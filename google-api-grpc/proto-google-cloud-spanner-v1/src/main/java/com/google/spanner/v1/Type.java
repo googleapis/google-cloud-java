@@ -4,6 +4,8 @@
 package com.google.spanner.v1;
 
 /**
+ *
+ *
  * <pre>
  * `Type` indicates the type of a Cloud Spanner value, as might be stored in a
  * table cell or returned from an SQL query.
@@ -11,29 +13,33 @@ package com.google.spanner.v1;
  *
  * Protobuf type {@code google.spanner.v1.Type}
  */
-public  final class Type extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class Type extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.spanner.v1.Type)
     TypeOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use Type.newBuilder() to construct.
   private Type(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private Type() {
     code_ = 0;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private Type(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -45,62 +51,67 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
-          case 8: {
-            int rawValue = input.readEnum();
+          case 8:
+            {
+              int rawValue = input.readEnum();
 
-            code_ = rawValue;
-            break;
-          }
-          case 18: {
-            com.google.spanner.v1.Type.Builder subBuilder = null;
-            if (arrayElementType_ != null) {
-              subBuilder = arrayElementType_.toBuilder();
+              code_ = rawValue;
+              break;
             }
-            arrayElementType_ = input.readMessage(com.google.spanner.v1.Type.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(arrayElementType_);
-              arrayElementType_ = subBuilder.buildPartial();
-            }
+          case 18:
+            {
+              com.google.spanner.v1.Type.Builder subBuilder = null;
+              if (arrayElementType_ != null) {
+                subBuilder = arrayElementType_.toBuilder();
+              }
+              arrayElementType_ =
+                  input.readMessage(com.google.spanner.v1.Type.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(arrayElementType_);
+                arrayElementType_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 26: {
-            com.google.spanner.v1.StructType.Builder subBuilder = null;
-            if (structType_ != null) {
-              subBuilder = structType_.toBuilder();
+              break;
             }
-            structType_ = input.readMessage(com.google.spanner.v1.StructType.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(structType_);
-              structType_ = subBuilder.buildPartial();
-            }
+          case 26:
+            {
+              com.google.spanner.v1.StructType.Builder subBuilder = null;
+              if (structType_ != null) {
+                subBuilder = structType_.toBuilder();
+              }
+              structType_ =
+                  input.readMessage(com.google.spanner.v1.StructType.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(structType_);
+                structType_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.spanner.v1.TypeProto.internal_static_google_spanner_v1_Type_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.spanner.v1.TypeProto.internal_static_google_spanner_v1_Type_fieldAccessorTable
@@ -111,6 +122,8 @@ private static final long serialVersionUID = 0L;
   public static final int CODE_FIELD_NUMBER = 1;
   private int code_;
   /**
+   *
+   *
    * <pre>
    * Required. The [TypeCode][google.spanner.v1.TypeCode] for this type.
    * </pre>
@@ -121,6 +134,8 @@ private static final long serialVersionUID = 0L;
     return code_;
   }
   /**
+   *
+   *
    * <pre>
    * Required. The [TypeCode][google.spanner.v1.TypeCode] for this type.
    * </pre>
@@ -128,6 +143,7 @@ private static final long serialVersionUID = 0L;
    * <code>.google.spanner.v1.TypeCode code = 1;</code>
    */
   public com.google.spanner.v1.TypeCode getCode() {
+    @SuppressWarnings("deprecation")
     com.google.spanner.v1.TypeCode result = com.google.spanner.v1.TypeCode.valueOf(code_);
     return result == null ? com.google.spanner.v1.TypeCode.UNRECOGNIZED : result;
   }
@@ -135,6 +151,8 @@ private static final long serialVersionUID = 0L;
   public static final int ARRAY_ELEMENT_TYPE_FIELD_NUMBER = 2;
   private com.google.spanner.v1.Type arrayElementType_;
   /**
+   *
+   *
    * <pre>
    * If [code][google.spanner.v1.Type.code] == [ARRAY][google.spanner.v1.TypeCode.ARRAY], then `array_element_type`
    * is the type of the array elements.
@@ -146,6 +164,8 @@ private static final long serialVersionUID = 0L;
     return arrayElementType_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * If [code][google.spanner.v1.Type.code] == [ARRAY][google.spanner.v1.TypeCode.ARRAY], then `array_element_type`
    * is the type of the array elements.
@@ -154,9 +174,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.spanner.v1.Type array_element_type = 2;</code>
    */
   public com.google.spanner.v1.Type getArrayElementType() {
-    return arrayElementType_ == null ? com.google.spanner.v1.Type.getDefaultInstance() : arrayElementType_;
+    return arrayElementType_ == null
+        ? com.google.spanner.v1.Type.getDefaultInstance()
+        : arrayElementType_;
   }
   /**
+   *
+   *
    * <pre>
    * If [code][google.spanner.v1.Type.code] == [ARRAY][google.spanner.v1.TypeCode.ARRAY], then `array_element_type`
    * is the type of the array elements.
@@ -171,6 +195,8 @@ private static final long serialVersionUID = 0L;
   public static final int STRUCT_TYPE_FIELD_NUMBER = 3;
   private com.google.spanner.v1.StructType structType_;
   /**
+   *
+   *
    * <pre>
    * If [code][google.spanner.v1.Type.code] == [STRUCT][google.spanner.v1.TypeCode.STRUCT], then `struct_type`
    * provides type information for the struct's fields.
@@ -182,6 +208,8 @@ private static final long serialVersionUID = 0L;
     return structType_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * If [code][google.spanner.v1.Type.code] == [STRUCT][google.spanner.v1.TypeCode.STRUCT], then `struct_type`
    * provides type information for the struct's fields.
@@ -190,9 +218,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.spanner.v1.StructType struct_type = 3;</code>
    */
   public com.google.spanner.v1.StructType getStructType() {
-    return structType_ == null ? com.google.spanner.v1.StructType.getDefaultInstance() : structType_;
+    return structType_ == null
+        ? com.google.spanner.v1.StructType.getDefaultInstance()
+        : structType_;
   }
   /**
+   *
+   *
    * <pre>
    * If [code][google.spanner.v1.Type.code] == [STRUCT][google.spanner.v1.TypeCode.STRUCT], then `struct_type`
    * provides type information for the struct's fields.
@@ -205,6 +237,8 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -214,8 +248,8 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  @java.lang.Override
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (code_ != com.google.spanner.v1.TypeCode.TYPE_CODE_UNSPECIFIED.getNumber()) {
       output.writeEnum(1, code_);
     }
@@ -228,22 +262,20 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
 
     size = 0;
     if (code_ != com.google.spanner.v1.TypeCode.TYPE_CODE_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(1, code_);
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, code_);
     }
     if (arrayElementType_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getArrayElementType());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getArrayElementType());
     }
     if (structType_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, getStructType());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getStructType());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -253,7 +285,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.spanner.v1.Type)) {
       return super.equals(obj);
@@ -264,13 +296,11 @@ private static final long serialVersionUID = 0L;
     result = result && code_ == other.code_;
     result = result && (hasArrayElementType() == other.hasArrayElementType());
     if (hasArrayElementType()) {
-      result = result && getArrayElementType()
-          .equals(other.getArrayElementType());
+      result = result && getArrayElementType().equals(other.getArrayElementType());
     }
     result = result && (hasStructType() == other.hasStructType());
     if (hasStructType()) {
-      result = result && getStructType()
-          .equals(other.getStructType());
+      result = result && getStructType().equals(other.getStructType());
     }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
@@ -298,95 +328,103 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.spanner.v1.Type parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.spanner.v1.Type parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.spanner.v1.Type parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.spanner.v1.Type parseFrom(
-      com.google.protobuf.ByteString data)
+
+  public static com.google.spanner.v1.Type parseFrom(com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.spanner.v1.Type parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.spanner.v1.Type parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.spanner.v1.Type parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.spanner.v1.Type parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.spanner.v1.Type parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.spanner.v1.Type parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
   public static com.google.spanner.v1.Type parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.spanner.v1.Type parseFrom(
-      com.google.protobuf.CodedInputStream input)
+
+  public static com.google.spanner.v1.Type parseFrom(com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.spanner.v1.Type parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  public Builder newBuilderForType() { return newBuilder(); }
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-  public static Builder newBuilder(com.google.spanner.v1.Type prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+
+  public static Builder newBuilder(com.google.spanner.v1.Type prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+
+  @java.lang.Override
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * `Type` indicates the type of a Cloud Spanner value, as might be stored in a
    * table cell or returned from an SQL query.
@@ -394,18 +432,19 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.spanner.v1.Type}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.spanner.v1.Type)
       com.google.spanner.v1.TypeOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.spanner.v1.TypeProto.internal_static_google_spanner_v1_Type_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.spanner.v1.TypeProto.internal_static_google_spanner_v1_Type_fieldAccessorTable
+      return com.google.spanner.v1.TypeProto
+          .internal_static_google_spanner_v1_Type_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.spanner.v1.Type.class, com.google.spanner.v1.Type.Builder.class);
     }
@@ -415,16 +454,16 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       code_ = 0;
@@ -444,15 +483,17 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.spanner.v1.TypeProto.internal_static_google_spanner_v1_Type_descriptor;
     }
 
+    @java.lang.Override
     public com.google.spanner.v1.Type getDefaultInstanceForType() {
       return com.google.spanner.v1.Type.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.spanner.v1.Type build() {
       com.google.spanner.v1.Type result = buildPartial();
       if (!result.isInitialized()) {
@@ -461,6 +502,7 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.spanner.v1.Type buildPartial() {
       com.google.spanner.v1.Type result = new com.google.spanner.v1.Type(this);
       result.code_ = code_;
@@ -478,35 +520,43 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+
+    @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+    @java.lang.Override
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+    @java.lang.Override
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
+    @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
+    @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.spanner.v1.Type) {
-        return mergeFrom((com.google.spanner.v1.Type)other);
+        return mergeFrom((com.google.spanner.v1.Type) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -529,10 +579,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -553,6 +605,8 @@ private static final long serialVersionUID = 0L;
 
     private int code_ = 0;
     /**
+     *
+     *
      * <pre>
      * Required. The [TypeCode][google.spanner.v1.TypeCode] for this type.
      * </pre>
@@ -563,6 +617,8 @@ private static final long serialVersionUID = 0L;
       return code_;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The [TypeCode][google.spanner.v1.TypeCode] for this type.
      * </pre>
@@ -575,6 +631,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The [TypeCode][google.spanner.v1.TypeCode] for this type.
      * </pre>
@@ -582,10 +640,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.spanner.v1.TypeCode code = 1;</code>
      */
     public com.google.spanner.v1.TypeCode getCode() {
+      @SuppressWarnings("deprecation")
       com.google.spanner.v1.TypeCode result = com.google.spanner.v1.TypeCode.valueOf(code_);
       return result == null ? com.google.spanner.v1.TypeCode.UNRECOGNIZED : result;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The [TypeCode][google.spanner.v1.TypeCode] for this type.
      * </pre>
@@ -596,12 +657,14 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       code_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The [TypeCode][google.spanner.v1.TypeCode] for this type.
      * </pre>
@@ -609,7 +672,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.spanner.v1.TypeCode code = 1;</code>
      */
     public Builder clearCode() {
-      
+
       code_ = 0;
       onChanged();
       return this;
@@ -617,8 +680,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.spanner.v1.Type arrayElementType_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.spanner.v1.Type, com.google.spanner.v1.Type.Builder, com.google.spanner.v1.TypeOrBuilder> arrayElementTypeBuilder_;
+            com.google.spanner.v1.Type,
+            com.google.spanner.v1.Type.Builder,
+            com.google.spanner.v1.TypeOrBuilder>
+        arrayElementTypeBuilder_;
     /**
+     *
+     *
      * <pre>
      * If [code][google.spanner.v1.Type.code] == [ARRAY][google.spanner.v1.TypeCode.ARRAY], then `array_element_type`
      * is the type of the array elements.
@@ -630,6 +698,8 @@ private static final long serialVersionUID = 0L;
       return arrayElementTypeBuilder_ != null || arrayElementType_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * If [code][google.spanner.v1.Type.code] == [ARRAY][google.spanner.v1.TypeCode.ARRAY], then `array_element_type`
      * is the type of the array elements.
@@ -639,12 +709,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.spanner.v1.Type getArrayElementType() {
       if (arrayElementTypeBuilder_ == null) {
-        return arrayElementType_ == null ? com.google.spanner.v1.Type.getDefaultInstance() : arrayElementType_;
+        return arrayElementType_ == null
+            ? com.google.spanner.v1.Type.getDefaultInstance()
+            : arrayElementType_;
       } else {
         return arrayElementTypeBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * If [code][google.spanner.v1.Type.code] == [ARRAY][google.spanner.v1.TypeCode.ARRAY], then `array_element_type`
      * is the type of the array elements.
@@ -666,6 +740,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If [code][google.spanner.v1.Type.code] == [ARRAY][google.spanner.v1.TypeCode.ARRAY], then `array_element_type`
      * is the type of the array elements.
@@ -673,8 +749,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.spanner.v1.Type array_element_type = 2;</code>
      */
-    public Builder setArrayElementType(
-        com.google.spanner.v1.Type.Builder builderForValue) {
+    public Builder setArrayElementType(com.google.spanner.v1.Type.Builder builderForValue) {
       if (arrayElementTypeBuilder_ == null) {
         arrayElementType_ = builderForValue.build();
         onChanged();
@@ -685,6 +760,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If [code][google.spanner.v1.Type.code] == [ARRAY][google.spanner.v1.TypeCode.ARRAY], then `array_element_type`
      * is the type of the array elements.
@@ -696,7 +773,9 @@ private static final long serialVersionUID = 0L;
       if (arrayElementTypeBuilder_ == null) {
         if (arrayElementType_ != null) {
           arrayElementType_ =
-            com.google.spanner.v1.Type.newBuilder(arrayElementType_).mergeFrom(value).buildPartial();
+              com.google.spanner.v1.Type.newBuilder(arrayElementType_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           arrayElementType_ = value;
         }
@@ -708,6 +787,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If [code][google.spanner.v1.Type.code] == [ARRAY][google.spanner.v1.TypeCode.ARRAY], then `array_element_type`
      * is the type of the array elements.
@@ -727,6 +808,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If [code][google.spanner.v1.Type.code] == [ARRAY][google.spanner.v1.TypeCode.ARRAY], then `array_element_type`
      * is the type of the array elements.
@@ -735,11 +818,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.spanner.v1.Type array_element_type = 2;</code>
      */
     public com.google.spanner.v1.Type.Builder getArrayElementTypeBuilder() {
-      
+
       onChanged();
       return getArrayElementTypeFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * If [code][google.spanner.v1.Type.code] == [ARRAY][google.spanner.v1.TypeCode.ARRAY], then `array_element_type`
      * is the type of the array elements.
@@ -751,11 +836,14 @@ private static final long serialVersionUID = 0L;
       if (arrayElementTypeBuilder_ != null) {
         return arrayElementTypeBuilder_.getMessageOrBuilder();
       } else {
-        return arrayElementType_ == null ?
-            com.google.spanner.v1.Type.getDefaultInstance() : arrayElementType_;
+        return arrayElementType_ == null
+            ? com.google.spanner.v1.Type.getDefaultInstance()
+            : arrayElementType_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * If [code][google.spanner.v1.Type.code] == [ARRAY][google.spanner.v1.TypeCode.ARRAY], then `array_element_type`
      * is the type of the array elements.
@@ -764,14 +852,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.spanner.v1.Type array_element_type = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.spanner.v1.Type, com.google.spanner.v1.Type.Builder, com.google.spanner.v1.TypeOrBuilder> 
+            com.google.spanner.v1.Type,
+            com.google.spanner.v1.Type.Builder,
+            com.google.spanner.v1.TypeOrBuilder>
         getArrayElementTypeFieldBuilder() {
       if (arrayElementTypeBuilder_ == null) {
-        arrayElementTypeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.spanner.v1.Type, com.google.spanner.v1.Type.Builder, com.google.spanner.v1.TypeOrBuilder>(
-                getArrayElementType(),
-                getParentForChildren(),
-                isClean());
+        arrayElementTypeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.spanner.v1.Type,
+                com.google.spanner.v1.Type.Builder,
+                com.google.spanner.v1.TypeOrBuilder>(
+                getArrayElementType(), getParentForChildren(), isClean());
         arrayElementType_ = null;
       }
       return arrayElementTypeBuilder_;
@@ -779,8 +870,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.spanner.v1.StructType structType_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.spanner.v1.StructType, com.google.spanner.v1.StructType.Builder, com.google.spanner.v1.StructTypeOrBuilder> structTypeBuilder_;
+            com.google.spanner.v1.StructType,
+            com.google.spanner.v1.StructType.Builder,
+            com.google.spanner.v1.StructTypeOrBuilder>
+        structTypeBuilder_;
     /**
+     *
+     *
      * <pre>
      * If [code][google.spanner.v1.Type.code] == [STRUCT][google.spanner.v1.TypeCode.STRUCT], then `struct_type`
      * provides type information for the struct's fields.
@@ -792,6 +888,8 @@ private static final long serialVersionUID = 0L;
       return structTypeBuilder_ != null || structType_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * If [code][google.spanner.v1.Type.code] == [STRUCT][google.spanner.v1.TypeCode.STRUCT], then `struct_type`
      * provides type information for the struct's fields.
@@ -801,12 +899,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.spanner.v1.StructType getStructType() {
       if (structTypeBuilder_ == null) {
-        return structType_ == null ? com.google.spanner.v1.StructType.getDefaultInstance() : structType_;
+        return structType_ == null
+            ? com.google.spanner.v1.StructType.getDefaultInstance()
+            : structType_;
       } else {
         return structTypeBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * If [code][google.spanner.v1.Type.code] == [STRUCT][google.spanner.v1.TypeCode.STRUCT], then `struct_type`
      * provides type information for the struct's fields.
@@ -828,6 +930,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If [code][google.spanner.v1.Type.code] == [STRUCT][google.spanner.v1.TypeCode.STRUCT], then `struct_type`
      * provides type information for the struct's fields.
@@ -835,8 +939,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.spanner.v1.StructType struct_type = 3;</code>
      */
-    public Builder setStructType(
-        com.google.spanner.v1.StructType.Builder builderForValue) {
+    public Builder setStructType(com.google.spanner.v1.StructType.Builder builderForValue) {
       if (structTypeBuilder_ == null) {
         structType_ = builderForValue.build();
         onChanged();
@@ -847,6 +950,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If [code][google.spanner.v1.Type.code] == [STRUCT][google.spanner.v1.TypeCode.STRUCT], then `struct_type`
      * provides type information for the struct's fields.
@@ -858,7 +963,9 @@ private static final long serialVersionUID = 0L;
       if (structTypeBuilder_ == null) {
         if (structType_ != null) {
           structType_ =
-            com.google.spanner.v1.StructType.newBuilder(structType_).mergeFrom(value).buildPartial();
+              com.google.spanner.v1.StructType.newBuilder(structType_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           structType_ = value;
         }
@@ -870,6 +977,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If [code][google.spanner.v1.Type.code] == [STRUCT][google.spanner.v1.TypeCode.STRUCT], then `struct_type`
      * provides type information for the struct's fields.
@@ -889,6 +998,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If [code][google.spanner.v1.Type.code] == [STRUCT][google.spanner.v1.TypeCode.STRUCT], then `struct_type`
      * provides type information for the struct's fields.
@@ -897,11 +1008,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.spanner.v1.StructType struct_type = 3;</code>
      */
     public com.google.spanner.v1.StructType.Builder getStructTypeBuilder() {
-      
+
       onChanged();
       return getStructTypeFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * If [code][google.spanner.v1.Type.code] == [STRUCT][google.spanner.v1.TypeCode.STRUCT], then `struct_type`
      * provides type information for the struct's fields.
@@ -913,11 +1026,14 @@ private static final long serialVersionUID = 0L;
       if (structTypeBuilder_ != null) {
         return structTypeBuilder_.getMessageOrBuilder();
       } else {
-        return structType_ == null ?
-            com.google.spanner.v1.StructType.getDefaultInstance() : structType_;
+        return structType_ == null
+            ? com.google.spanner.v1.StructType.getDefaultInstance()
+            : structType_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * If [code][google.spanner.v1.Type.code] == [STRUCT][google.spanner.v1.TypeCode.STRUCT], then `struct_type`
      * provides type information for the struct's fields.
@@ -926,34 +1042,39 @@ private static final long serialVersionUID = 0L;
      * <code>.google.spanner.v1.StructType struct_type = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.spanner.v1.StructType, com.google.spanner.v1.StructType.Builder, com.google.spanner.v1.StructTypeOrBuilder> 
+            com.google.spanner.v1.StructType,
+            com.google.spanner.v1.StructType.Builder,
+            com.google.spanner.v1.StructTypeOrBuilder>
         getStructTypeFieldBuilder() {
       if (structTypeBuilder_ == null) {
-        structTypeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.spanner.v1.StructType, com.google.spanner.v1.StructType.Builder, com.google.spanner.v1.StructTypeOrBuilder>(
-                getStructType(),
-                getParentForChildren(),
-                isClean());
+        structTypeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.spanner.v1.StructType,
+                com.google.spanner.v1.StructType.Builder,
+                com.google.spanner.v1.StructTypeOrBuilder>(
+                getStructType(), getParentForChildren(), isClean());
         structType_ = null;
       }
       return structTypeBuilder_;
     }
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+
+    @java.lang.Override
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
     }
-
 
     // @@protoc_insertion_point(builder_scope:google.spanner.v1.Type)
   }
 
   // @@protoc_insertion_point(class_scope:google.spanner.v1.Type)
   private static final com.google.spanner.v1.Type DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.spanner.v1.Type();
   }
@@ -962,15 +1083,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<Type>
-      PARSER = new com.google.protobuf.AbstractParser<Type>() {
-    public Type parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Type(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<Type> PARSER =
+      new com.google.protobuf.AbstractParser<Type>() {
+        @java.lang.Override
+        public Type parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new Type(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<Type> parser() {
     return PARSER;
@@ -981,9 +1103,8 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.spanner.v1.Type getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

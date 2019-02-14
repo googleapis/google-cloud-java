@@ -3,11 +3,14 @@
 
 package com.google.cloud.vision.v1p3beta1;
 
-public interface AddProductToProductSetRequestOrBuilder extends
+public interface AddProductToProductSetRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.vision.v1p3beta1.AddProductToProductSetRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The resource name for the ProductSet to modify.
    * Format is:
@@ -18,6 +21,8 @@ public interface AddProductToProductSetRequestOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The resource name for the ProductSet to modify.
    * Format is:
@@ -26,10 +31,11 @@ public interface AddProductToProductSetRequestOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * The resource name for the Product to be added to this ProductSet.
    * Format is:
@@ -40,6 +46,8 @@ public interface AddProductToProductSetRequestOrBuilder extends
    */
   java.lang.String getProduct();
   /**
+   *
+   *
    * <pre>
    * The resource name for the Product to be added to this ProductSet.
    * Format is:
@@ -48,6 +56,5 @@ public interface AddProductToProductSetRequestOrBuilder extends
    *
    * <code>string product = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getProductBytes();
+  com.google.protobuf.ByteString getProductBytes();
 }

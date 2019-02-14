@@ -24,18 +24,19 @@ import java.util.logging.Level;
  *
  * <p>Added levels in descending order are (between parenthesis the relation with Java logging
  * levels):
+ *
  * <ul>
- * <li>EMERGENCY
- * <li>ALERT
- * <li>CRITICAL
- * <li>ERROR ({@code WARNING < ERROR < SEVERE})
- * <li>NOTICE ({@code INFO < NOTICE < WARNING})
- * <li>DEBUG ({@code ALL < DEBUG < FINES}T
+ *   <li>EMERGENCY
+ *   <li>ALERT
+ *   <li>CRITICAL
+ *   <li>ERROR ({@code WARNING < ERROR < SEVERE})
+ *   <li>NOTICE ({@code INFO < NOTICE < WARNING})
+ *   <li>DEBUG ({@code ALL < DEBUG < FINES}T
  * </ul>
  *
- * <p>Notice that {@code ERROR} is lower than {@link java.util.logging.Level#SEVERE} but higher
- * than {@link java.util.logging.Level#WARNING}. {@code DEBUG} instead is lower than
- * {@link java.util.logging.Level#FINEST} but higher than {@link java.util.logging.Level#ALL}.
+ * <p>Notice that {@code ERROR} is lower than {@link java.util.logging.Level#SEVERE} but higher than
+ * {@link java.util.logging.Level#WARNING}. {@code DEBUG} instead is lower than {@link
+ * java.util.logging.Level#FINEST} but higher than {@link java.util.logging.Level#ALL}.
  */
 public final class LoggingLevel extends Level {
 
@@ -44,15 +45,13 @@ public final class LoggingLevel extends Level {
   /**
    * A level to be used for debug or trace information. This level is initialized to {@code 250}.
    */
-  public static final LoggingLevel DEBUG =
-      new LoggingLevel("DEBUG", 250, Severity.DEBUG);
+  public static final LoggingLevel DEBUG = new LoggingLevel("DEBUG", 250, Severity.DEBUG);
 
   /**
    * A level to be used when normal events occur, such as start up and shut down. This level is
    * initialized to {@code 850}.
    */
-  public static final LoggingLevel NOTICE =
-      new LoggingLevel("NOTICE", 850, Severity.NOTICE);
+  public static final LoggingLevel NOTICE = new LoggingLevel("NOTICE", 850, Severity.NOTICE);
 
   /**
    * A level to be used when events occur that are likely to cause problems. This level is
@@ -73,8 +72,8 @@ public final class LoggingLevel extends Level {
   public static final LoggingLevel ALERT = new LoggingLevel("ALERT", 1100, Severity.ALERT);
 
   /**
-   * A levet to be used when one or more systems are unusable. This level is initialized to
-   * {@code 1150}.
+   * A levet to be used when one or more systems are unusable. This level is initialized to {@code
+   * 1150}.
    */
   public static final LoggingLevel EMERGENCY =
       new LoggingLevel("EMERGENCY", 1150, Severity.EMERGENCY);
@@ -86,10 +85,7 @@ public final class LoggingLevel extends Level {
     this.severity = severity;
   }
 
-
-  /**
-   * Returns the Stackdriver Logging severity associated with this logging level.
-   */
+  /** Returns the Stackdriver Logging severity associated with this logging level. */
   public Severity getSeverity() {
     return severity;
   }

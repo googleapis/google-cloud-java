@@ -3,11 +3,14 @@
 
 package com.google.cloud.iot.v1;
 
-public interface RegistryCredentialOrBuilder extends
+public interface RegistryCredentialOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.iot.v1.RegistryCredential)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * A public key certificate used to verify the device credentials.
    * </pre>
@@ -16,6 +19,8 @@ public interface RegistryCredentialOrBuilder extends
    */
   boolean hasPublicKeyCertificate();
   /**
+   *
+   *
    * <pre>
    * A public key certificate used to verify the device credentials.
    * </pre>
@@ -24,6 +29,8 @@ public interface RegistryCredentialOrBuilder extends
    */
   com.google.cloud.iot.v1.PublicKeyCertificate getPublicKeyCertificate();
   /**
+   *
+   *
    * <pre>
    * A public key certificate used to verify the device credentials.
    * </pre>

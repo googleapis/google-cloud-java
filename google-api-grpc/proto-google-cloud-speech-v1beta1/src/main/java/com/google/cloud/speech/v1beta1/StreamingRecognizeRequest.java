@@ -4,6 +4,8 @@
 package com.google.cloud.speech.v1beta1;
 
 /**
+ *
+ *
  * <pre>
  * The top-level message sent by the client for the `StreamingRecognize` method.
  * Multiple `StreamingRecognizeRequest` messages are sent. The first message
@@ -14,23 +16,23 @@ package com.google.cloud.speech.v1beta1;
  *
  * Protobuf type {@code google.cloud.speech.v1beta1.StreamingRecognizeRequest}
  */
-public  final class StreamingRecognizeRequest extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class StreamingRecognizeRequest extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.speech.v1beta1.StreamingRecognizeRequest)
     StreamingRecognizeRequestOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use StreamingRecognizeRequest.newBuilder() to construct.
   private StreamingRecognizeRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private StreamingRecognizeRequest() {
-  }
+
+  private StreamingRecognizeRequest() {}
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private StreamingRecognizeRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -50,70 +52,78 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
             }
-            break;
-          }
-          case 10: {
-            com.google.cloud.speech.v1beta1.StreamingRecognitionConfig.Builder subBuilder = null;
-            if (streamingRequestCase_ == 1) {
-              subBuilder = ((com.google.cloud.speech.v1beta1.StreamingRecognitionConfig) streamingRequest_).toBuilder();
+          case 10:
+            {
+              com.google.cloud.speech.v1beta1.StreamingRecognitionConfig.Builder subBuilder = null;
+              if (streamingRequestCase_ == 1) {
+                subBuilder =
+                    ((com.google.cloud.speech.v1beta1.StreamingRecognitionConfig) streamingRequest_)
+                        .toBuilder();
+              }
+              streamingRequest_ =
+                  input.readMessage(
+                      com.google.cloud.speech.v1beta1.StreamingRecognitionConfig.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.speech.v1beta1.StreamingRecognitionConfig) streamingRequest_);
+                streamingRequest_ = subBuilder.buildPartial();
+              }
+              streamingRequestCase_ = 1;
+              break;
             }
-            streamingRequest_ =
-                input.readMessage(com.google.cloud.speech.v1beta1.StreamingRecognitionConfig.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.google.cloud.speech.v1beta1.StreamingRecognitionConfig) streamingRequest_);
-              streamingRequest_ = subBuilder.buildPartial();
+          case 18:
+            {
+              streamingRequestCase_ = 2;
+              streamingRequest_ = input.readBytes();
+              break;
             }
-            streamingRequestCase_ = 1;
-            break;
-          }
-          case 18: {
-            streamingRequestCase_ = 2;
-            streamingRequest_ = input.readBytes();
-            break;
-          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.speech.v1beta1.SpeechProto.internal_static_google_cloud_speech_v1beta1_StreamingRecognizeRequest_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.speech.v1beta1.SpeechProto
+        .internal_static_google_cloud_speech_v1beta1_StreamingRecognizeRequest_descriptor;
   }
 
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.speech.v1beta1.SpeechProto.internal_static_google_cloud_speech_v1beta1_StreamingRecognizeRequest_fieldAccessorTable
+    return com.google.cloud.speech.v1beta1.SpeechProto
+        .internal_static_google_cloud_speech_v1beta1_StreamingRecognizeRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.speech.v1beta1.StreamingRecognizeRequest.class, com.google.cloud.speech.v1beta1.StreamingRecognizeRequest.Builder.class);
+            com.google.cloud.speech.v1beta1.StreamingRecognizeRequest.class,
+            com.google.cloud.speech.v1beta1.StreamingRecognizeRequest.Builder.class);
   }
 
   private int streamingRequestCase_ = 0;
   private java.lang.Object streamingRequest_;
-  public enum StreamingRequestCase
-      implements com.google.protobuf.Internal.EnumLite {
+
+  public enum StreamingRequestCase implements com.google.protobuf.Internal.EnumLite {
     STREAMING_CONFIG(1),
     AUDIO_CONTENT(2),
     STREAMINGREQUEST_NOT_SET(0);
     private final int value;
+
     private StreamingRequestCase(int value) {
       this.value = value;
     }
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static StreamingRequestCase valueOf(int value) {
       return forNumber(value);
@@ -121,25 +131,30 @@ private static final long serialVersionUID = 0L;
 
     public static StreamingRequestCase forNumber(int value) {
       switch (value) {
-        case 1: return STREAMING_CONFIG;
-        case 2: return AUDIO_CONTENT;
-        case 0: return STREAMINGREQUEST_NOT_SET;
-        default: return null;
+        case 1:
+          return STREAMING_CONFIG;
+        case 2:
+          return AUDIO_CONTENT;
+        case 0:
+          return STREAMINGREQUEST_NOT_SET;
+        default:
+          return null;
       }
     }
+
     public int getNumber() {
       return this.value;
     }
   };
 
-  public StreamingRequestCase
-  getStreamingRequestCase() {
-    return StreamingRequestCase.forNumber(
-        streamingRequestCase_);
+  public StreamingRequestCase getStreamingRequestCase() {
+    return StreamingRequestCase.forNumber(streamingRequestCase_);
   }
 
   public static final int STREAMING_CONFIG_FIELD_NUMBER = 1;
   /**
+   *
+   *
    * <pre>
    * Provides information to the recognizer that specifies how to process the
    * request. The first `StreamingRecognizeRequest` message must contain a
@@ -152,6 +167,8 @@ private static final long serialVersionUID = 0L;
     return streamingRequestCase_ == 1;
   }
   /**
+   *
+   *
    * <pre>
    * Provides information to the recognizer that specifies how to process the
    * request. The first `StreamingRecognizeRequest` message must contain a
@@ -162,11 +179,13 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.cloud.speech.v1beta1.StreamingRecognitionConfig getStreamingConfig() {
     if (streamingRequestCase_ == 1) {
-       return (com.google.cloud.speech.v1beta1.StreamingRecognitionConfig) streamingRequest_;
+      return (com.google.cloud.speech.v1beta1.StreamingRecognitionConfig) streamingRequest_;
     }
     return com.google.cloud.speech.v1beta1.StreamingRecognitionConfig.getDefaultInstance();
   }
   /**
+   *
+   *
    * <pre>
    * Provides information to the recognizer that specifies how to process the
    * request. The first `StreamingRecognizeRequest` message must contain a
@@ -175,15 +194,18 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.cloud.speech.v1beta1.StreamingRecognitionConfig streaming_config = 1;</code>
    */
-  public com.google.cloud.speech.v1beta1.StreamingRecognitionConfigOrBuilder getStreamingConfigOrBuilder() {
+  public com.google.cloud.speech.v1beta1.StreamingRecognitionConfigOrBuilder
+      getStreamingConfigOrBuilder() {
     if (streamingRequestCase_ == 1) {
-       return (com.google.cloud.speech.v1beta1.StreamingRecognitionConfig) streamingRequest_;
+      return (com.google.cloud.speech.v1beta1.StreamingRecognitionConfig) streamingRequest_;
     }
     return com.google.cloud.speech.v1beta1.StreamingRecognitionConfig.getDefaultInstance();
   }
 
   public static final int AUDIO_CONTENT_FIELD_NUMBER = 2;
   /**
+   *
+   *
    * <pre>
    * The audio data to be recognized. Sequential chunks of audio data are sent
    * in sequential `StreamingRecognizeRequest` messages. The first
@@ -205,6 +227,7 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -214,14 +237,13 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (streamingRequestCase_ == 1) {
-      output.writeMessage(1, (com.google.cloud.speech.v1beta1.StreamingRecognitionConfig) streamingRequest_);
+      output.writeMessage(
+          1, (com.google.cloud.speech.v1beta1.StreamingRecognitionConfig) streamingRequest_);
     }
     if (streamingRequestCase_ == 2) {
-      output.writeBytes(
-          2, (com.google.protobuf.ByteString) streamingRequest_);
+      output.writeBytes(2, (com.google.protobuf.ByteString) streamingRequest_);
     }
     unknownFields.writeTo(output);
   }
@@ -232,13 +254,14 @@ private static final long serialVersionUID = 0L;
 
     size = 0;
     if (streamingRequestCase_ == 1) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, (com.google.cloud.speech.v1beta1.StreamingRecognitionConfig) streamingRequest_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              1, (com.google.cloud.speech.v1beta1.StreamingRecognitionConfig) streamingRequest_);
     }
     if (streamingRequestCase_ == 2) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBytesSize(
-            2, (com.google.protobuf.ByteString) streamingRequest_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBytesSize(
+              2, (com.google.protobuf.ByteString) streamingRequest_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -248,25 +271,23 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.speech.v1beta1.StreamingRecognizeRequest)) {
       return super.equals(obj);
     }
-    com.google.cloud.speech.v1beta1.StreamingRecognizeRequest other = (com.google.cloud.speech.v1beta1.StreamingRecognizeRequest) obj;
+    com.google.cloud.speech.v1beta1.StreamingRecognizeRequest other =
+        (com.google.cloud.speech.v1beta1.StreamingRecognizeRequest) obj;
 
     boolean result = true;
-    result = result && getStreamingRequestCase().equals(
-        other.getStreamingRequestCase());
+    result = result && getStreamingRequestCase().equals(other.getStreamingRequestCase());
     if (!result) return false;
     switch (streamingRequestCase_) {
       case 1:
-        result = result && getStreamingConfig()
-            .equals(other.getStreamingConfig());
+        result = result && getStreamingConfig().equals(other.getStreamingConfig());
         break;
       case 2:
-        result = result && getAudioContent()
-            .equals(other.getAudioContent());
+        result = result && getAudioContent().equals(other.getAudioContent());
         break;
       case 0:
       default:
@@ -300,94 +321,102 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.cloud.speech.v1beta1.StreamingRecognizeRequest parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.speech.v1beta1.StreamingRecognizeRequest parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.speech.v1beta1.StreamingRecognizeRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.speech.v1beta1.StreamingRecognizeRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.speech.v1beta1.StreamingRecognizeRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.speech.v1beta1.StreamingRecognizeRequest parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.speech.v1beta1.StreamingRecognizeRequest parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.speech.v1beta1.StreamingRecognizeRequest parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.speech.v1beta1.StreamingRecognizeRequest parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.cloud.speech.v1beta1.StreamingRecognizeRequest parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.cloud.speech.v1beta1.StreamingRecognizeRequest parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.speech.v1beta1.StreamingRecognizeRequest parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.speech.v1beta1.StreamingRecognizeRequest parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.speech.v1beta1.StreamingRecognizeRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
-  public Builder newBuilderForType() { return newBuilder(); }
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
   public static Builder newBuilder() {
     return DEFAULT_INSTANCE.toBuilder();
   }
-  public static Builder newBuilder(com.google.cloud.speech.v1beta1.StreamingRecognizeRequest prototype) {
+
+  public static Builder newBuilder(
+      com.google.cloud.speech.v1beta1.StreamingRecognizeRequest prototype) {
     return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
   }
+
   public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * The top-level message sent by the client for the `StreamingRecognize` method.
    * Multiple `StreamingRecognizeRequest` messages are sent. The first message
@@ -398,20 +427,22 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.cloud.speech.v1beta1.StreamingRecognizeRequest}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.speech.v1beta1.StreamingRecognizeRequest)
       com.google.cloud.speech.v1beta1.StreamingRecognizeRequestOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.speech.v1beta1.SpeechProto.internal_static_google_cloud_speech_v1beta1_StreamingRecognizeRequest_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.speech.v1beta1.SpeechProto
+          .internal_static_google_cloud_speech_v1beta1_StreamingRecognizeRequest_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.speech.v1beta1.SpeechProto.internal_static_google_cloud_speech_v1beta1_StreamingRecognizeRequest_fieldAccessorTable
+      return com.google.cloud.speech.v1beta1.SpeechProto
+          .internal_static_google_cloud_speech_v1beta1_StreamingRecognizeRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.speech.v1beta1.StreamingRecognizeRequest.class, com.google.cloud.speech.v1beta1.StreamingRecognizeRequest.Builder.class);
+              com.google.cloud.speech.v1beta1.StreamingRecognizeRequest.class,
+              com.google.cloud.speech.v1beta1.StreamingRecognizeRequest.Builder.class);
     }
 
     // Construct using com.google.cloud.speech.v1beta1.StreamingRecognizeRequest.newBuilder()
@@ -419,16 +450,15 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
     public Builder clear() {
       super.clear();
       streamingRequestCase_ = 0;
@@ -436,9 +466,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.speech.v1beta1.SpeechProto.internal_static_google_cloud_speech_v1beta1_StreamingRecognizeRequest_descriptor;
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.speech.v1beta1.SpeechProto
+          .internal_static_google_cloud_speech_v1beta1_StreamingRecognizeRequest_descriptor;
     }
 
     public com.google.cloud.speech.v1beta1.StreamingRecognizeRequest getDefaultInstanceForType() {
@@ -454,7 +484,8 @@ private static final long serialVersionUID = 0L;
     }
 
     public com.google.cloud.speech.v1beta1.StreamingRecognizeRequest buildPartial() {
-      com.google.cloud.speech.v1beta1.StreamingRecognizeRequest result = new com.google.cloud.speech.v1beta1.StreamingRecognizeRequest(this);
+      com.google.cloud.speech.v1beta1.StreamingRecognizeRequest result =
+          new com.google.cloud.speech.v1beta1.StreamingRecognizeRequest(this);
       if (streamingRequestCase_ == 1) {
         if (streamingConfigBuilder_ == null) {
           result.streamingRequest_ = streamingRequest_;
@@ -473,32 +504,33 @@ private static final long serialVersionUID = 0L;
     public Builder clone() {
       return (Builder) super.clone();
     }
+
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.speech.v1beta1.StreamingRecognizeRequest) {
-        return mergeFrom((com.google.cloud.speech.v1beta1.StreamingRecognizeRequest)other);
+        return mergeFrom((com.google.cloud.speech.v1beta1.StreamingRecognizeRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -506,19 +538,23 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.cloud.speech.v1beta1.StreamingRecognizeRequest other) {
-      if (other == com.google.cloud.speech.v1beta1.StreamingRecognizeRequest.getDefaultInstance()) return this;
+      if (other == com.google.cloud.speech.v1beta1.StreamingRecognizeRequest.getDefaultInstance())
+        return this;
       switch (other.getStreamingRequestCase()) {
-        case STREAMING_CONFIG: {
-          mergeStreamingConfig(other.getStreamingConfig());
-          break;
-        }
-        case AUDIO_CONTENT: {
-          setAudioContent(other.getAudioContent());
-          break;
-        }
-        case STREAMINGREQUEST_NOT_SET: {
-          break;
-        }
+        case STREAMING_CONFIG:
+          {
+            mergeStreamingConfig(other.getStreamingConfig());
+            break;
+          }
+        case AUDIO_CONTENT:
+          {
+            setAudioContent(other.getAudioContent());
+            break;
+          }
+        case STREAMINGREQUEST_NOT_SET:
+          {
+            break;
+          }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -537,7 +573,8 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.speech.v1beta1.StreamingRecognizeRequest) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.cloud.speech.v1beta1.StreamingRecognizeRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -546,12 +583,12 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int streamingRequestCase_ = 0;
     private java.lang.Object streamingRequest_;
-    public StreamingRequestCase
-        getStreamingRequestCase() {
-      return StreamingRequestCase.forNumber(
-          streamingRequestCase_);
+
+    public StreamingRequestCase getStreamingRequestCase() {
+      return StreamingRequestCase.forNumber(streamingRequestCase_);
     }
 
     public Builder clearStreamingRequest() {
@@ -561,10 +598,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.speech.v1beta1.StreamingRecognitionConfig, com.google.cloud.speech.v1beta1.StreamingRecognitionConfig.Builder, com.google.cloud.speech.v1beta1.StreamingRecognitionConfigOrBuilder> streamingConfigBuilder_;
+            com.google.cloud.speech.v1beta1.StreamingRecognitionConfig,
+            com.google.cloud.speech.v1beta1.StreamingRecognitionConfig.Builder,
+            com.google.cloud.speech.v1beta1.StreamingRecognitionConfigOrBuilder>
+        streamingConfigBuilder_;
     /**
+     *
+     *
      * <pre>
      * Provides information to the recognizer that specifies how to process the
      * request. The first `StreamingRecognizeRequest` message must contain a
@@ -577,6 +618,8 @@ private static final long serialVersionUID = 0L;
       return streamingRequestCase_ == 1;
     }
     /**
+     *
+     *
      * <pre>
      * Provides information to the recognizer that specifies how to process the
      * request. The first `StreamingRecognizeRequest` message must contain a
@@ -599,6 +642,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Provides information to the recognizer that specifies how to process the
      * request. The first `StreamingRecognizeRequest` message must contain a
@@ -607,7 +652,8 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.cloud.speech.v1beta1.StreamingRecognitionConfig streaming_config = 1;</code>
      */
-    public Builder setStreamingConfig(com.google.cloud.speech.v1beta1.StreamingRecognitionConfig value) {
+    public Builder setStreamingConfig(
+        com.google.cloud.speech.v1beta1.StreamingRecognitionConfig value) {
       if (streamingConfigBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -621,6 +667,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Provides information to the recognizer that specifies how to process the
      * request. The first `StreamingRecognizeRequest` message must contain a
@@ -641,6 +689,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Provides information to the recognizer that specifies how to process the
      * request. The first `StreamingRecognizeRequest` message must contain a
@@ -649,12 +699,19 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.cloud.speech.v1beta1.StreamingRecognitionConfig streaming_config = 1;</code>
      */
-    public Builder mergeStreamingConfig(com.google.cloud.speech.v1beta1.StreamingRecognitionConfig value) {
+    public Builder mergeStreamingConfig(
+        com.google.cloud.speech.v1beta1.StreamingRecognitionConfig value) {
       if (streamingConfigBuilder_ == null) {
-        if (streamingRequestCase_ == 1 &&
-            streamingRequest_ != com.google.cloud.speech.v1beta1.StreamingRecognitionConfig.getDefaultInstance()) {
-          streamingRequest_ = com.google.cloud.speech.v1beta1.StreamingRecognitionConfig.newBuilder((com.google.cloud.speech.v1beta1.StreamingRecognitionConfig) streamingRequest_)
-              .mergeFrom(value).buildPartial();
+        if (streamingRequestCase_ == 1
+            && streamingRequest_
+                != com.google.cloud.speech.v1beta1.StreamingRecognitionConfig
+                    .getDefaultInstance()) {
+          streamingRequest_ =
+              com.google.cloud.speech.v1beta1.StreamingRecognitionConfig.newBuilder(
+                      (com.google.cloud.speech.v1beta1.StreamingRecognitionConfig)
+                          streamingRequest_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           streamingRequest_ = value;
         }
@@ -669,6 +726,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Provides information to the recognizer that specifies how to process the
      * request. The first `StreamingRecognizeRequest` message must contain a
@@ -694,6 +753,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Provides information to the recognizer that specifies how to process the
      * request. The first `StreamingRecognizeRequest` message must contain a
@@ -702,10 +763,13 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.cloud.speech.v1beta1.StreamingRecognitionConfig streaming_config = 1;</code>
      */
-    public com.google.cloud.speech.v1beta1.StreamingRecognitionConfig.Builder getStreamingConfigBuilder() {
+    public com.google.cloud.speech.v1beta1.StreamingRecognitionConfig.Builder
+        getStreamingConfigBuilder() {
       return getStreamingConfigFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Provides information to the recognizer that specifies how to process the
      * request. The first `StreamingRecognizeRequest` message must contain a
@@ -714,7 +778,8 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.cloud.speech.v1beta1.StreamingRecognitionConfig streaming_config = 1;</code>
      */
-    public com.google.cloud.speech.v1beta1.StreamingRecognitionConfigOrBuilder getStreamingConfigOrBuilder() {
+    public com.google.cloud.speech.v1beta1.StreamingRecognitionConfigOrBuilder
+        getStreamingConfigOrBuilder() {
       if ((streamingRequestCase_ == 1) && (streamingConfigBuilder_ != null)) {
         return streamingConfigBuilder_.getMessageOrBuilder();
       } else {
@@ -725,6 +790,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Provides information to the recognizer that specifies how to process the
      * request. The first `StreamingRecognizeRequest` message must contain a
@@ -734,25 +801,34 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.speech.v1beta1.StreamingRecognitionConfig streaming_config = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.speech.v1beta1.StreamingRecognitionConfig, com.google.cloud.speech.v1beta1.StreamingRecognitionConfig.Builder, com.google.cloud.speech.v1beta1.StreamingRecognitionConfigOrBuilder> 
+            com.google.cloud.speech.v1beta1.StreamingRecognitionConfig,
+            com.google.cloud.speech.v1beta1.StreamingRecognitionConfig.Builder,
+            com.google.cloud.speech.v1beta1.StreamingRecognitionConfigOrBuilder>
         getStreamingConfigFieldBuilder() {
       if (streamingConfigBuilder_ == null) {
         if (!(streamingRequestCase_ == 1)) {
-          streamingRequest_ = com.google.cloud.speech.v1beta1.StreamingRecognitionConfig.getDefaultInstance();
+          streamingRequest_ =
+              com.google.cloud.speech.v1beta1.StreamingRecognitionConfig.getDefaultInstance();
         }
-        streamingConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.speech.v1beta1.StreamingRecognitionConfig, com.google.cloud.speech.v1beta1.StreamingRecognitionConfig.Builder, com.google.cloud.speech.v1beta1.StreamingRecognitionConfigOrBuilder>(
+        streamingConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.speech.v1beta1.StreamingRecognitionConfig,
+                com.google.cloud.speech.v1beta1.StreamingRecognitionConfig.Builder,
+                com.google.cloud.speech.v1beta1.StreamingRecognitionConfigOrBuilder>(
                 (com.google.cloud.speech.v1beta1.StreamingRecognitionConfig) streamingRequest_,
                 getParentForChildren(),
                 isClean());
         streamingRequest_ = null;
       }
       streamingRequestCase_ = 1;
-      onChanged();;
+      onChanged();
+      ;
       return streamingConfigBuilder_;
     }
 
     /**
+     *
+     *
      * <pre>
      * The audio data to be recognized. Sequential chunks of audio data are sent
      * in sequential `StreamingRecognizeRequest` messages. The first
@@ -773,6 +849,8 @@ private static final long serialVersionUID = 0L;
       return com.google.protobuf.ByteString.EMPTY;
     }
     /**
+     *
+     *
      * <pre>
      * The audio data to be recognized. Sequential chunks of audio data are sent
      * in sequential `StreamingRecognizeRequest` messages. The first
@@ -788,14 +866,16 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setAudioContent(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  streamingRequestCase_ = 2;
+        throw new NullPointerException();
+      }
+      streamingRequestCase_ = 2;
       streamingRequest_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The audio data to be recognized. Sequential chunks of audio data are sent
      * in sequential `StreamingRecognizeRequest` messages. The first
@@ -817,8 +897,8 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
@@ -827,12 +907,12 @@ private static final long serialVersionUID = 0L;
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.speech.v1beta1.StreamingRecognizeRequest)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.speech.v1beta1.StreamingRecognizeRequest)
   private static final com.google.cloud.speech.v1beta1.StreamingRecognizeRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.speech.v1beta1.StreamingRecognizeRequest();
   }
@@ -841,15 +921,15 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<StreamingRecognizeRequest>
-      PARSER = new com.google.protobuf.AbstractParser<StreamingRecognizeRequest>() {
-    public StreamingRecognizeRequest parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-      return new StreamingRecognizeRequest(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<StreamingRecognizeRequest> PARSER =
+      new com.google.protobuf.AbstractParser<StreamingRecognizeRequest>() {
+        public StreamingRecognizeRequest parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new StreamingRecognizeRequest(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<StreamingRecognizeRequest> parser() {
     return PARSER;
@@ -863,6 +943,4 @@ private static final long serialVersionUID = 0L;
   public com.google.cloud.speech.v1beta1.StreamingRecognizeRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

@@ -3,11 +3,14 @@
 
 package com.google.container.v1;
 
-public interface ListClustersResponseOrBuilder extends
+public interface ListClustersResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.container.v1.ListClustersResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * A list of clusters in the project in the specified zone, or
    * across all ones.
@@ -15,9 +18,10 @@ public interface ListClustersResponseOrBuilder extends
    *
    * <code>repeated .google.container.v1.Cluster clusters = 1;</code>
    */
-  java.util.List<com.google.container.v1.Cluster> 
-      getClustersList();
+  java.util.List<com.google.container.v1.Cluster> getClustersList();
   /**
+   *
+   *
    * <pre>
    * A list of clusters in the project in the specified zone, or
    * across all ones.
@@ -27,6 +31,8 @@ public interface ListClustersResponseOrBuilder extends
    */
   com.google.container.v1.Cluster getClusters(int index);
   /**
+   *
+   *
    * <pre>
    * A list of clusters in the project in the specified zone, or
    * across all ones.
@@ -36,6 +42,8 @@ public interface ListClustersResponseOrBuilder extends
    */
   int getClustersCount();
   /**
+   *
+   *
    * <pre>
    * A list of clusters in the project in the specified zone, or
    * across all ones.
@@ -43,9 +51,10 @@ public interface ListClustersResponseOrBuilder extends
    *
    * <code>repeated .google.container.v1.Cluster clusters = 1;</code>
    */
-  java.util.List<? extends com.google.container.v1.ClusterOrBuilder> 
-      getClustersOrBuilderList();
+  java.util.List<? extends com.google.container.v1.ClusterOrBuilder> getClustersOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * A list of clusters in the project in the specified zone, or
    * across all ones.
@@ -53,10 +62,11 @@ public interface ListClustersResponseOrBuilder extends
    *
    * <code>repeated .google.container.v1.Cluster clusters = 1;</code>
    */
-  com.google.container.v1.ClusterOrBuilder getClustersOrBuilder(
-      int index);
+  com.google.container.v1.ClusterOrBuilder getClustersOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * If any zones are listed here, the list of clusters returned
    * may be missing those zones.
@@ -64,9 +74,10 @@ public interface ListClustersResponseOrBuilder extends
    *
    * <code>repeated string missing_zones = 2;</code>
    */
-  java.util.List<java.lang.String>
-      getMissingZonesList();
+  java.util.List<java.lang.String> getMissingZonesList();
   /**
+   *
+   *
    * <pre>
    * If any zones are listed here, the list of clusters returned
    * may be missing those zones.
@@ -76,6 +87,8 @@ public interface ListClustersResponseOrBuilder extends
    */
   int getMissingZonesCount();
   /**
+   *
+   *
    * <pre>
    * If any zones are listed here, the list of clusters returned
    * may be missing those zones.
@@ -85,6 +98,8 @@ public interface ListClustersResponseOrBuilder extends
    */
   java.lang.String getMissingZones(int index);
   /**
+   *
+   *
    * <pre>
    * If any zones are listed here, the list of clusters returned
    * may be missing those zones.
@@ -92,6 +107,5 @@ public interface ListClustersResponseOrBuilder extends
    *
    * <code>repeated string missing_zones = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getMissingZonesBytes(int index);
+  com.google.protobuf.ByteString getMissingZonesBytes(int index);
 }

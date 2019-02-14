@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,6 +41,10 @@ import com.google.api.gax.rpc.StubSettings;
 import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.api.gax.rpc.UnaryCallable;
+import com.google.cloud.kms.v1.AsymmetricDecryptRequest;
+import com.google.cloud.kms.v1.AsymmetricDecryptResponse;
+import com.google.cloud.kms.v1.AsymmetricSignRequest;
+import com.google.cloud.kms.v1.AsymmetricSignResponse;
 import com.google.cloud.kms.v1.CreateCryptoKeyRequest;
 import com.google.cloud.kms.v1.CreateCryptoKeyVersionRequest;
 import com.google.cloud.kms.v1.CreateKeyRingRequest;
@@ -54,6 +58,7 @@ import com.google.cloud.kms.v1.EncryptResponse;
 import com.google.cloud.kms.v1.GetCryptoKeyRequest;
 import com.google.cloud.kms.v1.GetCryptoKeyVersionRequest;
 import com.google.cloud.kms.v1.GetKeyRingRequest;
+import com.google.cloud.kms.v1.GetPublicKeyRequest;
 import com.google.cloud.kms.v1.KeyRing;
 import com.google.cloud.kms.v1.ListCryptoKeyVersionsRequest;
 import com.google.cloud.kms.v1.ListCryptoKeyVersionsResponse;
@@ -61,6 +66,7 @@ import com.google.cloud.kms.v1.ListCryptoKeysRequest;
 import com.google.cloud.kms.v1.ListCryptoKeysResponse;
 import com.google.cloud.kms.v1.ListKeyRingsRequest;
 import com.google.cloud.kms.v1.ListKeyRingsResponse;
+import com.google.cloud.kms.v1.PublicKey;
 import com.google.cloud.kms.v1.RestoreCryptoKeyVersionRequest;
 import com.google.cloud.kms.v1.UpdateCryptoKeyPrimaryVersionRequest;
 import com.google.cloud.kms.v1.UpdateCryptoKeyRequest;
@@ -120,7 +126,8 @@ public class KeyManagementServiceStubSettings
           ListCryptoKeysRequest, ListCryptoKeysResponse, ListCryptoKeysPagedResponse>
       listCryptoKeysSettings;
   private final PagedCallSettings<
-          ListCryptoKeyVersionsRequest, ListCryptoKeyVersionsResponse,
+          ListCryptoKeyVersionsRequest,
+          ListCryptoKeyVersionsResponse,
           ListCryptoKeyVersionsPagedResponse>
       listCryptoKeyVersionsSettings;
   private final UnaryCallSettings<GetKeyRingRequest, KeyRing> getKeyRingSettings;
@@ -142,6 +149,11 @@ public class KeyManagementServiceStubSettings
       destroyCryptoKeyVersionSettings;
   private final UnaryCallSettings<RestoreCryptoKeyVersionRequest, CryptoKeyVersion>
       restoreCryptoKeyVersionSettings;
+  private final UnaryCallSettings<GetPublicKeyRequest, PublicKey> getPublicKeySettings;
+  private final UnaryCallSettings<AsymmetricDecryptRequest, AsymmetricDecryptResponse>
+      asymmetricDecryptSettings;
+  private final UnaryCallSettings<AsymmetricSignRequest, AsymmetricSignResponse>
+      asymmetricSignSettings;
   private final UnaryCallSettings<SetIamPolicyRequest, Policy> setIamPolicySettings;
   private final UnaryCallSettings<GetIamPolicyRequest, Policy> getIamPolicySettings;
   private final UnaryCallSettings<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -162,7 +174,8 @@ public class KeyManagementServiceStubSettings
 
   /** Returns the object with the settings used for calls to listCryptoKeyVersions. */
   public PagedCallSettings<
-          ListCryptoKeyVersionsRequest, ListCryptoKeyVersionsResponse,
+          ListCryptoKeyVersionsRequest,
+          ListCryptoKeyVersionsResponse,
           ListCryptoKeyVersionsPagedResponse>
       listCryptoKeyVersionsSettings() {
     return listCryptoKeyVersionsSettings;
@@ -237,6 +250,22 @@ public class KeyManagementServiceStubSettings
   public UnaryCallSettings<RestoreCryptoKeyVersionRequest, CryptoKeyVersion>
       restoreCryptoKeyVersionSettings() {
     return restoreCryptoKeyVersionSettings;
+  }
+
+  /** Returns the object with the settings used for calls to getPublicKey. */
+  public UnaryCallSettings<GetPublicKeyRequest, PublicKey> getPublicKeySettings() {
+    return getPublicKeySettings;
+  }
+
+  /** Returns the object with the settings used for calls to asymmetricDecrypt. */
+  public UnaryCallSettings<AsymmetricDecryptRequest, AsymmetricDecryptResponse>
+      asymmetricDecryptSettings() {
+    return asymmetricDecryptSettings;
+  }
+
+  /** Returns the object with the settings used for calls to asymmetricSign. */
+  public UnaryCallSettings<AsymmetricSignRequest, AsymmetricSignResponse> asymmetricSignSettings() {
+    return asymmetricSignSettings;
   }
 
   /** Returns the object with the settings used for calls to setIamPolicy. */
@@ -340,6 +369,9 @@ public class KeyManagementServiceStubSettings
         settingsBuilder.updateCryptoKeyPrimaryVersionSettings().build();
     destroyCryptoKeyVersionSettings = settingsBuilder.destroyCryptoKeyVersionSettings().build();
     restoreCryptoKeyVersionSettings = settingsBuilder.restoreCryptoKeyVersionSettings().build();
+    getPublicKeySettings = settingsBuilder.getPublicKeySettings().build();
+    asymmetricDecryptSettings = settingsBuilder.asymmetricDecryptSettings().build();
+    asymmetricSignSettings = settingsBuilder.asymmetricSignSettings().build();
     setIamPolicySettings = settingsBuilder.setIamPolicySettings().build();
     getIamPolicySettings = settingsBuilder.getIamPolicySettings().build();
     testIamPermissionsSettings = settingsBuilder.testIamPermissionsSettings().build();
@@ -375,7 +407,9 @@ public class KeyManagementServiceStubSettings
 
             @Override
             public Iterable<KeyRing> extractResources(ListKeyRingsResponse payload) {
-              return payload.getKeyRingsList();
+              return payload.getKeyRingsList() != null
+                  ? payload.getKeyRingsList()
+                  : ImmutableList.<KeyRing>of();
             }
           };
 
@@ -410,7 +444,9 @@ public class KeyManagementServiceStubSettings
 
             @Override
             public Iterable<CryptoKey> extractResources(ListCryptoKeysResponse payload) {
-              return payload.getCryptoKeysList();
+              return payload.getCryptoKeysList() != null
+                  ? payload.getCryptoKeysList()
+                  : ImmutableList.<CryptoKey>of();
             }
           };
 
@@ -449,7 +485,9 @@ public class KeyManagementServiceStubSettings
             @Override
             public Iterable<CryptoKeyVersion> extractResources(
                 ListCryptoKeyVersionsResponse payload) {
-              return payload.getCryptoKeyVersionsList();
+              return payload.getCryptoKeyVersionsList() != null
+                  ? payload.getCryptoKeyVersionsList()
+                  : ImmutableList.<CryptoKeyVersion>of();
             }
           };
 
@@ -488,11 +526,13 @@ public class KeyManagementServiceStubSettings
           };
 
   private static final PagedListResponseFactory<
-          ListCryptoKeyVersionsRequest, ListCryptoKeyVersionsResponse,
+          ListCryptoKeyVersionsRequest,
+          ListCryptoKeyVersionsResponse,
           ListCryptoKeyVersionsPagedResponse>
       LIST_CRYPTO_KEY_VERSIONS_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListCryptoKeyVersionsRequest, ListCryptoKeyVersionsResponse,
+              ListCryptoKeyVersionsRequest,
+              ListCryptoKeyVersionsResponse,
               ListCryptoKeyVersionsPagedResponse>() {
             @Override
             public ApiFuture<ListCryptoKeyVersionsPagedResponse> getFuturePagedResponse(
@@ -521,7 +561,8 @@ public class KeyManagementServiceStubSettings
             ListCryptoKeysRequest, ListCryptoKeysResponse, ListCryptoKeysPagedResponse>
         listCryptoKeysSettings;
     private final PagedCallSettings.Builder<
-            ListCryptoKeyVersionsRequest, ListCryptoKeyVersionsResponse,
+            ListCryptoKeyVersionsRequest,
+            ListCryptoKeyVersionsResponse,
             ListCryptoKeyVersionsPagedResponse>
         listCryptoKeyVersionsSettings;
     private final UnaryCallSettings.Builder<GetKeyRingRequest, KeyRing> getKeyRingSettings;
@@ -545,6 +586,11 @@ public class KeyManagementServiceStubSettings
         destroyCryptoKeyVersionSettings;
     private final UnaryCallSettings.Builder<RestoreCryptoKeyVersionRequest, CryptoKeyVersion>
         restoreCryptoKeyVersionSettings;
+    private final UnaryCallSettings.Builder<GetPublicKeyRequest, PublicKey> getPublicKeySettings;
+    private final UnaryCallSettings.Builder<AsymmetricDecryptRequest, AsymmetricDecryptResponse>
+        asymmetricDecryptSettings;
+    private final UnaryCallSettings.Builder<AsymmetricSignRequest, AsymmetricSignResponse>
+        asymmetricSignSettings;
     private final UnaryCallSettings.Builder<SetIamPolicyRequest, Policy> setIamPolicySettings;
     private final UnaryCallSettings.Builder<GetIamPolicyRequest, Policy> getIamPolicySettings;
     private final UnaryCallSettings.Builder<TestIamPermissionsRequest, TestIamPermissionsResponse>
@@ -624,6 +670,12 @@ public class KeyManagementServiceStubSettings
 
       restoreCryptoKeyVersionSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
+      getPublicKeySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      asymmetricDecryptSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
+      asymmetricSignSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       setIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       getIamPolicySettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
@@ -648,6 +700,9 @@ public class KeyManagementServiceStubSettings
               updateCryptoKeyPrimaryVersionSettings,
               destroyCryptoKeyVersionSettings,
               restoreCryptoKeyVersionSettings,
+              getPublicKeySettings,
+              asymmetricDecryptSettings,
+              asymmetricSignSettings,
               setIamPolicySettings,
               getIamPolicySettings,
               testIamPermissionsSettings);
@@ -747,6 +802,21 @@ public class KeyManagementServiceStubSettings
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
+          .getPublicKeySettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .asymmetricDecryptSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
+          .asymmetricSignSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
           .setIamPolicySettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
@@ -784,6 +854,9 @@ public class KeyManagementServiceStubSettings
           settings.updateCryptoKeyPrimaryVersionSettings.toBuilder();
       destroyCryptoKeyVersionSettings = settings.destroyCryptoKeyVersionSettings.toBuilder();
       restoreCryptoKeyVersionSettings = settings.restoreCryptoKeyVersionSettings.toBuilder();
+      getPublicKeySettings = settings.getPublicKeySettings.toBuilder();
+      asymmetricDecryptSettings = settings.asymmetricDecryptSettings.toBuilder();
+      asymmetricSignSettings = settings.asymmetricSignSettings.toBuilder();
       setIamPolicySettings = settings.setIamPolicySettings.toBuilder();
       getIamPolicySettings = settings.getIamPolicySettings.toBuilder();
       testIamPermissionsSettings = settings.testIamPermissionsSettings.toBuilder();
@@ -806,6 +879,9 @@ public class KeyManagementServiceStubSettings
               updateCryptoKeyPrimaryVersionSettings,
               destroyCryptoKeyVersionSettings,
               restoreCryptoKeyVersionSettings,
+              getPublicKeySettings,
+              asymmetricDecryptSettings,
+              asymmetricSignSettings,
               setIamPolicySettings,
               getIamPolicySettings,
               testIamPermissionsSettings);
@@ -843,7 +919,8 @@ public class KeyManagementServiceStubSettings
 
     /** Returns the builder for the settings used for calls to listCryptoKeyVersions. */
     public PagedCallSettings.Builder<
-            ListCryptoKeyVersionsRequest, ListCryptoKeyVersionsResponse,
+            ListCryptoKeyVersionsRequest,
+            ListCryptoKeyVersionsResponse,
             ListCryptoKeyVersionsPagedResponse>
         listCryptoKeyVersionsSettings() {
       return listCryptoKeyVersionsSettings;
@@ -918,6 +995,23 @@ public class KeyManagementServiceStubSettings
     public UnaryCallSettings.Builder<RestoreCryptoKeyVersionRequest, CryptoKeyVersion>
         restoreCryptoKeyVersionSettings() {
       return restoreCryptoKeyVersionSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to getPublicKey. */
+    public UnaryCallSettings.Builder<GetPublicKeyRequest, PublicKey> getPublicKeySettings() {
+      return getPublicKeySettings;
+    }
+
+    /** Returns the builder for the settings used for calls to asymmetricDecrypt. */
+    public UnaryCallSettings.Builder<AsymmetricDecryptRequest, AsymmetricDecryptResponse>
+        asymmetricDecryptSettings() {
+      return asymmetricDecryptSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to asymmetricSign. */
+    public UnaryCallSettings.Builder<AsymmetricSignRequest, AsymmetricSignResponse>
+        asymmetricSignSettings() {
+      return asymmetricSignSettings;
     }
 
     /** Returns the builder for the settings used for calls to setIamPolicy. */

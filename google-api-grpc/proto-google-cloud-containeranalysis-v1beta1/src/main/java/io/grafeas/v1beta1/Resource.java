@@ -4,36 +4,42 @@
 package io.grafeas.v1beta1;
 
 /**
+ *
+ *
  * <pre>
  * An entity that can have metadata. For example, a Docker image.
  * </pre>
  *
  * Protobuf type {@code grafeas.v1beta1.Resource}
  */
-public  final class Resource extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class Resource extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:grafeas.v1beta1.Resource)
     ResourceOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use Resource.newBuilder() to construct.
   private Resource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private Resource() {
     name_ = "";
     uri_ = "";
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private Resource(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -45,55 +51,59 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            name_ = s;
-            break;
-          }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            uri_ = s;
-            break;
-          }
-          case 26: {
-            io.grafeas.v1beta1.provenance.Hash.Builder subBuilder = null;
-            if (contentHash_ != null) {
-              subBuilder = contentHash_.toBuilder();
+              name_ = s;
+              break;
             }
-            contentHash_ = input.readMessage(io.grafeas.v1beta1.provenance.Hash.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(contentHash_);
-              contentHash_ = subBuilder.buildPartial();
-            }
+          case 18:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            break;
-          }
+              uri_ = s;
+              break;
+            }
+          case 26:
+            {
+              io.grafeas.v1beta1.provenance.Hash.Builder subBuilder = null;
+              if (contentHash_ != null) {
+                subBuilder = contentHash_.toBuilder();
+              }
+              contentHash_ =
+                  input.readMessage(io.grafeas.v1beta1.provenance.Hash.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(contentHash_);
+                contentHash_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return io.grafeas.v1beta1.Grafeas.internal_static_grafeas_v1beta1_Resource_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return io.grafeas.v1beta1.Grafeas.internal_static_grafeas_v1beta1_Resource_fieldAccessorTable
@@ -104,6 +114,8 @@ private static final long serialVersionUID = 0L;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
+   *
+   *
    * <pre>
    * The name of the resource. For example, the name of a Docker image -
    * "Debian".
@@ -116,14 +128,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       name_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The name of the resource. For example, the name of a Docker image -
    * "Debian".
@@ -131,13 +144,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string name = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getNameBytes() {
+  public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       name_ = b;
       return b;
     } else {
@@ -148,6 +159,8 @@ private static final long serialVersionUID = 0L;
   public static final int URI_FIELD_NUMBER = 2;
   private volatile java.lang.Object uri_;
   /**
+   *
+   *
    * <pre>
    * The unique URI of the resource. For example,
    * `https://gcr.io/project/image&#64;sha256:foo` for a Docker image.
@@ -160,14 +173,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       uri_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The unique URI of the resource. For example,
    * `https://gcr.io/project/image&#64;sha256:foo` for a Docker image.
@@ -175,13 +189,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string uri = 2;</code>
    */
-  public com.google.protobuf.ByteString
-      getUriBytes() {
+  public com.google.protobuf.ByteString getUriBytes() {
     java.lang.Object ref = uri_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       uri_ = b;
       return b;
     } else {
@@ -192,6 +204,8 @@ private static final long serialVersionUID = 0L;
   public static final int CONTENT_HASH_FIELD_NUMBER = 3;
   private io.grafeas.v1beta1.provenance.Hash contentHash_;
   /**
+   *
+   *
    * <pre>
    * The hash of the resource content. For example, the Docker digest.
    * </pre>
@@ -202,6 +216,8 @@ private static final long serialVersionUID = 0L;
     return contentHash_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * The hash of the resource content. For example, the Docker digest.
    * </pre>
@@ -209,9 +225,13 @@ private static final long serialVersionUID = 0L;
    * <code>.grafeas.v1beta1.provenance.Hash content_hash = 3;</code>
    */
   public io.grafeas.v1beta1.provenance.Hash getContentHash() {
-    return contentHash_ == null ? io.grafeas.v1beta1.provenance.Hash.getDefaultInstance() : contentHash_;
+    return contentHash_ == null
+        ? io.grafeas.v1beta1.provenance.Hash.getDefaultInstance()
+        : contentHash_;
   }
   /**
+   *
+   *
    * <pre>
    * The hash of the resource content. For example, the Docker digest.
    * </pre>
@@ -223,6 +243,8 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -232,8 +254,8 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  @java.lang.Override
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
@@ -246,6 +268,7 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -258,8 +281,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, uri_);
     }
     if (contentHash_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, getContentHash());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getContentHash());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -269,7 +291,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof io.grafeas.v1beta1.Resource)) {
       return super.equals(obj);
@@ -277,14 +299,11 @@ private static final long serialVersionUID = 0L;
     io.grafeas.v1beta1.Resource other = (io.grafeas.v1beta1.Resource) obj;
 
     boolean result = true;
-    result = result && getName()
-        .equals(other.getName());
-    result = result && getUri()
-        .equals(other.getUri());
+    result = result && getName().equals(other.getName());
+    result = result && getUri().equals(other.getUri());
     result = result && (hasContentHash() == other.hasContentHash());
     if (hasContentHash()) {
-      result = result && getContentHash()
-          .equals(other.getContentHash());
+      result = result && getContentHash().equals(other.getContentHash());
     }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
@@ -310,110 +329,118 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static io.grafeas.v1beta1.Resource parseFrom(
-      java.nio.ByteBuffer data)
+  public static io.grafeas.v1beta1.Resource parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static io.grafeas.v1beta1.Resource parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.grafeas.v1beta1.Resource parseFrom(
-      com.google.protobuf.ByteString data)
+
+  public static io.grafeas.v1beta1.Resource parseFrom(com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static io.grafeas.v1beta1.Resource parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static io.grafeas.v1beta1.Resource parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static io.grafeas.v1beta1.Resource parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static io.grafeas.v1beta1.Resource parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static io.grafeas.v1beta1.Resource parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static io.grafeas.v1beta1.Resource parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
   public static io.grafeas.v1beta1.Resource parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static io.grafeas.v1beta1.Resource parseFrom(
-      com.google.protobuf.CodedInputStream input)
+
+  public static io.grafeas.v1beta1.Resource parseFrom(com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static io.grafeas.v1beta1.Resource parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  public Builder newBuilderForType() { return newBuilder(); }
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-  public static Builder newBuilder(io.grafeas.v1beta1.Resource prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+
+  public static Builder newBuilder(io.grafeas.v1beta1.Resource prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+
+  @java.lang.Override
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * An entity that can have metadata. For example, a Docker image.
    * </pre>
    *
    * Protobuf type {@code grafeas.v1beta1.Resource}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:grafeas.v1beta1.Resource)
       io.grafeas.v1beta1.ResourceOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return io.grafeas.v1beta1.Grafeas.internal_static_grafeas_v1beta1_Resource_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
       return io.grafeas.v1beta1.Grafeas.internal_static_grafeas_v1beta1_Resource_fieldAccessorTable
@@ -426,16 +453,16 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       name_ = "";
@@ -451,15 +478,17 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return io.grafeas.v1beta1.Grafeas.internal_static_grafeas_v1beta1_Resource_descriptor;
     }
 
+    @java.lang.Override
     public io.grafeas.v1beta1.Resource getDefaultInstanceForType() {
       return io.grafeas.v1beta1.Resource.getDefaultInstance();
     }
 
+    @java.lang.Override
     public io.grafeas.v1beta1.Resource build() {
       io.grafeas.v1beta1.Resource result = buildPartial();
       if (!result.isInitialized()) {
@@ -468,6 +497,7 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public io.grafeas.v1beta1.Resource buildPartial() {
       io.grafeas.v1beta1.Resource result = new io.grafeas.v1beta1.Resource(this);
       result.name_ = name_;
@@ -481,35 +511,43 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+
+    @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+    @java.lang.Override
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+    @java.lang.Override
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
+    @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
+    @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof io.grafeas.v1beta1.Resource) {
-        return mergeFrom((io.grafeas.v1beta1.Resource)other);
+        return mergeFrom((io.grafeas.v1beta1.Resource) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -534,10 +572,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -558,6 +598,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object name_ = "";
     /**
+     *
+     *
      * <pre>
      * The name of the resource. For example, the name of a Docker image -
      * "Debian".
@@ -568,8 +610,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         name_ = s;
         return s;
@@ -578,6 +619,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The name of the resource. For example, the name of a Docker image -
      * "Debian".
@@ -585,13 +628,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getNameBytes() {
+    public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         name_ = b;
         return b;
       } else {
@@ -599,6 +640,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The name of the resource. For example, the name of a Docker image -
      * "Debian".
@@ -606,17 +649,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public Builder setName(
-        java.lang.String value) {
+    public Builder setName(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       name_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The name of the resource. For example, the name of a Docker image -
      * "Debian".
@@ -625,12 +669,14 @@ private static final long serialVersionUID = 0L;
      * <code>string name = 1;</code>
      */
     public Builder clearName() {
-      
+
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The name of the resource. For example, the name of a Docker image -
      * "Debian".
@@ -638,13 +684,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public Builder setNameBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       name_ = value;
       onChanged();
       return this;
@@ -652,6 +697,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object uri_ = "";
     /**
+     *
+     *
      * <pre>
      * The unique URI of the resource. For example,
      * `https://gcr.io/project/image&#64;sha256:foo` for a Docker image.
@@ -662,8 +709,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getUri() {
       java.lang.Object ref = uri_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         uri_ = s;
         return s;
@@ -672,6 +718,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The unique URI of the resource. For example,
      * `https://gcr.io/project/image&#64;sha256:foo` for a Docker image.
@@ -679,13 +727,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string uri = 2;</code>
      */
-    public com.google.protobuf.ByteString
-        getUriBytes() {
+    public com.google.protobuf.ByteString getUriBytes() {
       java.lang.Object ref = uri_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         uri_ = b;
         return b;
       } else {
@@ -693,6 +739,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The unique URI of the resource. For example,
      * `https://gcr.io/project/image&#64;sha256:foo` for a Docker image.
@@ -700,17 +748,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string uri = 2;</code>
      */
-    public Builder setUri(
-        java.lang.String value) {
+    public Builder setUri(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       uri_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The unique URI of the resource. For example,
      * `https://gcr.io/project/image&#64;sha256:foo` for a Docker image.
@@ -719,12 +768,14 @@ private static final long serialVersionUID = 0L;
      * <code>string uri = 2;</code>
      */
     public Builder clearUri() {
-      
+
       uri_ = getDefaultInstance().getUri();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The unique URI of the resource. For example,
      * `https://gcr.io/project/image&#64;sha256:foo` for a Docker image.
@@ -732,13 +783,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string uri = 2;</code>
      */
-    public Builder setUriBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setUriBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       uri_ = value;
       onChanged();
       return this;
@@ -746,8 +796,13 @@ private static final long serialVersionUID = 0L;
 
     private io.grafeas.v1beta1.provenance.Hash contentHash_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        io.grafeas.v1beta1.provenance.Hash, io.grafeas.v1beta1.provenance.Hash.Builder, io.grafeas.v1beta1.provenance.HashOrBuilder> contentHashBuilder_;
+            io.grafeas.v1beta1.provenance.Hash,
+            io.grafeas.v1beta1.provenance.Hash.Builder,
+            io.grafeas.v1beta1.provenance.HashOrBuilder>
+        contentHashBuilder_;
     /**
+     *
+     *
      * <pre>
      * The hash of the resource content. For example, the Docker digest.
      * </pre>
@@ -758,6 +813,8 @@ private static final long serialVersionUID = 0L;
       return contentHashBuilder_ != null || contentHash_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * The hash of the resource content. For example, the Docker digest.
      * </pre>
@@ -766,12 +823,16 @@ private static final long serialVersionUID = 0L;
      */
     public io.grafeas.v1beta1.provenance.Hash getContentHash() {
       if (contentHashBuilder_ == null) {
-        return contentHash_ == null ? io.grafeas.v1beta1.provenance.Hash.getDefaultInstance() : contentHash_;
+        return contentHash_ == null
+            ? io.grafeas.v1beta1.provenance.Hash.getDefaultInstance()
+            : contentHash_;
       } else {
         return contentHashBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * The hash of the resource content. For example, the Docker digest.
      * </pre>
@@ -792,14 +853,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The hash of the resource content. For example, the Docker digest.
      * </pre>
      *
      * <code>.grafeas.v1beta1.provenance.Hash content_hash = 3;</code>
      */
-    public Builder setContentHash(
-        io.grafeas.v1beta1.provenance.Hash.Builder builderForValue) {
+    public Builder setContentHash(io.grafeas.v1beta1.provenance.Hash.Builder builderForValue) {
       if (contentHashBuilder_ == null) {
         contentHash_ = builderForValue.build();
         onChanged();
@@ -810,6 +872,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The hash of the resource content. For example, the Docker digest.
      * </pre>
@@ -820,7 +884,9 @@ private static final long serialVersionUID = 0L;
       if (contentHashBuilder_ == null) {
         if (contentHash_ != null) {
           contentHash_ =
-            io.grafeas.v1beta1.provenance.Hash.newBuilder(contentHash_).mergeFrom(value).buildPartial();
+              io.grafeas.v1beta1.provenance.Hash.newBuilder(contentHash_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           contentHash_ = value;
         }
@@ -832,6 +898,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The hash of the resource content. For example, the Docker digest.
      * </pre>
@@ -850,6 +918,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The hash of the resource content. For example, the Docker digest.
      * </pre>
@@ -857,11 +927,13 @@ private static final long serialVersionUID = 0L;
      * <code>.grafeas.v1beta1.provenance.Hash content_hash = 3;</code>
      */
     public io.grafeas.v1beta1.provenance.Hash.Builder getContentHashBuilder() {
-      
+
       onChanged();
       return getContentHashFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * The hash of the resource content. For example, the Docker digest.
      * </pre>
@@ -872,11 +944,14 @@ private static final long serialVersionUID = 0L;
       if (contentHashBuilder_ != null) {
         return contentHashBuilder_.getMessageOrBuilder();
       } else {
-        return contentHash_ == null ?
-            io.grafeas.v1beta1.provenance.Hash.getDefaultInstance() : contentHash_;
+        return contentHash_ == null
+            ? io.grafeas.v1beta1.provenance.Hash.getDefaultInstance()
+            : contentHash_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The hash of the resource content. For example, the Docker digest.
      * </pre>
@@ -884,34 +959,39 @@ private static final long serialVersionUID = 0L;
      * <code>.grafeas.v1beta1.provenance.Hash content_hash = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        io.grafeas.v1beta1.provenance.Hash, io.grafeas.v1beta1.provenance.Hash.Builder, io.grafeas.v1beta1.provenance.HashOrBuilder> 
+            io.grafeas.v1beta1.provenance.Hash,
+            io.grafeas.v1beta1.provenance.Hash.Builder,
+            io.grafeas.v1beta1.provenance.HashOrBuilder>
         getContentHashFieldBuilder() {
       if (contentHashBuilder_ == null) {
-        contentHashBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            io.grafeas.v1beta1.provenance.Hash, io.grafeas.v1beta1.provenance.Hash.Builder, io.grafeas.v1beta1.provenance.HashOrBuilder>(
-                getContentHash(),
-                getParentForChildren(),
-                isClean());
+        contentHashBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                io.grafeas.v1beta1.provenance.Hash,
+                io.grafeas.v1beta1.provenance.Hash.Builder,
+                io.grafeas.v1beta1.provenance.HashOrBuilder>(
+                getContentHash(), getParentForChildren(), isClean());
         contentHash_ = null;
       }
       return contentHashBuilder_;
     }
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+
+    @java.lang.Override
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
     }
-
 
     // @@protoc_insertion_point(builder_scope:grafeas.v1beta1.Resource)
   }
 
   // @@protoc_insertion_point(class_scope:grafeas.v1beta1.Resource)
   private static final io.grafeas.v1beta1.Resource DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new io.grafeas.v1beta1.Resource();
   }
@@ -920,15 +1000,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<Resource>
-      PARSER = new com.google.protobuf.AbstractParser<Resource>() {
-    public Resource parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Resource(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<Resource> PARSER =
+      new com.google.protobuf.AbstractParser<Resource>() {
+        @java.lang.Override
+        public Resource parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new Resource(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<Resource> parser() {
     return PARSER;
@@ -939,9 +1020,8 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public io.grafeas.v1beta1.Resource getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

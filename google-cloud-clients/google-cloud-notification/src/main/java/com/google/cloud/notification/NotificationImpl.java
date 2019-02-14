@@ -19,11 +19,9 @@ package com.google.cloud.notification;
 import static com.google.cloud.BaseService.EXCEPTION_HANDLER;
 import static com.google.cloud.RetryHelper.runWithRetries;
 
-import com.google.cloud.BaseService;
 import com.google.cloud.RetryHelper.RetryHelperException;
 import com.google.cloud.storage.Storage;
 import com.google.cloud.storage.StorageException;
-import com.google.cloud.storage.StorageOptions;
 import com.google.cloud.storage.spi.v1.StorageRpc;
 import com.google.common.collect.Lists;
 import java.util.List;
@@ -51,12 +49,17 @@ public class NotificationImpl implements Notification {
   @Override
   public boolean deleteNotification(final String bucket, final String notification) {
     try {
-      return runWithRetries(new Callable<Boolean>() {
-        @Override
-        public Boolean call() {
-          return ((StorageRpc) storage.getOptions().getRpc()).deleteNotification(bucket, notification);
-        }
-      }, storage.getOptions().getRetrySettings(), EXCEPTION_HANDLER, storage.getOptions().getClock());
+      return runWithRetries(
+          new Callable<Boolean>() {
+            @Override
+            public Boolean call() {
+              return ((StorageRpc) storage.getOptions().getRpc())
+                  .deleteNotification(bucket, notification);
+            }
+          },
+          storage.getOptions().getRetrySettings(),
+          EXCEPTION_HANDLER,
+          storage.getOptions().getClock());
     } catch (RetryHelperException e) {
       throw StorageException.translateAndThrow(e);
     }
@@ -65,12 +68,17 @@ public class NotificationImpl implements Notification {
   @Override
   public List<NotificationInfo> listNotifications(final String bucket) {
     try {
-      List<com.google.api.services.storage.model.Notification> answer = runWithRetries(new Callable<List<com.google.api.services.storage.model.Notification>>() {
-        @Override
-        public List<com.google.api.services.storage.model.Notification> call() {
-          return ((StorageRpc) storage.getOptions().getRpc()).listNotifications(bucket);
-        }
-      }, storage.getOptions().getRetrySettings(), EXCEPTION_HANDLER, storage.getOptions().getClock());
+      List<com.google.api.services.storage.model.Notification> answer =
+          runWithRetries(
+              new Callable<List<com.google.api.services.storage.model.Notification>>() {
+                @Override
+                public List<com.google.api.services.storage.model.Notification> call() {
+                  return ((StorageRpc) storage.getOptions().getRpc()).listNotifications(bucket);
+                }
+              },
+              storage.getOptions().getRetrySettings(),
+              EXCEPTION_HANDLER,
+              storage.getOptions().getClock());
       if (answer == null) {
         return null;
       }
@@ -84,15 +92,20 @@ public class NotificationImpl implements Notification {
   public NotificationInfo createNotification(final String bucket, NotificationInfo notification) {
     final com.google.api.services.storage.model.Notification notificationPb = notification.toPb();
     try {
-      return NotificationInfo.fromPb(runWithRetries(new Callable<com.google.api.services.storage.model.Notification>() {
-        @Override
-        public com.google.api.services.storage.model.Notification call() {
-          return ((StorageRpc) storage.getOptions().getRpc()).createNotification(bucket, notificationPb);
-        }
-      }, storage.getOptions().getRetrySettings(), EXCEPTION_HANDLER, storage.getOptions().getClock()));
+      return NotificationInfo.fromPb(
+          runWithRetries(
+              new Callable<com.google.api.services.storage.model.Notification>() {
+                @Override
+                public com.google.api.services.storage.model.Notification call() {
+                  return ((StorageRpc) storage.getOptions().getRpc())
+                      .createNotification(bucket, notificationPb);
+                }
+              },
+              storage.getOptions().getRetrySettings(),
+              EXCEPTION_HANDLER,
+              storage.getOptions().getClock()));
     } catch (RetryHelperException e) {
       throw StorageException.translateAndThrow(e);
     }
   }
-
 }

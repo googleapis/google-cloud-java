@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,7 @@
  * <p>======================= ClusterControllerClient =======================
  *
  * <p>Service Description: The ClusterControllerService provides methods to manage clusters of
- * Google Compute Engine instances.
+ * Compute Engine instances.
  *
  * <p>Sample for ClusterControllerClient:
  *
@@ -50,6 +50,23 @@
  *   String region = "";
  *   Job job = Job.newBuilder().build();
  *   Job response = jobControllerClient.submitJob(projectId, region, job);
+ * }
+ * </code>
+ * </pre>
+ *
+ * ============================= WorkflowTemplateServiceClient =============================
+ *
+ * <p>Service Description: The API interface for managing Workflow Templates in the Cloud Dataproc
+ * API.
+ *
+ * <p>Sample for WorkflowTemplateServiceClient:
+ *
+ * <pre>
+ * <code>
+ * try (WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.create()) {
+ *   RegionName parent = RegionName.of("[PROJECT]", "[REGION]");
+ *   WorkflowTemplate template = WorkflowTemplate.newBuilder().build();
+ *   WorkflowTemplate response = workflowTemplateServiceClient.createWorkflowTemplate(parent, template);
  * }
  * </code>
  * </pre>

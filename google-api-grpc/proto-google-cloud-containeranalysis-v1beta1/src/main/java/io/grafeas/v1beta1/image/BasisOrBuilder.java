@@ -3,11 +3,14 @@
 
 package io.grafeas.v1beta1.image;
 
-public interface BasisOrBuilder extends
+public interface BasisOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:grafeas.v1beta1.image.Basis)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The resource_url for the resource representing the basis of
    * associated occurrence images.
@@ -17,6 +20,8 @@ public interface BasisOrBuilder extends
    */
   java.lang.String getResourceUrl();
   /**
+   *
+   *
    * <pre>
    * The resource_url for the resource representing the basis of
    * associated occurrence images.
@@ -24,10 +29,11 @@ public interface BasisOrBuilder extends
    *
    * <code>string resource_url = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getResourceUrlBytes();
+  com.google.protobuf.ByteString getResourceUrlBytes();
 
   /**
+   *
+   *
    * <pre>
    * The fingerprint of the base image.
    * </pre>
@@ -36,6 +42,8 @@ public interface BasisOrBuilder extends
    */
   boolean hasFingerprint();
   /**
+   *
+   *
    * <pre>
    * The fingerprint of the base image.
    * </pre>
@@ -44,6 +52,8 @@ public interface BasisOrBuilder extends
    */
   io.grafeas.v1beta1.image.Fingerprint getFingerprint();
   /**
+   *
+   *
    * <pre>
    * The fingerprint of the base image.
    * </pre>

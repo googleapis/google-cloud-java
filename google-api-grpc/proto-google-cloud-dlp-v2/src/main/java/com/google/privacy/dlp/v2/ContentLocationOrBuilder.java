@@ -3,35 +3,49 @@
 
 package com.google.privacy.dlp.v2;
 
-public interface ContentLocationOrBuilder extends
+public interface ContentLocationOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.ContentLocation)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Name of the container where the finding is located.
-   * The top level name is the source file name or table name. Nested names
-   * could be absent if the embedded object has no string identifier
-   * (for an example an image contained within a document).
+   * The top level name is the source file name or table name. Names of some
+   * common storage containers are formatted as follows:
+   * * BigQuery tables:  `&lt;project_id&gt;:&lt;dataset_id&gt;.&lt;table_id&gt;`
+   * * Cloud Storage files: `gs://&lt;bucket&gt;/&lt;path&gt;`
+   * * Datastore namespace: &lt;namespace&gt;
+   * Nested names could be absent if the embedded object has no string
+   * identifier (for an example an image contained within a document).
    * </pre>
    *
    * <code>string container_name = 1;</code>
    */
   java.lang.String getContainerName();
   /**
+   *
+   *
    * <pre>
    * Name of the container where the finding is located.
-   * The top level name is the source file name or table name. Nested names
-   * could be absent if the embedded object has no string identifier
-   * (for an example an image contained within a document).
+   * The top level name is the source file name or table name. Names of some
+   * common storage containers are formatted as follows:
+   * * BigQuery tables:  `&lt;project_id&gt;:&lt;dataset_id&gt;.&lt;table_id&gt;`
+   * * Cloud Storage files: `gs://&lt;bucket&gt;/&lt;path&gt;`
+   * * Datastore namespace: &lt;namespace&gt;
+   * Nested names could be absent if the embedded object has no string
+   * identifier (for an example an image contained within a document).
    * </pre>
    *
    * <code>string container_name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getContainerNameBytes();
+  com.google.protobuf.ByteString getContainerNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * Location within a row or record of a database table.
    * </pre>
@@ -40,6 +54,8 @@ public interface ContentLocationOrBuilder extends
    */
   boolean hasRecordLocation();
   /**
+   *
+   *
    * <pre>
    * Location within a row or record of a database table.
    * </pre>
@@ -48,6 +64,8 @@ public interface ContentLocationOrBuilder extends
    */
   com.google.privacy.dlp.v2.RecordLocation getRecordLocation();
   /**
+   *
+   *
    * <pre>
    * Location within a row or record of a database table.
    * </pre>
@@ -57,6 +75,8 @@ public interface ContentLocationOrBuilder extends
   com.google.privacy.dlp.v2.RecordLocationOrBuilder getRecordLocationOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Location within an image's pixels.
    * </pre>
@@ -65,6 +85,8 @@ public interface ContentLocationOrBuilder extends
    */
   boolean hasImageLocation();
   /**
+   *
+   *
    * <pre>
    * Location within an image's pixels.
    * </pre>
@@ -73,6 +95,8 @@ public interface ContentLocationOrBuilder extends
    */
   com.google.privacy.dlp.v2.ImageLocation getImageLocation();
   /**
+   *
+   *
    * <pre>
    * Location within an image's pixels.
    * </pre>
@@ -82,6 +106,8 @@ public interface ContentLocationOrBuilder extends
   com.google.privacy.dlp.v2.ImageLocationOrBuilder getImageLocationOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Location data for document files.
    * </pre>
@@ -90,6 +116,8 @@ public interface ContentLocationOrBuilder extends
    */
   boolean hasDocumentLocation();
   /**
+   *
+   *
    * <pre>
    * Location data for document files.
    * </pre>
@@ -98,6 +126,8 @@ public interface ContentLocationOrBuilder extends
    */
   com.google.privacy.dlp.v2.DocumentLocation getDocumentLocation();
   /**
+   *
+   *
    * <pre>
    * Location data for document files.
    * </pre>
@@ -107,6 +137,8 @@ public interface ContentLocationOrBuilder extends
   com.google.privacy.dlp.v2.DocumentLocationOrBuilder getDocumentLocationOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Findings container modification timestamp, if applicable.
    * For Google Cloud Storage contains last file modification timestamp.
@@ -118,6 +150,8 @@ public interface ContentLocationOrBuilder extends
    */
   boolean hasContainerTimestamp();
   /**
+   *
+   *
    * <pre>
    * Findings container modification timestamp, if applicable.
    * For Google Cloud Storage contains last file modification timestamp.
@@ -129,6 +163,8 @@ public interface ContentLocationOrBuilder extends
    */
   com.google.protobuf.Timestamp getContainerTimestamp();
   /**
+   *
+   *
    * <pre>
    * Findings container modification timestamp, if applicable.
    * For Google Cloud Storage contains last file modification timestamp.
@@ -141,6 +177,8 @@ public interface ContentLocationOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getContainerTimestampOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Findings container version, if available
    * ("generation" for Google Cloud Storage).
@@ -150,6 +188,8 @@ public interface ContentLocationOrBuilder extends
    */
   java.lang.String getContainerVersion();
   /**
+   *
+   *
    * <pre>
    * Findings container version, if available
    * ("generation" for Google Cloud Storage).
@@ -157,8 +197,7 @@ public interface ContentLocationOrBuilder extends
    *
    * <code>string container_version = 7;</code>
    */
-  com.google.protobuf.ByteString
-      getContainerVersionBytes();
+  com.google.protobuf.ByteString getContainerVersionBytes();
 
   public com.google.privacy.dlp.v2.ContentLocation.LocationCase getLocationCase();
 }

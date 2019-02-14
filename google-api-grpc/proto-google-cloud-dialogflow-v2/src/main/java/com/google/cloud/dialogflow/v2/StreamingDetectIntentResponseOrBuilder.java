@@ -3,11 +3,14 @@
 
 package com.google.cloud.dialogflow.v2;
 
-public interface StreamingDetectIntentResponseOrBuilder extends
+public interface StreamingDetectIntentResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2.StreamingDetectIntentResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The unique identifier of the response. It can be used to
    * locate a response in the training example set or for reporting issues.
@@ -17,6 +20,8 @@ public interface StreamingDetectIntentResponseOrBuilder extends
    */
   java.lang.String getResponseId();
   /**
+   *
+   *
    * <pre>
    * The unique identifier of the response. It can be used to
    * locate a response in the training example set or for reporting issues.
@@ -24,10 +29,11 @@ public interface StreamingDetectIntentResponseOrBuilder extends
    *
    * <code>string response_id = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getResponseIdBytes();
+  com.google.protobuf.ByteString getResponseIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * The result of speech recognition.
    * </pre>
@@ -36,6 +42,8 @@ public interface StreamingDetectIntentResponseOrBuilder extends
    */
   boolean hasRecognitionResult();
   /**
+   *
+   *
    * <pre>
    * The result of speech recognition.
    * </pre>
@@ -44,15 +52,20 @@ public interface StreamingDetectIntentResponseOrBuilder extends
    */
   com.google.cloud.dialogflow.v2.StreamingRecognitionResult getRecognitionResult();
   /**
+   *
+   *
    * <pre>
    * The result of speech recognition.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.StreamingRecognitionResult recognition_result = 2;</code>
    */
-  com.google.cloud.dialogflow.v2.StreamingRecognitionResultOrBuilder getRecognitionResultOrBuilder();
+  com.google.cloud.dialogflow.v2.StreamingRecognitionResultOrBuilder
+      getRecognitionResultOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The result of the conversational query or event processing.
    * </pre>
@@ -61,6 +74,8 @@ public interface StreamingDetectIntentResponseOrBuilder extends
    */
   boolean hasQueryResult();
   /**
+   *
+   *
    * <pre>
    * The result of the conversational query or event processing.
    * </pre>
@@ -69,6 +84,8 @@ public interface StreamingDetectIntentResponseOrBuilder extends
    */
   com.google.cloud.dialogflow.v2.QueryResult getQueryResult();
   /**
+   *
+   *
    * <pre>
    * The result of the conversational query or event processing.
    * </pre>
@@ -78,6 +95,8 @@ public interface StreamingDetectIntentResponseOrBuilder extends
   com.google.cloud.dialogflow.v2.QueryResultOrBuilder getQueryResultOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Specifies the status of the webhook request.
    * </pre>
@@ -86,6 +105,8 @@ public interface StreamingDetectIntentResponseOrBuilder extends
    */
   boolean hasWebhookStatus();
   /**
+   *
+   *
    * <pre>
    * Specifies the status of the webhook request.
    * </pre>
@@ -94,6 +115,8 @@ public interface StreamingDetectIntentResponseOrBuilder extends
    */
   com.google.rpc.Status getWebhookStatus();
   /**
+   *
+   *
    * <pre>
    * Specifies the status of the webhook request.
    * </pre>

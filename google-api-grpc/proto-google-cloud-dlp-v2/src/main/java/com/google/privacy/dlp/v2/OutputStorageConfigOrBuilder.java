@@ -3,11 +3,14 @@
 
 package com.google.privacy.dlp.v2;
 
-public interface OutputStorageConfigOrBuilder extends
+public interface OutputStorageConfigOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.OutputStorageConfig)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Store findings in an existing table or a new table in an existing
    * dataset. If table_id is not set a new one will be generated
@@ -27,6 +30,8 @@ public interface OutputStorageConfigOrBuilder extends
    */
   boolean hasTable();
   /**
+   *
+   *
    * <pre>
    * Store findings in an existing table or a new table in an existing
    * dataset. If table_id is not set a new one will be generated
@@ -46,6 +51,8 @@ public interface OutputStorageConfigOrBuilder extends
    */
   com.google.privacy.dlp.v2.BigQueryTable getTable();
   /**
+   *
+   *
    * <pre>
    * Store findings in an existing table or a new table in an existing
    * dataset. If table_id is not set a new one will be generated
@@ -66,28 +73,34 @@ public interface OutputStorageConfigOrBuilder extends
   com.google.privacy.dlp.v2.BigQueryTableOrBuilder getTableOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Schema used for writing the findings for Inspect jobs. This field is only
    * used for Inspect and must be unspecified for Risk jobs. Columns are derived
    * from the `Finding` object. If appending to an existing table, any columns
    * from the predefined schema that are missing will be added. No columns in
    * the existing table will be deleted.
-   * If unspecified, then all available columns will be used for a new table,
-   * and no changes will be made to an existing table.
+   * If unspecified, then all available columns will be used for a new table or
+   * an (existing) table with no schema, and no changes will be made to an
+   * existing table that has a schema.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.OutputStorageConfig.OutputSchema output_schema = 3;</code>
    */
   int getOutputSchemaValue();
   /**
+   *
+   *
    * <pre>
    * Schema used for writing the findings for Inspect jobs. This field is only
    * used for Inspect and must be unspecified for Risk jobs. Columns are derived
    * from the `Finding` object. If appending to an existing table, any columns
    * from the predefined schema that are missing will be added. No columns in
    * the existing table will be deleted.
-   * If unspecified, then all available columns will be used for a new table,
-   * and no changes will be made to an existing table.
+   * If unspecified, then all available columns will be used for a new table or
+   * an (existing) table with no schema, and no changes will be made to an
+   * existing table that has a schema.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.OutputStorageConfig.OutputSchema output_schema = 3;</code>

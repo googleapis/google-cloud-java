@@ -3,11 +3,14 @@
 
 package com.google.cloud.vision.v1p1beta1;
 
-public interface FeatureOrBuilder extends
+public interface FeatureOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.vision.v1p1beta1.Feature)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The feature type.
    * </pre>
@@ -16,6 +19,8 @@ public interface FeatureOrBuilder extends
    */
   int getTypeValue();
   /**
+   *
+   *
    * <pre>
    * The feature type.
    * </pre>
@@ -25,6 +30,8 @@ public interface FeatureOrBuilder extends
   com.google.cloud.vision.v1p1beta1.Feature.Type getType();
 
   /**
+   *
+   *
    * <pre>
    * Maximum number of results of this type.
    * </pre>
@@ -34,6 +41,8 @@ public interface FeatureOrBuilder extends
   int getMaxResults();
 
   /**
+   *
+   *
    * <pre>
    * Model to use for the feature.
    * Supported values: "builtin/stable" (the default if unset) and
@@ -44,6 +53,8 @@ public interface FeatureOrBuilder extends
    */
   java.lang.String getModel();
   /**
+   *
+   *
    * <pre>
    * Model to use for the feature.
    * Supported values: "builtin/stable" (the default if unset) and
@@ -52,6 +63,5 @@ public interface FeatureOrBuilder extends
    *
    * <code>string model = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getModelBytes();
+  com.google.protobuf.ByteString getModelBytes();
 }

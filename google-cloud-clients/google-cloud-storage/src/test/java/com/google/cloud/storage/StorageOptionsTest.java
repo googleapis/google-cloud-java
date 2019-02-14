@@ -24,13 +24,11 @@ import org.junit.rules.ExpectedException;
 
 public class StorageOptionsTest {
 
-  @Rule
-  public ExpectedException thrown = ExpectedException.none();
+  @Rule public ExpectedException thrown = ExpectedException.none();
 
   @Test
   public void testInvalidTransport() {
     thrown.expect(IllegalArgumentException.class);
     StorageOptions.newBuilder().setTransportOptions(EasyMock.createMock(TransportOptions.class));
   }
-
 }

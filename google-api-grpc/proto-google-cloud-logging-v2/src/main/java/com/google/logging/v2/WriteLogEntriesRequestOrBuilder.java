@@ -3,11 +3,14 @@
 
 package com.google.logging.v2;
 
-public interface WriteLogEntriesRequestOrBuilder extends
+public interface WriteLogEntriesRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.logging.v2.WriteLogEntriesRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Optional. A default log resource name that is assigned to all log entries
    * in `entries` that do not specify a value for `log_name`:
@@ -15,17 +18,21 @@ public interface WriteLogEntriesRequestOrBuilder extends
    *     "organizations/[ORGANIZATION_ID]/logs/[LOG_ID]"
    *     "billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]"
    *     "folders/[FOLDER_ID]/logs/[LOG_ID]"
-   * `[LOG_ID]` must be URL-encoded. For example,
-   * `"projects/my-project-id/logs/syslog"` or
-   * `"organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity"`.
-   * For more information about log names, see
-   * [LogEntry][google.logging.v2.LogEntry].
+   * `[LOG_ID]` must be URL-encoded. For example:
+   *     "projects/my-project-id/logs/syslog"
+   *     "organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity"
+   * The permission &lt;code&gt;logging.logEntries.create&lt;/code&gt; is needed on each
+   * project, organization, billing account, or folder that is receiving
+   * new log entries, whether the resource is specified in
+   * &lt;code&gt;logName&lt;/code&gt; or in an individual log entry.
    * </pre>
    *
    * <code>string log_name = 1;</code>
    */
   java.lang.String getLogName();
   /**
+   *
+   *
    * <pre>
    * Optional. A default log resource name that is assigned to all log entries
    * in `entries` that do not specify a value for `log_name`:
@@ -33,19 +40,22 @@ public interface WriteLogEntriesRequestOrBuilder extends
    *     "organizations/[ORGANIZATION_ID]/logs/[LOG_ID]"
    *     "billingAccounts/[BILLING_ACCOUNT_ID]/logs/[LOG_ID]"
    *     "folders/[FOLDER_ID]/logs/[LOG_ID]"
-   * `[LOG_ID]` must be URL-encoded. For example,
-   * `"projects/my-project-id/logs/syslog"` or
-   * `"organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity"`.
-   * For more information about log names, see
-   * [LogEntry][google.logging.v2.LogEntry].
+   * `[LOG_ID]` must be URL-encoded. For example:
+   *     "projects/my-project-id/logs/syslog"
+   *     "organizations/1234567890/logs/cloudresourcemanager.googleapis.com%2Factivity"
+   * The permission &lt;code&gt;logging.logEntries.create&lt;/code&gt; is needed on each
+   * project, organization, billing account, or folder that is receiving
+   * new log entries, whether the resource is specified in
+   * &lt;code&gt;logName&lt;/code&gt; or in an individual log entry.
    * </pre>
    *
    * <code>string log_name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getLogNameBytes();
+  com.google.protobuf.ByteString getLogNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * Optional. A default monitored resource object that is assigned to all log
    * entries in `entries` that do not specify a value for `resource`. Example:
@@ -59,6 +69,8 @@ public interface WriteLogEntriesRequestOrBuilder extends
    */
   boolean hasResource();
   /**
+   *
+   *
    * <pre>
    * Optional. A default monitored resource object that is assigned to all log
    * entries in `entries` that do not specify a value for `resource`. Example:
@@ -72,6 +84,8 @@ public interface WriteLogEntriesRequestOrBuilder extends
    */
   com.google.api.MonitoredResource getResource();
   /**
+   *
+   *
    * <pre>
    * Optional. A default monitored resource object that is assigned to all log
    * entries in `entries` that do not specify a value for `resource`. Example:
@@ -86,6 +100,8 @@ public interface WriteLogEntriesRequestOrBuilder extends
   com.google.api.MonitoredResourceOrBuilder getResourceOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Optional. Default labels that are added to the `labels` field of all log
    * entries in `entries`. If a log entry already has a label with the same key
@@ -97,6 +113,8 @@ public interface WriteLogEntriesRequestOrBuilder extends
    */
   int getLabelsCount();
   /**
+   *
+   *
    * <pre>
    * Optional. Default labels that are added to the `labels` field of all log
    * entries in `entries`. If a log entry already has a label with the same key
@@ -106,15 +124,13 @@ public interface WriteLogEntriesRequestOrBuilder extends
    *
    * <code>map&lt;string, string&gt; labels = 3;</code>
    */
-  boolean containsLabels(
-      java.lang.String key);
-  /**
-   * Use {@link #getLabelsMap()} instead.
-   */
+  boolean containsLabels(java.lang.String key);
+  /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
-  java.util.Map<java.lang.String, java.lang.String>
-  getLabels();
+  java.util.Map<java.lang.String, java.lang.String> getLabels();
   /**
+   *
+   *
    * <pre>
    * Optional. Default labels that are added to the `labels` field of all log
    * entries in `entries`. If a log entry already has a label with the same key
@@ -124,9 +140,10 @@ public interface WriteLogEntriesRequestOrBuilder extends
    *
    * <code>map&lt;string, string&gt; labels = 3;</code>
    */
-  java.util.Map<java.lang.String, java.lang.String>
-  getLabelsMap();
+  java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
   /**
+   *
+   *
    * <pre>
    * Optional. Default labels that are added to the `labels` field of all log
    * entries in `entries`. If a log entry already has a label with the same key
@@ -136,11 +153,10 @@ public interface WriteLogEntriesRequestOrBuilder extends
    *
    * <code>map&lt;string, string&gt; labels = 3;</code>
    */
-
-  java.lang.String getLabelsOrDefault(
-      java.lang.String key,
-      java.lang.String defaultValue);
+  java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue);
   /**
+   *
+   *
    * <pre>
    * Optional. Default labels that are added to the `labels` field of all log
    * entries in `entries`. If a log entry already has a label with the same key
@@ -150,13 +166,13 @@ public interface WriteLogEntriesRequestOrBuilder extends
    *
    * <code>map&lt;string, string&gt; labels = 3;</code>
    */
-
-  java.lang.String getLabelsOrThrow(
-      java.lang.String key);
+  java.lang.String getLabelsOrThrow(java.lang.String key);
 
   /**
+   *
+   *
    * <pre>
-   * Required. The log entries to send to Stackdriver Logging. The order of log
+   * Required. The log entries to send to Logging. The order of log
    * entries in this list does not matter. Values supplied in this method's
    * `log_name`, `resource`, and `labels` fields are copied into those log
    * entries in this list that do not include values for their corresponding
@@ -180,11 +196,12 @@ public interface WriteLogEntriesRequestOrBuilder extends
    *
    * <code>repeated .google.logging.v2.LogEntry entries = 4;</code>
    */
-  java.util.List<com.google.logging.v2.LogEntry> 
-      getEntriesList();
+  java.util.List<com.google.logging.v2.LogEntry> getEntriesList();
   /**
+   *
+   *
    * <pre>
-   * Required. The log entries to send to Stackdriver Logging. The order of log
+   * Required. The log entries to send to Logging. The order of log
    * entries in this list does not matter. Values supplied in this method's
    * `log_name`, `resource`, and `labels` fields are copied into those log
    * entries in this list that do not include values for their corresponding
@@ -210,8 +227,10 @@ public interface WriteLogEntriesRequestOrBuilder extends
    */
   com.google.logging.v2.LogEntry getEntries(int index);
   /**
+   *
+   *
    * <pre>
-   * Required. The log entries to send to Stackdriver Logging. The order of log
+   * Required. The log entries to send to Logging. The order of log
    * entries in this list does not matter. Values supplied in this method's
    * `log_name`, `resource`, and `labels` fields are copied into those log
    * entries in this list that do not include values for their corresponding
@@ -237,8 +256,10 @@ public interface WriteLogEntriesRequestOrBuilder extends
    */
   int getEntriesCount();
   /**
+   *
+   *
    * <pre>
-   * Required. The log entries to send to Stackdriver Logging. The order of log
+   * Required. The log entries to send to Logging. The order of log
    * entries in this list does not matter. Values supplied in this method's
    * `log_name`, `resource`, and `labels` fields are copied into those log
    * entries in this list that do not include values for their corresponding
@@ -262,11 +283,12 @@ public interface WriteLogEntriesRequestOrBuilder extends
    *
    * <code>repeated .google.logging.v2.LogEntry entries = 4;</code>
    */
-  java.util.List<? extends com.google.logging.v2.LogEntryOrBuilder> 
-      getEntriesOrBuilderList();
+  java.util.List<? extends com.google.logging.v2.LogEntryOrBuilder> getEntriesOrBuilderList();
   /**
+   *
+   *
    * <pre>
-   * Required. The log entries to send to Stackdriver Logging. The order of log
+   * Required. The log entries to send to Logging. The order of log
    * entries in this list does not matter. Values supplied in this method's
    * `log_name`, `resource`, and `labels` fields are copied into those log
    * entries in this list that do not include values for their corresponding
@@ -290,10 +312,11 @@ public interface WriteLogEntriesRequestOrBuilder extends
    *
    * <code>repeated .google.logging.v2.LogEntry entries = 4;</code>
    */
-  com.google.logging.v2.LogEntryOrBuilder getEntriesOrBuilder(
-      int index);
+  com.google.logging.v2.LogEntryOrBuilder getEntriesOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * Optional. Whether valid entries should be written even if some other
    * entries fail due to INVALID_ARGUMENT or PERMISSION_DENIED errors. If any
@@ -307,6 +330,8 @@ public interface WriteLogEntriesRequestOrBuilder extends
   boolean getPartialSuccess();
 
   /**
+   *
+   *
    * <pre>
    * Optional. If true, the request should expect normal response, but the
    * entries won't be persisted nor exported. Useful for checking whether the

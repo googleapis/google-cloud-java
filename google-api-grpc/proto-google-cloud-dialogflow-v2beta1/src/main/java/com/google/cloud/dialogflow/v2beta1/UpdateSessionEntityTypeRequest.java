@@ -4,34 +4,40 @@
 package com.google.cloud.dialogflow.v2beta1;
 
 /**
+ *
+ *
  * <pre>
  * The request message for [SessionEntityTypes.UpdateSessionEntityType][google.cloud.dialogflow.v2beta1.SessionEntityTypes.UpdateSessionEntityType].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2beta1.UpdateSessionEntityTypeRequest}
  */
-public  final class UpdateSessionEntityTypeRequest extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class UpdateSessionEntityTypeRequest extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.UpdateSessionEntityTypeRequest)
     UpdateSessionEntityTypeRequestOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use UpdateSessionEntityTypeRequest.newBuilder() to construct.
-  private UpdateSessionEntityTypeRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  private UpdateSessionEntityTypeRequest(
+      com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private UpdateSessionEntityTypeRequest() {
-  }
+
+  private UpdateSessionEntityTypeRequest() {}
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private UpdateSessionEntityTypeRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -43,66 +49,77 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
-          case 10: {
-            com.google.cloud.dialogflow.v2beta1.SessionEntityType.Builder subBuilder = null;
-            if (sessionEntityType_ != null) {
-              subBuilder = sessionEntityType_.toBuilder();
-            }
-            sessionEntityType_ = input.readMessage(com.google.cloud.dialogflow.v2beta1.SessionEntityType.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(sessionEntityType_);
-              sessionEntityType_ = subBuilder.buildPartial();
-            }
+          case 10:
+            {
+              com.google.cloud.dialogflow.v2beta1.SessionEntityType.Builder subBuilder = null;
+              if (sessionEntityType_ != null) {
+                subBuilder = sessionEntityType_.toBuilder();
+              }
+              sessionEntityType_ =
+                  input.readMessage(
+                      com.google.cloud.dialogflow.v2beta1.SessionEntityType.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(sessionEntityType_);
+                sessionEntityType_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 18: {
-            com.google.protobuf.FieldMask.Builder subBuilder = null;
-            if (updateMask_ != null) {
-              subBuilder = updateMask_.toBuilder();
+              break;
             }
-            updateMask_ = input.readMessage(com.google.protobuf.FieldMask.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(updateMask_);
-              updateMask_ = subBuilder.buildPartial();
-            }
+          case 18:
+            {
+              com.google.protobuf.FieldMask.Builder subBuilder = null;
+              if (updateMask_ != null) {
+                subBuilder = updateMask_.toBuilder();
+              }
+              updateMask_ =
+                  input.readMessage(com.google.protobuf.FieldMask.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(updateMask_);
+                updateMask_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.dialogflow.v2beta1.SessionEntityTypeProto.internal_static_google_cloud_dialogflow_v2beta1_UpdateSessionEntityTypeRequest_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.dialogflow.v2beta1.SessionEntityTypeProto
+        .internal_static_google_cloud_dialogflow_v2beta1_UpdateSessionEntityTypeRequest_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.dialogflow.v2beta1.SessionEntityTypeProto.internal_static_google_cloud_dialogflow_v2beta1_UpdateSessionEntityTypeRequest_fieldAccessorTable
+    return com.google.cloud.dialogflow.v2beta1.SessionEntityTypeProto
+        .internal_static_google_cloud_dialogflow_v2beta1_UpdateSessionEntityTypeRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.dialogflow.v2beta1.UpdateSessionEntityTypeRequest.class, com.google.cloud.dialogflow.v2beta1.UpdateSessionEntityTypeRequest.Builder.class);
+            com.google.cloud.dialogflow.v2beta1.UpdateSessionEntityTypeRequest.class,
+            com.google.cloud.dialogflow.v2beta1.UpdateSessionEntityTypeRequest.Builder.class);
   }
 
   public static final int SESSION_ENTITY_TYPE_FIELD_NUMBER = 1;
   private com.google.cloud.dialogflow.v2beta1.SessionEntityType sessionEntityType_;
   /**
+   *
+   *
    * <pre>
    * Required. The entity type to update. Format:
    * `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type
@@ -118,6 +135,8 @@ private static final long serialVersionUID = 0L;
     return sessionEntityType_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Required. The entity type to update. Format:
    * `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type
@@ -130,9 +149,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_type = 1;</code>
    */
   public com.google.cloud.dialogflow.v2beta1.SessionEntityType getSessionEntityType() {
-    return sessionEntityType_ == null ? com.google.cloud.dialogflow.v2beta1.SessionEntityType.getDefaultInstance() : sessionEntityType_;
+    return sessionEntityType_ == null
+        ? com.google.cloud.dialogflow.v2beta1.SessionEntityType.getDefaultInstance()
+        : sessionEntityType_;
   }
   /**
+   *
+   *
    * <pre>
    * Required. The entity type to update. Format:
    * `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type
@@ -144,13 +167,16 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_type = 1;</code>
    */
-  public com.google.cloud.dialogflow.v2beta1.SessionEntityTypeOrBuilder getSessionEntityTypeOrBuilder() {
+  public com.google.cloud.dialogflow.v2beta1.SessionEntityTypeOrBuilder
+      getSessionEntityTypeOrBuilder() {
     return getSessionEntityType();
   }
 
   public static final int UPDATE_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask updateMask_;
   /**
+   *
+   *
    * <pre>
    * Optional. The mask to control which fields get updated.
    * </pre>
@@ -161,6 +187,8 @@ private static final long serialVersionUID = 0L;
     return updateMask_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Optional. The mask to control which fields get updated.
    * </pre>
@@ -171,6 +199,8 @@ private static final long serialVersionUID = 0L;
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
   /**
+   *
+   *
    * <pre>
    * Optional. The mask to control which fields get updated.
    * </pre>
@@ -182,6 +212,8 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -191,8 +223,8 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  @java.lang.Override
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (sessionEntityType_ != null) {
       output.writeMessage(1, getSessionEntityType());
     }
@@ -202,18 +234,17 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
 
     size = 0;
     if (sessionEntityType_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getSessionEntityType());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getSessionEntityType());
     }
     if (updateMask_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getUpdateMask());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getUpdateMask());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -223,23 +254,22 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.dialogflow.v2beta1.UpdateSessionEntityTypeRequest)) {
       return super.equals(obj);
     }
-    com.google.cloud.dialogflow.v2beta1.UpdateSessionEntityTypeRequest other = (com.google.cloud.dialogflow.v2beta1.UpdateSessionEntityTypeRequest) obj;
+    com.google.cloud.dialogflow.v2beta1.UpdateSessionEntityTypeRequest other =
+        (com.google.cloud.dialogflow.v2beta1.UpdateSessionEntityTypeRequest) obj;
 
     boolean result = true;
     result = result && (hasSessionEntityType() == other.hasSessionEntityType());
     if (hasSessionEntityType()) {
-      result = result && getSessionEntityType()
-          .equals(other.getSessionEntityType());
+      result = result && getSessionEntityType().equals(other.getSessionEntityType());
     }
     result = result && (hasUpdateMask() == other.hasUpdateMask());
     if (hasUpdateMask()) {
-      result = result && getUpdateMask()
-          .equals(other.getUpdateMask());
+      result = result && getUpdateMask().equals(other.getUpdateMask());
     }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
@@ -266,131 +296,146 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.cloud.dialogflow.v2beta1.UpdateSessionEntityTypeRequest parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dialogflow.v2beta1.UpdateSessionEntityTypeRequest parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.dialogflow.v2beta1.UpdateSessionEntityTypeRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dialogflow.v2beta1.UpdateSessionEntityTypeRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.dialogflow.v2beta1.UpdateSessionEntityTypeRequest parseFrom(byte[] data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+
+  public static com.google.cloud.dialogflow.v2beta1.UpdateSessionEntityTypeRequest parseFrom(
+      byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dialogflow.v2beta1.UpdateSessionEntityTypeRequest parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.dialogflow.v2beta1.UpdateSessionEntityTypeRequest parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.dialogflow.v2beta1.UpdateSessionEntityTypeRequest parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.dialogflow.v2beta1.UpdateSessionEntityTypeRequest parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
-  public static com.google.cloud.dialogflow.v2beta1.UpdateSessionEntityTypeRequest parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-  }
+
   public static com.google.cloud.dialogflow.v2beta1.UpdateSessionEntityTypeRequest parseFrom(
-      com.google.protobuf.CodedInputStream input)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
+  public static com.google.cloud.dialogflow.v2beta1.UpdateSessionEntityTypeRequest
+      parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+  }
+
+  public static com.google.cloud.dialogflow.v2beta1.UpdateSessionEntityTypeRequest
+      parseDelimitedFrom(
+          java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
+  public static com.google.cloud.dialogflow.v2beta1.UpdateSessionEntityTypeRequest parseFrom(
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+  }
+
   public static com.google.cloud.dialogflow.v2beta1.UpdateSessionEntityTypeRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  public Builder newBuilderForType() { return newBuilder(); }
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-  public static Builder newBuilder(com.google.cloud.dialogflow.v2beta1.UpdateSessionEntityTypeRequest prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+
+  public static Builder newBuilder(
+      com.google.cloud.dialogflow.v2beta1.UpdateSessionEntityTypeRequest prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+
+  @java.lang.Override
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * The request message for [SessionEntityTypes.UpdateSessionEntityType][google.cloud.dialogflow.v2beta1.SessionEntityTypes.UpdateSessionEntityType].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2beta1.UpdateSessionEntityTypeRequest}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.v2beta1.UpdateSessionEntityTypeRequest)
       com.google.cloud.dialogflow.v2beta1.UpdateSessionEntityTypeRequestOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.dialogflow.v2beta1.SessionEntityTypeProto.internal_static_google_cloud_dialogflow_v2beta1_UpdateSessionEntityTypeRequest_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dialogflow.v2beta1.SessionEntityTypeProto
+          .internal_static_google_cloud_dialogflow_v2beta1_UpdateSessionEntityTypeRequest_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.dialogflow.v2beta1.SessionEntityTypeProto.internal_static_google_cloud_dialogflow_v2beta1_UpdateSessionEntityTypeRequest_fieldAccessorTable
+      return com.google.cloud.dialogflow.v2beta1.SessionEntityTypeProto
+          .internal_static_google_cloud_dialogflow_v2beta1_UpdateSessionEntityTypeRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.dialogflow.v2beta1.UpdateSessionEntityTypeRequest.class, com.google.cloud.dialogflow.v2beta1.UpdateSessionEntityTypeRequest.Builder.class);
+              com.google.cloud.dialogflow.v2beta1.UpdateSessionEntityTypeRequest.class,
+              com.google.cloud.dialogflow.v2beta1.UpdateSessionEntityTypeRequest.Builder.class);
     }
 
-    // Construct using com.google.cloud.dialogflow.v2beta1.UpdateSessionEntityTypeRequest.newBuilder()
+    // Construct using
+    // com.google.cloud.dialogflow.v2beta1.UpdateSessionEntityTypeRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       if (sessionEntityTypeBuilder_ == null) {
@@ -408,15 +453,20 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.dialogflow.v2beta1.SessionEntityTypeProto.internal_static_google_cloud_dialogflow_v2beta1_UpdateSessionEntityTypeRequest_descriptor;
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.dialogflow.v2beta1.SessionEntityTypeProto
+          .internal_static_google_cloud_dialogflow_v2beta1_UpdateSessionEntityTypeRequest_descriptor;
     }
 
-    public com.google.cloud.dialogflow.v2beta1.UpdateSessionEntityTypeRequest getDefaultInstanceForType() {
-      return com.google.cloud.dialogflow.v2beta1.UpdateSessionEntityTypeRequest.getDefaultInstance();
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2beta1.UpdateSessionEntityTypeRequest
+        getDefaultInstanceForType() {
+      return com.google.cloud.dialogflow.v2beta1.UpdateSessionEntityTypeRequest
+          .getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2beta1.UpdateSessionEntityTypeRequest build() {
       com.google.cloud.dialogflow.v2beta1.UpdateSessionEntityTypeRequest result = buildPartial();
       if (!result.isInitialized()) {
@@ -425,8 +475,10 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2beta1.UpdateSessionEntityTypeRequest buildPartial() {
-      com.google.cloud.dialogflow.v2beta1.UpdateSessionEntityTypeRequest result = new com.google.cloud.dialogflow.v2beta1.UpdateSessionEntityTypeRequest(this);
+      com.google.cloud.dialogflow.v2beta1.UpdateSessionEntityTypeRequest result =
+          new com.google.cloud.dialogflow.v2beta1.UpdateSessionEntityTypeRequest(this);
       if (sessionEntityTypeBuilder_ == null) {
         result.sessionEntityType_ = sessionEntityType_;
       } else {
@@ -441,43 +493,55 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+
+    @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+    @java.lang.Override
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+    @java.lang.Override
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
+    @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
+    @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.dialogflow.v2beta1.UpdateSessionEntityTypeRequest) {
-        return mergeFrom((com.google.cloud.dialogflow.v2beta1.UpdateSessionEntityTypeRequest)other);
+        return mergeFrom(
+            (com.google.cloud.dialogflow.v2beta1.UpdateSessionEntityTypeRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.cloud.dialogflow.v2beta1.UpdateSessionEntityTypeRequest other) {
-      if (other == com.google.cloud.dialogflow.v2beta1.UpdateSessionEntityTypeRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(
+        com.google.cloud.dialogflow.v2beta1.UpdateSessionEntityTypeRequest other) {
+      if (other
+          == com.google.cloud.dialogflow.v2beta1.UpdateSessionEntityTypeRequest
+              .getDefaultInstance()) return this;
       if (other.hasSessionEntityType()) {
         mergeSessionEntityType(other.getSessionEntityType());
       }
@@ -489,10 +553,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -501,7 +567,9 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.dialogflow.v2beta1.UpdateSessionEntityTypeRequest) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.cloud.dialogflow.v2beta1.UpdateSessionEntityTypeRequest)
+                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -513,8 +581,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.cloud.dialogflow.v2beta1.SessionEntityType sessionEntityType_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dialogflow.v2beta1.SessionEntityType, com.google.cloud.dialogflow.v2beta1.SessionEntityType.Builder, com.google.cloud.dialogflow.v2beta1.SessionEntityTypeOrBuilder> sessionEntityTypeBuilder_;
+            com.google.cloud.dialogflow.v2beta1.SessionEntityType,
+            com.google.cloud.dialogflow.v2beta1.SessionEntityType.Builder,
+            com.google.cloud.dialogflow.v2beta1.SessionEntityTypeOrBuilder>
+        sessionEntityTypeBuilder_;
     /**
+     *
+     *
      * <pre>
      * Required. The entity type to update. Format:
      * `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type
@@ -530,6 +603,8 @@ private static final long serialVersionUID = 0L;
       return sessionEntityTypeBuilder_ != null || sessionEntityType_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The entity type to update. Format:
      * `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type
@@ -543,12 +618,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.dialogflow.v2beta1.SessionEntityType getSessionEntityType() {
       if (sessionEntityTypeBuilder_ == null) {
-        return sessionEntityType_ == null ? com.google.cloud.dialogflow.v2beta1.SessionEntityType.getDefaultInstance() : sessionEntityType_;
+        return sessionEntityType_ == null
+            ? com.google.cloud.dialogflow.v2beta1.SessionEntityType.getDefaultInstance()
+            : sessionEntityType_;
       } else {
         return sessionEntityTypeBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The entity type to update. Format:
      * `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type
@@ -560,7 +639,8 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_type = 1;</code>
      */
-    public Builder setSessionEntityType(com.google.cloud.dialogflow.v2beta1.SessionEntityType value) {
+    public Builder setSessionEntityType(
+        com.google.cloud.dialogflow.v2beta1.SessionEntityType value) {
       if (sessionEntityTypeBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -574,6 +654,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The entity type to update. Format:
      * `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type
@@ -597,6 +679,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The entity type to update. Format:
      * `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type
@@ -608,11 +692,14 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_type = 1;</code>
      */
-    public Builder mergeSessionEntityType(com.google.cloud.dialogflow.v2beta1.SessionEntityType value) {
+    public Builder mergeSessionEntityType(
+        com.google.cloud.dialogflow.v2beta1.SessionEntityType value) {
       if (sessionEntityTypeBuilder_ == null) {
         if (sessionEntityType_ != null) {
           sessionEntityType_ =
-            com.google.cloud.dialogflow.v2beta1.SessionEntityType.newBuilder(sessionEntityType_).mergeFrom(value).buildPartial();
+              com.google.cloud.dialogflow.v2beta1.SessionEntityType.newBuilder(sessionEntityType_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           sessionEntityType_ = value;
         }
@@ -624,6 +711,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The entity type to update. Format:
      * `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type
@@ -647,6 +736,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The entity type to update. Format:
      * `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type
@@ -658,12 +749,15 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_type = 1;</code>
      */
-    public com.google.cloud.dialogflow.v2beta1.SessionEntityType.Builder getSessionEntityTypeBuilder() {
-      
+    public com.google.cloud.dialogflow.v2beta1.SessionEntityType.Builder
+        getSessionEntityTypeBuilder() {
+
       onChanged();
       return getSessionEntityTypeFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Required. The entity type to update. Format:
      * `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type
@@ -675,15 +769,19 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_type = 1;</code>
      */
-    public com.google.cloud.dialogflow.v2beta1.SessionEntityTypeOrBuilder getSessionEntityTypeOrBuilder() {
+    public com.google.cloud.dialogflow.v2beta1.SessionEntityTypeOrBuilder
+        getSessionEntityTypeOrBuilder() {
       if (sessionEntityTypeBuilder_ != null) {
         return sessionEntityTypeBuilder_.getMessageOrBuilder();
       } else {
-        return sessionEntityType_ == null ?
-            com.google.cloud.dialogflow.v2beta1.SessionEntityType.getDefaultInstance() : sessionEntityType_;
+        return sessionEntityType_ == null
+            ? com.google.cloud.dialogflow.v2beta1.SessionEntityType.getDefaultInstance()
+            : sessionEntityType_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The entity type to update. Format:
      * `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;/entityTypes/&lt;Entity Type
@@ -696,14 +794,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.dialogflow.v2beta1.SessionEntityType session_entity_type = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dialogflow.v2beta1.SessionEntityType, com.google.cloud.dialogflow.v2beta1.SessionEntityType.Builder, com.google.cloud.dialogflow.v2beta1.SessionEntityTypeOrBuilder> 
+            com.google.cloud.dialogflow.v2beta1.SessionEntityType,
+            com.google.cloud.dialogflow.v2beta1.SessionEntityType.Builder,
+            com.google.cloud.dialogflow.v2beta1.SessionEntityTypeOrBuilder>
         getSessionEntityTypeFieldBuilder() {
       if (sessionEntityTypeBuilder_ == null) {
-        sessionEntityTypeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.dialogflow.v2beta1.SessionEntityType, com.google.cloud.dialogflow.v2beta1.SessionEntityType.Builder, com.google.cloud.dialogflow.v2beta1.SessionEntityTypeOrBuilder>(
-                getSessionEntityType(),
-                getParentForChildren(),
-                isClean());
+        sessionEntityTypeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.v2beta1.SessionEntityType,
+                com.google.cloud.dialogflow.v2beta1.SessionEntityType.Builder,
+                com.google.cloud.dialogflow.v2beta1.SessionEntityTypeOrBuilder>(
+                getSessionEntityType(), getParentForChildren(), isClean());
         sessionEntityType_ = null;
       }
       return sessionEntityTypeBuilder_;
@@ -711,8 +812,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.FieldMask updateMask_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.FieldMask, com.google.protobuf.FieldMask.Builder, com.google.protobuf.FieldMaskOrBuilder> updateMaskBuilder_;
+            com.google.protobuf.FieldMask,
+            com.google.protobuf.FieldMask.Builder,
+            com.google.protobuf.FieldMaskOrBuilder>
+        updateMaskBuilder_;
     /**
+     *
+     *
      * <pre>
      * Optional. The mask to control which fields get updated.
      * </pre>
@@ -723,6 +829,8 @@ private static final long serialVersionUID = 0L;
       return updateMaskBuilder_ != null || updateMask_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The mask to control which fields get updated.
      * </pre>
@@ -731,12 +839,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.FieldMask getUpdateMask() {
       if (updateMaskBuilder_ == null) {
-        return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
+        return updateMask_ == null
+            ? com.google.protobuf.FieldMask.getDefaultInstance()
+            : updateMask_;
       } else {
         return updateMaskBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The mask to control which fields get updated.
      * </pre>
@@ -757,14 +869,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The mask to control which fields get updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
-    public Builder setUpdateMask(
-        com.google.protobuf.FieldMask.Builder builderForValue) {
+    public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
         onChanged();
@@ -775,6 +888,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The mask to control which fields get updated.
      * </pre>
@@ -785,7 +900,7 @@ private static final long serialVersionUID = 0L;
       if (updateMaskBuilder_ == null) {
         if (updateMask_ != null) {
           updateMask_ =
-            com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
         } else {
           updateMask_ = value;
         }
@@ -797,6 +912,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The mask to control which fields get updated.
      * </pre>
@@ -815,6 +932,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The mask to control which fields get updated.
      * </pre>
@@ -822,11 +941,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-      
+
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The mask to control which fields get updated.
      * </pre>
@@ -837,11 +958,14 @@ private static final long serialVersionUID = 0L;
       if (updateMaskBuilder_ != null) {
         return updateMaskBuilder_.getMessageOrBuilder();
       } else {
-        return updateMask_ == null ?
-            com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
+        return updateMask_ == null
+            ? com.google.protobuf.FieldMask.getDefaultInstance()
+            : updateMask_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The mask to control which fields get updated.
      * </pre>
@@ -849,51 +973,59 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.FieldMask update_mask = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.FieldMask, com.google.protobuf.FieldMask.Builder, com.google.protobuf.FieldMaskOrBuilder> 
+            com.google.protobuf.FieldMask,
+            com.google.protobuf.FieldMask.Builder,
+            com.google.protobuf.FieldMaskOrBuilder>
         getUpdateMaskFieldBuilder() {
       if (updateMaskBuilder_ == null) {
-        updateMaskBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.FieldMask, com.google.protobuf.FieldMask.Builder, com.google.protobuf.FieldMaskOrBuilder>(
-                getUpdateMask(),
-                getParentForChildren(),
-                isClean());
+        updateMaskBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.FieldMask,
+                com.google.protobuf.FieldMask.Builder,
+                com.google.protobuf.FieldMaskOrBuilder>(
+                getUpdateMask(), getParentForChildren(), isClean());
         updateMask_ = null;
       }
       return updateMaskBuilder_;
     }
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+
+    @java.lang.Override
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.v2beta1.UpdateSessionEntityTypeRequest)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.v2beta1.UpdateSessionEntityTypeRequest)
-  private static final com.google.cloud.dialogflow.v2beta1.UpdateSessionEntityTypeRequest DEFAULT_INSTANCE;
+  private static final com.google.cloud.dialogflow.v2beta1.UpdateSessionEntityTypeRequest
+      DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.dialogflow.v2beta1.UpdateSessionEntityTypeRequest();
   }
 
-  public static com.google.cloud.dialogflow.v2beta1.UpdateSessionEntityTypeRequest getDefaultInstance() {
+  public static com.google.cloud.dialogflow.v2beta1.UpdateSessionEntityTypeRequest
+      getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<UpdateSessionEntityTypeRequest>
-      PARSER = new com.google.protobuf.AbstractParser<UpdateSessionEntityTypeRequest>() {
-    public UpdateSessionEntityTypeRequest parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-        return new UpdateSessionEntityTypeRequest(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<UpdateSessionEntityTypeRequest> PARSER =
+      new com.google.protobuf.AbstractParser<UpdateSessionEntityTypeRequest>() {
+        @java.lang.Override
+        public UpdateSessionEntityTypeRequest parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new UpdateSessionEntityTypeRequest(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<UpdateSessionEntityTypeRequest> parser() {
     return PARSER;
@@ -904,9 +1036,9 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
-  public com.google.cloud.dialogflow.v2beta1.UpdateSessionEntityTypeRequest getDefaultInstanceForType() {
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2beta1.UpdateSessionEntityTypeRequest
+      getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

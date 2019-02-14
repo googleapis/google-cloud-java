@@ -4,21 +4,24 @@
 package com.google.cloud.videointelligence.v1beta2;
 
 /**
+ *
+ *
  * <pre>
  * Video annotation request.
  * </pre>
  *
  * Protobuf type {@code google.cloud.videointelligence.v1beta2.AnnotateVideoRequest}
  */
-public  final class AnnotateVideoRequest extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class AnnotateVideoRequest extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.videointelligence.v1beta2.AnnotateVideoRequest)
     AnnotateVideoRequestOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use AnnotateVideoRequest.newBuilder() to construct.
   private AnnotateVideoRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private AnnotateVideoRequest() {
     inputUri_ = "";
     inputContent_ = com.google.protobuf.ByteString.EMPTY;
@@ -28,15 +31,18 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private AnnotateVideoRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -48,79 +54,87 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            inputUri_ = s;
-            break;
-          }
-          case 16: {
-            int rawValue = input.readEnum();
-            if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-              features_ = new java.util.ArrayList<java.lang.Integer>();
-              mutable_bitField0_ |= 0x00000004;
+              inputUri_ = s;
+              break;
             }
-            features_.add(rawValue);
-            break;
-          }
-          case 18: {
-            int length = input.readRawVarint32();
-            int oldLimit = input.pushLimit(length);
-            while(input.getBytesUntilLimit() > 0) {
+          case 16:
+            {
               int rawValue = input.readEnum();
               if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
                 features_ = new java.util.ArrayList<java.lang.Integer>();
                 mutable_bitField0_ |= 0x00000004;
               }
               features_.add(rawValue);
+              break;
             }
-            input.popLimit(oldLimit);
-            break;
-          }
-          case 26: {
-            com.google.cloud.videointelligence.v1beta2.VideoContext.Builder subBuilder = null;
-            if (videoContext_ != null) {
-              subBuilder = videoContext_.toBuilder();
+          case 18:
+            {
+              int length = input.readRawVarint32();
+              int oldLimit = input.pushLimit(length);
+              while (input.getBytesUntilLimit() > 0) {
+                int rawValue = input.readEnum();
+                if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+                  features_ = new java.util.ArrayList<java.lang.Integer>();
+                  mutable_bitField0_ |= 0x00000004;
+                }
+                features_.add(rawValue);
+              }
+              input.popLimit(oldLimit);
+              break;
             }
-            videoContext_ = input.readMessage(com.google.cloud.videointelligence.v1beta2.VideoContext.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(videoContext_);
-              videoContext_ = subBuilder.buildPartial();
+          case 26:
+            {
+              com.google.cloud.videointelligence.v1beta2.VideoContext.Builder subBuilder = null;
+              if (videoContext_ != null) {
+                subBuilder = videoContext_.toBuilder();
+              }
+              videoContext_ =
+                  input.readMessage(
+                      com.google.cloud.videointelligence.v1beta2.VideoContext.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(videoContext_);
+                videoContext_ = subBuilder.buildPartial();
+              }
+
+              break;
             }
+          case 34:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            break;
-          }
-          case 34: {
-            java.lang.String s = input.readStringRequireUtf8();
+              outputUri_ = s;
+              break;
+            }
+          case 42:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            outputUri_ = s;
-            break;
-          }
-          case 42: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            locationId_ = s;
-            break;
-          }
-          case 50: {
-
-            inputContent_ = input.readBytes();
-            break;
-          }
+              locationId_ = s;
+              break;
+            }
+          case 50:
+            {
+              inputContent_ = input.readBytes();
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
         features_ = java.util.Collections.unmodifiableList(features_);
@@ -129,22 +143,28 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.videointelligence.v1beta2.VideoIntelligenceServiceProto.internal_static_google_cloud_videointelligence_v1beta2_AnnotateVideoRequest_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.videointelligence.v1beta2.VideoIntelligenceServiceProto
+        .internal_static_google_cloud_videointelligence_v1beta2_AnnotateVideoRequest_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.videointelligence.v1beta2.VideoIntelligenceServiceProto.internal_static_google_cloud_videointelligence_v1beta2_AnnotateVideoRequest_fieldAccessorTable
+    return com.google.cloud.videointelligence.v1beta2.VideoIntelligenceServiceProto
+        .internal_static_google_cloud_videointelligence_v1beta2_AnnotateVideoRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.videointelligence.v1beta2.AnnotateVideoRequest.class, com.google.cloud.videointelligence.v1beta2.AnnotateVideoRequest.Builder.class);
+            com.google.cloud.videointelligence.v1beta2.AnnotateVideoRequest.class,
+            com.google.cloud.videointelligence.v1beta2.AnnotateVideoRequest.Builder.class);
   }
 
   private int bitField0_;
   public static final int INPUT_URI_FIELD_NUMBER = 1;
   private volatile java.lang.Object inputUri_;
   /**
+   *
+   *
    * <pre>
    * Input video location. Currently, only
    * [Google Cloud Storage](https://cloud.google.com/storage/) URIs are
@@ -165,14 +185,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       inputUri_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Input video location. Currently, only
    * [Google Cloud Storage](https://cloud.google.com/storage/) URIs are
@@ -188,13 +209,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string input_uri = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getInputUriBytes() {
+  public com.google.protobuf.ByteString getInputUriBytes() {
     java.lang.Object ref = inputUri_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       inputUri_ = b;
       return b;
     } else {
@@ -205,6 +224,8 @@ private static final long serialVersionUID = 0L;
   public static final int INPUT_CONTENT_FIELD_NUMBER = 6;
   private com.google.protobuf.ByteString inputContent_;
   /**
+   *
+   *
    * <pre>
    * The video data bytes.
    * If unset, the input video(s) should be specified via `input_uri`.
@@ -220,15 +241,23 @@ private static final long serialVersionUID = 0L;
   public static final int FEATURES_FIELD_NUMBER = 2;
   private java.util.List<java.lang.Integer> features_;
   private static final com.google.protobuf.Internal.ListAdapter.Converter<
-      java.lang.Integer, com.google.cloud.videointelligence.v1beta2.Feature> features_converter_ =
+          java.lang.Integer, com.google.cloud.videointelligence.v1beta2.Feature>
+      features_converter_ =
           new com.google.protobuf.Internal.ListAdapter.Converter<
               java.lang.Integer, com.google.cloud.videointelligence.v1beta2.Feature>() {
-            public com.google.cloud.videointelligence.v1beta2.Feature convert(java.lang.Integer from) {
-              com.google.cloud.videointelligence.v1beta2.Feature result = com.google.cloud.videointelligence.v1beta2.Feature.valueOf(from);
-              return result == null ? com.google.cloud.videointelligence.v1beta2.Feature.UNRECOGNIZED : result;
+            public com.google.cloud.videointelligence.v1beta2.Feature convert(
+                java.lang.Integer from) {
+              @SuppressWarnings("deprecation")
+              com.google.cloud.videointelligence.v1beta2.Feature result =
+                  com.google.cloud.videointelligence.v1beta2.Feature.valueOf(from);
+              return result == null
+                  ? com.google.cloud.videointelligence.v1beta2.Feature.UNRECOGNIZED
+                  : result;
             }
           };
   /**
+   *
+   *
    * <pre>
    * Requested video annotation features.
    * </pre>
@@ -237,9 +266,12 @@ private static final long serialVersionUID = 0L;
    */
   public java.util.List<com.google.cloud.videointelligence.v1beta2.Feature> getFeaturesList() {
     return new com.google.protobuf.Internal.ListAdapter<
-        java.lang.Integer, com.google.cloud.videointelligence.v1beta2.Feature>(features_, features_converter_);
+        java.lang.Integer, com.google.cloud.videointelligence.v1beta2.Feature>(
+        features_, features_converter_);
   }
   /**
+   *
+   *
    * <pre>
    * Requested video annotation features.
    * </pre>
@@ -250,6 +282,8 @@ private static final long serialVersionUID = 0L;
     return features_.size();
   }
   /**
+   *
+   *
    * <pre>
    * Requested video annotation features.
    * </pre>
@@ -260,17 +294,20 @@ private static final long serialVersionUID = 0L;
     return features_converter_.convert(features_.get(index));
   }
   /**
+   *
+   *
    * <pre>
    * Requested video annotation features.
    * </pre>
    *
    * <code>repeated .google.cloud.videointelligence.v1beta2.Feature features = 2;</code>
    */
-  public java.util.List<java.lang.Integer>
-  getFeaturesValueList() {
+  public java.util.List<java.lang.Integer> getFeaturesValueList() {
     return features_;
   }
   /**
+   *
+   *
    * <pre>
    * Requested video annotation features.
    * </pre>
@@ -280,11 +317,14 @@ private static final long serialVersionUID = 0L;
   public int getFeaturesValue(int index) {
     return features_.get(index);
   }
+
   private int featuresMemoizedSerializedSize;
 
   public static final int VIDEO_CONTEXT_FIELD_NUMBER = 3;
   private com.google.cloud.videointelligence.v1beta2.VideoContext videoContext_;
   /**
+   *
+   *
    * <pre>
    * Additional video context and/or feature-specific parameters.
    * </pre>
@@ -295,6 +335,8 @@ private static final long serialVersionUID = 0L;
     return videoContext_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Additional video context and/or feature-specific parameters.
    * </pre>
@@ -302,22 +344,29 @@ private static final long serialVersionUID = 0L;
    * <code>.google.cloud.videointelligence.v1beta2.VideoContext video_context = 3;</code>
    */
   public com.google.cloud.videointelligence.v1beta2.VideoContext getVideoContext() {
-    return videoContext_ == null ? com.google.cloud.videointelligence.v1beta2.VideoContext.getDefaultInstance() : videoContext_;
+    return videoContext_ == null
+        ? com.google.cloud.videointelligence.v1beta2.VideoContext.getDefaultInstance()
+        : videoContext_;
   }
   /**
+   *
+   *
    * <pre>
    * Additional video context and/or feature-specific parameters.
    * </pre>
    *
    * <code>.google.cloud.videointelligence.v1beta2.VideoContext video_context = 3;</code>
    */
-  public com.google.cloud.videointelligence.v1beta2.VideoContextOrBuilder getVideoContextOrBuilder() {
+  public com.google.cloud.videointelligence.v1beta2.VideoContextOrBuilder
+      getVideoContextOrBuilder() {
     return getVideoContext();
   }
 
   public static final int OUTPUT_URI_FIELD_NUMBER = 4;
   private volatile java.lang.Object outputUri_;
   /**
+   *
+   *
    * <pre>
    * Optional location where the output (in JSON format) should be stored.
    * Currently, only [Google Cloud Storage](https://cloud.google.com/storage/)
@@ -334,14 +383,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       outputUri_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Optional location where the output (in JSON format) should be stored.
    * Currently, only [Google Cloud Storage](https://cloud.google.com/storage/)
@@ -353,13 +403,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string output_uri = 4;</code>
    */
-  public com.google.protobuf.ByteString
-      getOutputUriBytes() {
+  public com.google.protobuf.ByteString getOutputUriBytes() {
     java.lang.Object ref = outputUri_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       outputUri_ = b;
       return b;
     } else {
@@ -370,6 +418,8 @@ private static final long serialVersionUID = 0L;
   public static final int LOCATION_ID_FIELD_NUMBER = 5;
   private volatile java.lang.Object locationId_;
   /**
+   *
+   *
    * <pre>
    * Optional cloud region where annotation should take place. Supported cloud
    * regions: `us-east1`, `us-west1`, `europe-west1`, `asia-east1`. If no region
@@ -383,14 +433,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       locationId_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Optional cloud region where annotation should take place. Supported cloud
    * regions: `us-east1`, `us-west1`, `europe-west1`, `asia-east1`. If no region
@@ -399,13 +450,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string location_id = 5;</code>
    */
-  public com.google.protobuf.ByteString
-      getLocationIdBytes() {
+  public com.google.protobuf.ByteString getLocationIdBytes() {
     java.lang.Object ref = locationId_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       locationId_ = b;
       return b;
     } else {
@@ -414,6 +463,8 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -423,8 +474,8 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  @java.lang.Override
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     getSerializedSize();
     if (!getInputUriBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, inputUri_);
@@ -451,6 +502,7 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -462,18 +514,17 @@ private static final long serialVersionUID = 0L;
     {
       int dataSize = 0;
       for (int i = 0; i < features_.size(); i++) {
-        dataSize += com.google.protobuf.CodedOutputStream
-          .computeEnumSizeNoTag(features_.get(i));
+        dataSize += com.google.protobuf.CodedOutputStream.computeEnumSizeNoTag(features_.get(i));
       }
       size += dataSize;
-      if (!getFeaturesList().isEmpty()) {  size += 1;
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32SizeNoTag(dataSize);
-      }featuresMemoizedSerializedSize = dataSize;
+      if (!getFeaturesList().isEmpty()) {
+        size += 1;
+        size += com.google.protobuf.CodedOutputStream.computeUInt32SizeNoTag(dataSize);
+      }
+      featuresMemoizedSerializedSize = dataSize;
     }
     if (videoContext_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, getVideoContext());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getVideoContext());
     }
     if (!getOutputUriBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, outputUri_);
@@ -482,8 +533,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, locationId_);
     }
     if (!inputContent_.isEmpty()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBytesSize(6, inputContent_);
+      size += com.google.protobuf.CodedOutputStream.computeBytesSize(6, inputContent_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -493,28 +543,24 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.videointelligence.v1beta2.AnnotateVideoRequest)) {
       return super.equals(obj);
     }
-    com.google.cloud.videointelligence.v1beta2.AnnotateVideoRequest other = (com.google.cloud.videointelligence.v1beta2.AnnotateVideoRequest) obj;
+    com.google.cloud.videointelligence.v1beta2.AnnotateVideoRequest other =
+        (com.google.cloud.videointelligence.v1beta2.AnnotateVideoRequest) obj;
 
     boolean result = true;
-    result = result && getInputUri()
-        .equals(other.getInputUri());
-    result = result && getInputContent()
-        .equals(other.getInputContent());
+    result = result && getInputUri().equals(other.getInputUri());
+    result = result && getInputContent().equals(other.getInputContent());
     result = result && features_.equals(other.features_);
     result = result && (hasVideoContext() == other.hasVideoContext());
     if (hasVideoContext()) {
-      result = result && getVideoContext()
-          .equals(other.getVideoContext());
+      result = result && getVideoContext().equals(other.getVideoContext());
     }
-    result = result && getOutputUri()
-        .equals(other.getOutputUri());
-    result = result && getLocationId()
-        .equals(other.getLocationId());
+    result = result && getOutputUri().equals(other.getOutputUri());
+    result = result && getLocationId().equals(other.getLocationId());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -548,114 +594,127 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.cloud.videointelligence.v1beta2.AnnotateVideoRequest parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.videointelligence.v1beta2.AnnotateVideoRequest parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.videointelligence.v1beta2.AnnotateVideoRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.videointelligence.v1beta2.AnnotateVideoRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.videointelligence.v1beta2.AnnotateVideoRequest parseFrom(byte[] data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+
+  public static com.google.cloud.videointelligence.v1beta2.AnnotateVideoRequest parseFrom(
+      byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.videointelligence.v1beta2.AnnotateVideoRequest parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.videointelligence.v1beta2.AnnotateVideoRequest parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.videointelligence.v1beta2.AnnotateVideoRequest parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.videointelligence.v1beta2.AnnotateVideoRequest parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.cloud.videointelligence.v1beta2.AnnotateVideoRequest parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.cloud.videointelligence.v1beta2.AnnotateVideoRequest parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.videointelligence.v1beta2.AnnotateVideoRequest parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.videointelligence.v1beta2.AnnotateVideoRequest parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.videointelligence.v1beta2.AnnotateVideoRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  public Builder newBuilderForType() { return newBuilder(); }
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-  public static Builder newBuilder(com.google.cloud.videointelligence.v1beta2.AnnotateVideoRequest prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+
+  public static Builder newBuilder(
+      com.google.cloud.videointelligence.v1beta2.AnnotateVideoRequest prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+
+  @java.lang.Override
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Video annotation request.
    * </pre>
    *
    * Protobuf type {@code google.cloud.videointelligence.v1beta2.AnnotateVideoRequest}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.videointelligence.v1beta2.AnnotateVideoRequest)
       com.google.cloud.videointelligence.v1beta2.AnnotateVideoRequestOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.videointelligence.v1beta2.VideoIntelligenceServiceProto.internal_static_google_cloud_videointelligence_v1beta2_AnnotateVideoRequest_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.videointelligence.v1beta2.VideoIntelligenceServiceProto
+          .internal_static_google_cloud_videointelligence_v1beta2_AnnotateVideoRequest_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.videointelligence.v1beta2.VideoIntelligenceServiceProto.internal_static_google_cloud_videointelligence_v1beta2_AnnotateVideoRequest_fieldAccessorTable
+      return com.google.cloud.videointelligence.v1beta2.VideoIntelligenceServiceProto
+          .internal_static_google_cloud_videointelligence_v1beta2_AnnotateVideoRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.videointelligence.v1beta2.AnnotateVideoRequest.class, com.google.cloud.videointelligence.v1beta2.AnnotateVideoRequest.Builder.class);
+              com.google.cloud.videointelligence.v1beta2.AnnotateVideoRequest.class,
+              com.google.cloud.videointelligence.v1beta2.AnnotateVideoRequest.Builder.class);
     }
 
     // Construct using com.google.cloud.videointelligence.v1beta2.AnnotateVideoRequest.newBuilder()
@@ -663,16 +722,16 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       inputUri_ = "";
@@ -694,15 +753,19 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.videointelligence.v1beta2.VideoIntelligenceServiceProto.internal_static_google_cloud_videointelligence_v1beta2_AnnotateVideoRequest_descriptor;
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.videointelligence.v1beta2.VideoIntelligenceServiceProto
+          .internal_static_google_cloud_videointelligence_v1beta2_AnnotateVideoRequest_descriptor;
     }
 
-    public com.google.cloud.videointelligence.v1beta2.AnnotateVideoRequest getDefaultInstanceForType() {
+    @java.lang.Override
+    public com.google.cloud.videointelligence.v1beta2.AnnotateVideoRequest
+        getDefaultInstanceForType() {
       return com.google.cloud.videointelligence.v1beta2.AnnotateVideoRequest.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.cloud.videointelligence.v1beta2.AnnotateVideoRequest build() {
       com.google.cloud.videointelligence.v1beta2.AnnotateVideoRequest result = buildPartial();
       if (!result.isInitialized()) {
@@ -711,8 +774,10 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.cloud.videointelligence.v1beta2.AnnotateVideoRequest buildPartial() {
-      com.google.cloud.videointelligence.v1beta2.AnnotateVideoRequest result = new com.google.cloud.videointelligence.v1beta2.AnnotateVideoRequest(this);
+      com.google.cloud.videointelligence.v1beta2.AnnotateVideoRequest result =
+          new com.google.cloud.videointelligence.v1beta2.AnnotateVideoRequest(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       result.inputUri_ = inputUri_;
@@ -734,43 +799,54 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+
+    @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+    @java.lang.Override
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+    @java.lang.Override
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
+    @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
+    @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.videointelligence.v1beta2.AnnotateVideoRequest) {
-        return mergeFrom((com.google.cloud.videointelligence.v1beta2.AnnotateVideoRequest)other);
+        return mergeFrom((com.google.cloud.videointelligence.v1beta2.AnnotateVideoRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.cloud.videointelligence.v1beta2.AnnotateVideoRequest other) {
-      if (other == com.google.cloud.videointelligence.v1beta2.AnnotateVideoRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(
+        com.google.cloud.videointelligence.v1beta2.AnnotateVideoRequest other) {
+      if (other
+          == com.google.cloud.videointelligence.v1beta2.AnnotateVideoRequest.getDefaultInstance())
+        return this;
       if (!other.getInputUri().isEmpty()) {
         inputUri_ = other.inputUri_;
         onChanged();
@@ -804,10 +880,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -816,7 +894,9 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.videointelligence.v1beta2.AnnotateVideoRequest) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.cloud.videointelligence.v1beta2.AnnotateVideoRequest)
+                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -825,10 +905,13 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private java.lang.Object inputUri_ = "";
     /**
+     *
+     *
      * <pre>
      * Input video location. Currently, only
      * [Google Cloud Storage](https://cloud.google.com/storage/) URIs are
@@ -847,8 +930,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getInputUri() {
       java.lang.Object ref = inputUri_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         inputUri_ = s;
         return s;
@@ -857,6 +939,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Input video location. Currently, only
      * [Google Cloud Storage](https://cloud.google.com/storage/) URIs are
@@ -872,13 +956,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string input_uri = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getInputUriBytes() {
+    public com.google.protobuf.ByteString getInputUriBytes() {
       java.lang.Object ref = inputUri_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         inputUri_ = b;
         return b;
       } else {
@@ -886,6 +968,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Input video location. Currently, only
      * [Google Cloud Storage](https://cloud.google.com/storage/) URIs are
@@ -901,17 +985,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string input_uri = 1;</code>
      */
-    public Builder setInputUri(
-        java.lang.String value) {
+    public Builder setInputUri(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       inputUri_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Input video location. Currently, only
      * [Google Cloud Storage](https://cloud.google.com/storage/) URIs are
@@ -928,12 +1013,14 @@ private static final long serialVersionUID = 0L;
      * <code>string input_uri = 1;</code>
      */
     public Builder clearInputUri() {
-      
+
       inputUri_ = getDefaultInstance().getInputUri();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Input video location. Currently, only
      * [Google Cloud Storage](https://cloud.google.com/storage/) URIs are
@@ -949,13 +1036,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string input_uri = 1;</code>
      */
-    public Builder setInputUriBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setInputUriBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       inputUri_ = value;
       onChanged();
       return this;
@@ -963,6 +1049,8 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.ByteString inputContent_ = com.google.protobuf.ByteString.EMPTY;
     /**
+     *
+     *
      * <pre>
      * The video data bytes.
      * If unset, the input video(s) should be specified via `input_uri`.
@@ -975,6 +1063,8 @@ private static final long serialVersionUID = 0L;
       return inputContent_;
     }
     /**
+     *
+     *
      * <pre>
      * The video data bytes.
      * If unset, the input video(s) should be specified via `input_uri`.
@@ -985,14 +1075,16 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setInputContent(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       inputContent_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The video data bytes.
      * If unset, the input video(s) should be specified via `input_uri`.
@@ -1002,14 +1094,14 @@ private static final long serialVersionUID = 0L;
      * <code>bytes input_content = 6;</code>
      */
     public Builder clearInputContent() {
-      
+
       inputContent_ = getDefaultInstance().getInputContent();
       onChanged();
       return this;
     }
 
-    private java.util.List<java.lang.Integer> features_ =
-      java.util.Collections.emptyList();
+    private java.util.List<java.lang.Integer> features_ = java.util.Collections.emptyList();
+
     private void ensureFeaturesIsMutable() {
       if (!((bitField0_ & 0x00000004) == 0x00000004)) {
         features_ = new java.util.ArrayList<java.lang.Integer>(features_);
@@ -1017,6 +1109,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Requested video annotation features.
      * </pre>
@@ -1025,9 +1119,12 @@ private static final long serialVersionUID = 0L;
      */
     public java.util.List<com.google.cloud.videointelligence.v1beta2.Feature> getFeaturesList() {
       return new com.google.protobuf.Internal.ListAdapter<
-          java.lang.Integer, com.google.cloud.videointelligence.v1beta2.Feature>(features_, features_converter_);
+          java.lang.Integer, com.google.cloud.videointelligence.v1beta2.Feature>(
+          features_, features_converter_);
     }
     /**
+     *
+     *
      * <pre>
      * Requested video annotation features.
      * </pre>
@@ -1038,6 +1135,8 @@ private static final long serialVersionUID = 0L;
       return features_.size();
     }
     /**
+     *
+     *
      * <pre>
      * Requested video annotation features.
      * </pre>
@@ -1048,6 +1147,8 @@ private static final long serialVersionUID = 0L;
       return features_converter_.convert(features_.get(index));
     }
     /**
+     *
+     *
      * <pre>
      * Requested video annotation features.
      * </pre>
@@ -1065,6 +1166,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Requested video annotation features.
      * </pre>
@@ -1081,6 +1184,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Requested video annotation features.
      * </pre>
@@ -1097,6 +1202,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Requested video annotation features.
      * </pre>
@@ -1110,17 +1217,20 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Requested video annotation features.
      * </pre>
      *
      * <code>repeated .google.cloud.videointelligence.v1beta2.Feature features = 2;</code>
      */
-    public java.util.List<java.lang.Integer>
-    getFeaturesValueList() {
+    public java.util.List<java.lang.Integer> getFeaturesValueList() {
       return java.util.Collections.unmodifiableList(features_);
     }
     /**
+     *
+     *
      * <pre>
      * Requested video annotation features.
      * </pre>
@@ -1131,20 +1241,23 @@ private static final long serialVersionUID = 0L;
       return features_.get(index);
     }
     /**
+     *
+     *
      * <pre>
      * Requested video annotation features.
      * </pre>
      *
      * <code>repeated .google.cloud.videointelligence.v1beta2.Feature features = 2;</code>
      */
-    public Builder setFeaturesValue(
-        int index, int value) {
+    public Builder setFeaturesValue(int index, int value) {
       ensureFeaturesIsMutable();
       features_.set(index, value);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Requested video annotation features.
      * </pre>
@@ -1158,14 +1271,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Requested video annotation features.
      * </pre>
      *
      * <code>repeated .google.cloud.videointelligence.v1beta2.Feature features = 2;</code>
      */
-    public Builder addAllFeaturesValue(
-        java.lang.Iterable<java.lang.Integer> values) {
+    public Builder addAllFeaturesValue(java.lang.Iterable<java.lang.Integer> values) {
       ensureFeaturesIsMutable();
       for (int value : values) {
         features_.add(value);
@@ -1176,8 +1290,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.cloud.videointelligence.v1beta2.VideoContext videoContext_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.videointelligence.v1beta2.VideoContext, com.google.cloud.videointelligence.v1beta2.VideoContext.Builder, com.google.cloud.videointelligence.v1beta2.VideoContextOrBuilder> videoContextBuilder_;
+            com.google.cloud.videointelligence.v1beta2.VideoContext,
+            com.google.cloud.videointelligence.v1beta2.VideoContext.Builder,
+            com.google.cloud.videointelligence.v1beta2.VideoContextOrBuilder>
+        videoContextBuilder_;
     /**
+     *
+     *
      * <pre>
      * Additional video context and/or feature-specific parameters.
      * </pre>
@@ -1188,6 +1307,8 @@ private static final long serialVersionUID = 0L;
       return videoContextBuilder_ != null || videoContext_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Additional video context and/or feature-specific parameters.
      * </pre>
@@ -1196,12 +1317,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.videointelligence.v1beta2.VideoContext getVideoContext() {
       if (videoContextBuilder_ == null) {
-        return videoContext_ == null ? com.google.cloud.videointelligence.v1beta2.VideoContext.getDefaultInstance() : videoContext_;
+        return videoContext_ == null
+            ? com.google.cloud.videointelligence.v1beta2.VideoContext.getDefaultInstance()
+            : videoContext_;
       } else {
         return videoContextBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Additional video context and/or feature-specific parameters.
      * </pre>
@@ -1222,6 +1347,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Additional video context and/or feature-specific parameters.
      * </pre>
@@ -1240,17 +1367,22 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Additional video context and/or feature-specific parameters.
      * </pre>
      *
      * <code>.google.cloud.videointelligence.v1beta2.VideoContext video_context = 3;</code>
      */
-    public Builder mergeVideoContext(com.google.cloud.videointelligence.v1beta2.VideoContext value) {
+    public Builder mergeVideoContext(
+        com.google.cloud.videointelligence.v1beta2.VideoContext value) {
       if (videoContextBuilder_ == null) {
         if (videoContext_ != null) {
           videoContext_ =
-            com.google.cloud.videointelligence.v1beta2.VideoContext.newBuilder(videoContext_).mergeFrom(value).buildPartial();
+              com.google.cloud.videointelligence.v1beta2.VideoContext.newBuilder(videoContext_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           videoContext_ = value;
         }
@@ -1262,6 +1394,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Additional video context and/or feature-specific parameters.
      * </pre>
@@ -1280,33 +1414,42 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Additional video context and/or feature-specific parameters.
      * </pre>
      *
      * <code>.google.cloud.videointelligence.v1beta2.VideoContext video_context = 3;</code>
      */
-    public com.google.cloud.videointelligence.v1beta2.VideoContext.Builder getVideoContextBuilder() {
-      
+    public com.google.cloud.videointelligence.v1beta2.VideoContext.Builder
+        getVideoContextBuilder() {
+
       onChanged();
       return getVideoContextFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Additional video context and/or feature-specific parameters.
      * </pre>
      *
      * <code>.google.cloud.videointelligence.v1beta2.VideoContext video_context = 3;</code>
      */
-    public com.google.cloud.videointelligence.v1beta2.VideoContextOrBuilder getVideoContextOrBuilder() {
+    public com.google.cloud.videointelligence.v1beta2.VideoContextOrBuilder
+        getVideoContextOrBuilder() {
       if (videoContextBuilder_ != null) {
         return videoContextBuilder_.getMessageOrBuilder();
       } else {
-        return videoContext_ == null ?
-            com.google.cloud.videointelligence.v1beta2.VideoContext.getDefaultInstance() : videoContext_;
+        return videoContext_ == null
+            ? com.google.cloud.videointelligence.v1beta2.VideoContext.getDefaultInstance()
+            : videoContext_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Additional video context and/or feature-specific parameters.
      * </pre>
@@ -1314,14 +1457,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.videointelligence.v1beta2.VideoContext video_context = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.videointelligence.v1beta2.VideoContext, com.google.cloud.videointelligence.v1beta2.VideoContext.Builder, com.google.cloud.videointelligence.v1beta2.VideoContextOrBuilder> 
+            com.google.cloud.videointelligence.v1beta2.VideoContext,
+            com.google.cloud.videointelligence.v1beta2.VideoContext.Builder,
+            com.google.cloud.videointelligence.v1beta2.VideoContextOrBuilder>
         getVideoContextFieldBuilder() {
       if (videoContextBuilder_ == null) {
-        videoContextBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.videointelligence.v1beta2.VideoContext, com.google.cloud.videointelligence.v1beta2.VideoContext.Builder, com.google.cloud.videointelligence.v1beta2.VideoContextOrBuilder>(
-                getVideoContext(),
-                getParentForChildren(),
-                isClean());
+        videoContextBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.videointelligence.v1beta2.VideoContext,
+                com.google.cloud.videointelligence.v1beta2.VideoContext.Builder,
+                com.google.cloud.videointelligence.v1beta2.VideoContextOrBuilder>(
+                getVideoContext(), getParentForChildren(), isClean());
         videoContext_ = null;
       }
       return videoContextBuilder_;
@@ -1329,6 +1475,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object outputUri_ = "";
     /**
+     *
+     *
      * <pre>
      * Optional location where the output (in JSON format) should be stored.
      * Currently, only [Google Cloud Storage](https://cloud.google.com/storage/)
@@ -1343,8 +1491,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getOutputUri() {
       java.lang.Object ref = outputUri_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         outputUri_ = s;
         return s;
@@ -1353,6 +1500,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional location where the output (in JSON format) should be stored.
      * Currently, only [Google Cloud Storage](https://cloud.google.com/storage/)
@@ -1364,13 +1513,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string output_uri = 4;</code>
      */
-    public com.google.protobuf.ByteString
-        getOutputUriBytes() {
+    public com.google.protobuf.ByteString getOutputUriBytes() {
       java.lang.Object ref = outputUri_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         outputUri_ = b;
         return b;
       } else {
@@ -1378,6 +1525,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional location where the output (in JSON format) should be stored.
      * Currently, only [Google Cloud Storage](https://cloud.google.com/storage/)
@@ -1389,17 +1538,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string output_uri = 4;</code>
      */
-    public Builder setOutputUri(
-        java.lang.String value) {
+    public Builder setOutputUri(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       outputUri_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional location where the output (in JSON format) should be stored.
      * Currently, only [Google Cloud Storage](https://cloud.google.com/storage/)
@@ -1412,12 +1562,14 @@ private static final long serialVersionUID = 0L;
      * <code>string output_uri = 4;</code>
      */
     public Builder clearOutputUri() {
-      
+
       outputUri_ = getDefaultInstance().getOutputUri();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional location where the output (in JSON format) should be stored.
      * Currently, only [Google Cloud Storage](https://cloud.google.com/storage/)
@@ -1429,13 +1581,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string output_uri = 4;</code>
      */
-    public Builder setOutputUriBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setOutputUriBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       outputUri_ = value;
       onChanged();
       return this;
@@ -1443,6 +1594,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object locationId_ = "";
     /**
+     *
+     *
      * <pre>
      * Optional cloud region where annotation should take place. Supported cloud
      * regions: `us-east1`, `us-west1`, `europe-west1`, `asia-east1`. If no region
@@ -1454,8 +1607,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getLocationId() {
       java.lang.Object ref = locationId_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         locationId_ = s;
         return s;
@@ -1464,6 +1616,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional cloud region where annotation should take place. Supported cloud
      * regions: `us-east1`, `us-west1`, `europe-west1`, `asia-east1`. If no region
@@ -1472,13 +1626,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string location_id = 5;</code>
      */
-    public com.google.protobuf.ByteString
-        getLocationIdBytes() {
+    public com.google.protobuf.ByteString getLocationIdBytes() {
       java.lang.Object ref = locationId_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         locationId_ = b;
         return b;
       } else {
@@ -1486,6 +1638,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional cloud region where annotation should take place. Supported cloud
      * regions: `us-east1`, `us-west1`, `europe-west1`, `asia-east1`. If no region
@@ -1494,17 +1648,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string location_id = 5;</code>
      */
-    public Builder setLocationId(
-        java.lang.String value) {
+    public Builder setLocationId(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       locationId_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional cloud region where annotation should take place. Supported cloud
      * regions: `us-east1`, `us-west1`, `europe-west1`, `asia-east1`. If no region
@@ -1514,12 +1669,14 @@ private static final long serialVersionUID = 0L;
      * <code>string location_id = 5;</code>
      */
     public Builder clearLocationId() {
-      
+
       locationId_ = getDefaultInstance().getLocationId();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional cloud region where annotation should take place. Supported cloud
      * regions: `us-east1`, `us-west1`, `europe-west1`, `asia-east1`. If no region
@@ -1528,50 +1685,54 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string location_id = 5;</code>
      */
-    public Builder setLocationIdBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setLocationIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       locationId_ = value;
       onChanged();
       return this;
     }
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+
+    @java.lang.Override
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.videointelligence.v1beta2.AnnotateVideoRequest)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.videointelligence.v1beta2.AnnotateVideoRequest)
-  private static final com.google.cloud.videointelligence.v1beta2.AnnotateVideoRequest DEFAULT_INSTANCE;
+  private static final com.google.cloud.videointelligence.v1beta2.AnnotateVideoRequest
+      DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.videointelligence.v1beta2.AnnotateVideoRequest();
   }
 
-  public static com.google.cloud.videointelligence.v1beta2.AnnotateVideoRequest getDefaultInstance() {
+  public static com.google.cloud.videointelligence.v1beta2.AnnotateVideoRequest
+      getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<AnnotateVideoRequest>
-      PARSER = new com.google.protobuf.AbstractParser<AnnotateVideoRequest>() {
-    public AnnotateVideoRequest parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-        return new AnnotateVideoRequest(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<AnnotateVideoRequest> PARSER =
+      new com.google.protobuf.AbstractParser<AnnotateVideoRequest>() {
+        @java.lang.Override
+        public AnnotateVideoRequest parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new AnnotateVideoRequest(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<AnnotateVideoRequest> parser() {
     return PARSER;
@@ -1582,9 +1743,9 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
-  public com.google.cloud.videointelligence.v1beta2.AnnotateVideoRequest getDefaultInstanceForType() {
+  @java.lang.Override
+  public com.google.cloud.videointelligence.v1beta2.AnnotateVideoRequest
+      getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

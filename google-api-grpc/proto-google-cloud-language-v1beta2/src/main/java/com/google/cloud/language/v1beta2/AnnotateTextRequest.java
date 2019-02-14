@@ -4,6 +4,8 @@
 package com.google.cloud.language.v1beta2;
 
 /**
+ *
+ *
  * <pre>
  * The request message for the text annotation API, which can perform multiple
  * analysis types (sentiment, entities, and syntax) in one call.
@@ -11,29 +13,33 @@ package com.google.cloud.language.v1beta2;
  *
  * Protobuf type {@code google.cloud.language.v1beta2.AnnotateTextRequest}
  */
-public  final class AnnotateTextRequest extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class AnnotateTextRequest extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.language.v1beta2.AnnotateTextRequest)
     AnnotateTextRequestOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use AnnotateTextRequest.newBuilder() to construct.
   private AnnotateTextRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private AnnotateTextRequest() {
     encodingType_ = 0;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private AnnotateTextRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -45,74 +51,89 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
-          case 10: {
-            com.google.cloud.language.v1beta2.Document.Builder subBuilder = null;
-            if (document_ != null) {
-              subBuilder = document_.toBuilder();
-            }
-            document_ = input.readMessage(com.google.cloud.language.v1beta2.Document.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(document_);
-              document_ = subBuilder.buildPartial();
-            }
+          case 10:
+            {
+              com.google.cloud.language.v1beta2.Document.Builder subBuilder = null;
+              if (document_ != null) {
+                subBuilder = document_.toBuilder();
+              }
+              document_ =
+                  input.readMessage(
+                      com.google.cloud.language.v1beta2.Document.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(document_);
+                document_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 18: {
-            com.google.cloud.language.v1beta2.AnnotateTextRequest.Features.Builder subBuilder = null;
-            if (features_ != null) {
-              subBuilder = features_.toBuilder();
+              break;
             }
-            features_ = input.readMessage(com.google.cloud.language.v1beta2.AnnotateTextRequest.Features.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(features_);
-              features_ = subBuilder.buildPartial();
+          case 18:
+            {
+              com.google.cloud.language.v1beta2.AnnotateTextRequest.Features.Builder subBuilder =
+                  null;
+              if (features_ != null) {
+                subBuilder = features_.toBuilder();
+              }
+              features_ =
+                  input.readMessage(
+                      com.google.cloud.language.v1beta2.AnnotateTextRequest.Features.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(features_);
+                features_ = subBuilder.buildPartial();
+              }
+
+              break;
             }
+          case 24:
+            {
+              int rawValue = input.readEnum();
 
-            break;
-          }
-          case 24: {
-            int rawValue = input.readEnum();
-
-            encodingType_ = rawValue;
-            break;
-          }
+              encodingType_ = rawValue;
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.language.v1beta2.LanguageServiceProto.internal_static_google_cloud_language_v1beta2_AnnotateTextRequest_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.language.v1beta2.LanguageServiceProto
+        .internal_static_google_cloud_language_v1beta2_AnnotateTextRequest_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.language.v1beta2.LanguageServiceProto.internal_static_google_cloud_language_v1beta2_AnnotateTextRequest_fieldAccessorTable
+    return com.google.cloud.language.v1beta2.LanguageServiceProto
+        .internal_static_google_cloud_language_v1beta2_AnnotateTextRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.language.v1beta2.AnnotateTextRequest.class, com.google.cloud.language.v1beta2.AnnotateTextRequest.Builder.class);
+            com.google.cloud.language.v1beta2.AnnotateTextRequest.class,
+            com.google.cloud.language.v1beta2.AnnotateTextRequest.Builder.class);
   }
 
-  public interface FeaturesOrBuilder extends
+  public interface FeaturesOrBuilder
+      extends
       // @@protoc_insertion_point(interface_extends:google.cloud.language.v1beta2.AnnotateTextRequest.Features)
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     *
+     *
      * <pre>
      * Extract syntax information.
      * </pre>
@@ -122,6 +143,8 @@ private static final long serialVersionUID = 0L;
     boolean getExtractSyntax();
 
     /**
+     *
+     *
      * <pre>
      * Extract entities.
      * </pre>
@@ -131,6 +154,8 @@ private static final long serialVersionUID = 0L;
     boolean getExtractEntities();
 
     /**
+     *
+     *
      * <pre>
      * Extract document-level sentiment.
      * </pre>
@@ -140,6 +165,8 @@ private static final long serialVersionUID = 0L;
     boolean getExtractDocumentSentiment();
 
     /**
+     *
+     *
      * <pre>
      * Extract entities and their associated sentiment.
      * </pre>
@@ -149,6 +176,8 @@ private static final long serialVersionUID = 0L;
     boolean getExtractEntitySentiment();
 
     /**
+     *
+     *
      * <pre>
      * Classify the full document into categories.
      * </pre>
@@ -158,6 +187,8 @@ private static final long serialVersionUID = 0L;
     boolean getClassifyText();
   }
   /**
+   *
+   *
    * <pre>
    * All available features for sentiment, syntax, and semantic analysis.
    * Setting each one to true will enable that specific analysis for the input.
@@ -165,15 +196,16 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.cloud.language.v1beta2.AnnotateTextRequest.Features}
    */
-  public  static final class Features extends
-      com.google.protobuf.GeneratedMessageV3 implements
+  public static final class Features extends com.google.protobuf.GeneratedMessageV3
+      implements
       // @@protoc_insertion_point(message_implements:google.cloud.language.v1beta2.AnnotateTextRequest.Features)
       FeaturesOrBuilder {
-  private static final long serialVersionUID = 0L;
+    private static final long serialVersionUID = 0L;
     // Use Features.newBuilder() to construct.
     private Features(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
+
     private Features() {
       extractSyntax_ = false;
       extractEntities_ = false;
@@ -183,15 +215,18 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
+
     private Features(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -203,65 +238,70 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
+            case 8:
+              {
+                extractSyntax_ = input.readBool();
+                break;
               }
-              break;
-            }
-            case 8: {
-
-              extractSyntax_ = input.readBool();
-              break;
-            }
-            case 16: {
-
-              extractEntities_ = input.readBool();
-              break;
-            }
-            case 24: {
-
-              extractDocumentSentiment_ = input.readBool();
-              break;
-            }
-            case 32: {
-
-              extractEntitySentiment_ = input.readBool();
-              break;
-            }
-            case 48: {
-
-              classifyText_ = input.readBool();
-              break;
-            }
+            case 16:
+              {
+                extractEntities_ = input.readBool();
+                break;
+              }
+            case 24:
+              {
+                extractDocumentSentiment_ = input.readBool();
+                break;
+              }
+            case 32:
+              {
+                extractEntitySentiment_ = input.readBool();
+                break;
+              }
+            case 48:
+              {
+                classifyText_ = input.readBool();
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.language.v1beta2.LanguageServiceProto.internal_static_google_cloud_language_v1beta2_AnnotateTextRequest_Features_descriptor;
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.language.v1beta2.LanguageServiceProto
+          .internal_static_google_cloud_language_v1beta2_AnnotateTextRequest_Features_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.language.v1beta2.LanguageServiceProto.internal_static_google_cloud_language_v1beta2_AnnotateTextRequest_Features_fieldAccessorTable
+      return com.google.cloud.language.v1beta2.LanguageServiceProto
+          .internal_static_google_cloud_language_v1beta2_AnnotateTextRequest_Features_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.language.v1beta2.AnnotateTextRequest.Features.class, com.google.cloud.language.v1beta2.AnnotateTextRequest.Features.Builder.class);
+              com.google.cloud.language.v1beta2.AnnotateTextRequest.Features.class,
+              com.google.cloud.language.v1beta2.AnnotateTextRequest.Features.Builder.class);
     }
 
     public static final int EXTRACT_SYNTAX_FIELD_NUMBER = 1;
     private boolean extractSyntax_;
     /**
+     *
+     *
      * <pre>
      * Extract syntax information.
      * </pre>
@@ -275,6 +315,8 @@ private static final long serialVersionUID = 0L;
     public static final int EXTRACT_ENTITIES_FIELD_NUMBER = 2;
     private boolean extractEntities_;
     /**
+     *
+     *
      * <pre>
      * Extract entities.
      * </pre>
@@ -288,6 +330,8 @@ private static final long serialVersionUID = 0L;
     public static final int EXTRACT_DOCUMENT_SENTIMENT_FIELD_NUMBER = 3;
     private boolean extractDocumentSentiment_;
     /**
+     *
+     *
      * <pre>
      * Extract document-level sentiment.
      * </pre>
@@ -301,6 +345,8 @@ private static final long serialVersionUID = 0L;
     public static final int EXTRACT_ENTITY_SENTIMENT_FIELD_NUMBER = 4;
     private boolean extractEntitySentiment_;
     /**
+     *
+     *
      * <pre>
      * Extract entities and their associated sentiment.
      * </pre>
@@ -314,6 +360,8 @@ private static final long serialVersionUID = 0L;
     public static final int CLASSIFY_TEXT_FIELD_NUMBER = 6;
     private boolean classifyText_;
     /**
+     *
+     *
      * <pre>
      * Classify the full document into categories.
      * </pre>
@@ -325,6 +373,8 @@ private static final long serialVersionUID = 0L;
     }
 
     private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -334,8 +384,8 @@ private static final long serialVersionUID = 0L;
       return true;
     }
 
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
       if (extractSyntax_ != false) {
         output.writeBool(1, extractSyntax_);
       }
@@ -354,30 +404,26 @@ private static final long serialVersionUID = 0L;
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
       if (extractSyntax_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(1, extractSyntax_);
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, extractSyntax_);
       }
       if (extractEntities_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(2, extractEntities_);
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, extractEntities_);
       }
       if (extractDocumentSentiment_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(3, extractDocumentSentiment_);
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, extractDocumentSentiment_);
       }
       if (extractEntitySentiment_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(4, extractEntitySentiment_);
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(4, extractEntitySentiment_);
       }
       if (classifyText_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(6, classifyText_);
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(6, classifyText_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -387,24 +433,20 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-       return true;
+        return true;
       }
       if (!(obj instanceof com.google.cloud.language.v1beta2.AnnotateTextRequest.Features)) {
         return super.equals(obj);
       }
-      com.google.cloud.language.v1beta2.AnnotateTextRequest.Features other = (com.google.cloud.language.v1beta2.AnnotateTextRequest.Features) obj;
+      com.google.cloud.language.v1beta2.AnnotateTextRequest.Features other =
+          (com.google.cloud.language.v1beta2.AnnotateTextRequest.Features) obj;
 
       boolean result = true;
-      result = result && (getExtractSyntax()
-          == other.getExtractSyntax());
-      result = result && (getExtractEntities()
-          == other.getExtractEntities());
-      result = result && (getExtractDocumentSentiment()
-          == other.getExtractDocumentSentiment());
-      result = result && (getExtractEntitySentiment()
-          == other.getExtractEntitySentiment());
-      result = result && (getClassifyText()
-          == other.getClassifyText());
+      result = result && (getExtractSyntax() == other.getExtractSyntax());
+      result = result && (getExtractEntities() == other.getExtractEntities());
+      result = result && (getExtractDocumentSentiment() == other.getExtractDocumentSentiment());
+      result = result && (getExtractEntitySentiment() == other.getExtractEntitySentiment());
+      result = result && (getClassifyText() == other.getClassifyText());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -417,105 +459,109 @@ private static final long serialVersionUID = 0L;
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + EXTRACT_SYNTAX_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getExtractSyntax());
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getExtractSyntax());
       hash = (37 * hash) + EXTRACT_ENTITIES_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getExtractEntities());
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getExtractEntities());
       hash = (37 * hash) + EXTRACT_DOCUMENT_SENTIMENT_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getExtractDocumentSentiment());
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getExtractDocumentSentiment());
       hash = (37 * hash) + EXTRACT_ENTITY_SENTIMENT_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getExtractEntitySentiment());
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getExtractEntitySentiment());
       hash = (37 * hash) + CLASSIFY_TEXT_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getClassifyText());
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getClassifyText());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
     public static com.google.cloud.language.v1beta2.AnnotateTextRequest.Features parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.cloud.language.v1beta2.AnnotateTextRequest.Features parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static com.google.cloud.language.v1beta2.AnnotateTextRequest.Features parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.cloud.language.v1beta2.AnnotateTextRequest.Features parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.google.cloud.language.v1beta2.AnnotateTextRequest.Features parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+
+    public static com.google.cloud.language.v1beta2.AnnotateTextRequest.Features parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.cloud.language.v1beta2.AnnotateTextRequest.Features parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.google.cloud.language.v1beta2.AnnotateTextRequest.Features parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
+
     public static com.google.cloud.language.v1beta2.AnnotateTextRequest.Features parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
-    public static com.google.cloud.language.v1beta2.AnnotateTextRequest.Features parseDelimitedFrom(java.io.InputStream input)
+
+    public static com.google.cloud.language.v1beta2.AnnotateTextRequest.Features parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
+
     public static com.google.cloud.language.v1beta2.AnnotateTextRequest.Features parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
     }
+
+    public static com.google.cloud.language.v1beta2.AnnotateTextRequest.Features parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
     public static com.google.cloud.language.v1beta2.AnnotateTextRequest.Features parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
+
     public static com.google.cloud.language.v1beta2.AnnotateTextRequest.Features parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
 
-    public Builder newBuilderForType() { return newBuilder(); }
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.google.cloud.language.v1beta2.AnnotateTextRequest.Features prototype) {
+
+    public static Builder newBuilder(
+        com.google.cloud.language.v1beta2.AnnotateTextRequest.Features prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+
+    @java.lang.Override
     public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
     @java.lang.Override
@@ -525,6 +571,8 @@ private static final long serialVersionUID = 0L;
       return builder;
     }
     /**
+     *
+     *
      * <pre>
      * All available features for sentiment, syntax, and semantic analysis.
      * Setting each one to true will enable that specific analysis for the input.
@@ -532,20 +580,24 @@ private static final long serialVersionUID = 0L;
      *
      * Protobuf type {@code google.cloud.language.v1beta2.AnnotateTextRequest.Features}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
         // @@protoc_insertion_point(builder_implements:google.cloud.language.v1beta2.AnnotateTextRequest.Features)
         com.google.cloud.language.v1beta2.AnnotateTextRequest.FeaturesOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.google.cloud.language.v1beta2.LanguageServiceProto.internal_static_google_cloud_language_v1beta2_AnnotateTextRequest_Features_descriptor;
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.language.v1beta2.LanguageServiceProto
+            .internal_static_google_cloud_language_v1beta2_AnnotateTextRequest_Features_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.google.cloud.language.v1beta2.LanguageServiceProto.internal_static_google_cloud_language_v1beta2_AnnotateTextRequest_Features_fieldAccessorTable
+        return com.google.cloud.language.v1beta2.LanguageServiceProto
+            .internal_static_google_cloud_language_v1beta2_AnnotateTextRequest_Features_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.google.cloud.language.v1beta2.AnnotateTextRequest.Features.class, com.google.cloud.language.v1beta2.AnnotateTextRequest.Features.Builder.class);
+                com.google.cloud.language.v1beta2.AnnotateTextRequest.Features.class,
+                com.google.cloud.language.v1beta2.AnnotateTextRequest.Features.Builder.class);
       }
 
       // Construct using com.google.cloud.language.v1beta2.AnnotateTextRequest.Features.newBuilder()
@@ -553,16 +605,16 @@ private static final long serialVersionUID = 0L;
         maybeForceBuilderInitialization();
       }
 
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
+
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
+
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         extractSyntax_ = false;
@@ -578,15 +630,19 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.google.cloud.language.v1beta2.LanguageServiceProto.internal_static_google_cloud_language_v1beta2_AnnotateTextRequest_Features_descriptor;
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.language.v1beta2.LanguageServiceProto
+            .internal_static_google_cloud_language_v1beta2_AnnotateTextRequest_Features_descriptor;
       }
 
-      public com.google.cloud.language.v1beta2.AnnotateTextRequest.Features getDefaultInstanceForType() {
+      @java.lang.Override
+      public com.google.cloud.language.v1beta2.AnnotateTextRequest.Features
+          getDefaultInstanceForType() {
         return com.google.cloud.language.v1beta2.AnnotateTextRequest.Features.getDefaultInstance();
       }
 
+      @java.lang.Override
       public com.google.cloud.language.v1beta2.AnnotateTextRequest.Features build() {
         com.google.cloud.language.v1beta2.AnnotateTextRequest.Features result = buildPartial();
         if (!result.isInitialized()) {
@@ -595,8 +651,10 @@ private static final long serialVersionUID = 0L;
         return result;
       }
 
+      @java.lang.Override
       public com.google.cloud.language.v1beta2.AnnotateTextRequest.Features buildPartial() {
-        com.google.cloud.language.v1beta2.AnnotateTextRequest.Features result = new com.google.cloud.language.v1beta2.AnnotateTextRequest.Features(this);
+        com.google.cloud.language.v1beta2.AnnotateTextRequest.Features result =
+            new com.google.cloud.language.v1beta2.AnnotateTextRequest.Features(this);
         result.extractSyntax_ = extractSyntax_;
         result.extractEntities_ = extractEntities_;
         result.extractDocumentSentiment_ = extractDocumentSentiment_;
@@ -606,43 +664,56 @@ private static final long serialVersionUID = 0L;
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+
+      @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index,
+          java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+
+      @java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.google.cloud.language.v1beta2.AnnotateTextRequest.Features) {
-          return mergeFrom((com.google.cloud.language.v1beta2.AnnotateTextRequest.Features)other);
+          return mergeFrom((com.google.cloud.language.v1beta2.AnnotateTextRequest.Features) other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.google.cloud.language.v1beta2.AnnotateTextRequest.Features other) {
-        if (other == com.google.cloud.language.v1beta2.AnnotateTextRequest.Features.getDefaultInstance()) return this;
+      public Builder mergeFrom(
+          com.google.cloud.language.v1beta2.AnnotateTextRequest.Features other) {
+        if (other
+            == com.google.cloud.language.v1beta2.AnnotateTextRequest.Features.getDefaultInstance())
+          return this;
         if (other.getExtractSyntax() != false) {
           setExtractSyntax(other.getExtractSyntax());
         }
@@ -663,10 +734,12 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -675,7 +748,9 @@ private static final long serialVersionUID = 0L;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.google.cloud.language.v1beta2.AnnotateTextRequest.Features) e.getUnfinishedMessage();
+          parsedMessage =
+              (com.google.cloud.language.v1beta2.AnnotateTextRequest.Features)
+                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -685,8 +760,10 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
-      private boolean extractSyntax_ ;
+      private boolean extractSyntax_;
       /**
+       *
+       *
        * <pre>
        * Extract syntax information.
        * </pre>
@@ -697,6 +774,8 @@ private static final long serialVersionUID = 0L;
         return extractSyntax_;
       }
       /**
+       *
+       *
        * <pre>
        * Extract syntax information.
        * </pre>
@@ -704,12 +783,14 @@ private static final long serialVersionUID = 0L;
        * <code>bool extract_syntax = 1;</code>
        */
       public Builder setExtractSyntax(boolean value) {
-        
+
         extractSyntax_ = value;
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Extract syntax information.
        * </pre>
@@ -717,14 +798,16 @@ private static final long serialVersionUID = 0L;
        * <code>bool extract_syntax = 1;</code>
        */
       public Builder clearExtractSyntax() {
-        
+
         extractSyntax_ = false;
         onChanged();
         return this;
       }
 
-      private boolean extractEntities_ ;
+      private boolean extractEntities_;
       /**
+       *
+       *
        * <pre>
        * Extract entities.
        * </pre>
@@ -735,6 +818,8 @@ private static final long serialVersionUID = 0L;
         return extractEntities_;
       }
       /**
+       *
+       *
        * <pre>
        * Extract entities.
        * </pre>
@@ -742,12 +827,14 @@ private static final long serialVersionUID = 0L;
        * <code>bool extract_entities = 2;</code>
        */
       public Builder setExtractEntities(boolean value) {
-        
+
         extractEntities_ = value;
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Extract entities.
        * </pre>
@@ -755,14 +842,16 @@ private static final long serialVersionUID = 0L;
        * <code>bool extract_entities = 2;</code>
        */
       public Builder clearExtractEntities() {
-        
+
         extractEntities_ = false;
         onChanged();
         return this;
       }
 
-      private boolean extractDocumentSentiment_ ;
+      private boolean extractDocumentSentiment_;
       /**
+       *
+       *
        * <pre>
        * Extract document-level sentiment.
        * </pre>
@@ -773,6 +862,8 @@ private static final long serialVersionUID = 0L;
         return extractDocumentSentiment_;
       }
       /**
+       *
+       *
        * <pre>
        * Extract document-level sentiment.
        * </pre>
@@ -780,12 +871,14 @@ private static final long serialVersionUID = 0L;
        * <code>bool extract_document_sentiment = 3;</code>
        */
       public Builder setExtractDocumentSentiment(boolean value) {
-        
+
         extractDocumentSentiment_ = value;
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Extract document-level sentiment.
        * </pre>
@@ -793,14 +886,16 @@ private static final long serialVersionUID = 0L;
        * <code>bool extract_document_sentiment = 3;</code>
        */
       public Builder clearExtractDocumentSentiment() {
-        
+
         extractDocumentSentiment_ = false;
         onChanged();
         return this;
       }
 
-      private boolean extractEntitySentiment_ ;
+      private boolean extractEntitySentiment_;
       /**
+       *
+       *
        * <pre>
        * Extract entities and their associated sentiment.
        * </pre>
@@ -811,6 +906,8 @@ private static final long serialVersionUID = 0L;
         return extractEntitySentiment_;
       }
       /**
+       *
+       *
        * <pre>
        * Extract entities and their associated sentiment.
        * </pre>
@@ -818,12 +915,14 @@ private static final long serialVersionUID = 0L;
        * <code>bool extract_entity_sentiment = 4;</code>
        */
       public Builder setExtractEntitySentiment(boolean value) {
-        
+
         extractEntitySentiment_ = value;
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Extract entities and their associated sentiment.
        * </pre>
@@ -831,14 +930,16 @@ private static final long serialVersionUID = 0L;
        * <code>bool extract_entity_sentiment = 4;</code>
        */
       public Builder clearExtractEntitySentiment() {
-        
+
         extractEntitySentiment_ = false;
         onChanged();
         return this;
       }
 
-      private boolean classifyText_ ;
+      private boolean classifyText_;
       /**
+       *
+       *
        * <pre>
        * Classify the full document into categories.
        * </pre>
@@ -849,6 +950,8 @@ private static final long serialVersionUID = 0L;
         return classifyText_;
       }
       /**
+       *
+       *
        * <pre>
        * Classify the full document into categories.
        * </pre>
@@ -856,12 +959,14 @@ private static final long serialVersionUID = 0L;
        * <code>bool classify_text = 6;</code>
        */
       public Builder setClassifyText(boolean value) {
-        
+
         classifyText_ = value;
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Classify the full document into categories.
        * </pre>
@@ -869,44 +974,50 @@ private static final long serialVersionUID = 0L;
        * <code>bool classify_text = 6;</code>
        */
       public Builder clearClassifyText() {
-        
+
         classifyText_ = false;
         onChanged();
         return this;
       }
+
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
       }
 
-
       // @@protoc_insertion_point(builder_scope:google.cloud.language.v1beta2.AnnotateTextRequest.Features)
     }
 
     // @@protoc_insertion_point(class_scope:google.cloud.language.v1beta2.AnnotateTextRequest.Features)
-    private static final com.google.cloud.language.v1beta2.AnnotateTextRequest.Features DEFAULT_INSTANCE;
+    private static final com.google.cloud.language.v1beta2.AnnotateTextRequest.Features
+        DEFAULT_INSTANCE;
+
     static {
       DEFAULT_INSTANCE = new com.google.cloud.language.v1beta2.AnnotateTextRequest.Features();
     }
 
-    public static com.google.cloud.language.v1beta2.AnnotateTextRequest.Features getDefaultInstance() {
+    public static com.google.cloud.language.v1beta2.AnnotateTextRequest.Features
+        getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<Features>
-        PARSER = new com.google.protobuf.AbstractParser<Features>() {
-      public Features parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Features(input, extensionRegistry);
-      }
-    };
+    private static final com.google.protobuf.Parser<Features> PARSER =
+        new com.google.protobuf.AbstractParser<Features>() {
+          @java.lang.Override
+          public Features parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new Features(input, extensionRegistry);
+          }
+        };
 
     public static com.google.protobuf.Parser<Features> parser() {
       return PARSER;
@@ -917,15 +1028,18 @@ private static final long serialVersionUID = 0L;
       return PARSER;
     }
 
-    public com.google.cloud.language.v1beta2.AnnotateTextRequest.Features getDefaultInstanceForType() {
+    @java.lang.Override
+    public com.google.cloud.language.v1beta2.AnnotateTextRequest.Features
+        getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
-
   }
 
   public static final int DOCUMENT_FIELD_NUMBER = 1;
   private com.google.cloud.language.v1beta2.Document document_;
   /**
+   *
+   *
    * <pre>
    * Input document.
    * </pre>
@@ -936,6 +1050,8 @@ private static final long serialVersionUID = 0L;
     return document_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Input document.
    * </pre>
@@ -943,9 +1059,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.cloud.language.v1beta2.Document document = 1;</code>
    */
   public com.google.cloud.language.v1beta2.Document getDocument() {
-    return document_ == null ? com.google.cloud.language.v1beta2.Document.getDefaultInstance() : document_;
+    return document_ == null
+        ? com.google.cloud.language.v1beta2.Document.getDefaultInstance()
+        : document_;
   }
   /**
+   *
+   *
    * <pre>
    * Input document.
    * </pre>
@@ -959,6 +1079,8 @@ private static final long serialVersionUID = 0L;
   public static final int FEATURES_FIELD_NUMBER = 2;
   private com.google.cloud.language.v1beta2.AnnotateTextRequest.Features features_;
   /**
+   *
+   *
    * <pre>
    * The enabled features.
    * </pre>
@@ -969,6 +1091,8 @@ private static final long serialVersionUID = 0L;
     return features_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * The enabled features.
    * </pre>
@@ -976,22 +1100,29 @@ private static final long serialVersionUID = 0L;
    * <code>.google.cloud.language.v1beta2.AnnotateTextRequest.Features features = 2;</code>
    */
   public com.google.cloud.language.v1beta2.AnnotateTextRequest.Features getFeatures() {
-    return features_ == null ? com.google.cloud.language.v1beta2.AnnotateTextRequest.Features.getDefaultInstance() : features_;
+    return features_ == null
+        ? com.google.cloud.language.v1beta2.AnnotateTextRequest.Features.getDefaultInstance()
+        : features_;
   }
   /**
+   *
+   *
    * <pre>
    * The enabled features.
    * </pre>
    *
    * <code>.google.cloud.language.v1beta2.AnnotateTextRequest.Features features = 2;</code>
    */
-  public com.google.cloud.language.v1beta2.AnnotateTextRequest.FeaturesOrBuilder getFeaturesOrBuilder() {
+  public com.google.cloud.language.v1beta2.AnnotateTextRequest.FeaturesOrBuilder
+      getFeaturesOrBuilder() {
     return getFeatures();
   }
 
   public static final int ENCODING_TYPE_FIELD_NUMBER = 3;
   private int encodingType_;
   /**
+   *
+   *
    * <pre>
    * The encoding type used by the API to calculate offsets.
    * </pre>
@@ -1002,6 +1133,8 @@ private static final long serialVersionUID = 0L;
     return encodingType_;
   }
   /**
+   *
+   *
    * <pre>
    * The encoding type used by the API to calculate offsets.
    * </pre>
@@ -1009,11 +1142,15 @@ private static final long serialVersionUID = 0L;
    * <code>.google.cloud.language.v1beta2.EncodingType encoding_type = 3;</code>
    */
   public com.google.cloud.language.v1beta2.EncodingType getEncodingType() {
-    com.google.cloud.language.v1beta2.EncodingType result = com.google.cloud.language.v1beta2.EncodingType.valueOf(encodingType_);
+    @SuppressWarnings("deprecation")
+    com.google.cloud.language.v1beta2.EncodingType result =
+        com.google.cloud.language.v1beta2.EncodingType.valueOf(encodingType_);
     return result == null ? com.google.cloud.language.v1beta2.EncodingType.UNRECOGNIZED : result;
   }
 
   private byte memoizedIsInitialized = -1;
+
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -1023,8 +1160,8 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  @java.lang.Override
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (document_ != null) {
       output.writeMessage(1, getDocument());
     }
@@ -1037,22 +1174,20 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
 
     size = 0;
     if (document_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getDocument());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getDocument());
     }
     if (features_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getFeatures());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getFeatures());
     }
     if (encodingType_ != com.google.cloud.language.v1beta2.EncodingType.NONE.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(3, encodingType_);
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(3, encodingType_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1062,23 +1197,22 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.language.v1beta2.AnnotateTextRequest)) {
       return super.equals(obj);
     }
-    com.google.cloud.language.v1beta2.AnnotateTextRequest other = (com.google.cloud.language.v1beta2.AnnotateTextRequest) obj;
+    com.google.cloud.language.v1beta2.AnnotateTextRequest other =
+        (com.google.cloud.language.v1beta2.AnnotateTextRequest) obj;
 
     boolean result = true;
     result = result && (hasDocument() == other.hasDocument());
     if (hasDocument()) {
-      result = result && getDocument()
-          .equals(other.getDocument());
+      result = result && getDocument().equals(other.getDocument());
     }
     result = result && (hasFeatures() == other.hasFeatures());
     if (hasFeatures()) {
-      result = result && getFeatures()
-          .equals(other.getFeatures());
+      result = result && getFeatures().equals(other.getFeatures());
     }
     result = result && encodingType_ == other.encodingType_;
     result = result && unknownFields.equals(other.unknownFields);
@@ -1108,94 +1242,104 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.cloud.language.v1beta2.AnnotateTextRequest parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.language.v1beta2.AnnotateTextRequest parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.language.v1beta2.AnnotateTextRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.language.v1beta2.AnnotateTextRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.language.v1beta2.AnnotateTextRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.language.v1beta2.AnnotateTextRequest parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.language.v1beta2.AnnotateTextRequest parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.language.v1beta2.AnnotateTextRequest parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.language.v1beta2.AnnotateTextRequest parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.cloud.language.v1beta2.AnnotateTextRequest parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.cloud.language.v1beta2.AnnotateTextRequest parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.language.v1beta2.AnnotateTextRequest parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.language.v1beta2.AnnotateTextRequest parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.language.v1beta2.AnnotateTextRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  public Builder newBuilderForType() { return newBuilder(); }
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-  public static Builder newBuilder(com.google.cloud.language.v1beta2.AnnotateTextRequest prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+
+  public static Builder newBuilder(
+      com.google.cloud.language.v1beta2.AnnotateTextRequest prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+
+  @java.lang.Override
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * The request message for the text annotation API, which can perform multiple
    * analysis types (sentiment, entities, and syntax) in one call.
@@ -1203,20 +1347,23 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.cloud.language.v1beta2.AnnotateTextRequest}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.language.v1beta2.AnnotateTextRequest)
       com.google.cloud.language.v1beta2.AnnotateTextRequestOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.language.v1beta2.LanguageServiceProto.internal_static_google_cloud_language_v1beta2_AnnotateTextRequest_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.language.v1beta2.LanguageServiceProto
+          .internal_static_google_cloud_language_v1beta2_AnnotateTextRequest_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.language.v1beta2.LanguageServiceProto.internal_static_google_cloud_language_v1beta2_AnnotateTextRequest_fieldAccessorTable
+      return com.google.cloud.language.v1beta2.LanguageServiceProto
+          .internal_static_google_cloud_language_v1beta2_AnnotateTextRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.language.v1beta2.AnnotateTextRequest.class, com.google.cloud.language.v1beta2.AnnotateTextRequest.Builder.class);
+              com.google.cloud.language.v1beta2.AnnotateTextRequest.class,
+              com.google.cloud.language.v1beta2.AnnotateTextRequest.Builder.class);
     }
 
     // Construct using com.google.cloud.language.v1beta2.AnnotateTextRequest.newBuilder()
@@ -1224,16 +1371,16 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       if (documentBuilder_ == null) {
@@ -1253,15 +1400,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.language.v1beta2.LanguageServiceProto.internal_static_google_cloud_language_v1beta2_AnnotateTextRequest_descriptor;
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.language.v1beta2.LanguageServiceProto
+          .internal_static_google_cloud_language_v1beta2_AnnotateTextRequest_descriptor;
     }
 
+    @java.lang.Override
     public com.google.cloud.language.v1beta2.AnnotateTextRequest getDefaultInstanceForType() {
       return com.google.cloud.language.v1beta2.AnnotateTextRequest.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.cloud.language.v1beta2.AnnotateTextRequest build() {
       com.google.cloud.language.v1beta2.AnnotateTextRequest result = buildPartial();
       if (!result.isInitialized()) {
@@ -1270,8 +1420,10 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.cloud.language.v1beta2.AnnotateTextRequest buildPartial() {
-      com.google.cloud.language.v1beta2.AnnotateTextRequest result = new com.google.cloud.language.v1beta2.AnnotateTextRequest(this);
+      com.google.cloud.language.v1beta2.AnnotateTextRequest result =
+          new com.google.cloud.language.v1beta2.AnnotateTextRequest(this);
       if (documentBuilder_ == null) {
         result.document_ = document_;
       } else {
@@ -1287,35 +1439,43 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+
+    @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+    @java.lang.Override
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+    @java.lang.Override
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
+    @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
+    @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.language.v1beta2.AnnotateTextRequest) {
-        return mergeFrom((com.google.cloud.language.v1beta2.AnnotateTextRequest)other);
+        return mergeFrom((com.google.cloud.language.v1beta2.AnnotateTextRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -1323,7 +1483,8 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.cloud.language.v1beta2.AnnotateTextRequest other) {
-      if (other == com.google.cloud.language.v1beta2.AnnotateTextRequest.getDefaultInstance()) return this;
+      if (other == com.google.cloud.language.v1beta2.AnnotateTextRequest.getDefaultInstance())
+        return this;
       if (other.hasDocument()) {
         mergeDocument(other.getDocument());
       }
@@ -1338,10 +1499,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1350,7 +1513,8 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.language.v1beta2.AnnotateTextRequest) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.cloud.language.v1beta2.AnnotateTextRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -1362,8 +1526,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.cloud.language.v1beta2.Document document_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.language.v1beta2.Document, com.google.cloud.language.v1beta2.Document.Builder, com.google.cloud.language.v1beta2.DocumentOrBuilder> documentBuilder_;
+            com.google.cloud.language.v1beta2.Document,
+            com.google.cloud.language.v1beta2.Document.Builder,
+            com.google.cloud.language.v1beta2.DocumentOrBuilder>
+        documentBuilder_;
     /**
+     *
+     *
      * <pre>
      * Input document.
      * </pre>
@@ -1374,6 +1543,8 @@ private static final long serialVersionUID = 0L;
       return documentBuilder_ != null || document_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Input document.
      * </pre>
@@ -1382,12 +1553,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.language.v1beta2.Document getDocument() {
       if (documentBuilder_ == null) {
-        return document_ == null ? com.google.cloud.language.v1beta2.Document.getDefaultInstance() : document_;
+        return document_ == null
+            ? com.google.cloud.language.v1beta2.Document.getDefaultInstance()
+            : document_;
       } else {
         return documentBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Input document.
      * </pre>
@@ -1408,14 +1583,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Input document.
      * </pre>
      *
      * <code>.google.cloud.language.v1beta2.Document document = 1;</code>
      */
-    public Builder setDocument(
-        com.google.cloud.language.v1beta2.Document.Builder builderForValue) {
+    public Builder setDocument(com.google.cloud.language.v1beta2.Document.Builder builderForValue) {
       if (documentBuilder_ == null) {
         document_ = builderForValue.build();
         onChanged();
@@ -1426,6 +1602,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Input document.
      * </pre>
@@ -1436,7 +1614,9 @@ private static final long serialVersionUID = 0L;
       if (documentBuilder_ == null) {
         if (document_ != null) {
           document_ =
-            com.google.cloud.language.v1beta2.Document.newBuilder(document_).mergeFrom(value).buildPartial();
+              com.google.cloud.language.v1beta2.Document.newBuilder(document_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           document_ = value;
         }
@@ -1448,6 +1628,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Input document.
      * </pre>
@@ -1466,6 +1648,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Input document.
      * </pre>
@@ -1473,11 +1657,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.language.v1beta2.Document document = 1;</code>
      */
     public com.google.cloud.language.v1beta2.Document.Builder getDocumentBuilder() {
-      
+
       onChanged();
       return getDocumentFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Input document.
      * </pre>
@@ -1488,11 +1674,14 @@ private static final long serialVersionUID = 0L;
       if (documentBuilder_ != null) {
         return documentBuilder_.getMessageOrBuilder();
       } else {
-        return document_ == null ?
-            com.google.cloud.language.v1beta2.Document.getDefaultInstance() : document_;
+        return document_ == null
+            ? com.google.cloud.language.v1beta2.Document.getDefaultInstance()
+            : document_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Input document.
      * </pre>
@@ -1500,14 +1689,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.language.v1beta2.Document document = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.language.v1beta2.Document, com.google.cloud.language.v1beta2.Document.Builder, com.google.cloud.language.v1beta2.DocumentOrBuilder> 
+            com.google.cloud.language.v1beta2.Document,
+            com.google.cloud.language.v1beta2.Document.Builder,
+            com.google.cloud.language.v1beta2.DocumentOrBuilder>
         getDocumentFieldBuilder() {
       if (documentBuilder_ == null) {
-        documentBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.language.v1beta2.Document, com.google.cloud.language.v1beta2.Document.Builder, com.google.cloud.language.v1beta2.DocumentOrBuilder>(
-                getDocument(),
-                getParentForChildren(),
-                isClean());
+        documentBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.language.v1beta2.Document,
+                com.google.cloud.language.v1beta2.Document.Builder,
+                com.google.cloud.language.v1beta2.DocumentOrBuilder>(
+                getDocument(), getParentForChildren(), isClean());
         document_ = null;
       }
       return documentBuilder_;
@@ -1515,8 +1707,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.cloud.language.v1beta2.AnnotateTextRequest.Features features_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.language.v1beta2.AnnotateTextRequest.Features, com.google.cloud.language.v1beta2.AnnotateTextRequest.Features.Builder, com.google.cloud.language.v1beta2.AnnotateTextRequest.FeaturesOrBuilder> featuresBuilder_;
+            com.google.cloud.language.v1beta2.AnnotateTextRequest.Features,
+            com.google.cloud.language.v1beta2.AnnotateTextRequest.Features.Builder,
+            com.google.cloud.language.v1beta2.AnnotateTextRequest.FeaturesOrBuilder>
+        featuresBuilder_;
     /**
+     *
+     *
      * <pre>
      * The enabled features.
      * </pre>
@@ -1527,6 +1724,8 @@ private static final long serialVersionUID = 0L;
       return featuresBuilder_ != null || features_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * The enabled features.
      * </pre>
@@ -1535,19 +1734,24 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.language.v1beta2.AnnotateTextRequest.Features getFeatures() {
       if (featuresBuilder_ == null) {
-        return features_ == null ? com.google.cloud.language.v1beta2.AnnotateTextRequest.Features.getDefaultInstance() : features_;
+        return features_ == null
+            ? com.google.cloud.language.v1beta2.AnnotateTextRequest.Features.getDefaultInstance()
+            : features_;
       } else {
         return featuresBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * The enabled features.
      * </pre>
      *
      * <code>.google.cloud.language.v1beta2.AnnotateTextRequest.Features features = 2;</code>
      */
-    public Builder setFeatures(com.google.cloud.language.v1beta2.AnnotateTextRequest.Features value) {
+    public Builder setFeatures(
+        com.google.cloud.language.v1beta2.AnnotateTextRequest.Features value) {
       if (featuresBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1561,6 +1765,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The enabled features.
      * </pre>
@@ -1579,17 +1785,22 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The enabled features.
      * </pre>
      *
      * <code>.google.cloud.language.v1beta2.AnnotateTextRequest.Features features = 2;</code>
      */
-    public Builder mergeFeatures(com.google.cloud.language.v1beta2.AnnotateTextRequest.Features value) {
+    public Builder mergeFeatures(
+        com.google.cloud.language.v1beta2.AnnotateTextRequest.Features value) {
       if (featuresBuilder_ == null) {
         if (features_ != null) {
           features_ =
-            com.google.cloud.language.v1beta2.AnnotateTextRequest.Features.newBuilder(features_).mergeFrom(value).buildPartial();
+              com.google.cloud.language.v1beta2.AnnotateTextRequest.Features.newBuilder(features_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           features_ = value;
         }
@@ -1601,6 +1812,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The enabled features.
      * </pre>
@@ -1619,33 +1832,42 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The enabled features.
      * </pre>
      *
      * <code>.google.cloud.language.v1beta2.AnnotateTextRequest.Features features = 2;</code>
      */
-    public com.google.cloud.language.v1beta2.AnnotateTextRequest.Features.Builder getFeaturesBuilder() {
-      
+    public com.google.cloud.language.v1beta2.AnnotateTextRequest.Features.Builder
+        getFeaturesBuilder() {
+
       onChanged();
       return getFeaturesFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * The enabled features.
      * </pre>
      *
      * <code>.google.cloud.language.v1beta2.AnnotateTextRequest.Features features = 2;</code>
      */
-    public com.google.cloud.language.v1beta2.AnnotateTextRequest.FeaturesOrBuilder getFeaturesOrBuilder() {
+    public com.google.cloud.language.v1beta2.AnnotateTextRequest.FeaturesOrBuilder
+        getFeaturesOrBuilder() {
       if (featuresBuilder_ != null) {
         return featuresBuilder_.getMessageOrBuilder();
       } else {
-        return features_ == null ?
-            com.google.cloud.language.v1beta2.AnnotateTextRequest.Features.getDefaultInstance() : features_;
+        return features_ == null
+            ? com.google.cloud.language.v1beta2.AnnotateTextRequest.Features.getDefaultInstance()
+            : features_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The enabled features.
      * </pre>
@@ -1653,14 +1875,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.language.v1beta2.AnnotateTextRequest.Features features = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.language.v1beta2.AnnotateTextRequest.Features, com.google.cloud.language.v1beta2.AnnotateTextRequest.Features.Builder, com.google.cloud.language.v1beta2.AnnotateTextRequest.FeaturesOrBuilder> 
+            com.google.cloud.language.v1beta2.AnnotateTextRequest.Features,
+            com.google.cloud.language.v1beta2.AnnotateTextRequest.Features.Builder,
+            com.google.cloud.language.v1beta2.AnnotateTextRequest.FeaturesOrBuilder>
         getFeaturesFieldBuilder() {
       if (featuresBuilder_ == null) {
-        featuresBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.language.v1beta2.AnnotateTextRequest.Features, com.google.cloud.language.v1beta2.AnnotateTextRequest.Features.Builder, com.google.cloud.language.v1beta2.AnnotateTextRequest.FeaturesOrBuilder>(
-                getFeatures(),
-                getParentForChildren(),
-                isClean());
+        featuresBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.language.v1beta2.AnnotateTextRequest.Features,
+                com.google.cloud.language.v1beta2.AnnotateTextRequest.Features.Builder,
+                com.google.cloud.language.v1beta2.AnnotateTextRequest.FeaturesOrBuilder>(
+                getFeatures(), getParentForChildren(), isClean());
         features_ = null;
       }
       return featuresBuilder_;
@@ -1668,6 +1893,8 @@ private static final long serialVersionUID = 0L;
 
     private int encodingType_ = 0;
     /**
+     *
+     *
      * <pre>
      * The encoding type used by the API to calculate offsets.
      * </pre>
@@ -1678,6 +1905,8 @@ private static final long serialVersionUID = 0L;
       return encodingType_;
     }
     /**
+     *
+     *
      * <pre>
      * The encoding type used by the API to calculate offsets.
      * </pre>
@@ -1690,6 +1919,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The encoding type used by the API to calculate offsets.
      * </pre>
@@ -1697,10 +1928,14 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.language.v1beta2.EncodingType encoding_type = 3;</code>
      */
     public com.google.cloud.language.v1beta2.EncodingType getEncodingType() {
-      com.google.cloud.language.v1beta2.EncodingType result = com.google.cloud.language.v1beta2.EncodingType.valueOf(encodingType_);
+      @SuppressWarnings("deprecation")
+      com.google.cloud.language.v1beta2.EncodingType result =
+          com.google.cloud.language.v1beta2.EncodingType.valueOf(encodingType_);
       return result == null ? com.google.cloud.language.v1beta2.EncodingType.UNRECOGNIZED : result;
     }
     /**
+     *
+     *
      * <pre>
      * The encoding type used by the API to calculate offsets.
      * </pre>
@@ -1711,12 +1946,14 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       encodingType_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The encoding type used by the API to calculate offsets.
      * </pre>
@@ -1724,27 +1961,29 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.language.v1beta2.EncodingType encoding_type = 3;</code>
      */
     public Builder clearEncodingType() {
-      
+
       encodingType_ = 0;
       onChanged();
       return this;
     }
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+
+    @java.lang.Override
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
     }
-
 
     // @@protoc_insertion_point(builder_scope:google.cloud.language.v1beta2.AnnotateTextRequest)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.language.v1beta2.AnnotateTextRequest)
   private static final com.google.cloud.language.v1beta2.AnnotateTextRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.language.v1beta2.AnnotateTextRequest();
   }
@@ -1753,15 +1992,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<AnnotateTextRequest>
-      PARSER = new com.google.protobuf.AbstractParser<AnnotateTextRequest>() {
-    public AnnotateTextRequest parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-        return new AnnotateTextRequest(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<AnnotateTextRequest> PARSER =
+      new com.google.protobuf.AbstractParser<AnnotateTextRequest>() {
+        @java.lang.Override
+        public AnnotateTextRequest parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new AnnotateTextRequest(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<AnnotateTextRequest> parser() {
     return PARSER;
@@ -1772,9 +2012,8 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.cloud.language.v1beta2.AnnotateTextRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

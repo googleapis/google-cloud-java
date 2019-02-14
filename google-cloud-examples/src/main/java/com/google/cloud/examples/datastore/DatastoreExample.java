@@ -29,7 +29,6 @@ import com.google.cloud.datastore.QueryResults;
 import com.google.cloud.datastore.StructuredQuery;
 import com.google.cloud.datastore.StructuredQuery.PropertyFilter;
 import com.google.cloud.datastore.Transaction;
-
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
@@ -41,9 +40,10 @@ import java.util.TreeMap;
  * <p>This example adds, displays or clears comments for a given user. This example also sets
  * contact information for a user.
  *
- * <p>See the
- * <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/google-cloud-examples/README.md">
+ * <p>See the <a
+ * href="https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/google-cloud-examples/README.md">
  * README</a> for compilation instructions. Run this code with
+ *
  * <pre>{@code target/appassembler/bin/DatastoreExample
  * [projectId] [user] [delete|display|add comment|set <email> <phone>]}</pre>
  *
@@ -80,11 +80,12 @@ public class DatastoreExample {
         System.out.println("Nothing to delete, user does not exist.");
         return;
       }
-      Query<Key> query = Query.newKeyQueryBuilder()
-          .setNamespace(NAMESPACE)
-          .setKind(COMMENT_KIND)
-          .setFilter(PropertyFilter.hasAncestor(userKey))
-          .build();
+      Query<Key> query =
+          Query.newKeyQueryBuilder()
+              .setNamespace(NAMESPACE)
+              .setKind(COMMENT_KIND)
+              .setFilter(PropertyFilter.hasAncestor(userKey))
+              .build();
       QueryResults<Key> comments = tx.run(query);
       int count = 0;
       while (comments.hasNext()) {
@@ -102,8 +103,8 @@ public class DatastoreExample {
   }
 
   /**
-   * This class demonstrates how to get a user. The action also queries all comments associated
-   * with the user.
+   * This class demonstrates how to get a user. The action also queries all comments associated with
+   * the user.
    */
   private static class DisplayAction extends DatastoreAction<Void> {
     @Override
@@ -117,8 +118,8 @@ public class DatastoreExample {
         FullEntity<IncompleteKey> contact = user.getEntity("contact");
         String email = contact.getString("email");
         String phone = contact.getString("phone");
-        System.out.printf("User '%s' email is '%s', phone is '%s'.%n",
-            userKey.getName(), email, phone);
+        System.out.printf(
+            "User '%s' email is '%s', phone is '%s'.%n", userKey.getName(), email, phone);
       }
       System.out.printf("User '%s' has %d comment[s].%n", userKey.getName(), user.getLong("count"));
       int limit = 200;
@@ -157,9 +158,7 @@ public class DatastoreExample {
     }
   }
 
-  /**
-   * This class adds a comment for a user. If the user does not exist its entity is created.
-   */
+  /** This class adds a comment for a user. If the user does not exist its entity is created. */
   private static class AddCommentAction extends DatastoreAction<String> {
     @Override
     public void run(Transaction tx, Key userKey, String content) {
@@ -173,10 +172,11 @@ public class DatastoreExample {
         tx.update(user);
       }
       IncompleteKey commentKey = IncompleteKey.newBuilder(userKey, COMMENT_KIND).build();
-      FullEntity<IncompleteKey> comment = FullEntity.newBuilder(commentKey)
-          .set("content", content)
-          .set("timestamp", Timestamp.now())
-          .build();
+      FullEntity<IncompleteKey> comment =
+          FullEntity.newBuilder(commentKey)
+              .set("content", content)
+              .set("timestamp", Timestamp.now())
+              .build();
       tx.addWithDeferredIdAllocation(comment);
       System.out.printf("Adding a comment to user '%s'.%n", userKey.getName());
     }
@@ -234,10 +234,11 @@ public class DatastoreExample {
         user = Entity.newBuilder(userKey).set("count", 0L).build();
         tx.add(user);
       }
-      FullEntity<IncompleteKey> contactEntity = FullEntity.newBuilder()
-          .set("email", contact.email())
-          .set("phone", contact.phone())
-          .build();
+      FullEntity<IncompleteKey> contactEntity =
+          FullEntity.newBuilder()
+              .set("email", contact.email())
+              .set("phone", contact.phone())
+              .build();
       tx.update(Entity.newBuilder(user).set("contact", contactEntity).build());
       System.out.printf("Setting contact for user '%s'.%n", userKey.getName());
     }
@@ -278,7 +279,8 @@ public class DatastoreExample {
         actionAndParams.append(' ').append(param);
       }
     }
-    System.out.printf("Usage: %s <project_id> <user> operation <args>*%s%n",
+    System.out.printf(
+        "Usage: %s <project_id> <user> operation <args>*%s%n",
         DatastoreExample.class.getSimpleName(), actionAndParams);
   }
 
@@ -305,7 +307,7 @@ public class DatastoreExample {
       printUsage();
       return;
     }
-    args = args.length > 3 ? Arrays.copyOfRange(args, 3, args.length) : new String []{};
+    args = args.length > 3 ? Arrays.copyOfRange(args, 3, args.length) : new String[] {};
     Transaction tx = datastore.newTransaction();
     Object request;
     try {

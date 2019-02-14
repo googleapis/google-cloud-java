@@ -61,11 +61,22 @@ public class GoogleCloudCompatChecker {
     String javaSpecificationVersion = System.getProperty("java.specification.version");
 
     System.out.println("OS details:");
-    System.out.println("  " + Detector.DETECTED_NAME + ": " + osProperties.get(Detector.DETECTED_NAME));
-    System.out.println("  " + Detector.DETECTED_ARCH + ": " + osProperties.get(Detector.DETECTED_ARCH));
-    System.out.println("  " + Detector.DETECTED_CLASSIFIER + ": " + osProperties.get(Detector.DETECTED_CLASSIFIER));
-    System.out.println("  " + Detector.DETECTED_RELEASE + ": " + osProperties.get(Detector.DETECTED_RELEASE));
-    System.out.println("  " + Detector.DETECTED_RELEASE_VERSION + ": " + osProperties.get(Detector.DETECTED_RELEASE_VERSION));
+    System.out.println(
+        "  " + Detector.DETECTED_NAME + ": " + osProperties.get(Detector.DETECTED_NAME));
+    System.out.println(
+        "  " + Detector.DETECTED_ARCH + ": " + osProperties.get(Detector.DETECTED_ARCH));
+    System.out.println(
+        "  "
+            + Detector.DETECTED_CLASSIFIER
+            + ": "
+            + osProperties.get(Detector.DETECTED_CLASSIFIER));
+    System.out.println(
+        "  " + Detector.DETECTED_RELEASE + ": " + osProperties.get(Detector.DETECTED_RELEASE));
+    System.out.println(
+        "  "
+            + Detector.DETECTED_RELEASE_VERSION
+            + ": "
+            + osProperties.get(Detector.DETECTED_RELEASE_VERSION));
     System.out.println("JVM details:");
     System.out.println("  Java version: " + javaVersion);
     System.out.println("  Java specification version: " + javaSpecificationVersion);
@@ -74,7 +85,7 @@ public class GoogleCloudCompatChecker {
     System.out.println("  open ssl is available: " + openSslIsAvailable);
     System.out.println("  ALPN is supported: " + openSslAlpnIsSupported);
 
-    String osClassifier = (String)osProperties.get(Detector.DETECTED_CLASSIFIER);
+    String osClassifier = (String) osProperties.get(Detector.DETECTED_CLASSIFIER);
 
     boolean compatible = true;
     boolean warnings = false;

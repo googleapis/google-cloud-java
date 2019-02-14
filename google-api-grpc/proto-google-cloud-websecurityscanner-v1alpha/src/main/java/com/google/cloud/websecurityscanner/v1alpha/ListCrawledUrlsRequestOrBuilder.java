@@ -3,11 +3,14 @@
 
 package com.google.cloud.websecurityscanner.v1alpha;
 
-public interface ListCrawledUrlsRequestOrBuilder extends
+public interface ListCrawledUrlsRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.websecurityscanner.v1alpha.ListCrawledUrlsRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required.
    * The parent resource name, which should be a scan run resource name in the
@@ -19,6 +22,8 @@ public interface ListCrawledUrlsRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * Required.
    * The parent resource name, which should be a scan run resource name in the
@@ -28,10 +33,11 @@ public interface ListCrawledUrlsRequestOrBuilder extends
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * A token identifying a page of results to be returned. This should be a
    * `next_page_token` value returned from a previous List request.
@@ -42,6 +48,8 @@ public interface ListCrawledUrlsRequestOrBuilder extends
    */
   java.lang.String getPageToken();
   /**
+   *
+   *
    * <pre>
    * A token identifying a page of results to be returned. This should be a
    * `next_page_token` value returned from a previous List request.
@@ -50,10 +58,11 @@ public interface ListCrawledUrlsRequestOrBuilder extends
    *
    * <code>string page_token = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getPageTokenBytes();
+  com.google.protobuf.ByteString getPageTokenBytes();
 
   /**
+   *
+   *
    * <pre>
    * The maximum number of CrawledUrls to return, can be limited by server.
    * If not specified or not positive, the implementation will select a

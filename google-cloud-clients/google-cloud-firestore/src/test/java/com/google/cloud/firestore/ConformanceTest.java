@@ -47,16 +47,16 @@ import com.google.cloud.firestore.conformance.TestDefinition.Snapshot;
 import com.google.cloud.firestore.conformance.TestDefinition.UpdatePathsTest;
 import com.google.cloud.firestore.conformance.TestDefinition.UpdateTest;
 import com.google.cloud.firestore.conformance.TestDefinition.Where;
-import com.google.cloud.firestore.spi.v1beta1.FirestoreRpc;
+import com.google.cloud.firestore.spi.v1.FirestoreRpc;
 import com.google.common.base.Preconditions;
-import com.google.firestore.v1beta1.BatchGetDocumentsRequest;
-import com.google.firestore.v1beta1.CommitRequest;
-import com.google.firestore.v1beta1.Document;
-import com.google.firestore.v1beta1.ListenRequest;
-import com.google.firestore.v1beta1.ListenResponse;
-import com.google.firestore.v1beta1.Precondition;
-import com.google.firestore.v1beta1.RunQueryRequest;
-import com.google.firestore.v1beta1.Value;
+import com.google.firestore.v1.BatchGetDocumentsRequest;
+import com.google.firestore.v1.CommitRequest;
+import com.google.firestore.v1.Document;
+import com.google.firestore.v1.ListenRequest;
+import com.google.firestore.v1.ListenResponse;
+import com.google.firestore.v1.Precondition;
+import com.google.firestore.v1.RunQueryRequest;
+import com.google.firestore.v1.Value;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import com.google.protobuf.GeneratedMessageV3;
@@ -106,6 +106,9 @@ public class ConformanceTest {
   /** If non-empty, only runs tests included in this set. */
   private final Set<String> includedTests = Collections.emptySet();
 
+  /** If true, prints debug information to System.out. */
+  private final boolean DEBUG_MODE = !includedTests.isEmpty();
+
   @Captor private ArgumentCaptor<CommitRequest> commitCapture;
 
   @Captor private ArgumentCaptor<BatchGetDocumentsRequest> getAllCapture;
@@ -130,11 +133,7 @@ public class ConformanceTest {
     firestoreMock =
         Mockito.spy(
             new FirestoreImpl(
-                FirestoreOptions.newBuilder()
-                    .setProjectId("projectID")
-                    .setTimestampsInSnapshotsEnabled(true)
-                    .build(),
-                firestoreRpc));
+                FirestoreOptions.newBuilder().setProjectId("projectID").build(), firestoreRpc));
     watchQuery = collection("projects/projectID/databases/(default)/documents/C").orderBy("a");
   }
 
@@ -331,11 +330,19 @@ public class ConformanceTest {
   }
 
   /** Helper function to convert test values in a list to Firestore API types. */
-  private List<Object> convertArray(List<Object> list) {
-    for (int i = 0; i < list.size(); ++i) {
-      list.set(i, convertValue(list.get(i)));
+  private Object convertArray(List<Object> list) {
+    if (!list.isEmpty() && list.get(0).equals("ArrayUnion")) {
+      return FieldValue.arrayUnion(
+          ((List<Object>) convertArray(list.subList(1, list.size()))).toArray());
+    } else if (!list.isEmpty() && list.get(0).equals("ArrayRemove")) {
+      return FieldValue.arrayRemove(
+          ((List<Object>) convertArray(list.subList(1, list.size()))).toArray());
+    } else {
+      for (int i = 0; i < list.size(); ++i) {
+        list.set(i, convertValue(list.get(i)));
+      }
+      return list;
     }
-    return list;
   }
 
   /** Reads the test definition from the Proto file. */
@@ -378,8 +385,9 @@ public class ConformanceTest {
             new Protectable() {
               @Override
               public void protect() throws Throwable {
-                // Uncomment to print the test protobuf:
-                // System.out.println(testDefinition);
+                if (DEBUG_MODE) {
+                  System.out.println(testDefinition);
+                }
 
                 switch (testDefinition.getTestCase()) {
                   case GET:

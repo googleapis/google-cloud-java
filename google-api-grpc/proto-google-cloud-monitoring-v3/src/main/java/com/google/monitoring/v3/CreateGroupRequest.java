@@ -4,36 +4,42 @@
 package com.google.monitoring.v3;
 
 /**
+ *
+ *
  * <pre>
  * The `CreateGroup` request.
  * </pre>
  *
  * Protobuf type {@code google.monitoring.v3.CreateGroupRequest}
  */
-public  final class CreateGroupRequest extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class CreateGroupRequest extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.monitoring.v3.CreateGroupRequest)
     CreateGroupRequestOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use CreateGroupRequest.newBuilder() to construct.
   private CreateGroupRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private CreateGroupRequest() {
     name_ = "";
     validateOnly_ = false;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private CreateGroupRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -45,64 +51,72 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
-          case 18: {
-            com.google.monitoring.v3.Group.Builder subBuilder = null;
-            if (group_ != null) {
-              subBuilder = group_.toBuilder();
-            }
-            group_ = input.readMessage(com.google.monitoring.v3.Group.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(group_);
-              group_ = subBuilder.buildPartial();
-            }
+          case 18:
+            {
+              com.google.monitoring.v3.Group.Builder subBuilder = null;
+              if (group_ != null) {
+                subBuilder = group_.toBuilder();
+              }
+              group_ =
+                  input.readMessage(com.google.monitoring.v3.Group.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(group_);
+                group_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 24: {
+              break;
+            }
+          case 24:
+            {
+              validateOnly_ = input.readBool();
+              break;
+            }
+          case 34:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            validateOnly_ = input.readBool();
-            break;
-          }
-          case 34: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            name_ = s;
-            break;
-          }
+              name_ = s;
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.monitoring.v3.GroupServiceProto.internal_static_google_monitoring_v3_CreateGroupRequest_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.monitoring.v3.GroupServiceProto
+        .internal_static_google_monitoring_v3_CreateGroupRequest_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.monitoring.v3.GroupServiceProto.internal_static_google_monitoring_v3_CreateGroupRequest_fieldAccessorTable
+    return com.google.monitoring.v3.GroupServiceProto
+        .internal_static_google_monitoring_v3_CreateGroupRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.monitoring.v3.CreateGroupRequest.class, com.google.monitoring.v3.CreateGroupRequest.Builder.class);
+            com.google.monitoring.v3.CreateGroupRequest.class,
+            com.google.monitoring.v3.CreateGroupRequest.Builder.class);
   }
 
   public static final int NAME_FIELD_NUMBER = 4;
   private volatile java.lang.Object name_;
   /**
+   *
+   *
    * <pre>
    * The project in which to create the group. The format is
    * `"projects/{project_id_or_number}"`.
@@ -115,14 +129,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       name_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The project in which to create the group. The format is
    * `"projects/{project_id_or_number}"`.
@@ -130,13 +145,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string name = 4;</code>
    */
-  public com.google.protobuf.ByteString
-      getNameBytes() {
+  public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       name_ = b;
       return b;
     } else {
@@ -147,6 +160,8 @@ private static final long serialVersionUID = 0L;
   public static final int GROUP_FIELD_NUMBER = 2;
   private com.google.monitoring.v3.Group group_;
   /**
+   *
+   *
    * <pre>
    * A group definition. It is an error to define the `name` field because
    * the system assigns the name.
@@ -158,6 +173,8 @@ private static final long serialVersionUID = 0L;
     return group_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * A group definition. It is an error to define the `name` field because
    * the system assigns the name.
@@ -169,6 +186,8 @@ private static final long serialVersionUID = 0L;
     return group_ == null ? com.google.monitoring.v3.Group.getDefaultInstance() : group_;
   }
   /**
+   *
+   *
    * <pre>
    * A group definition. It is an error to define the `name` field because
    * the system assigns the name.
@@ -183,6 +202,8 @@ private static final long serialVersionUID = 0L;
   public static final int VALIDATE_ONLY_FIELD_NUMBER = 3;
   private boolean validateOnly_;
   /**
+   *
+   *
    * <pre>
    * If true, validate this request but do not create the group.
    * </pre>
@@ -194,6 +215,8 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -203,8 +226,8 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  @java.lang.Override
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (group_ != null) {
       output.writeMessage(2, getGroup());
     }
@@ -217,18 +240,17 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
 
     size = 0;
     if (group_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getGroup());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getGroup());
     }
     if (validateOnly_ != false) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(3, validateOnly_);
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, validateOnly_);
     }
     if (!getNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, name_);
@@ -241,23 +263,21 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.monitoring.v3.CreateGroupRequest)) {
       return super.equals(obj);
     }
-    com.google.monitoring.v3.CreateGroupRequest other = (com.google.monitoring.v3.CreateGroupRequest) obj;
+    com.google.monitoring.v3.CreateGroupRequest other =
+        (com.google.monitoring.v3.CreateGroupRequest) obj;
 
     boolean result = true;
-    result = result && getName()
-        .equals(other.getName());
+    result = result && getName().equals(other.getName());
     result = result && (hasGroup() == other.hasGroup());
     if (hasGroup()) {
-      result = result && getGroup()
-          .equals(other.getGroup());
+      result = result && getGroup().equals(other.getGroup());
     }
-    result = result && (getValidateOnly()
-        == other.getValidateOnly());
+    result = result && (getValidateOnly() == other.getValidateOnly());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -276,122 +296,133 @@ private static final long serialVersionUID = 0L;
       hash = (53 * hash) + getGroup().hashCode();
     }
     hash = (37 * hash) + VALIDATE_ONLY_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getValidateOnly());
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getValidateOnly());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.google.monitoring.v3.CreateGroupRequest parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.monitoring.v3.CreateGroupRequest parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.monitoring.v3.CreateGroupRequest parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.monitoring.v3.CreateGroupRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.monitoring.v3.CreateGroupRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.monitoring.v3.CreateGroupRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.monitoring.v3.CreateGroupRequest parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.monitoring.v3.CreateGroupRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.monitoring.v3.CreateGroupRequest parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.monitoring.v3.CreateGroupRequest parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
+
   public static com.google.monitoring.v3.CreateGroupRequest parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.monitoring.v3.CreateGroupRequest parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.monitoring.v3.CreateGroupRequest parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.monitoring.v3.CreateGroupRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  public Builder newBuilderForType() { return newBuilder(); }
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-  public static Builder newBuilder(com.google.monitoring.v3.CreateGroupRequest prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+
+  public static Builder newBuilder(com.google.monitoring.v3.CreateGroupRequest prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+
+  @java.lang.Override
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * The `CreateGroup` request.
    * </pre>
    *
    * Protobuf type {@code google.monitoring.v3.CreateGroupRequest}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.monitoring.v3.CreateGroupRequest)
       com.google.monitoring.v3.CreateGroupRequestOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.monitoring.v3.GroupServiceProto.internal_static_google_monitoring_v3_CreateGroupRequest_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.monitoring.v3.GroupServiceProto
+          .internal_static_google_monitoring_v3_CreateGroupRequest_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.monitoring.v3.GroupServiceProto.internal_static_google_monitoring_v3_CreateGroupRequest_fieldAccessorTable
+      return com.google.monitoring.v3.GroupServiceProto
+          .internal_static_google_monitoring_v3_CreateGroupRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.monitoring.v3.CreateGroupRequest.class, com.google.monitoring.v3.CreateGroupRequest.Builder.class);
+              com.google.monitoring.v3.CreateGroupRequest.class,
+              com.google.monitoring.v3.CreateGroupRequest.Builder.class);
     }
 
     // Construct using com.google.monitoring.v3.CreateGroupRequest.newBuilder()
@@ -399,16 +430,16 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       name_ = "";
@@ -424,15 +455,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.monitoring.v3.GroupServiceProto.internal_static_google_monitoring_v3_CreateGroupRequest_descriptor;
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.monitoring.v3.GroupServiceProto
+          .internal_static_google_monitoring_v3_CreateGroupRequest_descriptor;
     }
 
+    @java.lang.Override
     public com.google.monitoring.v3.CreateGroupRequest getDefaultInstanceForType() {
       return com.google.monitoring.v3.CreateGroupRequest.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.monitoring.v3.CreateGroupRequest build() {
       com.google.monitoring.v3.CreateGroupRequest result = buildPartial();
       if (!result.isInitialized()) {
@@ -441,8 +475,10 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.monitoring.v3.CreateGroupRequest buildPartial() {
-      com.google.monitoring.v3.CreateGroupRequest result = new com.google.monitoring.v3.CreateGroupRequest(this);
+      com.google.monitoring.v3.CreateGroupRequest result =
+          new com.google.monitoring.v3.CreateGroupRequest(this);
       result.name_ = name_;
       if (groupBuilder_ == null) {
         result.group_ = group_;
@@ -454,35 +490,43 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+
+    @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+    @java.lang.Override
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+    @java.lang.Override
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
+    @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
+    @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.monitoring.v3.CreateGroupRequest) {
-        return mergeFrom((com.google.monitoring.v3.CreateGroupRequest)other);
+        return mergeFrom((com.google.monitoring.v3.CreateGroupRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -506,10 +550,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -530,6 +576,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object name_ = "";
     /**
+     *
+     *
      * <pre>
      * The project in which to create the group. The format is
      * `"projects/{project_id_or_number}"`.
@@ -540,8 +588,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         name_ = s;
         return s;
@@ -550,6 +597,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The project in which to create the group. The format is
      * `"projects/{project_id_or_number}"`.
@@ -557,13 +606,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 4;</code>
      */
-    public com.google.protobuf.ByteString
-        getNameBytes() {
+    public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         name_ = b;
         return b;
       } else {
@@ -571,6 +618,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The project in which to create the group. The format is
      * `"projects/{project_id_or_number}"`.
@@ -578,17 +627,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 4;</code>
      */
-    public Builder setName(
-        java.lang.String value) {
+    public Builder setName(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       name_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The project in which to create the group. The format is
      * `"projects/{project_id_or_number}"`.
@@ -597,12 +647,14 @@ private static final long serialVersionUID = 0L;
      * <code>string name = 4;</code>
      */
     public Builder clearName() {
-      
+
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The project in which to create the group. The format is
      * `"projects/{project_id_or_number}"`.
@@ -610,13 +662,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 4;</code>
      */
-    public Builder setNameBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       name_ = value;
       onChanged();
       return this;
@@ -624,8 +675,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.monitoring.v3.Group group_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.monitoring.v3.Group, com.google.monitoring.v3.Group.Builder, com.google.monitoring.v3.GroupOrBuilder> groupBuilder_;
+            com.google.monitoring.v3.Group,
+            com.google.monitoring.v3.Group.Builder,
+            com.google.monitoring.v3.GroupOrBuilder>
+        groupBuilder_;
     /**
+     *
+     *
      * <pre>
      * A group definition. It is an error to define the `name` field because
      * the system assigns the name.
@@ -637,6 +693,8 @@ private static final long serialVersionUID = 0L;
       return groupBuilder_ != null || group_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * A group definition. It is an error to define the `name` field because
      * the system assigns the name.
@@ -652,6 +710,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A group definition. It is an error to define the `name` field because
      * the system assigns the name.
@@ -673,6 +733,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A group definition. It is an error to define the `name` field because
      * the system assigns the name.
@@ -680,8 +742,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.monitoring.v3.Group group = 2;</code>
      */
-    public Builder setGroup(
-        com.google.monitoring.v3.Group.Builder builderForValue) {
+    public Builder setGroup(com.google.monitoring.v3.Group.Builder builderForValue) {
       if (groupBuilder_ == null) {
         group_ = builderForValue.build();
         onChanged();
@@ -692,6 +753,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A group definition. It is an error to define the `name` field because
      * the system assigns the name.
@@ -703,7 +766,7 @@ private static final long serialVersionUID = 0L;
       if (groupBuilder_ == null) {
         if (group_ != null) {
           group_ =
-            com.google.monitoring.v3.Group.newBuilder(group_).mergeFrom(value).buildPartial();
+              com.google.monitoring.v3.Group.newBuilder(group_).mergeFrom(value).buildPartial();
         } else {
           group_ = value;
         }
@@ -715,6 +778,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A group definition. It is an error to define the `name` field because
      * the system assigns the name.
@@ -734,6 +799,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A group definition. It is an error to define the `name` field because
      * the system assigns the name.
@@ -742,11 +809,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.monitoring.v3.Group group = 2;</code>
      */
     public com.google.monitoring.v3.Group.Builder getGroupBuilder() {
-      
+
       onChanged();
       return getGroupFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * A group definition. It is an error to define the `name` field because
      * the system assigns the name.
@@ -758,11 +827,12 @@ private static final long serialVersionUID = 0L;
       if (groupBuilder_ != null) {
         return groupBuilder_.getMessageOrBuilder();
       } else {
-        return group_ == null ?
-            com.google.monitoring.v3.Group.getDefaultInstance() : group_;
+        return group_ == null ? com.google.monitoring.v3.Group.getDefaultInstance() : group_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A group definition. It is an error to define the `name` field because
      * the system assigns the name.
@@ -771,21 +841,26 @@ private static final long serialVersionUID = 0L;
      * <code>.google.monitoring.v3.Group group = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.monitoring.v3.Group, com.google.monitoring.v3.Group.Builder, com.google.monitoring.v3.GroupOrBuilder> 
+            com.google.monitoring.v3.Group,
+            com.google.monitoring.v3.Group.Builder,
+            com.google.monitoring.v3.GroupOrBuilder>
         getGroupFieldBuilder() {
       if (groupBuilder_ == null) {
-        groupBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.monitoring.v3.Group, com.google.monitoring.v3.Group.Builder, com.google.monitoring.v3.GroupOrBuilder>(
-                getGroup(),
-                getParentForChildren(),
-                isClean());
+        groupBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.monitoring.v3.Group,
+                com.google.monitoring.v3.Group.Builder,
+                com.google.monitoring.v3.GroupOrBuilder>(
+                getGroup(), getParentForChildren(), isClean());
         group_ = null;
       }
       return groupBuilder_;
     }
 
-    private boolean validateOnly_ ;
+    private boolean validateOnly_;
     /**
+     *
+     *
      * <pre>
      * If true, validate this request but do not create the group.
      * </pre>
@@ -796,6 +871,8 @@ private static final long serialVersionUID = 0L;
       return validateOnly_;
     }
     /**
+     *
+     *
      * <pre>
      * If true, validate this request but do not create the group.
      * </pre>
@@ -803,12 +880,14 @@ private static final long serialVersionUID = 0L;
      * <code>bool validate_only = 3;</code>
      */
     public Builder setValidateOnly(boolean value) {
-      
+
       validateOnly_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If true, validate this request but do not create the group.
      * </pre>
@@ -816,27 +895,29 @@ private static final long serialVersionUID = 0L;
      * <code>bool validate_only = 3;</code>
      */
     public Builder clearValidateOnly() {
-      
+
       validateOnly_ = false;
       onChanged();
       return this;
     }
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+
+    @java.lang.Override
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
     }
-
 
     // @@protoc_insertion_point(builder_scope:google.monitoring.v3.CreateGroupRequest)
   }
 
   // @@protoc_insertion_point(class_scope:google.monitoring.v3.CreateGroupRequest)
   private static final com.google.monitoring.v3.CreateGroupRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.monitoring.v3.CreateGroupRequest();
   }
@@ -845,15 +926,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<CreateGroupRequest>
-      PARSER = new com.google.protobuf.AbstractParser<CreateGroupRequest>() {
-    public CreateGroupRequest parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CreateGroupRequest(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<CreateGroupRequest> PARSER =
+      new com.google.protobuf.AbstractParser<CreateGroupRequest>() {
+        @java.lang.Override
+        public CreateGroupRequest parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new CreateGroupRequest(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<CreateGroupRequest> parser() {
     return PARSER;
@@ -864,9 +946,8 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.monitoring.v3.CreateGroupRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

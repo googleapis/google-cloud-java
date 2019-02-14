@@ -3,11 +3,14 @@
 
 package com.google.logging.v2;
 
-public interface LogEntryOrBuilder extends
+public interface LogEntryOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.logging.v2.LogEntry)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The resource name of the log to which this log entry belongs:
    *     "projects/[PROJECT_ID]/logs/[LOG_ID]"
@@ -33,6 +36,8 @@ public interface LogEntryOrBuilder extends
    */
   java.lang.String getLogName();
   /**
+   *
+   *
    * <pre>
    * Required. The resource name of the log to which this log entry belongs:
    *     "projects/[PROJECT_ID]/logs/[LOG_ID]"
@@ -56,10 +61,11 @@ public interface LogEntryOrBuilder extends
    *
    * <code>string log_name = 12;</code>
    */
-  com.google.protobuf.ByteString
-      getLogNameBytes();
+  com.google.protobuf.ByteString getLogNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * Required. The primary monitored resource associated with this log entry.
    * Example: a log entry that reports a database error would be
@@ -71,6 +77,8 @@ public interface LogEntryOrBuilder extends
    */
   boolean hasResource();
   /**
+   *
+   *
    * <pre>
    * Required. The primary monitored resource associated with this log entry.
    * Example: a log entry that reports a database error would be
@@ -82,6 +90,8 @@ public interface LogEntryOrBuilder extends
    */
   com.google.api.MonitoredResource getResource();
   /**
+   *
+   *
    * <pre>
    * Required. The primary monitored resource associated with this log entry.
    * Example: a log entry that reports a database error would be
@@ -94,6 +104,8 @@ public interface LogEntryOrBuilder extends
   com.google.api.MonitoredResourceOrBuilder getResourceOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The log entry payload, represented as a protocol buffer.  Some
    * Google Cloud Platform services use this field for their log
@@ -104,6 +116,8 @@ public interface LogEntryOrBuilder extends
    */
   boolean hasProtoPayload();
   /**
+   *
+   *
    * <pre>
    * The log entry payload, represented as a protocol buffer.  Some
    * Google Cloud Platform services use this field for their log
@@ -114,6 +128,8 @@ public interface LogEntryOrBuilder extends
    */
   com.google.protobuf.Any getProtoPayload();
   /**
+   *
+   *
    * <pre>
    * The log entry payload, represented as a protocol buffer.  Some
    * Google Cloud Platform services use this field for their log
@@ -125,6 +141,8 @@ public interface LogEntryOrBuilder extends
   com.google.protobuf.AnyOrBuilder getProtoPayloadOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The log entry payload, represented as a Unicode string (UTF-8).
    * </pre>
@@ -133,16 +151,19 @@ public interface LogEntryOrBuilder extends
    */
   java.lang.String getTextPayload();
   /**
+   *
+   *
    * <pre>
    * The log entry payload, represented as a Unicode string (UTF-8).
    * </pre>
    *
    * <code>string text_payload = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getTextPayloadBytes();
+  com.google.protobuf.ByteString getTextPayloadBytes();
 
   /**
+   *
+   *
    * <pre>
    * The log entry payload, represented as a structure that is
    * expressed as a JSON object.
@@ -152,6 +173,8 @@ public interface LogEntryOrBuilder extends
    */
   boolean hasJsonPayload();
   /**
+   *
+   *
    * <pre>
    * The log entry payload, represented as a structure that is
    * expressed as a JSON object.
@@ -161,6 +184,8 @@ public interface LogEntryOrBuilder extends
    */
   com.google.protobuf.Struct getJsonPayload();
   /**
+   *
+   *
    * <pre>
    * The log entry payload, represented as a structure that is
    * expressed as a JSON object.
@@ -171,11 +196,13 @@ public interface LogEntryOrBuilder extends
   com.google.protobuf.StructOrBuilder getJsonPayloadOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Optional. The time the event described by the log entry occurred.
    * This time is used to compute the log entry's age and to enforce
    * the logs retention period. If this field is omitted in a new log
-   * entry, then Stackdriver Logging assigns it the current time.
+   * entry, then Logging assigns it the current time.
    * Timestamps have nanosecond accuracy, but trailing zeros in the fractional
    * seconds might be omitted when the timestamp is displayed.
    * Incoming log entries should have timestamps that are no more than
@@ -190,11 +217,13 @@ public interface LogEntryOrBuilder extends
    */
   boolean hasTimestamp();
   /**
+   *
+   *
    * <pre>
    * Optional. The time the event described by the log entry occurred.
    * This time is used to compute the log entry's age and to enforce
    * the logs retention period. If this field is omitted in a new log
-   * entry, then Stackdriver Logging assigns it the current time.
+   * entry, then Logging assigns it the current time.
    * Timestamps have nanosecond accuracy, but trailing zeros in the fractional
    * seconds might be omitted when the timestamp is displayed.
    * Incoming log entries should have timestamps that are no more than
@@ -209,11 +238,13 @@ public interface LogEntryOrBuilder extends
    */
   com.google.protobuf.Timestamp getTimestamp();
   /**
+   *
+   *
    * <pre>
    * Optional. The time the event described by the log entry occurred.
    * This time is used to compute the log entry's age and to enforce
    * the logs retention period. If this field is omitted in a new log
-   * entry, then Stackdriver Logging assigns it the current time.
+   * entry, then Logging assigns it the current time.
    * Timestamps have nanosecond accuracy, but trailing zeros in the fractional
    * seconds might be omitted when the timestamp is displayed.
    * Incoming log entries should have timestamps that are no more than
@@ -229,24 +260,30 @@ public interface LogEntryOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getTimestampOrBuilder();
 
   /**
+   *
+   *
    * <pre>
-   * Output only. The time the log entry was received by Stackdriver Logging.
+   * Output only. The time the log entry was received by Logging.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp receive_timestamp = 24;</code>
    */
   boolean hasReceiveTimestamp();
   /**
+   *
+   *
    * <pre>
-   * Output only. The time the log entry was received by Stackdriver Logging.
+   * Output only. The time the log entry was received by Logging.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp receive_timestamp = 24;</code>
    */
   com.google.protobuf.Timestamp getReceiveTimestamp();
   /**
+   *
+   *
    * <pre>
-   * Output only. The time the log entry was received by Stackdriver Logging.
+   * Output only. The time the log entry was received by Logging.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp receive_timestamp = 24;</code>
@@ -254,6 +291,8 @@ public interface LogEntryOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getReceiveTimestampOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Optional. The severity of the log entry. The default value is
    * `LogSeverity.DEFAULT`.
@@ -263,6 +302,8 @@ public interface LogEntryOrBuilder extends
    */
   int getSeverityValue();
   /**
+   *
+   *
    * <pre>
    * Optional. The severity of the log entry. The default value is
    * `LogSeverity.DEFAULT`.
@@ -273,11 +314,13 @@ public interface LogEntryOrBuilder extends
   com.google.logging.type.LogSeverity getSeverity();
 
   /**
+   *
+   *
    * <pre>
    * Optional. A unique identifier for the log entry. If you provide a value,
-   * then Stackdriver Logging considers other log entries in the same project,
+   * then Logging considers other log entries in the same project,
    * with the same `timestamp`, and with the same `insert_id` to be duplicates
-   * which can be removed.  If omitted in new log entries, then Stackdriver
+   * which can be removed.  If omitted in new log entries, then
    * Logging assigns its own unique identifier. The `insert_id` is also used
    * to order log entries that have the same `timestamp` value.
    * </pre>
@@ -286,21 +329,24 @@ public interface LogEntryOrBuilder extends
    */
   java.lang.String getInsertId();
   /**
+   *
+   *
    * <pre>
    * Optional. A unique identifier for the log entry. If you provide a value,
-   * then Stackdriver Logging considers other log entries in the same project,
+   * then Logging considers other log entries in the same project,
    * with the same `timestamp`, and with the same `insert_id` to be duplicates
-   * which can be removed.  If omitted in new log entries, then Stackdriver
+   * which can be removed.  If omitted in new log entries, then
    * Logging assigns its own unique identifier. The `insert_id` is also used
    * to order log entries that have the same `timestamp` value.
    * </pre>
    *
    * <code>string insert_id = 4;</code>
    */
-  com.google.protobuf.ByteString
-      getInsertIdBytes();
+  com.google.protobuf.ByteString getInsertIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * Optional. Information about the HTTP request associated with this
    * log entry, if applicable.
@@ -310,6 +356,8 @@ public interface LogEntryOrBuilder extends
    */
   boolean hasHttpRequest();
   /**
+   *
+   *
    * <pre>
    * Optional. Information about the HTTP request associated with this
    * log entry, if applicable.
@@ -319,6 +367,8 @@ public interface LogEntryOrBuilder extends
    */
   com.google.logging.type.HttpRequest getHttpRequest();
   /**
+   *
+   *
    * <pre>
    * Optional. Information about the HTTP request associated with this
    * log entry, if applicable.
@@ -329,6 +379,8 @@ public interface LogEntryOrBuilder extends
   com.google.logging.type.HttpRequestOrBuilder getHttpRequestOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Optional. A set of user-defined (key, value) data that provides additional
    * information about the log entry.
@@ -338,6 +390,8 @@ public interface LogEntryOrBuilder extends
    */
   int getLabelsCount();
   /**
+   *
+   *
    * <pre>
    * Optional. A set of user-defined (key, value) data that provides additional
    * information about the log entry.
@@ -345,15 +399,13 @@ public interface LogEntryOrBuilder extends
    *
    * <code>map&lt;string, string&gt; labels = 11;</code>
    */
-  boolean containsLabels(
-      java.lang.String key);
-  /**
-   * Use {@link #getLabelsMap()} instead.
-   */
+  boolean containsLabels(java.lang.String key);
+  /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
-  java.util.Map<java.lang.String, java.lang.String>
-  getLabels();
+  java.util.Map<java.lang.String, java.lang.String> getLabels();
   /**
+   *
+   *
    * <pre>
    * Optional. A set of user-defined (key, value) data that provides additional
    * information about the log entry.
@@ -361,9 +413,10 @@ public interface LogEntryOrBuilder extends
    *
    * <code>map&lt;string, string&gt; labels = 11;</code>
    */
-  java.util.Map<java.lang.String, java.lang.String>
-  getLabelsMap();
+  java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
   /**
+   *
+   *
    * <pre>
    * Optional. A set of user-defined (key, value) data that provides additional
    * information about the log entry.
@@ -371,11 +424,10 @@ public interface LogEntryOrBuilder extends
    *
    * <code>map&lt;string, string&gt; labels = 11;</code>
    */
-
-  java.lang.String getLabelsOrDefault(
-      java.lang.String key,
-      java.lang.String defaultValue);
+  java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue);
   /**
+   *
+   *
    * <pre>
    * Optional. A set of user-defined (key, value) data that provides additional
    * information about the log entry.
@@ -383,11 +435,11 @@ public interface LogEntryOrBuilder extends
    *
    * <code>map&lt;string, string&gt; labels = 11;</code>
    */
-
-  java.lang.String getLabelsOrThrow(
-      java.lang.String key);
+  java.lang.String getLabelsOrThrow(java.lang.String key);
 
   /**
+   *
+   *
    * <pre>
    * Output only. Additional metadata about the monitored resource.
    * Only `k8s_container`, `k8s_pod`, and `k8s_node` MonitoredResources have
@@ -398,6 +450,8 @@ public interface LogEntryOrBuilder extends
    */
   boolean hasMetadata();
   /**
+   *
+   *
    * <pre>
    * Output only. Additional metadata about the monitored resource.
    * Only `k8s_container`, `k8s_pod`, and `k8s_node` MonitoredResources have
@@ -408,6 +462,8 @@ public interface LogEntryOrBuilder extends
    */
   com.google.api.MonitoredResourceMetadata getMetadata();
   /**
+   *
+   *
    * <pre>
    * Output only. Additional metadata about the monitored resource.
    * Only `k8s_container`, `k8s_pod`, and `k8s_node` MonitoredResources have
@@ -419,6 +475,8 @@ public interface LogEntryOrBuilder extends
   com.google.api.MonitoredResourceMetadataOrBuilder getMetadataOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Optional. Information about an operation associated with the log entry, if
    * applicable.
@@ -428,6 +486,8 @@ public interface LogEntryOrBuilder extends
    */
   boolean hasOperation();
   /**
+   *
+   *
    * <pre>
    * Optional. Information about an operation associated with the log entry, if
    * applicable.
@@ -437,6 +497,8 @@ public interface LogEntryOrBuilder extends
    */
   com.google.logging.v2.LogEntryOperation getOperation();
   /**
+   *
+   *
    * <pre>
    * Optional. Information about an operation associated with the log entry, if
    * applicable.
@@ -447,6 +509,8 @@ public interface LogEntryOrBuilder extends
   com.google.logging.v2.LogEntryOperationOrBuilder getOperationOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Optional. Resource name of the trace associated with the log entry, if any.
    * If it contains a relative resource name, the name is assumed to be relative
@@ -458,6 +522,8 @@ public interface LogEntryOrBuilder extends
    */
   java.lang.String getTrace();
   /**
+   *
+   *
    * <pre>
    * Optional. Resource name of the trace associated with the log entry, if any.
    * If it contains a relative resource name, the name is assumed to be relative
@@ -467,13 +533,14 @@ public interface LogEntryOrBuilder extends
    *
    * <code>string trace = 22;</code>
    */
-  com.google.protobuf.ByteString
-      getTraceBytes();
+  com.google.protobuf.ByteString getTraceBytes();
 
   /**
+   *
+   *
    * <pre>
-   * Optional. The span ID within the trace associated with the log entry. For
-   * Stackdriver Trace spans, this is the same format that the Stackdriver Trace
+   * Optional. The span ID within the trace associated with the log entry.
+   * For Trace spans, this is the same format that the Trace
    * API v2 uses: a 16-character hexadecimal encoding of an 8-byte array, such
    * as &lt;code&gt;"000000000000004a"&lt;/code&gt;.
    * </pre>
@@ -482,19 +549,38 @@ public interface LogEntryOrBuilder extends
    */
   java.lang.String getSpanId();
   /**
+   *
+   *
    * <pre>
-   * Optional. The span ID within the trace associated with the log entry. For
-   * Stackdriver Trace spans, this is the same format that the Stackdriver Trace
+   * Optional. The span ID within the trace associated with the log entry.
+   * For Trace spans, this is the same format that the Trace
    * API v2 uses: a 16-character hexadecimal encoding of an 8-byte array, such
    * as &lt;code&gt;"000000000000004a"&lt;/code&gt;.
    * </pre>
    *
    * <code>string span_id = 27;</code>
    */
-  com.google.protobuf.ByteString
-      getSpanIdBytes();
+  com.google.protobuf.ByteString getSpanIdBytes();
 
   /**
+   *
+   *
+   * <pre>
+   * Optional. The sampling decision of the trace associated with the log entry.
+   * True means that the trace resource name in the `trace` field was sampled
+   * for storage in a trace backend. False means that the trace was not sampled
+   * for storage when this log entry was written, or the sampling decision was
+   * unknown at the time. A non-sampled `trace` value is still useful as a
+   * request correlation identifier. The default is False.
+   * </pre>
+   *
+   * <code>bool trace_sampled = 30;</code>
+   */
+  boolean getTraceSampled();
+
+  /**
+   *
+   *
    * <pre>
    * Optional. Source code location information associated with the log entry,
    * if any.
@@ -504,6 +590,8 @@ public interface LogEntryOrBuilder extends
    */
   boolean hasSourceLocation();
   /**
+   *
+   *
    * <pre>
    * Optional. Source code location information associated with the log entry,
    * if any.
@@ -513,6 +601,8 @@ public interface LogEntryOrBuilder extends
    */
   com.google.logging.v2.LogEntrySourceLocation getSourceLocation();
   /**
+   *
+   *
    * <pre>
    * Optional. Source code location information associated with the log entry,
    * if any.

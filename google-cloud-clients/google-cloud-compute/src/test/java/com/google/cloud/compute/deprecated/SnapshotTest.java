@@ -28,10 +28,8 @@ import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
 import com.google.common.collect.ImmutableList;
-
-import org.junit.Test;
-
 import java.util.List;
+import org.junit.Test;
 
 public class SnapshotTest {
 
@@ -39,8 +37,8 @@ public class SnapshotTest {
   private static final DiskId SOURCE_DISK = DiskId.of("project", "zone", "disk");
   private static final Long CREATION_TIMESTAMP = 1453293540000L;
   private static final String DESCRIPTION = "description";
-  private static final List<LicenseId> LICENSES = ImmutableList.of(
-      LicenseId.of("project", "license1"), LicenseId.of("project", "license2"));
+  private static final List<LicenseId> LICENSES =
+      ImmutableList.of(LicenseId.of("project", "license1"), LicenseId.of("project", "license2"));
   private static final SnapshotId SNAPSHOT_ID = SnapshotId.of("project", "snapshot");
   private static final SnapshotInfo.Status STATUS = SnapshotInfo.Status.CREATING;
   private static final Long DISK_SIZE_GB = 42L;
@@ -58,32 +56,34 @@ public class SnapshotTest {
   private void initializeExpectedSnapshot(int optionsCalls) {
     expect(serviceMockReturnsOptions.getOptions()).andReturn(mockOptions).times(optionsCalls);
     replay(serviceMockReturnsOptions);
-    expectedSnapshot = new Snapshot.Builder(serviceMockReturnsOptions, SNAPSHOT_ID, SOURCE_DISK)
-        .setGeneratedId(GENERATED_ID)
-        .setCreationTimestamp(CREATION_TIMESTAMP)
-        .setDescription(DESCRIPTION)
-        .setStatus(STATUS)
-        .setDiskSizeGb(DISK_SIZE_GB)
-        .setLicenses(LICENSES)
-        .setSourceDiskId(SOURCE_DISK_ID)
-        .setStorageBytes(STORAGE_BYTES)
-        .setStorageBytesStatus(STORAGE_BYTES_STATUS)
-        .build();
+    expectedSnapshot =
+        new Snapshot.Builder(serviceMockReturnsOptions, SNAPSHOT_ID, SOURCE_DISK)
+            .setGeneratedId(GENERATED_ID)
+            .setCreationTimestamp(CREATION_TIMESTAMP)
+            .setDescription(DESCRIPTION)
+            .setStatus(STATUS)
+            .setDiskSizeGb(DISK_SIZE_GB)
+            .setLicenses(LICENSES)
+            .setSourceDiskId(SOURCE_DISK_ID)
+            .setStorageBytes(STORAGE_BYTES)
+            .setStorageBytesStatus(STORAGE_BYTES_STATUS)
+            .build();
     compute = createStrictMock(Compute.class);
   }
 
   private void initializeSnapshot() {
-    snapshot = new Snapshot.Builder(compute, SNAPSHOT_ID, SOURCE_DISK)
-        .setGeneratedId(GENERATED_ID)
-        .setCreationTimestamp(CREATION_TIMESTAMP)
-        .setDescription(DESCRIPTION)
-        .setStatus(STATUS)
-        .setDiskSizeGb(DISK_SIZE_GB)
-        .setLicenses(LICENSES)
-        .setSourceDiskId(SOURCE_DISK_ID)
-        .setStorageBytes(STORAGE_BYTES)
-        .setStorageBytesStatus(STORAGE_BYTES_STATUS)
-        .build();
+    snapshot =
+        new Snapshot.Builder(compute, SNAPSHOT_ID, SOURCE_DISK)
+            .setGeneratedId(GENERATED_ID)
+            .setCreationTimestamp(CREATION_TIMESTAMP)
+            .setDescription(DESCRIPTION)
+            .setStatus(STATUS)
+            .setDiskSizeGb(DISK_SIZE_GB)
+            .setLicenses(LICENSES)
+            .setSourceDiskId(SOURCE_DISK_ID)
+            .setStorageBytes(STORAGE_BYTES)
+            .setStorageBytesStatus(STORAGE_BYTES_STATUS)
+            .build();
   }
 
   @Test
@@ -108,8 +108,8 @@ public class SnapshotTest {
   @Test
   public void testToAndFromPb() {
     initializeExpectedSnapshot(8);
-    compareSnapshot(expectedSnapshot,
-        Snapshot.fromPb(serviceMockReturnsOptions, expectedSnapshot.toPb()));
+    compareSnapshot(
+        expectedSnapshot, Snapshot.fromPb(serviceMockReturnsOptions, expectedSnapshot.toPb()));
     Snapshot snapshot =
         new Snapshot.Builder(serviceMockReturnsOptions, SNAPSHOT_ID, SOURCE_DISK).build();
     compareSnapshot(snapshot, Snapshot.fromPb(serviceMockReturnsOptions, snapshot.toPb()));
@@ -119,9 +119,10 @@ public class SnapshotTest {
   public void testDeleteOperation() {
     initializeExpectedSnapshot(2);
     expect(compute.getOptions()).andReturn(mockOptions);
-    Operation operation = new Operation.Builder(serviceMockReturnsOptions)
-        .setOperationId(GlobalOperationId.of("project", "op"))
-        .build();
+    Operation operation =
+        new Operation.Builder(serviceMockReturnsOptions)
+            .setOperationId(GlobalOperationId.of("project", "op"))
+            .build();
     expect(compute.deleteSnapshot(SNAPSHOT_ID)).andReturn(operation);
     replay(compute);
     initializeSnapshot();

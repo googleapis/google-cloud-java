@@ -3,11 +3,14 @@
 
 package com.google.cloud.texttospeech.v1beta1;
 
-public interface VoiceSelectionParamsOrBuilder extends
+public interface VoiceSelectionParamsOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.texttospeech.v1beta1.VoiceSelectionParams)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The language (and optionally also the region) of the voice expressed as a
    * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag, e.g.
@@ -26,6 +29,8 @@ public interface VoiceSelectionParamsOrBuilder extends
    */
   java.lang.String getLanguageCode();
   /**
+   *
+   *
    * <pre>
    * The language (and optionally also the region) of the voice expressed as a
    * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag, e.g.
@@ -42,10 +47,11 @@ public interface VoiceSelectionParamsOrBuilder extends
    *
    * <code>string language_code = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getLanguageCodeBytes();
+  com.google.protobuf.ByteString getLanguageCodeBytes();
 
   /**
+   *
+   *
    * <pre>
    * The name of the voice. Optional; if not set, the service will choose a
    * voice based on the other parameters such as language_code and gender.
@@ -55,6 +61,8 @@ public interface VoiceSelectionParamsOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The name of the voice. Optional; if not set, the service will choose a
    * voice based on the other parameters such as language_code and gender.
@@ -62,10 +70,11 @@ public interface VoiceSelectionParamsOrBuilder extends
    *
    * <code>string name = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * The preferred gender of the voice. Optional; if not set, the service will
    * choose a voice based on the other parameters such as language_code and
@@ -78,6 +87,8 @@ public interface VoiceSelectionParamsOrBuilder extends
    */
   int getSsmlGenderValue();
   /**
+   *
+   *
    * <pre>
    * The preferred gender of the voice. Optional; if not set, the service will
    * choose a voice based on the other parameters such as language_code and

@@ -3,11 +3,14 @@
 
 package com.google.devtools.clouderrorreporting.v1beta1;
 
-public interface ReportErrorEventRequestOrBuilder extends
+public interface ReportErrorEventRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.devtools.clouderrorreporting.v1beta1.ReportErrorEventRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * [Required] The resource name of the Google Cloud Platform project. Written
    * as `projects/` plus the
@@ -19,6 +22,8 @@ public interface ReportErrorEventRequestOrBuilder extends
    */
   java.lang.String getProjectName();
   /**
+   *
+   *
    * <pre>
    * [Required] The resource name of the Google Cloud Platform project. Written
    * as `projects/` plus the
@@ -28,10 +33,11 @@ public interface ReportErrorEventRequestOrBuilder extends
    *
    * <code>string project_name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getProjectNameBytes();
+  com.google.protobuf.ByteString getProjectNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * [Required] The error event to be reported.
    * </pre>
@@ -40,6 +46,8 @@ public interface ReportErrorEventRequestOrBuilder extends
    */
   boolean hasEvent();
   /**
+   *
+   *
    * <pre>
    * [Required] The error event to be reported.
    * </pre>
@@ -48,6 +56,8 @@ public interface ReportErrorEventRequestOrBuilder extends
    */
   com.google.devtools.clouderrorreporting.v1beta1.ReportedErrorEvent getEvent();
   /**
+   *
+   *
    * <pre>
    * [Required] The error event to be reported.
    * </pre>

@@ -3,11 +3,14 @@
 
 package com.google.cloud.videointelligence.v1p1beta1;
 
-public interface EntityOrBuilder extends
+public interface EntityOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.videointelligence.v1p1beta1.Entity)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Opaque entity ID. Some IDs may be available in
    * [Google Knowledge Graph Search
@@ -18,6 +21,8 @@ public interface EntityOrBuilder extends
    */
   java.lang.String getEntityId();
   /**
+   *
+   *
    * <pre>
    * Opaque entity ID. Some IDs may be available in
    * [Google Knowledge Graph Search
@@ -26,10 +31,11 @@ public interface EntityOrBuilder extends
    *
    * <code>string entity_id = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getEntityIdBytes();
+  com.google.protobuf.ByteString getEntityIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * Textual description, e.g. `Fixed-gear bicycle`.
    * </pre>
@@ -38,16 +44,19 @@ public interface EntityOrBuilder extends
    */
   java.lang.String getDescription();
   /**
+   *
+   *
    * <pre>
    * Textual description, e.g. `Fixed-gear bicycle`.
    * </pre>
    *
    * <code>string description = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getDescriptionBytes();
+  com.google.protobuf.ByteString getDescriptionBytes();
 
   /**
+   *
+   *
    * <pre>
    * Language code for `description` in BCP-47 format.
    * </pre>
@@ -56,12 +65,13 @@ public interface EntityOrBuilder extends
    */
   java.lang.String getLanguageCode();
   /**
+   *
+   *
    * <pre>
    * Language code for `description` in BCP-47 format.
    * </pre>
    *
    * <code>string language_code = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getLanguageCodeBytes();
+  com.google.protobuf.ByteString getLanguageCodeBytes();
 }

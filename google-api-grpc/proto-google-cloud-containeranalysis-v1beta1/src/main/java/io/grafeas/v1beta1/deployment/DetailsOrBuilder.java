@@ -3,11 +3,14 @@
 
 package io.grafeas.v1beta1.deployment;
 
-public interface DetailsOrBuilder extends
+public interface DetailsOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:grafeas.v1beta1.deployment.Details)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Deployment history for the resource.
    * </pre>
@@ -16,6 +19,8 @@ public interface DetailsOrBuilder extends
    */
   boolean hasDeployment();
   /**
+   *
+   *
    * <pre>
    * Deployment history for the resource.
    * </pre>
@@ -24,6 +29,8 @@ public interface DetailsOrBuilder extends
    */
   io.grafeas.v1beta1.deployment.Deployment getDeployment();
   /**
+   *
+   *
    * <pre>
    * Deployment history for the resource.
    * </pre>

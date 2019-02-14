@@ -4,21 +4,24 @@
 package com.google.cloud.vision.v1;
 
 /**
+ *
+ *
  * <pre>
  * Relevant information for the image from the Internet.
  * </pre>
  *
  * Protobuf type {@code google.cloud.vision.v1.WebDetection}
  */
-public  final class WebDetection extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class WebDetection extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.vision.v1.WebDetection)
     WebDetectionOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use WebDetection.newBuilder() to construct.
   private WebDetection(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private WebDetection() {
     webEntities_ = java.util.Collections.emptyList();
     fullMatchingImages_ = java.util.Collections.emptyList();
@@ -29,15 +32,18 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private WebDetection(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -49,74 +55,96 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          case 10:
+            {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                webEntities_ =
+                    new java.util.ArrayList<com.google.cloud.vision.v1.WebDetection.WebEntity>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              webEntities_.add(
+                  input.readMessage(
+                      com.google.cloud.vision.v1.WebDetection.WebEntity.parser(),
+                      extensionRegistry));
+              break;
             }
-            break;
-          }
-          case 10: {
-            if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-              webEntities_ = new java.util.ArrayList<com.google.cloud.vision.v1.WebDetection.WebEntity>();
-              mutable_bitField0_ |= 0x00000001;
+          case 18:
+            {
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                fullMatchingImages_ =
+                    new java.util.ArrayList<com.google.cloud.vision.v1.WebDetection.WebImage>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              fullMatchingImages_.add(
+                  input.readMessage(
+                      com.google.cloud.vision.v1.WebDetection.WebImage.parser(),
+                      extensionRegistry));
+              break;
             }
-            webEntities_.add(
-                input.readMessage(com.google.cloud.vision.v1.WebDetection.WebEntity.parser(), extensionRegistry));
-            break;
-          }
-          case 18: {
-            if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-              fullMatchingImages_ = new java.util.ArrayList<com.google.cloud.vision.v1.WebDetection.WebImage>();
-              mutable_bitField0_ |= 0x00000002;
+          case 26:
+            {
+              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+                partialMatchingImages_ =
+                    new java.util.ArrayList<com.google.cloud.vision.v1.WebDetection.WebImage>();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              partialMatchingImages_.add(
+                  input.readMessage(
+                      com.google.cloud.vision.v1.WebDetection.WebImage.parser(),
+                      extensionRegistry));
+              break;
             }
-            fullMatchingImages_.add(
-                input.readMessage(com.google.cloud.vision.v1.WebDetection.WebImage.parser(), extensionRegistry));
-            break;
-          }
-          case 26: {
-            if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-              partialMatchingImages_ = new java.util.ArrayList<com.google.cloud.vision.v1.WebDetection.WebImage>();
-              mutable_bitField0_ |= 0x00000004;
+          case 34:
+            {
+              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+                pagesWithMatchingImages_ =
+                    new java.util.ArrayList<com.google.cloud.vision.v1.WebDetection.WebPage>();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              pagesWithMatchingImages_.add(
+                  input.readMessage(
+                      com.google.cloud.vision.v1.WebDetection.WebPage.parser(), extensionRegistry));
+              break;
             }
-            partialMatchingImages_.add(
-                input.readMessage(com.google.cloud.vision.v1.WebDetection.WebImage.parser(), extensionRegistry));
-            break;
-          }
-          case 34: {
-            if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-              pagesWithMatchingImages_ = new java.util.ArrayList<com.google.cloud.vision.v1.WebDetection.WebPage>();
-              mutable_bitField0_ |= 0x00000008;
+          case 50:
+            {
+              if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+                visuallySimilarImages_ =
+                    new java.util.ArrayList<com.google.cloud.vision.v1.WebDetection.WebImage>();
+                mutable_bitField0_ |= 0x00000010;
+              }
+              visuallySimilarImages_.add(
+                  input.readMessage(
+                      com.google.cloud.vision.v1.WebDetection.WebImage.parser(),
+                      extensionRegistry));
+              break;
             }
-            pagesWithMatchingImages_.add(
-                input.readMessage(com.google.cloud.vision.v1.WebDetection.WebPage.parser(), extensionRegistry));
-            break;
-          }
-          case 50: {
-            if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
-              visuallySimilarImages_ = new java.util.ArrayList<com.google.cloud.vision.v1.WebDetection.WebImage>();
-              mutable_bitField0_ |= 0x00000010;
+          case 66:
+            {
+              if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+                bestGuessLabels_ =
+                    new java.util.ArrayList<com.google.cloud.vision.v1.WebDetection.WebLabel>();
+                mutable_bitField0_ |= 0x00000020;
+              }
+              bestGuessLabels_.add(
+                  input.readMessage(
+                      com.google.cloud.vision.v1.WebDetection.WebLabel.parser(),
+                      extensionRegistry));
+              break;
             }
-            visuallySimilarImages_.add(
-                input.readMessage(com.google.cloud.vision.v1.WebDetection.WebImage.parser(), extensionRegistry));
-            break;
-          }
-          case 66: {
-            if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
-              bestGuessLabels_ = new java.util.ArrayList<com.google.cloud.vision.v1.WebDetection.WebLabel>();
-              mutable_bitField0_ |= 0x00000020;
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
             }
-            bestGuessLabels_.add(
-                input.readMessage(com.google.cloud.vision.v1.WebDetection.WebLabel.parser(), extensionRegistry));
-            break;
-          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
         webEntities_ = java.util.Collections.unmodifiableList(webEntities_);
@@ -140,23 +168,30 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.vision.v1.WebDetectionProto.internal_static_google_cloud_vision_v1_WebDetection_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.vision.v1.WebDetectionProto
+        .internal_static_google_cloud_vision_v1_WebDetection_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.vision.v1.WebDetectionProto.internal_static_google_cloud_vision_v1_WebDetection_fieldAccessorTable
+    return com.google.cloud.vision.v1.WebDetectionProto
+        .internal_static_google_cloud_vision_v1_WebDetection_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.vision.v1.WebDetection.class, com.google.cloud.vision.v1.WebDetection.Builder.class);
+            com.google.cloud.vision.v1.WebDetection.class,
+            com.google.cloud.vision.v1.WebDetection.Builder.class);
   }
 
-  public interface WebEntityOrBuilder extends
+  public interface WebEntityOrBuilder
+      extends
       // @@protoc_insertion_point(interface_extends:google.cloud.vision.v1.WebDetection.WebEntity)
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     *
+     *
      * <pre>
      * Opaque entity ID.
      * </pre>
@@ -165,16 +200,19 @@ private static final long serialVersionUID = 0L;
      */
     java.lang.String getEntityId();
     /**
+     *
+     *
      * <pre>
      * Opaque entity ID.
      * </pre>
      *
      * <code>string entity_id = 1;</code>
      */
-    com.google.protobuf.ByteString
-        getEntityIdBytes();
+    com.google.protobuf.ByteString getEntityIdBytes();
 
     /**
+     *
+     *
      * <pre>
      * Overall relevancy score for the entity.
      * Not normalized and not comparable across different image queries.
@@ -185,6 +223,8 @@ private static final long serialVersionUID = 0L;
     float getScore();
 
     /**
+     *
+     *
      * <pre>
      * Canonical description of the entity, in English.
      * </pre>
@@ -193,31 +233,35 @@ private static final long serialVersionUID = 0L;
      */
     java.lang.String getDescription();
     /**
+     *
+     *
      * <pre>
      * Canonical description of the entity, in English.
      * </pre>
      *
      * <code>string description = 3;</code>
      */
-    com.google.protobuf.ByteString
-        getDescriptionBytes();
+    com.google.protobuf.ByteString getDescriptionBytes();
   }
   /**
+   *
+   *
    * <pre>
    * Entity deduced from similar images on the Internet.
    * </pre>
    *
    * Protobuf type {@code google.cloud.vision.v1.WebDetection.WebEntity}
    */
-  public  static final class WebEntity extends
-      com.google.protobuf.GeneratedMessageV3 implements
+  public static final class WebEntity extends com.google.protobuf.GeneratedMessageV3
+      implements
       // @@protoc_insertion_point(message_implements:google.cloud.vision.v1.WebDetection.WebEntity)
       WebEntityOrBuilder {
-  private static final long serialVersionUID = 0L;
+    private static final long serialVersionUID = 0L;
     // Use WebEntity.newBuilder() to construct.
     private WebEntity(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
+
     private WebEntity() {
       entityId_ = "";
       score_ = 0F;
@@ -225,15 +269,18 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
+
     private WebEntity(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -245,57 +292,64 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
+            case 10:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                entityId_ = s;
+                break;
               }
-              break;
-            }
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 21:
+              {
+                score_ = input.readFloat();
+                break;
+              }
+            case 26:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
 
-              entityId_ = s;
-              break;
-            }
-            case 21: {
-
-              score_ = input.readFloat();
-              break;
-            }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              description_ = s;
-              break;
-            }
+                description_ = s;
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.vision.v1.WebDetectionProto.internal_static_google_cloud_vision_v1_WebDetection_WebEntity_descriptor;
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.vision.v1.WebDetectionProto
+          .internal_static_google_cloud_vision_v1_WebDetection_WebEntity_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.vision.v1.WebDetectionProto.internal_static_google_cloud_vision_v1_WebDetection_WebEntity_fieldAccessorTable
+      return com.google.cloud.vision.v1.WebDetectionProto
+          .internal_static_google_cloud_vision_v1_WebDetection_WebEntity_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.vision.v1.WebDetection.WebEntity.class, com.google.cloud.vision.v1.WebDetection.WebEntity.Builder.class);
+              com.google.cloud.vision.v1.WebDetection.WebEntity.class,
+              com.google.cloud.vision.v1.WebDetection.WebEntity.Builder.class);
     }
 
     public static final int ENTITY_ID_FIELD_NUMBER = 1;
     private volatile java.lang.Object entityId_;
     /**
+     *
+     *
      * <pre>
      * Opaque entity ID.
      * </pre>
@@ -307,27 +361,26 @@ private static final long serialVersionUID = 0L;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         entityId_ = s;
         return s;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Opaque entity ID.
      * </pre>
      *
      * <code>string entity_id = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getEntityIdBytes() {
+    public com.google.protobuf.ByteString getEntityIdBytes() {
       java.lang.Object ref = entityId_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         entityId_ = b;
         return b;
       } else {
@@ -338,6 +391,8 @@ private static final long serialVersionUID = 0L;
     public static final int SCORE_FIELD_NUMBER = 2;
     private float score_;
     /**
+     *
+     *
      * <pre>
      * Overall relevancy score for the entity.
      * Not normalized and not comparable across different image queries.
@@ -352,6 +407,8 @@ private static final long serialVersionUID = 0L;
     public static final int DESCRIPTION_FIELD_NUMBER = 3;
     private volatile java.lang.Object description_;
     /**
+     *
+     *
      * <pre>
      * Canonical description of the entity, in English.
      * </pre>
@@ -363,27 +420,26 @@ private static final long serialVersionUID = 0L;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         description_ = s;
         return s;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Canonical description of the entity, in English.
      * </pre>
      *
      * <code>string description = 3;</code>
      */
-    public com.google.protobuf.ByteString
-        getDescriptionBytes() {
+    public com.google.protobuf.ByteString getDescriptionBytes() {
       java.lang.Object ref = description_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         description_ = b;
         return b;
       } else {
@@ -392,6 +448,8 @@ private static final long serialVersionUID = 0L;
     }
 
     private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -401,8 +459,8 @@ private static final long serialVersionUID = 0L;
       return true;
     }
 
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
       if (!getEntityIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, entityId_);
       }
@@ -415,6 +473,7 @@ private static final long serialVersionUID = 0L;
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -424,8 +483,7 @@ private static final long serialVersionUID = 0L;
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, entityId_);
       }
       if (score_ != 0F) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(2, score_);
+        size += com.google.protobuf.CodedOutputStream.computeFloatSize(2, score_);
       }
       if (!getDescriptionBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, description_);
@@ -438,22 +496,21 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-       return true;
+        return true;
       }
       if (!(obj instanceof com.google.cloud.vision.v1.WebDetection.WebEntity)) {
         return super.equals(obj);
       }
-      com.google.cloud.vision.v1.WebDetection.WebEntity other = (com.google.cloud.vision.v1.WebDetection.WebEntity) obj;
+      com.google.cloud.vision.v1.WebDetection.WebEntity other =
+          (com.google.cloud.vision.v1.WebDetection.WebEntity) obj;
 
       boolean result = true;
-      result = result && getEntityId()
-          .equals(other.getEntityId());
-      result = result && (
-          java.lang.Float.floatToIntBits(getScore())
-          == java.lang.Float.floatToIntBits(
-              other.getScore()));
-      result = result && getDescription()
-          .equals(other.getDescription());
+      result = result && getEntityId().equals(other.getEntityId());
+      result =
+          result
+              && (java.lang.Float.floatToIntBits(getScore())
+                  == java.lang.Float.floatToIntBits(other.getScore()));
+      result = result && getDescription().equals(other.getDescription());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -468,8 +525,7 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + ENTITY_ID_FIELD_NUMBER;
       hash = (53 * hash) + getEntityId().hashCode();
       hash = (37 * hash) + SCORE_FIELD_NUMBER;
-      hash = (53 * hash) + java.lang.Float.floatToIntBits(
-          getScore());
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(getScore());
       hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
       hash = (53 * hash) + getDescription().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -478,85 +534,93 @@ private static final long serialVersionUID = 0L;
     }
 
     public static com.google.cloud.vision.v1.WebDetection.WebEntity parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.cloud.vision.v1.WebDetection.WebEntity parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static com.google.cloud.vision.v1.WebDetection.WebEntity parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.cloud.vision.v1.WebDetection.WebEntity parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static com.google.cloud.vision.v1.WebDetection.WebEntity parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.cloud.vision.v1.WebDetection.WebEntity parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.google.cloud.vision.v1.WebDetection.WebEntity parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
+
     public static com.google.cloud.vision.v1.WebDetection.WebEntity parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
-    public static com.google.cloud.vision.v1.WebDetection.WebEntity parseDelimitedFrom(java.io.InputStream input)
+
+    public static com.google.cloud.vision.v1.WebDetection.WebEntity parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
+
     public static com.google.cloud.vision.v1.WebDetection.WebEntity parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
     }
+
+    public static com.google.cloud.vision.v1.WebDetection.WebEntity parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
     public static com.google.cloud.vision.v1.WebDetection.WebEntity parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
+
     public static com.google.cloud.vision.v1.WebDetection.WebEntity parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
 
-    public Builder newBuilderForType() { return newBuilder(); }
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
+
     public static Builder newBuilder(com.google.cloud.vision.v1.WebDetection.WebEntity prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+
+    @java.lang.Override
     public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
     @java.lang.Override
@@ -566,26 +630,32 @@ private static final long serialVersionUID = 0L;
       return builder;
     }
     /**
+     *
+     *
      * <pre>
      * Entity deduced from similar images on the Internet.
      * </pre>
      *
      * Protobuf type {@code google.cloud.vision.v1.WebDetection.WebEntity}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
         // @@protoc_insertion_point(builder_implements:google.cloud.vision.v1.WebDetection.WebEntity)
         com.google.cloud.vision.v1.WebDetection.WebEntityOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.google.cloud.vision.v1.WebDetectionProto.internal_static_google_cloud_vision_v1_WebDetection_WebEntity_descriptor;
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.vision.v1.WebDetectionProto
+            .internal_static_google_cloud_vision_v1_WebDetection_WebEntity_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.google.cloud.vision.v1.WebDetectionProto.internal_static_google_cloud_vision_v1_WebDetection_WebEntity_fieldAccessorTable
+        return com.google.cloud.vision.v1.WebDetectionProto
+            .internal_static_google_cloud_vision_v1_WebDetection_WebEntity_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.google.cloud.vision.v1.WebDetection.WebEntity.class, com.google.cloud.vision.v1.WebDetection.WebEntity.Builder.class);
+                com.google.cloud.vision.v1.WebDetection.WebEntity.class,
+                com.google.cloud.vision.v1.WebDetection.WebEntity.Builder.class);
       }
 
       // Construct using com.google.cloud.vision.v1.WebDetection.WebEntity.newBuilder()
@@ -593,16 +663,16 @@ private static final long serialVersionUID = 0L;
         maybeForceBuilderInitialization();
       }
 
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
+
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
+
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         entityId_ = "";
@@ -614,15 +684,18 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.google.cloud.vision.v1.WebDetectionProto.internal_static_google_cloud_vision_v1_WebDetection_WebEntity_descriptor;
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.vision.v1.WebDetectionProto
+            .internal_static_google_cloud_vision_v1_WebDetection_WebEntity_descriptor;
       }
 
+      @java.lang.Override
       public com.google.cloud.vision.v1.WebDetection.WebEntity getDefaultInstanceForType() {
         return com.google.cloud.vision.v1.WebDetection.WebEntity.getDefaultInstance();
       }
 
+      @java.lang.Override
       public com.google.cloud.vision.v1.WebDetection.WebEntity build() {
         com.google.cloud.vision.v1.WebDetection.WebEntity result = buildPartial();
         if (!result.isInitialized()) {
@@ -631,8 +704,10 @@ private static final long serialVersionUID = 0L;
         return result;
       }
 
+      @java.lang.Override
       public com.google.cloud.vision.v1.WebDetection.WebEntity buildPartial() {
-        com.google.cloud.vision.v1.WebDetection.WebEntity result = new com.google.cloud.vision.v1.WebDetection.WebEntity(this);
+        com.google.cloud.vision.v1.WebDetection.WebEntity result =
+            new com.google.cloud.vision.v1.WebDetection.WebEntity(this);
         result.entityId_ = entityId_;
         result.score_ = score_;
         result.description_ = description_;
@@ -640,35 +715,45 @@ private static final long serialVersionUID = 0L;
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+
+      @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index,
+          java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+
+      @java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.google.cloud.vision.v1.WebDetection.WebEntity) {
-          return mergeFrom((com.google.cloud.vision.v1.WebDetection.WebEntity)other);
+          return mergeFrom((com.google.cloud.vision.v1.WebDetection.WebEntity) other);
         } else {
           super.mergeFrom(other);
           return this;
@@ -676,7 +761,8 @@ private static final long serialVersionUID = 0L;
       }
 
       public Builder mergeFrom(com.google.cloud.vision.v1.WebDetection.WebEntity other) {
-        if (other == com.google.cloud.vision.v1.WebDetection.WebEntity.getDefaultInstance()) return this;
+        if (other == com.google.cloud.vision.v1.WebDetection.WebEntity.getDefaultInstance())
+          return this;
         if (!other.getEntityId().isEmpty()) {
           entityId_ = other.entityId_;
           onChanged();
@@ -693,10 +779,12 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -705,7 +793,8 @@ private static final long serialVersionUID = 0L;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.google.cloud.vision.v1.WebDetection.WebEntity) e.getUnfinishedMessage();
+          parsedMessage =
+              (com.google.cloud.vision.v1.WebDetection.WebEntity) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -717,6 +806,8 @@ private static final long serialVersionUID = 0L;
 
       private java.lang.Object entityId_ = "";
       /**
+       *
+       *
        * <pre>
        * Opaque entity ID.
        * </pre>
@@ -726,8 +817,7 @@ private static final long serialVersionUID = 0L;
       public java.lang.String getEntityId() {
         java.lang.Object ref = entityId_;
         if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           entityId_ = s;
           return s;
@@ -736,19 +826,19 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * Opaque entity ID.
        * </pre>
        *
        * <code>string entity_id = 1;</code>
        */
-      public com.google.protobuf.ByteString
-          getEntityIdBytes() {
+      public com.google.protobuf.ByteString getEntityIdBytes() {
         java.lang.Object ref = entityId_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
           entityId_ = b;
           return b;
         } else {
@@ -756,23 +846,26 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * Opaque entity ID.
        * </pre>
        *
        * <code>string entity_id = 1;</code>
        */
-      public Builder setEntityId(
-          java.lang.String value) {
+      public Builder setEntityId(java.lang.String value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  
+          throw new NullPointerException();
+        }
+
         entityId_ = value;
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Opaque entity ID.
        * </pre>
@@ -780,32 +873,35 @@ private static final long serialVersionUID = 0L;
        * <code>string entity_id = 1;</code>
        */
       public Builder clearEntityId() {
-        
+
         entityId_ = getDefaultInstance().getEntityId();
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Opaque entity ID.
        * </pre>
        *
        * <code>string entity_id = 1;</code>
        */
-      public Builder setEntityIdBytes(
-          com.google.protobuf.ByteString value) {
+      public Builder setEntityIdBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
         entityId_ = value;
         onChanged();
         return this;
       }
 
-      private float score_ ;
+      private float score_;
       /**
+       *
+       *
        * <pre>
        * Overall relevancy score for the entity.
        * Not normalized and not comparable across different image queries.
@@ -817,6 +913,8 @@ private static final long serialVersionUID = 0L;
         return score_;
       }
       /**
+       *
+       *
        * <pre>
        * Overall relevancy score for the entity.
        * Not normalized and not comparable across different image queries.
@@ -825,12 +923,14 @@ private static final long serialVersionUID = 0L;
        * <code>float score = 2;</code>
        */
       public Builder setScore(float value) {
-        
+
         score_ = value;
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Overall relevancy score for the entity.
        * Not normalized and not comparable across different image queries.
@@ -839,7 +939,7 @@ private static final long serialVersionUID = 0L;
        * <code>float score = 2;</code>
        */
       public Builder clearScore() {
-        
+
         score_ = 0F;
         onChanged();
         return this;
@@ -847,6 +947,8 @@ private static final long serialVersionUID = 0L;
 
       private java.lang.Object description_ = "";
       /**
+       *
+       *
        * <pre>
        * Canonical description of the entity, in English.
        * </pre>
@@ -856,8 +958,7 @@ private static final long serialVersionUID = 0L;
       public java.lang.String getDescription() {
         java.lang.Object ref = description_;
         if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           description_ = s;
           return s;
@@ -866,19 +967,19 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * Canonical description of the entity, in English.
        * </pre>
        *
        * <code>string description = 3;</code>
        */
-      public com.google.protobuf.ByteString
-          getDescriptionBytes() {
+      public com.google.protobuf.ByteString getDescriptionBytes() {
         java.lang.Object ref = description_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
           description_ = b;
           return b;
         } else {
@@ -886,23 +987,26 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * Canonical description of the entity, in English.
        * </pre>
        *
        * <code>string description = 3;</code>
        */
-      public Builder setDescription(
-          java.lang.String value) {
+      public Builder setDescription(java.lang.String value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  
+          throw new NullPointerException();
+        }
+
         description_ = value;
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Canonical description of the entity, in English.
        * </pre>
@@ -910,45 +1014,49 @@ private static final long serialVersionUID = 0L;
        * <code>string description = 3;</code>
        */
       public Builder clearDescription() {
-        
+
         description_ = getDefaultInstance().getDescription();
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Canonical description of the entity, in English.
        * </pre>
        *
        * <code>string description = 3;</code>
        */
-      public Builder setDescriptionBytes(
-          com.google.protobuf.ByteString value) {
+      public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
         description_ = value;
         onChanged();
         return this;
       }
+
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
       }
-
 
       // @@protoc_insertion_point(builder_scope:google.cloud.vision.v1.WebDetection.WebEntity)
     }
 
     // @@protoc_insertion_point(class_scope:google.cloud.vision.v1.WebDetection.WebEntity)
     private static final com.google.cloud.vision.v1.WebDetection.WebEntity DEFAULT_INSTANCE;
+
     static {
       DEFAULT_INSTANCE = new com.google.cloud.vision.v1.WebDetection.WebEntity();
     }
@@ -957,15 +1065,16 @@ private static final long serialVersionUID = 0L;
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<WebEntity>
-        PARSER = new com.google.protobuf.AbstractParser<WebEntity>() {
-      public WebEntity parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new WebEntity(input, extensionRegistry);
-      }
-    };
+    private static final com.google.protobuf.Parser<WebEntity> PARSER =
+        new com.google.protobuf.AbstractParser<WebEntity>() {
+          @java.lang.Override
+          public WebEntity parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new WebEntity(input, extensionRegistry);
+          }
+        };
 
     public static com.google.protobuf.Parser<WebEntity> parser() {
       return PARSER;
@@ -976,17 +1085,20 @@ private static final long serialVersionUID = 0L;
       return PARSER;
     }
 
+    @java.lang.Override
     public com.google.cloud.vision.v1.WebDetection.WebEntity getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
-
   }
 
-  public interface WebImageOrBuilder extends
+  public interface WebImageOrBuilder
+      extends
       // @@protoc_insertion_point(interface_extends:google.cloud.vision.v1.WebDetection.WebImage)
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     *
+     *
      * <pre>
      * The result image URL.
      * </pre>
@@ -995,16 +1107,19 @@ private static final long serialVersionUID = 0L;
      */
     java.lang.String getUrl();
     /**
+     *
+     *
      * <pre>
      * The result image URL.
      * </pre>
      *
      * <code>string url = 1;</code>
      */
-    com.google.protobuf.ByteString
-        getUrlBytes();
+    com.google.protobuf.ByteString getUrlBytes();
 
     /**
+     *
+     *
      * <pre>
      * (Deprecated) Overall relevancy score for the image.
      * </pre>
@@ -1014,36 +1129,42 @@ private static final long serialVersionUID = 0L;
     float getScore();
   }
   /**
+   *
+   *
    * <pre>
    * Metadata for online images.
    * </pre>
    *
    * Protobuf type {@code google.cloud.vision.v1.WebDetection.WebImage}
    */
-  public  static final class WebImage extends
-      com.google.protobuf.GeneratedMessageV3 implements
+  public static final class WebImage extends com.google.protobuf.GeneratedMessageV3
+      implements
       // @@protoc_insertion_point(message_implements:google.cloud.vision.v1.WebDetection.WebImage)
       WebImageOrBuilder {
-  private static final long serialVersionUID = 0L;
+    private static final long serialVersionUID = 0L;
     // Use WebImage.newBuilder() to construct.
     private WebImage(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
+
     private WebImage() {
       url_ = "";
       score_ = 0F;
     }
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
+
     private WebImage(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -1055,51 +1176,57 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
+            case 10:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                url_ = s;
+                break;
               }
-              break;
-            }
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              url_ = s;
-              break;
-            }
-            case 21: {
-
-              score_ = input.readFloat();
-              break;
-            }
+            case 21:
+              {
+                score_ = input.readFloat();
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.vision.v1.WebDetectionProto.internal_static_google_cloud_vision_v1_WebDetection_WebImage_descriptor;
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.vision.v1.WebDetectionProto
+          .internal_static_google_cloud_vision_v1_WebDetection_WebImage_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.vision.v1.WebDetectionProto.internal_static_google_cloud_vision_v1_WebDetection_WebImage_fieldAccessorTable
+      return com.google.cloud.vision.v1.WebDetectionProto
+          .internal_static_google_cloud_vision_v1_WebDetection_WebImage_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.vision.v1.WebDetection.WebImage.class, com.google.cloud.vision.v1.WebDetection.WebImage.Builder.class);
+              com.google.cloud.vision.v1.WebDetection.WebImage.class,
+              com.google.cloud.vision.v1.WebDetection.WebImage.Builder.class);
     }
 
     public static final int URL_FIELD_NUMBER = 1;
     private volatile java.lang.Object url_;
     /**
+     *
+     *
      * <pre>
      * The result image URL.
      * </pre>
@@ -1111,27 +1238,26 @@ private static final long serialVersionUID = 0L;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         url_ = s;
         return s;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The result image URL.
      * </pre>
      *
      * <code>string url = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getUrlBytes() {
+    public com.google.protobuf.ByteString getUrlBytes() {
       java.lang.Object ref = url_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         url_ = b;
         return b;
       } else {
@@ -1142,6 +1268,8 @@ private static final long serialVersionUID = 0L;
     public static final int SCORE_FIELD_NUMBER = 2;
     private float score_;
     /**
+     *
+     *
      * <pre>
      * (Deprecated) Overall relevancy score for the image.
      * </pre>
@@ -1153,6 +1281,8 @@ private static final long serialVersionUID = 0L;
     }
 
     private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -1162,8 +1292,8 @@ private static final long serialVersionUID = 0L;
       return true;
     }
 
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
       if (!getUrlBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, url_);
       }
@@ -1173,6 +1303,7 @@ private static final long serialVersionUID = 0L;
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -1182,8 +1313,7 @@ private static final long serialVersionUID = 0L;
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, url_);
       }
       if (score_ != 0F) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(2, score_);
+        size += com.google.protobuf.CodedOutputStream.computeFloatSize(2, score_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -1193,20 +1323,20 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-       return true;
+        return true;
       }
       if (!(obj instanceof com.google.cloud.vision.v1.WebDetection.WebImage)) {
         return super.equals(obj);
       }
-      com.google.cloud.vision.v1.WebDetection.WebImage other = (com.google.cloud.vision.v1.WebDetection.WebImage) obj;
+      com.google.cloud.vision.v1.WebDetection.WebImage other =
+          (com.google.cloud.vision.v1.WebDetection.WebImage) obj;
 
       boolean result = true;
-      result = result && getUrl()
-          .equals(other.getUrl());
-      result = result && (
-          java.lang.Float.floatToIntBits(getScore())
-          == java.lang.Float.floatToIntBits(
-              other.getScore()));
+      result = result && getUrl().equals(other.getUrl());
+      result =
+          result
+              && (java.lang.Float.floatToIntBits(getScore())
+                  == java.lang.Float.floatToIntBits(other.getScore()));
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -1221,93 +1351,100 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + URL_FIELD_NUMBER;
       hash = (53 * hash) + getUrl().hashCode();
       hash = (37 * hash) + SCORE_FIELD_NUMBER;
-      hash = (53 * hash) + java.lang.Float.floatToIntBits(
-          getScore());
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(getScore());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
     public static com.google.cloud.vision.v1.WebDetection.WebImage parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.cloud.vision.v1.WebDetection.WebImage parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static com.google.cloud.vision.v1.WebDetection.WebImage parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.cloud.vision.v1.WebDetection.WebImage parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static com.google.cloud.vision.v1.WebDetection.WebImage parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.cloud.vision.v1.WebDetection.WebImage parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.google.cloud.vision.v1.WebDetection.WebImage parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
+
     public static com.google.cloud.vision.v1.WebDetection.WebImage parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
-    public static com.google.cloud.vision.v1.WebDetection.WebImage parseDelimitedFrom(java.io.InputStream input)
+
+    public static com.google.cloud.vision.v1.WebDetection.WebImage parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
+
     public static com.google.cloud.vision.v1.WebDetection.WebImage parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
     }
+
+    public static com.google.cloud.vision.v1.WebDetection.WebImage parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
     public static com.google.cloud.vision.v1.WebDetection.WebImage parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
+
     public static com.google.cloud.vision.v1.WebDetection.WebImage parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
 
-    public Builder newBuilderForType() { return newBuilder(); }
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
+
     public static Builder newBuilder(com.google.cloud.vision.v1.WebDetection.WebImage prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+
+    @java.lang.Override
     public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
     @java.lang.Override
@@ -1317,26 +1454,32 @@ private static final long serialVersionUID = 0L;
       return builder;
     }
     /**
+     *
+     *
      * <pre>
      * Metadata for online images.
      * </pre>
      *
      * Protobuf type {@code google.cloud.vision.v1.WebDetection.WebImage}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
         // @@protoc_insertion_point(builder_implements:google.cloud.vision.v1.WebDetection.WebImage)
         com.google.cloud.vision.v1.WebDetection.WebImageOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.google.cloud.vision.v1.WebDetectionProto.internal_static_google_cloud_vision_v1_WebDetection_WebImage_descriptor;
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.vision.v1.WebDetectionProto
+            .internal_static_google_cloud_vision_v1_WebDetection_WebImage_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.google.cloud.vision.v1.WebDetectionProto.internal_static_google_cloud_vision_v1_WebDetection_WebImage_fieldAccessorTable
+        return com.google.cloud.vision.v1.WebDetectionProto
+            .internal_static_google_cloud_vision_v1_WebDetection_WebImage_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.google.cloud.vision.v1.WebDetection.WebImage.class, com.google.cloud.vision.v1.WebDetection.WebImage.Builder.class);
+                com.google.cloud.vision.v1.WebDetection.WebImage.class,
+                com.google.cloud.vision.v1.WebDetection.WebImage.Builder.class);
       }
 
       // Construct using com.google.cloud.vision.v1.WebDetection.WebImage.newBuilder()
@@ -1344,16 +1487,16 @@ private static final long serialVersionUID = 0L;
         maybeForceBuilderInitialization();
       }
 
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
+
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
+
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         url_ = "";
@@ -1363,15 +1506,18 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.google.cloud.vision.v1.WebDetectionProto.internal_static_google_cloud_vision_v1_WebDetection_WebImage_descriptor;
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.vision.v1.WebDetectionProto
+            .internal_static_google_cloud_vision_v1_WebDetection_WebImage_descriptor;
       }
 
+      @java.lang.Override
       public com.google.cloud.vision.v1.WebDetection.WebImage getDefaultInstanceForType() {
         return com.google.cloud.vision.v1.WebDetection.WebImage.getDefaultInstance();
       }
 
+      @java.lang.Override
       public com.google.cloud.vision.v1.WebDetection.WebImage build() {
         com.google.cloud.vision.v1.WebDetection.WebImage result = buildPartial();
         if (!result.isInitialized()) {
@@ -1380,43 +1526,55 @@ private static final long serialVersionUID = 0L;
         return result;
       }
 
+      @java.lang.Override
       public com.google.cloud.vision.v1.WebDetection.WebImage buildPartial() {
-        com.google.cloud.vision.v1.WebDetection.WebImage result = new com.google.cloud.vision.v1.WebDetection.WebImage(this);
+        com.google.cloud.vision.v1.WebDetection.WebImage result =
+            new com.google.cloud.vision.v1.WebDetection.WebImage(this);
         result.url_ = url_;
         result.score_ = score_;
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+
+      @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index,
+          java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+
+      @java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.google.cloud.vision.v1.WebDetection.WebImage) {
-          return mergeFrom((com.google.cloud.vision.v1.WebDetection.WebImage)other);
+          return mergeFrom((com.google.cloud.vision.v1.WebDetection.WebImage) other);
         } else {
           super.mergeFrom(other);
           return this;
@@ -1424,7 +1582,8 @@ private static final long serialVersionUID = 0L;
       }
 
       public Builder mergeFrom(com.google.cloud.vision.v1.WebDetection.WebImage other) {
-        if (other == com.google.cloud.vision.v1.WebDetection.WebImage.getDefaultInstance()) return this;
+        if (other == com.google.cloud.vision.v1.WebDetection.WebImage.getDefaultInstance())
+          return this;
         if (!other.getUrl().isEmpty()) {
           url_ = other.url_;
           onChanged();
@@ -1437,10 +1596,12 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1449,7 +1610,8 @@ private static final long serialVersionUID = 0L;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.google.cloud.vision.v1.WebDetection.WebImage) e.getUnfinishedMessage();
+          parsedMessage =
+              (com.google.cloud.vision.v1.WebDetection.WebImage) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -1461,6 +1623,8 @@ private static final long serialVersionUID = 0L;
 
       private java.lang.Object url_ = "";
       /**
+       *
+       *
        * <pre>
        * The result image URL.
        * </pre>
@@ -1470,8 +1634,7 @@ private static final long serialVersionUID = 0L;
       public java.lang.String getUrl() {
         java.lang.Object ref = url_;
         if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           url_ = s;
           return s;
@@ -1480,19 +1643,19 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * The result image URL.
        * </pre>
        *
        * <code>string url = 1;</code>
        */
-      public com.google.protobuf.ByteString
-          getUrlBytes() {
+      public com.google.protobuf.ByteString getUrlBytes() {
         java.lang.Object ref = url_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
           url_ = b;
           return b;
         } else {
@@ -1500,23 +1663,26 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * The result image URL.
        * </pre>
        *
        * <code>string url = 1;</code>
        */
-      public Builder setUrl(
-          java.lang.String value) {
+      public Builder setUrl(java.lang.String value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  
+          throw new NullPointerException();
+        }
+
         url_ = value;
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The result image URL.
        * </pre>
@@ -1524,32 +1690,35 @@ private static final long serialVersionUID = 0L;
        * <code>string url = 1;</code>
        */
       public Builder clearUrl() {
-        
+
         url_ = getDefaultInstance().getUrl();
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The result image URL.
        * </pre>
        *
        * <code>string url = 1;</code>
        */
-      public Builder setUrlBytes(
-          com.google.protobuf.ByteString value) {
+      public Builder setUrlBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
         url_ = value;
         onChanged();
         return this;
       }
 
-      private float score_ ;
+      private float score_;
       /**
+       *
+       *
        * <pre>
        * (Deprecated) Overall relevancy score for the image.
        * </pre>
@@ -1560,6 +1729,8 @@ private static final long serialVersionUID = 0L;
         return score_;
       }
       /**
+       *
+       *
        * <pre>
        * (Deprecated) Overall relevancy score for the image.
        * </pre>
@@ -1567,12 +1738,14 @@ private static final long serialVersionUID = 0L;
        * <code>float score = 2;</code>
        */
       public Builder setScore(float value) {
-        
+
         score_ = value;
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * (Deprecated) Overall relevancy score for the image.
        * </pre>
@@ -1580,27 +1753,30 @@ private static final long serialVersionUID = 0L;
        * <code>float score = 2;</code>
        */
       public Builder clearScore() {
-        
+
         score_ = 0F;
         onChanged();
         return this;
       }
+
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
       }
-
 
       // @@protoc_insertion_point(builder_scope:google.cloud.vision.v1.WebDetection.WebImage)
     }
 
     // @@protoc_insertion_point(class_scope:google.cloud.vision.v1.WebDetection.WebImage)
     private static final com.google.cloud.vision.v1.WebDetection.WebImage DEFAULT_INSTANCE;
+
     static {
       DEFAULT_INSTANCE = new com.google.cloud.vision.v1.WebDetection.WebImage();
     }
@@ -1609,15 +1785,16 @@ private static final long serialVersionUID = 0L;
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<WebImage>
-        PARSER = new com.google.protobuf.AbstractParser<WebImage>() {
-      public WebImage parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new WebImage(input, extensionRegistry);
-      }
-    };
+    private static final com.google.protobuf.Parser<WebImage> PARSER =
+        new com.google.protobuf.AbstractParser<WebImage>() {
+          @java.lang.Override
+          public WebImage parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new WebImage(input, extensionRegistry);
+          }
+        };
 
     public static com.google.protobuf.Parser<WebImage> parser() {
       return PARSER;
@@ -1628,17 +1805,20 @@ private static final long serialVersionUID = 0L;
       return PARSER;
     }
 
+    @java.lang.Override
     public com.google.cloud.vision.v1.WebDetection.WebImage getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
-
   }
 
-  public interface WebPageOrBuilder extends
+  public interface WebPageOrBuilder
+      extends
       // @@protoc_insertion_point(interface_extends:google.cloud.vision.v1.WebDetection.WebPage)
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     *
+     *
      * <pre>
      * The result web page URL.
      * </pre>
@@ -1647,16 +1827,19 @@ private static final long serialVersionUID = 0L;
      */
     java.lang.String getUrl();
     /**
+     *
+     *
      * <pre>
      * The result web page URL.
      * </pre>
      *
      * <code>string url = 1;</code>
      */
-    com.google.protobuf.ByteString
-        getUrlBytes();
+    com.google.protobuf.ByteString getUrlBytes();
 
     /**
+     *
+     *
      * <pre>
      * (Deprecated) Overall relevancy score for the web page.
      * </pre>
@@ -1666,6 +1849,8 @@ private static final long serialVersionUID = 0L;
     float getScore();
 
     /**
+     *
+     *
      * <pre>
      * Title for the web page, may contain HTML markups.
      * </pre>
@@ -1674,16 +1859,19 @@ private static final long serialVersionUID = 0L;
      */
     java.lang.String getPageTitle();
     /**
+     *
+     *
      * <pre>
      * Title for the web page, may contain HTML markups.
      * </pre>
      *
      * <code>string page_title = 3;</code>
      */
-    com.google.protobuf.ByteString
-        getPageTitleBytes();
+    com.google.protobuf.ByteString getPageTitleBytes();
 
     /**
+     *
+     *
      * <pre>
      * Fully matching images on the page.
      * Can include resized copies of the query image.
@@ -1691,9 +1879,10 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage full_matching_images = 4;</code>
      */
-    java.util.List<com.google.cloud.vision.v1.WebDetection.WebImage> 
-        getFullMatchingImagesList();
+    java.util.List<com.google.cloud.vision.v1.WebDetection.WebImage> getFullMatchingImagesList();
     /**
+     *
+     *
      * <pre>
      * Fully matching images on the page.
      * Can include resized copies of the query image.
@@ -1703,6 +1892,8 @@ private static final long serialVersionUID = 0L;
      */
     com.google.cloud.vision.v1.WebDetection.WebImage getFullMatchingImages(int index);
     /**
+     *
+     *
      * <pre>
      * Fully matching images on the page.
      * Can include resized copies of the query image.
@@ -1712,6 +1903,8 @@ private static final long serialVersionUID = 0L;
      */
     int getFullMatchingImagesCount();
     /**
+     *
+     *
      * <pre>
      * Fully matching images on the page.
      * Can include resized copies of the query image.
@@ -1719,9 +1912,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage full_matching_images = 4;</code>
      */
-    java.util.List<? extends com.google.cloud.vision.v1.WebDetection.WebImageOrBuilder> 
+    java.util.List<? extends com.google.cloud.vision.v1.WebDetection.WebImageOrBuilder>
         getFullMatchingImagesOrBuilderList();
     /**
+     *
+     *
      * <pre>
      * Fully matching images on the page.
      * Can include resized copies of the query image.
@@ -1733,6 +1928,8 @@ private static final long serialVersionUID = 0L;
         int index);
 
     /**
+     *
+     *
      * <pre>
      * Partial matching images on the page.
      * Those images are similar enough to share some key-point features. For
@@ -1740,11 +1937,13 @@ private static final long serialVersionUID = 0L;
      * crops.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 5;</code>
+     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 5;
+     * </code>
      */
-    java.util.List<com.google.cloud.vision.v1.WebDetection.WebImage> 
-        getPartialMatchingImagesList();
+    java.util.List<com.google.cloud.vision.v1.WebDetection.WebImage> getPartialMatchingImagesList();
     /**
+     *
+     *
      * <pre>
      * Partial matching images on the page.
      * Those images are similar enough to share some key-point features. For
@@ -1752,10 +1951,13 @@ private static final long serialVersionUID = 0L;
      * crops.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 5;</code>
+     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 5;
+     * </code>
      */
     com.google.cloud.vision.v1.WebDetection.WebImage getPartialMatchingImages(int index);
     /**
+     *
+     *
      * <pre>
      * Partial matching images on the page.
      * Those images are similar enough to share some key-point features. For
@@ -1763,10 +1965,13 @@ private static final long serialVersionUID = 0L;
      * crops.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 5;</code>
+     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 5;
+     * </code>
      */
     int getPartialMatchingImagesCount();
     /**
+     *
+     *
      * <pre>
      * Partial matching images on the page.
      * Those images are similar enough to share some key-point features. For
@@ -1774,11 +1979,14 @@ private static final long serialVersionUID = 0L;
      * crops.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 5;</code>
+     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 5;
+     * </code>
      */
-    java.util.List<? extends com.google.cloud.vision.v1.WebDetection.WebImageOrBuilder> 
+    java.util.List<? extends com.google.cloud.vision.v1.WebDetection.WebImageOrBuilder>
         getPartialMatchingImagesOrBuilderList();
     /**
+     *
+     *
      * <pre>
      * Partial matching images on the page.
      * Those images are similar enough to share some key-point features. For
@@ -1786,27 +1994,31 @@ private static final long serialVersionUID = 0L;
      * crops.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 5;</code>
+     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 5;
+     * </code>
      */
     com.google.cloud.vision.v1.WebDetection.WebImageOrBuilder getPartialMatchingImagesOrBuilder(
         int index);
   }
   /**
+   *
+   *
    * <pre>
    * Metadata for web pages.
    * </pre>
    *
    * Protobuf type {@code google.cloud.vision.v1.WebDetection.WebPage}
    */
-  public  static final class WebPage extends
-      com.google.protobuf.GeneratedMessageV3 implements
+  public static final class WebPage extends com.google.protobuf.GeneratedMessageV3
+      implements
       // @@protoc_insertion_point(message_implements:google.cloud.vision.v1.WebDetection.WebPage)
       WebPageOrBuilder {
-  private static final long serialVersionUID = 0L;
+    private static final long serialVersionUID = 0L;
     // Use WebPage.newBuilder() to construct.
     private WebPage(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
+
     private WebPage() {
       url_ = "";
       score_ = 0F;
@@ -1816,15 +2028,18 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
+
     private WebPage(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -1836,55 +2051,64 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 10:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
 
-              url_ = s;
-              break;
-            }
-            case 21: {
-
-              score_ = input.readFloat();
-              break;
-            }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              pageTitle_ = s;
-              break;
-            }
-            case 34: {
-              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-                fullMatchingImages_ = new java.util.ArrayList<com.google.cloud.vision.v1.WebDetection.WebImage>();
-                mutable_bitField0_ |= 0x00000008;
+                url_ = s;
+                break;
               }
-              fullMatchingImages_.add(
-                  input.readMessage(com.google.cloud.vision.v1.WebDetection.WebImage.parser(), extensionRegistry));
-              break;
-            }
-            case 42: {
-              if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
-                partialMatchingImages_ = new java.util.ArrayList<com.google.cloud.vision.v1.WebDetection.WebImage>();
-                mutable_bitField0_ |= 0x00000010;
+            case 21:
+              {
+                score_ = input.readFloat();
+                break;
               }
-              partialMatchingImages_.add(
-                  input.readMessage(com.google.cloud.vision.v1.WebDetection.WebImage.parser(), extensionRegistry));
-              break;
-            }
+            case 26:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                pageTitle_ = s;
+                break;
+              }
+            case 34:
+              {
+                if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+                  fullMatchingImages_ =
+                      new java.util.ArrayList<com.google.cloud.vision.v1.WebDetection.WebImage>();
+                  mutable_bitField0_ |= 0x00000008;
+                }
+                fullMatchingImages_.add(
+                    input.readMessage(
+                        com.google.cloud.vision.v1.WebDetection.WebImage.parser(),
+                        extensionRegistry));
+                break;
+              }
+            case 42:
+              {
+                if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+                  partialMatchingImages_ =
+                      new java.util.ArrayList<com.google.cloud.vision.v1.WebDetection.WebImage>();
+                  mutable_bitField0_ |= 0x00000010;
+                }
+                partialMatchingImages_.add(
+                    input.readMessage(
+                        com.google.cloud.vision.v1.WebDetection.WebImage.parser(),
+                        extensionRegistry));
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
         if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
           fullMatchingImages_ = java.util.Collections.unmodifiableList(fullMatchingImages_);
@@ -1896,22 +2120,28 @@ private static final long serialVersionUID = 0L;
         makeExtensionsImmutable();
       }
     }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.vision.v1.WebDetectionProto.internal_static_google_cloud_vision_v1_WebDetection_WebPage_descriptor;
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.vision.v1.WebDetectionProto
+          .internal_static_google_cloud_vision_v1_WebDetection_WebPage_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.vision.v1.WebDetectionProto.internal_static_google_cloud_vision_v1_WebDetection_WebPage_fieldAccessorTable
+      return com.google.cloud.vision.v1.WebDetectionProto
+          .internal_static_google_cloud_vision_v1_WebDetection_WebPage_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.vision.v1.WebDetection.WebPage.class, com.google.cloud.vision.v1.WebDetection.WebPage.Builder.class);
+              com.google.cloud.vision.v1.WebDetection.WebPage.class,
+              com.google.cloud.vision.v1.WebDetection.WebPage.Builder.class);
     }
 
     private int bitField0_;
     public static final int URL_FIELD_NUMBER = 1;
     private volatile java.lang.Object url_;
     /**
+     *
+     *
      * <pre>
      * The result web page URL.
      * </pre>
@@ -1923,27 +2153,26 @@ private static final long serialVersionUID = 0L;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         url_ = s;
         return s;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The result web page URL.
      * </pre>
      *
      * <code>string url = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getUrlBytes() {
+    public com.google.protobuf.ByteString getUrlBytes() {
       java.lang.Object ref = url_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         url_ = b;
         return b;
       } else {
@@ -1954,6 +2183,8 @@ private static final long serialVersionUID = 0L;
     public static final int SCORE_FIELD_NUMBER = 2;
     private float score_;
     /**
+     *
+     *
      * <pre>
      * (Deprecated) Overall relevancy score for the web page.
      * </pre>
@@ -1967,6 +2198,8 @@ private static final long serialVersionUID = 0L;
     public static final int PAGE_TITLE_FIELD_NUMBER = 3;
     private volatile java.lang.Object pageTitle_;
     /**
+     *
+     *
      * <pre>
      * Title for the web page, may contain HTML markups.
      * </pre>
@@ -1978,27 +2211,26 @@ private static final long serialVersionUID = 0L;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         pageTitle_ = s;
         return s;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Title for the web page, may contain HTML markups.
      * </pre>
      *
      * <code>string page_title = 3;</code>
      */
-    public com.google.protobuf.ByteString
-        getPageTitleBytes() {
+    public com.google.protobuf.ByteString getPageTitleBytes() {
       java.lang.Object ref = pageTitle_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         pageTitle_ = b;
         return b;
       } else {
@@ -2009,6 +2241,8 @@ private static final long serialVersionUID = 0L;
     public static final int FULL_MATCHING_IMAGES_FIELD_NUMBER = 4;
     private java.util.List<com.google.cloud.vision.v1.WebDetection.WebImage> fullMatchingImages_;
     /**
+     *
+     *
      * <pre>
      * Fully matching images on the page.
      * Can include resized copies of the query image.
@@ -2016,10 +2250,13 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage full_matching_images = 4;</code>
      */
-    public java.util.List<com.google.cloud.vision.v1.WebDetection.WebImage> getFullMatchingImagesList() {
+    public java.util.List<com.google.cloud.vision.v1.WebDetection.WebImage>
+        getFullMatchingImagesList() {
       return fullMatchingImages_;
     }
     /**
+     *
+     *
      * <pre>
      * Fully matching images on the page.
      * Can include resized copies of the query image.
@@ -2027,11 +2264,13 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage full_matching_images = 4;</code>
      */
-    public java.util.List<? extends com.google.cloud.vision.v1.WebDetection.WebImageOrBuilder> 
+    public java.util.List<? extends com.google.cloud.vision.v1.WebDetection.WebImageOrBuilder>
         getFullMatchingImagesOrBuilderList() {
       return fullMatchingImages_;
     }
     /**
+     *
+     *
      * <pre>
      * Fully matching images on the page.
      * Can include resized copies of the query image.
@@ -2043,6 +2282,8 @@ private static final long serialVersionUID = 0L;
       return fullMatchingImages_.size();
     }
     /**
+     *
+     *
      * <pre>
      * Fully matching images on the page.
      * Can include resized copies of the query image.
@@ -2054,6 +2295,8 @@ private static final long serialVersionUID = 0L;
       return fullMatchingImages_.get(index);
     }
     /**
+     *
+     *
      * <pre>
      * Fully matching images on the page.
      * Can include resized copies of the query image.
@@ -2069,6 +2312,8 @@ private static final long serialVersionUID = 0L;
     public static final int PARTIAL_MATCHING_IMAGES_FIELD_NUMBER = 5;
     private java.util.List<com.google.cloud.vision.v1.WebDetection.WebImage> partialMatchingImages_;
     /**
+     *
+     *
      * <pre>
      * Partial matching images on the page.
      * Those images are similar enough to share some key-point features. For
@@ -2076,12 +2321,16 @@ private static final long serialVersionUID = 0L;
      * crops.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 5;</code>
+     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 5;
+     * </code>
      */
-    public java.util.List<com.google.cloud.vision.v1.WebDetection.WebImage> getPartialMatchingImagesList() {
+    public java.util.List<com.google.cloud.vision.v1.WebDetection.WebImage>
+        getPartialMatchingImagesList() {
       return partialMatchingImages_;
     }
     /**
+     *
+     *
      * <pre>
      * Partial matching images on the page.
      * Those images are similar enough to share some key-point features. For
@@ -2089,13 +2338,16 @@ private static final long serialVersionUID = 0L;
      * crops.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 5;</code>
+     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 5;
+     * </code>
      */
-    public java.util.List<? extends com.google.cloud.vision.v1.WebDetection.WebImageOrBuilder> 
+    public java.util.List<? extends com.google.cloud.vision.v1.WebDetection.WebImageOrBuilder>
         getPartialMatchingImagesOrBuilderList() {
       return partialMatchingImages_;
     }
     /**
+     *
+     *
      * <pre>
      * Partial matching images on the page.
      * Those images are similar enough to share some key-point features. For
@@ -2103,12 +2355,15 @@ private static final long serialVersionUID = 0L;
      * crops.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 5;</code>
+     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 5;
+     * </code>
      */
     public int getPartialMatchingImagesCount() {
       return partialMatchingImages_.size();
     }
     /**
+     *
+     *
      * <pre>
      * Partial matching images on the page.
      * Those images are similar enough to share some key-point features. For
@@ -2116,12 +2371,15 @@ private static final long serialVersionUID = 0L;
      * crops.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 5;</code>
+     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 5;
+     * </code>
      */
     public com.google.cloud.vision.v1.WebDetection.WebImage getPartialMatchingImages(int index) {
       return partialMatchingImages_.get(index);
     }
     /**
+     *
+     *
      * <pre>
      * Partial matching images on the page.
      * Those images are similar enough to share some key-point features. For
@@ -2129,14 +2387,17 @@ private static final long serialVersionUID = 0L;
      * crops.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 5;</code>
+     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 5;
+     * </code>
      */
-    public com.google.cloud.vision.v1.WebDetection.WebImageOrBuilder getPartialMatchingImagesOrBuilder(
-        int index) {
+    public com.google.cloud.vision.v1.WebDetection.WebImageOrBuilder
+        getPartialMatchingImagesOrBuilder(int index) {
       return partialMatchingImages_.get(index);
     }
 
     private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -2146,8 +2407,8 @@ private static final long serialVersionUID = 0L;
       return true;
     }
 
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
       if (!getUrlBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, url_);
       }
@@ -2166,6 +2427,7 @@ private static final long serialVersionUID = 0L;
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -2175,19 +2437,19 @@ private static final long serialVersionUID = 0L;
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, url_);
       }
       if (score_ != 0F) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(2, score_);
+        size += com.google.protobuf.CodedOutputStream.computeFloatSize(2, score_);
       }
       if (!getPageTitleBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, pageTitle_);
       }
       for (int i = 0; i < fullMatchingImages_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, fullMatchingImages_.get(i));
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(4, fullMatchingImages_.get(i));
       }
       for (int i = 0; i < partialMatchingImages_.size(); i++) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, partialMatchingImages_.get(i));
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                5, partialMatchingImages_.get(i));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2197,26 +2459,24 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-       return true;
+        return true;
       }
       if (!(obj instanceof com.google.cloud.vision.v1.WebDetection.WebPage)) {
         return super.equals(obj);
       }
-      com.google.cloud.vision.v1.WebDetection.WebPage other = (com.google.cloud.vision.v1.WebDetection.WebPage) obj;
+      com.google.cloud.vision.v1.WebDetection.WebPage other =
+          (com.google.cloud.vision.v1.WebDetection.WebPage) obj;
 
       boolean result = true;
-      result = result && getUrl()
-          .equals(other.getUrl());
-      result = result && (
-          java.lang.Float.floatToIntBits(getScore())
-          == java.lang.Float.floatToIntBits(
-              other.getScore()));
-      result = result && getPageTitle()
-          .equals(other.getPageTitle());
-      result = result && getFullMatchingImagesList()
-          .equals(other.getFullMatchingImagesList());
-      result = result && getPartialMatchingImagesList()
-          .equals(other.getPartialMatchingImagesList());
+      result = result && getUrl().equals(other.getUrl());
+      result =
+          result
+              && (java.lang.Float.floatToIntBits(getScore())
+                  == java.lang.Float.floatToIntBits(other.getScore()));
+      result = result && getPageTitle().equals(other.getPageTitle());
+      result = result && getFullMatchingImagesList().equals(other.getFullMatchingImagesList());
+      result =
+          result && getPartialMatchingImagesList().equals(other.getPartialMatchingImagesList());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -2231,8 +2491,7 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + URL_FIELD_NUMBER;
       hash = (53 * hash) + getUrl().hashCode();
       hash = (37 * hash) + SCORE_FIELD_NUMBER;
-      hash = (53 * hash) + java.lang.Float.floatToIntBits(
-          getScore());
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(getScore());
       hash = (37 * hash) + PAGE_TITLE_FIELD_NUMBER;
       hash = (53 * hash) + getPageTitle().hashCode();
       if (getFullMatchingImagesCount() > 0) {
@@ -2249,85 +2508,93 @@ private static final long serialVersionUID = 0L;
     }
 
     public static com.google.cloud.vision.v1.WebDetection.WebPage parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.cloud.vision.v1.WebDetection.WebPage parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static com.google.cloud.vision.v1.WebDetection.WebPage parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.cloud.vision.v1.WebDetection.WebPage parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static com.google.cloud.vision.v1.WebDetection.WebPage parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.cloud.vision.v1.WebDetection.WebPage parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.google.cloud.vision.v1.WebDetection.WebPage parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
+
     public static com.google.cloud.vision.v1.WebDetection.WebPage parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
-    public static com.google.cloud.vision.v1.WebDetection.WebPage parseDelimitedFrom(java.io.InputStream input)
+
+    public static com.google.cloud.vision.v1.WebDetection.WebPage parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
+
     public static com.google.cloud.vision.v1.WebDetection.WebPage parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
     }
+
+    public static com.google.cloud.vision.v1.WebDetection.WebPage parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
     public static com.google.cloud.vision.v1.WebDetection.WebPage parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
+
     public static com.google.cloud.vision.v1.WebDetection.WebPage parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
 
-    public Builder newBuilderForType() { return newBuilder(); }
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
+
     public static Builder newBuilder(com.google.cloud.vision.v1.WebDetection.WebPage prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+
+    @java.lang.Override
     public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
     @java.lang.Override
@@ -2337,26 +2604,32 @@ private static final long serialVersionUID = 0L;
       return builder;
     }
     /**
+     *
+     *
      * <pre>
      * Metadata for web pages.
      * </pre>
      *
      * Protobuf type {@code google.cloud.vision.v1.WebDetection.WebPage}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
         // @@protoc_insertion_point(builder_implements:google.cloud.vision.v1.WebDetection.WebPage)
         com.google.cloud.vision.v1.WebDetection.WebPageOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.google.cloud.vision.v1.WebDetectionProto.internal_static_google_cloud_vision_v1_WebDetection_WebPage_descriptor;
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.vision.v1.WebDetectionProto
+            .internal_static_google_cloud_vision_v1_WebDetection_WebPage_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.google.cloud.vision.v1.WebDetectionProto.internal_static_google_cloud_vision_v1_WebDetection_WebPage_fieldAccessorTable
+        return com.google.cloud.vision.v1.WebDetectionProto
+            .internal_static_google_cloud_vision_v1_WebDetection_WebPage_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.google.cloud.vision.v1.WebDetection.WebPage.class, com.google.cloud.vision.v1.WebDetection.WebPage.Builder.class);
+                com.google.cloud.vision.v1.WebDetection.WebPage.class,
+                com.google.cloud.vision.v1.WebDetection.WebPage.Builder.class);
       }
 
       // Construct using com.google.cloud.vision.v1.WebDetection.WebPage.newBuilder()
@@ -2364,18 +2637,19 @@ private static final long serialVersionUID = 0L;
         maybeForceBuilderInitialization();
       }
 
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
+
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
           getFullMatchingImagesFieldBuilder();
           getPartialMatchingImagesFieldBuilder();
         }
       }
+
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         url_ = "";
@@ -2399,15 +2673,18 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.google.cloud.vision.v1.WebDetectionProto.internal_static_google_cloud_vision_v1_WebDetection_WebPage_descriptor;
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.vision.v1.WebDetectionProto
+            .internal_static_google_cloud_vision_v1_WebDetection_WebPage_descriptor;
       }
 
+      @java.lang.Override
       public com.google.cloud.vision.v1.WebDetection.WebPage getDefaultInstanceForType() {
         return com.google.cloud.vision.v1.WebDetection.WebPage.getDefaultInstance();
       }
 
+      @java.lang.Override
       public com.google.cloud.vision.v1.WebDetection.WebPage build() {
         com.google.cloud.vision.v1.WebDetection.WebPage result = buildPartial();
         if (!result.isInitialized()) {
@@ -2416,8 +2693,10 @@ private static final long serialVersionUID = 0L;
         return result;
       }
 
+      @java.lang.Override
       public com.google.cloud.vision.v1.WebDetection.WebPage buildPartial() {
-        com.google.cloud.vision.v1.WebDetection.WebPage result = new com.google.cloud.vision.v1.WebDetection.WebPage(this);
+        com.google.cloud.vision.v1.WebDetection.WebPage result =
+            new com.google.cloud.vision.v1.WebDetection.WebPage(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         result.url_ = url_;
@@ -2446,35 +2725,45 @@ private static final long serialVersionUID = 0L;
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+
+      @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index,
+          java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+
+      @java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.google.cloud.vision.v1.WebDetection.WebPage) {
-          return mergeFrom((com.google.cloud.vision.v1.WebDetection.WebPage)other);
+          return mergeFrom((com.google.cloud.vision.v1.WebDetection.WebPage) other);
         } else {
           super.mergeFrom(other);
           return this;
@@ -2482,7 +2771,8 @@ private static final long serialVersionUID = 0L;
       }
 
       public Builder mergeFrom(com.google.cloud.vision.v1.WebDetection.WebPage other) {
-        if (other == com.google.cloud.vision.v1.WebDetection.WebPage.getDefaultInstance()) return this;
+        if (other == com.google.cloud.vision.v1.WebDetection.WebPage.getDefaultInstance())
+          return this;
         if (!other.getUrl().isEmpty()) {
           url_ = other.url_;
           onChanged();
@@ -2512,9 +2802,10 @@ private static final long serialVersionUID = 0L;
               fullMatchingImagesBuilder_ = null;
               fullMatchingImages_ = other.fullMatchingImages_;
               bitField0_ = (bitField0_ & ~0x00000008);
-              fullMatchingImagesBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getFullMatchingImagesFieldBuilder() : null;
+              fullMatchingImagesBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                      ? getFullMatchingImagesFieldBuilder()
+                      : null;
             } else {
               fullMatchingImagesBuilder_.addAllMessages(other.fullMatchingImages_);
             }
@@ -2538,9 +2829,10 @@ private static final long serialVersionUID = 0L;
               partialMatchingImagesBuilder_ = null;
               partialMatchingImages_ = other.partialMatchingImages_;
               bitField0_ = (bitField0_ & ~0x00000010);
-              partialMatchingImagesBuilder_ = 
-                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                   getPartialMatchingImagesFieldBuilder() : null;
+              partialMatchingImagesBuilder_ =
+                  com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                      ? getPartialMatchingImagesFieldBuilder()
+                      : null;
             } else {
               partialMatchingImagesBuilder_.addAllMessages(other.partialMatchingImages_);
             }
@@ -2551,10 +2843,12 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -2563,7 +2857,8 @@ private static final long serialVersionUID = 0L;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.google.cloud.vision.v1.WebDetection.WebPage) e.getUnfinishedMessage();
+          parsedMessage =
+              (com.google.cloud.vision.v1.WebDetection.WebPage) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -2572,10 +2867,13 @@ private static final long serialVersionUID = 0L;
         }
         return this;
       }
+
       private int bitField0_;
 
       private java.lang.Object url_ = "";
       /**
+       *
+       *
        * <pre>
        * The result web page URL.
        * </pre>
@@ -2585,8 +2883,7 @@ private static final long serialVersionUID = 0L;
       public java.lang.String getUrl() {
         java.lang.Object ref = url_;
         if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           url_ = s;
           return s;
@@ -2595,19 +2892,19 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * The result web page URL.
        * </pre>
        *
        * <code>string url = 1;</code>
        */
-      public com.google.protobuf.ByteString
-          getUrlBytes() {
+      public com.google.protobuf.ByteString getUrlBytes() {
         java.lang.Object ref = url_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
           url_ = b;
           return b;
         } else {
@@ -2615,23 +2912,26 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * The result web page URL.
        * </pre>
        *
        * <code>string url = 1;</code>
        */
-      public Builder setUrl(
-          java.lang.String value) {
+      public Builder setUrl(java.lang.String value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  
+          throw new NullPointerException();
+        }
+
         url_ = value;
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The result web page URL.
        * </pre>
@@ -2639,32 +2939,35 @@ private static final long serialVersionUID = 0L;
        * <code>string url = 1;</code>
        */
       public Builder clearUrl() {
-        
+
         url_ = getDefaultInstance().getUrl();
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The result web page URL.
        * </pre>
        *
        * <code>string url = 1;</code>
        */
-      public Builder setUrlBytes(
-          com.google.protobuf.ByteString value) {
+      public Builder setUrlBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
         url_ = value;
         onChanged();
         return this;
       }
 
-      private float score_ ;
+      private float score_;
       /**
+       *
+       *
        * <pre>
        * (Deprecated) Overall relevancy score for the web page.
        * </pre>
@@ -2675,6 +2978,8 @@ private static final long serialVersionUID = 0L;
         return score_;
       }
       /**
+       *
+       *
        * <pre>
        * (Deprecated) Overall relevancy score for the web page.
        * </pre>
@@ -2682,12 +2987,14 @@ private static final long serialVersionUID = 0L;
        * <code>float score = 2;</code>
        */
       public Builder setScore(float value) {
-        
+
         score_ = value;
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * (Deprecated) Overall relevancy score for the web page.
        * </pre>
@@ -2695,7 +3002,7 @@ private static final long serialVersionUID = 0L;
        * <code>float score = 2;</code>
        */
       public Builder clearScore() {
-        
+
         score_ = 0F;
         onChanged();
         return this;
@@ -2703,6 +3010,8 @@ private static final long serialVersionUID = 0L;
 
       private java.lang.Object pageTitle_ = "";
       /**
+       *
+       *
        * <pre>
        * Title for the web page, may contain HTML markups.
        * </pre>
@@ -2712,8 +3021,7 @@ private static final long serialVersionUID = 0L;
       public java.lang.String getPageTitle() {
         java.lang.Object ref = pageTitle_;
         if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           pageTitle_ = s;
           return s;
@@ -2722,19 +3030,19 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * Title for the web page, may contain HTML markups.
        * </pre>
        *
        * <code>string page_title = 3;</code>
        */
-      public com.google.protobuf.ByteString
-          getPageTitleBytes() {
+      public com.google.protobuf.ByteString getPageTitleBytes() {
         java.lang.Object ref = pageTitle_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
           pageTitle_ = b;
           return b;
         } else {
@@ -2742,23 +3050,26 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * Title for the web page, may contain HTML markups.
        * </pre>
        *
        * <code>string page_title = 3;</code>
        */
-      public Builder setPageTitle(
-          java.lang.String value) {
+      public Builder setPageTitle(java.lang.String value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  
+          throw new NullPointerException();
+        }
+
         pageTitle_ = value;
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Title for the web page, may contain HTML markups.
        * </pre>
@@ -2766,51 +3077,62 @@ private static final long serialVersionUID = 0L;
        * <code>string page_title = 3;</code>
        */
       public Builder clearPageTitle() {
-        
+
         pageTitle_ = getDefaultInstance().getPageTitle();
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Title for the web page, may contain HTML markups.
        * </pre>
        *
        * <code>string page_title = 3;</code>
        */
-      public Builder setPageTitleBytes(
-          com.google.protobuf.ByteString value) {
+      public Builder setPageTitleBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
         pageTitle_ = value;
         onChanged();
         return this;
       }
 
       private java.util.List<com.google.cloud.vision.v1.WebDetection.WebImage> fullMatchingImages_ =
-        java.util.Collections.emptyList();
+          java.util.Collections.emptyList();
+
       private void ensureFullMatchingImagesIsMutable() {
         if (!((bitField0_ & 0x00000008) == 0x00000008)) {
-          fullMatchingImages_ = new java.util.ArrayList<com.google.cloud.vision.v1.WebDetection.WebImage>(fullMatchingImages_);
+          fullMatchingImages_ =
+              new java.util.ArrayList<com.google.cloud.vision.v1.WebDetection.WebImage>(
+                  fullMatchingImages_);
           bitField0_ |= 0x00000008;
-         }
+        }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.google.cloud.vision.v1.WebDetection.WebImage, com.google.cloud.vision.v1.WebDetection.WebImage.Builder, com.google.cloud.vision.v1.WebDetection.WebImageOrBuilder> fullMatchingImagesBuilder_;
+              com.google.cloud.vision.v1.WebDetection.WebImage,
+              com.google.cloud.vision.v1.WebDetection.WebImage.Builder,
+              com.google.cloud.vision.v1.WebDetection.WebImageOrBuilder>
+          fullMatchingImagesBuilder_;
 
       /**
+       *
+       *
        * <pre>
        * Fully matching images on the page.
        * Can include resized copies of the query image.
        * </pre>
        *
-       * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage full_matching_images = 4;</code>
+       * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage full_matching_images = 4;
+       * </code>
        */
-      public java.util.List<com.google.cloud.vision.v1.WebDetection.WebImage> getFullMatchingImagesList() {
+      public java.util.List<com.google.cloud.vision.v1.WebDetection.WebImage>
+          getFullMatchingImagesList() {
         if (fullMatchingImagesBuilder_ == null) {
           return java.util.Collections.unmodifiableList(fullMatchingImages_);
         } else {
@@ -2818,12 +3140,15 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * Fully matching images on the page.
        * Can include resized copies of the query image.
        * </pre>
        *
-       * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage full_matching_images = 4;</code>
+       * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage full_matching_images = 4;
+       * </code>
        */
       public int getFullMatchingImagesCount() {
         if (fullMatchingImagesBuilder_ == null) {
@@ -2833,12 +3158,15 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * Fully matching images on the page.
        * Can include resized copies of the query image.
        * </pre>
        *
-       * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage full_matching_images = 4;</code>
+       * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage full_matching_images = 4;
+       * </code>
        */
       public com.google.cloud.vision.v1.WebDetection.WebImage getFullMatchingImages(int index) {
         if (fullMatchingImagesBuilder_ == null) {
@@ -2848,12 +3176,15 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * Fully matching images on the page.
        * Can include resized copies of the query image.
        * </pre>
        *
-       * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage full_matching_images = 4;</code>
+       * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage full_matching_images = 4;
+       * </code>
        */
       public Builder setFullMatchingImages(
           int index, com.google.cloud.vision.v1.WebDetection.WebImage value) {
@@ -2870,12 +3201,15 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Fully matching images on the page.
        * Can include resized copies of the query image.
        * </pre>
        *
-       * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage full_matching_images = 4;</code>
+       * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage full_matching_images = 4;
+       * </code>
        */
       public Builder setFullMatchingImages(
           int index, com.google.cloud.vision.v1.WebDetection.WebImage.Builder builderForValue) {
@@ -2889,12 +3223,15 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Fully matching images on the page.
        * Can include resized copies of the query image.
        * </pre>
        *
-       * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage full_matching_images = 4;</code>
+       * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage full_matching_images = 4;
+       * </code>
        */
       public Builder addFullMatchingImages(com.google.cloud.vision.v1.WebDetection.WebImage value) {
         if (fullMatchingImagesBuilder_ == null) {
@@ -2910,12 +3247,15 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Fully matching images on the page.
        * Can include resized copies of the query image.
        * </pre>
        *
-       * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage full_matching_images = 4;</code>
+       * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage full_matching_images = 4;
+       * </code>
        */
       public Builder addFullMatchingImages(
           int index, com.google.cloud.vision.v1.WebDetection.WebImage value) {
@@ -2932,12 +3272,15 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Fully matching images on the page.
        * Can include resized copies of the query image.
        * </pre>
        *
-       * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage full_matching_images = 4;</code>
+       * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage full_matching_images = 4;
+       * </code>
        */
       public Builder addFullMatchingImages(
           com.google.cloud.vision.v1.WebDetection.WebImage.Builder builderForValue) {
@@ -2951,12 +3294,15 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Fully matching images on the page.
        * Can include resized copies of the query image.
        * </pre>
        *
-       * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage full_matching_images = 4;</code>
+       * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage full_matching_images = 4;
+       * </code>
        */
       public Builder addFullMatchingImages(
           int index, com.google.cloud.vision.v1.WebDetection.WebImage.Builder builderForValue) {
@@ -2970,19 +3316,21 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Fully matching images on the page.
        * Can include resized copies of the query image.
        * </pre>
        *
-       * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage full_matching_images = 4;</code>
+       * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage full_matching_images = 4;
+       * </code>
        */
       public Builder addAllFullMatchingImages(
           java.lang.Iterable<? extends com.google.cloud.vision.v1.WebDetection.WebImage> values) {
         if (fullMatchingImagesBuilder_ == null) {
           ensureFullMatchingImagesIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, fullMatchingImages_);
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, fullMatchingImages_);
           onChanged();
         } else {
           fullMatchingImagesBuilder_.addAllMessages(values);
@@ -2990,12 +3338,15 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Fully matching images on the page.
        * Can include resized copies of the query image.
        * </pre>
        *
-       * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage full_matching_images = 4;</code>
+       * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage full_matching_images = 4;
+       * </code>
        */
       public Builder clearFullMatchingImages() {
         if (fullMatchingImagesBuilder_ == null) {
@@ -3008,12 +3359,15 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Fully matching images on the page.
        * Can include resized copies of the query image.
        * </pre>
        *
-       * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage full_matching_images = 4;</code>
+       * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage full_matching_images = 4;
+       * </code>
        */
       public Builder removeFullMatchingImages(int index) {
         if (fullMatchingImagesBuilder_ == null) {
@@ -3026,42 +3380,52 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Fully matching images on the page.
        * Can include resized copies of the query image.
        * </pre>
        *
-       * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage full_matching_images = 4;</code>
+       * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage full_matching_images = 4;
+       * </code>
        */
       public com.google.cloud.vision.v1.WebDetection.WebImage.Builder getFullMatchingImagesBuilder(
           int index) {
         return getFullMatchingImagesFieldBuilder().getBuilder(index);
       }
       /**
+       *
+       *
        * <pre>
        * Fully matching images on the page.
        * Can include resized copies of the query image.
        * </pre>
        *
-       * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage full_matching_images = 4;</code>
+       * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage full_matching_images = 4;
+       * </code>
        */
-      public com.google.cloud.vision.v1.WebDetection.WebImageOrBuilder getFullMatchingImagesOrBuilder(
-          int index) {
+      public com.google.cloud.vision.v1.WebDetection.WebImageOrBuilder
+          getFullMatchingImagesOrBuilder(int index) {
         if (fullMatchingImagesBuilder_ == null) {
-          return fullMatchingImages_.get(index);  } else {
+          return fullMatchingImages_.get(index);
+        } else {
           return fullMatchingImagesBuilder_.getMessageOrBuilder(index);
         }
       }
       /**
+       *
+       *
        * <pre>
        * Fully matching images on the page.
        * Can include resized copies of the query image.
        * </pre>
        *
-       * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage full_matching_images = 4;</code>
+       * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage full_matching_images = 4;
+       * </code>
        */
-      public java.util.List<? extends com.google.cloud.vision.v1.WebDetection.WebImageOrBuilder> 
-           getFullMatchingImagesOrBuilderList() {
+      public java.util.List<? extends com.google.cloud.vision.v1.WebDetection.WebImageOrBuilder>
+          getFullMatchingImagesOrBuilderList() {
         if (fullMatchingImagesBuilder_ != null) {
           return fullMatchingImagesBuilder_.getMessageOrBuilderList();
         } else {
@@ -3069,48 +3433,65 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * Fully matching images on the page.
        * Can include resized copies of the query image.
        * </pre>
        *
-       * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage full_matching_images = 4;</code>
+       * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage full_matching_images = 4;
+       * </code>
        */
-      public com.google.cloud.vision.v1.WebDetection.WebImage.Builder addFullMatchingImagesBuilder() {
-        return getFullMatchingImagesFieldBuilder().addBuilder(
-            com.google.cloud.vision.v1.WebDetection.WebImage.getDefaultInstance());
+      public com.google.cloud.vision.v1.WebDetection.WebImage.Builder
+          addFullMatchingImagesBuilder() {
+        return getFullMatchingImagesFieldBuilder()
+            .addBuilder(com.google.cloud.vision.v1.WebDetection.WebImage.getDefaultInstance());
       }
       /**
+       *
+       *
        * <pre>
        * Fully matching images on the page.
        * Can include resized copies of the query image.
        * </pre>
        *
-       * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage full_matching_images = 4;</code>
+       * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage full_matching_images = 4;
+       * </code>
        */
       public com.google.cloud.vision.v1.WebDetection.WebImage.Builder addFullMatchingImagesBuilder(
           int index) {
-        return getFullMatchingImagesFieldBuilder().addBuilder(
-            index, com.google.cloud.vision.v1.WebDetection.WebImage.getDefaultInstance());
+        return getFullMatchingImagesFieldBuilder()
+            .addBuilder(
+                index, com.google.cloud.vision.v1.WebDetection.WebImage.getDefaultInstance());
       }
       /**
+       *
+       *
        * <pre>
        * Fully matching images on the page.
        * Can include resized copies of the query image.
        * </pre>
        *
-       * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage full_matching_images = 4;</code>
+       * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage full_matching_images = 4;
+       * </code>
        */
-      public java.util.List<com.google.cloud.vision.v1.WebDetection.WebImage.Builder> 
-           getFullMatchingImagesBuilderList() {
+      public java.util.List<com.google.cloud.vision.v1.WebDetection.WebImage.Builder>
+          getFullMatchingImagesBuilderList() {
         return getFullMatchingImagesFieldBuilder().getBuilderList();
       }
+
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.google.cloud.vision.v1.WebDetection.WebImage, com.google.cloud.vision.v1.WebDetection.WebImage.Builder, com.google.cloud.vision.v1.WebDetection.WebImageOrBuilder> 
+              com.google.cloud.vision.v1.WebDetection.WebImage,
+              com.google.cloud.vision.v1.WebDetection.WebImage.Builder,
+              com.google.cloud.vision.v1.WebDetection.WebImageOrBuilder>
           getFullMatchingImagesFieldBuilder() {
         if (fullMatchingImagesBuilder_ == null) {
-          fullMatchingImagesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.google.cloud.vision.v1.WebDetection.WebImage, com.google.cloud.vision.v1.WebDetection.WebImage.Builder, com.google.cloud.vision.v1.WebDetection.WebImageOrBuilder>(
+          fullMatchingImagesBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.cloud.vision.v1.WebDetection.WebImage,
+                  com.google.cloud.vision.v1.WebDetection.WebImage.Builder,
+                  com.google.cloud.vision.v1.WebDetection.WebImageOrBuilder>(
                   fullMatchingImages_,
                   ((bitField0_ & 0x00000008) == 0x00000008),
                   getParentForChildren(),
@@ -3120,19 +3501,27 @@ private static final long serialVersionUID = 0L;
         return fullMatchingImagesBuilder_;
       }
 
-      private java.util.List<com.google.cloud.vision.v1.WebDetection.WebImage> partialMatchingImages_ =
-        java.util.Collections.emptyList();
+      private java.util.List<com.google.cloud.vision.v1.WebDetection.WebImage>
+          partialMatchingImages_ = java.util.Collections.emptyList();
+
       private void ensurePartialMatchingImagesIsMutable() {
         if (!((bitField0_ & 0x00000010) == 0x00000010)) {
-          partialMatchingImages_ = new java.util.ArrayList<com.google.cloud.vision.v1.WebDetection.WebImage>(partialMatchingImages_);
+          partialMatchingImages_ =
+              new java.util.ArrayList<com.google.cloud.vision.v1.WebDetection.WebImage>(
+                  partialMatchingImages_);
           bitField0_ |= 0x00000010;
-         }
+        }
       }
 
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.google.cloud.vision.v1.WebDetection.WebImage, com.google.cloud.vision.v1.WebDetection.WebImage.Builder, com.google.cloud.vision.v1.WebDetection.WebImageOrBuilder> partialMatchingImagesBuilder_;
+              com.google.cloud.vision.v1.WebDetection.WebImage,
+              com.google.cloud.vision.v1.WebDetection.WebImage.Builder,
+              com.google.cloud.vision.v1.WebDetection.WebImageOrBuilder>
+          partialMatchingImagesBuilder_;
 
       /**
+       *
+       *
        * <pre>
        * Partial matching images on the page.
        * Those images are similar enough to share some key-point features. For
@@ -3140,9 +3529,11 @@ private static final long serialVersionUID = 0L;
        * crops.
        * </pre>
        *
-       * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 5;</code>
+       * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 5;
+       * </code>
        */
-      public java.util.List<com.google.cloud.vision.v1.WebDetection.WebImage> getPartialMatchingImagesList() {
+      public java.util.List<com.google.cloud.vision.v1.WebDetection.WebImage>
+          getPartialMatchingImagesList() {
         if (partialMatchingImagesBuilder_ == null) {
           return java.util.Collections.unmodifiableList(partialMatchingImages_);
         } else {
@@ -3150,6 +3541,8 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * Partial matching images on the page.
        * Those images are similar enough to share some key-point features. For
@@ -3157,7 +3550,8 @@ private static final long serialVersionUID = 0L;
        * crops.
        * </pre>
        *
-       * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 5;</code>
+       * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 5;
+       * </code>
        */
       public int getPartialMatchingImagesCount() {
         if (partialMatchingImagesBuilder_ == null) {
@@ -3167,6 +3561,8 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * Partial matching images on the page.
        * Those images are similar enough to share some key-point features. For
@@ -3174,7 +3570,8 @@ private static final long serialVersionUID = 0L;
        * crops.
        * </pre>
        *
-       * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 5;</code>
+       * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 5;
+       * </code>
        */
       public com.google.cloud.vision.v1.WebDetection.WebImage getPartialMatchingImages(int index) {
         if (partialMatchingImagesBuilder_ == null) {
@@ -3184,6 +3581,8 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * Partial matching images on the page.
        * Those images are similar enough to share some key-point features. For
@@ -3191,7 +3590,8 @@ private static final long serialVersionUID = 0L;
        * crops.
        * </pre>
        *
-       * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 5;</code>
+       * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 5;
+       * </code>
        */
       public Builder setPartialMatchingImages(
           int index, com.google.cloud.vision.v1.WebDetection.WebImage value) {
@@ -3208,6 +3608,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Partial matching images on the page.
        * Those images are similar enough to share some key-point features. For
@@ -3215,7 +3617,8 @@ private static final long serialVersionUID = 0L;
        * crops.
        * </pre>
        *
-       * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 5;</code>
+       * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 5;
+       * </code>
        */
       public Builder setPartialMatchingImages(
           int index, com.google.cloud.vision.v1.WebDetection.WebImage.Builder builderForValue) {
@@ -3229,6 +3632,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Partial matching images on the page.
        * Those images are similar enough to share some key-point features. For
@@ -3236,9 +3641,11 @@ private static final long serialVersionUID = 0L;
        * crops.
        * </pre>
        *
-       * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 5;</code>
+       * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 5;
+       * </code>
        */
-      public Builder addPartialMatchingImages(com.google.cloud.vision.v1.WebDetection.WebImage value) {
+      public Builder addPartialMatchingImages(
+          com.google.cloud.vision.v1.WebDetection.WebImage value) {
         if (partialMatchingImagesBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -3252,6 +3659,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Partial matching images on the page.
        * Those images are similar enough to share some key-point features. For
@@ -3259,7 +3668,8 @@ private static final long serialVersionUID = 0L;
        * crops.
        * </pre>
        *
-       * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 5;</code>
+       * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 5;
+       * </code>
        */
       public Builder addPartialMatchingImages(
           int index, com.google.cloud.vision.v1.WebDetection.WebImage value) {
@@ -3276,6 +3686,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Partial matching images on the page.
        * Those images are similar enough to share some key-point features. For
@@ -3283,7 +3695,8 @@ private static final long serialVersionUID = 0L;
        * crops.
        * </pre>
        *
-       * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 5;</code>
+       * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 5;
+       * </code>
        */
       public Builder addPartialMatchingImages(
           com.google.cloud.vision.v1.WebDetection.WebImage.Builder builderForValue) {
@@ -3297,6 +3710,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Partial matching images on the page.
        * Those images are similar enough to share some key-point features. For
@@ -3304,7 +3719,8 @@ private static final long serialVersionUID = 0L;
        * crops.
        * </pre>
        *
-       * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 5;</code>
+       * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 5;
+       * </code>
        */
       public Builder addPartialMatchingImages(
           int index, com.google.cloud.vision.v1.WebDetection.WebImage.Builder builderForValue) {
@@ -3318,6 +3734,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Partial matching images on the page.
        * Those images are similar enough to share some key-point features. For
@@ -3325,14 +3743,14 @@ private static final long serialVersionUID = 0L;
        * crops.
        * </pre>
        *
-       * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 5;</code>
+       * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 5;
+       * </code>
        */
       public Builder addAllPartialMatchingImages(
           java.lang.Iterable<? extends com.google.cloud.vision.v1.WebDetection.WebImage> values) {
         if (partialMatchingImagesBuilder_ == null) {
           ensurePartialMatchingImagesIsMutable();
-          com.google.protobuf.AbstractMessageLite.Builder.addAll(
-              values, partialMatchingImages_);
+          com.google.protobuf.AbstractMessageLite.Builder.addAll(values, partialMatchingImages_);
           onChanged();
         } else {
           partialMatchingImagesBuilder_.addAllMessages(values);
@@ -3340,6 +3758,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Partial matching images on the page.
        * Those images are similar enough to share some key-point features. For
@@ -3347,7 +3767,8 @@ private static final long serialVersionUID = 0L;
        * crops.
        * </pre>
        *
-       * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 5;</code>
+       * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 5;
+       * </code>
        */
       public Builder clearPartialMatchingImages() {
         if (partialMatchingImagesBuilder_ == null) {
@@ -3360,6 +3781,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Partial matching images on the page.
        * Those images are similar enough to share some key-point features. For
@@ -3367,7 +3790,8 @@ private static final long serialVersionUID = 0L;
        * crops.
        * </pre>
        *
-       * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 5;</code>
+       * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 5;
+       * </code>
        */
       public Builder removePartialMatchingImages(int index) {
         if (partialMatchingImagesBuilder_ == null) {
@@ -3380,6 +3804,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Partial matching images on the page.
        * Those images are similar enough to share some key-point features. For
@@ -3387,13 +3813,16 @@ private static final long serialVersionUID = 0L;
        * crops.
        * </pre>
        *
-       * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 5;</code>
+       * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 5;
+       * </code>
        */
-      public com.google.cloud.vision.v1.WebDetection.WebImage.Builder getPartialMatchingImagesBuilder(
-          int index) {
+      public com.google.cloud.vision.v1.WebDetection.WebImage.Builder
+          getPartialMatchingImagesBuilder(int index) {
         return getPartialMatchingImagesFieldBuilder().getBuilder(index);
       }
       /**
+       *
+       *
        * <pre>
        * Partial matching images on the page.
        * Those images are similar enough to share some key-point features. For
@@ -3401,16 +3830,20 @@ private static final long serialVersionUID = 0L;
        * crops.
        * </pre>
        *
-       * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 5;</code>
+       * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 5;
+       * </code>
        */
-      public com.google.cloud.vision.v1.WebDetection.WebImageOrBuilder getPartialMatchingImagesOrBuilder(
-          int index) {
+      public com.google.cloud.vision.v1.WebDetection.WebImageOrBuilder
+          getPartialMatchingImagesOrBuilder(int index) {
         if (partialMatchingImagesBuilder_ == null) {
-          return partialMatchingImages_.get(index);  } else {
+          return partialMatchingImages_.get(index);
+        } else {
           return partialMatchingImagesBuilder_.getMessageOrBuilder(index);
         }
       }
       /**
+       *
+       *
        * <pre>
        * Partial matching images on the page.
        * Those images are similar enough to share some key-point features. For
@@ -3418,10 +3851,11 @@ private static final long serialVersionUID = 0L;
        * crops.
        * </pre>
        *
-       * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 5;</code>
+       * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 5;
+       * </code>
        */
-      public java.util.List<? extends com.google.cloud.vision.v1.WebDetection.WebImageOrBuilder> 
-           getPartialMatchingImagesOrBuilderList() {
+      public java.util.List<? extends com.google.cloud.vision.v1.WebDetection.WebImageOrBuilder>
+          getPartialMatchingImagesOrBuilderList() {
         if (partialMatchingImagesBuilder_ != null) {
           return partialMatchingImagesBuilder_.getMessageOrBuilderList();
         } else {
@@ -3429,6 +3863,8 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * Partial matching images on the page.
        * Those images are similar enough to share some key-point features. For
@@ -3436,13 +3872,17 @@ private static final long serialVersionUID = 0L;
        * crops.
        * </pre>
        *
-       * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 5;</code>
+       * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 5;
+       * </code>
        */
-      public com.google.cloud.vision.v1.WebDetection.WebImage.Builder addPartialMatchingImagesBuilder() {
-        return getPartialMatchingImagesFieldBuilder().addBuilder(
-            com.google.cloud.vision.v1.WebDetection.WebImage.getDefaultInstance());
+      public com.google.cloud.vision.v1.WebDetection.WebImage.Builder
+          addPartialMatchingImagesBuilder() {
+        return getPartialMatchingImagesFieldBuilder()
+            .addBuilder(com.google.cloud.vision.v1.WebDetection.WebImage.getDefaultInstance());
       }
       /**
+       *
+       *
        * <pre>
        * Partial matching images on the page.
        * Those images are similar enough to share some key-point features. For
@@ -3450,14 +3890,18 @@ private static final long serialVersionUID = 0L;
        * crops.
        * </pre>
        *
-       * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 5;</code>
+       * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 5;
+       * </code>
        */
-      public com.google.cloud.vision.v1.WebDetection.WebImage.Builder addPartialMatchingImagesBuilder(
-          int index) {
-        return getPartialMatchingImagesFieldBuilder().addBuilder(
-            index, com.google.cloud.vision.v1.WebDetection.WebImage.getDefaultInstance());
+      public com.google.cloud.vision.v1.WebDetection.WebImage.Builder
+          addPartialMatchingImagesBuilder(int index) {
+        return getPartialMatchingImagesFieldBuilder()
+            .addBuilder(
+                index, com.google.cloud.vision.v1.WebDetection.WebImage.getDefaultInstance());
       }
       /**
+       *
+       *
        * <pre>
        * Partial matching images on the page.
        * Those images are similar enough to share some key-point features. For
@@ -3465,18 +3909,25 @@ private static final long serialVersionUID = 0L;
        * crops.
        * </pre>
        *
-       * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 5;</code>
+       * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 5;
+       * </code>
        */
-      public java.util.List<com.google.cloud.vision.v1.WebDetection.WebImage.Builder> 
-           getPartialMatchingImagesBuilderList() {
+      public java.util.List<com.google.cloud.vision.v1.WebDetection.WebImage.Builder>
+          getPartialMatchingImagesBuilderList() {
         return getPartialMatchingImagesFieldBuilder().getBuilderList();
       }
+
       private com.google.protobuf.RepeatedFieldBuilderV3<
-          com.google.cloud.vision.v1.WebDetection.WebImage, com.google.cloud.vision.v1.WebDetection.WebImage.Builder, com.google.cloud.vision.v1.WebDetection.WebImageOrBuilder> 
+              com.google.cloud.vision.v1.WebDetection.WebImage,
+              com.google.cloud.vision.v1.WebDetection.WebImage.Builder,
+              com.google.cloud.vision.v1.WebDetection.WebImageOrBuilder>
           getPartialMatchingImagesFieldBuilder() {
         if (partialMatchingImagesBuilder_ == null) {
-          partialMatchingImagesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-              com.google.cloud.vision.v1.WebDetection.WebImage, com.google.cloud.vision.v1.WebDetection.WebImage.Builder, com.google.cloud.vision.v1.WebDetection.WebImageOrBuilder>(
+          partialMatchingImagesBuilder_ =
+              new com.google.protobuf.RepeatedFieldBuilderV3<
+                  com.google.cloud.vision.v1.WebDetection.WebImage,
+                  com.google.cloud.vision.v1.WebDetection.WebImage.Builder,
+                  com.google.cloud.vision.v1.WebDetection.WebImageOrBuilder>(
                   partialMatchingImages_,
                   ((bitField0_ & 0x00000010) == 0x00000010),
                   getParentForChildren(),
@@ -3485,22 +3936,25 @@ private static final long serialVersionUID = 0L;
         }
         return partialMatchingImagesBuilder_;
       }
+
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
       }
-
 
       // @@protoc_insertion_point(builder_scope:google.cloud.vision.v1.WebDetection.WebPage)
     }
 
     // @@protoc_insertion_point(class_scope:google.cloud.vision.v1.WebDetection.WebPage)
     private static final com.google.cloud.vision.v1.WebDetection.WebPage DEFAULT_INSTANCE;
+
     static {
       DEFAULT_INSTANCE = new com.google.cloud.vision.v1.WebDetection.WebPage();
     }
@@ -3509,15 +3963,16 @@ private static final long serialVersionUID = 0L;
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<WebPage>
-        PARSER = new com.google.protobuf.AbstractParser<WebPage>() {
-      public WebPage parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new WebPage(input, extensionRegistry);
-      }
-    };
+    private static final com.google.protobuf.Parser<WebPage> PARSER =
+        new com.google.protobuf.AbstractParser<WebPage>() {
+          @java.lang.Override
+          public WebPage parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new WebPage(input, extensionRegistry);
+          }
+        };
 
     public static com.google.protobuf.Parser<WebPage> parser() {
       return PARSER;
@@ -3528,17 +3983,20 @@ private static final long serialVersionUID = 0L;
       return PARSER;
     }
 
+    @java.lang.Override
     public com.google.cloud.vision.v1.WebDetection.WebPage getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
-
   }
 
-  public interface WebLabelOrBuilder extends
+  public interface WebLabelOrBuilder
+      extends
       // @@protoc_insertion_point(interface_extends:google.cloud.vision.v1.WebDetection.WebLabel)
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     *
+     *
      * <pre>
      * Label for extra metadata.
      * </pre>
@@ -3547,16 +4005,19 @@ private static final long serialVersionUID = 0L;
      */
     java.lang.String getLabel();
     /**
+     *
+     *
      * <pre>
      * Label for extra metadata.
      * </pre>
      *
      * <code>string label = 1;</code>
      */
-    com.google.protobuf.ByteString
-        getLabelBytes();
+    com.google.protobuf.ByteString getLabelBytes();
 
     /**
+     *
+     *
      * <pre>
      * The BCP-47 language code for `label`, such as "en-US" or "sr-Latn".
      * For more information, see
@@ -3567,6 +4028,8 @@ private static final long serialVersionUID = 0L;
      */
     java.lang.String getLanguageCode();
     /**
+     *
+     *
      * <pre>
      * The BCP-47 language code for `label`, such as "en-US" or "sr-Latn".
      * For more information, see
@@ -3575,40 +4038,45 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string language_code = 2;</code>
      */
-    com.google.protobuf.ByteString
-        getLanguageCodeBytes();
+    com.google.protobuf.ByteString getLanguageCodeBytes();
   }
   /**
+   *
+   *
    * <pre>
    * Label to provide extra metadata for the web detection.
    * </pre>
    *
    * Protobuf type {@code google.cloud.vision.v1.WebDetection.WebLabel}
    */
-  public  static final class WebLabel extends
-      com.google.protobuf.GeneratedMessageV3 implements
+  public static final class WebLabel extends com.google.protobuf.GeneratedMessageV3
+      implements
       // @@protoc_insertion_point(message_implements:google.cloud.vision.v1.WebDetection.WebLabel)
       WebLabelOrBuilder {
-  private static final long serialVersionUID = 0L;
+    private static final long serialVersionUID = 0L;
     // Use WebLabel.newBuilder() to construct.
     private WebLabel(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
+
     private WebLabel() {
       label_ = "";
       languageCode_ = "";
     }
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
+
     private WebLabel(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -3620,52 +4088,59 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
+            case 10:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                label_ = s;
+                break;
               }
-              break;
-            }
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 18:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
 
-              label_ = s;
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              languageCode_ = s;
-              break;
-            }
+                languageCode_ = s;
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.vision.v1.WebDetectionProto.internal_static_google_cloud_vision_v1_WebDetection_WebLabel_descriptor;
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.vision.v1.WebDetectionProto
+          .internal_static_google_cloud_vision_v1_WebDetection_WebLabel_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.vision.v1.WebDetectionProto.internal_static_google_cloud_vision_v1_WebDetection_WebLabel_fieldAccessorTable
+      return com.google.cloud.vision.v1.WebDetectionProto
+          .internal_static_google_cloud_vision_v1_WebDetection_WebLabel_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.vision.v1.WebDetection.WebLabel.class, com.google.cloud.vision.v1.WebDetection.WebLabel.Builder.class);
+              com.google.cloud.vision.v1.WebDetection.WebLabel.class,
+              com.google.cloud.vision.v1.WebDetection.WebLabel.Builder.class);
     }
 
     public static final int LABEL_FIELD_NUMBER = 1;
     private volatile java.lang.Object label_;
     /**
+     *
+     *
      * <pre>
      * Label for extra metadata.
      * </pre>
@@ -3677,27 +4152,26 @@ private static final long serialVersionUID = 0L;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         label_ = s;
         return s;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Label for extra metadata.
      * </pre>
      *
      * <code>string label = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getLabelBytes() {
+    public com.google.protobuf.ByteString getLabelBytes() {
       java.lang.Object ref = label_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         label_ = b;
         return b;
       } else {
@@ -3708,6 +4182,8 @@ private static final long serialVersionUID = 0L;
     public static final int LANGUAGE_CODE_FIELD_NUMBER = 2;
     private volatile java.lang.Object languageCode_;
     /**
+     *
+     *
      * <pre>
      * The BCP-47 language code for `label`, such as "en-US" or "sr-Latn".
      * For more information, see
@@ -3721,14 +4197,15 @@ private static final long serialVersionUID = 0L;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         languageCode_ = s;
         return s;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The BCP-47 language code for `label`, such as "en-US" or "sr-Latn".
      * For more information, see
@@ -3737,13 +4214,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string language_code = 2;</code>
      */
-    public com.google.protobuf.ByteString
-        getLanguageCodeBytes() {
+    public com.google.protobuf.ByteString getLanguageCodeBytes() {
       java.lang.Object ref = languageCode_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         languageCode_ = b;
         return b;
       } else {
@@ -3752,6 +4227,8 @@ private static final long serialVersionUID = 0L;
     }
 
     private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -3761,8 +4238,8 @@ private static final long serialVersionUID = 0L;
       return true;
     }
 
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
       if (!getLabelBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, label_);
       }
@@ -3772,6 +4249,7 @@ private static final long serialVersionUID = 0L;
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -3791,18 +4269,17 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-       return true;
+        return true;
       }
       if (!(obj instanceof com.google.cloud.vision.v1.WebDetection.WebLabel)) {
         return super.equals(obj);
       }
-      com.google.cloud.vision.v1.WebDetection.WebLabel other = (com.google.cloud.vision.v1.WebDetection.WebLabel) obj;
+      com.google.cloud.vision.v1.WebDetection.WebLabel other =
+          (com.google.cloud.vision.v1.WebDetection.WebLabel) obj;
 
       boolean result = true;
-      result = result && getLabel()
-          .equals(other.getLabel());
-      result = result && getLanguageCode()
-          .equals(other.getLanguageCode());
+      result = result && getLabel().equals(other.getLabel());
+      result = result && getLanguageCode().equals(other.getLanguageCode());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -3824,85 +4301,93 @@ private static final long serialVersionUID = 0L;
     }
 
     public static com.google.cloud.vision.v1.WebDetection.WebLabel parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.cloud.vision.v1.WebDetection.WebLabel parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static com.google.cloud.vision.v1.WebDetection.WebLabel parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.cloud.vision.v1.WebDetection.WebLabel parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static com.google.cloud.vision.v1.WebDetection.WebLabel parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.cloud.vision.v1.WebDetection.WebLabel parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.google.cloud.vision.v1.WebDetection.WebLabel parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
+
     public static com.google.cloud.vision.v1.WebDetection.WebLabel parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
-    public static com.google.cloud.vision.v1.WebDetection.WebLabel parseDelimitedFrom(java.io.InputStream input)
+
+    public static com.google.cloud.vision.v1.WebDetection.WebLabel parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
+
     public static com.google.cloud.vision.v1.WebDetection.WebLabel parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
     }
+
+    public static com.google.cloud.vision.v1.WebDetection.WebLabel parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
     public static com.google.cloud.vision.v1.WebDetection.WebLabel parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
+
     public static com.google.cloud.vision.v1.WebDetection.WebLabel parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
 
-    public Builder newBuilderForType() { return newBuilder(); }
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
+
     public static Builder newBuilder(com.google.cloud.vision.v1.WebDetection.WebLabel prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+
+    @java.lang.Override
     public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
     @java.lang.Override
@@ -3912,26 +4397,32 @@ private static final long serialVersionUID = 0L;
       return builder;
     }
     /**
+     *
+     *
      * <pre>
      * Label to provide extra metadata for the web detection.
      * </pre>
      *
      * Protobuf type {@code google.cloud.vision.v1.WebDetection.WebLabel}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
         // @@protoc_insertion_point(builder_implements:google.cloud.vision.v1.WebDetection.WebLabel)
         com.google.cloud.vision.v1.WebDetection.WebLabelOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.google.cloud.vision.v1.WebDetectionProto.internal_static_google_cloud_vision_v1_WebDetection_WebLabel_descriptor;
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.vision.v1.WebDetectionProto
+            .internal_static_google_cloud_vision_v1_WebDetection_WebLabel_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.google.cloud.vision.v1.WebDetectionProto.internal_static_google_cloud_vision_v1_WebDetection_WebLabel_fieldAccessorTable
+        return com.google.cloud.vision.v1.WebDetectionProto
+            .internal_static_google_cloud_vision_v1_WebDetection_WebLabel_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.google.cloud.vision.v1.WebDetection.WebLabel.class, com.google.cloud.vision.v1.WebDetection.WebLabel.Builder.class);
+                com.google.cloud.vision.v1.WebDetection.WebLabel.class,
+                com.google.cloud.vision.v1.WebDetection.WebLabel.Builder.class);
       }
 
       // Construct using com.google.cloud.vision.v1.WebDetection.WebLabel.newBuilder()
@@ -3939,16 +4430,16 @@ private static final long serialVersionUID = 0L;
         maybeForceBuilderInitialization();
       }
 
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
+
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
+
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         label_ = "";
@@ -3958,15 +4449,18 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.google.cloud.vision.v1.WebDetectionProto.internal_static_google_cloud_vision_v1_WebDetection_WebLabel_descriptor;
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.vision.v1.WebDetectionProto
+            .internal_static_google_cloud_vision_v1_WebDetection_WebLabel_descriptor;
       }
 
+      @java.lang.Override
       public com.google.cloud.vision.v1.WebDetection.WebLabel getDefaultInstanceForType() {
         return com.google.cloud.vision.v1.WebDetection.WebLabel.getDefaultInstance();
       }
 
+      @java.lang.Override
       public com.google.cloud.vision.v1.WebDetection.WebLabel build() {
         com.google.cloud.vision.v1.WebDetection.WebLabel result = buildPartial();
         if (!result.isInitialized()) {
@@ -3975,43 +4469,55 @@ private static final long serialVersionUID = 0L;
         return result;
       }
 
+      @java.lang.Override
       public com.google.cloud.vision.v1.WebDetection.WebLabel buildPartial() {
-        com.google.cloud.vision.v1.WebDetection.WebLabel result = new com.google.cloud.vision.v1.WebDetection.WebLabel(this);
+        com.google.cloud.vision.v1.WebDetection.WebLabel result =
+            new com.google.cloud.vision.v1.WebDetection.WebLabel(this);
         result.label_ = label_;
         result.languageCode_ = languageCode_;
         onBuilt();
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+
+      @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index,
+          java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+
+      @java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.google.cloud.vision.v1.WebDetection.WebLabel) {
-          return mergeFrom((com.google.cloud.vision.v1.WebDetection.WebLabel)other);
+          return mergeFrom((com.google.cloud.vision.v1.WebDetection.WebLabel) other);
         } else {
           super.mergeFrom(other);
           return this;
@@ -4019,7 +4525,8 @@ private static final long serialVersionUID = 0L;
       }
 
       public Builder mergeFrom(com.google.cloud.vision.v1.WebDetection.WebLabel other) {
-        if (other == com.google.cloud.vision.v1.WebDetection.WebLabel.getDefaultInstance()) return this;
+        if (other == com.google.cloud.vision.v1.WebDetection.WebLabel.getDefaultInstance())
+          return this;
         if (!other.getLabel().isEmpty()) {
           label_ = other.label_;
           onChanged();
@@ -4033,10 +4540,12 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -4045,7 +4554,8 @@ private static final long serialVersionUID = 0L;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.google.cloud.vision.v1.WebDetection.WebLabel) e.getUnfinishedMessage();
+          parsedMessage =
+              (com.google.cloud.vision.v1.WebDetection.WebLabel) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -4057,6 +4567,8 @@ private static final long serialVersionUID = 0L;
 
       private java.lang.Object label_ = "";
       /**
+       *
+       *
        * <pre>
        * Label for extra metadata.
        * </pre>
@@ -4066,8 +4578,7 @@ private static final long serialVersionUID = 0L;
       public java.lang.String getLabel() {
         java.lang.Object ref = label_;
         if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           label_ = s;
           return s;
@@ -4076,19 +4587,19 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * Label for extra metadata.
        * </pre>
        *
        * <code>string label = 1;</code>
        */
-      public com.google.protobuf.ByteString
-          getLabelBytes() {
+      public com.google.protobuf.ByteString getLabelBytes() {
         java.lang.Object ref = label_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
           label_ = b;
           return b;
         } else {
@@ -4096,23 +4607,26 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * Label for extra metadata.
        * </pre>
        *
        * <code>string label = 1;</code>
        */
-      public Builder setLabel(
-          java.lang.String value) {
+      public Builder setLabel(java.lang.String value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  
+          throw new NullPointerException();
+        }
+
         label_ = value;
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Label for extra metadata.
        * </pre>
@@ -4120,25 +4634,26 @@ private static final long serialVersionUID = 0L;
        * <code>string label = 1;</code>
        */
       public Builder clearLabel() {
-        
+
         label_ = getDefaultInstance().getLabel();
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Label for extra metadata.
        * </pre>
        *
        * <code>string label = 1;</code>
        */
-      public Builder setLabelBytes(
-          com.google.protobuf.ByteString value) {
+      public Builder setLabelBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
         label_ = value;
         onChanged();
         return this;
@@ -4146,6 +4661,8 @@ private static final long serialVersionUID = 0L;
 
       private java.lang.Object languageCode_ = "";
       /**
+       *
+       *
        * <pre>
        * The BCP-47 language code for `label`, such as "en-US" or "sr-Latn".
        * For more information, see
@@ -4157,8 +4674,7 @@ private static final long serialVersionUID = 0L;
       public java.lang.String getLanguageCode() {
         java.lang.Object ref = languageCode_;
         if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           languageCode_ = s;
           return s;
@@ -4167,6 +4683,8 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * The BCP-47 language code for `label`, such as "en-US" or "sr-Latn".
        * For more information, see
@@ -4175,13 +4693,11 @@ private static final long serialVersionUID = 0L;
        *
        * <code>string language_code = 2;</code>
        */
-      public com.google.protobuf.ByteString
-          getLanguageCodeBytes() {
+      public com.google.protobuf.ByteString getLanguageCodeBytes() {
         java.lang.Object ref = languageCode_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
           languageCode_ = b;
           return b;
         } else {
@@ -4189,6 +4705,8 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * The BCP-47 language code for `label`, such as "en-US" or "sr-Latn".
        * For more information, see
@@ -4197,17 +4715,18 @@ private static final long serialVersionUID = 0L;
        *
        * <code>string language_code = 2;</code>
        */
-      public Builder setLanguageCode(
-          java.lang.String value) {
+      public Builder setLanguageCode(java.lang.String value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  
+          throw new NullPointerException();
+        }
+
         languageCode_ = value;
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The BCP-47 language code for `label`, such as "en-US" or "sr-Latn".
        * For more information, see
@@ -4217,12 +4736,14 @@ private static final long serialVersionUID = 0L;
        * <code>string language_code = 2;</code>
        */
       public Builder clearLanguageCode() {
-        
+
         languageCode_ = getDefaultInstance().getLanguageCode();
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The BCP-47 language code for `label`, such as "en-US" or "sr-Latn".
        * For more information, see
@@ -4231,33 +4752,35 @@ private static final long serialVersionUID = 0L;
        *
        * <code>string language_code = 2;</code>
        */
-      public Builder setLanguageCodeBytes(
-          com.google.protobuf.ByteString value) {
+      public Builder setLanguageCodeBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
         languageCode_ = value;
         onChanged();
         return this;
       }
+
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
       }
-
 
       // @@protoc_insertion_point(builder_scope:google.cloud.vision.v1.WebDetection.WebLabel)
     }
 
     // @@protoc_insertion_point(class_scope:google.cloud.vision.v1.WebDetection.WebLabel)
     private static final com.google.cloud.vision.v1.WebDetection.WebLabel DEFAULT_INSTANCE;
+
     static {
       DEFAULT_INSTANCE = new com.google.cloud.vision.v1.WebDetection.WebLabel();
     }
@@ -4266,15 +4789,16 @@ private static final long serialVersionUID = 0L;
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<WebLabel>
-        PARSER = new com.google.protobuf.AbstractParser<WebLabel>() {
-      public WebLabel parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new WebLabel(input, extensionRegistry);
-      }
-    };
+    private static final com.google.protobuf.Parser<WebLabel> PARSER =
+        new com.google.protobuf.AbstractParser<WebLabel>() {
+          @java.lang.Override
+          public WebLabel parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new WebLabel(input, extensionRegistry);
+          }
+        };
 
     public static com.google.protobuf.Parser<WebLabel> parser() {
       return PARSER;
@@ -4285,15 +4809,17 @@ private static final long serialVersionUID = 0L;
       return PARSER;
     }
 
+    @java.lang.Override
     public com.google.cloud.vision.v1.WebDetection.WebLabel getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
-
   }
 
   public static final int WEB_ENTITIES_FIELD_NUMBER = 1;
   private java.util.List<com.google.cloud.vision.v1.WebDetection.WebEntity> webEntities_;
   /**
+   *
+   *
    * <pre>
    * Deduced entities from similar images on the Internet.
    * </pre>
@@ -4304,17 +4830,21 @@ private static final long serialVersionUID = 0L;
     return webEntities_;
   }
   /**
+   *
+   *
    * <pre>
    * Deduced entities from similar images on the Internet.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1.WebDetection.WebEntity web_entities = 1;</code>
    */
-  public java.util.List<? extends com.google.cloud.vision.v1.WebDetection.WebEntityOrBuilder> 
+  public java.util.List<? extends com.google.cloud.vision.v1.WebDetection.WebEntityOrBuilder>
       getWebEntitiesOrBuilderList() {
     return webEntities_;
   }
   /**
+   *
+   *
    * <pre>
    * Deduced entities from similar images on the Internet.
    * </pre>
@@ -4325,6 +4855,8 @@ private static final long serialVersionUID = 0L;
     return webEntities_.size();
   }
   /**
+   *
+   *
    * <pre>
    * Deduced entities from similar images on the Internet.
    * </pre>
@@ -4335,6 +4867,8 @@ private static final long serialVersionUID = 0L;
     return webEntities_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * Deduced entities from similar images on the Internet.
    * </pre>
@@ -4349,6 +4883,8 @@ private static final long serialVersionUID = 0L;
   public static final int FULL_MATCHING_IMAGES_FIELD_NUMBER = 2;
   private java.util.List<com.google.cloud.vision.v1.WebDetection.WebImage> fullMatchingImages_;
   /**
+   *
+   *
    * <pre>
    * Fully matching images from the Internet.
    * Can include resized copies of the query image.
@@ -4356,10 +4892,13 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage full_matching_images = 2;</code>
    */
-  public java.util.List<com.google.cloud.vision.v1.WebDetection.WebImage> getFullMatchingImagesList() {
+  public java.util.List<com.google.cloud.vision.v1.WebDetection.WebImage>
+      getFullMatchingImagesList() {
     return fullMatchingImages_;
   }
   /**
+   *
+   *
    * <pre>
    * Fully matching images from the Internet.
    * Can include resized copies of the query image.
@@ -4367,11 +4906,13 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage full_matching_images = 2;</code>
    */
-  public java.util.List<? extends com.google.cloud.vision.v1.WebDetection.WebImageOrBuilder> 
+  public java.util.List<? extends com.google.cloud.vision.v1.WebDetection.WebImageOrBuilder>
       getFullMatchingImagesOrBuilderList() {
     return fullMatchingImages_;
   }
   /**
+   *
+   *
    * <pre>
    * Fully matching images from the Internet.
    * Can include resized copies of the query image.
@@ -4383,6 +4924,8 @@ private static final long serialVersionUID = 0L;
     return fullMatchingImages_.size();
   }
   /**
+   *
+   *
    * <pre>
    * Fully matching images from the Internet.
    * Can include resized copies of the query image.
@@ -4394,6 +4937,8 @@ private static final long serialVersionUID = 0L;
     return fullMatchingImages_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * Fully matching images from the Internet.
    * Can include resized copies of the query image.
@@ -4409,183 +4954,234 @@ private static final long serialVersionUID = 0L;
   public static final int PARTIAL_MATCHING_IMAGES_FIELD_NUMBER = 3;
   private java.util.List<com.google.cloud.vision.v1.WebDetection.WebImage> partialMatchingImages_;
   /**
+   *
+   *
    * <pre>
    * Partial matching images from the Internet.
    * Those images are similar enough to share some key-point features. For
    * example an original image will likely have partial matching for its crops.
    * </pre>
    *
-   * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 3;</code>
+   * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 3;
+   * </code>
    */
-  public java.util.List<com.google.cloud.vision.v1.WebDetection.WebImage> getPartialMatchingImagesList() {
+  public java.util.List<com.google.cloud.vision.v1.WebDetection.WebImage>
+      getPartialMatchingImagesList() {
     return partialMatchingImages_;
   }
   /**
+   *
+   *
    * <pre>
    * Partial matching images from the Internet.
    * Those images are similar enough to share some key-point features. For
    * example an original image will likely have partial matching for its crops.
    * </pre>
    *
-   * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 3;</code>
+   * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 3;
+   * </code>
    */
-  public java.util.List<? extends com.google.cloud.vision.v1.WebDetection.WebImageOrBuilder> 
+  public java.util.List<? extends com.google.cloud.vision.v1.WebDetection.WebImageOrBuilder>
       getPartialMatchingImagesOrBuilderList() {
     return partialMatchingImages_;
   }
   /**
+   *
+   *
    * <pre>
    * Partial matching images from the Internet.
    * Those images are similar enough to share some key-point features. For
    * example an original image will likely have partial matching for its crops.
    * </pre>
    *
-   * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 3;</code>
+   * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 3;
+   * </code>
    */
   public int getPartialMatchingImagesCount() {
     return partialMatchingImages_.size();
   }
   /**
+   *
+   *
    * <pre>
    * Partial matching images from the Internet.
    * Those images are similar enough to share some key-point features. For
    * example an original image will likely have partial matching for its crops.
    * </pre>
    *
-   * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 3;</code>
+   * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 3;
+   * </code>
    */
   public com.google.cloud.vision.v1.WebDetection.WebImage getPartialMatchingImages(int index) {
     return partialMatchingImages_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * Partial matching images from the Internet.
    * Those images are similar enough to share some key-point features. For
    * example an original image will likely have partial matching for its crops.
    * </pre>
    *
-   * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 3;</code>
+   * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 3;
+   * </code>
    */
-  public com.google.cloud.vision.v1.WebDetection.WebImageOrBuilder getPartialMatchingImagesOrBuilder(
-      int index) {
+  public com.google.cloud.vision.v1.WebDetection.WebImageOrBuilder
+      getPartialMatchingImagesOrBuilder(int index) {
     return partialMatchingImages_.get(index);
   }
 
   public static final int PAGES_WITH_MATCHING_IMAGES_FIELD_NUMBER = 4;
   private java.util.List<com.google.cloud.vision.v1.WebDetection.WebPage> pagesWithMatchingImages_;
   /**
+   *
+   *
    * <pre>
    * Web pages containing the matching images from the Internet.
    * </pre>
    *
-   * <code>repeated .google.cloud.vision.v1.WebDetection.WebPage pages_with_matching_images = 4;</code>
+   * <code>repeated .google.cloud.vision.v1.WebDetection.WebPage pages_with_matching_images = 4;
+   * </code>
    */
-  public java.util.List<com.google.cloud.vision.v1.WebDetection.WebPage> getPagesWithMatchingImagesList() {
+  public java.util.List<com.google.cloud.vision.v1.WebDetection.WebPage>
+      getPagesWithMatchingImagesList() {
     return pagesWithMatchingImages_;
   }
   /**
+   *
+   *
    * <pre>
    * Web pages containing the matching images from the Internet.
    * </pre>
    *
-   * <code>repeated .google.cloud.vision.v1.WebDetection.WebPage pages_with_matching_images = 4;</code>
+   * <code>repeated .google.cloud.vision.v1.WebDetection.WebPage pages_with_matching_images = 4;
+   * </code>
    */
-  public java.util.List<? extends com.google.cloud.vision.v1.WebDetection.WebPageOrBuilder> 
+  public java.util.List<? extends com.google.cloud.vision.v1.WebDetection.WebPageOrBuilder>
       getPagesWithMatchingImagesOrBuilderList() {
     return pagesWithMatchingImages_;
   }
   /**
+   *
+   *
    * <pre>
    * Web pages containing the matching images from the Internet.
    * </pre>
    *
-   * <code>repeated .google.cloud.vision.v1.WebDetection.WebPage pages_with_matching_images = 4;</code>
+   * <code>repeated .google.cloud.vision.v1.WebDetection.WebPage pages_with_matching_images = 4;
+   * </code>
    */
   public int getPagesWithMatchingImagesCount() {
     return pagesWithMatchingImages_.size();
   }
   /**
+   *
+   *
    * <pre>
    * Web pages containing the matching images from the Internet.
    * </pre>
    *
-   * <code>repeated .google.cloud.vision.v1.WebDetection.WebPage pages_with_matching_images = 4;</code>
+   * <code>repeated .google.cloud.vision.v1.WebDetection.WebPage pages_with_matching_images = 4;
+   * </code>
    */
   public com.google.cloud.vision.v1.WebDetection.WebPage getPagesWithMatchingImages(int index) {
     return pagesWithMatchingImages_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * Web pages containing the matching images from the Internet.
    * </pre>
    *
-   * <code>repeated .google.cloud.vision.v1.WebDetection.WebPage pages_with_matching_images = 4;</code>
+   * <code>repeated .google.cloud.vision.v1.WebDetection.WebPage pages_with_matching_images = 4;
+   * </code>
    */
-  public com.google.cloud.vision.v1.WebDetection.WebPageOrBuilder getPagesWithMatchingImagesOrBuilder(
-      int index) {
+  public com.google.cloud.vision.v1.WebDetection.WebPageOrBuilder
+      getPagesWithMatchingImagesOrBuilder(int index) {
     return pagesWithMatchingImages_.get(index);
   }
 
   public static final int VISUALLY_SIMILAR_IMAGES_FIELD_NUMBER = 6;
   private java.util.List<com.google.cloud.vision.v1.WebDetection.WebImage> visuallySimilarImages_;
   /**
+   *
+   *
    * <pre>
    * The visually similar image results.
    * </pre>
    *
-   * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage visually_similar_images = 6;</code>
+   * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage visually_similar_images = 6;
+   * </code>
    */
-  public java.util.List<com.google.cloud.vision.v1.WebDetection.WebImage> getVisuallySimilarImagesList() {
+  public java.util.List<com.google.cloud.vision.v1.WebDetection.WebImage>
+      getVisuallySimilarImagesList() {
     return visuallySimilarImages_;
   }
   /**
+   *
+   *
    * <pre>
    * The visually similar image results.
    * </pre>
    *
-   * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage visually_similar_images = 6;</code>
+   * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage visually_similar_images = 6;
+   * </code>
    */
-  public java.util.List<? extends com.google.cloud.vision.v1.WebDetection.WebImageOrBuilder> 
+  public java.util.List<? extends com.google.cloud.vision.v1.WebDetection.WebImageOrBuilder>
       getVisuallySimilarImagesOrBuilderList() {
     return visuallySimilarImages_;
   }
   /**
+   *
+   *
    * <pre>
    * The visually similar image results.
    * </pre>
    *
-   * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage visually_similar_images = 6;</code>
+   * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage visually_similar_images = 6;
+   * </code>
    */
   public int getVisuallySimilarImagesCount() {
     return visuallySimilarImages_.size();
   }
   /**
+   *
+   *
    * <pre>
    * The visually similar image results.
    * </pre>
    *
-   * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage visually_similar_images = 6;</code>
+   * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage visually_similar_images = 6;
+   * </code>
    */
   public com.google.cloud.vision.v1.WebDetection.WebImage getVisuallySimilarImages(int index) {
     return visuallySimilarImages_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * The visually similar image results.
    * </pre>
    *
-   * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage visually_similar_images = 6;</code>
+   * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage visually_similar_images = 6;
+   * </code>
    */
-  public com.google.cloud.vision.v1.WebDetection.WebImageOrBuilder getVisuallySimilarImagesOrBuilder(
-      int index) {
+  public com.google.cloud.vision.v1.WebDetection.WebImageOrBuilder
+      getVisuallySimilarImagesOrBuilder(int index) {
     return visuallySimilarImages_.get(index);
   }
 
   public static final int BEST_GUESS_LABELS_FIELD_NUMBER = 8;
   private java.util.List<com.google.cloud.vision.v1.WebDetection.WebLabel> bestGuessLabels_;
   /**
+   *
+   *
    * <pre>
-   * Best guess text labels for the request image.
+   * The service's best guess as to the topic of the request image.
+   * Inferred from similar images on the open web.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1.WebDetection.WebLabel best_guess_labels = 8;</code>
@@ -4594,19 +5190,25 @@ private static final long serialVersionUID = 0L;
     return bestGuessLabels_;
   }
   /**
+   *
+   *
    * <pre>
-   * Best guess text labels for the request image.
+   * The service's best guess as to the topic of the request image.
+   * Inferred from similar images on the open web.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1.WebDetection.WebLabel best_guess_labels = 8;</code>
    */
-  public java.util.List<? extends com.google.cloud.vision.v1.WebDetection.WebLabelOrBuilder> 
+  public java.util.List<? extends com.google.cloud.vision.v1.WebDetection.WebLabelOrBuilder>
       getBestGuessLabelsOrBuilderList() {
     return bestGuessLabels_;
   }
   /**
+   *
+   *
    * <pre>
-   * Best guess text labels for the request image.
+   * The service's best guess as to the topic of the request image.
+   * Inferred from similar images on the open web.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1.WebDetection.WebLabel best_guess_labels = 8;</code>
@@ -4615,8 +5217,11 @@ private static final long serialVersionUID = 0L;
     return bestGuessLabels_.size();
   }
   /**
+   *
+   *
    * <pre>
-   * Best guess text labels for the request image.
+   * The service's best guess as to the topic of the request image.
+   * Inferred from similar images on the open web.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1.WebDetection.WebLabel best_guess_labels = 8;</code>
@@ -4625,8 +5230,11 @@ private static final long serialVersionUID = 0L;
     return bestGuessLabels_.get(index);
   }
   /**
+   *
+   *
    * <pre>
-   * Best guess text labels for the request image.
+   * The service's best guess as to the topic of the request image.
+   * Inferred from similar images on the open web.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1.WebDetection.WebLabel best_guess_labels = 8;</code>
@@ -4637,6 +5245,8 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -4646,8 +5256,8 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  @java.lang.Override
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     for (int i = 0; i < webEntities_.size(); i++) {
       output.writeMessage(1, webEntities_.get(i));
     }
@@ -4669,34 +5279,36 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
 
     size = 0;
     for (int i = 0; i < webEntities_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, webEntities_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, webEntities_.get(i));
     }
     for (int i = 0; i < fullMatchingImages_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, fullMatchingImages_.get(i));
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(2, fullMatchingImages_.get(i));
     }
     for (int i = 0; i < partialMatchingImages_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, partialMatchingImages_.get(i));
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              3, partialMatchingImages_.get(i));
     }
     for (int i = 0; i < pagesWithMatchingImages_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, pagesWithMatchingImages_.get(i));
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              4, pagesWithMatchingImages_.get(i));
     }
     for (int i = 0; i < visuallySimilarImages_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(6, visuallySimilarImages_.get(i));
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              6, visuallySimilarImages_.get(i));
     }
     for (int i = 0; i < bestGuessLabels_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(8, bestGuessLabels_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, bestGuessLabels_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -4706,7 +5318,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.vision.v1.WebDetection)) {
       return super.equals(obj);
@@ -4714,18 +5326,13 @@ private static final long serialVersionUID = 0L;
     com.google.cloud.vision.v1.WebDetection other = (com.google.cloud.vision.v1.WebDetection) obj;
 
     boolean result = true;
-    result = result && getWebEntitiesList()
-        .equals(other.getWebEntitiesList());
-    result = result && getFullMatchingImagesList()
-        .equals(other.getFullMatchingImagesList());
-    result = result && getPartialMatchingImagesList()
-        .equals(other.getPartialMatchingImagesList());
-    result = result && getPagesWithMatchingImagesList()
-        .equals(other.getPagesWithMatchingImagesList());
-    result = result && getVisuallySimilarImagesList()
-        .equals(other.getVisuallySimilarImagesList());
-    result = result && getBestGuessLabelsList()
-        .equals(other.getBestGuessLabelsList());
+    result = result && getWebEntitiesList().equals(other.getWebEntitiesList());
+    result = result && getFullMatchingImagesList().equals(other.getFullMatchingImagesList());
+    result = result && getPartialMatchingImagesList().equals(other.getPartialMatchingImagesList());
+    result =
+        result && getPagesWithMatchingImagesList().equals(other.getPagesWithMatchingImagesList());
+    result = result && getVisuallySimilarImagesList().equals(other.getVisuallySimilarImagesList());
+    result = result && getBestGuessLabelsList().equals(other.getBestGuessLabelsList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -4766,115 +5373,127 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.cloud.vision.v1.WebDetection parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.cloud.vision.v1.WebDetection parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.vision.v1.WebDetection parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.vision.v1.WebDetection parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.vision.v1.WebDetection parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.vision.v1.WebDetection parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.vision.v1.WebDetection parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.vision.v1.WebDetection parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.vision.v1.WebDetection parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.cloud.vision.v1.WebDetection parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.vision.v1.WebDetection parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.vision.v1.WebDetection parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.vision.v1.WebDetection parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.vision.v1.WebDetection parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  public Builder newBuilderForType() { return newBuilder(); }
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-  public static Builder newBuilder(com.google.cloud.vision.v1.WebDetection prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+
+  public static Builder newBuilder(com.google.cloud.vision.v1.WebDetection prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+
+  @java.lang.Override
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Relevant information for the image from the Internet.
    * </pre>
    *
    * Protobuf type {@code google.cloud.vision.v1.WebDetection}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.vision.v1.WebDetection)
       com.google.cloud.vision.v1.WebDetectionOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.vision.v1.WebDetectionProto.internal_static_google_cloud_vision_v1_WebDetection_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.vision.v1.WebDetectionProto
+          .internal_static_google_cloud_vision_v1_WebDetection_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.vision.v1.WebDetectionProto.internal_static_google_cloud_vision_v1_WebDetection_fieldAccessorTable
+      return com.google.cloud.vision.v1.WebDetectionProto
+          .internal_static_google_cloud_vision_v1_WebDetection_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.vision.v1.WebDetection.class, com.google.cloud.vision.v1.WebDetection.Builder.class);
+              com.google.cloud.vision.v1.WebDetection.class,
+              com.google.cloud.vision.v1.WebDetection.Builder.class);
     }
 
     // Construct using com.google.cloud.vision.v1.WebDetection.newBuilder()
@@ -4882,14 +5501,13 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getWebEntitiesFieldBuilder();
         getFullMatchingImagesFieldBuilder();
         getPartialMatchingImagesFieldBuilder();
@@ -4898,6 +5516,8 @@ private static final long serialVersionUID = 0L;
         getBestGuessLabelsFieldBuilder();
       }
     }
+
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       if (webEntitiesBuilder_ == null) {
@@ -4939,15 +5559,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.vision.v1.WebDetectionProto.internal_static_google_cloud_vision_v1_WebDetection_descriptor;
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.vision.v1.WebDetectionProto
+          .internal_static_google_cloud_vision_v1_WebDetection_descriptor;
     }
 
+    @java.lang.Override
     public com.google.cloud.vision.v1.WebDetection getDefaultInstanceForType() {
       return com.google.cloud.vision.v1.WebDetection.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.cloud.vision.v1.WebDetection build() {
       com.google.cloud.vision.v1.WebDetection result = buildPartial();
       if (!result.isInitialized()) {
@@ -4956,8 +5579,10 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.cloud.vision.v1.WebDetection buildPartial() {
-      com.google.cloud.vision.v1.WebDetection result = new com.google.cloud.vision.v1.WebDetection(this);
+      com.google.cloud.vision.v1.WebDetection result =
+          new com.google.cloud.vision.v1.WebDetection(this);
       int from_bitField0_ = bitField0_;
       if (webEntitiesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -4988,7 +5613,8 @@ private static final long serialVersionUID = 0L;
       }
       if (pagesWithMatchingImagesBuilder_ == null) {
         if (((bitField0_ & 0x00000008) == 0x00000008)) {
-          pagesWithMatchingImages_ = java.util.Collections.unmodifiableList(pagesWithMatchingImages_);
+          pagesWithMatchingImages_ =
+              java.util.Collections.unmodifiableList(pagesWithMatchingImages_);
           bitField0_ = (bitField0_ & ~0x00000008);
         }
         result.pagesWithMatchingImages_ = pagesWithMatchingImages_;
@@ -5017,35 +5643,43 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+
+    @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+    @java.lang.Override
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+    @java.lang.Override
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
+    @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
+    @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.vision.v1.WebDetection) {
-        return mergeFrom((com.google.cloud.vision.v1.WebDetection)other);
+        return mergeFrom((com.google.cloud.vision.v1.WebDetection) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -5072,9 +5706,10 @@ private static final long serialVersionUID = 0L;
             webEntitiesBuilder_ = null;
             webEntities_ = other.webEntities_;
             bitField0_ = (bitField0_ & ~0x00000001);
-            webEntitiesBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getWebEntitiesFieldBuilder() : null;
+            webEntitiesBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getWebEntitiesFieldBuilder()
+                    : null;
           } else {
             webEntitiesBuilder_.addAllMessages(other.webEntities_);
           }
@@ -5098,9 +5733,10 @@ private static final long serialVersionUID = 0L;
             fullMatchingImagesBuilder_ = null;
             fullMatchingImages_ = other.fullMatchingImages_;
             bitField0_ = (bitField0_ & ~0x00000002);
-            fullMatchingImagesBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getFullMatchingImagesFieldBuilder() : null;
+            fullMatchingImagesBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getFullMatchingImagesFieldBuilder()
+                    : null;
           } else {
             fullMatchingImagesBuilder_.addAllMessages(other.fullMatchingImages_);
           }
@@ -5124,9 +5760,10 @@ private static final long serialVersionUID = 0L;
             partialMatchingImagesBuilder_ = null;
             partialMatchingImages_ = other.partialMatchingImages_;
             bitField0_ = (bitField0_ & ~0x00000004);
-            partialMatchingImagesBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getPartialMatchingImagesFieldBuilder() : null;
+            partialMatchingImagesBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getPartialMatchingImagesFieldBuilder()
+                    : null;
           } else {
             partialMatchingImagesBuilder_.addAllMessages(other.partialMatchingImages_);
           }
@@ -5150,9 +5787,10 @@ private static final long serialVersionUID = 0L;
             pagesWithMatchingImagesBuilder_ = null;
             pagesWithMatchingImages_ = other.pagesWithMatchingImages_;
             bitField0_ = (bitField0_ & ~0x00000008);
-            pagesWithMatchingImagesBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getPagesWithMatchingImagesFieldBuilder() : null;
+            pagesWithMatchingImagesBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getPagesWithMatchingImagesFieldBuilder()
+                    : null;
           } else {
             pagesWithMatchingImagesBuilder_.addAllMessages(other.pagesWithMatchingImages_);
           }
@@ -5176,9 +5814,10 @@ private static final long serialVersionUID = 0L;
             visuallySimilarImagesBuilder_ = null;
             visuallySimilarImages_ = other.visuallySimilarImages_;
             bitField0_ = (bitField0_ & ~0x00000010);
-            visuallySimilarImagesBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getVisuallySimilarImagesFieldBuilder() : null;
+            visuallySimilarImagesBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getVisuallySimilarImagesFieldBuilder()
+                    : null;
           } else {
             visuallySimilarImagesBuilder_.addAllMessages(other.visuallySimilarImages_);
           }
@@ -5202,9 +5841,10 @@ private static final long serialVersionUID = 0L;
             bestGuessLabelsBuilder_ = null;
             bestGuessLabels_ = other.bestGuessLabels_;
             bitField0_ = (bitField0_ & ~0x00000020);
-            bestGuessLabelsBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getBestGuessLabelsFieldBuilder() : null;
+            bestGuessLabelsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getBestGuessLabelsFieldBuilder()
+                    : null;
           } else {
             bestGuessLabelsBuilder_.addAllMessages(other.bestGuessLabels_);
           }
@@ -5215,10 +5855,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -5236,21 +5878,30 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private java.util.List<com.google.cloud.vision.v1.WebDetection.WebEntity> webEntities_ =
-      java.util.Collections.emptyList();
+        java.util.Collections.emptyList();
+
     private void ensureWebEntitiesIsMutable() {
       if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-        webEntities_ = new java.util.ArrayList<com.google.cloud.vision.v1.WebDetection.WebEntity>(webEntities_);
+        webEntities_ =
+            new java.util.ArrayList<com.google.cloud.vision.v1.WebDetection.WebEntity>(
+                webEntities_);
         bitField0_ |= 0x00000001;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.vision.v1.WebDetection.WebEntity, com.google.cloud.vision.v1.WebDetection.WebEntity.Builder, com.google.cloud.vision.v1.WebDetection.WebEntityOrBuilder> webEntitiesBuilder_;
+            com.google.cloud.vision.v1.WebDetection.WebEntity,
+            com.google.cloud.vision.v1.WebDetection.WebEntity.Builder,
+            com.google.cloud.vision.v1.WebDetection.WebEntityOrBuilder>
+        webEntitiesBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * Deduced entities from similar images on the Internet.
      * </pre>
@@ -5265,6 +5916,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Deduced entities from similar images on the Internet.
      * </pre>
@@ -5279,6 +5932,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Deduced entities from similar images on the Internet.
      * </pre>
@@ -5293,6 +5948,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Deduced entities from similar images on the Internet.
      * </pre>
@@ -5314,6 +5971,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Deduced entities from similar images on the Internet.
      * </pre>
@@ -5332,6 +5991,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Deduced entities from similar images on the Internet.
      * </pre>
@@ -5352,6 +6013,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Deduced entities from similar images on the Internet.
      * </pre>
@@ -5373,6 +6036,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Deduced entities from similar images on the Internet.
      * </pre>
@@ -5391,6 +6056,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Deduced entities from similar images on the Internet.
      * </pre>
@@ -5409,6 +6076,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Deduced entities from similar images on the Internet.
      * </pre>
@@ -5419,8 +6088,7 @@ private static final long serialVersionUID = 0L;
         java.lang.Iterable<? extends com.google.cloud.vision.v1.WebDetection.WebEntity> values) {
       if (webEntitiesBuilder_ == null) {
         ensureWebEntitiesIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, webEntities_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, webEntities_);
         onChanged();
       } else {
         webEntitiesBuilder_.addAllMessages(values);
@@ -5428,6 +6096,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Deduced entities from similar images on the Internet.
      * </pre>
@@ -5445,6 +6115,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Deduced entities from similar images on the Internet.
      * </pre>
@@ -5462,6 +6134,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Deduced entities from similar images on the Internet.
      * </pre>
@@ -5473,6 +6147,8 @@ private static final long serialVersionUID = 0L;
       return getWebEntitiesFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * Deduced entities from similar images on the Internet.
      * </pre>
@@ -5482,19 +6158,22 @@ private static final long serialVersionUID = 0L;
     public com.google.cloud.vision.v1.WebDetection.WebEntityOrBuilder getWebEntitiesOrBuilder(
         int index) {
       if (webEntitiesBuilder_ == null) {
-        return webEntities_.get(index);  } else {
+        return webEntities_.get(index);
+      } else {
         return webEntitiesBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * Deduced entities from similar images on the Internet.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1.WebDetection.WebEntity web_entities = 1;</code>
      */
-    public java.util.List<? extends com.google.cloud.vision.v1.WebDetection.WebEntityOrBuilder> 
-         getWebEntitiesOrBuilderList() {
+    public java.util.List<? extends com.google.cloud.vision.v1.WebDetection.WebEntityOrBuilder>
+        getWebEntitiesOrBuilderList() {
       if (webEntitiesBuilder_ != null) {
         return webEntitiesBuilder_.getMessageOrBuilderList();
       } else {
@@ -5502,6 +6181,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Deduced entities from similar images on the Internet.
      * </pre>
@@ -5509,10 +6190,12 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.cloud.vision.v1.WebDetection.WebEntity web_entities = 1;</code>
      */
     public com.google.cloud.vision.v1.WebDetection.WebEntity.Builder addWebEntitiesBuilder() {
-      return getWebEntitiesFieldBuilder().addBuilder(
-          com.google.cloud.vision.v1.WebDetection.WebEntity.getDefaultInstance());
+      return getWebEntitiesFieldBuilder()
+          .addBuilder(com.google.cloud.vision.v1.WebDetection.WebEntity.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Deduced entities from similar images on the Internet.
      * </pre>
@@ -5521,26 +6204,35 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.vision.v1.WebDetection.WebEntity.Builder addWebEntitiesBuilder(
         int index) {
-      return getWebEntitiesFieldBuilder().addBuilder(
-          index, com.google.cloud.vision.v1.WebDetection.WebEntity.getDefaultInstance());
+      return getWebEntitiesFieldBuilder()
+          .addBuilder(
+              index, com.google.cloud.vision.v1.WebDetection.WebEntity.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Deduced entities from similar images on the Internet.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1.WebDetection.WebEntity web_entities = 1;</code>
      */
-    public java.util.List<com.google.cloud.vision.v1.WebDetection.WebEntity.Builder> 
-         getWebEntitiesBuilderList() {
+    public java.util.List<com.google.cloud.vision.v1.WebDetection.WebEntity.Builder>
+        getWebEntitiesBuilderList() {
       return getWebEntitiesFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.vision.v1.WebDetection.WebEntity, com.google.cloud.vision.v1.WebDetection.WebEntity.Builder, com.google.cloud.vision.v1.WebDetection.WebEntityOrBuilder> 
+            com.google.cloud.vision.v1.WebDetection.WebEntity,
+            com.google.cloud.vision.v1.WebDetection.WebEntity.Builder,
+            com.google.cloud.vision.v1.WebDetection.WebEntityOrBuilder>
         getWebEntitiesFieldBuilder() {
       if (webEntitiesBuilder_ == null) {
-        webEntitiesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.cloud.vision.v1.WebDetection.WebEntity, com.google.cloud.vision.v1.WebDetection.WebEntity.Builder, com.google.cloud.vision.v1.WebDetection.WebEntityOrBuilder>(
+        webEntitiesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.vision.v1.WebDetection.WebEntity,
+                com.google.cloud.vision.v1.WebDetection.WebEntity.Builder,
+                com.google.cloud.vision.v1.WebDetection.WebEntityOrBuilder>(
                 webEntities_,
                 ((bitField0_ & 0x00000001) == 0x00000001),
                 getParentForChildren(),
@@ -5551,18 +6243,26 @@ private static final long serialVersionUID = 0L;
     }
 
     private java.util.List<com.google.cloud.vision.v1.WebDetection.WebImage> fullMatchingImages_ =
-      java.util.Collections.emptyList();
+        java.util.Collections.emptyList();
+
     private void ensureFullMatchingImagesIsMutable() {
       if (!((bitField0_ & 0x00000002) == 0x00000002)) {
-        fullMatchingImages_ = new java.util.ArrayList<com.google.cloud.vision.v1.WebDetection.WebImage>(fullMatchingImages_);
+        fullMatchingImages_ =
+            new java.util.ArrayList<com.google.cloud.vision.v1.WebDetection.WebImage>(
+                fullMatchingImages_);
         bitField0_ |= 0x00000002;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.vision.v1.WebDetection.WebImage, com.google.cloud.vision.v1.WebDetection.WebImage.Builder, com.google.cloud.vision.v1.WebDetection.WebImageOrBuilder> fullMatchingImagesBuilder_;
+            com.google.cloud.vision.v1.WebDetection.WebImage,
+            com.google.cloud.vision.v1.WebDetection.WebImage.Builder,
+            com.google.cloud.vision.v1.WebDetection.WebImageOrBuilder>
+        fullMatchingImagesBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * Fully matching images from the Internet.
      * Can include resized copies of the query image.
@@ -5570,7 +6270,8 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage full_matching_images = 2;</code>
      */
-    public java.util.List<com.google.cloud.vision.v1.WebDetection.WebImage> getFullMatchingImagesList() {
+    public java.util.List<com.google.cloud.vision.v1.WebDetection.WebImage>
+        getFullMatchingImagesList() {
       if (fullMatchingImagesBuilder_ == null) {
         return java.util.Collections.unmodifiableList(fullMatchingImages_);
       } else {
@@ -5578,6 +6279,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Fully matching images from the Internet.
      * Can include resized copies of the query image.
@@ -5593,6 +6296,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Fully matching images from the Internet.
      * Can include resized copies of the query image.
@@ -5608,6 +6313,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Fully matching images from the Internet.
      * Can include resized copies of the query image.
@@ -5630,6 +6337,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Fully matching images from the Internet.
      * Can include resized copies of the query image.
@@ -5649,6 +6358,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Fully matching images from the Internet.
      * Can include resized copies of the query image.
@@ -5670,6 +6381,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Fully matching images from the Internet.
      * Can include resized copies of the query image.
@@ -5692,6 +6405,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Fully matching images from the Internet.
      * Can include resized copies of the query image.
@@ -5711,6 +6426,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Fully matching images from the Internet.
      * Can include resized copies of the query image.
@@ -5730,6 +6447,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Fully matching images from the Internet.
      * Can include resized copies of the query image.
@@ -5741,8 +6460,7 @@ private static final long serialVersionUID = 0L;
         java.lang.Iterable<? extends com.google.cloud.vision.v1.WebDetection.WebImage> values) {
       if (fullMatchingImagesBuilder_ == null) {
         ensureFullMatchingImagesIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, fullMatchingImages_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, fullMatchingImages_);
         onChanged();
       } else {
         fullMatchingImagesBuilder_.addAllMessages(values);
@@ -5750,6 +6468,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Fully matching images from the Internet.
      * Can include resized copies of the query image.
@@ -5768,6 +6488,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Fully matching images from the Internet.
      * Can include resized copies of the query image.
@@ -5786,6 +6508,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Fully matching images from the Internet.
      * Can include resized copies of the query image.
@@ -5798,6 +6522,8 @@ private static final long serialVersionUID = 0L;
       return getFullMatchingImagesFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * Fully matching images from the Internet.
      * Can include resized copies of the query image.
@@ -5808,11 +6534,14 @@ private static final long serialVersionUID = 0L;
     public com.google.cloud.vision.v1.WebDetection.WebImageOrBuilder getFullMatchingImagesOrBuilder(
         int index) {
       if (fullMatchingImagesBuilder_ == null) {
-        return fullMatchingImages_.get(index);  } else {
+        return fullMatchingImages_.get(index);
+      } else {
         return fullMatchingImagesBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * Fully matching images from the Internet.
      * Can include resized copies of the query image.
@@ -5820,8 +6549,8 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage full_matching_images = 2;</code>
      */
-    public java.util.List<? extends com.google.cloud.vision.v1.WebDetection.WebImageOrBuilder> 
-         getFullMatchingImagesOrBuilderList() {
+    public java.util.List<? extends com.google.cloud.vision.v1.WebDetection.WebImageOrBuilder>
+        getFullMatchingImagesOrBuilderList() {
       if (fullMatchingImagesBuilder_ != null) {
         return fullMatchingImagesBuilder_.getMessageOrBuilderList();
       } else {
@@ -5829,6 +6558,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Fully matching images from the Internet.
      * Can include resized copies of the query image.
@@ -5837,10 +6568,12 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage full_matching_images = 2;</code>
      */
     public com.google.cloud.vision.v1.WebDetection.WebImage.Builder addFullMatchingImagesBuilder() {
-      return getFullMatchingImagesFieldBuilder().addBuilder(
-          com.google.cloud.vision.v1.WebDetection.WebImage.getDefaultInstance());
+      return getFullMatchingImagesFieldBuilder()
+          .addBuilder(com.google.cloud.vision.v1.WebDetection.WebImage.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Fully matching images from the Internet.
      * Can include resized copies of the query image.
@@ -5850,10 +6583,12 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.vision.v1.WebDetection.WebImage.Builder addFullMatchingImagesBuilder(
         int index) {
-      return getFullMatchingImagesFieldBuilder().addBuilder(
-          index, com.google.cloud.vision.v1.WebDetection.WebImage.getDefaultInstance());
+      return getFullMatchingImagesFieldBuilder()
+          .addBuilder(index, com.google.cloud.vision.v1.WebDetection.WebImage.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Fully matching images from the Internet.
      * Can include resized copies of the query image.
@@ -5861,16 +6596,22 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage full_matching_images = 2;</code>
      */
-    public java.util.List<com.google.cloud.vision.v1.WebDetection.WebImage.Builder> 
-         getFullMatchingImagesBuilderList() {
+    public java.util.List<com.google.cloud.vision.v1.WebDetection.WebImage.Builder>
+        getFullMatchingImagesBuilderList() {
       return getFullMatchingImagesFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.vision.v1.WebDetection.WebImage, com.google.cloud.vision.v1.WebDetection.WebImage.Builder, com.google.cloud.vision.v1.WebDetection.WebImageOrBuilder> 
+            com.google.cloud.vision.v1.WebDetection.WebImage,
+            com.google.cloud.vision.v1.WebDetection.WebImage.Builder,
+            com.google.cloud.vision.v1.WebDetection.WebImageOrBuilder>
         getFullMatchingImagesFieldBuilder() {
       if (fullMatchingImagesBuilder_ == null) {
-        fullMatchingImagesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.cloud.vision.v1.WebDetection.WebImage, com.google.cloud.vision.v1.WebDetection.WebImage.Builder, com.google.cloud.vision.v1.WebDetection.WebImageOrBuilder>(
+        fullMatchingImagesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.vision.v1.WebDetection.WebImage,
+                com.google.cloud.vision.v1.WebDetection.WebImage.Builder,
+                com.google.cloud.vision.v1.WebDetection.WebImageOrBuilder>(
                 fullMatchingImages_,
                 ((bitField0_ & 0x00000002) == 0x00000002),
                 getParentForChildren(),
@@ -5880,28 +6621,38 @@ private static final long serialVersionUID = 0L;
       return fullMatchingImagesBuilder_;
     }
 
-    private java.util.List<com.google.cloud.vision.v1.WebDetection.WebImage> partialMatchingImages_ =
-      java.util.Collections.emptyList();
+    private java.util.List<com.google.cloud.vision.v1.WebDetection.WebImage>
+        partialMatchingImages_ = java.util.Collections.emptyList();
+
     private void ensurePartialMatchingImagesIsMutable() {
       if (!((bitField0_ & 0x00000004) == 0x00000004)) {
-        partialMatchingImages_ = new java.util.ArrayList<com.google.cloud.vision.v1.WebDetection.WebImage>(partialMatchingImages_);
+        partialMatchingImages_ =
+            new java.util.ArrayList<com.google.cloud.vision.v1.WebDetection.WebImage>(
+                partialMatchingImages_);
         bitField0_ |= 0x00000004;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.vision.v1.WebDetection.WebImage, com.google.cloud.vision.v1.WebDetection.WebImage.Builder, com.google.cloud.vision.v1.WebDetection.WebImageOrBuilder> partialMatchingImagesBuilder_;
+            com.google.cloud.vision.v1.WebDetection.WebImage,
+            com.google.cloud.vision.v1.WebDetection.WebImage.Builder,
+            com.google.cloud.vision.v1.WebDetection.WebImageOrBuilder>
+        partialMatchingImagesBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * Partial matching images from the Internet.
      * Those images are similar enough to share some key-point features. For
      * example an original image will likely have partial matching for its crops.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 3;</code>
+     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 3;
+     * </code>
      */
-    public java.util.List<com.google.cloud.vision.v1.WebDetection.WebImage> getPartialMatchingImagesList() {
+    public java.util.List<com.google.cloud.vision.v1.WebDetection.WebImage>
+        getPartialMatchingImagesList() {
       if (partialMatchingImagesBuilder_ == null) {
         return java.util.Collections.unmodifiableList(partialMatchingImages_);
       } else {
@@ -5909,13 +6660,16 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Partial matching images from the Internet.
      * Those images are similar enough to share some key-point features. For
      * example an original image will likely have partial matching for its crops.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 3;</code>
+     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 3;
+     * </code>
      */
     public int getPartialMatchingImagesCount() {
       if (partialMatchingImagesBuilder_ == null) {
@@ -5925,13 +6679,16 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Partial matching images from the Internet.
      * Those images are similar enough to share some key-point features. For
      * example an original image will likely have partial matching for its crops.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 3;</code>
+     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 3;
+     * </code>
      */
     public com.google.cloud.vision.v1.WebDetection.WebImage getPartialMatchingImages(int index) {
       if (partialMatchingImagesBuilder_ == null) {
@@ -5941,13 +6698,16 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Partial matching images from the Internet.
      * Those images are similar enough to share some key-point features. For
      * example an original image will likely have partial matching for its crops.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 3;</code>
+     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 3;
+     * </code>
      */
     public Builder setPartialMatchingImages(
         int index, com.google.cloud.vision.v1.WebDetection.WebImage value) {
@@ -5964,13 +6724,16 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Partial matching images from the Internet.
      * Those images are similar enough to share some key-point features. For
      * example an original image will likely have partial matching for its crops.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 3;</code>
+     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 3;
+     * </code>
      */
     public Builder setPartialMatchingImages(
         int index, com.google.cloud.vision.v1.WebDetection.WebImage.Builder builderForValue) {
@@ -5984,15 +6747,19 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Partial matching images from the Internet.
      * Those images are similar enough to share some key-point features. For
      * example an original image will likely have partial matching for its crops.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 3;</code>
+     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 3;
+     * </code>
      */
-    public Builder addPartialMatchingImages(com.google.cloud.vision.v1.WebDetection.WebImage value) {
+    public Builder addPartialMatchingImages(
+        com.google.cloud.vision.v1.WebDetection.WebImage value) {
       if (partialMatchingImagesBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -6006,13 +6773,16 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Partial matching images from the Internet.
      * Those images are similar enough to share some key-point features. For
      * example an original image will likely have partial matching for its crops.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 3;</code>
+     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 3;
+     * </code>
      */
     public Builder addPartialMatchingImages(
         int index, com.google.cloud.vision.v1.WebDetection.WebImage value) {
@@ -6029,13 +6799,16 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Partial matching images from the Internet.
      * Those images are similar enough to share some key-point features. For
      * example an original image will likely have partial matching for its crops.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 3;</code>
+     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 3;
+     * </code>
      */
     public Builder addPartialMatchingImages(
         com.google.cloud.vision.v1.WebDetection.WebImage.Builder builderForValue) {
@@ -6049,13 +6822,16 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Partial matching images from the Internet.
      * Those images are similar enough to share some key-point features. For
      * example an original image will likely have partial matching for its crops.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 3;</code>
+     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 3;
+     * </code>
      */
     public Builder addPartialMatchingImages(
         int index, com.google.cloud.vision.v1.WebDetection.WebImage.Builder builderForValue) {
@@ -6069,20 +6845,22 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Partial matching images from the Internet.
      * Those images are similar enough to share some key-point features. For
      * example an original image will likely have partial matching for its crops.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 3;</code>
+     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 3;
+     * </code>
      */
     public Builder addAllPartialMatchingImages(
         java.lang.Iterable<? extends com.google.cloud.vision.v1.WebDetection.WebImage> values) {
       if (partialMatchingImagesBuilder_ == null) {
         ensurePartialMatchingImagesIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, partialMatchingImages_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, partialMatchingImages_);
         onChanged();
       } else {
         partialMatchingImagesBuilder_.addAllMessages(values);
@@ -6090,13 +6868,16 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Partial matching images from the Internet.
      * Those images are similar enough to share some key-point features. For
      * example an original image will likely have partial matching for its crops.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 3;</code>
+     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 3;
+     * </code>
      */
     public Builder clearPartialMatchingImages() {
       if (partialMatchingImagesBuilder_ == null) {
@@ -6109,13 +6890,16 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Partial matching images from the Internet.
      * Those images are similar enough to share some key-point features. For
      * example an original image will likely have partial matching for its crops.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 3;</code>
+     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 3;
+     * </code>
      */
     public Builder removePartialMatchingImages(int index) {
       if (partialMatchingImagesBuilder_ == null) {
@@ -6128,45 +6912,55 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Partial matching images from the Internet.
      * Those images are similar enough to share some key-point features. For
      * example an original image will likely have partial matching for its crops.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 3;</code>
+     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 3;
+     * </code>
      */
     public com.google.cloud.vision.v1.WebDetection.WebImage.Builder getPartialMatchingImagesBuilder(
         int index) {
       return getPartialMatchingImagesFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * Partial matching images from the Internet.
      * Those images are similar enough to share some key-point features. For
      * example an original image will likely have partial matching for its crops.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 3;</code>
+     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 3;
+     * </code>
      */
-    public com.google.cloud.vision.v1.WebDetection.WebImageOrBuilder getPartialMatchingImagesOrBuilder(
-        int index) {
+    public com.google.cloud.vision.v1.WebDetection.WebImageOrBuilder
+        getPartialMatchingImagesOrBuilder(int index) {
       if (partialMatchingImagesBuilder_ == null) {
-        return partialMatchingImages_.get(index);  } else {
+        return partialMatchingImages_.get(index);
+      } else {
         return partialMatchingImagesBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * Partial matching images from the Internet.
      * Those images are similar enough to share some key-point features. For
      * example an original image will likely have partial matching for its crops.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 3;</code>
+     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 3;
+     * </code>
      */
-    public java.util.List<? extends com.google.cloud.vision.v1.WebDetection.WebImageOrBuilder> 
-         getPartialMatchingImagesOrBuilderList() {
+    public java.util.List<? extends com.google.cloud.vision.v1.WebDetection.WebImageOrBuilder>
+        getPartialMatchingImagesOrBuilderList() {
       if (partialMatchingImagesBuilder_ != null) {
         return partialMatchingImagesBuilder_.getMessageOrBuilderList();
       } else {
@@ -6174,51 +6968,67 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Partial matching images from the Internet.
      * Those images are similar enough to share some key-point features. For
      * example an original image will likely have partial matching for its crops.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 3;</code>
+     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 3;
+     * </code>
      */
-    public com.google.cloud.vision.v1.WebDetection.WebImage.Builder addPartialMatchingImagesBuilder() {
-      return getPartialMatchingImagesFieldBuilder().addBuilder(
-          com.google.cloud.vision.v1.WebDetection.WebImage.getDefaultInstance());
+    public com.google.cloud.vision.v1.WebDetection.WebImage.Builder
+        addPartialMatchingImagesBuilder() {
+      return getPartialMatchingImagesFieldBuilder()
+          .addBuilder(com.google.cloud.vision.v1.WebDetection.WebImage.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Partial matching images from the Internet.
      * Those images are similar enough to share some key-point features. For
      * example an original image will likely have partial matching for its crops.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 3;</code>
+     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 3;
+     * </code>
      */
     public com.google.cloud.vision.v1.WebDetection.WebImage.Builder addPartialMatchingImagesBuilder(
         int index) {
-      return getPartialMatchingImagesFieldBuilder().addBuilder(
-          index, com.google.cloud.vision.v1.WebDetection.WebImage.getDefaultInstance());
+      return getPartialMatchingImagesFieldBuilder()
+          .addBuilder(index, com.google.cloud.vision.v1.WebDetection.WebImage.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Partial matching images from the Internet.
      * Those images are similar enough to share some key-point features. For
      * example an original image will likely have partial matching for its crops.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 3;</code>
+     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage partial_matching_images = 3;
+     * </code>
      */
-    public java.util.List<com.google.cloud.vision.v1.WebDetection.WebImage.Builder> 
-         getPartialMatchingImagesBuilderList() {
+    public java.util.List<com.google.cloud.vision.v1.WebDetection.WebImage.Builder>
+        getPartialMatchingImagesBuilderList() {
       return getPartialMatchingImagesFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.vision.v1.WebDetection.WebImage, com.google.cloud.vision.v1.WebDetection.WebImage.Builder, com.google.cloud.vision.v1.WebDetection.WebImageOrBuilder> 
+            com.google.cloud.vision.v1.WebDetection.WebImage,
+            com.google.cloud.vision.v1.WebDetection.WebImage.Builder,
+            com.google.cloud.vision.v1.WebDetection.WebImageOrBuilder>
         getPartialMatchingImagesFieldBuilder() {
       if (partialMatchingImagesBuilder_ == null) {
-        partialMatchingImagesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.cloud.vision.v1.WebDetection.WebImage, com.google.cloud.vision.v1.WebDetection.WebImage.Builder, com.google.cloud.vision.v1.WebDetection.WebImageOrBuilder>(
+        partialMatchingImagesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.vision.v1.WebDetection.WebImage,
+                com.google.cloud.vision.v1.WebDetection.WebImage.Builder,
+                com.google.cloud.vision.v1.WebDetection.WebImageOrBuilder>(
                 partialMatchingImages_,
                 ((bitField0_ & 0x00000004) == 0x00000004),
                 getParentForChildren(),
@@ -6228,26 +7038,36 @@ private static final long serialVersionUID = 0L;
       return partialMatchingImagesBuilder_;
     }
 
-    private java.util.List<com.google.cloud.vision.v1.WebDetection.WebPage> pagesWithMatchingImages_ =
-      java.util.Collections.emptyList();
+    private java.util.List<com.google.cloud.vision.v1.WebDetection.WebPage>
+        pagesWithMatchingImages_ = java.util.Collections.emptyList();
+
     private void ensurePagesWithMatchingImagesIsMutable() {
       if (!((bitField0_ & 0x00000008) == 0x00000008)) {
-        pagesWithMatchingImages_ = new java.util.ArrayList<com.google.cloud.vision.v1.WebDetection.WebPage>(pagesWithMatchingImages_);
+        pagesWithMatchingImages_ =
+            new java.util.ArrayList<com.google.cloud.vision.v1.WebDetection.WebPage>(
+                pagesWithMatchingImages_);
         bitField0_ |= 0x00000008;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.vision.v1.WebDetection.WebPage, com.google.cloud.vision.v1.WebDetection.WebPage.Builder, com.google.cloud.vision.v1.WebDetection.WebPageOrBuilder> pagesWithMatchingImagesBuilder_;
+            com.google.cloud.vision.v1.WebDetection.WebPage,
+            com.google.cloud.vision.v1.WebDetection.WebPage.Builder,
+            com.google.cloud.vision.v1.WebDetection.WebPageOrBuilder>
+        pagesWithMatchingImagesBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * Web pages containing the matching images from the Internet.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1.WebDetection.WebPage pages_with_matching_images = 4;</code>
+     * <code>repeated .google.cloud.vision.v1.WebDetection.WebPage pages_with_matching_images = 4;
+     * </code>
      */
-    public java.util.List<com.google.cloud.vision.v1.WebDetection.WebPage> getPagesWithMatchingImagesList() {
+    public java.util.List<com.google.cloud.vision.v1.WebDetection.WebPage>
+        getPagesWithMatchingImagesList() {
       if (pagesWithMatchingImagesBuilder_ == null) {
         return java.util.Collections.unmodifiableList(pagesWithMatchingImages_);
       } else {
@@ -6255,11 +7075,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Web pages containing the matching images from the Internet.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1.WebDetection.WebPage pages_with_matching_images = 4;</code>
+     * <code>repeated .google.cloud.vision.v1.WebDetection.WebPage pages_with_matching_images = 4;
+     * </code>
      */
     public int getPagesWithMatchingImagesCount() {
       if (pagesWithMatchingImagesBuilder_ == null) {
@@ -6269,11 +7092,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Web pages containing the matching images from the Internet.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1.WebDetection.WebPage pages_with_matching_images = 4;</code>
+     * <code>repeated .google.cloud.vision.v1.WebDetection.WebPage pages_with_matching_images = 4;
+     * </code>
      */
     public com.google.cloud.vision.v1.WebDetection.WebPage getPagesWithMatchingImages(int index) {
       if (pagesWithMatchingImagesBuilder_ == null) {
@@ -6283,11 +7109,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Web pages containing the matching images from the Internet.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1.WebDetection.WebPage pages_with_matching_images = 4;</code>
+     * <code>repeated .google.cloud.vision.v1.WebDetection.WebPage pages_with_matching_images = 4;
+     * </code>
      */
     public Builder setPagesWithMatchingImages(
         int index, com.google.cloud.vision.v1.WebDetection.WebPage value) {
@@ -6304,11 +7133,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Web pages containing the matching images from the Internet.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1.WebDetection.WebPage pages_with_matching_images = 4;</code>
+     * <code>repeated .google.cloud.vision.v1.WebDetection.WebPage pages_with_matching_images = 4;
+     * </code>
      */
     public Builder setPagesWithMatchingImages(
         int index, com.google.cloud.vision.v1.WebDetection.WebPage.Builder builderForValue) {
@@ -6322,13 +7154,17 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Web pages containing the matching images from the Internet.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1.WebDetection.WebPage pages_with_matching_images = 4;</code>
+     * <code>repeated .google.cloud.vision.v1.WebDetection.WebPage pages_with_matching_images = 4;
+     * </code>
      */
-    public Builder addPagesWithMatchingImages(com.google.cloud.vision.v1.WebDetection.WebPage value) {
+    public Builder addPagesWithMatchingImages(
+        com.google.cloud.vision.v1.WebDetection.WebPage value) {
       if (pagesWithMatchingImagesBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -6342,11 +7178,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Web pages containing the matching images from the Internet.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1.WebDetection.WebPage pages_with_matching_images = 4;</code>
+     * <code>repeated .google.cloud.vision.v1.WebDetection.WebPage pages_with_matching_images = 4;
+     * </code>
      */
     public Builder addPagesWithMatchingImages(
         int index, com.google.cloud.vision.v1.WebDetection.WebPage value) {
@@ -6363,11 +7202,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Web pages containing the matching images from the Internet.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1.WebDetection.WebPage pages_with_matching_images = 4;</code>
+     * <code>repeated .google.cloud.vision.v1.WebDetection.WebPage pages_with_matching_images = 4;
+     * </code>
      */
     public Builder addPagesWithMatchingImages(
         com.google.cloud.vision.v1.WebDetection.WebPage.Builder builderForValue) {
@@ -6381,11 +7223,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Web pages containing the matching images from the Internet.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1.WebDetection.WebPage pages_with_matching_images = 4;</code>
+     * <code>repeated .google.cloud.vision.v1.WebDetection.WebPage pages_with_matching_images = 4;
+     * </code>
      */
     public Builder addPagesWithMatchingImages(
         int index, com.google.cloud.vision.v1.WebDetection.WebPage.Builder builderForValue) {
@@ -6399,18 +7244,20 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Web pages containing the matching images from the Internet.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1.WebDetection.WebPage pages_with_matching_images = 4;</code>
+     * <code>repeated .google.cloud.vision.v1.WebDetection.WebPage pages_with_matching_images = 4;
+     * </code>
      */
     public Builder addAllPagesWithMatchingImages(
         java.lang.Iterable<? extends com.google.cloud.vision.v1.WebDetection.WebPage> values) {
       if (pagesWithMatchingImagesBuilder_ == null) {
         ensurePagesWithMatchingImagesIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, pagesWithMatchingImages_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, pagesWithMatchingImages_);
         onChanged();
       } else {
         pagesWithMatchingImagesBuilder_.addAllMessages(values);
@@ -6418,11 +7265,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Web pages containing the matching images from the Internet.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1.WebDetection.WebPage pages_with_matching_images = 4;</code>
+     * <code>repeated .google.cloud.vision.v1.WebDetection.WebPage pages_with_matching_images = 4;
+     * </code>
      */
     public Builder clearPagesWithMatchingImages() {
       if (pagesWithMatchingImagesBuilder_ == null) {
@@ -6435,11 +7285,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Web pages containing the matching images from the Internet.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1.WebDetection.WebPage pages_with_matching_images = 4;</code>
+     * <code>repeated .google.cloud.vision.v1.WebDetection.WebPage pages_with_matching_images = 4;
+     * </code>
      */
     public Builder removePagesWithMatchingImages(int index) {
       if (pagesWithMatchingImagesBuilder_ == null) {
@@ -6452,39 +7305,49 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Web pages containing the matching images from the Internet.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1.WebDetection.WebPage pages_with_matching_images = 4;</code>
+     * <code>repeated .google.cloud.vision.v1.WebDetection.WebPage pages_with_matching_images = 4;
+     * </code>
      */
-    public com.google.cloud.vision.v1.WebDetection.WebPage.Builder getPagesWithMatchingImagesBuilder(
-        int index) {
+    public com.google.cloud.vision.v1.WebDetection.WebPage.Builder
+        getPagesWithMatchingImagesBuilder(int index) {
       return getPagesWithMatchingImagesFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * Web pages containing the matching images from the Internet.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1.WebDetection.WebPage pages_with_matching_images = 4;</code>
+     * <code>repeated .google.cloud.vision.v1.WebDetection.WebPage pages_with_matching_images = 4;
+     * </code>
      */
-    public com.google.cloud.vision.v1.WebDetection.WebPageOrBuilder getPagesWithMatchingImagesOrBuilder(
-        int index) {
+    public com.google.cloud.vision.v1.WebDetection.WebPageOrBuilder
+        getPagesWithMatchingImagesOrBuilder(int index) {
       if (pagesWithMatchingImagesBuilder_ == null) {
-        return pagesWithMatchingImages_.get(index);  } else {
+        return pagesWithMatchingImages_.get(index);
+      } else {
         return pagesWithMatchingImagesBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * Web pages containing the matching images from the Internet.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1.WebDetection.WebPage pages_with_matching_images = 4;</code>
+     * <code>repeated .google.cloud.vision.v1.WebDetection.WebPage pages_with_matching_images = 4;
+     * </code>
      */
-    public java.util.List<? extends com.google.cloud.vision.v1.WebDetection.WebPageOrBuilder> 
-         getPagesWithMatchingImagesOrBuilderList() {
+    public java.util.List<? extends com.google.cloud.vision.v1.WebDetection.WebPageOrBuilder>
+        getPagesWithMatchingImagesOrBuilderList() {
       if (pagesWithMatchingImagesBuilder_ != null) {
         return pagesWithMatchingImagesBuilder_.getMessageOrBuilderList();
       } else {
@@ -6492,45 +7355,61 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Web pages containing the matching images from the Internet.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1.WebDetection.WebPage pages_with_matching_images = 4;</code>
+     * <code>repeated .google.cloud.vision.v1.WebDetection.WebPage pages_with_matching_images = 4;
+     * </code>
      */
-    public com.google.cloud.vision.v1.WebDetection.WebPage.Builder addPagesWithMatchingImagesBuilder() {
-      return getPagesWithMatchingImagesFieldBuilder().addBuilder(
-          com.google.cloud.vision.v1.WebDetection.WebPage.getDefaultInstance());
+    public com.google.cloud.vision.v1.WebDetection.WebPage.Builder
+        addPagesWithMatchingImagesBuilder() {
+      return getPagesWithMatchingImagesFieldBuilder()
+          .addBuilder(com.google.cloud.vision.v1.WebDetection.WebPage.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Web pages containing the matching images from the Internet.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1.WebDetection.WebPage pages_with_matching_images = 4;</code>
+     * <code>repeated .google.cloud.vision.v1.WebDetection.WebPage pages_with_matching_images = 4;
+     * </code>
      */
-    public com.google.cloud.vision.v1.WebDetection.WebPage.Builder addPagesWithMatchingImagesBuilder(
-        int index) {
-      return getPagesWithMatchingImagesFieldBuilder().addBuilder(
-          index, com.google.cloud.vision.v1.WebDetection.WebPage.getDefaultInstance());
+    public com.google.cloud.vision.v1.WebDetection.WebPage.Builder
+        addPagesWithMatchingImagesBuilder(int index) {
+      return getPagesWithMatchingImagesFieldBuilder()
+          .addBuilder(index, com.google.cloud.vision.v1.WebDetection.WebPage.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Web pages containing the matching images from the Internet.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1.WebDetection.WebPage pages_with_matching_images = 4;</code>
+     * <code>repeated .google.cloud.vision.v1.WebDetection.WebPage pages_with_matching_images = 4;
+     * </code>
      */
-    public java.util.List<com.google.cloud.vision.v1.WebDetection.WebPage.Builder> 
-         getPagesWithMatchingImagesBuilderList() {
+    public java.util.List<com.google.cloud.vision.v1.WebDetection.WebPage.Builder>
+        getPagesWithMatchingImagesBuilderList() {
       return getPagesWithMatchingImagesFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.vision.v1.WebDetection.WebPage, com.google.cloud.vision.v1.WebDetection.WebPage.Builder, com.google.cloud.vision.v1.WebDetection.WebPageOrBuilder> 
+            com.google.cloud.vision.v1.WebDetection.WebPage,
+            com.google.cloud.vision.v1.WebDetection.WebPage.Builder,
+            com.google.cloud.vision.v1.WebDetection.WebPageOrBuilder>
         getPagesWithMatchingImagesFieldBuilder() {
       if (pagesWithMatchingImagesBuilder_ == null) {
-        pagesWithMatchingImagesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.cloud.vision.v1.WebDetection.WebPage, com.google.cloud.vision.v1.WebDetection.WebPage.Builder, com.google.cloud.vision.v1.WebDetection.WebPageOrBuilder>(
+        pagesWithMatchingImagesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.vision.v1.WebDetection.WebPage,
+                com.google.cloud.vision.v1.WebDetection.WebPage.Builder,
+                com.google.cloud.vision.v1.WebDetection.WebPageOrBuilder>(
                 pagesWithMatchingImages_,
                 ((bitField0_ & 0x00000008) == 0x00000008),
                 getParentForChildren(),
@@ -6540,26 +7419,36 @@ private static final long serialVersionUID = 0L;
       return pagesWithMatchingImagesBuilder_;
     }
 
-    private java.util.List<com.google.cloud.vision.v1.WebDetection.WebImage> visuallySimilarImages_ =
-      java.util.Collections.emptyList();
+    private java.util.List<com.google.cloud.vision.v1.WebDetection.WebImage>
+        visuallySimilarImages_ = java.util.Collections.emptyList();
+
     private void ensureVisuallySimilarImagesIsMutable() {
       if (!((bitField0_ & 0x00000010) == 0x00000010)) {
-        visuallySimilarImages_ = new java.util.ArrayList<com.google.cloud.vision.v1.WebDetection.WebImage>(visuallySimilarImages_);
+        visuallySimilarImages_ =
+            new java.util.ArrayList<com.google.cloud.vision.v1.WebDetection.WebImage>(
+                visuallySimilarImages_);
         bitField0_ |= 0x00000010;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.vision.v1.WebDetection.WebImage, com.google.cloud.vision.v1.WebDetection.WebImage.Builder, com.google.cloud.vision.v1.WebDetection.WebImageOrBuilder> visuallySimilarImagesBuilder_;
+            com.google.cloud.vision.v1.WebDetection.WebImage,
+            com.google.cloud.vision.v1.WebDetection.WebImage.Builder,
+            com.google.cloud.vision.v1.WebDetection.WebImageOrBuilder>
+        visuallySimilarImagesBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * The visually similar image results.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage visually_similar_images = 6;</code>
+     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage visually_similar_images = 6;
+     * </code>
      */
-    public java.util.List<com.google.cloud.vision.v1.WebDetection.WebImage> getVisuallySimilarImagesList() {
+    public java.util.List<com.google.cloud.vision.v1.WebDetection.WebImage>
+        getVisuallySimilarImagesList() {
       if (visuallySimilarImagesBuilder_ == null) {
         return java.util.Collections.unmodifiableList(visuallySimilarImages_);
       } else {
@@ -6567,11 +7456,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The visually similar image results.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage visually_similar_images = 6;</code>
+     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage visually_similar_images = 6;
+     * </code>
      */
     public int getVisuallySimilarImagesCount() {
       if (visuallySimilarImagesBuilder_ == null) {
@@ -6581,11 +7473,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The visually similar image results.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage visually_similar_images = 6;</code>
+     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage visually_similar_images = 6;
+     * </code>
      */
     public com.google.cloud.vision.v1.WebDetection.WebImage getVisuallySimilarImages(int index) {
       if (visuallySimilarImagesBuilder_ == null) {
@@ -6595,11 +7490,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The visually similar image results.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage visually_similar_images = 6;</code>
+     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage visually_similar_images = 6;
+     * </code>
      */
     public Builder setVisuallySimilarImages(
         int index, com.google.cloud.vision.v1.WebDetection.WebImage value) {
@@ -6616,11 +7514,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The visually similar image results.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage visually_similar_images = 6;</code>
+     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage visually_similar_images = 6;
+     * </code>
      */
     public Builder setVisuallySimilarImages(
         int index, com.google.cloud.vision.v1.WebDetection.WebImage.Builder builderForValue) {
@@ -6634,13 +7535,17 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The visually similar image results.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage visually_similar_images = 6;</code>
+     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage visually_similar_images = 6;
+     * </code>
      */
-    public Builder addVisuallySimilarImages(com.google.cloud.vision.v1.WebDetection.WebImage value) {
+    public Builder addVisuallySimilarImages(
+        com.google.cloud.vision.v1.WebDetection.WebImage value) {
       if (visuallySimilarImagesBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -6654,11 +7559,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The visually similar image results.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage visually_similar_images = 6;</code>
+     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage visually_similar_images = 6;
+     * </code>
      */
     public Builder addVisuallySimilarImages(
         int index, com.google.cloud.vision.v1.WebDetection.WebImage value) {
@@ -6675,11 +7583,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The visually similar image results.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage visually_similar_images = 6;</code>
+     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage visually_similar_images = 6;
+     * </code>
      */
     public Builder addVisuallySimilarImages(
         com.google.cloud.vision.v1.WebDetection.WebImage.Builder builderForValue) {
@@ -6693,11 +7604,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The visually similar image results.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage visually_similar_images = 6;</code>
+     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage visually_similar_images = 6;
+     * </code>
      */
     public Builder addVisuallySimilarImages(
         int index, com.google.cloud.vision.v1.WebDetection.WebImage.Builder builderForValue) {
@@ -6711,18 +7625,20 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The visually similar image results.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage visually_similar_images = 6;</code>
+     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage visually_similar_images = 6;
+     * </code>
      */
     public Builder addAllVisuallySimilarImages(
         java.lang.Iterable<? extends com.google.cloud.vision.v1.WebDetection.WebImage> values) {
       if (visuallySimilarImagesBuilder_ == null) {
         ensureVisuallySimilarImagesIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, visuallySimilarImages_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, visuallySimilarImages_);
         onChanged();
       } else {
         visuallySimilarImagesBuilder_.addAllMessages(values);
@@ -6730,11 +7646,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The visually similar image results.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage visually_similar_images = 6;</code>
+     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage visually_similar_images = 6;
+     * </code>
      */
     public Builder clearVisuallySimilarImages() {
       if (visuallySimilarImagesBuilder_ == null) {
@@ -6747,11 +7666,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The visually similar image results.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage visually_similar_images = 6;</code>
+     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage visually_similar_images = 6;
+     * </code>
      */
     public Builder removeVisuallySimilarImages(int index) {
       if (visuallySimilarImagesBuilder_ == null) {
@@ -6764,39 +7686,49 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The visually similar image results.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage visually_similar_images = 6;</code>
+     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage visually_similar_images = 6;
+     * </code>
      */
     public com.google.cloud.vision.v1.WebDetection.WebImage.Builder getVisuallySimilarImagesBuilder(
         int index) {
       return getVisuallySimilarImagesFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * The visually similar image results.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage visually_similar_images = 6;</code>
+     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage visually_similar_images = 6;
+     * </code>
      */
-    public com.google.cloud.vision.v1.WebDetection.WebImageOrBuilder getVisuallySimilarImagesOrBuilder(
-        int index) {
+    public com.google.cloud.vision.v1.WebDetection.WebImageOrBuilder
+        getVisuallySimilarImagesOrBuilder(int index) {
       if (visuallySimilarImagesBuilder_ == null) {
-        return visuallySimilarImages_.get(index);  } else {
+        return visuallySimilarImages_.get(index);
+      } else {
         return visuallySimilarImagesBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * The visually similar image results.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage visually_similar_images = 6;</code>
+     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage visually_similar_images = 6;
+     * </code>
      */
-    public java.util.List<? extends com.google.cloud.vision.v1.WebDetection.WebImageOrBuilder> 
-         getVisuallySimilarImagesOrBuilderList() {
+    public java.util.List<? extends com.google.cloud.vision.v1.WebDetection.WebImageOrBuilder>
+        getVisuallySimilarImagesOrBuilderList() {
       if (visuallySimilarImagesBuilder_ != null) {
         return visuallySimilarImagesBuilder_.getMessageOrBuilderList();
       } else {
@@ -6804,45 +7736,61 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The visually similar image results.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage visually_similar_images = 6;</code>
+     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage visually_similar_images = 6;
+     * </code>
      */
-    public com.google.cloud.vision.v1.WebDetection.WebImage.Builder addVisuallySimilarImagesBuilder() {
-      return getVisuallySimilarImagesFieldBuilder().addBuilder(
-          com.google.cloud.vision.v1.WebDetection.WebImage.getDefaultInstance());
+    public com.google.cloud.vision.v1.WebDetection.WebImage.Builder
+        addVisuallySimilarImagesBuilder() {
+      return getVisuallySimilarImagesFieldBuilder()
+          .addBuilder(com.google.cloud.vision.v1.WebDetection.WebImage.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * The visually similar image results.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage visually_similar_images = 6;</code>
+     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage visually_similar_images = 6;
+     * </code>
      */
     public com.google.cloud.vision.v1.WebDetection.WebImage.Builder addVisuallySimilarImagesBuilder(
         int index) {
-      return getVisuallySimilarImagesFieldBuilder().addBuilder(
-          index, com.google.cloud.vision.v1.WebDetection.WebImage.getDefaultInstance());
+      return getVisuallySimilarImagesFieldBuilder()
+          .addBuilder(index, com.google.cloud.vision.v1.WebDetection.WebImage.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * The visually similar image results.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage visually_similar_images = 6;</code>
+     * <code>repeated .google.cloud.vision.v1.WebDetection.WebImage visually_similar_images = 6;
+     * </code>
      */
-    public java.util.List<com.google.cloud.vision.v1.WebDetection.WebImage.Builder> 
-         getVisuallySimilarImagesBuilderList() {
+    public java.util.List<com.google.cloud.vision.v1.WebDetection.WebImage.Builder>
+        getVisuallySimilarImagesBuilderList() {
       return getVisuallySimilarImagesFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.vision.v1.WebDetection.WebImage, com.google.cloud.vision.v1.WebDetection.WebImage.Builder, com.google.cloud.vision.v1.WebDetection.WebImageOrBuilder> 
+            com.google.cloud.vision.v1.WebDetection.WebImage,
+            com.google.cloud.vision.v1.WebDetection.WebImage.Builder,
+            com.google.cloud.vision.v1.WebDetection.WebImageOrBuilder>
         getVisuallySimilarImagesFieldBuilder() {
       if (visuallySimilarImagesBuilder_ == null) {
-        visuallySimilarImagesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.cloud.vision.v1.WebDetection.WebImage, com.google.cloud.vision.v1.WebDetection.WebImage.Builder, com.google.cloud.vision.v1.WebDetection.WebImageOrBuilder>(
+        visuallySimilarImagesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.vision.v1.WebDetection.WebImage,
+                com.google.cloud.vision.v1.WebDetection.WebImage.Builder,
+                com.google.cloud.vision.v1.WebDetection.WebImageOrBuilder>(
                 visuallySimilarImages_,
                 ((bitField0_ & 0x00000010) == 0x00000010),
                 getParentForChildren(),
@@ -6853,25 +7801,35 @@ private static final long serialVersionUID = 0L;
     }
 
     private java.util.List<com.google.cloud.vision.v1.WebDetection.WebLabel> bestGuessLabels_ =
-      java.util.Collections.emptyList();
+        java.util.Collections.emptyList();
+
     private void ensureBestGuessLabelsIsMutable() {
       if (!((bitField0_ & 0x00000020) == 0x00000020)) {
-        bestGuessLabels_ = new java.util.ArrayList<com.google.cloud.vision.v1.WebDetection.WebLabel>(bestGuessLabels_);
+        bestGuessLabels_ =
+            new java.util.ArrayList<com.google.cloud.vision.v1.WebDetection.WebLabel>(
+                bestGuessLabels_);
         bitField0_ |= 0x00000020;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.vision.v1.WebDetection.WebLabel, com.google.cloud.vision.v1.WebDetection.WebLabel.Builder, com.google.cloud.vision.v1.WebDetection.WebLabelOrBuilder> bestGuessLabelsBuilder_;
+            com.google.cloud.vision.v1.WebDetection.WebLabel,
+            com.google.cloud.vision.v1.WebDetection.WebLabel.Builder,
+            com.google.cloud.vision.v1.WebDetection.WebLabelOrBuilder>
+        bestGuessLabelsBuilder_;
 
     /**
+     *
+     *
      * <pre>
-     * Best guess text labels for the request image.
+     * The service's best guess as to the topic of the request image.
+     * Inferred from similar images on the open web.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1.WebDetection.WebLabel best_guess_labels = 8;</code>
      */
-    public java.util.List<com.google.cloud.vision.v1.WebDetection.WebLabel> getBestGuessLabelsList() {
+    public java.util.List<com.google.cloud.vision.v1.WebDetection.WebLabel>
+        getBestGuessLabelsList() {
       if (bestGuessLabelsBuilder_ == null) {
         return java.util.Collections.unmodifiableList(bestGuessLabels_);
       } else {
@@ -6879,8 +7837,11 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
-     * Best guess text labels for the request image.
+     * The service's best guess as to the topic of the request image.
+     * Inferred from similar images on the open web.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1.WebDetection.WebLabel best_guess_labels = 8;</code>
@@ -6893,8 +7854,11 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
-     * Best guess text labels for the request image.
+     * The service's best guess as to the topic of the request image.
+     * Inferred from similar images on the open web.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1.WebDetection.WebLabel best_guess_labels = 8;</code>
@@ -6907,8 +7871,11 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
-     * Best guess text labels for the request image.
+     * The service's best guess as to the topic of the request image.
+     * Inferred from similar images on the open web.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1.WebDetection.WebLabel best_guess_labels = 8;</code>
@@ -6928,8 +7895,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * Best guess text labels for the request image.
+     * The service's best guess as to the topic of the request image.
+     * Inferred from similar images on the open web.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1.WebDetection.WebLabel best_guess_labels = 8;</code>
@@ -6946,8 +7916,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * Best guess text labels for the request image.
+     * The service's best guess as to the topic of the request image.
+     * Inferred from similar images on the open web.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1.WebDetection.WebLabel best_guess_labels = 8;</code>
@@ -6966,8 +7939,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * Best guess text labels for the request image.
+     * The service's best guess as to the topic of the request image.
+     * Inferred from similar images on the open web.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1.WebDetection.WebLabel best_guess_labels = 8;</code>
@@ -6987,8 +7963,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * Best guess text labels for the request image.
+     * The service's best guess as to the topic of the request image.
+     * Inferred from similar images on the open web.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1.WebDetection.WebLabel best_guess_labels = 8;</code>
@@ -7005,8 +7984,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * Best guess text labels for the request image.
+     * The service's best guess as to the topic of the request image.
+     * Inferred from similar images on the open web.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1.WebDetection.WebLabel best_guess_labels = 8;</code>
@@ -7023,8 +8005,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * Best guess text labels for the request image.
+     * The service's best guess as to the topic of the request image.
+     * Inferred from similar images on the open web.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1.WebDetection.WebLabel best_guess_labels = 8;</code>
@@ -7033,8 +8018,7 @@ private static final long serialVersionUID = 0L;
         java.lang.Iterable<? extends com.google.cloud.vision.v1.WebDetection.WebLabel> values) {
       if (bestGuessLabelsBuilder_ == null) {
         ensureBestGuessLabelsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, bestGuessLabels_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, bestGuessLabels_);
         onChanged();
       } else {
         bestGuessLabelsBuilder_.addAllMessages(values);
@@ -7042,8 +8026,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * Best guess text labels for the request image.
+     * The service's best guess as to the topic of the request image.
+     * Inferred from similar images on the open web.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1.WebDetection.WebLabel best_guess_labels = 8;</code>
@@ -7059,8 +8046,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * Best guess text labels for the request image.
+     * The service's best guess as to the topic of the request image.
+     * Inferred from similar images on the open web.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1.WebDetection.WebLabel best_guess_labels = 8;</code>
@@ -7076,8 +8066,11 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * Best guess text labels for the request image.
+     * The service's best guess as to the topic of the request image.
+     * Inferred from similar images on the open web.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1.WebDetection.WebLabel best_guess_labels = 8;</code>
@@ -7087,8 +8080,11 @@ private static final long serialVersionUID = 0L;
       return getBestGuessLabelsFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
-     * Best guess text labels for the request image.
+     * The service's best guess as to the topic of the request image.
+     * Inferred from similar images on the open web.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1.WebDetection.WebLabel best_guess_labels = 8;</code>
@@ -7096,19 +8092,23 @@ private static final long serialVersionUID = 0L;
     public com.google.cloud.vision.v1.WebDetection.WebLabelOrBuilder getBestGuessLabelsOrBuilder(
         int index) {
       if (bestGuessLabelsBuilder_ == null) {
-        return bestGuessLabels_.get(index);  } else {
+        return bestGuessLabels_.get(index);
+      } else {
         return bestGuessLabelsBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
-     * Best guess text labels for the request image.
+     * The service's best guess as to the topic of the request image.
+     * Inferred from similar images on the open web.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1.WebDetection.WebLabel best_guess_labels = 8;</code>
      */
-    public java.util.List<? extends com.google.cloud.vision.v1.WebDetection.WebLabelOrBuilder> 
-         getBestGuessLabelsOrBuilderList() {
+    public java.util.List<? extends com.google.cloud.vision.v1.WebDetection.WebLabelOrBuilder>
+        getBestGuessLabelsOrBuilderList() {
       if (bestGuessLabelsBuilder_ != null) {
         return bestGuessLabelsBuilder_.getMessageOrBuilderList();
       } else {
@@ -7116,45 +8116,60 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
-     * Best guess text labels for the request image.
+     * The service's best guess as to the topic of the request image.
+     * Inferred from similar images on the open web.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1.WebDetection.WebLabel best_guess_labels = 8;</code>
      */
     public com.google.cloud.vision.v1.WebDetection.WebLabel.Builder addBestGuessLabelsBuilder() {
-      return getBestGuessLabelsFieldBuilder().addBuilder(
-          com.google.cloud.vision.v1.WebDetection.WebLabel.getDefaultInstance());
+      return getBestGuessLabelsFieldBuilder()
+          .addBuilder(com.google.cloud.vision.v1.WebDetection.WebLabel.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
-     * Best guess text labels for the request image.
+     * The service's best guess as to the topic of the request image.
+     * Inferred from similar images on the open web.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1.WebDetection.WebLabel best_guess_labels = 8;</code>
      */
     public com.google.cloud.vision.v1.WebDetection.WebLabel.Builder addBestGuessLabelsBuilder(
         int index) {
-      return getBestGuessLabelsFieldBuilder().addBuilder(
-          index, com.google.cloud.vision.v1.WebDetection.WebLabel.getDefaultInstance());
+      return getBestGuessLabelsFieldBuilder()
+          .addBuilder(index, com.google.cloud.vision.v1.WebDetection.WebLabel.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
-     * Best guess text labels for the request image.
+     * The service's best guess as to the topic of the request image.
+     * Inferred from similar images on the open web.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1.WebDetection.WebLabel best_guess_labels = 8;</code>
      */
-    public java.util.List<com.google.cloud.vision.v1.WebDetection.WebLabel.Builder> 
-         getBestGuessLabelsBuilderList() {
+    public java.util.List<com.google.cloud.vision.v1.WebDetection.WebLabel.Builder>
+        getBestGuessLabelsBuilderList() {
       return getBestGuessLabelsFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.vision.v1.WebDetection.WebLabel, com.google.cloud.vision.v1.WebDetection.WebLabel.Builder, com.google.cloud.vision.v1.WebDetection.WebLabelOrBuilder> 
+            com.google.cloud.vision.v1.WebDetection.WebLabel,
+            com.google.cloud.vision.v1.WebDetection.WebLabel.Builder,
+            com.google.cloud.vision.v1.WebDetection.WebLabelOrBuilder>
         getBestGuessLabelsFieldBuilder() {
       if (bestGuessLabelsBuilder_ == null) {
-        bestGuessLabelsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.cloud.vision.v1.WebDetection.WebLabel, com.google.cloud.vision.v1.WebDetection.WebLabel.Builder, com.google.cloud.vision.v1.WebDetection.WebLabelOrBuilder>(
+        bestGuessLabelsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.vision.v1.WebDetection.WebLabel,
+                com.google.cloud.vision.v1.WebDetection.WebLabel.Builder,
+                com.google.cloud.vision.v1.WebDetection.WebLabelOrBuilder>(
                 bestGuessLabels_,
                 ((bitField0_ & 0x00000020) == 0x00000020),
                 getParentForChildren(),
@@ -7163,22 +8178,24 @@ private static final long serialVersionUID = 0L;
       }
       return bestGuessLabelsBuilder_;
     }
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+
+    @java.lang.Override
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
     }
-
 
     // @@protoc_insertion_point(builder_scope:google.cloud.vision.v1.WebDetection)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.vision.v1.WebDetection)
   private static final com.google.cloud.vision.v1.WebDetection DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.vision.v1.WebDetection();
   }
@@ -7187,15 +8204,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<WebDetection>
-      PARSER = new com.google.protobuf.AbstractParser<WebDetection>() {
-    public WebDetection parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-        return new WebDetection(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<WebDetection> PARSER =
+      new com.google.protobuf.AbstractParser<WebDetection>() {
+        @java.lang.Override
+        public WebDetection parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new WebDetection(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<WebDetection> parser() {
     return PARSER;
@@ -7206,9 +8224,8 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.cloud.vision.v1.WebDetection getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

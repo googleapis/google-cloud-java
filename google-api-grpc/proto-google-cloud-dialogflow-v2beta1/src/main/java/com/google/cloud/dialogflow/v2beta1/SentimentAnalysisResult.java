@@ -4,6 +4,8 @@
 package com.google.cloud.dialogflow.v2beta1;
 
 /**
+ *
+ *
  * <pre>
  * The result of sentiment analysis as configured by
  * `sentiment_analysis_request_config`.
@@ -11,28 +13,31 @@ package com.google.cloud.dialogflow.v2beta1;
  *
  * Protobuf type {@code google.cloud.dialogflow.v2beta1.SentimentAnalysisResult}
  */
-public  final class SentimentAnalysisResult extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class SentimentAnalysisResult extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.SentimentAnalysisResult)
     SentimentAnalysisResultOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use SentimentAnalysisResult.newBuilder() to construct.
   private SentimentAnalysisResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private SentimentAnalysisResult() {
-  }
+
+  private SentimentAnalysisResult() {}
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private SentimentAnalysisResult(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -44,53 +49,61 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
-          case 10: {
-            com.google.cloud.dialogflow.v2beta1.Sentiment.Builder subBuilder = null;
-            if (queryTextSentiment_ != null) {
-              subBuilder = queryTextSentiment_.toBuilder();
-            }
-            queryTextSentiment_ = input.readMessage(com.google.cloud.dialogflow.v2beta1.Sentiment.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(queryTextSentiment_);
-              queryTextSentiment_ = subBuilder.buildPartial();
-            }
+          case 10:
+            {
+              com.google.cloud.dialogflow.v2beta1.Sentiment.Builder subBuilder = null;
+              if (queryTextSentiment_ != null) {
+                subBuilder = queryTextSentiment_.toBuilder();
+              }
+              queryTextSentiment_ =
+                  input.readMessage(
+                      com.google.cloud.dialogflow.v2beta1.Sentiment.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(queryTextSentiment_);
+                queryTextSentiment_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.dialogflow.v2beta1.SessionProto.internal_static_google_cloud_dialogflow_v2beta1_SentimentAnalysisResult_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.dialogflow.v2beta1.SessionProto
+        .internal_static_google_cloud_dialogflow_v2beta1_SentimentAnalysisResult_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.dialogflow.v2beta1.SessionProto.internal_static_google_cloud_dialogflow_v2beta1_SentimentAnalysisResult_fieldAccessorTable
+    return com.google.cloud.dialogflow.v2beta1.SessionProto
+        .internal_static_google_cloud_dialogflow_v2beta1_SentimentAnalysisResult_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult.class, com.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult.Builder.class);
+            com.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult.class,
+            com.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult.Builder.class);
   }
 
   public static final int QUERY_TEXT_SENTIMENT_FIELD_NUMBER = 1;
   private com.google.cloud.dialogflow.v2beta1.Sentiment queryTextSentiment_;
   /**
+   *
+   *
    * <pre>
    * The sentiment analysis result for `query_text`.
    * </pre>
@@ -101,6 +114,8 @@ private static final long serialVersionUID = 0L;
     return queryTextSentiment_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * The sentiment analysis result for `query_text`.
    * </pre>
@@ -108,9 +123,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.cloud.dialogflow.v2beta1.Sentiment query_text_sentiment = 1;</code>
    */
   public com.google.cloud.dialogflow.v2beta1.Sentiment getQueryTextSentiment() {
-    return queryTextSentiment_ == null ? com.google.cloud.dialogflow.v2beta1.Sentiment.getDefaultInstance() : queryTextSentiment_;
+    return queryTextSentiment_ == null
+        ? com.google.cloud.dialogflow.v2beta1.Sentiment.getDefaultInstance()
+        : queryTextSentiment_;
   }
   /**
+   *
+   *
    * <pre>
    * The sentiment analysis result for `query_text`.
    * </pre>
@@ -122,6 +141,8 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -131,22 +152,22 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  @java.lang.Override
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (queryTextSentiment_ != null) {
       output.writeMessage(1, getQueryTextSentiment());
     }
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
 
     size = 0;
     if (queryTextSentiment_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getQueryTextSentiment());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getQueryTextSentiment());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -156,18 +177,18 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult)) {
       return super.equals(obj);
     }
-    com.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult other = (com.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult) obj;
+    com.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult other =
+        (com.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult) obj;
 
     boolean result = true;
     result = result && (hasQueryTextSentiment() == other.hasQueryTextSentiment());
     if (hasQueryTextSentiment()) {
-      result = result && getQueryTextSentiment()
-          .equals(other.getQueryTextSentiment());
+      result = result && getQueryTextSentiment().equals(other.getQueryTextSentiment());
     }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
@@ -190,94 +211,104 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  public Builder newBuilderForType() { return newBuilder(); }
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-  public static Builder newBuilder(com.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+
+  public static Builder newBuilder(
+      com.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+
+  @java.lang.Override
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * The result of sentiment analysis as configured by
    * `sentiment_analysis_request_config`.
@@ -285,20 +316,23 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.cloud.dialogflow.v2beta1.SentimentAnalysisResult}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.v2beta1.SentimentAnalysisResult)
       com.google.cloud.dialogflow.v2beta1.SentimentAnalysisResultOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.dialogflow.v2beta1.SessionProto.internal_static_google_cloud_dialogflow_v2beta1_SentimentAnalysisResult_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dialogflow.v2beta1.SessionProto
+          .internal_static_google_cloud_dialogflow_v2beta1_SentimentAnalysisResult_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.dialogflow.v2beta1.SessionProto.internal_static_google_cloud_dialogflow_v2beta1_SentimentAnalysisResult_fieldAccessorTable
+      return com.google.cloud.dialogflow.v2beta1.SessionProto
+          .internal_static_google_cloud_dialogflow_v2beta1_SentimentAnalysisResult_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult.class, com.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult.Builder.class);
+              com.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult.class,
+              com.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult.Builder.class);
     }
 
     // Construct using com.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult.newBuilder()
@@ -306,16 +340,16 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       if (queryTextSentimentBuilder_ == null) {
@@ -327,15 +361,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.dialogflow.v2beta1.SessionProto.internal_static_google_cloud_dialogflow_v2beta1_SentimentAnalysisResult_descriptor;
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.dialogflow.v2beta1.SessionProto
+          .internal_static_google_cloud_dialogflow_v2beta1_SentimentAnalysisResult_descriptor;
     }
 
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult getDefaultInstanceForType() {
       return com.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult build() {
       com.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult result = buildPartial();
       if (!result.isInitialized()) {
@@ -344,8 +381,10 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult buildPartial() {
-      com.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult result = new com.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult(this);
+      com.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult result =
+          new com.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult(this);
       if (queryTextSentimentBuilder_ == null) {
         result.queryTextSentiment_ = queryTextSentiment_;
       } else {
@@ -355,35 +394,43 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+
+    @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+    @java.lang.Override
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+    @java.lang.Override
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
+    @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
+    @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult) {
-        return mergeFrom((com.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult)other);
+        return mergeFrom((com.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -391,7 +438,8 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult other) {
-      if (other == com.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult.getDefaultInstance()) return this;
+      if (other == com.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult.getDefaultInstance())
+        return this;
       if (other.hasQueryTextSentiment()) {
         mergeQueryTextSentiment(other.getQueryTextSentiment());
       }
@@ -400,10 +448,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -412,7 +462,8 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -424,8 +475,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.cloud.dialogflow.v2beta1.Sentiment queryTextSentiment_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dialogflow.v2beta1.Sentiment, com.google.cloud.dialogflow.v2beta1.Sentiment.Builder, com.google.cloud.dialogflow.v2beta1.SentimentOrBuilder> queryTextSentimentBuilder_;
+            com.google.cloud.dialogflow.v2beta1.Sentiment,
+            com.google.cloud.dialogflow.v2beta1.Sentiment.Builder,
+            com.google.cloud.dialogflow.v2beta1.SentimentOrBuilder>
+        queryTextSentimentBuilder_;
     /**
+     *
+     *
      * <pre>
      * The sentiment analysis result for `query_text`.
      * </pre>
@@ -436,6 +492,8 @@ private static final long serialVersionUID = 0L;
       return queryTextSentimentBuilder_ != null || queryTextSentiment_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * The sentiment analysis result for `query_text`.
      * </pre>
@@ -444,12 +502,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.dialogflow.v2beta1.Sentiment getQueryTextSentiment() {
       if (queryTextSentimentBuilder_ == null) {
-        return queryTextSentiment_ == null ? com.google.cloud.dialogflow.v2beta1.Sentiment.getDefaultInstance() : queryTextSentiment_;
+        return queryTextSentiment_ == null
+            ? com.google.cloud.dialogflow.v2beta1.Sentiment.getDefaultInstance()
+            : queryTextSentiment_;
       } else {
         return queryTextSentimentBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * The sentiment analysis result for `query_text`.
      * </pre>
@@ -470,6 +532,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The sentiment analysis result for `query_text`.
      * </pre>
@@ -488,6 +552,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The sentiment analysis result for `query_text`.
      * </pre>
@@ -498,7 +564,9 @@ private static final long serialVersionUID = 0L;
       if (queryTextSentimentBuilder_ == null) {
         if (queryTextSentiment_ != null) {
           queryTextSentiment_ =
-            com.google.cloud.dialogflow.v2beta1.Sentiment.newBuilder(queryTextSentiment_).mergeFrom(value).buildPartial();
+              com.google.cloud.dialogflow.v2beta1.Sentiment.newBuilder(queryTextSentiment_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           queryTextSentiment_ = value;
         }
@@ -510,6 +578,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The sentiment analysis result for `query_text`.
      * </pre>
@@ -528,6 +598,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The sentiment analysis result for `query_text`.
      * </pre>
@@ -535,11 +607,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.dialogflow.v2beta1.Sentiment query_text_sentiment = 1;</code>
      */
     public com.google.cloud.dialogflow.v2beta1.Sentiment.Builder getQueryTextSentimentBuilder() {
-      
+
       onChanged();
       return getQueryTextSentimentFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * The sentiment analysis result for `query_text`.
      * </pre>
@@ -550,11 +624,14 @@ private static final long serialVersionUID = 0L;
       if (queryTextSentimentBuilder_ != null) {
         return queryTextSentimentBuilder_.getMessageOrBuilder();
       } else {
-        return queryTextSentiment_ == null ?
-            com.google.cloud.dialogflow.v2beta1.Sentiment.getDefaultInstance() : queryTextSentiment_;
+        return queryTextSentiment_ == null
+            ? com.google.cloud.dialogflow.v2beta1.Sentiment.getDefaultInstance()
+            : queryTextSentiment_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The sentiment analysis result for `query_text`.
      * </pre>
@@ -562,34 +639,39 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.dialogflow.v2beta1.Sentiment query_text_sentiment = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dialogflow.v2beta1.Sentiment, com.google.cloud.dialogflow.v2beta1.Sentiment.Builder, com.google.cloud.dialogflow.v2beta1.SentimentOrBuilder> 
+            com.google.cloud.dialogflow.v2beta1.Sentiment,
+            com.google.cloud.dialogflow.v2beta1.Sentiment.Builder,
+            com.google.cloud.dialogflow.v2beta1.SentimentOrBuilder>
         getQueryTextSentimentFieldBuilder() {
       if (queryTextSentimentBuilder_ == null) {
-        queryTextSentimentBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.dialogflow.v2beta1.Sentiment, com.google.cloud.dialogflow.v2beta1.Sentiment.Builder, com.google.cloud.dialogflow.v2beta1.SentimentOrBuilder>(
-                getQueryTextSentiment(),
-                getParentForChildren(),
-                isClean());
+        queryTextSentimentBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.v2beta1.Sentiment,
+                com.google.cloud.dialogflow.v2beta1.Sentiment.Builder,
+                com.google.cloud.dialogflow.v2beta1.SentimentOrBuilder>(
+                getQueryTextSentiment(), getParentForChildren(), isClean());
         queryTextSentiment_ = null;
       }
       return queryTextSentimentBuilder_;
     }
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+
+    @java.lang.Override
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
     }
-
 
     // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.v2beta1.SentimentAnalysisResult)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.v2beta1.SentimentAnalysisResult)
   private static final com.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult();
   }
@@ -598,15 +680,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<SentimentAnalysisResult>
-      PARSER = new com.google.protobuf.AbstractParser<SentimentAnalysisResult>() {
-    public SentimentAnalysisResult parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SentimentAnalysisResult(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<SentimentAnalysisResult> PARSER =
+      new com.google.protobuf.AbstractParser<SentimentAnalysisResult>() {
+        @java.lang.Override
+        public SentimentAnalysisResult parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new SentimentAnalysisResult(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<SentimentAnalysisResult> parser() {
     return PARSER;
@@ -617,9 +700,8 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.SentimentAnalysisResult getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

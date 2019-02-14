@@ -3,7 +3,7 @@
 
 package com.google.logging.v2;
 
-public interface WriteLogEntriesResponseOrBuilder extends
+public interface WriteLogEntriesResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.logging.v2.WriteLogEntriesResponse)
-    com.google.protobuf.MessageOrBuilder {
-}
+    com.google.protobuf.MessageOrBuilder {}

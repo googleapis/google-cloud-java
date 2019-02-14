@@ -3,11 +3,14 @@
 
 package com.google.cloud.bigquery.datatransfer.v1;
 
-public interface ListTransferConfigsRequestOrBuilder extends
+public interface ListTransferConfigsRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.bigquery.datatransfer.v1.ListTransferConfigsRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The BigQuery project id for which data sources
    * should be returned: `projects/{project_id}`.
@@ -17,6 +20,8 @@ public interface ListTransferConfigsRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * The BigQuery project id for which data sources
    * should be returned: `projects/{project_id}`.
@@ -24,19 +29,21 @@ public interface ListTransferConfigsRequestOrBuilder extends
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * When specified, only configurations of requested data sources are returned.
    * </pre>
    *
    * <code>repeated string data_source_ids = 2;</code>
    */
-  java.util.List<java.lang.String>
-      getDataSourceIdsList();
+  java.util.List<java.lang.String> getDataSourceIdsList();
   /**
+   *
+   *
    * <pre>
    * When specified, only configurations of requested data sources are returned.
    * </pre>
@@ -45,6 +52,8 @@ public interface ListTransferConfigsRequestOrBuilder extends
    */
   int getDataSourceIdsCount();
   /**
+   *
+   *
    * <pre>
    * When specified, only configurations of requested data sources are returned.
    * </pre>
@@ -53,16 +62,19 @@ public interface ListTransferConfigsRequestOrBuilder extends
    */
   java.lang.String getDataSourceIds(int index);
   /**
+   *
+   *
    * <pre>
    * When specified, only configurations of requested data sources are returned.
    * </pre>
    *
    * <code>repeated string data_source_ids = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getDataSourceIdsBytes(int index);
+  com.google.protobuf.ByteString getDataSourceIdsBytes(int index);
 
   /**
+   *
+   *
    * <pre>
    * Pagination token, which can be used to request a specific page
    * of `ListTransfersRequest` list results. For multiple-page
@@ -75,6 +87,8 @@ public interface ListTransferConfigsRequestOrBuilder extends
    */
   java.lang.String getPageToken();
   /**
+   *
+   *
    * <pre>
    * Pagination token, which can be used to request a specific page
    * of `ListTransfersRequest` list results. For multiple-page
@@ -85,10 +99,11 @@ public interface ListTransferConfigsRequestOrBuilder extends
    *
    * <code>string page_token = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getPageTokenBytes();
+  com.google.protobuf.ByteString getPageTokenBytes();
 
   /**
+   *
+   *
    * <pre>
    * Page size. The default page size is the maximum value of 1000 results.
    * </pre>

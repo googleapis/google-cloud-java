@@ -18,13 +18,10 @@ package com.google.cloud.dns;
 
 import com.google.cloud.BatchResult;
 
-/**
- * This class holds a single result of a batch call to the Cloud DNS.
- */
+/** This class holds a single result of a batch call to the Cloud DNS. */
 public class DnsBatchResult<T> extends BatchResult<T, DnsException> {
 
-  DnsBatchResult() {
-  }
+  DnsBatchResult() {}
 
   @Override
   protected void error(DnsException error) {

@@ -3,67 +3,123 @@
 
 package com.google.container.v1;
 
-public interface StartIPRotationRequestOrBuilder extends
+public interface StartIPRotationRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.container.v1.StartIPRotationRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
-   * The Google Developers Console [project ID or project
+   * Deprecated. The Google Developers Console [project ID or project
    * number](https://developers.google.com/console/help/new/#projectnumber).
+   * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   java.lang.String getProjectId();
   /**
+   *
+   *
    * <pre>
-   * The Google Developers Console [project ID or project
+   * Deprecated. The Google Developers Console [project ID or project
    * number](https://developers.google.com/console/help/new/#projectnumber).
+   * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [deprecated = true];</code>
    */
-  com.google.protobuf.ByteString
-      getProjectIdBytes();
+  @java.lang.Deprecated
+  com.google.protobuf.ByteString getProjectIdBytes();
 
   /**
+   *
+   *
    * <pre>
-   * The name of the Google Compute Engine
+   * Deprecated. The name of the Google Compute Engine
    * [zone](/compute/docs/zones#available) in which the cluster
    * resides.
+   * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string zone = 2;</code>
+   * <code>string zone = 2 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   java.lang.String getZone();
   /**
+   *
+   *
    * <pre>
-   * The name of the Google Compute Engine
+   * Deprecated. The name of the Google Compute Engine
    * [zone](/compute/docs/zones#available) in which the cluster
    * resides.
+   * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string zone = 2;</code>
+   * <code>string zone = 2 [deprecated = true];</code>
    */
-  com.google.protobuf.ByteString
-      getZoneBytes();
+  @java.lang.Deprecated
+  com.google.protobuf.ByteString getZoneBytes();
 
   /**
+   *
+   *
    * <pre>
-   * The name of the cluster.
+   * Deprecated. The name of the cluster.
+   * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string cluster_id = 3;</code>
+   * <code>string cluster_id = 3 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   java.lang.String getClusterId();
   /**
+   *
+   *
    * <pre>
-   * The name of the cluster.
+   * Deprecated. The name of the cluster.
+   * This field has been deprecated and replaced by the name field.
    * </pre>
    *
-   * <code>string cluster_id = 3;</code>
+   * <code>string cluster_id = 3 [deprecated = true];</code>
    */
-  com.google.protobuf.ByteString
-      getClusterIdBytes();
+  @java.lang.Deprecated
+  com.google.protobuf.ByteString getClusterIdBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * The name (project, location, cluster id) of the cluster to start IP
+   * rotation. Specified in the format 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;'.
+   * </pre>
+   *
+   * <code>string name = 6;</code>
+   */
+  java.lang.String getName();
+  /**
+   *
+   *
+   * <pre>
+   * The name (project, location, cluster id) of the cluster to start IP
+   * rotation. Specified in the format 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;'.
+   * </pre>
+   *
+   * <code>string name = 6;</code>
+   */
+  com.google.protobuf.ByteString getNameBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Whether to rotate credentials during IP rotation.
+   * </pre>
+   *
+   * <code>bool rotate_credentials = 7;</code>
+   */
+  boolean getRotateCredentials();
 }

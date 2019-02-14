@@ -16,7 +16,6 @@
 
 package com.google.cloud.datastore.testing;
 
-import com.google.cloud.http.HttpTransportOptions;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.retrying.RetrySettings;
 import com.google.cloud.datastore.Datastore;
@@ -25,25 +24,23 @@ import com.google.cloud.datastore.Key;
 import com.google.cloud.datastore.Query;
 import com.google.cloud.datastore.QueryResults;
 import com.google.cloud.datastore.StructuredQuery;
-
+import com.google.cloud.http.HttpTransportOptions;
 import java.util.UUID;
 import org.threeten.bp.Duration;
 
 /**
  * Utility to create a remote datastore configuration for testing. Datastore options can be obtained
- * via the {@link #getOptions()} method. Returned options use a randomly generated namespace
- * ({@link DatastoreOptions#getNamespace()}) that can be used to run the tests. Once the tests are
- * run, all entities in the namespace can be deleted using {@link #deleteNamespace()}. Returned
- * options also have custom {@link DatastoreOptions#getRetrySettings()}:
- * {@link RetrySettings#getMaxAttempts()} is {@code 10},
- * {@link RetrySettings#getMaxRetryDelay()} is {@code 30000},
- * {@link RetrySettings#getTotalTimeout()} is {@code 120000} and
- * {@link RetrySettings#getInitialRetryDelay()} is {@code 250}.
- * {@link HttpTransportOptions#getConnectTimeout()} and
- * {@link HttpTransportOptions#getReadTimeout()} are both
- * both set to {@code 60000}.
- * 
- * Internal testing use only
+ * via the {@link #getOptions()} method. Returned options use a randomly generated namespace ({@link
+ * DatastoreOptions#getNamespace()}) that can be used to run the tests. Once the tests are run, all
+ * entities in the namespace can be deleted using {@link #deleteNamespace()}. Returned options also
+ * have custom {@link DatastoreOptions#getRetrySettings()}: {@link RetrySettings#getMaxAttempts()}
+ * is {@code 10}, {@link RetrySettings#getMaxRetryDelay()} is {@code 30000}, {@link
+ * RetrySettings#getTotalTimeout()} is {@code 120000} and {@link
+ * RetrySettings#getInitialRetryDelay()} is {@code 250}. {@link
+ * HttpTransportOptions#getConnectTimeout()} and {@link HttpTransportOptions#getReadTimeout()} are
+ * both both set to {@code 60000}.
+ *
+ * <p>Internal testing use only
  */
 @InternalApi
 public class RemoteDatastoreHelper {
@@ -58,18 +55,15 @@ public class RemoteDatastoreHelper {
     this.namespace = options.getNamespace();
   }
 
-
   /**
-   * Returns a {@link DatastoreOptions} object to be used for testing. The options are associated
-   * to a randomly generated namespace.
+   * Returns a {@link DatastoreOptions} object to be used for testing. The options are associated to
+   * a randomly generated namespace.
    */
   public DatastoreOptions getOptions() {
     return options;
   }
 
-  /**
-   * Deletes all entities in the namespace associated with this {@link RemoteDatastoreHelper}.
-   */
+  /** Deletes all entities in the namespace associated with this {@link RemoteDatastoreHelper}. */
   public void deleteNamespace() {
     StructuredQuery<Key> query = Query.newKeyQueryBuilder().setNamespace(namespace).build();
     QueryResults<Key> keys = datastore.run(query);
@@ -78,23 +72,23 @@ public class RemoteDatastoreHelper {
     }
   }
 
-  /**
-   * Creates a {@code RemoteStorageHelper} object.
-   */
+  /** Creates a {@code RemoteStorageHelper} object. */
   public static RemoteDatastoreHelper create() {
     HttpTransportOptions transportOptions = DatastoreOptions.getDefaultHttpTransportOptions();
-    transportOptions = transportOptions.toBuilder().setConnectTimeout(60000).setReadTimeout(60000)
-        .build();
-    DatastoreOptions datastoreOption = DatastoreOptions.newBuilder()
-        .setNamespace(UUID.randomUUID().toString())
-        .setRetrySettings(retrySettings())
-        .setTransportOptions(transportOptions)
-        .build();
+    transportOptions =
+        transportOptions.toBuilder().setConnectTimeout(60000).setReadTimeout(60000).build();
+    DatastoreOptions datastoreOption =
+        DatastoreOptions.newBuilder()
+            .setNamespace(UUID.randomUUID().toString())
+            .setRetrySettings(retrySettings())
+            .setTransportOptions(transportOptions)
+            .build();
     return new RemoteDatastoreHelper(datastoreOption);
   }
 
   private static RetrySettings retrySettings() {
-    return RetrySettings.newBuilder().setMaxAttempts(10)
+    return RetrySettings.newBuilder()
+        .setMaxAttempts(10)
         .setMaxRetryDelay(Duration.ofMillis(30000L))
         .setTotalTimeout(Duration.ofMillis(120000L))
         .setInitialRetryDelay(Duration.ofMillis(250L))

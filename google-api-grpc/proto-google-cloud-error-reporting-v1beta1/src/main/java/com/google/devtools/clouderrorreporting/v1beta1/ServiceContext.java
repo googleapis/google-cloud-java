@@ -4,6 +4,8 @@
 package com.google.devtools.clouderrorreporting.v1beta1;
 
 /**
+ *
+ *
  * <pre>
  * Describes a running service that sends errors.
  * Its version changes over time and multiple versions can run in parallel.
@@ -11,15 +13,16 @@ package com.google.devtools.clouderrorreporting.v1beta1;
  *
  * Protobuf type {@code google.devtools.clouderrorreporting.v1beta1.ServiceContext}
  */
-public  final class ServiceContext extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class ServiceContext extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.devtools.clouderrorreporting.v1beta1.ServiceContext)
     ServiceContextOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use ServiceContext.newBuilder() to construct.
   private ServiceContext(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private ServiceContext() {
     service_ = "";
     version_ = "";
@@ -27,15 +30,18 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private ServiceContext(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -47,58 +53,66 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          case 18:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              service_ = s;
+              break;
             }
-            break;
-          }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 26:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            service_ = s;
-            break;
-          }
-          case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
+              version_ = s;
+              break;
+            }
+          case 34:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            version_ = s;
-            break;
-          }
-          case 34: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            resourceType_ = s;
-            break;
-          }
+              resourceType_ = s;
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.devtools.clouderrorreporting.v1beta1.CommonProto.internal_static_google_devtools_clouderrorreporting_v1beta1_ServiceContext_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.devtools.clouderrorreporting.v1beta1.CommonProto
+        .internal_static_google_devtools_clouderrorreporting_v1beta1_ServiceContext_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.devtools.clouderrorreporting.v1beta1.CommonProto.internal_static_google_devtools_clouderrorreporting_v1beta1_ServiceContext_fieldAccessorTable
+    return com.google.devtools.clouderrorreporting.v1beta1.CommonProto
+        .internal_static_google_devtools_clouderrorreporting_v1beta1_ServiceContext_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.devtools.clouderrorreporting.v1beta1.ServiceContext.class, com.google.devtools.clouderrorreporting.v1beta1.ServiceContext.Builder.class);
+            com.google.devtools.clouderrorreporting.v1beta1.ServiceContext.class,
+            com.google.devtools.clouderrorreporting.v1beta1.ServiceContext.Builder.class);
   }
 
   public static final int SERVICE_FIELD_NUMBER = 2;
   private volatile java.lang.Object service_;
   /**
+   *
+   *
    * <pre>
    * An identifier of the service, such as the name of the
    * executable, job, or Google App Engine service name. This field is expected
@@ -115,14 +129,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       service_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * An identifier of the service, such as the name of the
    * executable, job, or Google App Engine service name. This field is expected
@@ -134,13 +149,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string service = 2;</code>
    */
-  public com.google.protobuf.ByteString
-      getServiceBytes() {
+  public com.google.protobuf.ByteString getServiceBytes() {
     java.lang.Object ref = service_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       service_ = b;
       return b;
     } else {
@@ -151,6 +164,8 @@ private static final long serialVersionUID = 0L;
   public static final int VERSION_FIELD_NUMBER = 3;
   private volatile java.lang.Object version_;
   /**
+   *
+   *
    * <pre>
    * Represents the source code version that the developer provided,
    * which could represent a version label or a Git SHA-1 hash, for example.
@@ -163,14 +178,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       version_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Represents the source code version that the developer provided,
    * which could represent a version label or a Git SHA-1 hash, for example.
@@ -178,13 +194,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string version = 3;</code>
    */
-  public com.google.protobuf.ByteString
-      getVersionBytes() {
+  public com.google.protobuf.ByteString getVersionBytes() {
     java.lang.Object ref = version_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       version_ = b;
       return b;
     } else {
@@ -195,6 +209,8 @@ private static final long serialVersionUID = 0L;
   public static final int RESOURCE_TYPE_FIELD_NUMBER = 4;
   private volatile java.lang.Object resourceType_;
   /**
+   *
+   *
    * <pre>
    * Type of the MonitoredResource. List of possible values:
    * https://cloud.google.com/monitoring/api/resources
@@ -209,14 +225,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       resourceType_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Type of the MonitoredResource. List of possible values:
    * https://cloud.google.com/monitoring/api/resources
@@ -226,13 +243,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string resource_type = 4;</code>
    */
-  public com.google.protobuf.ByteString
-      getResourceTypeBytes() {
+  public com.google.protobuf.ByteString getResourceTypeBytes() {
     java.lang.Object ref = resourceType_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       resourceType_ = b;
       return b;
     } else {
@@ -241,6 +256,8 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -250,8 +267,8 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  @java.lang.Override
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getServiceBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, service_);
     }
@@ -264,6 +281,7 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -286,20 +304,18 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.devtools.clouderrorreporting.v1beta1.ServiceContext)) {
       return super.equals(obj);
     }
-    com.google.devtools.clouderrorreporting.v1beta1.ServiceContext other = (com.google.devtools.clouderrorreporting.v1beta1.ServiceContext) obj;
+    com.google.devtools.clouderrorreporting.v1beta1.ServiceContext other =
+        (com.google.devtools.clouderrorreporting.v1beta1.ServiceContext) obj;
 
     boolean result = true;
-    result = result && getService()
-        .equals(other.getService());
-    result = result && getVersion()
-        .equals(other.getVersion());
-    result = result && getResourceType()
-        .equals(other.getResourceType());
+    result = result && getService().equals(other.getService());
+    result = result && getVersion().equals(other.getVersion());
+    result = result && getResourceType().equals(other.getResourceType());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -323,94 +339,104 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.devtools.clouderrorreporting.v1beta1.ServiceContext parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.devtools.clouderrorreporting.v1beta1.ServiceContext parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.devtools.clouderrorreporting.v1beta1.ServiceContext parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.devtools.clouderrorreporting.v1beta1.ServiceContext parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.devtools.clouderrorreporting.v1beta1.ServiceContext parseFrom(byte[] data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+
+  public static com.google.devtools.clouderrorreporting.v1beta1.ServiceContext parseFrom(
+      byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.devtools.clouderrorreporting.v1beta1.ServiceContext parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.devtools.clouderrorreporting.v1beta1.ServiceContext parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.devtools.clouderrorreporting.v1beta1.ServiceContext parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.devtools.clouderrorreporting.v1beta1.ServiceContext parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.devtools.clouderrorreporting.v1beta1.ServiceContext parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.devtools.clouderrorreporting.v1beta1.ServiceContext parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.devtools.clouderrorreporting.v1beta1.ServiceContext parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.devtools.clouderrorreporting.v1beta1.ServiceContext parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.devtools.clouderrorreporting.v1beta1.ServiceContext parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  public Builder newBuilderForType() { return newBuilder(); }
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-  public static Builder newBuilder(com.google.devtools.clouderrorreporting.v1beta1.ServiceContext prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+
+  public static Builder newBuilder(
+      com.google.devtools.clouderrorreporting.v1beta1.ServiceContext prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+
+  @java.lang.Override
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Describes a running service that sends errors.
    * Its version changes over time and multiple versions can run in parallel.
@@ -418,20 +444,23 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.devtools.clouderrorreporting.v1beta1.ServiceContext}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.devtools.clouderrorreporting.v1beta1.ServiceContext)
       com.google.devtools.clouderrorreporting.v1beta1.ServiceContextOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.devtools.clouderrorreporting.v1beta1.CommonProto.internal_static_google_devtools_clouderrorreporting_v1beta1_ServiceContext_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.devtools.clouderrorreporting.v1beta1.CommonProto
+          .internal_static_google_devtools_clouderrorreporting_v1beta1_ServiceContext_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.devtools.clouderrorreporting.v1beta1.CommonProto.internal_static_google_devtools_clouderrorreporting_v1beta1_ServiceContext_fieldAccessorTable
+      return com.google.devtools.clouderrorreporting.v1beta1.CommonProto
+          .internal_static_google_devtools_clouderrorreporting_v1beta1_ServiceContext_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.devtools.clouderrorreporting.v1beta1.ServiceContext.class, com.google.devtools.clouderrorreporting.v1beta1.ServiceContext.Builder.class);
+              com.google.devtools.clouderrorreporting.v1beta1.ServiceContext.class,
+              com.google.devtools.clouderrorreporting.v1beta1.ServiceContext.Builder.class);
     }
 
     // Construct using com.google.devtools.clouderrorreporting.v1beta1.ServiceContext.newBuilder()
@@ -439,16 +468,16 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       service_ = "";
@@ -460,15 +489,19 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.devtools.clouderrorreporting.v1beta1.CommonProto.internal_static_google_devtools_clouderrorreporting_v1beta1_ServiceContext_descriptor;
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.devtools.clouderrorreporting.v1beta1.CommonProto
+          .internal_static_google_devtools_clouderrorreporting_v1beta1_ServiceContext_descriptor;
     }
 
-    public com.google.devtools.clouderrorreporting.v1beta1.ServiceContext getDefaultInstanceForType() {
+    @java.lang.Override
+    public com.google.devtools.clouderrorreporting.v1beta1.ServiceContext
+        getDefaultInstanceForType() {
       return com.google.devtools.clouderrorreporting.v1beta1.ServiceContext.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.devtools.clouderrorreporting.v1beta1.ServiceContext build() {
       com.google.devtools.clouderrorreporting.v1beta1.ServiceContext result = buildPartial();
       if (!result.isInitialized()) {
@@ -477,8 +510,10 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.devtools.clouderrorreporting.v1beta1.ServiceContext buildPartial() {
-      com.google.devtools.clouderrorreporting.v1beta1.ServiceContext result = new com.google.devtools.clouderrorreporting.v1beta1.ServiceContext(this);
+      com.google.devtools.clouderrorreporting.v1beta1.ServiceContext result =
+          new com.google.devtools.clouderrorreporting.v1beta1.ServiceContext(this);
       result.service_ = service_;
       result.version_ = version_;
       result.resourceType_ = resourceType_;
@@ -486,35 +521,43 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+
+    @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+    @java.lang.Override
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+    @java.lang.Override
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
+    @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
+    @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.devtools.clouderrorreporting.v1beta1.ServiceContext) {
-        return mergeFrom((com.google.devtools.clouderrorreporting.v1beta1.ServiceContext)other);
+        return mergeFrom((com.google.devtools.clouderrorreporting.v1beta1.ServiceContext) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -522,7 +565,9 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.devtools.clouderrorreporting.v1beta1.ServiceContext other) {
-      if (other == com.google.devtools.clouderrorreporting.v1beta1.ServiceContext.getDefaultInstance()) return this;
+      if (other
+          == com.google.devtools.clouderrorreporting.v1beta1.ServiceContext.getDefaultInstance())
+        return this;
       if (!other.getService().isEmpty()) {
         service_ = other.service_;
         onChanged();
@@ -540,10 +585,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -552,7 +599,9 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.devtools.clouderrorreporting.v1beta1.ServiceContext) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.devtools.clouderrorreporting.v1beta1.ServiceContext)
+                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -564,6 +613,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object service_ = "";
     /**
+     *
+     *
      * <pre>
      * An identifier of the service, such as the name of the
      * executable, job, or Google App Engine service name. This field is expected
@@ -578,8 +629,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getService() {
       java.lang.Object ref = service_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         service_ = s;
         return s;
@@ -588,6 +638,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * An identifier of the service, such as the name of the
      * executable, job, or Google App Engine service name. This field is expected
@@ -599,13 +651,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string service = 2;</code>
      */
-    public com.google.protobuf.ByteString
-        getServiceBytes() {
+    public com.google.protobuf.ByteString getServiceBytes() {
       java.lang.Object ref = service_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         service_ = b;
         return b;
       } else {
@@ -613,6 +663,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * An identifier of the service, such as the name of the
      * executable, job, or Google App Engine service name. This field is expected
@@ -624,17 +676,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string service = 2;</code>
      */
-    public Builder setService(
-        java.lang.String value) {
+    public Builder setService(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       service_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * An identifier of the service, such as the name of the
      * executable, job, or Google App Engine service name. This field is expected
@@ -647,12 +700,14 @@ private static final long serialVersionUID = 0L;
      * <code>string service = 2;</code>
      */
     public Builder clearService() {
-      
+
       service_ = getDefaultInstance().getService();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * An identifier of the service, such as the name of the
      * executable, job, or Google App Engine service name. This field is expected
@@ -664,13 +719,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string service = 2;</code>
      */
-    public Builder setServiceBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setServiceBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       service_ = value;
       onChanged();
       return this;
@@ -678,6 +732,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object version_ = "";
     /**
+     *
+     *
      * <pre>
      * Represents the source code version that the developer provided,
      * which could represent a version label or a Git SHA-1 hash, for example.
@@ -688,8 +744,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getVersion() {
       java.lang.Object ref = version_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         version_ = s;
         return s;
@@ -698,6 +753,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Represents the source code version that the developer provided,
      * which could represent a version label or a Git SHA-1 hash, for example.
@@ -705,13 +762,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string version = 3;</code>
      */
-    public com.google.protobuf.ByteString
-        getVersionBytes() {
+    public com.google.protobuf.ByteString getVersionBytes() {
       java.lang.Object ref = version_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         version_ = b;
         return b;
       } else {
@@ -719,6 +774,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Represents the source code version that the developer provided,
      * which could represent a version label or a Git SHA-1 hash, for example.
@@ -726,17 +783,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string version = 3;</code>
      */
-    public Builder setVersion(
-        java.lang.String value) {
+    public Builder setVersion(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       version_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Represents the source code version that the developer provided,
      * which could represent a version label or a Git SHA-1 hash, for example.
@@ -745,12 +803,14 @@ private static final long serialVersionUID = 0L;
      * <code>string version = 3;</code>
      */
     public Builder clearVersion() {
-      
+
       version_ = getDefaultInstance().getVersion();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Represents the source code version that the developer provided,
      * which could represent a version label or a Git SHA-1 hash, for example.
@@ -758,13 +818,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string version = 3;</code>
      */
-    public Builder setVersionBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setVersionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       version_ = value;
       onChanged();
       return this;
@@ -772,6 +831,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object resourceType_ = "";
     /**
+     *
+     *
      * <pre>
      * Type of the MonitoredResource. List of possible values:
      * https://cloud.google.com/monitoring/api/resources
@@ -784,8 +845,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getResourceType() {
       java.lang.Object ref = resourceType_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         resourceType_ = s;
         return s;
@@ -794,6 +854,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Type of the MonitoredResource. List of possible values:
      * https://cloud.google.com/monitoring/api/resources
@@ -803,13 +865,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string resource_type = 4;</code>
      */
-    public com.google.protobuf.ByteString
-        getResourceTypeBytes() {
+    public com.google.protobuf.ByteString getResourceTypeBytes() {
       java.lang.Object ref = resourceType_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         resourceType_ = b;
         return b;
       } else {
@@ -817,6 +877,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Type of the MonitoredResource. List of possible values:
      * https://cloud.google.com/monitoring/api/resources
@@ -826,17 +888,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string resource_type = 4;</code>
      */
-    public Builder setResourceType(
-        java.lang.String value) {
+    public Builder setResourceType(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       resourceType_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Type of the MonitoredResource. List of possible values:
      * https://cloud.google.com/monitoring/api/resources
@@ -847,12 +910,14 @@ private static final long serialVersionUID = 0L;
      * <code>string resource_type = 4;</code>
      */
     public Builder clearResourceType() {
-      
+
       resourceType_ = getDefaultInstance().getResourceType();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Type of the MonitoredResource. List of possible values:
      * https://cloud.google.com/monitoring/api/resources
@@ -862,50 +927,54 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string resource_type = 4;</code>
      */
-    public Builder setResourceTypeBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setResourceTypeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       resourceType_ = value;
       onChanged();
       return this;
     }
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+
+    @java.lang.Override
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.devtools.clouderrorreporting.v1beta1.ServiceContext)
   }
 
   // @@protoc_insertion_point(class_scope:google.devtools.clouderrorreporting.v1beta1.ServiceContext)
-  private static final com.google.devtools.clouderrorreporting.v1beta1.ServiceContext DEFAULT_INSTANCE;
+  private static final com.google.devtools.clouderrorreporting.v1beta1.ServiceContext
+      DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.devtools.clouderrorreporting.v1beta1.ServiceContext();
   }
 
-  public static com.google.devtools.clouderrorreporting.v1beta1.ServiceContext getDefaultInstance() {
+  public static com.google.devtools.clouderrorreporting.v1beta1.ServiceContext
+      getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ServiceContext>
-      PARSER = new com.google.protobuf.AbstractParser<ServiceContext>() {
-    public ServiceContext parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ServiceContext(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<ServiceContext> PARSER =
+      new com.google.protobuf.AbstractParser<ServiceContext>() {
+        @java.lang.Override
+        public ServiceContext parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new ServiceContext(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<ServiceContext> parser() {
     return PARSER;
@@ -916,9 +985,9 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
-  public com.google.devtools.clouderrorreporting.v1beta1.ServiceContext getDefaultInstanceForType() {
+  @java.lang.Override
+  public com.google.devtools.clouderrorreporting.v1beta1.ServiceContext
+      getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

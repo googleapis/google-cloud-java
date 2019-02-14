@@ -3,11 +3,14 @@
 
 package com.google.datastore.v1;
 
-public interface ReserveIdsRequestOrBuilder extends
+public interface ReserveIdsRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.datastore.v1.ReserveIdsRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The ID of the project against which to make the request.
    * </pre>
@@ -16,16 +19,19 @@ public interface ReserveIdsRequestOrBuilder extends
    */
   java.lang.String getProjectId();
   /**
+   *
+   *
    * <pre>
    * The ID of the project against which to make the request.
    * </pre>
    *
    * <code>string project_id = 8;</code>
    */
-  com.google.protobuf.ByteString
-      getProjectIdBytes();
+  com.google.protobuf.ByteString getProjectIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * If not empty, the ID of the database against which to make the request.
    * </pre>
@@ -34,16 +40,19 @@ public interface ReserveIdsRequestOrBuilder extends
    */
   java.lang.String getDatabaseId();
   /**
+   *
+   *
    * <pre>
    * If not empty, the ID of the database against which to make the request.
    * </pre>
    *
    * <code>string database_id = 9;</code>
    */
-  com.google.protobuf.ByteString
-      getDatabaseIdBytes();
+  com.google.protobuf.ByteString getDatabaseIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * A list of keys with complete key paths whose numeric IDs should not be
    * auto-allocated.
@@ -51,9 +60,10 @@ public interface ReserveIdsRequestOrBuilder extends
    *
    * <code>repeated .google.datastore.v1.Key keys = 1;</code>
    */
-  java.util.List<com.google.datastore.v1.Key> 
-      getKeysList();
+  java.util.List<com.google.datastore.v1.Key> getKeysList();
   /**
+   *
+   *
    * <pre>
    * A list of keys with complete key paths whose numeric IDs should not be
    * auto-allocated.
@@ -63,6 +73,8 @@ public interface ReserveIdsRequestOrBuilder extends
    */
   com.google.datastore.v1.Key getKeys(int index);
   /**
+   *
+   *
    * <pre>
    * A list of keys with complete key paths whose numeric IDs should not be
    * auto-allocated.
@@ -72,6 +84,8 @@ public interface ReserveIdsRequestOrBuilder extends
    */
   int getKeysCount();
   /**
+   *
+   *
    * <pre>
    * A list of keys with complete key paths whose numeric IDs should not be
    * auto-allocated.
@@ -79,9 +93,10 @@ public interface ReserveIdsRequestOrBuilder extends
    *
    * <code>repeated .google.datastore.v1.Key keys = 1;</code>
    */
-  java.util.List<? extends com.google.datastore.v1.KeyOrBuilder> 
-      getKeysOrBuilderList();
+  java.util.List<? extends com.google.datastore.v1.KeyOrBuilder> getKeysOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * A list of keys with complete key paths whose numeric IDs should not be
    * auto-allocated.
@@ -89,6 +104,5 @@ public interface ReserveIdsRequestOrBuilder extends
    *
    * <code>repeated .google.datastore.v1.Key keys = 1;</code>
    */
-  com.google.datastore.v1.KeyOrBuilder getKeysOrBuilder(
-      int index);
+  com.google.datastore.v1.KeyOrBuilder getKeysOrBuilder(int index);
 }

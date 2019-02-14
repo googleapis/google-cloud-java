@@ -3,11 +3,14 @@
 
 package com.google.container.v1;
 
-public interface NodeManagementOrBuilder extends
+public interface NodeManagementOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.container.v1.NodeManagement)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * A flag that specifies whether node auto-upgrade is enabled for the node
    * pool. If enabled, node auto-upgrade helps keep the nodes in your node pool
@@ -19,6 +22,8 @@ public interface NodeManagementOrBuilder extends
   boolean getAutoUpgrade();
 
   /**
+   *
+   *
    * <pre>
    * A flag that specifies whether the node auto-repair is enabled for the node
    * pool. If enabled, the nodes in this node pool will be monitored and, if
@@ -31,6 +36,8 @@ public interface NodeManagementOrBuilder extends
   boolean getAutoRepair();
 
   /**
+   *
+   *
    * <pre>
    * Specifies the Auto Upgrade knobs for the node pool.
    * </pre>
@@ -39,6 +46,8 @@ public interface NodeManagementOrBuilder extends
    */
   boolean hasUpgradeOptions();
   /**
+   *
+   *
    * <pre>
    * Specifies the Auto Upgrade knobs for the node pool.
    * </pre>
@@ -47,6 +56,8 @@ public interface NodeManagementOrBuilder extends
    */
   com.google.container.v1.AutoUpgradeOptions getUpgradeOptions();
   /**
+   *
+   *
    * <pre>
    * Specifies the Auto Upgrade knobs for the node pool.
    * </pre>

@@ -28,15 +28,18 @@ import org.junit.Test;
 
 public class DatasetInfoTest {
 
-  private static final List<Acl> ACCESS_RULES = ImmutableList.of(
-      Acl.of(Acl.Group.ofAllAuthenticatedUsers(), Acl.Role.READER),
-      Acl.of(new Acl.View(TableId.of("dataset", "table"))));
-  private static final List<Acl> ACCESS_RULES_COMPLETE = ImmutableList.of(
-      Acl.of(Acl.Group.ofAllAuthenticatedUsers(), Acl.Role.READER),
-      Acl.of(new Acl.View(TableId.of("project", "dataset", "table"))));
-  private static final Map<String, String> LABELS = ImmutableMap.of(
-      "example-label1", "example-value1",
-      "example-label2", "example-value2");
+  private static final List<Acl> ACCESS_RULES =
+      ImmutableList.of(
+          Acl.of(Acl.Group.ofAllAuthenticatedUsers(), Acl.Role.READER),
+          Acl.of(new Acl.View(TableId.of("dataset", "table"))));
+  private static final List<Acl> ACCESS_RULES_COMPLETE =
+      ImmutableList.of(
+          Acl.of(Acl.Group.ofAllAuthenticatedUsers(), Acl.Role.READER),
+          Acl.of(new Acl.View(TableId.of("project", "dataset", "table"))));
+  private static final Map<String, String> LABELS =
+      ImmutableMap.of(
+          "example-label1", "example-value1",
+          "example-label2", "example-value2");
   private static final Long CREATION_TIME = System.currentTimeMillis();
   private static final Long DEFAULT_TABLE_EXPIRATION = CREATION_TIME + 100;
   private static final String DESCRIPTION = "description";
@@ -48,31 +51,36 @@ public class DatasetInfoTest {
   private static final String SELF_LINK = "http://bigquery/p/d";
   private static final DatasetId DATASET_ID = DatasetId.of("dataset");
   private static final DatasetId DATASET_ID_COMPLETE = DatasetId.of("project", "dataset");
-  private static final DatasetInfo DATASET_INFO = DatasetInfo.newBuilder(DATASET_ID)
-      .setAcl(ACCESS_RULES)
-      .setCreationTime(CREATION_TIME)
-      .setDefaultTableLifetime(DEFAULT_TABLE_EXPIRATION)
-      .setDescription(DESCRIPTION)
-      .setEtag(ETAG)
-      .setFriendlyName(FRIENDLY_NAME)
-      .setGeneratedId(GENERATED_ID)
-      .setLastModified(LAST_MODIFIED)
-      .setLocation(LOCATION)
-      .setSelfLink(SELF_LINK)
-      .setLabels(LABELS)
-      .build();
-  private static final DatasetInfo DATASET_INFO_COMPLETE = DATASET_INFO.toBuilder()
-      .setDatasetId(DATASET_ID_COMPLETE)
-      .setAcl(ACCESS_RULES_COMPLETE)
-      .build();
+  private static final DatasetInfo DATASET_INFO =
+      DatasetInfo.newBuilder(DATASET_ID)
+          .setAcl(ACCESS_RULES)
+          .setCreationTime(CREATION_TIME)
+          .setDefaultTableLifetime(DEFAULT_TABLE_EXPIRATION)
+          .setDescription(DESCRIPTION)
+          .setEtag(ETAG)
+          .setFriendlyName(FRIENDLY_NAME)
+          .setGeneratedId(GENERATED_ID)
+          .setLastModified(LAST_MODIFIED)
+          .setLocation(LOCATION)
+          .setSelfLink(SELF_LINK)
+          .setLabels(LABELS)
+          .build();
+  private static final DatasetInfo DATASET_INFO_COMPLETE =
+      DATASET_INFO
+          .toBuilder()
+          .setDatasetId(DATASET_ID_COMPLETE)
+          .setAcl(ACCESS_RULES_COMPLETE)
+          .build();
 
   @Test
   public void testToBuilder() {
     compareDatasets(DATASET_INFO, DATASET_INFO.toBuilder().build());
-    DatasetInfo datasetInfo = DATASET_INFO.toBuilder()
-        .setDatasetId(DatasetId.of("dataset2"))
-        .setDescription("description2")
-        .build();
+    DatasetInfo datasetInfo =
+        DATASET_INFO
+            .toBuilder()
+            .setDatasetId(DatasetId.of("dataset2"))
+            .setDescription("description2")
+            .build();
     assertEquals(DatasetId.of("dataset2"), datasetInfo.getDatasetId());
     assertEquals("description2", datasetInfo.getDescription());
     datasetInfo =
@@ -113,7 +121,6 @@ public class DatasetInfoTest {
     assertEquals(SELF_LINK, DATASET_INFO_COMPLETE.getSelfLink());
     assertEquals(LABELS, DATASET_INFO_COMPLETE.getLabels());
   }
-
 
   @Test
   public void testOf() {

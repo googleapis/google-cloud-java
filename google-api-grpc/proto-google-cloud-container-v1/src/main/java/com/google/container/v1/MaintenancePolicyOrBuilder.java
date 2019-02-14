@@ -3,11 +3,14 @@
 
 package com.google.container.v1;
 
-public interface MaintenancePolicyOrBuilder extends
+public interface MaintenancePolicyOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.container.v1.MaintenancePolicy)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Specifies the maintenance window in which maintenance may be performed.
    * </pre>
@@ -16,6 +19,8 @@ public interface MaintenancePolicyOrBuilder extends
    */
   boolean hasWindow();
   /**
+   *
+   *
    * <pre>
    * Specifies the maintenance window in which maintenance may be performed.
    * </pre>
@@ -24,6 +29,8 @@ public interface MaintenancePolicyOrBuilder extends
    */
   com.google.container.v1.MaintenanceWindow getWindow();
   /**
+   *
+   *
    * <pre>
    * Specifies the maintenance window in which maintenance may be performed.
    * </pre>

@@ -4,6 +4,8 @@
 package io.grafeas.v1beta1.attestation;
 
 /**
+ *
+ *
  * <pre>
  * Occurrence that represents a single "attestation". The authenticity of an
  * Attestation can be verified using the attached signature. If the verifier
@@ -17,28 +19,31 @@ package io.grafeas.v1beta1.attestation;
  *
  * Protobuf type {@code grafeas.v1beta1.attestation.Attestation}
  */
-public  final class Attestation extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class Attestation extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:grafeas.v1beta1.attestation.Attestation)
     AttestationOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use Attestation.newBuilder() to construct.
   private Attestation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private Attestation() {
-  }
+
+  private Attestation() {}
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private Attestation(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -50,64 +55,71 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          case 10:
+            {
+              io.grafeas.v1beta1.attestation.PgpSignedAttestation.Builder subBuilder = null;
+              if (signatureCase_ == 1) {
+                subBuilder =
+                    ((io.grafeas.v1beta1.attestation.PgpSignedAttestation) signature_).toBuilder();
+              }
+              signature_ =
+                  input.readMessage(
+                      io.grafeas.v1beta1.attestation.PgpSignedAttestation.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (io.grafeas.v1beta1.attestation.PgpSignedAttestation) signature_);
+                signature_ = subBuilder.buildPartial();
+              }
+              signatureCase_ = 1;
+              break;
             }
-            break;
-          }
-          case 10: {
-            io.grafeas.v1beta1.attestation.PgpSignedAttestation.Builder subBuilder = null;
-            if (signatureCase_ == 1) {
-              subBuilder = ((io.grafeas.v1beta1.attestation.PgpSignedAttestation) signature_).toBuilder();
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
             }
-            signature_ =
-                input.readMessage(io.grafeas.v1beta1.attestation.PgpSignedAttestation.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((io.grafeas.v1beta1.attestation.PgpSignedAttestation) signature_);
-              signature_ = subBuilder.buildPartial();
-            }
-            signatureCase_ = 1;
-            break;
-          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return io.grafeas.v1beta1.attestation.AttestationOuterClass.internal_static_grafeas_v1beta1_attestation_Attestation_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return io.grafeas.v1beta1.attestation.AttestationOuterClass
+        .internal_static_grafeas_v1beta1_attestation_Attestation_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return io.grafeas.v1beta1.attestation.AttestationOuterClass.internal_static_grafeas_v1beta1_attestation_Attestation_fieldAccessorTable
+    return io.grafeas.v1beta1.attestation.AttestationOuterClass
+        .internal_static_grafeas_v1beta1_attestation_Attestation_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            io.grafeas.v1beta1.attestation.Attestation.class, io.grafeas.v1beta1.attestation.Attestation.Builder.class);
+            io.grafeas.v1beta1.attestation.Attestation.class,
+            io.grafeas.v1beta1.attestation.Attestation.Builder.class);
   }
 
   private int signatureCase_ = 0;
   private java.lang.Object signature_;
-  public enum SignatureCase
-      implements com.google.protobuf.Internal.EnumLite {
+
+  public enum SignatureCase implements com.google.protobuf.Internal.EnumLite {
     PGP_SIGNED_ATTESTATION(1),
     SIGNATURE_NOT_SET(0);
     private final int value;
+
     private SignatureCase(int value) {
       this.value = value;
     }
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static SignatureCase valueOf(int value) {
       return forNumber(value);
@@ -115,24 +127,28 @@ private static final long serialVersionUID = 0L;
 
     public static SignatureCase forNumber(int value) {
       switch (value) {
-        case 1: return PGP_SIGNED_ATTESTATION;
-        case 0: return SIGNATURE_NOT_SET;
-        default: return null;
+        case 1:
+          return PGP_SIGNED_ATTESTATION;
+        case 0:
+          return SIGNATURE_NOT_SET;
+        default:
+          return null;
       }
     }
+
     public int getNumber() {
       return this.value;
     }
   };
 
-  public SignatureCase
-  getSignatureCase() {
-    return SignatureCase.forNumber(
-        signatureCase_);
+  public SignatureCase getSignatureCase() {
+    return SignatureCase.forNumber(signatureCase_);
   }
 
   public static final int PGP_SIGNED_ATTESTATION_FIELD_NUMBER = 1;
   /**
+   *
+   *
    * <pre>
    * A PGP signed attestation.
    * </pre>
@@ -143,6 +159,8 @@ private static final long serialVersionUID = 0L;
     return signatureCase_ == 1;
   }
   /**
+   *
+   *
    * <pre>
    * A PGP signed attestation.
    * </pre>
@@ -151,25 +169,30 @@ private static final long serialVersionUID = 0L;
    */
   public io.grafeas.v1beta1.attestation.PgpSignedAttestation getPgpSignedAttestation() {
     if (signatureCase_ == 1) {
-       return (io.grafeas.v1beta1.attestation.PgpSignedAttestation) signature_;
+      return (io.grafeas.v1beta1.attestation.PgpSignedAttestation) signature_;
     }
     return io.grafeas.v1beta1.attestation.PgpSignedAttestation.getDefaultInstance();
   }
   /**
+   *
+   *
    * <pre>
    * A PGP signed attestation.
    * </pre>
    *
    * <code>.grafeas.v1beta1.attestation.PgpSignedAttestation pgp_signed_attestation = 1;</code>
    */
-  public io.grafeas.v1beta1.attestation.PgpSignedAttestationOrBuilder getPgpSignedAttestationOrBuilder() {
+  public io.grafeas.v1beta1.attestation.PgpSignedAttestationOrBuilder
+      getPgpSignedAttestationOrBuilder() {
     if (signatureCase_ == 1) {
-       return (io.grafeas.v1beta1.attestation.PgpSignedAttestation) signature_;
+      return (io.grafeas.v1beta1.attestation.PgpSignedAttestation) signature_;
     }
     return io.grafeas.v1beta1.attestation.PgpSignedAttestation.getDefaultInstance();
   }
 
   private byte memoizedIsInitialized = -1;
+
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -179,22 +202,24 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  @java.lang.Override
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (signatureCase_ == 1) {
       output.writeMessage(1, (io.grafeas.v1beta1.attestation.PgpSignedAttestation) signature_);
     }
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
 
     size = 0;
     if (signatureCase_ == 1) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, (io.grafeas.v1beta1.attestation.PgpSignedAttestation) signature_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              1, (io.grafeas.v1beta1.attestation.PgpSignedAttestation) signature_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -204,21 +229,20 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof io.grafeas.v1beta1.attestation.Attestation)) {
       return super.equals(obj);
     }
-    io.grafeas.v1beta1.attestation.Attestation other = (io.grafeas.v1beta1.attestation.Attestation) obj;
+    io.grafeas.v1beta1.attestation.Attestation other =
+        (io.grafeas.v1beta1.attestation.Attestation) obj;
 
     boolean result = true;
-    result = result && getSignatureCase().equals(
-        other.getSignatureCase());
+    result = result && getSignatureCase().equals(other.getSignatureCase());
     if (!result) return false;
     switch (signatureCase_) {
       case 1:
-        result = result && getPgpSignedAttestation()
-            .equals(other.getPgpSignedAttestation());
+        result = result && getPgpSignedAttestation().equals(other.getPgpSignedAttestation());
         break;
       case 0:
       default:
@@ -247,95 +271,104 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static io.grafeas.v1beta1.attestation.Attestation parseFrom(
-      java.nio.ByteBuffer data)
+  public static io.grafeas.v1beta1.attestation.Attestation parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static io.grafeas.v1beta1.attestation.Attestation parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static io.grafeas.v1beta1.attestation.Attestation parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static io.grafeas.v1beta1.attestation.Attestation parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static io.grafeas.v1beta1.attestation.Attestation parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static io.grafeas.v1beta1.attestation.Attestation parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static io.grafeas.v1beta1.attestation.Attestation parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static io.grafeas.v1beta1.attestation.Attestation parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static io.grafeas.v1beta1.attestation.Attestation parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
+
   public static io.grafeas.v1beta1.attestation.Attestation parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static io.grafeas.v1beta1.attestation.Attestation parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static io.grafeas.v1beta1.attestation.Attestation parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static io.grafeas.v1beta1.attestation.Attestation parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  public Builder newBuilderForType() { return newBuilder(); }
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-  public static Builder newBuilder(io.grafeas.v1beta1.attestation.Attestation prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+
+  public static Builder newBuilder(io.grafeas.v1beta1.attestation.Attestation prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+
+  @java.lang.Override
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Occurrence that represents a single "attestation". The authenticity of an
    * Attestation can be verified using the attached signature. If the verifier
@@ -349,20 +382,23 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code grafeas.v1beta1.attestation.Attestation}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:grafeas.v1beta1.attestation.Attestation)
       io.grafeas.v1beta1.attestation.AttestationOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return io.grafeas.v1beta1.attestation.AttestationOuterClass.internal_static_grafeas_v1beta1_attestation_Attestation_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return io.grafeas.v1beta1.attestation.AttestationOuterClass
+          .internal_static_grafeas_v1beta1_attestation_Attestation_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.grafeas.v1beta1.attestation.AttestationOuterClass.internal_static_grafeas_v1beta1_attestation_Attestation_fieldAccessorTable
+      return io.grafeas.v1beta1.attestation.AttestationOuterClass
+          .internal_static_grafeas_v1beta1_attestation_Attestation_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              io.grafeas.v1beta1.attestation.Attestation.class, io.grafeas.v1beta1.attestation.Attestation.Builder.class);
+              io.grafeas.v1beta1.attestation.Attestation.class,
+              io.grafeas.v1beta1.attestation.Attestation.Builder.class);
     }
 
     // Construct using io.grafeas.v1beta1.attestation.Attestation.newBuilder()
@@ -370,16 +406,16 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       signatureCase_ = 0;
@@ -387,15 +423,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return io.grafeas.v1beta1.attestation.AttestationOuterClass.internal_static_grafeas_v1beta1_attestation_Attestation_descriptor;
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return io.grafeas.v1beta1.attestation.AttestationOuterClass
+          .internal_static_grafeas_v1beta1_attestation_Attestation_descriptor;
     }
 
+    @java.lang.Override
     public io.grafeas.v1beta1.attestation.Attestation getDefaultInstanceForType() {
       return io.grafeas.v1beta1.attestation.Attestation.getDefaultInstance();
     }
 
+    @java.lang.Override
     public io.grafeas.v1beta1.attestation.Attestation build() {
       io.grafeas.v1beta1.attestation.Attestation result = buildPartial();
       if (!result.isInitialized()) {
@@ -404,8 +443,10 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public io.grafeas.v1beta1.attestation.Attestation buildPartial() {
-      io.grafeas.v1beta1.attestation.Attestation result = new io.grafeas.v1beta1.attestation.Attestation(this);
+      io.grafeas.v1beta1.attestation.Attestation result =
+          new io.grafeas.v1beta1.attestation.Attestation(this);
       if (signatureCase_ == 1) {
         if (pgpSignedAttestationBuilder_ == null) {
           result.signature_ = signature_;
@@ -418,35 +459,43 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+
+    @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+    @java.lang.Override
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+    @java.lang.Override
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
+    @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
+    @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof io.grafeas.v1beta1.attestation.Attestation) {
-        return mergeFrom((io.grafeas.v1beta1.attestation.Attestation)other);
+        return mergeFrom((io.grafeas.v1beta1.attestation.Attestation) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -456,23 +505,27 @@ private static final long serialVersionUID = 0L;
     public Builder mergeFrom(io.grafeas.v1beta1.attestation.Attestation other) {
       if (other == io.grafeas.v1beta1.attestation.Attestation.getDefaultInstance()) return this;
       switch (other.getSignatureCase()) {
-        case PGP_SIGNED_ATTESTATION: {
-          mergePgpSignedAttestation(other.getPgpSignedAttestation());
-          break;
-        }
-        case SIGNATURE_NOT_SET: {
-          break;
-        }
+        case PGP_SIGNED_ATTESTATION:
+          {
+            mergePgpSignedAttestation(other.getPgpSignedAttestation());
+            break;
+          }
+        case SIGNATURE_NOT_SET:
+          {
+            break;
+          }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -490,12 +543,12 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int signatureCase_ = 0;
     private java.lang.Object signature_;
-    public SignatureCase
-        getSignatureCase() {
-      return SignatureCase.forNumber(
-          signatureCase_);
+
+    public SignatureCase getSignatureCase() {
+      return SignatureCase.forNumber(signatureCase_);
     }
 
     public Builder clearSignature() {
@@ -505,10 +558,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-
     private com.google.protobuf.SingleFieldBuilderV3<
-        io.grafeas.v1beta1.attestation.PgpSignedAttestation, io.grafeas.v1beta1.attestation.PgpSignedAttestation.Builder, io.grafeas.v1beta1.attestation.PgpSignedAttestationOrBuilder> pgpSignedAttestationBuilder_;
+            io.grafeas.v1beta1.attestation.PgpSignedAttestation,
+            io.grafeas.v1beta1.attestation.PgpSignedAttestation.Builder,
+            io.grafeas.v1beta1.attestation.PgpSignedAttestationOrBuilder>
+        pgpSignedAttestationBuilder_;
     /**
+     *
+     *
      * <pre>
      * A PGP signed attestation.
      * </pre>
@@ -519,6 +576,8 @@ private static final long serialVersionUID = 0L;
       return signatureCase_ == 1;
     }
     /**
+     *
+     *
      * <pre>
      * A PGP signed attestation.
      * </pre>
@@ -539,13 +598,16 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A PGP signed attestation.
      * </pre>
      *
      * <code>.grafeas.v1beta1.attestation.PgpSignedAttestation pgp_signed_attestation = 1;</code>
      */
-    public Builder setPgpSignedAttestation(io.grafeas.v1beta1.attestation.PgpSignedAttestation value) {
+    public Builder setPgpSignedAttestation(
+        io.grafeas.v1beta1.attestation.PgpSignedAttestation value) {
       if (pgpSignedAttestationBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -559,6 +621,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A PGP signed attestation.
      * </pre>
@@ -577,18 +641,25 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A PGP signed attestation.
      * </pre>
      *
      * <code>.grafeas.v1beta1.attestation.PgpSignedAttestation pgp_signed_attestation = 1;</code>
      */
-    public Builder mergePgpSignedAttestation(io.grafeas.v1beta1.attestation.PgpSignedAttestation value) {
+    public Builder mergePgpSignedAttestation(
+        io.grafeas.v1beta1.attestation.PgpSignedAttestation value) {
       if (pgpSignedAttestationBuilder_ == null) {
-        if (signatureCase_ == 1 &&
-            signature_ != io.grafeas.v1beta1.attestation.PgpSignedAttestation.getDefaultInstance()) {
-          signature_ = io.grafeas.v1beta1.attestation.PgpSignedAttestation.newBuilder((io.grafeas.v1beta1.attestation.PgpSignedAttestation) signature_)
-              .mergeFrom(value).buildPartial();
+        if (signatureCase_ == 1
+            && signature_
+                != io.grafeas.v1beta1.attestation.PgpSignedAttestation.getDefaultInstance()) {
+          signature_ =
+              io.grafeas.v1beta1.attestation.PgpSignedAttestation.newBuilder(
+                      (io.grafeas.v1beta1.attestation.PgpSignedAttestation) signature_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           signature_ = value;
         }
@@ -603,6 +674,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A PGP signed attestation.
      * </pre>
@@ -626,23 +699,29 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A PGP signed attestation.
      * </pre>
      *
      * <code>.grafeas.v1beta1.attestation.PgpSignedAttestation pgp_signed_attestation = 1;</code>
      */
-    public io.grafeas.v1beta1.attestation.PgpSignedAttestation.Builder getPgpSignedAttestationBuilder() {
+    public io.grafeas.v1beta1.attestation.PgpSignedAttestation.Builder
+        getPgpSignedAttestationBuilder() {
       return getPgpSignedAttestationFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * A PGP signed attestation.
      * </pre>
      *
      * <code>.grafeas.v1beta1.attestation.PgpSignedAttestation pgp_signed_attestation = 1;</code>
      */
-    public io.grafeas.v1beta1.attestation.PgpSignedAttestationOrBuilder getPgpSignedAttestationOrBuilder() {
+    public io.grafeas.v1beta1.attestation.PgpSignedAttestationOrBuilder
+        getPgpSignedAttestationOrBuilder() {
       if ((signatureCase_ == 1) && (pgpSignedAttestationBuilder_ != null)) {
         return pgpSignedAttestationBuilder_.getMessageOrBuilder();
       } else {
@@ -653,6 +732,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A PGP signed attestation.
      * </pre>
@@ -660,39 +741,47 @@ private static final long serialVersionUID = 0L;
      * <code>.grafeas.v1beta1.attestation.PgpSignedAttestation pgp_signed_attestation = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        io.grafeas.v1beta1.attestation.PgpSignedAttestation, io.grafeas.v1beta1.attestation.PgpSignedAttestation.Builder, io.grafeas.v1beta1.attestation.PgpSignedAttestationOrBuilder> 
+            io.grafeas.v1beta1.attestation.PgpSignedAttestation,
+            io.grafeas.v1beta1.attestation.PgpSignedAttestation.Builder,
+            io.grafeas.v1beta1.attestation.PgpSignedAttestationOrBuilder>
         getPgpSignedAttestationFieldBuilder() {
       if (pgpSignedAttestationBuilder_ == null) {
         if (!(signatureCase_ == 1)) {
           signature_ = io.grafeas.v1beta1.attestation.PgpSignedAttestation.getDefaultInstance();
         }
-        pgpSignedAttestationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            io.grafeas.v1beta1.attestation.PgpSignedAttestation, io.grafeas.v1beta1.attestation.PgpSignedAttestation.Builder, io.grafeas.v1beta1.attestation.PgpSignedAttestationOrBuilder>(
+        pgpSignedAttestationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                io.grafeas.v1beta1.attestation.PgpSignedAttestation,
+                io.grafeas.v1beta1.attestation.PgpSignedAttestation.Builder,
+                io.grafeas.v1beta1.attestation.PgpSignedAttestationOrBuilder>(
                 (io.grafeas.v1beta1.attestation.PgpSignedAttestation) signature_,
                 getParentForChildren(),
                 isClean());
         signature_ = null;
       }
       signatureCase_ = 1;
-      onChanged();;
+      onChanged();
+      ;
       return pgpSignedAttestationBuilder_;
     }
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+
+    @java.lang.Override
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
     }
-
 
     // @@protoc_insertion_point(builder_scope:grafeas.v1beta1.attestation.Attestation)
   }
 
   // @@protoc_insertion_point(class_scope:grafeas.v1beta1.attestation.Attestation)
   private static final io.grafeas.v1beta1.attestation.Attestation DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new io.grafeas.v1beta1.attestation.Attestation();
   }
@@ -701,15 +790,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<Attestation>
-      PARSER = new com.google.protobuf.AbstractParser<Attestation>() {
-    public Attestation parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Attestation(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<Attestation> PARSER =
+      new com.google.protobuf.AbstractParser<Attestation>() {
+        @java.lang.Override
+        public Attestation parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new Attestation(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<Attestation> parser() {
     return PARSER;
@@ -720,9 +810,8 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public io.grafeas.v1beta1.attestation.Attestation getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

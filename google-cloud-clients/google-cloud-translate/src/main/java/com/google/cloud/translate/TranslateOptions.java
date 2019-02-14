@@ -70,8 +70,7 @@ public class TranslateOptions extends ServiceOptions<Translate, TranslateOptions
     }
   }
 
-  public static class Builder extends
-      ServiceOptions.Builder<Translate, TranslateOptions, Builder> {
+  public static class Builder extends ServiceOptions.Builder<Translate, TranslateOptions, Builder> {
 
     private String apiKey;
     private String targetLanguage;
@@ -83,9 +82,7 @@ public class TranslateOptions extends ServiceOptions<Translate, TranslateOptions
       this.apiKey = options.apiKey;
     }
 
-    /**
-     * Returns the authentication credentials.
-     */
+    /** Returns the authentication credentials. */
     public Credentials getCredentials() {
       return credentials;
     }
@@ -113,9 +110,9 @@ public class TranslateOptions extends ServiceOptions<Translate, TranslateOptions
     /**
      * Sets the API key used to issue requests. This will be ignored if credentials are explicitly
      * set with {@link ServiceOptions.Builder#setCredentials setCredentials}. If neither are set,
-     * and no Application Default Credentials are available, an API key is looked for in the
-     * {@code GOOGLE_API_KEY} environment variable. For instructions on how to get an API key, see
-     * the <a href="https://cloud.google.com/translate/v2/quickstart">Translate Quickstart</a>.
+     * and no Application Default Credentials are available, an API key is looked for in the {@code
+     * GOOGLE_API_KEY} environment variable. For instructions on how to get an API key, see the <a
+     * href="https://cloud.google.com/translate/v2/quickstart">Translate Quickstart</a>.
      */
     @Deprecated
     public Builder setApiKey(String apiKey) {
@@ -123,12 +120,11 @@ public class TranslateOptions extends ServiceOptions<Translate, TranslateOptions
       return this;
     }
 
-
     /**
-     * Sets the code for the default target language. If not set, English ({@code en}) is
-     * used. Calls to {@link Translate#translate(List, TranslateOption...)} and
-     * {@link Translate#translate(String, TranslateOption...)} will use this value unless an option
-     * from {@link TranslateOption#targetLanguage(String)} is explicitly provided.
+     * Sets the code for the default target language. If not set, English ({@code en}) is used.
+     * Calls to {@link Translate#translate(List, TranslateOption...)} and {@link
+     * Translate#translate(String, TranslateOption...)} will use this value unless an option from
+     * {@link TranslateOption#targetLanguage(String)} is explicitly provided.
      *
      * @return the builder
      */
@@ -155,13 +151,12 @@ public class TranslateOptions extends ServiceOptions<Translate, TranslateOptions
       apiKey = null;
       if (builder.apiKey != null) {
         logger.log(
-            Level.WARNING,
-                "Ignoring API key: using explicit setting for credentials instead.");
+            Level.WARNING, "Ignoring API key: using explicit setting for credentials instead.");
       } else if (getDefaultApiKey() != null) {
         logger.log(
             Level.WARNING,
-                "Ignoring API key set in environment variable {0}: using explicit setting for credentials instead.",
-                API_KEY_ENV_NAME);
+            "Ignoring API key set in environment variable {0}: using explicit setting for credentials instead.",
+            API_KEY_ENV_NAME);
       }
     } else if (builder.apiKey != null) {
       credentials = null;
@@ -169,14 +164,14 @@ public class TranslateOptions extends ServiceOptions<Translate, TranslateOptions
       logger.log(
           Level.WARNING,
           "Ignoring Application Default Credentials {0}: using explicit setting for API key instead.",
-              ServiceOptions.CREDENTIAL_ENV_NAME);
+          ServiceOptions.CREDENTIAL_ENV_NAME);
     } else if (credentials != null) { // credentials assigned from ADC in superclass constructor
       apiKey = null;
       if (getDefaultApiKey() != null) {
         logger.log(
             Level.WARNING,
-                "Ignoring API key set in environment variable {0}: using Application Default Credentials instead.",
-                API_KEY_ENV_NAME);
+            "Ignoring API key set in environment variable {0}: using Application Default Credentials instead.",
+            API_KEY_ENV_NAME);
       }
     } else {
       apiKey = getDefaultApiKey();
@@ -184,8 +179,7 @@ public class TranslateOptions extends ServiceOptions<Translate, TranslateOptions
     targetLanguage = firstNonNull(builder.targetLanguage, Locale.ENGLISH.getLanguage());
   }
 
-  private static class TranslateDefaults implements
-      ServiceDefaults<Translate, TranslateOptions> {
+  private static class TranslateDefaults implements ServiceDefaults<Translate, TranslateOptions> {
 
     @Override
     public TranslateFactory getDefaultServiceFactory() {
@@ -230,18 +224,12 @@ public class TranslateOptions extends ServiceOptions<Translate, TranslateOptions
     return DEFAULT_HOST;
   }
 
-
-  /**
-   * Returns the API key to be used to send requests.
-   */
+  /** Returns the API key to be used to send requests. */
   public String getApiKey() {
     return apiKey;
   }
 
-
-  /**
-   * Returns the code for the default target language.
-   */
+  /** Returns the code for the default target language. */
   public String getTargetLanguage() {
     return targetLanguage;
   }
@@ -268,18 +256,12 @@ public class TranslateOptions extends ServiceOptions<Translate, TranslateOptions
         && Objects.equals(targetLanguage, options.targetLanguage);
   }
 
-
-  /**
-   * Returns a default {@code TranslateOptions} instance.
-   */
+  /** Returns a default {@code TranslateOptions} instance. */
   public static TranslateOptions getDefaultInstance() {
     return newBuilder().build();
   }
 
-
-  /**
-   * Returns a builder for {@code TranslateOptions} objects.
-   */
+  /** Returns a builder for {@code TranslateOptions} objects. */
   public static Builder newBuilder() {
     return new Builder();
   }

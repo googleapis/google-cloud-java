@@ -62,7 +62,8 @@ public class AsyncPageImpl<T> extends PageImpl<T> implements AsyncPage<T> {
     public Page<T> getNextPage() {
       try {
         return asyncPageFetcher != null
-            ? Uninterruptibles.getUninterruptibly(asyncPageFetcher.getNextPage()) : null;
+            ? Uninterruptibles.getUninterruptibly(asyncPageFetcher.getNextPage())
+            : null;
       } catch (ExecutionException ex) {
         Throwables.throwIfUnchecked(ex.getCause());
         throw new RuntimeException(ex);
@@ -70,14 +71,11 @@ public class AsyncPageImpl<T> extends PageImpl<T> implements AsyncPage<T> {
     }
   }
 
-  /**
-   * Creates an {@code AsyncPageImpl} object.
-   */
+  /** Creates an {@code AsyncPageImpl} object. */
   public AsyncPageImpl(NextPageFetcher<T> asyncPageFetcher, String cursor, Iterable<T> results) {
     super(new SyncNextPageFetcher<T>(asyncPageFetcher), cursor, results);
     this.asyncPageFetcher = asyncPageFetcher;
   }
-
 
   @Override
   public ApiFuture<AsyncPage<T>> getNextPageAsync() {

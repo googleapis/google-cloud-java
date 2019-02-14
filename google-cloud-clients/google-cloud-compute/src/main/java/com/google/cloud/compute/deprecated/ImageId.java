@@ -20,28 +20,27 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
-
 import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
- * Identity for a Google Compute Engine image.
- */
+/** Identity for a Google Compute Engine image. */
 public final class ImageId extends ResourceId {
 
-  static final Function<String, ImageId> FROM_URL_FUNCTION = new Function<String, ImageId>() {
-    @Override
-    public ImageId apply(String pb) {
-      return ImageId.fromUrl(pb);
-    }
-  };
-  static final Function<ImageId, String> TO_URL_FUNCTION = new Function<ImageId, String>() {
-    @Override
-    public String apply(ImageId imageId) {
-      return imageId.getSelfLink();
-    }
-  };
+  static final Function<String, ImageId> FROM_URL_FUNCTION =
+      new Function<String, ImageId>() {
+        @Override
+        public ImageId apply(String pb) {
+          return ImageId.fromUrl(pb);
+        }
+      };
+  static final Function<ImageId, String> TO_URL_FUNCTION =
+      new Function<ImageId, String>() {
+        @Override
+        public String apply(ImageId imageId) {
+          return imageId.getSelfLink();
+        }
+      };
 
   private static final String REGEX = ResourceId.REGEX + "global/images/([^/]+)";
   private static final Pattern PATTERN = Pattern.compile(REGEX);
@@ -103,10 +102,10 @@ public final class ImageId extends ResourceId {
 
   /**
    * Returns an image identity given the image name. The image name must be 1-63 characters long and
-   * comply with RFC1035. Specifically, the name must match the regular expression
-   * {@code [a-z]([-a-z0-9]*[a-z0-9])?} which means the first character must be a lowercase letter,
-   * and all following characters must be a dash, lowercase letter, or digit, except the last
-   * character, which cannot be a dash.
+   * comply with RFC1035. Specifically, the name must match the regular expression {@code
+   * [a-z]([-a-z0-9]*[a-z0-9])?} which means the first character must be a lowercase letter, and all
+   * following characters must be a dash, lowercase letter, or digit, except the last character,
+   * which cannot be a dash.
    *
    * @see <a href="https://www.ietf.org/rfc/rfc1035.txt">RFC1035</a>
    */
@@ -116,10 +115,10 @@ public final class ImageId extends ResourceId {
 
   /**
    * Returns an image identity given project and image names. The image name must be 1-63 characters
-   * long and comply with RFC1035. Specifically, the name must match the regular expression
-   * {@code [a-z]([-a-z0-9]*[a-z0-9])?} which means the first character must be a lowercase letter,
-   * and all following characters must be a dash, lowercase letter, or digit, except the last
-   * character, which cannot be a dash.
+   * long and comply with RFC1035. Specifically, the name must match the regular expression {@code
+   * [a-z]([-a-z0-9]*[a-z0-9])?} which means the first character must be a lowercase letter, and all
+   * following characters must be a dash, lowercase letter, or digit, except the last character,
+   * which cannot be a dash.
    *
    * @see <a href="https://www.ietf.org/rfc/rfc1035.txt">RFC1035</a>
    */

@@ -25,14 +25,12 @@ import com.google.cloud.translate.Language;
 import com.google.cloud.translate.Translate;
 import com.google.cloud.translate.Translation;
 import com.google.cloud.translate.testing.RemoteTranslateHelper;
-
-import org.junit.BeforeClass;
-import org.junit.Test;
-
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
+import org.junit.BeforeClass;
+import org.junit.Test;
 
 /**
  * This class contains a number of snippets for the {@link Translate} interface.
@@ -46,13 +44,14 @@ public class ITTranslateSnippets {
 
   private static Translate translate;
 
-  private static final String[] LANGUAGES = {"af", "sq", "ar", "hy", "az", "eu", "be", "bn", "bs",
-      "bg", "ca", "ceb", "ny", "zh-TW", "hr", "cs", "da", "nl", "en", "eo", "et", "tl", "fi", "fr",
-      "gl", "ka", "de", "el", "gu", "ht", "ha", "iw", "hi", "hmn", "hu", "is", "ig", "id", "ga",
-      "it", "ja", "jw", "kn", "kk", "km", "ko", "lo", "la", "lv", "lt", "mk", "mg", "ms", "ml",
-      "mt", "mi", "mr", "mn", "my", "ne", "no", "fa", "pl", "pt", "ro", "ru", "sr", "st", "si",
-      "sk", "sl", "so", "es", "su", "sw", "sv", "tg", "ta", "te", "th", "tr", "uk", "ur", "uz",
-      "vi", "cy", "yi", "yo", "zu"};
+  private static final String[] LANGUAGES = {
+    "af", "sq", "ar", "hy", "az", "eu", "be", "bn", "bs", "bg", "ca", "ceb", "ny", "zh-TW", "hr",
+    "cs", "da", "nl", "en", "eo", "et", "tl", "fi", "fr", "gl", "ka", "de", "el", "gu", "ht", "ha",
+    "iw", "hi", "hmn", "hu", "is", "ig", "id", "ga", "it", "ja", "jw", "kn", "kk", "km", "ko", "lo",
+    "la", "lv", "lt", "mk", "mg", "ms", "ml", "mt", "mi", "mr", "mn", "my", "ne", "no", "fa", "pl",
+    "pt", "ro", "ru", "sr", "st", "si", "sk", "sl", "so", "es", "su", "sw", "sv", "tg", "ta", "te",
+    "th", "tr", "uk", "ur", "uz", "vi", "cy", "yi", "yo", "zu"
+  };
 
   @BeforeClass
   public static void beforeClass() {
@@ -91,8 +90,8 @@ public class ITTranslateSnippets {
     // import com.google.cloud.translate.*;
     // Translate translate = TranslateOptions.getDefaultInstance().getService();
 
-    List<Language> languages = translate.listSupportedLanguages(
-            Translate.LanguageListOption.targetLanguage("es"));
+    List<Language> languages =
+        translate.listSupportedLanguages(Translate.LanguageListOption.targetLanguage("es"));
 
     for (Language language : languages) {
       System.out.printf("Name: %s, Code: %s\n", language.getName(), language.getCode());
@@ -175,10 +174,11 @@ public class ITTranslateSnippets {
     // SNIPPET translateTextsWithOptions
     List<String> texts = new LinkedList<>();
     texts.add("¡Hola Mundo!");
-    List<Translation> translations = translate.translate(
-        texts,
-        Translate.TranslateOption.sourceLanguage("es"),
-        Translate.TranslateOption.targetLanguage("de"));
+    List<Translation> translations =
+        translate.translate(
+            texts,
+            Translate.TranslateOption.sourceLanguage("es"),
+            Translate.TranslateOption.targetLanguage("de"));
     // SNIPPET translateTextsWithOptions
     Translation translation = translations.get(0);
     assertEquals("Hallo Welt!", translation.getTranslatedText());
@@ -202,16 +202,15 @@ public class ITTranslateSnippets {
   @Test
   public void testTranslateTextWithModel() {
     // [START translate_text_with_model]
-    Translation translation = translate.translate(
-        "Hola Mundo!",
-        Translate.TranslateOption.sourceLanguage("es"),
-        Translate.TranslateOption.targetLanguage("de"),
-        // Use "base" for standard edition, "nmt" for the premium model.
-        Translate.TranslateOption.model("nmt"));
+    Translation translation =
+        translate.translate(
+            "Hola Mundo!",
+            Translate.TranslateOption.sourceLanguage("es"),
+            Translate.TranslateOption.targetLanguage("de"),
+            // Use "base" for standard edition, "nmt" for the premium model.
+            Translate.TranslateOption.model("nmt"));
 
-    System.out.printf(
-        "TranslatedText:\nText: %s\n",
-        translation.getTranslatedText());
+    System.out.printf("TranslatedText:\nText: %s\n", translation.getTranslatedText());
     // [END translate_text_with_model]
     assertEquals("Hallo Welt!", translation.getTranslatedText());
     assertEquals("es", translation.getSourceLanguage());

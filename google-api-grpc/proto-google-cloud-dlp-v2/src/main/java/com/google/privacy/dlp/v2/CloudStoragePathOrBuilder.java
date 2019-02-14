@@ -3,11 +3,14 @@
 
 package com.google.privacy.dlp.v2;
 
-public interface CloudStoragePathOrBuilder extends
+public interface CloudStoragePathOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.CloudStoragePath)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * A url representing a file or path (no wildcards) in Cloud Storage.
    * Example: gs://[BUCKET_NAME]/dictionary.txt
@@ -17,6 +20,8 @@ public interface CloudStoragePathOrBuilder extends
    */
   java.lang.String getPath();
   /**
+   *
+   *
    * <pre>
    * A url representing a file or path (no wildcards) in Cloud Storage.
    * Example: gs://[BUCKET_NAME]/dictionary.txt
@@ -24,6 +29,5 @@ public interface CloudStoragePathOrBuilder extends
    *
    * <code>string path = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getPathBytes();
+  com.google.protobuf.ByteString getPathBytes();
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/** Identity-Aware Proxy */
 public final class BackendServiceIAP implements ApiMessage {
   private final Boolean enabled;
   private final String oauth2ClientId;
@@ -50,16 +51,16 @@ public final class BackendServiceIAP implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("enabled")) {
+    if ("enabled".equals(fieldName)) {
       return enabled;
     }
-    if (fieldName.equals("oauth2ClientId")) {
+    if ("oauth2ClientId".equals(fieldName)) {
       return oauth2ClientId;
     }
-    if (fieldName.equals("oauth2ClientSecret")) {
+    if ("oauth2ClientSecret".equals(fieldName)) {
       return oauth2ClientSecret;
     }
-    if (fieldName.equals("oauth2ClientSecretSha256")) {
+    if ("oauth2ClientSecretSha256".equals(fieldName)) {
       return oauth2ClientSecretSha256;
     }
     return null;
@@ -73,6 +74,12 @@ public final class BackendServiceIAP implements ApiMessage {
 
   @Nullable
   @Override
+  /**
+   * The fields that should be serialized (even if they have empty values). If the containing
+   * message object has a non-null fieldmask, then all the fields in the field mask (and only those
+   * fields in the field mask) will be serialized. If the containing object does not have a
+   * fieldmask, then only non-empty fields will be serialized.
+   */
   public List<String> getFieldMask() {
     return null;
   }
@@ -89,6 +96,7 @@ public final class BackendServiceIAP implements ApiMessage {
     return oauth2ClientSecret;
   }
 
+  /** [Output Only] SHA256 hash value for the field oauth2_client_secret above. */
   public String getOauth2ClientSecretSha256() {
     return oauth2ClientSecretSha256;
   }
@@ -174,10 +182,12 @@ public final class BackendServiceIAP implements ApiMessage {
       return this;
     }
 
+    /** [Output Only] SHA256 hash value for the field oauth2_client_secret above. */
     public String getOauth2ClientSecretSha256() {
       return oauth2ClientSecretSha256;
     }
 
+    /** [Output Only] SHA256 hash value for the field oauth2_client_secret above. */
     public Builder setOauth2ClientSecretSha256(String oauth2ClientSecretSha256) {
       this.oauth2ClientSecretSha256 = oauth2ClientSecretSha256;
       return this;

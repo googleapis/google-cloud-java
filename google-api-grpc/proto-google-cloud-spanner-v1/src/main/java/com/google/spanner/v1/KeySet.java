@@ -4,6 +4,8 @@
 package com.google.spanner.v1;
 
 /**
+ *
+ *
  * <pre>
  * `KeySet` defines a collection of Cloud Spanner keys and/or key ranges. All
  * the keys are expected to be in the same table or index. The keys need
@@ -15,15 +17,16 @@ package com.google.spanner.v1;
  *
  * Protobuf type {@code google.spanner.v1.KeySet}
  */
-public  final class KeySet extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class KeySet extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.spanner.v1.KeySet)
     KeySetOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use KeySet.newBuilder() to construct.
   private KeySet(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private KeySet() {
     keys_ = java.util.Collections.emptyList();
     ranges_ = java.util.Collections.emptyList();
@@ -31,15 +34,18 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private KeySet(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -51,43 +57,44 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          case 10:
+            {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                keys_ = new java.util.ArrayList<com.google.protobuf.ListValue>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              keys_.add(
+                  input.readMessage(com.google.protobuf.ListValue.parser(), extensionRegistry));
+              break;
             }
-            break;
-          }
-          case 10: {
-            if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-              keys_ = new java.util.ArrayList<com.google.protobuf.ListValue>();
-              mutable_bitField0_ |= 0x00000001;
+          case 18:
+            {
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                ranges_ = new java.util.ArrayList<com.google.spanner.v1.KeyRange>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              ranges_.add(
+                  input.readMessage(com.google.spanner.v1.KeyRange.parser(), extensionRegistry));
+              break;
             }
-            keys_.add(
-                input.readMessage(com.google.protobuf.ListValue.parser(), extensionRegistry));
-            break;
-          }
-          case 18: {
-            if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-              ranges_ = new java.util.ArrayList<com.google.spanner.v1.KeyRange>();
-              mutable_bitField0_ |= 0x00000002;
+          case 24:
+            {
+              all_ = input.readBool();
+              break;
             }
-            ranges_.add(
-                input.readMessage(com.google.spanner.v1.KeyRange.parser(), extensionRegistry));
-            break;
-          }
-          case 24: {
-
-            all_ = input.readBool();
-            break;
-          }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
         keys_ = java.util.Collections.unmodifiableList(keys_);
@@ -99,14 +106,16 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.spanner.v1.KeysProto.internal_static_google_spanner_v1_KeySet_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.spanner.v1.KeysProto.internal_static_google_spanner_v1_KeySet_fieldAccessorTable
+    return com.google.spanner.v1.KeysProto
+        .internal_static_google_spanner_v1_KeySet_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.spanner.v1.KeySet.class, com.google.spanner.v1.KeySet.Builder.class);
   }
@@ -115,6 +124,8 @@ private static final long serialVersionUID = 0L;
   public static final int KEYS_FIELD_NUMBER = 1;
   private java.util.List<com.google.protobuf.ListValue> keys_;
   /**
+   *
+   *
    * <pre>
    * A list of specific keys. Entries in `keys` should have exactly as
    * many elements as there are columns in the primary or index key
@@ -128,6 +139,8 @@ private static final long serialVersionUID = 0L;
     return keys_;
   }
   /**
+   *
+   *
    * <pre>
    * A list of specific keys. Entries in `keys` should have exactly as
    * many elements as there are columns in the primary or index key
@@ -137,11 +150,12 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.protobuf.ListValue keys = 1;</code>
    */
-  public java.util.List<? extends com.google.protobuf.ListValueOrBuilder> 
-      getKeysOrBuilderList() {
+  public java.util.List<? extends com.google.protobuf.ListValueOrBuilder> getKeysOrBuilderList() {
     return keys_;
   }
   /**
+   *
+   *
    * <pre>
    * A list of specific keys. Entries in `keys` should have exactly as
    * many elements as there are columns in the primary or index key
@@ -155,6 +169,8 @@ private static final long serialVersionUID = 0L;
     return keys_.size();
   }
   /**
+   *
+   *
    * <pre>
    * A list of specific keys. Entries in `keys` should have exactly as
    * many elements as there are columns in the primary or index key
@@ -168,6 +184,8 @@ private static final long serialVersionUID = 0L;
     return keys_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * A list of specific keys. Entries in `keys` should have exactly as
    * many elements as there are columns in the primary or index key
@@ -177,14 +195,15 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.protobuf.ListValue keys = 1;</code>
    */
-  public com.google.protobuf.ListValueOrBuilder getKeysOrBuilder(
-      int index) {
+  public com.google.protobuf.ListValueOrBuilder getKeysOrBuilder(int index) {
     return keys_.get(index);
   }
 
   public static final int RANGES_FIELD_NUMBER = 2;
   private java.util.List<com.google.spanner.v1.KeyRange> ranges_;
   /**
+   *
+   *
    * <pre>
    * A list of key ranges. See [KeyRange][google.spanner.v1.KeyRange] for more information about
    * key range specifications.
@@ -196,6 +215,8 @@ private static final long serialVersionUID = 0L;
     return ranges_;
   }
   /**
+   *
+   *
    * <pre>
    * A list of key ranges. See [KeyRange][google.spanner.v1.KeyRange] for more information about
    * key range specifications.
@@ -203,11 +224,13 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.spanner.v1.KeyRange ranges = 2;</code>
    */
-  public java.util.List<? extends com.google.spanner.v1.KeyRangeOrBuilder> 
+  public java.util.List<? extends com.google.spanner.v1.KeyRangeOrBuilder>
       getRangesOrBuilderList() {
     return ranges_;
   }
   /**
+   *
+   *
    * <pre>
    * A list of key ranges. See [KeyRange][google.spanner.v1.KeyRange] for more information about
    * key range specifications.
@@ -219,6 +242,8 @@ private static final long serialVersionUID = 0L;
     return ranges_.size();
   }
   /**
+   *
+   *
    * <pre>
    * A list of key ranges. See [KeyRange][google.spanner.v1.KeyRange] for more information about
    * key range specifications.
@@ -230,6 +255,8 @@ private static final long serialVersionUID = 0L;
     return ranges_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * A list of key ranges. See [KeyRange][google.spanner.v1.KeyRange] for more information about
    * key range specifications.
@@ -237,14 +264,15 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.spanner.v1.KeyRange ranges = 2;</code>
    */
-  public com.google.spanner.v1.KeyRangeOrBuilder getRangesOrBuilder(
-      int index) {
+  public com.google.spanner.v1.KeyRangeOrBuilder getRangesOrBuilder(int index) {
     return ranges_.get(index);
   }
 
   public static final int ALL_FIELD_NUMBER = 3;
   private boolean all_;
   /**
+   *
+   *
    * <pre>
    * For convenience `all` can be set to `true` to indicate that this
    * `KeySet` matches all keys in the table or index. Note that any keys
@@ -258,6 +286,8 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -267,8 +297,8 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  @java.lang.Override
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     for (int i = 0; i < keys_.size(); i++) {
       output.writeMessage(1, keys_.get(i));
     }
@@ -281,22 +311,20 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
 
     size = 0;
     for (int i = 0; i < keys_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, keys_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, keys_.get(i));
     }
     for (int i = 0; i < ranges_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, ranges_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, ranges_.get(i));
     }
     if (all_ != false) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(3, all_);
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, all_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -306,7 +334,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.spanner.v1.KeySet)) {
       return super.equals(obj);
@@ -314,12 +342,9 @@ private static final long serialVersionUID = 0L;
     com.google.spanner.v1.KeySet other = (com.google.spanner.v1.KeySet) obj;
 
     boolean result = true;
-    result = result && getKeysList()
-        .equals(other.getKeysList());
-    result = result && getRangesList()
-        .equals(other.getRangesList());
-    result = result && (getAll()
-        == other.getAll());
+    result = result && getKeysList().equals(other.getKeysList());
+    result = result && getRangesList().equals(other.getRangesList());
+    result = result && (getAll() == other.getAll());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -340,102 +365,109 @@ private static final long serialVersionUID = 0L;
       hash = (53 * hash) + getRangesList().hashCode();
     }
     hash = (37 * hash) + ALL_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getAll());
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAll());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.google.spanner.v1.KeySet parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.spanner.v1.KeySet parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.spanner.v1.KeySet parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.spanner.v1.KeySet parseFrom(
-      com.google.protobuf.ByteString data)
+
+  public static com.google.spanner.v1.KeySet parseFrom(com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.spanner.v1.KeySet parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.spanner.v1.KeySet parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.spanner.v1.KeySet parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.spanner.v1.KeySet parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.spanner.v1.KeySet parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.spanner.v1.KeySet parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
   public static com.google.spanner.v1.KeySet parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.spanner.v1.KeySet parseFrom(
-      com.google.protobuf.CodedInputStream input)
+
+  public static com.google.spanner.v1.KeySet parseFrom(com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.spanner.v1.KeySet parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  public Builder newBuilderForType() { return newBuilder(); }
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-  public static Builder newBuilder(com.google.spanner.v1.KeySet prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+
+  public static Builder newBuilder(com.google.spanner.v1.KeySet prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+
+  @java.lang.Override
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * `KeySet` defines a collection of Cloud Spanner keys and/or key ranges. All
    * the keys are expected to be in the same table or index. The keys need
@@ -447,18 +479,19 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.spanner.v1.KeySet}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.spanner.v1.KeySet)
       com.google.spanner.v1.KeySetOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.spanner.v1.KeysProto.internal_static_google_spanner_v1_KeySet_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.spanner.v1.KeysProto.internal_static_google_spanner_v1_KeySet_fieldAccessorTable
+      return com.google.spanner.v1.KeysProto
+          .internal_static_google_spanner_v1_KeySet_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.spanner.v1.KeySet.class, com.google.spanner.v1.KeySet.Builder.class);
     }
@@ -468,18 +501,19 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getKeysFieldBuilder();
         getRangesFieldBuilder();
       }
     }
+
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       if (keysBuilder_ == null) {
@@ -499,15 +533,17 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.spanner.v1.KeysProto.internal_static_google_spanner_v1_KeySet_descriptor;
     }
 
+    @java.lang.Override
     public com.google.spanner.v1.KeySet getDefaultInstanceForType() {
       return com.google.spanner.v1.KeySet.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.spanner.v1.KeySet build() {
       com.google.spanner.v1.KeySet result = buildPartial();
       if (!result.isInitialized()) {
@@ -516,6 +552,7 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.spanner.v1.KeySet buildPartial() {
       com.google.spanner.v1.KeySet result = new com.google.spanner.v1.KeySet(this);
       int from_bitField0_ = bitField0_;
@@ -544,35 +581,43 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+
+    @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+    @java.lang.Override
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+    @java.lang.Override
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
+    @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
+    @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.spanner.v1.KeySet) {
-        return mergeFrom((com.google.spanner.v1.KeySet)other);
+        return mergeFrom((com.google.spanner.v1.KeySet) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -599,9 +644,10 @@ private static final long serialVersionUID = 0L;
             keysBuilder_ = null;
             keys_ = other.keys_;
             bitField0_ = (bitField0_ & ~0x00000001);
-            keysBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getKeysFieldBuilder() : null;
+            keysBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getKeysFieldBuilder()
+                    : null;
           } else {
             keysBuilder_.addAllMessages(other.keys_);
           }
@@ -625,9 +671,10 @@ private static final long serialVersionUID = 0L;
             rangesBuilder_ = null;
             ranges_ = other.ranges_;
             bitField0_ = (bitField0_ & ~0x00000002);
-            rangesBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getRangesFieldBuilder() : null;
+            rangesBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getRangesFieldBuilder()
+                    : null;
           } else {
             rangesBuilder_.addAllMessages(other.ranges_);
           }
@@ -641,10 +688,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -662,21 +711,27 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
-    private java.util.List<com.google.protobuf.ListValue> keys_ =
-      java.util.Collections.emptyList();
+    private java.util.List<com.google.protobuf.ListValue> keys_ = java.util.Collections.emptyList();
+
     private void ensureKeysIsMutable() {
       if (!((bitField0_ & 0x00000001) == 0x00000001)) {
         keys_ = new java.util.ArrayList<com.google.protobuf.ListValue>(keys_);
         bitField0_ |= 0x00000001;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.protobuf.ListValue, com.google.protobuf.ListValue.Builder, com.google.protobuf.ListValueOrBuilder> keysBuilder_;
+            com.google.protobuf.ListValue,
+            com.google.protobuf.ListValue.Builder,
+            com.google.protobuf.ListValueOrBuilder>
+        keysBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * A list of specific keys. Entries in `keys` should have exactly as
      * many elements as there are columns in the primary or index key
@@ -694,6 +749,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A list of specific keys. Entries in `keys` should have exactly as
      * many elements as there are columns in the primary or index key
@@ -711,6 +768,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A list of specific keys. Entries in `keys` should have exactly as
      * many elements as there are columns in the primary or index key
@@ -728,6 +787,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A list of specific keys. Entries in `keys` should have exactly as
      * many elements as there are columns in the primary or index key
@@ -737,8 +798,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.protobuf.ListValue keys = 1;</code>
      */
-    public Builder setKeys(
-        int index, com.google.protobuf.ListValue value) {
+    public Builder setKeys(int index, com.google.protobuf.ListValue value) {
       if (keysBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -752,6 +812,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of specific keys. Entries in `keys` should have exactly as
      * many elements as there are columns in the primary or index key
@@ -761,8 +823,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.protobuf.ListValue keys = 1;</code>
      */
-    public Builder setKeys(
-        int index, com.google.protobuf.ListValue.Builder builderForValue) {
+    public Builder setKeys(int index, com.google.protobuf.ListValue.Builder builderForValue) {
       if (keysBuilder_ == null) {
         ensureKeysIsMutable();
         keys_.set(index, builderForValue.build());
@@ -773,6 +834,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of specific keys. Entries in `keys` should have exactly as
      * many elements as there are columns in the primary or index key
@@ -796,6 +859,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of specific keys. Entries in `keys` should have exactly as
      * many elements as there are columns in the primary or index key
@@ -805,8 +870,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.protobuf.ListValue keys = 1;</code>
      */
-    public Builder addKeys(
-        int index, com.google.protobuf.ListValue value) {
+    public Builder addKeys(int index, com.google.protobuf.ListValue value) {
       if (keysBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -820,6 +884,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of specific keys. Entries in `keys` should have exactly as
      * many elements as there are columns in the primary or index key
@@ -829,8 +895,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.protobuf.ListValue keys = 1;</code>
      */
-    public Builder addKeys(
-        com.google.protobuf.ListValue.Builder builderForValue) {
+    public Builder addKeys(com.google.protobuf.ListValue.Builder builderForValue) {
       if (keysBuilder_ == null) {
         ensureKeysIsMutable();
         keys_.add(builderForValue.build());
@@ -841,6 +906,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of specific keys. Entries in `keys` should have exactly as
      * many elements as there are columns in the primary or index key
@@ -850,8 +917,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.protobuf.ListValue keys = 1;</code>
      */
-    public Builder addKeys(
-        int index, com.google.protobuf.ListValue.Builder builderForValue) {
+    public Builder addKeys(int index, com.google.protobuf.ListValue.Builder builderForValue) {
       if (keysBuilder_ == null) {
         ensureKeysIsMutable();
         keys_.add(index, builderForValue.build());
@@ -862,6 +928,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of specific keys. Entries in `keys` should have exactly as
      * many elements as there are columns in the primary or index key
@@ -871,12 +939,10 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.protobuf.ListValue keys = 1;</code>
      */
-    public Builder addAllKeys(
-        java.lang.Iterable<? extends com.google.protobuf.ListValue> values) {
+    public Builder addAllKeys(java.lang.Iterable<? extends com.google.protobuf.ListValue> values) {
       if (keysBuilder_ == null) {
         ensureKeysIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, keys_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, keys_);
         onChanged();
       } else {
         keysBuilder_.addAllMessages(values);
@@ -884,6 +950,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of specific keys. Entries in `keys` should have exactly as
      * many elements as there are columns in the primary or index key
@@ -904,6 +972,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of specific keys. Entries in `keys` should have exactly as
      * many elements as there are columns in the primary or index key
@@ -924,6 +994,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of specific keys. Entries in `keys` should have exactly as
      * many elements as there are columns in the primary or index key
@@ -933,11 +1005,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.protobuf.ListValue keys = 1;</code>
      */
-    public com.google.protobuf.ListValue.Builder getKeysBuilder(
-        int index) {
+    public com.google.protobuf.ListValue.Builder getKeysBuilder(int index) {
       return getKeysFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * A list of specific keys. Entries in `keys` should have exactly as
      * many elements as there are columns in the primary or index key
@@ -947,14 +1020,16 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.protobuf.ListValue keys = 1;</code>
      */
-    public com.google.protobuf.ListValueOrBuilder getKeysOrBuilder(
-        int index) {
+    public com.google.protobuf.ListValueOrBuilder getKeysOrBuilder(int index) {
       if (keysBuilder_ == null) {
-        return keys_.get(index);  } else {
+        return keys_.get(index);
+      } else {
         return keysBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * A list of specific keys. Entries in `keys` should have exactly as
      * many elements as there are columns in the primary or index key
@@ -964,8 +1039,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.protobuf.ListValue keys = 1;</code>
      */
-    public java.util.List<? extends com.google.protobuf.ListValueOrBuilder> 
-         getKeysOrBuilderList() {
+    public java.util.List<? extends com.google.protobuf.ListValueOrBuilder> getKeysOrBuilderList() {
       if (keysBuilder_ != null) {
         return keysBuilder_.getMessageOrBuilderList();
       } else {
@@ -973,6 +1047,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A list of specific keys. Entries in `keys` should have exactly as
      * many elements as there are columns in the primary or index key
@@ -983,10 +1059,11 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.protobuf.ListValue keys = 1;</code>
      */
     public com.google.protobuf.ListValue.Builder addKeysBuilder() {
-      return getKeysFieldBuilder().addBuilder(
-          com.google.protobuf.ListValue.getDefaultInstance());
+      return getKeysFieldBuilder().addBuilder(com.google.protobuf.ListValue.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * A list of specific keys. Entries in `keys` should have exactly as
      * many elements as there are columns in the primary or index key
@@ -996,12 +1073,13 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.protobuf.ListValue keys = 1;</code>
      */
-    public com.google.protobuf.ListValue.Builder addKeysBuilder(
-        int index) {
-      return getKeysFieldBuilder().addBuilder(
-          index, com.google.protobuf.ListValue.getDefaultInstance());
+    public com.google.protobuf.ListValue.Builder addKeysBuilder(int index) {
+      return getKeysFieldBuilder()
+          .addBuilder(index, com.google.protobuf.ListValue.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * A list of specific keys. Entries in `keys` should have exactly as
      * many elements as there are columns in the primary or index key
@@ -1011,16 +1089,21 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.protobuf.ListValue keys = 1;</code>
      */
-    public java.util.List<com.google.protobuf.ListValue.Builder> 
-         getKeysBuilderList() {
+    public java.util.List<com.google.protobuf.ListValue.Builder> getKeysBuilderList() {
       return getKeysFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.protobuf.ListValue, com.google.protobuf.ListValue.Builder, com.google.protobuf.ListValueOrBuilder> 
+            com.google.protobuf.ListValue,
+            com.google.protobuf.ListValue.Builder,
+            com.google.protobuf.ListValueOrBuilder>
         getKeysFieldBuilder() {
       if (keysBuilder_ == null) {
-        keysBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.protobuf.ListValue, com.google.protobuf.ListValue.Builder, com.google.protobuf.ListValueOrBuilder>(
+        keysBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.protobuf.ListValue,
+                com.google.protobuf.ListValue.Builder,
+                com.google.protobuf.ListValueOrBuilder>(
                 keys_,
                 ((bitField0_ & 0x00000001) == 0x00000001),
                 getParentForChildren(),
@@ -1031,18 +1114,24 @@ private static final long serialVersionUID = 0L;
     }
 
     private java.util.List<com.google.spanner.v1.KeyRange> ranges_ =
-      java.util.Collections.emptyList();
+        java.util.Collections.emptyList();
+
     private void ensureRangesIsMutable() {
       if (!((bitField0_ & 0x00000002) == 0x00000002)) {
         ranges_ = new java.util.ArrayList<com.google.spanner.v1.KeyRange>(ranges_);
         bitField0_ |= 0x00000002;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.spanner.v1.KeyRange, com.google.spanner.v1.KeyRange.Builder, com.google.spanner.v1.KeyRangeOrBuilder> rangesBuilder_;
+            com.google.spanner.v1.KeyRange,
+            com.google.spanner.v1.KeyRange.Builder,
+            com.google.spanner.v1.KeyRangeOrBuilder>
+        rangesBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * A list of key ranges. See [KeyRange][google.spanner.v1.KeyRange] for more information about
      * key range specifications.
@@ -1058,6 +1147,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A list of key ranges. See [KeyRange][google.spanner.v1.KeyRange] for more information about
      * key range specifications.
@@ -1073,6 +1164,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A list of key ranges. See [KeyRange][google.spanner.v1.KeyRange] for more information about
      * key range specifications.
@@ -1088,6 +1181,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A list of key ranges. See [KeyRange][google.spanner.v1.KeyRange] for more information about
      * key range specifications.
@@ -1095,8 +1190,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.spanner.v1.KeyRange ranges = 2;</code>
      */
-    public Builder setRanges(
-        int index, com.google.spanner.v1.KeyRange value) {
+    public Builder setRanges(int index, com.google.spanner.v1.KeyRange value) {
       if (rangesBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1110,6 +1204,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of key ranges. See [KeyRange][google.spanner.v1.KeyRange] for more information about
      * key range specifications.
@@ -1117,8 +1213,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.spanner.v1.KeyRange ranges = 2;</code>
      */
-    public Builder setRanges(
-        int index, com.google.spanner.v1.KeyRange.Builder builderForValue) {
+    public Builder setRanges(int index, com.google.spanner.v1.KeyRange.Builder builderForValue) {
       if (rangesBuilder_ == null) {
         ensureRangesIsMutable();
         ranges_.set(index, builderForValue.build());
@@ -1129,6 +1224,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of key ranges. See [KeyRange][google.spanner.v1.KeyRange] for more information about
      * key range specifications.
@@ -1150,6 +1247,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of key ranges. See [KeyRange][google.spanner.v1.KeyRange] for more information about
      * key range specifications.
@@ -1157,8 +1256,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.spanner.v1.KeyRange ranges = 2;</code>
      */
-    public Builder addRanges(
-        int index, com.google.spanner.v1.KeyRange value) {
+    public Builder addRanges(int index, com.google.spanner.v1.KeyRange value) {
       if (rangesBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1172,6 +1270,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of key ranges. See [KeyRange][google.spanner.v1.KeyRange] for more information about
      * key range specifications.
@@ -1179,8 +1279,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.spanner.v1.KeyRange ranges = 2;</code>
      */
-    public Builder addRanges(
-        com.google.spanner.v1.KeyRange.Builder builderForValue) {
+    public Builder addRanges(com.google.spanner.v1.KeyRange.Builder builderForValue) {
       if (rangesBuilder_ == null) {
         ensureRangesIsMutable();
         ranges_.add(builderForValue.build());
@@ -1191,6 +1290,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of key ranges. See [KeyRange][google.spanner.v1.KeyRange] for more information about
      * key range specifications.
@@ -1198,8 +1299,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.spanner.v1.KeyRange ranges = 2;</code>
      */
-    public Builder addRanges(
-        int index, com.google.spanner.v1.KeyRange.Builder builderForValue) {
+    public Builder addRanges(int index, com.google.spanner.v1.KeyRange.Builder builderForValue) {
       if (rangesBuilder_ == null) {
         ensureRangesIsMutable();
         ranges_.add(index, builderForValue.build());
@@ -1210,6 +1310,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of key ranges. See [KeyRange][google.spanner.v1.KeyRange] for more information about
      * key range specifications.
@@ -1221,8 +1323,7 @@ private static final long serialVersionUID = 0L;
         java.lang.Iterable<? extends com.google.spanner.v1.KeyRange> values) {
       if (rangesBuilder_ == null) {
         ensureRangesIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, ranges_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, ranges_);
         onChanged();
       } else {
         rangesBuilder_.addAllMessages(values);
@@ -1230,6 +1331,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of key ranges. See [KeyRange][google.spanner.v1.KeyRange] for more information about
      * key range specifications.
@@ -1248,6 +1351,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of key ranges. See [KeyRange][google.spanner.v1.KeyRange] for more information about
      * key range specifications.
@@ -1266,6 +1371,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of key ranges. See [KeyRange][google.spanner.v1.KeyRange] for more information about
      * key range specifications.
@@ -1273,11 +1380,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.spanner.v1.KeyRange ranges = 2;</code>
      */
-    public com.google.spanner.v1.KeyRange.Builder getRangesBuilder(
-        int index) {
+    public com.google.spanner.v1.KeyRange.Builder getRangesBuilder(int index) {
       return getRangesFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * A list of key ranges. See [KeyRange][google.spanner.v1.KeyRange] for more information about
      * key range specifications.
@@ -1285,14 +1393,16 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.spanner.v1.KeyRange ranges = 2;</code>
      */
-    public com.google.spanner.v1.KeyRangeOrBuilder getRangesOrBuilder(
-        int index) {
+    public com.google.spanner.v1.KeyRangeOrBuilder getRangesOrBuilder(int index) {
       if (rangesBuilder_ == null) {
-        return ranges_.get(index);  } else {
+        return ranges_.get(index);
+      } else {
         return rangesBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * A list of key ranges. See [KeyRange][google.spanner.v1.KeyRange] for more information about
      * key range specifications.
@@ -1300,8 +1410,8 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.spanner.v1.KeyRange ranges = 2;</code>
      */
-    public java.util.List<? extends com.google.spanner.v1.KeyRangeOrBuilder> 
-         getRangesOrBuilderList() {
+    public java.util.List<? extends com.google.spanner.v1.KeyRangeOrBuilder>
+        getRangesOrBuilderList() {
       if (rangesBuilder_ != null) {
         return rangesBuilder_.getMessageOrBuilderList();
       } else {
@@ -1309,6 +1419,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A list of key ranges. See [KeyRange][google.spanner.v1.KeyRange] for more information about
      * key range specifications.
@@ -1317,10 +1429,12 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.spanner.v1.KeyRange ranges = 2;</code>
      */
     public com.google.spanner.v1.KeyRange.Builder addRangesBuilder() {
-      return getRangesFieldBuilder().addBuilder(
-          com.google.spanner.v1.KeyRange.getDefaultInstance());
+      return getRangesFieldBuilder()
+          .addBuilder(com.google.spanner.v1.KeyRange.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * A list of key ranges. See [KeyRange][google.spanner.v1.KeyRange] for more information about
      * key range specifications.
@@ -1328,12 +1442,13 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.spanner.v1.KeyRange ranges = 2;</code>
      */
-    public com.google.spanner.v1.KeyRange.Builder addRangesBuilder(
-        int index) {
-      return getRangesFieldBuilder().addBuilder(
-          index, com.google.spanner.v1.KeyRange.getDefaultInstance());
+    public com.google.spanner.v1.KeyRange.Builder addRangesBuilder(int index) {
+      return getRangesFieldBuilder()
+          .addBuilder(index, com.google.spanner.v1.KeyRange.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * A list of key ranges. See [KeyRange][google.spanner.v1.KeyRange] for more information about
      * key range specifications.
@@ -1341,16 +1456,21 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.spanner.v1.KeyRange ranges = 2;</code>
      */
-    public java.util.List<com.google.spanner.v1.KeyRange.Builder> 
-         getRangesBuilderList() {
+    public java.util.List<com.google.spanner.v1.KeyRange.Builder> getRangesBuilderList() {
       return getRangesFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.spanner.v1.KeyRange, com.google.spanner.v1.KeyRange.Builder, com.google.spanner.v1.KeyRangeOrBuilder> 
+            com.google.spanner.v1.KeyRange,
+            com.google.spanner.v1.KeyRange.Builder,
+            com.google.spanner.v1.KeyRangeOrBuilder>
         getRangesFieldBuilder() {
       if (rangesBuilder_ == null) {
-        rangesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.spanner.v1.KeyRange, com.google.spanner.v1.KeyRange.Builder, com.google.spanner.v1.KeyRangeOrBuilder>(
+        rangesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.spanner.v1.KeyRange,
+                com.google.spanner.v1.KeyRange.Builder,
+                com.google.spanner.v1.KeyRangeOrBuilder>(
                 ranges_,
                 ((bitField0_ & 0x00000002) == 0x00000002),
                 getParentForChildren(),
@@ -1360,8 +1480,10 @@ private static final long serialVersionUID = 0L;
       return rangesBuilder_;
     }
 
-    private boolean all_ ;
+    private boolean all_;
     /**
+     *
+     *
      * <pre>
      * For convenience `all` can be set to `true` to indicate that this
      * `KeySet` matches all keys in the table or index. Note that any keys
@@ -1374,6 +1496,8 @@ private static final long serialVersionUID = 0L;
       return all_;
     }
     /**
+     *
+     *
      * <pre>
      * For convenience `all` can be set to `true` to indicate that this
      * `KeySet` matches all keys in the table or index. Note that any keys
@@ -1383,12 +1507,14 @@ private static final long serialVersionUID = 0L;
      * <code>bool all = 3;</code>
      */
     public Builder setAll(boolean value) {
-      
+
       all_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * For convenience `all` can be set to `true` to indicate that this
      * `KeySet` matches all keys in the table or index. Note that any keys
@@ -1398,27 +1524,29 @@ private static final long serialVersionUID = 0L;
      * <code>bool all = 3;</code>
      */
     public Builder clearAll() {
-      
+
       all_ = false;
       onChanged();
       return this;
     }
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+
+    @java.lang.Override
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
     }
-
 
     // @@protoc_insertion_point(builder_scope:google.spanner.v1.KeySet)
   }
 
   // @@protoc_insertion_point(class_scope:google.spanner.v1.KeySet)
   private static final com.google.spanner.v1.KeySet DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.spanner.v1.KeySet();
   }
@@ -1427,15 +1555,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<KeySet>
-      PARSER = new com.google.protobuf.AbstractParser<KeySet>() {
-    public KeySet parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-        return new KeySet(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<KeySet> PARSER =
+      new com.google.protobuf.AbstractParser<KeySet>() {
+        @java.lang.Override
+        public KeySet parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new KeySet(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<KeySet> parser() {
     return PARSER;
@@ -1446,9 +1575,8 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.spanner.v1.KeySet getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

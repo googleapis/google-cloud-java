@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -57,13 +57,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li> A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li>A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li> A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li>A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -156,12 +156,12 @@ public class InstanceGroupManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Schedules a group action to remove the specified instances from the managed instance group.
-   * Abandoning an instance does not delete the instance, but it does remove the instance from any
-   * target pools that are applied by the managed instance group. This method reduces the targetSize
-   * of the managed instance group by the number of instances that you abandon. This operation is
-   * marked as DONE when the action is scheduled even if the instances have not yet been removed
-   * from the group. You must separately verify the status of the abandoning action with the
+   * Flags the specified instances to be removed from the managed instance group. Abandoning an
+   * instance does not delete the instance, but it does remove the instance from any target pools
+   * that are applied by the managed instance group. This method reduces the targetSize of the
+   * managed instance group by the number of instances that you abandon. This operation is marked as
+   * DONE when the action is scheduled even if the instances have not yet been removed from the
+   * group. You must separately verify the status of the abandoning action with the
    * listmanagedinstances method.
    *
    * <p>If the group is part of a backend service that has enabled connection draining, it can take
@@ -202,12 +202,12 @@ public class InstanceGroupManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Schedules a group action to remove the specified instances from the managed instance group.
-   * Abandoning an instance does not delete the instance, but it does remove the instance from any
-   * target pools that are applied by the managed instance group. This method reduces the targetSize
-   * of the managed instance group by the number of instances that you abandon. This operation is
-   * marked as DONE when the action is scheduled even if the instances have not yet been removed
-   * from the group. You must separately verify the status of the abandoning action with the
+   * Flags the specified instances to be removed from the managed instance group. Abandoning an
+   * instance does not delete the instance, but it does remove the instance from any target pools
+   * that are applied by the managed instance group. This method reduces the targetSize of the
+   * managed instance group by the number of instances that you abandon. This operation is marked as
+   * DONE when the action is scheduled even if the instances have not yet been removed from the
+   * group. You must separately verify the status of the abandoning action with the
    * listmanagedinstances method.
    *
    * <p>If the group is part of a backend service that has enabled connection draining, it can take
@@ -247,12 +247,12 @@ public class InstanceGroupManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Schedules a group action to remove the specified instances from the managed instance group.
-   * Abandoning an instance does not delete the instance, but it does remove the instance from any
-   * target pools that are applied by the managed instance group. This method reduces the targetSize
-   * of the managed instance group by the number of instances that you abandon. This operation is
-   * marked as DONE when the action is scheduled even if the instances have not yet been removed
-   * from the group. You must separately verify the status of the abandoning action with the
+   * Flags the specified instances to be removed from the managed instance group. Abandoning an
+   * instance does not delete the instance, but it does remove the instance from any target pools
+   * that are applied by the managed instance group. This method reduces the targetSize of the
+   * managed instance group by the number of instances that you abandon. This operation is marked as
+   * DONE when the action is scheduled even if the instances have not yet been removed from the
+   * group. You must separately verify the status of the abandoning action with the
    * listmanagedinstances method.
    *
    * <p>If the group is part of a backend service that has enabled connection draining, it can take
@@ -286,12 +286,12 @@ public class InstanceGroupManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Schedules a group action to remove the specified instances from the managed instance group.
-   * Abandoning an instance does not delete the instance, but it does remove the instance from any
-   * target pools that are applied by the managed instance group. This method reduces the targetSize
-   * of the managed instance group by the number of instances that you abandon. This operation is
-   * marked as DONE when the action is scheduled even if the instances have not yet been removed
-   * from the group. You must separately verify the status of the abandoning action with the
+   * Flags the specified instances to be removed from the managed instance group. Abandoning an
+   * instance does not delete the instance, but it does remove the instance from any target pools
+   * that are applied by the managed instance group. This method reduces the targetSize of the
+   * managed instance group by the number of instances that you abandon. This operation is marked as
+   * DONE when the action is scheduled even if the instances have not yet been removed from the
+   * group. You must separately verify the status of the abandoning action with the
    * listmanagedinstances method.
    *
    * <p>If the group is part of a backend service that has enabled connection draining, it can take
@@ -577,7 +577,7 @@ public class InstanceGroupManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Schedules a group action to delete the specified instances in the managed instance group. The
+   * Flags the specified instances in the managed instance group for immediate deletion. The
    * instances are also removed from any target pools of which they were a member. This method
    * reduces the targetSize of the managed instance group by the number of instances that you
    * delete. This operation is marked as DONE when the action is scheduled even if the instances are
@@ -622,7 +622,7 @@ public class InstanceGroupManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Schedules a group action to delete the specified instances in the managed instance group. The
+   * Flags the specified instances in the managed instance group for immediate deletion. The
    * instances are also removed from any target pools of which they were a member. This method
    * reduces the targetSize of the managed instance group by the number of instances that you
    * delete. This operation is marked as DONE when the action is scheduled even if the instances are
@@ -666,7 +666,7 @@ public class InstanceGroupManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Schedules a group action to delete the specified instances in the managed instance group. The
+   * Flags the specified instances in the managed instance group for immediate deletion. The
    * instances are also removed from any target pools of which they were a member. This method
    * reduces the targetSize of the managed instance group by the number of instances that you
    * delete. This operation is marked as DONE when the action is scheduled even if the instances are
@@ -704,7 +704,7 @@ public class InstanceGroupManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Schedules a group action to delete the specified instances in the managed instance group. The
+   * Flags the specified instances in the managed instance group for immediate deletion. The
    * instances are also removed from any target pools of which they were a member. This method
    * reduces the targetSize of the managed instance group by the number of instances that you
    * delete. This operation is marked as DONE when the action is scheduled even if the instances are
@@ -849,10 +849,10 @@ public class InstanceGroupManagerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a managed instance group using the information that you specify in the request. After
-   * the group is created, it schedules an action to create instances in the group using the
-   * specified instance template. This operation is marked as DONE when the group is created even if
-   * the instances in the group have not yet been created. You must separately verify the status of
-   * the individual instances with the listmanagedinstances method.
+   * the group is created, instances in the group are created using the specified instance template.
+   * This operation is marked as DONE when the group is created even if the instances in the group
+   * have not yet been created. You must separately verify the status of the individual instances
+   * with the listmanagedinstances method.
    *
    * <p>A managed instance group can have up to 1000 VM instances per group. Please contact Cloud
    * Support if you need an increase in this limit.
@@ -889,10 +889,10 @@ public class InstanceGroupManagerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a managed instance group using the information that you specify in the request. After
-   * the group is created, it schedules an action to create instances in the group using the
-   * specified instance template. This operation is marked as DONE when the group is created even if
-   * the instances in the group have not yet been created. You must separately verify the status of
-   * the individual instances with the listmanagedinstances method.
+   * the group is created, instances in the group are created using the specified instance template.
+   * This operation is marked as DONE when the group is created even if the instances in the group
+   * have not yet been created. You must separately verify the status of the individual instances
+   * with the listmanagedinstances method.
    *
    * <p>A managed instance group can have up to 1000 VM instances per group. Please contact Cloud
    * Support if you need an increase in this limit.
@@ -929,10 +929,10 @@ public class InstanceGroupManagerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a managed instance group using the information that you specify in the request. After
-   * the group is created, it schedules an action to create instances in the group using the
-   * specified instance template. This operation is marked as DONE when the group is created even if
-   * the instances in the group have not yet been created. You must separately verify the status of
-   * the individual instances with the listmanagedinstances method.
+   * the group is created, instances in the group are created using the specified instance template.
+   * This operation is marked as DONE when the group is created even if the instances in the group
+   * have not yet been created. You must separately verify the status of the individual instances
+   * with the listmanagedinstances method.
    *
    * <p>A managed instance group can have up to 1000 VM instances per group. Please contact Cloud
    * Support if you need an increase in this limit.
@@ -962,10 +962,10 @@ public class InstanceGroupManagerClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Creates a managed instance group using the information that you specify in the request. After
-   * the group is created, it schedules an action to create instances in the group using the
-   * specified instance template. This operation is marked as DONE when the group is created even if
-   * the instances in the group have not yet been created. You must separately verify the status of
-   * the individual instances with the listmanagedinstances method.
+   * the group is created, instances in the group are created using the specified instance template.
+   * This operation is marked as DONE when the group is created even if the instances in the group
+   * have not yet been created. You must separately verify the status of the individual instances
+   * with the listmanagedinstances method.
    *
    * <p>A managed instance group can have up to 1000 VM instances per group. Please contact Cloud
    * Support if you need an increase in this limit.
@@ -1259,11 +1259,166 @@ public class InstanceGroupManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Schedules a group action to recreate the specified instances in the managed instance group. The
+   * Updates a managed instance group using the information that you specify in the request. This
+   * operation is marked as DONE when the group is patched even if the instances in the group are
+   * still in the process of being patched. You must separately verify the status of the individual
+   * instances with the listManagedInstances method. This method supports PATCH semantics and uses
+   * the JSON merge patch format and processing rules.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InstanceGroupManagerClient instanceGroupManagerClient = InstanceGroupManagerClient.create()) {
+   *   ProjectZoneInstanceGroupManagerName instanceGroupManager = ProjectZoneInstanceGroupManagerName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP_MANAGER]");
+   *   InstanceGroupManager instanceGroupManagerResource = InstanceGroupManager.newBuilder().build();
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
+   *   Operation response = instanceGroupManagerClient.patchInstanceGroupManager(instanceGroupManager, instanceGroupManagerResource, fieldMask);
+   * }
+   * </code></pre>
+   *
+   * @param instanceGroupManager The name of the instance group manager.
+   * @param instanceGroupManagerResource An Instance Group Manager resource. (== resource_for
+   *     beta.instanceGroupManagers ==) (== resource_for v1.instanceGroupManagers ==) (==
+   *     resource_for beta.regionInstanceGroupManagers ==) (== resource_for
+   *     v1.regionInstanceGroupManagers ==)
+   * @param fieldMask The fields that should be serialized (even if they have empty values). If the
+   *     containing message object has a non-null fieldmask, then all the fields in the field mask
+   *     (and only those fields in the field mask) will be serialized. If the containing object does
+   *     not have a fieldmask, then only non-empty fields will be serialized.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation patchInstanceGroupManager(
+      ProjectZoneInstanceGroupManagerName instanceGroupManager,
+      InstanceGroupManager instanceGroupManagerResource,
+      List<String> fieldMask) {
+
+    PatchInstanceGroupManagerHttpRequest request =
+        PatchInstanceGroupManagerHttpRequest.newBuilder()
+            .setInstanceGroupManager(
+                instanceGroupManager == null ? null : instanceGroupManager.toString())
+            .setInstanceGroupManagerResource(instanceGroupManagerResource)
+            .addAllFieldMask(fieldMask)
+            .build();
+    return patchInstanceGroupManager(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates a managed instance group using the information that you specify in the request. This
+   * operation is marked as DONE when the group is patched even if the instances in the group are
+   * still in the process of being patched. You must separately verify the status of the individual
+   * instances with the listManagedInstances method. This method supports PATCH semantics and uses
+   * the JSON merge patch format and processing rules.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InstanceGroupManagerClient instanceGroupManagerClient = InstanceGroupManagerClient.create()) {
+   *   ProjectZoneInstanceGroupManagerName instanceGroupManager = ProjectZoneInstanceGroupManagerName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP_MANAGER]");
+   *   InstanceGroupManager instanceGroupManagerResource = InstanceGroupManager.newBuilder().build();
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
+   *   Operation response = instanceGroupManagerClient.patchInstanceGroupManager(instanceGroupManager.toString(), instanceGroupManagerResource, fieldMask);
+   * }
+   * </code></pre>
+   *
+   * @param instanceGroupManager The name of the instance group manager.
+   * @param instanceGroupManagerResource An Instance Group Manager resource. (== resource_for
+   *     beta.instanceGroupManagers ==) (== resource_for v1.instanceGroupManagers ==) (==
+   *     resource_for beta.regionInstanceGroupManagers ==) (== resource_for
+   *     v1.regionInstanceGroupManagers ==)
+   * @param fieldMask The fields that should be serialized (even if they have empty values). If the
+   *     containing message object has a non-null fieldmask, then all the fields in the field mask
+   *     (and only those fields in the field mask) will be serialized. If the containing object does
+   *     not have a fieldmask, then only non-empty fields will be serialized.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation patchInstanceGroupManager(
+      String instanceGroupManager,
+      InstanceGroupManager instanceGroupManagerResource,
+      List<String> fieldMask) {
+
+    PatchInstanceGroupManagerHttpRequest request =
+        PatchInstanceGroupManagerHttpRequest.newBuilder()
+            .setInstanceGroupManager(instanceGroupManager)
+            .setInstanceGroupManagerResource(instanceGroupManagerResource)
+            .addAllFieldMask(fieldMask)
+            .build();
+    return patchInstanceGroupManager(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates a managed instance group using the information that you specify in the request. This
+   * operation is marked as DONE when the group is patched even if the instances in the group are
+   * still in the process of being patched. You must separately verify the status of the individual
+   * instances with the listManagedInstances method. This method supports PATCH semantics and uses
+   * the JSON merge patch format and processing rules.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InstanceGroupManagerClient instanceGroupManagerClient = InstanceGroupManagerClient.create()) {
+   *   ProjectZoneInstanceGroupManagerName instanceGroupManager = ProjectZoneInstanceGroupManagerName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP_MANAGER]");
+   *   InstanceGroupManager instanceGroupManagerResource = InstanceGroupManager.newBuilder().build();
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
+   *   PatchInstanceGroupManagerHttpRequest request = PatchInstanceGroupManagerHttpRequest.newBuilder()
+   *     .setInstanceGroupManager(instanceGroupManager.toString())
+   *     .setInstanceGroupManagerResource(instanceGroupManagerResource)
+   *     .addAllFieldMask(fieldMask)
+   *     .build();
+   *   Operation response = instanceGroupManagerClient.patchInstanceGroupManager(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Operation patchInstanceGroupManager(PatchInstanceGroupManagerHttpRequest request) {
+    return patchInstanceGroupManagerCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Updates a managed instance group using the information that you specify in the request. This
+   * operation is marked as DONE when the group is patched even if the instances in the group are
+   * still in the process of being patched. You must separately verify the status of the individual
+   * instances with the listManagedInstances method. This method supports PATCH semantics and uses
+   * the JSON merge patch format and processing rules.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InstanceGroupManagerClient instanceGroupManagerClient = InstanceGroupManagerClient.create()) {
+   *   ProjectZoneInstanceGroupManagerName instanceGroupManager = ProjectZoneInstanceGroupManagerName.of("[PROJECT]", "[ZONE]", "[INSTANCE_GROUP_MANAGER]");
+   *   InstanceGroupManager instanceGroupManagerResource = InstanceGroupManager.newBuilder().build();
+   *   List&lt;String&gt; fieldMask = new ArrayList&lt;&gt;();
+   *   PatchInstanceGroupManagerHttpRequest request = PatchInstanceGroupManagerHttpRequest.newBuilder()
+   *     .setInstanceGroupManager(instanceGroupManager.toString())
+   *     .setInstanceGroupManagerResource(instanceGroupManagerResource)
+   *     .addAllFieldMask(fieldMask)
+   *     .build();
+   *   ApiFuture&lt;Operation&gt; future = instanceGroupManagerClient.patchInstanceGroupManagerCallable().futureCall(request);
+   *   // Do something
+   *   Operation response = future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi
+  public final UnaryCallable<PatchInstanceGroupManagerHttpRequest, Operation>
+      patchInstanceGroupManagerCallable() {
+    return stub.patchInstanceGroupManagerCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Flags the specified instances in the managed instance group to be immediately recreated. The
    * instances are deleted and recreated using the current instance template for the managed
-   * instance group. This operation is marked as DONE when the action is scheduled even if the
-   * instances have not yet been recreated. You must separately verify the status of the recreating
-   * action with the listmanagedinstances method.
+   * instance group. This operation is marked as DONE when the flag is set even if the instances
+   * have not yet been recreated. You must separately verify the status of the recreating action
+   * with the listmanagedinstances method.
    *
    * <p>If the group is part of a backend service that has enabled connection draining, it can take
    * up to 60 seconds after the connection draining duration has elapsed before the VM instance is
@@ -1303,11 +1458,11 @@ public class InstanceGroupManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Schedules a group action to recreate the specified instances in the managed instance group. The
+   * Flags the specified instances in the managed instance group to be immediately recreated. The
    * instances are deleted and recreated using the current instance template for the managed
-   * instance group. This operation is marked as DONE when the action is scheduled even if the
-   * instances have not yet been recreated. You must separately verify the status of the recreating
-   * action with the listmanagedinstances method.
+   * instance group. This operation is marked as DONE when the flag is set even if the instances
+   * have not yet been recreated. You must separately verify the status of the recreating action
+   * with the listmanagedinstances method.
    *
    * <p>If the group is part of a backend service that has enabled connection draining, it can take
    * up to 60 seconds after the connection draining duration has elapsed before the VM instance is
@@ -1346,11 +1501,11 @@ public class InstanceGroupManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Schedules a group action to recreate the specified instances in the managed instance group. The
+   * Flags the specified instances in the managed instance group to be immediately recreated. The
    * instances are deleted and recreated using the current instance template for the managed
-   * instance group. This operation is marked as DONE when the action is scheduled even if the
-   * instances have not yet been recreated. You must separately verify the status of the recreating
-   * action with the listmanagedinstances method.
+   * instance group. This operation is marked as DONE when the flag is set even if the instances
+   * have not yet been recreated. You must separately verify the status of the recreating action
+   * with the listmanagedinstances method.
    *
    * <p>If the group is part of a backend service that has enabled connection draining, it can take
    * up to 60 seconds after the connection draining duration has elapsed before the VM instance is
@@ -1383,11 +1538,11 @@ public class InstanceGroupManagerClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Schedules a group action to recreate the specified instances in the managed instance group. The
+   * Flags the specified instances in the managed instance group to be immediately recreated. The
    * instances are deleted and recreated using the current instance template for the managed
-   * instance group. This operation is marked as DONE when the action is scheduled even if the
-   * instances have not yet been recreated. You must separately verify the status of the recreating
-   * action with the listmanagedinstances method.
+   * instance group. This operation is marked as DONE when the flag is set even if the instances
+   * have not yet been recreated. You must separately verify the status of the recreating action
+   * with the listmanagedinstances method.
    *
    * <p>If the group is part of a backend service that has enabled connection draining, it can take
    * up to 60 seconds after the connection draining duration has elapsed before the VM instance is
@@ -1424,6 +1579,15 @@ public class InstanceGroupManagerClient implements BackgroundResource {
    * resize operation is marked DONE when the resize actions are scheduled even if the group has not
    * yet added or deleted any instances. You must separately verify the status of the creating or
    * deleting actions with the listmanagedinstances method.
+   *
+   * <p>When resizing down, the instance group arbitrarily chooses the order in which VMs are
+   * deleted. The group takes into account some VM attributes when making the selection including:
+   *
+   * <p>+ The status of the VM instance. + The health of the VM instance. + The instance template
+   * version the VM is based on. + For regional managed instance groups, the location of the VM
+   * instance.
+   *
+   * <p>This list is subject to change.
    *
    * <p>If the group is part of a backend service that has enabled connection draining, it can take
    * up to 60 seconds after the connection draining duration has elapsed before the VM instance is
@@ -1466,6 +1630,15 @@ public class InstanceGroupManagerClient implements BackgroundResource {
    * yet added or deleted any instances. You must separately verify the status of the creating or
    * deleting actions with the listmanagedinstances method.
    *
+   * <p>When resizing down, the instance group arbitrarily chooses the order in which VMs are
+   * deleted. The group takes into account some VM attributes when making the selection including:
+   *
+   * <p>+ The status of the VM instance. + The health of the VM instance. + The instance template
+   * version the VM is based on. + For regional managed instance groups, the location of the VM
+   * instance.
+   *
+   * <p>This list is subject to change.
+   *
    * <p>If the group is part of a backend service that has enabled connection draining, it can take
    * up to 60 seconds after the connection draining duration has elapsed before the VM instance is
    * removed or deleted.
@@ -1505,6 +1678,15 @@ public class InstanceGroupManagerClient implements BackgroundResource {
    * yet added or deleted any instances. You must separately verify the status of the creating or
    * deleting actions with the listmanagedinstances method.
    *
+   * <p>When resizing down, the instance group arbitrarily chooses the order in which VMs are
+   * deleted. The group takes into account some VM attributes when making the selection including:
+   *
+   * <p>+ The status of the VM instance. + The health of the VM instance. + The instance template
+   * version the VM is based on. + For regional managed instance groups, the location of the VM
+   * instance.
+   *
+   * <p>This list is subject to change.
+   *
    * <p>If the group is part of a backend service that has enabled connection draining, it can take
    * up to 60 seconds after the connection draining duration has elapsed before the VM instance is
    * removed or deleted.
@@ -1538,6 +1720,15 @@ public class InstanceGroupManagerClient implements BackgroundResource {
    * resize operation is marked DONE when the resize actions are scheduled even if the group has not
    * yet added or deleted any instances. You must separately verify the status of the creating or
    * deleting actions with the listmanagedinstances method.
+   *
+   * <p>When resizing down, the instance group arbitrarily chooses the order in which VMs are
+   * deleted. The group takes into account some VM attributes when making the selection including:
+   *
+   * <p>+ The status of the VM instance. + The health of the VM instance. + The instance template
+   * version the VM is based on. + For regional managed instance groups, the location of the VM
+   * instance.
+   *
+   * <p>This list is subject to change.
    *
    * <p>If the group is part of a backend service that has enabled connection draining, it can take
    * up to 60 seconds after the connection draining duration has elapsed before the VM instance is
@@ -1857,13 +2048,16 @@ public class InstanceGroupManagerClient implements BackgroundResource {
 
   public static class AggregatedListInstanceGroupManagersPagedResponse
       extends AbstractPagedListResponse<
-          AggregatedListInstanceGroupManagersHttpRequest, InstanceGroupManagerAggregatedList,
-          InstanceGroupManagersScopedList, AggregatedListInstanceGroupManagersPage,
+          AggregatedListInstanceGroupManagersHttpRequest,
+          InstanceGroupManagerAggregatedList,
+          InstanceGroupManagersScopedList,
+          AggregatedListInstanceGroupManagersPage,
           AggregatedListInstanceGroupManagersFixedSizeCollection> {
 
     public static ApiFuture<AggregatedListInstanceGroupManagersPagedResponse> createAsync(
         PageContext<
-                AggregatedListInstanceGroupManagersHttpRequest, InstanceGroupManagerAggregatedList,
+                AggregatedListInstanceGroupManagersHttpRequest,
+                InstanceGroupManagerAggregatedList,
                 InstanceGroupManagersScopedList>
             context,
         ApiFuture<InstanceGroupManagerAggregatedList> futureResponse) {
@@ -1891,12 +2085,15 @@ public class InstanceGroupManagerClient implements BackgroundResource {
 
   public static class AggregatedListInstanceGroupManagersPage
       extends AbstractPage<
-          AggregatedListInstanceGroupManagersHttpRequest, InstanceGroupManagerAggregatedList,
-          InstanceGroupManagersScopedList, AggregatedListInstanceGroupManagersPage> {
+          AggregatedListInstanceGroupManagersHttpRequest,
+          InstanceGroupManagerAggregatedList,
+          InstanceGroupManagersScopedList,
+          AggregatedListInstanceGroupManagersPage> {
 
     private AggregatedListInstanceGroupManagersPage(
         PageContext<
-                AggregatedListInstanceGroupManagersHttpRequest, InstanceGroupManagerAggregatedList,
+                AggregatedListInstanceGroupManagersHttpRequest,
+                InstanceGroupManagerAggregatedList,
                 InstanceGroupManagersScopedList>
             context,
         InstanceGroupManagerAggregatedList response) {
@@ -1910,7 +2107,8 @@ public class InstanceGroupManagerClient implements BackgroundResource {
     @Override
     protected AggregatedListInstanceGroupManagersPage createPage(
         PageContext<
-                AggregatedListInstanceGroupManagersHttpRequest, InstanceGroupManagerAggregatedList,
+                AggregatedListInstanceGroupManagersHttpRequest,
+                InstanceGroupManagerAggregatedList,
                 InstanceGroupManagersScopedList>
             context,
         InstanceGroupManagerAggregatedList response) {
@@ -1920,7 +2118,8 @@ public class InstanceGroupManagerClient implements BackgroundResource {
     @Override
     public ApiFuture<AggregatedListInstanceGroupManagersPage> createPageAsync(
         PageContext<
-                AggregatedListInstanceGroupManagersHttpRequest, InstanceGroupManagerAggregatedList,
+                AggregatedListInstanceGroupManagersHttpRequest,
+                InstanceGroupManagerAggregatedList,
                 InstanceGroupManagersScopedList>
             context,
         ApiFuture<InstanceGroupManagerAggregatedList> futureResponse) {
@@ -1930,8 +2129,10 @@ public class InstanceGroupManagerClient implements BackgroundResource {
 
   public static class AggregatedListInstanceGroupManagersFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          AggregatedListInstanceGroupManagersHttpRequest, InstanceGroupManagerAggregatedList,
-          InstanceGroupManagersScopedList, AggregatedListInstanceGroupManagersPage,
+          AggregatedListInstanceGroupManagersHttpRequest,
+          InstanceGroupManagerAggregatedList,
+          InstanceGroupManagersScopedList,
+          AggregatedListInstanceGroupManagersPage,
           AggregatedListInstanceGroupManagersFixedSizeCollection> {
 
     private AggregatedListInstanceGroupManagersFixedSizeCollection(
@@ -1952,12 +2153,16 @@ public class InstanceGroupManagerClient implements BackgroundResource {
 
   public static class ListInstanceGroupManagersPagedResponse
       extends AbstractPagedListResponse<
-          ListInstanceGroupManagersHttpRequest, InstanceGroupManagerList, InstanceGroupManager,
-          ListInstanceGroupManagersPage, ListInstanceGroupManagersFixedSizeCollection> {
+          ListInstanceGroupManagersHttpRequest,
+          InstanceGroupManagerList,
+          InstanceGroupManager,
+          ListInstanceGroupManagersPage,
+          ListInstanceGroupManagersFixedSizeCollection> {
 
     public static ApiFuture<ListInstanceGroupManagersPagedResponse> createAsync(
         PageContext<
-                ListInstanceGroupManagersHttpRequest, InstanceGroupManagerList,
+                ListInstanceGroupManagersHttpRequest,
+                InstanceGroupManagerList,
                 InstanceGroupManager>
             context,
         ApiFuture<InstanceGroupManagerList> futureResponse) {
@@ -1981,12 +2186,15 @@ public class InstanceGroupManagerClient implements BackgroundResource {
 
   public static class ListInstanceGroupManagersPage
       extends AbstractPage<
-          ListInstanceGroupManagersHttpRequest, InstanceGroupManagerList, InstanceGroupManager,
+          ListInstanceGroupManagersHttpRequest,
+          InstanceGroupManagerList,
+          InstanceGroupManager,
           ListInstanceGroupManagersPage> {
 
     private ListInstanceGroupManagersPage(
         PageContext<
-                ListInstanceGroupManagersHttpRequest, InstanceGroupManagerList,
+                ListInstanceGroupManagersHttpRequest,
+                InstanceGroupManagerList,
                 InstanceGroupManager>
             context,
         InstanceGroupManagerList response) {
@@ -2000,7 +2208,8 @@ public class InstanceGroupManagerClient implements BackgroundResource {
     @Override
     protected ListInstanceGroupManagersPage createPage(
         PageContext<
-                ListInstanceGroupManagersHttpRequest, InstanceGroupManagerList,
+                ListInstanceGroupManagersHttpRequest,
+                InstanceGroupManagerList,
                 InstanceGroupManager>
             context,
         InstanceGroupManagerList response) {
@@ -2010,7 +2219,8 @@ public class InstanceGroupManagerClient implements BackgroundResource {
     @Override
     public ApiFuture<ListInstanceGroupManagersPage> createPageAsync(
         PageContext<
-                ListInstanceGroupManagersHttpRequest, InstanceGroupManagerList,
+                ListInstanceGroupManagersHttpRequest,
+                InstanceGroupManagerList,
                 InstanceGroupManager>
             context,
         ApiFuture<InstanceGroupManagerList> futureResponse) {
@@ -2020,8 +2230,11 @@ public class InstanceGroupManagerClient implements BackgroundResource {
 
   public static class ListInstanceGroupManagersFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListInstanceGroupManagersHttpRequest, InstanceGroupManagerList, InstanceGroupManager,
-          ListInstanceGroupManagersPage, ListInstanceGroupManagersFixedSizeCollection> {
+          ListInstanceGroupManagersHttpRequest,
+          InstanceGroupManagerList,
+          InstanceGroupManager,
+          ListInstanceGroupManagersPage,
+          ListInstanceGroupManagersFixedSizeCollection> {
 
     private ListInstanceGroupManagersFixedSizeCollection(
         List<ListInstanceGroupManagersPage> pages, int collectionSize) {

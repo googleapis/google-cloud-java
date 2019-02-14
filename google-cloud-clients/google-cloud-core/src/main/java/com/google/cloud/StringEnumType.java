@@ -39,13 +39,11 @@ public class StringEnumType<EnumT> {
     this.constructor = Preconditions.checkNotNull(constructor);
   }
 
-  /**
-   * Create a new constant and register it in the known values.
-   */
+  /** Create a new constant and register it in the known values. */
   public EnumT createAndRegister(String constant) {
-      EnumT instance = constructor.apply(constant);
-      knownValues.put(constant, instance);
-      return instance;
+    EnumT instance = constructor.apply(constant);
+    knownValues.put(constant, instance);
+    return instance;
   }
 
   /**
@@ -62,9 +60,7 @@ public class StringEnumType<EnumT> {
     }
   }
 
-  /**
-   * Get the enum object for the given String constant, and allow unrecognized values.
-   */
+  /** Get the enum object for the given String constant, and allow unrecognized values. */
   public EnumT valueOf(String constant) {
     if (constant == null || constant.isEmpty()) {
       throw new IllegalArgumentException("Empty enum constants not allowed.");
@@ -77,9 +73,7 @@ public class StringEnumType<EnumT> {
     }
   }
 
-  /**
-   * Return the known values of this enum type.
-   */
+  /** Return the known values of this enum type. */
   public EnumT[] values() {
     Collection<EnumT> valueCollection = knownValues.values();
 

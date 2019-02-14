@@ -39,8 +39,7 @@ public class OperationIdTest {
   private static final String REGION_URL =
       "https://www.googleapis.com/compute/v1/projects/project/regions/region/operations/op";
 
-  @Rule
-  public ExpectedException thrown = ExpectedException.none();
+  @Rule public ExpectedException thrown = ExpectedException.none();
 
   @Test
   public void testOf() {
@@ -99,8 +98,8 @@ public class OperationIdTest {
   @Test
   public void testToAndFromUrlRegion() {
     RegionOperationId regionOperationId = RegionOperationId.of(PROJECT, REGION, NAME);
-    compareRegionOperationId(regionOperationId,
-        RegionOperationId.fromUrl(regionOperationId.getSelfLink()));
+    compareRegionOperationId(
+        regionOperationId, RegionOperationId.fromUrl(regionOperationId.getSelfLink()));
     thrown.expect(IllegalArgumentException.class);
     thrown.expectMessage("notMatchingUrl is not a valid region operation URL");
     RegionOperationId.fromUrl("notMatchingUrl");
@@ -125,8 +124,8 @@ public class OperationIdTest {
     compareZoneOperationId(zoneOperationId, ZoneOperationId.of(ZONE, NAME).setProjectId(PROJECT));
     RegionOperationId regionOperationId = RegionOperationId.of(PROJECT, REGION, NAME);
     assertSame(regionOperationId, regionOperationId.setProjectId(PROJECT));
-    compareRegionOperationId(regionOperationId,
-        RegionOperationId.of(REGION, NAME).setProjectId(PROJECT));
+    compareRegionOperationId(
+        regionOperationId, RegionOperationId.of(REGION, NAME).setProjectId(PROJECT));
   }
 
   @Test

@@ -4,34 +4,39 @@
 package com.google.cloud.dataproc.v1beta2;
 
 /**
+ *
+ *
  * <pre>
- * Specifies the cluster auto delete related schedule configuration.
+ * Specifies the cluster auto-delete schedule configuration.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dataproc.v1beta2.LifecycleConfig}
  */
-public  final class LifecycleConfig extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class LifecycleConfig extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1beta2.LifecycleConfig)
     LifecycleConfigOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use LifecycleConfig.newBuilder() to construct.
   private LifecycleConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private LifecycleConfig() {
-  }
+
+  private LifecycleConfig() {}
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private LifecycleConfig(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -43,92 +48,96 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
-          case 10: {
-            com.google.protobuf.Duration.Builder subBuilder = null;
-            if (idleDeleteTtl_ != null) {
-              subBuilder = idleDeleteTtl_.toBuilder();
-            }
-            idleDeleteTtl_ = input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(idleDeleteTtl_);
-              idleDeleteTtl_ = subBuilder.buildPartial();
-            }
+          case 10:
+            {
+              com.google.protobuf.Duration.Builder subBuilder = null;
+              if (idleDeleteTtl_ != null) {
+                subBuilder = idleDeleteTtl_.toBuilder();
+              }
+              idleDeleteTtl_ =
+                  input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(idleDeleteTtl_);
+                idleDeleteTtl_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 18: {
-            com.google.protobuf.Timestamp.Builder subBuilder = null;
-            if (ttlCase_ == 2) {
-              subBuilder = ((com.google.protobuf.Timestamp) ttl_).toBuilder();
+              break;
             }
-            ttl_ =
-                input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.google.protobuf.Timestamp) ttl_);
-              ttl_ = subBuilder.buildPartial();
+          case 18:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (ttlCase_ == 2) {
+                subBuilder = ((com.google.protobuf.Timestamp) ttl_).toBuilder();
+              }
+              ttl_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.protobuf.Timestamp) ttl_);
+                ttl_ = subBuilder.buildPartial();
+              }
+              ttlCase_ = 2;
+              break;
             }
-            ttlCase_ = 2;
-            break;
-          }
-          case 26: {
-            com.google.protobuf.Duration.Builder subBuilder = null;
-            if (ttlCase_ == 3) {
-              subBuilder = ((com.google.protobuf.Duration) ttl_).toBuilder();
+          case 26:
+            {
+              com.google.protobuf.Duration.Builder subBuilder = null;
+              if (ttlCase_ == 3) {
+                subBuilder = ((com.google.protobuf.Duration) ttl_).toBuilder();
+              }
+              ttl_ = input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.protobuf.Duration) ttl_);
+                ttl_ = subBuilder.buildPartial();
+              }
+              ttlCase_ = 3;
+              break;
             }
-            ttl_ =
-                input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.google.protobuf.Duration) ttl_);
-              ttl_ = subBuilder.buildPartial();
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
             }
-            ttlCase_ = 3;
-            break;
-          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.dataproc.v1beta2.ClustersProto.internal_static_google_cloud_dataproc_v1beta2_LifecycleConfig_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.dataproc.v1beta2.ClustersProto
+        .internal_static_google_cloud_dataproc_v1beta2_LifecycleConfig_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.dataproc.v1beta2.ClustersProto.internal_static_google_cloud_dataproc_v1beta2_LifecycleConfig_fieldAccessorTable
+    return com.google.cloud.dataproc.v1beta2.ClustersProto
+        .internal_static_google_cloud_dataproc_v1beta2_LifecycleConfig_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.dataproc.v1beta2.LifecycleConfig.class, com.google.cloud.dataproc.v1beta2.LifecycleConfig.Builder.class);
+            com.google.cloud.dataproc.v1beta2.LifecycleConfig.class,
+            com.google.cloud.dataproc.v1beta2.LifecycleConfig.Builder.class);
   }
 
   private int ttlCase_ = 0;
   private java.lang.Object ttl_;
-  public enum TtlCase
-      implements com.google.protobuf.Internal.EnumLite {
+
+  public enum TtlCase implements com.google.protobuf.Internal.EnumLite {
     AUTO_DELETE_TIME(2),
     AUTO_DELETE_TTL(3),
     TTL_NOT_SET(0);
     private final int value;
+
     private TtlCase(int value) {
       this.value = value;
     }
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static TtlCase valueOf(int value) {
       return forNumber(value);
@@ -136,29 +145,37 @@ private static final long serialVersionUID = 0L;
 
     public static TtlCase forNumber(int value) {
       switch (value) {
-        case 2: return AUTO_DELETE_TIME;
-        case 3: return AUTO_DELETE_TTL;
-        case 0: return TTL_NOT_SET;
-        default: return null;
+        case 2:
+          return AUTO_DELETE_TIME;
+        case 3:
+          return AUTO_DELETE_TTL;
+        case 0:
+          return TTL_NOT_SET;
+        default:
+          return null;
       }
     }
+
     public int getNumber() {
       return this.value;
     }
   };
 
-  public TtlCase
-  getTtlCase() {
-    return TtlCase.forNumber(
-        ttlCase_);
+  public TtlCase getTtlCase() {
+    return TtlCase.forNumber(ttlCase_);
   }
 
   public static final int IDLE_DELETE_TTL_FIELD_NUMBER = 1;
   private com.google.protobuf.Duration idleDeleteTtl_;
   /**
+   *
+   *
    * <pre>
-   * Optional. The longest duration that cluster would keep alive while staying
-   *  idle; passing this threshold will cause cluster to be auto-deleted.
+   * Optional. The duration to keep the cluster alive while idling.
+   * Passing this threshold will cause the cluster to be
+   * deleted. Valid range: **[10m, 14d]**.
+   * Example: **"10m"**, the minimum value, to delete the
+   * cluster when it has had no jobs running for 10 minutes.
    * </pre>
    *
    * <code>.google.protobuf.Duration idle_delete_ttl = 1;</code>
@@ -167,20 +184,32 @@ private static final long serialVersionUID = 0L;
     return idleDeleteTtl_ != null;
   }
   /**
+   *
+   *
    * <pre>
-   * Optional. The longest duration that cluster would keep alive while staying
-   *  idle; passing this threshold will cause cluster to be auto-deleted.
+   * Optional. The duration to keep the cluster alive while idling.
+   * Passing this threshold will cause the cluster to be
+   * deleted. Valid range: **[10m, 14d]**.
+   * Example: **"10m"**, the minimum value, to delete the
+   * cluster when it has had no jobs running for 10 minutes.
    * </pre>
    *
    * <code>.google.protobuf.Duration idle_delete_ttl = 1;</code>
    */
   public com.google.protobuf.Duration getIdleDeleteTtl() {
-    return idleDeleteTtl_ == null ? com.google.protobuf.Duration.getDefaultInstance() : idleDeleteTtl_;
+    return idleDeleteTtl_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : idleDeleteTtl_;
   }
   /**
+   *
+   *
    * <pre>
-   * Optional. The longest duration that cluster would keep alive while staying
-   *  idle; passing this threshold will cause cluster to be auto-deleted.
+   * Optional. The duration to keep the cluster alive while idling.
+   * Passing this threshold will cause the cluster to be
+   * deleted. Valid range: **[10m, 14d]**.
+   * Example: **"10m"**, the minimum value, to delete the
+   * cluster when it has had no jobs running for 10 minutes.
    * </pre>
    *
    * <code>.google.protobuf.Duration idle_delete_ttl = 1;</code>
@@ -191,6 +220,8 @@ private static final long serialVersionUID = 0L;
 
   public static final int AUTO_DELETE_TIME_FIELD_NUMBER = 2;
   /**
+   *
+   *
    * <pre>
    * Optional. The time when cluster will be auto-deleted.
    * </pre>
@@ -201,6 +232,8 @@ private static final long serialVersionUID = 0L;
     return ttlCase_ == 2;
   }
   /**
+   *
+   *
    * <pre>
    * Optional. The time when cluster will be auto-deleted.
    * </pre>
@@ -209,11 +242,13 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.protobuf.Timestamp getAutoDeleteTime() {
     if (ttlCase_ == 2) {
-       return (com.google.protobuf.Timestamp) ttl_;
+      return (com.google.protobuf.Timestamp) ttl_;
     }
     return com.google.protobuf.Timestamp.getDefaultInstance();
   }
   /**
+   *
+   *
    * <pre>
    * Optional. The time when cluster will be auto-deleted.
    * </pre>
@@ -222,16 +257,19 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.protobuf.TimestampOrBuilder getAutoDeleteTimeOrBuilder() {
     if (ttlCase_ == 2) {
-       return (com.google.protobuf.Timestamp) ttl_;
+      return (com.google.protobuf.Timestamp) ttl_;
     }
     return com.google.protobuf.Timestamp.getDefaultInstance();
   }
 
   public static final int AUTO_DELETE_TTL_FIELD_NUMBER = 3;
   /**
+   *
+   *
    * <pre>
-   * Optional. The life duration of cluster, the cluster will be auto-deleted
-   * at the end of this duration.
+   * Optional. The lifetime duration of cluster. The cluster will be
+   * auto-deleted at the end of this period. Valid range: **[10m, 14d]**.
+   * Example: **"1d"**, to delete the cluster 1 day after its creation..
    * </pre>
    *
    * <code>.google.protobuf.Duration auto_delete_ttl = 3;</code>
@@ -240,35 +278,43 @@ private static final long serialVersionUID = 0L;
     return ttlCase_ == 3;
   }
   /**
+   *
+   *
    * <pre>
-   * Optional. The life duration of cluster, the cluster will be auto-deleted
-   * at the end of this duration.
+   * Optional. The lifetime duration of cluster. The cluster will be
+   * auto-deleted at the end of this period. Valid range: **[10m, 14d]**.
+   * Example: **"1d"**, to delete the cluster 1 day after its creation..
    * </pre>
    *
    * <code>.google.protobuf.Duration auto_delete_ttl = 3;</code>
    */
   public com.google.protobuf.Duration getAutoDeleteTtl() {
     if (ttlCase_ == 3) {
-       return (com.google.protobuf.Duration) ttl_;
+      return (com.google.protobuf.Duration) ttl_;
     }
     return com.google.protobuf.Duration.getDefaultInstance();
   }
   /**
+   *
+   *
    * <pre>
-   * Optional. The life duration of cluster, the cluster will be auto-deleted
-   * at the end of this duration.
+   * Optional. The lifetime duration of cluster. The cluster will be
+   * auto-deleted at the end of this period. Valid range: **[10m, 14d]**.
+   * Example: **"1d"**, to delete the cluster 1 day after its creation..
    * </pre>
    *
    * <code>.google.protobuf.Duration auto_delete_ttl = 3;</code>
    */
   public com.google.protobuf.DurationOrBuilder getAutoDeleteTtlOrBuilder() {
     if (ttlCase_ == 3) {
-       return (com.google.protobuf.Duration) ttl_;
+      return (com.google.protobuf.Duration) ttl_;
     }
     return com.google.protobuf.Duration.getDefaultInstance();
   }
 
   private byte memoizedIsInitialized = -1;
+
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -278,8 +324,8 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  @java.lang.Override
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (idleDeleteTtl_ != null) {
       output.writeMessage(1, getIdleDeleteTtl());
     }
@@ -292,22 +338,24 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
 
     size = 0;
     if (idleDeleteTtl_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getIdleDeleteTtl());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getIdleDeleteTtl());
     }
     if (ttlCase_ == 2) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, (com.google.protobuf.Timestamp) ttl_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              2, (com.google.protobuf.Timestamp) ttl_);
     }
     if (ttlCase_ == 3) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, (com.google.protobuf.Duration) ttl_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              3, (com.google.protobuf.Duration) ttl_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -317,30 +365,27 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.dataproc.v1beta2.LifecycleConfig)) {
       return super.equals(obj);
     }
-    com.google.cloud.dataproc.v1beta2.LifecycleConfig other = (com.google.cloud.dataproc.v1beta2.LifecycleConfig) obj;
+    com.google.cloud.dataproc.v1beta2.LifecycleConfig other =
+        (com.google.cloud.dataproc.v1beta2.LifecycleConfig) obj;
 
     boolean result = true;
     result = result && (hasIdleDeleteTtl() == other.hasIdleDeleteTtl());
     if (hasIdleDeleteTtl()) {
-      result = result && getIdleDeleteTtl()
-          .equals(other.getIdleDeleteTtl());
+      result = result && getIdleDeleteTtl().equals(other.getIdleDeleteTtl());
     }
-    result = result && getTtlCase().equals(
-        other.getTtlCase());
+    result = result && getTtlCase().equals(other.getTtlCase());
     if (!result) return false;
     switch (ttlCase_) {
       case 2:
-        result = result && getAutoDeleteTime()
-            .equals(other.getAutoDeleteTime());
+        result = result && getAutoDeleteTime().equals(other.getAutoDeleteTime());
         break;
       case 3:
-        result = result && getAutoDeleteTtl()
-            .equals(other.getAutoDeleteTtl());
+        result = result && getAutoDeleteTtl().equals(other.getAutoDeleteTtl());
         break;
       case 0:
       default:
@@ -378,114 +423,126 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.cloud.dataproc.v1beta2.LifecycleConfig parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dataproc.v1beta2.LifecycleConfig parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.dataproc.v1beta2.LifecycleConfig parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dataproc.v1beta2.LifecycleConfig parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.dataproc.v1beta2.LifecycleConfig parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dataproc.v1beta2.LifecycleConfig parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.dataproc.v1beta2.LifecycleConfig parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.dataproc.v1beta2.LifecycleConfig parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.dataproc.v1beta2.LifecycleConfig parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.cloud.dataproc.v1beta2.LifecycleConfig parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.cloud.dataproc.v1beta2.LifecycleConfig parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.dataproc.v1beta2.LifecycleConfig parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.dataproc.v1beta2.LifecycleConfig parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.dataproc.v1beta2.LifecycleConfig parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  public Builder newBuilderForType() { return newBuilder(); }
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-  public static Builder newBuilder(com.google.cloud.dataproc.v1beta2.LifecycleConfig prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+
+  public static Builder newBuilder(com.google.cloud.dataproc.v1beta2.LifecycleConfig prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+
+  @java.lang.Override
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
-   * Specifies the cluster auto delete related schedule configuration.
+   * Specifies the cluster auto-delete schedule configuration.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dataproc.v1beta2.LifecycleConfig}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.dataproc.v1beta2.LifecycleConfig)
       com.google.cloud.dataproc.v1beta2.LifecycleConfigOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.dataproc.v1beta2.ClustersProto.internal_static_google_cloud_dataproc_v1beta2_LifecycleConfig_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dataproc.v1beta2.ClustersProto
+          .internal_static_google_cloud_dataproc_v1beta2_LifecycleConfig_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.dataproc.v1beta2.ClustersProto.internal_static_google_cloud_dataproc_v1beta2_LifecycleConfig_fieldAccessorTable
+      return com.google.cloud.dataproc.v1beta2.ClustersProto
+          .internal_static_google_cloud_dataproc_v1beta2_LifecycleConfig_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.dataproc.v1beta2.LifecycleConfig.class, com.google.cloud.dataproc.v1beta2.LifecycleConfig.Builder.class);
+              com.google.cloud.dataproc.v1beta2.LifecycleConfig.class,
+              com.google.cloud.dataproc.v1beta2.LifecycleConfig.Builder.class);
     }
 
     // Construct using com.google.cloud.dataproc.v1beta2.LifecycleConfig.newBuilder()
@@ -493,16 +550,16 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       if (idleDeleteTtlBuilder_ == null) {
@@ -516,15 +573,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.dataproc.v1beta2.ClustersProto.internal_static_google_cloud_dataproc_v1beta2_LifecycleConfig_descriptor;
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.dataproc.v1beta2.ClustersProto
+          .internal_static_google_cloud_dataproc_v1beta2_LifecycleConfig_descriptor;
     }
 
+    @java.lang.Override
     public com.google.cloud.dataproc.v1beta2.LifecycleConfig getDefaultInstanceForType() {
       return com.google.cloud.dataproc.v1beta2.LifecycleConfig.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.cloud.dataproc.v1beta2.LifecycleConfig build() {
       com.google.cloud.dataproc.v1beta2.LifecycleConfig result = buildPartial();
       if (!result.isInitialized()) {
@@ -533,8 +593,10 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.cloud.dataproc.v1beta2.LifecycleConfig buildPartial() {
-      com.google.cloud.dataproc.v1beta2.LifecycleConfig result = new com.google.cloud.dataproc.v1beta2.LifecycleConfig(this);
+      com.google.cloud.dataproc.v1beta2.LifecycleConfig result =
+          new com.google.cloud.dataproc.v1beta2.LifecycleConfig(this);
       if (idleDeleteTtlBuilder_ == null) {
         result.idleDeleteTtl_ = idleDeleteTtl_;
       } else {
@@ -559,35 +621,43 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+
+    @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+    @java.lang.Override
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+    @java.lang.Override
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
+    @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
+    @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.dataproc.v1beta2.LifecycleConfig) {
-        return mergeFrom((com.google.cloud.dataproc.v1beta2.LifecycleConfig)other);
+        return mergeFrom((com.google.cloud.dataproc.v1beta2.LifecycleConfig) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -595,32 +665,38 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.cloud.dataproc.v1beta2.LifecycleConfig other) {
-      if (other == com.google.cloud.dataproc.v1beta2.LifecycleConfig.getDefaultInstance()) return this;
+      if (other == com.google.cloud.dataproc.v1beta2.LifecycleConfig.getDefaultInstance())
+        return this;
       if (other.hasIdleDeleteTtl()) {
         mergeIdleDeleteTtl(other.getIdleDeleteTtl());
       }
       switch (other.getTtlCase()) {
-        case AUTO_DELETE_TIME: {
-          mergeAutoDeleteTime(other.getAutoDeleteTime());
-          break;
-        }
-        case AUTO_DELETE_TTL: {
-          mergeAutoDeleteTtl(other.getAutoDeleteTtl());
-          break;
-        }
-        case TTL_NOT_SET: {
-          break;
-        }
+        case AUTO_DELETE_TIME:
+          {
+            mergeAutoDeleteTime(other.getAutoDeleteTime());
+            break;
+          }
+        case AUTO_DELETE_TTL:
+          {
+            mergeAutoDeleteTtl(other.getAutoDeleteTtl());
+            break;
+          }
+        case TTL_NOT_SET:
+          {
+            break;
+          }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -629,7 +705,8 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.dataproc.v1beta2.LifecycleConfig) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.cloud.dataproc.v1beta2.LifecycleConfig) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -638,12 +715,12 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int ttlCase_ = 0;
     private java.lang.Object ttl_;
-    public TtlCase
-        getTtlCase() {
-      return TtlCase.forNumber(
-          ttlCase_);
+
+    public TtlCase getTtlCase() {
+      return TtlCase.forNumber(ttlCase_);
     }
 
     public Builder clearTtl() {
@@ -653,14 +730,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-
     private com.google.protobuf.Duration idleDeleteTtl_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> idleDeleteTtlBuilder_;
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        idleDeleteTtlBuilder_;
     /**
+     *
+     *
      * <pre>
-     * Optional. The longest duration that cluster would keep alive while staying
-     *  idle; passing this threshold will cause cluster to be auto-deleted.
+     * Optional. The duration to keep the cluster alive while idling.
+     * Passing this threshold will cause the cluster to be
+     * deleted. Valid range: **[10m, 14d]**.
+     * Example: **"10m"**, the minimum value, to delete the
+     * cluster when it has had no jobs running for 10 minutes.
      * </pre>
      *
      * <code>.google.protobuf.Duration idle_delete_ttl = 1;</code>
@@ -669,24 +753,36 @@ private static final long serialVersionUID = 0L;
       return idleDeleteTtlBuilder_ != null || idleDeleteTtl_ != null;
     }
     /**
+     *
+     *
      * <pre>
-     * Optional. The longest duration that cluster would keep alive while staying
-     *  idle; passing this threshold will cause cluster to be auto-deleted.
+     * Optional. The duration to keep the cluster alive while idling.
+     * Passing this threshold will cause the cluster to be
+     * deleted. Valid range: **[10m, 14d]**.
+     * Example: **"10m"**, the minimum value, to delete the
+     * cluster when it has had no jobs running for 10 minutes.
      * </pre>
      *
      * <code>.google.protobuf.Duration idle_delete_ttl = 1;</code>
      */
     public com.google.protobuf.Duration getIdleDeleteTtl() {
       if (idleDeleteTtlBuilder_ == null) {
-        return idleDeleteTtl_ == null ? com.google.protobuf.Duration.getDefaultInstance() : idleDeleteTtl_;
+        return idleDeleteTtl_ == null
+            ? com.google.protobuf.Duration.getDefaultInstance()
+            : idleDeleteTtl_;
       } else {
         return idleDeleteTtlBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
-     * Optional. The longest duration that cluster would keep alive while staying
-     *  idle; passing this threshold will cause cluster to be auto-deleted.
+     * Optional. The duration to keep the cluster alive while idling.
+     * Passing this threshold will cause the cluster to be
+     * deleted. Valid range: **[10m, 14d]**.
+     * Example: **"10m"**, the minimum value, to delete the
+     * cluster when it has had no jobs running for 10 minutes.
      * </pre>
      *
      * <code>.google.protobuf.Duration idle_delete_ttl = 1;</code>
@@ -705,15 +801,19 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * Optional. The longest duration that cluster would keep alive while staying
-     *  idle; passing this threshold will cause cluster to be auto-deleted.
+     * Optional. The duration to keep the cluster alive while idling.
+     * Passing this threshold will cause the cluster to be
+     * deleted. Valid range: **[10m, 14d]**.
+     * Example: **"10m"**, the minimum value, to delete the
+     * cluster when it has had no jobs running for 10 minutes.
      * </pre>
      *
      * <code>.google.protobuf.Duration idle_delete_ttl = 1;</code>
      */
-    public Builder setIdleDeleteTtl(
-        com.google.protobuf.Duration.Builder builderForValue) {
+    public Builder setIdleDeleteTtl(com.google.protobuf.Duration.Builder builderForValue) {
       if (idleDeleteTtlBuilder_ == null) {
         idleDeleteTtl_ = builderForValue.build();
         onChanged();
@@ -724,9 +824,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * Optional. The longest duration that cluster would keep alive while staying
-     *  idle; passing this threshold will cause cluster to be auto-deleted.
+     * Optional. The duration to keep the cluster alive while idling.
+     * Passing this threshold will cause the cluster to be
+     * deleted. Valid range: **[10m, 14d]**.
+     * Example: **"10m"**, the minimum value, to delete the
+     * cluster when it has had no jobs running for 10 minutes.
      * </pre>
      *
      * <code>.google.protobuf.Duration idle_delete_ttl = 1;</code>
@@ -735,7 +840,9 @@ private static final long serialVersionUID = 0L;
       if (idleDeleteTtlBuilder_ == null) {
         if (idleDeleteTtl_ != null) {
           idleDeleteTtl_ =
-            com.google.protobuf.Duration.newBuilder(idleDeleteTtl_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Duration.newBuilder(idleDeleteTtl_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           idleDeleteTtl_ = value;
         }
@@ -747,9 +854,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * Optional. The longest duration that cluster would keep alive while staying
-     *  idle; passing this threshold will cause cluster to be auto-deleted.
+     * Optional. The duration to keep the cluster alive while idling.
+     * Passing this threshold will cause the cluster to be
+     * deleted. Valid range: **[10m, 14d]**.
+     * Example: **"10m"**, the minimum value, to delete the
+     * cluster when it has had no jobs running for 10 minutes.
      * </pre>
      *
      * <code>.google.protobuf.Duration idle_delete_ttl = 1;</code>
@@ -766,22 +878,32 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * Optional. The longest duration that cluster would keep alive while staying
-     *  idle; passing this threshold will cause cluster to be auto-deleted.
+     * Optional. The duration to keep the cluster alive while idling.
+     * Passing this threshold will cause the cluster to be
+     * deleted. Valid range: **[10m, 14d]**.
+     * Example: **"10m"**, the minimum value, to delete the
+     * cluster when it has had no jobs running for 10 minutes.
      * </pre>
      *
      * <code>.google.protobuf.Duration idle_delete_ttl = 1;</code>
      */
     public com.google.protobuf.Duration.Builder getIdleDeleteTtlBuilder() {
-      
+
       onChanged();
       return getIdleDeleteTtlFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
-     * Optional. The longest duration that cluster would keep alive while staying
-     *  idle; passing this threshold will cause cluster to be auto-deleted.
+     * Optional. The duration to keep the cluster alive while idling.
+     * Passing this threshold will cause the cluster to be
+     * deleted. Valid range: **[10m, 14d]**.
+     * Example: **"10m"**, the minimum value, to delete the
+     * cluster when it has had no jobs running for 10 minutes.
      * </pre>
      *
      * <code>.google.protobuf.Duration idle_delete_ttl = 1;</code>
@@ -790,35 +912,49 @@ private static final long serialVersionUID = 0L;
       if (idleDeleteTtlBuilder_ != null) {
         return idleDeleteTtlBuilder_.getMessageOrBuilder();
       } else {
-        return idleDeleteTtl_ == null ?
-            com.google.protobuf.Duration.getDefaultInstance() : idleDeleteTtl_;
+        return idleDeleteTtl_ == null
+            ? com.google.protobuf.Duration.getDefaultInstance()
+            : idleDeleteTtl_;
       }
     }
     /**
+     *
+     *
      * <pre>
-     * Optional. The longest duration that cluster would keep alive while staying
-     *  idle; passing this threshold will cause cluster to be auto-deleted.
+     * Optional. The duration to keep the cluster alive while idling.
+     * Passing this threshold will cause the cluster to be
+     * deleted. Valid range: **[10m, 14d]**.
+     * Example: **"10m"**, the minimum value, to delete the
+     * cluster when it has had no jobs running for 10 minutes.
      * </pre>
      *
      * <code>.google.protobuf.Duration idle_delete_ttl = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> 
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
         getIdleDeleteTtlFieldBuilder() {
       if (idleDeleteTtlBuilder_ == null) {
-        idleDeleteTtlBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder>(
-                getIdleDeleteTtl(),
-                getParentForChildren(),
-                isClean());
+        idleDeleteTtlBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Duration,
+                com.google.protobuf.Duration.Builder,
+                com.google.protobuf.DurationOrBuilder>(
+                getIdleDeleteTtl(), getParentForChildren(), isClean());
         idleDeleteTtl_ = null;
       }
       return idleDeleteTtlBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> autoDeleteTimeBuilder_;
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        autoDeleteTimeBuilder_;
     /**
+     *
+     *
      * <pre>
      * Optional. The time when cluster will be auto-deleted.
      * </pre>
@@ -829,6 +965,8 @@ private static final long serialVersionUID = 0L;
       return ttlCase_ == 2;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The time when cluster will be auto-deleted.
      * </pre>
@@ -849,6 +987,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The time when cluster will be auto-deleted.
      * </pre>
@@ -869,14 +1009,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The time when cluster will be auto-deleted.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp auto_delete_time = 2;</code>
      */
-    public Builder setAutoDeleteTime(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
+    public Builder setAutoDeleteTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (autoDeleteTimeBuilder_ == null) {
         ttl_ = builderForValue.build();
         onChanged();
@@ -887,6 +1028,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The time when cluster will be auto-deleted.
      * </pre>
@@ -895,10 +1038,11 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeAutoDeleteTime(com.google.protobuf.Timestamp value) {
       if (autoDeleteTimeBuilder_ == null) {
-        if (ttlCase_ == 2 &&
-            ttl_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
-          ttl_ = com.google.protobuf.Timestamp.newBuilder((com.google.protobuf.Timestamp) ttl_)
-              .mergeFrom(value).buildPartial();
+        if (ttlCase_ == 2 && ttl_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          ttl_ =
+              com.google.protobuf.Timestamp.newBuilder((com.google.protobuf.Timestamp) ttl_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           ttl_ = value;
         }
@@ -913,6 +1057,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The time when cluster will be auto-deleted.
      * </pre>
@@ -936,6 +1082,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The time when cluster will be auto-deleted.
      * </pre>
@@ -946,6 +1094,8 @@ private static final long serialVersionUID = 0L;
       return getAutoDeleteTimeFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The time when cluster will be auto-deleted.
      * </pre>
@@ -963,6 +1113,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The time when cluster will be auto-deleted.
      * </pre>
@@ -970,30 +1122,40 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp auto_delete_time = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
         getAutoDeleteTimeFieldBuilder() {
       if (autoDeleteTimeBuilder_ == null) {
         if (!(ttlCase_ == 2)) {
           ttl_ = com.google.protobuf.Timestamp.getDefaultInstance();
         }
-        autoDeleteTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                (com.google.protobuf.Timestamp) ttl_,
-                getParentForChildren(),
-                isClean());
+        autoDeleteTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                (com.google.protobuf.Timestamp) ttl_, getParentForChildren(), isClean());
         ttl_ = null;
       }
       ttlCase_ = 2;
-      onChanged();;
+      onChanged();
+      ;
       return autoDeleteTimeBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> autoDeleteTtlBuilder_;
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        autoDeleteTtlBuilder_;
     /**
+     *
+     *
      * <pre>
-     * Optional. The life duration of cluster, the cluster will be auto-deleted
-     * at the end of this duration.
+     * Optional. The lifetime duration of cluster. The cluster will be
+     * auto-deleted at the end of this period. Valid range: **[10m, 14d]**.
+     * Example: **"1d"**, to delete the cluster 1 day after its creation..
      * </pre>
      *
      * <code>.google.protobuf.Duration auto_delete_ttl = 3;</code>
@@ -1002,9 +1164,12 @@ private static final long serialVersionUID = 0L;
       return ttlCase_ == 3;
     }
     /**
+     *
+     *
      * <pre>
-     * Optional. The life duration of cluster, the cluster will be auto-deleted
-     * at the end of this duration.
+     * Optional. The lifetime duration of cluster. The cluster will be
+     * auto-deleted at the end of this period. Valid range: **[10m, 14d]**.
+     * Example: **"1d"**, to delete the cluster 1 day after its creation..
      * </pre>
      *
      * <code>.google.protobuf.Duration auto_delete_ttl = 3;</code>
@@ -1023,9 +1188,12 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
-     * Optional. The life duration of cluster, the cluster will be auto-deleted
-     * at the end of this duration.
+     * Optional. The lifetime duration of cluster. The cluster will be
+     * auto-deleted at the end of this period. Valid range: **[10m, 14d]**.
+     * Example: **"1d"**, to delete the cluster 1 day after its creation..
      * </pre>
      *
      * <code>.google.protobuf.Duration auto_delete_ttl = 3;</code>
@@ -1044,15 +1212,17 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * Optional. The life duration of cluster, the cluster will be auto-deleted
-     * at the end of this duration.
+     * Optional. The lifetime duration of cluster. The cluster will be
+     * auto-deleted at the end of this period. Valid range: **[10m, 14d]**.
+     * Example: **"1d"**, to delete the cluster 1 day after its creation..
      * </pre>
      *
      * <code>.google.protobuf.Duration auto_delete_ttl = 3;</code>
      */
-    public Builder setAutoDeleteTtl(
-        com.google.protobuf.Duration.Builder builderForValue) {
+    public Builder setAutoDeleteTtl(com.google.protobuf.Duration.Builder builderForValue) {
       if (autoDeleteTtlBuilder_ == null) {
         ttl_ = builderForValue.build();
         onChanged();
@@ -1063,19 +1233,23 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * Optional. The life duration of cluster, the cluster will be auto-deleted
-     * at the end of this duration.
+     * Optional. The lifetime duration of cluster. The cluster will be
+     * auto-deleted at the end of this period. Valid range: **[10m, 14d]**.
+     * Example: **"1d"**, to delete the cluster 1 day after its creation..
      * </pre>
      *
      * <code>.google.protobuf.Duration auto_delete_ttl = 3;</code>
      */
     public Builder mergeAutoDeleteTtl(com.google.protobuf.Duration value) {
       if (autoDeleteTtlBuilder_ == null) {
-        if (ttlCase_ == 3 &&
-            ttl_ != com.google.protobuf.Duration.getDefaultInstance()) {
-          ttl_ = com.google.protobuf.Duration.newBuilder((com.google.protobuf.Duration) ttl_)
-              .mergeFrom(value).buildPartial();
+        if (ttlCase_ == 3 && ttl_ != com.google.protobuf.Duration.getDefaultInstance()) {
+          ttl_ =
+              com.google.protobuf.Duration.newBuilder((com.google.protobuf.Duration) ttl_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           ttl_ = value;
         }
@@ -1090,9 +1264,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * Optional. The life duration of cluster, the cluster will be auto-deleted
-     * at the end of this duration.
+     * Optional. The lifetime duration of cluster. The cluster will be
+     * auto-deleted at the end of this period. Valid range: **[10m, 14d]**.
+     * Example: **"1d"**, to delete the cluster 1 day after its creation..
      * </pre>
      *
      * <code>.google.protobuf.Duration auto_delete_ttl = 3;</code>
@@ -1114,9 +1291,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * Optional. The life duration of cluster, the cluster will be auto-deleted
-     * at the end of this duration.
+     * Optional. The lifetime duration of cluster. The cluster will be
+     * auto-deleted at the end of this period. Valid range: **[10m, 14d]**.
+     * Example: **"1d"**, to delete the cluster 1 day after its creation..
      * </pre>
      *
      * <code>.google.protobuf.Duration auto_delete_ttl = 3;</code>
@@ -1125,9 +1305,12 @@ private static final long serialVersionUID = 0L;
       return getAutoDeleteTtlFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
-     * Optional. The life duration of cluster, the cluster will be auto-deleted
-     * at the end of this duration.
+     * Optional. The lifetime duration of cluster. The cluster will be
+     * auto-deleted at the end of this period. Valid range: **[10m, 14d]**.
+     * Example: **"1d"**, to delete the cluster 1 day after its creation..
      * </pre>
      *
      * <code>.google.protobuf.Duration auto_delete_ttl = 3;</code>
@@ -1143,47 +1326,56 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
-     * Optional. The life duration of cluster, the cluster will be auto-deleted
-     * at the end of this duration.
+     * Optional. The lifetime duration of cluster. The cluster will be
+     * auto-deleted at the end of this period. Valid range: **[10m, 14d]**.
+     * Example: **"1d"**, to delete the cluster 1 day after its creation..
      * </pre>
      *
      * <code>.google.protobuf.Duration auto_delete_ttl = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> 
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
         getAutoDeleteTtlFieldBuilder() {
       if (autoDeleteTtlBuilder_ == null) {
         if (!(ttlCase_ == 3)) {
           ttl_ = com.google.protobuf.Duration.getDefaultInstance();
         }
-        autoDeleteTtlBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder>(
-                (com.google.protobuf.Duration) ttl_,
-                getParentForChildren(),
-                isClean());
+        autoDeleteTtlBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Duration,
+                com.google.protobuf.Duration.Builder,
+                com.google.protobuf.DurationOrBuilder>(
+                (com.google.protobuf.Duration) ttl_, getParentForChildren(), isClean());
         ttl_ = null;
       }
       ttlCase_ = 3;
-      onChanged();;
+      onChanged();
+      ;
       return autoDeleteTtlBuilder_;
     }
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+
+    @java.lang.Override
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
     }
-
 
     // @@protoc_insertion_point(builder_scope:google.cloud.dataproc.v1beta2.LifecycleConfig)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.dataproc.v1beta2.LifecycleConfig)
   private static final com.google.cloud.dataproc.v1beta2.LifecycleConfig DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.dataproc.v1beta2.LifecycleConfig();
   }
@@ -1192,15 +1384,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<LifecycleConfig>
-      PARSER = new com.google.protobuf.AbstractParser<LifecycleConfig>() {
-    public LifecycleConfig parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-        return new LifecycleConfig(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<LifecycleConfig> PARSER =
+      new com.google.protobuf.AbstractParser<LifecycleConfig>() {
+        @java.lang.Override
+        public LifecycleConfig parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new LifecycleConfig(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<LifecycleConfig> parser() {
     return PARSER;
@@ -1211,9 +1404,8 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.cloud.dataproc.v1beta2.LifecycleConfig getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

@@ -3,11 +3,14 @@
 
 package io.grafeas.v1beta1.image;
 
-public interface FingerprintOrBuilder extends
+public interface FingerprintOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:grafeas.v1beta1.image.Fingerprint)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The layer-id of the final layer in the Docker image's v1 representation.
    * </pre>
@@ -16,25 +19,29 @@ public interface FingerprintOrBuilder extends
    */
   java.lang.String getV1Name();
   /**
+   *
+   *
    * <pre>
    * The layer-id of the final layer in the Docker image's v1 representation.
    * </pre>
    *
    * <code>string v1_name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getV1NameBytes();
+  com.google.protobuf.ByteString getV1NameBytes();
 
   /**
+   *
+   *
    * <pre>
    * The ordered list of v2 blobs that represent a given image.
    * </pre>
    *
    * <code>repeated string v2_blob = 2;</code>
    */
-  java.util.List<java.lang.String>
-      getV2BlobList();
+  java.util.List<java.lang.String> getV2BlobList();
   /**
+   *
+   *
    * <pre>
    * The ordered list of v2 blobs that represent a given image.
    * </pre>
@@ -43,6 +50,8 @@ public interface FingerprintOrBuilder extends
    */
   int getV2BlobCount();
   /**
+   *
+   *
    * <pre>
    * The ordered list of v2 blobs that represent a given image.
    * </pre>
@@ -51,16 +60,19 @@ public interface FingerprintOrBuilder extends
    */
   java.lang.String getV2Blob(int index);
   /**
+   *
+   *
    * <pre>
    * The ordered list of v2 blobs that represent a given image.
    * </pre>
    *
    * <code>repeated string v2_blob = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getV2BlobBytes(int index);
+  com.google.protobuf.ByteString getV2BlobBytes(int index);
 
   /**
+   *
+   *
    * <pre>
    * Output only. The name of the image's v2 blobs computed via:
    *   [bottom] := v2_blob[bottom]
@@ -72,6 +84,8 @@ public interface FingerprintOrBuilder extends
    */
   java.lang.String getV2Name();
   /**
+   *
+   *
    * <pre>
    * Output only. The name of the image's v2 blobs computed via:
    *   [bottom] := v2_blob[bottom]
@@ -81,6 +95,5 @@ public interface FingerprintOrBuilder extends
    *
    * <code>string v2_name = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getV2NameBytes();
+  com.google.protobuf.ByteString getV2NameBytes();
 }

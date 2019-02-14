@@ -3,11 +3,14 @@
 
 package com.google.cloud.bigquery.datatransfer.v1;
 
-public interface ListTransferLogsRequestOrBuilder extends
+public interface ListTransferLogsRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.bigquery.datatransfer.v1.ListTransferLogsRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Transfer run name in the form:
    * `projects/{project_id}/transferConfigs/{config_Id}/runs/{run_id}`.
@@ -17,6 +20,8 @@ public interface ListTransferLogsRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * Transfer run name in the form:
    * `projects/{project_id}/transferConfigs/{config_Id}/runs/{run_id}`.
@@ -24,10 +29,11 @@ public interface ListTransferLogsRequestOrBuilder extends
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * Pagination token, which can be used to request a specific page
    * of `ListTransferLogsRequest` list results. For multiple-page
@@ -40,6 +46,8 @@ public interface ListTransferLogsRequestOrBuilder extends
    */
   java.lang.String getPageToken();
   /**
+   *
+   *
    * <pre>
    * Pagination token, which can be used to request a specific page
    * of `ListTransferLogsRequest` list results. For multiple-page
@@ -50,10 +58,11 @@ public interface ListTransferLogsRequestOrBuilder extends
    *
    * <code>string page_token = 4;</code>
    */
-  com.google.protobuf.ByteString
-      getPageTokenBytes();
+  com.google.protobuf.ByteString getPageTokenBytes();
 
   /**
+   *
+   *
    * <pre>
    * Page size. The default page size is the maximum value of 1000 results.
    * </pre>
@@ -63,49 +72,70 @@ public interface ListTransferLogsRequestOrBuilder extends
   int getPageSize();
 
   /**
+   *
+   *
    * <pre>
    * Message types to return. If not populated - INFO, WARNING and ERROR
    * messages are returned.
    * </pre>
    *
-   * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage.MessageSeverity message_types = 6;</code>
+   * <code>
+   * repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage.MessageSeverity message_types = 6;
+   * </code>
    */
-  java.util.List<com.google.cloud.bigquery.datatransfer.v1.TransferMessage.MessageSeverity> getMessageTypesList();
+  java.util.List<com.google.cloud.bigquery.datatransfer.v1.TransferMessage.MessageSeverity>
+      getMessageTypesList();
   /**
+   *
+   *
    * <pre>
    * Message types to return. If not populated - INFO, WARNING and ERROR
    * messages are returned.
    * </pre>
    *
-   * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage.MessageSeverity message_types = 6;</code>
+   * <code>
+   * repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage.MessageSeverity message_types = 6;
+   * </code>
    */
   int getMessageTypesCount();
   /**
+   *
+   *
    * <pre>
    * Message types to return. If not populated - INFO, WARNING and ERROR
    * messages are returned.
    * </pre>
    *
-   * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage.MessageSeverity message_types = 6;</code>
+   * <code>
+   * repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage.MessageSeverity message_types = 6;
+   * </code>
    */
-  com.google.cloud.bigquery.datatransfer.v1.TransferMessage.MessageSeverity getMessageTypes(int index);
+  com.google.cloud.bigquery.datatransfer.v1.TransferMessage.MessageSeverity getMessageTypes(
+      int index);
   /**
+   *
+   *
    * <pre>
    * Message types to return. If not populated - INFO, WARNING and ERROR
    * messages are returned.
    * </pre>
    *
-   * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage.MessageSeverity message_types = 6;</code>
+   * <code>
+   * repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage.MessageSeverity message_types = 6;
+   * </code>
    */
-  java.util.List<java.lang.Integer>
-  getMessageTypesValueList();
+  java.util.List<java.lang.Integer> getMessageTypesValueList();
   /**
+   *
+   *
    * <pre>
    * Message types to return. If not populated - INFO, WARNING and ERROR
    * messages are returned.
    * </pre>
    *
-   * <code>repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage.MessageSeverity message_types = 6;</code>
+   * <code>
+   * repeated .google.cloud.bigquery.datatransfer.v1.TransferMessage.MessageSeverity message_types = 6;
+   * </code>
    */
   int getMessageTypesValue(int index);
 }

@@ -19,7 +19,6 @@ package com.google.cloud.bigquery;
 import com.google.api.services.bigquery.model.ErrorProto;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
-
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -29,9 +28,9 @@ import java.util.Objects;
  * {@link JobStatus#getError()}. A job can also encounter errors during its execution that do not
  * cause the whole job to fail (see {@link JobStatus#getExecutionErrors()}). Similarly, queries and
  * insert all requests can cause BigQuery errors that do not mean the whole operation failed (see
- * {@link JobStatus#getExecutionErrors()} and {@link InsertAllResponse#getInsertErrors()}).
- * When a {@link BigQueryException} is thrown the BigQuery Error that caused it, if any, can be
- * accessed with {@link BigQueryException#getError()}.
+ * {@link JobStatus#getExecutionErrors()} and {@link InsertAllResponse#getInsertErrors()}). When a
+ * {@link BigQueryException} is thrown the BigQuery Error that caused it, if any, can be accessed
+ * with {@link BigQueryException#getError()}.
  */
 public final class BigQueryError implements Serializable {
 
@@ -70,7 +69,6 @@ public final class BigQueryError implements Serializable {
     this.debugInfo = null;
   }
 
-
   /**
    * Returns short error code that summarizes the error.
    *
@@ -81,10 +79,7 @@ public final class BigQueryError implements Serializable {
     return reason;
   }
 
-
-  /**
-   * Returns where the error occurred, if present.
-   */
+  /** Returns where the error occurred, if present. */
   public String getLocation() {
     return location;
   }
@@ -93,10 +88,7 @@ public final class BigQueryError implements Serializable {
     return debugInfo;
   }
 
-
-  /**
-   * Returns a human-readable description of the error.
-   */
+  /** Returns a human-readable description of the error. */
   public String getMessage() {
     return message;
   }
@@ -118,8 +110,7 @@ public final class BigQueryError implements Serializable {
   @Override
   public boolean equals(Object obj) {
     return obj == this
-        || obj instanceof BigQueryError
-        && Objects.equals(toPb(), ((BigQueryError) obj).toPb());
+        || obj instanceof BigQueryError && Objects.equals(toPb(), ((BigQueryError) obj).toPb());
   }
 
   ErrorProto toPb() {
@@ -140,7 +131,7 @@ public final class BigQueryError implements Serializable {
   }
 
   static BigQueryError fromPb(ErrorProto errorPb) {
-    return new BigQueryError(errorPb.getReason(), errorPb.getLocation(), errorPb.getMessage(),
-        errorPb.getDebugInfo());
+    return new BigQueryError(
+        errorPb.getReason(), errorPb.getLocation(), errorPb.getMessage(), errorPb.getDebugInfo());
   }
 }

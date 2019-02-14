@@ -3,11 +3,14 @@
 
 package com.google.cloud.tasks.v2beta3;
 
-public interface RetryConfigOrBuilder extends
+public interface RetryConfigOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.tasks.v2beta3.RetryConfig)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Number of attempts per task.
    * Cloud Tasks will attempt the task `max_attempts` times (that is, if the
@@ -25,6 +28,8 @@ public interface RetryConfigOrBuilder extends
   int getMaxAttempts();
 
   /**
+   *
+   *
    * <pre>
    * If positive, `max_retry_duration` specifies the time limit for
    * retrying a failed task, measured from when the task was first
@@ -44,6 +49,8 @@ public interface RetryConfigOrBuilder extends
    */
   boolean hasMaxRetryDuration();
   /**
+   *
+   *
    * <pre>
    * If positive, `max_retry_duration` specifies the time limit for
    * retrying a failed task, measured from when the task was first
@@ -63,6 +70,8 @@ public interface RetryConfigOrBuilder extends
    */
   com.google.protobuf.Duration getMaxRetryDuration();
   /**
+   *
+   *
    * <pre>
    * If positive, `max_retry_duration` specifies the time limit for
    * retrying a failed task, measured from when the task was first
@@ -83,6 +92,8 @@ public interface RetryConfigOrBuilder extends
   com.google.protobuf.DurationOrBuilder getMaxRetryDurationOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * A task will be [scheduled][google.cloud.tasks.v2beta3.Task.schedule_time] for retry between
    * [min_backoff][google.cloud.tasks.v2beta3.RetryConfig.min_backoff] and
@@ -100,6 +111,8 @@ public interface RetryConfigOrBuilder extends
    */
   boolean hasMinBackoff();
   /**
+   *
+   *
    * <pre>
    * A task will be [scheduled][google.cloud.tasks.v2beta3.Task.schedule_time] for retry between
    * [min_backoff][google.cloud.tasks.v2beta3.RetryConfig.min_backoff] and
@@ -117,6 +130,8 @@ public interface RetryConfigOrBuilder extends
    */
   com.google.protobuf.Duration getMinBackoff();
   /**
+   *
+   *
    * <pre>
    * A task will be [scheduled][google.cloud.tasks.v2beta3.Task.schedule_time] for retry between
    * [min_backoff][google.cloud.tasks.v2beta3.RetryConfig.min_backoff] and
@@ -135,6 +150,8 @@ public interface RetryConfigOrBuilder extends
   com.google.protobuf.DurationOrBuilder getMinBackoffOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * A task will be [scheduled][google.cloud.tasks.v2beta3.Task.schedule_time] for retry between
    * [min_backoff][google.cloud.tasks.v2beta3.RetryConfig.min_backoff] and
@@ -152,6 +169,8 @@ public interface RetryConfigOrBuilder extends
    */
   boolean hasMaxBackoff();
   /**
+   *
+   *
    * <pre>
    * A task will be [scheduled][google.cloud.tasks.v2beta3.Task.schedule_time] for retry between
    * [min_backoff][google.cloud.tasks.v2beta3.RetryConfig.min_backoff] and
@@ -169,6 +188,8 @@ public interface RetryConfigOrBuilder extends
    */
   com.google.protobuf.Duration getMaxBackoff();
   /**
+   *
+   *
    * <pre>
    * A task will be [scheduled][google.cloud.tasks.v2beta3.Task.schedule_time] for retry between
    * [min_backoff][google.cloud.tasks.v2beta3.RetryConfig.min_backoff] and
@@ -187,6 +208,8 @@ public interface RetryConfigOrBuilder extends
   com.google.protobuf.DurationOrBuilder getMaxBackoffOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The time between retries will double `max_doublings` times.
    * A task's retry interval starts at

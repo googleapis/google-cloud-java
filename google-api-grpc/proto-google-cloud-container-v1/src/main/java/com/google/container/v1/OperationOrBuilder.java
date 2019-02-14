@@ -3,11 +3,14 @@
 
 package com.google.container.v1;
 
-public interface OperationOrBuilder extends
+public interface OperationOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.container.v1.Operation)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The server-assigned ID for the operation.
    * </pre>
@@ -16,38 +19,48 @@ public interface OperationOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The server-assigned ID for the operation.
    * </pre>
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * The name of the Google Compute Engine
    * [zone](/compute/docs/zones#available) in which the operation
    * is taking place.
+   * This field is deprecated, use location instead.
    * </pre>
    *
-   * <code>string zone = 2;</code>
+   * <code>string zone = 2 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   java.lang.String getZone();
   /**
+   *
+   *
    * <pre>
    * The name of the Google Compute Engine
    * [zone](/compute/docs/zones#available) in which the operation
    * is taking place.
+   * This field is deprecated, use location instead.
    * </pre>
    *
-   * <code>string zone = 2;</code>
+   * <code>string zone = 2 [deprecated = true];</code>
    */
-  com.google.protobuf.ByteString
-      getZoneBytes();
+  @java.lang.Deprecated
+  com.google.protobuf.ByteString getZoneBytes();
 
   /**
+   *
+   *
    * <pre>
    * The operation type.
    * </pre>
@@ -56,6 +69,8 @@ public interface OperationOrBuilder extends
    */
   int getOperationTypeValue();
   /**
+   *
+   *
    * <pre>
    * The operation type.
    * </pre>
@@ -65,6 +80,8 @@ public interface OperationOrBuilder extends
   com.google.container.v1.Operation.Type getOperationType();
 
   /**
+   *
+   *
    * <pre>
    * The current status of the operation.
    * </pre>
@@ -73,6 +90,8 @@ public interface OperationOrBuilder extends
    */
   int getStatusValue();
   /**
+   *
+   *
    * <pre>
    * The current status of the operation.
    * </pre>
@@ -82,6 +101,8 @@ public interface OperationOrBuilder extends
   com.google.container.v1.Operation.Status getStatus();
 
   /**
+   *
+   *
    * <pre>
    * Detailed operation progress, if available.
    * </pre>
@@ -90,16 +111,19 @@ public interface OperationOrBuilder extends
    */
   java.lang.String getDetail();
   /**
+   *
+   *
    * <pre>
    * Detailed operation progress, if available.
    * </pre>
    *
    * <code>string detail = 8;</code>
    */
-  com.google.protobuf.ByteString
-      getDetailBytes();
+  com.google.protobuf.ByteString getDetailBytes();
 
   /**
+   *
+   *
    * <pre>
    * If an error has occurred, a textual description of the error.
    * </pre>
@@ -108,16 +132,19 @@ public interface OperationOrBuilder extends
    */
   java.lang.String getStatusMessage();
   /**
+   *
+   *
    * <pre>
    * If an error has occurred, a textual description of the error.
    * </pre>
    *
    * <code>string status_message = 5;</code>
    */
-  com.google.protobuf.ByteString
-      getStatusMessageBytes();
+  com.google.protobuf.ByteString getStatusMessageBytes();
 
   /**
+   *
+   *
    * <pre>
    * Server-defined URL for the resource.
    * </pre>
@@ -126,16 +153,19 @@ public interface OperationOrBuilder extends
    */
   java.lang.String getSelfLink();
   /**
+   *
+   *
    * <pre>
    * Server-defined URL for the resource.
    * </pre>
    *
    * <code>string self_link = 6;</code>
    */
-  com.google.protobuf.ByteString
-      getSelfLinkBytes();
+  com.google.protobuf.ByteString getSelfLinkBytes();
 
   /**
+   *
+   *
    * <pre>
    * Server-defined URL for the target of the operation.
    * </pre>
@@ -144,16 +174,46 @@ public interface OperationOrBuilder extends
    */
   java.lang.String getTargetLink();
   /**
+   *
+   *
    * <pre>
    * Server-defined URL for the target of the operation.
    * </pre>
    *
    * <code>string target_link = 7;</code>
    */
-  com.google.protobuf.ByteString
-      getTargetLinkBytes();
+  com.google.protobuf.ByteString getTargetLinkBytes();
 
   /**
+   *
+   *
+   * <pre>
+   * [Output only] The name of the Google Compute Engine
+   * [zone](/compute/docs/regions-zones/regions-zones#available) or
+   * [region](/compute/docs/regions-zones/regions-zones#available) in which
+   * the cluster resides.
+   * </pre>
+   *
+   * <code>string location = 9;</code>
+   */
+  java.lang.String getLocation();
+  /**
+   *
+   *
+   * <pre>
+   * [Output only] The name of the Google Compute Engine
+   * [zone](/compute/docs/regions-zones/regions-zones#available) or
+   * [region](/compute/docs/regions-zones/regions-zones#available) in which
+   * the cluster resides.
+   * </pre>
+   *
+   * <code>string location = 9;</code>
+   */
+  com.google.protobuf.ByteString getLocationBytes();
+
+  /**
+   *
+   *
    * <pre>
    * [Output only] The time the operation started, in
    * [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
@@ -163,6 +223,8 @@ public interface OperationOrBuilder extends
    */
   java.lang.String getStartTime();
   /**
+   *
+   *
    * <pre>
    * [Output only] The time the operation started, in
    * [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
@@ -170,10 +232,11 @@ public interface OperationOrBuilder extends
    *
    * <code>string start_time = 10;</code>
    */
-  com.google.protobuf.ByteString
-      getStartTimeBytes();
+  com.google.protobuf.ByteString getStartTimeBytes();
 
   /**
+   *
+   *
    * <pre>
    * [Output only] The time the operation completed, in
    * [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
@@ -183,6 +246,8 @@ public interface OperationOrBuilder extends
    */
   java.lang.String getEndTime();
   /**
+   *
+   *
    * <pre>
    * [Output only] The time the operation completed, in
    * [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
@@ -190,6 +255,5 @@ public interface OperationOrBuilder extends
    *
    * <code>string end_time = 11;</code>
    */
-  com.google.protobuf.ByteString
-      getEndTimeBytes();
+  com.google.protobuf.ByteString getEndTimeBytes();
 }

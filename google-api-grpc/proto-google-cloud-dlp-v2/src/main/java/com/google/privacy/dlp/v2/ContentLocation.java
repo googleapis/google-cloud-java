@@ -4,36 +4,42 @@
 package com.google.privacy.dlp.v2;
 
 /**
+ *
+ *
  * <pre>
  * Findings container location data.
  * </pre>
  *
  * Protobuf type {@code google.privacy.dlp.v2.ContentLocation}
  */
-public  final class ContentLocation extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class ContentLocation extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.ContentLocation)
     ContentLocationOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use ContentLocation.newBuilder() to construct.
   private ContentLocation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private ContentLocation() {
     containerName_ = "";
     containerVersion_ = "";
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private ContentLocation(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -45,119 +51,131 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            containerName_ = s;
-            break;
-          }
-          case 18: {
-            com.google.privacy.dlp.v2.RecordLocation.Builder subBuilder = null;
-            if (locationCase_ == 2) {
-              subBuilder = ((com.google.privacy.dlp.v2.RecordLocation) location_).toBuilder();
+              containerName_ = s;
+              break;
             }
-            location_ =
-                input.readMessage(com.google.privacy.dlp.v2.RecordLocation.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.google.privacy.dlp.v2.RecordLocation) location_);
-              location_ = subBuilder.buildPartial();
+          case 18:
+            {
+              com.google.privacy.dlp.v2.RecordLocation.Builder subBuilder = null;
+              if (locationCase_ == 2) {
+                subBuilder = ((com.google.privacy.dlp.v2.RecordLocation) location_).toBuilder();
+              }
+              location_ =
+                  input.readMessage(
+                      com.google.privacy.dlp.v2.RecordLocation.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.privacy.dlp.v2.RecordLocation) location_);
+                location_ = subBuilder.buildPartial();
+              }
+              locationCase_ = 2;
+              break;
             }
-            locationCase_ = 2;
-            break;
-          }
-          case 26: {
-            com.google.privacy.dlp.v2.ImageLocation.Builder subBuilder = null;
-            if (locationCase_ == 3) {
-              subBuilder = ((com.google.privacy.dlp.v2.ImageLocation) location_).toBuilder();
+          case 26:
+            {
+              com.google.privacy.dlp.v2.ImageLocation.Builder subBuilder = null;
+              if (locationCase_ == 3) {
+                subBuilder = ((com.google.privacy.dlp.v2.ImageLocation) location_).toBuilder();
+              }
+              location_ =
+                  input.readMessage(
+                      com.google.privacy.dlp.v2.ImageLocation.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.privacy.dlp.v2.ImageLocation) location_);
+                location_ = subBuilder.buildPartial();
+              }
+              locationCase_ = 3;
+              break;
             }
-            location_ =
-                input.readMessage(com.google.privacy.dlp.v2.ImageLocation.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.google.privacy.dlp.v2.ImageLocation) location_);
-              location_ = subBuilder.buildPartial();
+          case 42:
+            {
+              com.google.privacy.dlp.v2.DocumentLocation.Builder subBuilder = null;
+              if (locationCase_ == 5) {
+                subBuilder = ((com.google.privacy.dlp.v2.DocumentLocation) location_).toBuilder();
+              }
+              location_ =
+                  input.readMessage(
+                      com.google.privacy.dlp.v2.DocumentLocation.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.privacy.dlp.v2.DocumentLocation) location_);
+                location_ = subBuilder.buildPartial();
+              }
+              locationCase_ = 5;
+              break;
             }
-            locationCase_ = 3;
-            break;
-          }
-          case 42: {
-            com.google.privacy.dlp.v2.DocumentLocation.Builder subBuilder = null;
-            if (locationCase_ == 5) {
-              subBuilder = ((com.google.privacy.dlp.v2.DocumentLocation) location_).toBuilder();
-            }
-            location_ =
-                input.readMessage(com.google.privacy.dlp.v2.DocumentLocation.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.google.privacy.dlp.v2.DocumentLocation) location_);
-              location_ = subBuilder.buildPartial();
-            }
-            locationCase_ = 5;
-            break;
-          }
-          case 50: {
-            com.google.protobuf.Timestamp.Builder subBuilder = null;
-            if (containerTimestamp_ != null) {
-              subBuilder = containerTimestamp_.toBuilder();
-            }
-            containerTimestamp_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(containerTimestamp_);
-              containerTimestamp_ = subBuilder.buildPartial();
-            }
+          case 50:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (containerTimestamp_ != null) {
+                subBuilder = containerTimestamp_.toBuilder();
+              }
+              containerTimestamp_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(containerTimestamp_);
+                containerTimestamp_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 58: {
-            java.lang.String s = input.readStringRequireUtf8();
+              break;
+            }
+          case 58:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            containerVersion_ = s;
-            break;
-          }
+              containerVersion_ = s;
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_ContentLocation_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.privacy.dlp.v2.DlpProto
+        .internal_static_google_privacy_dlp_v2_ContentLocation_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_ContentLocation_fieldAccessorTable
+    return com.google.privacy.dlp.v2.DlpProto
+        .internal_static_google_privacy_dlp_v2_ContentLocation_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.privacy.dlp.v2.ContentLocation.class, com.google.privacy.dlp.v2.ContentLocation.Builder.class);
+            com.google.privacy.dlp.v2.ContentLocation.class,
+            com.google.privacy.dlp.v2.ContentLocation.Builder.class);
   }
 
   private int locationCase_ = 0;
   private java.lang.Object location_;
-  public enum LocationCase
-      implements com.google.protobuf.Internal.EnumLite {
+
+  public enum LocationCase implements com.google.protobuf.Internal.EnumLite {
     RECORD_LOCATION(2),
     IMAGE_LOCATION(3),
     DOCUMENT_LOCATION(5),
     LOCATION_NOT_SET(0);
     private final int value;
+
     private LocationCase(int value) {
       this.value = value;
     }
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static LocationCase valueOf(int value) {
       return forNumber(value);
@@ -165,32 +183,42 @@ private static final long serialVersionUID = 0L;
 
     public static LocationCase forNumber(int value) {
       switch (value) {
-        case 2: return RECORD_LOCATION;
-        case 3: return IMAGE_LOCATION;
-        case 5: return DOCUMENT_LOCATION;
-        case 0: return LOCATION_NOT_SET;
-        default: return null;
+        case 2:
+          return RECORD_LOCATION;
+        case 3:
+          return IMAGE_LOCATION;
+        case 5:
+          return DOCUMENT_LOCATION;
+        case 0:
+          return LOCATION_NOT_SET;
+        default:
+          return null;
       }
     }
+
     public int getNumber() {
       return this.value;
     }
   };
 
-  public LocationCase
-  getLocationCase() {
-    return LocationCase.forNumber(
-        locationCase_);
+  public LocationCase getLocationCase() {
+    return LocationCase.forNumber(locationCase_);
   }
 
   public static final int CONTAINER_NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object containerName_;
   /**
+   *
+   *
    * <pre>
    * Name of the container where the finding is located.
-   * The top level name is the source file name or table name. Nested names
-   * could be absent if the embedded object has no string identifier
-   * (for an example an image contained within a document).
+   * The top level name is the source file name or table name. Names of some
+   * common storage containers are formatted as follows:
+   * * BigQuery tables:  `&lt;project_id&gt;:&lt;dataset_id&gt;.&lt;table_id&gt;`
+   * * Cloud Storage files: `gs://&lt;bucket&gt;/&lt;path&gt;`
+   * * Datastore namespace: &lt;namespace&gt;
+   * Nested names could be absent if the embedded object has no string
+   * identifier (for an example an image contained within a document).
    * </pre>
    *
    * <code>string container_name = 1;</code>
@@ -200,30 +228,33 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       containerName_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Name of the container where the finding is located.
-   * The top level name is the source file name or table name. Nested names
-   * could be absent if the embedded object has no string identifier
-   * (for an example an image contained within a document).
+   * The top level name is the source file name or table name. Names of some
+   * common storage containers are formatted as follows:
+   * * BigQuery tables:  `&lt;project_id&gt;:&lt;dataset_id&gt;.&lt;table_id&gt;`
+   * * Cloud Storage files: `gs://&lt;bucket&gt;/&lt;path&gt;`
+   * * Datastore namespace: &lt;namespace&gt;
+   * Nested names could be absent if the embedded object has no string
+   * identifier (for an example an image contained within a document).
    * </pre>
    *
    * <code>string container_name = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getContainerNameBytes() {
+  public com.google.protobuf.ByteString getContainerNameBytes() {
     java.lang.Object ref = containerName_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       containerName_ = b;
       return b;
     } else {
@@ -233,6 +264,8 @@ private static final long serialVersionUID = 0L;
 
   public static final int RECORD_LOCATION_FIELD_NUMBER = 2;
   /**
+   *
+   *
    * <pre>
    * Location within a row or record of a database table.
    * </pre>
@@ -243,6 +276,8 @@ private static final long serialVersionUID = 0L;
     return locationCase_ == 2;
   }
   /**
+   *
+   *
    * <pre>
    * Location within a row or record of a database table.
    * </pre>
@@ -251,11 +286,13 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.privacy.dlp.v2.RecordLocation getRecordLocation() {
     if (locationCase_ == 2) {
-       return (com.google.privacy.dlp.v2.RecordLocation) location_;
+      return (com.google.privacy.dlp.v2.RecordLocation) location_;
     }
     return com.google.privacy.dlp.v2.RecordLocation.getDefaultInstance();
   }
   /**
+   *
+   *
    * <pre>
    * Location within a row or record of a database table.
    * </pre>
@@ -264,13 +301,15 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.privacy.dlp.v2.RecordLocationOrBuilder getRecordLocationOrBuilder() {
     if (locationCase_ == 2) {
-       return (com.google.privacy.dlp.v2.RecordLocation) location_;
+      return (com.google.privacy.dlp.v2.RecordLocation) location_;
     }
     return com.google.privacy.dlp.v2.RecordLocation.getDefaultInstance();
   }
 
   public static final int IMAGE_LOCATION_FIELD_NUMBER = 3;
   /**
+   *
+   *
    * <pre>
    * Location within an image's pixels.
    * </pre>
@@ -281,6 +320,8 @@ private static final long serialVersionUID = 0L;
     return locationCase_ == 3;
   }
   /**
+   *
+   *
    * <pre>
    * Location within an image's pixels.
    * </pre>
@@ -289,11 +330,13 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.privacy.dlp.v2.ImageLocation getImageLocation() {
     if (locationCase_ == 3) {
-       return (com.google.privacy.dlp.v2.ImageLocation) location_;
+      return (com.google.privacy.dlp.v2.ImageLocation) location_;
     }
     return com.google.privacy.dlp.v2.ImageLocation.getDefaultInstance();
   }
   /**
+   *
+   *
    * <pre>
    * Location within an image's pixels.
    * </pre>
@@ -302,13 +345,15 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.privacy.dlp.v2.ImageLocationOrBuilder getImageLocationOrBuilder() {
     if (locationCase_ == 3) {
-       return (com.google.privacy.dlp.v2.ImageLocation) location_;
+      return (com.google.privacy.dlp.v2.ImageLocation) location_;
     }
     return com.google.privacy.dlp.v2.ImageLocation.getDefaultInstance();
   }
 
   public static final int DOCUMENT_LOCATION_FIELD_NUMBER = 5;
   /**
+   *
+   *
    * <pre>
    * Location data for document files.
    * </pre>
@@ -319,6 +364,8 @@ private static final long serialVersionUID = 0L;
     return locationCase_ == 5;
   }
   /**
+   *
+   *
    * <pre>
    * Location data for document files.
    * </pre>
@@ -327,11 +374,13 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.privacy.dlp.v2.DocumentLocation getDocumentLocation() {
     if (locationCase_ == 5) {
-       return (com.google.privacy.dlp.v2.DocumentLocation) location_;
+      return (com.google.privacy.dlp.v2.DocumentLocation) location_;
     }
     return com.google.privacy.dlp.v2.DocumentLocation.getDefaultInstance();
   }
   /**
+   *
+   *
    * <pre>
    * Location data for document files.
    * </pre>
@@ -340,7 +389,7 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.privacy.dlp.v2.DocumentLocationOrBuilder getDocumentLocationOrBuilder() {
     if (locationCase_ == 5) {
-       return (com.google.privacy.dlp.v2.DocumentLocation) location_;
+      return (com.google.privacy.dlp.v2.DocumentLocation) location_;
     }
     return com.google.privacy.dlp.v2.DocumentLocation.getDefaultInstance();
   }
@@ -348,6 +397,8 @@ private static final long serialVersionUID = 0L;
   public static final int CONTAINER_TIMESTAMP_FIELD_NUMBER = 6;
   private com.google.protobuf.Timestamp containerTimestamp_;
   /**
+   *
+   *
    * <pre>
    * Findings container modification timestamp, if applicable.
    * For Google Cloud Storage contains last file modification timestamp.
@@ -361,6 +412,8 @@ private static final long serialVersionUID = 0L;
     return containerTimestamp_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Findings container modification timestamp, if applicable.
    * For Google Cloud Storage contains last file modification timestamp.
@@ -371,9 +424,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp container_timestamp = 6;</code>
    */
   public com.google.protobuf.Timestamp getContainerTimestamp() {
-    return containerTimestamp_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : containerTimestamp_;
+    return containerTimestamp_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : containerTimestamp_;
   }
   /**
+   *
+   *
    * <pre>
    * Findings container modification timestamp, if applicable.
    * For Google Cloud Storage contains last file modification timestamp.
@@ -390,6 +447,8 @@ private static final long serialVersionUID = 0L;
   public static final int CONTAINER_VERSION_FIELD_NUMBER = 7;
   private volatile java.lang.Object containerVersion_;
   /**
+   *
+   *
    * <pre>
    * Findings container version, if available
    * ("generation" for Google Cloud Storage).
@@ -402,14 +461,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       containerVersion_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Findings container version, if available
    * ("generation" for Google Cloud Storage).
@@ -417,13 +477,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string container_version = 7;</code>
    */
-  public com.google.protobuf.ByteString
-      getContainerVersionBytes() {
+  public com.google.protobuf.ByteString getContainerVersionBytes() {
     java.lang.Object ref = containerVersion_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       containerVersion_ = b;
       return b;
     } else {
@@ -432,6 +490,8 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -441,8 +501,8 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  @java.lang.Override
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getContainerNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, containerName_);
     }
@@ -464,6 +524,7 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -473,20 +534,22 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, containerName_);
     }
     if (locationCase_ == 2) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, (com.google.privacy.dlp.v2.RecordLocation) location_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              2, (com.google.privacy.dlp.v2.RecordLocation) location_);
     }
     if (locationCase_ == 3) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, (com.google.privacy.dlp.v2.ImageLocation) location_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              3, (com.google.privacy.dlp.v2.ImageLocation) location_);
     }
     if (locationCase_ == 5) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(5, (com.google.privacy.dlp.v2.DocumentLocation) location_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              5, (com.google.privacy.dlp.v2.DocumentLocation) location_);
     }
     if (containerTimestamp_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(6, getContainerTimestamp());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getContainerTimestamp());
     }
     if (!getContainerVersionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, containerVersion_);
@@ -499,38 +562,32 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.privacy.dlp.v2.ContentLocation)) {
       return super.equals(obj);
     }
-    com.google.privacy.dlp.v2.ContentLocation other = (com.google.privacy.dlp.v2.ContentLocation) obj;
+    com.google.privacy.dlp.v2.ContentLocation other =
+        (com.google.privacy.dlp.v2.ContentLocation) obj;
 
     boolean result = true;
-    result = result && getContainerName()
-        .equals(other.getContainerName());
+    result = result && getContainerName().equals(other.getContainerName());
     result = result && (hasContainerTimestamp() == other.hasContainerTimestamp());
     if (hasContainerTimestamp()) {
-      result = result && getContainerTimestamp()
-          .equals(other.getContainerTimestamp());
+      result = result && getContainerTimestamp().equals(other.getContainerTimestamp());
     }
-    result = result && getContainerVersion()
-        .equals(other.getContainerVersion());
-    result = result && getLocationCase().equals(
-        other.getLocationCase());
+    result = result && getContainerVersion().equals(other.getContainerVersion());
+    result = result && getLocationCase().equals(other.getLocationCase());
     if (!result) return false;
     switch (locationCase_) {
       case 2:
-        result = result && getRecordLocation()
-            .equals(other.getRecordLocation());
+        result = result && getRecordLocation().equals(other.getRecordLocation());
         break;
       case 3:
-        result = result && getImageLocation()
-            .equals(other.getImageLocation());
+        result = result && getImageLocation().equals(other.getImageLocation());
         break;
       case 5:
-        result = result && getDocumentLocation()
-            .equals(other.getDocumentLocation());
+        result = result && getDocumentLocation().equals(other.getDocumentLocation());
         break;
       case 0:
       default:
@@ -575,115 +632,127 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.privacy.dlp.v2.ContentLocation parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.privacy.dlp.v2.ContentLocation parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.privacy.dlp.v2.ContentLocation parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.privacy.dlp.v2.ContentLocation parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.privacy.dlp.v2.ContentLocation parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.privacy.dlp.v2.ContentLocation parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.privacy.dlp.v2.ContentLocation parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.privacy.dlp.v2.ContentLocation parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.privacy.dlp.v2.ContentLocation parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.privacy.dlp.v2.ContentLocation parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
+
   public static com.google.privacy.dlp.v2.ContentLocation parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.privacy.dlp.v2.ContentLocation parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.privacy.dlp.v2.ContentLocation parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.privacy.dlp.v2.ContentLocation parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  public Builder newBuilderForType() { return newBuilder(); }
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-  public static Builder newBuilder(com.google.privacy.dlp.v2.ContentLocation prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+
+  public static Builder newBuilder(com.google.privacy.dlp.v2.ContentLocation prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+
+  @java.lang.Override
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Findings container location data.
    * </pre>
    *
    * Protobuf type {@code google.privacy.dlp.v2.ContentLocation}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.privacy.dlp.v2.ContentLocation)
       com.google.privacy.dlp.v2.ContentLocationOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_ContentLocation_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_ContentLocation_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_ContentLocation_fieldAccessorTable
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_ContentLocation_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.privacy.dlp.v2.ContentLocation.class, com.google.privacy.dlp.v2.ContentLocation.Builder.class);
+              com.google.privacy.dlp.v2.ContentLocation.class,
+              com.google.privacy.dlp.v2.ContentLocation.Builder.class);
     }
 
     // Construct using com.google.privacy.dlp.v2.ContentLocation.newBuilder()
@@ -691,16 +760,16 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       containerName_ = "";
@@ -718,15 +787,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_ContentLocation_descriptor;
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_ContentLocation_descriptor;
     }
 
+    @java.lang.Override
     public com.google.privacy.dlp.v2.ContentLocation getDefaultInstanceForType() {
       return com.google.privacy.dlp.v2.ContentLocation.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.privacy.dlp.v2.ContentLocation build() {
       com.google.privacy.dlp.v2.ContentLocation result = buildPartial();
       if (!result.isInitialized()) {
@@ -735,8 +807,10 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.privacy.dlp.v2.ContentLocation buildPartial() {
-      com.google.privacy.dlp.v2.ContentLocation result = new com.google.privacy.dlp.v2.ContentLocation(this);
+      com.google.privacy.dlp.v2.ContentLocation result =
+          new com.google.privacy.dlp.v2.ContentLocation(this);
       result.containerName_ = containerName_;
       if (locationCase_ == 2) {
         if (recordLocationBuilder_ == null) {
@@ -770,35 +844,43 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+
+    @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+    @java.lang.Override
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+    @java.lang.Override
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
+    @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
+    @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.privacy.dlp.v2.ContentLocation) {
-        return mergeFrom((com.google.privacy.dlp.v2.ContentLocation)other);
+        return mergeFrom((com.google.privacy.dlp.v2.ContentLocation) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -819,31 +901,37 @@ private static final long serialVersionUID = 0L;
         onChanged();
       }
       switch (other.getLocationCase()) {
-        case RECORD_LOCATION: {
-          mergeRecordLocation(other.getRecordLocation());
-          break;
-        }
-        case IMAGE_LOCATION: {
-          mergeImageLocation(other.getImageLocation());
-          break;
-        }
-        case DOCUMENT_LOCATION: {
-          mergeDocumentLocation(other.getDocumentLocation());
-          break;
-        }
-        case LOCATION_NOT_SET: {
-          break;
-        }
+        case RECORD_LOCATION:
+          {
+            mergeRecordLocation(other.getRecordLocation());
+            break;
+          }
+        case IMAGE_LOCATION:
+          {
+            mergeImageLocation(other.getImageLocation());
+            break;
+          }
+        case DOCUMENT_LOCATION:
+          {
+            mergeDocumentLocation(other.getDocumentLocation());
+            break;
+          }
+        case LOCATION_NOT_SET:
+          {
+            break;
+          }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -861,12 +949,12 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int locationCase_ = 0;
     private java.lang.Object location_;
-    public LocationCase
-        getLocationCase() {
-      return LocationCase.forNumber(
-          locationCase_);
+
+    public LocationCase getLocationCase() {
+      return LocationCase.forNumber(locationCase_);
     }
 
     public Builder clearLocation() {
@@ -876,14 +964,19 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-
     private java.lang.Object containerName_ = "";
     /**
+     *
+     *
      * <pre>
      * Name of the container where the finding is located.
-     * The top level name is the source file name or table name. Nested names
-     * could be absent if the embedded object has no string identifier
-     * (for an example an image contained within a document).
+     * The top level name is the source file name or table name. Names of some
+     * common storage containers are formatted as follows:
+     * * BigQuery tables:  `&lt;project_id&gt;:&lt;dataset_id&gt;.&lt;table_id&gt;`
+     * * Cloud Storage files: `gs://&lt;bucket&gt;/&lt;path&gt;`
+     * * Datastore namespace: &lt;namespace&gt;
+     * Nested names could be absent if the embedded object has no string
+     * identifier (for an example an image contained within a document).
      * </pre>
      *
      * <code>string container_name = 1;</code>
@@ -891,8 +984,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getContainerName() {
       java.lang.Object ref = containerName_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         containerName_ = s;
         return s;
@@ -901,22 +993,26 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Name of the container where the finding is located.
-     * The top level name is the source file name or table name. Nested names
-     * could be absent if the embedded object has no string identifier
-     * (for an example an image contained within a document).
+     * The top level name is the source file name or table name. Names of some
+     * common storage containers are formatted as follows:
+     * * BigQuery tables:  `&lt;project_id&gt;:&lt;dataset_id&gt;.&lt;table_id&gt;`
+     * * Cloud Storage files: `gs://&lt;bucket&gt;/&lt;path&gt;`
+     * * Datastore namespace: &lt;namespace&gt;
+     * Nested names could be absent if the embedded object has no string
+     * identifier (for an example an image contained within a document).
      * </pre>
      *
      * <code>string container_name = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getContainerNameBytes() {
+    public com.google.protobuf.ByteString getContainerNameBytes() {
       java.lang.Object ref = containerName_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         containerName_ = b;
         return b;
       } else {
@@ -924,66 +1020,87 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Name of the container where the finding is located.
-     * The top level name is the source file name or table name. Nested names
-     * could be absent if the embedded object has no string identifier
-     * (for an example an image contained within a document).
+     * The top level name is the source file name or table name. Names of some
+     * common storage containers are formatted as follows:
+     * * BigQuery tables:  `&lt;project_id&gt;:&lt;dataset_id&gt;.&lt;table_id&gt;`
+     * * Cloud Storage files: `gs://&lt;bucket&gt;/&lt;path&gt;`
+     * * Datastore namespace: &lt;namespace&gt;
+     * Nested names could be absent if the embedded object has no string
+     * identifier (for an example an image contained within a document).
      * </pre>
      *
      * <code>string container_name = 1;</code>
      */
-    public Builder setContainerName(
-        java.lang.String value) {
+    public Builder setContainerName(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       containerName_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Name of the container where the finding is located.
-     * The top level name is the source file name or table name. Nested names
-     * could be absent if the embedded object has no string identifier
-     * (for an example an image contained within a document).
+     * The top level name is the source file name or table name. Names of some
+     * common storage containers are formatted as follows:
+     * * BigQuery tables:  `&lt;project_id&gt;:&lt;dataset_id&gt;.&lt;table_id&gt;`
+     * * Cloud Storage files: `gs://&lt;bucket&gt;/&lt;path&gt;`
+     * * Datastore namespace: &lt;namespace&gt;
+     * Nested names could be absent if the embedded object has no string
+     * identifier (for an example an image contained within a document).
      * </pre>
      *
      * <code>string container_name = 1;</code>
      */
     public Builder clearContainerName() {
-      
+
       containerName_ = getDefaultInstance().getContainerName();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Name of the container where the finding is located.
-     * The top level name is the source file name or table name. Nested names
-     * could be absent if the embedded object has no string identifier
-     * (for an example an image contained within a document).
+     * The top level name is the source file name or table name. Names of some
+     * common storage containers are formatted as follows:
+     * * BigQuery tables:  `&lt;project_id&gt;:&lt;dataset_id&gt;.&lt;table_id&gt;`
+     * * Cloud Storage files: `gs://&lt;bucket&gt;/&lt;path&gt;`
+     * * Datastore namespace: &lt;namespace&gt;
+     * Nested names could be absent if the embedded object has no string
+     * identifier (for an example an image contained within a document).
      * </pre>
      *
      * <code>string container_name = 1;</code>
      */
-    public Builder setContainerNameBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setContainerNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       containerName_ = value;
       onChanged();
       return this;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.privacy.dlp.v2.RecordLocation, com.google.privacy.dlp.v2.RecordLocation.Builder, com.google.privacy.dlp.v2.RecordLocationOrBuilder> recordLocationBuilder_;
+            com.google.privacy.dlp.v2.RecordLocation,
+            com.google.privacy.dlp.v2.RecordLocation.Builder,
+            com.google.privacy.dlp.v2.RecordLocationOrBuilder>
+        recordLocationBuilder_;
     /**
+     *
+     *
      * <pre>
      * Location within a row or record of a database table.
      * </pre>
@@ -994,6 +1111,8 @@ private static final long serialVersionUID = 0L;
       return locationCase_ == 2;
     }
     /**
+     *
+     *
      * <pre>
      * Location within a row or record of a database table.
      * </pre>
@@ -1014,6 +1133,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Location within a row or record of a database table.
      * </pre>
@@ -1034,6 +1155,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Location within a row or record of a database table.
      * </pre>
@@ -1052,6 +1175,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Location within a row or record of a database table.
      * </pre>
@@ -1060,10 +1185,13 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeRecordLocation(com.google.privacy.dlp.v2.RecordLocation value) {
       if (recordLocationBuilder_ == null) {
-        if (locationCase_ == 2 &&
-            location_ != com.google.privacy.dlp.v2.RecordLocation.getDefaultInstance()) {
-          location_ = com.google.privacy.dlp.v2.RecordLocation.newBuilder((com.google.privacy.dlp.v2.RecordLocation) location_)
-              .mergeFrom(value).buildPartial();
+        if (locationCase_ == 2
+            && location_ != com.google.privacy.dlp.v2.RecordLocation.getDefaultInstance()) {
+          location_ =
+              com.google.privacy.dlp.v2.RecordLocation.newBuilder(
+                      (com.google.privacy.dlp.v2.RecordLocation) location_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           location_ = value;
         }
@@ -1078,6 +1206,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Location within a row or record of a database table.
      * </pre>
@@ -1101,6 +1231,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Location within a row or record of a database table.
      * </pre>
@@ -1111,6 +1243,8 @@ private static final long serialVersionUID = 0L;
       return getRecordLocationFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Location within a row or record of a database table.
      * </pre>
@@ -1128,6 +1262,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Location within a row or record of a database table.
      * </pre>
@@ -1135,27 +1271,38 @@ private static final long serialVersionUID = 0L;
      * <code>.google.privacy.dlp.v2.RecordLocation record_location = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.privacy.dlp.v2.RecordLocation, com.google.privacy.dlp.v2.RecordLocation.Builder, com.google.privacy.dlp.v2.RecordLocationOrBuilder> 
+            com.google.privacy.dlp.v2.RecordLocation,
+            com.google.privacy.dlp.v2.RecordLocation.Builder,
+            com.google.privacy.dlp.v2.RecordLocationOrBuilder>
         getRecordLocationFieldBuilder() {
       if (recordLocationBuilder_ == null) {
         if (!(locationCase_ == 2)) {
           location_ = com.google.privacy.dlp.v2.RecordLocation.getDefaultInstance();
         }
-        recordLocationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.privacy.dlp.v2.RecordLocation, com.google.privacy.dlp.v2.RecordLocation.Builder, com.google.privacy.dlp.v2.RecordLocationOrBuilder>(
+        recordLocationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.privacy.dlp.v2.RecordLocation,
+                com.google.privacy.dlp.v2.RecordLocation.Builder,
+                com.google.privacy.dlp.v2.RecordLocationOrBuilder>(
                 (com.google.privacy.dlp.v2.RecordLocation) location_,
                 getParentForChildren(),
                 isClean());
         location_ = null;
       }
       locationCase_ = 2;
-      onChanged();;
+      onChanged();
+      ;
       return recordLocationBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.privacy.dlp.v2.ImageLocation, com.google.privacy.dlp.v2.ImageLocation.Builder, com.google.privacy.dlp.v2.ImageLocationOrBuilder> imageLocationBuilder_;
+            com.google.privacy.dlp.v2.ImageLocation,
+            com.google.privacy.dlp.v2.ImageLocation.Builder,
+            com.google.privacy.dlp.v2.ImageLocationOrBuilder>
+        imageLocationBuilder_;
     /**
+     *
+     *
      * <pre>
      * Location within an image's pixels.
      * </pre>
@@ -1166,6 +1313,8 @@ private static final long serialVersionUID = 0L;
       return locationCase_ == 3;
     }
     /**
+     *
+     *
      * <pre>
      * Location within an image's pixels.
      * </pre>
@@ -1186,6 +1335,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Location within an image's pixels.
      * </pre>
@@ -1206,6 +1357,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Location within an image's pixels.
      * </pre>
@@ -1224,6 +1377,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Location within an image's pixels.
      * </pre>
@@ -1232,10 +1387,13 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeImageLocation(com.google.privacy.dlp.v2.ImageLocation value) {
       if (imageLocationBuilder_ == null) {
-        if (locationCase_ == 3 &&
-            location_ != com.google.privacy.dlp.v2.ImageLocation.getDefaultInstance()) {
-          location_ = com.google.privacy.dlp.v2.ImageLocation.newBuilder((com.google.privacy.dlp.v2.ImageLocation) location_)
-              .mergeFrom(value).buildPartial();
+        if (locationCase_ == 3
+            && location_ != com.google.privacy.dlp.v2.ImageLocation.getDefaultInstance()) {
+          location_ =
+              com.google.privacy.dlp.v2.ImageLocation.newBuilder(
+                      (com.google.privacy.dlp.v2.ImageLocation) location_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           location_ = value;
         }
@@ -1250,6 +1408,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Location within an image's pixels.
      * </pre>
@@ -1273,6 +1433,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Location within an image's pixels.
      * </pre>
@@ -1283,6 +1445,8 @@ private static final long serialVersionUID = 0L;
       return getImageLocationFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Location within an image's pixels.
      * </pre>
@@ -1300,6 +1464,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Location within an image's pixels.
      * </pre>
@@ -1307,27 +1473,38 @@ private static final long serialVersionUID = 0L;
      * <code>.google.privacy.dlp.v2.ImageLocation image_location = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.privacy.dlp.v2.ImageLocation, com.google.privacy.dlp.v2.ImageLocation.Builder, com.google.privacy.dlp.v2.ImageLocationOrBuilder> 
+            com.google.privacy.dlp.v2.ImageLocation,
+            com.google.privacy.dlp.v2.ImageLocation.Builder,
+            com.google.privacy.dlp.v2.ImageLocationOrBuilder>
         getImageLocationFieldBuilder() {
       if (imageLocationBuilder_ == null) {
         if (!(locationCase_ == 3)) {
           location_ = com.google.privacy.dlp.v2.ImageLocation.getDefaultInstance();
         }
-        imageLocationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.privacy.dlp.v2.ImageLocation, com.google.privacy.dlp.v2.ImageLocation.Builder, com.google.privacy.dlp.v2.ImageLocationOrBuilder>(
+        imageLocationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.privacy.dlp.v2.ImageLocation,
+                com.google.privacy.dlp.v2.ImageLocation.Builder,
+                com.google.privacy.dlp.v2.ImageLocationOrBuilder>(
                 (com.google.privacy.dlp.v2.ImageLocation) location_,
                 getParentForChildren(),
                 isClean());
         location_ = null;
       }
       locationCase_ = 3;
-      onChanged();;
+      onChanged();
+      ;
       return imageLocationBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.privacy.dlp.v2.DocumentLocation, com.google.privacy.dlp.v2.DocumentLocation.Builder, com.google.privacy.dlp.v2.DocumentLocationOrBuilder> documentLocationBuilder_;
+            com.google.privacy.dlp.v2.DocumentLocation,
+            com.google.privacy.dlp.v2.DocumentLocation.Builder,
+            com.google.privacy.dlp.v2.DocumentLocationOrBuilder>
+        documentLocationBuilder_;
     /**
+     *
+     *
      * <pre>
      * Location data for document files.
      * </pre>
@@ -1338,6 +1515,8 @@ private static final long serialVersionUID = 0L;
       return locationCase_ == 5;
     }
     /**
+     *
+     *
      * <pre>
      * Location data for document files.
      * </pre>
@@ -1358,6 +1537,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Location data for document files.
      * </pre>
@@ -1378,6 +1559,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Location data for document files.
      * </pre>
@@ -1396,6 +1579,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Location data for document files.
      * </pre>
@@ -1404,10 +1589,13 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeDocumentLocation(com.google.privacy.dlp.v2.DocumentLocation value) {
       if (documentLocationBuilder_ == null) {
-        if (locationCase_ == 5 &&
-            location_ != com.google.privacy.dlp.v2.DocumentLocation.getDefaultInstance()) {
-          location_ = com.google.privacy.dlp.v2.DocumentLocation.newBuilder((com.google.privacy.dlp.v2.DocumentLocation) location_)
-              .mergeFrom(value).buildPartial();
+        if (locationCase_ == 5
+            && location_ != com.google.privacy.dlp.v2.DocumentLocation.getDefaultInstance()) {
+          location_ =
+              com.google.privacy.dlp.v2.DocumentLocation.newBuilder(
+                      (com.google.privacy.dlp.v2.DocumentLocation) location_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           location_ = value;
         }
@@ -1422,6 +1610,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Location data for document files.
      * </pre>
@@ -1445,6 +1635,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Location data for document files.
      * </pre>
@@ -1455,6 +1647,8 @@ private static final long serialVersionUID = 0L;
       return getDocumentLocationFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Location data for document files.
      * </pre>
@@ -1472,6 +1666,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Location data for document files.
      * </pre>
@@ -1479,28 +1675,39 @@ private static final long serialVersionUID = 0L;
      * <code>.google.privacy.dlp.v2.DocumentLocation document_location = 5;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.privacy.dlp.v2.DocumentLocation, com.google.privacy.dlp.v2.DocumentLocation.Builder, com.google.privacy.dlp.v2.DocumentLocationOrBuilder> 
+            com.google.privacy.dlp.v2.DocumentLocation,
+            com.google.privacy.dlp.v2.DocumentLocation.Builder,
+            com.google.privacy.dlp.v2.DocumentLocationOrBuilder>
         getDocumentLocationFieldBuilder() {
       if (documentLocationBuilder_ == null) {
         if (!(locationCase_ == 5)) {
           location_ = com.google.privacy.dlp.v2.DocumentLocation.getDefaultInstance();
         }
-        documentLocationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.privacy.dlp.v2.DocumentLocation, com.google.privacy.dlp.v2.DocumentLocation.Builder, com.google.privacy.dlp.v2.DocumentLocationOrBuilder>(
+        documentLocationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.privacy.dlp.v2.DocumentLocation,
+                com.google.privacy.dlp.v2.DocumentLocation.Builder,
+                com.google.privacy.dlp.v2.DocumentLocationOrBuilder>(
                 (com.google.privacy.dlp.v2.DocumentLocation) location_,
                 getParentForChildren(),
                 isClean());
         location_ = null;
       }
       locationCase_ = 5;
-      onChanged();;
+      onChanged();
+      ;
       return documentLocationBuilder_;
     }
 
     private com.google.protobuf.Timestamp containerTimestamp_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> containerTimestampBuilder_;
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        containerTimestampBuilder_;
     /**
+     *
+     *
      * <pre>
      * Findings container modification timestamp, if applicable.
      * For Google Cloud Storage contains last file modification timestamp.
@@ -1514,6 +1721,8 @@ private static final long serialVersionUID = 0L;
       return containerTimestampBuilder_ != null || containerTimestamp_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Findings container modification timestamp, if applicable.
      * For Google Cloud Storage contains last file modification timestamp.
@@ -1525,12 +1734,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.Timestamp getContainerTimestamp() {
       if (containerTimestampBuilder_ == null) {
-        return containerTimestamp_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : containerTimestamp_;
+        return containerTimestamp_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : containerTimestamp_;
       } else {
         return containerTimestampBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Findings container modification timestamp, if applicable.
      * For Google Cloud Storage contains last file modification timestamp.
@@ -1554,6 +1767,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Findings container modification timestamp, if applicable.
      * For Google Cloud Storage contains last file modification timestamp.
@@ -1563,8 +1778,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.Timestamp container_timestamp = 6;</code>
      */
-    public Builder setContainerTimestamp(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
+    public Builder setContainerTimestamp(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (containerTimestampBuilder_ == null) {
         containerTimestamp_ = builderForValue.build();
         onChanged();
@@ -1575,6 +1789,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Findings container modification timestamp, if applicable.
      * For Google Cloud Storage contains last file modification timestamp.
@@ -1588,7 +1804,9 @@ private static final long serialVersionUID = 0L;
       if (containerTimestampBuilder_ == null) {
         if (containerTimestamp_ != null) {
           containerTimestamp_ =
-            com.google.protobuf.Timestamp.newBuilder(containerTimestamp_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Timestamp.newBuilder(containerTimestamp_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           containerTimestamp_ = value;
         }
@@ -1600,6 +1818,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Findings container modification timestamp, if applicable.
      * For Google Cloud Storage contains last file modification timestamp.
@@ -1621,6 +1841,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Findings container modification timestamp, if applicable.
      * For Google Cloud Storage contains last file modification timestamp.
@@ -1631,11 +1853,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp container_timestamp = 6;</code>
      */
     public com.google.protobuf.Timestamp.Builder getContainerTimestampBuilder() {
-      
+
       onChanged();
       return getContainerTimestampFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Findings container modification timestamp, if applicable.
      * For Google Cloud Storage contains last file modification timestamp.
@@ -1649,11 +1873,14 @@ private static final long serialVersionUID = 0L;
       if (containerTimestampBuilder_ != null) {
         return containerTimestampBuilder_.getMessageOrBuilder();
       } else {
-        return containerTimestamp_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : containerTimestamp_;
+        return containerTimestamp_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : containerTimestamp_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Findings container modification timestamp, if applicable.
      * For Google Cloud Storage contains last file modification timestamp.
@@ -1664,14 +1891,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp container_timestamp = 6;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
         getContainerTimestampFieldBuilder() {
       if (containerTimestampBuilder_ == null) {
-        containerTimestampBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getContainerTimestamp(),
-                getParentForChildren(),
-                isClean());
+        containerTimestampBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getContainerTimestamp(), getParentForChildren(), isClean());
         containerTimestamp_ = null;
       }
       return containerTimestampBuilder_;
@@ -1679,6 +1909,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object containerVersion_ = "";
     /**
+     *
+     *
      * <pre>
      * Findings container version, if available
      * ("generation" for Google Cloud Storage).
@@ -1689,8 +1921,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getContainerVersion() {
       java.lang.Object ref = containerVersion_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         containerVersion_ = s;
         return s;
@@ -1699,6 +1930,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Findings container version, if available
      * ("generation" for Google Cloud Storage).
@@ -1706,13 +1939,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string container_version = 7;</code>
      */
-    public com.google.protobuf.ByteString
-        getContainerVersionBytes() {
+    public com.google.protobuf.ByteString getContainerVersionBytes() {
       java.lang.Object ref = containerVersion_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         containerVersion_ = b;
         return b;
       } else {
@@ -1720,6 +1951,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Findings container version, if available
      * ("generation" for Google Cloud Storage).
@@ -1727,17 +1960,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string container_version = 7;</code>
      */
-    public Builder setContainerVersion(
-        java.lang.String value) {
+    public Builder setContainerVersion(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       containerVersion_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Findings container version, if available
      * ("generation" for Google Cloud Storage).
@@ -1746,12 +1980,14 @@ private static final long serialVersionUID = 0L;
      * <code>string container_version = 7;</code>
      */
     public Builder clearContainerVersion() {
-      
+
       containerVersion_ = getDefaultInstance().getContainerVersion();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Findings container version, if available
      * ("generation" for Google Cloud Storage).
@@ -1759,33 +1995,34 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string container_version = 7;</code>
      */
-    public Builder setContainerVersionBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setContainerVersionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       containerVersion_ = value;
       onChanged();
       return this;
     }
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+
+    @java.lang.Override
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
     }
-
 
     // @@protoc_insertion_point(builder_scope:google.privacy.dlp.v2.ContentLocation)
   }
 
   // @@protoc_insertion_point(class_scope:google.privacy.dlp.v2.ContentLocation)
   private static final com.google.privacy.dlp.v2.ContentLocation DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.privacy.dlp.v2.ContentLocation();
   }
@@ -1794,15 +2031,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ContentLocation>
-      PARSER = new com.google.protobuf.AbstractParser<ContentLocation>() {
-    public ContentLocation parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ContentLocation(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<ContentLocation> PARSER =
+      new com.google.protobuf.AbstractParser<ContentLocation>() {
+        @java.lang.Override
+        public ContentLocation parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new ContentLocation(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<ContentLocation> parser() {
     return PARSER;
@@ -1813,9 +2051,8 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.privacy.dlp.v2.ContentLocation getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

@@ -18,7 +18,6 @@ package com.google.cloud.datastore;
 
 import static com.google.cloud.datastore.BlobValue.of;
 import static com.google.cloud.datastore.BooleanValue.of;
-import static com.google.cloud.datastore.TimestampValue.of;
 import static com.google.cloud.datastore.DoubleValue.of;
 import static com.google.cloud.datastore.EntityValue.of;
 import static com.google.cloud.datastore.KeyValue.of;
@@ -27,12 +26,12 @@ import static com.google.cloud.datastore.ListValue.of;
 import static com.google.cloud.datastore.LongValue.of;
 import static com.google.cloud.datastore.NullValue.of;
 import static com.google.cloud.datastore.StringValue.of;
+import static com.google.cloud.datastore.TimestampValue.of;
 
 import com.google.cloud.Timestamp;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableSortedMap;
 import com.google.common.collect.Maps;
-
 import java.io.Serializable;
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -42,11 +41,10 @@ import java.util.Objects;
 import java.util.Set;
 
 /**
- * A base class for entities (key and properties).
- * An entity is a Google Cloud Datastore persistent data object.
- * An entity holds one or more properties, represented by a name (as {@link String})
- * and a value (as {@link com.google.cloud.datastore.Value}), and may be associated with a
- * key. For a list of possible values see {@link ValueType}.
+ * A base class for entities (key and properties). An entity is a Google Cloud Datastore persistent
+ * data object. An entity holds one or more properties, represented by a name (as {@link String})
+ * and a value (as {@link com.google.cloud.datastore.Value}), and may be associated with a key. For
+ * a list of possible values see {@link ValueType}.
  *
  * @see <a href="https://cloud.google.com/datastore/docs/concepts/entities">Google Cloud Datastore
  *     Entities, Properties, and Keys</a>
@@ -62,8 +60,7 @@ public abstract class BaseEntity<K extends IncompleteKey> implements Serializabl
     private K key;
     private final Map<String, Value<?>> properties = new HashMap<>();
 
-    Builder() {
-    }
+    Builder() {}
 
     Builder(K key) {
       setKey(key);
@@ -110,26 +107,19 @@ public abstract class BaseEntity<K extends IncompleteKey> implements Serializabl
       return self();
     }
 
-
-    /**
-     * Sets the key for the entity.
-     */
+    /** Sets the key for the entity. */
     public B setKey(K key) {
       this.key = key;
       return self();
     }
 
-    /**
-     * Clears all the properties.
-     */
+    /** Clears all the properties. */
     public B clear() {
       properties.clear();
       return self();
     }
 
-    /**
-     * Removes a property with the given {@code name}.
-     */
+    /** Removes a property with the given {@code name}. */
     public B remove(String name) {
       properties.remove(name);
       return self();
@@ -485,28 +475,20 @@ public abstract class BaseEntity<K extends IncompleteKey> implements Serializabl
       return false;
     }
     BaseEntity<?> other = (BaseEntity<?>) obj;
-    return Objects.equals(key, other.key)
-        && Objects.equals(properties, other.properties);
+    return Objects.equals(key, other.key) && Objects.equals(properties, other.properties);
   }
 
-  /**
-   * Returns true if entity has a non-null key.
-   */
+  /** Returns true if entity has a non-null key. */
   public boolean hasKey() {
     return key != null;
   }
 
-
-  /**
-   * Returns the associated key or null if it does not have one.
-   */
+  /** Returns the associated key or null if it does not have one. */
   public K getKey() {
     return key;
   }
 
-  /**
-   * Returns {@code true} if the entity contains a property with the given {@code name}.
-   */
+  /** Returns {@code true} if the entity contains a property with the given {@code name}. */
   public boolean contains(String name) {
     return properties.containsKey(name);
   }
@@ -533,7 +515,6 @@ public abstract class BaseEntity<K extends IncompleteKey> implements Serializabl
   public boolean isNull(String name) {
     return getValue(name) instanceof NullValue;
   }
-
 
   /**
    * Returns the property value as a string.
@@ -645,10 +626,7 @@ public abstract class BaseEntity<K extends IncompleteKey> implements Serializabl
     return ((Value<Blob>) getValue(name)).get();
   }
 
-
-  /**
-   * Returns the properties name.
-   */
+  /** Returns the properties name. */
   public Set<String> getNames() {
     return properties.keySet();
   }

@@ -3,11 +3,14 @@
 
 package com.google.cloud.tasks.v2beta2;
 
-public interface CancelLeaseRequestOrBuilder extends
+public interface CancelLeaseRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.tasks.v2beta2.CancelLeaseRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required.
    * The task name. For example:
@@ -18,6 +21,8 @@ public interface CancelLeaseRequestOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * Required.
    * The task name. For example:
@@ -26,10 +31,11 @@ public interface CancelLeaseRequestOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * Required.
    * The task's current schedule time, available in the
@@ -43,6 +49,8 @@ public interface CancelLeaseRequestOrBuilder extends
    */
   boolean hasScheduleTime();
   /**
+   *
+   *
    * <pre>
    * Required.
    * The task's current schedule time, available in the
@@ -56,6 +64,8 @@ public interface CancelLeaseRequestOrBuilder extends
    */
   com.google.protobuf.Timestamp getScheduleTime();
   /**
+   *
+   *
    * <pre>
    * Required.
    * The task's current schedule time, available in the
@@ -70,6 +80,8 @@ public interface CancelLeaseRequestOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getScheduleTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The response_view specifies which subset of the [Task][google.cloud.tasks.v2beta2.Task] will be
    * returned.
@@ -87,6 +99,8 @@ public interface CancelLeaseRequestOrBuilder extends
    */
   int getResponseViewValue();
   /**
+   *
+   *
    * <pre>
    * The response_view specifies which subset of the [Task][google.cloud.tasks.v2beta2.Task] will be
    * returned.

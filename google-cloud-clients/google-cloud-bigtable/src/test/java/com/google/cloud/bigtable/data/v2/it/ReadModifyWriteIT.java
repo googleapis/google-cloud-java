@@ -35,7 +35,7 @@ public class ReadModifyWriteIT {
 
   @Test
   public void test() throws InterruptedException, ExecutionException, TimeoutException {
-    String tableId = testEnvRule.env().getTableName().getTable();
+    String tableId = testEnvRule.env().getTableId();
     String family = testEnvRule.env().getFamilyId();
     String rowKey = testEnvRule.env().getRowPrefix();
 

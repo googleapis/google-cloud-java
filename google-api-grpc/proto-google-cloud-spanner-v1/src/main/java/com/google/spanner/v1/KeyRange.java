@@ -4,6 +4,8 @@
 package com.google.spanner.v1;
 
 /**
+ *
+ *
  * <pre>
  * KeyRange represents a range of rows in a table or index.
  * A range has a start key and an end key. These keys can be open or
@@ -69,28 +71,31 @@ package com.google.spanner.v1;
  *
  * Protobuf type {@code google.spanner.v1.KeyRange}
  */
-public  final class KeyRange extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class KeyRange extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.spanner.v1.KeyRange)
     KeyRangeOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use KeyRange.newBuilder() to construct.
   private KeyRange(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private KeyRange() {
-  }
+
+  private KeyRange() {}
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private KeyRange(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -102,107 +107,111 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          case 10:
+            {
+              com.google.protobuf.ListValue.Builder subBuilder = null;
+              if (startKeyTypeCase_ == 1) {
+                subBuilder = ((com.google.protobuf.ListValue) startKeyType_).toBuilder();
+              }
+              startKeyType_ =
+                  input.readMessage(com.google.protobuf.ListValue.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.protobuf.ListValue) startKeyType_);
+                startKeyType_ = subBuilder.buildPartial();
+              }
+              startKeyTypeCase_ = 1;
+              break;
             }
-            break;
-          }
-          case 10: {
-            com.google.protobuf.ListValue.Builder subBuilder = null;
-            if (startKeyTypeCase_ == 1) {
-              subBuilder = ((com.google.protobuf.ListValue) startKeyType_).toBuilder();
+          case 18:
+            {
+              com.google.protobuf.ListValue.Builder subBuilder = null;
+              if (startKeyTypeCase_ == 2) {
+                subBuilder = ((com.google.protobuf.ListValue) startKeyType_).toBuilder();
+              }
+              startKeyType_ =
+                  input.readMessage(com.google.protobuf.ListValue.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.protobuf.ListValue) startKeyType_);
+                startKeyType_ = subBuilder.buildPartial();
+              }
+              startKeyTypeCase_ = 2;
+              break;
             }
-            startKeyType_ =
-                input.readMessage(com.google.protobuf.ListValue.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.google.protobuf.ListValue) startKeyType_);
-              startKeyType_ = subBuilder.buildPartial();
+          case 26:
+            {
+              com.google.protobuf.ListValue.Builder subBuilder = null;
+              if (endKeyTypeCase_ == 3) {
+                subBuilder = ((com.google.protobuf.ListValue) endKeyType_).toBuilder();
+              }
+              endKeyType_ =
+                  input.readMessage(com.google.protobuf.ListValue.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.protobuf.ListValue) endKeyType_);
+                endKeyType_ = subBuilder.buildPartial();
+              }
+              endKeyTypeCase_ = 3;
+              break;
             }
-            startKeyTypeCase_ = 1;
-            break;
-          }
-          case 18: {
-            com.google.protobuf.ListValue.Builder subBuilder = null;
-            if (startKeyTypeCase_ == 2) {
-              subBuilder = ((com.google.protobuf.ListValue) startKeyType_).toBuilder();
+          case 34:
+            {
+              com.google.protobuf.ListValue.Builder subBuilder = null;
+              if (endKeyTypeCase_ == 4) {
+                subBuilder = ((com.google.protobuf.ListValue) endKeyType_).toBuilder();
+              }
+              endKeyType_ =
+                  input.readMessage(com.google.protobuf.ListValue.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.protobuf.ListValue) endKeyType_);
+                endKeyType_ = subBuilder.buildPartial();
+              }
+              endKeyTypeCase_ = 4;
+              break;
             }
-            startKeyType_ =
-                input.readMessage(com.google.protobuf.ListValue.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.google.protobuf.ListValue) startKeyType_);
-              startKeyType_ = subBuilder.buildPartial();
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
             }
-            startKeyTypeCase_ = 2;
-            break;
-          }
-          case 26: {
-            com.google.protobuf.ListValue.Builder subBuilder = null;
-            if (endKeyTypeCase_ == 3) {
-              subBuilder = ((com.google.protobuf.ListValue) endKeyType_).toBuilder();
-            }
-            endKeyType_ =
-                input.readMessage(com.google.protobuf.ListValue.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.google.protobuf.ListValue) endKeyType_);
-              endKeyType_ = subBuilder.buildPartial();
-            }
-            endKeyTypeCase_ = 3;
-            break;
-          }
-          case 34: {
-            com.google.protobuf.ListValue.Builder subBuilder = null;
-            if (endKeyTypeCase_ == 4) {
-              subBuilder = ((com.google.protobuf.ListValue) endKeyType_).toBuilder();
-            }
-            endKeyType_ =
-                input.readMessage(com.google.protobuf.ListValue.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.google.protobuf.ListValue) endKeyType_);
-              endKeyType_ = subBuilder.buildPartial();
-            }
-            endKeyTypeCase_ = 4;
-            break;
-          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.spanner.v1.KeysProto.internal_static_google_spanner_v1_KeyRange_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.spanner.v1.KeysProto.internal_static_google_spanner_v1_KeyRange_fieldAccessorTable
+    return com.google.spanner.v1.KeysProto
+        .internal_static_google_spanner_v1_KeyRange_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.spanner.v1.KeyRange.class, com.google.spanner.v1.KeyRange.Builder.class);
   }
 
   private int startKeyTypeCase_ = 0;
   private java.lang.Object startKeyType_;
-  public enum StartKeyTypeCase
-      implements com.google.protobuf.Internal.EnumLite {
+
+  public enum StartKeyTypeCase implements com.google.protobuf.Internal.EnumLite {
     START_CLOSED(1),
     START_OPEN(2),
     STARTKEYTYPE_NOT_SET(0);
     private final int value;
+
     private StartKeyTypeCase(int value) {
       this.value = value;
     }
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static StartKeyTypeCase valueOf(int value) {
       return forNumber(value);
@@ -210,37 +219,39 @@ private static final long serialVersionUID = 0L;
 
     public static StartKeyTypeCase forNumber(int value) {
       switch (value) {
-        case 1: return START_CLOSED;
-        case 2: return START_OPEN;
-        case 0: return STARTKEYTYPE_NOT_SET;
-        default: return null;
+        case 1:
+          return START_CLOSED;
+        case 2:
+          return START_OPEN;
+        case 0:
+          return STARTKEYTYPE_NOT_SET;
+        default:
+          return null;
       }
     }
+
     public int getNumber() {
       return this.value;
     }
   };
 
-  public StartKeyTypeCase
-  getStartKeyTypeCase() {
-    return StartKeyTypeCase.forNumber(
-        startKeyTypeCase_);
+  public StartKeyTypeCase getStartKeyTypeCase() {
+    return StartKeyTypeCase.forNumber(startKeyTypeCase_);
   }
 
   private int endKeyTypeCase_ = 0;
   private java.lang.Object endKeyType_;
-  public enum EndKeyTypeCase
-      implements com.google.protobuf.Internal.EnumLite {
+
+  public enum EndKeyTypeCase implements com.google.protobuf.Internal.EnumLite {
     END_CLOSED(3),
     END_OPEN(4),
     ENDKEYTYPE_NOT_SET(0);
     private final int value;
+
     private EndKeyTypeCase(int value) {
       this.value = value;
     }
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static EndKeyTypeCase valueOf(int value) {
       return forNumber(value);
@@ -248,25 +259,30 @@ private static final long serialVersionUID = 0L;
 
     public static EndKeyTypeCase forNumber(int value) {
       switch (value) {
-        case 3: return END_CLOSED;
-        case 4: return END_OPEN;
-        case 0: return ENDKEYTYPE_NOT_SET;
-        default: return null;
+        case 3:
+          return END_CLOSED;
+        case 4:
+          return END_OPEN;
+        case 0:
+          return ENDKEYTYPE_NOT_SET;
+        default:
+          return null;
       }
     }
+
     public int getNumber() {
       return this.value;
     }
   };
 
-  public EndKeyTypeCase
-  getEndKeyTypeCase() {
-    return EndKeyTypeCase.forNumber(
-        endKeyTypeCase_);
+  public EndKeyTypeCase getEndKeyTypeCase() {
+    return EndKeyTypeCase.forNumber(endKeyTypeCase_);
   }
 
   public static final int START_CLOSED_FIELD_NUMBER = 1;
   /**
+   *
+   *
    * <pre>
    * If the start is closed, then the range includes all rows whose
    * first `len(start_closed)` key columns exactly match `start_closed`.
@@ -278,6 +294,8 @@ private static final long serialVersionUID = 0L;
     return startKeyTypeCase_ == 1;
   }
   /**
+   *
+   *
    * <pre>
    * If the start is closed, then the range includes all rows whose
    * first `len(start_closed)` key columns exactly match `start_closed`.
@@ -287,11 +305,13 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.protobuf.ListValue getStartClosed() {
     if (startKeyTypeCase_ == 1) {
-       return (com.google.protobuf.ListValue) startKeyType_;
+      return (com.google.protobuf.ListValue) startKeyType_;
     }
     return com.google.protobuf.ListValue.getDefaultInstance();
   }
   /**
+   *
+   *
    * <pre>
    * If the start is closed, then the range includes all rows whose
    * first `len(start_closed)` key columns exactly match `start_closed`.
@@ -301,13 +321,15 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.protobuf.ListValueOrBuilder getStartClosedOrBuilder() {
     if (startKeyTypeCase_ == 1) {
-       return (com.google.protobuf.ListValue) startKeyType_;
+      return (com.google.protobuf.ListValue) startKeyType_;
     }
     return com.google.protobuf.ListValue.getDefaultInstance();
   }
 
   public static final int START_OPEN_FIELD_NUMBER = 2;
   /**
+   *
+   *
    * <pre>
    * If the start is open, then the range excludes rows whose first
    * `len(start_open)` key columns exactly match `start_open`.
@@ -319,6 +341,8 @@ private static final long serialVersionUID = 0L;
     return startKeyTypeCase_ == 2;
   }
   /**
+   *
+   *
    * <pre>
    * If the start is open, then the range excludes rows whose first
    * `len(start_open)` key columns exactly match `start_open`.
@@ -328,11 +352,13 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.protobuf.ListValue getStartOpen() {
     if (startKeyTypeCase_ == 2) {
-       return (com.google.protobuf.ListValue) startKeyType_;
+      return (com.google.protobuf.ListValue) startKeyType_;
     }
     return com.google.protobuf.ListValue.getDefaultInstance();
   }
   /**
+   *
+   *
    * <pre>
    * If the start is open, then the range excludes rows whose first
    * `len(start_open)` key columns exactly match `start_open`.
@@ -342,13 +368,15 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.protobuf.ListValueOrBuilder getStartOpenOrBuilder() {
     if (startKeyTypeCase_ == 2) {
-       return (com.google.protobuf.ListValue) startKeyType_;
+      return (com.google.protobuf.ListValue) startKeyType_;
     }
     return com.google.protobuf.ListValue.getDefaultInstance();
   }
 
   public static final int END_CLOSED_FIELD_NUMBER = 3;
   /**
+   *
+   *
    * <pre>
    * If the end is closed, then the range includes all rows whose
    * first `len(end_closed)` key columns exactly match `end_closed`.
@@ -360,6 +388,8 @@ private static final long serialVersionUID = 0L;
     return endKeyTypeCase_ == 3;
   }
   /**
+   *
+   *
    * <pre>
    * If the end is closed, then the range includes all rows whose
    * first `len(end_closed)` key columns exactly match `end_closed`.
@@ -369,11 +399,13 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.protobuf.ListValue getEndClosed() {
     if (endKeyTypeCase_ == 3) {
-       return (com.google.protobuf.ListValue) endKeyType_;
+      return (com.google.protobuf.ListValue) endKeyType_;
     }
     return com.google.protobuf.ListValue.getDefaultInstance();
   }
   /**
+   *
+   *
    * <pre>
    * If the end is closed, then the range includes all rows whose
    * first `len(end_closed)` key columns exactly match `end_closed`.
@@ -383,13 +415,15 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.protobuf.ListValueOrBuilder getEndClosedOrBuilder() {
     if (endKeyTypeCase_ == 3) {
-       return (com.google.protobuf.ListValue) endKeyType_;
+      return (com.google.protobuf.ListValue) endKeyType_;
     }
     return com.google.protobuf.ListValue.getDefaultInstance();
   }
 
   public static final int END_OPEN_FIELD_NUMBER = 4;
   /**
+   *
+   *
    * <pre>
    * If the end is open, then the range excludes rows whose first
    * `len(end_open)` key columns exactly match `end_open`.
@@ -401,6 +435,8 @@ private static final long serialVersionUID = 0L;
     return endKeyTypeCase_ == 4;
   }
   /**
+   *
+   *
    * <pre>
    * If the end is open, then the range excludes rows whose first
    * `len(end_open)` key columns exactly match `end_open`.
@@ -410,11 +446,13 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.protobuf.ListValue getEndOpen() {
     if (endKeyTypeCase_ == 4) {
-       return (com.google.protobuf.ListValue) endKeyType_;
+      return (com.google.protobuf.ListValue) endKeyType_;
     }
     return com.google.protobuf.ListValue.getDefaultInstance();
   }
   /**
+   *
+   *
    * <pre>
    * If the end is open, then the range excludes rows whose first
    * `len(end_open)` key columns exactly match `end_open`.
@@ -424,12 +462,14 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.protobuf.ListValueOrBuilder getEndOpenOrBuilder() {
     if (endKeyTypeCase_ == 4) {
-       return (com.google.protobuf.ListValue) endKeyType_;
+      return (com.google.protobuf.ListValue) endKeyType_;
     }
     return com.google.protobuf.ListValue.getDefaultInstance();
   }
 
   private byte memoizedIsInitialized = -1;
+
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -439,8 +479,8 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  @java.lang.Override
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (startKeyTypeCase_ == 1) {
       output.writeMessage(1, (com.google.protobuf.ListValue) startKeyType_);
     }
@@ -456,26 +496,31 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
 
     size = 0;
     if (startKeyTypeCase_ == 1) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, (com.google.protobuf.ListValue) startKeyType_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              1, (com.google.protobuf.ListValue) startKeyType_);
     }
     if (startKeyTypeCase_ == 2) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, (com.google.protobuf.ListValue) startKeyType_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              2, (com.google.protobuf.ListValue) startKeyType_);
     }
     if (endKeyTypeCase_ == 3) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, (com.google.protobuf.ListValue) endKeyType_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              3, (com.google.protobuf.ListValue) endKeyType_);
     }
     if (endKeyTypeCase_ == 4) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, (com.google.protobuf.ListValue) endKeyType_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              4, (com.google.protobuf.ListValue) endKeyType_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -485,7 +530,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.spanner.v1.KeyRange)) {
       return super.equals(obj);
@@ -493,32 +538,26 @@ private static final long serialVersionUID = 0L;
     com.google.spanner.v1.KeyRange other = (com.google.spanner.v1.KeyRange) obj;
 
     boolean result = true;
-    result = result && getStartKeyTypeCase().equals(
-        other.getStartKeyTypeCase());
+    result = result && getStartKeyTypeCase().equals(other.getStartKeyTypeCase());
     if (!result) return false;
     switch (startKeyTypeCase_) {
       case 1:
-        result = result && getStartClosed()
-            .equals(other.getStartClosed());
+        result = result && getStartClosed().equals(other.getStartClosed());
         break;
       case 2:
-        result = result && getStartOpen()
-            .equals(other.getStartOpen());
+        result = result && getStartOpen().equals(other.getStartOpen());
         break;
       case 0:
       default:
     }
-    result = result && getEndKeyTypeCase().equals(
-        other.getEndKeyTypeCase());
+    result = result && getEndKeyTypeCase().equals(other.getEndKeyTypeCase());
     if (!result) return false;
     switch (endKeyTypeCase_) {
       case 3:
-        result = result && getEndClosed()
-            .equals(other.getEndClosed());
+        result = result && getEndClosed().equals(other.getEndClosed());
         break;
       case 4:
-        result = result && getEndOpen()
-            .equals(other.getEndOpen());
+        result = result && getEndOpen().equals(other.getEndOpen());
         break;
       case 0:
       default:
@@ -563,95 +602,103 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.spanner.v1.KeyRange parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.spanner.v1.KeyRange parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.spanner.v1.KeyRange parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.spanner.v1.KeyRange parseFrom(
-      com.google.protobuf.ByteString data)
+
+  public static com.google.spanner.v1.KeyRange parseFrom(com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.spanner.v1.KeyRange parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.spanner.v1.KeyRange parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.spanner.v1.KeyRange parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.spanner.v1.KeyRange parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.spanner.v1.KeyRange parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.spanner.v1.KeyRange parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
   public static com.google.spanner.v1.KeyRange parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.spanner.v1.KeyRange parseFrom(
-      com.google.protobuf.CodedInputStream input)
+
+  public static com.google.spanner.v1.KeyRange parseFrom(com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.spanner.v1.KeyRange parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  public Builder newBuilderForType() { return newBuilder(); }
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-  public static Builder newBuilder(com.google.spanner.v1.KeyRange prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+
+  public static Builder newBuilder(com.google.spanner.v1.KeyRange prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+
+  @java.lang.Override
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * KeyRange represents a range of rows in a table or index.
    * A range has a start key and an end key. These keys can be open or
@@ -717,18 +764,19 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.spanner.v1.KeyRange}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.spanner.v1.KeyRange)
       com.google.spanner.v1.KeyRangeOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return com.google.spanner.v1.KeysProto.internal_static_google_spanner_v1_KeyRange_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.spanner.v1.KeysProto.internal_static_google_spanner_v1_KeyRange_fieldAccessorTable
+      return com.google.spanner.v1.KeysProto
+          .internal_static_google_spanner_v1_KeyRange_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.spanner.v1.KeyRange.class, com.google.spanner.v1.KeyRange.Builder.class);
     }
@@ -738,16 +786,16 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       startKeyTypeCase_ = 0;
@@ -757,15 +805,17 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return com.google.spanner.v1.KeysProto.internal_static_google_spanner_v1_KeyRange_descriptor;
     }
 
+    @java.lang.Override
     public com.google.spanner.v1.KeyRange getDefaultInstanceForType() {
       return com.google.spanner.v1.KeyRange.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.spanner.v1.KeyRange build() {
       com.google.spanner.v1.KeyRange result = buildPartial();
       if (!result.isInitialized()) {
@@ -774,6 +824,7 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.spanner.v1.KeyRange buildPartial() {
       com.google.spanner.v1.KeyRange result = new com.google.spanner.v1.KeyRange(this);
       if (startKeyTypeCase_ == 1) {
@@ -810,35 +861,43 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+
+    @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+    @java.lang.Override
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+    @java.lang.Override
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
+    @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
+    @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.spanner.v1.KeyRange) {
-        return mergeFrom((com.google.spanner.v1.KeyRange)other);
+        return mergeFrom((com.google.spanner.v1.KeyRange) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -848,40 +907,48 @@ private static final long serialVersionUID = 0L;
     public Builder mergeFrom(com.google.spanner.v1.KeyRange other) {
       if (other == com.google.spanner.v1.KeyRange.getDefaultInstance()) return this;
       switch (other.getStartKeyTypeCase()) {
-        case START_CLOSED: {
-          mergeStartClosed(other.getStartClosed());
-          break;
-        }
-        case START_OPEN: {
-          mergeStartOpen(other.getStartOpen());
-          break;
-        }
-        case STARTKEYTYPE_NOT_SET: {
-          break;
-        }
+        case START_CLOSED:
+          {
+            mergeStartClosed(other.getStartClosed());
+            break;
+          }
+        case START_OPEN:
+          {
+            mergeStartOpen(other.getStartOpen());
+            break;
+          }
+        case STARTKEYTYPE_NOT_SET:
+          {
+            break;
+          }
       }
       switch (other.getEndKeyTypeCase()) {
-        case END_CLOSED: {
-          mergeEndClosed(other.getEndClosed());
-          break;
-        }
-        case END_OPEN: {
-          mergeEndOpen(other.getEndOpen());
-          break;
-        }
-        case ENDKEYTYPE_NOT_SET: {
-          break;
-        }
+        case END_CLOSED:
+          {
+            mergeEndClosed(other.getEndClosed());
+            break;
+          }
+        case END_OPEN:
+          {
+            mergeEndOpen(other.getEndOpen());
+            break;
+          }
+        case ENDKEYTYPE_NOT_SET:
+          {
+            break;
+          }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -899,12 +966,12 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int startKeyTypeCase_ = 0;
     private java.lang.Object startKeyType_;
-    public StartKeyTypeCase
-        getStartKeyTypeCase() {
-      return StartKeyTypeCase.forNumber(
-          startKeyTypeCase_);
+
+    public StartKeyTypeCase getStartKeyTypeCase() {
+      return StartKeyTypeCase.forNumber(startKeyTypeCase_);
     }
 
     public Builder clearStartKeyType() {
@@ -916,10 +983,9 @@ private static final long serialVersionUID = 0L;
 
     private int endKeyTypeCase_ = 0;
     private java.lang.Object endKeyType_;
-    public EndKeyTypeCase
-        getEndKeyTypeCase() {
-      return EndKeyTypeCase.forNumber(
-          endKeyTypeCase_);
+
+    public EndKeyTypeCase getEndKeyTypeCase() {
+      return EndKeyTypeCase.forNumber(endKeyTypeCase_);
     }
 
     public Builder clearEndKeyType() {
@@ -929,10 +995,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.ListValue, com.google.protobuf.ListValue.Builder, com.google.protobuf.ListValueOrBuilder> startClosedBuilder_;
+            com.google.protobuf.ListValue,
+            com.google.protobuf.ListValue.Builder,
+            com.google.protobuf.ListValueOrBuilder>
+        startClosedBuilder_;
     /**
+     *
+     *
      * <pre>
      * If the start is closed, then the range includes all rows whose
      * first `len(start_closed)` key columns exactly match `start_closed`.
@@ -944,6 +1014,8 @@ private static final long serialVersionUID = 0L;
       return startKeyTypeCase_ == 1;
     }
     /**
+     *
+     *
      * <pre>
      * If the start is closed, then the range includes all rows whose
      * first `len(start_closed)` key columns exactly match `start_closed`.
@@ -965,6 +1037,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * If the start is closed, then the range includes all rows whose
      * first `len(start_closed)` key columns exactly match `start_closed`.
@@ -986,6 +1060,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If the start is closed, then the range includes all rows whose
      * first `len(start_closed)` key columns exactly match `start_closed`.
@@ -993,8 +1069,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.ListValue start_closed = 1;</code>
      */
-    public Builder setStartClosed(
-        com.google.protobuf.ListValue.Builder builderForValue) {
+    public Builder setStartClosed(com.google.protobuf.ListValue.Builder builderForValue) {
       if (startClosedBuilder_ == null) {
         startKeyType_ = builderForValue.build();
         onChanged();
@@ -1005,6 +1080,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If the start is closed, then the range includes all rows whose
      * first `len(start_closed)` key columns exactly match `start_closed`.
@@ -1014,10 +1091,13 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeStartClosed(com.google.protobuf.ListValue value) {
       if (startClosedBuilder_ == null) {
-        if (startKeyTypeCase_ == 1 &&
-            startKeyType_ != com.google.protobuf.ListValue.getDefaultInstance()) {
-          startKeyType_ = com.google.protobuf.ListValue.newBuilder((com.google.protobuf.ListValue) startKeyType_)
-              .mergeFrom(value).buildPartial();
+        if (startKeyTypeCase_ == 1
+            && startKeyType_ != com.google.protobuf.ListValue.getDefaultInstance()) {
+          startKeyType_ =
+              com.google.protobuf.ListValue.newBuilder(
+                      (com.google.protobuf.ListValue) startKeyType_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           startKeyType_ = value;
         }
@@ -1032,6 +1112,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If the start is closed, then the range includes all rows whose
      * first `len(start_closed)` key columns exactly match `start_closed`.
@@ -1056,6 +1138,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If the start is closed, then the range includes all rows whose
      * first `len(start_closed)` key columns exactly match `start_closed`.
@@ -1067,6 +1151,8 @@ private static final long serialVersionUID = 0L;
       return getStartClosedFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * If the start is closed, then the range includes all rows whose
      * first `len(start_closed)` key columns exactly match `start_closed`.
@@ -1085,6 +1171,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * If the start is closed, then the range includes all rows whose
      * first `len(start_closed)` key columns exactly match `start_closed`.
@@ -1093,27 +1181,36 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.ListValue start_closed = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.ListValue, com.google.protobuf.ListValue.Builder, com.google.protobuf.ListValueOrBuilder> 
+            com.google.protobuf.ListValue,
+            com.google.protobuf.ListValue.Builder,
+            com.google.protobuf.ListValueOrBuilder>
         getStartClosedFieldBuilder() {
       if (startClosedBuilder_ == null) {
         if (!(startKeyTypeCase_ == 1)) {
           startKeyType_ = com.google.protobuf.ListValue.getDefaultInstance();
         }
-        startClosedBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.ListValue, com.google.protobuf.ListValue.Builder, com.google.protobuf.ListValueOrBuilder>(
-                (com.google.protobuf.ListValue) startKeyType_,
-                getParentForChildren(),
-                isClean());
+        startClosedBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.ListValue,
+                com.google.protobuf.ListValue.Builder,
+                com.google.protobuf.ListValueOrBuilder>(
+                (com.google.protobuf.ListValue) startKeyType_, getParentForChildren(), isClean());
         startKeyType_ = null;
       }
       startKeyTypeCase_ = 1;
-      onChanged();;
+      onChanged();
+      ;
       return startClosedBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.ListValue, com.google.protobuf.ListValue.Builder, com.google.protobuf.ListValueOrBuilder> startOpenBuilder_;
+            com.google.protobuf.ListValue,
+            com.google.protobuf.ListValue.Builder,
+            com.google.protobuf.ListValueOrBuilder>
+        startOpenBuilder_;
     /**
+     *
+     *
      * <pre>
      * If the start is open, then the range excludes rows whose first
      * `len(start_open)` key columns exactly match `start_open`.
@@ -1125,6 +1222,8 @@ private static final long serialVersionUID = 0L;
       return startKeyTypeCase_ == 2;
     }
     /**
+     *
+     *
      * <pre>
      * If the start is open, then the range excludes rows whose first
      * `len(start_open)` key columns exactly match `start_open`.
@@ -1146,6 +1245,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * If the start is open, then the range excludes rows whose first
      * `len(start_open)` key columns exactly match `start_open`.
@@ -1167,6 +1268,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If the start is open, then the range excludes rows whose first
      * `len(start_open)` key columns exactly match `start_open`.
@@ -1174,8 +1277,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.ListValue start_open = 2;</code>
      */
-    public Builder setStartOpen(
-        com.google.protobuf.ListValue.Builder builderForValue) {
+    public Builder setStartOpen(com.google.protobuf.ListValue.Builder builderForValue) {
       if (startOpenBuilder_ == null) {
         startKeyType_ = builderForValue.build();
         onChanged();
@@ -1186,6 +1288,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If the start is open, then the range excludes rows whose first
      * `len(start_open)` key columns exactly match `start_open`.
@@ -1195,10 +1299,13 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeStartOpen(com.google.protobuf.ListValue value) {
       if (startOpenBuilder_ == null) {
-        if (startKeyTypeCase_ == 2 &&
-            startKeyType_ != com.google.protobuf.ListValue.getDefaultInstance()) {
-          startKeyType_ = com.google.protobuf.ListValue.newBuilder((com.google.protobuf.ListValue) startKeyType_)
-              .mergeFrom(value).buildPartial();
+        if (startKeyTypeCase_ == 2
+            && startKeyType_ != com.google.protobuf.ListValue.getDefaultInstance()) {
+          startKeyType_ =
+              com.google.protobuf.ListValue.newBuilder(
+                      (com.google.protobuf.ListValue) startKeyType_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           startKeyType_ = value;
         }
@@ -1213,6 +1320,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If the start is open, then the range excludes rows whose first
      * `len(start_open)` key columns exactly match `start_open`.
@@ -1237,6 +1346,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If the start is open, then the range excludes rows whose first
      * `len(start_open)` key columns exactly match `start_open`.
@@ -1248,6 +1359,8 @@ private static final long serialVersionUID = 0L;
       return getStartOpenFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * If the start is open, then the range excludes rows whose first
      * `len(start_open)` key columns exactly match `start_open`.
@@ -1266,6 +1379,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * If the start is open, then the range excludes rows whose first
      * `len(start_open)` key columns exactly match `start_open`.
@@ -1274,27 +1389,36 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.ListValue start_open = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.ListValue, com.google.protobuf.ListValue.Builder, com.google.protobuf.ListValueOrBuilder> 
+            com.google.protobuf.ListValue,
+            com.google.protobuf.ListValue.Builder,
+            com.google.protobuf.ListValueOrBuilder>
         getStartOpenFieldBuilder() {
       if (startOpenBuilder_ == null) {
         if (!(startKeyTypeCase_ == 2)) {
           startKeyType_ = com.google.protobuf.ListValue.getDefaultInstance();
         }
-        startOpenBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.ListValue, com.google.protobuf.ListValue.Builder, com.google.protobuf.ListValueOrBuilder>(
-                (com.google.protobuf.ListValue) startKeyType_,
-                getParentForChildren(),
-                isClean());
+        startOpenBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.ListValue,
+                com.google.protobuf.ListValue.Builder,
+                com.google.protobuf.ListValueOrBuilder>(
+                (com.google.protobuf.ListValue) startKeyType_, getParentForChildren(), isClean());
         startKeyType_ = null;
       }
       startKeyTypeCase_ = 2;
-      onChanged();;
+      onChanged();
+      ;
       return startOpenBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.ListValue, com.google.protobuf.ListValue.Builder, com.google.protobuf.ListValueOrBuilder> endClosedBuilder_;
+            com.google.protobuf.ListValue,
+            com.google.protobuf.ListValue.Builder,
+            com.google.protobuf.ListValueOrBuilder>
+        endClosedBuilder_;
     /**
+     *
+     *
      * <pre>
      * If the end is closed, then the range includes all rows whose
      * first `len(end_closed)` key columns exactly match `end_closed`.
@@ -1306,6 +1430,8 @@ private static final long serialVersionUID = 0L;
       return endKeyTypeCase_ == 3;
     }
     /**
+     *
+     *
      * <pre>
      * If the end is closed, then the range includes all rows whose
      * first `len(end_closed)` key columns exactly match `end_closed`.
@@ -1327,6 +1453,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * If the end is closed, then the range includes all rows whose
      * first `len(end_closed)` key columns exactly match `end_closed`.
@@ -1348,6 +1476,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If the end is closed, then the range includes all rows whose
      * first `len(end_closed)` key columns exactly match `end_closed`.
@@ -1355,8 +1485,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.ListValue end_closed = 3;</code>
      */
-    public Builder setEndClosed(
-        com.google.protobuf.ListValue.Builder builderForValue) {
+    public Builder setEndClosed(com.google.protobuf.ListValue.Builder builderForValue) {
       if (endClosedBuilder_ == null) {
         endKeyType_ = builderForValue.build();
         onChanged();
@@ -1367,6 +1496,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If the end is closed, then the range includes all rows whose
      * first `len(end_closed)` key columns exactly match `end_closed`.
@@ -1376,10 +1507,12 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeEndClosed(com.google.protobuf.ListValue value) {
       if (endClosedBuilder_ == null) {
-        if (endKeyTypeCase_ == 3 &&
-            endKeyType_ != com.google.protobuf.ListValue.getDefaultInstance()) {
-          endKeyType_ = com.google.protobuf.ListValue.newBuilder((com.google.protobuf.ListValue) endKeyType_)
-              .mergeFrom(value).buildPartial();
+        if (endKeyTypeCase_ == 3
+            && endKeyType_ != com.google.protobuf.ListValue.getDefaultInstance()) {
+          endKeyType_ =
+              com.google.protobuf.ListValue.newBuilder((com.google.protobuf.ListValue) endKeyType_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           endKeyType_ = value;
         }
@@ -1394,6 +1527,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If the end is closed, then the range includes all rows whose
      * first `len(end_closed)` key columns exactly match `end_closed`.
@@ -1418,6 +1553,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If the end is closed, then the range includes all rows whose
      * first `len(end_closed)` key columns exactly match `end_closed`.
@@ -1429,6 +1566,8 @@ private static final long serialVersionUID = 0L;
       return getEndClosedFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * If the end is closed, then the range includes all rows whose
      * first `len(end_closed)` key columns exactly match `end_closed`.
@@ -1447,6 +1586,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * If the end is closed, then the range includes all rows whose
      * first `len(end_closed)` key columns exactly match `end_closed`.
@@ -1455,27 +1596,36 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.ListValue end_closed = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.ListValue, com.google.protobuf.ListValue.Builder, com.google.protobuf.ListValueOrBuilder> 
+            com.google.protobuf.ListValue,
+            com.google.protobuf.ListValue.Builder,
+            com.google.protobuf.ListValueOrBuilder>
         getEndClosedFieldBuilder() {
       if (endClosedBuilder_ == null) {
         if (!(endKeyTypeCase_ == 3)) {
           endKeyType_ = com.google.protobuf.ListValue.getDefaultInstance();
         }
-        endClosedBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.ListValue, com.google.protobuf.ListValue.Builder, com.google.protobuf.ListValueOrBuilder>(
-                (com.google.protobuf.ListValue) endKeyType_,
-                getParentForChildren(),
-                isClean());
+        endClosedBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.ListValue,
+                com.google.protobuf.ListValue.Builder,
+                com.google.protobuf.ListValueOrBuilder>(
+                (com.google.protobuf.ListValue) endKeyType_, getParentForChildren(), isClean());
         endKeyType_ = null;
       }
       endKeyTypeCase_ = 3;
-      onChanged();;
+      onChanged();
+      ;
       return endClosedBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.ListValue, com.google.protobuf.ListValue.Builder, com.google.protobuf.ListValueOrBuilder> endOpenBuilder_;
+            com.google.protobuf.ListValue,
+            com.google.protobuf.ListValue.Builder,
+            com.google.protobuf.ListValueOrBuilder>
+        endOpenBuilder_;
     /**
+     *
+     *
      * <pre>
      * If the end is open, then the range excludes rows whose first
      * `len(end_open)` key columns exactly match `end_open`.
@@ -1487,6 +1637,8 @@ private static final long serialVersionUID = 0L;
       return endKeyTypeCase_ == 4;
     }
     /**
+     *
+     *
      * <pre>
      * If the end is open, then the range excludes rows whose first
      * `len(end_open)` key columns exactly match `end_open`.
@@ -1508,6 +1660,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * If the end is open, then the range excludes rows whose first
      * `len(end_open)` key columns exactly match `end_open`.
@@ -1529,6 +1683,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If the end is open, then the range excludes rows whose first
      * `len(end_open)` key columns exactly match `end_open`.
@@ -1536,8 +1692,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.ListValue end_open = 4;</code>
      */
-    public Builder setEndOpen(
-        com.google.protobuf.ListValue.Builder builderForValue) {
+    public Builder setEndOpen(com.google.protobuf.ListValue.Builder builderForValue) {
       if (endOpenBuilder_ == null) {
         endKeyType_ = builderForValue.build();
         onChanged();
@@ -1548,6 +1703,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If the end is open, then the range excludes rows whose first
      * `len(end_open)` key columns exactly match `end_open`.
@@ -1557,10 +1714,12 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeEndOpen(com.google.protobuf.ListValue value) {
       if (endOpenBuilder_ == null) {
-        if (endKeyTypeCase_ == 4 &&
-            endKeyType_ != com.google.protobuf.ListValue.getDefaultInstance()) {
-          endKeyType_ = com.google.protobuf.ListValue.newBuilder((com.google.protobuf.ListValue) endKeyType_)
-              .mergeFrom(value).buildPartial();
+        if (endKeyTypeCase_ == 4
+            && endKeyType_ != com.google.protobuf.ListValue.getDefaultInstance()) {
+          endKeyType_ =
+              com.google.protobuf.ListValue.newBuilder((com.google.protobuf.ListValue) endKeyType_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           endKeyType_ = value;
         }
@@ -1575,6 +1734,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If the end is open, then the range excludes rows whose first
      * `len(end_open)` key columns exactly match `end_open`.
@@ -1599,6 +1760,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If the end is open, then the range excludes rows whose first
      * `len(end_open)` key columns exactly match `end_open`.
@@ -1610,6 +1773,8 @@ private static final long serialVersionUID = 0L;
       return getEndOpenFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * If the end is open, then the range excludes rows whose first
      * `len(end_open)` key columns exactly match `end_open`.
@@ -1628,6 +1793,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * If the end is open, then the range excludes rows whose first
      * `len(end_open)` key columns exactly match `end_open`.
@@ -1636,39 +1803,45 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.ListValue end_open = 4;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.ListValue, com.google.protobuf.ListValue.Builder, com.google.protobuf.ListValueOrBuilder> 
+            com.google.protobuf.ListValue,
+            com.google.protobuf.ListValue.Builder,
+            com.google.protobuf.ListValueOrBuilder>
         getEndOpenFieldBuilder() {
       if (endOpenBuilder_ == null) {
         if (!(endKeyTypeCase_ == 4)) {
           endKeyType_ = com.google.protobuf.ListValue.getDefaultInstance();
         }
-        endOpenBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.ListValue, com.google.protobuf.ListValue.Builder, com.google.protobuf.ListValueOrBuilder>(
-                (com.google.protobuf.ListValue) endKeyType_,
-                getParentForChildren(),
-                isClean());
+        endOpenBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.ListValue,
+                com.google.protobuf.ListValue.Builder,
+                com.google.protobuf.ListValueOrBuilder>(
+                (com.google.protobuf.ListValue) endKeyType_, getParentForChildren(), isClean());
         endKeyType_ = null;
       }
       endKeyTypeCase_ = 4;
-      onChanged();;
+      onChanged();
+      ;
       return endOpenBuilder_;
     }
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+
+    @java.lang.Override
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
     }
-
 
     // @@protoc_insertion_point(builder_scope:google.spanner.v1.KeyRange)
   }
 
   // @@protoc_insertion_point(class_scope:google.spanner.v1.KeyRange)
   private static final com.google.spanner.v1.KeyRange DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.spanner.v1.KeyRange();
   }
@@ -1677,15 +1850,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<KeyRange>
-      PARSER = new com.google.protobuf.AbstractParser<KeyRange>() {
-    public KeyRange parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-        return new KeyRange(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<KeyRange> PARSER =
+      new com.google.protobuf.AbstractParser<KeyRange>() {
+        @java.lang.Override
+        public KeyRange parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new KeyRange(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<KeyRange> parser() {
     return PARSER;
@@ -1696,9 +1870,8 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.spanner.v1.KeyRange getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

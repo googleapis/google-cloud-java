@@ -4,34 +4,39 @@
 package com.google.cloud.texttospeech.v1;
 
 /**
+ *
+ *
  * <pre>
  * The top-level message sent by the client for the `SynthesizeSpeech` method.
  * </pre>
  *
  * Protobuf type {@code google.cloud.texttospeech.v1.SynthesizeSpeechRequest}
  */
-public  final class SynthesizeSpeechRequest extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class SynthesizeSpeechRequest extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.texttospeech.v1.SynthesizeSpeechRequest)
     SynthesizeSpeechRequestOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use SynthesizeSpeechRequest.newBuilder() to construct.
   private SynthesizeSpeechRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private SynthesizeSpeechRequest() {
-  }
+
+  private SynthesizeSpeechRequest() {}
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private SynthesizeSpeechRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -43,79 +48,94 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
-          case 10: {
-            com.google.cloud.texttospeech.v1.SynthesisInput.Builder subBuilder = null;
-            if (input_ != null) {
-              subBuilder = input_.toBuilder();
-            }
-            input_ = input.readMessage(com.google.cloud.texttospeech.v1.SynthesisInput.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(input_);
-              input_ = subBuilder.buildPartial();
-            }
+          case 10:
+            {
+              com.google.cloud.texttospeech.v1.SynthesisInput.Builder subBuilder = null;
+              if (input_ != null) {
+                subBuilder = input_.toBuilder();
+              }
+              input_ =
+                  input.readMessage(
+                      com.google.cloud.texttospeech.v1.SynthesisInput.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(input_);
+                input_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 18: {
-            com.google.cloud.texttospeech.v1.VoiceSelectionParams.Builder subBuilder = null;
-            if (voice_ != null) {
-              subBuilder = voice_.toBuilder();
+              break;
             }
-            voice_ = input.readMessage(com.google.cloud.texttospeech.v1.VoiceSelectionParams.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(voice_);
-              voice_ = subBuilder.buildPartial();
-            }
+          case 18:
+            {
+              com.google.cloud.texttospeech.v1.VoiceSelectionParams.Builder subBuilder = null;
+              if (voice_ != null) {
+                subBuilder = voice_.toBuilder();
+              }
+              voice_ =
+                  input.readMessage(
+                      com.google.cloud.texttospeech.v1.VoiceSelectionParams.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(voice_);
+                voice_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 26: {
-            com.google.cloud.texttospeech.v1.AudioConfig.Builder subBuilder = null;
-            if (audioConfig_ != null) {
-              subBuilder = audioConfig_.toBuilder();
+              break;
             }
-            audioConfig_ = input.readMessage(com.google.cloud.texttospeech.v1.AudioConfig.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(audioConfig_);
-              audioConfig_ = subBuilder.buildPartial();
-            }
+          case 26:
+            {
+              com.google.cloud.texttospeech.v1.AudioConfig.Builder subBuilder = null;
+              if (audioConfig_ != null) {
+                subBuilder = audioConfig_.toBuilder();
+              }
+              audioConfig_ =
+                  input.readMessage(
+                      com.google.cloud.texttospeech.v1.AudioConfig.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(audioConfig_);
+                audioConfig_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.texttospeech.v1.TextToSpeechProto.internal_static_google_cloud_texttospeech_v1_SynthesizeSpeechRequest_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.texttospeech.v1.TextToSpeechProto
+        .internal_static_google_cloud_texttospeech_v1_SynthesizeSpeechRequest_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.texttospeech.v1.TextToSpeechProto.internal_static_google_cloud_texttospeech_v1_SynthesizeSpeechRequest_fieldAccessorTable
+    return com.google.cloud.texttospeech.v1.TextToSpeechProto
+        .internal_static_google_cloud_texttospeech_v1_SynthesizeSpeechRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.texttospeech.v1.SynthesizeSpeechRequest.class, com.google.cloud.texttospeech.v1.SynthesizeSpeechRequest.Builder.class);
+            com.google.cloud.texttospeech.v1.SynthesizeSpeechRequest.class,
+            com.google.cloud.texttospeech.v1.SynthesizeSpeechRequest.Builder.class);
   }
 
   public static final int INPUT_FIELD_NUMBER = 1;
   private com.google.cloud.texttospeech.v1.SynthesisInput input_;
   /**
+   *
+   *
    * <pre>
    * Required. The Synthesizer requires either plain text or SSML as input.
    * </pre>
@@ -126,6 +146,8 @@ private static final long serialVersionUID = 0L;
     return input_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Required. The Synthesizer requires either plain text or SSML as input.
    * </pre>
@@ -133,9 +155,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.cloud.texttospeech.v1.SynthesisInput input = 1;</code>
    */
   public com.google.cloud.texttospeech.v1.SynthesisInput getInput() {
-    return input_ == null ? com.google.cloud.texttospeech.v1.SynthesisInput.getDefaultInstance() : input_;
+    return input_ == null
+        ? com.google.cloud.texttospeech.v1.SynthesisInput.getDefaultInstance()
+        : input_;
   }
   /**
+   *
+   *
    * <pre>
    * Required. The Synthesizer requires either plain text or SSML as input.
    * </pre>
@@ -149,6 +175,8 @@ private static final long serialVersionUID = 0L;
   public static final int VOICE_FIELD_NUMBER = 2;
   private com.google.cloud.texttospeech.v1.VoiceSelectionParams voice_;
   /**
+   *
+   *
    * <pre>
    * Required. The desired voice of the synthesized audio.
    * </pre>
@@ -159,6 +187,8 @@ private static final long serialVersionUID = 0L;
     return voice_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Required. The desired voice of the synthesized audio.
    * </pre>
@@ -166,9 +196,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.cloud.texttospeech.v1.VoiceSelectionParams voice = 2;</code>
    */
   public com.google.cloud.texttospeech.v1.VoiceSelectionParams getVoice() {
-    return voice_ == null ? com.google.cloud.texttospeech.v1.VoiceSelectionParams.getDefaultInstance() : voice_;
+    return voice_ == null
+        ? com.google.cloud.texttospeech.v1.VoiceSelectionParams.getDefaultInstance()
+        : voice_;
   }
   /**
+   *
+   *
    * <pre>
    * Required. The desired voice of the synthesized audio.
    * </pre>
@@ -182,6 +216,8 @@ private static final long serialVersionUID = 0L;
   public static final int AUDIO_CONFIG_FIELD_NUMBER = 3;
   private com.google.cloud.texttospeech.v1.AudioConfig audioConfig_;
   /**
+   *
+   *
    * <pre>
    * Required. The configuration of the synthesized audio.
    * </pre>
@@ -192,6 +228,8 @@ private static final long serialVersionUID = 0L;
     return audioConfig_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Required. The configuration of the synthesized audio.
    * </pre>
@@ -199,9 +237,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.cloud.texttospeech.v1.AudioConfig audio_config = 3;</code>
    */
   public com.google.cloud.texttospeech.v1.AudioConfig getAudioConfig() {
-    return audioConfig_ == null ? com.google.cloud.texttospeech.v1.AudioConfig.getDefaultInstance() : audioConfig_;
+    return audioConfig_ == null
+        ? com.google.cloud.texttospeech.v1.AudioConfig.getDefaultInstance()
+        : audioConfig_;
   }
   /**
+   *
+   *
    * <pre>
    * Required. The configuration of the synthesized audio.
    * </pre>
@@ -213,6 +255,8 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -222,8 +266,8 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  @java.lang.Override
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (input_ != null) {
       output.writeMessage(1, getInput());
     }
@@ -236,22 +280,20 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
 
     size = 0;
     if (input_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getInput());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getInput());
     }
     if (voice_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getVoice());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getVoice());
     }
     if (audioConfig_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, getAudioConfig());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getAudioConfig());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -261,28 +303,26 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.texttospeech.v1.SynthesizeSpeechRequest)) {
       return super.equals(obj);
     }
-    com.google.cloud.texttospeech.v1.SynthesizeSpeechRequest other = (com.google.cloud.texttospeech.v1.SynthesizeSpeechRequest) obj;
+    com.google.cloud.texttospeech.v1.SynthesizeSpeechRequest other =
+        (com.google.cloud.texttospeech.v1.SynthesizeSpeechRequest) obj;
 
     boolean result = true;
     result = result && (hasInput() == other.hasInput());
     if (hasInput()) {
-      result = result && getInput()
-          .equals(other.getInput());
+      result = result && getInput().equals(other.getInput());
     }
     result = result && (hasVoice() == other.hasVoice());
     if (hasVoice()) {
-      result = result && getVoice()
-          .equals(other.getVoice());
+      result = result && getVoice().equals(other.getVoice());
     }
     result = result && (hasAudioConfig() == other.hasAudioConfig());
     if (hasAudioConfig()) {
-      result = result && getAudioConfig()
-          .equals(other.getAudioConfig());
+      result = result && getAudioConfig().equals(other.getAudioConfig());
     }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
@@ -313,114 +353,127 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.cloud.texttospeech.v1.SynthesizeSpeechRequest parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.texttospeech.v1.SynthesizeSpeechRequest parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.texttospeech.v1.SynthesizeSpeechRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.texttospeech.v1.SynthesizeSpeechRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.texttospeech.v1.SynthesizeSpeechRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.texttospeech.v1.SynthesizeSpeechRequest parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.texttospeech.v1.SynthesizeSpeechRequest parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.texttospeech.v1.SynthesizeSpeechRequest parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.texttospeech.v1.SynthesizeSpeechRequest parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.cloud.texttospeech.v1.SynthesizeSpeechRequest parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.cloud.texttospeech.v1.SynthesizeSpeechRequest parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.texttospeech.v1.SynthesizeSpeechRequest parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.texttospeech.v1.SynthesizeSpeechRequest parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.texttospeech.v1.SynthesizeSpeechRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  public Builder newBuilderForType() { return newBuilder(); }
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-  public static Builder newBuilder(com.google.cloud.texttospeech.v1.SynthesizeSpeechRequest prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+
+  public static Builder newBuilder(
+      com.google.cloud.texttospeech.v1.SynthesizeSpeechRequest prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+
+  @java.lang.Override
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * The top-level message sent by the client for the `SynthesizeSpeech` method.
    * </pre>
    *
    * Protobuf type {@code google.cloud.texttospeech.v1.SynthesizeSpeechRequest}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.texttospeech.v1.SynthesizeSpeechRequest)
       com.google.cloud.texttospeech.v1.SynthesizeSpeechRequestOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.texttospeech.v1.TextToSpeechProto.internal_static_google_cloud_texttospeech_v1_SynthesizeSpeechRequest_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.texttospeech.v1.TextToSpeechProto
+          .internal_static_google_cloud_texttospeech_v1_SynthesizeSpeechRequest_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.texttospeech.v1.TextToSpeechProto.internal_static_google_cloud_texttospeech_v1_SynthesizeSpeechRequest_fieldAccessorTable
+      return com.google.cloud.texttospeech.v1.TextToSpeechProto
+          .internal_static_google_cloud_texttospeech_v1_SynthesizeSpeechRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.texttospeech.v1.SynthesizeSpeechRequest.class, com.google.cloud.texttospeech.v1.SynthesizeSpeechRequest.Builder.class);
+              com.google.cloud.texttospeech.v1.SynthesizeSpeechRequest.class,
+              com.google.cloud.texttospeech.v1.SynthesizeSpeechRequest.Builder.class);
     }
 
     // Construct using com.google.cloud.texttospeech.v1.SynthesizeSpeechRequest.newBuilder()
@@ -428,16 +481,16 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       if (inputBuilder_ == null) {
@@ -461,15 +514,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.texttospeech.v1.TextToSpeechProto.internal_static_google_cloud_texttospeech_v1_SynthesizeSpeechRequest_descriptor;
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.texttospeech.v1.TextToSpeechProto
+          .internal_static_google_cloud_texttospeech_v1_SynthesizeSpeechRequest_descriptor;
     }
 
+    @java.lang.Override
     public com.google.cloud.texttospeech.v1.SynthesizeSpeechRequest getDefaultInstanceForType() {
       return com.google.cloud.texttospeech.v1.SynthesizeSpeechRequest.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.cloud.texttospeech.v1.SynthesizeSpeechRequest build() {
       com.google.cloud.texttospeech.v1.SynthesizeSpeechRequest result = buildPartial();
       if (!result.isInitialized()) {
@@ -478,8 +534,10 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.cloud.texttospeech.v1.SynthesizeSpeechRequest buildPartial() {
-      com.google.cloud.texttospeech.v1.SynthesizeSpeechRequest result = new com.google.cloud.texttospeech.v1.SynthesizeSpeechRequest(this);
+      com.google.cloud.texttospeech.v1.SynthesizeSpeechRequest result =
+          new com.google.cloud.texttospeech.v1.SynthesizeSpeechRequest(this);
       if (inputBuilder_ == null) {
         result.input_ = input_;
       } else {
@@ -499,35 +557,43 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+
+    @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+    @java.lang.Override
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+    @java.lang.Override
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
+    @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
+    @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.texttospeech.v1.SynthesizeSpeechRequest) {
-        return mergeFrom((com.google.cloud.texttospeech.v1.SynthesizeSpeechRequest)other);
+        return mergeFrom((com.google.cloud.texttospeech.v1.SynthesizeSpeechRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -535,7 +601,8 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.cloud.texttospeech.v1.SynthesizeSpeechRequest other) {
-      if (other == com.google.cloud.texttospeech.v1.SynthesizeSpeechRequest.getDefaultInstance()) return this;
+      if (other == com.google.cloud.texttospeech.v1.SynthesizeSpeechRequest.getDefaultInstance())
+        return this;
       if (other.hasInput()) {
         mergeInput(other.getInput());
       }
@@ -550,10 +617,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -562,7 +631,8 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.texttospeech.v1.SynthesizeSpeechRequest) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.cloud.texttospeech.v1.SynthesizeSpeechRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -574,8 +644,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.cloud.texttospeech.v1.SynthesisInput input_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.texttospeech.v1.SynthesisInput, com.google.cloud.texttospeech.v1.SynthesisInput.Builder, com.google.cloud.texttospeech.v1.SynthesisInputOrBuilder> inputBuilder_;
+            com.google.cloud.texttospeech.v1.SynthesisInput,
+            com.google.cloud.texttospeech.v1.SynthesisInput.Builder,
+            com.google.cloud.texttospeech.v1.SynthesisInputOrBuilder>
+        inputBuilder_;
     /**
+     *
+     *
      * <pre>
      * Required. The Synthesizer requires either plain text or SSML as input.
      * </pre>
@@ -586,6 +661,8 @@ private static final long serialVersionUID = 0L;
       return inputBuilder_ != null || input_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The Synthesizer requires either plain text or SSML as input.
      * </pre>
@@ -594,12 +671,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.texttospeech.v1.SynthesisInput getInput() {
       if (inputBuilder_ == null) {
-        return input_ == null ? com.google.cloud.texttospeech.v1.SynthesisInput.getDefaultInstance() : input_;
+        return input_ == null
+            ? com.google.cloud.texttospeech.v1.SynthesisInput.getDefaultInstance()
+            : input_;
       } else {
         return inputBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The Synthesizer requires either plain text or SSML as input.
      * </pre>
@@ -620,6 +701,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The Synthesizer requires either plain text or SSML as input.
      * </pre>
@@ -638,6 +721,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The Synthesizer requires either plain text or SSML as input.
      * </pre>
@@ -648,7 +733,9 @@ private static final long serialVersionUID = 0L;
       if (inputBuilder_ == null) {
         if (input_ != null) {
           input_ =
-            com.google.cloud.texttospeech.v1.SynthesisInput.newBuilder(input_).mergeFrom(value).buildPartial();
+              com.google.cloud.texttospeech.v1.SynthesisInput.newBuilder(input_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           input_ = value;
         }
@@ -660,6 +747,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The Synthesizer requires either plain text or SSML as input.
      * </pre>
@@ -678,6 +767,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The Synthesizer requires either plain text or SSML as input.
      * </pre>
@@ -685,11 +776,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.texttospeech.v1.SynthesisInput input = 1;</code>
      */
     public com.google.cloud.texttospeech.v1.SynthesisInput.Builder getInputBuilder() {
-      
+
       onChanged();
       return getInputFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Required. The Synthesizer requires either plain text or SSML as input.
      * </pre>
@@ -700,11 +793,14 @@ private static final long serialVersionUID = 0L;
       if (inputBuilder_ != null) {
         return inputBuilder_.getMessageOrBuilder();
       } else {
-        return input_ == null ?
-            com.google.cloud.texttospeech.v1.SynthesisInput.getDefaultInstance() : input_;
+        return input_ == null
+            ? com.google.cloud.texttospeech.v1.SynthesisInput.getDefaultInstance()
+            : input_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The Synthesizer requires either plain text or SSML as input.
      * </pre>
@@ -712,14 +808,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.texttospeech.v1.SynthesisInput input = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.texttospeech.v1.SynthesisInput, com.google.cloud.texttospeech.v1.SynthesisInput.Builder, com.google.cloud.texttospeech.v1.SynthesisInputOrBuilder> 
+            com.google.cloud.texttospeech.v1.SynthesisInput,
+            com.google.cloud.texttospeech.v1.SynthesisInput.Builder,
+            com.google.cloud.texttospeech.v1.SynthesisInputOrBuilder>
         getInputFieldBuilder() {
       if (inputBuilder_ == null) {
-        inputBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.texttospeech.v1.SynthesisInput, com.google.cloud.texttospeech.v1.SynthesisInput.Builder, com.google.cloud.texttospeech.v1.SynthesisInputOrBuilder>(
-                getInput(),
-                getParentForChildren(),
-                isClean());
+        inputBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.texttospeech.v1.SynthesisInput,
+                com.google.cloud.texttospeech.v1.SynthesisInput.Builder,
+                com.google.cloud.texttospeech.v1.SynthesisInputOrBuilder>(
+                getInput(), getParentForChildren(), isClean());
         input_ = null;
       }
       return inputBuilder_;
@@ -727,8 +826,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.cloud.texttospeech.v1.VoiceSelectionParams voice_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.texttospeech.v1.VoiceSelectionParams, com.google.cloud.texttospeech.v1.VoiceSelectionParams.Builder, com.google.cloud.texttospeech.v1.VoiceSelectionParamsOrBuilder> voiceBuilder_;
+            com.google.cloud.texttospeech.v1.VoiceSelectionParams,
+            com.google.cloud.texttospeech.v1.VoiceSelectionParams.Builder,
+            com.google.cloud.texttospeech.v1.VoiceSelectionParamsOrBuilder>
+        voiceBuilder_;
     /**
+     *
+     *
      * <pre>
      * Required. The desired voice of the synthesized audio.
      * </pre>
@@ -739,6 +843,8 @@ private static final long serialVersionUID = 0L;
       return voiceBuilder_ != null || voice_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The desired voice of the synthesized audio.
      * </pre>
@@ -747,12 +853,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.texttospeech.v1.VoiceSelectionParams getVoice() {
       if (voiceBuilder_ == null) {
-        return voice_ == null ? com.google.cloud.texttospeech.v1.VoiceSelectionParams.getDefaultInstance() : voice_;
+        return voice_ == null
+            ? com.google.cloud.texttospeech.v1.VoiceSelectionParams.getDefaultInstance()
+            : voice_;
       } else {
         return voiceBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The desired voice of the synthesized audio.
      * </pre>
@@ -773,6 +883,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The desired voice of the synthesized audio.
      * </pre>
@@ -791,6 +903,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The desired voice of the synthesized audio.
      * </pre>
@@ -801,7 +915,9 @@ private static final long serialVersionUID = 0L;
       if (voiceBuilder_ == null) {
         if (voice_ != null) {
           voice_ =
-            com.google.cloud.texttospeech.v1.VoiceSelectionParams.newBuilder(voice_).mergeFrom(value).buildPartial();
+              com.google.cloud.texttospeech.v1.VoiceSelectionParams.newBuilder(voice_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           voice_ = value;
         }
@@ -813,6 +929,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The desired voice of the synthesized audio.
      * </pre>
@@ -831,6 +949,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The desired voice of the synthesized audio.
      * </pre>
@@ -838,11 +958,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.texttospeech.v1.VoiceSelectionParams voice = 2;</code>
      */
     public com.google.cloud.texttospeech.v1.VoiceSelectionParams.Builder getVoiceBuilder() {
-      
+
       onChanged();
       return getVoiceFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Required. The desired voice of the synthesized audio.
      * </pre>
@@ -853,11 +975,14 @@ private static final long serialVersionUID = 0L;
       if (voiceBuilder_ != null) {
         return voiceBuilder_.getMessageOrBuilder();
       } else {
-        return voice_ == null ?
-            com.google.cloud.texttospeech.v1.VoiceSelectionParams.getDefaultInstance() : voice_;
+        return voice_ == null
+            ? com.google.cloud.texttospeech.v1.VoiceSelectionParams.getDefaultInstance()
+            : voice_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The desired voice of the synthesized audio.
      * </pre>
@@ -865,14 +990,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.texttospeech.v1.VoiceSelectionParams voice = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.texttospeech.v1.VoiceSelectionParams, com.google.cloud.texttospeech.v1.VoiceSelectionParams.Builder, com.google.cloud.texttospeech.v1.VoiceSelectionParamsOrBuilder> 
+            com.google.cloud.texttospeech.v1.VoiceSelectionParams,
+            com.google.cloud.texttospeech.v1.VoiceSelectionParams.Builder,
+            com.google.cloud.texttospeech.v1.VoiceSelectionParamsOrBuilder>
         getVoiceFieldBuilder() {
       if (voiceBuilder_ == null) {
-        voiceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.texttospeech.v1.VoiceSelectionParams, com.google.cloud.texttospeech.v1.VoiceSelectionParams.Builder, com.google.cloud.texttospeech.v1.VoiceSelectionParamsOrBuilder>(
-                getVoice(),
-                getParentForChildren(),
-                isClean());
+        voiceBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.texttospeech.v1.VoiceSelectionParams,
+                com.google.cloud.texttospeech.v1.VoiceSelectionParams.Builder,
+                com.google.cloud.texttospeech.v1.VoiceSelectionParamsOrBuilder>(
+                getVoice(), getParentForChildren(), isClean());
         voice_ = null;
       }
       return voiceBuilder_;
@@ -880,8 +1008,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.cloud.texttospeech.v1.AudioConfig audioConfig_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.texttospeech.v1.AudioConfig, com.google.cloud.texttospeech.v1.AudioConfig.Builder, com.google.cloud.texttospeech.v1.AudioConfigOrBuilder> audioConfigBuilder_;
+            com.google.cloud.texttospeech.v1.AudioConfig,
+            com.google.cloud.texttospeech.v1.AudioConfig.Builder,
+            com.google.cloud.texttospeech.v1.AudioConfigOrBuilder>
+        audioConfigBuilder_;
     /**
+     *
+     *
      * <pre>
      * Required. The configuration of the synthesized audio.
      * </pre>
@@ -892,6 +1025,8 @@ private static final long serialVersionUID = 0L;
       return audioConfigBuilder_ != null || audioConfig_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The configuration of the synthesized audio.
      * </pre>
@@ -900,12 +1035,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.texttospeech.v1.AudioConfig getAudioConfig() {
       if (audioConfigBuilder_ == null) {
-        return audioConfig_ == null ? com.google.cloud.texttospeech.v1.AudioConfig.getDefaultInstance() : audioConfig_;
+        return audioConfig_ == null
+            ? com.google.cloud.texttospeech.v1.AudioConfig.getDefaultInstance()
+            : audioConfig_;
       } else {
         return audioConfigBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The configuration of the synthesized audio.
      * </pre>
@@ -926,6 +1065,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The configuration of the synthesized audio.
      * </pre>
@@ -944,6 +1085,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The configuration of the synthesized audio.
      * </pre>
@@ -954,7 +1097,9 @@ private static final long serialVersionUID = 0L;
       if (audioConfigBuilder_ == null) {
         if (audioConfig_ != null) {
           audioConfig_ =
-            com.google.cloud.texttospeech.v1.AudioConfig.newBuilder(audioConfig_).mergeFrom(value).buildPartial();
+              com.google.cloud.texttospeech.v1.AudioConfig.newBuilder(audioConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           audioConfig_ = value;
         }
@@ -966,6 +1111,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The configuration of the synthesized audio.
      * </pre>
@@ -984,6 +1131,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The configuration of the synthesized audio.
      * </pre>
@@ -991,11 +1140,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.texttospeech.v1.AudioConfig audio_config = 3;</code>
      */
     public com.google.cloud.texttospeech.v1.AudioConfig.Builder getAudioConfigBuilder() {
-      
+
       onChanged();
       return getAudioConfigFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Required. The configuration of the synthesized audio.
      * </pre>
@@ -1006,11 +1157,14 @@ private static final long serialVersionUID = 0L;
       if (audioConfigBuilder_ != null) {
         return audioConfigBuilder_.getMessageOrBuilder();
       } else {
-        return audioConfig_ == null ?
-            com.google.cloud.texttospeech.v1.AudioConfig.getDefaultInstance() : audioConfig_;
+        return audioConfig_ == null
+            ? com.google.cloud.texttospeech.v1.AudioConfig.getDefaultInstance()
+            : audioConfig_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The configuration of the synthesized audio.
      * </pre>
@@ -1018,34 +1172,39 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.texttospeech.v1.AudioConfig audio_config = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.texttospeech.v1.AudioConfig, com.google.cloud.texttospeech.v1.AudioConfig.Builder, com.google.cloud.texttospeech.v1.AudioConfigOrBuilder> 
+            com.google.cloud.texttospeech.v1.AudioConfig,
+            com.google.cloud.texttospeech.v1.AudioConfig.Builder,
+            com.google.cloud.texttospeech.v1.AudioConfigOrBuilder>
         getAudioConfigFieldBuilder() {
       if (audioConfigBuilder_ == null) {
-        audioConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.texttospeech.v1.AudioConfig, com.google.cloud.texttospeech.v1.AudioConfig.Builder, com.google.cloud.texttospeech.v1.AudioConfigOrBuilder>(
-                getAudioConfig(),
-                getParentForChildren(),
-                isClean());
+        audioConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.texttospeech.v1.AudioConfig,
+                com.google.cloud.texttospeech.v1.AudioConfig.Builder,
+                com.google.cloud.texttospeech.v1.AudioConfigOrBuilder>(
+                getAudioConfig(), getParentForChildren(), isClean());
         audioConfig_ = null;
       }
       return audioConfigBuilder_;
     }
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+
+    @java.lang.Override
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
     }
-
 
     // @@protoc_insertion_point(builder_scope:google.cloud.texttospeech.v1.SynthesizeSpeechRequest)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.texttospeech.v1.SynthesizeSpeechRequest)
   private static final com.google.cloud.texttospeech.v1.SynthesizeSpeechRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.texttospeech.v1.SynthesizeSpeechRequest();
   }
@@ -1054,15 +1213,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<SynthesizeSpeechRequest>
-      PARSER = new com.google.protobuf.AbstractParser<SynthesizeSpeechRequest>() {
-    public SynthesizeSpeechRequest parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SynthesizeSpeechRequest(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<SynthesizeSpeechRequest> PARSER =
+      new com.google.protobuf.AbstractParser<SynthesizeSpeechRequest>() {
+        @java.lang.Override
+        public SynthesizeSpeechRequest parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new SynthesizeSpeechRequest(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<SynthesizeSpeechRequest> parser() {
     return PARSER;
@@ -1073,9 +1233,8 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.cloud.texttospeech.v1.SynthesizeSpeechRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

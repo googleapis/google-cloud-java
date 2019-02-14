@@ -4,36 +4,42 @@
 package com.google.cloud.automl.v1beta1;
 
 /**
+ *
+ *
  * <pre>
  * Contains annotation information that is relevant to AutoML.
  * </pre>
  *
  * Protobuf type {@code google.cloud.automl.v1beta1.AnnotationPayload}
  */
-public  final class AnnotationPayload extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class AnnotationPayload extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.automl.v1beta1.AnnotationPayload)
     AnnotationPayloadOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use AnnotationPayload.newBuilder() to construct.
   private AnnotationPayload(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private AnnotationPayload() {
     annotationSpecId_ = "";
     displayName_ = "";
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private AnnotationPayload(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -45,91 +51,110 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            annotationSpecId_ = s;
-            break;
-          }
-          case 18: {
-            com.google.cloud.automl.v1beta1.TranslationAnnotation.Builder subBuilder = null;
-            if (detailCase_ == 2) {
-              subBuilder = ((com.google.cloud.automl.v1beta1.TranslationAnnotation) detail_).toBuilder();
+              annotationSpecId_ = s;
+              break;
             }
-            detail_ =
-                input.readMessage(com.google.cloud.automl.v1beta1.TranslationAnnotation.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.google.cloud.automl.v1beta1.TranslationAnnotation) detail_);
-              detail_ = subBuilder.buildPartial();
+          case 18:
+            {
+              com.google.cloud.automl.v1beta1.TranslationAnnotation.Builder subBuilder = null;
+              if (detailCase_ == 2) {
+                subBuilder =
+                    ((com.google.cloud.automl.v1beta1.TranslationAnnotation) detail_).toBuilder();
+              }
+              detail_ =
+                  input.readMessage(
+                      com.google.cloud.automl.v1beta1.TranslationAnnotation.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.automl.v1beta1.TranslationAnnotation) detail_);
+                detail_ = subBuilder.buildPartial();
+              }
+              detailCase_ = 2;
+              break;
             }
-            detailCase_ = 2;
-            break;
-          }
-          case 26: {
-            com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation.Builder subBuilder = null;
-            if (detailCase_ == 3) {
-              subBuilder = ((com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation) detail_).toBuilder();
+          case 26:
+            {
+              com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation.Builder
+                  subBuilder = null;
+              if (detailCase_ == 3) {
+                subBuilder =
+                    ((com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation)
+                            detail_)
+                        .toBuilder();
+              }
+              detail_ =
+                  input.readMessage(
+                      com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation
+                          .parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation)
+                        detail_);
+                detail_ = subBuilder.buildPartial();
+              }
+              detailCase_ = 3;
+              break;
             }
-            detail_ =
-                input.readMessage(com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation) detail_);
-              detail_ = subBuilder.buildPartial();
-            }
-            detailCase_ = 3;
-            break;
-          }
-          case 42: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 42:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            displayName_ = s;
-            break;
-          }
+              displayName_ = s;
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.automl.v1beta1.AnnotationPayloadOuterClass.internal_static_google_cloud_automl_v1beta1_AnnotationPayload_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.automl.v1beta1.AnnotationPayloadOuterClass
+        .internal_static_google_cloud_automl_v1beta1_AnnotationPayload_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.automl.v1beta1.AnnotationPayloadOuterClass.internal_static_google_cloud_automl_v1beta1_AnnotationPayload_fieldAccessorTable
+    return com.google.cloud.automl.v1beta1.AnnotationPayloadOuterClass
+        .internal_static_google_cloud_automl_v1beta1_AnnotationPayload_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.automl.v1beta1.AnnotationPayload.class, com.google.cloud.automl.v1beta1.AnnotationPayload.Builder.class);
+            com.google.cloud.automl.v1beta1.AnnotationPayload.class,
+            com.google.cloud.automl.v1beta1.AnnotationPayload.Builder.class);
   }
 
   private int detailCase_ = 0;
   private java.lang.Object detail_;
-  public enum DetailCase
-      implements com.google.protobuf.Internal.EnumLite {
+
+  public enum DetailCase implements com.google.protobuf.Internal.EnumLite {
     TRANSLATION(2),
     CLASSIFICATION(3),
     DETAIL_NOT_SET(0);
     private final int value;
+
     private DetailCase(int value) {
       this.value = value;
     }
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static DetailCase valueOf(int value) {
       return forNumber(value);
@@ -137,25 +162,30 @@ private static final long serialVersionUID = 0L;
 
     public static DetailCase forNumber(int value) {
       switch (value) {
-        case 2: return TRANSLATION;
-        case 3: return CLASSIFICATION;
-        case 0: return DETAIL_NOT_SET;
-        default: return null;
+        case 2:
+          return TRANSLATION;
+        case 3:
+          return CLASSIFICATION;
+        case 0:
+          return DETAIL_NOT_SET;
+        default:
+          return null;
       }
     }
+
     public int getNumber() {
       return this.value;
     }
   };
 
-  public DetailCase
-  getDetailCase() {
-    return DetailCase.forNumber(
-        detailCase_);
+  public DetailCase getDetailCase() {
+    return DetailCase.forNumber(detailCase_);
   }
 
   public static final int TRANSLATION_FIELD_NUMBER = 2;
   /**
+   *
+   *
    * <pre>
    * Annotation details for translation.
    * </pre>
@@ -166,6 +196,8 @@ private static final long serialVersionUID = 0L;
     return detailCase_ == 2;
   }
   /**
+   *
+   *
    * <pre>
    * Annotation details for translation.
    * </pre>
@@ -174,11 +206,13 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.cloud.automl.v1beta1.TranslationAnnotation getTranslation() {
     if (detailCase_ == 2) {
-       return (com.google.cloud.automl.v1beta1.TranslationAnnotation) detail_;
+      return (com.google.cloud.automl.v1beta1.TranslationAnnotation) detail_;
     }
     return com.google.cloud.automl.v1beta1.TranslationAnnotation.getDefaultInstance();
   }
   /**
+   *
+   *
    * <pre>
    * Annotation details for translation.
    * </pre>
@@ -187,13 +221,15 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.cloud.automl.v1beta1.TranslationAnnotationOrBuilder getTranslationOrBuilder() {
     if (detailCase_ == 2) {
-       return (com.google.cloud.automl.v1beta1.TranslationAnnotation) detail_;
+      return (com.google.cloud.automl.v1beta1.TranslationAnnotation) detail_;
     }
     return com.google.cloud.automl.v1beta1.TranslationAnnotation.getDefaultInstance();
   }
 
   public static final int CLASSIFICATION_FIELD_NUMBER = 3;
   /**
+   *
+   *
    * <pre>
    * Annotation details for content or image classification.
    * </pre>
@@ -204,35 +240,45 @@ private static final long serialVersionUID = 0L;
     return detailCase_ == 3;
   }
   /**
+   *
+   *
    * <pre>
    * Annotation details for content or image classification.
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.ClassificationAnnotation classification = 3;</code>
    */
-  public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation getClassification() {
+  public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation
+      getClassification() {
     if (detailCase_ == 3) {
-       return (com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation) detail_;
+      return (com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation) detail_;
     }
-    return com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation.getDefaultInstance();
+    return com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation
+        .getDefaultInstance();
   }
   /**
+   *
+   *
    * <pre>
    * Annotation details for content or image classification.
    * </pre>
    *
    * <code>.google.cloud.automl.v1beta1.ClassificationAnnotation classification = 3;</code>
    */
-  public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotationOrBuilder getClassificationOrBuilder() {
+  public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotationOrBuilder
+      getClassificationOrBuilder() {
     if (detailCase_ == 3) {
-       return (com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation) detail_;
+      return (com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation) detail_;
     }
-    return com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation.getDefaultInstance();
+    return com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation
+        .getDefaultInstance();
   }
 
   public static final int ANNOTATION_SPEC_ID_FIELD_NUMBER = 1;
   private volatile java.lang.Object annotationSpecId_;
   /**
+   *
+   *
    * <pre>
    * Output only . The resource ID of the annotation spec that
    * this annotation pertains to. The annotation spec comes from either an
@@ -246,14 +292,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       annotationSpecId_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Output only . The resource ID of the annotation spec that
    * this annotation pertains to. The annotation spec comes from either an
@@ -262,13 +309,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string annotation_spec_id = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getAnnotationSpecIdBytes() {
+  public com.google.protobuf.ByteString getAnnotationSpecIdBytes() {
     java.lang.Object ref = annotationSpecId_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       annotationSpecId_ = b;
       return b;
     } else {
@@ -279,6 +324,8 @@ private static final long serialVersionUID = 0L;
   public static final int DISPLAY_NAME_FIELD_NUMBER = 5;
   private volatile java.lang.Object displayName_;
   /**
+   *
+   *
    * <pre>
    * Output only. The value of [AnnotationSpec.display_name][google.cloud.automl.v1beta1.AnnotationSpec.display_name] when the model
    * was trained. Because this field returns a value at model training time,
@@ -294,14 +341,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       displayName_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Output only. The value of [AnnotationSpec.display_name][google.cloud.automl.v1beta1.AnnotationSpec.display_name] when the model
    * was trained. Because this field returns a value at model training time,
@@ -312,13 +360,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string display_name = 5;</code>
    */
-  public com.google.protobuf.ByteString
-      getDisplayNameBytes() {
+  public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       displayName_ = b;
       return b;
     } else {
@@ -327,6 +373,8 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -336,8 +384,8 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  @java.lang.Override
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getAnnotationSpecIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, annotationSpecId_);
     }
@@ -345,7 +393,9 @@ private static final long serialVersionUID = 0L;
       output.writeMessage(2, (com.google.cloud.automl.v1beta1.TranslationAnnotation) detail_);
     }
     if (detailCase_ == 3) {
-      output.writeMessage(3, (com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation) detail_);
+      output.writeMessage(
+          3,
+          (com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation) detail_);
     }
     if (!getDisplayNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 5, displayName_);
@@ -353,6 +403,7 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -362,12 +413,16 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, annotationSpecId_);
     }
     if (detailCase_ == 2) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, (com.google.cloud.automl.v1beta1.TranslationAnnotation) detail_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              2, (com.google.cloud.automl.v1beta1.TranslationAnnotation) detail_);
     }
     if (detailCase_ == 3) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, (com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation) detail_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              3,
+              (com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation)
+                  detail_);
     }
     if (!getDisplayNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, displayName_);
@@ -380,29 +435,25 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.automl.v1beta1.AnnotationPayload)) {
       return super.equals(obj);
     }
-    com.google.cloud.automl.v1beta1.AnnotationPayload other = (com.google.cloud.automl.v1beta1.AnnotationPayload) obj;
+    com.google.cloud.automl.v1beta1.AnnotationPayload other =
+        (com.google.cloud.automl.v1beta1.AnnotationPayload) obj;
 
     boolean result = true;
-    result = result && getAnnotationSpecId()
-        .equals(other.getAnnotationSpecId());
-    result = result && getDisplayName()
-        .equals(other.getDisplayName());
-    result = result && getDetailCase().equals(
-        other.getDetailCase());
+    result = result && getAnnotationSpecId().equals(other.getAnnotationSpecId());
+    result = result && getDisplayName().equals(other.getDisplayName());
+    result = result && getDetailCase().equals(other.getDetailCase());
     if (!result) return false;
     switch (detailCase_) {
       case 2:
-        result = result && getTranslation()
-            .equals(other.getTranslation());
+        result = result && getTranslation().equals(other.getTranslation());
         break;
       case 3:
-        result = result && getClassification()
-            .equals(other.getClassification());
+        result = result && getClassification().equals(other.getClassification());
         break;
       case 0:
       default:
@@ -440,114 +491,126 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.cloud.automl.v1beta1.AnnotationPayload parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.automl.v1beta1.AnnotationPayload parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.automl.v1beta1.AnnotationPayload parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.automl.v1beta1.AnnotationPayload parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.automl.v1beta1.AnnotationPayload parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.automl.v1beta1.AnnotationPayload parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.automl.v1beta1.AnnotationPayload parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.automl.v1beta1.AnnotationPayload parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.automl.v1beta1.AnnotationPayload parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.cloud.automl.v1beta1.AnnotationPayload parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.cloud.automl.v1beta1.AnnotationPayload parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.automl.v1beta1.AnnotationPayload parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.automl.v1beta1.AnnotationPayload parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.automl.v1beta1.AnnotationPayload parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  public Builder newBuilderForType() { return newBuilder(); }
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-  public static Builder newBuilder(com.google.cloud.automl.v1beta1.AnnotationPayload prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+
+  public static Builder newBuilder(com.google.cloud.automl.v1beta1.AnnotationPayload prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+
+  @java.lang.Override
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Contains annotation information that is relevant to AutoML.
    * </pre>
    *
    * Protobuf type {@code google.cloud.automl.v1beta1.AnnotationPayload}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.automl.v1beta1.AnnotationPayload)
       com.google.cloud.automl.v1beta1.AnnotationPayloadOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.automl.v1beta1.AnnotationPayloadOuterClass.internal_static_google_cloud_automl_v1beta1_AnnotationPayload_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.automl.v1beta1.AnnotationPayloadOuterClass
+          .internal_static_google_cloud_automl_v1beta1_AnnotationPayload_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.automl.v1beta1.AnnotationPayloadOuterClass.internal_static_google_cloud_automl_v1beta1_AnnotationPayload_fieldAccessorTable
+      return com.google.cloud.automl.v1beta1.AnnotationPayloadOuterClass
+          .internal_static_google_cloud_automl_v1beta1_AnnotationPayload_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.automl.v1beta1.AnnotationPayload.class, com.google.cloud.automl.v1beta1.AnnotationPayload.Builder.class);
+              com.google.cloud.automl.v1beta1.AnnotationPayload.class,
+              com.google.cloud.automl.v1beta1.AnnotationPayload.Builder.class);
     }
 
     // Construct using com.google.cloud.automl.v1beta1.AnnotationPayload.newBuilder()
@@ -555,16 +618,16 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       annotationSpecId_ = "";
@@ -576,15 +639,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.automl.v1beta1.AnnotationPayloadOuterClass.internal_static_google_cloud_automl_v1beta1_AnnotationPayload_descriptor;
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.automl.v1beta1.AnnotationPayloadOuterClass
+          .internal_static_google_cloud_automl_v1beta1_AnnotationPayload_descriptor;
     }
 
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.AnnotationPayload getDefaultInstanceForType() {
       return com.google.cloud.automl.v1beta1.AnnotationPayload.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.AnnotationPayload build() {
       com.google.cloud.automl.v1beta1.AnnotationPayload result = buildPartial();
       if (!result.isInitialized()) {
@@ -593,8 +659,10 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.AnnotationPayload buildPartial() {
-      com.google.cloud.automl.v1beta1.AnnotationPayload result = new com.google.cloud.automl.v1beta1.AnnotationPayload(this);
+      com.google.cloud.automl.v1beta1.AnnotationPayload result =
+          new com.google.cloud.automl.v1beta1.AnnotationPayload(this);
       if (detailCase_ == 2) {
         if (translationBuilder_ == null) {
           result.detail_ = detail_;
@@ -616,35 +684,43 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+
+    @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+    @java.lang.Override
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+    @java.lang.Override
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
+    @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
+    @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.automl.v1beta1.AnnotationPayload) {
-        return mergeFrom((com.google.cloud.automl.v1beta1.AnnotationPayload)other);
+        return mergeFrom((com.google.cloud.automl.v1beta1.AnnotationPayload) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -652,7 +728,8 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.cloud.automl.v1beta1.AnnotationPayload other) {
-      if (other == com.google.cloud.automl.v1beta1.AnnotationPayload.getDefaultInstance()) return this;
+      if (other == com.google.cloud.automl.v1beta1.AnnotationPayload.getDefaultInstance())
+        return this;
       if (!other.getAnnotationSpecId().isEmpty()) {
         annotationSpecId_ = other.annotationSpecId_;
         onChanged();
@@ -662,27 +739,32 @@ private static final long serialVersionUID = 0L;
         onChanged();
       }
       switch (other.getDetailCase()) {
-        case TRANSLATION: {
-          mergeTranslation(other.getTranslation());
-          break;
-        }
-        case CLASSIFICATION: {
-          mergeClassification(other.getClassification());
-          break;
-        }
-        case DETAIL_NOT_SET: {
-          break;
-        }
+        case TRANSLATION:
+          {
+            mergeTranslation(other.getTranslation());
+            break;
+          }
+        case CLASSIFICATION:
+          {
+            mergeClassification(other.getClassification());
+            break;
+          }
+        case DETAIL_NOT_SET:
+          {
+            break;
+          }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -691,7 +773,8 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.automl.v1beta1.AnnotationPayload) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.cloud.automl.v1beta1.AnnotationPayload) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -700,12 +783,12 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int detailCase_ = 0;
     private java.lang.Object detail_;
-    public DetailCase
-        getDetailCase() {
-      return DetailCase.forNumber(
-          detailCase_);
+
+    public DetailCase getDetailCase() {
+      return DetailCase.forNumber(detailCase_);
     }
 
     public Builder clearDetail() {
@@ -715,10 +798,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.automl.v1beta1.TranslationAnnotation, com.google.cloud.automl.v1beta1.TranslationAnnotation.Builder, com.google.cloud.automl.v1beta1.TranslationAnnotationOrBuilder> translationBuilder_;
+            com.google.cloud.automl.v1beta1.TranslationAnnotation,
+            com.google.cloud.automl.v1beta1.TranslationAnnotation.Builder,
+            com.google.cloud.automl.v1beta1.TranslationAnnotationOrBuilder>
+        translationBuilder_;
     /**
+     *
+     *
      * <pre>
      * Annotation details for translation.
      * </pre>
@@ -729,6 +816,8 @@ private static final long serialVersionUID = 0L;
       return detailCase_ == 2;
     }
     /**
+     *
+     *
      * <pre>
      * Annotation details for translation.
      * </pre>
@@ -749,6 +838,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Annotation details for translation.
      * </pre>
@@ -769,6 +860,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Annotation details for translation.
      * </pre>
@@ -787,6 +880,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Annotation details for translation.
      * </pre>
@@ -795,10 +890,14 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeTranslation(com.google.cloud.automl.v1beta1.TranslationAnnotation value) {
       if (translationBuilder_ == null) {
-        if (detailCase_ == 2 &&
-            detail_ != com.google.cloud.automl.v1beta1.TranslationAnnotation.getDefaultInstance()) {
-          detail_ = com.google.cloud.automl.v1beta1.TranslationAnnotation.newBuilder((com.google.cloud.automl.v1beta1.TranslationAnnotation) detail_)
-              .mergeFrom(value).buildPartial();
+        if (detailCase_ == 2
+            && detail_
+                != com.google.cloud.automl.v1beta1.TranslationAnnotation.getDefaultInstance()) {
+          detail_ =
+              com.google.cloud.automl.v1beta1.TranslationAnnotation.newBuilder(
+                      (com.google.cloud.automl.v1beta1.TranslationAnnotation) detail_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           detail_ = value;
         }
@@ -813,6 +912,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Annotation details for translation.
      * </pre>
@@ -836,6 +937,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Annotation details for translation.
      * </pre>
@@ -846,13 +949,16 @@ private static final long serialVersionUID = 0L;
       return getTranslationFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Annotation details for translation.
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.TranslationAnnotation translation = 2;</code>
      */
-    public com.google.cloud.automl.v1beta1.TranslationAnnotationOrBuilder getTranslationOrBuilder() {
+    public com.google.cloud.automl.v1beta1.TranslationAnnotationOrBuilder
+        getTranslationOrBuilder() {
       if ((detailCase_ == 2) && (translationBuilder_ != null)) {
         return translationBuilder_.getMessageOrBuilder();
       } else {
@@ -863,6 +969,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Annotation details for translation.
      * </pre>
@@ -870,27 +978,38 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.automl.v1beta1.TranslationAnnotation translation = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.automl.v1beta1.TranslationAnnotation, com.google.cloud.automl.v1beta1.TranslationAnnotation.Builder, com.google.cloud.automl.v1beta1.TranslationAnnotationOrBuilder> 
+            com.google.cloud.automl.v1beta1.TranslationAnnotation,
+            com.google.cloud.automl.v1beta1.TranslationAnnotation.Builder,
+            com.google.cloud.automl.v1beta1.TranslationAnnotationOrBuilder>
         getTranslationFieldBuilder() {
       if (translationBuilder_ == null) {
         if (!(detailCase_ == 2)) {
           detail_ = com.google.cloud.automl.v1beta1.TranslationAnnotation.getDefaultInstance();
         }
-        translationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.automl.v1beta1.TranslationAnnotation, com.google.cloud.automl.v1beta1.TranslationAnnotation.Builder, com.google.cloud.automl.v1beta1.TranslationAnnotationOrBuilder>(
+        translationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.automl.v1beta1.TranslationAnnotation,
+                com.google.cloud.automl.v1beta1.TranslationAnnotation.Builder,
+                com.google.cloud.automl.v1beta1.TranslationAnnotationOrBuilder>(
                 (com.google.cloud.automl.v1beta1.TranslationAnnotation) detail_,
                 getParentForChildren(),
                 isClean());
         detail_ = null;
       }
       detailCase_ = 2;
-      onChanged();;
+      onChanged();
+      ;
       return translationBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation, com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation.Builder, com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotationOrBuilder> classificationBuilder_;
+            com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation,
+            com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation.Builder,
+            com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotationOrBuilder>
+        classificationBuilder_;
     /**
+     *
+     *
      * <pre>
      * Annotation details for content or image classification.
      * </pre>
@@ -901,33 +1020,42 @@ private static final long serialVersionUID = 0L;
       return detailCase_ == 3;
     }
     /**
+     *
+     *
      * <pre>
      * Annotation details for content or image classification.
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.ClassificationAnnotation classification = 3;</code>
      */
-    public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation getClassification() {
+    public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation
+        getClassification() {
       if (classificationBuilder_ == null) {
         if (detailCase_ == 3) {
-          return (com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation) detail_;
+          return (com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation)
+              detail_;
         }
-        return com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation.getDefaultInstance();
+        return com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation
+            .getDefaultInstance();
       } else {
         if (detailCase_ == 3) {
           return classificationBuilder_.getMessage();
         }
-        return com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation.getDefaultInstance();
+        return com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation
+            .getDefaultInstance();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Annotation details for content or image classification.
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.ClassificationAnnotation classification = 3;</code>
      */
-    public Builder setClassification(com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation value) {
+    public Builder setClassification(
+        com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation value) {
       if (classificationBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -941,6 +1069,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Annotation details for content or image classification.
      * </pre>
@@ -948,7 +1078,8 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.automl.v1beta1.ClassificationAnnotation classification = 3;</code>
      */
     public Builder setClassification(
-        com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation.Builder builderForValue) {
+        com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation.Builder
+            builderForValue) {
       if (classificationBuilder_ == null) {
         detail_ = builderForValue.build();
         onChanged();
@@ -959,18 +1090,28 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Annotation details for content or image classification.
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.ClassificationAnnotation classification = 3;</code>
      */
-    public Builder mergeClassification(com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation value) {
+    public Builder mergeClassification(
+        com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation value) {
       if (classificationBuilder_ == null) {
-        if (detailCase_ == 3 &&
-            detail_ != com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation.getDefaultInstance()) {
-          detail_ = com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation.newBuilder((com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation) detail_)
-              .mergeFrom(value).buildPartial();
+        if (detailCase_ == 3
+            && detail_
+                != com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation
+                    .getDefaultInstance()) {
+          detail_ =
+              com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation
+                  .newBuilder(
+                      (com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation)
+                          detail_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           detail_ = value;
         }
@@ -985,6 +1126,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Annotation details for content or image classification.
      * </pre>
@@ -1008,33 +1151,43 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Annotation details for content or image classification.
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.ClassificationAnnotation classification = 3;</code>
      */
-    public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation.Builder getClassificationBuilder() {
+    public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation.Builder
+        getClassificationBuilder() {
       return getClassificationFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Annotation details for content or image classification.
      * </pre>
      *
      * <code>.google.cloud.automl.v1beta1.ClassificationAnnotation classification = 3;</code>
      */
-    public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotationOrBuilder getClassificationOrBuilder() {
+    public com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotationOrBuilder
+        getClassificationOrBuilder() {
       if ((detailCase_ == 3) && (classificationBuilder_ != null)) {
         return classificationBuilder_.getMessageOrBuilder();
       } else {
         if (detailCase_ == 3) {
-          return (com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation) detail_;
+          return (com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation)
+              detail_;
         }
-        return com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation.getDefaultInstance();
+        return com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation
+            .getDefaultInstance();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Annotation details for content or image classification.
      * </pre>
@@ -1042,26 +1195,39 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.automl.v1beta1.ClassificationAnnotation classification = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation, com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation.Builder, com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotationOrBuilder> 
+            com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation,
+            com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation.Builder,
+            com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotationOrBuilder>
         getClassificationFieldBuilder() {
       if (classificationBuilder_ == null) {
         if (!(detailCase_ == 3)) {
-          detail_ = com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation.getDefaultInstance();
+          detail_ =
+              com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation
+                  .getDefaultInstance();
         }
-        classificationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation, com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation.Builder, com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotationOrBuilder>(
-                (com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation) detail_,
+        classificationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation,
+                com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation
+                    .Builder,
+                com.google.cloud.automl.v1beta1.ClassificationProto
+                    .ClassificationAnnotationOrBuilder>(
+                (com.google.cloud.automl.v1beta1.ClassificationProto.ClassificationAnnotation)
+                    detail_,
                 getParentForChildren(),
                 isClean());
         detail_ = null;
       }
       detailCase_ = 3;
-      onChanged();;
+      onChanged();
+      ;
       return classificationBuilder_;
     }
 
     private java.lang.Object annotationSpecId_ = "";
     /**
+     *
+     *
      * <pre>
      * Output only . The resource ID of the annotation spec that
      * this annotation pertains to. The annotation spec comes from either an
@@ -1073,8 +1239,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getAnnotationSpecId() {
       java.lang.Object ref = annotationSpecId_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         annotationSpecId_ = s;
         return s;
@@ -1083,6 +1248,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only . The resource ID of the annotation spec that
      * this annotation pertains to. The annotation spec comes from either an
@@ -1091,13 +1258,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string annotation_spec_id = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getAnnotationSpecIdBytes() {
+    public com.google.protobuf.ByteString getAnnotationSpecIdBytes() {
       java.lang.Object ref = annotationSpecId_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         annotationSpecId_ = b;
         return b;
       } else {
@@ -1105,6 +1270,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only . The resource ID of the annotation spec that
      * this annotation pertains to. The annotation spec comes from either an
@@ -1113,17 +1280,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string annotation_spec_id = 1;</code>
      */
-    public Builder setAnnotationSpecId(
-        java.lang.String value) {
+    public Builder setAnnotationSpecId(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       annotationSpecId_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only . The resource ID of the annotation spec that
      * this annotation pertains to. The annotation spec comes from either an
@@ -1133,12 +1301,14 @@ private static final long serialVersionUID = 0L;
      * <code>string annotation_spec_id = 1;</code>
      */
     public Builder clearAnnotationSpecId() {
-      
+
       annotationSpecId_ = getDefaultInstance().getAnnotationSpecId();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only . The resource ID of the annotation spec that
      * this annotation pertains to. The annotation spec comes from either an
@@ -1147,13 +1317,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string annotation_spec_id = 1;</code>
      */
-    public Builder setAnnotationSpecIdBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setAnnotationSpecIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       annotationSpecId_ = value;
       onChanged();
       return this;
@@ -1161,6 +1330,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object displayName_ = "";
     /**
+     *
+     *
      * <pre>
      * Output only. The value of [AnnotationSpec.display_name][google.cloud.automl.v1beta1.AnnotationSpec.display_name] when the model
      * was trained. Because this field returns a value at model training time,
@@ -1174,8 +1345,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getDisplayName() {
       java.lang.Object ref = displayName_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         displayName_ = s;
         return s;
@@ -1184,6 +1354,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The value of [AnnotationSpec.display_name][google.cloud.automl.v1beta1.AnnotationSpec.display_name] when the model
      * was trained. Because this field returns a value at model training time,
@@ -1194,13 +1366,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string display_name = 5;</code>
      */
-    public com.google.protobuf.ByteString
-        getDisplayNameBytes() {
+    public com.google.protobuf.ByteString getDisplayNameBytes() {
       java.lang.Object ref = displayName_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         displayName_ = b;
         return b;
       } else {
@@ -1208,6 +1378,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The value of [AnnotationSpec.display_name][google.cloud.automl.v1beta1.AnnotationSpec.display_name] when the model
      * was trained. Because this field returns a value at model training time,
@@ -1218,17 +1390,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string display_name = 5;</code>
      */
-    public Builder setDisplayName(
-        java.lang.String value) {
+    public Builder setDisplayName(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       displayName_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The value of [AnnotationSpec.display_name][google.cloud.automl.v1beta1.AnnotationSpec.display_name] when the model
      * was trained. Because this field returns a value at model training time,
@@ -1240,12 +1413,14 @@ private static final long serialVersionUID = 0L;
      * <code>string display_name = 5;</code>
      */
     public Builder clearDisplayName() {
-      
+
       displayName_ = getDefaultInstance().getDisplayName();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The value of [AnnotationSpec.display_name][google.cloud.automl.v1beta1.AnnotationSpec.display_name] when the model
      * was trained. Because this field returns a value at model training time,
@@ -1256,33 +1431,34 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string display_name = 5;</code>
      */
-    public Builder setDisplayNameBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       displayName_ = value;
       onChanged();
       return this;
     }
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+
+    @java.lang.Override
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
     }
-
 
     // @@protoc_insertion_point(builder_scope:google.cloud.automl.v1beta1.AnnotationPayload)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.automl.v1beta1.AnnotationPayload)
   private static final com.google.cloud.automl.v1beta1.AnnotationPayload DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.automl.v1beta1.AnnotationPayload();
   }
@@ -1291,15 +1467,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<AnnotationPayload>
-      PARSER = new com.google.protobuf.AbstractParser<AnnotationPayload>() {
-    public AnnotationPayload parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-        return new AnnotationPayload(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<AnnotationPayload> PARSER =
+      new com.google.protobuf.AbstractParser<AnnotationPayload>() {
+        @java.lang.Override
+        public AnnotationPayload parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new AnnotationPayload(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<AnnotationPayload> parser() {
     return PARSER;
@@ -1310,9 +1487,8 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.AnnotationPayload getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

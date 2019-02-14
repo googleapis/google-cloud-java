@@ -4,36 +4,42 @@
 package com.google.cloud.automl.v1beta1;
 
 /**
+ *
+ *
  * <pre>
  * Response message for [AutoMl.ListDatasets][google.cloud.automl.v1beta1.AutoMl.ListDatasets].
  * </pre>
  *
  * Protobuf type {@code google.cloud.automl.v1beta1.ListDatasetsResponse}
  */
-public  final class ListDatasetsResponse extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class ListDatasetsResponse extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.automl.v1beta1.ListDatasetsResponse)
     ListDatasetsResponseOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use ListDatasetsResponse.newBuilder() to construct.
   private ListDatasetsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private ListDatasetsResponse() {
     datasets_ = java.util.Collections.emptyList();
     nextPageToken_ = "";
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private ListDatasetsResponse(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -45,35 +51,37 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          case 10:
+            {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                datasets_ = new java.util.ArrayList<com.google.cloud.automl.v1beta1.Dataset>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              datasets_.add(
+                  input.readMessage(
+                      com.google.cloud.automl.v1beta1.Dataset.parser(), extensionRegistry));
+              break;
             }
-            break;
-          }
-          case 10: {
-            if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-              datasets_ = new java.util.ArrayList<com.google.cloud.automl.v1beta1.Dataset>();
-              mutable_bitField0_ |= 0x00000001;
-            }
-            datasets_.add(
-                input.readMessage(com.google.cloud.automl.v1beta1.Dataset.parser(), extensionRegistry));
-            break;
-          }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 18:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            nextPageToken_ = s;
-            break;
-          }
+              nextPageToken_ = s;
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
         datasets_ = java.util.Collections.unmodifiableList(datasets_);
@@ -82,22 +90,28 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.automl.v1beta1.AutoMlProto.internal_static_google_cloud_automl_v1beta1_ListDatasetsResponse_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.automl.v1beta1.AutoMlProto
+        .internal_static_google_cloud_automl_v1beta1_ListDatasetsResponse_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.automl.v1beta1.AutoMlProto.internal_static_google_cloud_automl_v1beta1_ListDatasetsResponse_fieldAccessorTable
+    return com.google.cloud.automl.v1beta1.AutoMlProto
+        .internal_static_google_cloud_automl_v1beta1_ListDatasetsResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.automl.v1beta1.ListDatasetsResponse.class, com.google.cloud.automl.v1beta1.ListDatasetsResponse.Builder.class);
+            com.google.cloud.automl.v1beta1.ListDatasetsResponse.class,
+            com.google.cloud.automl.v1beta1.ListDatasetsResponse.Builder.class);
   }
 
   private int bitField0_;
   public static final int DATASETS_FIELD_NUMBER = 1;
   private java.util.List<com.google.cloud.automl.v1beta1.Dataset> datasets_;
   /**
+   *
+   *
    * <pre>
    * The datasets read.
    * </pre>
@@ -108,17 +122,21 @@ private static final long serialVersionUID = 0L;
     return datasets_;
   }
   /**
+   *
+   *
    * <pre>
    * The datasets read.
    * </pre>
    *
    * <code>repeated .google.cloud.automl.v1beta1.Dataset datasets = 1;</code>
    */
-  public java.util.List<? extends com.google.cloud.automl.v1beta1.DatasetOrBuilder> 
+  public java.util.List<? extends com.google.cloud.automl.v1beta1.DatasetOrBuilder>
       getDatasetsOrBuilderList() {
     return datasets_;
   }
   /**
+   *
+   *
    * <pre>
    * The datasets read.
    * </pre>
@@ -129,6 +147,8 @@ private static final long serialVersionUID = 0L;
     return datasets_.size();
   }
   /**
+   *
+   *
    * <pre>
    * The datasets read.
    * </pre>
@@ -139,20 +159,23 @@ private static final long serialVersionUID = 0L;
     return datasets_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * The datasets read.
    * </pre>
    *
    * <code>repeated .google.cloud.automl.v1beta1.Dataset datasets = 1;</code>
    */
-  public com.google.cloud.automl.v1beta1.DatasetOrBuilder getDatasetsOrBuilder(
-      int index) {
+  public com.google.cloud.automl.v1beta1.DatasetOrBuilder getDatasetsOrBuilder(int index) {
     return datasets_.get(index);
   }
 
   public static final int NEXT_PAGE_TOKEN_FIELD_NUMBER = 2;
   private volatile java.lang.Object nextPageToken_;
   /**
+   *
+   *
    * <pre>
    * A token to retrieve next page of results.
    * Pass to [ListDatasetsRequest.page_token][google.cloud.automl.v1beta1.ListDatasetsRequest.page_token] to obtain that page.
@@ -165,14 +188,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       nextPageToken_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * A token to retrieve next page of results.
    * Pass to [ListDatasetsRequest.page_token][google.cloud.automl.v1beta1.ListDatasetsRequest.page_token] to obtain that page.
@@ -180,13 +204,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string next_page_token = 2;</code>
    */
-  public com.google.protobuf.ByteString
-      getNextPageTokenBytes() {
+  public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       nextPageToken_ = b;
       return b;
     } else {
@@ -195,6 +217,8 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -204,8 +228,8 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  @java.lang.Override
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     for (int i = 0; i < datasets_.size(); i++) {
       output.writeMessage(1, datasets_.get(i));
     }
@@ -215,14 +239,14 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
 
     size = 0;
     for (int i = 0; i < datasets_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, datasets_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, datasets_.get(i));
     }
     if (!getNextPageTokenBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, nextPageToken_);
@@ -235,18 +259,17 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.automl.v1beta1.ListDatasetsResponse)) {
       return super.equals(obj);
     }
-    com.google.cloud.automl.v1beta1.ListDatasetsResponse other = (com.google.cloud.automl.v1beta1.ListDatasetsResponse) obj;
+    com.google.cloud.automl.v1beta1.ListDatasetsResponse other =
+        (com.google.cloud.automl.v1beta1.ListDatasetsResponse) obj;
 
     boolean result = true;
-    result = result && getDatasetsList()
-        .equals(other.getDatasetsList());
-    result = result && getNextPageToken()
-        .equals(other.getNextPageToken());
+    result = result && getDatasetsList().equals(other.getDatasetsList());
+    result = result && getNextPageToken().equals(other.getNextPageToken());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -270,114 +293,126 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.cloud.automl.v1beta1.ListDatasetsResponse parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.automl.v1beta1.ListDatasetsResponse parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.automl.v1beta1.ListDatasetsResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.automl.v1beta1.ListDatasetsResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.automl.v1beta1.ListDatasetsResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.automl.v1beta1.ListDatasetsResponse parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.automl.v1beta1.ListDatasetsResponse parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.automl.v1beta1.ListDatasetsResponse parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.automl.v1beta1.ListDatasetsResponse parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.cloud.automl.v1beta1.ListDatasetsResponse parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.cloud.automl.v1beta1.ListDatasetsResponse parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.automl.v1beta1.ListDatasetsResponse parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.automl.v1beta1.ListDatasetsResponse parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.automl.v1beta1.ListDatasetsResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  public Builder newBuilderForType() { return newBuilder(); }
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-  public static Builder newBuilder(com.google.cloud.automl.v1beta1.ListDatasetsResponse prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+
+  public static Builder newBuilder(com.google.cloud.automl.v1beta1.ListDatasetsResponse prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+
+  @java.lang.Override
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Response message for [AutoMl.ListDatasets][google.cloud.automl.v1beta1.AutoMl.ListDatasets].
    * </pre>
    *
    * Protobuf type {@code google.cloud.automl.v1beta1.ListDatasetsResponse}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.automl.v1beta1.ListDatasetsResponse)
       com.google.cloud.automl.v1beta1.ListDatasetsResponseOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.automl.v1beta1.AutoMlProto.internal_static_google_cloud_automl_v1beta1_ListDatasetsResponse_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.automl.v1beta1.AutoMlProto
+          .internal_static_google_cloud_automl_v1beta1_ListDatasetsResponse_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.automl.v1beta1.AutoMlProto.internal_static_google_cloud_automl_v1beta1_ListDatasetsResponse_fieldAccessorTable
+      return com.google.cloud.automl.v1beta1.AutoMlProto
+          .internal_static_google_cloud_automl_v1beta1_ListDatasetsResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.automl.v1beta1.ListDatasetsResponse.class, com.google.cloud.automl.v1beta1.ListDatasetsResponse.Builder.class);
+              com.google.cloud.automl.v1beta1.ListDatasetsResponse.class,
+              com.google.cloud.automl.v1beta1.ListDatasetsResponse.Builder.class);
     }
 
     // Construct using com.google.cloud.automl.v1beta1.ListDatasetsResponse.newBuilder()
@@ -385,17 +420,18 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getDatasetsFieldBuilder();
       }
     }
+
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       if (datasetsBuilder_ == null) {
@@ -409,15 +445,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.automl.v1beta1.AutoMlProto.internal_static_google_cloud_automl_v1beta1_ListDatasetsResponse_descriptor;
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.automl.v1beta1.AutoMlProto
+          .internal_static_google_cloud_automl_v1beta1_ListDatasetsResponse_descriptor;
     }
 
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.ListDatasetsResponse getDefaultInstanceForType() {
       return com.google.cloud.automl.v1beta1.ListDatasetsResponse.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.ListDatasetsResponse build() {
       com.google.cloud.automl.v1beta1.ListDatasetsResponse result = buildPartial();
       if (!result.isInitialized()) {
@@ -426,8 +465,10 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.ListDatasetsResponse buildPartial() {
-      com.google.cloud.automl.v1beta1.ListDatasetsResponse result = new com.google.cloud.automl.v1beta1.ListDatasetsResponse(this);
+      com.google.cloud.automl.v1beta1.ListDatasetsResponse result =
+          new com.google.cloud.automl.v1beta1.ListDatasetsResponse(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (datasetsBuilder_ == null) {
@@ -445,35 +486,43 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+
+    @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+    @java.lang.Override
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+    @java.lang.Override
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
+    @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
+    @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.automl.v1beta1.ListDatasetsResponse) {
-        return mergeFrom((com.google.cloud.automl.v1beta1.ListDatasetsResponse)other);
+        return mergeFrom((com.google.cloud.automl.v1beta1.ListDatasetsResponse) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -481,7 +530,8 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.cloud.automl.v1beta1.ListDatasetsResponse other) {
-      if (other == com.google.cloud.automl.v1beta1.ListDatasetsResponse.getDefaultInstance()) return this;
+      if (other == com.google.cloud.automl.v1beta1.ListDatasetsResponse.getDefaultInstance())
+        return this;
       if (datasetsBuilder_ == null) {
         if (!other.datasets_.isEmpty()) {
           if (datasets_.isEmpty()) {
@@ -500,9 +550,10 @@ private static final long serialVersionUID = 0L;
             datasetsBuilder_ = null;
             datasets_ = other.datasets_;
             bitField0_ = (bitField0_ & ~0x00000001);
-            datasetsBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getDatasetsFieldBuilder() : null;
+            datasetsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getDatasetsFieldBuilder()
+                    : null;
           } else {
             datasetsBuilder_.addAllMessages(other.datasets_);
           }
@@ -517,10 +568,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -529,7 +582,8 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.automl.v1beta1.ListDatasetsResponse) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.cloud.automl.v1beta1.ListDatasetsResponse) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -538,21 +592,28 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private java.util.List<com.google.cloud.automl.v1beta1.Dataset> datasets_ =
-      java.util.Collections.emptyList();
+        java.util.Collections.emptyList();
+
     private void ensureDatasetsIsMutable() {
       if (!((bitField0_ & 0x00000001) == 0x00000001)) {
         datasets_ = new java.util.ArrayList<com.google.cloud.automl.v1beta1.Dataset>(datasets_);
         bitField0_ |= 0x00000001;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.automl.v1beta1.Dataset, com.google.cloud.automl.v1beta1.Dataset.Builder, com.google.cloud.automl.v1beta1.DatasetOrBuilder> datasetsBuilder_;
+            com.google.cloud.automl.v1beta1.Dataset,
+            com.google.cloud.automl.v1beta1.Dataset.Builder,
+            com.google.cloud.automl.v1beta1.DatasetOrBuilder>
+        datasetsBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * The datasets read.
      * </pre>
@@ -567,6 +628,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The datasets read.
      * </pre>
@@ -581,6 +644,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The datasets read.
      * </pre>
@@ -595,14 +660,15 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The datasets read.
      * </pre>
      *
      * <code>repeated .google.cloud.automl.v1beta1.Dataset datasets = 1;</code>
      */
-    public Builder setDatasets(
-        int index, com.google.cloud.automl.v1beta1.Dataset value) {
+    public Builder setDatasets(int index, com.google.cloud.automl.v1beta1.Dataset value) {
       if (datasetsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -616,6 +682,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The datasets read.
      * </pre>
@@ -634,6 +702,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The datasets read.
      * </pre>
@@ -654,14 +724,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The datasets read.
      * </pre>
      *
      * <code>repeated .google.cloud.automl.v1beta1.Dataset datasets = 1;</code>
      */
-    public Builder addDatasets(
-        int index, com.google.cloud.automl.v1beta1.Dataset value) {
+    public Builder addDatasets(int index, com.google.cloud.automl.v1beta1.Dataset value) {
       if (datasetsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -675,14 +746,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The datasets read.
      * </pre>
      *
      * <code>repeated .google.cloud.automl.v1beta1.Dataset datasets = 1;</code>
      */
-    public Builder addDatasets(
-        com.google.cloud.automl.v1beta1.Dataset.Builder builderForValue) {
+    public Builder addDatasets(com.google.cloud.automl.v1beta1.Dataset.Builder builderForValue) {
       if (datasetsBuilder_ == null) {
         ensureDatasetsIsMutable();
         datasets_.add(builderForValue.build());
@@ -693,6 +765,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The datasets read.
      * </pre>
@@ -711,6 +785,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The datasets read.
      * </pre>
@@ -721,8 +797,7 @@ private static final long serialVersionUID = 0L;
         java.lang.Iterable<? extends com.google.cloud.automl.v1beta1.Dataset> values) {
       if (datasetsBuilder_ == null) {
         ensureDatasetsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, datasets_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, datasets_);
         onChanged();
       } else {
         datasetsBuilder_.addAllMessages(values);
@@ -730,6 +805,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The datasets read.
      * </pre>
@@ -747,6 +824,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The datasets read.
      * </pre>
@@ -764,39 +843,44 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The datasets read.
      * </pre>
      *
      * <code>repeated .google.cloud.automl.v1beta1.Dataset datasets = 1;</code>
      */
-    public com.google.cloud.automl.v1beta1.Dataset.Builder getDatasetsBuilder(
-        int index) {
+    public com.google.cloud.automl.v1beta1.Dataset.Builder getDatasetsBuilder(int index) {
       return getDatasetsFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * The datasets read.
      * </pre>
      *
      * <code>repeated .google.cloud.automl.v1beta1.Dataset datasets = 1;</code>
      */
-    public com.google.cloud.automl.v1beta1.DatasetOrBuilder getDatasetsOrBuilder(
-        int index) {
+    public com.google.cloud.automl.v1beta1.DatasetOrBuilder getDatasetsOrBuilder(int index) {
       if (datasetsBuilder_ == null) {
-        return datasets_.get(index);  } else {
+        return datasets_.get(index);
+      } else {
         return datasetsBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * The datasets read.
      * </pre>
      *
      * <code>repeated .google.cloud.automl.v1beta1.Dataset datasets = 1;</code>
      */
-    public java.util.List<? extends com.google.cloud.automl.v1beta1.DatasetOrBuilder> 
-         getDatasetsOrBuilderList() {
+    public java.util.List<? extends com.google.cloud.automl.v1beta1.DatasetOrBuilder>
+        getDatasetsOrBuilderList() {
       if (datasetsBuilder_ != null) {
         return datasetsBuilder_.getMessageOrBuilderList();
       } else {
@@ -804,6 +888,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The datasets read.
      * </pre>
@@ -811,38 +897,47 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.cloud.automl.v1beta1.Dataset datasets = 1;</code>
      */
     public com.google.cloud.automl.v1beta1.Dataset.Builder addDatasetsBuilder() {
-      return getDatasetsFieldBuilder().addBuilder(
-          com.google.cloud.automl.v1beta1.Dataset.getDefaultInstance());
+      return getDatasetsFieldBuilder()
+          .addBuilder(com.google.cloud.automl.v1beta1.Dataset.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * The datasets read.
      * </pre>
      *
      * <code>repeated .google.cloud.automl.v1beta1.Dataset datasets = 1;</code>
      */
-    public com.google.cloud.automl.v1beta1.Dataset.Builder addDatasetsBuilder(
-        int index) {
-      return getDatasetsFieldBuilder().addBuilder(
-          index, com.google.cloud.automl.v1beta1.Dataset.getDefaultInstance());
+    public com.google.cloud.automl.v1beta1.Dataset.Builder addDatasetsBuilder(int index) {
+      return getDatasetsFieldBuilder()
+          .addBuilder(index, com.google.cloud.automl.v1beta1.Dataset.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * The datasets read.
      * </pre>
      *
      * <code>repeated .google.cloud.automl.v1beta1.Dataset datasets = 1;</code>
      */
-    public java.util.List<com.google.cloud.automl.v1beta1.Dataset.Builder> 
-         getDatasetsBuilderList() {
+    public java.util.List<com.google.cloud.automl.v1beta1.Dataset.Builder>
+        getDatasetsBuilderList() {
       return getDatasetsFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.automl.v1beta1.Dataset, com.google.cloud.automl.v1beta1.Dataset.Builder, com.google.cloud.automl.v1beta1.DatasetOrBuilder> 
+            com.google.cloud.automl.v1beta1.Dataset,
+            com.google.cloud.automl.v1beta1.Dataset.Builder,
+            com.google.cloud.automl.v1beta1.DatasetOrBuilder>
         getDatasetsFieldBuilder() {
       if (datasetsBuilder_ == null) {
-        datasetsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.cloud.automl.v1beta1.Dataset, com.google.cloud.automl.v1beta1.Dataset.Builder, com.google.cloud.automl.v1beta1.DatasetOrBuilder>(
+        datasetsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.automl.v1beta1.Dataset,
+                com.google.cloud.automl.v1beta1.Dataset.Builder,
+                com.google.cloud.automl.v1beta1.DatasetOrBuilder>(
                 datasets_,
                 ((bitField0_ & 0x00000001) == 0x00000001),
                 getParentForChildren(),
@@ -854,6 +949,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object nextPageToken_ = "";
     /**
+     *
+     *
      * <pre>
      * A token to retrieve next page of results.
      * Pass to [ListDatasetsRequest.page_token][google.cloud.automl.v1beta1.ListDatasetsRequest.page_token] to obtain that page.
@@ -864,8 +961,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getNextPageToken() {
       java.lang.Object ref = nextPageToken_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         nextPageToken_ = s;
         return s;
@@ -874,6 +970,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A token to retrieve next page of results.
      * Pass to [ListDatasetsRequest.page_token][google.cloud.automl.v1beta1.ListDatasetsRequest.page_token] to obtain that page.
@@ -881,13 +979,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string next_page_token = 2;</code>
      */
-    public com.google.protobuf.ByteString
-        getNextPageTokenBytes() {
+    public com.google.protobuf.ByteString getNextPageTokenBytes() {
       java.lang.Object ref = nextPageToken_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         nextPageToken_ = b;
         return b;
       } else {
@@ -895,6 +991,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A token to retrieve next page of results.
      * Pass to [ListDatasetsRequest.page_token][google.cloud.automl.v1beta1.ListDatasetsRequest.page_token] to obtain that page.
@@ -902,17 +1000,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string next_page_token = 2;</code>
      */
-    public Builder setNextPageToken(
-        java.lang.String value) {
+    public Builder setNextPageToken(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       nextPageToken_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A token to retrieve next page of results.
      * Pass to [ListDatasetsRequest.page_token][google.cloud.automl.v1beta1.ListDatasetsRequest.page_token] to obtain that page.
@@ -921,12 +1020,14 @@ private static final long serialVersionUID = 0L;
      * <code>string next_page_token = 2;</code>
      */
     public Builder clearNextPageToken() {
-      
+
       nextPageToken_ = getDefaultInstance().getNextPageToken();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A token to retrieve next page of results.
      * Pass to [ListDatasetsRequest.page_token][google.cloud.automl.v1beta1.ListDatasetsRequest.page_token] to obtain that page.
@@ -934,33 +1035,34 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string next_page_token = 2;</code>
      */
-    public Builder setNextPageTokenBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setNextPageTokenBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       nextPageToken_ = value;
       onChanged();
       return this;
     }
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+
+    @java.lang.Override
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
     }
-
 
     // @@protoc_insertion_point(builder_scope:google.cloud.automl.v1beta1.ListDatasetsResponse)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.automl.v1beta1.ListDatasetsResponse)
   private static final com.google.cloud.automl.v1beta1.ListDatasetsResponse DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.automl.v1beta1.ListDatasetsResponse();
   }
@@ -969,15 +1071,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ListDatasetsResponse>
-      PARSER = new com.google.protobuf.AbstractParser<ListDatasetsResponse>() {
-    public ListDatasetsResponse parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ListDatasetsResponse(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<ListDatasetsResponse> PARSER =
+      new com.google.protobuf.AbstractParser<ListDatasetsResponse>() {
+        @java.lang.Override
+        public ListDatasetsResponse parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new ListDatasetsResponse(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<ListDatasetsResponse> parser() {
     return PARSER;
@@ -988,9 +1091,8 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.ListDatasetsResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

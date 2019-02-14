@@ -17,16 +17,17 @@
 /**
  * A testing helper for Google Cloud Resource Manager.
  *
- * <p>A simple usage example:
- * Before the test:
- * <pre> {@code
+ * <p>A simple usage example: Before the test:
+ *
+ * <pre>{@code
  * LocalResourceManagerHelper resourceManagerHelper = LocalResourceManagerHelper.create();
  * resourceManagerHelper.start();
  * ResourceManager resourceManager = resourceManagerHelper.getOptions().getService();
  * }</pre>
  *
  * <p>After the test:
- * <pre> {@code
+ *
+ * <pre>{@code
  * resourceManagerHelper.stop();
  * }</pre>
  */

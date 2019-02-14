@@ -8,8 +8,8 @@ If you see exceptions related to `ALPN is not configured properly`, such as:
 Caused by: java.lang.IllegalArgumentException: ALPN is not configured properly. See https://github.com/grpc/grpc-java/blob/master/SECURITY.md#troubleshooting for more information.
 ```
 
-Please use the [compatibility checker](https://github.com/GoogleCloudPlatform/google-cloud-java/tree/master/google-cloud-util/google-cloud-compat-checker) to see if your environment is compatible with grpc-based clients. The incompatibility can mean that:
-- You are not on a [supported platform](https://github.com/GoogleCloudPlatform/google-cloud-java/#supported-platforms)
+Please use the [compatibility checker](https://github.com/googleapis/google-cloud-java/tree/master/google-cloud-util/google-cloud-compat-checker) to see if your environment is compatible with grpc-based clients. The incompatibility can mean that:
+- You are not on a [supported platform](https://github.com/googleapis/google-cloud-java/#supported-platforms)
 - There are classpath conflicts with `netty`
 - Or, you are seeing any of the conflicts specified in [gRPC Troubleshooting guide](https://github.com/grpc/grpc-java/blob/master/SECURITY.md#troubleshooting).
 

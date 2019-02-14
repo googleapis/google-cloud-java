@@ -34,8 +34,7 @@ public class SubnetworkIdTest {
   private static final String URL =
       "https://www.googleapis.com/compute/v1/projects/project/regions/region/subnetworks/subnet";
 
-  @Rule
-  public ExpectedException thrown = ExpectedException.none();
+  @Rule public ExpectedException thrown = ExpectedException.none();
 
   @Test
   public void testOf() {

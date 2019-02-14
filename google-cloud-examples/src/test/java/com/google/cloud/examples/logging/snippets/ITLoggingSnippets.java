@@ -27,17 +27,15 @@ import com.google.cloud.logging.Sink;
 import com.google.cloud.logging.testing.RemoteLoggingHelper;
 import com.google.common.collect.Iterators;
 import com.google.common.collect.Sets;
-
+import java.util.Iterator;
+import java.util.Set;
+import java.util.concurrent.ExecutionException;
 import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 import org.junit.rules.Timeout;
-
-import java.util.Iterator;
-import java.util.Set;
-import java.util.concurrent.ExecutionException;
 
 public class ITLoggingSnippets {
 
@@ -46,11 +44,9 @@ public class ITLoggingSnippets {
   private static Logging logging;
   private static LoggingSnippets loggingSnippets;
 
-  @Rule
-  public Timeout globalTimeout = Timeout.seconds(300);
+  @Rule public Timeout globalTimeout = Timeout.seconds(300);
 
-  @Rule
-  public ExpectedException thrown = ExpectedException.none();
+  @Rule public ExpectedException thrown = ExpectedException.none();
 
   @BeforeClass
   public static void beforeClass() {
@@ -161,7 +157,8 @@ public class ITLoggingSnippets {
     loggingSnippets.write(logName);
     // flush all pending asynchronous writes
     logging.flush();
-    Iterator<LogEntry> iterator = loggingSnippets.listLogEntriesAsync(filter).iterateAll().iterator();
+    Iterator<LogEntry> iterator =
+        loggingSnippets.listLogEntriesAsync(filter).iterateAll().iterator();
     while (Iterators.size(iterator) < 2) {
       Thread.sleep(500);
       iterator = loggingSnippets.listLogEntriesAsync(filter).iterateAll().iterator();

@@ -3,11 +3,14 @@
 
 package com.google.spanner.v1;
 
-public interface PartitionQueryRequestOrBuilder extends
+public interface PartitionQueryRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.spanner.v1.PartitionQueryRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The session used to create the partitions.
    * </pre>
@@ -16,16 +19,19 @@ public interface PartitionQueryRequestOrBuilder extends
    */
   java.lang.String getSession();
   /**
+   *
+   *
    * <pre>
    * Required. The session used to create the partitions.
    * </pre>
    *
    * <code>string session = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getSessionBytes();
+  com.google.protobuf.ByteString getSessionBytes();
 
   /**
+   *
+   *
    * <pre>
    * Read only snapshot transactions are supported, read/write and single use
    * transactions are not.
@@ -35,6 +41,8 @@ public interface PartitionQueryRequestOrBuilder extends
    */
   boolean hasTransaction();
   /**
+   *
+   *
    * <pre>
    * Read only snapshot transactions are supported, read/write and single use
    * transactions are not.
@@ -44,6 +52,8 @@ public interface PartitionQueryRequestOrBuilder extends
    */
   com.google.spanner.v1.TransactionSelector getTransaction();
   /**
+   *
+   *
    * <pre>
    * Read only snapshot transactions are supported, read/write and single use
    * transactions are not.
@@ -54,6 +64,8 @@ public interface PartitionQueryRequestOrBuilder extends
   com.google.spanner.v1.TransactionSelectorOrBuilder getTransactionOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The query request to generate partitions for. The request will fail if
    * the query is not root partitionable. The query plan of a root
@@ -61,12 +73,17 @@ public interface PartitionQueryRequestOrBuilder extends
    * union operator conceptually divides one or more tables into multiple
    * splits, remotely evaluates a subquery independently on each split, and
    * then unions all results.
+   * This must not contain DML commands, such as INSERT, UPDATE, or
+   * DELETE. Use [ExecuteStreamingSql][google.spanner.v1.Spanner.ExecuteStreamingSql] with a
+   * PartitionedDml transaction for large, partition-friendly DML operations.
    * </pre>
    *
    * <code>string sql = 3;</code>
    */
   java.lang.String getSql();
   /**
+   *
+   *
    * <pre>
    * The query request to generate partitions for. The request will fail if
    * the query is not root partitionable. The query plan of a root
@@ -74,14 +91,18 @@ public interface PartitionQueryRequestOrBuilder extends
    * union operator conceptually divides one or more tables into multiple
    * splits, remotely evaluates a subquery independently on each split, and
    * then unions all results.
+   * This must not contain DML commands, such as INSERT, UPDATE, or
+   * DELETE. Use [ExecuteStreamingSql][google.spanner.v1.Spanner.ExecuteStreamingSql] with a
+   * PartitionedDml transaction for large, partition-friendly DML operations.
    * </pre>
    *
    * <code>string sql = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getSqlBytes();
+  com.google.protobuf.ByteString getSqlBytes();
 
   /**
+   *
+   *
    * <pre>
    * The SQL query string can contain parameter placeholders. A parameter
    * placeholder consists of `'&#64;'` followed by the parameter
@@ -100,6 +121,8 @@ public interface PartitionQueryRequestOrBuilder extends
    */
   boolean hasParams();
   /**
+   *
+   *
    * <pre>
    * The SQL query string can contain parameter placeholders. A parameter
    * placeholder consists of `'&#64;'` followed by the parameter
@@ -118,6 +141,8 @@ public interface PartitionQueryRequestOrBuilder extends
    */
   com.google.protobuf.Struct getParams();
   /**
+   *
+   *
    * <pre>
    * The SQL query string can contain parameter placeholders. A parameter
    * placeholder consists of `'&#64;'` followed by the parameter
@@ -137,6 +162,8 @@ public interface PartitionQueryRequestOrBuilder extends
   com.google.protobuf.StructOrBuilder getParamsOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * It is not always possible for Cloud Spanner to infer the right SQL type
    * from a JSON value.  For example, values of type `BYTES` and values
@@ -151,6 +178,8 @@ public interface PartitionQueryRequestOrBuilder extends
    */
   int getParamTypesCount();
   /**
+   *
+   *
    * <pre>
    * It is not always possible for Cloud Spanner to infer the right SQL type
    * from a JSON value.  For example, values of type `BYTES` and values
@@ -163,15 +192,13 @@ public interface PartitionQueryRequestOrBuilder extends
    *
    * <code>map&lt;string, .google.spanner.v1.Type&gt; param_types = 5;</code>
    */
-  boolean containsParamTypes(
-      java.lang.String key);
-  /**
-   * Use {@link #getParamTypesMap()} instead.
-   */
+  boolean containsParamTypes(java.lang.String key);
+  /** Use {@link #getParamTypesMap()} instead. */
   @java.lang.Deprecated
-  java.util.Map<java.lang.String, com.google.spanner.v1.Type>
-  getParamTypes();
+  java.util.Map<java.lang.String, com.google.spanner.v1.Type> getParamTypes();
   /**
+   *
+   *
    * <pre>
    * It is not always possible for Cloud Spanner to infer the right SQL type
    * from a JSON value.  For example, values of type `BYTES` and values
@@ -184,9 +211,10 @@ public interface PartitionQueryRequestOrBuilder extends
    *
    * <code>map&lt;string, .google.spanner.v1.Type&gt; param_types = 5;</code>
    */
-  java.util.Map<java.lang.String, com.google.spanner.v1.Type>
-  getParamTypesMap();
+  java.util.Map<java.lang.String, com.google.spanner.v1.Type> getParamTypesMap();
   /**
+   *
+   *
    * <pre>
    * It is not always possible for Cloud Spanner to infer the right SQL type
    * from a JSON value.  For example, values of type `BYTES` and values
@@ -199,11 +227,11 @@ public interface PartitionQueryRequestOrBuilder extends
    *
    * <code>map&lt;string, .google.spanner.v1.Type&gt; param_types = 5;</code>
    */
-
   com.google.spanner.v1.Type getParamTypesOrDefault(
-      java.lang.String key,
-      com.google.spanner.v1.Type defaultValue);
+      java.lang.String key, com.google.spanner.v1.Type defaultValue);
   /**
+   *
+   *
    * <pre>
    * It is not always possible for Cloud Spanner to infer the right SQL type
    * from a JSON value.  For example, values of type `BYTES` and values
@@ -216,11 +244,11 @@ public interface PartitionQueryRequestOrBuilder extends
    *
    * <code>map&lt;string, .google.spanner.v1.Type&gt; param_types = 5;</code>
    */
-
-  com.google.spanner.v1.Type getParamTypesOrThrow(
-      java.lang.String key);
+  com.google.spanner.v1.Type getParamTypesOrThrow(java.lang.String key);
 
   /**
+   *
+   *
    * <pre>
    * Additional options that affect how many partitions are created.
    * </pre>
@@ -229,6 +257,8 @@ public interface PartitionQueryRequestOrBuilder extends
    */
   boolean hasPartitionOptions();
   /**
+   *
+   *
    * <pre>
    * Additional options that affect how many partitions are created.
    * </pre>
@@ -237,6 +267,8 @@ public interface PartitionQueryRequestOrBuilder extends
    */
   com.google.spanner.v1.PartitionOptions getPartitionOptions();
   /**
+   *
+   *
    * <pre>
    * Additional options that affect how many partitions are created.
    * </pre>

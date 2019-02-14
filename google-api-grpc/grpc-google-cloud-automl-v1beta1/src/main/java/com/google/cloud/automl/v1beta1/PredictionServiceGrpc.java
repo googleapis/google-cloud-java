@@ -1,21 +1,15 @@
 package com.google.cloud.automl.v1beta1;
 
 import static io.grpc.MethodDescriptor.generateFullMethodName;
-import static io.grpc.stub.ClientCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ClientCalls.asyncServerStreamingCall;
 import static io.grpc.stub.ClientCalls.asyncUnaryCall;
-import static io.grpc.stub.ClientCalls.blockingServerStreamingCall;
 import static io.grpc.stub.ClientCalls.blockingUnaryCall;
 import static io.grpc.stub.ClientCalls.futureUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncBidiStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncClientStreamingCall;
-import static io.grpc.stub.ServerCalls.asyncServerStreamingCall;
 import static io.grpc.stub.ServerCalls.asyncUnaryCall;
-import static io.grpc.stub.ServerCalls.asyncUnimplementedStreamingCall;
 import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
+ *
+ *
  * <pre>
  * AutoML Prediction API.
  * </pre>
@@ -31,46 +25,62 @@ public final class PredictionServiceGrpc {
 
   // Static method descriptors that strictly reflect the proto.
   @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  @java.lang.Deprecated // Use {@link #getPredictMethod()} instead. 
-  public static final io.grpc.MethodDescriptor<com.google.cloud.automl.v1beta1.PredictRequest,
-      com.google.cloud.automl.v1beta1.PredictResponse> METHOD_PREDICT = getPredictMethodHelper();
+  @java.lang.Deprecated // Use {@link #getPredictMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.cloud.automl.v1beta1.PredictRequest,
+          com.google.cloud.automl.v1beta1.PredictResponse>
+      METHOD_PREDICT = getPredictMethodHelper();
 
-  private static volatile io.grpc.MethodDescriptor<com.google.cloud.automl.v1beta1.PredictRequest,
-      com.google.cloud.automl.v1beta1.PredictResponse> getPredictMethod;
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.cloud.automl.v1beta1.PredictRequest,
+          com.google.cloud.automl.v1beta1.PredictResponse>
+      getPredictMethod;
 
   @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
-  public static io.grpc.MethodDescriptor<com.google.cloud.automl.v1beta1.PredictRequest,
-      com.google.cloud.automl.v1beta1.PredictResponse> getPredictMethod() {
+  public static io.grpc.MethodDescriptor<
+          com.google.cloud.automl.v1beta1.PredictRequest,
+          com.google.cloud.automl.v1beta1.PredictResponse>
+      getPredictMethod() {
     return getPredictMethodHelper();
   }
 
-  private static io.grpc.MethodDescriptor<com.google.cloud.automl.v1beta1.PredictRequest,
-      com.google.cloud.automl.v1beta1.PredictResponse> getPredictMethodHelper() {
-    io.grpc.MethodDescriptor<com.google.cloud.automl.v1beta1.PredictRequest, com.google.cloud.automl.v1beta1.PredictResponse> getPredictMethod;
+  private static io.grpc.MethodDescriptor<
+          com.google.cloud.automl.v1beta1.PredictRequest,
+          com.google.cloud.automl.v1beta1.PredictResponse>
+      getPredictMethodHelper() {
+    io.grpc.MethodDescriptor<
+            com.google.cloud.automl.v1beta1.PredictRequest,
+            com.google.cloud.automl.v1beta1.PredictResponse>
+        getPredictMethod;
     if ((getPredictMethod = PredictionServiceGrpc.getPredictMethod) == null) {
       synchronized (PredictionServiceGrpc.class) {
         if ((getPredictMethod = PredictionServiceGrpc.getPredictMethod) == null) {
-          PredictionServiceGrpc.getPredictMethod = getPredictMethod = 
-              io.grpc.MethodDescriptor.<com.google.cloud.automl.v1beta1.PredictRequest, com.google.cloud.automl.v1beta1.PredictResponse>newBuilder()
-              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName(generateFullMethodName(
-                  "google.cloud.automl.v1beta1.PredictionService", "Predict"))
-              .setSampledToLocalTracing(true)
-              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.google.cloud.automl.v1beta1.PredictRequest.getDefaultInstance()))
-              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  com.google.cloud.automl.v1beta1.PredictResponse.getDefaultInstance()))
-                  .setSchemaDescriptor(new PredictionServiceMethodDescriptorSupplier("Predict"))
-                  .build();
-          }
+          PredictionServiceGrpc.getPredictMethod =
+              getPredictMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.cloud.automl.v1beta1.PredictRequest,
+                          com.google.cloud.automl.v1beta1.PredictResponse>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              "google.cloud.automl.v1beta1.PredictionService", "Predict"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.automl.v1beta1.PredictRequest.getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.cloud.automl.v1beta1.PredictResponse.getDefaultInstance()))
+                      .setSchemaDescriptor(new PredictionServiceMethodDescriptorSupplier("Predict"))
+                      .build();
         }
-     }
-     return getPredictMethod;
+      }
+    }
+    return getPredictMethod;
   }
 
-  /**
-   * Creates a new async stub that supports all call types for the service
-   */
+  /** Creates a new async stub that supports all call types for the service */
   public static PredictionServiceStub newStub(io.grpc.Channel channel) {
     return new PredictionServiceStub(channel);
   }
@@ -78,142 +88,162 @@ public final class PredictionServiceGrpc {
   /**
    * Creates a new blocking-style stub that supports unary and streaming output calls on the service
    */
-  public static PredictionServiceBlockingStub newBlockingStub(
-      io.grpc.Channel channel) {
+  public static PredictionServiceBlockingStub newBlockingStub(io.grpc.Channel channel) {
     return new PredictionServiceBlockingStub(channel);
   }
 
-  /**
-   * Creates a new ListenableFuture-style stub that supports unary calls on the service
-   */
-  public static PredictionServiceFutureStub newFutureStub(
-      io.grpc.Channel channel) {
+  /** Creates a new ListenableFuture-style stub that supports unary calls on the service */
+  public static PredictionServiceFutureStub newFutureStub(io.grpc.Channel channel) {
     return new PredictionServiceFutureStub(channel);
   }
 
   /**
+   *
+   *
    * <pre>
    * AutoML Prediction API.
    * </pre>
    */
-  public static abstract class PredictionServiceImplBase implements io.grpc.BindableService {
+  public abstract static class PredictionServiceImplBase implements io.grpc.BindableService {
 
     /**
+     *
+     *
      * <pre>
      * Perform a prediction.
      * </pre>
      */
-    public void predict(com.google.cloud.automl.v1beta1.PredictRequest request,
-        io.grpc.stub.StreamObserver<com.google.cloud.automl.v1beta1.PredictResponse> responseObserver) {
+    public void predict(
+        com.google.cloud.automl.v1beta1.PredictRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.automl.v1beta1.PredictResponse>
+            responseObserver) {
       asyncUnimplementedUnaryCall(getPredictMethodHelper(), responseObserver);
     }
 
-    @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
+    @java.lang.Override
+    public final io.grpc.ServerServiceDefinition bindService() {
       return io.grpc.ServerServiceDefinition.builder(getServiceDescriptor())
           .addMethod(
-            getPredictMethodHelper(),
-            asyncUnaryCall(
-              new MethodHandlers<
-                com.google.cloud.automl.v1beta1.PredictRequest,
-                com.google.cloud.automl.v1beta1.PredictResponse>(
-                  this, METHODID_PREDICT)))
+              getPredictMethodHelper(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.cloud.automl.v1beta1.PredictRequest,
+                      com.google.cloud.automl.v1beta1.PredictResponse>(this, METHODID_PREDICT)))
           .build();
     }
   }
 
   /**
+   *
+   *
    * <pre>
    * AutoML Prediction API.
    * </pre>
    */
-  public static final class PredictionServiceStub extends io.grpc.stub.AbstractStub<PredictionServiceStub> {
+  public static final class PredictionServiceStub
+      extends io.grpc.stub.AbstractStub<PredictionServiceStub> {
     private PredictionServiceStub(io.grpc.Channel channel) {
       super(channel);
     }
 
-    private PredictionServiceStub(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+    private PredictionServiceStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected PredictionServiceStub build(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+    protected PredictionServiceStub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new PredictionServiceStub(channel, callOptions);
     }
 
     /**
+     *
+     *
      * <pre>
      * Perform a prediction.
      * </pre>
      */
-    public void predict(com.google.cloud.automl.v1beta1.PredictRequest request,
-        io.grpc.stub.StreamObserver<com.google.cloud.automl.v1beta1.PredictResponse> responseObserver) {
+    public void predict(
+        com.google.cloud.automl.v1beta1.PredictRequest request,
+        io.grpc.stub.StreamObserver<com.google.cloud.automl.v1beta1.PredictResponse>
+            responseObserver) {
       asyncUnaryCall(
-          getChannel().newCall(getPredictMethodHelper(), getCallOptions()), request, responseObserver);
+          getChannel().newCall(getPredictMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
     }
   }
 
   /**
+   *
+   *
    * <pre>
    * AutoML Prediction API.
    * </pre>
    */
-  public static final class PredictionServiceBlockingStub extends io.grpc.stub.AbstractStub<PredictionServiceBlockingStub> {
+  public static final class PredictionServiceBlockingStub
+      extends io.grpc.stub.AbstractStub<PredictionServiceBlockingStub> {
     private PredictionServiceBlockingStub(io.grpc.Channel channel) {
       super(channel);
     }
 
-    private PredictionServiceBlockingStub(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+    private PredictionServiceBlockingStub(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected PredictionServiceBlockingStub build(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+    protected PredictionServiceBlockingStub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new PredictionServiceBlockingStub(channel, callOptions);
     }
 
     /**
+     *
+     *
      * <pre>
      * Perform a prediction.
      * </pre>
      */
-    public com.google.cloud.automl.v1beta1.PredictResponse predict(com.google.cloud.automl.v1beta1.PredictRequest request) {
-      return blockingUnaryCall(
-          getChannel(), getPredictMethodHelper(), getCallOptions(), request);
+    public com.google.cloud.automl.v1beta1.PredictResponse predict(
+        com.google.cloud.automl.v1beta1.PredictRequest request) {
+      return blockingUnaryCall(getChannel(), getPredictMethodHelper(), getCallOptions(), request);
     }
   }
 
   /**
+   *
+   *
    * <pre>
    * AutoML Prediction API.
    * </pre>
    */
-  public static final class PredictionServiceFutureStub extends io.grpc.stub.AbstractStub<PredictionServiceFutureStub> {
+  public static final class PredictionServiceFutureStub
+      extends io.grpc.stub.AbstractStub<PredictionServiceFutureStub> {
     private PredictionServiceFutureStub(io.grpc.Channel channel) {
       super(channel);
     }
 
-    private PredictionServiceFutureStub(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+    private PredictionServiceFutureStub(io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       super(channel, callOptions);
     }
 
     @java.lang.Override
-    protected PredictionServiceFutureStub build(io.grpc.Channel channel,
-        io.grpc.CallOptions callOptions) {
+    protected PredictionServiceFutureStub build(
+        io.grpc.Channel channel, io.grpc.CallOptions callOptions) {
       return new PredictionServiceFutureStub(channel, callOptions);
     }
 
     /**
+     *
+     *
      * <pre>
      * Perform a prediction.
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<com.google.cloud.automl.v1beta1.PredictResponse> predict(
-        com.google.cloud.automl.v1beta1.PredictRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<
+            com.google.cloud.automl.v1beta1.PredictResponse>
+        predict(com.google.cloud.automl.v1beta1.PredictRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getPredictMethodHelper(), getCallOptions()), request);
     }
@@ -221,11 +251,11 @@ public final class PredictionServiceGrpc {
 
   private static final int METHODID_PREDICT = 0;
 
-  private static final class MethodHandlers<Req, Resp> implements
-      io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
-      io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
-      io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
-      io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
+  private static final class MethodHandlers<Req, Resp>
+      implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
+          io.grpc.stub.ServerCalls.ServerStreamingMethod<Req, Resp>,
+          io.grpc.stub.ServerCalls.ClientStreamingMethod<Req, Resp>,
+          io.grpc.stub.ServerCalls.BidiStreamingMethod<Req, Resp> {
     private final PredictionServiceImplBase serviceImpl;
     private final int methodId;
 
@@ -239,8 +269,10 @@ public final class PredictionServiceGrpc {
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
         case METHODID_PREDICT:
-          serviceImpl.predict((com.google.cloud.automl.v1beta1.PredictRequest) request,
-              (io.grpc.stub.StreamObserver<com.google.cloud.automl.v1beta1.PredictResponse>) responseObserver);
+          serviceImpl.predict(
+              (com.google.cloud.automl.v1beta1.PredictRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.cloud.automl.v1beta1.PredictResponse>)
+                  responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -258,8 +290,9 @@ public final class PredictionServiceGrpc {
     }
   }
 
-  private static abstract class PredictionServiceBaseDescriptorSupplier
-      implements io.grpc.protobuf.ProtoFileDescriptorSupplier, io.grpc.protobuf.ProtoServiceDescriptorSupplier {
+  private abstract static class PredictionServiceBaseDescriptorSupplier
+      implements io.grpc.protobuf.ProtoFileDescriptorSupplier,
+          io.grpc.protobuf.ProtoServiceDescriptorSupplier {
     PredictionServiceBaseDescriptorSupplier() {}
 
     @java.lang.Override
@@ -301,10 +334,12 @@ public final class PredictionServiceGrpc {
       synchronized (PredictionServiceGrpc.class) {
         result = serviceDescriptor;
         if (result == null) {
-          serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
-              .setSchemaDescriptor(new PredictionServiceFileDescriptorSupplier())
-              .addMethod(getPredictMethodHelper())
-              .build();
+          serviceDescriptor =
+              result =
+                  io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
+                      .setSchemaDescriptor(new PredictionServiceFileDescriptorSupplier())
+                      .addMethod(getPredictMethodHelper())
+                      .build();
         }
       }
     }

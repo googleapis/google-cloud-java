@@ -44,9 +44,7 @@ import java.util.List;
 import java.util.Map;
 import org.threeten.bp.Duration;
 
-/**
- * This class contains a number of snippets for the {@link Table} class.
- */
+/** This class contains a number of snippets for the {@link Table} class. */
 public class TableSnippets {
 
   private final Table table;
@@ -55,9 +53,7 @@ public class TableSnippets {
     this.table = table;
   }
 
-  /**
-   * Example of checking if the table exists.
-   */
+  /** Example of checking if the table exists. */
   // [TARGET exists()]
   public boolean exists() {
     // [START ]
@@ -72,8 +68,7 @@ public class TableSnippets {
   }
 
   /**
-   * Example of fetching the table's latest information, specifying particular table fields to
-   * get.
+   * Example of fetching the table's latest information, specifying particular table fields to get.
    */
   // [TARGET reload(TableOption...)]
   // [VARIABLE TableField.LAST_MODIFIED_TIME]
@@ -88,9 +83,7 @@ public class TableSnippets {
     return latestTable;
   }
 
-  /**
-   * Example of updating the table's information.
-   */
+  /** Example of updating the table's information. */
   // [TARGET update(TableOption...)]
   public Table update() {
     // [START ]
@@ -99,9 +92,7 @@ public class TableSnippets {
     return updatedTable;
   }
 
-  /**
-   * Example of deleting the table.
-   */
+  /** Example of deleting the table. */
   // [TARGET delete()]
   public boolean delete() {
     // [START ]
@@ -115,9 +106,7 @@ public class TableSnippets {
     return deleted;
   }
 
-  /**
-   * Example of inserting rows into the table.
-   */
+  /** Example of inserting rows into the table. */
   // [TARGET insert(Iterable)]
   // [VARIABLE "rowId1"]
   // [VARIABLE "rowId2"]
@@ -138,9 +127,7 @@ public class TableSnippets {
     return response;
   }
 
-  /**
-   * Example of inserting rows into the table, ignoring invalid rows.
-   */
+  /** Example of inserting rows into the table, ignoring invalid rows. */
   // [TARGET insert(Iterable, boolean, boolean)]
   // [VARIABLE "rowId1"]
   // [VARIABLE "rowId2"]
@@ -161,9 +148,7 @@ public class TableSnippets {
     return response;
   }
 
-  /**
-   * Example of listing rows in the table.
-   */
+  /** Example of listing rows in the table. */
   // [TARGET list(TableDataListOption...)]
   public Page<FieldValueList> list() {
     // [START ]
@@ -177,9 +162,7 @@ public class TableSnippets {
     return page;
   }
 
-  /**
-   * Example of listing rows in the table given a schema.
-   */
+  /** Example of listing rows in the table given a schema. */
   // [TARGET list(Schema, TableDataListOption...)]
   // [VARIABLE ...]
   // [VARIABLE "my_field"]
@@ -193,9 +176,7 @@ public class TableSnippets {
     return page;
   }
 
-  /**
-   * Example of copying the table to a destination table.
-   */
+  /** Example of copying the table to a destination table. */
   // [TARGET copy(String, String, JobOption...)]
   // [VARIABLE "my_dataset"]
   // [VARIABLE "my_destination_table"]
@@ -220,9 +201,7 @@ public class TableSnippets {
     return job;
   }
 
-  /**
-   * Example copying the table to a destination table.
-   */
+  /** Example copying the table to a destination table. */
   // [TARGET copy(TableId, JobOption...)]
   // [VARIABLE "my_dataset"]
   // [VARIABLE "my_destination_table"]
@@ -249,9 +228,7 @@ public class TableSnippets {
     return job;
   }
 
-  /**
-   * Example of partitioning data to a list of Google Cloud Storage files.
-   */
+  /** Example of partitioning data to a list of Google Cloud Storage files. */
   // [TARGET extract(String, List, JobOption...)]
   // [VARIABLE "CSV"]
   // [VARIABLE "gs://my_bucket/PartitionA_*.csv"]
@@ -280,9 +257,7 @@ public class TableSnippets {
     return job;
   }
 
-  /**
-   * Example extracting data to single Google Cloud Storage file.
-   */
+  /** Example extracting data to single Google Cloud Storage file. */
   // [TARGET extract(String, String, JobOption...)]
   // [VARIABLE "CSV"]
   // [VARIABLE "gs://my_bucket/filename.csv"]
@@ -307,9 +282,7 @@ public class TableSnippets {
     return job;
   }
 
-  /**
-   * Example loading data from a list of Google Cloud Storage files.
-   */
+  /** Example loading data from a list of Google Cloud Storage files. */
   // [TARGET load(FormatOptions, List, JobOption...)]
   // [VARIABLE "gs://my_bucket/filename1.csv"]
   // [VARIABLE "gs://my_bucket/filename2.csv"]
@@ -337,9 +310,7 @@ public class TableSnippets {
     return job;
   }
 
-  /**
-   * Example loading data from a single Google Cloud Storage file.
-   */
+  /** Example loading data from a single Google Cloud Storage file. */
   // [TARGET load(FormatOptions, String, JobOption...)]
   // [VARIABLE "gs://my_bucket/filename.csv"]
   public Job loadSingle(String sourceUri) {

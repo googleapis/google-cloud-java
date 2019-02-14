@@ -21,7 +21,6 @@ import com.google.api.services.translate.model.TranslationsResource;
 import com.google.cloud.BaseSerializationTest;
 import com.google.cloud.NoCredentials;
 import com.google.cloud.Restorable;
-
 import java.io.Serializable;
 
 public class SerializationTest extends BaseSerializationTest {
@@ -33,9 +32,10 @@ public class SerializationTest extends BaseSerializationTest {
       new DetectionsResourceItems().setLanguage(LANGUAGE).setConfidence(CONFIDENCE);
   private static final Detection DETECTION = Detection.fromPb(DETECTION_PB);
   private static final String TRANSLATED_TEXT = "Hello world";
-  private static final TranslationsResource TRANSLATION_PB = new TranslationsResource()
-      .setTranslatedText(TRANSLATED_TEXT)
-      .setDetectedSourceLanguage(LANGUAGE);
+  private static final TranslationsResource TRANSLATION_PB =
+      new TranslationsResource()
+          .setTranslatedText(TRANSLATED_TEXT)
+          .setDetectedSourceLanguage(LANGUAGE);
   private static final Translation TRANSLATION = Translation.fromPb(TRANSLATION_PB);
   private static final TranslateException TRANSLATE_EXCEPTION =
       new TranslateException(42, "message");
@@ -46,13 +46,21 @@ public class SerializationTest extends BaseSerializationTest {
 
   @Override
   protected Serializable[] serializableObjects() {
-    TranslateOptions options = TranslateOptions.newBuilder()
-        .setApiKey(API_KEY)
-        .setCredentials(NoCredentials.getInstance())
-        .build();
+    TranslateOptions options =
+        TranslateOptions.newBuilder()
+            .setApiKey(API_KEY)
+            .setCredentials(NoCredentials.getInstance())
+            .build();
     TranslateOptions otherOptions = options.toBuilder().build();
-    return new Serializable[]{DETECTION, TRANSLATION, TRANSLATE_EXCEPTION, LANGUAGE_LIST_OPTION,
-        TRANSLATE_OPTION, options, otherOptions};
+    return new Serializable[] {
+      DETECTION,
+      TRANSLATION,
+      TRANSLATE_EXCEPTION,
+      LANGUAGE_LIST_OPTION,
+      TRANSLATE_OPTION,
+      options,
+      otherOptions
+    };
   }
 
   @Override

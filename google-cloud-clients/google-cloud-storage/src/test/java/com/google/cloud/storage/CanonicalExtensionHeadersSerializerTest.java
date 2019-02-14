@@ -32,46 +32,46 @@ public class CanonicalExtensionHeadersSerializerTest {
   public void setUp() {
     serializer = new CanonicalExtensionHeadersSerializer();
   }
-  
+
   @Test
   public void givenNoHeadersWhenSerializeThenProduceNothing() {
-    
+
     StringBuilder sb = serializer.serialize(Collections.<String, String>emptyMap());
-    
+
     assertEquals(sb.toString(), "");
   }
-  
+
   @Test
   public void givenNullHeadersWhenSerializeThenProduceNothing() {
-    
+
     StringBuilder sb = serializer.serialize(null);
-    
+
     assertEquals(sb.toString(), "");
   }
-  
+
   @Test
   public void givenEncryptionHeadersWhenSerializeThenAreRemvoed() {
-    
+
     Map<String, String> encryptionHeaders = new HashMap<>();
     encryptionHeaders.put("x-goog-encryption-key", "");
     encryptionHeaders.put("x-goog-encryption-key-sha256", "");
-    
+
     StringBuilder sb = serializer.serialize(encryptionHeaders);
-    
+
     assertEquals(sb.toString(), "");
   }
-  
+
   @Test
   public void givenHeadersWhenSerializeThenSuccess() {
-    
+
     Map<String, String> encryptionHeaders = new HashMap<>();
     encryptionHeaders.put("x-goog-encryption-key", "");
     encryptionHeaders.put("x-GOOg-acl", " \n public-read ");
     encryptionHeaders.put("x-goog-encryption-key-sha256", "");
     encryptionHeaders.put("X-goog-meta-OWNER", "   myself    and   others   \n");
-    
+
     StringBuilder sb = serializer.serialize(encryptionHeaders);
-    
+
     assertEquals(sb.toString(), "x-goog-acl:public-read\nx-goog-meta-owner:myself and others\n");
   }
 }

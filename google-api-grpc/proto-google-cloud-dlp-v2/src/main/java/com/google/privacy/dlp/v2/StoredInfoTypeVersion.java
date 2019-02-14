@@ -4,6 +4,8 @@
 package com.google.privacy.dlp.v2;
 
 /**
+ *
+ *
  * <pre>
  * Version of a StoredInfoType, including the configuration used to build it,
  * create timestamp, and current state.
@@ -11,30 +13,34 @@ package com.google.privacy.dlp.v2;
  *
  * Protobuf type {@code google.privacy.dlp.v2.StoredInfoTypeVersion}
  */
-public  final class StoredInfoTypeVersion extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class StoredInfoTypeVersion extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.StoredInfoTypeVersion)
     StoredInfoTypeVersionOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use StoredInfoTypeVersion.newBuilder() to construct.
   private StoredInfoTypeVersion(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private StoredInfoTypeVersion() {
     state_ = 0;
     errors_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private StoredInfoTypeVersion(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -46,61 +52,67 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
-          case 10: {
-            com.google.privacy.dlp.v2.StoredInfoTypeConfig.Builder subBuilder = null;
-            if (config_ != null) {
-              subBuilder = config_.toBuilder();
-            }
-            config_ = input.readMessage(com.google.privacy.dlp.v2.StoredInfoTypeConfig.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(config_);
-              config_ = subBuilder.buildPartial();
-            }
+          case 10:
+            {
+              com.google.privacy.dlp.v2.StoredInfoTypeConfig.Builder subBuilder = null;
+              if (config_ != null) {
+                subBuilder = config_.toBuilder();
+              }
+              config_ =
+                  input.readMessage(
+                      com.google.privacy.dlp.v2.StoredInfoTypeConfig.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(config_);
+                config_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 18: {
-            com.google.protobuf.Timestamp.Builder subBuilder = null;
-            if (createTime_ != null) {
-              subBuilder = createTime_.toBuilder();
+              break;
             }
-            createTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(createTime_);
-              createTime_ = subBuilder.buildPartial();
-            }
+          case 18:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (createTime_ != null) {
+                subBuilder = createTime_.toBuilder();
+              }
+              createTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(createTime_);
+                createTime_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 24: {
-            int rawValue = input.readEnum();
-
-            state_ = rawValue;
-            break;
-          }
-          case 34: {
-            if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-              errors_ = new java.util.ArrayList<com.google.privacy.dlp.v2.Error>();
-              mutable_bitField0_ |= 0x00000008;
+              break;
             }
-            errors_.add(
-                input.readMessage(com.google.privacy.dlp.v2.Error.parser(), extensionRegistry));
-            break;
-          }
+          case 24:
+            {
+              int rawValue = input.readEnum();
+
+              state_ = rawValue;
+              break;
+            }
+          case 34:
+            {
+              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+                errors_ = new java.util.ArrayList<com.google.privacy.dlp.v2.Error>();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              errors_.add(
+                  input.readMessage(com.google.privacy.dlp.v2.Error.parser(), extensionRegistry));
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
         errors_ = java.util.Collections.unmodifiableList(errors_);
@@ -109,22 +121,28 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_StoredInfoTypeVersion_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.privacy.dlp.v2.DlpProto
+        .internal_static_google_privacy_dlp_v2_StoredInfoTypeVersion_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_StoredInfoTypeVersion_fieldAccessorTable
+    return com.google.privacy.dlp.v2.DlpProto
+        .internal_static_google_privacy_dlp_v2_StoredInfoTypeVersion_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.privacy.dlp.v2.StoredInfoTypeVersion.class, com.google.privacy.dlp.v2.StoredInfoTypeVersion.Builder.class);
+            com.google.privacy.dlp.v2.StoredInfoTypeVersion.class,
+            com.google.privacy.dlp.v2.StoredInfoTypeVersion.Builder.class);
   }
 
   private int bitField0_;
   public static final int CONFIG_FIELD_NUMBER = 1;
   private com.google.privacy.dlp.v2.StoredInfoTypeConfig config_;
   /**
+   *
+   *
    * <pre>
    * StoredInfoType configuration.
    * </pre>
@@ -135,6 +153,8 @@ private static final long serialVersionUID = 0L;
     return config_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * StoredInfoType configuration.
    * </pre>
@@ -142,9 +162,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.privacy.dlp.v2.StoredInfoTypeConfig config = 1;</code>
    */
   public com.google.privacy.dlp.v2.StoredInfoTypeConfig getConfig() {
-    return config_ == null ? com.google.privacy.dlp.v2.StoredInfoTypeConfig.getDefaultInstance() : config_;
+    return config_ == null
+        ? com.google.privacy.dlp.v2.StoredInfoTypeConfig.getDefaultInstance()
+        : config_;
   }
   /**
+   *
+   *
    * <pre>
    * StoredInfoType configuration.
    * </pre>
@@ -158,6 +182,8 @@ private static final long serialVersionUID = 0L;
   public static final int CREATE_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp createTime_;
   /**
+   *
+   *
    * <pre>
    * Create timestamp of the version. Read-only, determined by the system
    * when the version is created.
@@ -169,6 +195,8 @@ private static final long serialVersionUID = 0L;
     return createTime_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Create timestamp of the version. Read-only, determined by the system
    * when the version is created.
@@ -180,6 +208,8 @@ private static final long serialVersionUID = 0L;
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
   /**
+   *
+   *
    * <pre>
    * Create timestamp of the version. Read-only, determined by the system
    * when the version is created.
@@ -194,6 +224,8 @@ private static final long serialVersionUID = 0L;
   public static final int STATE_FIELD_NUMBER = 3;
   private int state_;
   /**
+   *
+   *
    * <pre>
    * Stored info type version state. Read-only, updated by the system
    * during dictionary creation.
@@ -205,6 +237,8 @@ private static final long serialVersionUID = 0L;
     return state_;
   }
   /**
+   *
+   *
    * <pre>
    * Stored info type version state. Read-only, updated by the system
    * during dictionary creation.
@@ -213,13 +247,17 @@ private static final long serialVersionUID = 0L;
    * <code>.google.privacy.dlp.v2.StoredInfoTypeState state = 3;</code>
    */
   public com.google.privacy.dlp.v2.StoredInfoTypeState getState() {
-    com.google.privacy.dlp.v2.StoredInfoTypeState result = com.google.privacy.dlp.v2.StoredInfoTypeState.valueOf(state_);
+    @SuppressWarnings("deprecation")
+    com.google.privacy.dlp.v2.StoredInfoTypeState result =
+        com.google.privacy.dlp.v2.StoredInfoTypeState.valueOf(state_);
     return result == null ? com.google.privacy.dlp.v2.StoredInfoTypeState.UNRECOGNIZED : result;
   }
 
   public static final int ERRORS_FIELD_NUMBER = 4;
   private java.util.List<com.google.privacy.dlp.v2.Error> errors_;
   /**
+   *
+   *
    * <pre>
    * Errors that occurred when creating this storedInfoType version, or
    * anomalies detected in the storedInfoType data that render it unusable. Only
@@ -240,6 +278,8 @@ private static final long serialVersionUID = 0L;
     return errors_;
   }
   /**
+   *
+   *
    * <pre>
    * Errors that occurred when creating this storedInfoType version, or
    * anomalies detected in the storedInfoType data that render it unusable. Only
@@ -256,11 +296,13 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.privacy.dlp.v2.Error errors = 4;</code>
    */
-  public java.util.List<? extends com.google.privacy.dlp.v2.ErrorOrBuilder> 
+  public java.util.List<? extends com.google.privacy.dlp.v2.ErrorOrBuilder>
       getErrorsOrBuilderList() {
     return errors_;
   }
   /**
+   *
+   *
    * <pre>
    * Errors that occurred when creating this storedInfoType version, or
    * anomalies detected in the storedInfoType data that render it unusable. Only
@@ -281,6 +323,8 @@ private static final long serialVersionUID = 0L;
     return errors_.size();
   }
   /**
+   *
+   *
    * <pre>
    * Errors that occurred when creating this storedInfoType version, or
    * anomalies detected in the storedInfoType data that render it unusable. Only
@@ -301,6 +345,8 @@ private static final long serialVersionUID = 0L;
     return errors_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * Errors that occurred when creating this storedInfoType version, or
    * anomalies detected in the storedInfoType data that render it unusable. Only
@@ -317,12 +363,13 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.privacy.dlp.v2.Error errors = 4;</code>
    */
-  public com.google.privacy.dlp.v2.ErrorOrBuilder getErrorsOrBuilder(
-      int index) {
+  public com.google.privacy.dlp.v2.ErrorOrBuilder getErrorsOrBuilder(int index) {
     return errors_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
+
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -332,15 +379,17 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  @java.lang.Override
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (config_ != null) {
       output.writeMessage(1, getConfig());
     }
     if (createTime_ != null) {
       output.writeMessage(2, getCreateTime());
     }
-    if (state_ != com.google.privacy.dlp.v2.StoredInfoTypeState.STORED_INFO_TYPE_STATE_UNSPECIFIED.getNumber()) {
+    if (state_
+        != com.google.privacy.dlp.v2.StoredInfoTypeState.STORED_INFO_TYPE_STATE_UNSPECIFIED
+            .getNumber()) {
       output.writeEnum(3, state_);
     }
     for (int i = 0; i < errors_.size(); i++) {
@@ -349,26 +398,25 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
 
     size = 0;
     if (config_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getConfig());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getConfig());
     }
     if (createTime_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getCreateTime());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getCreateTime());
     }
-    if (state_ != com.google.privacy.dlp.v2.StoredInfoTypeState.STORED_INFO_TYPE_STATE_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(3, state_);
+    if (state_
+        != com.google.privacy.dlp.v2.StoredInfoTypeState.STORED_INFO_TYPE_STATE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(3, state_);
     }
     for (int i = 0; i < errors_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, errors_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, errors_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -378,27 +426,25 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.privacy.dlp.v2.StoredInfoTypeVersion)) {
       return super.equals(obj);
     }
-    com.google.privacy.dlp.v2.StoredInfoTypeVersion other = (com.google.privacy.dlp.v2.StoredInfoTypeVersion) obj;
+    com.google.privacy.dlp.v2.StoredInfoTypeVersion other =
+        (com.google.privacy.dlp.v2.StoredInfoTypeVersion) obj;
 
     boolean result = true;
     result = result && (hasConfig() == other.hasConfig());
     if (hasConfig()) {
-      result = result && getConfig()
-          .equals(other.getConfig());
+      result = result && getConfig().equals(other.getConfig());
     }
     result = result && (hasCreateTime() == other.hasCreateTime());
     if (hasCreateTime()) {
-      result = result && getCreateTime()
-          .equals(other.getCreateTime());
+      result = result && getCreateTime().equals(other.getCreateTime());
     }
     result = result && state_ == other.state_;
-    result = result && getErrorsList()
-        .equals(other.getErrorsList());
+    result = result && getErrorsList().equals(other.getErrorsList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -429,95 +475,104 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.privacy.dlp.v2.StoredInfoTypeVersion parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.privacy.dlp.v2.StoredInfoTypeVersion parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.privacy.dlp.v2.StoredInfoTypeVersion parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.privacy.dlp.v2.StoredInfoTypeVersion parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.privacy.dlp.v2.StoredInfoTypeVersion parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.privacy.dlp.v2.StoredInfoTypeVersion parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.privacy.dlp.v2.StoredInfoTypeVersion parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.privacy.dlp.v2.StoredInfoTypeVersion parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.privacy.dlp.v2.StoredInfoTypeVersion parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.privacy.dlp.v2.StoredInfoTypeVersion parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
+
   public static com.google.privacy.dlp.v2.StoredInfoTypeVersion parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.privacy.dlp.v2.StoredInfoTypeVersion parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.privacy.dlp.v2.StoredInfoTypeVersion parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.privacy.dlp.v2.StoredInfoTypeVersion parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  public Builder newBuilderForType() { return newBuilder(); }
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-  public static Builder newBuilder(com.google.privacy.dlp.v2.StoredInfoTypeVersion prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+
+  public static Builder newBuilder(com.google.privacy.dlp.v2.StoredInfoTypeVersion prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+
+  @java.lang.Override
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Version of a StoredInfoType, including the configuration used to build it,
    * create timestamp, and current state.
@@ -525,20 +580,23 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.privacy.dlp.v2.StoredInfoTypeVersion}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.privacy.dlp.v2.StoredInfoTypeVersion)
       com.google.privacy.dlp.v2.StoredInfoTypeVersionOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_StoredInfoTypeVersion_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_StoredInfoTypeVersion_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_StoredInfoTypeVersion_fieldAccessorTable
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_StoredInfoTypeVersion_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.privacy.dlp.v2.StoredInfoTypeVersion.class, com.google.privacy.dlp.v2.StoredInfoTypeVersion.Builder.class);
+              com.google.privacy.dlp.v2.StoredInfoTypeVersion.class,
+              com.google.privacy.dlp.v2.StoredInfoTypeVersion.Builder.class);
     }
 
     // Construct using com.google.privacy.dlp.v2.StoredInfoTypeVersion.newBuilder()
@@ -546,17 +604,18 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getErrorsFieldBuilder();
       }
     }
+
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       if (configBuilder_ == null) {
@@ -582,15 +641,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_StoredInfoTypeVersion_descriptor;
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_StoredInfoTypeVersion_descriptor;
     }
 
+    @java.lang.Override
     public com.google.privacy.dlp.v2.StoredInfoTypeVersion getDefaultInstanceForType() {
       return com.google.privacy.dlp.v2.StoredInfoTypeVersion.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.privacy.dlp.v2.StoredInfoTypeVersion build() {
       com.google.privacy.dlp.v2.StoredInfoTypeVersion result = buildPartial();
       if (!result.isInitialized()) {
@@ -599,8 +661,10 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.privacy.dlp.v2.StoredInfoTypeVersion buildPartial() {
-      com.google.privacy.dlp.v2.StoredInfoTypeVersion result = new com.google.privacy.dlp.v2.StoredInfoTypeVersion(this);
+      com.google.privacy.dlp.v2.StoredInfoTypeVersion result =
+          new com.google.privacy.dlp.v2.StoredInfoTypeVersion(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (configBuilder_ == null) {
@@ -628,35 +692,43 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+
+    @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+    @java.lang.Override
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+    @java.lang.Override
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
+    @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
+    @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.privacy.dlp.v2.StoredInfoTypeVersion) {
-        return mergeFrom((com.google.privacy.dlp.v2.StoredInfoTypeVersion)other);
+        return mergeFrom((com.google.privacy.dlp.v2.StoredInfoTypeVersion) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -664,7 +736,8 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.privacy.dlp.v2.StoredInfoTypeVersion other) {
-      if (other == com.google.privacy.dlp.v2.StoredInfoTypeVersion.getDefaultInstance()) return this;
+      if (other == com.google.privacy.dlp.v2.StoredInfoTypeVersion.getDefaultInstance())
+        return this;
       if (other.hasConfig()) {
         mergeConfig(other.getConfig());
       }
@@ -692,9 +765,10 @@ private static final long serialVersionUID = 0L;
             errorsBuilder_ = null;
             errors_ = other.errors_;
             bitField0_ = (bitField0_ & ~0x00000008);
-            errorsBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getErrorsFieldBuilder() : null;
+            errorsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getErrorsFieldBuilder()
+                    : null;
           } else {
             errorsBuilder_.addAllMessages(other.errors_);
           }
@@ -705,10 +779,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -726,12 +802,18 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private com.google.privacy.dlp.v2.StoredInfoTypeConfig config_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.privacy.dlp.v2.StoredInfoTypeConfig, com.google.privacy.dlp.v2.StoredInfoTypeConfig.Builder, com.google.privacy.dlp.v2.StoredInfoTypeConfigOrBuilder> configBuilder_;
+            com.google.privacy.dlp.v2.StoredInfoTypeConfig,
+            com.google.privacy.dlp.v2.StoredInfoTypeConfig.Builder,
+            com.google.privacy.dlp.v2.StoredInfoTypeConfigOrBuilder>
+        configBuilder_;
     /**
+     *
+     *
      * <pre>
      * StoredInfoType configuration.
      * </pre>
@@ -742,6 +824,8 @@ private static final long serialVersionUID = 0L;
       return configBuilder_ != null || config_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * StoredInfoType configuration.
      * </pre>
@@ -750,12 +834,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.privacy.dlp.v2.StoredInfoTypeConfig getConfig() {
       if (configBuilder_ == null) {
-        return config_ == null ? com.google.privacy.dlp.v2.StoredInfoTypeConfig.getDefaultInstance() : config_;
+        return config_ == null
+            ? com.google.privacy.dlp.v2.StoredInfoTypeConfig.getDefaultInstance()
+            : config_;
       } else {
         return configBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * StoredInfoType configuration.
      * </pre>
@@ -776,6 +864,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * StoredInfoType configuration.
      * </pre>
@@ -794,6 +884,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * StoredInfoType configuration.
      * </pre>
@@ -804,7 +896,9 @@ private static final long serialVersionUID = 0L;
       if (configBuilder_ == null) {
         if (config_ != null) {
           config_ =
-            com.google.privacy.dlp.v2.StoredInfoTypeConfig.newBuilder(config_).mergeFrom(value).buildPartial();
+              com.google.privacy.dlp.v2.StoredInfoTypeConfig.newBuilder(config_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           config_ = value;
         }
@@ -816,6 +910,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * StoredInfoType configuration.
      * </pre>
@@ -834,6 +930,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * StoredInfoType configuration.
      * </pre>
@@ -841,11 +939,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.privacy.dlp.v2.StoredInfoTypeConfig config = 1;</code>
      */
     public com.google.privacy.dlp.v2.StoredInfoTypeConfig.Builder getConfigBuilder() {
-      
+
       onChanged();
       return getConfigFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * StoredInfoType configuration.
      * </pre>
@@ -856,11 +956,14 @@ private static final long serialVersionUID = 0L;
       if (configBuilder_ != null) {
         return configBuilder_.getMessageOrBuilder();
       } else {
-        return config_ == null ?
-            com.google.privacy.dlp.v2.StoredInfoTypeConfig.getDefaultInstance() : config_;
+        return config_ == null
+            ? com.google.privacy.dlp.v2.StoredInfoTypeConfig.getDefaultInstance()
+            : config_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * StoredInfoType configuration.
      * </pre>
@@ -868,14 +971,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.privacy.dlp.v2.StoredInfoTypeConfig config = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.privacy.dlp.v2.StoredInfoTypeConfig, com.google.privacy.dlp.v2.StoredInfoTypeConfig.Builder, com.google.privacy.dlp.v2.StoredInfoTypeConfigOrBuilder> 
+            com.google.privacy.dlp.v2.StoredInfoTypeConfig,
+            com.google.privacy.dlp.v2.StoredInfoTypeConfig.Builder,
+            com.google.privacy.dlp.v2.StoredInfoTypeConfigOrBuilder>
         getConfigFieldBuilder() {
       if (configBuilder_ == null) {
-        configBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.privacy.dlp.v2.StoredInfoTypeConfig, com.google.privacy.dlp.v2.StoredInfoTypeConfig.Builder, com.google.privacy.dlp.v2.StoredInfoTypeConfigOrBuilder>(
-                getConfig(),
-                getParentForChildren(),
-                isClean());
+        configBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.privacy.dlp.v2.StoredInfoTypeConfig,
+                com.google.privacy.dlp.v2.StoredInfoTypeConfig.Builder,
+                com.google.privacy.dlp.v2.StoredInfoTypeConfigOrBuilder>(
+                getConfig(), getParentForChildren(), isClean());
         config_ = null;
       }
       return configBuilder_;
@@ -883,8 +989,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Timestamp createTime_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> createTimeBuilder_;
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        createTimeBuilder_;
     /**
+     *
+     *
      * <pre>
      * Create timestamp of the version. Read-only, determined by the system
      * when the version is created.
@@ -896,6 +1007,8 @@ private static final long serialVersionUID = 0L;
       return createTimeBuilder_ != null || createTime_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Create timestamp of the version. Read-only, determined by the system
      * when the version is created.
@@ -905,12 +1018,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.Timestamp getCreateTime() {
       if (createTimeBuilder_ == null) {
-        return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
+        return createTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : createTime_;
       } else {
         return createTimeBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Create timestamp of the version. Read-only, determined by the system
      * when the version is created.
@@ -932,6 +1049,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Create timestamp of the version. Read-only, determined by the system
      * when the version is created.
@@ -939,8 +1058,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.Timestamp create_time = 2;</code>
      */
-    public Builder setCreateTime(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
+    public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
         onChanged();
@@ -951,6 +1069,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Create timestamp of the version. Read-only, determined by the system
      * when the version is created.
@@ -962,7 +1082,7 @@ private static final long serialVersionUID = 0L;
       if (createTimeBuilder_ == null) {
         if (createTime_ != null) {
           createTime_ =
-            com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
         } else {
           createTime_ = value;
         }
@@ -974,6 +1094,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Create timestamp of the version. Read-only, determined by the system
      * when the version is created.
@@ -993,6 +1115,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Create timestamp of the version. Read-only, determined by the system
      * when the version is created.
@@ -1001,11 +1125,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp create_time = 2;</code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-      
+
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Create timestamp of the version. Read-only, determined by the system
      * when the version is created.
@@ -1017,11 +1143,14 @@ private static final long serialVersionUID = 0L;
       if (createTimeBuilder_ != null) {
         return createTimeBuilder_.getMessageOrBuilder();
       } else {
-        return createTime_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
+        return createTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : createTime_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Create timestamp of the version. Read-only, determined by the system
      * when the version is created.
@@ -1030,14 +1159,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp create_time = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
         getCreateTimeFieldBuilder() {
       if (createTimeBuilder_ == null) {
-        createTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getCreateTime(),
-                getParentForChildren(),
-                isClean());
+        createTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getCreateTime(), getParentForChildren(), isClean());
         createTime_ = null;
       }
       return createTimeBuilder_;
@@ -1045,6 +1177,8 @@ private static final long serialVersionUID = 0L;
 
     private int state_ = 0;
     /**
+     *
+     *
      * <pre>
      * Stored info type version state. Read-only, updated by the system
      * during dictionary creation.
@@ -1056,6 +1190,8 @@ private static final long serialVersionUID = 0L;
       return state_;
     }
     /**
+     *
+     *
      * <pre>
      * Stored info type version state. Read-only, updated by the system
      * during dictionary creation.
@@ -1069,6 +1205,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Stored info type version state. Read-only, updated by the system
      * during dictionary creation.
@@ -1077,10 +1215,14 @@ private static final long serialVersionUID = 0L;
      * <code>.google.privacy.dlp.v2.StoredInfoTypeState state = 3;</code>
      */
     public com.google.privacy.dlp.v2.StoredInfoTypeState getState() {
-      com.google.privacy.dlp.v2.StoredInfoTypeState result = com.google.privacy.dlp.v2.StoredInfoTypeState.valueOf(state_);
+      @SuppressWarnings("deprecation")
+      com.google.privacy.dlp.v2.StoredInfoTypeState result =
+          com.google.privacy.dlp.v2.StoredInfoTypeState.valueOf(state_);
       return result == null ? com.google.privacy.dlp.v2.StoredInfoTypeState.UNRECOGNIZED : result;
     }
     /**
+     *
+     *
      * <pre>
      * Stored info type version state. Read-only, updated by the system
      * during dictionary creation.
@@ -1092,12 +1234,14 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       state_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Stored info type version state. Read-only, updated by the system
      * during dictionary creation.
@@ -1106,25 +1250,31 @@ private static final long serialVersionUID = 0L;
      * <code>.google.privacy.dlp.v2.StoredInfoTypeState state = 3;</code>
      */
     public Builder clearState() {
-      
+
       state_ = 0;
       onChanged();
       return this;
     }
 
     private java.util.List<com.google.privacy.dlp.v2.Error> errors_ =
-      java.util.Collections.emptyList();
+        java.util.Collections.emptyList();
+
     private void ensureErrorsIsMutable() {
       if (!((bitField0_ & 0x00000008) == 0x00000008)) {
         errors_ = new java.util.ArrayList<com.google.privacy.dlp.v2.Error>(errors_);
         bitField0_ |= 0x00000008;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.privacy.dlp.v2.Error, com.google.privacy.dlp.v2.Error.Builder, com.google.privacy.dlp.v2.ErrorOrBuilder> errorsBuilder_;
+            com.google.privacy.dlp.v2.Error,
+            com.google.privacy.dlp.v2.Error.Builder,
+            com.google.privacy.dlp.v2.ErrorOrBuilder>
+        errorsBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * Errors that occurred when creating this storedInfoType version, or
      * anomalies detected in the storedInfoType data that render it unusable. Only
@@ -1149,6 +1299,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Errors that occurred when creating this storedInfoType version, or
      * anomalies detected in the storedInfoType data that render it unusable. Only
@@ -1173,6 +1325,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Errors that occurred when creating this storedInfoType version, or
      * anomalies detected in the storedInfoType data that render it unusable. Only
@@ -1197,6 +1351,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Errors that occurred when creating this storedInfoType version, or
      * anomalies detected in the storedInfoType data that render it unusable. Only
@@ -1213,8 +1369,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.privacy.dlp.v2.Error errors = 4;</code>
      */
-    public Builder setErrors(
-        int index, com.google.privacy.dlp.v2.Error value) {
+    public Builder setErrors(int index, com.google.privacy.dlp.v2.Error value) {
       if (errorsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1228,6 +1383,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Errors that occurred when creating this storedInfoType version, or
      * anomalies detected in the storedInfoType data that render it unusable. Only
@@ -1244,8 +1401,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.privacy.dlp.v2.Error errors = 4;</code>
      */
-    public Builder setErrors(
-        int index, com.google.privacy.dlp.v2.Error.Builder builderForValue) {
+    public Builder setErrors(int index, com.google.privacy.dlp.v2.Error.Builder builderForValue) {
       if (errorsBuilder_ == null) {
         ensureErrorsIsMutable();
         errors_.set(index, builderForValue.build());
@@ -1256,6 +1412,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Errors that occurred when creating this storedInfoType version, or
      * anomalies detected in the storedInfoType data that render it unusable. Only
@@ -1286,6 +1444,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Errors that occurred when creating this storedInfoType version, or
      * anomalies detected in the storedInfoType data that render it unusable. Only
@@ -1302,8 +1462,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.privacy.dlp.v2.Error errors = 4;</code>
      */
-    public Builder addErrors(
-        int index, com.google.privacy.dlp.v2.Error value) {
+    public Builder addErrors(int index, com.google.privacy.dlp.v2.Error value) {
       if (errorsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1317,6 +1476,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Errors that occurred when creating this storedInfoType version, or
      * anomalies detected in the storedInfoType data that render it unusable. Only
@@ -1333,8 +1494,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.privacy.dlp.v2.Error errors = 4;</code>
      */
-    public Builder addErrors(
-        com.google.privacy.dlp.v2.Error.Builder builderForValue) {
+    public Builder addErrors(com.google.privacy.dlp.v2.Error.Builder builderForValue) {
       if (errorsBuilder_ == null) {
         ensureErrorsIsMutable();
         errors_.add(builderForValue.build());
@@ -1345,6 +1505,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Errors that occurred when creating this storedInfoType version, or
      * anomalies detected in the storedInfoType data that render it unusable. Only
@@ -1361,8 +1523,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.privacy.dlp.v2.Error errors = 4;</code>
      */
-    public Builder addErrors(
-        int index, com.google.privacy.dlp.v2.Error.Builder builderForValue) {
+    public Builder addErrors(int index, com.google.privacy.dlp.v2.Error.Builder builderForValue) {
       if (errorsBuilder_ == null) {
         ensureErrorsIsMutable();
         errors_.add(index, builderForValue.build());
@@ -1373,6 +1534,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Errors that occurred when creating this storedInfoType version, or
      * anomalies detected in the storedInfoType data that render it unusable. Only
@@ -1393,8 +1556,7 @@ private static final long serialVersionUID = 0L;
         java.lang.Iterable<? extends com.google.privacy.dlp.v2.Error> values) {
       if (errorsBuilder_ == null) {
         ensureErrorsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, errors_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, errors_);
         onChanged();
       } else {
         errorsBuilder_.addAllMessages(values);
@@ -1402,6 +1564,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Errors that occurred when creating this storedInfoType version, or
      * anomalies detected in the storedInfoType data that render it unusable. Only
@@ -1429,6 +1593,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Errors that occurred when creating this storedInfoType version, or
      * anomalies detected in the storedInfoType data that render it unusable. Only
@@ -1456,6 +1622,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Errors that occurred when creating this storedInfoType version, or
      * anomalies detected in the storedInfoType data that render it unusable. Only
@@ -1472,11 +1640,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.privacy.dlp.v2.Error errors = 4;</code>
      */
-    public com.google.privacy.dlp.v2.Error.Builder getErrorsBuilder(
-        int index) {
+    public com.google.privacy.dlp.v2.Error.Builder getErrorsBuilder(int index) {
       return getErrorsFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * Errors that occurred when creating this storedInfoType version, or
      * anomalies detected in the storedInfoType data that render it unusable. Only
@@ -1493,14 +1662,16 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.privacy.dlp.v2.Error errors = 4;</code>
      */
-    public com.google.privacy.dlp.v2.ErrorOrBuilder getErrorsOrBuilder(
-        int index) {
+    public com.google.privacy.dlp.v2.ErrorOrBuilder getErrorsOrBuilder(int index) {
       if (errorsBuilder_ == null) {
-        return errors_.get(index);  } else {
+        return errors_.get(index);
+      } else {
         return errorsBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * Errors that occurred when creating this storedInfoType version, or
      * anomalies detected in the storedInfoType data that render it unusable. Only
@@ -1517,8 +1688,8 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.privacy.dlp.v2.Error errors = 4;</code>
      */
-    public java.util.List<? extends com.google.privacy.dlp.v2.ErrorOrBuilder> 
-         getErrorsOrBuilderList() {
+    public java.util.List<? extends com.google.privacy.dlp.v2.ErrorOrBuilder>
+        getErrorsOrBuilderList() {
       if (errorsBuilder_ != null) {
         return errorsBuilder_.getMessageOrBuilderList();
       } else {
@@ -1526,6 +1697,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Errors that occurred when creating this storedInfoType version, or
      * anomalies detected in the storedInfoType data that render it unusable. Only
@@ -1543,10 +1716,12 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.privacy.dlp.v2.Error errors = 4;</code>
      */
     public com.google.privacy.dlp.v2.Error.Builder addErrorsBuilder() {
-      return getErrorsFieldBuilder().addBuilder(
-          com.google.privacy.dlp.v2.Error.getDefaultInstance());
+      return getErrorsFieldBuilder()
+          .addBuilder(com.google.privacy.dlp.v2.Error.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Errors that occurred when creating this storedInfoType version, or
      * anomalies detected in the storedInfoType data that render it unusable. Only
@@ -1563,12 +1738,13 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.privacy.dlp.v2.Error errors = 4;</code>
      */
-    public com.google.privacy.dlp.v2.Error.Builder addErrorsBuilder(
-        int index) {
-      return getErrorsFieldBuilder().addBuilder(
-          index, com.google.privacy.dlp.v2.Error.getDefaultInstance());
+    public com.google.privacy.dlp.v2.Error.Builder addErrorsBuilder(int index) {
+      return getErrorsFieldBuilder()
+          .addBuilder(index, com.google.privacy.dlp.v2.Error.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Errors that occurred when creating this storedInfoType version, or
      * anomalies detected in the storedInfoType data that render it unusable. Only
@@ -1585,16 +1761,21 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.privacy.dlp.v2.Error errors = 4;</code>
      */
-    public java.util.List<com.google.privacy.dlp.v2.Error.Builder> 
-         getErrorsBuilderList() {
+    public java.util.List<com.google.privacy.dlp.v2.Error.Builder> getErrorsBuilderList() {
       return getErrorsFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.privacy.dlp.v2.Error, com.google.privacy.dlp.v2.Error.Builder, com.google.privacy.dlp.v2.ErrorOrBuilder> 
+            com.google.privacy.dlp.v2.Error,
+            com.google.privacy.dlp.v2.Error.Builder,
+            com.google.privacy.dlp.v2.ErrorOrBuilder>
         getErrorsFieldBuilder() {
       if (errorsBuilder_ == null) {
-        errorsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.privacy.dlp.v2.Error, com.google.privacy.dlp.v2.Error.Builder, com.google.privacy.dlp.v2.ErrorOrBuilder>(
+        errorsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.privacy.dlp.v2.Error,
+                com.google.privacy.dlp.v2.Error.Builder,
+                com.google.privacy.dlp.v2.ErrorOrBuilder>(
                 errors_,
                 ((bitField0_ & 0x00000008) == 0x00000008),
                 getParentForChildren(),
@@ -1603,22 +1784,24 @@ private static final long serialVersionUID = 0L;
       }
       return errorsBuilder_;
     }
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+
+    @java.lang.Override
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
     }
-
 
     // @@protoc_insertion_point(builder_scope:google.privacy.dlp.v2.StoredInfoTypeVersion)
   }
 
   // @@protoc_insertion_point(class_scope:google.privacy.dlp.v2.StoredInfoTypeVersion)
   private static final com.google.privacy.dlp.v2.StoredInfoTypeVersion DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.privacy.dlp.v2.StoredInfoTypeVersion();
   }
@@ -1627,15 +1810,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<StoredInfoTypeVersion>
-      PARSER = new com.google.protobuf.AbstractParser<StoredInfoTypeVersion>() {
-    public StoredInfoTypeVersion parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-        return new StoredInfoTypeVersion(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<StoredInfoTypeVersion> PARSER =
+      new com.google.protobuf.AbstractParser<StoredInfoTypeVersion>() {
+        @java.lang.Override
+        public StoredInfoTypeVersion parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new StoredInfoTypeVersion(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<StoredInfoTypeVersion> parser() {
     return PARSER;
@@ -1646,9 +1830,8 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.privacy.dlp.v2.StoredInfoTypeVersion getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

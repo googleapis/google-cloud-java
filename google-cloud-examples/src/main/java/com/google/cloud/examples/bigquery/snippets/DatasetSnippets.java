@@ -32,9 +32,7 @@ import com.google.cloud.bigquery.StandardTableDefinition;
 import com.google.cloud.bigquery.Table;
 import com.google.cloud.bigquery.TimePartitioning;
 
-/**
- * This class contains a number of snippets for the {@link Dataset} interface.
- */
+/** This class contains a number of snippets for the {@link Dataset} interface. */
 public class DatasetSnippets {
 
   private final Dataset dataset;
@@ -43,9 +41,7 @@ public class DatasetSnippets {
     this.dataset = dataset;
   }
 
-  /**
-   * Example of checking whether a dataset exists.
-   */
+  /** Example of checking whether a dataset exists. */
   // [TARGET exists()]
   public boolean doesDatasetExist() {
     // [START ]
@@ -59,9 +55,7 @@ public class DatasetSnippets {
     return exists;
   }
 
-  /**
-   * Example of reloading a dataset.
-   */
+  /** Example of reloading a dataset. */
   // [TARGET reload(DatasetOption...)]
   public Dataset reloadDataset() {
     // [START ]
@@ -73,9 +67,7 @@ public class DatasetSnippets {
     return latestDataset;
   }
 
-  /**
-   * Example of updating a dataset.
-   */
+  /** Example of updating a dataset. */
   // [TARGET update(DatasetOption...)]
   // [VARIABLE "my_friendly_name"]
   public Dataset updateDataset(String friendlyName) {
@@ -87,9 +79,7 @@ public class DatasetSnippets {
     return updatedDataset;
   }
 
-  /**
-   * Example of deleting a dataset.
-   */
+  /** Example of deleting a dataset. */
   // [TARGET delete(DatasetDeleteOption...)]
   public boolean deleteDataset() {
     // [START ]
@@ -103,9 +93,7 @@ public class DatasetSnippets {
     return deleted;
   }
 
-  /**
-   * Example of listing tables in the dataset.
-   */
+  /** Example of listing tables in the dataset. */
   // [TARGET list(TableListOption...)]
   public Page<Table> list() {
     // [START ]
@@ -117,9 +105,7 @@ public class DatasetSnippets {
     return tables;
   }
 
-  /**
-   * Example of getting a table in the dataset.
-   */
+  /** Example of getting a table in the dataset. */
   // [TARGET get(String, TableOption...)]
   // [VARIABLE “my_table”]
   public Table getTable(String tableName) {
@@ -129,9 +115,7 @@ public class DatasetSnippets {
     return table;
   }
 
-  /**
-   * Example of creating a table in the dataset with schema and time partitioning.
-   */
+  /** Example of creating a table in the dataset with schema and time partitioning. */
   // [TARGET create(String, TableDefinition, TableOption...)]
   // [VARIABLE “my_table”]
   // [VARIABLE “my_field”]

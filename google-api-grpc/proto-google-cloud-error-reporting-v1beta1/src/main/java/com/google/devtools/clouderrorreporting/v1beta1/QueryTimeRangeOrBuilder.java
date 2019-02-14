@@ -3,11 +3,14 @@
 
 package com.google.devtools.clouderrorreporting.v1beta1;
 
-public interface QueryTimeRangeOrBuilder extends
+public interface QueryTimeRangeOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.devtools.clouderrorreporting.v1beta1.QueryTimeRange)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Restricts the query to the specified time range.
    * </pre>
@@ -16,6 +19,8 @@ public interface QueryTimeRangeOrBuilder extends
    */
   int getPeriodValue();
   /**
+   *
+   *
    * <pre>
    * Restricts the query to the specified time range.
    * </pre>

@@ -32,15 +32,12 @@ import com.google.cloud.storage.Bucket;
 import com.google.cloud.storage.Bucket.BucketSourceOption;
 import com.google.cloud.storage.Storage.BlobGetOption;
 import com.google.cloud.storage.StorageException;
-
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.util.LinkedList;
 import java.util.List;
 
-/**
- * This class contains a number of snippets for the {@link Bucket} class.
- */
+/** This class contains a number of snippets for the {@link Bucket} class. */
 public class BucketSnippets {
 
   private final Bucket bucket;
@@ -49,9 +46,7 @@ public class BucketSnippets {
     this.bucket = bucket;
   }
 
-  /**
-   * Example of checking if the bucket exists.
-   */
+  /** Example of checking if the bucket exists. */
   // [TARGET exists(BucketSourceOption...)]
   public boolean exists() {
     // [START exists]
@@ -66,8 +61,8 @@ public class BucketSnippets {
   }
 
   /**
-   * Example of getting the bucket's latest information, if its generation does not match the
-   * {@link Bucket#getMetageneration()} value, otherwise a {@link StorageException} is thrown.
+   * Example of getting the bucket's latest information, if its generation does not match the {@link
+   * Bucket#getMetageneration()} value, otherwise a {@link StorageException} is thrown.
    */
   // [TARGET reload(BucketSourceOption...)]
   public Bucket reload() {
@@ -80,9 +75,7 @@ public class BucketSnippets {
     return latestBucket;
   }
 
-  /**
-   * Example of updating the bucket's information.
-   */
+  /** Example of updating the bucket's information. */
   // [TARGET update(BucketTargetOption...)]
   public Bucket update() {
     // [START update]
@@ -92,8 +85,8 @@ public class BucketSnippets {
   }
 
   /**
-   * Example of deleting the bucket, if its metageneration matches the
-   * {@link Bucket#getMetageneration()} value, otherwise a {@link StorageException} is thrown.
+   * Example of deleting the bucket, if its metageneration matches the {@link
+   * Bucket#getMetageneration()} value, otherwise a {@link StorageException} is thrown.
    */
   // [TARGET delete(BucketSourceOption...)]
   public boolean delete() {
@@ -108,9 +101,7 @@ public class BucketSnippets {
     return deleted;
   }
 
-  /**
-   * Example of listing the blobs in the bucket.
-   */
+  /** Example of listing the blobs in the bucket. */
   // [TARGET list(BlobListOption...)]
   public Page<Blob> listBlobs() {
     // [START listBlobs]
@@ -123,8 +114,8 @@ public class BucketSnippets {
   }
 
   /**
-   * Example of getting a blob in the bucket, only if its metageneration matches a value,
-   * otherwise a {@link StorageException} is thrown.
+   * Example of getting a blob in the bucket, only if its metageneration matches a value, otherwise
+   * a {@link StorageException} is thrown.
    */
   // [TARGET get(String, BlobGetOption...)]
   // [VARIABLE "my_blob_name"]
@@ -136,10 +127,7 @@ public class BucketSnippets {
     return blob;
   }
 
-
-  /**
-   * Example of getting some blobs in the bucket, using a batch request.
-   */
+  /** Example of getting some blobs in the bucket, using a batch request. */
   // [TARGET get(String, String, String...)]
   // [VARIABLE "my_blob_name1"]
   // [VARIABLE "my_blob_name2"]
@@ -155,9 +143,7 @@ public class BucketSnippets {
     return blobs;
   }
 
-  /**
-   * Example of getting some blobs in the bucket, using a batch request.
-   */
+  /** Example of getting some blobs in the bucket, using a batch request. */
   // [TARGET get(Iterable)]
   // [VARIABLE "my_blob_name1"]
   // [VARIABLE "my_blob_name2"]
@@ -176,9 +162,7 @@ public class BucketSnippets {
     return blobs;
   }
 
-  /**
-   * Example of creating a blob in the bucket from a byte array.
-   */
+  /** Example of creating a blob in the bucket from a byte array. */
   // [TARGET create(String, byte[], BlobTargetOption...)]
   // [VARIABLE "my_blob_name"]
   public Blob createBlobFromByteArray(String blobName) {
@@ -188,9 +172,7 @@ public class BucketSnippets {
     return blob;
   }
 
-  /**
-   * Example of creating a blob in the bucket from an input stream.
-   */
+  /** Example of creating a blob in the bucket from an input stream. */
   // [TARGET create(String, InputStream, BlobWriteOption...)]
   // [VARIABLE "my_blob_name"]
   public Blob createBlobFromInputStream(String blobName) {
@@ -201,9 +183,7 @@ public class BucketSnippets {
     return blob;
   }
 
-  /**
-   * Example of creating a blob in the bucket from a byte array with a content type.
-   */
+  /** Example of creating a blob in the bucket from a byte array with a content type. */
   // [TARGET create(String, byte[], String, BlobTargetOption...)]
   // [VARIABLE "my_blob_name"]
   public Blob createBlobFromByteArrayWithContentType(String blobName) {
@@ -213,9 +193,7 @@ public class BucketSnippets {
     return blob;
   }
 
-  /**
-   * Example of creating a blob in the bucket from an input stream with a content type.
-   */
+  /** Example of creating a blob in the bucket from an input stream with a content type. */
   // [TARGET create(String, InputStream, String, BlobWriteOption...)]
   // [VARIABLE "my_blob_name"]
   public Blob createBlobFromInputStreamWithContentType(String blobName) {
@@ -226,9 +204,7 @@ public class BucketSnippets {
     return blob;
   }
 
-  /**
-   * Example of getting the ACL entry for an entity.
-   */
+  /** Example of getting the ACL entry for an entity. */
   // [TARGET getAcl(Entity)]
   public Acl getAcl() {
     // [START getAcl]
@@ -237,9 +213,7 @@ public class BucketSnippets {
     return acl;
   }
 
-  /**
-   * Example of deleting the ACL entry for an entity.
-   */
+  /** Example of deleting the ACL entry for an entity. */
   // [TARGET deleteAcl(Entity)]
   public boolean deleteAcl() {
     // [START deleteAcl]
@@ -253,9 +227,7 @@ public class BucketSnippets {
     return deleted;
   }
 
-  /**
-   * Example of creating a new ACL entry.
-   */
+  /** Example of creating a new ACL entry. */
   // [TARGET createAcl(Acl)]
   public Acl createAcl() {
     // [START createAcl]
@@ -264,9 +236,7 @@ public class BucketSnippets {
     return acl;
   }
 
-  /**
-   * Example of updating a new ACL entry.
-   */
+  /** Example of updating a new ACL entry. */
   // [TARGET updateAcl(Acl)]
   public Acl updateAcl() {
     // [START updateAcl]
@@ -275,9 +245,7 @@ public class BucketSnippets {
     return acl;
   }
 
-  /**
-   * Example of listing the ACL entries.
-   */
+  /** Example of listing the ACL entries. */
   // [TARGET listAcls()]
   public List<Acl> listAcls() {
     // [START listAcls]
@@ -289,9 +257,7 @@ public class BucketSnippets {
     return acls;
   }
 
-  /**
-   * Example of getting the default ACL entry for an entity.
-   */
+  /** Example of getting the default ACL entry for an entity. */
   // [TARGET getDefaultAcl(Entity)]
   public Acl getDefaultAcl() {
     // [START getDefaultAcl]
@@ -300,9 +266,7 @@ public class BucketSnippets {
     return acl;
   }
 
-  /**
-   * Example of deleting the default ACL entry for an entity.
-   */
+  /** Example of deleting the default ACL entry for an entity. */
   // [TARGET deleteDefaultAcl(Entity)]
   public boolean deleteDefaultAcl() {
     // [START deleteDefaultAcl]
@@ -316,9 +280,7 @@ public class BucketSnippets {
     return deleted;
   }
 
-  /**
-   * Example of creating a new default ACL entry.
-   */
+  /** Example of creating a new default ACL entry. */
   // [TARGET createDefaultAcl(Acl)]
   public Acl createDefaultAcl() {
     // [START createDefaultAcl]
@@ -327,9 +289,7 @@ public class BucketSnippets {
     return acl;
   }
 
-  /**
-   * Example of updating a new default ACL entry.
-   */
+  /** Example of updating a new default ACL entry. */
   // [TARGET updateDefaultAcl(Acl)]
   public Acl updateDefaultAcl() {
     // [START updateDefaultAcl]
@@ -338,9 +298,7 @@ public class BucketSnippets {
     return acl;
   }
 
-  /**
-   * Example of listing the default ACL entries.
-   */
+  /** Example of listing the default ACL entries. */
   // [TARGET listDefaultAcls()]
   public List<Acl> listDefaultAcls() {
     // [START listDefaultAcls]

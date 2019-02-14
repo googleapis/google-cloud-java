@@ -19,7 +19,38 @@
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *
- * <p>==================== ImageAnnotatorClient ====================
+ * <p>=================== ProductSearchClient ===================
+ *
+ * <p>Service Description: Manages Products and ProductSets of reference images for use in product
+ * search. It uses the following resource model:
+ *
+ * <p>- The API has a collection of [ProductSet][google.cloud.vision.v1.ProductSet] resources, named
+ * `projects/&#42;/locations/&#42;/productSets/&#42;`, which acts as a way to put different products
+ * into groups to limit identification.
+ *
+ * <p>In parallel,
+ *
+ * <p>- The API has a collection of [Product][google.cloud.vision.v1.Product] resources, named
+ * `projects/&#42;/locations/&#42;/products/&#42;`
+ *
+ * <p>- Each [Product][google.cloud.vision.v1.Product] has a collection of
+ * [ReferenceImage][google.cloud.vision.v1.ReferenceImage] resources, named
+ * `projects/&#42;/locations/&#42;/products/&#42;/referenceImages/&#42;`
+ *
+ * <p>Sample for ProductSearchClient:
+ *
+ * <pre>
+ * <code>
+ * try (ProductSearchClient productSearchClient = ProductSearchClient.create()) {
+ *   String formattedParent = ProductSearchClient.formatLocationName("[PROJECT]", "[LOCATION]");
+ *   Product product = Product.newBuilder().build();
+ *   String productId = "";
+ *   Product response = productSearchClient.createProduct(formattedParent, product, productId);
+ * }
+ * </code>
+ * </pre>
+ *
+ * ==================== ImageAnnotatorClient ====================
  *
  * <p>Service Description: Service that performs Google Cloud Vision API detection tasks over client
  * images, such as face, landmark, logo, label, and text detection. The ImageAnnotator service

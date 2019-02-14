@@ -4,21 +4,24 @@
 package com.google.cloud.videointelligence.v1p1beta1;
 
 /**
+ *
+ *
  * <pre>
  * Alternative hypotheses (a.k.a. n-best list).
  * </pre>
  *
  * Protobuf type {@code google.cloud.videointelligence.v1p1beta1.SpeechRecognitionAlternative}
  */
-public  final class SpeechRecognitionAlternative extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class SpeechRecognitionAlternative extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.videointelligence.v1p1beta1.SpeechRecognitionAlternative)
     SpeechRecognitionAlternativeOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use SpeechRecognitionAlternative.newBuilder() to construct.
   private SpeechRecognitionAlternative(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private SpeechRecognitionAlternative() {
     transcript_ = "";
     confidence_ = 0F;
@@ -26,15 +29,18 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private SpeechRecognitionAlternative(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -46,40 +52,45 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            transcript_ = s;
-            break;
-          }
-          case 21: {
-
-            confidence_ = input.readFloat();
-            break;
-          }
-          case 26: {
-            if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-              words_ = new java.util.ArrayList<com.google.cloud.videointelligence.v1p1beta1.WordInfo>();
-              mutable_bitField0_ |= 0x00000004;
+              transcript_ = s;
+              break;
             }
-            words_.add(
-                input.readMessage(com.google.cloud.videointelligence.v1p1beta1.WordInfo.parser(), extensionRegistry));
-            break;
-          }
+          case 21:
+            {
+              confidence_ = input.readFloat();
+              break;
+            }
+          case 26:
+            {
+              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+                words_ =
+                    new java.util.ArrayList<
+                        com.google.cloud.videointelligence.v1p1beta1.WordInfo>();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              words_.add(
+                  input.readMessage(
+                      com.google.cloud.videointelligence.v1p1beta1.WordInfo.parser(),
+                      extensionRegistry));
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
         words_ = java.util.Collections.unmodifiableList(words_);
@@ -88,22 +99,29 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.videointelligence.v1p1beta1.VideoIntelligenceServiceProto.internal_static_google_cloud_videointelligence_v1p1beta1_SpeechRecognitionAlternative_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.videointelligence.v1p1beta1.VideoIntelligenceServiceProto
+        .internal_static_google_cloud_videointelligence_v1p1beta1_SpeechRecognitionAlternative_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.videointelligence.v1p1beta1.VideoIntelligenceServiceProto.internal_static_google_cloud_videointelligence_v1p1beta1_SpeechRecognitionAlternative_fieldAccessorTable
+    return com.google.cloud.videointelligence.v1p1beta1.VideoIntelligenceServiceProto
+        .internal_static_google_cloud_videointelligence_v1p1beta1_SpeechRecognitionAlternative_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.videointelligence.v1p1beta1.SpeechRecognitionAlternative.class, com.google.cloud.videointelligence.v1p1beta1.SpeechRecognitionAlternative.Builder.class);
+            com.google.cloud.videointelligence.v1p1beta1.SpeechRecognitionAlternative.class,
+            com.google.cloud.videointelligence.v1p1beta1.SpeechRecognitionAlternative.Builder
+                .class);
   }
 
   private int bitField0_;
   public static final int TRANSCRIPT_FIELD_NUMBER = 1;
   private volatile java.lang.Object transcript_;
   /**
+   *
+   *
    * <pre>
    * Output only. Transcript text representing the words that the user spoke.
    * </pre>
@@ -115,27 +133,26 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       transcript_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Output only. Transcript text representing the words that the user spoke.
    * </pre>
    *
    * <code>string transcript = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getTranscriptBytes() {
+  public com.google.protobuf.ByteString getTranscriptBytes() {
     java.lang.Object ref = transcript_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       transcript_ = b;
       return b;
     } else {
@@ -146,6 +163,8 @@ private static final long serialVersionUID = 0L;
   public static final int CONFIDENCE_FIELD_NUMBER = 2;
   private float confidence_;
   /**
+   *
+   *
    * <pre>
    * Output only. The confidence estimate between 0.0 and 1.0. A higher number
    * indicates an estimated greater likelihood that the recognized words are
@@ -164,6 +183,8 @@ private static final long serialVersionUID = 0L;
   public static final int WORDS_FIELD_NUMBER = 3;
   private java.util.List<com.google.cloud.videointelligence.v1p1beta1.WordInfo> words_;
   /**
+   *
+   *
    * <pre>
    * Output only. A list of word-specific information for each recognized word.
    * </pre>
@@ -174,17 +195,21 @@ private static final long serialVersionUID = 0L;
     return words_;
   }
   /**
+   *
+   *
    * <pre>
    * Output only. A list of word-specific information for each recognized word.
    * </pre>
    *
    * <code>repeated .google.cloud.videointelligence.v1p1beta1.WordInfo words = 3;</code>
    */
-  public java.util.List<? extends com.google.cloud.videointelligence.v1p1beta1.WordInfoOrBuilder> 
+  public java.util.List<? extends com.google.cloud.videointelligence.v1p1beta1.WordInfoOrBuilder>
       getWordsOrBuilderList() {
     return words_;
   }
   /**
+   *
+   *
    * <pre>
    * Output only. A list of word-specific information for each recognized word.
    * </pre>
@@ -195,6 +220,8 @@ private static final long serialVersionUID = 0L;
     return words_.size();
   }
   /**
+   *
+   *
    * <pre>
    * Output only. A list of word-specific information for each recognized word.
    * </pre>
@@ -205,6 +232,8 @@ private static final long serialVersionUID = 0L;
     return words_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * Output only. A list of word-specific information for each recognized word.
    * </pre>
@@ -217,6 +246,8 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -226,8 +257,8 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  @java.lang.Override
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getTranscriptBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, transcript_);
     }
@@ -240,6 +271,7 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -249,12 +281,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, transcript_);
     }
     if (confidence_ != 0F) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeFloatSize(2, confidence_);
+      size += com.google.protobuf.CodedOutputStream.computeFloatSize(2, confidence_);
     }
     for (int i = 0; i < words_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, words_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, words_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -264,22 +294,22 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
-    if (!(obj instanceof com.google.cloud.videointelligence.v1p1beta1.SpeechRecognitionAlternative)) {
+    if (!(obj
+        instanceof com.google.cloud.videointelligence.v1p1beta1.SpeechRecognitionAlternative)) {
       return super.equals(obj);
     }
-    com.google.cloud.videointelligence.v1p1beta1.SpeechRecognitionAlternative other = (com.google.cloud.videointelligence.v1p1beta1.SpeechRecognitionAlternative) obj;
+    com.google.cloud.videointelligence.v1p1beta1.SpeechRecognitionAlternative other =
+        (com.google.cloud.videointelligence.v1p1beta1.SpeechRecognitionAlternative) obj;
 
     boolean result = true;
-    result = result && getTranscript()
-        .equals(other.getTranscript());
-    result = result && (
-        java.lang.Float.floatToIntBits(getConfidence())
-        == java.lang.Float.floatToIntBits(
-            other.getConfidence()));
-    result = result && getWordsList()
-        .equals(other.getWordsList());
+    result = result && getTranscript().equals(other.getTranscript());
+    result =
+        result
+            && (java.lang.Float.floatToIntBits(getConfidence())
+                == java.lang.Float.floatToIntBits(other.getConfidence()));
+    result = result && getWordsList().equals(other.getWordsList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -294,8 +324,7 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + TRANSCRIPT_FIELD_NUMBER;
     hash = (53 * hash) + getTranscript().hashCode();
     hash = (37 * hash) + CONFIDENCE_FIELD_NUMBER;
-    hash = (53 * hash) + java.lang.Float.floatToIntBits(
-        getConfidence());
+    hash = (53 * hash) + java.lang.Float.floatToIntBits(getConfidence());
     if (getWordsCount() > 0) {
       hash = (37 * hash) + WORDS_FIELD_NUMBER;
       hash = (53 * hash) + getWordsList().hashCode();
@@ -306,132 +335,149 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.cloud.videointelligence.v1p1beta1.SpeechRecognitionAlternative parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.videointelligence.v1p1beta1.SpeechRecognitionAlternative parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.videointelligence.v1p1beta1.SpeechRecognitionAlternative parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.videointelligence.v1p1beta1.SpeechRecognitionAlternative parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.videointelligence.v1p1beta1.SpeechRecognitionAlternative parseFrom(byte[] data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+
+  public static com.google.cloud.videointelligence.v1p1beta1.SpeechRecognitionAlternative parseFrom(
+      byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.videointelligence.v1p1beta1.SpeechRecognitionAlternative parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.videointelligence.v1p1beta1.SpeechRecognitionAlternative parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.videointelligence.v1p1beta1.SpeechRecognitionAlternative parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.videointelligence.v1p1beta1.SpeechRecognitionAlternative parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
-  public static com.google.cloud.videointelligence.v1p1beta1.SpeechRecognitionAlternative parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-  }
+
   public static com.google.cloud.videointelligence.v1p1beta1.SpeechRecognitionAlternative parseFrom(
-      com.google.protobuf.CodedInputStream input)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
+  public static com.google.cloud.videointelligence.v1p1beta1.SpeechRecognitionAlternative
+      parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+  }
+
+  public static com.google.cloud.videointelligence.v1p1beta1.SpeechRecognitionAlternative
+      parseDelimitedFrom(
+          java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
+  public static com.google.cloud.videointelligence.v1p1beta1.SpeechRecognitionAlternative parseFrom(
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+  }
+
   public static com.google.cloud.videointelligence.v1p1beta1.SpeechRecognitionAlternative parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  public Builder newBuilderForType() { return newBuilder(); }
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-  public static Builder newBuilder(com.google.cloud.videointelligence.v1p1beta1.SpeechRecognitionAlternative prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+
+  public static Builder newBuilder(
+      com.google.cloud.videointelligence.v1p1beta1.SpeechRecognitionAlternative prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+
+  @java.lang.Override
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Alternative hypotheses (a.k.a. n-best list).
    * </pre>
    *
    * Protobuf type {@code google.cloud.videointelligence.v1p1beta1.SpeechRecognitionAlternative}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.videointelligence.v1p1beta1.SpeechRecognitionAlternative)
       com.google.cloud.videointelligence.v1p1beta1.SpeechRecognitionAlternativeOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.videointelligence.v1p1beta1.VideoIntelligenceServiceProto.internal_static_google_cloud_videointelligence_v1p1beta1_SpeechRecognitionAlternative_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.videointelligence.v1p1beta1.VideoIntelligenceServiceProto
+          .internal_static_google_cloud_videointelligence_v1p1beta1_SpeechRecognitionAlternative_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.videointelligence.v1p1beta1.VideoIntelligenceServiceProto.internal_static_google_cloud_videointelligence_v1p1beta1_SpeechRecognitionAlternative_fieldAccessorTable
+      return com.google.cloud.videointelligence.v1p1beta1.VideoIntelligenceServiceProto
+          .internal_static_google_cloud_videointelligence_v1p1beta1_SpeechRecognitionAlternative_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.videointelligence.v1p1beta1.SpeechRecognitionAlternative.class, com.google.cloud.videointelligence.v1p1beta1.SpeechRecognitionAlternative.Builder.class);
+              com.google.cloud.videointelligence.v1p1beta1.SpeechRecognitionAlternative.class,
+              com.google.cloud.videointelligence.v1p1beta1.SpeechRecognitionAlternative.Builder
+                  .class);
     }
 
-    // Construct using com.google.cloud.videointelligence.v1p1beta1.SpeechRecognitionAlternative.newBuilder()
+    // Construct using
+    // com.google.cloud.videointelligence.v1p1beta1.SpeechRecognitionAlternative.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getWordsFieldBuilder();
       }
     }
+
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       transcript_ = "";
@@ -447,25 +493,34 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.videointelligence.v1p1beta1.VideoIntelligenceServiceProto.internal_static_google_cloud_videointelligence_v1p1beta1_SpeechRecognitionAlternative_descriptor;
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.videointelligence.v1p1beta1.VideoIntelligenceServiceProto
+          .internal_static_google_cloud_videointelligence_v1p1beta1_SpeechRecognitionAlternative_descriptor;
     }
 
-    public com.google.cloud.videointelligence.v1p1beta1.SpeechRecognitionAlternative getDefaultInstanceForType() {
-      return com.google.cloud.videointelligence.v1p1beta1.SpeechRecognitionAlternative.getDefaultInstance();
+    @java.lang.Override
+    public com.google.cloud.videointelligence.v1p1beta1.SpeechRecognitionAlternative
+        getDefaultInstanceForType() {
+      return com.google.cloud.videointelligence.v1p1beta1.SpeechRecognitionAlternative
+          .getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.cloud.videointelligence.v1p1beta1.SpeechRecognitionAlternative build() {
-      com.google.cloud.videointelligence.v1p1beta1.SpeechRecognitionAlternative result = buildPartial();
+      com.google.cloud.videointelligence.v1p1beta1.SpeechRecognitionAlternative result =
+          buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
-    public com.google.cloud.videointelligence.v1p1beta1.SpeechRecognitionAlternative buildPartial() {
-      com.google.cloud.videointelligence.v1p1beta1.SpeechRecognitionAlternative result = new com.google.cloud.videointelligence.v1p1beta1.SpeechRecognitionAlternative(this);
+    @java.lang.Override
+    public com.google.cloud.videointelligence.v1p1beta1.SpeechRecognitionAlternative
+        buildPartial() {
+      com.google.cloud.videointelligence.v1p1beta1.SpeechRecognitionAlternative result =
+          new com.google.cloud.videointelligence.v1p1beta1.SpeechRecognitionAlternative(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       result.transcript_ = transcript_;
@@ -484,43 +539,56 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+
+    @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+    @java.lang.Override
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+    @java.lang.Override
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
+    @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
+    @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
-      if (other instanceof com.google.cloud.videointelligence.v1p1beta1.SpeechRecognitionAlternative) {
-        return mergeFrom((com.google.cloud.videointelligence.v1p1beta1.SpeechRecognitionAlternative)other);
+      if (other
+          instanceof com.google.cloud.videointelligence.v1p1beta1.SpeechRecognitionAlternative) {
+        return mergeFrom(
+            (com.google.cloud.videointelligence.v1p1beta1.SpeechRecognitionAlternative) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.cloud.videointelligence.v1p1beta1.SpeechRecognitionAlternative other) {
-      if (other == com.google.cloud.videointelligence.v1p1beta1.SpeechRecognitionAlternative.getDefaultInstance()) return this;
+    public Builder mergeFrom(
+        com.google.cloud.videointelligence.v1p1beta1.SpeechRecognitionAlternative other) {
+      if (other
+          == com.google.cloud.videointelligence.v1p1beta1.SpeechRecognitionAlternative
+              .getDefaultInstance()) return this;
       if (!other.getTranscript().isEmpty()) {
         transcript_ = other.transcript_;
         onChanged();
@@ -546,9 +614,10 @@ private static final long serialVersionUID = 0L;
             wordsBuilder_ = null;
             words_ = other.words_;
             bitField0_ = (bitField0_ & ~0x00000004);
-            wordsBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getWordsFieldBuilder() : null;
+            wordsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getWordsFieldBuilder()
+                    : null;
           } else {
             wordsBuilder_.addAllMessages(other.words_);
           }
@@ -559,19 +628,24 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      com.google.cloud.videointelligence.v1p1beta1.SpeechRecognitionAlternative parsedMessage = null;
+      com.google.cloud.videointelligence.v1p1beta1.SpeechRecognitionAlternative parsedMessage =
+          null;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.videointelligence.v1p1beta1.SpeechRecognitionAlternative) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.cloud.videointelligence.v1p1beta1.SpeechRecognitionAlternative)
+                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -580,10 +654,13 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private java.lang.Object transcript_ = "";
     /**
+     *
+     *
      * <pre>
      * Output only. Transcript text representing the words that the user spoke.
      * </pre>
@@ -593,8 +670,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getTranscript() {
       java.lang.Object ref = transcript_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         transcript_ = s;
         return s;
@@ -603,19 +679,19 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Transcript text representing the words that the user spoke.
      * </pre>
      *
      * <code>string transcript = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getTranscriptBytes() {
+    public com.google.protobuf.ByteString getTranscriptBytes() {
       java.lang.Object ref = transcript_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         transcript_ = b;
         return b;
       } else {
@@ -623,23 +699,26 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Transcript text representing the words that the user spoke.
      * </pre>
      *
      * <code>string transcript = 1;</code>
      */
-    public Builder setTranscript(
-        java.lang.String value) {
+    public Builder setTranscript(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       transcript_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Transcript text representing the words that the user spoke.
      * </pre>
@@ -647,32 +726,35 @@ private static final long serialVersionUID = 0L;
      * <code>string transcript = 1;</code>
      */
     public Builder clearTranscript() {
-      
+
       transcript_ = getDefaultInstance().getTranscript();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Transcript text representing the words that the user spoke.
      * </pre>
      *
      * <code>string transcript = 1;</code>
      */
-    public Builder setTranscriptBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setTranscriptBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       transcript_ = value;
       onChanged();
       return this;
     }
 
-    private float confidence_ ;
+    private float confidence_;
     /**
+     *
+     *
      * <pre>
      * Output only. The confidence estimate between 0.0 and 1.0. A higher number
      * indicates an estimated greater likelihood that the recognized words are
@@ -688,6 +770,8 @@ private static final long serialVersionUID = 0L;
       return confidence_;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The confidence estimate between 0.0 and 1.0. A higher number
      * indicates an estimated greater likelihood that the recognized words are
@@ -700,12 +784,14 @@ private static final long serialVersionUID = 0L;
      * <code>float confidence = 2;</code>
      */
     public Builder setConfidence(float value) {
-      
+
       confidence_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The confidence estimate between 0.0 and 1.0. A higher number
      * indicates an estimated greater likelihood that the recognized words are
@@ -718,25 +804,32 @@ private static final long serialVersionUID = 0L;
      * <code>float confidence = 2;</code>
      */
     public Builder clearConfidence() {
-      
+
       confidence_ = 0F;
       onChanged();
       return this;
     }
 
     private java.util.List<com.google.cloud.videointelligence.v1p1beta1.WordInfo> words_ =
-      java.util.Collections.emptyList();
+        java.util.Collections.emptyList();
+
     private void ensureWordsIsMutable() {
       if (!((bitField0_ & 0x00000004) == 0x00000004)) {
-        words_ = new java.util.ArrayList<com.google.cloud.videointelligence.v1p1beta1.WordInfo>(words_);
+        words_ =
+            new java.util.ArrayList<com.google.cloud.videointelligence.v1p1beta1.WordInfo>(words_);
         bitField0_ |= 0x00000004;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.videointelligence.v1p1beta1.WordInfo, com.google.cloud.videointelligence.v1p1beta1.WordInfo.Builder, com.google.cloud.videointelligence.v1p1beta1.WordInfoOrBuilder> wordsBuilder_;
+            com.google.cloud.videointelligence.v1p1beta1.WordInfo,
+            com.google.cloud.videointelligence.v1p1beta1.WordInfo.Builder,
+            com.google.cloud.videointelligence.v1p1beta1.WordInfoOrBuilder>
+        wordsBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * Output only. A list of word-specific information for each recognized word.
      * </pre>
@@ -751,6 +844,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. A list of word-specific information for each recognized word.
      * </pre>
@@ -765,6 +860,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. A list of word-specific information for each recognized word.
      * </pre>
@@ -779,6 +876,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. A list of word-specific information for each recognized word.
      * </pre>
@@ -800,6 +899,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. A list of word-specific information for each recognized word.
      * </pre>
@@ -818,6 +919,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. A list of word-specific information for each recognized word.
      * </pre>
@@ -838,6 +941,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. A list of word-specific information for each recognized word.
      * </pre>
@@ -859,6 +964,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. A list of word-specific information for each recognized word.
      * </pre>
@@ -877,6 +984,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. A list of word-specific information for each recognized word.
      * </pre>
@@ -895,6 +1004,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. A list of word-specific information for each recognized word.
      * </pre>
@@ -902,11 +1013,11 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.cloud.videointelligence.v1p1beta1.WordInfo words = 3;</code>
      */
     public Builder addAllWords(
-        java.lang.Iterable<? extends com.google.cloud.videointelligence.v1p1beta1.WordInfo> values) {
+        java.lang.Iterable<? extends com.google.cloud.videointelligence.v1p1beta1.WordInfo>
+            values) {
       if (wordsBuilder_ == null) {
         ensureWordsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, words_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, words_);
         onChanged();
       } else {
         wordsBuilder_.addAllMessages(values);
@@ -914,6 +1025,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. A list of word-specific information for each recognized word.
      * </pre>
@@ -931,6 +1044,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. A list of word-specific information for each recognized word.
      * </pre>
@@ -948,6 +1063,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. A list of word-specific information for each recognized word.
      * </pre>
@@ -959,6 +1076,8 @@ private static final long serialVersionUID = 0L;
       return getWordsFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * Output only. A list of word-specific information for each recognized word.
      * </pre>
@@ -968,19 +1087,22 @@ private static final long serialVersionUID = 0L;
     public com.google.cloud.videointelligence.v1p1beta1.WordInfoOrBuilder getWordsOrBuilder(
         int index) {
       if (wordsBuilder_ == null) {
-        return words_.get(index);  } else {
+        return words_.get(index);
+      } else {
         return wordsBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. A list of word-specific information for each recognized word.
      * </pre>
      *
      * <code>repeated .google.cloud.videointelligence.v1p1beta1.WordInfo words = 3;</code>
      */
-    public java.util.List<? extends com.google.cloud.videointelligence.v1p1beta1.WordInfoOrBuilder> 
-         getWordsOrBuilderList() {
+    public java.util.List<? extends com.google.cloud.videointelligence.v1p1beta1.WordInfoOrBuilder>
+        getWordsOrBuilderList() {
       if (wordsBuilder_ != null) {
         return wordsBuilder_.getMessageOrBuilderList();
       } else {
@@ -988,6 +1110,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. A list of word-specific information for each recognized word.
      * </pre>
@@ -995,10 +1119,12 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.cloud.videointelligence.v1p1beta1.WordInfo words = 3;</code>
      */
     public com.google.cloud.videointelligence.v1p1beta1.WordInfo.Builder addWordsBuilder() {
-      return getWordsFieldBuilder().addBuilder(
-          com.google.cloud.videointelligence.v1p1beta1.WordInfo.getDefaultInstance());
+      return getWordsFieldBuilder()
+          .addBuilder(com.google.cloud.videointelligence.v1p1beta1.WordInfo.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Output only. A list of word-specific information for each recognized word.
      * </pre>
@@ -1007,26 +1133,35 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.videointelligence.v1p1beta1.WordInfo.Builder addWordsBuilder(
         int index) {
-      return getWordsFieldBuilder().addBuilder(
-          index, com.google.cloud.videointelligence.v1p1beta1.WordInfo.getDefaultInstance());
+      return getWordsFieldBuilder()
+          .addBuilder(
+              index, com.google.cloud.videointelligence.v1p1beta1.WordInfo.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Output only. A list of word-specific information for each recognized word.
      * </pre>
      *
      * <code>repeated .google.cloud.videointelligence.v1p1beta1.WordInfo words = 3;</code>
      */
-    public java.util.List<com.google.cloud.videointelligence.v1p1beta1.WordInfo.Builder> 
-         getWordsBuilderList() {
+    public java.util.List<com.google.cloud.videointelligence.v1p1beta1.WordInfo.Builder>
+        getWordsBuilderList() {
       return getWordsFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.videointelligence.v1p1beta1.WordInfo, com.google.cloud.videointelligence.v1p1beta1.WordInfo.Builder, com.google.cloud.videointelligence.v1p1beta1.WordInfoOrBuilder> 
+            com.google.cloud.videointelligence.v1p1beta1.WordInfo,
+            com.google.cloud.videointelligence.v1p1beta1.WordInfo.Builder,
+            com.google.cloud.videointelligence.v1p1beta1.WordInfoOrBuilder>
         getWordsFieldBuilder() {
       if (wordsBuilder_ == null) {
-        wordsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.cloud.videointelligence.v1p1beta1.WordInfo, com.google.cloud.videointelligence.v1p1beta1.WordInfo.Builder, com.google.cloud.videointelligence.v1p1beta1.WordInfoOrBuilder>(
+        wordsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.videointelligence.v1p1beta1.WordInfo,
+                com.google.cloud.videointelligence.v1p1beta1.WordInfo.Builder,
+                com.google.cloud.videointelligence.v1p1beta1.WordInfoOrBuilder>(
                 words_,
                 ((bitField0_ & 0x00000004) == 0x00000004),
                 getParentForChildren(),
@@ -1035,39 +1170,45 @@ private static final long serialVersionUID = 0L;
       }
       return wordsBuilder_;
     }
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+
+    @java.lang.Override
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.videointelligence.v1p1beta1.SpeechRecognitionAlternative)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.videointelligence.v1p1beta1.SpeechRecognitionAlternative)
-  private static final com.google.cloud.videointelligence.v1p1beta1.SpeechRecognitionAlternative DEFAULT_INSTANCE;
+  private static final com.google.cloud.videointelligence.v1p1beta1.SpeechRecognitionAlternative
+      DEFAULT_INSTANCE;
+
   static {
-    DEFAULT_INSTANCE = new com.google.cloud.videointelligence.v1p1beta1.SpeechRecognitionAlternative();
+    DEFAULT_INSTANCE =
+        new com.google.cloud.videointelligence.v1p1beta1.SpeechRecognitionAlternative();
   }
 
-  public static com.google.cloud.videointelligence.v1p1beta1.SpeechRecognitionAlternative getDefaultInstance() {
+  public static com.google.cloud.videointelligence.v1p1beta1.SpeechRecognitionAlternative
+      getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<SpeechRecognitionAlternative>
-      PARSER = new com.google.protobuf.AbstractParser<SpeechRecognitionAlternative>() {
-    public SpeechRecognitionAlternative parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SpeechRecognitionAlternative(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<SpeechRecognitionAlternative> PARSER =
+      new com.google.protobuf.AbstractParser<SpeechRecognitionAlternative>() {
+        @java.lang.Override
+        public SpeechRecognitionAlternative parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new SpeechRecognitionAlternative(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<SpeechRecognitionAlternative> parser() {
     return PARSER;
@@ -1078,9 +1219,9 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
-  public com.google.cloud.videointelligence.v1p1beta1.SpeechRecognitionAlternative getDefaultInstanceForType() {
+  @java.lang.Override
+  public com.google.cloud.videointelligence.v1p1beta1.SpeechRecognitionAlternative
+      getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

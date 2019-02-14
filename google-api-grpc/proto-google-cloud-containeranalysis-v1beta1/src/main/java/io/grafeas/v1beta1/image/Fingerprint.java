@@ -4,21 +4,24 @@
 package io.grafeas.v1beta1.image;
 
 /**
+ *
+ *
  * <pre>
  * A set of properties that uniquely identify a given Docker image.
  * </pre>
  *
  * Protobuf type {@code grafeas.v1beta1.image.Fingerprint}
  */
-public  final class Fingerprint extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class Fingerprint extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:grafeas.v1beta1.image.Fingerprint)
     FingerprintOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use Fingerprint.newBuilder() to construct.
   private Fingerprint(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private Fingerprint() {
     v1Name_ = "";
     v2Blob_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -26,15 +29,18 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private Fingerprint(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -46,41 +52,43 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            v1Name_ = s;
-            break;
-          }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-              v2Blob_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000002;
+              v1Name_ = s;
+              break;
             }
-            v2Blob_.add(s);
-            break;
-          }
-          case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 18:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                v2Blob_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              v2Blob_.add(s);
+              break;
+            }
+          case 26:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            v2Name_ = s;
-            break;
-          }
+              v2Name_ = s;
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
         v2Blob_ = v2Blob_.getUnmodifiableView();
@@ -89,22 +97,28 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return io.grafeas.v1beta1.image.Image.internal_static_grafeas_v1beta1_image_Fingerprint_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return io.grafeas.v1beta1.image.Image
+        .internal_static_grafeas_v1beta1_image_Fingerprint_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return io.grafeas.v1beta1.image.Image.internal_static_grafeas_v1beta1_image_Fingerprint_fieldAccessorTable
+    return io.grafeas.v1beta1.image.Image
+        .internal_static_grafeas_v1beta1_image_Fingerprint_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            io.grafeas.v1beta1.image.Fingerprint.class, io.grafeas.v1beta1.image.Fingerprint.Builder.class);
+            io.grafeas.v1beta1.image.Fingerprint.class,
+            io.grafeas.v1beta1.image.Fingerprint.Builder.class);
   }
 
   private int bitField0_;
   public static final int V1_NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object v1Name_;
   /**
+   *
+   *
    * <pre>
    * The layer-id of the final layer in the Docker image's v1 representation.
    * </pre>
@@ -116,27 +130,26 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       v1Name_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The layer-id of the final layer in the Docker image's v1 representation.
    * </pre>
    *
    * <code>string v1_name = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getV1NameBytes() {
+  public com.google.protobuf.ByteString getV1NameBytes() {
     java.lang.Object ref = v1Name_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       v1Name_ = b;
       return b;
     } else {
@@ -147,17 +160,20 @@ private static final long serialVersionUID = 0L;
   public static final int V2_BLOB_FIELD_NUMBER = 2;
   private com.google.protobuf.LazyStringList v2Blob_;
   /**
+   *
+   *
    * <pre>
    * The ordered list of v2 blobs that represent a given image.
    * </pre>
    *
    * <code>repeated string v2_blob = 2;</code>
    */
-  public com.google.protobuf.ProtocolStringList
-      getV2BlobList() {
+  public com.google.protobuf.ProtocolStringList getV2BlobList() {
     return v2Blob_;
   }
   /**
+   *
+   *
    * <pre>
    * The ordered list of v2 blobs that represent a given image.
    * </pre>
@@ -168,6 +184,8 @@ private static final long serialVersionUID = 0L;
     return v2Blob_.size();
   }
   /**
+   *
+   *
    * <pre>
    * The ordered list of v2 blobs that represent a given image.
    * </pre>
@@ -178,20 +196,23 @@ private static final long serialVersionUID = 0L;
     return v2Blob_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * The ordered list of v2 blobs that represent a given image.
    * </pre>
    *
    * <code>repeated string v2_blob = 2;</code>
    */
-  public com.google.protobuf.ByteString
-      getV2BlobBytes(int index) {
+  public com.google.protobuf.ByteString getV2BlobBytes(int index) {
     return v2Blob_.getByteString(index);
   }
 
   public static final int V2_NAME_FIELD_NUMBER = 3;
   private volatile java.lang.Object v2Name_;
   /**
+   *
+   *
    * <pre>
    * Output only. The name of the image's v2 blobs computed via:
    *   [bottom] := v2_blob[bottom]
@@ -206,14 +227,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       v2Name_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Output only. The name of the image's v2 blobs computed via:
    *   [bottom] := v2_blob[bottom]
@@ -223,13 +245,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string v2_name = 3;</code>
    */
-  public com.google.protobuf.ByteString
-      getV2NameBytes() {
+  public com.google.protobuf.ByteString getV2NameBytes() {
     java.lang.Object ref = v2Name_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       v2Name_ = b;
       return b;
     } else {
@@ -238,6 +258,8 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -247,8 +269,8 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  @java.lang.Override
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getV1NameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, v1Name_);
     }
@@ -261,6 +283,7 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -288,7 +311,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof io.grafeas.v1beta1.image.Fingerprint)) {
       return super.equals(obj);
@@ -296,12 +319,9 @@ private static final long serialVersionUID = 0L;
     io.grafeas.v1beta1.image.Fingerprint other = (io.grafeas.v1beta1.image.Fingerprint) obj;
 
     boolean result = true;
-    result = result && getV1Name()
-        .equals(other.getV1Name());
-    result = result && getV2BlobList()
-        .equals(other.getV2BlobList());
-    result = result && getV2Name()
-        .equals(other.getV2Name());
+    result = result && getV1Name().equals(other.getV1Name());
+    result = result && getV2BlobList().equals(other.getV2BlobList());
+    result = result && getV2Name().equals(other.getV2Name());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -326,115 +346,126 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static io.grafeas.v1beta1.image.Fingerprint parseFrom(
-      java.nio.ByteBuffer data)
+  public static io.grafeas.v1beta1.image.Fingerprint parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static io.grafeas.v1beta1.image.Fingerprint parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.grafeas.v1beta1.image.Fingerprint parseFrom(
-      com.google.protobuf.ByteString data)
+
+  public static io.grafeas.v1beta1.image.Fingerprint parseFrom(com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static io.grafeas.v1beta1.image.Fingerprint parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static io.grafeas.v1beta1.image.Fingerprint parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static io.grafeas.v1beta1.image.Fingerprint parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static io.grafeas.v1beta1.image.Fingerprint parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static io.grafeas.v1beta1.image.Fingerprint parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static io.grafeas.v1beta1.image.Fingerprint parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
   public static io.grafeas.v1beta1.image.Fingerprint parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static io.grafeas.v1beta1.image.Fingerprint parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static io.grafeas.v1beta1.image.Fingerprint parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  public Builder newBuilderForType() { return newBuilder(); }
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-  public static Builder newBuilder(io.grafeas.v1beta1.image.Fingerprint prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+
+  public static Builder newBuilder(io.grafeas.v1beta1.image.Fingerprint prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+
+  @java.lang.Override
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * A set of properties that uniquely identify a given Docker image.
    * </pre>
    *
    * Protobuf type {@code grafeas.v1beta1.image.Fingerprint}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:grafeas.v1beta1.image.Fingerprint)
       io.grafeas.v1beta1.image.FingerprintOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return io.grafeas.v1beta1.image.Image.internal_static_grafeas_v1beta1_image_Fingerprint_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return io.grafeas.v1beta1.image.Image
+          .internal_static_grafeas_v1beta1_image_Fingerprint_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.grafeas.v1beta1.image.Image.internal_static_grafeas_v1beta1_image_Fingerprint_fieldAccessorTable
+      return io.grafeas.v1beta1.image.Image
+          .internal_static_grafeas_v1beta1_image_Fingerprint_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              io.grafeas.v1beta1.image.Fingerprint.class, io.grafeas.v1beta1.image.Fingerprint.Builder.class);
+              io.grafeas.v1beta1.image.Fingerprint.class,
+              io.grafeas.v1beta1.image.Fingerprint.Builder.class);
     }
 
     // Construct using io.grafeas.v1beta1.image.Fingerprint.newBuilder()
@@ -442,16 +473,16 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       v1Name_ = "";
@@ -463,15 +494,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return io.grafeas.v1beta1.image.Image.internal_static_grafeas_v1beta1_image_Fingerprint_descriptor;
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return io.grafeas.v1beta1.image.Image
+          .internal_static_grafeas_v1beta1_image_Fingerprint_descriptor;
     }
 
+    @java.lang.Override
     public io.grafeas.v1beta1.image.Fingerprint getDefaultInstanceForType() {
       return io.grafeas.v1beta1.image.Fingerprint.getDefaultInstance();
     }
 
+    @java.lang.Override
     public io.grafeas.v1beta1.image.Fingerprint build() {
       io.grafeas.v1beta1.image.Fingerprint result = buildPartial();
       if (!result.isInitialized()) {
@@ -480,6 +514,7 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public io.grafeas.v1beta1.image.Fingerprint buildPartial() {
       io.grafeas.v1beta1.image.Fingerprint result = new io.grafeas.v1beta1.image.Fingerprint(this);
       int from_bitField0_ = bitField0_;
@@ -496,35 +531,43 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+
+    @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+    @java.lang.Override
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+    @java.lang.Override
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
+    @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
+    @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof io.grafeas.v1beta1.image.Fingerprint) {
-        return mergeFrom((io.grafeas.v1beta1.image.Fingerprint)other);
+        return mergeFrom((io.grafeas.v1beta1.image.Fingerprint) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -556,10 +599,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -577,10 +622,13 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private java.lang.Object v1Name_ = "";
     /**
+     *
+     *
      * <pre>
      * The layer-id of the final layer in the Docker image's v1 representation.
      * </pre>
@@ -590,8 +638,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getV1Name() {
       java.lang.Object ref = v1Name_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         v1Name_ = s;
         return s;
@@ -600,19 +647,19 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The layer-id of the final layer in the Docker image's v1 representation.
      * </pre>
      *
      * <code>string v1_name = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getV1NameBytes() {
+    public com.google.protobuf.ByteString getV1NameBytes() {
       java.lang.Object ref = v1Name_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         v1Name_ = b;
         return b;
       } else {
@@ -620,23 +667,26 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The layer-id of the final layer in the Docker image's v1 representation.
      * </pre>
      *
      * <code>string v1_name = 1;</code>
      */
-    public Builder setV1Name(
-        java.lang.String value) {
+    public Builder setV1Name(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       v1Name_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The layer-id of the final layer in the Docker image's v1 representation.
      * </pre>
@@ -644,49 +694,55 @@ private static final long serialVersionUID = 0L;
      * <code>string v1_name = 1;</code>
      */
     public Builder clearV1Name() {
-      
+
       v1Name_ = getDefaultInstance().getV1Name();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The layer-id of the final layer in the Docker image's v1 representation.
      * </pre>
      *
      * <code>string v1_name = 1;</code>
      */
-    public Builder setV1NameBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setV1NameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       v1Name_ = value;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList v2Blob_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringList v2Blob_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
     private void ensureV2BlobIsMutable() {
       if (!((bitField0_ & 0x00000002) == 0x00000002)) {
         v2Blob_ = new com.google.protobuf.LazyStringArrayList(v2Blob_);
         bitField0_ |= 0x00000002;
-       }
+      }
     }
     /**
+     *
+     *
      * <pre>
      * The ordered list of v2 blobs that represent a given image.
      * </pre>
      *
      * <code>repeated string v2_blob = 2;</code>
      */
-    public com.google.protobuf.ProtocolStringList
-        getV2BlobList() {
+    public com.google.protobuf.ProtocolStringList getV2BlobList() {
       return v2Blob_.getUnmodifiableView();
     }
     /**
+     *
+     *
      * <pre>
      * The ordered list of v2 blobs that represent a given image.
      * </pre>
@@ -697,6 +753,8 @@ private static final long serialVersionUID = 0L;
       return v2Blob_.size();
     }
     /**
+     *
+     *
      * <pre>
      * The ordered list of v2 blobs that represent a given image.
      * </pre>
@@ -707,66 +765,71 @@ private static final long serialVersionUID = 0L;
       return v2Blob_.get(index);
     }
     /**
+     *
+     *
      * <pre>
      * The ordered list of v2 blobs that represent a given image.
      * </pre>
      *
      * <code>repeated string v2_blob = 2;</code>
      */
-    public com.google.protobuf.ByteString
-        getV2BlobBytes(int index) {
+    public com.google.protobuf.ByteString getV2BlobBytes(int index) {
       return v2Blob_.getByteString(index);
     }
     /**
+     *
+     *
      * <pre>
      * The ordered list of v2 blobs that represent a given image.
      * </pre>
      *
      * <code>repeated string v2_blob = 2;</code>
      */
-    public Builder setV2Blob(
-        int index, java.lang.String value) {
+    public Builder setV2Blob(int index, java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureV2BlobIsMutable();
+        throw new NullPointerException();
+      }
+      ensureV2BlobIsMutable();
       v2Blob_.set(index, value);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The ordered list of v2 blobs that represent a given image.
      * </pre>
      *
      * <code>repeated string v2_blob = 2;</code>
      */
-    public Builder addV2Blob(
-        java.lang.String value) {
+    public Builder addV2Blob(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureV2BlobIsMutable();
+        throw new NullPointerException();
+      }
+      ensureV2BlobIsMutable();
       v2Blob_.add(value);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The ordered list of v2 blobs that represent a given image.
      * </pre>
      *
      * <code>repeated string v2_blob = 2;</code>
      */
-    public Builder addAllV2Blob(
-        java.lang.Iterable<java.lang.String> values) {
+    public Builder addAllV2Blob(java.lang.Iterable<java.lang.String> values) {
       ensureV2BlobIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(
-          values, v2Blob_);
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, v2Blob_);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The ordered list of v2 blobs that represent a given image.
      * </pre>
@@ -780,18 +843,19 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The ordered list of v2 blobs that represent a given image.
      * </pre>
      *
      * <code>repeated string v2_blob = 2;</code>
      */
-    public Builder addV2BlobBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder addV2BlobBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
       ensureV2BlobIsMutable();
       v2Blob_.add(value);
       onChanged();
@@ -800,6 +864,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object v2Name_ = "";
     /**
+     *
+     *
      * <pre>
      * Output only. The name of the image's v2 blobs computed via:
      *   [bottom] := v2_blob[bottom]
@@ -812,8 +878,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getV2Name() {
       java.lang.Object ref = v2Name_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         v2Name_ = s;
         return s;
@@ -822,6 +887,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The name of the image's v2 blobs computed via:
      *   [bottom] := v2_blob[bottom]
@@ -831,13 +898,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string v2_name = 3;</code>
      */
-    public com.google.protobuf.ByteString
-        getV2NameBytes() {
+    public com.google.protobuf.ByteString getV2NameBytes() {
       java.lang.Object ref = v2Name_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         v2Name_ = b;
         return b;
       } else {
@@ -845,6 +910,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The name of the image's v2 blobs computed via:
      *   [bottom] := v2_blob[bottom]
@@ -854,17 +921,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string v2_name = 3;</code>
      */
-    public Builder setV2Name(
-        java.lang.String value) {
+    public Builder setV2Name(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       v2Name_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The name of the image's v2 blobs computed via:
      *   [bottom] := v2_blob[bottom]
@@ -875,12 +943,14 @@ private static final long serialVersionUID = 0L;
      * <code>string v2_name = 3;</code>
      */
     public Builder clearV2Name() {
-      
+
       v2Name_ = getDefaultInstance().getV2Name();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The name of the image's v2 blobs computed via:
      *   [bottom] := v2_blob[bottom]
@@ -890,33 +960,34 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string v2_name = 3;</code>
      */
-    public Builder setV2NameBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setV2NameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       v2Name_ = value;
       onChanged();
       return this;
     }
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+
+    @java.lang.Override
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
     }
-
 
     // @@protoc_insertion_point(builder_scope:grafeas.v1beta1.image.Fingerprint)
   }
 
   // @@protoc_insertion_point(class_scope:grafeas.v1beta1.image.Fingerprint)
   private static final io.grafeas.v1beta1.image.Fingerprint DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new io.grafeas.v1beta1.image.Fingerprint();
   }
@@ -925,15 +996,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<Fingerprint>
-      PARSER = new com.google.protobuf.AbstractParser<Fingerprint>() {
-    public Fingerprint parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Fingerprint(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<Fingerprint> PARSER =
+      new com.google.protobuf.AbstractParser<Fingerprint>() {
+        @java.lang.Override
+        public Fingerprint parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new Fingerprint(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<Fingerprint> parser() {
     return PARSER;
@@ -944,9 +1016,8 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public io.grafeas.v1beta1.image.Fingerprint getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

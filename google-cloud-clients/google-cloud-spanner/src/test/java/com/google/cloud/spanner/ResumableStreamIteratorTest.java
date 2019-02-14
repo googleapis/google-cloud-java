@@ -98,7 +98,7 @@ public class ResumableStreamIteratorTest {
 
   private void initWithLimit(int maxBufferSize) {
     iterator =
-        new SpannerImpl.ResumableStreamIterator(maxBufferSize, "") {
+        new SpannerImpl.ResumableStreamIterator(maxBufferSize, "", null) {
           @Override
           SpannerImpl.CloseableIterator<PartialResultSet> startStream(
               @Nullable ByteString resumeToken) {

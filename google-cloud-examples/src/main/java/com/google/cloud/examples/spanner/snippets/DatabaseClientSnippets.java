@@ -37,9 +37,7 @@ import com.google.cloud.spanner.TransactionRunner.TransactionCallable;
 import java.util.Collections;
 import java.util.concurrent.TimeUnit;
 
-/**
- * This class contains snippets for {@link DatabaseClient} interface.
- */
+/** This class contains snippets for {@link DatabaseClient} interface. */
 public class DatabaseClientSnippets {
 
   private final DatabaseClient dbClient;
@@ -48,14 +46,13 @@ public class DatabaseClientSnippets {
     this.dbClient = dbClient;
   }
 
-  /**
-   * Example of blind write.
-   */
+  /** Example of blind write. */
   // [TARGET write(Iterable)]
   // [VARIABLE my_singer_id]
   public void write(long singerId) {
     // [START write]
-    Mutation mutation = Mutation.newInsertBuilder("Singer")
+    Mutation mutation =
+        Mutation.newInsertBuilder("Singer")
             .set("SingerId")
             .to(singerId)
             .set("FirstName")
@@ -67,14 +64,13 @@ public class DatabaseClientSnippets {
     // [END write]
   }
 
-  /**
-   * Example of unprotected blind write.
-   */
+  /** Example of unprotected blind write. */
   // [TARGET writeAtLeastOnce(Iterable)]
   // [VARIABLE my_singer_id]
   public void writeAtLeastOnce(long singerId) {
     // [START writeAtLeastOnce]
-    Mutation mutation = Mutation.newInsertBuilder("Singers")
+    Mutation mutation =
+        Mutation.newInsertBuilder("Singers")
             .set("SingerId")
             .to(singerId)
             .set("FirstName")
@@ -86,9 +82,7 @@ public class DatabaseClientSnippets {
     // [END writeAtLeastOnce]
   }
 
-  /**
-   * Example of single use.
-   */
+  /** Example of single use. */
   // [TARGET singleUse()]
   // [VARIABLE my_singer_id]
   public String singleUse(long singerId) {
@@ -101,9 +95,7 @@ public class DatabaseClientSnippets {
     return firstName;
   }
 
-  /**
-   * Example of single use with timestamp bound.
-   */
+  /** Example of single use with timestamp bound. */
   // [TARGET singleUse(TimestampBound)]
   // [VARIABLE my_singer_id]
   public String singleUseStale(long singerId) {
@@ -118,9 +110,7 @@ public class DatabaseClientSnippets {
     return firstName;
   }
 
-  /**
-   * Example of single use read only transaction.
-   */
+  /** Example of single use read only transaction. */
   // [TARGET singleUseReadOnlyTransaction()]
   // [VARIABLE my_singer_id]
   public Timestamp singleUseReadOnlyTransaction(long singerId) {
@@ -134,9 +124,7 @@ public class DatabaseClientSnippets {
     return timestamp;
   }
 
-  /**
-   * Example of single use read only transaction with timestamp bound.
-   */
+  /** Example of single use read only transaction with timestamp bound. */
   // [TARGET singleUseReadOnlyTransaction(TimestampBound)]
   // [VARIABLE my_singer_id]
   public Timestamp singleUseReadOnlyTransactionTimestamp(long singerId) {
@@ -151,9 +139,7 @@ public class DatabaseClientSnippets {
     return timestamp;
   }
 
-  /**
-   * Example of read only transaction.
-   */
+  /** Example of read only transaction. */
   // [TARGET readOnlyTransaction()]
   // [VARIABLE my_singer_id]
   // [VARIABLE my_album_id]
@@ -175,9 +161,7 @@ public class DatabaseClientSnippets {
     return albumTitle;
   }
 
-  /**
-   * Example of read only transaction with timestamp bound.
-   */
+  /** Example of read only transaction with timestamp bound. */
   // [TARGET readOnlyTransaction(TimestampBound)]
   // [VARIABLE my_singer_id]
   // [VARIABLE my_album_id]
@@ -200,9 +184,7 @@ public class DatabaseClientSnippets {
     return albumTitle;
   }
 
-  /**
-   * Example of a read write transaction.
-   */
+  /** Example of a read write transaction. */
   // [TARGET readWriteTransaction()]
   // [VARIABLE my_singer_id]
   public void readWriteTransaction(final long singerId) {
@@ -224,10 +206,8 @@ public class DatabaseClientSnippets {
         });
     // [END readWriteTransaction]
   }
-  
-  /**
-   * Example of using {@link TransactionManager}.
-   */
+
+  /** Example of using {@link TransactionManager}. */
   // [TARGET transactionManager()]
   // [VARIABLE my_singer_id]
   public void transactionManager(final long singerId) throws InterruptedException {
@@ -238,8 +218,7 @@ public class DatabaseClientSnippets {
         String column = "FirstName";
         Struct row = txn.readRow("Singers", Key.of(singerId), Collections.singleton(column));
         String name = row.getString(column);
-        txn.buffer(
-            Mutation.newUpdateBuilder("Singers").set(column).to(name.toUpperCase()).build());
+        txn.buffer(Mutation.newUpdateBuilder("Singers").set(column).to(name.toUpperCase()).build());
         try {
           manager.commit();
           break;

@@ -3,11 +3,14 @@
 
 package com.google.monitoring.v3;
 
-public interface UpdateAlertPolicyRequestOrBuilder extends
+public interface UpdateAlertPolicyRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.monitoring.v3.UpdateAlertPolicyRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Optional. A list of alerting policy field names. If this field is not
    * empty, each listed field in the existing alerting policy is set to the
@@ -33,6 +36,8 @@ public interface UpdateAlertPolicyRequestOrBuilder extends
    */
   boolean hasUpdateMask();
   /**
+   *
+   *
    * <pre>
    * Optional. A list of alerting policy field names. If this field is not
    * empty, each listed field in the existing alerting policy is set to the
@@ -58,6 +63,8 @@ public interface UpdateAlertPolicyRequestOrBuilder extends
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**
+   *
+   *
    * <pre>
    * Optional. A list of alerting policy field names. If this field is not
    * empty, each listed field in the existing alerting policy is set to the
@@ -84,6 +91,8 @@ public interface UpdateAlertPolicyRequestOrBuilder extends
   com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Required. The updated alerting policy or the updated values for the
    * fields listed in `update_mask`.
@@ -95,6 +104,8 @@ public interface UpdateAlertPolicyRequestOrBuilder extends
    */
   boolean hasAlertPolicy();
   /**
+   *
+   *
    * <pre>
    * Required. The updated alerting policy or the updated values for the
    * fields listed in `update_mask`.
@@ -106,6 +117,8 @@ public interface UpdateAlertPolicyRequestOrBuilder extends
    */
   com.google.monitoring.v3.AlertPolicy getAlertPolicy();
   /**
+   *
+   *
    * <pre>
    * Required. The updated alerting policy or the updated values for the
    * fields listed in `update_mask`.

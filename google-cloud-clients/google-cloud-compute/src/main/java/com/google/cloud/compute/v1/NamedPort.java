@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/** The named port. For example: . */
 public final class NamedPort implements ApiMessage {
   private final String name;
   private final Integer port;
@@ -40,10 +41,10 @@ public final class NamedPort implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("name")) {
+    if ("name".equals(fieldName)) {
       return name;
     }
-    if (fieldName.equals("port")) {
+    if ("port".equals(fieldName)) {
       return port;
     }
     return null;
@@ -57,14 +58,24 @@ public final class NamedPort implements ApiMessage {
 
   @Nullable
   @Override
+  /**
+   * The fields that should be serialized (even if they have empty values). If the containing
+   * message object has a non-null fieldmask, then all the fields in the field mask (and only those
+   * fields in the field mask) will be serialized. If the containing object does not have a
+   * fieldmask, then only non-empty fields will be serialized.
+   */
   public List<String> getFieldMask() {
     return null;
   }
 
+  /**
+   * The name for this named port. The name must be 1-63 characters long, and comply with RFC1035.
+   */
   public String getName() {
     return name;
   }
 
+  /** The port number, which can be a value between 1 and 65535. */
   public Integer getPort() {
     return port;
   }
@@ -113,19 +124,27 @@ public final class NamedPort implements ApiMessage {
       this.port = source.port;
     }
 
+    /**
+     * The name for this named port. The name must be 1-63 characters long, and comply with RFC1035.
+     */
     public String getName() {
       return name;
     }
 
+    /**
+     * The name for this named port. The name must be 1-63 characters long, and comply with RFC1035.
+     */
     public Builder setName(String name) {
       this.name = name;
       return this;
     }
 
+    /** The port number, which can be a value between 1 and 65535. */
     public Integer getPort() {
       return port;
     }
 
+    /** The port number, which can be a value between 1 and 65535. */
     public Builder setPort(Integer port) {
       this.port = port;
       return this;

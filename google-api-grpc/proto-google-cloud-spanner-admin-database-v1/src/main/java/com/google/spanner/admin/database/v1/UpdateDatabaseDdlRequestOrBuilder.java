@@ -3,11 +3,14 @@
 
 package com.google.spanner.admin.database.v1;
 
-public interface UpdateDatabaseDdlRequestOrBuilder extends
+public interface UpdateDatabaseDdlRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.spanner.admin.database.v1.UpdateDatabaseDdlRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The database to update.
    * </pre>
@@ -16,25 +19,29 @@ public interface UpdateDatabaseDdlRequestOrBuilder extends
    */
   java.lang.String getDatabase();
   /**
+   *
+   *
    * <pre>
    * Required. The database to update.
    * </pre>
    *
    * <code>string database = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getDatabaseBytes();
+  com.google.protobuf.ByteString getDatabaseBytes();
 
   /**
+   *
+   *
    * <pre>
    * DDL statements to be applied to the database.
    * </pre>
    *
    * <code>repeated string statements = 2;</code>
    */
-  java.util.List<java.lang.String>
-      getStatementsList();
+  java.util.List<java.lang.String> getStatementsList();
   /**
+   *
+   *
    * <pre>
    * DDL statements to be applied to the database.
    * </pre>
@@ -43,6 +50,8 @@ public interface UpdateDatabaseDdlRequestOrBuilder extends
    */
   int getStatementsCount();
   /**
+   *
+   *
    * <pre>
    * DDL statements to be applied to the database.
    * </pre>
@@ -51,16 +60,19 @@ public interface UpdateDatabaseDdlRequestOrBuilder extends
    */
   java.lang.String getStatements(int index);
   /**
+   *
+   *
    * <pre>
    * DDL statements to be applied to the database.
    * </pre>
    *
    * <code>repeated string statements = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getStatementsBytes(int index);
+  com.google.protobuf.ByteString getStatementsBytes(int index);
 
   /**
+   *
+   *
    * <pre>
    * If empty, the new update request is assigned an
    * automatically-generated operation ID. Otherwise, `operation_id`
@@ -85,6 +97,8 @@ public interface UpdateDatabaseDdlRequestOrBuilder extends
    */
   java.lang.String getOperationId();
   /**
+   *
+   *
    * <pre>
    * If empty, the new update request is assigned an
    * automatically-generated operation ID. Otherwise, `operation_id`
@@ -107,6 +121,5 @@ public interface UpdateDatabaseDdlRequestOrBuilder extends
    *
    * <code>string operation_id = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getOperationIdBytes();
+  com.google.protobuf.ByteString getOperationIdBytes();
 }

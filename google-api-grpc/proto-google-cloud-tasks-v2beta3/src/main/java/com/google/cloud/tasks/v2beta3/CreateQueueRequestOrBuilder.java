@@ -3,11 +3,14 @@
 
 package com.google.cloud.tasks.v2beta3;
 
-public interface CreateQueueRequestOrBuilder extends
+public interface CreateQueueRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.tasks.v2beta3.CreateQueueRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required.
    * The location name in which the queue will be created.
@@ -21,6 +24,8 @@ public interface CreateQueueRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * Required.
    * The location name in which the queue will be created.
@@ -32,10 +37,11 @@ public interface CreateQueueRequestOrBuilder extends
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * Required.
    * The queue to create.
@@ -46,6 +52,8 @@ public interface CreateQueueRequestOrBuilder extends
    */
   boolean hasQueue();
   /**
+   *
+   *
    * <pre>
    * Required.
    * The queue to create.
@@ -56,6 +64,8 @@ public interface CreateQueueRequestOrBuilder extends
    */
   com.google.cloud.tasks.v2beta3.Queue getQueue();
   /**
+   *
+   *
    * <pre>
    * Required.
    * The queue to create.

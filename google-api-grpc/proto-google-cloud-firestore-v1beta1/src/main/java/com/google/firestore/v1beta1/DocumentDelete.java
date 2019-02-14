@@ -4,6 +4,8 @@
 package com.google.firestore.v1beta1;
 
 /**
+ *
+ *
  * <pre>
  * A [Document][google.firestore.v1beta1.Document] has been deleted.
  * May be the result of multiple [writes][google.firestore.v1beta1.Write], including updates, the
@@ -14,30 +16,34 @@ package com.google.firestore.v1beta1;
  *
  * Protobuf type {@code google.firestore.v1beta1.DocumentDelete}
  */
-public  final class DocumentDelete extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class DocumentDelete extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.firestore.v1beta1.DocumentDelete)
     DocumentDeleteOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use DocumentDelete.newBuilder() to construct.
   private DocumentDelete(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private DocumentDelete() {
     document_ = "";
     removedTargetIds_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private DocumentDelete(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -49,60 +55,65 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            document_ = s;
-            break;
-          }
-          case 34: {
-            com.google.protobuf.Timestamp.Builder subBuilder = null;
-            if (readTime_ != null) {
-              subBuilder = readTime_.toBuilder();
+              document_ = s;
+              break;
             }
-            readTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(readTime_);
-              readTime_ = subBuilder.buildPartial();
-            }
+          case 34:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (readTime_ != null) {
+                subBuilder = readTime_.toBuilder();
+              }
+              readTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(readTime_);
+                readTime_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 48: {
-            if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-              removedTargetIds_ = new java.util.ArrayList<java.lang.Integer>();
-              mutable_bitField0_ |= 0x00000002;
+              break;
             }
-            removedTargetIds_.add(input.readInt32());
-            break;
-          }
-          case 50: {
-            int length = input.readRawVarint32();
-            int limit = input.pushLimit(length);
-            if (!((mutable_bitField0_ & 0x00000002) == 0x00000002) && input.getBytesUntilLimit() > 0) {
-              removedTargetIds_ = new java.util.ArrayList<java.lang.Integer>();
-              mutable_bitField0_ |= 0x00000002;
-            }
-            while (input.getBytesUntilLimit() > 0) {
+          case 48:
+            {
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                removedTargetIds_ = new java.util.ArrayList<java.lang.Integer>();
+                mutable_bitField0_ |= 0x00000002;
+              }
               removedTargetIds_.add(input.readInt32());
+              break;
             }
-            input.popLimit(limit);
-            break;
-          }
+          case 50:
+            {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)
+                  && input.getBytesUntilLimit() > 0) {
+                removedTargetIds_ = new java.util.ArrayList<java.lang.Integer>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                removedTargetIds_.add(input.readInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
         removedTargetIds_ = java.util.Collections.unmodifiableList(removedTargetIds_);
@@ -111,22 +122,28 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.firestore.v1beta1.WriteProto.internal_static_google_firestore_v1beta1_DocumentDelete_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.firestore.v1beta1.WriteProto
+        .internal_static_google_firestore_v1beta1_DocumentDelete_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.firestore.v1beta1.WriteProto.internal_static_google_firestore_v1beta1_DocumentDelete_fieldAccessorTable
+    return com.google.firestore.v1beta1.WriteProto
+        .internal_static_google_firestore_v1beta1_DocumentDelete_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.firestore.v1beta1.DocumentDelete.class, com.google.firestore.v1beta1.DocumentDelete.Builder.class);
+            com.google.firestore.v1beta1.DocumentDelete.class,
+            com.google.firestore.v1beta1.DocumentDelete.Builder.class);
   }
 
   private int bitField0_;
   public static final int DOCUMENT_FIELD_NUMBER = 1;
   private volatile java.lang.Object document_;
   /**
+   *
+   *
    * <pre>
    * The resource name of the [Document][google.firestore.v1beta1.Document] that was deleted.
    * </pre>
@@ -138,27 +155,26 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       document_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The resource name of the [Document][google.firestore.v1beta1.Document] that was deleted.
    * </pre>
    *
    * <code>string document = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getDocumentBytes() {
+  public com.google.protobuf.ByteString getDocumentBytes() {
     java.lang.Object ref = document_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       document_ = b;
       return b;
     } else {
@@ -169,17 +185,20 @@ private static final long serialVersionUID = 0L;
   public static final int REMOVED_TARGET_IDS_FIELD_NUMBER = 6;
   private java.util.List<java.lang.Integer> removedTargetIds_;
   /**
+   *
+   *
    * <pre>
    * A set of target IDs for targets that previously matched this entity.
    * </pre>
    *
    * <code>repeated int32 removed_target_ids = 6;</code>
    */
-  public java.util.List<java.lang.Integer>
-      getRemovedTargetIdsList() {
+  public java.util.List<java.lang.Integer> getRemovedTargetIdsList() {
     return removedTargetIds_;
   }
   /**
+   *
+   *
    * <pre>
    * A set of target IDs for targets that previously matched this entity.
    * </pre>
@@ -190,6 +209,8 @@ private static final long serialVersionUID = 0L;
     return removedTargetIds_.size();
   }
   /**
+   *
+   *
    * <pre>
    * A set of target IDs for targets that previously matched this entity.
    * </pre>
@@ -199,11 +220,14 @@ private static final long serialVersionUID = 0L;
   public int getRemovedTargetIds(int index) {
     return removedTargetIds_.get(index);
   }
+
   private int removedTargetIdsMemoizedSerializedSize = -1;
 
   public static final int READ_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp readTime_;
   /**
+   *
+   *
    * <pre>
    * The read timestamp at which the delete was observed.
    * Greater or equal to the `commit_time` of the delete.
@@ -215,6 +239,8 @@ private static final long serialVersionUID = 0L;
     return readTime_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * The read timestamp at which the delete was observed.
    * Greater or equal to the `commit_time` of the delete.
@@ -226,6 +252,8 @@ private static final long serialVersionUID = 0L;
     return readTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : readTime_;
   }
   /**
+   *
+   *
    * <pre>
    * The read timestamp at which the delete was observed.
    * Greater or equal to the `commit_time` of the delete.
@@ -238,6 +266,8 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -247,8 +277,8 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  @java.lang.Override
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     getSerializedSize();
     if (!getDocumentBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, document_);
@@ -266,6 +296,7 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -275,20 +306,18 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, document_);
     }
     if (readTime_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, getReadTime());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getReadTime());
     }
     {
       int dataSize = 0;
       for (int i = 0; i < removedTargetIds_.size(); i++) {
-        dataSize += com.google.protobuf.CodedOutputStream
-          .computeInt32SizeNoTag(removedTargetIds_.get(i));
+        dataSize +=
+            com.google.protobuf.CodedOutputStream.computeInt32SizeNoTag(removedTargetIds_.get(i));
       }
       size += dataSize;
       if (!getRemovedTargetIdsList().isEmpty()) {
         size += 1;
-        size += com.google.protobuf.CodedOutputStream
-            .computeInt32SizeNoTag(dataSize);
+        size += com.google.protobuf.CodedOutputStream.computeInt32SizeNoTag(dataSize);
       }
       removedTargetIdsMemoizedSerializedSize = dataSize;
     }
@@ -300,22 +329,20 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.firestore.v1beta1.DocumentDelete)) {
       return super.equals(obj);
     }
-    com.google.firestore.v1beta1.DocumentDelete other = (com.google.firestore.v1beta1.DocumentDelete) obj;
+    com.google.firestore.v1beta1.DocumentDelete other =
+        (com.google.firestore.v1beta1.DocumentDelete) obj;
 
     boolean result = true;
-    result = result && getDocument()
-        .equals(other.getDocument());
-    result = result && getRemovedTargetIdsList()
-        .equals(other.getRemovedTargetIdsList());
+    result = result && getDocument().equals(other.getDocument());
+    result = result && getRemovedTargetIdsList().equals(other.getRemovedTargetIdsList());
     result = result && (hasReadTime() == other.hasReadTime());
     if (hasReadTime()) {
-      result = result && getReadTime()
-          .equals(other.getReadTime());
+      result = result && getReadTime().equals(other.getReadTime());
     }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
@@ -343,95 +370,104 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.firestore.v1beta1.DocumentDelete parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.firestore.v1beta1.DocumentDelete parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.firestore.v1beta1.DocumentDelete parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.firestore.v1beta1.DocumentDelete parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.firestore.v1beta1.DocumentDelete parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.firestore.v1beta1.DocumentDelete parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.firestore.v1beta1.DocumentDelete parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.firestore.v1beta1.DocumentDelete parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.firestore.v1beta1.DocumentDelete parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.firestore.v1beta1.DocumentDelete parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
+
   public static com.google.firestore.v1beta1.DocumentDelete parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.firestore.v1beta1.DocumentDelete parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.firestore.v1beta1.DocumentDelete parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.firestore.v1beta1.DocumentDelete parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  public Builder newBuilderForType() { return newBuilder(); }
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-  public static Builder newBuilder(com.google.firestore.v1beta1.DocumentDelete prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+
+  public static Builder newBuilder(com.google.firestore.v1beta1.DocumentDelete prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+
+  @java.lang.Override
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * A [Document][google.firestore.v1beta1.Document] has been deleted.
    * May be the result of multiple [writes][google.firestore.v1beta1.Write], including updates, the
@@ -442,20 +478,23 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.firestore.v1beta1.DocumentDelete}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.firestore.v1beta1.DocumentDelete)
       com.google.firestore.v1beta1.DocumentDeleteOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.firestore.v1beta1.WriteProto.internal_static_google_firestore_v1beta1_DocumentDelete_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.firestore.v1beta1.WriteProto
+          .internal_static_google_firestore_v1beta1_DocumentDelete_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.firestore.v1beta1.WriteProto.internal_static_google_firestore_v1beta1_DocumentDelete_fieldAccessorTable
+      return com.google.firestore.v1beta1.WriteProto
+          .internal_static_google_firestore_v1beta1_DocumentDelete_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.firestore.v1beta1.DocumentDelete.class, com.google.firestore.v1beta1.DocumentDelete.Builder.class);
+              com.google.firestore.v1beta1.DocumentDelete.class,
+              com.google.firestore.v1beta1.DocumentDelete.Builder.class);
     }
 
     // Construct using com.google.firestore.v1beta1.DocumentDelete.newBuilder()
@@ -463,16 +502,16 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       document_ = "";
@@ -488,15 +527,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.firestore.v1beta1.WriteProto.internal_static_google_firestore_v1beta1_DocumentDelete_descriptor;
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.firestore.v1beta1.WriteProto
+          .internal_static_google_firestore_v1beta1_DocumentDelete_descriptor;
     }
 
+    @java.lang.Override
     public com.google.firestore.v1beta1.DocumentDelete getDefaultInstanceForType() {
       return com.google.firestore.v1beta1.DocumentDelete.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.firestore.v1beta1.DocumentDelete build() {
       com.google.firestore.v1beta1.DocumentDelete result = buildPartial();
       if (!result.isInitialized()) {
@@ -505,8 +547,10 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.firestore.v1beta1.DocumentDelete buildPartial() {
-      com.google.firestore.v1beta1.DocumentDelete result = new com.google.firestore.v1beta1.DocumentDelete(this);
+      com.google.firestore.v1beta1.DocumentDelete result =
+          new com.google.firestore.v1beta1.DocumentDelete(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       result.document_ = document_;
@@ -525,35 +569,43 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+
+    @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+    @java.lang.Override
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+    @java.lang.Override
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
+    @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
+    @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.firestore.v1beta1.DocumentDelete) {
-        return mergeFrom((com.google.firestore.v1beta1.DocumentDelete)other);
+        return mergeFrom((com.google.firestore.v1beta1.DocumentDelete) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -584,10 +636,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -605,10 +659,13 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private java.lang.Object document_ = "";
     /**
+     *
+     *
      * <pre>
      * The resource name of the [Document][google.firestore.v1beta1.Document] that was deleted.
      * </pre>
@@ -618,8 +675,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getDocument() {
       java.lang.Object ref = document_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         document_ = s;
         return s;
@@ -628,19 +684,19 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The resource name of the [Document][google.firestore.v1beta1.Document] that was deleted.
      * </pre>
      *
      * <code>string document = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getDocumentBytes() {
+    public com.google.protobuf.ByteString getDocumentBytes() {
       java.lang.Object ref = document_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         document_ = b;
         return b;
       } else {
@@ -648,23 +704,26 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The resource name of the [Document][google.firestore.v1beta1.Document] that was deleted.
      * </pre>
      *
      * <code>string document = 1;</code>
      */
-    public Builder setDocument(
-        java.lang.String value) {
+    public Builder setDocument(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       document_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The resource name of the [Document][google.firestore.v1beta1.Document] that was deleted.
      * </pre>
@@ -672,49 +731,54 @@ private static final long serialVersionUID = 0L;
      * <code>string document = 1;</code>
      */
     public Builder clearDocument() {
-      
+
       document_ = getDefaultInstance().getDocument();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The resource name of the [Document][google.firestore.v1beta1.Document] that was deleted.
      * </pre>
      *
      * <code>string document = 1;</code>
      */
-    public Builder setDocumentBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setDocumentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       document_ = value;
       onChanged();
       return this;
     }
 
     private java.util.List<java.lang.Integer> removedTargetIds_ = java.util.Collections.emptyList();
+
     private void ensureRemovedTargetIdsIsMutable() {
       if (!((bitField0_ & 0x00000002) == 0x00000002)) {
         removedTargetIds_ = new java.util.ArrayList<java.lang.Integer>(removedTargetIds_);
         bitField0_ |= 0x00000002;
-       }
+      }
     }
     /**
+     *
+     *
      * <pre>
      * A set of target IDs for targets that previously matched this entity.
      * </pre>
      *
      * <code>repeated int32 removed_target_ids = 6;</code>
      */
-    public java.util.List<java.lang.Integer>
-        getRemovedTargetIdsList() {
+    public java.util.List<java.lang.Integer> getRemovedTargetIdsList() {
       return java.util.Collections.unmodifiableList(removedTargetIds_);
     }
     /**
+     *
+     *
      * <pre>
      * A set of target IDs for targets that previously matched this entity.
      * </pre>
@@ -725,6 +789,8 @@ private static final long serialVersionUID = 0L;
       return removedTargetIds_.size();
     }
     /**
+     *
+     *
      * <pre>
      * A set of target IDs for targets that previously matched this entity.
      * </pre>
@@ -735,20 +801,23 @@ private static final long serialVersionUID = 0L;
       return removedTargetIds_.get(index);
     }
     /**
+     *
+     *
      * <pre>
      * A set of target IDs for targets that previously matched this entity.
      * </pre>
      *
      * <code>repeated int32 removed_target_ids = 6;</code>
      */
-    public Builder setRemovedTargetIds(
-        int index, int value) {
+    public Builder setRemovedTargetIds(int index, int value) {
       ensureRemovedTargetIdsIsMutable();
       removedTargetIds_.set(index, value);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A set of target IDs for targets that previously matched this entity.
      * </pre>
@@ -762,21 +831,23 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A set of target IDs for targets that previously matched this entity.
      * </pre>
      *
      * <code>repeated int32 removed_target_ids = 6;</code>
      */
-    public Builder addAllRemovedTargetIds(
-        java.lang.Iterable<? extends java.lang.Integer> values) {
+    public Builder addAllRemovedTargetIds(java.lang.Iterable<? extends java.lang.Integer> values) {
       ensureRemovedTargetIdsIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(
-          values, removedTargetIds_);
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, removedTargetIds_);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A set of target IDs for targets that previously matched this entity.
      * </pre>
@@ -792,8 +863,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Timestamp readTime_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> readTimeBuilder_;
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        readTimeBuilder_;
     /**
+     *
+     *
      * <pre>
      * The read timestamp at which the delete was observed.
      * Greater or equal to the `commit_time` of the delete.
@@ -805,6 +881,8 @@ private static final long serialVersionUID = 0L;
       return readTimeBuilder_ != null || readTime_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * The read timestamp at which the delete was observed.
      * Greater or equal to the `commit_time` of the delete.
@@ -820,6 +898,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The read timestamp at which the delete was observed.
      * Greater or equal to the `commit_time` of the delete.
@@ -841,6 +921,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The read timestamp at which the delete was observed.
      * Greater or equal to the `commit_time` of the delete.
@@ -848,8 +930,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.Timestamp read_time = 4;</code>
      */
-    public Builder setReadTime(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
+    public Builder setReadTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (readTimeBuilder_ == null) {
         readTime_ = builderForValue.build();
         onChanged();
@@ -860,6 +941,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The read timestamp at which the delete was observed.
      * Greater or equal to the `commit_time` of the delete.
@@ -871,7 +954,7 @@ private static final long serialVersionUID = 0L;
       if (readTimeBuilder_ == null) {
         if (readTime_ != null) {
           readTime_ =
-            com.google.protobuf.Timestamp.newBuilder(readTime_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Timestamp.newBuilder(readTime_).mergeFrom(value).buildPartial();
         } else {
           readTime_ = value;
         }
@@ -883,6 +966,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The read timestamp at which the delete was observed.
      * Greater or equal to the `commit_time` of the delete.
@@ -902,6 +987,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The read timestamp at which the delete was observed.
      * Greater or equal to the `commit_time` of the delete.
@@ -910,11 +997,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp read_time = 4;</code>
      */
     public com.google.protobuf.Timestamp.Builder getReadTimeBuilder() {
-      
+
       onChanged();
       return getReadTimeFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * The read timestamp at which the delete was observed.
      * Greater or equal to the `commit_time` of the delete.
@@ -926,11 +1015,12 @@ private static final long serialVersionUID = 0L;
       if (readTimeBuilder_ != null) {
         return readTimeBuilder_.getMessageOrBuilder();
       } else {
-        return readTime_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : readTime_;
+        return readTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : readTime_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The read timestamp at which the delete was observed.
      * Greater or equal to the `commit_time` of the delete.
@@ -939,34 +1029,39 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp read_time = 4;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
         getReadTimeFieldBuilder() {
       if (readTimeBuilder_ == null) {
-        readTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getReadTime(),
-                getParentForChildren(),
-                isClean());
+        readTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getReadTime(), getParentForChildren(), isClean());
         readTime_ = null;
       }
       return readTimeBuilder_;
     }
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+
+    @java.lang.Override
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
     }
-
 
     // @@protoc_insertion_point(builder_scope:google.firestore.v1beta1.DocumentDelete)
   }
 
   // @@protoc_insertion_point(class_scope:google.firestore.v1beta1.DocumentDelete)
   private static final com.google.firestore.v1beta1.DocumentDelete DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.firestore.v1beta1.DocumentDelete();
   }
@@ -975,15 +1070,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<DocumentDelete>
-      PARSER = new com.google.protobuf.AbstractParser<DocumentDelete>() {
-    public DocumentDelete parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-        return new DocumentDelete(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<DocumentDelete> PARSER =
+      new com.google.protobuf.AbstractParser<DocumentDelete>() {
+        @java.lang.Override
+        public DocumentDelete parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new DocumentDelete(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<DocumentDelete> parser() {
     return PARSER;
@@ -994,9 +1090,8 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.firestore.v1beta1.DocumentDelete getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

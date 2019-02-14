@@ -3,33 +3,51 @@
 
 package com.google.container.v1;
 
-public interface ClusterUpdateOrBuilder extends
+public interface ClusterUpdateOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.container.v1.ClusterUpdate)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The Kubernetes version to change the nodes to (typically an
-   * upgrade). Use `-` to upgrade to the latest version supported by
-   * the server.
+   * upgrade).
+   * Users may specify either explicit versions offered by
+   * Kubernetes Engine or version aliases, which have the following behavior:
+   * - "latest": picks the highest valid Kubernetes version
+   * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
+   * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
+   * - "1.X.Y-gke.N": picks an explicit Kubernetes version
+   * - "-": picks the Kubernetes master version
    * </pre>
    *
    * <code>string desired_node_version = 4;</code>
    */
   java.lang.String getDesiredNodeVersion();
   /**
+   *
+   *
    * <pre>
    * The Kubernetes version to change the nodes to (typically an
-   * upgrade). Use `-` to upgrade to the latest version supported by
-   * the server.
+   * upgrade).
+   * Users may specify either explicit versions offered by
+   * Kubernetes Engine or version aliases, which have the following behavior:
+   * - "latest": picks the highest valid Kubernetes version
+   * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
+   * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
+   * - "1.X.Y-gke.N": picks an explicit Kubernetes version
+   * - "-": picks the Kubernetes master version
    * </pre>
    *
    * <code>string desired_node_version = 4;</code>
    */
-  com.google.protobuf.ByteString
-      getDesiredNodeVersionBytes();
+  com.google.protobuf.ByteString getDesiredNodeVersionBytes();
 
   /**
+   *
+   *
    * <pre>
    * The monitoring service the cluster should use to write metrics.
    * Currently available options:
@@ -41,6 +59,8 @@ public interface ClusterUpdateOrBuilder extends
    */
   java.lang.String getDesiredMonitoringService();
   /**
+   *
+   *
    * <pre>
    * The monitoring service the cluster should use to write metrics.
    * Currently available options:
@@ -50,10 +70,11 @@ public interface ClusterUpdateOrBuilder extends
    *
    * <code>string desired_monitoring_service = 5;</code>
    */
-  com.google.protobuf.ByteString
-      getDesiredMonitoringServiceBytes();
+  com.google.protobuf.ByteString getDesiredMonitoringServiceBytes();
 
   /**
+   *
+   *
    * <pre>
    * Configurations for the various addons available to run in the cluster.
    * </pre>
@@ -62,6 +83,8 @@ public interface ClusterUpdateOrBuilder extends
    */
   boolean hasDesiredAddonsConfig();
   /**
+   *
+   *
    * <pre>
    * Configurations for the various addons available to run in the cluster.
    * </pre>
@@ -70,6 +93,8 @@ public interface ClusterUpdateOrBuilder extends
    */
   com.google.container.v1.AddonsConfig getDesiredAddonsConfig();
   /**
+   *
+   *
    * <pre>
    * Configurations for the various addons available to run in the cluster.
    * </pre>
@@ -79,6 +104,8 @@ public interface ClusterUpdateOrBuilder extends
   com.google.container.v1.AddonsConfigOrBuilder getDesiredAddonsConfigOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The node pool to be upgraded. This field is mandatory if
    * "desired_node_version", "desired_image_family" or
@@ -90,6 +117,8 @@ public interface ClusterUpdateOrBuilder extends
    */
   java.lang.String getDesiredNodePoolId();
   /**
+   *
+   *
    * <pre>
    * The node pool to be upgraded. This field is mandatory if
    * "desired_node_version", "desired_image_family" or
@@ -99,10 +128,11 @@ public interface ClusterUpdateOrBuilder extends
    *
    * <code>string desired_node_pool_id = 7;</code>
    */
-  com.google.protobuf.ByteString
-      getDesiredNodePoolIdBytes();
+  com.google.protobuf.ByteString getDesiredNodePoolIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * The desired image type for the node pool.
    * NOTE: Set the "desired_node_pool" field as well.
@@ -112,6 +142,8 @@ public interface ClusterUpdateOrBuilder extends
    */
   java.lang.String getDesiredImageType();
   /**
+   *
+   *
    * <pre>
    * The desired image type for the node pool.
    * NOTE: Set the "desired_node_pool" field as well.
@@ -119,10 +151,11 @@ public interface ClusterUpdateOrBuilder extends
    *
    * <code>string desired_image_type = 8;</code>
    */
-  com.google.protobuf.ByteString
-      getDesiredImageTypeBytes();
+  com.google.protobuf.ByteString getDesiredImageTypeBytes();
 
   /**
+   *
+   *
    * <pre>
    * Autoscaler configuration for the node pool specified in
    * desired_node_pool_id. If there is only one pool in the
@@ -134,6 +167,8 @@ public interface ClusterUpdateOrBuilder extends
    */
   boolean hasDesiredNodePoolAutoscaling();
   /**
+   *
+   *
    * <pre>
    * Autoscaler configuration for the node pool specified in
    * desired_node_pool_id. If there is only one pool in the
@@ -145,6 +180,8 @@ public interface ClusterUpdateOrBuilder extends
    */
   com.google.container.v1.NodePoolAutoscaling getDesiredNodePoolAutoscaling();
   /**
+   *
+   *
    * <pre>
    * Autoscaler configuration for the node pool specified in
    * desired_node_pool_id. If there is only one pool in the
@@ -157,6 +194,8 @@ public interface ClusterUpdateOrBuilder extends
   com.google.container.v1.NodePoolAutoscalingOrBuilder getDesiredNodePoolAutoscalingOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The desired list of Google Compute Engine
    * [locations](/compute/docs/zones#available) in which the cluster's nodes
@@ -168,9 +207,10 @@ public interface ClusterUpdateOrBuilder extends
    *
    * <code>repeated string desired_locations = 10;</code>
    */
-  java.util.List<java.lang.String>
-      getDesiredLocationsList();
+  java.util.List<java.lang.String> getDesiredLocationsList();
   /**
+   *
+   *
    * <pre>
    * The desired list of Google Compute Engine
    * [locations](/compute/docs/zones#available) in which the cluster's nodes
@@ -184,6 +224,8 @@ public interface ClusterUpdateOrBuilder extends
    */
   int getDesiredLocationsCount();
   /**
+   *
+   *
    * <pre>
    * The desired list of Google Compute Engine
    * [locations](/compute/docs/zones#available) in which the cluster's nodes
@@ -197,6 +239,8 @@ public interface ClusterUpdateOrBuilder extends
    */
   java.lang.String getDesiredLocations(int index);
   /**
+   *
+   *
    * <pre>
    * The desired list of Google Compute Engine
    * [locations](/compute/docs/zones#available) in which the cluster's nodes
@@ -208,56 +252,78 @@ public interface ClusterUpdateOrBuilder extends
    *
    * <code>repeated string desired_locations = 10;</code>
    */
-  com.google.protobuf.ByteString
-      getDesiredLocationsBytes(int index);
+  com.google.protobuf.ByteString getDesiredLocationsBytes(int index);
 
   /**
+   *
+   *
    * <pre>
-   * Master authorized networks is a Beta feature.
    * The desired configuration options for master authorized networks feature.
    * </pre>
    *
-   * <code>.google.container.v1.MasterAuthorizedNetworksConfig desired_master_authorized_networks_config = 12;</code>
+   * <code>
+   * .google.container.v1.MasterAuthorizedNetworksConfig desired_master_authorized_networks_config = 12;
+   * </code>
    */
   boolean hasDesiredMasterAuthorizedNetworksConfig();
   /**
+   *
+   *
    * <pre>
-   * Master authorized networks is a Beta feature.
    * The desired configuration options for master authorized networks feature.
    * </pre>
    *
-   * <code>.google.container.v1.MasterAuthorizedNetworksConfig desired_master_authorized_networks_config = 12;</code>
+   * <code>
+   * .google.container.v1.MasterAuthorizedNetworksConfig desired_master_authorized_networks_config = 12;
+   * </code>
    */
   com.google.container.v1.MasterAuthorizedNetworksConfig getDesiredMasterAuthorizedNetworksConfig();
   /**
+   *
+   *
    * <pre>
-   * Master authorized networks is a Beta feature.
    * The desired configuration options for master authorized networks feature.
    * </pre>
    *
-   * <code>.google.container.v1.MasterAuthorizedNetworksConfig desired_master_authorized_networks_config = 12;</code>
+   * <code>
+   * .google.container.v1.MasterAuthorizedNetworksConfig desired_master_authorized_networks_config = 12;
+   * </code>
    */
-  com.google.container.v1.MasterAuthorizedNetworksConfigOrBuilder getDesiredMasterAuthorizedNetworksConfigOrBuilder();
+  com.google.container.v1.MasterAuthorizedNetworksConfigOrBuilder
+      getDesiredMasterAuthorizedNetworksConfigOrBuilder();
 
   /**
+   *
+   *
    * <pre>
-   * The Kubernetes version to change the master to. The only valid value is the
-   * latest supported version. Use "-" to have the server automatically select
-   * the latest version.
+   * The Kubernetes version to change the master to.
+   * Users may specify either explicit versions offered by
+   * Kubernetes Engine or version aliases, which have the following behavior:
+   * - "latest": picks the highest valid Kubernetes version
+   * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
+   * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
+   * - "1.X.Y-gke.N": picks an explicit Kubernetes version
+   * - "-": picks the default Kubernetes version
    * </pre>
    *
    * <code>string desired_master_version = 100;</code>
    */
   java.lang.String getDesiredMasterVersion();
   /**
+   *
+   *
    * <pre>
-   * The Kubernetes version to change the master to. The only valid value is the
-   * latest supported version. Use "-" to have the server automatically select
-   * the latest version.
+   * The Kubernetes version to change the master to.
+   * Users may specify either explicit versions offered by
+   * Kubernetes Engine or version aliases, which have the following behavior:
+   * - "latest": picks the highest valid Kubernetes version
+   * - "1.X": picks the highest valid patch+gke.N patch in the 1.X version
+   * - "1.X.Y": picks the highest valid gke.N patch in the 1.X.Y version
+   * - "1.X.Y-gke.N": picks an explicit Kubernetes version
+   * - "-": picks the default Kubernetes version
    * </pre>
    *
    * <code>string desired_master_version = 100;</code>
    */
-  com.google.protobuf.ByteString
-      getDesiredMasterVersionBytes();
+  com.google.protobuf.ByteString getDesiredMasterVersionBytes();
 }

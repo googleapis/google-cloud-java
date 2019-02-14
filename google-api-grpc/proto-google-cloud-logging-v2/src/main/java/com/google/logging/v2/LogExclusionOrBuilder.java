@@ -3,11 +3,14 @@
 
 package com.google.logging.v2;
 
-public interface LogExclusionOrBuilder extends
+public interface LogExclusionOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.logging.v2.LogExclusion)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. A client-assigned identifier, such as
    * `"load-balancer-exclusion"`. Identifiers are limited to 100 characters and
@@ -18,6 +21,8 @@ public interface LogExclusionOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * Required. A client-assigned identifier, such as
    * `"load-balancer-exclusion"`. Identifiers are limited to 100 characters and
@@ -26,10 +31,11 @@ public interface LogExclusionOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * Optional. A description of this exclusion.
    * </pre>
@@ -38,16 +44,19 @@ public interface LogExclusionOrBuilder extends
    */
   java.lang.String getDescription();
   /**
+   *
+   *
    * <pre>
    * Optional. A description of this exclusion.
    * </pre>
    *
    * <code>string description = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getDescriptionBytes();
+  com.google.protobuf.ByteString getDescriptionBytes();
 
   /**
+   *
+   *
    * <pre>
    * Required.
    * An [advanced logs filter](/logging/docs/view/advanced_filters)
@@ -63,6 +72,8 @@ public interface LogExclusionOrBuilder extends
    */
   java.lang.String getFilter();
   /**
+   *
+   *
    * <pre>
    * Required.
    * An [advanced logs filter](/logging/docs/view/advanced_filters)
@@ -76,10 +87,11 @@ public interface LogExclusionOrBuilder extends
    *
    * <code>string filter = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getFilterBytes();
+  com.google.protobuf.ByteString getFilterBytes();
 
   /**
+   *
+   *
    * <pre>
    * Optional. If set to True, then this exclusion is disabled and it does not
    * exclude any log entries. You can use

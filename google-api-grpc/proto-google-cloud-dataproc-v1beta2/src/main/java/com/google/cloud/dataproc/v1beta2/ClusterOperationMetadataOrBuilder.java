@@ -3,11 +3,14 @@
 
 package com.google.cloud.dataproc.v1beta2;
 
-public interface ClusterOperationMetadataOrBuilder extends
+public interface ClusterOperationMetadataOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dataproc.v1beta2.ClusterOperationMetadata)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Output only. Name of the cluster for the operation.
    * </pre>
@@ -16,16 +19,19 @@ public interface ClusterOperationMetadataOrBuilder extends
    */
   java.lang.String getClusterName();
   /**
+   *
+   *
    * <pre>
    * Output only. Name of the cluster for the operation.
    * </pre>
    *
    * <code>string cluster_name = 7;</code>
    */
-  com.google.protobuf.ByteString
-      getClusterNameBytes();
+  com.google.protobuf.ByteString getClusterNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * Output only. Cluster UUID for the operation.
    * </pre>
@@ -34,16 +40,19 @@ public interface ClusterOperationMetadataOrBuilder extends
    */
   java.lang.String getClusterUuid();
   /**
+   *
+   *
    * <pre>
    * Output only. Cluster UUID for the operation.
    * </pre>
    *
    * <code>string cluster_uuid = 8;</code>
    */
-  com.google.protobuf.ByteString
-      getClusterUuidBytes();
+  com.google.protobuf.ByteString getClusterUuidBytes();
 
   /**
+   *
+   *
    * <pre>
    * Output only. Current operation status.
    * </pre>
@@ -52,6 +61,8 @@ public interface ClusterOperationMetadataOrBuilder extends
    */
   boolean hasStatus();
   /**
+   *
+   *
    * <pre>
    * Output only. Current operation status.
    * </pre>
@@ -60,6 +71,8 @@ public interface ClusterOperationMetadataOrBuilder extends
    */
   com.google.cloud.dataproc.v1beta2.ClusterOperationStatus getStatus();
   /**
+   *
+   *
    * <pre>
    * Output only. Current operation status.
    * </pre>
@@ -69,50 +82,66 @@ public interface ClusterOperationMetadataOrBuilder extends
   com.google.cloud.dataproc.v1beta2.ClusterOperationStatusOrBuilder getStatusOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Output only. The previous operation status.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1beta2.ClusterOperationStatus status_history = 10;</code>
+   * <code>repeated .google.cloud.dataproc.v1beta2.ClusterOperationStatus status_history = 10;
+   * </code>
    */
-  java.util.List<com.google.cloud.dataproc.v1beta2.ClusterOperationStatus> 
-      getStatusHistoryList();
+  java.util.List<com.google.cloud.dataproc.v1beta2.ClusterOperationStatus> getStatusHistoryList();
   /**
+   *
+   *
    * <pre>
    * Output only. The previous operation status.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1beta2.ClusterOperationStatus status_history = 10;</code>
+   * <code>repeated .google.cloud.dataproc.v1beta2.ClusterOperationStatus status_history = 10;
+   * </code>
    */
   com.google.cloud.dataproc.v1beta2.ClusterOperationStatus getStatusHistory(int index);
   /**
+   *
+   *
    * <pre>
    * Output only. The previous operation status.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1beta2.ClusterOperationStatus status_history = 10;</code>
+   * <code>repeated .google.cloud.dataproc.v1beta2.ClusterOperationStatus status_history = 10;
+   * </code>
    */
   int getStatusHistoryCount();
   /**
+   *
+   *
    * <pre>
    * Output only. The previous operation status.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1beta2.ClusterOperationStatus status_history = 10;</code>
+   * <code>repeated .google.cloud.dataproc.v1beta2.ClusterOperationStatus status_history = 10;
+   * </code>
    */
-  java.util.List<? extends com.google.cloud.dataproc.v1beta2.ClusterOperationStatusOrBuilder> 
+  java.util.List<? extends com.google.cloud.dataproc.v1beta2.ClusterOperationStatusOrBuilder>
       getStatusHistoryOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * Output only. The previous operation status.
    * </pre>
    *
-   * <code>repeated .google.cloud.dataproc.v1beta2.ClusterOperationStatus status_history = 10;</code>
+   * <code>repeated .google.cloud.dataproc.v1beta2.ClusterOperationStatus status_history = 10;
+   * </code>
    */
   com.google.cloud.dataproc.v1beta2.ClusterOperationStatusOrBuilder getStatusHistoryOrBuilder(
       int index);
 
   /**
+   *
+   *
    * <pre>
    * Output only. The operation type.
    * </pre>
@@ -121,16 +150,19 @@ public interface ClusterOperationMetadataOrBuilder extends
    */
   java.lang.String getOperationType();
   /**
+   *
+   *
    * <pre>
    * Output only. The operation type.
    * </pre>
    *
    * <code>string operation_type = 11;</code>
    */
-  com.google.protobuf.ByteString
-      getOperationTypeBytes();
+  com.google.protobuf.ByteString getOperationTypeBytes();
 
   /**
+   *
+   *
    * <pre>
    * Output only. Short description of operation.
    * </pre>
@@ -139,16 +171,19 @@ public interface ClusterOperationMetadataOrBuilder extends
    */
   java.lang.String getDescription();
   /**
+   *
+   *
    * <pre>
    * Output only. Short description of operation.
    * </pre>
    *
    * <code>string description = 12;</code>
    */
-  com.google.protobuf.ByteString
-      getDescriptionBytes();
+  com.google.protobuf.ByteString getDescriptionBytes();
 
   /**
+   *
+   *
    * <pre>
    * Output only. Labels associated with the operation
    * </pre>
@@ -157,61 +192,62 @@ public interface ClusterOperationMetadataOrBuilder extends
    */
   int getLabelsCount();
   /**
+   *
+   *
    * <pre>
    * Output only. Labels associated with the operation
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 13;</code>
    */
-  boolean containsLabels(
-      java.lang.String key);
-  /**
-   * Use {@link #getLabelsMap()} instead.
-   */
+  boolean containsLabels(java.lang.String key);
+  /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
-  java.util.Map<java.lang.String, java.lang.String>
-  getLabels();
+  java.util.Map<java.lang.String, java.lang.String> getLabels();
   /**
+   *
+   *
    * <pre>
    * Output only. Labels associated with the operation
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 13;</code>
    */
-  java.util.Map<java.lang.String, java.lang.String>
-  getLabelsMap();
+  java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
   /**
+   *
+   *
    * <pre>
    * Output only. Labels associated with the operation
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 13;</code>
    */
-
-  java.lang.String getLabelsOrDefault(
-      java.lang.String key,
-      java.lang.String defaultValue);
+  java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue);
   /**
+   *
+   *
    * <pre>
    * Output only. Labels associated with the operation
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 13;</code>
    */
-
-  java.lang.String getLabelsOrThrow(
-      java.lang.String key);
+  java.lang.String getLabelsOrThrow(java.lang.String key);
 
   /**
+   *
+   *
    * <pre>
    * Output only. Errors encountered during operation execution.
    * </pre>
    *
    * <code>repeated string warnings = 14;</code>
    */
-  java.util.List<java.lang.String>
-      getWarningsList();
+  java.util.List<java.lang.String> getWarningsList();
   /**
+   *
+   *
    * <pre>
    * Output only. Errors encountered during operation execution.
    * </pre>
@@ -220,6 +256,8 @@ public interface ClusterOperationMetadataOrBuilder extends
    */
   int getWarningsCount();
   /**
+   *
+   *
    * <pre>
    * Output only. Errors encountered during operation execution.
    * </pre>
@@ -228,12 +266,13 @@ public interface ClusterOperationMetadataOrBuilder extends
    */
   java.lang.String getWarnings(int index);
   /**
+   *
+   *
    * <pre>
    * Output only. Errors encountered during operation execution.
    * </pre>
    *
    * <code>repeated string warnings = 14;</code>
    */
-  com.google.protobuf.ByteString
-      getWarningsBytes(int index);
+  com.google.protobuf.ByteString getWarningsBytes(int index);
 }

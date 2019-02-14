@@ -16,9 +16,5 @@
 
 package com.google.cloud.datastore;
 
-
-/**
- * An interface that combines both Google Cloud Datastore read and write operations.
- */
-public interface DatastoreReaderWriter extends DatastoreReader, DatastoreWriter {
-}
+/** An interface that combines both Google Cloud Datastore read and write operations. */
+public interface DatastoreReaderWriter extends DatastoreReader, DatastoreWriter {}

@@ -42,9 +42,7 @@ public abstract class TimePartitioning implements Serializable {
    */
   public enum Type {
 
-    /**
-     * Table is partitioned per day, based on data loading time.
-     */
+    /** Table is partitioned per day, based on data loading time. */
     DAY
   }
 
@@ -58,14 +56,12 @@ public abstract class TimePartitioning implements Serializable {
    */
   public abstract Type getType();
 
-
   /**
    * Returns the number of milliseconds for which to keep the storage for a partition. When expired,
    * the storage for the partition is reclaimed. If null, the partion does not expire.
    */
   @Nullable
   public abstract Long getExpirationMs();
-
 
   /**
    * If not set, the table is partitioned by pseudo column '_PARTITIONTIME'; if set, the table is
@@ -74,7 +70,6 @@ public abstract class TimePartitioning implements Serializable {
   @BetaApi
   @Nullable
   public abstract String getField();
-
 
   /**
    * If set to true, queries over this table require a partition filter (that can be used for

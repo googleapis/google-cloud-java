@@ -3,11 +3,14 @@
 
 package com.google.container.v1;
 
-public interface IPAllocationPolicyOrBuilder extends
+public interface IPAllocationPolicyOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.container.v1.IPAllocationPolicy)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Whether alias IPs will be used for pod IPs in the cluster.
    * </pre>
@@ -17,6 +20,8 @@ public interface IPAllocationPolicyOrBuilder extends
   boolean getUseIpAliases();
 
   /**
+   *
+   *
    * <pre>
    * Whether a new subnetwork will be created automatically for the cluster.
    * This field is only applicable when `use_ip_aliases` is true.
@@ -27,6 +32,8 @@ public interface IPAllocationPolicyOrBuilder extends
   boolean getCreateSubnetwork();
 
   /**
+   *
+   *
    * <pre>
    * A custom subnetwork name to be used if `create_subnetwork` is true.  If
    * this field is empty, then an automatic name will be chosen for the new
@@ -37,6 +44,8 @@ public interface IPAllocationPolicyOrBuilder extends
    */
   java.lang.String getSubnetworkName();
   /**
+   *
+   *
    * <pre>
    * A custom subnetwork name to be used if `create_subnetwork` is true.  If
    * this field is empty, then an automatic name will be chosen for the new
@@ -45,64 +54,80 @@ public interface IPAllocationPolicyOrBuilder extends
    *
    * <code>string subnetwork_name = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getSubnetworkNameBytes();
+  com.google.protobuf.ByteString getSubnetworkNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * This field is deprecated, use cluster_ipv4_cidr_block.
    * </pre>
    *
-   * <code>string cluster_ipv4_cidr = 4;</code>
+   * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   java.lang.String getClusterIpv4Cidr();
   /**
+   *
+   *
    * <pre>
    * This field is deprecated, use cluster_ipv4_cidr_block.
    * </pre>
    *
-   * <code>string cluster_ipv4_cidr = 4;</code>
+   * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
    */
-  com.google.protobuf.ByteString
-      getClusterIpv4CidrBytes();
+  @java.lang.Deprecated
+  com.google.protobuf.ByteString getClusterIpv4CidrBytes();
 
   /**
+   *
+   *
    * <pre>
    * This field is deprecated, use node_ipv4_cidr_block.
    * </pre>
    *
-   * <code>string node_ipv4_cidr = 5;</code>
+   * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   java.lang.String getNodeIpv4Cidr();
   /**
+   *
+   *
    * <pre>
    * This field is deprecated, use node_ipv4_cidr_block.
    * </pre>
    *
-   * <code>string node_ipv4_cidr = 5;</code>
+   * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
    */
-  com.google.protobuf.ByteString
-      getNodeIpv4CidrBytes();
+  @java.lang.Deprecated
+  com.google.protobuf.ByteString getNodeIpv4CidrBytes();
 
   /**
+   *
+   *
    * <pre>
    * This field is deprecated, use services_ipv4_cidr_block.
    * </pre>
    *
-   * <code>string services_ipv4_cidr = 6;</code>
+   * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   java.lang.String getServicesIpv4Cidr();
   /**
+   *
+   *
    * <pre>
    * This field is deprecated, use services_ipv4_cidr_block.
    * </pre>
    *
-   * <code>string services_ipv4_cidr = 6;</code>
+   * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
    */
-  com.google.protobuf.ByteString
-      getServicesIpv4CidrBytes();
+  @java.lang.Deprecated
+  com.google.protobuf.ByteString getServicesIpv4CidrBytes();
 
   /**
+   *
+   *
    * <pre>
    * The name of the secondary range to be used for the cluster CIDR
    * block.  The secondary range will be used for pod IP
@@ -116,6 +141,8 @@ public interface IPAllocationPolicyOrBuilder extends
    */
   java.lang.String getClusterSecondaryRangeName();
   /**
+   *
+   *
    * <pre>
    * The name of the secondary range to be used for the cluster CIDR
    * block.  The secondary range will be used for pod IP
@@ -127,10 +154,11 @@ public interface IPAllocationPolicyOrBuilder extends
    *
    * <code>string cluster_secondary_range_name = 7;</code>
    */
-  com.google.protobuf.ByteString
-      getClusterSecondaryRangeNameBytes();
+  com.google.protobuf.ByteString getClusterSecondaryRangeNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * The name of the secondary range to be used as for the services
    * CIDR block.  The secondary range will be used for service
@@ -144,6 +172,8 @@ public interface IPAllocationPolicyOrBuilder extends
    */
   java.lang.String getServicesSecondaryRangeName();
   /**
+   *
+   *
    * <pre>
    * The name of the secondary range to be used as for the services
    * CIDR block.  The secondary range will be used for service
@@ -155,10 +185,11 @@ public interface IPAllocationPolicyOrBuilder extends
    *
    * <code>string services_secondary_range_name = 8;</code>
    */
-  com.google.protobuf.ByteString
-      getServicesSecondaryRangeNameBytes();
+  com.google.protobuf.ByteString getServicesSecondaryRangeNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * The IP address range for the cluster pod IPs. If this field is set, then
    * `cluster.cluster_ipv4_cidr` must be left blank.
@@ -177,6 +208,8 @@ public interface IPAllocationPolicyOrBuilder extends
    */
   java.lang.String getClusterIpv4CidrBlock();
   /**
+   *
+   *
    * <pre>
    * The IP address range for the cluster pod IPs. If this field is set, then
    * `cluster.cluster_ipv4_cidr` must be left blank.
@@ -193,10 +226,11 @@ public interface IPAllocationPolicyOrBuilder extends
    *
    * <code>string cluster_ipv4_cidr_block = 9;</code>
    */
-  com.google.protobuf.ByteString
-      getClusterIpv4CidrBlockBytes();
+  com.google.protobuf.ByteString getClusterIpv4CidrBlockBytes();
 
   /**
+   *
+   *
    * <pre>
    * The IP address range of the instance IPs in this cluster.
    * This is applicable only if `create_subnetwork` is true.
@@ -214,6 +248,8 @@ public interface IPAllocationPolicyOrBuilder extends
    */
   java.lang.String getNodeIpv4CidrBlock();
   /**
+   *
+   *
    * <pre>
    * The IP address range of the instance IPs in this cluster.
    * This is applicable only if `create_subnetwork` is true.
@@ -229,10 +265,11 @@ public interface IPAllocationPolicyOrBuilder extends
    *
    * <code>string node_ipv4_cidr_block = 10;</code>
    */
-  com.google.protobuf.ByteString
-      getNodeIpv4CidrBlockBytes();
+  com.google.protobuf.ByteString getNodeIpv4CidrBlockBytes();
 
   /**
+   *
+   *
    * <pre>
    * The IP address range of the services IPs in this cluster. If blank, a range
    * will be automatically chosen with the default size.
@@ -251,6 +288,8 @@ public interface IPAllocationPolicyOrBuilder extends
    */
   java.lang.String getServicesIpv4CidrBlock();
   /**
+   *
+   *
    * <pre>
    * The IP address range of the services IPs in this cluster. If blank, a range
    * will be automatically chosen with the default size.
@@ -267,6 +306,5 @@ public interface IPAllocationPolicyOrBuilder extends
    *
    * <code>string services_ipv4_cidr_block = 11;</code>
    */
-  com.google.protobuf.ByteString
-      getServicesIpv4CidrBlockBytes();
+  com.google.protobuf.ByteString getServicesIpv4CidrBlockBytes();
 }

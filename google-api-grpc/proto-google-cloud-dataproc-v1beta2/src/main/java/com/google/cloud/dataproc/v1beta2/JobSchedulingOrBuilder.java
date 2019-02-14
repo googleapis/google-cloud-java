@@ -3,11 +3,14 @@
 
 package com.google.cloud.dataproc.v1beta2;
 
-public interface JobSchedulingOrBuilder extends
+public interface JobSchedulingOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dataproc.v1beta2.JobScheduling)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Optional. Maximum number of times per hour a driver may be restarted as
    * a result of driver terminating with non-zero code before job is

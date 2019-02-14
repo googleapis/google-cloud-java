@@ -3,11 +3,14 @@
 
 package com.google.cloud.dataproc.v1beta2;
 
-public interface ClusterOperationOrBuilder extends
+public interface ClusterOperationOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dataproc.v1beta2.ClusterOperation)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Output only. The id of the cluster operation.
    * </pre>
@@ -16,16 +19,19 @@ public interface ClusterOperationOrBuilder extends
    */
   java.lang.String getOperationId();
   /**
+   *
+   *
    * <pre>
    * Output only. The id of the cluster operation.
    * </pre>
    *
    * <code>string operation_id = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getOperationIdBytes();
+  com.google.protobuf.ByteString getOperationIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * Output only. Error, if operation failed.
    * </pre>
@@ -34,16 +40,19 @@ public interface ClusterOperationOrBuilder extends
    */
   java.lang.String getError();
   /**
+   *
+   *
    * <pre>
    * Output only. Error, if operation failed.
    * </pre>
    *
    * <code>string error = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getErrorBytes();
+  com.google.protobuf.ByteString getErrorBytes();
 
   /**
+   *
+   *
    * <pre>
    * Output only. Indicates the operation is done.
    * </pre>

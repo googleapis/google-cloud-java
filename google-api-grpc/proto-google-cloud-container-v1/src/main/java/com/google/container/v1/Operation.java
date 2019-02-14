@@ -4,6 +4,8 @@
 package com.google.container.v1;
 
 /**
+ *
+ *
  * <pre>
  * This operation resource represents operations that may have happened or are
  * happening on the cluster. All fields are output only.
@@ -11,15 +13,16 @@ package com.google.container.v1;
  *
  * Protobuf type {@code google.container.v1.Operation}
  */
-public  final class Operation extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class Operation extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.container.v1.Operation)
     OperationOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use Operation.newBuilder() to construct.
   private Operation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private Operation() {
     name_ = "";
     zone_ = "";
@@ -29,20 +32,24 @@ private static final long serialVersionUID = 0L;
     statusMessage_ = "";
     selfLink_ = "";
     targetLink_ = "";
+    location_ = "";
     startTime_ = "";
     endTime_ = "";
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private Operation(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -54,107 +61,130 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              name_ = s;
+              break;
             }
-            break;
-          }
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 18:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            name_ = s;
-            break;
-          }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
+              zone_ = s;
+              break;
+            }
+          case 24:
+            {
+              int rawValue = input.readEnum();
 
-            zone_ = s;
-            break;
-          }
-          case 24: {
-            int rawValue = input.readEnum();
+              operationType_ = rawValue;
+              break;
+            }
+          case 32:
+            {
+              int rawValue = input.readEnum();
 
-            operationType_ = rawValue;
-            break;
-          }
-          case 32: {
-            int rawValue = input.readEnum();
+              status_ = rawValue;
+              break;
+            }
+          case 42:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            status_ = rawValue;
-            break;
-          }
-          case 42: {
-            java.lang.String s = input.readStringRequireUtf8();
+              statusMessage_ = s;
+              break;
+            }
+          case 50:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            statusMessage_ = s;
-            break;
-          }
-          case 50: {
-            java.lang.String s = input.readStringRequireUtf8();
+              selfLink_ = s;
+              break;
+            }
+          case 58:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            selfLink_ = s;
-            break;
-          }
-          case 58: {
-            java.lang.String s = input.readStringRequireUtf8();
+              targetLink_ = s;
+              break;
+            }
+          case 66:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            targetLink_ = s;
-            break;
-          }
-          case 66: {
-            java.lang.String s = input.readStringRequireUtf8();
+              detail_ = s;
+              break;
+            }
+          case 74:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            detail_ = s;
-            break;
-          }
-          case 82: {
-            java.lang.String s = input.readStringRequireUtf8();
+              location_ = s;
+              break;
+            }
+          case 82:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            startTime_ = s;
-            break;
-          }
-          case 90: {
-            java.lang.String s = input.readStringRequireUtf8();
+              startTime_ = s;
+              break;
+            }
+          case 90:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            endTime_ = s;
-            break;
-          }
+              endTime_ = s;
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_Operation_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.container.v1.ClusterServiceProto
+        .internal_static_google_container_v1_Operation_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_Operation_fieldAccessorTable
+    return com.google.container.v1.ClusterServiceProto
+        .internal_static_google_container_v1_Operation_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.container.v1.Operation.class, com.google.container.v1.Operation.Builder.class);
+            com.google.container.v1.Operation.class,
+            com.google.container.v1.Operation.Builder.class);
   }
 
   /**
+   *
+   *
    * <pre>
    * Current status of the operation.
    * </pre>
    *
    * Protobuf enum {@code google.container.v1.Operation.Status}
    */
-  public enum Status
-      implements com.google.protobuf.ProtocolMessageEnum {
+  public enum Status implements com.google.protobuf.ProtocolMessageEnum {
     /**
+     *
+     *
      * <pre>
      * Not set.
      * </pre>
@@ -163,6 +193,8 @@ private static final long serialVersionUID = 0L;
      */
     STATUS_UNSPECIFIED(0),
     /**
+     *
+     *
      * <pre>
      * The operation has been created.
      * </pre>
@@ -171,6 +203,8 @@ private static final long serialVersionUID = 0L;
      */
     PENDING(1),
     /**
+     *
+     *
      * <pre>
      * The operation is currently running.
      * </pre>
@@ -179,6 +213,8 @@ private static final long serialVersionUID = 0L;
      */
     RUNNING(2),
     /**
+     *
+     *
      * <pre>
      * The operation is done, either cancelled or completed.
      * </pre>
@@ -187,6 +223,8 @@ private static final long serialVersionUID = 0L;
      */
     DONE(3),
     /**
+     *
+     *
      * <pre>
      * The operation is aborting.
      * </pre>
@@ -198,6 +236,8 @@ private static final long serialVersionUID = 0L;
     ;
 
     /**
+     *
+     *
      * <pre>
      * Not set.
      * </pre>
@@ -206,6 +246,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int STATUS_UNSPECIFIED_VALUE = 0;
     /**
+     *
+     *
      * <pre>
      * The operation has been created.
      * </pre>
@@ -214,6 +256,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int PENDING_VALUE = 1;
     /**
+     *
+     *
      * <pre>
      * The operation is currently running.
      * </pre>
@@ -222,6 +266,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int RUNNING_VALUE = 2;
     /**
+     *
+     *
      * <pre>
      * The operation is done, either cancelled or completed.
      * </pre>
@@ -230,6 +276,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int DONE_VALUE = 3;
     /**
+     *
+     *
      * <pre>
      * The operation is aborting.
      * </pre>
@@ -237,7 +285,6 @@ private static final long serialVersionUID = 0L;
      * <code>ABORTING = 4;</code>
      */
     public static final int ABORTING_VALUE = 4;
-
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -247,9 +294,7 @@ private static final long serialVersionUID = 0L;
       return value;
     }
 
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static Status valueOf(int value) {
       return forNumber(value);
@@ -257,47 +302,49 @@ private static final long serialVersionUID = 0L;
 
     public static Status forNumber(int value) {
       switch (value) {
-        case 0: return STATUS_UNSPECIFIED;
-        case 1: return PENDING;
-        case 2: return RUNNING;
-        case 3: return DONE;
-        case 4: return ABORTING;
-        default: return null;
+        case 0:
+          return STATUS_UNSPECIFIED;
+        case 1:
+          return PENDING;
+        case 2:
+          return RUNNING;
+        case 3:
+          return DONE;
+        case 4:
+          return ABORTING;
+        default:
+          return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<Status>
-        internalGetValueMap() {
+    public static com.google.protobuf.Internal.EnumLiteMap<Status> internalGetValueMap() {
       return internalValueMap;
     }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        Status> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<Status>() {
-            public Status findValueByNumber(int number) {
-              return Status.forNumber(number);
-            }
-          };
 
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
+    private static final com.google.protobuf.Internal.EnumLiteMap<Status> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Status>() {
+          public Status findValueByNumber(int number) {
+            return Status.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
       return getDescriptor().getValues().get(ordinal());
     }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
       return getDescriptor();
     }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
       return com.google.container.v1.Operation.getDescriptor().getEnumTypes().get(0);
     }
 
     private static final Status[] VALUES = values();
 
-    public static Status valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+    public static Status valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
         return UNRECOGNIZED;
@@ -315,15 +362,18 @@ private static final long serialVersionUID = 0L;
   }
 
   /**
+   *
+   *
    * <pre>
    * Operation type.
    * </pre>
    *
    * Protobuf enum {@code google.container.v1.Operation.Type}
    */
-  public enum Type
-      implements com.google.protobuf.ProtocolMessageEnum {
+  public enum Type implements com.google.protobuf.ProtocolMessageEnum {
     /**
+     *
+     *
      * <pre>
      * Not set.
      * </pre>
@@ -332,6 +382,8 @@ private static final long serialVersionUID = 0L;
      */
     TYPE_UNSPECIFIED(0),
     /**
+     *
+     *
      * <pre>
      * Cluster create.
      * </pre>
@@ -340,6 +392,8 @@ private static final long serialVersionUID = 0L;
      */
     CREATE_CLUSTER(1),
     /**
+     *
+     *
      * <pre>
      * Cluster delete.
      * </pre>
@@ -348,6 +402,8 @@ private static final long serialVersionUID = 0L;
      */
     DELETE_CLUSTER(2),
     /**
+     *
+     *
      * <pre>
      * A master upgrade.
      * </pre>
@@ -356,6 +412,8 @@ private static final long serialVersionUID = 0L;
      */
     UPGRADE_MASTER(3),
     /**
+     *
+     *
      * <pre>
      * A node upgrade.
      * </pre>
@@ -364,6 +422,8 @@ private static final long serialVersionUID = 0L;
      */
     UPGRADE_NODES(4),
     /**
+     *
+     *
      * <pre>
      * Cluster repair.
      * </pre>
@@ -372,6 +432,8 @@ private static final long serialVersionUID = 0L;
      */
     REPAIR_CLUSTER(5),
     /**
+     *
+     *
      * <pre>
      * Cluster update.
      * </pre>
@@ -380,6 +442,8 @@ private static final long serialVersionUID = 0L;
      */
     UPDATE_CLUSTER(6),
     /**
+     *
+     *
      * <pre>
      * Node pool create.
      * </pre>
@@ -388,6 +452,8 @@ private static final long serialVersionUID = 0L;
      */
     CREATE_NODE_POOL(7),
     /**
+     *
+     *
      * <pre>
      * Node pool delete.
      * </pre>
@@ -396,6 +462,8 @@ private static final long serialVersionUID = 0L;
      */
     DELETE_NODE_POOL(8),
     /**
+     *
+     *
      * <pre>
      * Set node pool management.
      * </pre>
@@ -404,6 +472,8 @@ private static final long serialVersionUID = 0L;
      */
     SET_NODE_POOL_MANAGEMENT(9),
     /**
+     *
+     *
      * <pre>
      * Automatic node pool repair.
      * </pre>
@@ -412,6 +482,8 @@ private static final long serialVersionUID = 0L;
      */
     AUTO_REPAIR_NODES(10),
     /**
+     *
+     *
      * <pre>
      * Automatic node upgrade.
      * </pre>
@@ -420,6 +492,8 @@ private static final long serialVersionUID = 0L;
      */
     AUTO_UPGRADE_NODES(11),
     /**
+     *
+     *
      * <pre>
      * Set labels.
      * </pre>
@@ -428,6 +502,8 @@ private static final long serialVersionUID = 0L;
      */
     SET_LABELS(12),
     /**
+     *
+     *
      * <pre>
      * Set/generate master auth materials
      * </pre>
@@ -436,6 +512,8 @@ private static final long serialVersionUID = 0L;
      */
     SET_MASTER_AUTH(13),
     /**
+     *
+     *
      * <pre>
      * Set node pool size.
      * </pre>
@@ -444,6 +522,8 @@ private static final long serialVersionUID = 0L;
      */
     SET_NODE_POOL_SIZE(14),
     /**
+     *
+     *
      * <pre>
      * Updates network policy for a cluster.
      * </pre>
@@ -452,6 +532,8 @@ private static final long serialVersionUID = 0L;
      */
     SET_NETWORK_POLICY(15),
     /**
+     *
+     *
      * <pre>
      * Set the maintenance policy.
      * </pre>
@@ -463,6 +545,8 @@ private static final long serialVersionUID = 0L;
     ;
 
     /**
+     *
+     *
      * <pre>
      * Not set.
      * </pre>
@@ -471,6 +555,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int TYPE_UNSPECIFIED_VALUE = 0;
     /**
+     *
+     *
      * <pre>
      * Cluster create.
      * </pre>
@@ -479,6 +565,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int CREATE_CLUSTER_VALUE = 1;
     /**
+     *
+     *
      * <pre>
      * Cluster delete.
      * </pre>
@@ -487,6 +575,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int DELETE_CLUSTER_VALUE = 2;
     /**
+     *
+     *
      * <pre>
      * A master upgrade.
      * </pre>
@@ -495,6 +585,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int UPGRADE_MASTER_VALUE = 3;
     /**
+     *
+     *
      * <pre>
      * A node upgrade.
      * </pre>
@@ -503,6 +595,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int UPGRADE_NODES_VALUE = 4;
     /**
+     *
+     *
      * <pre>
      * Cluster repair.
      * </pre>
@@ -511,6 +605,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int REPAIR_CLUSTER_VALUE = 5;
     /**
+     *
+     *
      * <pre>
      * Cluster update.
      * </pre>
@@ -519,6 +615,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int UPDATE_CLUSTER_VALUE = 6;
     /**
+     *
+     *
      * <pre>
      * Node pool create.
      * </pre>
@@ -527,6 +625,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int CREATE_NODE_POOL_VALUE = 7;
     /**
+     *
+     *
      * <pre>
      * Node pool delete.
      * </pre>
@@ -535,6 +635,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int DELETE_NODE_POOL_VALUE = 8;
     /**
+     *
+     *
      * <pre>
      * Set node pool management.
      * </pre>
@@ -543,6 +645,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int SET_NODE_POOL_MANAGEMENT_VALUE = 9;
     /**
+     *
+     *
      * <pre>
      * Automatic node pool repair.
      * </pre>
@@ -551,6 +655,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int AUTO_REPAIR_NODES_VALUE = 10;
     /**
+     *
+     *
      * <pre>
      * Automatic node upgrade.
      * </pre>
@@ -559,6 +665,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int AUTO_UPGRADE_NODES_VALUE = 11;
     /**
+     *
+     *
      * <pre>
      * Set labels.
      * </pre>
@@ -567,6 +675,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int SET_LABELS_VALUE = 12;
     /**
+     *
+     *
      * <pre>
      * Set/generate master auth materials
      * </pre>
@@ -575,6 +685,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int SET_MASTER_AUTH_VALUE = 13;
     /**
+     *
+     *
      * <pre>
      * Set node pool size.
      * </pre>
@@ -583,6 +695,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int SET_NODE_POOL_SIZE_VALUE = 14;
     /**
+     *
+     *
      * <pre>
      * Updates network policy for a cluster.
      * </pre>
@@ -591,6 +705,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int SET_NETWORK_POLICY_VALUE = 15;
     /**
+     *
+     *
      * <pre>
      * Set the maintenance policy.
      * </pre>
@@ -598,7 +714,6 @@ private static final long serialVersionUID = 0L;
      * <code>SET_MAINTENANCE_POLICY = 16;</code>
      */
     public static final int SET_MAINTENANCE_POLICY_VALUE = 16;
-
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -608,9 +723,7 @@ private static final long serialVersionUID = 0L;
       return value;
     }
 
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static Type valueOf(int value) {
       return forNumber(value);
@@ -618,59 +731,73 @@ private static final long serialVersionUID = 0L;
 
     public static Type forNumber(int value) {
       switch (value) {
-        case 0: return TYPE_UNSPECIFIED;
-        case 1: return CREATE_CLUSTER;
-        case 2: return DELETE_CLUSTER;
-        case 3: return UPGRADE_MASTER;
-        case 4: return UPGRADE_NODES;
-        case 5: return REPAIR_CLUSTER;
-        case 6: return UPDATE_CLUSTER;
-        case 7: return CREATE_NODE_POOL;
-        case 8: return DELETE_NODE_POOL;
-        case 9: return SET_NODE_POOL_MANAGEMENT;
-        case 10: return AUTO_REPAIR_NODES;
-        case 11: return AUTO_UPGRADE_NODES;
-        case 12: return SET_LABELS;
-        case 13: return SET_MASTER_AUTH;
-        case 14: return SET_NODE_POOL_SIZE;
-        case 15: return SET_NETWORK_POLICY;
-        case 16: return SET_MAINTENANCE_POLICY;
-        default: return null;
+        case 0:
+          return TYPE_UNSPECIFIED;
+        case 1:
+          return CREATE_CLUSTER;
+        case 2:
+          return DELETE_CLUSTER;
+        case 3:
+          return UPGRADE_MASTER;
+        case 4:
+          return UPGRADE_NODES;
+        case 5:
+          return REPAIR_CLUSTER;
+        case 6:
+          return UPDATE_CLUSTER;
+        case 7:
+          return CREATE_NODE_POOL;
+        case 8:
+          return DELETE_NODE_POOL;
+        case 9:
+          return SET_NODE_POOL_MANAGEMENT;
+        case 10:
+          return AUTO_REPAIR_NODES;
+        case 11:
+          return AUTO_UPGRADE_NODES;
+        case 12:
+          return SET_LABELS;
+        case 13:
+          return SET_MASTER_AUTH;
+        case 14:
+          return SET_NODE_POOL_SIZE;
+        case 15:
+          return SET_NETWORK_POLICY;
+        case 16:
+          return SET_MAINTENANCE_POLICY;
+        default:
+          return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<Type>
-        internalGetValueMap() {
+    public static com.google.protobuf.Internal.EnumLiteMap<Type> internalGetValueMap() {
       return internalValueMap;
     }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        Type> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<Type>() {
-            public Type findValueByNumber(int number) {
-              return Type.forNumber(number);
-            }
-          };
 
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
+    private static final com.google.protobuf.Internal.EnumLiteMap<Type> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Type>() {
+          public Type findValueByNumber(int number) {
+            return Type.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
       return getDescriptor().getValues().get(ordinal());
     }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
       return getDescriptor();
     }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
       return com.google.container.v1.Operation.getDescriptor().getEnumTypes().get(1);
     }
 
     private static final Type[] VALUES = values();
 
-    public static Type valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+    public static Type valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
         return UNRECOGNIZED;
@@ -690,6 +817,8 @@ private static final long serialVersionUID = 0L;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
+   *
+   *
    * <pre>
    * The server-assigned ID for the operation.
    * </pre>
@@ -701,27 +830,26 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       name_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The server-assigned ID for the operation.
    * </pre>
    *
    * <code>string name = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getNameBytes() {
+  public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       name_ = b;
       return b;
     } else {
@@ -732,42 +860,47 @@ private static final long serialVersionUID = 0L;
   public static final int ZONE_FIELD_NUMBER = 2;
   private volatile java.lang.Object zone_;
   /**
+   *
+   *
    * <pre>
    * The name of the Google Compute Engine
    * [zone](/compute/docs/zones#available) in which the operation
    * is taking place.
+   * This field is deprecated, use location instead.
    * </pre>
    *
-   * <code>string zone = 2;</code>
+   * <code>string zone = 2 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   public java.lang.String getZone() {
     java.lang.Object ref = zone_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       zone_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The name of the Google Compute Engine
    * [zone](/compute/docs/zones#available) in which the operation
    * is taking place.
+   * This field is deprecated, use location instead.
    * </pre>
    *
-   * <code>string zone = 2;</code>
+   * <code>string zone = 2 [deprecated = true];</code>
    */
-  public com.google.protobuf.ByteString
-      getZoneBytes() {
+  @java.lang.Deprecated
+  public com.google.protobuf.ByteString getZoneBytes() {
     java.lang.Object ref = zone_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       zone_ = b;
       return b;
     } else {
@@ -778,6 +911,8 @@ private static final long serialVersionUID = 0L;
   public static final int OPERATION_TYPE_FIELD_NUMBER = 3;
   private int operationType_;
   /**
+   *
+   *
    * <pre>
    * The operation type.
    * </pre>
@@ -788,6 +923,8 @@ private static final long serialVersionUID = 0L;
     return operationType_;
   }
   /**
+   *
+   *
    * <pre>
    * The operation type.
    * </pre>
@@ -795,13 +932,17 @@ private static final long serialVersionUID = 0L;
    * <code>.google.container.v1.Operation.Type operation_type = 3;</code>
    */
   public com.google.container.v1.Operation.Type getOperationType() {
-    com.google.container.v1.Operation.Type result = com.google.container.v1.Operation.Type.valueOf(operationType_);
+    @SuppressWarnings("deprecation")
+    com.google.container.v1.Operation.Type result =
+        com.google.container.v1.Operation.Type.valueOf(operationType_);
     return result == null ? com.google.container.v1.Operation.Type.UNRECOGNIZED : result;
   }
 
   public static final int STATUS_FIELD_NUMBER = 4;
   private int status_;
   /**
+   *
+   *
    * <pre>
    * The current status of the operation.
    * </pre>
@@ -812,6 +953,8 @@ private static final long serialVersionUID = 0L;
     return status_;
   }
   /**
+   *
+   *
    * <pre>
    * The current status of the operation.
    * </pre>
@@ -819,13 +962,17 @@ private static final long serialVersionUID = 0L;
    * <code>.google.container.v1.Operation.Status status = 4;</code>
    */
   public com.google.container.v1.Operation.Status getStatus() {
-    com.google.container.v1.Operation.Status result = com.google.container.v1.Operation.Status.valueOf(status_);
+    @SuppressWarnings("deprecation")
+    com.google.container.v1.Operation.Status result =
+        com.google.container.v1.Operation.Status.valueOf(status_);
     return result == null ? com.google.container.v1.Operation.Status.UNRECOGNIZED : result;
   }
 
   public static final int DETAIL_FIELD_NUMBER = 8;
   private volatile java.lang.Object detail_;
   /**
+   *
+   *
    * <pre>
    * Detailed operation progress, if available.
    * </pre>
@@ -837,27 +984,26 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       detail_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Detailed operation progress, if available.
    * </pre>
    *
    * <code>string detail = 8;</code>
    */
-  public com.google.protobuf.ByteString
-      getDetailBytes() {
+  public com.google.protobuf.ByteString getDetailBytes() {
     java.lang.Object ref = detail_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       detail_ = b;
       return b;
     } else {
@@ -868,6 +1014,8 @@ private static final long serialVersionUID = 0L;
   public static final int STATUS_MESSAGE_FIELD_NUMBER = 5;
   private volatile java.lang.Object statusMessage_;
   /**
+   *
+   *
    * <pre>
    * If an error has occurred, a textual description of the error.
    * </pre>
@@ -879,27 +1027,26 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       statusMessage_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * If an error has occurred, a textual description of the error.
    * </pre>
    *
    * <code>string status_message = 5;</code>
    */
-  public com.google.protobuf.ByteString
-      getStatusMessageBytes() {
+  public com.google.protobuf.ByteString getStatusMessageBytes() {
     java.lang.Object ref = statusMessage_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       statusMessage_ = b;
       return b;
     } else {
@@ -910,6 +1057,8 @@ private static final long serialVersionUID = 0L;
   public static final int SELF_LINK_FIELD_NUMBER = 6;
   private volatile java.lang.Object selfLink_;
   /**
+   *
+   *
    * <pre>
    * Server-defined URL for the resource.
    * </pre>
@@ -921,27 +1070,26 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       selfLink_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Server-defined URL for the resource.
    * </pre>
    *
    * <code>string self_link = 6;</code>
    */
-  public com.google.protobuf.ByteString
-      getSelfLinkBytes() {
+  public com.google.protobuf.ByteString getSelfLinkBytes() {
     java.lang.Object ref = selfLink_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       selfLink_ = b;
       return b;
     } else {
@@ -952,6 +1100,8 @@ private static final long serialVersionUID = 0L;
   public static final int TARGET_LINK_FIELD_NUMBER = 7;
   private volatile java.lang.Object targetLink_;
   /**
+   *
+   *
    * <pre>
    * Server-defined URL for the target of the operation.
    * </pre>
@@ -963,28 +1113,76 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       targetLink_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Server-defined URL for the target of the operation.
    * </pre>
    *
    * <code>string target_link = 7;</code>
    */
-  public com.google.protobuf.ByteString
-      getTargetLinkBytes() {
+  public com.google.protobuf.ByteString getTargetLinkBytes() {
     java.lang.Object ref = targetLink_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       targetLink_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
+  public static final int LOCATION_FIELD_NUMBER = 9;
+  private volatile java.lang.Object location_;
+  /**
+   *
+   *
+   * <pre>
+   * [Output only] The name of the Google Compute Engine
+   * [zone](/compute/docs/regions-zones/regions-zones#available) or
+   * [region](/compute/docs/regions-zones/regions-zones#available) in which
+   * the cluster resides.
+   * </pre>
+   *
+   * <code>string location = 9;</code>
+   */
+  public java.lang.String getLocation() {
+    java.lang.Object ref = location_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      location_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * [Output only] The name of the Google Compute Engine
+   * [zone](/compute/docs/regions-zones/regions-zones#available) or
+   * [region](/compute/docs/regions-zones/regions-zones#available) in which
+   * the cluster resides.
+   * </pre>
+   *
+   * <code>string location = 9;</code>
+   */
+  public com.google.protobuf.ByteString getLocationBytes() {
+    java.lang.Object ref = location_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      location_ = b;
       return b;
     } else {
       return (com.google.protobuf.ByteString) ref;
@@ -994,6 +1192,8 @@ private static final long serialVersionUID = 0L;
   public static final int START_TIME_FIELD_NUMBER = 10;
   private volatile java.lang.Object startTime_;
   /**
+   *
+   *
    * <pre>
    * [Output only] The time the operation started, in
    * [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
@@ -1006,14 +1206,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       startTime_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * [Output only] The time the operation started, in
    * [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
@@ -1021,13 +1222,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string start_time = 10;</code>
    */
-  public com.google.protobuf.ByteString
-      getStartTimeBytes() {
+  public com.google.protobuf.ByteString getStartTimeBytes() {
     java.lang.Object ref = startTime_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       startTime_ = b;
       return b;
     } else {
@@ -1038,6 +1237,8 @@ private static final long serialVersionUID = 0L;
   public static final int END_TIME_FIELD_NUMBER = 11;
   private volatile java.lang.Object endTime_;
   /**
+   *
+   *
    * <pre>
    * [Output only] The time the operation completed, in
    * [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
@@ -1050,14 +1251,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       endTime_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * [Output only] The time the operation completed, in
    * [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
@@ -1065,13 +1267,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string end_time = 11;</code>
    */
-  public com.google.protobuf.ByteString
-      getEndTimeBytes() {
+  public com.google.protobuf.ByteString getEndTimeBytes() {
     java.lang.Object ref = endTime_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       endTime_ = b;
       return b;
     } else {
@@ -1080,6 +1280,8 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -1089,8 +1291,8 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  @java.lang.Override
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
@@ -1115,6 +1317,9 @@ private static final long serialVersionUID = 0L;
     if (!getDetailBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 8, detail_);
     }
+    if (!getLocationBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 9, location_);
+    }
     if (!getStartTimeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 10, startTime_);
     }
@@ -1124,6 +1329,7 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -1136,12 +1342,10 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, zone_);
     }
     if (operationType_ != com.google.container.v1.Operation.Type.TYPE_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(3, operationType_);
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(3, operationType_);
     }
     if (status_ != com.google.container.v1.Operation.Status.STATUS_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(4, status_);
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, status_);
     }
     if (!getStatusMessageBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, statusMessage_);
@@ -1154,6 +1358,9 @@ private static final long serialVersionUID = 0L;
     }
     if (!getDetailBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, detail_);
+    }
+    if (!getLocationBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, location_);
     }
     if (!getStartTimeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, startTime_);
@@ -1169,7 +1376,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.container.v1.Operation)) {
       return super.equals(obj);
@@ -1177,24 +1384,17 @@ private static final long serialVersionUID = 0L;
     com.google.container.v1.Operation other = (com.google.container.v1.Operation) obj;
 
     boolean result = true;
-    result = result && getName()
-        .equals(other.getName());
-    result = result && getZone()
-        .equals(other.getZone());
+    result = result && getName().equals(other.getName());
+    result = result && getZone().equals(other.getZone());
     result = result && operationType_ == other.operationType_;
     result = result && status_ == other.status_;
-    result = result && getDetail()
-        .equals(other.getDetail());
-    result = result && getStatusMessage()
-        .equals(other.getStatusMessage());
-    result = result && getSelfLink()
-        .equals(other.getSelfLink());
-    result = result && getTargetLink()
-        .equals(other.getTargetLink());
-    result = result && getStartTime()
-        .equals(other.getStartTime());
-    result = result && getEndTime()
-        .equals(other.getEndTime());
+    result = result && getDetail().equals(other.getDetail());
+    result = result && getStatusMessage().equals(other.getStatusMessage());
+    result = result && getSelfLink().equals(other.getSelfLink());
+    result = result && getTargetLink().equals(other.getTargetLink());
+    result = result && getLocation().equals(other.getLocation());
+    result = result && getStartTime().equals(other.getStartTime());
+    result = result && getEndTime().equals(other.getEndTime());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -1222,6 +1422,8 @@ private static final long serialVersionUID = 0L;
     hash = (53 * hash) + getSelfLink().hashCode();
     hash = (37 * hash) + TARGET_LINK_FIELD_NUMBER;
     hash = (53 * hash) + getTargetLink().hashCode();
+    hash = (37 * hash) + LOCATION_FIELD_NUMBER;
+    hash = (53 * hash) + getLocation().hashCode();
     hash = (37 * hash) + START_TIME_FIELD_NUMBER;
     hash = (53 * hash) + getStartTime().hashCode();
     hash = (37 * hash) + END_TIME_FIELD_NUMBER;
@@ -1231,95 +1433,103 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.container.v1.Operation parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.container.v1.Operation parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.container.v1.Operation parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.container.v1.Operation parseFrom(
-      com.google.protobuf.ByteString data)
+
+  public static com.google.container.v1.Operation parseFrom(com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.container.v1.Operation parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.container.v1.Operation parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.container.v1.Operation parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.container.v1.Operation parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.container.v1.Operation parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.container.v1.Operation parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
   public static com.google.container.v1.Operation parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.container.v1.Operation parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.container.v1.Operation parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  public Builder newBuilderForType() { return newBuilder(); }
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-  public static Builder newBuilder(com.google.container.v1.Operation prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+
+  public static Builder newBuilder(com.google.container.v1.Operation prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+
+  @java.lang.Override
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * This operation resource represents operations that may have happened or are
    * happening on the cluster. All fields are output only.
@@ -1327,20 +1537,23 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.container.v1.Operation}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.container.v1.Operation)
       com.google.container.v1.OperationOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_Operation_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.container.v1.ClusterServiceProto
+          .internal_static_google_container_v1_Operation_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_Operation_fieldAccessorTable
+      return com.google.container.v1.ClusterServiceProto
+          .internal_static_google_container_v1_Operation_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.container.v1.Operation.class, com.google.container.v1.Operation.Builder.class);
+              com.google.container.v1.Operation.class,
+              com.google.container.v1.Operation.Builder.class);
     }
 
     // Construct using com.google.container.v1.Operation.newBuilder()
@@ -1348,16 +1561,16 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       name_ = "";
@@ -1376,6 +1589,8 @@ private static final long serialVersionUID = 0L;
 
       targetLink_ = "";
 
+      location_ = "";
+
       startTime_ = "";
 
       endTime_ = "";
@@ -1383,15 +1598,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_Operation_descriptor;
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.container.v1.ClusterServiceProto
+          .internal_static_google_container_v1_Operation_descriptor;
     }
 
+    @java.lang.Override
     public com.google.container.v1.Operation getDefaultInstanceForType() {
       return com.google.container.v1.Operation.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.container.v1.Operation build() {
       com.google.container.v1.Operation result = buildPartial();
       if (!result.isInitialized()) {
@@ -1400,6 +1618,7 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.container.v1.Operation buildPartial() {
       com.google.container.v1.Operation result = new com.google.container.v1.Operation(this);
       result.name_ = name_;
@@ -1410,41 +1629,50 @@ private static final long serialVersionUID = 0L;
       result.statusMessage_ = statusMessage_;
       result.selfLink_ = selfLink_;
       result.targetLink_ = targetLink_;
+      result.location_ = location_;
       result.startTime_ = startTime_;
       result.endTime_ = endTime_;
       onBuilt();
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+
+    @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+    @java.lang.Override
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+    @java.lang.Override
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
+    @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
+    @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.container.v1.Operation) {
-        return mergeFrom((com.google.container.v1.Operation)other);
+        return mergeFrom((com.google.container.v1.Operation) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -1483,6 +1711,10 @@ private static final long serialVersionUID = 0L;
         targetLink_ = other.targetLink_;
         onChanged();
       }
+      if (!other.getLocation().isEmpty()) {
+        location_ = other.location_;
+        onChanged();
+      }
       if (!other.getStartTime().isEmpty()) {
         startTime_ = other.startTime_;
         onChanged();
@@ -1496,10 +1728,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1520,6 +1754,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object name_ = "";
     /**
+     *
+     *
      * <pre>
      * The server-assigned ID for the operation.
      * </pre>
@@ -1529,8 +1765,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         name_ = s;
         return s;
@@ -1539,19 +1774,19 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The server-assigned ID for the operation.
      * </pre>
      *
      * <code>string name = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getNameBytes() {
+    public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         name_ = b;
         return b;
       } else {
@@ -1559,23 +1794,26 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The server-assigned ID for the operation.
      * </pre>
      *
      * <code>string name = 1;</code>
      */
-    public Builder setName(
-        java.lang.String value) {
+    public Builder setName(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       name_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The server-assigned ID for the operation.
      * </pre>
@@ -1583,25 +1821,26 @@ private static final long serialVersionUID = 0L;
      * <code>string name = 1;</code>
      */
     public Builder clearName() {
-      
+
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The server-assigned ID for the operation.
      * </pre>
      *
      * <code>string name = 1;</code>
      */
-    public Builder setNameBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       name_ = value;
       onChanged();
       return this;
@@ -1609,19 +1848,22 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object zone_ = "";
     /**
+     *
+     *
      * <pre>
      * The name of the Google Compute Engine
      * [zone](/compute/docs/zones#available) in which the operation
      * is taking place.
+     * This field is deprecated, use location instead.
      * </pre>
      *
-     * <code>string zone = 2;</code>
+     * <code>string zone = 2 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public java.lang.String getZone() {
       java.lang.Object ref = zone_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         zone_ = s;
         return s;
@@ -1630,21 +1872,23 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The name of the Google Compute Engine
      * [zone](/compute/docs/zones#available) in which the operation
      * is taking place.
+     * This field is deprecated, use location instead.
      * </pre>
      *
-     * <code>string zone = 2;</code>
+     * <code>string zone = 2 [deprecated = true];</code>
      */
-    public com.google.protobuf.ByteString
-        getZoneBytes() {
+    @java.lang.Deprecated
+    public com.google.protobuf.ByteString getZoneBytes() {
       java.lang.Object ref = zone_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         zone_ = b;
         return b;
       } else {
@@ -1652,55 +1896,65 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The name of the Google Compute Engine
      * [zone](/compute/docs/zones#available) in which the operation
      * is taking place.
+     * This field is deprecated, use location instead.
      * </pre>
      *
-     * <code>string zone = 2;</code>
+     * <code>string zone = 2 [deprecated = true];</code>
      */
-    public Builder setZone(
-        java.lang.String value) {
+    @java.lang.Deprecated
+    public Builder setZone(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       zone_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The name of the Google Compute Engine
      * [zone](/compute/docs/zones#available) in which the operation
      * is taking place.
+     * This field is deprecated, use location instead.
      * </pre>
      *
-     * <code>string zone = 2;</code>
+     * <code>string zone = 2 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder clearZone() {
-      
+
       zone_ = getDefaultInstance().getZone();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The name of the Google Compute Engine
      * [zone](/compute/docs/zones#available) in which the operation
      * is taking place.
+     * This field is deprecated, use location instead.
      * </pre>
      *
-     * <code>string zone = 2;</code>
+     * <code>string zone = 2 [deprecated = true];</code>
      */
-    public Builder setZoneBytes(
-        com.google.protobuf.ByteString value) {
+    @java.lang.Deprecated
+    public Builder setZoneBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       zone_ = value;
       onChanged();
       return this;
@@ -1708,6 +1962,8 @@ private static final long serialVersionUID = 0L;
 
     private int operationType_ = 0;
     /**
+     *
+     *
      * <pre>
      * The operation type.
      * </pre>
@@ -1718,6 +1974,8 @@ private static final long serialVersionUID = 0L;
       return operationType_;
     }
     /**
+     *
+     *
      * <pre>
      * The operation type.
      * </pre>
@@ -1730,6 +1988,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The operation type.
      * </pre>
@@ -1737,10 +1997,14 @@ private static final long serialVersionUID = 0L;
      * <code>.google.container.v1.Operation.Type operation_type = 3;</code>
      */
     public com.google.container.v1.Operation.Type getOperationType() {
-      com.google.container.v1.Operation.Type result = com.google.container.v1.Operation.Type.valueOf(operationType_);
+      @SuppressWarnings("deprecation")
+      com.google.container.v1.Operation.Type result =
+          com.google.container.v1.Operation.Type.valueOf(operationType_);
       return result == null ? com.google.container.v1.Operation.Type.UNRECOGNIZED : result;
     }
     /**
+     *
+     *
      * <pre>
      * The operation type.
      * </pre>
@@ -1751,12 +2015,14 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       operationType_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The operation type.
      * </pre>
@@ -1764,7 +2030,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.container.v1.Operation.Type operation_type = 3;</code>
      */
     public Builder clearOperationType() {
-      
+
       operationType_ = 0;
       onChanged();
       return this;
@@ -1772,6 +2038,8 @@ private static final long serialVersionUID = 0L;
 
     private int status_ = 0;
     /**
+     *
+     *
      * <pre>
      * The current status of the operation.
      * </pre>
@@ -1782,6 +2050,8 @@ private static final long serialVersionUID = 0L;
       return status_;
     }
     /**
+     *
+     *
      * <pre>
      * The current status of the operation.
      * </pre>
@@ -1794,6 +2064,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The current status of the operation.
      * </pre>
@@ -1801,10 +2073,14 @@ private static final long serialVersionUID = 0L;
      * <code>.google.container.v1.Operation.Status status = 4;</code>
      */
     public com.google.container.v1.Operation.Status getStatus() {
-      com.google.container.v1.Operation.Status result = com.google.container.v1.Operation.Status.valueOf(status_);
+      @SuppressWarnings("deprecation")
+      com.google.container.v1.Operation.Status result =
+          com.google.container.v1.Operation.Status.valueOf(status_);
       return result == null ? com.google.container.v1.Operation.Status.UNRECOGNIZED : result;
     }
     /**
+     *
+     *
      * <pre>
      * The current status of the operation.
      * </pre>
@@ -1815,12 +2091,14 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       status_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The current status of the operation.
      * </pre>
@@ -1828,7 +2106,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.container.v1.Operation.Status status = 4;</code>
      */
     public Builder clearStatus() {
-      
+
       status_ = 0;
       onChanged();
       return this;
@@ -1836,6 +2114,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object detail_ = "";
     /**
+     *
+     *
      * <pre>
      * Detailed operation progress, if available.
      * </pre>
@@ -1845,8 +2125,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getDetail() {
       java.lang.Object ref = detail_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         detail_ = s;
         return s;
@@ -1855,19 +2134,19 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Detailed operation progress, if available.
      * </pre>
      *
      * <code>string detail = 8;</code>
      */
-    public com.google.protobuf.ByteString
-        getDetailBytes() {
+    public com.google.protobuf.ByteString getDetailBytes() {
       java.lang.Object ref = detail_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         detail_ = b;
         return b;
       } else {
@@ -1875,23 +2154,26 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Detailed operation progress, if available.
      * </pre>
      *
      * <code>string detail = 8;</code>
      */
-    public Builder setDetail(
-        java.lang.String value) {
+    public Builder setDetail(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       detail_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Detailed operation progress, if available.
      * </pre>
@@ -1899,25 +2181,26 @@ private static final long serialVersionUID = 0L;
      * <code>string detail = 8;</code>
      */
     public Builder clearDetail() {
-      
+
       detail_ = getDefaultInstance().getDetail();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Detailed operation progress, if available.
      * </pre>
      *
      * <code>string detail = 8;</code>
      */
-    public Builder setDetailBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setDetailBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       detail_ = value;
       onChanged();
       return this;
@@ -1925,6 +2208,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object statusMessage_ = "";
     /**
+     *
+     *
      * <pre>
      * If an error has occurred, a textual description of the error.
      * </pre>
@@ -1934,8 +2219,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getStatusMessage() {
       java.lang.Object ref = statusMessage_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         statusMessage_ = s;
         return s;
@@ -1944,19 +2228,19 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * If an error has occurred, a textual description of the error.
      * </pre>
      *
      * <code>string status_message = 5;</code>
      */
-    public com.google.protobuf.ByteString
-        getStatusMessageBytes() {
+    public com.google.protobuf.ByteString getStatusMessageBytes() {
       java.lang.Object ref = statusMessage_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         statusMessage_ = b;
         return b;
       } else {
@@ -1964,23 +2248,26 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * If an error has occurred, a textual description of the error.
      * </pre>
      *
      * <code>string status_message = 5;</code>
      */
-    public Builder setStatusMessage(
-        java.lang.String value) {
+    public Builder setStatusMessage(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       statusMessage_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If an error has occurred, a textual description of the error.
      * </pre>
@@ -1988,25 +2275,26 @@ private static final long serialVersionUID = 0L;
      * <code>string status_message = 5;</code>
      */
     public Builder clearStatusMessage() {
-      
+
       statusMessage_ = getDefaultInstance().getStatusMessage();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If an error has occurred, a textual description of the error.
      * </pre>
      *
      * <code>string status_message = 5;</code>
      */
-    public Builder setStatusMessageBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setStatusMessageBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       statusMessage_ = value;
       onChanged();
       return this;
@@ -2014,6 +2302,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object selfLink_ = "";
     /**
+     *
+     *
      * <pre>
      * Server-defined URL for the resource.
      * </pre>
@@ -2023,8 +2313,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getSelfLink() {
       java.lang.Object ref = selfLink_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         selfLink_ = s;
         return s;
@@ -2033,19 +2322,19 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Server-defined URL for the resource.
      * </pre>
      *
      * <code>string self_link = 6;</code>
      */
-    public com.google.protobuf.ByteString
-        getSelfLinkBytes() {
+    public com.google.protobuf.ByteString getSelfLinkBytes() {
       java.lang.Object ref = selfLink_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         selfLink_ = b;
         return b;
       } else {
@@ -2053,23 +2342,26 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Server-defined URL for the resource.
      * </pre>
      *
      * <code>string self_link = 6;</code>
      */
-    public Builder setSelfLink(
-        java.lang.String value) {
+    public Builder setSelfLink(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       selfLink_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Server-defined URL for the resource.
      * </pre>
@@ -2077,25 +2369,26 @@ private static final long serialVersionUID = 0L;
      * <code>string self_link = 6;</code>
      */
     public Builder clearSelfLink() {
-      
+
       selfLink_ = getDefaultInstance().getSelfLink();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Server-defined URL for the resource.
      * </pre>
      *
      * <code>string self_link = 6;</code>
      */
-    public Builder setSelfLinkBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setSelfLinkBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       selfLink_ = value;
       onChanged();
       return this;
@@ -2103,6 +2396,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object targetLink_ = "";
     /**
+     *
+     *
      * <pre>
      * Server-defined URL for the target of the operation.
      * </pre>
@@ -2112,8 +2407,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getTargetLink() {
       java.lang.Object ref = targetLink_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         targetLink_ = s;
         return s;
@@ -2122,19 +2416,19 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Server-defined URL for the target of the operation.
      * </pre>
      *
      * <code>string target_link = 7;</code>
      */
-    public com.google.protobuf.ByteString
-        getTargetLinkBytes() {
+    public com.google.protobuf.ByteString getTargetLinkBytes() {
       java.lang.Object ref = targetLink_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         targetLink_ = b;
         return b;
       } else {
@@ -2142,23 +2436,26 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Server-defined URL for the target of the operation.
      * </pre>
      *
      * <code>string target_link = 7;</code>
      */
-    public Builder setTargetLink(
-        java.lang.String value) {
+    public Builder setTargetLink(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       targetLink_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Server-defined URL for the target of the operation.
      * </pre>
@@ -2166,32 +2463,144 @@ private static final long serialVersionUID = 0L;
      * <code>string target_link = 7;</code>
      */
     public Builder clearTargetLink() {
-      
+
       targetLink_ = getDefaultInstance().getTargetLink();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Server-defined URL for the target of the operation.
      * </pre>
      *
      * <code>string target_link = 7;</code>
      */
-    public Builder setTargetLinkBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setTargetLinkBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       targetLink_ = value;
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object location_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * [Output only] The name of the Google Compute Engine
+     * [zone](/compute/docs/regions-zones/regions-zones#available) or
+     * [region](/compute/docs/regions-zones/regions-zones#available) in which
+     * the cluster resides.
+     * </pre>
+     *
+     * <code>string location = 9;</code>
+     */
+    public java.lang.String getLocation() {
+      java.lang.Object ref = location_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        location_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output only] The name of the Google Compute Engine
+     * [zone](/compute/docs/regions-zones/regions-zones#available) or
+     * [region](/compute/docs/regions-zones/regions-zones#available) in which
+     * the cluster resides.
+     * </pre>
+     *
+     * <code>string location = 9;</code>
+     */
+    public com.google.protobuf.ByteString getLocationBytes() {
+      java.lang.Object ref = location_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        location_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output only] The name of the Google Compute Engine
+     * [zone](/compute/docs/regions-zones/regions-zones#available) or
+     * [region](/compute/docs/regions-zones/regions-zones#available) in which
+     * the cluster resides.
+     * </pre>
+     *
+     * <code>string location = 9;</code>
+     */
+    public Builder setLocation(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      location_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output only] The name of the Google Compute Engine
+     * [zone](/compute/docs/regions-zones/regions-zones#available) or
+     * [region](/compute/docs/regions-zones/regions-zones#available) in which
+     * the cluster resides.
+     * </pre>
+     *
+     * <code>string location = 9;</code>
+     */
+    public Builder clearLocation() {
+
+      location_ = getDefaultInstance().getLocation();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Output only] The name of the Google Compute Engine
+     * [zone](/compute/docs/regions-zones/regions-zones#available) or
+     * [region](/compute/docs/regions-zones/regions-zones#available) in which
+     * the cluster resides.
+     * </pre>
+     *
+     * <code>string location = 9;</code>
+     */
+    public Builder setLocationBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      location_ = value;
       onChanged();
       return this;
     }
 
     private java.lang.Object startTime_ = "";
     /**
+     *
+     *
      * <pre>
      * [Output only] The time the operation started, in
      * [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
@@ -2202,8 +2611,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getStartTime() {
       java.lang.Object ref = startTime_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         startTime_ = s;
         return s;
@@ -2212,6 +2620,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The time the operation started, in
      * [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
@@ -2219,13 +2629,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string start_time = 10;</code>
      */
-    public com.google.protobuf.ByteString
-        getStartTimeBytes() {
+    public com.google.protobuf.ByteString getStartTimeBytes() {
       java.lang.Object ref = startTime_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         startTime_ = b;
         return b;
       } else {
@@ -2233,6 +2641,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The time the operation started, in
      * [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
@@ -2240,17 +2650,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string start_time = 10;</code>
      */
-    public Builder setStartTime(
-        java.lang.String value) {
+    public Builder setStartTime(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       startTime_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The time the operation started, in
      * [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
@@ -2259,12 +2670,14 @@ private static final long serialVersionUID = 0L;
      * <code>string start_time = 10;</code>
      */
     public Builder clearStartTime() {
-      
+
       startTime_ = getDefaultInstance().getStartTime();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The time the operation started, in
      * [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
@@ -2272,13 +2685,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string start_time = 10;</code>
      */
-    public Builder setStartTimeBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setStartTimeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       startTime_ = value;
       onChanged();
       return this;
@@ -2286,6 +2698,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object endTime_ = "";
     /**
+     *
+     *
      * <pre>
      * [Output only] The time the operation completed, in
      * [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
@@ -2296,8 +2710,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getEndTime() {
       java.lang.Object ref = endTime_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         endTime_ = s;
         return s;
@@ -2306,6 +2719,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The time the operation completed, in
      * [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
@@ -2313,13 +2728,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string end_time = 11;</code>
      */
-    public com.google.protobuf.ByteString
-        getEndTimeBytes() {
+    public com.google.protobuf.ByteString getEndTimeBytes() {
       java.lang.Object ref = endTime_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         endTime_ = b;
         return b;
       } else {
@@ -2327,6 +2740,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The time the operation completed, in
      * [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
@@ -2334,17 +2749,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string end_time = 11;</code>
      */
-    public Builder setEndTime(
-        java.lang.String value) {
+    public Builder setEndTime(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       endTime_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The time the operation completed, in
      * [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
@@ -2353,12 +2769,14 @@ private static final long serialVersionUID = 0L;
      * <code>string end_time = 11;</code>
      */
     public Builder clearEndTime() {
-      
+
       endTime_ = getDefaultInstance().getEndTime();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The time the operation completed, in
      * [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
@@ -2366,33 +2784,34 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string end_time = 11;</code>
      */
-    public Builder setEndTimeBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setEndTimeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       endTime_ = value;
       onChanged();
       return this;
     }
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+
+    @java.lang.Override
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
     }
-
 
     // @@protoc_insertion_point(builder_scope:google.container.v1.Operation)
   }
 
   // @@protoc_insertion_point(class_scope:google.container.v1.Operation)
   private static final com.google.container.v1.Operation DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.container.v1.Operation();
   }
@@ -2401,15 +2820,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<Operation>
-      PARSER = new com.google.protobuf.AbstractParser<Operation>() {
-    public Operation parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Operation(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<Operation> PARSER =
+      new com.google.protobuf.AbstractParser<Operation>() {
+        @java.lang.Override
+        public Operation parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new Operation(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<Operation> parser() {
     return PARSER;
@@ -2420,9 +2840,8 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.container.v1.Operation getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

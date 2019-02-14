@@ -3,11 +3,14 @@
 
 package com.google.cloud.tasks.v2beta3;
 
-public interface QueueOrBuilder extends
+public interface QueueOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.tasks.v2beta3.Queue)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Caller-specified and required in [CreateQueue][google.cloud.tasks.v2beta3.CloudTasks.CreateQueue],
    * after which it becomes output only.
@@ -30,6 +33,8 @@ public interface QueueOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * Caller-specified and required in [CreateQueue][google.cloud.tasks.v2beta3.CloudTasks.CreateQueue],
    * after which it becomes output only.
@@ -50,31 +55,36 @@ public interface QueueOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
-   * App Engine HTTP queue.
-   * An App Engine queue is a queue that has an [AppEngineHttpQeueue][] type.
+   * [AppEngineHttpQueue][google.cloud.tasks.v2beta3.AppEngineHttpQueue] settings apply only to
+   * [App Engine tasks][google.cloud.tasks.v2beta3.AppEngineHttpRequest] in this queue.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.AppEngineHttpQueue app_engine_http_queue = 3;</code>
    */
   boolean hasAppEngineHttpQueue();
   /**
+   *
+   *
    * <pre>
-   * App Engine HTTP queue.
-   * An App Engine queue is a queue that has an [AppEngineHttpQeueue][] type.
+   * [AppEngineHttpQueue][google.cloud.tasks.v2beta3.AppEngineHttpQueue] settings apply only to
+   * [App Engine tasks][google.cloud.tasks.v2beta3.AppEngineHttpRequest] in this queue.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.AppEngineHttpQueue app_engine_http_queue = 3;</code>
    */
   com.google.cloud.tasks.v2beta3.AppEngineHttpQueue getAppEngineHttpQueue();
   /**
+   *
+   *
    * <pre>
-   * App Engine HTTP queue.
-   * An App Engine queue is a queue that has an [AppEngineHttpQeueue][] type.
+   * [AppEngineHttpQueue][google.cloud.tasks.v2beta3.AppEngineHttpQueue] settings apply only to
+   * [App Engine tasks][google.cloud.tasks.v2beta3.AppEngineHttpRequest] in this queue.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.AppEngineHttpQueue app_engine_http_queue = 3;</code>
@@ -82,12 +92,13 @@ public interface QueueOrBuilder extends
   com.google.cloud.tasks.v2beta3.AppEngineHttpQueueOrBuilder getAppEngineHttpQueueOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Rate limits for task dispatches.
-   * [rate_limits][google.cloud.tasks.v2beta3.Queue.rate_limits] and
-   * [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] are related because they both
-   * control task attempts however they control how tasks are
-   * attempted in different ways:
+   * [rate_limits][google.cloud.tasks.v2beta3.Queue.rate_limits] and [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] are
+   * related because they both control task attempts. However they control task
+   * attempts in different ways:
    * * [rate_limits][google.cloud.tasks.v2beta3.Queue.rate_limits] controls the total rate of
    *   dispatches from a queue (i.e. all traffic dispatched from the
    *   queue, regardless of whether the dispatch is from a first
@@ -96,18 +107,27 @@ public interface QueueOrBuilder extends
    *   particular a task after its first attempt fails. That is,
    *   [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] controls task retries (the
    *   second attempt, third attempt, etc).
+   * The queue's actual dispatch rate is the result of:
+   * * Number of tasks in the queue
+   * * User-specified throttling: [rate limits][Queue.RateLimits]
+   *   [retry configuration][Queue.RetryConfig], and the
+   *   [queue's state][google.cloud.tasks.v2beta3.Queue.state].
+   * * System throttling due to `429` (Too Many Requests) or `503` (Service
+   *   Unavailable) responses from the worker, high error rates, or to smooth
+   *   sudden large traffic spikes.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.RateLimits rate_limits = 4;</code>
    */
   boolean hasRateLimits();
   /**
+   *
+   *
    * <pre>
    * Rate limits for task dispatches.
-   * [rate_limits][google.cloud.tasks.v2beta3.Queue.rate_limits] and
-   * [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] are related because they both
-   * control task attempts however they control how tasks are
-   * attempted in different ways:
+   * [rate_limits][google.cloud.tasks.v2beta3.Queue.rate_limits] and [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] are
+   * related because they both control task attempts. However they control task
+   * attempts in different ways:
    * * [rate_limits][google.cloud.tasks.v2beta3.Queue.rate_limits] controls the total rate of
    *   dispatches from a queue (i.e. all traffic dispatched from the
    *   queue, regardless of whether the dispatch is from a first
@@ -116,18 +136,27 @@ public interface QueueOrBuilder extends
    *   particular a task after its first attempt fails. That is,
    *   [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] controls task retries (the
    *   second attempt, third attempt, etc).
+   * The queue's actual dispatch rate is the result of:
+   * * Number of tasks in the queue
+   * * User-specified throttling: [rate limits][Queue.RateLimits]
+   *   [retry configuration][Queue.RetryConfig], and the
+   *   [queue's state][google.cloud.tasks.v2beta3.Queue.state].
+   * * System throttling due to `429` (Too Many Requests) or `503` (Service
+   *   Unavailable) responses from the worker, high error rates, or to smooth
+   *   sudden large traffic spikes.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.RateLimits rate_limits = 4;</code>
    */
   com.google.cloud.tasks.v2beta3.RateLimits getRateLimits();
   /**
+   *
+   *
    * <pre>
    * Rate limits for task dispatches.
-   * [rate_limits][google.cloud.tasks.v2beta3.Queue.rate_limits] and
-   * [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] are related because they both
-   * control task attempts however they control how tasks are
-   * attempted in different ways:
+   * [rate_limits][google.cloud.tasks.v2beta3.Queue.rate_limits] and [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] are
+   * related because they both control task attempts. However they control task
+   * attempts in different ways:
    * * [rate_limits][google.cloud.tasks.v2beta3.Queue.rate_limits] controls the total rate of
    *   dispatches from a queue (i.e. all traffic dispatched from the
    *   queue, regardless of whether the dispatch is from a first
@@ -136,6 +165,14 @@ public interface QueueOrBuilder extends
    *   particular a task after its first attempt fails. That is,
    *   [retry_config][google.cloud.tasks.v2beta3.Queue.retry_config] controls task retries (the
    *   second attempt, third attempt, etc).
+   * The queue's actual dispatch rate is the result of:
+   * * Number of tasks in the queue
+   * * User-specified throttling: [rate limits][Queue.RateLimits]
+   *   [retry configuration][Queue.RetryConfig], and the
+   *   [queue's state][google.cloud.tasks.v2beta3.Queue.state].
+   * * System throttling due to `429` (Too Many Requests) or `503` (Service
+   *   Unavailable) responses from the worker, high error rates, or to smooth
+   *   sudden large traffic spikes.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.RateLimits rate_limits = 4;</code>
@@ -143,6 +180,8 @@ public interface QueueOrBuilder extends
   com.google.cloud.tasks.v2beta3.RateLimitsOrBuilder getRateLimitsOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Settings that determine the retry behavior.
    * * For tasks created using Cloud Tasks: the queue-level retry settings
@@ -158,6 +197,8 @@ public interface QueueOrBuilder extends
    */
   boolean hasRetryConfig();
   /**
+   *
+   *
    * <pre>
    * Settings that determine the retry behavior.
    * * For tasks created using Cloud Tasks: the queue-level retry settings
@@ -173,6 +214,8 @@ public interface QueueOrBuilder extends
    */
   com.google.cloud.tasks.v2beta3.RetryConfig getRetryConfig();
   /**
+   *
+   *
    * <pre>
    * Settings that determine the retry behavior.
    * * For tasks created using Cloud Tasks: the queue-level retry settings
@@ -189,6 +232,8 @@ public interface QueueOrBuilder extends
   com.google.cloud.tasks.v2beta3.RetryConfigOrBuilder getRetryConfigOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Output only. The state of the queue.
    * `state` can only be changed by called
@@ -202,6 +247,8 @@ public interface QueueOrBuilder extends
    */
   int getStateValue();
   /**
+   *
+   *
    * <pre>
    * Output only. The state of the queue.
    * `state` can only be changed by called
@@ -216,6 +263,8 @@ public interface QueueOrBuilder extends
   com.google.cloud.tasks.v2beta3.Queue.State getState();
 
   /**
+   *
+   *
    * <pre>
    * Output only. The last time this queue was purged.
    * All tasks that were [created][google.cloud.tasks.v2beta3.Task.create_time] before this time
@@ -230,6 +279,8 @@ public interface QueueOrBuilder extends
    */
   boolean hasPurgeTime();
   /**
+   *
+   *
    * <pre>
    * Output only. The last time this queue was purged.
    * All tasks that were [created][google.cloud.tasks.v2beta3.Task.create_time] before this time
@@ -244,6 +295,8 @@ public interface QueueOrBuilder extends
    */
   com.google.protobuf.Timestamp getPurgeTime();
   /**
+   *
+   *
    * <pre>
    * Output only. The last time this queue was purged.
    * All tasks that were [created][google.cloud.tasks.v2beta3.Task.create_time] before this time

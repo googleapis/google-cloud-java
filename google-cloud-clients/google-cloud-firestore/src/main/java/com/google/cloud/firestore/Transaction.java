@@ -20,9 +20,9 @@ import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutures;
 import com.google.common.base.Preconditions;
-import com.google.firestore.v1beta1.BeginTransactionRequest;
-import com.google.firestore.v1beta1.BeginTransactionResponse;
-import com.google.firestore.v1beta1.RollbackRequest;
+import com.google.firestore.v1.BeginTransactionRequest;
+import com.google.firestore.v1.BeginTransactionResponse;
+import com.google.firestore.v1.RollbackRequest;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Empty;
 import java.util.List;
@@ -134,7 +134,7 @@ public final class Transaction extends UpdateBuilder<Transaction> {
     Preconditions.checkState(isEmpty(), READ_BEFORE_WRITE_ERROR_MSG);
 
     return ApiFutures.transform(
-        firestore.getAll(new DocumentReference[] {documentRef}, transactionId),
+        firestore.getAll(new DocumentReference[] {documentRef}, /*fieldMask=*/ null, transactionId),
         new ApiFunction<List<DocumentSnapshot>, DocumentSnapshot>() {
           @Override
           public DocumentSnapshot apply(List<DocumentSnapshot> snapshots) {
@@ -150,10 +150,27 @@ public final class Transaction extends UpdateBuilder<Transaction> {
    * @param documentReferences List of Document References to fetch.
    */
   @Nonnull
-  public ApiFuture<List<DocumentSnapshot>> getAll(final DocumentReference... documentReferences) {
+  public ApiFuture<List<DocumentSnapshot>> getAll(
+      @Nonnull DocumentReference... documentReferences) {
     Preconditions.checkState(isEmpty(), READ_BEFORE_WRITE_ERROR_MSG);
 
-    return firestore.getAll(documentReferences, transactionId);
+    return firestore.getAll(documentReferences, /*fieldMask=*/ null, transactionId);
+  }
+
+  /**
+   * Retrieves multiple documents from Firestore, while optionally applying a field mask to reduce
+   * the amount of data transmitted from the backend. Holds a pessimistic lock on all returned
+   * documents.
+   *
+   * @param documentReferences Array with Document References to fetch.
+   * @param fieldMask If set, specifies the subset of fields to return.
+   */
+  @Nonnull
+  public ApiFuture<List<DocumentSnapshot>> getAll(
+      @Nonnull DocumentReference[] documentReferences, @Nullable FieldMask fieldMask) {
+    Preconditions.checkState(isEmpty(), READ_BEFORE_WRITE_ERROR_MSG);
+
+    return firestore.getAll(documentReferences, fieldMask, transactionId);
   }
 
   /**

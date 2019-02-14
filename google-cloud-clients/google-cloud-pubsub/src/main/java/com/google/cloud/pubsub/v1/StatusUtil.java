@@ -16,8 +16,8 @@
 
 package com.google.cloud.pubsub.v1;
 
+import com.google.api.gax.rpc.ApiException;
 import io.grpc.Status;
-import io.grpc.StatusRuntimeException;
 
 /** Utilities for handling gRPC {@link Status}. */
 final class StatusUtil {
@@ -26,11 +26,11 @@ final class StatusUtil {
   }
 
   public static boolean isRetryable(Throwable error) {
-    if (!(error instanceof StatusRuntimeException)) {
+    if (!(error instanceof ApiException)) {
       return true;
     }
-    StatusRuntimeException statusRuntimeException = (StatusRuntimeException) error;
-    switch (statusRuntimeException.getStatus().getCode()) {
+    ApiException apiException = (ApiException) error;
+    switch (apiException.getStatusCode().getCode()) {
       case DEADLINE_EXCEEDED:
       case INTERNAL:
       case CANCELLED:
@@ -38,11 +38,8 @@ final class StatusUtil {
       case ABORTED:
         return true;
       case UNAVAILABLE:
-        if (statusRuntimeException.getMessage().contains("Server shutdownNow invoked")) {
-          return false;
-        } else {
-          return true;
-        }
+        // TODO(pongad): check that ApiException propagate message properly.
+        return !apiException.getMessage().contains("Server shutdownNow invoked");
       default:
         return false;
     }

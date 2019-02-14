@@ -14,20 +14,21 @@
 
 package com.google.cloud.dialogflow.v2;
 
-import com.google.common.base.Preconditions;
-import com.google.common.collect.ImmutableMap;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.resourcenames.ResourceName;
-import java.util.Map;
+import com.google.common.base.Preconditions;
+import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 @javax.annotation.Generated("by GAPIC protoc plugin")
 public class ContextName implements ResourceName {
 
   private static final PathTemplate PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}/agent/sessions/{session}/contexts/{context}");
+      PathTemplate.createWithoutUrlEncoding(
+          "projects/{project}/agent/sessions/{session}/contexts/{context}");
 
   private volatile Map<String, String> fieldValuesMap;
 
@@ -62,20 +63,16 @@ public class ContextName implements ResourceName {
   }
 
   public static ContextName of(String project, String session, String context) {
-    return newBuilder()
-      .setProject(project)
-      .setSession(session)
-      .setContext(context)
-      .build();
+    return newBuilder().setProject(project).setSession(session).setContext(context).build();
   }
 
   public static String format(String project, String session, String context) {
     return newBuilder()
-      .setProject(project)
-      .setSession(session)
-      .setContext(context)
-      .build()
-      .toString();
+        .setProject(project)
+        .setSession(session)
+        .setContext(context)
+        .build()
+        .toString();
   }
 
   public static ContextName parse(String formattedString) {
@@ -83,7 +80,8 @@ public class ContextName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(formattedString, "ContextName.parse: formattedString not in valid format");
+        PATH_TEMPLATE.validatedMatch(
+            formattedString, "ContextName.parse: formattedString not in valid format");
     return of(matchMap.get("project"), matchMap.get("session"), matchMap.get("context"));
   }
 
@@ -169,8 +167,7 @@ public class ContextName implements ResourceName {
       return this;
     }
 
-    private Builder() {
-    }
+    private Builder() {}
 
     private Builder(ContextName contextName) {
       project = contextName.project;
@@ -209,4 +206,3 @@ public class ContextName implements ResourceName {
     return h;
   }
 }
-

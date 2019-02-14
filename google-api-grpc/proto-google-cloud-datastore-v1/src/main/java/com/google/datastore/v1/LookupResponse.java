@@ -4,21 +4,24 @@
 package com.google.datastore.v1;
 
 /**
+ *
+ *
  * <pre>
  * The response for [Datastore.Lookup][google.datastore.v1.Datastore.Lookup].
  * </pre>
  *
  * Protobuf type {@code google.datastore.v1.LookupResponse}
  */
-public  final class LookupResponse extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class LookupResponse extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.datastore.v1.LookupResponse)
     LookupResponseOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use LookupResponse.newBuilder() to construct.
   private LookupResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private LookupResponse() {
     found_ = java.util.Collections.emptyList();
     missing_ = java.util.Collections.emptyList();
@@ -26,15 +29,18 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private LookupResponse(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -46,47 +52,51 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          case 10:
+            {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                found_ = new java.util.ArrayList<com.google.datastore.v1.EntityResult>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              found_.add(
+                  input.readMessage(
+                      com.google.datastore.v1.EntityResult.parser(), extensionRegistry));
+              break;
             }
-            break;
-          }
-          case 10: {
-            if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-              found_ = new java.util.ArrayList<com.google.datastore.v1.EntityResult>();
-              mutable_bitField0_ |= 0x00000001;
+          case 18:
+            {
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                missing_ = new java.util.ArrayList<com.google.datastore.v1.EntityResult>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              missing_.add(
+                  input.readMessage(
+                      com.google.datastore.v1.EntityResult.parser(), extensionRegistry));
+              break;
             }
-            found_.add(
-                input.readMessage(com.google.datastore.v1.EntityResult.parser(), extensionRegistry));
-            break;
-          }
-          case 18: {
-            if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-              missing_ = new java.util.ArrayList<com.google.datastore.v1.EntityResult>();
-              mutable_bitField0_ |= 0x00000002;
+          case 26:
+            {
+              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+                deferred_ = new java.util.ArrayList<com.google.datastore.v1.Key>();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              deferred_.add(
+                  input.readMessage(com.google.datastore.v1.Key.parser(), extensionRegistry));
+              break;
             }
-            missing_.add(
-                input.readMessage(com.google.datastore.v1.EntityResult.parser(), extensionRegistry));
-            break;
-          }
-          case 26: {
-            if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-              deferred_ = new java.util.ArrayList<com.google.datastore.v1.Key>();
-              mutable_bitField0_ |= 0x00000004;
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
             }
-            deferred_.add(
-                input.readMessage(com.google.datastore.v1.Key.parser(), extensionRegistry));
-            break;
-          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
         found_ = java.util.Collections.unmodifiableList(found_);
@@ -101,21 +111,27 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.datastore.v1.DatastoreProto.internal_static_google_datastore_v1_LookupResponse_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.datastore.v1.DatastoreProto
+        .internal_static_google_datastore_v1_LookupResponse_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.datastore.v1.DatastoreProto.internal_static_google_datastore_v1_LookupResponse_fieldAccessorTable
+    return com.google.datastore.v1.DatastoreProto
+        .internal_static_google_datastore_v1_LookupResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.datastore.v1.LookupResponse.class, com.google.datastore.v1.LookupResponse.Builder.class);
+            com.google.datastore.v1.LookupResponse.class,
+            com.google.datastore.v1.LookupResponse.Builder.class);
   }
 
   public static final int FOUND_FIELD_NUMBER = 1;
   private java.util.List<com.google.datastore.v1.EntityResult> found_;
   /**
+   *
+   *
    * <pre>
    * Entities found as `ResultType.FULL` entities. The order of results in this
    * field is undefined and has no relation to the order of the keys in the
@@ -128,6 +144,8 @@ private static final long serialVersionUID = 0L;
     return found_;
   }
   /**
+   *
+   *
    * <pre>
    * Entities found as `ResultType.FULL` entities. The order of results in this
    * field is undefined and has no relation to the order of the keys in the
@@ -136,11 +154,13 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.datastore.v1.EntityResult found = 1;</code>
    */
-  public java.util.List<? extends com.google.datastore.v1.EntityResultOrBuilder> 
+  public java.util.List<? extends com.google.datastore.v1.EntityResultOrBuilder>
       getFoundOrBuilderList() {
     return found_;
   }
   /**
+   *
+   *
    * <pre>
    * Entities found as `ResultType.FULL` entities. The order of results in this
    * field is undefined and has no relation to the order of the keys in the
@@ -153,6 +173,8 @@ private static final long serialVersionUID = 0L;
     return found_.size();
   }
   /**
+   *
+   *
    * <pre>
    * Entities found as `ResultType.FULL` entities. The order of results in this
    * field is undefined and has no relation to the order of the keys in the
@@ -165,6 +187,8 @@ private static final long serialVersionUID = 0L;
     return found_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * Entities found as `ResultType.FULL` entities. The order of results in this
    * field is undefined and has no relation to the order of the keys in the
@@ -173,14 +197,15 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.datastore.v1.EntityResult found = 1;</code>
    */
-  public com.google.datastore.v1.EntityResultOrBuilder getFoundOrBuilder(
-      int index) {
+  public com.google.datastore.v1.EntityResultOrBuilder getFoundOrBuilder(int index) {
     return found_.get(index);
   }
 
   public static final int MISSING_FIELD_NUMBER = 2;
   private java.util.List<com.google.datastore.v1.EntityResult> missing_;
   /**
+   *
+   *
    * <pre>
    * Entities not found as `ResultType.KEY_ONLY` entities. The order of results
    * in this field is undefined and has no relation to the order of the keys
@@ -193,6 +218,8 @@ private static final long serialVersionUID = 0L;
     return missing_;
   }
   /**
+   *
+   *
    * <pre>
    * Entities not found as `ResultType.KEY_ONLY` entities. The order of results
    * in this field is undefined and has no relation to the order of the keys
@@ -201,11 +228,13 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.datastore.v1.EntityResult missing = 2;</code>
    */
-  public java.util.List<? extends com.google.datastore.v1.EntityResultOrBuilder> 
+  public java.util.List<? extends com.google.datastore.v1.EntityResultOrBuilder>
       getMissingOrBuilderList() {
     return missing_;
   }
   /**
+   *
+   *
    * <pre>
    * Entities not found as `ResultType.KEY_ONLY` entities. The order of results
    * in this field is undefined and has no relation to the order of the keys
@@ -218,6 +247,8 @@ private static final long serialVersionUID = 0L;
     return missing_.size();
   }
   /**
+   *
+   *
    * <pre>
    * Entities not found as `ResultType.KEY_ONLY` entities. The order of results
    * in this field is undefined and has no relation to the order of the keys
@@ -230,6 +261,8 @@ private static final long serialVersionUID = 0L;
     return missing_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * Entities not found as `ResultType.KEY_ONLY` entities. The order of results
    * in this field is undefined and has no relation to the order of the keys
@@ -238,14 +271,15 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.datastore.v1.EntityResult missing = 2;</code>
    */
-  public com.google.datastore.v1.EntityResultOrBuilder getMissingOrBuilder(
-      int index) {
+  public com.google.datastore.v1.EntityResultOrBuilder getMissingOrBuilder(int index) {
     return missing_.get(index);
   }
 
   public static final int DEFERRED_FIELD_NUMBER = 3;
   private java.util.List<com.google.datastore.v1.Key> deferred_;
   /**
+   *
+   *
    * <pre>
    * A list of keys that were not looked up due to resource constraints. The
    * order of results in this field is undefined and has no relation to the
@@ -258,6 +292,8 @@ private static final long serialVersionUID = 0L;
     return deferred_;
   }
   /**
+   *
+   *
    * <pre>
    * A list of keys that were not looked up due to resource constraints. The
    * order of results in this field is undefined and has no relation to the
@@ -266,11 +302,12 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.datastore.v1.Key deferred = 3;</code>
    */
-  public java.util.List<? extends com.google.datastore.v1.KeyOrBuilder> 
-      getDeferredOrBuilderList() {
+  public java.util.List<? extends com.google.datastore.v1.KeyOrBuilder> getDeferredOrBuilderList() {
     return deferred_;
   }
   /**
+   *
+   *
    * <pre>
    * A list of keys that were not looked up due to resource constraints. The
    * order of results in this field is undefined and has no relation to the
@@ -283,6 +320,8 @@ private static final long serialVersionUID = 0L;
     return deferred_.size();
   }
   /**
+   *
+   *
    * <pre>
    * A list of keys that were not looked up due to resource constraints. The
    * order of results in this field is undefined and has no relation to the
@@ -295,6 +334,8 @@ private static final long serialVersionUID = 0L;
     return deferred_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * A list of keys that were not looked up due to resource constraints. The
    * order of results in this field is undefined and has no relation to the
@@ -303,12 +344,13 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.datastore.v1.Key deferred = 3;</code>
    */
-  public com.google.datastore.v1.KeyOrBuilder getDeferredOrBuilder(
-      int index) {
+  public com.google.datastore.v1.KeyOrBuilder getDeferredOrBuilder(int index) {
     return deferred_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
+
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -318,8 +360,8 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  @java.lang.Override
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     for (int i = 0; i < found_.size(); i++) {
       output.writeMessage(1, found_.get(i));
     }
@@ -332,22 +374,20 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
 
     size = 0;
     for (int i = 0; i < found_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, found_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, found_.get(i));
     }
     for (int i = 0; i < missing_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, missing_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, missing_.get(i));
     }
     for (int i = 0; i < deferred_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, deferred_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, deferred_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -357,7 +397,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.datastore.v1.LookupResponse)) {
       return super.equals(obj);
@@ -365,12 +405,9 @@ private static final long serialVersionUID = 0L;
     com.google.datastore.v1.LookupResponse other = (com.google.datastore.v1.LookupResponse) obj;
 
     boolean result = true;
-    result = result && getFoundList()
-        .equals(other.getFoundList());
-    result = result && getMissingList()
-        .equals(other.getMissingList());
-    result = result && getDeferredList()
-        .equals(other.getDeferredList());
+    result = result && getFoundList().equals(other.getFoundList());
+    result = result && getMissingList().equals(other.getMissingList());
+    result = result && getDeferredList().equals(other.getDeferredList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -399,115 +436,127 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.datastore.v1.LookupResponse parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.datastore.v1.LookupResponse parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.datastore.v1.LookupResponse parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.datastore.v1.LookupResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.datastore.v1.LookupResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.datastore.v1.LookupResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.datastore.v1.LookupResponse parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.datastore.v1.LookupResponse parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.datastore.v1.LookupResponse parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.datastore.v1.LookupResponse parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
   public static com.google.datastore.v1.LookupResponse parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.datastore.v1.LookupResponse parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.datastore.v1.LookupResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  public Builder newBuilderForType() { return newBuilder(); }
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-  public static Builder newBuilder(com.google.datastore.v1.LookupResponse prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+
+  public static Builder newBuilder(com.google.datastore.v1.LookupResponse prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+
+  @java.lang.Override
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * The response for [Datastore.Lookup][google.datastore.v1.Datastore.Lookup].
    * </pre>
    *
    * Protobuf type {@code google.datastore.v1.LookupResponse}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.datastore.v1.LookupResponse)
       com.google.datastore.v1.LookupResponseOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.datastore.v1.DatastoreProto.internal_static_google_datastore_v1_LookupResponse_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.datastore.v1.DatastoreProto
+          .internal_static_google_datastore_v1_LookupResponse_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.datastore.v1.DatastoreProto.internal_static_google_datastore_v1_LookupResponse_fieldAccessorTable
+      return com.google.datastore.v1.DatastoreProto
+          .internal_static_google_datastore_v1_LookupResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.datastore.v1.LookupResponse.class, com.google.datastore.v1.LookupResponse.Builder.class);
+              com.google.datastore.v1.LookupResponse.class,
+              com.google.datastore.v1.LookupResponse.Builder.class);
     }
 
     // Construct using com.google.datastore.v1.LookupResponse.newBuilder()
@@ -515,19 +564,20 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getFoundFieldBuilder();
         getMissingFieldBuilder();
         getDeferredFieldBuilder();
       }
     }
+
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       if (foundBuilder_ == null) {
@@ -551,15 +601,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.datastore.v1.DatastoreProto.internal_static_google_datastore_v1_LookupResponse_descriptor;
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.datastore.v1.DatastoreProto
+          .internal_static_google_datastore_v1_LookupResponse_descriptor;
     }
 
+    @java.lang.Override
     public com.google.datastore.v1.LookupResponse getDefaultInstanceForType() {
       return com.google.datastore.v1.LookupResponse.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.datastore.v1.LookupResponse build() {
       com.google.datastore.v1.LookupResponse result = buildPartial();
       if (!result.isInitialized()) {
@@ -568,8 +621,10 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.datastore.v1.LookupResponse buildPartial() {
-      com.google.datastore.v1.LookupResponse result = new com.google.datastore.v1.LookupResponse(this);
+      com.google.datastore.v1.LookupResponse result =
+          new com.google.datastore.v1.LookupResponse(this);
       int from_bitField0_ = bitField0_;
       if (foundBuilder_ == null) {
         if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -602,35 +657,43 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+
+    @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+    @java.lang.Override
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+    @java.lang.Override
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
+    @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
+    @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.datastore.v1.LookupResponse) {
-        return mergeFrom((com.google.datastore.v1.LookupResponse)other);
+        return mergeFrom((com.google.datastore.v1.LookupResponse) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -657,9 +720,10 @@ private static final long serialVersionUID = 0L;
             foundBuilder_ = null;
             found_ = other.found_;
             bitField0_ = (bitField0_ & ~0x00000001);
-            foundBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getFoundFieldBuilder() : null;
+            foundBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getFoundFieldBuilder()
+                    : null;
           } else {
             foundBuilder_.addAllMessages(other.found_);
           }
@@ -683,9 +747,10 @@ private static final long serialVersionUID = 0L;
             missingBuilder_ = null;
             missing_ = other.missing_;
             bitField0_ = (bitField0_ & ~0x00000002);
-            missingBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getMissingFieldBuilder() : null;
+            missingBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getMissingFieldBuilder()
+                    : null;
           } else {
             missingBuilder_.addAllMessages(other.missing_);
           }
@@ -709,9 +774,10 @@ private static final long serialVersionUID = 0L;
             deferredBuilder_ = null;
             deferred_ = other.deferred_;
             bitField0_ = (bitField0_ & ~0x00000004);
-            deferredBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getDeferredFieldBuilder() : null;
+            deferredBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getDeferredFieldBuilder()
+                    : null;
           } else {
             deferredBuilder_.addAllMessages(other.deferred_);
           }
@@ -722,10 +788,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -743,21 +811,28 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private java.util.List<com.google.datastore.v1.EntityResult> found_ =
-      java.util.Collections.emptyList();
+        java.util.Collections.emptyList();
+
     private void ensureFoundIsMutable() {
       if (!((bitField0_ & 0x00000001) == 0x00000001)) {
         found_ = new java.util.ArrayList<com.google.datastore.v1.EntityResult>(found_);
         bitField0_ |= 0x00000001;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.datastore.v1.EntityResult, com.google.datastore.v1.EntityResult.Builder, com.google.datastore.v1.EntityResultOrBuilder> foundBuilder_;
+            com.google.datastore.v1.EntityResult,
+            com.google.datastore.v1.EntityResult.Builder,
+            com.google.datastore.v1.EntityResultOrBuilder>
+        foundBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * Entities found as `ResultType.FULL` entities. The order of results in this
      * field is undefined and has no relation to the order of the keys in the
@@ -774,6 +849,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Entities found as `ResultType.FULL` entities. The order of results in this
      * field is undefined and has no relation to the order of the keys in the
@@ -790,6 +867,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Entities found as `ResultType.FULL` entities. The order of results in this
      * field is undefined and has no relation to the order of the keys in the
@@ -806,6 +885,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Entities found as `ResultType.FULL` entities. The order of results in this
      * field is undefined and has no relation to the order of the keys in the
@@ -814,8 +895,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.datastore.v1.EntityResult found = 1;</code>
      */
-    public Builder setFound(
-        int index, com.google.datastore.v1.EntityResult value) {
+    public Builder setFound(int index, com.google.datastore.v1.EntityResult value) {
       if (foundBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -829,6 +909,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Entities found as `ResultType.FULL` entities. The order of results in this
      * field is undefined and has no relation to the order of the keys in the
@@ -849,6 +931,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Entities found as `ResultType.FULL` entities. The order of results in this
      * field is undefined and has no relation to the order of the keys in the
@@ -871,6 +955,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Entities found as `ResultType.FULL` entities. The order of results in this
      * field is undefined and has no relation to the order of the keys in the
@@ -879,8 +965,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.datastore.v1.EntityResult found = 1;</code>
      */
-    public Builder addFound(
-        int index, com.google.datastore.v1.EntityResult value) {
+    public Builder addFound(int index, com.google.datastore.v1.EntityResult value) {
       if (foundBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -894,6 +979,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Entities found as `ResultType.FULL` entities. The order of results in this
      * field is undefined and has no relation to the order of the keys in the
@@ -902,8 +989,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.datastore.v1.EntityResult found = 1;</code>
      */
-    public Builder addFound(
-        com.google.datastore.v1.EntityResult.Builder builderForValue) {
+    public Builder addFound(com.google.datastore.v1.EntityResult.Builder builderForValue) {
       if (foundBuilder_ == null) {
         ensureFoundIsMutable();
         found_.add(builderForValue.build());
@@ -914,6 +1000,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Entities found as `ResultType.FULL` entities. The order of results in this
      * field is undefined and has no relation to the order of the keys in the
@@ -934,6 +1022,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Entities found as `ResultType.FULL` entities. The order of results in this
      * field is undefined and has no relation to the order of the keys in the
@@ -946,8 +1036,7 @@ private static final long serialVersionUID = 0L;
         java.lang.Iterable<? extends com.google.datastore.v1.EntityResult> values) {
       if (foundBuilder_ == null) {
         ensureFoundIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, found_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, found_);
         onChanged();
       } else {
         foundBuilder_.addAllMessages(values);
@@ -955,6 +1044,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Entities found as `ResultType.FULL` entities. The order of results in this
      * field is undefined and has no relation to the order of the keys in the
@@ -974,6 +1065,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Entities found as `ResultType.FULL` entities. The order of results in this
      * field is undefined and has no relation to the order of the keys in the
@@ -993,6 +1086,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Entities found as `ResultType.FULL` entities. The order of results in this
      * field is undefined and has no relation to the order of the keys in the
@@ -1001,11 +1096,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.datastore.v1.EntityResult found = 1;</code>
      */
-    public com.google.datastore.v1.EntityResult.Builder getFoundBuilder(
-        int index) {
+    public com.google.datastore.v1.EntityResult.Builder getFoundBuilder(int index) {
       return getFoundFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * Entities found as `ResultType.FULL` entities. The order of results in this
      * field is undefined and has no relation to the order of the keys in the
@@ -1014,14 +1110,16 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.datastore.v1.EntityResult found = 1;</code>
      */
-    public com.google.datastore.v1.EntityResultOrBuilder getFoundOrBuilder(
-        int index) {
+    public com.google.datastore.v1.EntityResultOrBuilder getFoundOrBuilder(int index) {
       if (foundBuilder_ == null) {
-        return found_.get(index);  } else {
+        return found_.get(index);
+      } else {
         return foundBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * Entities found as `ResultType.FULL` entities. The order of results in this
      * field is undefined and has no relation to the order of the keys in the
@@ -1030,8 +1128,8 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.datastore.v1.EntityResult found = 1;</code>
      */
-    public java.util.List<? extends com.google.datastore.v1.EntityResultOrBuilder> 
-         getFoundOrBuilderList() {
+    public java.util.List<? extends com.google.datastore.v1.EntityResultOrBuilder>
+        getFoundOrBuilderList() {
       if (foundBuilder_ != null) {
         return foundBuilder_.getMessageOrBuilderList();
       } else {
@@ -1039,6 +1137,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Entities found as `ResultType.FULL` entities. The order of results in this
      * field is undefined and has no relation to the order of the keys in the
@@ -1048,10 +1148,12 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.datastore.v1.EntityResult found = 1;</code>
      */
     public com.google.datastore.v1.EntityResult.Builder addFoundBuilder() {
-      return getFoundFieldBuilder().addBuilder(
-          com.google.datastore.v1.EntityResult.getDefaultInstance());
+      return getFoundFieldBuilder()
+          .addBuilder(com.google.datastore.v1.EntityResult.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Entities found as `ResultType.FULL` entities. The order of results in this
      * field is undefined and has no relation to the order of the keys in the
@@ -1060,12 +1162,13 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.datastore.v1.EntityResult found = 1;</code>
      */
-    public com.google.datastore.v1.EntityResult.Builder addFoundBuilder(
-        int index) {
-      return getFoundFieldBuilder().addBuilder(
-          index, com.google.datastore.v1.EntityResult.getDefaultInstance());
+    public com.google.datastore.v1.EntityResult.Builder addFoundBuilder(int index) {
+      return getFoundFieldBuilder()
+          .addBuilder(index, com.google.datastore.v1.EntityResult.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Entities found as `ResultType.FULL` entities. The order of results in this
      * field is undefined and has no relation to the order of the keys in the
@@ -1074,16 +1177,21 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.datastore.v1.EntityResult found = 1;</code>
      */
-    public java.util.List<com.google.datastore.v1.EntityResult.Builder> 
-         getFoundBuilderList() {
+    public java.util.List<com.google.datastore.v1.EntityResult.Builder> getFoundBuilderList() {
       return getFoundFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.datastore.v1.EntityResult, com.google.datastore.v1.EntityResult.Builder, com.google.datastore.v1.EntityResultOrBuilder> 
+            com.google.datastore.v1.EntityResult,
+            com.google.datastore.v1.EntityResult.Builder,
+            com.google.datastore.v1.EntityResultOrBuilder>
         getFoundFieldBuilder() {
       if (foundBuilder_ == null) {
-        foundBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.datastore.v1.EntityResult, com.google.datastore.v1.EntityResult.Builder, com.google.datastore.v1.EntityResultOrBuilder>(
+        foundBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.datastore.v1.EntityResult,
+                com.google.datastore.v1.EntityResult.Builder,
+                com.google.datastore.v1.EntityResultOrBuilder>(
                 found_,
                 ((bitField0_ & 0x00000001) == 0x00000001),
                 getParentForChildren(),
@@ -1094,18 +1202,24 @@ private static final long serialVersionUID = 0L;
     }
 
     private java.util.List<com.google.datastore.v1.EntityResult> missing_ =
-      java.util.Collections.emptyList();
+        java.util.Collections.emptyList();
+
     private void ensureMissingIsMutable() {
       if (!((bitField0_ & 0x00000002) == 0x00000002)) {
         missing_ = new java.util.ArrayList<com.google.datastore.v1.EntityResult>(missing_);
         bitField0_ |= 0x00000002;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.datastore.v1.EntityResult, com.google.datastore.v1.EntityResult.Builder, com.google.datastore.v1.EntityResultOrBuilder> missingBuilder_;
+            com.google.datastore.v1.EntityResult,
+            com.google.datastore.v1.EntityResult.Builder,
+            com.google.datastore.v1.EntityResultOrBuilder>
+        missingBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * Entities not found as `ResultType.KEY_ONLY` entities. The order of results
      * in this field is undefined and has no relation to the order of the keys
@@ -1122,6 +1236,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Entities not found as `ResultType.KEY_ONLY` entities. The order of results
      * in this field is undefined and has no relation to the order of the keys
@@ -1138,6 +1254,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Entities not found as `ResultType.KEY_ONLY` entities. The order of results
      * in this field is undefined and has no relation to the order of the keys
@@ -1154,6 +1272,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Entities not found as `ResultType.KEY_ONLY` entities. The order of results
      * in this field is undefined and has no relation to the order of the keys
@@ -1162,8 +1282,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.datastore.v1.EntityResult missing = 2;</code>
      */
-    public Builder setMissing(
-        int index, com.google.datastore.v1.EntityResult value) {
+    public Builder setMissing(int index, com.google.datastore.v1.EntityResult value) {
       if (missingBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1177,6 +1296,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Entities not found as `ResultType.KEY_ONLY` entities. The order of results
      * in this field is undefined and has no relation to the order of the keys
@@ -1197,6 +1318,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Entities not found as `ResultType.KEY_ONLY` entities. The order of results
      * in this field is undefined and has no relation to the order of the keys
@@ -1219,6 +1342,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Entities not found as `ResultType.KEY_ONLY` entities. The order of results
      * in this field is undefined and has no relation to the order of the keys
@@ -1227,8 +1352,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.datastore.v1.EntityResult missing = 2;</code>
      */
-    public Builder addMissing(
-        int index, com.google.datastore.v1.EntityResult value) {
+    public Builder addMissing(int index, com.google.datastore.v1.EntityResult value) {
       if (missingBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1242,6 +1366,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Entities not found as `ResultType.KEY_ONLY` entities. The order of results
      * in this field is undefined and has no relation to the order of the keys
@@ -1250,8 +1376,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.datastore.v1.EntityResult missing = 2;</code>
      */
-    public Builder addMissing(
-        com.google.datastore.v1.EntityResult.Builder builderForValue) {
+    public Builder addMissing(com.google.datastore.v1.EntityResult.Builder builderForValue) {
       if (missingBuilder_ == null) {
         ensureMissingIsMutable();
         missing_.add(builderForValue.build());
@@ -1262,6 +1387,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Entities not found as `ResultType.KEY_ONLY` entities. The order of results
      * in this field is undefined and has no relation to the order of the keys
@@ -1282,6 +1409,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Entities not found as `ResultType.KEY_ONLY` entities. The order of results
      * in this field is undefined and has no relation to the order of the keys
@@ -1294,8 +1423,7 @@ private static final long serialVersionUID = 0L;
         java.lang.Iterable<? extends com.google.datastore.v1.EntityResult> values) {
       if (missingBuilder_ == null) {
         ensureMissingIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, missing_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, missing_);
         onChanged();
       } else {
         missingBuilder_.addAllMessages(values);
@@ -1303,6 +1431,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Entities not found as `ResultType.KEY_ONLY` entities. The order of results
      * in this field is undefined and has no relation to the order of the keys
@@ -1322,6 +1452,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Entities not found as `ResultType.KEY_ONLY` entities. The order of results
      * in this field is undefined and has no relation to the order of the keys
@@ -1341,6 +1473,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Entities not found as `ResultType.KEY_ONLY` entities. The order of results
      * in this field is undefined and has no relation to the order of the keys
@@ -1349,11 +1483,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.datastore.v1.EntityResult missing = 2;</code>
      */
-    public com.google.datastore.v1.EntityResult.Builder getMissingBuilder(
-        int index) {
+    public com.google.datastore.v1.EntityResult.Builder getMissingBuilder(int index) {
       return getMissingFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * Entities not found as `ResultType.KEY_ONLY` entities. The order of results
      * in this field is undefined and has no relation to the order of the keys
@@ -1362,14 +1497,16 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.datastore.v1.EntityResult missing = 2;</code>
      */
-    public com.google.datastore.v1.EntityResultOrBuilder getMissingOrBuilder(
-        int index) {
+    public com.google.datastore.v1.EntityResultOrBuilder getMissingOrBuilder(int index) {
       if (missingBuilder_ == null) {
-        return missing_.get(index);  } else {
+        return missing_.get(index);
+      } else {
         return missingBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * Entities not found as `ResultType.KEY_ONLY` entities. The order of results
      * in this field is undefined and has no relation to the order of the keys
@@ -1378,8 +1515,8 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.datastore.v1.EntityResult missing = 2;</code>
      */
-    public java.util.List<? extends com.google.datastore.v1.EntityResultOrBuilder> 
-         getMissingOrBuilderList() {
+    public java.util.List<? extends com.google.datastore.v1.EntityResultOrBuilder>
+        getMissingOrBuilderList() {
       if (missingBuilder_ != null) {
         return missingBuilder_.getMessageOrBuilderList();
       } else {
@@ -1387,6 +1524,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Entities not found as `ResultType.KEY_ONLY` entities. The order of results
      * in this field is undefined and has no relation to the order of the keys
@@ -1396,10 +1535,12 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.datastore.v1.EntityResult missing = 2;</code>
      */
     public com.google.datastore.v1.EntityResult.Builder addMissingBuilder() {
-      return getMissingFieldBuilder().addBuilder(
-          com.google.datastore.v1.EntityResult.getDefaultInstance());
+      return getMissingFieldBuilder()
+          .addBuilder(com.google.datastore.v1.EntityResult.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Entities not found as `ResultType.KEY_ONLY` entities. The order of results
      * in this field is undefined and has no relation to the order of the keys
@@ -1408,12 +1549,13 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.datastore.v1.EntityResult missing = 2;</code>
      */
-    public com.google.datastore.v1.EntityResult.Builder addMissingBuilder(
-        int index) {
-      return getMissingFieldBuilder().addBuilder(
-          index, com.google.datastore.v1.EntityResult.getDefaultInstance());
+    public com.google.datastore.v1.EntityResult.Builder addMissingBuilder(int index) {
+      return getMissingFieldBuilder()
+          .addBuilder(index, com.google.datastore.v1.EntityResult.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Entities not found as `ResultType.KEY_ONLY` entities. The order of results
      * in this field is undefined and has no relation to the order of the keys
@@ -1422,16 +1564,21 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.datastore.v1.EntityResult missing = 2;</code>
      */
-    public java.util.List<com.google.datastore.v1.EntityResult.Builder> 
-         getMissingBuilderList() {
+    public java.util.List<com.google.datastore.v1.EntityResult.Builder> getMissingBuilderList() {
       return getMissingFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.datastore.v1.EntityResult, com.google.datastore.v1.EntityResult.Builder, com.google.datastore.v1.EntityResultOrBuilder> 
+            com.google.datastore.v1.EntityResult,
+            com.google.datastore.v1.EntityResult.Builder,
+            com.google.datastore.v1.EntityResultOrBuilder>
         getMissingFieldBuilder() {
       if (missingBuilder_ == null) {
-        missingBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.datastore.v1.EntityResult, com.google.datastore.v1.EntityResult.Builder, com.google.datastore.v1.EntityResultOrBuilder>(
+        missingBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.datastore.v1.EntityResult,
+                com.google.datastore.v1.EntityResult.Builder,
+                com.google.datastore.v1.EntityResultOrBuilder>(
                 missing_,
                 ((bitField0_ & 0x00000002) == 0x00000002),
                 getParentForChildren(),
@@ -1442,18 +1589,24 @@ private static final long serialVersionUID = 0L;
     }
 
     private java.util.List<com.google.datastore.v1.Key> deferred_ =
-      java.util.Collections.emptyList();
+        java.util.Collections.emptyList();
+
     private void ensureDeferredIsMutable() {
       if (!((bitField0_ & 0x00000004) == 0x00000004)) {
         deferred_ = new java.util.ArrayList<com.google.datastore.v1.Key>(deferred_);
         bitField0_ |= 0x00000004;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.datastore.v1.Key, com.google.datastore.v1.Key.Builder, com.google.datastore.v1.KeyOrBuilder> deferredBuilder_;
+            com.google.datastore.v1.Key,
+            com.google.datastore.v1.Key.Builder,
+            com.google.datastore.v1.KeyOrBuilder>
+        deferredBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * A list of keys that were not looked up due to resource constraints. The
      * order of results in this field is undefined and has no relation to the
@@ -1470,6 +1623,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A list of keys that were not looked up due to resource constraints. The
      * order of results in this field is undefined and has no relation to the
@@ -1486,6 +1641,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A list of keys that were not looked up due to resource constraints. The
      * order of results in this field is undefined and has no relation to the
@@ -1502,6 +1659,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A list of keys that were not looked up due to resource constraints. The
      * order of results in this field is undefined and has no relation to the
@@ -1510,8 +1669,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.datastore.v1.Key deferred = 3;</code>
      */
-    public Builder setDeferred(
-        int index, com.google.datastore.v1.Key value) {
+    public Builder setDeferred(int index, com.google.datastore.v1.Key value) {
       if (deferredBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1525,6 +1683,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of keys that were not looked up due to resource constraints. The
      * order of results in this field is undefined and has no relation to the
@@ -1533,8 +1693,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.datastore.v1.Key deferred = 3;</code>
      */
-    public Builder setDeferred(
-        int index, com.google.datastore.v1.Key.Builder builderForValue) {
+    public Builder setDeferred(int index, com.google.datastore.v1.Key.Builder builderForValue) {
       if (deferredBuilder_ == null) {
         ensureDeferredIsMutable();
         deferred_.set(index, builderForValue.build());
@@ -1545,6 +1704,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of keys that were not looked up due to resource constraints. The
      * order of results in this field is undefined and has no relation to the
@@ -1567,6 +1728,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of keys that were not looked up due to resource constraints. The
      * order of results in this field is undefined and has no relation to the
@@ -1575,8 +1738,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.datastore.v1.Key deferred = 3;</code>
      */
-    public Builder addDeferred(
-        int index, com.google.datastore.v1.Key value) {
+    public Builder addDeferred(int index, com.google.datastore.v1.Key value) {
       if (deferredBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1590,6 +1752,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of keys that were not looked up due to resource constraints. The
      * order of results in this field is undefined and has no relation to the
@@ -1598,8 +1762,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.datastore.v1.Key deferred = 3;</code>
      */
-    public Builder addDeferred(
-        com.google.datastore.v1.Key.Builder builderForValue) {
+    public Builder addDeferred(com.google.datastore.v1.Key.Builder builderForValue) {
       if (deferredBuilder_ == null) {
         ensureDeferredIsMutable();
         deferred_.add(builderForValue.build());
@@ -1610,6 +1773,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of keys that were not looked up due to resource constraints. The
      * order of results in this field is undefined and has no relation to the
@@ -1618,8 +1783,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.datastore.v1.Key deferred = 3;</code>
      */
-    public Builder addDeferred(
-        int index, com.google.datastore.v1.Key.Builder builderForValue) {
+    public Builder addDeferred(int index, com.google.datastore.v1.Key.Builder builderForValue) {
       if (deferredBuilder_ == null) {
         ensureDeferredIsMutable();
         deferred_.add(index, builderForValue.build());
@@ -1630,6 +1794,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of keys that were not looked up due to resource constraints. The
      * order of results in this field is undefined and has no relation to the
@@ -1642,8 +1808,7 @@ private static final long serialVersionUID = 0L;
         java.lang.Iterable<? extends com.google.datastore.v1.Key> values) {
       if (deferredBuilder_ == null) {
         ensureDeferredIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, deferred_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, deferred_);
         onChanged();
       } else {
         deferredBuilder_.addAllMessages(values);
@@ -1651,6 +1816,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of keys that were not looked up due to resource constraints. The
      * order of results in this field is undefined and has no relation to the
@@ -1670,6 +1837,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of keys that were not looked up due to resource constraints. The
      * order of results in this field is undefined and has no relation to the
@@ -1689,6 +1858,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of keys that were not looked up due to resource constraints. The
      * order of results in this field is undefined and has no relation to the
@@ -1697,11 +1868,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.datastore.v1.Key deferred = 3;</code>
      */
-    public com.google.datastore.v1.Key.Builder getDeferredBuilder(
-        int index) {
+    public com.google.datastore.v1.Key.Builder getDeferredBuilder(int index) {
       return getDeferredFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * A list of keys that were not looked up due to resource constraints. The
      * order of results in this field is undefined and has no relation to the
@@ -1710,14 +1882,16 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.datastore.v1.Key deferred = 3;</code>
      */
-    public com.google.datastore.v1.KeyOrBuilder getDeferredOrBuilder(
-        int index) {
+    public com.google.datastore.v1.KeyOrBuilder getDeferredOrBuilder(int index) {
       if (deferredBuilder_ == null) {
-        return deferred_.get(index);  } else {
+        return deferred_.get(index);
+      } else {
         return deferredBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * A list of keys that were not looked up due to resource constraints. The
      * order of results in this field is undefined and has no relation to the
@@ -1726,8 +1900,8 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.datastore.v1.Key deferred = 3;</code>
      */
-    public java.util.List<? extends com.google.datastore.v1.KeyOrBuilder> 
-         getDeferredOrBuilderList() {
+    public java.util.List<? extends com.google.datastore.v1.KeyOrBuilder>
+        getDeferredOrBuilderList() {
       if (deferredBuilder_ != null) {
         return deferredBuilder_.getMessageOrBuilderList();
       } else {
@@ -1735,6 +1909,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A list of keys that were not looked up due to resource constraints. The
      * order of results in this field is undefined and has no relation to the
@@ -1744,10 +1920,11 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.datastore.v1.Key deferred = 3;</code>
      */
     public com.google.datastore.v1.Key.Builder addDeferredBuilder() {
-      return getDeferredFieldBuilder().addBuilder(
-          com.google.datastore.v1.Key.getDefaultInstance());
+      return getDeferredFieldBuilder().addBuilder(com.google.datastore.v1.Key.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * A list of keys that were not looked up due to resource constraints. The
      * order of results in this field is undefined and has no relation to the
@@ -1756,12 +1933,13 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.datastore.v1.Key deferred = 3;</code>
      */
-    public com.google.datastore.v1.Key.Builder addDeferredBuilder(
-        int index) {
-      return getDeferredFieldBuilder().addBuilder(
-          index, com.google.datastore.v1.Key.getDefaultInstance());
+    public com.google.datastore.v1.Key.Builder addDeferredBuilder(int index) {
+      return getDeferredFieldBuilder()
+          .addBuilder(index, com.google.datastore.v1.Key.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * A list of keys that were not looked up due to resource constraints. The
      * order of results in this field is undefined and has no relation to the
@@ -1770,16 +1948,21 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.datastore.v1.Key deferred = 3;</code>
      */
-    public java.util.List<com.google.datastore.v1.Key.Builder> 
-         getDeferredBuilderList() {
+    public java.util.List<com.google.datastore.v1.Key.Builder> getDeferredBuilderList() {
       return getDeferredFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.datastore.v1.Key, com.google.datastore.v1.Key.Builder, com.google.datastore.v1.KeyOrBuilder> 
+            com.google.datastore.v1.Key,
+            com.google.datastore.v1.Key.Builder,
+            com.google.datastore.v1.KeyOrBuilder>
         getDeferredFieldBuilder() {
       if (deferredBuilder_ == null) {
-        deferredBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.datastore.v1.Key, com.google.datastore.v1.Key.Builder, com.google.datastore.v1.KeyOrBuilder>(
+        deferredBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.datastore.v1.Key,
+                com.google.datastore.v1.Key.Builder,
+                com.google.datastore.v1.KeyOrBuilder>(
                 deferred_,
                 ((bitField0_ & 0x00000004) == 0x00000004),
                 getParentForChildren(),
@@ -1788,22 +1971,24 @@ private static final long serialVersionUID = 0L;
       }
       return deferredBuilder_;
     }
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+
+    @java.lang.Override
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
     }
-
 
     // @@protoc_insertion_point(builder_scope:google.datastore.v1.LookupResponse)
   }
 
   // @@protoc_insertion_point(class_scope:google.datastore.v1.LookupResponse)
   private static final com.google.datastore.v1.LookupResponse DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.datastore.v1.LookupResponse();
   }
@@ -1812,15 +1997,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<LookupResponse>
-      PARSER = new com.google.protobuf.AbstractParser<LookupResponse>() {
-    public LookupResponse parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-        return new LookupResponse(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<LookupResponse> PARSER =
+      new com.google.protobuf.AbstractParser<LookupResponse>() {
+        @java.lang.Override
+        public LookupResponse parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new LookupResponse(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<LookupResponse> parser() {
     return PARSER;
@@ -1831,9 +2017,8 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.datastore.v1.LookupResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

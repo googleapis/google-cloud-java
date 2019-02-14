@@ -3,11 +3,14 @@
 
 package com.google.cloud.dataproc.v1beta2;
 
-public interface UpdateClusterRequestOrBuilder extends
+public interface UpdateClusterRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dataproc.v1beta2.UpdateClusterRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The ID of the Google Cloud Platform project the
    * cluster belongs to.
@@ -17,6 +20,8 @@ public interface UpdateClusterRequestOrBuilder extends
    */
   java.lang.String getProjectId();
   /**
+   *
+   *
    * <pre>
    * Required. The ID of the Google Cloud Platform project the
    * cluster belongs to.
@@ -24,10 +29,11 @@ public interface UpdateClusterRequestOrBuilder extends
    *
    * <code>string project_id = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getProjectIdBytes();
+  com.google.protobuf.ByteString getProjectIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * Required. The Cloud Dataproc region in which to handle the request.
    * </pre>
@@ -36,16 +42,19 @@ public interface UpdateClusterRequestOrBuilder extends
    */
   java.lang.String getRegion();
   /**
+   *
+   *
    * <pre>
    * Required. The Cloud Dataproc region in which to handle the request.
    * </pre>
    *
    * <code>string region = 5;</code>
    */
-  com.google.protobuf.ByteString
-      getRegionBytes();
+  com.google.protobuf.ByteString getRegionBytes();
 
   /**
+   *
+   *
    * <pre>
    * Required. The cluster name.
    * </pre>
@@ -54,16 +63,19 @@ public interface UpdateClusterRequestOrBuilder extends
    */
   java.lang.String getClusterName();
   /**
+   *
+   *
    * <pre>
    * Required. The cluster name.
    * </pre>
    *
    * <code>string cluster_name = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getClusterNameBytes();
+  com.google.protobuf.ByteString getClusterNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * Required. The changes to the cluster.
    * </pre>
@@ -72,6 +84,8 @@ public interface UpdateClusterRequestOrBuilder extends
    */
   boolean hasCluster();
   /**
+   *
+   *
    * <pre>
    * Required. The changes to the cluster.
    * </pre>
@@ -80,6 +94,8 @@ public interface UpdateClusterRequestOrBuilder extends
    */
   com.google.cloud.dataproc.v1beta2.Cluster getCluster();
   /**
+   *
+   *
    * <pre>
    * Required. The changes to the cluster.
    * </pre>
@@ -89,6 +105,8 @@ public interface UpdateClusterRequestOrBuilder extends
   com.google.cloud.dataproc.v1beta2.ClusterOrBuilder getClusterOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Optional. Timeout for graceful YARN decomissioning. Graceful
    * decommissioning allows removing nodes from the cluster without
@@ -103,6 +121,8 @@ public interface UpdateClusterRequestOrBuilder extends
    */
   boolean hasGracefulDecommissionTimeout();
   /**
+   *
+   *
    * <pre>
    * Optional. Timeout for graceful YARN decomissioning. Graceful
    * decommissioning allows removing nodes from the cluster without
@@ -117,6 +137,8 @@ public interface UpdateClusterRequestOrBuilder extends
    */
   com.google.protobuf.Duration getGracefulDecommissionTimeout();
   /**
+   *
+   *
    * <pre>
    * Optional. Timeout for graceful YARN decomissioning. Graceful
    * decommissioning allows removing nodes from the cluster without
@@ -132,6 +154,8 @@ public interface UpdateClusterRequestOrBuilder extends
   com.google.protobuf.DurationOrBuilder getGracefulDecommissionTimeoutOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Required. Specifies the path, relative to `Cluster`, of
    * the field to update. For example, to change the number of workers
@@ -185,6 +209,8 @@ public interface UpdateClusterRequestOrBuilder extends
    */
   boolean hasUpdateMask();
   /**
+   *
+   *
    * <pre>
    * Required. Specifies the path, relative to `Cluster`, of
    * the field to update. For example, to change the number of workers
@@ -238,6 +264,8 @@ public interface UpdateClusterRequestOrBuilder extends
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**
+   *
+   *
    * <pre>
    * Required. Specifies the path, relative to `Cluster`, of
    * the field to update. For example, to change the number of workers
@@ -292,6 +320,8 @@ public interface UpdateClusterRequestOrBuilder extends
   com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Optional. A unique id used to identify the request. If the server
    * receives two [UpdateClusterRequest][google.cloud.dataproc.v1beta2.UpdateClusterRequest] requests  with the same
@@ -308,6 +338,8 @@ public interface UpdateClusterRequestOrBuilder extends
    */
   java.lang.String getRequestId();
   /**
+   *
+   *
    * <pre>
    * Optional. A unique id used to identify the request. If the server
    * receives two [UpdateClusterRequest][google.cloud.dataproc.v1beta2.UpdateClusterRequest] requests  with the same
@@ -322,6 +354,5 @@ public interface UpdateClusterRequestOrBuilder extends
    *
    * <code>string request_id = 7;</code>
    */
-  com.google.protobuf.ByteString
-      getRequestIdBytes();
+  com.google.protobuf.ByteString getRequestIdBytes();
 }

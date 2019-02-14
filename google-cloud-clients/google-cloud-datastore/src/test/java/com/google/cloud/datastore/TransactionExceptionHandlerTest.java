@@ -63,10 +63,7 @@ public class TransactionExceptionHandlerTest {
 
     DatastoreException nestedUserException =
         new DatastoreException(
-            BaseServiceException.UNKNOWN_CODE,
-            "",
-            null,
-            new RuntimeException(""));
+            BaseServiceException.UNKNOWN_CODE, "", null, new RuntimeException(""));
 
     assertFalse(transactionHandler.shouldRetry(nestedUserException, null));
     assertFalse(handler.shouldRetry(nestedDatastoreException, null));

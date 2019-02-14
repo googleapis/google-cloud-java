@@ -3,11 +3,14 @@
 
 package com.google.pubsub.v1;
 
-public interface GetSnapshotRequestOrBuilder extends
+public interface GetSnapshotRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.pubsub.v1.GetSnapshotRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The name of the snapshot to get.
    * Format is `projects/{project}/snapshots/{snap}`.
@@ -17,6 +20,8 @@ public interface GetSnapshotRequestOrBuilder extends
    */
   java.lang.String getSnapshot();
   /**
+   *
+   *
    * <pre>
    * The name of the snapshot to get.
    * Format is `projects/{project}/snapshots/{snap}`.
@@ -24,6 +29,5 @@ public interface GetSnapshotRequestOrBuilder extends
    *
    * <code>string snapshot = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getSnapshotBytes();
+  com.google.protobuf.ByteString getSnapshotBytes();
 }

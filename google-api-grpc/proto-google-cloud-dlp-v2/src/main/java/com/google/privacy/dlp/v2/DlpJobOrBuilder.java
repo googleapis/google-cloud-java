@@ -3,11 +3,14 @@
 
 package com.google.privacy.dlp.v2;
 
-public interface DlpJobOrBuilder extends
+public interface DlpJobOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.DlpJob)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The server-assigned name.
    * </pre>
@@ -16,16 +19,19 @@ public interface DlpJobOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The server-assigned name.
    * </pre>
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * The type of job.
    * </pre>
@@ -34,6 +40,8 @@ public interface DlpJobOrBuilder extends
    */
   int getTypeValue();
   /**
+   *
+   *
    * <pre>
    * The type of job.
    * </pre>
@@ -43,6 +51,8 @@ public interface DlpJobOrBuilder extends
   com.google.privacy.dlp.v2.DlpJobType getType();
 
   /**
+   *
+   *
    * <pre>
    * State of a job.
    * </pre>
@@ -51,6 +61,8 @@ public interface DlpJobOrBuilder extends
    */
   int getStateValue();
   /**
+   *
+   *
    * <pre>
    * State of a job.
    * </pre>
@@ -60,6 +72,8 @@ public interface DlpJobOrBuilder extends
   com.google.privacy.dlp.v2.DlpJob.JobState getState();
 
   /**
+   *
+   *
    * <pre>
    * Results from analyzing risk of a data source.
    * </pre>
@@ -68,6 +82,8 @@ public interface DlpJobOrBuilder extends
    */
   boolean hasRiskDetails();
   /**
+   *
+   *
    * <pre>
    * Results from analyzing risk of a data source.
    * </pre>
@@ -76,6 +92,8 @@ public interface DlpJobOrBuilder extends
    */
   com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetails getRiskDetails();
   /**
+   *
+   *
    * <pre>
    * Results from analyzing risk of a data source.
    * </pre>
@@ -85,6 +103,8 @@ public interface DlpJobOrBuilder extends
   com.google.privacy.dlp.v2.AnalyzeDataSourceRiskDetailsOrBuilder getRiskDetailsOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Results from inspecting a data source.
    * </pre>
@@ -93,6 +113,8 @@ public interface DlpJobOrBuilder extends
    */
   boolean hasInspectDetails();
   /**
+   *
+   *
    * <pre>
    * Results from inspecting a data source.
    * </pre>
@@ -101,6 +123,8 @@ public interface DlpJobOrBuilder extends
    */
   com.google.privacy.dlp.v2.InspectDataSourceDetails getInspectDetails();
   /**
+   *
+   *
    * <pre>
    * Results from inspecting a data source.
    * </pre>
@@ -110,6 +134,8 @@ public interface DlpJobOrBuilder extends
   com.google.privacy.dlp.v2.InspectDataSourceDetailsOrBuilder getInspectDetailsOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Time when the job was created.
    * </pre>
@@ -118,6 +144,8 @@ public interface DlpJobOrBuilder extends
    */
   boolean hasCreateTime();
   /**
+   *
+   *
    * <pre>
    * Time when the job was created.
    * </pre>
@@ -126,6 +154,8 @@ public interface DlpJobOrBuilder extends
    */
   com.google.protobuf.Timestamp getCreateTime();
   /**
+   *
+   *
    * <pre>
    * Time when the job was created.
    * </pre>
@@ -135,6 +165,8 @@ public interface DlpJobOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Time when the job started.
    * </pre>
@@ -143,6 +175,8 @@ public interface DlpJobOrBuilder extends
    */
   boolean hasStartTime();
   /**
+   *
+   *
    * <pre>
    * Time when the job started.
    * </pre>
@@ -151,6 +185,8 @@ public interface DlpJobOrBuilder extends
    */
   com.google.protobuf.Timestamp getStartTime();
   /**
+   *
+   *
    * <pre>
    * Time when the job started.
    * </pre>
@@ -160,6 +196,8 @@ public interface DlpJobOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Time when the job finished.
    * </pre>
@@ -168,6 +206,8 @@ public interface DlpJobOrBuilder extends
    */
   boolean hasEndTime();
   /**
+   *
+   *
    * <pre>
    * Time when the job finished.
    * </pre>
@@ -176,6 +216,8 @@ public interface DlpJobOrBuilder extends
    */
   com.google.protobuf.Timestamp getEndTime();
   /**
+   *
+   *
    * <pre>
    * Time when the job finished.
    * </pre>
@@ -185,6 +227,8 @@ public interface DlpJobOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getEndTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * If created by a job trigger, the resource name of the trigger that
    * instantiated the job.
@@ -194,6 +238,8 @@ public interface DlpJobOrBuilder extends
    */
   java.lang.String getJobTriggerName();
   /**
+   *
+   *
    * <pre>
    * If created by a job trigger, the resource name of the trigger that
    * instantiated the job.
@@ -201,19 +247,21 @@ public interface DlpJobOrBuilder extends
    *
    * <code>string job_trigger_name = 10;</code>
    */
-  com.google.protobuf.ByteString
-      getJobTriggerNameBytes();
+  com.google.protobuf.ByteString getJobTriggerNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * A stream of errors encountered running the job.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.Error errors = 11;</code>
    */
-  java.util.List<com.google.privacy.dlp.v2.Error> 
-      getErrorsList();
+  java.util.List<com.google.privacy.dlp.v2.Error> getErrorsList();
   /**
+   *
+   *
    * <pre>
    * A stream of errors encountered running the job.
    * </pre>
@@ -222,6 +270,8 @@ public interface DlpJobOrBuilder extends
    */
   com.google.privacy.dlp.v2.Error getErrors(int index);
   /**
+   *
+   *
    * <pre>
    * A stream of errors encountered running the job.
    * </pre>
@@ -230,23 +280,25 @@ public interface DlpJobOrBuilder extends
    */
   int getErrorsCount();
   /**
+   *
+   *
    * <pre>
    * A stream of errors encountered running the job.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.Error errors = 11;</code>
    */
-  java.util.List<? extends com.google.privacy.dlp.v2.ErrorOrBuilder> 
-      getErrorsOrBuilderList();
+  java.util.List<? extends com.google.privacy.dlp.v2.ErrorOrBuilder> getErrorsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * A stream of errors encountered running the job.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.Error errors = 11;</code>
    */
-  com.google.privacy.dlp.v2.ErrorOrBuilder getErrorsOrBuilder(
-      int index);
+  com.google.privacy.dlp.v2.ErrorOrBuilder getErrorsOrBuilder(int index);
 
   public com.google.privacy.dlp.v2.DlpJob.DetailsCase getDetailsCase();
 }

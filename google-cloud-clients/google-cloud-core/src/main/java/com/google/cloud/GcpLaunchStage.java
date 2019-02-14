@@ -22,10 +22,11 @@ import java.lang.annotation.RetentionPolicy;
 /**
  * A qualifier indicating what level of access and support can be expected of a particular Google
  * Cloud Platform feature. The "GeneralAvailability" qualifier is not provided since the vast
- * majority of features are in this category. Note that features may be in a later launch stage
- * than the client library annotation indicates.
+ * majority of features are in this category. Note that features may be in a later launch stage than
+ * the client library annotation indicates.
  *
- * <p>See more at the <a href="https://cloud.google.com/terms/launch-stages">Launch Stages Documentation</a>.
+ * <p>See more at the <a href="https://cloud.google.com/terms/launch-stages">Launch Stages
+ * Documentation</a>.
  */
 public class GcpLaunchStage {
 
@@ -61,9 +62,9 @@ public class GcpLaunchStage {
 
   /**
    * Deprecated features are scheduled to be shut down and removed. For more information, see the
-   * “Deprecation Policy” section of our <a href="https://cloud.google.com/terms/">Terms of Service</a>
-   * and the <a href="https://cloud.google.com/terms/deprecation">Google Cloud Platform Subject to the Deprecation Policy</a>
-   * documentation.
+   * “Deprecation Policy” section of our <a href="https://cloud.google.com/terms/">Terms of
+   * Service</a> and the <a href="https://cloud.google.com/terms/deprecation">Google Cloud Platform
+   * Subject to the Deprecation Policy</a> documentation.
    */
   @Retention(RetentionPolicy.RUNTIME)
   public @interface Deprecated {}

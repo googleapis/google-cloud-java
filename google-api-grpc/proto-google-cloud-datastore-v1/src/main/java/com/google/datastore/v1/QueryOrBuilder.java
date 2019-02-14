@@ -3,20 +3,24 @@
 
 package com.google.datastore.v1;
 
-public interface QueryOrBuilder extends
+public interface QueryOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.datastore.v1.Query)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The projection to return. Defaults to returning all properties.
    * </pre>
    *
    * <code>repeated .google.datastore.v1.Projection projection = 2;</code>
    */
-  java.util.List<com.google.datastore.v1.Projection> 
-      getProjectionList();
+  java.util.List<com.google.datastore.v1.Projection> getProjectionList();
   /**
+   *
+   *
    * <pre>
    * The projection to return. Defaults to returning all properties.
    * </pre>
@@ -25,6 +29,8 @@ public interface QueryOrBuilder extends
    */
   com.google.datastore.v1.Projection getProjection(int index);
   /**
+   *
+   *
    * <pre>
    * The projection to return. Defaults to returning all properties.
    * </pre>
@@ -33,25 +39,30 @@ public interface QueryOrBuilder extends
    */
   int getProjectionCount();
   /**
+   *
+   *
    * <pre>
    * The projection to return. Defaults to returning all properties.
    * </pre>
    *
    * <code>repeated .google.datastore.v1.Projection projection = 2;</code>
    */
-  java.util.List<? extends com.google.datastore.v1.ProjectionOrBuilder> 
+  java.util.List<? extends com.google.datastore.v1.ProjectionOrBuilder>
       getProjectionOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * The projection to return. Defaults to returning all properties.
    * </pre>
    *
    * <code>repeated .google.datastore.v1.Projection projection = 2;</code>
    */
-  com.google.datastore.v1.ProjectionOrBuilder getProjectionOrBuilder(
-      int index);
+  com.google.datastore.v1.ProjectionOrBuilder getProjectionOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * The kinds to query (if empty, returns entities of all kinds).
    * Currently at most 1 kind may be specified.
@@ -59,9 +70,10 @@ public interface QueryOrBuilder extends
    *
    * <code>repeated .google.datastore.v1.KindExpression kind = 3;</code>
    */
-  java.util.List<com.google.datastore.v1.KindExpression> 
-      getKindList();
+  java.util.List<com.google.datastore.v1.KindExpression> getKindList();
   /**
+   *
+   *
    * <pre>
    * The kinds to query (if empty, returns entities of all kinds).
    * Currently at most 1 kind may be specified.
@@ -71,6 +83,8 @@ public interface QueryOrBuilder extends
    */
   com.google.datastore.v1.KindExpression getKind(int index);
   /**
+   *
+   *
    * <pre>
    * The kinds to query (if empty, returns entities of all kinds).
    * Currently at most 1 kind may be specified.
@@ -80,6 +94,8 @@ public interface QueryOrBuilder extends
    */
   int getKindCount();
   /**
+   *
+   *
    * <pre>
    * The kinds to query (if empty, returns entities of all kinds).
    * Currently at most 1 kind may be specified.
@@ -87,9 +103,10 @@ public interface QueryOrBuilder extends
    *
    * <code>repeated .google.datastore.v1.KindExpression kind = 3;</code>
    */
-  java.util.List<? extends com.google.datastore.v1.KindExpressionOrBuilder> 
-      getKindOrBuilderList();
+  java.util.List<? extends com.google.datastore.v1.KindExpressionOrBuilder> getKindOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * The kinds to query (if empty, returns entities of all kinds).
    * Currently at most 1 kind may be specified.
@@ -97,10 +114,11 @@ public interface QueryOrBuilder extends
    *
    * <code>repeated .google.datastore.v1.KindExpression kind = 3;</code>
    */
-  com.google.datastore.v1.KindExpressionOrBuilder getKindOrBuilder(
-      int index);
+  com.google.datastore.v1.KindExpressionOrBuilder getKindOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * The filter to apply.
    * </pre>
@@ -109,6 +127,8 @@ public interface QueryOrBuilder extends
    */
   boolean hasFilter();
   /**
+   *
+   *
    * <pre>
    * The filter to apply.
    * </pre>
@@ -117,6 +137,8 @@ public interface QueryOrBuilder extends
    */
   com.google.datastore.v1.Filter getFilter();
   /**
+   *
+   *
    * <pre>
    * The filter to apply.
    * </pre>
@@ -126,15 +148,18 @@ public interface QueryOrBuilder extends
   com.google.datastore.v1.FilterOrBuilder getFilterOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The order to apply to the query results (if empty, order is unspecified).
    * </pre>
    *
    * <code>repeated .google.datastore.v1.PropertyOrder order = 5;</code>
    */
-  java.util.List<com.google.datastore.v1.PropertyOrder> 
-      getOrderList();
+  java.util.List<com.google.datastore.v1.PropertyOrder> getOrderList();
   /**
+   *
+   *
    * <pre>
    * The order to apply to the query results (if empty, order is unspecified).
    * </pre>
@@ -143,6 +168,8 @@ public interface QueryOrBuilder extends
    */
   com.google.datastore.v1.PropertyOrder getOrder(int index);
   /**
+   *
+   *
    * <pre>
    * The order to apply to the query results (if empty, order is unspecified).
    * </pre>
@@ -151,25 +178,29 @@ public interface QueryOrBuilder extends
    */
   int getOrderCount();
   /**
+   *
+   *
    * <pre>
    * The order to apply to the query results (if empty, order is unspecified).
    * </pre>
    *
    * <code>repeated .google.datastore.v1.PropertyOrder order = 5;</code>
    */
-  java.util.List<? extends com.google.datastore.v1.PropertyOrderOrBuilder> 
-      getOrderOrBuilderList();
+  java.util.List<? extends com.google.datastore.v1.PropertyOrderOrBuilder> getOrderOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * The order to apply to the query results (if empty, order is unspecified).
    * </pre>
    *
    * <code>repeated .google.datastore.v1.PropertyOrder order = 5;</code>
    */
-  com.google.datastore.v1.PropertyOrderOrBuilder getOrderOrBuilder(
-      int index);
+  com.google.datastore.v1.PropertyOrderOrBuilder getOrderOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * The properties to make distinct. The query results will contain the first
    * result for each distinct combination of values for the given properties
@@ -178,9 +209,10 @@ public interface QueryOrBuilder extends
    *
    * <code>repeated .google.datastore.v1.PropertyReference distinct_on = 6;</code>
    */
-  java.util.List<com.google.datastore.v1.PropertyReference> 
-      getDistinctOnList();
+  java.util.List<com.google.datastore.v1.PropertyReference> getDistinctOnList();
   /**
+   *
+   *
    * <pre>
    * The properties to make distinct. The query results will contain the first
    * result for each distinct combination of values for the given properties
@@ -191,6 +223,8 @@ public interface QueryOrBuilder extends
    */
   com.google.datastore.v1.PropertyReference getDistinctOn(int index);
   /**
+   *
+   *
    * <pre>
    * The properties to make distinct. The query results will contain the first
    * result for each distinct combination of values for the given properties
@@ -201,6 +235,8 @@ public interface QueryOrBuilder extends
    */
   int getDistinctOnCount();
   /**
+   *
+   *
    * <pre>
    * The properties to make distinct. The query results will contain the first
    * result for each distinct combination of values for the given properties
@@ -209,9 +245,11 @@ public interface QueryOrBuilder extends
    *
    * <code>repeated .google.datastore.v1.PropertyReference distinct_on = 6;</code>
    */
-  java.util.List<? extends com.google.datastore.v1.PropertyReferenceOrBuilder> 
+  java.util.List<? extends com.google.datastore.v1.PropertyReferenceOrBuilder>
       getDistinctOnOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * The properties to make distinct. The query results will contain the first
    * result for each distinct combination of values for the given properties
@@ -220,10 +258,11 @@ public interface QueryOrBuilder extends
    *
    * <code>repeated .google.datastore.v1.PropertyReference distinct_on = 6;</code>
    */
-  com.google.datastore.v1.PropertyReferenceOrBuilder getDistinctOnOrBuilder(
-      int index);
+  com.google.datastore.v1.PropertyReferenceOrBuilder getDistinctOnOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * A starting point for the query results. Query cursors are
    * returned in query result batches and
@@ -235,6 +274,8 @@ public interface QueryOrBuilder extends
   com.google.protobuf.ByteString getStartCursor();
 
   /**
+   *
+   *
    * <pre>
    * An ending point for the query results. Query cursors are
    * returned in query result batches and
@@ -246,6 +287,8 @@ public interface QueryOrBuilder extends
   com.google.protobuf.ByteString getEndCursor();
 
   /**
+   *
+   *
    * <pre>
    * The number of results to skip. Applies before limit, but after all other
    * constraints. Optional. Must be &gt;= 0 if specified.
@@ -256,6 +299,8 @@ public interface QueryOrBuilder extends
   int getOffset();
 
   /**
+   *
+   *
    * <pre>
    * The maximum number of results to return. Applies after all other
    * constraints. Optional.
@@ -267,6 +312,8 @@ public interface QueryOrBuilder extends
    */
   boolean hasLimit();
   /**
+   *
+   *
    * <pre>
    * The maximum number of results to return. Applies after all other
    * constraints. Optional.
@@ -278,6 +325,8 @@ public interface QueryOrBuilder extends
    */
   com.google.protobuf.Int32Value getLimit();
   /**
+   *
+   *
    * <pre>
    * The maximum number of results to return. Applies after all other
    * constraints. Optional.

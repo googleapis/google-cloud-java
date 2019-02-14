@@ -3,11 +3,14 @@
 
 package com.google.spanner.admin.instance.v1;
 
-public interface InstanceOrBuilder extends
+public interface InstanceOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.spanner.admin.instance.v1.Instance)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. A unique identifier for the instance, which cannot be changed
    * after the instance is created. Values are of the form
@@ -19,6 +22,8 @@ public interface InstanceOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * Required. A unique identifier for the instance, which cannot be changed
    * after the instance is created. Values are of the form
@@ -28,10 +33,11 @@ public interface InstanceOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * Required. The name of the instance's configuration. Values are of the form
    * `projects/&lt;project&gt;/instanceConfigs/&lt;configuration&gt;`. See
@@ -43,6 +49,8 @@ public interface InstanceOrBuilder extends
    */
   java.lang.String getConfig();
   /**
+   *
+   *
    * <pre>
    * Required. The name of the instance's configuration. Values are of the form
    * `projects/&lt;project&gt;/instanceConfigs/&lt;configuration&gt;`. See
@@ -52,10 +60,11 @@ public interface InstanceOrBuilder extends
    *
    * <code>string config = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getConfigBytes();
+  com.google.protobuf.ByteString getConfigBytes();
 
   /**
+   *
+   *
    * <pre>
    * Required. The descriptive name for this instance as it appears in UIs.
    * Must be unique per project and between 4 and 30 characters in length.
@@ -65,6 +74,8 @@ public interface InstanceOrBuilder extends
    */
   java.lang.String getDisplayName();
   /**
+   *
+   *
    * <pre>
    * Required. The descriptive name for this instance as it appears in UIs.
    * Must be unique per project and between 4 and 30 characters in length.
@@ -72,10 +83,11 @@ public interface InstanceOrBuilder extends
    *
    * <code>string display_name = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getDisplayNameBytes();
+  com.google.protobuf.ByteString getDisplayNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * Required. The number of nodes allocated to this instance. This may be zero
    * in API responses for instances that are not yet in state `READY`.
@@ -88,6 +100,8 @@ public interface InstanceOrBuilder extends
   int getNodeCount();
 
   /**
+   *
+   *
    * <pre>
    * Output only. The current instance state. For
    * [CreateInstance][google.spanner.admin.instance.v1.InstanceAdmin.CreateInstance], the state must be
@@ -100,6 +114,8 @@ public interface InstanceOrBuilder extends
    */
   int getStateValue();
   /**
+   *
+   *
    * <pre>
    * Output only. The current instance state. For
    * [CreateInstance][google.spanner.admin.instance.v1.InstanceAdmin.CreateInstance], the state must be
@@ -113,6 +129,8 @@ public interface InstanceOrBuilder extends
   com.google.spanner.admin.instance.v1.Instance.State getState();
 
   /**
+   *
+   *
    * <pre>
    * Cloud Labels are a flexible and lightweight mechanism for organizing cloud
    * resources into groups that reflect a customer's organizational needs and
@@ -138,6 +156,8 @@ public interface InstanceOrBuilder extends
    */
   int getLabelsCount();
   /**
+   *
+   *
    * <pre>
    * Cloud Labels are a flexible and lightweight mechanism for organizing cloud
    * resources into groups that reflect a customer's organizational needs and
@@ -161,15 +181,13 @@ public interface InstanceOrBuilder extends
    *
    * <code>map&lt;string, string&gt; labels = 7;</code>
    */
-  boolean containsLabels(
-      java.lang.String key);
-  /**
-   * Use {@link #getLabelsMap()} instead.
-   */
+  boolean containsLabels(java.lang.String key);
+  /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
-  java.util.Map<java.lang.String, java.lang.String>
-  getLabels();
+  java.util.Map<java.lang.String, java.lang.String> getLabels();
   /**
+   *
+   *
    * <pre>
    * Cloud Labels are a flexible and lightweight mechanism for organizing cloud
    * resources into groups that reflect a customer's organizational needs and
@@ -193,9 +211,10 @@ public interface InstanceOrBuilder extends
    *
    * <code>map&lt;string, string&gt; labels = 7;</code>
    */
-  java.util.Map<java.lang.String, java.lang.String>
-  getLabelsMap();
+  java.util.Map<java.lang.String, java.lang.String> getLabelsMap();
   /**
+   *
+   *
    * <pre>
    * Cloud Labels are a flexible and lightweight mechanism for organizing cloud
    * resources into groups that reflect a customer's organizational needs and
@@ -219,11 +238,10 @@ public interface InstanceOrBuilder extends
    *
    * <code>map&lt;string, string&gt; labels = 7;</code>
    */
-
-  java.lang.String getLabelsOrDefault(
-      java.lang.String key,
-      java.lang.String defaultValue);
+  java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue);
   /**
+   *
+   *
    * <pre>
    * Cloud Labels are a flexible and lightweight mechanism for organizing cloud
    * resources into groups that reflect a customer's organizational needs and
@@ -247,7 +265,5 @@ public interface InstanceOrBuilder extends
    *
    * <code>map&lt;string, string&gt; labels = 7;</code>
    */
-
-  java.lang.String getLabelsOrThrow(
-      java.lang.String key);
+  java.lang.String getLabelsOrThrow(java.lang.String key);
 }

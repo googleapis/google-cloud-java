@@ -3,11 +3,14 @@
 
 package com.google.spanner.admin.instance.v1;
 
-public interface ListInstancesRequestOrBuilder extends
+public interface ListInstancesRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.spanner.admin.instance.v1.ListInstancesRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The name of the project for which a list of instances is
    * requested. Values are of the form `projects/&lt;project&gt;`.
@@ -17,6 +20,8 @@ public interface ListInstancesRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * Required. The name of the project for which a list of instances is
    * requested. Values are of the form `projects/&lt;project&gt;`.
@@ -24,10 +29,11 @@ public interface ListInstancesRequestOrBuilder extends
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * Number of instances to be returned in the response. If 0 or less, defaults
    * to the server's maximum allowed page size.
@@ -38,6 +44,8 @@ public interface ListInstancesRequestOrBuilder extends
   int getPageSize();
 
   /**
+   *
+   *
    * <pre>
    * If non-empty, `page_token` should contain a
    * [next_page_token][google.spanner.admin.instance.v1.ListInstancesResponse.next_page_token] from a
@@ -48,6 +56,8 @@ public interface ListInstancesRequestOrBuilder extends
    */
   java.lang.String getPageToken();
   /**
+   *
+   *
    * <pre>
    * If non-empty, `page_token` should contain a
    * [next_page_token][google.spanner.admin.instance.v1.ListInstancesResponse.next_page_token] from a
@@ -56,10 +66,11 @@ public interface ListInstancesRequestOrBuilder extends
    *
    * <code>string page_token = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getPageTokenBytes();
+  com.google.protobuf.ByteString getPageTokenBytes();
 
   /**
+   *
+   *
    * <pre>
    * An expression for filtering the results of the request. Filter rules are
    * case insensitive. The fields eligible for filtering are:
@@ -83,6 +94,8 @@ public interface ListInstancesRequestOrBuilder extends
    */
   java.lang.String getFilter();
   /**
+   *
+   *
    * <pre>
    * An expression for filtering the results of the request. Filter rules are
    * case insensitive. The fields eligible for filtering are:
@@ -104,6 +117,5 @@ public interface ListInstancesRequestOrBuilder extends
    *
    * <code>string filter = 4;</code>
    */
-  com.google.protobuf.ByteString
-      getFilterBytes();
+  com.google.protobuf.ByteString getFilterBytes();
 }

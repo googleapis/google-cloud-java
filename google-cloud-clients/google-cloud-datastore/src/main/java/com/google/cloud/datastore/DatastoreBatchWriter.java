@@ -36,9 +36,8 @@ public interface DatastoreBatchWriter extends DatastoreWriter {
   void addWithDeferredIdAllocation(FullEntity<?>... entities);
 
   /**
-   * {@inheritDoc}
-   * If {@code entity} has a complete key and was already marked for deletion in this writer, the
-   * operation will be changed to {@link #put}.
+   * {@inheritDoc} If {@code entity} has a complete key and was already marked for deletion in this
+   * writer, the operation will be changed to {@link #put}.
    *
    * @throws DatastoreException if a given entity with the same complete key was already added to
    *     this writer, if writer is not active or if id allocation for an entity with an incomplete
@@ -48,9 +47,8 @@ public interface DatastoreBatchWriter extends DatastoreWriter {
   Entity add(FullEntity<?> entity);
 
   /**
-   * {@inheritDoc}
-   * For entities with complete keys that were marked for deletion in this writer the operation
-   * will be changed to {@link #put}.
+   * {@inheritDoc} For entities with complete keys that were marked for deletion in this writer the
+   * operation will be changed to {@link #put}.
    *
    * @throws DatastoreException if a given entity with the same complete key was already added to
    *     this writer, if writer is not active or if id allocation for an entity with an incomplete
@@ -60,9 +58,8 @@ public interface DatastoreBatchWriter extends DatastoreWriter {
   List<Entity> add(FullEntity<?>... entities);
 
   /**
-   * {@inheritDoc}
-   * This operation will be converted to {@link #put} operation for entities that were already
-   * added or put in this writer.
+   * {@inheritDoc} This operation will be converted to {@link #put} operation for entities that were
+   * already added or put in this writer.
    *
    * @throws DatastoreException if an entity is marked for deletion in this writer or if not active
    */
@@ -70,9 +67,8 @@ public interface DatastoreBatchWriter extends DatastoreWriter {
   void update(Entity... entities);
 
   /**
-   * {@inheritDoc}
-   * This operation will also remove from this batch any prior writes for entities with the same
-   * keys.
+   * {@inheritDoc} This operation will also remove from this batch any prior writes for entities
+   * with the same keys.
    *
    * @throws DatastoreException if not active
    */
@@ -90,8 +86,8 @@ public interface DatastoreBatchWriter extends DatastoreWriter {
   void putWithDeferredIdAllocation(FullEntity<?>... entities);
 
   /**
-   * {@inheritDoc}
-   * This operation will also remove from this writer any prior writes for the same entity.
+   * {@inheritDoc} This operation will also remove from this writer any prior writes for the same
+   * entity.
    *
    * @throws DatastoreException if not active or if id allocation for an entity with an incomplete
    *     key failed
@@ -100,8 +96,8 @@ public interface DatastoreBatchWriter extends DatastoreWriter {
   Entity put(FullEntity<?> entity);
 
   /**
-   * {@inheritDoc}
-   * This operation will also remove from this writer any prior writes for the same entities.
+   * {@inheritDoc} This operation will also remove from this writer any prior writes for the same
+   * entities.
    *
    * @throws DatastoreException if not active or if id allocation for an entity with an incomplete
    *     key failed
@@ -109,9 +105,6 @@ public interface DatastoreBatchWriter extends DatastoreWriter {
   @Override
   List<Entity> put(FullEntity<?>... entities);
 
-
-  /**
-   * Returns {@code true} if still active (write operations were not sent to the Datastore).
-   */
+  /** Returns {@code true} if still active (write operations were not sent to the Datastore). */
   boolean isActive();
 }

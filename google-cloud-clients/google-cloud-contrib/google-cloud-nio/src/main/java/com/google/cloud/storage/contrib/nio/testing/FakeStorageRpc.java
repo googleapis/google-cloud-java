@@ -44,28 +44,30 @@ import javax.annotation.concurrent.NotThreadSafe;
  * A bare-bones in-memory implementation of StorageRpc, meant for testing.
  *
  * <p>This class is <i>not</i> thread-safe. It's also (currently) limited in the following ways:
+ *
  * <ul>
- * <li>Supported
- *   <ul>
- *   <li>object create
- *   <li>object get
- *   <li>object delete
- *   <li>list the contents of a bucket
- *   <li>generations
- *   </ul>
- * <li>Unsupported
- *   <ul>
- *   <li>bucket create
- *   <li>bucket get
- *   <li>bucket delete
- *   <li>list all buckets
- *   <li>file attributes
- *   <li>patch
- *   <li>continueRewrite
- *   <li>createBatch
- *   <li>checksums, etags
- *   <li>IAM operations</li>
- *   </ul>
+ *   <li>Supported
+ *       <ul>
+ *         <li>object create
+ *         <li>object get
+ *         <li>object delete
+ *         <li>list the contents of a bucket
+ *         <li>generations
+ *       </ul>
+ *   <li>Unsupported
+ *       <ul>
+ *         <li>bucket create
+ *         <li>bucket get
+ *         <li>bucket delete
+ *         <li>list all buckets
+ *         <li>file attributes
+ *         <li>patch
+ *         <li>continueRewrite
+ *         <li>createBatch
+ *         <li>checksums, etags
+ *         <li>IAM operations
+ *         <li>BucketLock operations
+ *       </ul>
  * </ul>
  */
 @NotThreadSafe
@@ -80,9 +82,7 @@ class FakeStorageRpc implements StorageRpc {
 
   private final boolean throwIfOption;
 
-  /**
-   * @param throwIfOption if true, we throw when given any option
-   */
+  /** @param throwIfOption if true, we throw when given any option */
   public FakeStorageRpc(boolean throwIfOption) {
     this.throwIfOption = throwIfOption;
   }
@@ -123,8 +123,13 @@ class FakeStorageRpc implements StorageRpc {
       throws StorageException {
     String delimiter = null;
     String preprefix = "";
+    String pageToken = null;
+    long maxResults = Long.MAX_VALUE;
     for (Map.Entry<Option, ?> e : options.entrySet()) {
       switch (e.getKey()) {
+        case PAGE_TOKEN:
+          pageToken = (String) e.getValue();
+          break;
         case PREFIX:
           preprefix = (String) e.getValue();
           if (preprefix.startsWith("/")) {
@@ -136,6 +141,9 @@ class FakeStorageRpc implements StorageRpc {
           break;
         case FIELDS:
           // ignore and return all the fields
+          break;
+        case MAX_RESULTS:
+          maxResults = (Long) e.getValue();
           break;
         default:
           throw new UnsupportedOperationException("Unknown option: " + e.getKey());
@@ -155,28 +163,38 @@ class FakeStorageRpc implements StorageRpc {
       values.add(so);
     }
     values.addAll(folders.values());
-    // null cursor to indicate there is no more data (empty string would cause us to be called again).
-    // The type cast seems to be necessary to help Java's typesystem remember that collections are iterable.
-    return Tuple.of(null, (Iterable<StorageObject>) values);
+
+    // truncate to max allowed length
+    if (values.size() > maxResults) {
+      List<StorageObject> newValues = new ArrayList<>();
+      for (int i = 0; i < maxResults; i++) {
+        newValues.add(values.get(i));
+      }
+      values = newValues;
+    }
+
+    // null cursor to indicate there is no more data (empty string would cause us to be called
+    // again).
+    // The type cast seems to be necessary to help Java's typesystem remember that collections are
+    // iterable.
+    return Tuple.of(pageToken, (Iterable<StorageObject>) values);
   }
 
-  /**
-   * Returns the requested bucket or {@code null} if not found.
-   */
+  /** Returns the requested bucket or {@code null} if not found. */
   @Override
   public Bucket get(Bucket bucket, Map<Option, ?> options) throws StorageException {
     potentiallyThrow(options);
     return null;
   }
 
-  /**
-   * Returns the requested storage object or {@code null} if not found.
-   */
+  /** Returns the requested storage object or {@code null} if not found. */
   @Override
   public StorageObject get(StorageObject object, Map<Option, ?> options) throws StorageException {
     // we allow the "ID" option because we need to, but then we give a whole answer anyways
     // because the caller won't mind the extra fields.
-    if (throwIfOption && !options.isEmpty() && options.size() > 1
+    if (throwIfOption
+        && !options.isEmpty()
+        && options.size() > 1
         && options.keySet().toArray()[0] != Storage.BlobGetOption.fields(Storage.BlobField.ID)) {
       throw new UnsupportedOperationException();
     }
@@ -221,13 +239,14 @@ class FakeStorageRpc implements StorageRpc {
 
   @Override
   public RpcBatch createBatch() {
-    //return new DefaultRpcBatch(storage);
+    // return new DefaultRpcBatch(storage);
     throw new UnsupportedOperationException();
   }
 
   @Override
-  public StorageObject compose(Iterable<StorageObject> sources, StorageObject target,
-                               Map<Option, ?> targetOptions) throws StorageException {
+  public StorageObject compose(
+      Iterable<StorageObject> sources, StorageObject target, Map<Option, ?> targetOptions)
+      throws StorageException {
     return null;
   }
 
@@ -248,7 +267,7 @@ class FakeStorageRpc implements StorageRpc {
     Long generationMatch = null;
     for (Option op : options.keySet()) {
       if (op.equals(StorageRpc.Option.IF_GENERATION_MATCH)) {
-        generationMatch = (Long)options.get(op);
+        generationMatch = (Long) options.get(op);
       } else {
         throw new UnsupportedOperationException("Unknown option: " + op);
       }
@@ -294,8 +313,9 @@ class FakeStorageRpc implements StorageRpc {
   }
 
   @Override
-  public void write(String uploadId, byte[] toWrite, int toWriteOffset, long destOffset,
-                    int length, boolean last) throws StorageException {
+  public void write(
+      String uploadId, byte[] toWrite, int toWriteOffset, long destOffset, int length, boolean last)
+      throws StorageException {
     // this may have a lot more allocations than ideal, but it'll work.
     byte[] bytes;
     if (futureContents.containsKey(uploadId)) {
@@ -353,8 +373,13 @@ class FakeStorageRpc implements StorageRpc {
 
     byte[] data = contents.get(sourceKey);
     contents.put(destKey, Arrays.copyOf(data, data.length));
-    return new RewriteResponse(rewriteRequest, rewriteRequest.target, data.length, true,
-        "rewriteToken goes here", data.length);
+    return new RewriteResponse(
+        rewriteRequest,
+        rewriteRequest.target,
+        data.length,
+        true,
+        "rewriteToken goes here",
+        data.length);
   }
 
   @Override
@@ -448,8 +473,8 @@ class FakeStorageRpc implements StorageRpc {
   }
 
   /**
-   * Throw if we're asking for generation 0 and the file exists,
-   * or if the requested generation number doesn't match what is asked.
+   * Throw if we're asking for generation 0 and the file exists, or if the requested generation
+   * number doesn't match what is asked.
    *
    * @param key
    * @param generationMatch
@@ -464,13 +489,18 @@ class FakeStorageRpc implements StorageRpc {
     if (generationMatch != 0) {
       Long generation = metadata.get(key).getGeneration();
       if (!generationMatch.equals(generation)) {
-        throw new StorageException(404, "Generation mismatch. Requested " + generationMatch + " but got " + generation);
+        throw new StorageException(
+            404, "Generation mismatch. Requested " + generationMatch + " but got " + generation);
       }
     }
   }
 
   // Returns true if this is a folder. Adds it to folders if it isn't already there.
-  private static boolean processedAsFolder(StorageObject so, String delimiter, String prefix, /* inout */ Map<String, StorageObject> folders) {
+  private static boolean processedAsFolder(
+      StorageObject so,
+      String delimiter,
+      String prefix, /* inout */
+      Map<String, StorageObject> folders) {
     if (delimiter == null) {
       return false;
     }
@@ -501,7 +531,8 @@ class FakeStorageRpc implements StorageRpc {
   }
 
   @Override
-  public TestIamPermissionsResponse testIamPermissions(String bucket, List<String> permissions, Map<Option, ?> options) {
+  public TestIamPermissionsResponse testIamPermissions(
+      String bucket, List<String> permissions, Map<Option, ?> options) {
     throw new UnsupportedOperationException();
   }
 
@@ -517,6 +548,11 @@ class FakeStorageRpc implements StorageRpc {
 
   @Override
   public Notification createNotification(String bucket, Notification notification) {
+    throw new UnsupportedOperationException();
+  }
+
+  @Override
+  public Bucket lockRetentionPolicy(Bucket bucket, Map<Option, ?> options) {
     throw new UnsupportedOperationException();
   }
 

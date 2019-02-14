@@ -4,6 +4,8 @@
 package io.grafeas.v1beta1.provenance;
 
 /**
+ *
+ *
  * <pre>
  * Container message for hashes of byte content of files, used in Source
  * messages to verify integrity of source input to the build.
@@ -11,29 +13,33 @@ package io.grafeas.v1beta1.provenance;
  *
  * Protobuf type {@code grafeas.v1beta1.provenance.FileHashes}
  */
-public  final class FileHashes extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class FileHashes extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:grafeas.v1beta1.provenance.FileHashes)
     FileHashesOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use FileHashes.newBuilder() to construct.
   private FileHashes(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private FileHashes() {
     fileHash_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private FileHashes(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -45,29 +51,30 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          case 10:
+            {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                fileHash_ = new java.util.ArrayList<io.grafeas.v1beta1.provenance.Hash>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              fileHash_.add(
+                  input.readMessage(
+                      io.grafeas.v1beta1.provenance.Hash.parser(), extensionRegistry));
+              break;
             }
-            break;
-          }
-          case 10: {
-            if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-              fileHash_ = new java.util.ArrayList<io.grafeas.v1beta1.provenance.Hash>();
-              mutable_bitField0_ |= 0x00000001;
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
             }
-            fileHash_.add(
-                input.readMessage(io.grafeas.v1beta1.provenance.Hash.parser(), extensionRegistry));
-            break;
-          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
         fileHash_ = java.util.Collections.unmodifiableList(fileHash_);
@@ -76,21 +83,27 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return io.grafeas.v1beta1.provenance.Provenance.internal_static_grafeas_v1beta1_provenance_FileHashes_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return io.grafeas.v1beta1.provenance.Provenance
+        .internal_static_grafeas_v1beta1_provenance_FileHashes_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return io.grafeas.v1beta1.provenance.Provenance.internal_static_grafeas_v1beta1_provenance_FileHashes_fieldAccessorTable
+    return io.grafeas.v1beta1.provenance.Provenance
+        .internal_static_grafeas_v1beta1_provenance_FileHashes_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            io.grafeas.v1beta1.provenance.FileHashes.class, io.grafeas.v1beta1.provenance.FileHashes.Builder.class);
+            io.grafeas.v1beta1.provenance.FileHashes.class,
+            io.grafeas.v1beta1.provenance.FileHashes.Builder.class);
   }
 
   public static final int FILE_HASH_FIELD_NUMBER = 1;
   private java.util.List<io.grafeas.v1beta1.provenance.Hash> fileHash_;
   /**
+   *
+   *
    * <pre>
    * Collection of file hashes.
    * </pre>
@@ -101,17 +114,21 @@ private static final long serialVersionUID = 0L;
     return fileHash_;
   }
   /**
+   *
+   *
    * <pre>
    * Collection of file hashes.
    * </pre>
    *
    * <code>repeated .grafeas.v1beta1.provenance.Hash file_hash = 1;</code>
    */
-  public java.util.List<? extends io.grafeas.v1beta1.provenance.HashOrBuilder> 
+  public java.util.List<? extends io.grafeas.v1beta1.provenance.HashOrBuilder>
       getFileHashOrBuilderList() {
     return fileHash_;
   }
   /**
+   *
+   *
    * <pre>
    * Collection of file hashes.
    * </pre>
@@ -122,6 +139,8 @@ private static final long serialVersionUID = 0L;
     return fileHash_.size();
   }
   /**
+   *
+   *
    * <pre>
    * Collection of file hashes.
    * </pre>
@@ -132,18 +151,21 @@ private static final long serialVersionUID = 0L;
     return fileHash_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * Collection of file hashes.
    * </pre>
    *
    * <code>repeated .grafeas.v1beta1.provenance.Hash file_hash = 1;</code>
    */
-  public io.grafeas.v1beta1.provenance.HashOrBuilder getFileHashOrBuilder(
-      int index) {
+  public io.grafeas.v1beta1.provenance.HashOrBuilder getFileHashOrBuilder(int index) {
     return fileHash_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
+
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -153,22 +175,22 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  @java.lang.Override
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     for (int i = 0; i < fileHash_.size(); i++) {
       output.writeMessage(1, fileHash_.get(i));
     }
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
 
     size = 0;
     for (int i = 0; i < fileHash_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, fileHash_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, fileHash_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -178,7 +200,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof io.grafeas.v1beta1.provenance.FileHashes)) {
       return super.equals(obj);
@@ -186,8 +208,7 @@ private static final long serialVersionUID = 0L;
     io.grafeas.v1beta1.provenance.FileHashes other = (io.grafeas.v1beta1.provenance.FileHashes) obj;
 
     boolean result = true;
-    result = result && getFileHashList()
-        .equals(other.getFileHashList());
+    result = result && getFileHashList().equals(other.getFileHashList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -208,95 +229,104 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static io.grafeas.v1beta1.provenance.FileHashes parseFrom(
-      java.nio.ByteBuffer data)
+  public static io.grafeas.v1beta1.provenance.FileHashes parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static io.grafeas.v1beta1.provenance.FileHashes parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static io.grafeas.v1beta1.provenance.FileHashes parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static io.grafeas.v1beta1.provenance.FileHashes parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static io.grafeas.v1beta1.provenance.FileHashes parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static io.grafeas.v1beta1.provenance.FileHashes parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static io.grafeas.v1beta1.provenance.FileHashes parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static io.grafeas.v1beta1.provenance.FileHashes parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static io.grafeas.v1beta1.provenance.FileHashes parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
+
   public static io.grafeas.v1beta1.provenance.FileHashes parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static io.grafeas.v1beta1.provenance.FileHashes parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static io.grafeas.v1beta1.provenance.FileHashes parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static io.grafeas.v1beta1.provenance.FileHashes parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  public Builder newBuilderForType() { return newBuilder(); }
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-  public static Builder newBuilder(io.grafeas.v1beta1.provenance.FileHashes prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+
+  public static Builder newBuilder(io.grafeas.v1beta1.provenance.FileHashes prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+
+  @java.lang.Override
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Container message for hashes of byte content of files, used in Source
    * messages to verify integrity of source input to the build.
@@ -304,20 +334,23 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code grafeas.v1beta1.provenance.FileHashes}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:grafeas.v1beta1.provenance.FileHashes)
       io.grafeas.v1beta1.provenance.FileHashesOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return io.grafeas.v1beta1.provenance.Provenance.internal_static_grafeas_v1beta1_provenance_FileHashes_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return io.grafeas.v1beta1.provenance.Provenance
+          .internal_static_grafeas_v1beta1_provenance_FileHashes_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.grafeas.v1beta1.provenance.Provenance.internal_static_grafeas_v1beta1_provenance_FileHashes_fieldAccessorTable
+      return io.grafeas.v1beta1.provenance.Provenance
+          .internal_static_grafeas_v1beta1_provenance_FileHashes_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              io.grafeas.v1beta1.provenance.FileHashes.class, io.grafeas.v1beta1.provenance.FileHashes.Builder.class);
+              io.grafeas.v1beta1.provenance.FileHashes.class,
+              io.grafeas.v1beta1.provenance.FileHashes.Builder.class);
     }
 
     // Construct using io.grafeas.v1beta1.provenance.FileHashes.newBuilder()
@@ -325,17 +358,18 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getFileHashFieldBuilder();
       }
     }
+
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       if (fileHashBuilder_ == null) {
@@ -347,15 +381,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return io.grafeas.v1beta1.provenance.Provenance.internal_static_grafeas_v1beta1_provenance_FileHashes_descriptor;
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return io.grafeas.v1beta1.provenance.Provenance
+          .internal_static_grafeas_v1beta1_provenance_FileHashes_descriptor;
     }
 
+    @java.lang.Override
     public io.grafeas.v1beta1.provenance.FileHashes getDefaultInstanceForType() {
       return io.grafeas.v1beta1.provenance.FileHashes.getDefaultInstance();
     }
 
+    @java.lang.Override
     public io.grafeas.v1beta1.provenance.FileHashes build() {
       io.grafeas.v1beta1.provenance.FileHashes result = buildPartial();
       if (!result.isInitialized()) {
@@ -364,8 +401,10 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public io.grafeas.v1beta1.provenance.FileHashes buildPartial() {
-      io.grafeas.v1beta1.provenance.FileHashes result = new io.grafeas.v1beta1.provenance.FileHashes(this);
+      io.grafeas.v1beta1.provenance.FileHashes result =
+          new io.grafeas.v1beta1.provenance.FileHashes(this);
       int from_bitField0_ = bitField0_;
       if (fileHashBuilder_ == null) {
         if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -380,35 +419,43 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+
+    @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+    @java.lang.Override
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+    @java.lang.Override
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
+    @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
+    @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof io.grafeas.v1beta1.provenance.FileHashes) {
-        return mergeFrom((io.grafeas.v1beta1.provenance.FileHashes)other);
+        return mergeFrom((io.grafeas.v1beta1.provenance.FileHashes) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -435,9 +482,10 @@ private static final long serialVersionUID = 0L;
             fileHashBuilder_ = null;
             fileHash_ = other.fileHash_;
             bitField0_ = (bitField0_ & ~0x00000001);
-            fileHashBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getFileHashFieldBuilder() : null;
+            fileHashBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getFileHashFieldBuilder()
+                    : null;
           } else {
             fileHashBuilder_.addAllMessages(other.fileHash_);
           }
@@ -448,10 +496,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -469,21 +519,28 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private java.util.List<io.grafeas.v1beta1.provenance.Hash> fileHash_ =
-      java.util.Collections.emptyList();
+        java.util.Collections.emptyList();
+
     private void ensureFileHashIsMutable() {
       if (!((bitField0_ & 0x00000001) == 0x00000001)) {
         fileHash_ = new java.util.ArrayList<io.grafeas.v1beta1.provenance.Hash>(fileHash_);
         bitField0_ |= 0x00000001;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        io.grafeas.v1beta1.provenance.Hash, io.grafeas.v1beta1.provenance.Hash.Builder, io.grafeas.v1beta1.provenance.HashOrBuilder> fileHashBuilder_;
+            io.grafeas.v1beta1.provenance.Hash,
+            io.grafeas.v1beta1.provenance.Hash.Builder,
+            io.grafeas.v1beta1.provenance.HashOrBuilder>
+        fileHashBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * Collection of file hashes.
      * </pre>
@@ -498,6 +555,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Collection of file hashes.
      * </pre>
@@ -512,6 +571,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Collection of file hashes.
      * </pre>
@@ -526,14 +587,15 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Collection of file hashes.
      * </pre>
      *
      * <code>repeated .grafeas.v1beta1.provenance.Hash file_hash = 1;</code>
      */
-    public Builder setFileHash(
-        int index, io.grafeas.v1beta1.provenance.Hash value) {
+    public Builder setFileHash(int index, io.grafeas.v1beta1.provenance.Hash value) {
       if (fileHashBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -547,6 +609,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Collection of file hashes.
      * </pre>
@@ -565,6 +629,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Collection of file hashes.
      * </pre>
@@ -585,14 +651,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Collection of file hashes.
      * </pre>
      *
      * <code>repeated .grafeas.v1beta1.provenance.Hash file_hash = 1;</code>
      */
-    public Builder addFileHash(
-        int index, io.grafeas.v1beta1.provenance.Hash value) {
+    public Builder addFileHash(int index, io.grafeas.v1beta1.provenance.Hash value) {
       if (fileHashBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -606,14 +673,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Collection of file hashes.
      * </pre>
      *
      * <code>repeated .grafeas.v1beta1.provenance.Hash file_hash = 1;</code>
      */
-    public Builder addFileHash(
-        io.grafeas.v1beta1.provenance.Hash.Builder builderForValue) {
+    public Builder addFileHash(io.grafeas.v1beta1.provenance.Hash.Builder builderForValue) {
       if (fileHashBuilder_ == null) {
         ensureFileHashIsMutable();
         fileHash_.add(builderForValue.build());
@@ -624,6 +692,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Collection of file hashes.
      * </pre>
@@ -642,6 +712,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Collection of file hashes.
      * </pre>
@@ -652,8 +724,7 @@ private static final long serialVersionUID = 0L;
         java.lang.Iterable<? extends io.grafeas.v1beta1.provenance.Hash> values) {
       if (fileHashBuilder_ == null) {
         ensureFileHashIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, fileHash_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, fileHash_);
         onChanged();
       } else {
         fileHashBuilder_.addAllMessages(values);
@@ -661,6 +732,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Collection of file hashes.
      * </pre>
@@ -678,6 +751,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Collection of file hashes.
      * </pre>
@@ -695,39 +770,44 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Collection of file hashes.
      * </pre>
      *
      * <code>repeated .grafeas.v1beta1.provenance.Hash file_hash = 1;</code>
      */
-    public io.grafeas.v1beta1.provenance.Hash.Builder getFileHashBuilder(
-        int index) {
+    public io.grafeas.v1beta1.provenance.Hash.Builder getFileHashBuilder(int index) {
       return getFileHashFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * Collection of file hashes.
      * </pre>
      *
      * <code>repeated .grafeas.v1beta1.provenance.Hash file_hash = 1;</code>
      */
-    public io.grafeas.v1beta1.provenance.HashOrBuilder getFileHashOrBuilder(
-        int index) {
+    public io.grafeas.v1beta1.provenance.HashOrBuilder getFileHashOrBuilder(int index) {
       if (fileHashBuilder_ == null) {
-        return fileHash_.get(index);  } else {
+        return fileHash_.get(index);
+      } else {
         return fileHashBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * Collection of file hashes.
      * </pre>
      *
      * <code>repeated .grafeas.v1beta1.provenance.Hash file_hash = 1;</code>
      */
-    public java.util.List<? extends io.grafeas.v1beta1.provenance.HashOrBuilder> 
-         getFileHashOrBuilderList() {
+    public java.util.List<? extends io.grafeas.v1beta1.provenance.HashOrBuilder>
+        getFileHashOrBuilderList() {
       if (fileHashBuilder_ != null) {
         return fileHashBuilder_.getMessageOrBuilderList();
       } else {
@@ -735,6 +815,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Collection of file hashes.
      * </pre>
@@ -742,38 +824,46 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .grafeas.v1beta1.provenance.Hash file_hash = 1;</code>
      */
     public io.grafeas.v1beta1.provenance.Hash.Builder addFileHashBuilder() {
-      return getFileHashFieldBuilder().addBuilder(
-          io.grafeas.v1beta1.provenance.Hash.getDefaultInstance());
+      return getFileHashFieldBuilder()
+          .addBuilder(io.grafeas.v1beta1.provenance.Hash.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Collection of file hashes.
      * </pre>
      *
      * <code>repeated .grafeas.v1beta1.provenance.Hash file_hash = 1;</code>
      */
-    public io.grafeas.v1beta1.provenance.Hash.Builder addFileHashBuilder(
-        int index) {
-      return getFileHashFieldBuilder().addBuilder(
-          index, io.grafeas.v1beta1.provenance.Hash.getDefaultInstance());
+    public io.grafeas.v1beta1.provenance.Hash.Builder addFileHashBuilder(int index) {
+      return getFileHashFieldBuilder()
+          .addBuilder(index, io.grafeas.v1beta1.provenance.Hash.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Collection of file hashes.
      * </pre>
      *
      * <code>repeated .grafeas.v1beta1.provenance.Hash file_hash = 1;</code>
      */
-    public java.util.List<io.grafeas.v1beta1.provenance.Hash.Builder> 
-         getFileHashBuilderList() {
+    public java.util.List<io.grafeas.v1beta1.provenance.Hash.Builder> getFileHashBuilderList() {
       return getFileHashFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        io.grafeas.v1beta1.provenance.Hash, io.grafeas.v1beta1.provenance.Hash.Builder, io.grafeas.v1beta1.provenance.HashOrBuilder> 
+            io.grafeas.v1beta1.provenance.Hash,
+            io.grafeas.v1beta1.provenance.Hash.Builder,
+            io.grafeas.v1beta1.provenance.HashOrBuilder>
         getFileHashFieldBuilder() {
       if (fileHashBuilder_ == null) {
-        fileHashBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            io.grafeas.v1beta1.provenance.Hash, io.grafeas.v1beta1.provenance.Hash.Builder, io.grafeas.v1beta1.provenance.HashOrBuilder>(
+        fileHashBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                io.grafeas.v1beta1.provenance.Hash,
+                io.grafeas.v1beta1.provenance.Hash.Builder,
+                io.grafeas.v1beta1.provenance.HashOrBuilder>(
                 fileHash_,
                 ((bitField0_ & 0x00000001) == 0x00000001),
                 getParentForChildren(),
@@ -782,22 +872,24 @@ private static final long serialVersionUID = 0L;
       }
       return fileHashBuilder_;
     }
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+
+    @java.lang.Override
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
     }
-
 
     // @@protoc_insertion_point(builder_scope:grafeas.v1beta1.provenance.FileHashes)
   }
 
   // @@protoc_insertion_point(class_scope:grafeas.v1beta1.provenance.FileHashes)
   private static final io.grafeas.v1beta1.provenance.FileHashes DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new io.grafeas.v1beta1.provenance.FileHashes();
   }
@@ -806,15 +898,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<FileHashes>
-      PARSER = new com.google.protobuf.AbstractParser<FileHashes>() {
-    public FileHashes parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-        return new FileHashes(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<FileHashes> PARSER =
+      new com.google.protobuf.AbstractParser<FileHashes>() {
+        @java.lang.Override
+        public FileHashes parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new FileHashes(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<FileHashes> parser() {
     return PARSER;
@@ -825,9 +918,8 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public io.grafeas.v1beta1.provenance.FileHashes getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

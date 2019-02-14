@@ -20,7 +20,6 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.common.base.MoreObjects;
 import com.google.logging.v2.LogEntryOperation;
-
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -41,9 +40,7 @@ public final class Operation implements Serializable {
   private final boolean first;
   private final boolean last;
 
-  /**
-   * A builder for {@code Operation} objects.
-   */
+  /** A builder for {@code Operation} objects. */
   public static final class Builder {
 
     private String id;
@@ -63,27 +60,24 @@ public final class Operation implements Serializable {
       this.last = operation.last;
     }
 
-
     /**
-     * Sets the operation identifier. Log entries with the same identifier are assumed to be part
-     * of the same operation. The combination of id and producer must be globally unique.
+     * Sets the operation identifier. Log entries with the same identifier are assumed to be part of
+     * the same operation. The combination of id and producer must be globally unique.
      */
     public Builder setId(String id) {
       this.id = id;
       return this;
     }
 
-
     /**
      * Sets an arbitrary producer identifier. The combination of producer and id must be globally
-     * unique. Examples: {@code MyDivision.MyBigCompany.com},
-     * {@code github.com/MyProject/MyApplication}.
+     * unique. Examples: {@code MyDivision.MyBigCompany.com}, {@code
+     * github.com/MyProject/MyApplication}.
      */
     public Builder setProducer(String producer) {
       this.producer = producer;
       return this;
     }
-
 
     /**
      * Sets whether the corresponding entry is the first log entry in the operation. If not set,
@@ -94,7 +88,6 @@ public final class Operation implements Serializable {
       return this;
     }
 
-
     /**
      * Sets whether the corresponding entry is the last log entry in the operation. If not set,
      * {@code false} is used.
@@ -104,9 +97,7 @@ public final class Operation implements Serializable {
       return this;
     }
 
-    /**
-     * Creates an {@code Operation} object for this builder.
-     */
+    /** Creates an {@code Operation} object for this builder. */
     public Operation build() {
       return new Operation(this);
     }
@@ -119,7 +110,6 @@ public final class Operation implements Serializable {
     this.last = builder.last;
   }
 
-
   /**
    * Returns the operation identifier. Log entries with the same identifier are assumed to be part
    * of the same operation. The combination of this value and {@link #getProducer()} must be
@@ -129,27 +119,26 @@ public final class Operation implements Serializable {
     return id;
   }
 
-
   /**
    * Returns an arbitrary producer identifier. The combination of this value and {@link #getId()}
-   * must be globally unique. Examples: {@code MyDivision.MyBigCompany.com},
-   * {@code github.com/MyProject/MyApplication}.
+   * must be globally unique. Examples: {@code MyDivision.MyBigCompany.com}, {@code
+   * github.com/MyProject/MyApplication}.
    */
   public String getProducer() {
     return producer;
   }
 
   /**
-   * Returns {@code true} if the corresponding entry is the first log entry in the operation,
-   * {@code false} otherwise.
+   * Returns {@code true} if the corresponding entry is the first log entry in the operation, {@code
+   * false} otherwise.
    */
   public boolean first() {
     return first;
   }
 
   /**
-   * Returns {@code true} if the corresponding entry is the last log entry in the operation,
-   * {@code false} otherwise.
+   * Returns {@code true} if the corresponding entry is the last log entry in the operation, {@code
+   * false} otherwise.
    */
   public boolean last() {
     return last;
@@ -185,9 +174,7 @@ public final class Operation implements Serializable {
         .toString();
   }
 
-  /**
-   * Returns a {@code Builder} for this operation.
-   */
+  /** Returns a {@code Builder} for this operation. */
   public Builder toBuilder() {
     return new Builder(this);
   }
@@ -200,7 +187,6 @@ public final class Operation implements Serializable {
     builder.setLast(last);
     return builder.build();
   }
-
 
   /**
    * Returns a builder for {@code Operation} objects given the operation and producer identifiers.

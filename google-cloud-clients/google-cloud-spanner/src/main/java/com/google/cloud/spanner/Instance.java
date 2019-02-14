@@ -16,6 +16,7 @@
 
 package com.google.cloud.spanner;
 
+import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.Page;
 import com.google.spanner.admin.database.v1.CreateDatabaseMetadata;
 import com.google.spanner.admin.instance.v1.UpdateInstanceMetadata;
@@ -104,7 +105,7 @@ public class Instance extends InstanceInfo {
     instanceClient.deleteInstance(instanceId());
   }
 
-  public Operation<Instance, UpdateInstanceMetadata> update(
+  public OperationFuture<Instance, UpdateInstanceMetadata> update(
       InstanceInfo.InstanceField... fieldsToUpdate) {
     return instanceClient.updateInstance(this, fieldsToUpdate);
   }
@@ -125,7 +126,7 @@ public class Instance extends InstanceInfo {
    * @param statements DDL statements to run while creating the database, for example {@code CREATE
    *     TABLE MyTable ( ... )}. This should not include {@code CREATE DATABASE} statement.
    */
-  public Operation<Database, CreateDatabaseMetadata> createDatabase(
+  public OperationFuture<Database, CreateDatabaseMetadata> createDatabase(
       String databaseId, Iterable<String> statements) throws SpannerException {
     return dbClient.createDatabase(instanceId(), databaseId, statements);
   }

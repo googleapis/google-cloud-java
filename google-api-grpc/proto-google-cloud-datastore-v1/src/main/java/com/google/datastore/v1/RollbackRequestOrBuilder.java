@@ -3,11 +3,14 @@
 
 package com.google.datastore.v1;
 
-public interface RollbackRequestOrBuilder extends
+public interface RollbackRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.datastore.v1.RollbackRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The ID of the project against which to make the request.
    * </pre>
@@ -16,16 +19,19 @@ public interface RollbackRequestOrBuilder extends
    */
   java.lang.String getProjectId();
   /**
+   *
+   *
    * <pre>
    * The ID of the project against which to make the request.
    * </pre>
    *
    * <code>string project_id = 8;</code>
    */
-  com.google.protobuf.ByteString
-      getProjectIdBytes();
+  com.google.protobuf.ByteString getProjectIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * The transaction identifier, returned by a call to
    * [Datastore.BeginTransaction][google.datastore.v1.Datastore.BeginTransaction].

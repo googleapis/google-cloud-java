@@ -4,34 +4,39 @@
 package com.google.spanner.admin.instance.v1;
 
 /**
+ *
+ *
  * <pre>
  * The request for [UpdateInstance][google.spanner.admin.instance.v1.InstanceAdmin.UpdateInstance].
  * </pre>
  *
  * Protobuf type {@code google.spanner.admin.instance.v1.UpdateInstanceRequest}
  */
-public  final class UpdateInstanceRequest extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.spanner.admin.instance.v1.UpdateInstanceRequest)
     UpdateInstanceRequestOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use UpdateInstanceRequest.newBuilder() to construct.
   private UpdateInstanceRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private UpdateInstanceRequest() {
-  }
+
+  private UpdateInstanceRequest() {}
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private UpdateInstanceRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -43,66 +48,76 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
-          case 10: {
-            com.google.spanner.admin.instance.v1.Instance.Builder subBuilder = null;
-            if (instance_ != null) {
-              subBuilder = instance_.toBuilder();
-            }
-            instance_ = input.readMessage(com.google.spanner.admin.instance.v1.Instance.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(instance_);
-              instance_ = subBuilder.buildPartial();
-            }
+          case 10:
+            {
+              com.google.spanner.admin.instance.v1.Instance.Builder subBuilder = null;
+              if (instance_ != null) {
+                subBuilder = instance_.toBuilder();
+              }
+              instance_ =
+                  input.readMessage(
+                      com.google.spanner.admin.instance.v1.Instance.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(instance_);
+                instance_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 18: {
-            com.google.protobuf.FieldMask.Builder subBuilder = null;
-            if (fieldMask_ != null) {
-              subBuilder = fieldMask_.toBuilder();
+              break;
             }
-            fieldMask_ = input.readMessage(com.google.protobuf.FieldMask.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(fieldMask_);
-              fieldMask_ = subBuilder.buildPartial();
-            }
+          case 18:
+            {
+              com.google.protobuf.FieldMask.Builder subBuilder = null;
+              if (fieldMask_ != null) {
+                subBuilder = fieldMask_.toBuilder();
+              }
+              fieldMask_ =
+                  input.readMessage(com.google.protobuf.FieldMask.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(fieldMask_);
+                fieldMask_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.spanner.admin.instance.v1.SpannerInstanceAdminProto.internal_static_google_spanner_admin_instance_v1_UpdateInstanceRequest_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.spanner.admin.instance.v1.SpannerInstanceAdminProto
+        .internal_static_google_spanner_admin_instance_v1_UpdateInstanceRequest_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.spanner.admin.instance.v1.SpannerInstanceAdminProto.internal_static_google_spanner_admin_instance_v1_UpdateInstanceRequest_fieldAccessorTable
+    return com.google.spanner.admin.instance.v1.SpannerInstanceAdminProto
+        .internal_static_google_spanner_admin_instance_v1_UpdateInstanceRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.spanner.admin.instance.v1.UpdateInstanceRequest.class, com.google.spanner.admin.instance.v1.UpdateInstanceRequest.Builder.class);
+            com.google.spanner.admin.instance.v1.UpdateInstanceRequest.class,
+            com.google.spanner.admin.instance.v1.UpdateInstanceRequest.Builder.class);
   }
 
   public static final int INSTANCE_FIELD_NUMBER = 1;
   private com.google.spanner.admin.instance.v1.Instance instance_;
   /**
+   *
+   *
    * <pre>
    * Required. The instance to update, which must always include the instance
    * name.  Otherwise, only fields mentioned in [][google.spanner.admin.instance.v1.UpdateInstanceRequest.field_mask] need be included.
@@ -114,6 +129,8 @@ private static final long serialVersionUID = 0L;
     return instance_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Required. The instance to update, which must always include the instance
    * name.  Otherwise, only fields mentioned in [][google.spanner.admin.instance.v1.UpdateInstanceRequest.field_mask] need be included.
@@ -122,9 +139,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.spanner.admin.instance.v1.Instance instance = 1;</code>
    */
   public com.google.spanner.admin.instance.v1.Instance getInstance() {
-    return instance_ == null ? com.google.spanner.admin.instance.v1.Instance.getDefaultInstance() : instance_;
+    return instance_ == null
+        ? com.google.spanner.admin.instance.v1.Instance.getDefaultInstance()
+        : instance_;
   }
   /**
+   *
+   *
    * <pre>
    * Required. The instance to update, which must always include the instance
    * name.  Otherwise, only fields mentioned in [][google.spanner.admin.instance.v1.UpdateInstanceRequest.field_mask] need be included.
@@ -139,6 +160,8 @@ private static final long serialVersionUID = 0L;
   public static final int FIELD_MASK_FIELD_NUMBER = 2;
   private com.google.protobuf.FieldMask fieldMask_;
   /**
+   *
+   *
    * <pre>
    * Required. A mask specifying which fields in [][google.spanner.admin.instance.v1.UpdateInstanceRequest.instance] should be updated.
    * The field mask must always be specified; this prevents any future fields in
@@ -152,6 +175,8 @@ private static final long serialVersionUID = 0L;
     return fieldMask_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Required. A mask specifying which fields in [][google.spanner.admin.instance.v1.UpdateInstanceRequest.instance] should be updated.
    * The field mask must always be specified; this prevents any future fields in
@@ -165,6 +190,8 @@ private static final long serialVersionUID = 0L;
     return fieldMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : fieldMask_;
   }
   /**
+   *
+   *
    * <pre>
    * Required. A mask specifying which fields in [][google.spanner.admin.instance.v1.UpdateInstanceRequest.instance] should be updated.
    * The field mask must always be specified; this prevents any future fields in
@@ -179,6 +206,8 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -188,8 +217,8 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  @java.lang.Override
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (instance_ != null) {
       output.writeMessage(1, getInstance());
     }
@@ -199,18 +228,17 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
 
     size = 0;
     if (instance_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getInstance());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getInstance());
     }
     if (fieldMask_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getFieldMask());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getFieldMask());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -220,23 +248,22 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.spanner.admin.instance.v1.UpdateInstanceRequest)) {
       return super.equals(obj);
     }
-    com.google.spanner.admin.instance.v1.UpdateInstanceRequest other = (com.google.spanner.admin.instance.v1.UpdateInstanceRequest) obj;
+    com.google.spanner.admin.instance.v1.UpdateInstanceRequest other =
+        (com.google.spanner.admin.instance.v1.UpdateInstanceRequest) obj;
 
     boolean result = true;
     result = result && (hasInstance() == other.hasInstance());
     if (hasInstance()) {
-      result = result && getInstance()
-          .equals(other.getInstance());
+      result = result && getInstance().equals(other.getInstance());
     }
     result = result && (hasFieldMask() == other.hasFieldMask());
     if (hasFieldMask()) {
-      result = result && getFieldMask()
-          .equals(other.getFieldMask());
+      result = result && getFieldMask().equals(other.getFieldMask());
     }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
@@ -263,114 +290,127 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.spanner.admin.instance.v1.UpdateInstanceRequest parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.spanner.admin.instance.v1.UpdateInstanceRequest parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.spanner.admin.instance.v1.UpdateInstanceRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.spanner.admin.instance.v1.UpdateInstanceRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.spanner.admin.instance.v1.UpdateInstanceRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.spanner.admin.instance.v1.UpdateInstanceRequest parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.spanner.admin.instance.v1.UpdateInstanceRequest parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.spanner.admin.instance.v1.UpdateInstanceRequest parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.spanner.admin.instance.v1.UpdateInstanceRequest parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.spanner.admin.instance.v1.UpdateInstanceRequest parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.spanner.admin.instance.v1.UpdateInstanceRequest parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.spanner.admin.instance.v1.UpdateInstanceRequest parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.spanner.admin.instance.v1.UpdateInstanceRequest parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.spanner.admin.instance.v1.UpdateInstanceRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  public Builder newBuilderForType() { return newBuilder(); }
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-  public static Builder newBuilder(com.google.spanner.admin.instance.v1.UpdateInstanceRequest prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+
+  public static Builder newBuilder(
+      com.google.spanner.admin.instance.v1.UpdateInstanceRequest prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+
+  @java.lang.Override
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * The request for [UpdateInstance][google.spanner.admin.instance.v1.InstanceAdmin.UpdateInstance].
    * </pre>
    *
    * Protobuf type {@code google.spanner.admin.instance.v1.UpdateInstanceRequest}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.spanner.admin.instance.v1.UpdateInstanceRequest)
       com.google.spanner.admin.instance.v1.UpdateInstanceRequestOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.spanner.admin.instance.v1.SpannerInstanceAdminProto.internal_static_google_spanner_admin_instance_v1_UpdateInstanceRequest_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.spanner.admin.instance.v1.SpannerInstanceAdminProto
+          .internal_static_google_spanner_admin_instance_v1_UpdateInstanceRequest_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.spanner.admin.instance.v1.SpannerInstanceAdminProto.internal_static_google_spanner_admin_instance_v1_UpdateInstanceRequest_fieldAccessorTable
+      return com.google.spanner.admin.instance.v1.SpannerInstanceAdminProto
+          .internal_static_google_spanner_admin_instance_v1_UpdateInstanceRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.spanner.admin.instance.v1.UpdateInstanceRequest.class, com.google.spanner.admin.instance.v1.UpdateInstanceRequest.Builder.class);
+              com.google.spanner.admin.instance.v1.UpdateInstanceRequest.class,
+              com.google.spanner.admin.instance.v1.UpdateInstanceRequest.Builder.class);
     }
 
     // Construct using com.google.spanner.admin.instance.v1.UpdateInstanceRequest.newBuilder()
@@ -378,16 +418,16 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       if (instanceBuilder_ == null) {
@@ -405,15 +445,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.spanner.admin.instance.v1.SpannerInstanceAdminProto.internal_static_google_spanner_admin_instance_v1_UpdateInstanceRequest_descriptor;
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.spanner.admin.instance.v1.SpannerInstanceAdminProto
+          .internal_static_google_spanner_admin_instance_v1_UpdateInstanceRequest_descriptor;
     }
 
+    @java.lang.Override
     public com.google.spanner.admin.instance.v1.UpdateInstanceRequest getDefaultInstanceForType() {
       return com.google.spanner.admin.instance.v1.UpdateInstanceRequest.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.spanner.admin.instance.v1.UpdateInstanceRequest build() {
       com.google.spanner.admin.instance.v1.UpdateInstanceRequest result = buildPartial();
       if (!result.isInitialized()) {
@@ -422,8 +465,10 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.spanner.admin.instance.v1.UpdateInstanceRequest buildPartial() {
-      com.google.spanner.admin.instance.v1.UpdateInstanceRequest result = new com.google.spanner.admin.instance.v1.UpdateInstanceRequest(this);
+      com.google.spanner.admin.instance.v1.UpdateInstanceRequest result =
+          new com.google.spanner.admin.instance.v1.UpdateInstanceRequest(this);
       if (instanceBuilder_ == null) {
         result.instance_ = instance_;
       } else {
@@ -438,35 +483,43 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+
+    @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+    @java.lang.Override
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+    @java.lang.Override
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
+    @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
+    @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.spanner.admin.instance.v1.UpdateInstanceRequest) {
-        return mergeFrom((com.google.spanner.admin.instance.v1.UpdateInstanceRequest)other);
+        return mergeFrom((com.google.spanner.admin.instance.v1.UpdateInstanceRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -474,7 +527,8 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.spanner.admin.instance.v1.UpdateInstanceRequest other) {
-      if (other == com.google.spanner.admin.instance.v1.UpdateInstanceRequest.getDefaultInstance()) return this;
+      if (other == com.google.spanner.admin.instance.v1.UpdateInstanceRequest.getDefaultInstance())
+        return this;
       if (other.hasInstance()) {
         mergeInstance(other.getInstance());
       }
@@ -486,10 +540,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -498,7 +554,8 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.spanner.admin.instance.v1.UpdateInstanceRequest) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.spanner.admin.instance.v1.UpdateInstanceRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -510,8 +567,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.spanner.admin.instance.v1.Instance instance_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.spanner.admin.instance.v1.Instance, com.google.spanner.admin.instance.v1.Instance.Builder, com.google.spanner.admin.instance.v1.InstanceOrBuilder> instanceBuilder_;
+            com.google.spanner.admin.instance.v1.Instance,
+            com.google.spanner.admin.instance.v1.Instance.Builder,
+            com.google.spanner.admin.instance.v1.InstanceOrBuilder>
+        instanceBuilder_;
     /**
+     *
+     *
      * <pre>
      * Required. The instance to update, which must always include the instance
      * name.  Otherwise, only fields mentioned in [][google.spanner.admin.instance.v1.UpdateInstanceRequest.field_mask] need be included.
@@ -523,6 +585,8 @@ private static final long serialVersionUID = 0L;
       return instanceBuilder_ != null || instance_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The instance to update, which must always include the instance
      * name.  Otherwise, only fields mentioned in [][google.spanner.admin.instance.v1.UpdateInstanceRequest.field_mask] need be included.
@@ -532,12 +596,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.spanner.admin.instance.v1.Instance getInstance() {
       if (instanceBuilder_ == null) {
-        return instance_ == null ? com.google.spanner.admin.instance.v1.Instance.getDefaultInstance() : instance_;
+        return instance_ == null
+            ? com.google.spanner.admin.instance.v1.Instance.getDefaultInstance()
+            : instance_;
       } else {
         return instanceBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The instance to update, which must always include the instance
      * name.  Otherwise, only fields mentioned in [][google.spanner.admin.instance.v1.UpdateInstanceRequest.field_mask] need be included.
@@ -559,6 +627,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The instance to update, which must always include the instance
      * name.  Otherwise, only fields mentioned in [][google.spanner.admin.instance.v1.UpdateInstanceRequest.field_mask] need be included.
@@ -578,6 +648,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The instance to update, which must always include the instance
      * name.  Otherwise, only fields mentioned in [][google.spanner.admin.instance.v1.UpdateInstanceRequest.field_mask] need be included.
@@ -589,7 +661,9 @@ private static final long serialVersionUID = 0L;
       if (instanceBuilder_ == null) {
         if (instance_ != null) {
           instance_ =
-            com.google.spanner.admin.instance.v1.Instance.newBuilder(instance_).mergeFrom(value).buildPartial();
+              com.google.spanner.admin.instance.v1.Instance.newBuilder(instance_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           instance_ = value;
         }
@@ -601,6 +675,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The instance to update, which must always include the instance
      * name.  Otherwise, only fields mentioned in [][google.spanner.admin.instance.v1.UpdateInstanceRequest.field_mask] need be included.
@@ -620,6 +696,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The instance to update, which must always include the instance
      * name.  Otherwise, only fields mentioned in [][google.spanner.admin.instance.v1.UpdateInstanceRequest.field_mask] need be included.
@@ -628,11 +706,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.spanner.admin.instance.v1.Instance instance = 1;</code>
      */
     public com.google.spanner.admin.instance.v1.Instance.Builder getInstanceBuilder() {
-      
+
       onChanged();
       return getInstanceFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Required. The instance to update, which must always include the instance
      * name.  Otherwise, only fields mentioned in [][google.spanner.admin.instance.v1.UpdateInstanceRequest.field_mask] need be included.
@@ -644,11 +724,14 @@ private static final long serialVersionUID = 0L;
       if (instanceBuilder_ != null) {
         return instanceBuilder_.getMessageOrBuilder();
       } else {
-        return instance_ == null ?
-            com.google.spanner.admin.instance.v1.Instance.getDefaultInstance() : instance_;
+        return instance_ == null
+            ? com.google.spanner.admin.instance.v1.Instance.getDefaultInstance()
+            : instance_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The instance to update, which must always include the instance
      * name.  Otherwise, only fields mentioned in [][google.spanner.admin.instance.v1.UpdateInstanceRequest.field_mask] need be included.
@@ -657,14 +740,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.spanner.admin.instance.v1.Instance instance = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.spanner.admin.instance.v1.Instance, com.google.spanner.admin.instance.v1.Instance.Builder, com.google.spanner.admin.instance.v1.InstanceOrBuilder> 
+            com.google.spanner.admin.instance.v1.Instance,
+            com.google.spanner.admin.instance.v1.Instance.Builder,
+            com.google.spanner.admin.instance.v1.InstanceOrBuilder>
         getInstanceFieldBuilder() {
       if (instanceBuilder_ == null) {
-        instanceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.spanner.admin.instance.v1.Instance, com.google.spanner.admin.instance.v1.Instance.Builder, com.google.spanner.admin.instance.v1.InstanceOrBuilder>(
-                getInstance(),
-                getParentForChildren(),
-                isClean());
+        instanceBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.spanner.admin.instance.v1.Instance,
+                com.google.spanner.admin.instance.v1.Instance.Builder,
+                com.google.spanner.admin.instance.v1.InstanceOrBuilder>(
+                getInstance(), getParentForChildren(), isClean());
         instance_ = null;
       }
       return instanceBuilder_;
@@ -672,8 +758,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.FieldMask fieldMask_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.FieldMask, com.google.protobuf.FieldMask.Builder, com.google.protobuf.FieldMaskOrBuilder> fieldMaskBuilder_;
+            com.google.protobuf.FieldMask,
+            com.google.protobuf.FieldMask.Builder,
+            com.google.protobuf.FieldMaskOrBuilder>
+        fieldMaskBuilder_;
     /**
+     *
+     *
      * <pre>
      * Required. A mask specifying which fields in [][google.spanner.admin.instance.v1.UpdateInstanceRequest.instance] should be updated.
      * The field mask must always be specified; this prevents any future fields in
@@ -687,6 +778,8 @@ private static final long serialVersionUID = 0L;
       return fieldMaskBuilder_ != null || fieldMask_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Required. A mask specifying which fields in [][google.spanner.admin.instance.v1.UpdateInstanceRequest.instance] should be updated.
      * The field mask must always be specified; this prevents any future fields in
@@ -704,6 +797,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. A mask specifying which fields in [][google.spanner.admin.instance.v1.UpdateInstanceRequest.instance] should be updated.
      * The field mask must always be specified; this prevents any future fields in
@@ -727,6 +822,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. A mask specifying which fields in [][google.spanner.admin.instance.v1.UpdateInstanceRequest.instance] should be updated.
      * The field mask must always be specified; this prevents any future fields in
@@ -736,8 +833,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.FieldMask field_mask = 2;</code>
      */
-    public Builder setFieldMask(
-        com.google.protobuf.FieldMask.Builder builderForValue) {
+    public Builder setFieldMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (fieldMaskBuilder_ == null) {
         fieldMask_ = builderForValue.build();
         onChanged();
@@ -748,6 +844,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. A mask specifying which fields in [][google.spanner.admin.instance.v1.UpdateInstanceRequest.instance] should be updated.
      * The field mask must always be specified; this prevents any future fields in
@@ -761,7 +859,7 @@ private static final long serialVersionUID = 0L;
       if (fieldMaskBuilder_ == null) {
         if (fieldMask_ != null) {
           fieldMask_ =
-            com.google.protobuf.FieldMask.newBuilder(fieldMask_).mergeFrom(value).buildPartial();
+              com.google.protobuf.FieldMask.newBuilder(fieldMask_).mergeFrom(value).buildPartial();
         } else {
           fieldMask_ = value;
         }
@@ -773,6 +871,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. A mask specifying which fields in [][google.spanner.admin.instance.v1.UpdateInstanceRequest.instance] should be updated.
      * The field mask must always be specified; this prevents any future fields in
@@ -794,6 +894,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. A mask specifying which fields in [][google.spanner.admin.instance.v1.UpdateInstanceRequest.instance] should be updated.
      * The field mask must always be specified; this prevents any future fields in
@@ -804,11 +906,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.FieldMask field_mask = 2;</code>
      */
     public com.google.protobuf.FieldMask.Builder getFieldMaskBuilder() {
-      
+
       onChanged();
       return getFieldMaskFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Required. A mask specifying which fields in [][google.spanner.admin.instance.v1.UpdateInstanceRequest.instance] should be updated.
      * The field mask must always be specified; this prevents any future fields in
@@ -822,11 +926,12 @@ private static final long serialVersionUID = 0L;
       if (fieldMaskBuilder_ != null) {
         return fieldMaskBuilder_.getMessageOrBuilder();
       } else {
-        return fieldMask_ == null ?
-            com.google.protobuf.FieldMask.getDefaultInstance() : fieldMask_;
+        return fieldMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : fieldMask_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. A mask specifying which fields in [][google.spanner.admin.instance.v1.UpdateInstanceRequest.instance] should be updated.
      * The field mask must always be specified; this prevents any future fields in
@@ -837,34 +942,39 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.FieldMask field_mask = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.FieldMask, com.google.protobuf.FieldMask.Builder, com.google.protobuf.FieldMaskOrBuilder> 
+            com.google.protobuf.FieldMask,
+            com.google.protobuf.FieldMask.Builder,
+            com.google.protobuf.FieldMaskOrBuilder>
         getFieldMaskFieldBuilder() {
       if (fieldMaskBuilder_ == null) {
-        fieldMaskBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.FieldMask, com.google.protobuf.FieldMask.Builder, com.google.protobuf.FieldMaskOrBuilder>(
-                getFieldMask(),
-                getParentForChildren(),
-                isClean());
+        fieldMaskBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.FieldMask,
+                com.google.protobuf.FieldMask.Builder,
+                com.google.protobuf.FieldMaskOrBuilder>(
+                getFieldMask(), getParentForChildren(), isClean());
         fieldMask_ = null;
       }
       return fieldMaskBuilder_;
     }
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+
+    @java.lang.Override
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
     }
-
 
     // @@protoc_insertion_point(builder_scope:google.spanner.admin.instance.v1.UpdateInstanceRequest)
   }
 
   // @@protoc_insertion_point(class_scope:google.spanner.admin.instance.v1.UpdateInstanceRequest)
   private static final com.google.spanner.admin.instance.v1.UpdateInstanceRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.spanner.admin.instance.v1.UpdateInstanceRequest();
   }
@@ -873,15 +983,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<UpdateInstanceRequest>
-      PARSER = new com.google.protobuf.AbstractParser<UpdateInstanceRequest>() {
-    public UpdateInstanceRequest parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-        return new UpdateInstanceRequest(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<UpdateInstanceRequest> PARSER =
+      new com.google.protobuf.AbstractParser<UpdateInstanceRequest>() {
+        @java.lang.Override
+        public UpdateInstanceRequest parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new UpdateInstanceRequest(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<UpdateInstanceRequest> parser() {
     return PARSER;
@@ -892,9 +1003,8 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.spanner.admin.instance.v1.UpdateInstanceRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

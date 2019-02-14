@@ -17,7 +17,6 @@
 package com.google.cloud.spanner;
 
 import com.google.common.base.Preconditions;
-
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -79,7 +78,7 @@ public final class Options implements Serializable {
    * operations that support this options are:
    *
    * <ul>
-   *   <li> {@link InstanceAdminClient#listInstances}
+   *   <li>{@link InstanceAdminClient#listInstances}
    * </ul>
    *
    * If this option is passed to any other list operation, it will throw an
@@ -88,13 +87,13 @@ public final class Options implements Serializable {
    * @param filter An expression for filtering the results of the request. Filter rules are case
    *     insensitive. Some examples of using filters are:
    *     <ul>
-   *       <li> name:* The entity has a name.
-   *       <li> name:Howl The entity's name contains "howl".
-   *       <li> name:HOWL Equivalent to above.
-   *       <li> NAME:howl Equivalent to above.
-   *       <li> labels.env:* The entity has the label env.
-   *       <li> labels.env:dev The entity has a label env whose value contains "dev".
-   *       <li> name:howl labels.env:dev The entity's name contains "howl" and it has the label env
+   *       <li>name:* The entity has a name.
+   *       <li>name:Howl The entity's name contains "howl".
+   *       <li>name:HOWL Equivalent to above.
+   *       <li>NAME:howl Equivalent to above.
+   *       <li>labels.env:* The entity has the label env.
+   *       <li>labels.env:dev The entity has a label env whose value contains "dev".
+   *       <li>name:howl labels.env:dev The entity's name contains "howl" and it has the label env
    *           whose value contains "dev".
    *     </ul>
    */
@@ -108,10 +107,6 @@ public final class Options implements Serializable {
 
     FlowControlOption(int prefetchChunks) {
       this.prefetchChunks = prefetchChunks;
-    }
-
-    int prefetchChunks() {
-      return prefetchChunks;
     }
 
     @Override
@@ -202,10 +197,14 @@ public final class Options implements Serializable {
     }
 
     Options that = (Options) o;
-    return (!hasLimit() && !that.hasLimit() || Objects.equals(limit(), that.limit()))
+    return (!hasLimit() && !that.hasLimit()
+            || hasLimit() && that.hasLimit() && Objects.equals(limit(), that.limit()))
         && (!hasPrefetchChunks() && !that.hasPrefetchChunks()
-            || Objects.equals(prefetchChunks(), that.prefetchChunks()))
-        && (!hasPageSize() && !that.hasPageSize() || Objects.equals(pageSize(), that.pageSize()))
+            || hasPrefetchChunks()
+                && that.hasPrefetchChunks()
+                && Objects.equals(prefetchChunks(), that.prefetchChunks()))
+        && (!hasPageSize() && !that.hasPageSize()
+            || hasPageSize() && that.hasPageSize() && Objects.equals(pageSize(), that.pageSize()))
         && Objects.equals(pageToken(), that.pageToken())
         && Objects.equals(filter(), that.filter());
   }
@@ -266,10 +265,6 @@ public final class Options implements Serializable {
       this.limit = limit;
     }
 
-    long limit() {
-      return limit;
-    }
-
     @Override
     void appendToOptions(Options options) {
       options.limit = limit;
@@ -283,10 +278,6 @@ public final class Options implements Serializable {
       this.pageSize = pageSize;
     }
 
-    int pageSize() {
-      return pageSize;
-    }
-
     @Override
     void appendToOptions(Options options) {
       options.pageSize = pageSize;
@@ -298,10 +289,6 @@ public final class Options implements Serializable {
 
     PageTokenOption(String pageToken) {
       this.pageToken = pageToken;
-    }
-
-    String pageToken() {
-      return pageToken;
     }
 
     @Override

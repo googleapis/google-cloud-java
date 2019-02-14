@@ -3,11 +3,14 @@
 
 package com.google.cloud.dialogflow.v2beta1;
 
-public interface KnowledgeOperationMetadataOrBuilder extends
+public interface KnowledgeOperationMetadataOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The current state of this operation.
    * </pre>
@@ -16,6 +19,8 @@ public interface KnowledgeOperationMetadataOrBuilder extends
    */
   int getStateValue();
   /**
+   *
+   *
    * <pre>
    * Required. The current state of this operation.
    * </pre>

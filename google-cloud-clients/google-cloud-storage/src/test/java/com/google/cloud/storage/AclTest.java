@@ -29,7 +29,6 @@ import com.google.cloud.storage.Acl.Project.ProjectRole;
 import com.google.cloud.storage.Acl.RawEntity;
 import com.google.cloud.storage.Acl.Role;
 import com.google.cloud.storage.Acl.User;
-
 import org.junit.Test;
 
 public class AclTest {
@@ -51,12 +50,13 @@ public class AclTest {
   @Test
   public void testToBuilder() {
     assertEquals(ACL, ACL.toBuilder().build());
-    Acl acl = ACL.toBuilder()
-        .setEtag("otherEtag")
-        .setId("otherId")
-        .setRole(Role.READER)
-        .setEntity(User.ofAllUsers())
-        .build();
+    Acl acl =
+        ACL.toBuilder()
+            .setEtag("otherEtag")
+            .setId("otherId")
+            .setRole(Role.READER)
+            .setEntity(User.ofAllUsers())
+            .build();
     assertEquals(Role.READER, acl.getRole());
     assertEquals(User.ofAllUsers(), acl.getEntity());
     assertEquals("otherEtag", acl.getEtag());

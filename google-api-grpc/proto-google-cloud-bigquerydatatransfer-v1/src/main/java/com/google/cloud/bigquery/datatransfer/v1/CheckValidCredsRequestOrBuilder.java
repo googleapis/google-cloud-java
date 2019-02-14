@@ -3,11 +3,14 @@
 
 package com.google.cloud.bigquery.datatransfer.v1;
 
-public interface CheckValidCredsRequestOrBuilder extends
+public interface CheckValidCredsRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.bigquery.datatransfer.v1.CheckValidCredsRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The data source in the form:
    * `projects/{project_id}/dataSources/{data_source_id}`
@@ -17,6 +20,8 @@ public interface CheckValidCredsRequestOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The data source in the form:
    * `projects/{project_id}/dataSources/{data_source_id}`
@@ -24,6 +29,5 @@ public interface CheckValidCredsRequestOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 }

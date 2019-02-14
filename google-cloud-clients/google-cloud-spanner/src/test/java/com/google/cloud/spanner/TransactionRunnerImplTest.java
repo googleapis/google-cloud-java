@@ -32,7 +32,6 @@ import io.grpc.Context;
 import io.grpc.Status;
 import io.grpc.StatusRuntimeException;
 import java.util.concurrent.atomic.AtomicInteger;
-
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -40,9 +39,7 @@ import org.junit.runners.JUnit4;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
-/**
- *  Unit test for {@link com.google.cloud.spanner.SpannerImpl.TransactionRunnerImpl}
- **/
+/** Unit test for {@link com.google.cloud.spanner.SpannerImpl.TransactionRunnerImpl} */
 @RunWith(JUnit4.class)
 public class TransactionRunnerImplTest {
   @Mock private SpannerRpc rpc;
@@ -75,7 +72,7 @@ public class TransactionRunnerImplTest {
     verify(txn).ensureTxn();
     verify(txn).commit();
   }
-  
+
   @Test
   public void runAbort() {
     when(txn.isAborted()).thenReturn(true);
@@ -106,7 +103,7 @@ public class TransactionRunnerImplTest {
     verify(sleeper, times(1)).backoffSleep(any(Context.class), eq(backoffMillis));
     verify(txn, times(2)).ensureTxn();
   }
-  
+
   @Test
   public void commitFailsWithNonAbort() {
     final SpannerException error =

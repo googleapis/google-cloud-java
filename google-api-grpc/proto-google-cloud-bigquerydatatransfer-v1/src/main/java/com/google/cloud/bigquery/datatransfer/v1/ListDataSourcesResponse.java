@@ -4,36 +4,42 @@
 package com.google.cloud.bigquery.datatransfer.v1;
 
 /**
+ *
+ *
  * <pre>
  * Returns list of supported data sources and their metadata.
  * </pre>
  *
  * Protobuf type {@code google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponse}
  */
-public  final class ListDataSourcesResponse extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class ListDataSourcesResponse extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponse)
     ListDataSourcesResponseOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use ListDataSourcesResponse.newBuilder() to construct.
   private ListDataSourcesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private ListDataSourcesResponse() {
     dataSources_ = java.util.Collections.emptyList();
     nextPageToken_ = "";
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private ListDataSourcesResponse(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -45,35 +51,39 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          case 10:
+            {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                dataSources_ =
+                    new java.util.ArrayList<com.google.cloud.bigquery.datatransfer.v1.DataSource>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              dataSources_.add(
+                  input.readMessage(
+                      com.google.cloud.bigquery.datatransfer.v1.DataSource.parser(),
+                      extensionRegistry));
+              break;
             }
-            break;
-          }
-          case 10: {
-            if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-              dataSources_ = new java.util.ArrayList<com.google.cloud.bigquery.datatransfer.v1.DataSource>();
-              mutable_bitField0_ |= 0x00000001;
-            }
-            dataSources_.add(
-                input.readMessage(com.google.cloud.bigquery.datatransfer.v1.DataSource.parser(), extensionRegistry));
-            break;
-          }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 18:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            nextPageToken_ = s;
-            break;
-          }
+              nextPageToken_ = s;
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
         dataSources_ = java.util.Collections.unmodifiableList(dataSources_);
@@ -82,22 +92,28 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.bigquery.datatransfer.v1.DataTransferProto.internal_static_google_cloud_bigquery_datatransfer_v1_ListDataSourcesResponse_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.bigquery.datatransfer.v1.DataTransferProto
+        .internal_static_google_cloud_bigquery_datatransfer_v1_ListDataSourcesResponse_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.bigquery.datatransfer.v1.DataTransferProto.internal_static_google_cloud_bigquery_datatransfer_v1_ListDataSourcesResponse_fieldAccessorTable
+    return com.google.cloud.bigquery.datatransfer.v1.DataTransferProto
+        .internal_static_google_cloud_bigquery_datatransfer_v1_ListDataSourcesResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponse.class, com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponse.Builder.class);
+            com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponse.class,
+            com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponse.Builder.class);
   }
 
   private int bitField0_;
   public static final int DATA_SOURCES_FIELD_NUMBER = 1;
   private java.util.List<com.google.cloud.bigquery.datatransfer.v1.DataSource> dataSources_;
   /**
+   *
+   *
    * <pre>
    * List of supported data sources and their transfer settings.
    * </pre>
@@ -108,17 +124,21 @@ private static final long serialVersionUID = 0L;
     return dataSources_;
   }
   /**
+   *
+   *
    * <pre>
    * List of supported data sources and their transfer settings.
    * </pre>
    *
    * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSource data_sources = 1;</code>
    */
-  public java.util.List<? extends com.google.cloud.bigquery.datatransfer.v1.DataSourceOrBuilder> 
+  public java.util.List<? extends com.google.cloud.bigquery.datatransfer.v1.DataSourceOrBuilder>
       getDataSourcesOrBuilderList() {
     return dataSources_;
   }
   /**
+   *
+   *
    * <pre>
    * List of supported data sources and their transfer settings.
    * </pre>
@@ -129,6 +149,8 @@ private static final long serialVersionUID = 0L;
     return dataSources_.size();
   }
   /**
+   *
+   *
    * <pre>
    * List of supported data sources and their transfer settings.
    * </pre>
@@ -139,6 +161,8 @@ private static final long serialVersionUID = 0L;
     return dataSources_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * List of supported data sources and their transfer settings.
    * </pre>
@@ -153,6 +177,8 @@ private static final long serialVersionUID = 0L;
   public static final int NEXT_PAGE_TOKEN_FIELD_NUMBER = 2;
   private volatile java.lang.Object nextPageToken_;
   /**
+   *
+   *
    * <pre>
    * Output only. The next-pagination token. For multiple-page list results,
    * this token can be used as the
@@ -167,14 +193,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       nextPageToken_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Output only. The next-pagination token. For multiple-page list results,
    * this token can be used as the
@@ -184,13 +211,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string next_page_token = 2;</code>
    */
-  public com.google.protobuf.ByteString
-      getNextPageTokenBytes() {
+  public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       nextPageToken_ = b;
       return b;
     } else {
@@ -199,6 +224,8 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -208,8 +235,8 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  @java.lang.Override
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     for (int i = 0; i < dataSources_.size(); i++) {
       output.writeMessage(1, dataSources_.get(i));
     }
@@ -219,14 +246,14 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
 
     size = 0;
     for (int i = 0; i < dataSources_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, dataSources_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, dataSources_.get(i));
     }
     if (!getNextPageTokenBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, nextPageToken_);
@@ -239,18 +266,17 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponse)) {
       return super.equals(obj);
     }
-    com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponse other = (com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponse) obj;
+    com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponse other =
+        (com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponse) obj;
 
     boolean result = true;
-    result = result && getDataSourcesList()
-        .equals(other.getDataSourcesList());
-    result = result && getNextPageToken()
-        .equals(other.getNextPageToken());
+    result = result && getDataSourcesList().equals(other.getDataSourcesList());
+    result = result && getNextPageToken().equals(other.getNextPageToken());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -274,132 +300,148 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponse parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponse parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponse parseFrom(byte[] data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+
+  public static com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponse parseFrom(
+      byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponse parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponse parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponse parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponse parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
-  public static com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponse parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-  }
+
   public static com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponse parseFrom(
-      com.google.protobuf.CodedInputStream input)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
+  public static com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponse
+      parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+  }
+
+  public static com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponse
+      parseDelimitedFrom(
+          java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
+  public static com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponse parseFrom(
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+  }
+
   public static com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  public Builder newBuilderForType() { return newBuilder(); }
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-  public static Builder newBuilder(com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponse prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+
+  public static Builder newBuilder(
+      com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponse prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+
+  @java.lang.Override
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Returns list of supported data sources and their metadata.
    * </pre>
    *
    * Protobuf type {@code google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponse}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponse)
       com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponseOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.bigquery.datatransfer.v1.DataTransferProto.internal_static_google_cloud_bigquery_datatransfer_v1_ListDataSourcesResponse_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.bigquery.datatransfer.v1.DataTransferProto
+          .internal_static_google_cloud_bigquery_datatransfer_v1_ListDataSourcesResponse_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.bigquery.datatransfer.v1.DataTransferProto.internal_static_google_cloud_bigquery_datatransfer_v1_ListDataSourcesResponse_fieldAccessorTable
+      return com.google.cloud.bigquery.datatransfer.v1.DataTransferProto
+          .internal_static_google_cloud_bigquery_datatransfer_v1_ListDataSourcesResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponse.class, com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponse.Builder.class);
+              com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponse.class,
+              com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponse.Builder.class);
     }
 
-    // Construct using com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponse.newBuilder()
+    // Construct using
+    // com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponse.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getDataSourcesFieldBuilder();
       }
     }
+
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       if (dataSourcesBuilder_ == null) {
@@ -413,15 +455,19 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.bigquery.datatransfer.v1.DataTransferProto.internal_static_google_cloud_bigquery_datatransfer_v1_ListDataSourcesResponse_descriptor;
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.bigquery.datatransfer.v1.DataTransferProto
+          .internal_static_google_cloud_bigquery_datatransfer_v1_ListDataSourcesResponse_descriptor;
     }
 
-    public com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponse getDefaultInstanceForType() {
+    @java.lang.Override
+    public com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponse
+        getDefaultInstanceForType() {
       return com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponse.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponse build() {
       com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponse result = buildPartial();
       if (!result.isInitialized()) {
@@ -430,8 +476,10 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponse buildPartial() {
-      com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponse result = new com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponse(this);
+      com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponse result =
+          new com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponse(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (dataSourcesBuilder_ == null) {
@@ -449,43 +497,54 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+
+    @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+    @java.lang.Override
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+    @java.lang.Override
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
+    @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
+    @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponse) {
-        return mergeFrom((com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponse)other);
+        return mergeFrom((com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponse) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponse other) {
-      if (other == com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponse.getDefaultInstance()) return this;
+    public Builder mergeFrom(
+        com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponse other) {
+      if (other
+          == com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponse.getDefaultInstance())
+        return this;
       if (dataSourcesBuilder_ == null) {
         if (!other.dataSources_.isEmpty()) {
           if (dataSources_.isEmpty()) {
@@ -504,9 +563,10 @@ private static final long serialVersionUID = 0L;
             dataSourcesBuilder_ = null;
             dataSources_ = other.dataSources_;
             bitField0_ = (bitField0_ & ~0x00000001);
-            dataSourcesBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getDataSourcesFieldBuilder() : null;
+            dataSourcesBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getDataSourcesFieldBuilder()
+                    : null;
           } else {
             dataSourcesBuilder_.addAllMessages(other.dataSources_);
           }
@@ -521,10 +581,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -533,7 +595,9 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponse) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponse)
+                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -542,28 +606,38 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private java.util.List<com.google.cloud.bigquery.datatransfer.v1.DataSource> dataSources_ =
-      java.util.Collections.emptyList();
+        java.util.Collections.emptyList();
+
     private void ensureDataSourcesIsMutable() {
       if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-        dataSources_ = new java.util.ArrayList<com.google.cloud.bigquery.datatransfer.v1.DataSource>(dataSources_);
+        dataSources_ =
+            new java.util.ArrayList<com.google.cloud.bigquery.datatransfer.v1.DataSource>(
+                dataSources_);
         bitField0_ |= 0x00000001;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.bigquery.datatransfer.v1.DataSource, com.google.cloud.bigquery.datatransfer.v1.DataSource.Builder, com.google.cloud.bigquery.datatransfer.v1.DataSourceOrBuilder> dataSourcesBuilder_;
+            com.google.cloud.bigquery.datatransfer.v1.DataSource,
+            com.google.cloud.bigquery.datatransfer.v1.DataSource.Builder,
+            com.google.cloud.bigquery.datatransfer.v1.DataSourceOrBuilder>
+        dataSourcesBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * List of supported data sources and their transfer settings.
      * </pre>
      *
      * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSource data_sources = 1;</code>
      */
-    public java.util.List<com.google.cloud.bigquery.datatransfer.v1.DataSource> getDataSourcesList() {
+    public java.util.List<com.google.cloud.bigquery.datatransfer.v1.DataSource>
+        getDataSourcesList() {
       if (dataSourcesBuilder_ == null) {
         return java.util.Collections.unmodifiableList(dataSources_);
       } else {
@@ -571,6 +645,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * List of supported data sources and their transfer settings.
      * </pre>
@@ -585,6 +661,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * List of supported data sources and their transfer settings.
      * </pre>
@@ -599,6 +677,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * List of supported data sources and their transfer settings.
      * </pre>
@@ -620,6 +700,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * List of supported data sources and their transfer settings.
      * </pre>
@@ -638,6 +720,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * List of supported data sources and their transfer settings.
      * </pre>
@@ -658,6 +742,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * List of supported data sources and their transfer settings.
      * </pre>
@@ -679,6 +765,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * List of supported data sources and their transfer settings.
      * </pre>
@@ -697,6 +785,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * List of supported data sources and their transfer settings.
      * </pre>
@@ -715,6 +805,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * List of supported data sources and their transfer settings.
      * </pre>
@@ -725,8 +817,7 @@ private static final long serialVersionUID = 0L;
         java.lang.Iterable<? extends com.google.cloud.bigquery.datatransfer.v1.DataSource> values) {
       if (dataSourcesBuilder_ == null) {
         ensureDataSourcesIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, dataSources_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, dataSources_);
         onChanged();
       } else {
         dataSourcesBuilder_.addAllMessages(values);
@@ -734,6 +825,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * List of supported data sources and their transfer settings.
      * </pre>
@@ -751,6 +844,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * List of supported data sources and their transfer settings.
      * </pre>
@@ -768,6 +863,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * List of supported data sources and their transfer settings.
      * </pre>
@@ -779,6 +876,8 @@ private static final long serialVersionUID = 0L;
       return getDataSourcesFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * List of supported data sources and their transfer settings.
      * </pre>
@@ -788,19 +887,22 @@ private static final long serialVersionUID = 0L;
     public com.google.cloud.bigquery.datatransfer.v1.DataSourceOrBuilder getDataSourcesOrBuilder(
         int index) {
       if (dataSourcesBuilder_ == null) {
-        return dataSources_.get(index);  } else {
+        return dataSources_.get(index);
+      } else {
         return dataSourcesBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * List of supported data sources and their transfer settings.
      * </pre>
      *
      * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSource data_sources = 1;</code>
      */
-    public java.util.List<? extends com.google.cloud.bigquery.datatransfer.v1.DataSourceOrBuilder> 
-         getDataSourcesOrBuilderList() {
+    public java.util.List<? extends com.google.cloud.bigquery.datatransfer.v1.DataSourceOrBuilder>
+        getDataSourcesOrBuilderList() {
       if (dataSourcesBuilder_ != null) {
         return dataSourcesBuilder_.getMessageOrBuilderList();
       } else {
@@ -808,6 +910,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * List of supported data sources and their transfer settings.
      * </pre>
@@ -815,10 +919,12 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSource data_sources = 1;</code>
      */
     public com.google.cloud.bigquery.datatransfer.v1.DataSource.Builder addDataSourcesBuilder() {
-      return getDataSourcesFieldBuilder().addBuilder(
-          com.google.cloud.bigquery.datatransfer.v1.DataSource.getDefaultInstance());
+      return getDataSourcesFieldBuilder()
+          .addBuilder(com.google.cloud.bigquery.datatransfer.v1.DataSource.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * List of supported data sources and their transfer settings.
      * </pre>
@@ -827,26 +933,35 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.bigquery.datatransfer.v1.DataSource.Builder addDataSourcesBuilder(
         int index) {
-      return getDataSourcesFieldBuilder().addBuilder(
-          index, com.google.cloud.bigquery.datatransfer.v1.DataSource.getDefaultInstance());
+      return getDataSourcesFieldBuilder()
+          .addBuilder(
+              index, com.google.cloud.bigquery.datatransfer.v1.DataSource.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * List of supported data sources and their transfer settings.
      * </pre>
      *
      * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSource data_sources = 1;</code>
      */
-    public java.util.List<com.google.cloud.bigquery.datatransfer.v1.DataSource.Builder> 
-         getDataSourcesBuilderList() {
+    public java.util.List<com.google.cloud.bigquery.datatransfer.v1.DataSource.Builder>
+        getDataSourcesBuilderList() {
       return getDataSourcesFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.bigquery.datatransfer.v1.DataSource, com.google.cloud.bigquery.datatransfer.v1.DataSource.Builder, com.google.cloud.bigquery.datatransfer.v1.DataSourceOrBuilder> 
+            com.google.cloud.bigquery.datatransfer.v1.DataSource,
+            com.google.cloud.bigquery.datatransfer.v1.DataSource.Builder,
+            com.google.cloud.bigquery.datatransfer.v1.DataSourceOrBuilder>
         getDataSourcesFieldBuilder() {
       if (dataSourcesBuilder_ == null) {
-        dataSourcesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.cloud.bigquery.datatransfer.v1.DataSource, com.google.cloud.bigquery.datatransfer.v1.DataSource.Builder, com.google.cloud.bigquery.datatransfer.v1.DataSourceOrBuilder>(
+        dataSourcesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.bigquery.datatransfer.v1.DataSource,
+                com.google.cloud.bigquery.datatransfer.v1.DataSource.Builder,
+                com.google.cloud.bigquery.datatransfer.v1.DataSourceOrBuilder>(
                 dataSources_,
                 ((bitField0_ & 0x00000001) == 0x00000001),
                 getParentForChildren(),
@@ -858,6 +973,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object nextPageToken_ = "";
     /**
+     *
+     *
      * <pre>
      * Output only. The next-pagination token. For multiple-page list results,
      * this token can be used as the
@@ -870,8 +987,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getNextPageToken() {
       java.lang.Object ref = nextPageToken_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         nextPageToken_ = s;
         return s;
@@ -880,6 +996,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The next-pagination token. For multiple-page list results,
      * this token can be used as the
@@ -889,13 +1007,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string next_page_token = 2;</code>
      */
-    public com.google.protobuf.ByteString
-        getNextPageTokenBytes() {
+    public com.google.protobuf.ByteString getNextPageTokenBytes() {
       java.lang.Object ref = nextPageToken_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         nextPageToken_ = b;
         return b;
       } else {
@@ -903,6 +1019,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The next-pagination token. For multiple-page list results,
      * this token can be used as the
@@ -912,17 +1030,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string next_page_token = 2;</code>
      */
-    public Builder setNextPageToken(
-        java.lang.String value) {
+    public Builder setNextPageToken(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       nextPageToken_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The next-pagination token. For multiple-page list results,
      * this token can be used as the
@@ -933,12 +1052,14 @@ private static final long serialVersionUID = 0L;
      * <code>string next_page_token = 2;</code>
      */
     public Builder clearNextPageToken() {
-      
+
       nextPageToken_ = getDefaultInstance().getNextPageToken();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The next-pagination token. For multiple-page list results,
      * this token can be used as the
@@ -948,50 +1069,54 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string next_page_token = 2;</code>
      */
-    public Builder setNextPageTokenBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setNextPageTokenBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       nextPageToken_ = value;
       onChanged();
       return this;
     }
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+
+    @java.lang.Override
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponse)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponse)
-  private static final com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponse DEFAULT_INSTANCE;
+  private static final com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponse
+      DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponse();
   }
 
-  public static com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponse getDefaultInstance() {
+  public static com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponse
+      getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ListDataSourcesResponse>
-      PARSER = new com.google.protobuf.AbstractParser<ListDataSourcesResponse>() {
-    public ListDataSourcesResponse parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ListDataSourcesResponse(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<ListDataSourcesResponse> PARSER =
+      new com.google.protobuf.AbstractParser<ListDataSourcesResponse>() {
+        @java.lang.Override
+        public ListDataSourcesResponse parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new ListDataSourcesResponse(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<ListDataSourcesResponse> parser() {
     return PARSER;
@@ -1002,9 +1127,9 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
-  public com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponse getDefaultInstanceForType() {
+  @java.lang.Override
+  public com.google.cloud.bigquery.datatransfer.v1.ListDataSourcesResponse
+      getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

@@ -4,6 +4,8 @@
 package com.google.cloud.tasks.v2beta2;
 
 /**
+ *
+ *
  * <pre>
  * Retry config.
  * These settings determine how a failed task attempt is retried.
@@ -11,29 +13,33 @@ package com.google.cloud.tasks.v2beta2;
  *
  * Protobuf type {@code google.cloud.tasks.v2beta2.RetryConfig}
  */
-public  final class RetryConfig extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class RetryConfig extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.tasks.v2beta2.RetryConfig)
     RetryConfigOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use RetryConfig.newBuilder() to construct.
   private RetryConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private RetryConfig() {
     maxDoublings_ = 0;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private RetryConfig(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -45,105 +51,115 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          case 8:
+            {
+              numAttemptsCase_ = 1;
+              numAttempts_ = input.readInt32();
+              break;
             }
-            break;
-          }
-          case 8: {
-            numAttemptsCase_ = 1;
-            numAttempts_ = input.readInt32();
-            break;
-          }
-          case 16: {
-            numAttemptsCase_ = 2;
-            numAttempts_ = input.readBool();
-            break;
-          }
-          case 26: {
-            com.google.protobuf.Duration.Builder subBuilder = null;
-            if (maxRetryDuration_ != null) {
-              subBuilder = maxRetryDuration_.toBuilder();
+          case 16:
+            {
+              numAttemptsCase_ = 2;
+              numAttempts_ = input.readBool();
+              break;
             }
-            maxRetryDuration_ = input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(maxRetryDuration_);
-              maxRetryDuration_ = subBuilder.buildPartial();
-            }
+          case 26:
+            {
+              com.google.protobuf.Duration.Builder subBuilder = null;
+              if (maxRetryDuration_ != null) {
+                subBuilder = maxRetryDuration_.toBuilder();
+              }
+              maxRetryDuration_ =
+                  input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(maxRetryDuration_);
+                maxRetryDuration_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 34: {
-            com.google.protobuf.Duration.Builder subBuilder = null;
-            if (minBackoff_ != null) {
-              subBuilder = minBackoff_.toBuilder();
+              break;
             }
-            minBackoff_ = input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(minBackoff_);
-              minBackoff_ = subBuilder.buildPartial();
-            }
+          case 34:
+            {
+              com.google.protobuf.Duration.Builder subBuilder = null;
+              if (minBackoff_ != null) {
+                subBuilder = minBackoff_.toBuilder();
+              }
+              minBackoff_ =
+                  input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(minBackoff_);
+                minBackoff_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 42: {
-            com.google.protobuf.Duration.Builder subBuilder = null;
-            if (maxBackoff_ != null) {
-              subBuilder = maxBackoff_.toBuilder();
+              break;
             }
-            maxBackoff_ = input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(maxBackoff_);
-              maxBackoff_ = subBuilder.buildPartial();
+          case 42:
+            {
+              com.google.protobuf.Duration.Builder subBuilder = null;
+              if (maxBackoff_ != null) {
+                subBuilder = maxBackoff_.toBuilder();
+              }
+              maxBackoff_ =
+                  input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(maxBackoff_);
+                maxBackoff_ = subBuilder.buildPartial();
+              }
+
+              break;
             }
-
-            break;
-          }
-          case 48: {
-
-            maxDoublings_ = input.readInt32();
-            break;
-          }
+          case 48:
+            {
+              maxDoublings_ = input.readInt32();
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.tasks.v2beta2.QueueProto.internal_static_google_cloud_tasks_v2beta2_RetryConfig_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.tasks.v2beta2.QueueProto
+        .internal_static_google_cloud_tasks_v2beta2_RetryConfig_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.tasks.v2beta2.QueueProto.internal_static_google_cloud_tasks_v2beta2_RetryConfig_fieldAccessorTable
+    return com.google.cloud.tasks.v2beta2.QueueProto
+        .internal_static_google_cloud_tasks_v2beta2_RetryConfig_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.tasks.v2beta2.RetryConfig.class, com.google.cloud.tasks.v2beta2.RetryConfig.Builder.class);
+            com.google.cloud.tasks.v2beta2.RetryConfig.class,
+            com.google.cloud.tasks.v2beta2.RetryConfig.Builder.class);
   }
 
   private int numAttemptsCase_ = 0;
   private java.lang.Object numAttempts_;
-  public enum NumAttemptsCase
-      implements com.google.protobuf.Internal.EnumLite {
+
+  public enum NumAttemptsCase implements com.google.protobuf.Internal.EnumLite {
     MAX_ATTEMPTS(1),
     UNLIMITED_ATTEMPTS(2),
     NUMATTEMPTS_NOT_SET(0);
     private final int value;
+
     private NumAttemptsCase(int value) {
       this.value = value;
     }
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static NumAttemptsCase valueOf(int value) {
       return forNumber(value);
@@ -151,25 +167,30 @@ private static final long serialVersionUID = 0L;
 
     public static NumAttemptsCase forNumber(int value) {
       switch (value) {
-        case 1: return MAX_ATTEMPTS;
-        case 2: return UNLIMITED_ATTEMPTS;
-        case 0: return NUMATTEMPTS_NOT_SET;
-        default: return null;
+        case 1:
+          return MAX_ATTEMPTS;
+        case 2:
+          return UNLIMITED_ATTEMPTS;
+        case 0:
+          return NUMATTEMPTS_NOT_SET;
+        default:
+          return null;
       }
     }
+
     public int getNumber() {
       return this.value;
     }
   };
 
-  public NumAttemptsCase
-  getNumAttemptsCase() {
-    return NumAttemptsCase.forNumber(
-        numAttemptsCase_);
+  public NumAttemptsCase getNumAttemptsCase() {
+    return NumAttemptsCase.forNumber(numAttemptsCase_);
   }
 
   public static final int MAX_ATTEMPTS_FIELD_NUMBER = 1;
   /**
+   *
+   *
    * <pre>
    * The maximum number of attempts for a task.
    * Cloud Tasks will attempt the task `max_attempts` times (that
@@ -188,6 +209,8 @@ private static final long serialVersionUID = 0L;
 
   public static final int UNLIMITED_ATTEMPTS_FIELD_NUMBER = 2;
   /**
+   *
+   *
    * <pre>
    * If true, then the number of attempts is unlimited.
    * </pre>
@@ -204,6 +227,8 @@ private static final long serialVersionUID = 0L;
   public static final int MAX_RETRY_DURATION_FIELD_NUMBER = 3;
   private com.google.protobuf.Duration maxRetryDuration_;
   /**
+   *
+   *
    * <pre>
    * If positive, `max_retry_duration` specifies the time limit for
    * retrying a failed task, measured from when the task was first
@@ -226,6 +251,8 @@ private static final long serialVersionUID = 0L;
     return maxRetryDuration_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * If positive, `max_retry_duration` specifies the time limit for
    * retrying a failed task, measured from when the task was first
@@ -245,9 +272,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Duration max_retry_duration = 3;</code>
    */
   public com.google.protobuf.Duration getMaxRetryDuration() {
-    return maxRetryDuration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : maxRetryDuration_;
+    return maxRetryDuration_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : maxRetryDuration_;
   }
   /**
+   *
+   *
    * <pre>
    * If positive, `max_retry_duration` specifies the time limit for
    * retrying a failed task, measured from when the task was first
@@ -273,6 +304,8 @@ private static final long serialVersionUID = 0L;
   public static final int MIN_BACKOFF_FIELD_NUMBER = 4;
   private com.google.protobuf.Duration minBackoff_;
   /**
+   *
+   *
    * <pre>
    * A task will be [scheduled][google.cloud.tasks.v2beta2.Task.schedule_time] for retry between
    * [min_backoff][google.cloud.tasks.v2beta2.RetryConfig.min_backoff] and
@@ -293,6 +326,8 @@ private static final long serialVersionUID = 0L;
     return minBackoff_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * A task will be [scheduled][google.cloud.tasks.v2beta2.Task.schedule_time] for retry between
    * [min_backoff][google.cloud.tasks.v2beta2.RetryConfig.min_backoff] and
@@ -313,6 +348,8 @@ private static final long serialVersionUID = 0L;
     return minBackoff_ == null ? com.google.protobuf.Duration.getDefaultInstance() : minBackoff_;
   }
   /**
+   *
+   *
    * <pre>
    * A task will be [scheduled][google.cloud.tasks.v2beta2.Task.schedule_time] for retry between
    * [min_backoff][google.cloud.tasks.v2beta2.RetryConfig.min_backoff] and
@@ -336,6 +373,8 @@ private static final long serialVersionUID = 0L;
   public static final int MAX_BACKOFF_FIELD_NUMBER = 5;
   private com.google.protobuf.Duration maxBackoff_;
   /**
+   *
+   *
    * <pre>
    * A task will be [scheduled][google.cloud.tasks.v2beta2.Task.schedule_time] for retry between
    * [min_backoff][google.cloud.tasks.v2beta2.RetryConfig.min_backoff] and
@@ -356,6 +395,8 @@ private static final long serialVersionUID = 0L;
     return maxBackoff_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * A task will be [scheduled][google.cloud.tasks.v2beta2.Task.schedule_time] for retry between
    * [min_backoff][google.cloud.tasks.v2beta2.RetryConfig.min_backoff] and
@@ -376,6 +417,8 @@ private static final long serialVersionUID = 0L;
     return maxBackoff_ == null ? com.google.protobuf.Duration.getDefaultInstance() : maxBackoff_;
   }
   /**
+   *
+   *
    * <pre>
    * A task will be [scheduled][google.cloud.tasks.v2beta2.Task.schedule_time] for retry between
    * [min_backoff][google.cloud.tasks.v2beta2.RetryConfig.min_backoff] and
@@ -399,6 +442,8 @@ private static final long serialVersionUID = 0L;
   public static final int MAX_DOUBLINGS_FIELD_NUMBER = 6;
   private int maxDoublings_;
   /**
+   *
+   *
    * <pre>
    * The time between retries will double `max_doublings` times.
    * A task's retry interval starts at
@@ -430,6 +475,8 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -439,15 +486,13 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  @java.lang.Override
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (numAttemptsCase_ == 1) {
-      output.writeInt32(
-          1, (int)((java.lang.Integer) numAttempts_));
+      output.writeInt32(1, (int) ((java.lang.Integer) numAttempts_));
     }
     if (numAttemptsCase_ == 2) {
-      output.writeBool(
-          2, (boolean)((java.lang.Boolean) numAttempts_));
+      output.writeBool(2, (boolean) ((java.lang.Boolean) numAttempts_));
     }
     if (maxRetryDuration_ != null) {
       output.writeMessage(3, getMaxRetryDuration());
@@ -464,36 +509,33 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
 
     size = 0;
     if (numAttemptsCase_ == 1) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(
-            1, (int)((java.lang.Integer) numAttempts_));
+      size +=
+          com.google.protobuf.CodedOutputStream.computeInt32Size(
+              1, (int) ((java.lang.Integer) numAttempts_));
     }
     if (numAttemptsCase_ == 2) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(
-            2, (boolean)((java.lang.Boolean) numAttempts_));
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBoolSize(
+              2, (boolean) ((java.lang.Boolean) numAttempts_));
     }
     if (maxRetryDuration_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, getMaxRetryDuration());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getMaxRetryDuration());
     }
     if (minBackoff_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, getMinBackoff());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getMinBackoff());
     }
     if (maxBackoff_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(5, getMaxBackoff());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getMaxBackoff());
     }
     if (maxDoublings_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(6, maxDoublings_);
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(6, maxDoublings_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -503,42 +545,36 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.tasks.v2beta2.RetryConfig)) {
       return super.equals(obj);
     }
-    com.google.cloud.tasks.v2beta2.RetryConfig other = (com.google.cloud.tasks.v2beta2.RetryConfig) obj;
+    com.google.cloud.tasks.v2beta2.RetryConfig other =
+        (com.google.cloud.tasks.v2beta2.RetryConfig) obj;
 
     boolean result = true;
     result = result && (hasMaxRetryDuration() == other.hasMaxRetryDuration());
     if (hasMaxRetryDuration()) {
-      result = result && getMaxRetryDuration()
-          .equals(other.getMaxRetryDuration());
+      result = result && getMaxRetryDuration().equals(other.getMaxRetryDuration());
     }
     result = result && (hasMinBackoff() == other.hasMinBackoff());
     if (hasMinBackoff()) {
-      result = result && getMinBackoff()
-          .equals(other.getMinBackoff());
+      result = result && getMinBackoff().equals(other.getMinBackoff());
     }
     result = result && (hasMaxBackoff() == other.hasMaxBackoff());
     if (hasMaxBackoff()) {
-      result = result && getMaxBackoff()
-          .equals(other.getMaxBackoff());
+      result = result && getMaxBackoff().equals(other.getMaxBackoff());
     }
-    result = result && (getMaxDoublings()
-        == other.getMaxDoublings());
-    result = result && getNumAttemptsCase().equals(
-        other.getNumAttemptsCase());
+    result = result && (getMaxDoublings() == other.getMaxDoublings());
+    result = result && getNumAttemptsCase().equals(other.getNumAttemptsCase());
     if (!result) return false;
     switch (numAttemptsCase_) {
       case 1:
-        result = result && (getMaxAttempts()
-            == other.getMaxAttempts());
+        result = result && (getMaxAttempts() == other.getMaxAttempts());
         break;
       case 2:
-        result = result && (getUnlimitedAttempts()
-            == other.getUnlimitedAttempts());
+        result = result && (getUnlimitedAttempts() == other.getUnlimitedAttempts());
         break;
       case 0:
       default:
@@ -575,8 +611,7 @@ private static final long serialVersionUID = 0L;
         break;
       case 2:
         hash = (37 * hash) + UNLIMITED_ATTEMPTS_FIELD_NUMBER;
-        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-            getUnlimitedAttempts());
+        hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getUnlimitedAttempts());
         break;
       case 0:
       default:
@@ -586,95 +621,104 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.cloud.tasks.v2beta2.RetryConfig parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.cloud.tasks.v2beta2.RetryConfig parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.tasks.v2beta2.RetryConfig parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.tasks.v2beta2.RetryConfig parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.tasks.v2beta2.RetryConfig parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.tasks.v2beta2.RetryConfig parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.tasks.v2beta2.RetryConfig parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.tasks.v2beta2.RetryConfig parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.tasks.v2beta2.RetryConfig parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.cloud.tasks.v2beta2.RetryConfig parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.tasks.v2beta2.RetryConfig parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.tasks.v2beta2.RetryConfig parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.tasks.v2beta2.RetryConfig parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.tasks.v2beta2.RetryConfig parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  public Builder newBuilderForType() { return newBuilder(); }
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-  public static Builder newBuilder(com.google.cloud.tasks.v2beta2.RetryConfig prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+
+  public static Builder newBuilder(com.google.cloud.tasks.v2beta2.RetryConfig prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+
+  @java.lang.Override
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Retry config.
    * These settings determine how a failed task attempt is retried.
@@ -682,20 +726,23 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.cloud.tasks.v2beta2.RetryConfig}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.tasks.v2beta2.RetryConfig)
       com.google.cloud.tasks.v2beta2.RetryConfigOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.tasks.v2beta2.QueueProto.internal_static_google_cloud_tasks_v2beta2_RetryConfig_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.tasks.v2beta2.QueueProto
+          .internal_static_google_cloud_tasks_v2beta2_RetryConfig_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.tasks.v2beta2.QueueProto.internal_static_google_cloud_tasks_v2beta2_RetryConfig_fieldAccessorTable
+      return com.google.cloud.tasks.v2beta2.QueueProto
+          .internal_static_google_cloud_tasks_v2beta2_RetryConfig_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.tasks.v2beta2.RetryConfig.class, com.google.cloud.tasks.v2beta2.RetryConfig.Builder.class);
+              com.google.cloud.tasks.v2beta2.RetryConfig.class,
+              com.google.cloud.tasks.v2beta2.RetryConfig.Builder.class);
     }
 
     // Construct using com.google.cloud.tasks.v2beta2.RetryConfig.newBuilder()
@@ -703,16 +750,16 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       if (maxRetryDurationBuilder_ == null) {
@@ -740,15 +787,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.tasks.v2beta2.QueueProto.internal_static_google_cloud_tasks_v2beta2_RetryConfig_descriptor;
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.tasks.v2beta2.QueueProto
+          .internal_static_google_cloud_tasks_v2beta2_RetryConfig_descriptor;
     }
 
+    @java.lang.Override
     public com.google.cloud.tasks.v2beta2.RetryConfig getDefaultInstanceForType() {
       return com.google.cloud.tasks.v2beta2.RetryConfig.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.cloud.tasks.v2beta2.RetryConfig build() {
       com.google.cloud.tasks.v2beta2.RetryConfig result = buildPartial();
       if (!result.isInitialized()) {
@@ -757,8 +807,10 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.cloud.tasks.v2beta2.RetryConfig buildPartial() {
-      com.google.cloud.tasks.v2beta2.RetryConfig result = new com.google.cloud.tasks.v2beta2.RetryConfig(this);
+      com.google.cloud.tasks.v2beta2.RetryConfig result =
+          new com.google.cloud.tasks.v2beta2.RetryConfig(this);
       if (numAttemptsCase_ == 1) {
         result.numAttempts_ = numAttempts_;
       }
@@ -786,35 +838,43 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+
+    @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+    @java.lang.Override
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+    @java.lang.Override
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
+    @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
+    @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.tasks.v2beta2.RetryConfig) {
-        return mergeFrom((com.google.cloud.tasks.v2beta2.RetryConfig)other);
+        return mergeFrom((com.google.cloud.tasks.v2beta2.RetryConfig) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -836,27 +896,32 @@ private static final long serialVersionUID = 0L;
         setMaxDoublings(other.getMaxDoublings());
       }
       switch (other.getNumAttemptsCase()) {
-        case MAX_ATTEMPTS: {
-          setMaxAttempts(other.getMaxAttempts());
-          break;
-        }
-        case UNLIMITED_ATTEMPTS: {
-          setUnlimitedAttempts(other.getUnlimitedAttempts());
-          break;
-        }
-        case NUMATTEMPTS_NOT_SET: {
-          break;
-        }
+        case MAX_ATTEMPTS:
+          {
+            setMaxAttempts(other.getMaxAttempts());
+            break;
+          }
+        case UNLIMITED_ATTEMPTS:
+          {
+            setUnlimitedAttempts(other.getUnlimitedAttempts());
+            break;
+          }
+        case NUMATTEMPTS_NOT_SET:
+          {
+            break;
+          }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -874,12 +939,12 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int numAttemptsCase_ = 0;
     private java.lang.Object numAttempts_;
-    public NumAttemptsCase
-        getNumAttemptsCase() {
-      return NumAttemptsCase.forNumber(
-          numAttemptsCase_);
+
+    public NumAttemptsCase getNumAttemptsCase() {
+      return NumAttemptsCase.forNumber(numAttemptsCase_);
     }
 
     public Builder clearNumAttempts() {
@@ -889,8 +954,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-
     /**
+     *
+     *
      * <pre>
      * The maximum number of attempts for a task.
      * Cloud Tasks will attempt the task `max_attempts` times (that
@@ -907,6 +973,8 @@ private static final long serialVersionUID = 0L;
       return 0;
     }
     /**
+     *
+     *
      * <pre>
      * The maximum number of attempts for a task.
      * Cloud Tasks will attempt the task `max_attempts` times (that
@@ -923,6 +991,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The maximum number of attempts for a task.
      * Cloud Tasks will attempt the task `max_attempts` times (that
@@ -942,6 +1012,8 @@ private static final long serialVersionUID = 0L;
     }
 
     /**
+     *
+     *
      * <pre>
      * If true, then the number of attempts is unlimited.
      * </pre>
@@ -955,6 +1027,8 @@ private static final long serialVersionUID = 0L;
       return false;
     }
     /**
+     *
+     *
      * <pre>
      * If true, then the number of attempts is unlimited.
      * </pre>
@@ -968,6 +1042,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If true, then the number of attempts is unlimited.
      * </pre>
@@ -985,8 +1061,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Duration maxRetryDuration_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> maxRetryDurationBuilder_;
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        maxRetryDurationBuilder_;
     /**
+     *
+     *
      * <pre>
      * If positive, `max_retry_duration` specifies the time limit for
      * retrying a failed task, measured from when the task was first
@@ -1009,6 +1090,8 @@ private static final long serialVersionUID = 0L;
       return maxRetryDurationBuilder_ != null || maxRetryDuration_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * If positive, `max_retry_duration` specifies the time limit for
      * retrying a failed task, measured from when the task was first
@@ -1029,12 +1112,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.Duration getMaxRetryDuration() {
       if (maxRetryDurationBuilder_ == null) {
-        return maxRetryDuration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : maxRetryDuration_;
+        return maxRetryDuration_ == null
+            ? com.google.protobuf.Duration.getDefaultInstance()
+            : maxRetryDuration_;
       } else {
         return maxRetryDurationBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * If positive, `max_retry_duration` specifies the time limit for
      * retrying a failed task, measured from when the task was first
@@ -1067,6 +1154,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If positive, `max_retry_duration` specifies the time limit for
      * retrying a failed task, measured from when the task was first
@@ -1085,8 +1174,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.Duration max_retry_duration = 3;</code>
      */
-    public Builder setMaxRetryDuration(
-        com.google.protobuf.Duration.Builder builderForValue) {
+    public Builder setMaxRetryDuration(com.google.protobuf.Duration.Builder builderForValue) {
       if (maxRetryDurationBuilder_ == null) {
         maxRetryDuration_ = builderForValue.build();
         onChanged();
@@ -1097,6 +1185,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If positive, `max_retry_duration` specifies the time limit for
      * retrying a failed task, measured from when the task was first
@@ -1119,7 +1209,9 @@ private static final long serialVersionUID = 0L;
       if (maxRetryDurationBuilder_ == null) {
         if (maxRetryDuration_ != null) {
           maxRetryDuration_ =
-            com.google.protobuf.Duration.newBuilder(maxRetryDuration_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Duration.newBuilder(maxRetryDuration_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           maxRetryDuration_ = value;
         }
@@ -1131,6 +1223,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If positive, `max_retry_duration` specifies the time limit for
      * retrying a failed task, measured from when the task was first
@@ -1161,6 +1255,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If positive, `max_retry_duration` specifies the time limit for
      * retrying a failed task, measured from when the task was first
@@ -1180,11 +1276,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Duration max_retry_duration = 3;</code>
      */
     public com.google.protobuf.Duration.Builder getMaxRetryDurationBuilder() {
-      
+
       onChanged();
       return getMaxRetryDurationFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * If positive, `max_retry_duration` specifies the time limit for
      * retrying a failed task, measured from when the task was first
@@ -1207,11 +1305,14 @@ private static final long serialVersionUID = 0L;
       if (maxRetryDurationBuilder_ != null) {
         return maxRetryDurationBuilder_.getMessageOrBuilder();
       } else {
-        return maxRetryDuration_ == null ?
-            com.google.protobuf.Duration.getDefaultInstance() : maxRetryDuration_;
+        return maxRetryDuration_ == null
+            ? com.google.protobuf.Duration.getDefaultInstance()
+            : maxRetryDuration_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * If positive, `max_retry_duration` specifies the time limit for
      * retrying a failed task, measured from when the task was first
@@ -1231,14 +1332,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Duration max_retry_duration = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> 
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
         getMaxRetryDurationFieldBuilder() {
       if (maxRetryDurationBuilder_ == null) {
-        maxRetryDurationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder>(
-                getMaxRetryDuration(),
-                getParentForChildren(),
-                isClean());
+        maxRetryDurationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Duration,
+                com.google.protobuf.Duration.Builder,
+                com.google.protobuf.DurationOrBuilder>(
+                getMaxRetryDuration(), getParentForChildren(), isClean());
         maxRetryDuration_ = null;
       }
       return maxRetryDurationBuilder_;
@@ -1246,8 +1350,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Duration minBackoff_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> minBackoffBuilder_;
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        minBackoffBuilder_;
     /**
+     *
+     *
      * <pre>
      * A task will be [scheduled][google.cloud.tasks.v2beta2.Task.schedule_time] for retry between
      * [min_backoff][google.cloud.tasks.v2beta2.RetryConfig.min_backoff] and
@@ -1268,6 +1377,8 @@ private static final long serialVersionUID = 0L;
       return minBackoffBuilder_ != null || minBackoff_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * A task will be [scheduled][google.cloud.tasks.v2beta2.Task.schedule_time] for retry between
      * [min_backoff][google.cloud.tasks.v2beta2.RetryConfig.min_backoff] and
@@ -1286,12 +1397,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.Duration getMinBackoff() {
       if (minBackoffBuilder_ == null) {
-        return minBackoff_ == null ? com.google.protobuf.Duration.getDefaultInstance() : minBackoff_;
+        return minBackoff_ == null
+            ? com.google.protobuf.Duration.getDefaultInstance()
+            : minBackoff_;
       } else {
         return minBackoffBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * A task will be [scheduled][google.cloud.tasks.v2beta2.Task.schedule_time] for retry between
      * [min_backoff][google.cloud.tasks.v2beta2.RetryConfig.min_backoff] and
@@ -1322,6 +1437,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A task will be [scheduled][google.cloud.tasks.v2beta2.Task.schedule_time] for retry between
      * [min_backoff][google.cloud.tasks.v2beta2.RetryConfig.min_backoff] and
@@ -1338,8 +1455,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.Duration min_backoff = 4;</code>
      */
-    public Builder setMinBackoff(
-        com.google.protobuf.Duration.Builder builderForValue) {
+    public Builder setMinBackoff(com.google.protobuf.Duration.Builder builderForValue) {
       if (minBackoffBuilder_ == null) {
         minBackoff_ = builderForValue.build();
         onChanged();
@@ -1350,6 +1466,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A task will be [scheduled][google.cloud.tasks.v2beta2.Task.schedule_time] for retry between
      * [min_backoff][google.cloud.tasks.v2beta2.RetryConfig.min_backoff] and
@@ -1370,7 +1488,7 @@ private static final long serialVersionUID = 0L;
       if (minBackoffBuilder_ == null) {
         if (minBackoff_ != null) {
           minBackoff_ =
-            com.google.protobuf.Duration.newBuilder(minBackoff_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Duration.newBuilder(minBackoff_).mergeFrom(value).buildPartial();
         } else {
           minBackoff_ = value;
         }
@@ -1382,6 +1500,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A task will be [scheduled][google.cloud.tasks.v2beta2.Task.schedule_time] for retry between
      * [min_backoff][google.cloud.tasks.v2beta2.RetryConfig.min_backoff] and
@@ -1410,6 +1530,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A task will be [scheduled][google.cloud.tasks.v2beta2.Task.schedule_time] for retry between
      * [min_backoff][google.cloud.tasks.v2beta2.RetryConfig.min_backoff] and
@@ -1427,11 +1549,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Duration min_backoff = 4;</code>
      */
     public com.google.protobuf.Duration.Builder getMinBackoffBuilder() {
-      
+
       onChanged();
       return getMinBackoffFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * A task will be [scheduled][google.cloud.tasks.v2beta2.Task.schedule_time] for retry between
      * [min_backoff][google.cloud.tasks.v2beta2.RetryConfig.min_backoff] and
@@ -1452,11 +1576,14 @@ private static final long serialVersionUID = 0L;
       if (minBackoffBuilder_ != null) {
         return minBackoffBuilder_.getMessageOrBuilder();
       } else {
-        return minBackoff_ == null ?
-            com.google.protobuf.Duration.getDefaultInstance() : minBackoff_;
+        return minBackoff_ == null
+            ? com.google.protobuf.Duration.getDefaultInstance()
+            : minBackoff_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A task will be [scheduled][google.cloud.tasks.v2beta2.Task.schedule_time] for retry between
      * [min_backoff][google.cloud.tasks.v2beta2.RetryConfig.min_backoff] and
@@ -1474,14 +1601,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Duration min_backoff = 4;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> 
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
         getMinBackoffFieldBuilder() {
       if (minBackoffBuilder_ == null) {
-        minBackoffBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder>(
-                getMinBackoff(),
-                getParentForChildren(),
-                isClean());
+        minBackoffBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Duration,
+                com.google.protobuf.Duration.Builder,
+                com.google.protobuf.DurationOrBuilder>(
+                getMinBackoff(), getParentForChildren(), isClean());
         minBackoff_ = null;
       }
       return minBackoffBuilder_;
@@ -1489,8 +1619,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Duration maxBackoff_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> maxBackoffBuilder_;
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        maxBackoffBuilder_;
     /**
+     *
+     *
      * <pre>
      * A task will be [scheduled][google.cloud.tasks.v2beta2.Task.schedule_time] for retry between
      * [min_backoff][google.cloud.tasks.v2beta2.RetryConfig.min_backoff] and
@@ -1511,6 +1646,8 @@ private static final long serialVersionUID = 0L;
       return maxBackoffBuilder_ != null || maxBackoff_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * A task will be [scheduled][google.cloud.tasks.v2beta2.Task.schedule_time] for retry between
      * [min_backoff][google.cloud.tasks.v2beta2.RetryConfig.min_backoff] and
@@ -1529,12 +1666,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.Duration getMaxBackoff() {
       if (maxBackoffBuilder_ == null) {
-        return maxBackoff_ == null ? com.google.protobuf.Duration.getDefaultInstance() : maxBackoff_;
+        return maxBackoff_ == null
+            ? com.google.protobuf.Duration.getDefaultInstance()
+            : maxBackoff_;
       } else {
         return maxBackoffBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * A task will be [scheduled][google.cloud.tasks.v2beta2.Task.schedule_time] for retry between
      * [min_backoff][google.cloud.tasks.v2beta2.RetryConfig.min_backoff] and
@@ -1565,6 +1706,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A task will be [scheduled][google.cloud.tasks.v2beta2.Task.schedule_time] for retry between
      * [min_backoff][google.cloud.tasks.v2beta2.RetryConfig.min_backoff] and
@@ -1581,8 +1724,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.Duration max_backoff = 5;</code>
      */
-    public Builder setMaxBackoff(
-        com.google.protobuf.Duration.Builder builderForValue) {
+    public Builder setMaxBackoff(com.google.protobuf.Duration.Builder builderForValue) {
       if (maxBackoffBuilder_ == null) {
         maxBackoff_ = builderForValue.build();
         onChanged();
@@ -1593,6 +1735,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A task will be [scheduled][google.cloud.tasks.v2beta2.Task.schedule_time] for retry between
      * [min_backoff][google.cloud.tasks.v2beta2.RetryConfig.min_backoff] and
@@ -1613,7 +1757,7 @@ private static final long serialVersionUID = 0L;
       if (maxBackoffBuilder_ == null) {
         if (maxBackoff_ != null) {
           maxBackoff_ =
-            com.google.protobuf.Duration.newBuilder(maxBackoff_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Duration.newBuilder(maxBackoff_).mergeFrom(value).buildPartial();
         } else {
           maxBackoff_ = value;
         }
@@ -1625,6 +1769,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A task will be [scheduled][google.cloud.tasks.v2beta2.Task.schedule_time] for retry between
      * [min_backoff][google.cloud.tasks.v2beta2.RetryConfig.min_backoff] and
@@ -1653,6 +1799,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A task will be [scheduled][google.cloud.tasks.v2beta2.Task.schedule_time] for retry between
      * [min_backoff][google.cloud.tasks.v2beta2.RetryConfig.min_backoff] and
@@ -1670,11 +1818,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Duration max_backoff = 5;</code>
      */
     public com.google.protobuf.Duration.Builder getMaxBackoffBuilder() {
-      
+
       onChanged();
       return getMaxBackoffFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * A task will be [scheduled][google.cloud.tasks.v2beta2.Task.schedule_time] for retry between
      * [min_backoff][google.cloud.tasks.v2beta2.RetryConfig.min_backoff] and
@@ -1695,11 +1845,14 @@ private static final long serialVersionUID = 0L;
       if (maxBackoffBuilder_ != null) {
         return maxBackoffBuilder_.getMessageOrBuilder();
       } else {
-        return maxBackoff_ == null ?
-            com.google.protobuf.Duration.getDefaultInstance() : maxBackoff_;
+        return maxBackoff_ == null
+            ? com.google.protobuf.Duration.getDefaultInstance()
+            : maxBackoff_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A task will be [scheduled][google.cloud.tasks.v2beta2.Task.schedule_time] for retry between
      * [min_backoff][google.cloud.tasks.v2beta2.RetryConfig.min_backoff] and
@@ -1717,21 +1870,26 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Duration max_backoff = 5;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> 
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
         getMaxBackoffFieldBuilder() {
       if (maxBackoffBuilder_ == null) {
-        maxBackoffBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder>(
-                getMaxBackoff(),
-                getParentForChildren(),
-                isClean());
+        maxBackoffBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Duration,
+                com.google.protobuf.Duration.Builder,
+                com.google.protobuf.DurationOrBuilder>(
+                getMaxBackoff(), getParentForChildren(), isClean());
         maxBackoff_ = null;
       }
       return maxBackoffBuilder_;
     }
 
-    private int maxDoublings_ ;
+    private int maxDoublings_;
     /**
+     *
+     *
      * <pre>
      * The time between retries will double `max_doublings` times.
      * A task's retry interval starts at
@@ -1762,6 +1920,8 @@ private static final long serialVersionUID = 0L;
       return maxDoublings_;
     }
     /**
+     *
+     *
      * <pre>
      * The time between retries will double `max_doublings` times.
      * A task's retry interval starts at
@@ -1789,12 +1949,14 @@ private static final long serialVersionUID = 0L;
      * <code>int32 max_doublings = 6;</code>
      */
     public Builder setMaxDoublings(int value) {
-      
+
       maxDoublings_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The time between retries will double `max_doublings` times.
      * A task's retry interval starts at
@@ -1822,27 +1984,29 @@ private static final long serialVersionUID = 0L;
      * <code>int32 max_doublings = 6;</code>
      */
     public Builder clearMaxDoublings() {
-      
+
       maxDoublings_ = 0;
       onChanged();
       return this;
     }
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+
+    @java.lang.Override
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
     }
-
 
     // @@protoc_insertion_point(builder_scope:google.cloud.tasks.v2beta2.RetryConfig)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.tasks.v2beta2.RetryConfig)
   private static final com.google.cloud.tasks.v2beta2.RetryConfig DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.tasks.v2beta2.RetryConfig();
   }
@@ -1851,15 +2015,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<RetryConfig>
-      PARSER = new com.google.protobuf.AbstractParser<RetryConfig>() {
-    public RetryConfig parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-        return new RetryConfig(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<RetryConfig> PARSER =
+      new com.google.protobuf.AbstractParser<RetryConfig>() {
+        @java.lang.Override
+        public RetryConfig parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new RetryConfig(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<RetryConfig> parser() {
     return PARSER;
@@ -1870,9 +2035,8 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.cloud.tasks.v2beta2.RetryConfig getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

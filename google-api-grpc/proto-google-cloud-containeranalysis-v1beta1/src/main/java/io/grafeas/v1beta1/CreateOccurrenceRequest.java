@@ -4,35 +4,41 @@
 package io.grafeas.v1beta1;
 
 /**
+ *
+ *
  * <pre>
  * Request to create a new occurrence.
  * </pre>
  *
  * Protobuf type {@code grafeas.v1beta1.CreateOccurrenceRequest}
  */
-public  final class CreateOccurrenceRequest extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class CreateOccurrenceRequest extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:grafeas.v1beta1.CreateOccurrenceRequest)
     CreateOccurrenceRequestOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use CreateOccurrenceRequest.newBuilder() to construct.
   private CreateOccurrenceRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private CreateOccurrenceRequest() {
     parent_ = "";
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private CreateOccurrenceRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -44,59 +50,67 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            parent_ = s;
-            break;
-          }
-          case 18: {
-            io.grafeas.v1beta1.Occurrence.Builder subBuilder = null;
-            if (occurrence_ != null) {
-              subBuilder = occurrence_.toBuilder();
+              parent_ = s;
+              break;
             }
-            occurrence_ = input.readMessage(io.grafeas.v1beta1.Occurrence.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(occurrence_);
-              occurrence_ = subBuilder.buildPartial();
-            }
+          case 18:
+            {
+              io.grafeas.v1beta1.Occurrence.Builder subBuilder = null;
+              if (occurrence_ != null) {
+                subBuilder = occurrence_.toBuilder();
+              }
+              occurrence_ =
+                  input.readMessage(io.grafeas.v1beta1.Occurrence.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(occurrence_);
+                occurrence_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return io.grafeas.v1beta1.Grafeas.internal_static_grafeas_v1beta1_CreateOccurrenceRequest_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return io.grafeas.v1beta1.Grafeas
+        .internal_static_grafeas_v1beta1_CreateOccurrenceRequest_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return io.grafeas.v1beta1.Grafeas.internal_static_grafeas_v1beta1_CreateOccurrenceRequest_fieldAccessorTable
+    return io.grafeas.v1beta1.Grafeas
+        .internal_static_grafeas_v1beta1_CreateOccurrenceRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            io.grafeas.v1beta1.CreateOccurrenceRequest.class, io.grafeas.v1beta1.CreateOccurrenceRequest.Builder.class);
+            io.grafeas.v1beta1.CreateOccurrenceRequest.class,
+            io.grafeas.v1beta1.CreateOccurrenceRequest.Builder.class);
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
   private volatile java.lang.Object parent_;
   /**
+   *
+   *
    * <pre>
    * The name of the project in the form of `projects/[PROJECT_ID]`, under which
    * the occurrence is to be created.
@@ -109,14 +123,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       parent_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The name of the project in the form of `projects/[PROJECT_ID]`, under which
    * the occurrence is to be created.
@@ -124,13 +139,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string parent = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getParentBytes() {
+  public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       parent_ = b;
       return b;
     } else {
@@ -141,6 +154,8 @@ private static final long serialVersionUID = 0L;
   public static final int OCCURRENCE_FIELD_NUMBER = 2;
   private io.grafeas.v1beta1.Occurrence occurrence_;
   /**
+   *
+   *
    * <pre>
    * The occurrence to create.
    * </pre>
@@ -151,6 +166,8 @@ private static final long serialVersionUID = 0L;
     return occurrence_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * The occurrence to create.
    * </pre>
@@ -161,6 +178,8 @@ private static final long serialVersionUID = 0L;
     return occurrence_ == null ? io.grafeas.v1beta1.Occurrence.getDefaultInstance() : occurrence_;
   }
   /**
+   *
+   *
    * <pre>
    * The occurrence to create.
    * </pre>
@@ -172,6 +191,8 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -181,8 +202,8 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  @java.lang.Override
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getParentBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, parent_);
     }
@@ -192,6 +213,7 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -201,8 +223,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, parent_);
     }
     if (occurrence_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getOccurrence());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getOccurrence());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -212,20 +233,19 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof io.grafeas.v1beta1.CreateOccurrenceRequest)) {
       return super.equals(obj);
     }
-    io.grafeas.v1beta1.CreateOccurrenceRequest other = (io.grafeas.v1beta1.CreateOccurrenceRequest) obj;
+    io.grafeas.v1beta1.CreateOccurrenceRequest other =
+        (io.grafeas.v1beta1.CreateOccurrenceRequest) obj;
 
     boolean result = true;
-    result = result && getParent()
-        .equals(other.getParent());
+    result = result && getParent().equals(other.getParent());
     result = result && (hasOccurrence() == other.hasOccurrence());
     if (hasOccurrence()) {
-      result = result && getOccurrence()
-          .equals(other.getOccurrence());
+      result = result && getOccurrence().equals(other.getOccurrence());
     }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
@@ -249,115 +269,127 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static io.grafeas.v1beta1.CreateOccurrenceRequest parseFrom(
-      java.nio.ByteBuffer data)
+  public static io.grafeas.v1beta1.CreateOccurrenceRequest parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static io.grafeas.v1beta1.CreateOccurrenceRequest parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static io.grafeas.v1beta1.CreateOccurrenceRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static io.grafeas.v1beta1.CreateOccurrenceRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static io.grafeas.v1beta1.CreateOccurrenceRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static io.grafeas.v1beta1.CreateOccurrenceRequest parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static io.grafeas.v1beta1.CreateOccurrenceRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static io.grafeas.v1beta1.CreateOccurrenceRequest parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static io.grafeas.v1beta1.CreateOccurrenceRequest parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
+
   public static io.grafeas.v1beta1.CreateOccurrenceRequest parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static io.grafeas.v1beta1.CreateOccurrenceRequest parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static io.grafeas.v1beta1.CreateOccurrenceRequest parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static io.grafeas.v1beta1.CreateOccurrenceRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  public Builder newBuilderForType() { return newBuilder(); }
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-  public static Builder newBuilder(io.grafeas.v1beta1.CreateOccurrenceRequest prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+
+  public static Builder newBuilder(io.grafeas.v1beta1.CreateOccurrenceRequest prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+
+  @java.lang.Override
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Request to create a new occurrence.
    * </pre>
    *
    * Protobuf type {@code grafeas.v1beta1.CreateOccurrenceRequest}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:grafeas.v1beta1.CreateOccurrenceRequest)
       io.grafeas.v1beta1.CreateOccurrenceRequestOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return io.grafeas.v1beta1.Grafeas.internal_static_grafeas_v1beta1_CreateOccurrenceRequest_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return io.grafeas.v1beta1.Grafeas
+          .internal_static_grafeas_v1beta1_CreateOccurrenceRequest_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.grafeas.v1beta1.Grafeas.internal_static_grafeas_v1beta1_CreateOccurrenceRequest_fieldAccessorTable
+      return io.grafeas.v1beta1.Grafeas
+          .internal_static_grafeas_v1beta1_CreateOccurrenceRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              io.grafeas.v1beta1.CreateOccurrenceRequest.class, io.grafeas.v1beta1.CreateOccurrenceRequest.Builder.class);
+              io.grafeas.v1beta1.CreateOccurrenceRequest.class,
+              io.grafeas.v1beta1.CreateOccurrenceRequest.Builder.class);
     }
 
     // Construct using io.grafeas.v1beta1.CreateOccurrenceRequest.newBuilder()
@@ -365,16 +397,16 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       parent_ = "";
@@ -388,15 +420,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return io.grafeas.v1beta1.Grafeas.internal_static_grafeas_v1beta1_CreateOccurrenceRequest_descriptor;
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return io.grafeas.v1beta1.Grafeas
+          .internal_static_grafeas_v1beta1_CreateOccurrenceRequest_descriptor;
     }
 
+    @java.lang.Override
     public io.grafeas.v1beta1.CreateOccurrenceRequest getDefaultInstanceForType() {
       return io.grafeas.v1beta1.CreateOccurrenceRequest.getDefaultInstance();
     }
 
+    @java.lang.Override
     public io.grafeas.v1beta1.CreateOccurrenceRequest build() {
       io.grafeas.v1beta1.CreateOccurrenceRequest result = buildPartial();
       if (!result.isInitialized()) {
@@ -405,8 +440,10 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public io.grafeas.v1beta1.CreateOccurrenceRequest buildPartial() {
-      io.grafeas.v1beta1.CreateOccurrenceRequest result = new io.grafeas.v1beta1.CreateOccurrenceRequest(this);
+      io.grafeas.v1beta1.CreateOccurrenceRequest result =
+          new io.grafeas.v1beta1.CreateOccurrenceRequest(this);
       result.parent_ = parent_;
       if (occurrenceBuilder_ == null) {
         result.occurrence_ = occurrence_;
@@ -417,35 +454,43 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+
+    @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+    @java.lang.Override
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+    @java.lang.Override
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
+    @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
+    @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof io.grafeas.v1beta1.CreateOccurrenceRequest) {
-        return mergeFrom((io.grafeas.v1beta1.CreateOccurrenceRequest)other);
+        return mergeFrom((io.grafeas.v1beta1.CreateOccurrenceRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -466,10 +511,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -490,6 +537,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object parent_ = "";
     /**
+     *
+     *
      * <pre>
      * The name of the project in the form of `projects/[PROJECT_ID]`, under which
      * the occurrence is to be created.
@@ -500,8 +549,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         parent_ = s;
         return s;
@@ -510,6 +558,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The name of the project in the form of `projects/[PROJECT_ID]`, under which
      * the occurrence is to be created.
@@ -517,13 +567,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string parent = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getParentBytes() {
+    public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         parent_ = b;
         return b;
       } else {
@@ -531,6 +579,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The name of the project in the form of `projects/[PROJECT_ID]`, under which
      * the occurrence is to be created.
@@ -538,17 +588,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string parent = 1;</code>
      */
-    public Builder setParent(
-        java.lang.String value) {
+    public Builder setParent(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       parent_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The name of the project in the form of `projects/[PROJECT_ID]`, under which
      * the occurrence is to be created.
@@ -557,12 +608,14 @@ private static final long serialVersionUID = 0L;
      * <code>string parent = 1;</code>
      */
     public Builder clearParent() {
-      
+
       parent_ = getDefaultInstance().getParent();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The name of the project in the form of `projects/[PROJECT_ID]`, under which
      * the occurrence is to be created.
@@ -570,13 +623,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string parent = 1;</code>
      */
-    public Builder setParentBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       parent_ = value;
       onChanged();
       return this;
@@ -584,8 +636,13 @@ private static final long serialVersionUID = 0L;
 
     private io.grafeas.v1beta1.Occurrence occurrence_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        io.grafeas.v1beta1.Occurrence, io.grafeas.v1beta1.Occurrence.Builder, io.grafeas.v1beta1.OccurrenceOrBuilder> occurrenceBuilder_;
+            io.grafeas.v1beta1.Occurrence,
+            io.grafeas.v1beta1.Occurrence.Builder,
+            io.grafeas.v1beta1.OccurrenceOrBuilder>
+        occurrenceBuilder_;
     /**
+     *
+     *
      * <pre>
      * The occurrence to create.
      * </pre>
@@ -596,6 +653,8 @@ private static final long serialVersionUID = 0L;
       return occurrenceBuilder_ != null || occurrence_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * The occurrence to create.
      * </pre>
@@ -604,12 +663,16 @@ private static final long serialVersionUID = 0L;
      */
     public io.grafeas.v1beta1.Occurrence getOccurrence() {
       if (occurrenceBuilder_ == null) {
-        return occurrence_ == null ? io.grafeas.v1beta1.Occurrence.getDefaultInstance() : occurrence_;
+        return occurrence_ == null
+            ? io.grafeas.v1beta1.Occurrence.getDefaultInstance()
+            : occurrence_;
       } else {
         return occurrenceBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * The occurrence to create.
      * </pre>
@@ -630,14 +693,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The occurrence to create.
      * </pre>
      *
      * <code>.grafeas.v1beta1.Occurrence occurrence = 2;</code>
      */
-    public Builder setOccurrence(
-        io.grafeas.v1beta1.Occurrence.Builder builderForValue) {
+    public Builder setOccurrence(io.grafeas.v1beta1.Occurrence.Builder builderForValue) {
       if (occurrenceBuilder_ == null) {
         occurrence_ = builderForValue.build();
         onChanged();
@@ -648,6 +712,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The occurrence to create.
      * </pre>
@@ -658,7 +724,7 @@ private static final long serialVersionUID = 0L;
       if (occurrenceBuilder_ == null) {
         if (occurrence_ != null) {
           occurrence_ =
-            io.grafeas.v1beta1.Occurrence.newBuilder(occurrence_).mergeFrom(value).buildPartial();
+              io.grafeas.v1beta1.Occurrence.newBuilder(occurrence_).mergeFrom(value).buildPartial();
         } else {
           occurrence_ = value;
         }
@@ -670,6 +736,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The occurrence to create.
      * </pre>
@@ -688,6 +756,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The occurrence to create.
      * </pre>
@@ -695,11 +765,13 @@ private static final long serialVersionUID = 0L;
      * <code>.grafeas.v1beta1.Occurrence occurrence = 2;</code>
      */
     public io.grafeas.v1beta1.Occurrence.Builder getOccurrenceBuilder() {
-      
+
       onChanged();
       return getOccurrenceFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * The occurrence to create.
      * </pre>
@@ -710,11 +782,14 @@ private static final long serialVersionUID = 0L;
       if (occurrenceBuilder_ != null) {
         return occurrenceBuilder_.getMessageOrBuilder();
       } else {
-        return occurrence_ == null ?
-            io.grafeas.v1beta1.Occurrence.getDefaultInstance() : occurrence_;
+        return occurrence_ == null
+            ? io.grafeas.v1beta1.Occurrence.getDefaultInstance()
+            : occurrence_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The occurrence to create.
      * </pre>
@@ -722,34 +797,39 @@ private static final long serialVersionUID = 0L;
      * <code>.grafeas.v1beta1.Occurrence occurrence = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        io.grafeas.v1beta1.Occurrence, io.grafeas.v1beta1.Occurrence.Builder, io.grafeas.v1beta1.OccurrenceOrBuilder> 
+            io.grafeas.v1beta1.Occurrence,
+            io.grafeas.v1beta1.Occurrence.Builder,
+            io.grafeas.v1beta1.OccurrenceOrBuilder>
         getOccurrenceFieldBuilder() {
       if (occurrenceBuilder_ == null) {
-        occurrenceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            io.grafeas.v1beta1.Occurrence, io.grafeas.v1beta1.Occurrence.Builder, io.grafeas.v1beta1.OccurrenceOrBuilder>(
-                getOccurrence(),
-                getParentForChildren(),
-                isClean());
+        occurrenceBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                io.grafeas.v1beta1.Occurrence,
+                io.grafeas.v1beta1.Occurrence.Builder,
+                io.grafeas.v1beta1.OccurrenceOrBuilder>(
+                getOccurrence(), getParentForChildren(), isClean());
         occurrence_ = null;
       }
       return occurrenceBuilder_;
     }
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+
+    @java.lang.Override
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
     }
-
 
     // @@protoc_insertion_point(builder_scope:grafeas.v1beta1.CreateOccurrenceRequest)
   }
 
   // @@protoc_insertion_point(class_scope:grafeas.v1beta1.CreateOccurrenceRequest)
   private static final io.grafeas.v1beta1.CreateOccurrenceRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new io.grafeas.v1beta1.CreateOccurrenceRequest();
   }
@@ -758,15 +838,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<CreateOccurrenceRequest>
-      PARSER = new com.google.protobuf.AbstractParser<CreateOccurrenceRequest>() {
-    public CreateOccurrenceRequest parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-        return new CreateOccurrenceRequest(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<CreateOccurrenceRequest> PARSER =
+      new com.google.protobuf.AbstractParser<CreateOccurrenceRequest>() {
+        @java.lang.Override
+        public CreateOccurrenceRequest parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new CreateOccurrenceRequest(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<CreateOccurrenceRequest> parser() {
     return PARSER;
@@ -777,9 +858,8 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public io.grafeas.v1beta1.CreateOccurrenceRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

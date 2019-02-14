@@ -19,7 +19,6 @@ package com.google.cloud.datastore;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.Iterables;
 import com.google.common.collect.Lists;
-
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Iterator;
@@ -30,9 +29,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-/**
- * Base class for DatastoreBatchWriter.
- */
+/** Base class for DatastoreBatchWriter. */
 public abstract class BaseDatastoreBatchWriter implements DatastoreBatchWriter {
 
   private final String name;
@@ -65,8 +62,8 @@ public abstract class BaseDatastoreBatchWriter implements DatastoreBatchWriter {
   private void addInternal(FullEntity<Key> entity) {
     Key key = entity.getKey();
     if (toAdd.containsKey(key) || toUpdate.containsKey(key) || toPut.containsKey(key)) {
-      throw newInvalidRequest("Entity with the key %s was already added or updated in this %s",
-          entity.getKey(), name);
+      throw newInvalidRequest(
+          "Entity with the key %s was already added or updated in this %s", entity.getKey(), name);
     }
     if (toDelete.remove(key)) {
       toPut.put(key, entity);
@@ -120,8 +117,8 @@ public abstract class BaseDatastoreBatchWriter implements DatastoreBatchWriter {
     for (Entity entity : entities) {
       Key key = entity.getKey();
       if (toDelete.contains(key)) {
-        throw newInvalidRequest("Entity with the key %s was already deleted in this %s",
-            entity.getKey(), name);
+        throw newInvalidRequest(
+            "Entity with the key %s was already deleted in this %s", entity.getKey(), name);
       }
       if (toAdd.remove(key) != null || toPut.containsKey(key)) {
         toPut.put(key, entity);
@@ -203,7 +200,6 @@ public abstract class BaseDatastoreBatchWriter implements DatastoreBatchWriter {
     }
   }
 
-
   @Override
   public boolean isActive() {
     return active;
@@ -270,7 +266,6 @@ public abstract class BaseDatastoreBatchWriter implements DatastoreBatchWriter {
     }
     return mutationsPb;
   }
-
 
   protected abstract Datastore getDatastore();
 }

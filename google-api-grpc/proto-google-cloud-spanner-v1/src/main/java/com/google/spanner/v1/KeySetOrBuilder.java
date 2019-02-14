@@ -3,11 +3,14 @@
 
 package com.google.spanner.v1;
 
-public interface KeySetOrBuilder extends
+public interface KeySetOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.spanner.v1.KeySet)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * A list of specific keys. Entries in `keys` should have exactly as
    * many elements as there are columns in the primary or index key
@@ -17,9 +20,10 @@ public interface KeySetOrBuilder extends
    *
    * <code>repeated .google.protobuf.ListValue keys = 1;</code>
    */
-  java.util.List<com.google.protobuf.ListValue> 
-      getKeysList();
+  java.util.List<com.google.protobuf.ListValue> getKeysList();
   /**
+   *
+   *
    * <pre>
    * A list of specific keys. Entries in `keys` should have exactly as
    * many elements as there are columns in the primary or index key
@@ -31,6 +35,8 @@ public interface KeySetOrBuilder extends
    */
   com.google.protobuf.ListValue getKeys(int index);
   /**
+   *
+   *
    * <pre>
    * A list of specific keys. Entries in `keys` should have exactly as
    * many elements as there are columns in the primary or index key
@@ -42,6 +48,8 @@ public interface KeySetOrBuilder extends
    */
   int getKeysCount();
   /**
+   *
+   *
    * <pre>
    * A list of specific keys. Entries in `keys` should have exactly as
    * many elements as there are columns in the primary or index key
@@ -51,9 +59,10 @@ public interface KeySetOrBuilder extends
    *
    * <code>repeated .google.protobuf.ListValue keys = 1;</code>
    */
-  java.util.List<? extends com.google.protobuf.ListValueOrBuilder> 
-      getKeysOrBuilderList();
+  java.util.List<? extends com.google.protobuf.ListValueOrBuilder> getKeysOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * A list of specific keys. Entries in `keys` should have exactly as
    * many elements as there are columns in the primary or index key
@@ -63,10 +72,11 @@ public interface KeySetOrBuilder extends
    *
    * <code>repeated .google.protobuf.ListValue keys = 1;</code>
    */
-  com.google.protobuf.ListValueOrBuilder getKeysOrBuilder(
-      int index);
+  com.google.protobuf.ListValueOrBuilder getKeysOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * A list of key ranges. See [KeyRange][google.spanner.v1.KeyRange] for more information about
    * key range specifications.
@@ -74,9 +84,10 @@ public interface KeySetOrBuilder extends
    *
    * <code>repeated .google.spanner.v1.KeyRange ranges = 2;</code>
    */
-  java.util.List<com.google.spanner.v1.KeyRange> 
-      getRangesList();
+  java.util.List<com.google.spanner.v1.KeyRange> getRangesList();
   /**
+   *
+   *
    * <pre>
    * A list of key ranges. See [KeyRange][google.spanner.v1.KeyRange] for more information about
    * key range specifications.
@@ -86,6 +97,8 @@ public interface KeySetOrBuilder extends
    */
   com.google.spanner.v1.KeyRange getRanges(int index);
   /**
+   *
+   *
    * <pre>
    * A list of key ranges. See [KeyRange][google.spanner.v1.KeyRange] for more information about
    * key range specifications.
@@ -95,6 +108,8 @@ public interface KeySetOrBuilder extends
    */
   int getRangesCount();
   /**
+   *
+   *
    * <pre>
    * A list of key ranges. See [KeyRange][google.spanner.v1.KeyRange] for more information about
    * key range specifications.
@@ -102,9 +117,10 @@ public interface KeySetOrBuilder extends
    *
    * <code>repeated .google.spanner.v1.KeyRange ranges = 2;</code>
    */
-  java.util.List<? extends com.google.spanner.v1.KeyRangeOrBuilder> 
-      getRangesOrBuilderList();
+  java.util.List<? extends com.google.spanner.v1.KeyRangeOrBuilder> getRangesOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * A list of key ranges. See [KeyRange][google.spanner.v1.KeyRange] for more information about
    * key range specifications.
@@ -112,10 +128,11 @@ public interface KeySetOrBuilder extends
    *
    * <code>repeated .google.spanner.v1.KeyRange ranges = 2;</code>
    */
-  com.google.spanner.v1.KeyRangeOrBuilder getRangesOrBuilder(
-      int index);
+  com.google.spanner.v1.KeyRangeOrBuilder getRangesOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * For convenience `all` can be set to `true` to indicate that this
    * `KeySet` matches all keys in the table or index. Note that any keys

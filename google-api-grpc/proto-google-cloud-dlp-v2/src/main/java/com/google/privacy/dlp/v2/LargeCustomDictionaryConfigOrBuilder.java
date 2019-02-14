@@ -3,11 +3,14 @@
 
 package com.google.privacy.dlp.v2;
 
-public interface LargeCustomDictionaryConfigOrBuilder extends
+public interface LargeCustomDictionaryConfigOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.LargeCustomDictionaryConfig)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Location to store dictionary artifacts in Google Cloud Storage. These files
    * will only be accessible by project owners and the DLP API. If any of these
@@ -19,6 +22,8 @@ public interface LargeCustomDictionaryConfigOrBuilder extends
    */
   boolean hasOutputPath();
   /**
+   *
+   *
    * <pre>
    * Location to store dictionary artifacts in Google Cloud Storage. These files
    * will only be accessible by project owners and the DLP API. If any of these
@@ -30,6 +35,8 @@ public interface LargeCustomDictionaryConfigOrBuilder extends
    */
   com.google.privacy.dlp.v2.CloudStoragePath getOutputPath();
   /**
+   *
+   *
    * <pre>
    * Location to store dictionary artifacts in Google Cloud Storage. These files
    * will only be accessible by project owners and the DLP API. If any of these
@@ -42,6 +49,8 @@ public interface LargeCustomDictionaryConfigOrBuilder extends
   com.google.privacy.dlp.v2.CloudStoragePathOrBuilder getOutputPathOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Set of files containing newline-delimited lists of dictionary phrases.
    * </pre>
@@ -50,6 +59,8 @@ public interface LargeCustomDictionaryConfigOrBuilder extends
    */
   boolean hasCloudStorageFileSet();
   /**
+   *
+   *
    * <pre>
    * Set of files containing newline-delimited lists of dictionary phrases.
    * </pre>
@@ -58,6 +69,8 @@ public interface LargeCustomDictionaryConfigOrBuilder extends
    */
   com.google.privacy.dlp.v2.CloudStorageFileSet getCloudStorageFileSet();
   /**
+   *
+   *
    * <pre>
    * Set of files containing newline-delimited lists of dictionary phrases.
    * </pre>
@@ -67,6 +80,8 @@ public interface LargeCustomDictionaryConfigOrBuilder extends
   com.google.privacy.dlp.v2.CloudStorageFileSetOrBuilder getCloudStorageFileSetOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Field in a BigQuery table where each cell represents a dictionary phrase.
    * </pre>
@@ -75,6 +90,8 @@ public interface LargeCustomDictionaryConfigOrBuilder extends
    */
   boolean hasBigQueryField();
   /**
+   *
+   *
    * <pre>
    * Field in a BigQuery table where each cell represents a dictionary phrase.
    * </pre>
@@ -83,6 +100,8 @@ public interface LargeCustomDictionaryConfigOrBuilder extends
    */
   com.google.privacy.dlp.v2.BigQueryField getBigQueryField();
   /**
+   *
+   *
    * <pre>
    * Field in a BigQuery table where each cell represents a dictionary phrase.
    * </pre>

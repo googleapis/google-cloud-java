@@ -4,21 +4,24 @@
 package com.google.cloud.asset.v1beta1;
 
 /**
+ *
+ *
  * <pre>
  * Representation of a cloud resource.
  * </pre>
  *
  * Protobuf type {@code google.cloud.asset.v1beta1.Resource}
  */
-public  final class Resource extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class Resource extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.asset.v1beta1.Resource)
     ResourceOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use Resource.newBuilder() to construct.
   private Resource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private Resource() {
     version_ = "";
     discoveryDocumentUri_ = "";
@@ -28,15 +31,18 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private Resource(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -48,83 +54,94 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              version_ = s;
+              break;
             }
-            break;
-          }
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 18:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            version_ = s;
-            break;
-          }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            discoveryDocumentUri_ = s;
-            break;
-          }
-          case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            discoveryName_ = s;
-            break;
-          }
-          case 34: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            resourceUrl_ = s;
-            break;
-          }
-          case 42: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            parent_ = s;
-            break;
-          }
-          case 50: {
-            com.google.protobuf.Struct.Builder subBuilder = null;
-            if (data_ != null) {
-              subBuilder = data_.toBuilder();
+              discoveryDocumentUri_ = s;
+              break;
             }
-            data_ = input.readMessage(com.google.protobuf.Struct.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(data_);
-              data_ = subBuilder.buildPartial();
-            }
+          case 26:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            break;
-          }
+              discoveryName_ = s;
+              break;
+            }
+          case 34:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              resourceUrl_ = s;
+              break;
+            }
+          case 42:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              parent_ = s;
+              break;
+            }
+          case 50:
+            {
+              com.google.protobuf.Struct.Builder subBuilder = null;
+              if (data_ != null) {
+                subBuilder = data_.toBuilder();
+              }
+              data_ = input.readMessage(com.google.protobuf.Struct.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(data_);
+                data_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.asset.v1beta1.AssetProto.internal_static_google_cloud_asset_v1beta1_Resource_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.asset.v1beta1.AssetProto
+        .internal_static_google_cloud_asset_v1beta1_Resource_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.asset.v1beta1.AssetProto.internal_static_google_cloud_asset_v1beta1_Resource_fieldAccessorTable
+    return com.google.cloud.asset.v1beta1.AssetProto
+        .internal_static_google_cloud_asset_v1beta1_Resource_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.asset.v1beta1.Resource.class, com.google.cloud.asset.v1beta1.Resource.Builder.class);
+            com.google.cloud.asset.v1beta1.Resource.class,
+            com.google.cloud.asset.v1beta1.Resource.Builder.class);
   }
 
   public static final int VERSION_FIELD_NUMBER = 1;
   private volatile java.lang.Object version_;
   /**
+   *
+   *
    * <pre>
    * The API version. Example: "v1".
    * </pre>
@@ -136,27 +153,26 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       version_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The API version. Example: "v1".
    * </pre>
    *
    * <code>string version = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getVersionBytes() {
+  public com.google.protobuf.ByteString getVersionBytes() {
     java.lang.Object ref = version_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       version_ = b;
       return b;
     } else {
@@ -167,10 +183,12 @@ private static final long serialVersionUID = 0L;
   public static final int DISCOVERY_DOCUMENT_URI_FIELD_NUMBER = 2;
   private volatile java.lang.Object discoveryDocumentUri_;
   /**
+   *
+   *
    * <pre>
    * The URL of the discovery document containing the resource's JSON schema.
-   * Example:
-   * "https://www.googleapis.com/discovery/v1/apis/compute/v1/rest".
+   * For example:
+   * `"https://www.googleapis.com/discovery/v1/apis/compute/v1/rest"`.
    * It will be left unspecified for resources without a discovery-based API,
    * such as Cloud Bigtable.
    * </pre>
@@ -182,31 +200,30 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       discoveryDocumentUri_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The URL of the discovery document containing the resource's JSON schema.
-   * Example:
-   * "https://www.googleapis.com/discovery/v1/apis/compute/v1/rest".
+   * For example:
+   * `"https://www.googleapis.com/discovery/v1/apis/compute/v1/rest"`.
    * It will be left unspecified for resources without a discovery-based API,
    * such as Cloud Bigtable.
    * </pre>
    *
    * <code>string discovery_document_uri = 2;</code>
    */
-  public com.google.protobuf.ByteString
-      getDiscoveryDocumentUriBytes() {
+  public com.google.protobuf.ByteString getDiscoveryDocumentUriBytes() {
     java.lang.Object ref = discoveryDocumentUri_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       discoveryDocumentUri_ = b;
       return b;
     } else {
@@ -217,6 +234,8 @@ private static final long serialVersionUID = 0L;
   public static final int DISCOVERY_NAME_FIELD_NUMBER = 3;
   private volatile java.lang.Object discoveryName_;
   /**
+   *
+   *
    * <pre>
    * The JSON schema name listed in the discovery document.
    * Example: "Project". It will be left unspecified for resources (such as
@@ -230,14 +249,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       discoveryName_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The JSON schema name listed in the discovery document.
    * Example: "Project". It will be left unspecified for resources (such as
@@ -246,13 +266,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string discovery_name = 3;</code>
    */
-  public com.google.protobuf.ByteString
-      getDiscoveryNameBytes() {
+  public com.google.protobuf.ByteString getDiscoveryNameBytes() {
     java.lang.Object ref = discoveryName_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       discoveryName_ = b;
       return b;
     } else {
@@ -263,6 +281,8 @@ private static final long serialVersionUID = 0L;
   public static final int RESOURCE_URL_FIELD_NUMBER = 4;
   private volatile java.lang.Object resourceUrl_;
   /**
+   *
+   *
    * <pre>
    * The REST URL for accessing the resource. An HTTP GET operation using this
    * URL returns the resource itself.
@@ -278,14 +298,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       resourceUrl_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The REST URL for accessing the resource. An HTTP GET operation using this
    * URL returns the resource itself.
@@ -296,13 +317,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string resource_url = 4;</code>
    */
-  public com.google.protobuf.ByteString
-      getResourceUrlBytes() {
+  public com.google.protobuf.ByteString getResourceUrlBytes() {
     java.lang.Object ref = resourceUrl_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       resourceUrl_ = b;
       return b;
     } else {
@@ -313,12 +332,15 @@ private static final long serialVersionUID = 0L;
   public static final int PARENT_FIELD_NUMBER = 5;
   private volatile java.lang.Object parent_;
   /**
+   *
+   *
    * <pre>
-   * The full name of the immediate parent of this resource. See:
-   * https://cloud.google.com/apis/design/resource_names#full_resource_name
-   * For GCP assets, it is the parent resource defined in the IAM policy
-   * hierarchy: https://cloud.google.com/iam/docs/overview#policy_hierarchy.
-   * Example: "//cloudresourcemanager.googleapis.com/projects/my_project_123".
+   * The full name of the immediate parent of this resource. See
+   * [Resource Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
+   * for more information.
+   * For GCP assets, it is the parent resource defined in the [Cloud IAM policy
+   * hierarchy](https://cloud.google.com/iam/docs/overview#policy_hierarchy).
+   * For example: `"//cloudresourcemanager.googleapis.com/projects/my_project_123"`.
    * For third-party assets, it is up to the users to define.
    * </pre>
    *
@@ -329,32 +351,32 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       parent_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
-   * The full name of the immediate parent of this resource. See:
-   * https://cloud.google.com/apis/design/resource_names#full_resource_name
-   * For GCP assets, it is the parent resource defined in the IAM policy
-   * hierarchy: https://cloud.google.com/iam/docs/overview#policy_hierarchy.
-   * Example: "//cloudresourcemanager.googleapis.com/projects/my_project_123".
+   * The full name of the immediate parent of this resource. See
+   * [Resource Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
+   * for more information.
+   * For GCP assets, it is the parent resource defined in the [Cloud IAM policy
+   * hierarchy](https://cloud.google.com/iam/docs/overview#policy_hierarchy).
+   * For example: `"//cloudresourcemanager.googleapis.com/projects/my_project_123"`.
    * For third-party assets, it is up to the users to define.
    * </pre>
    *
    * <code>string parent = 5;</code>
    */
-  public com.google.protobuf.ByteString
-      getParentBytes() {
+  public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       parent_ = b;
       return b;
     } else {
@@ -365,6 +387,8 @@ private static final long serialVersionUID = 0L;
   public static final int DATA_FIELD_NUMBER = 6;
   private com.google.protobuf.Struct data_;
   /**
+   *
+   *
    * <pre>
    * The content of the resource, in which some sensitive fields are scrubbed
    * away and may not be present.
@@ -376,6 +400,8 @@ private static final long serialVersionUID = 0L;
     return data_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * The content of the resource, in which some sensitive fields are scrubbed
    * away and may not be present.
@@ -387,6 +413,8 @@ private static final long serialVersionUID = 0L;
     return data_ == null ? com.google.protobuf.Struct.getDefaultInstance() : data_;
   }
   /**
+   *
+   *
    * <pre>
    * The content of the resource, in which some sensitive fields are scrubbed
    * away and may not be present.
@@ -399,6 +427,8 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -408,8 +438,8 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  @java.lang.Override
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getVersionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, version_);
     }
@@ -431,6 +461,7 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -452,8 +483,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, parent_);
     }
     if (data_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(6, getData());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getData());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -463,7 +493,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.asset.v1beta1.Resource)) {
       return super.equals(obj);
@@ -471,20 +501,14 @@ private static final long serialVersionUID = 0L;
     com.google.cloud.asset.v1beta1.Resource other = (com.google.cloud.asset.v1beta1.Resource) obj;
 
     boolean result = true;
-    result = result && getVersion()
-        .equals(other.getVersion());
-    result = result && getDiscoveryDocumentUri()
-        .equals(other.getDiscoveryDocumentUri());
-    result = result && getDiscoveryName()
-        .equals(other.getDiscoveryName());
-    result = result && getResourceUrl()
-        .equals(other.getResourceUrl());
-    result = result && getParent()
-        .equals(other.getParent());
+    result = result && getVersion().equals(other.getVersion());
+    result = result && getDiscoveryDocumentUri().equals(other.getDiscoveryDocumentUri());
+    result = result && getDiscoveryName().equals(other.getDiscoveryName());
+    result = result && getResourceUrl().equals(other.getResourceUrl());
+    result = result && getParent().equals(other.getParent());
     result = result && (hasData() == other.hasData());
     if (hasData()) {
-      result = result && getData()
-          .equals(other.getData());
+      result = result && getData().equals(other.getData());
     }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
@@ -516,115 +540,127 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.cloud.asset.v1beta1.Resource parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.cloud.asset.v1beta1.Resource parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.asset.v1beta1.Resource parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.asset.v1beta1.Resource parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.asset.v1beta1.Resource parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.asset.v1beta1.Resource parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.asset.v1beta1.Resource parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.asset.v1beta1.Resource parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.asset.v1beta1.Resource parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.cloud.asset.v1beta1.Resource parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.asset.v1beta1.Resource parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.asset.v1beta1.Resource parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.asset.v1beta1.Resource parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.asset.v1beta1.Resource parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  public Builder newBuilderForType() { return newBuilder(); }
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-  public static Builder newBuilder(com.google.cloud.asset.v1beta1.Resource prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+
+  public static Builder newBuilder(com.google.cloud.asset.v1beta1.Resource prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+
+  @java.lang.Override
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Representation of a cloud resource.
    * </pre>
    *
    * Protobuf type {@code google.cloud.asset.v1beta1.Resource}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.asset.v1beta1.Resource)
       com.google.cloud.asset.v1beta1.ResourceOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.asset.v1beta1.AssetProto.internal_static_google_cloud_asset_v1beta1_Resource_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.asset.v1beta1.AssetProto
+          .internal_static_google_cloud_asset_v1beta1_Resource_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.asset.v1beta1.AssetProto.internal_static_google_cloud_asset_v1beta1_Resource_fieldAccessorTable
+      return com.google.cloud.asset.v1beta1.AssetProto
+          .internal_static_google_cloud_asset_v1beta1_Resource_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.asset.v1beta1.Resource.class, com.google.cloud.asset.v1beta1.Resource.Builder.class);
+              com.google.cloud.asset.v1beta1.Resource.class,
+              com.google.cloud.asset.v1beta1.Resource.Builder.class);
     }
 
     // Construct using com.google.cloud.asset.v1beta1.Resource.newBuilder()
@@ -632,16 +668,16 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       version_ = "";
@@ -663,15 +699,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.asset.v1beta1.AssetProto.internal_static_google_cloud_asset_v1beta1_Resource_descriptor;
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.asset.v1beta1.AssetProto
+          .internal_static_google_cloud_asset_v1beta1_Resource_descriptor;
     }
 
+    @java.lang.Override
     public com.google.cloud.asset.v1beta1.Resource getDefaultInstanceForType() {
       return com.google.cloud.asset.v1beta1.Resource.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.cloud.asset.v1beta1.Resource build() {
       com.google.cloud.asset.v1beta1.Resource result = buildPartial();
       if (!result.isInitialized()) {
@@ -680,8 +719,10 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.cloud.asset.v1beta1.Resource buildPartial() {
-      com.google.cloud.asset.v1beta1.Resource result = new com.google.cloud.asset.v1beta1.Resource(this);
+      com.google.cloud.asset.v1beta1.Resource result =
+          new com.google.cloud.asset.v1beta1.Resource(this);
       result.version_ = version_;
       result.discoveryDocumentUri_ = discoveryDocumentUri_;
       result.discoveryName_ = discoveryName_;
@@ -696,35 +737,43 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+
+    @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+    @java.lang.Override
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+    @java.lang.Override
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
+    @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
+    @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.asset.v1beta1.Resource) {
-        return mergeFrom((com.google.cloud.asset.v1beta1.Resource)other);
+        return mergeFrom((com.google.cloud.asset.v1beta1.Resource) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -761,10 +810,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -785,6 +836,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object version_ = "";
     /**
+     *
+     *
      * <pre>
      * The API version. Example: "v1".
      * </pre>
@@ -794,8 +847,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getVersion() {
       java.lang.Object ref = version_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         version_ = s;
         return s;
@@ -804,19 +856,19 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The API version. Example: "v1".
      * </pre>
      *
      * <code>string version = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getVersionBytes() {
+    public com.google.protobuf.ByteString getVersionBytes() {
       java.lang.Object ref = version_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         version_ = b;
         return b;
       } else {
@@ -824,23 +876,26 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The API version. Example: "v1".
      * </pre>
      *
      * <code>string version = 1;</code>
      */
-    public Builder setVersion(
-        java.lang.String value) {
+    public Builder setVersion(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       version_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The API version. Example: "v1".
      * </pre>
@@ -848,25 +903,26 @@ private static final long serialVersionUID = 0L;
      * <code>string version = 1;</code>
      */
     public Builder clearVersion() {
-      
+
       version_ = getDefaultInstance().getVersion();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The API version. Example: "v1".
      * </pre>
      *
      * <code>string version = 1;</code>
      */
-    public Builder setVersionBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setVersionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       version_ = value;
       onChanged();
       return this;
@@ -874,10 +930,12 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object discoveryDocumentUri_ = "";
     /**
+     *
+     *
      * <pre>
      * The URL of the discovery document containing the resource's JSON schema.
-     * Example:
-     * "https://www.googleapis.com/discovery/v1/apis/compute/v1/rest".
+     * For example:
+     * `"https://www.googleapis.com/discovery/v1/apis/compute/v1/rest"`.
      * It will be left unspecified for resources without a discovery-based API,
      * such as Cloud Bigtable.
      * </pre>
@@ -887,8 +945,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getDiscoveryDocumentUri() {
       java.lang.Object ref = discoveryDocumentUri_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         discoveryDocumentUri_ = s;
         return s;
@@ -897,23 +954,23 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The URL of the discovery document containing the resource's JSON schema.
-     * Example:
-     * "https://www.googleapis.com/discovery/v1/apis/compute/v1/rest".
+     * For example:
+     * `"https://www.googleapis.com/discovery/v1/apis/compute/v1/rest"`.
      * It will be left unspecified for resources without a discovery-based API,
      * such as Cloud Bigtable.
      * </pre>
      *
      * <code>string discovery_document_uri = 2;</code>
      */
-    public com.google.protobuf.ByteString
-        getDiscoveryDocumentUriBytes() {
+    public com.google.protobuf.ByteString getDiscoveryDocumentUriBytes() {
       java.lang.Object ref = discoveryDocumentUri_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         discoveryDocumentUri_ = b;
         return b;
       } else {
@@ -921,31 +978,34 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The URL of the discovery document containing the resource's JSON schema.
-     * Example:
-     * "https://www.googleapis.com/discovery/v1/apis/compute/v1/rest".
+     * For example:
+     * `"https://www.googleapis.com/discovery/v1/apis/compute/v1/rest"`.
      * It will be left unspecified for resources without a discovery-based API,
      * such as Cloud Bigtable.
      * </pre>
      *
      * <code>string discovery_document_uri = 2;</code>
      */
-    public Builder setDiscoveryDocumentUri(
-        java.lang.String value) {
+    public Builder setDiscoveryDocumentUri(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       discoveryDocumentUri_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The URL of the discovery document containing the resource's JSON schema.
-     * Example:
-     * "https://www.googleapis.com/discovery/v1/apis/compute/v1/rest".
+     * For example:
+     * `"https://www.googleapis.com/discovery/v1/apis/compute/v1/rest"`.
      * It will be left unspecified for resources without a discovery-based API,
      * such as Cloud Bigtable.
      * </pre>
@@ -953,29 +1013,30 @@ private static final long serialVersionUID = 0L;
      * <code>string discovery_document_uri = 2;</code>
      */
     public Builder clearDiscoveryDocumentUri() {
-      
+
       discoveryDocumentUri_ = getDefaultInstance().getDiscoveryDocumentUri();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The URL of the discovery document containing the resource's JSON schema.
-     * Example:
-     * "https://www.googleapis.com/discovery/v1/apis/compute/v1/rest".
+     * For example:
+     * `"https://www.googleapis.com/discovery/v1/apis/compute/v1/rest"`.
      * It will be left unspecified for resources without a discovery-based API,
      * such as Cloud Bigtable.
      * </pre>
      *
      * <code>string discovery_document_uri = 2;</code>
      */
-    public Builder setDiscoveryDocumentUriBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setDiscoveryDocumentUriBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       discoveryDocumentUri_ = value;
       onChanged();
       return this;
@@ -983,6 +1044,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object discoveryName_ = "";
     /**
+     *
+     *
      * <pre>
      * The JSON schema name listed in the discovery document.
      * Example: "Project". It will be left unspecified for resources (such as
@@ -994,8 +1057,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getDiscoveryName() {
       java.lang.Object ref = discoveryName_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         discoveryName_ = s;
         return s;
@@ -1004,6 +1066,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The JSON schema name listed in the discovery document.
      * Example: "Project". It will be left unspecified for resources (such as
@@ -1012,13 +1076,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string discovery_name = 3;</code>
      */
-    public com.google.protobuf.ByteString
-        getDiscoveryNameBytes() {
+    public com.google.protobuf.ByteString getDiscoveryNameBytes() {
       java.lang.Object ref = discoveryName_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         discoveryName_ = b;
         return b;
       } else {
@@ -1026,6 +1088,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The JSON schema name listed in the discovery document.
      * Example: "Project". It will be left unspecified for resources (such as
@@ -1034,17 +1098,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string discovery_name = 3;</code>
      */
-    public Builder setDiscoveryName(
-        java.lang.String value) {
+    public Builder setDiscoveryName(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       discoveryName_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The JSON schema name listed in the discovery document.
      * Example: "Project". It will be left unspecified for resources (such as
@@ -1054,12 +1119,14 @@ private static final long serialVersionUID = 0L;
      * <code>string discovery_name = 3;</code>
      */
     public Builder clearDiscoveryName() {
-      
+
       discoveryName_ = getDefaultInstance().getDiscoveryName();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The JSON schema name listed in the discovery document.
      * Example: "Project". It will be left unspecified for resources (such as
@@ -1068,13 +1135,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string discovery_name = 3;</code>
      */
-    public Builder setDiscoveryNameBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setDiscoveryNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       discoveryName_ = value;
       onChanged();
       return this;
@@ -1082,6 +1148,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object resourceUrl_ = "";
     /**
+     *
+     *
      * <pre>
      * The REST URL for accessing the resource. An HTTP GET operation using this
      * URL returns the resource itself.
@@ -1095,8 +1163,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getResourceUrl() {
       java.lang.Object ref = resourceUrl_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         resourceUrl_ = s;
         return s;
@@ -1105,6 +1172,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The REST URL for accessing the resource. An HTTP GET operation using this
      * URL returns the resource itself.
@@ -1115,13 +1184,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string resource_url = 4;</code>
      */
-    public com.google.protobuf.ByteString
-        getResourceUrlBytes() {
+    public com.google.protobuf.ByteString getResourceUrlBytes() {
       java.lang.Object ref = resourceUrl_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         resourceUrl_ = b;
         return b;
       } else {
@@ -1129,6 +1196,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The REST URL for accessing the resource. An HTTP GET operation using this
      * URL returns the resource itself.
@@ -1139,17 +1208,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string resource_url = 4;</code>
      */
-    public Builder setResourceUrl(
-        java.lang.String value) {
+    public Builder setResourceUrl(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       resourceUrl_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The REST URL for accessing the resource. An HTTP GET operation using this
      * URL returns the resource itself.
@@ -1161,12 +1231,14 @@ private static final long serialVersionUID = 0L;
      * <code>string resource_url = 4;</code>
      */
     public Builder clearResourceUrl() {
-      
+
       resourceUrl_ = getDefaultInstance().getResourceUrl();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The REST URL for accessing the resource. An HTTP GET operation using this
      * URL returns the resource itself.
@@ -1177,13 +1249,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string resource_url = 4;</code>
      */
-    public Builder setResourceUrlBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setResourceUrlBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       resourceUrl_ = value;
       onChanged();
       return this;
@@ -1191,12 +1262,15 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object parent_ = "";
     /**
+     *
+     *
      * <pre>
-     * The full name of the immediate parent of this resource. See:
-     * https://cloud.google.com/apis/design/resource_names#full_resource_name
-     * For GCP assets, it is the parent resource defined in the IAM policy
-     * hierarchy: https://cloud.google.com/iam/docs/overview#policy_hierarchy.
-     * Example: "//cloudresourcemanager.googleapis.com/projects/my_project_123".
+     * The full name of the immediate parent of this resource. See
+     * [Resource Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
+     * for more information.
+     * For GCP assets, it is the parent resource defined in the [Cloud IAM policy
+     * hierarchy](https://cloud.google.com/iam/docs/overview#policy_hierarchy).
+     * For example: `"//cloudresourcemanager.googleapis.com/projects/my_project_123"`.
      * For third-party assets, it is up to the users to define.
      * </pre>
      *
@@ -1205,8 +1279,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         parent_ = s;
         return s;
@@ -1215,24 +1288,25 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
-     * The full name of the immediate parent of this resource. See:
-     * https://cloud.google.com/apis/design/resource_names#full_resource_name
-     * For GCP assets, it is the parent resource defined in the IAM policy
-     * hierarchy: https://cloud.google.com/iam/docs/overview#policy_hierarchy.
-     * Example: "//cloudresourcemanager.googleapis.com/projects/my_project_123".
+     * The full name of the immediate parent of this resource. See
+     * [Resource Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
+     * for more information.
+     * For GCP assets, it is the parent resource defined in the [Cloud IAM policy
+     * hierarchy](https://cloud.google.com/iam/docs/overview#policy_hierarchy).
+     * For example: `"//cloudresourcemanager.googleapis.com/projects/my_project_123"`.
      * For third-party assets, it is up to the users to define.
      * </pre>
      *
      * <code>string parent = 5;</code>
      */
-    public com.google.protobuf.ByteString
-        getParentBytes() {
+    public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         parent_ = b;
         return b;
       } else {
@@ -1240,64 +1314,71 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
-     * The full name of the immediate parent of this resource. See:
-     * https://cloud.google.com/apis/design/resource_names#full_resource_name
-     * For GCP assets, it is the parent resource defined in the IAM policy
-     * hierarchy: https://cloud.google.com/iam/docs/overview#policy_hierarchy.
-     * Example: "//cloudresourcemanager.googleapis.com/projects/my_project_123".
+     * The full name of the immediate parent of this resource. See
+     * [Resource Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
+     * for more information.
+     * For GCP assets, it is the parent resource defined in the [Cloud IAM policy
+     * hierarchy](https://cloud.google.com/iam/docs/overview#policy_hierarchy).
+     * For example: `"//cloudresourcemanager.googleapis.com/projects/my_project_123"`.
      * For third-party assets, it is up to the users to define.
      * </pre>
      *
      * <code>string parent = 5;</code>
      */
-    public Builder setParent(
-        java.lang.String value) {
+    public Builder setParent(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       parent_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * The full name of the immediate parent of this resource. See:
-     * https://cloud.google.com/apis/design/resource_names#full_resource_name
-     * For GCP assets, it is the parent resource defined in the IAM policy
-     * hierarchy: https://cloud.google.com/iam/docs/overview#policy_hierarchy.
-     * Example: "//cloudresourcemanager.googleapis.com/projects/my_project_123".
+     * The full name of the immediate parent of this resource. See
+     * [Resource Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
+     * for more information.
+     * For GCP assets, it is the parent resource defined in the [Cloud IAM policy
+     * hierarchy](https://cloud.google.com/iam/docs/overview#policy_hierarchy).
+     * For example: `"//cloudresourcemanager.googleapis.com/projects/my_project_123"`.
      * For third-party assets, it is up to the users to define.
      * </pre>
      *
      * <code>string parent = 5;</code>
      */
     public Builder clearParent() {
-      
+
       parent_ = getDefaultInstance().getParent();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * The full name of the immediate parent of this resource. See:
-     * https://cloud.google.com/apis/design/resource_names#full_resource_name
-     * For GCP assets, it is the parent resource defined in the IAM policy
-     * hierarchy: https://cloud.google.com/iam/docs/overview#policy_hierarchy.
-     * Example: "//cloudresourcemanager.googleapis.com/projects/my_project_123".
+     * The full name of the immediate parent of this resource. See
+     * [Resource Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
+     * for more information.
+     * For GCP assets, it is the parent resource defined in the [Cloud IAM policy
+     * hierarchy](https://cloud.google.com/iam/docs/overview#policy_hierarchy).
+     * For example: `"//cloudresourcemanager.googleapis.com/projects/my_project_123"`.
      * For third-party assets, it is up to the users to define.
      * </pre>
      *
      * <code>string parent = 5;</code>
      */
-    public Builder setParentBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       parent_ = value;
       onChanged();
       return this;
@@ -1305,8 +1386,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Struct data_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> dataBuilder_;
+            com.google.protobuf.Struct,
+            com.google.protobuf.Struct.Builder,
+            com.google.protobuf.StructOrBuilder>
+        dataBuilder_;
     /**
+     *
+     *
      * <pre>
      * The content of the resource, in which some sensitive fields are scrubbed
      * away and may not be present.
@@ -1318,6 +1404,8 @@ private static final long serialVersionUID = 0L;
       return dataBuilder_ != null || data_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * The content of the resource, in which some sensitive fields are scrubbed
      * away and may not be present.
@@ -1333,6 +1421,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The content of the resource, in which some sensitive fields are scrubbed
      * away and may not be present.
@@ -1354,6 +1444,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The content of the resource, in which some sensitive fields are scrubbed
      * away and may not be present.
@@ -1361,8 +1453,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.Struct data = 6;</code>
      */
-    public Builder setData(
-        com.google.protobuf.Struct.Builder builderForValue) {
+    public Builder setData(com.google.protobuf.Struct.Builder builderForValue) {
       if (dataBuilder_ == null) {
         data_ = builderForValue.build();
         onChanged();
@@ -1373,6 +1464,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The content of the resource, in which some sensitive fields are scrubbed
      * away and may not be present.
@@ -1383,8 +1476,7 @@ private static final long serialVersionUID = 0L;
     public Builder mergeData(com.google.protobuf.Struct value) {
       if (dataBuilder_ == null) {
         if (data_ != null) {
-          data_ =
-            com.google.protobuf.Struct.newBuilder(data_).mergeFrom(value).buildPartial();
+          data_ = com.google.protobuf.Struct.newBuilder(data_).mergeFrom(value).buildPartial();
         } else {
           data_ = value;
         }
@@ -1396,6 +1488,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The content of the resource, in which some sensitive fields are scrubbed
      * away and may not be present.
@@ -1415,6 +1509,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The content of the resource, in which some sensitive fields are scrubbed
      * away and may not be present.
@@ -1423,11 +1519,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Struct data = 6;</code>
      */
     public com.google.protobuf.Struct.Builder getDataBuilder() {
-      
+
       onChanged();
       return getDataFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * The content of the resource, in which some sensitive fields are scrubbed
      * away and may not be present.
@@ -1439,11 +1537,12 @@ private static final long serialVersionUID = 0L;
       if (dataBuilder_ != null) {
         return dataBuilder_.getMessageOrBuilder();
       } else {
-        return data_ == null ?
-            com.google.protobuf.Struct.getDefaultInstance() : data_;
+        return data_ == null ? com.google.protobuf.Struct.getDefaultInstance() : data_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The content of the resource, in which some sensitive fields are scrubbed
      * away and may not be present.
@@ -1452,34 +1551,38 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Struct data = 6;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> 
+            com.google.protobuf.Struct,
+            com.google.protobuf.Struct.Builder,
+            com.google.protobuf.StructOrBuilder>
         getDataFieldBuilder() {
       if (dataBuilder_ == null) {
-        dataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder>(
-                getData(),
-                getParentForChildren(),
-                isClean());
+        dataBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Struct,
+                com.google.protobuf.Struct.Builder,
+                com.google.protobuf.StructOrBuilder>(getData(), getParentForChildren(), isClean());
         data_ = null;
       }
       return dataBuilder_;
     }
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+
+    @java.lang.Override
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
     }
-
 
     // @@protoc_insertion_point(builder_scope:google.cloud.asset.v1beta1.Resource)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.asset.v1beta1.Resource)
   private static final com.google.cloud.asset.v1beta1.Resource DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.asset.v1beta1.Resource();
   }
@@ -1488,15 +1591,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<Resource>
-      PARSER = new com.google.protobuf.AbstractParser<Resource>() {
-    public Resource parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Resource(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<Resource> PARSER =
+      new com.google.protobuf.AbstractParser<Resource>() {
+        @java.lang.Override
+        public Resource parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new Resource(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<Resource> parser() {
     return PARSER;
@@ -1507,9 +1611,8 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.cloud.asset.v1beta1.Resource getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

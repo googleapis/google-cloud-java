@@ -24,7 +24,6 @@ package com.google.cloud.examples.spanner.snippets;
 
 import com.google.cloud.spanner.BatchClient;
 import com.google.cloud.spanner.BatchReadOnlyTransaction;
-import com.google.cloud.spanner.BatchTransactionId;
 import com.google.cloud.spanner.KeySet;
 import com.google.cloud.spanner.Partition;
 import com.google.cloud.spanner.PartitionOptions;
@@ -34,9 +33,7 @@ import com.google.cloud.spanner.TimestampBound;
 import java.util.Arrays;
 import java.util.List;
 
-/**
- * This class contains snippets for {@link com.google.cloud.spanner.BatchClient} interface.
- */
+/** This class contains snippets for {@link com.google.cloud.spanner.BatchClient} interface. */
 public class BatchClientSnippets {
 
   private final BatchClient batchClient;
@@ -45,9 +42,7 @@ public class BatchClientSnippets {
     this.batchClient = batchClient;
   }
 
-  /**
-   * Example to do a batch strong read.
-   */
+  /** Example to do a batch strong read. */
   BatchReadOnlyTransaction readStrong() {
     // [START batch_client_strong_read]
     BatchReadOnlyTransaction txn = batchClient.batchReadOnlyTransaction(TimestampBound.strong());
@@ -55,24 +50,14 @@ public class BatchClientSnippets {
     return txn;
   }
 
-  /**
-   * Example to do a batch read with txn id.
-   */
-  BatchReadOnlyTransaction readWithId(BatchReadOnlyTransaction my_txn) {
-    // [START batch_client_read_with_id]
-    BatchTransactionId txnId = my_txn.getBatchTransactionId();
-    BatchReadOnlyTransaction txn = batchClient.batchReadOnlyTransaction(txnId);
-    // [END batch_client_read_with_id]
-
-    return txn;
-  }
-
   void partitionQuery() {
     // [START partition_query]
     final BatchReadOnlyTransaction txn =
         batchClient.batchReadOnlyTransaction(TimestampBound.strong());
-    List<Partition> partitions = txn.partitionQuery(PartitionOptions.getDefaultInstance(),
-        Statement.of("SELECT SingerId, FirstName, LastName FROM Singers"));
+    List<Partition> partitions =
+        txn.partitionQuery(
+            PartitionOptions.getDefaultInstance(),
+            Statement.of("SELECT SingerId, FirstName, LastName FROM Singers"));
 
     for (final Partition p : partitions) {
       try (ResultSet results = txn.execute(p)) {
@@ -104,7 +89,7 @@ public class BatchClientSnippets {
           long singerId = results.getLong(0);
           String firstName = results.getString(1);
           String lastName = results.getString(2);
-          System.out.println("P2 [" + singerId + "] " + firstName + " " + lastName);
+          System.out.println("[" + singerId + "] " + firstName + " " + lastName);
         }
       }
     }
@@ -121,18 +106,18 @@ public class BatchClientSnippets {
             "Singers",
             "SingerId",
             KeySet.all(),
-            Arrays.asList("FirstName"));
-    BatchTransactionId txnID = txn.getBatchTransactionId();
-    int numRowsRead = 0;
+            Arrays.asList("SingerId", "FirstName", "LastName"));
+
     for (Partition p : partitions) {
-      BatchReadOnlyTransaction batchTxnOnEachWorker = batchClient.batchReadOnlyTransaction(txnID);
-      try (ResultSet results = batchTxnOnEachWorker.execute(p)) {
+      try (ResultSet results = txn.execute(p)) {
         while (results.next()) {
-          System.out.println(results.getString(0));
+          long singerId = results.getLong(0);
+          String firstName = results.getString(1);
+          String lastName = results.getString(2);
+          System.out.println("[" + singerId + "] " + firstName + " " + lastName);
         }
       }
     }
     // [END partition_read_using_index]
   }
 }
-

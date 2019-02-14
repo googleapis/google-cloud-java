@@ -3,20 +3,24 @@
 
 package com.google.cloud.tasks.v2beta3;
 
-public interface ListQueuesResponseOrBuilder extends
+public interface ListQueuesResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.tasks.v2beta3.ListQueuesResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The list of queues.
    * </pre>
    *
    * <code>repeated .google.cloud.tasks.v2beta3.Queue queues = 1;</code>
    */
-  java.util.List<com.google.cloud.tasks.v2beta3.Queue> 
-      getQueuesList();
+  java.util.List<com.google.cloud.tasks.v2beta3.Queue> getQueuesList();
   /**
+   *
+   *
    * <pre>
    * The list of queues.
    * </pre>
@@ -25,6 +29,8 @@ public interface ListQueuesResponseOrBuilder extends
    */
   com.google.cloud.tasks.v2beta3.Queue getQueues(int index);
   /**
+   *
+   *
    * <pre>
    * The list of queues.
    * </pre>
@@ -33,25 +39,29 @@ public interface ListQueuesResponseOrBuilder extends
    */
   int getQueuesCount();
   /**
+   *
+   *
    * <pre>
    * The list of queues.
    * </pre>
    *
    * <code>repeated .google.cloud.tasks.v2beta3.Queue queues = 1;</code>
    */
-  java.util.List<? extends com.google.cloud.tasks.v2beta3.QueueOrBuilder> 
-      getQueuesOrBuilderList();
+  java.util.List<? extends com.google.cloud.tasks.v2beta3.QueueOrBuilder> getQueuesOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * The list of queues.
    * </pre>
    *
    * <code>repeated .google.cloud.tasks.v2beta3.Queue queues = 1;</code>
    */
-  com.google.cloud.tasks.v2beta3.QueueOrBuilder getQueuesOrBuilder(
-      int index);
+  com.google.cloud.tasks.v2beta3.QueueOrBuilder getQueuesOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * A token to retrieve next page of results.
    * To return the next page of results, call
@@ -65,6 +75,8 @@ public interface ListQueuesResponseOrBuilder extends
    */
   java.lang.String getNextPageToken();
   /**
+   *
+   *
    * <pre>
    * A token to retrieve next page of results.
    * To return the next page of results, call
@@ -76,6 +88,5 @@ public interface ListQueuesResponseOrBuilder extends
    *
    * <code>string next_page_token = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getNextPageTokenBytes();
+  com.google.protobuf.ByteString getNextPageTokenBytes();
 }

@@ -4,34 +4,39 @@
 package com.google.bigtable.v2;
 
 /**
+ *
+ *
  * <pre>
  * Specifies a contiguous range of raw byte values.
  * </pre>
  *
  * Protobuf type {@code google.bigtable.v2.ValueRange}
  */
-public  final class ValueRange extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class ValueRange extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.bigtable.v2.ValueRange)
     ValueRangeOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use ValueRange.newBuilder() to construct.
   private ValueRange(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private ValueRange() {
-  }
+
+  private ValueRange() {}
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private ValueRange(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -43,71 +48,77 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          case 10:
+            {
+              startValueCase_ = 1;
+              startValue_ = input.readBytes();
+              break;
             }
-            break;
-          }
-          case 10: {
-            startValueCase_ = 1;
-            startValue_ = input.readBytes();
-            break;
-          }
-          case 18: {
-            startValueCase_ = 2;
-            startValue_ = input.readBytes();
-            break;
-          }
-          case 26: {
-            endValueCase_ = 3;
-            endValue_ = input.readBytes();
-            break;
-          }
-          case 34: {
-            endValueCase_ = 4;
-            endValue_ = input.readBytes();
-            break;
-          }
+          case 18:
+            {
+              startValueCase_ = 2;
+              startValue_ = input.readBytes();
+              break;
+            }
+          case 26:
+            {
+              endValueCase_ = 3;
+              endValue_ = input.readBytes();
+              break;
+            }
+          case 34:
+            {
+              endValueCase_ = 4;
+              endValue_ = input.readBytes();
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.bigtable.v2.DataProto.internal_static_google_bigtable_v2_ValueRange_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.bigtable.v2.DataProto
+        .internal_static_google_bigtable_v2_ValueRange_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.bigtable.v2.DataProto.internal_static_google_bigtable_v2_ValueRange_fieldAccessorTable
+    return com.google.bigtable.v2.DataProto
+        .internal_static_google_bigtable_v2_ValueRange_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.bigtable.v2.ValueRange.class, com.google.bigtable.v2.ValueRange.Builder.class);
+            com.google.bigtable.v2.ValueRange.class,
+            com.google.bigtable.v2.ValueRange.Builder.class);
   }
 
   private int startValueCase_ = 0;
   private java.lang.Object startValue_;
-  public enum StartValueCase
-      implements com.google.protobuf.Internal.EnumLite {
+
+  public enum StartValueCase implements com.google.protobuf.Internal.EnumLite {
     START_VALUE_CLOSED(1),
     START_VALUE_OPEN(2),
     STARTVALUE_NOT_SET(0);
     private final int value;
+
     private StartValueCase(int value) {
       this.value = value;
     }
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static StartValueCase valueOf(int value) {
       return forNumber(value);
@@ -115,37 +126,39 @@ private static final long serialVersionUID = 0L;
 
     public static StartValueCase forNumber(int value) {
       switch (value) {
-        case 1: return START_VALUE_CLOSED;
-        case 2: return START_VALUE_OPEN;
-        case 0: return STARTVALUE_NOT_SET;
-        default: return null;
+        case 1:
+          return START_VALUE_CLOSED;
+        case 2:
+          return START_VALUE_OPEN;
+        case 0:
+          return STARTVALUE_NOT_SET;
+        default:
+          return null;
       }
     }
+
     public int getNumber() {
       return this.value;
     }
   };
 
-  public StartValueCase
-  getStartValueCase() {
-    return StartValueCase.forNumber(
-        startValueCase_);
+  public StartValueCase getStartValueCase() {
+    return StartValueCase.forNumber(startValueCase_);
   }
 
   private int endValueCase_ = 0;
   private java.lang.Object endValue_;
-  public enum EndValueCase
-      implements com.google.protobuf.Internal.EnumLite {
+
+  public enum EndValueCase implements com.google.protobuf.Internal.EnumLite {
     END_VALUE_CLOSED(3),
     END_VALUE_OPEN(4),
     ENDVALUE_NOT_SET(0);
     private final int value;
+
     private EndValueCase(int value) {
       this.value = value;
     }
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static EndValueCase valueOf(int value) {
       return forNumber(value);
@@ -153,25 +166,30 @@ private static final long serialVersionUID = 0L;
 
     public static EndValueCase forNumber(int value) {
       switch (value) {
-        case 3: return END_VALUE_CLOSED;
-        case 4: return END_VALUE_OPEN;
-        case 0: return ENDVALUE_NOT_SET;
-        default: return null;
+        case 3:
+          return END_VALUE_CLOSED;
+        case 4:
+          return END_VALUE_OPEN;
+        case 0:
+          return ENDVALUE_NOT_SET;
+        default:
+          return null;
       }
     }
+
     public int getNumber() {
       return this.value;
     }
   };
 
-  public EndValueCase
-  getEndValueCase() {
-    return EndValueCase.forNumber(
-        endValueCase_);
+  public EndValueCase getEndValueCase() {
+    return EndValueCase.forNumber(endValueCase_);
   }
 
   public static final int START_VALUE_CLOSED_FIELD_NUMBER = 1;
   /**
+   *
+   *
    * <pre>
    * Used when giving an inclusive lower bound for the range.
    * </pre>
@@ -187,6 +205,8 @@ private static final long serialVersionUID = 0L;
 
   public static final int START_VALUE_OPEN_FIELD_NUMBER = 2;
   /**
+   *
+   *
    * <pre>
    * Used when giving an exclusive lower bound for the range.
    * </pre>
@@ -202,6 +222,8 @@ private static final long serialVersionUID = 0L;
 
   public static final int END_VALUE_CLOSED_FIELD_NUMBER = 3;
   /**
+   *
+   *
    * <pre>
    * Used when giving an inclusive upper bound for the range.
    * </pre>
@@ -217,6 +239,8 @@ private static final long serialVersionUID = 0L;
 
   public static final int END_VALUE_OPEN_FIELD_NUMBER = 4;
   /**
+   *
+   *
    * <pre>
    * Used when giving an exclusive upper bound for the range.
    * </pre>
@@ -231,6 +255,8 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -240,51 +266,48 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  @java.lang.Override
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (startValueCase_ == 1) {
-      output.writeBytes(
-          1, (com.google.protobuf.ByteString) startValue_);
+      output.writeBytes(1, (com.google.protobuf.ByteString) startValue_);
     }
     if (startValueCase_ == 2) {
-      output.writeBytes(
-          2, (com.google.protobuf.ByteString) startValue_);
+      output.writeBytes(2, (com.google.protobuf.ByteString) startValue_);
     }
     if (endValueCase_ == 3) {
-      output.writeBytes(
-          3, (com.google.protobuf.ByteString) endValue_);
+      output.writeBytes(3, (com.google.protobuf.ByteString) endValue_);
     }
     if (endValueCase_ == 4) {
-      output.writeBytes(
-          4, (com.google.protobuf.ByteString) endValue_);
+      output.writeBytes(4, (com.google.protobuf.ByteString) endValue_);
     }
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
 
     size = 0;
     if (startValueCase_ == 1) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBytesSize(
-            1, (com.google.protobuf.ByteString) startValue_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBytesSize(
+              1, (com.google.protobuf.ByteString) startValue_);
     }
     if (startValueCase_ == 2) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBytesSize(
-            2, (com.google.protobuf.ByteString) startValue_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBytesSize(
+              2, (com.google.protobuf.ByteString) startValue_);
     }
     if (endValueCase_ == 3) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBytesSize(
-            3, (com.google.protobuf.ByteString) endValue_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBytesSize(
+              3, (com.google.protobuf.ByteString) endValue_);
     }
     if (endValueCase_ == 4) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBytesSize(
-            4, (com.google.protobuf.ByteString) endValue_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeBytesSize(
+              4, (com.google.protobuf.ByteString) endValue_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -294,7 +317,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.bigtable.v2.ValueRange)) {
       return super.equals(obj);
@@ -302,32 +325,26 @@ private static final long serialVersionUID = 0L;
     com.google.bigtable.v2.ValueRange other = (com.google.bigtable.v2.ValueRange) obj;
 
     boolean result = true;
-    result = result && getStartValueCase().equals(
-        other.getStartValueCase());
+    result = result && getStartValueCase().equals(other.getStartValueCase());
     if (!result) return false;
     switch (startValueCase_) {
       case 1:
-        result = result && getStartValueClosed()
-            .equals(other.getStartValueClosed());
+        result = result && getStartValueClosed().equals(other.getStartValueClosed());
         break;
       case 2:
-        result = result && getStartValueOpen()
-            .equals(other.getStartValueOpen());
+        result = result && getStartValueOpen().equals(other.getStartValueOpen());
         break;
       case 0:
       default:
     }
-    result = result && getEndValueCase().equals(
-        other.getEndValueCase());
+    result = result && getEndValueCase().equals(other.getEndValueCase());
     if (!result) return false;
     switch (endValueCase_) {
       case 3:
-        result = result && getEndValueClosed()
-            .equals(other.getEndValueClosed());
+        result = result && getEndValueClosed().equals(other.getEndValueClosed());
         break;
       case 4:
-        result = result && getEndValueOpen()
-            .equals(other.getEndValueOpen());
+        result = result && getEndValueOpen().equals(other.getEndValueOpen());
         break;
       case 0:
       default:
@@ -372,115 +389,126 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.bigtable.v2.ValueRange parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.bigtable.v2.ValueRange parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.bigtable.v2.ValueRange parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.bigtable.v2.ValueRange parseFrom(
-      com.google.protobuf.ByteString data)
+
+  public static com.google.bigtable.v2.ValueRange parseFrom(com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.bigtable.v2.ValueRange parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.bigtable.v2.ValueRange parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.bigtable.v2.ValueRange parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.bigtable.v2.ValueRange parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.bigtable.v2.ValueRange parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.bigtable.v2.ValueRange parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
   public static com.google.bigtable.v2.ValueRange parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.bigtable.v2.ValueRange parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.bigtable.v2.ValueRange parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  public Builder newBuilderForType() { return newBuilder(); }
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-  public static Builder newBuilder(com.google.bigtable.v2.ValueRange prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+
+  public static Builder newBuilder(com.google.bigtable.v2.ValueRange prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+
+  @java.lang.Override
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Specifies a contiguous range of raw byte values.
    * </pre>
    *
    * Protobuf type {@code google.bigtable.v2.ValueRange}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.bigtable.v2.ValueRange)
       com.google.bigtable.v2.ValueRangeOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.bigtable.v2.DataProto.internal_static_google_bigtable_v2_ValueRange_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.bigtable.v2.DataProto
+          .internal_static_google_bigtable_v2_ValueRange_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.bigtable.v2.DataProto.internal_static_google_bigtable_v2_ValueRange_fieldAccessorTable
+      return com.google.bigtable.v2.DataProto
+          .internal_static_google_bigtable_v2_ValueRange_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.bigtable.v2.ValueRange.class, com.google.bigtable.v2.ValueRange.Builder.class);
+              com.google.bigtable.v2.ValueRange.class,
+              com.google.bigtable.v2.ValueRange.Builder.class);
     }
 
     // Construct using com.google.bigtable.v2.ValueRange.newBuilder()
@@ -488,16 +516,16 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       startValueCase_ = 0;
@@ -507,15 +535,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.bigtable.v2.DataProto.internal_static_google_bigtable_v2_ValueRange_descriptor;
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.bigtable.v2.DataProto
+          .internal_static_google_bigtable_v2_ValueRange_descriptor;
     }
 
+    @java.lang.Override
     public com.google.bigtable.v2.ValueRange getDefaultInstanceForType() {
       return com.google.bigtable.v2.ValueRange.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.bigtable.v2.ValueRange build() {
       com.google.bigtable.v2.ValueRange result = buildPartial();
       if (!result.isInitialized()) {
@@ -524,6 +555,7 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.bigtable.v2.ValueRange buildPartial() {
       com.google.bigtable.v2.ValueRange result = new com.google.bigtable.v2.ValueRange(this);
       if (startValueCase_ == 1) {
@@ -544,35 +576,43 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+
+    @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+    @java.lang.Override
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+    @java.lang.Override
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
+    @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
+    @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.bigtable.v2.ValueRange) {
-        return mergeFrom((com.google.bigtable.v2.ValueRange)other);
+        return mergeFrom((com.google.bigtable.v2.ValueRange) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -582,40 +622,48 @@ private static final long serialVersionUID = 0L;
     public Builder mergeFrom(com.google.bigtable.v2.ValueRange other) {
       if (other == com.google.bigtable.v2.ValueRange.getDefaultInstance()) return this;
       switch (other.getStartValueCase()) {
-        case START_VALUE_CLOSED: {
-          setStartValueClosed(other.getStartValueClosed());
-          break;
-        }
-        case START_VALUE_OPEN: {
-          setStartValueOpen(other.getStartValueOpen());
-          break;
-        }
-        case STARTVALUE_NOT_SET: {
-          break;
-        }
+        case START_VALUE_CLOSED:
+          {
+            setStartValueClosed(other.getStartValueClosed());
+            break;
+          }
+        case START_VALUE_OPEN:
+          {
+            setStartValueOpen(other.getStartValueOpen());
+            break;
+          }
+        case STARTVALUE_NOT_SET:
+          {
+            break;
+          }
       }
       switch (other.getEndValueCase()) {
-        case END_VALUE_CLOSED: {
-          setEndValueClosed(other.getEndValueClosed());
-          break;
-        }
-        case END_VALUE_OPEN: {
-          setEndValueOpen(other.getEndValueOpen());
-          break;
-        }
-        case ENDVALUE_NOT_SET: {
-          break;
-        }
+        case END_VALUE_CLOSED:
+          {
+            setEndValueClosed(other.getEndValueClosed());
+            break;
+          }
+        case END_VALUE_OPEN:
+          {
+            setEndValueOpen(other.getEndValueOpen());
+            break;
+          }
+        case ENDVALUE_NOT_SET:
+          {
+            break;
+          }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -633,12 +681,12 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int startValueCase_ = 0;
     private java.lang.Object startValue_;
-    public StartValueCase
-        getStartValueCase() {
-      return StartValueCase.forNumber(
-          startValueCase_);
+
+    public StartValueCase getStartValueCase() {
+      return StartValueCase.forNumber(startValueCase_);
     }
 
     public Builder clearStartValue() {
@@ -650,10 +698,9 @@ private static final long serialVersionUID = 0L;
 
     private int endValueCase_ = 0;
     private java.lang.Object endValue_;
-    public EndValueCase
-        getEndValueCase() {
-      return EndValueCase.forNumber(
-          endValueCase_);
+
+    public EndValueCase getEndValueCase() {
+      return EndValueCase.forNumber(endValueCase_);
     }
 
     public Builder clearEndValue() {
@@ -663,8 +710,9 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-
     /**
+     *
+     *
      * <pre>
      * Used when giving an inclusive lower bound for the range.
      * </pre>
@@ -678,6 +726,8 @@ private static final long serialVersionUID = 0L;
       return com.google.protobuf.ByteString.EMPTY;
     }
     /**
+     *
+     *
      * <pre>
      * Used when giving an inclusive lower bound for the range.
      * </pre>
@@ -686,14 +736,16 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setStartValueClosed(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  startValueCase_ = 1;
+        throw new NullPointerException();
+      }
+      startValueCase_ = 1;
       startValue_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Used when giving an inclusive lower bound for the range.
      * </pre>
@@ -710,6 +762,8 @@ private static final long serialVersionUID = 0L;
     }
 
     /**
+     *
+     *
      * <pre>
      * Used when giving an exclusive lower bound for the range.
      * </pre>
@@ -723,6 +777,8 @@ private static final long serialVersionUID = 0L;
       return com.google.protobuf.ByteString.EMPTY;
     }
     /**
+     *
+     *
      * <pre>
      * Used when giving an exclusive lower bound for the range.
      * </pre>
@@ -731,14 +787,16 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setStartValueOpen(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  startValueCase_ = 2;
+        throw new NullPointerException();
+      }
+      startValueCase_ = 2;
       startValue_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Used when giving an exclusive lower bound for the range.
      * </pre>
@@ -755,6 +813,8 @@ private static final long serialVersionUID = 0L;
     }
 
     /**
+     *
+     *
      * <pre>
      * Used when giving an inclusive upper bound for the range.
      * </pre>
@@ -768,6 +828,8 @@ private static final long serialVersionUID = 0L;
       return com.google.protobuf.ByteString.EMPTY;
     }
     /**
+     *
+     *
      * <pre>
      * Used when giving an inclusive upper bound for the range.
      * </pre>
@@ -776,14 +838,16 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setEndValueClosed(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  endValueCase_ = 3;
+        throw new NullPointerException();
+      }
+      endValueCase_ = 3;
       endValue_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Used when giving an inclusive upper bound for the range.
      * </pre>
@@ -800,6 +864,8 @@ private static final long serialVersionUID = 0L;
     }
 
     /**
+     *
+     *
      * <pre>
      * Used when giving an exclusive upper bound for the range.
      * </pre>
@@ -813,6 +879,8 @@ private static final long serialVersionUID = 0L;
       return com.google.protobuf.ByteString.EMPTY;
     }
     /**
+     *
+     *
      * <pre>
      * Used when giving an exclusive upper bound for the range.
      * </pre>
@@ -821,14 +889,16 @@ private static final long serialVersionUID = 0L;
      */
     public Builder setEndValueOpen(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  endValueCase_ = 4;
+        throw new NullPointerException();
+      }
+      endValueCase_ = 4;
       endValue_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Used when giving an exclusive upper bound for the range.
      * </pre>
@@ -843,22 +913,24 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+
+    @java.lang.Override
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
     }
-
 
     // @@protoc_insertion_point(builder_scope:google.bigtable.v2.ValueRange)
   }
 
   // @@protoc_insertion_point(class_scope:google.bigtable.v2.ValueRange)
   private static final com.google.bigtable.v2.ValueRange DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.bigtable.v2.ValueRange();
   }
@@ -867,15 +939,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ValueRange>
-      PARSER = new com.google.protobuf.AbstractParser<ValueRange>() {
-    public ValueRange parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ValueRange(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<ValueRange> PARSER =
+      new com.google.protobuf.AbstractParser<ValueRange>() {
+        @java.lang.Override
+        public ValueRange parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new ValueRange(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<ValueRange> parser() {
     return PARSER;
@@ -886,9 +959,8 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.bigtable.v2.ValueRange getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

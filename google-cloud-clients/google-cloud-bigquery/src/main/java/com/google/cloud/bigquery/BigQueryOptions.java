@@ -16,16 +16,15 @@
 
 package com.google.cloud.bigquery;
 
-import com.google.cloud.http.HttpTransportOptions;
 import com.google.cloud.ServiceDefaults;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.ServiceRpc;
 import com.google.cloud.TransportOptions;
-import com.google.cloud.bigquery.spi.v2.BigQueryRpc;
 import com.google.cloud.bigquery.spi.BigQueryRpcFactory;
+import com.google.cloud.bigquery.spi.v2.BigQueryRpc;
 import com.google.cloud.bigquery.spi.v2.HttpBigQueryRpc;
+import com.google.cloud.http.HttpTransportOptions;
 import com.google.common.collect.ImmutableSet;
-
 import java.util.Set;
 
 public class BigQueryOptions extends ServiceOptions<BigQuery, BigQueryOptions> {
@@ -34,6 +33,7 @@ public class BigQueryOptions extends ServiceOptions<BigQuery, BigQueryOptions> {
   private static final String BIGQUERY_SCOPE = "https://www.googleapis.com/auth/bigquery";
   private static final Set<String> SCOPES = ImmutableSet.of(BIGQUERY_SCOPE);
   private static final long serialVersionUID = -2437598817433266049L;
+  private final String location;
 
   public static class DefaultBigQueryFactory implements BigQueryFactory {
 
@@ -55,11 +55,11 @@ public class BigQueryOptions extends ServiceOptions<BigQuery, BigQueryOptions> {
     }
   }
 
-  public static class Builder extends
-      ServiceOptions.Builder<BigQuery, BigQueryOptions, Builder> {
+  public static class Builder extends ServiceOptions.Builder<BigQuery, BigQueryOptions, Builder> {
 
-    private Builder() {
-    }
+    private String location;
+
+    private Builder() {}
 
     private Builder(BigQueryOptions options) {
       super(options);
@@ -74,6 +74,11 @@ public class BigQueryOptions extends ServiceOptions<BigQuery, BigQueryOptions> {
       return super.setTransportOptions(transportOptions);
     }
 
+    public Builder setLocation(String location) {
+      this.location = location;
+      return this;
+    }
+
     @Override
     public BigQueryOptions build() {
       return new BigQueryOptions(this);
@@ -82,10 +87,10 @@ public class BigQueryOptions extends ServiceOptions<BigQuery, BigQueryOptions> {
 
   private BigQueryOptions(Builder builder) {
     super(BigQueryFactory.class, BigQueryRpcFactory.class, builder, new BigQueryDefaults());
+    this.location = builder.location;
   }
 
-  private static class BigQueryDefaults implements
-      ServiceDefaults<BigQuery, BigQueryOptions> {
+  private static class BigQueryDefaults implements ServiceDefaults<BigQuery, BigQueryOptions> {
 
     @Override
     public BigQueryFactory getDefaultServiceFactory() {
@@ -116,6 +121,10 @@ public class BigQueryOptions extends ServiceOptions<BigQuery, BigQueryOptions> {
     return (BigQueryRpc) getRpc();
   }
 
+  public String getLocation() {
+    return location;
+  }
+
   @SuppressWarnings("unchecked")
   @Override
   public Builder toBuilder() {
@@ -136,11 +145,9 @@ public class BigQueryOptions extends ServiceOptions<BigQuery, BigQueryOptions> {
     return baseEquals(other);
   }
 
-
   public static BigQueryOptions getDefaultInstance() {
     return newBuilder().build();
   }
-
 
   public static Builder newBuilder() {
     return new Builder();

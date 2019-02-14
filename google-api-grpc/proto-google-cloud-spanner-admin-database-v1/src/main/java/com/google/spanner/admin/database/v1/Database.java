@@ -4,36 +4,42 @@
 package com.google.spanner.admin.database.v1;
 
 /**
+ *
+ *
  * <pre>
  * A Cloud Spanner database.
  * </pre>
  *
  * Protobuf type {@code google.spanner.admin.database.v1.Database}
  */
-public  final class Database extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class Database extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.spanner.admin.database.v1.Database)
     DatabaseOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use Database.newBuilder() to construct.
   private Database(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private Database() {
     name_ = "";
     state_ = 0;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private Database(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -45,59 +51,67 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              name_ = s;
+              break;
             }
-            break;
-          }
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 16:
+            {
+              int rawValue = input.readEnum();
 
-            name_ = s;
-            break;
-          }
-          case 16: {
-            int rawValue = input.readEnum();
-
-            state_ = rawValue;
-            break;
-          }
+              state_ = rawValue;
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.spanner.admin.database.v1.SpannerDatabaseAdminProto.internal_static_google_spanner_admin_database_v1_Database_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.spanner.admin.database.v1.SpannerDatabaseAdminProto
+        .internal_static_google_spanner_admin_database_v1_Database_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.spanner.admin.database.v1.SpannerDatabaseAdminProto.internal_static_google_spanner_admin_database_v1_Database_fieldAccessorTable
+    return com.google.spanner.admin.database.v1.SpannerDatabaseAdminProto
+        .internal_static_google_spanner_admin_database_v1_Database_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.spanner.admin.database.v1.Database.class, com.google.spanner.admin.database.v1.Database.Builder.class);
+            com.google.spanner.admin.database.v1.Database.class,
+            com.google.spanner.admin.database.v1.Database.Builder.class);
   }
 
   /**
+   *
+   *
    * <pre>
    * Indicates the current state of the database.
    * </pre>
    *
    * Protobuf enum {@code google.spanner.admin.database.v1.Database.State}
    */
-  public enum State
-      implements com.google.protobuf.ProtocolMessageEnum {
+  public enum State implements com.google.protobuf.ProtocolMessageEnum {
     /**
+     *
+     *
      * <pre>
      * Not specified.
      * </pre>
@@ -106,6 +120,8 @@ private static final long serialVersionUID = 0L;
      */
     STATE_UNSPECIFIED(0),
     /**
+     *
+     *
      * <pre>
      * The database is still being created. Operations on the database may fail
      * with `FAILED_PRECONDITION` in this state.
@@ -115,6 +131,8 @@ private static final long serialVersionUID = 0L;
      */
     CREATING(1),
     /**
+     *
+     *
      * <pre>
      * The database is fully created and ready for use.
      * </pre>
@@ -126,6 +144,8 @@ private static final long serialVersionUID = 0L;
     ;
 
     /**
+     *
+     *
      * <pre>
      * Not specified.
      * </pre>
@@ -134,6 +154,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
     /**
+     *
+     *
      * <pre>
      * The database is still being created. Operations on the database may fail
      * with `FAILED_PRECONDITION` in this state.
@@ -143,6 +165,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int CREATING_VALUE = 1;
     /**
+     *
+     *
      * <pre>
      * The database is fully created and ready for use.
      * </pre>
@@ -150,7 +174,6 @@ private static final long serialVersionUID = 0L;
      * <code>READY = 2;</code>
      */
     public static final int READY_VALUE = 2;
-
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -160,9 +183,7 @@ private static final long serialVersionUID = 0L;
       return value;
     }
 
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static State valueOf(int value) {
       return forNumber(value);
@@ -170,45 +191,45 @@ private static final long serialVersionUID = 0L;
 
     public static State forNumber(int value) {
       switch (value) {
-        case 0: return STATE_UNSPECIFIED;
-        case 1: return CREATING;
-        case 2: return READY;
-        default: return null;
+        case 0:
+          return STATE_UNSPECIFIED;
+        case 1:
+          return CREATING;
+        case 2:
+          return READY;
+        default:
+          return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<State>
-        internalGetValueMap() {
+    public static com.google.protobuf.Internal.EnumLiteMap<State> internalGetValueMap() {
       return internalValueMap;
     }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        State> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<State>() {
-            public State findValueByNumber(int number) {
-              return State.forNumber(number);
-            }
-          };
 
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
+    private static final com.google.protobuf.Internal.EnumLiteMap<State> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<State>() {
+          public State findValueByNumber(int number) {
+            return State.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
       return getDescriptor().getValues().get(ordinal());
     }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
       return getDescriptor();
     }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
       return com.google.spanner.admin.database.v1.Database.getDescriptor().getEnumTypes().get(0);
     }
 
     private static final State[] VALUES = values();
 
-    public static State valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+    public static State valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
         return UNRECOGNIZED;
@@ -228,6 +249,8 @@ private static final long serialVersionUID = 0L;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
+   *
+   *
    * <pre>
    * Required. The name of the database. Values are of the form
    * `projects/&lt;project&gt;/instances/&lt;instance&gt;/databases/&lt;database&gt;`,
@@ -243,14 +266,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       name_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Required. The name of the database. Values are of the form
    * `projects/&lt;project&gt;/instances/&lt;instance&gt;/databases/&lt;database&gt;`,
@@ -261,13 +285,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string name = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getNameBytes() {
+  public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       name_ = b;
       return b;
     } else {
@@ -278,6 +300,8 @@ private static final long serialVersionUID = 0L;
   public static final int STATE_FIELD_NUMBER = 2;
   private int state_;
   /**
+   *
+   *
    * <pre>
    * Output only. The current database state.
    * </pre>
@@ -288,6 +312,8 @@ private static final long serialVersionUID = 0L;
     return state_;
   }
   /**
+   *
+   *
    * <pre>
    * Output only. The current database state.
    * </pre>
@@ -295,11 +321,17 @@ private static final long serialVersionUID = 0L;
    * <code>.google.spanner.admin.database.v1.Database.State state = 2;</code>
    */
   public com.google.spanner.admin.database.v1.Database.State getState() {
-    com.google.spanner.admin.database.v1.Database.State result = com.google.spanner.admin.database.v1.Database.State.valueOf(state_);
-    return result == null ? com.google.spanner.admin.database.v1.Database.State.UNRECOGNIZED : result;
+    @SuppressWarnings("deprecation")
+    com.google.spanner.admin.database.v1.Database.State result =
+        com.google.spanner.admin.database.v1.Database.State.valueOf(state_);
+    return result == null
+        ? com.google.spanner.admin.database.v1.Database.State.UNRECOGNIZED
+        : result;
   }
 
   private byte memoizedIsInitialized = -1;
+
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -309,17 +341,19 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  @java.lang.Override
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
-    if (state_ != com.google.spanner.admin.database.v1.Database.State.STATE_UNSPECIFIED.getNumber()) {
+    if (state_
+        != com.google.spanner.admin.database.v1.Database.State.STATE_UNSPECIFIED.getNumber()) {
       output.writeEnum(2, state_);
     }
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -328,9 +362,9 @@ private static final long serialVersionUID = 0L;
     if (!getNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
-    if (state_ != com.google.spanner.admin.database.v1.Database.State.STATE_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(2, state_);
+    if (state_
+        != com.google.spanner.admin.database.v1.Database.State.STATE_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, state_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -340,16 +374,16 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.spanner.admin.database.v1.Database)) {
       return super.equals(obj);
     }
-    com.google.spanner.admin.database.v1.Database other = (com.google.spanner.admin.database.v1.Database) obj;
+    com.google.spanner.admin.database.v1.Database other =
+        (com.google.spanner.admin.database.v1.Database) obj;
 
     boolean result = true;
-    result = result && getName()
-        .equals(other.getName());
+    result = result && getName().equals(other.getName());
     result = result && state_ == other.state_;
     result = result && unknownFields.equals(other.unknownFields);
     return result;
@@ -371,115 +405,127 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.spanner.admin.database.v1.Database parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.spanner.admin.database.v1.Database parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.spanner.admin.database.v1.Database parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.spanner.admin.database.v1.Database parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.spanner.admin.database.v1.Database parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.spanner.admin.database.v1.Database parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.spanner.admin.database.v1.Database parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.spanner.admin.database.v1.Database parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.spanner.admin.database.v1.Database parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.spanner.admin.database.v1.Database parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
+
   public static com.google.spanner.admin.database.v1.Database parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.spanner.admin.database.v1.Database parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.spanner.admin.database.v1.Database parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.spanner.admin.database.v1.Database parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  public Builder newBuilderForType() { return newBuilder(); }
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-  public static Builder newBuilder(com.google.spanner.admin.database.v1.Database prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+
+  public static Builder newBuilder(com.google.spanner.admin.database.v1.Database prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+
+  @java.lang.Override
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * A Cloud Spanner database.
    * </pre>
    *
    * Protobuf type {@code google.spanner.admin.database.v1.Database}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.spanner.admin.database.v1.Database)
       com.google.spanner.admin.database.v1.DatabaseOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.spanner.admin.database.v1.SpannerDatabaseAdminProto.internal_static_google_spanner_admin_database_v1_Database_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.spanner.admin.database.v1.SpannerDatabaseAdminProto
+          .internal_static_google_spanner_admin_database_v1_Database_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.spanner.admin.database.v1.SpannerDatabaseAdminProto.internal_static_google_spanner_admin_database_v1_Database_fieldAccessorTable
+      return com.google.spanner.admin.database.v1.SpannerDatabaseAdminProto
+          .internal_static_google_spanner_admin_database_v1_Database_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.spanner.admin.database.v1.Database.class, com.google.spanner.admin.database.v1.Database.Builder.class);
+              com.google.spanner.admin.database.v1.Database.class,
+              com.google.spanner.admin.database.v1.Database.Builder.class);
     }
 
     // Construct using com.google.spanner.admin.database.v1.Database.newBuilder()
@@ -487,16 +533,16 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       name_ = "";
@@ -506,15 +552,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.spanner.admin.database.v1.SpannerDatabaseAdminProto.internal_static_google_spanner_admin_database_v1_Database_descriptor;
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.spanner.admin.database.v1.SpannerDatabaseAdminProto
+          .internal_static_google_spanner_admin_database_v1_Database_descriptor;
     }
 
+    @java.lang.Override
     public com.google.spanner.admin.database.v1.Database getDefaultInstanceForType() {
       return com.google.spanner.admin.database.v1.Database.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.spanner.admin.database.v1.Database build() {
       com.google.spanner.admin.database.v1.Database result = buildPartial();
       if (!result.isInitialized()) {
@@ -523,43 +572,53 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.spanner.admin.database.v1.Database buildPartial() {
-      com.google.spanner.admin.database.v1.Database result = new com.google.spanner.admin.database.v1.Database(this);
+      com.google.spanner.admin.database.v1.Database result =
+          new com.google.spanner.admin.database.v1.Database(this);
       result.name_ = name_;
       result.state_ = state_;
       onBuilt();
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+
+    @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+    @java.lang.Override
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+    @java.lang.Override
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
+    @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
+    @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.spanner.admin.database.v1.Database) {
-        return mergeFrom((com.google.spanner.admin.database.v1.Database)other);
+        return mergeFrom((com.google.spanner.admin.database.v1.Database) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -580,10 +639,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -604,6 +665,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object name_ = "";
     /**
+     *
+     *
      * <pre>
      * Required. The name of the database. Values are of the form
      * `projects/&lt;project&gt;/instances/&lt;instance&gt;/databases/&lt;database&gt;`,
@@ -617,8 +680,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         name_ = s;
         return s;
@@ -627,6 +689,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The name of the database. Values are of the form
      * `projects/&lt;project&gt;/instances/&lt;instance&gt;/databases/&lt;database&gt;`,
@@ -637,13 +701,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getNameBytes() {
+    public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         name_ = b;
         return b;
       } else {
@@ -651,6 +713,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The name of the database. Values are of the form
      * `projects/&lt;project&gt;/instances/&lt;instance&gt;/databases/&lt;database&gt;`,
@@ -661,17 +725,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public Builder setName(
-        java.lang.String value) {
+    public Builder setName(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       name_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The name of the database. Values are of the form
      * `projects/&lt;project&gt;/instances/&lt;instance&gt;/databases/&lt;database&gt;`,
@@ -683,12 +748,14 @@ private static final long serialVersionUID = 0L;
      * <code>string name = 1;</code>
      */
     public Builder clearName() {
-      
+
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The name of the database. Values are of the form
      * `projects/&lt;project&gt;/instances/&lt;instance&gt;/databases/&lt;database&gt;`,
@@ -699,13 +766,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public Builder setNameBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       name_ = value;
       onChanged();
       return this;
@@ -713,6 +779,8 @@ private static final long serialVersionUID = 0L;
 
     private int state_ = 0;
     /**
+     *
+     *
      * <pre>
      * Output only. The current database state.
      * </pre>
@@ -723,6 +791,8 @@ private static final long serialVersionUID = 0L;
       return state_;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The current database state.
      * </pre>
@@ -735,6 +805,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The current database state.
      * </pre>
@@ -742,10 +814,16 @@ private static final long serialVersionUID = 0L;
      * <code>.google.spanner.admin.database.v1.Database.State state = 2;</code>
      */
     public com.google.spanner.admin.database.v1.Database.State getState() {
-      com.google.spanner.admin.database.v1.Database.State result = com.google.spanner.admin.database.v1.Database.State.valueOf(state_);
-      return result == null ? com.google.spanner.admin.database.v1.Database.State.UNRECOGNIZED : result;
+      @SuppressWarnings("deprecation")
+      com.google.spanner.admin.database.v1.Database.State result =
+          com.google.spanner.admin.database.v1.Database.State.valueOf(state_);
+      return result == null
+          ? com.google.spanner.admin.database.v1.Database.State.UNRECOGNIZED
+          : result;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The current database state.
      * </pre>
@@ -756,12 +834,14 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       state_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The current database state.
      * </pre>
@@ -769,27 +849,29 @@ private static final long serialVersionUID = 0L;
      * <code>.google.spanner.admin.database.v1.Database.State state = 2;</code>
      */
     public Builder clearState() {
-      
+
       state_ = 0;
       onChanged();
       return this;
     }
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+
+    @java.lang.Override
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
     }
-
 
     // @@protoc_insertion_point(builder_scope:google.spanner.admin.database.v1.Database)
   }
 
   // @@protoc_insertion_point(class_scope:google.spanner.admin.database.v1.Database)
   private static final com.google.spanner.admin.database.v1.Database DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.spanner.admin.database.v1.Database();
   }
@@ -798,15 +880,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<Database>
-      PARSER = new com.google.protobuf.AbstractParser<Database>() {
-    public Database parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Database(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<Database> PARSER =
+      new com.google.protobuf.AbstractParser<Database>() {
+        @java.lang.Override
+        public Database parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new Database(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<Database> parser() {
     return PARSER;
@@ -817,9 +900,8 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.spanner.admin.database.v1.Database getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

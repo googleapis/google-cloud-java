@@ -3,20 +3,24 @@
 
 package com.google.privacy.dlp.v2;
 
-public interface ListDlpJobsResponseOrBuilder extends
+public interface ListDlpJobsResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.ListDlpJobsResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * A list of DlpJobs that matches the specified filter in the request.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.DlpJob jobs = 1;</code>
    */
-  java.util.List<com.google.privacy.dlp.v2.DlpJob> 
-      getJobsList();
+  java.util.List<com.google.privacy.dlp.v2.DlpJob> getJobsList();
   /**
+   *
+   *
    * <pre>
    * A list of DlpJobs that matches the specified filter in the request.
    * </pre>
@@ -25,6 +29,8 @@ public interface ListDlpJobsResponseOrBuilder extends
    */
   com.google.privacy.dlp.v2.DlpJob getJobs(int index);
   /**
+   *
+   *
    * <pre>
    * A list of DlpJobs that matches the specified filter in the request.
    * </pre>
@@ -33,25 +39,29 @@ public interface ListDlpJobsResponseOrBuilder extends
    */
   int getJobsCount();
   /**
+   *
+   *
    * <pre>
    * A list of DlpJobs that matches the specified filter in the request.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.DlpJob jobs = 1;</code>
    */
-  java.util.List<? extends com.google.privacy.dlp.v2.DlpJobOrBuilder> 
-      getJobsOrBuilderList();
+  java.util.List<? extends com.google.privacy.dlp.v2.DlpJobOrBuilder> getJobsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * A list of DlpJobs that matches the specified filter in the request.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.DlpJob jobs = 1;</code>
    */
-  com.google.privacy.dlp.v2.DlpJobOrBuilder getJobsOrBuilder(
-      int index);
+  com.google.privacy.dlp.v2.DlpJobOrBuilder getJobsOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * The standard List next-page token.
    * </pre>
@@ -60,12 +70,13 @@ public interface ListDlpJobsResponseOrBuilder extends
    */
   java.lang.String getNextPageToken();
   /**
+   *
+   *
    * <pre>
    * The standard List next-page token.
    * </pre>
    *
    * <code>string next_page_token = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getNextPageTokenBytes();
+  com.google.protobuf.ByteString getNextPageTokenBytes();
 }

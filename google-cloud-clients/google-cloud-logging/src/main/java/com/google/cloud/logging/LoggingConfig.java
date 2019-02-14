@@ -88,7 +88,8 @@ class LoggingConfig {
         String[] items = list.split(",");
         for (String e_name : items) {
           Class<? extends LoggingEnhancer> clz =
-              (Class<? extends LoggingEnhancer>) ClassLoader.getSystemClassLoader().loadClass(e_name);
+              (Class<? extends LoggingEnhancer>)
+                  ClassLoader.getSystemClassLoader().loadClass(e_name);
           enhancers.add(clz.newInstance());
         }
       }

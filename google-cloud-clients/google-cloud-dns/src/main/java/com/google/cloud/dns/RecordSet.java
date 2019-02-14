@@ -28,7 +28,6 @@ import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import com.google.common.primitives.Ints;
-
 import java.io.Serializable;
 import java.util.LinkedList;
 import java.util.List;
@@ -44,7 +43,7 @@ import java.util.concurrent.TimeUnit;
  * edit the records in a zone by creating a {@link ChangeRequest}.
  *
  * @see <a href="https://cloud.google.com/dns/api/v1/resourceRecordSets">Google Cloud DNS
- * documentation</a>
+ *     documentation</a>
  */
 public final class RecordSet implements Serializable {
 
@@ -75,7 +74,7 @@ public final class RecordSet implements Serializable {
    * SPF, SRV, TXT.
    *
    * @see <a href="https://cloud.google.com/dns/what-is-cloud-dns#supported_record_types">Cloud DNS
-   * supported record types</a>
+   *     supported record types</a>
    */
   public static final class Type extends StringEnumValue {
     private static final long serialVersionUID = -2217433987664635241L;
@@ -88,45 +87,25 @@ public final class RecordSet implements Serializable {
           }
         };
 
-    private static final StringEnumType<Type> type = new StringEnumType(
-        Type.class,
-        CONSTRUCTOR);
+    private static final StringEnumType<Type> type = new StringEnumType(Type.class, CONSTRUCTOR);
 
-    /**
-     * Address record, which is used to map host names to their IPv4 address.
-     */
+    /** Address record, which is used to map host names to their IPv4 address. */
     public static final Type A = type.createAndRegister("A");
-    /**
-     * IPv6 Address record, which is used to map host names to their IPv6 address.
-     */
+    /** IPv6 Address record, which is used to map host names to their IPv6 address. */
     public static final Type AAAA = type.createAndRegister("AAAA");
-    /**
-     * Canonical name record, which is used to alias names.
-     */
+    /** Canonical name record, which is used to alias names. */
     public static final Type CNAME = type.createAndRegister("CNAME");
-    /**
-     * Mail exchange record, which is used in routing requests to mail servers.
-     */
+    /** Mail exchange record, which is used in routing requests to mail servers. */
     public static final Type MX = type.createAndRegister("MX");
-    /**
-     * Naming authority pointer record, defined by RFC3403.
-     */
+    /** Naming authority pointer record, defined by RFC3403. */
     public static final Type NAPTR = type.createAndRegister("NAPTR");
-    /**
-     * Name server record, which delegates a DNS zone to an authoritative server.
-     */
+    /** Name server record, which delegates a DNS zone to an authoritative server. */
     public static final Type NS = type.createAndRegister("NS");
-    /**
-     * Pointer record, which is often used for reverse DNS lookups.
-     */
+    /** Pointer record, which is often used for reverse DNS lookups. */
     public static final Type PTR = type.createAndRegister("PTR");
-    /**
-     * Start of authority record, which specifies authoritative information about a DNS zone.
-     */
+    /** Start of authority record, which specifies authoritative information about a DNS zone. */
     public static final Type SOA = type.createAndRegister("SOA");
-    /**
-     * Sender policy framework record, which is used in email validation systems.
-     */
+    /** Sender policy framework record, which is used in email validation systems. */
     public static final Type SPF = type.createAndRegister("SPF");
     /**
      * Service locator record, which is used by some voice over IP, instant messaging protocols and
@@ -144,31 +123,25 @@ public final class RecordSet implements Serializable {
     }
 
     /**
-     * Get the Type for the given String constant, and throw an exception if the constant is
-     * not recognized.
+     * Get the Type for the given String constant, and throw an exception if the constant is not
+     * recognized.
      */
     public static Type valueOfStrict(String constant) {
       return type.valueOfStrict(constant);
     }
 
-    /**
-     * Get the Type for the given String constant, and allow unrecognized values.
-     */
+    /** Get the Type for the given String constant, and allow unrecognized values. */
     public static Type valueOf(String constant) {
       return type.valueOf(constant);
     }
 
-    /**
-     * Return the known values for Type.
-     */
+    /** Return the known values for Type. */
     public static Type[] values() {
       return type.values();
     }
   }
 
-  /**
-   * A builder for {@link RecordSet}.
-   */
+  /** A builder for {@link RecordSet}. */
   public static class Builder {
 
     private List<String> rrdatas = new LinkedList<>();
@@ -204,40 +177,29 @@ public final class RecordSet implements Serializable {
       return this;
     }
 
-    /**
-     * Removes a record from the set. An exact match is required.
-     */
+    /** Removes a record from the set. An exact match is required. */
     public Builder removeRecord(String record) {
       this.rrdatas.remove(checkNotNull(record));
       return this;
     }
 
-    /**
-     * Removes all the records.
-     */
+    /** Removes all the records. */
     public Builder clearRecords() {
       this.rrdatas.clear();
       return this;
     }
 
-
-    /**
-     * Replaces the current records with the provided list of records.
-     */
+    /** Replaces the current records with the provided list of records. */
     public Builder setRecords(List<String> records) {
       this.rrdatas = Lists.newLinkedList(checkNotNull(records));
       return this;
     }
 
-
-    /**
-     * Sets the name for this record set. For example, www.example.com.
-     */
+    /** Sets the name for this record set. For example, www.example.com. */
     public Builder setName(String name) {
       this.name = checkNotNull(name);
       return this;
     }
-
 
     /**
      * Sets the time that this record can be cached by resolvers. This number must be non-negative.
@@ -247,8 +209,8 @@ public final class RecordSet implements Serializable {
      * @param unit The unit of the ttl parameter
      */
     public Builder setTtl(int duration, TimeUnit unit) {
-      checkArgument(duration >= 0,
-          "Duration cannot be negative. The supplied value was %s.", duration);
+      checkArgument(
+          duration >= 0, "Duration cannot be negative. The supplied value was %s.", duration);
       checkNotNull(unit);
       // we cannot have long because pb does not support it
       long converted = unit.toSeconds(duration);
@@ -256,18 +218,13 @@ public final class RecordSet implements Serializable {
       return this;
     }
 
-
-    /**
-     * The identifier of a supported record type, for example, A, AAAA, MX, TXT, and so on.
-     */
+    /** The identifier of a supported record type, for example, A, AAAA, MX, TXT, and so on. */
     public Builder setType(Type type) {
       this.type = checkNotNull(type);
       return this;
     }
 
-    /**
-     * Builds the record set.
-     */
+    /** Builds the record set. */
     public RecordSet build() {
       return new RecordSet(this);
     }
@@ -280,49 +237,32 @@ public final class RecordSet implements Serializable {
     this.type = builder.type;
   }
 
-  /**
-   * Creates a builder pre-populated with the attribute values of this instance.
-   */
+  /** Creates a builder pre-populated with the attribute values of this instance. */
   public Builder toBuilder() {
     return new Builder(this);
   }
 
-
-  /**
-   * Creates a {@code RecordSet} builder for the given {@code name} and {@code type}.
-   */
+  /** Creates a {@code RecordSet} builder for the given {@code name} and {@code type}. */
   public static Builder newBuilder(String name, Type type) {
     return new Builder(name, type);
   }
 
-
-  /**
-   * Returns the user-assigned name of this record set.
-   */
+  /** Returns the user-assigned name of this record set. */
   public String getName() {
     return name;
   }
 
-
-  /**
-   * Returns a list of records stored in this record set.
-   */
+  /** Returns a list of records stored in this record set. */
   public List<String> getRecords() {
     return rrdatas;
   }
 
-
-  /**
-   * Returns the number of seconds that this record set can be cached by resolvers.
-   */
+  /** Returns the number of seconds that this record set can be cached by resolvers. */
   public Integer getTtl() {
     return ttl;
   }
 
-
-  /**
-   * Returns the type of this record set.
-   */
+  /** Returns the type of this record set. */
   public Type getType() {
     return type;
   }
@@ -335,8 +275,7 @@ public final class RecordSet implements Serializable {
   @Override
   public boolean equals(Object obj) {
     return obj == this
-        || obj instanceof RecordSet
-        && Objects.equals(this.toPb(), ((RecordSet) obj).toPb());
+        || obj instanceof RecordSet && Objects.equals(this.toPb(), ((RecordSet) obj).toPb());
   }
 
   ResourceRecordSet toPb() {

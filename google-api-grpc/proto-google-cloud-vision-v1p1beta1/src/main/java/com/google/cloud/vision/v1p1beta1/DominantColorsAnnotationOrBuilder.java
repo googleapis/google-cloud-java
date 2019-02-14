@@ -3,20 +3,24 @@
 
 package com.google.cloud.vision.v1p1beta1;
 
-public interface DominantColorsAnnotationOrBuilder extends
+public interface DominantColorsAnnotationOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.vision.v1p1beta1.DominantColorsAnnotation)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * RGB color values with their score and pixel fraction.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1p1beta1.ColorInfo colors = 1;</code>
    */
-  java.util.List<com.google.cloud.vision.v1p1beta1.ColorInfo> 
-      getColorsList();
+  java.util.List<com.google.cloud.vision.v1p1beta1.ColorInfo> getColorsList();
   /**
+   *
+   *
    * <pre>
    * RGB color values with their score and pixel fraction.
    * </pre>
@@ -25,6 +29,8 @@ public interface DominantColorsAnnotationOrBuilder extends
    */
   com.google.cloud.vision.v1p1beta1.ColorInfo getColors(int index);
   /**
+   *
+   *
    * <pre>
    * RGB color values with their score and pixel fraction.
    * </pre>
@@ -33,21 +39,24 @@ public interface DominantColorsAnnotationOrBuilder extends
    */
   int getColorsCount();
   /**
+   *
+   *
    * <pre>
    * RGB color values with their score and pixel fraction.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1p1beta1.ColorInfo colors = 1;</code>
    */
-  java.util.List<? extends com.google.cloud.vision.v1p1beta1.ColorInfoOrBuilder> 
+  java.util.List<? extends com.google.cloud.vision.v1p1beta1.ColorInfoOrBuilder>
       getColorsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * RGB color values with their score and pixel fraction.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1p1beta1.ColorInfo colors = 1;</code>
    */
-  com.google.cloud.vision.v1p1beta1.ColorInfoOrBuilder getColorsOrBuilder(
-      int index);
+  com.google.cloud.vision.v1p1beta1.ColorInfoOrBuilder getColorsOrBuilder(int index);
 }

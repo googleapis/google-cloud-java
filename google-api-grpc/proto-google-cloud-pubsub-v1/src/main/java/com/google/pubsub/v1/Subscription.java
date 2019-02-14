@@ -4,21 +4,24 @@
 package com.google.pubsub.v1;
 
 /**
+ *
+ *
  * <pre>
  * A subscription resource.
  * </pre>
  *
  * Protobuf type {@code google.pubsub.v1.Subscription}
  */
-public  final class Subscription extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class Subscription extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.pubsub.v1.Subscription)
     SubscriptionOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use Subscription.newBuilder() to construct.
   private Subscription(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private Subscription() {
     name_ = "";
     topic_ = "";
@@ -27,15 +30,18 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private Subscription(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -47,113 +53,140 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            name_ = s;
-            break;
-          }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            topic_ = s;
-            break;
-          }
-          case 34: {
-            com.google.pubsub.v1.PushConfig.Builder subBuilder = null;
-            if (pushConfig_ != null) {
-              subBuilder = pushConfig_.toBuilder();
+              name_ = s;
+              break;
             }
-            pushConfig_ = input.readMessage(com.google.pubsub.v1.PushConfig.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(pushConfig_);
-              pushConfig_ = subBuilder.buildPartial();
-            }
+          case 18:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            break;
-          }
-          case 40: {
-
-            ackDeadlineSeconds_ = input.readInt32();
-            break;
-          }
-          case 56: {
-
-            retainAckedMessages_ = input.readBool();
-            break;
-          }
-          case 66: {
-            com.google.protobuf.Duration.Builder subBuilder = null;
-            if (messageRetentionDuration_ != null) {
-              subBuilder = messageRetentionDuration_.toBuilder();
+              topic_ = s;
+              break;
             }
-            messageRetentionDuration_ = input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(messageRetentionDuration_);
-              messageRetentionDuration_ = subBuilder.buildPartial();
-            }
+          case 34:
+            {
+              com.google.pubsub.v1.PushConfig.Builder subBuilder = null;
+              if (pushConfig_ != null) {
+                subBuilder = pushConfig_.toBuilder();
+              }
+              pushConfig_ =
+                  input.readMessage(com.google.pubsub.v1.PushConfig.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(pushConfig_);
+                pushConfig_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 74: {
-            if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
-              labels_ = com.google.protobuf.MapField.newMapField(
-                  LabelsDefaultEntryHolder.defaultEntry);
-              mutable_bitField0_ |= 0x00000040;
+              break;
             }
-            com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-            labels__ = input.readMessage(
-                LabelsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-            labels_.getMutableMap().put(
-                labels__.getKey(), labels__.getValue());
-            break;
-          }
+          case 40:
+            {
+              ackDeadlineSeconds_ = input.readInt32();
+              break;
+            }
+          case 56:
+            {
+              retainAckedMessages_ = input.readBool();
+              break;
+            }
+          case 66:
+            {
+              com.google.protobuf.Duration.Builder subBuilder = null;
+              if (messageRetentionDuration_ != null) {
+                subBuilder = messageRetentionDuration_.toBuilder();
+              }
+              messageRetentionDuration_ =
+                  input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(messageRetentionDuration_);
+                messageRetentionDuration_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 74:
+            {
+              if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+                labels_ =
+                    com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000040;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+                  input.readMessage(
+                      LabelsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              labels_.getMutableMap().put(labels__.getKey(), labels__.getValue());
+              break;
+            }
+          case 90:
+            {
+              com.google.pubsub.v1.ExpirationPolicy.Builder subBuilder = null;
+              if (expirationPolicy_ != null) {
+                subBuilder = expirationPolicy_.toBuilder();
+              }
+              expirationPolicy_ =
+                  input.readMessage(
+                      com.google.pubsub.v1.ExpirationPolicy.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(expirationPolicy_);
+                expirationPolicy_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.pubsub.v1.PubsubProto.internal_static_google_pubsub_v1_Subscription_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.pubsub.v1.PubsubProto
+        .internal_static_google_pubsub_v1_Subscription_descriptor;
   }
 
   @SuppressWarnings({"rawtypes"})
-  protected com.google.protobuf.MapField internalGetMapField(
-      int number) {
+  @java.lang.Override
+  protected com.google.protobuf.MapField internalGetMapField(int number) {
     switch (number) {
       case 9:
         return internalGetLabels();
       default:
-        throw new RuntimeException(
-            "Invalid map field number: " + number);
+        throw new RuntimeException("Invalid map field number: " + number);
     }
   }
+
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.pubsub.v1.PubsubProto.internal_static_google_pubsub_v1_Subscription_fieldAccessorTable
+    return com.google.pubsub.v1.PubsubProto
+        .internal_static_google_pubsub_v1_Subscription_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.pubsub.v1.Subscription.class, com.google.pubsub.v1.Subscription.Builder.class);
+            com.google.pubsub.v1.Subscription.class,
+            com.google.pubsub.v1.Subscription.Builder.class);
   }
 
   private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
+   *
+   *
    * <pre>
    * The name of the subscription. It must have the format
    * `"projects/{project}/subscriptions/{subscription}"`. `{subscription}` must
@@ -170,14 +203,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       name_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The name of the subscription. It must have the format
    * `"projects/{project}/subscriptions/{subscription}"`. `{subscription}` must
@@ -189,13 +223,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string name = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getNameBytes() {
+  public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       name_ = b;
       return b;
     } else {
@@ -206,6 +238,8 @@ private static final long serialVersionUID = 0L;
   public static final int TOPIC_FIELD_NUMBER = 2;
   private volatile java.lang.Object topic_;
   /**
+   *
+   *
    * <pre>
    * The name of the topic from which this subscription is receiving messages.
    * Format is `projects/{project}/topics/{topic}`.
@@ -220,14 +254,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       topic_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The name of the topic from which this subscription is receiving messages.
    * Format is `projects/{project}/topics/{topic}`.
@@ -237,13 +272,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string topic = 2;</code>
    */
-  public com.google.protobuf.ByteString
-      getTopicBytes() {
+  public com.google.protobuf.ByteString getTopicBytes() {
     java.lang.Object ref = topic_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       topic_ = b;
       return b;
     } else {
@@ -254,6 +287,8 @@ private static final long serialVersionUID = 0L;
   public static final int PUSH_CONFIG_FIELD_NUMBER = 4;
   private com.google.pubsub.v1.PushConfig pushConfig_;
   /**
+   *
+   *
    * <pre>
    * If push delivery is used with this subscription, this field is
    * used to configure it. An empty `pushConfig` signifies that the subscriber
@@ -266,6 +301,8 @@ private static final long serialVersionUID = 0L;
     return pushConfig_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * If push delivery is used with this subscription, this field is
    * used to configure it. An empty `pushConfig` signifies that the subscriber
@@ -278,6 +315,8 @@ private static final long serialVersionUID = 0L;
     return pushConfig_ == null ? com.google.pubsub.v1.PushConfig.getDefaultInstance() : pushConfig_;
   }
   /**
+   *
+   *
    * <pre>
    * If push delivery is used with this subscription, this field is
    * used to configure it. An empty `pushConfig` signifies that the subscriber
@@ -293,12 +332,14 @@ private static final long serialVersionUID = 0L;
   public static final int ACK_DEADLINE_SECONDS_FIELD_NUMBER = 5;
   private int ackDeadlineSeconds_;
   /**
+   *
+   *
    * <pre>
-   * This value is the maximum time after a subscriber receives a message
-   * before the subscriber should acknowledge the message. After message
-   * delivery but before the ack deadline expires and before the message is
-   * acknowledged, it is an outstanding message and will not be delivered
-   * again during that time (on a best-effort basis).
+   * The approximate amount of time (on a best-effort basis) Pub/Sub waits for
+   * the subscriber to acknowledge receipt before resending the message. In the
+   * interval after the message is delivered and before it is acknowledged, it
+   * is considered to be &lt;i&gt;outstanding&lt;/i&gt;. During that time period, the
+   * message will not be redelivered (on a best-effort basis).
    * For pull subscriptions, this value is used as the initial value for the ack
    * deadline. To override this value for a given message, call
    * `ModifyAckDeadline` with the corresponding `ack_id` if using
@@ -322,12 +363,17 @@ private static final long serialVersionUID = 0L;
   public static final int RETAIN_ACKED_MESSAGES_FIELD_NUMBER = 7;
   private boolean retainAckedMessages_;
   /**
+   *
+   *
    * <pre>
    * Indicates whether to retain acknowledged messages. If true, then
    * messages are not expunged from the subscription's backlog, even if they are
    * acknowledged, until they fall out of the `message_retention_duration`
-   * window.&lt;br&gt;&lt;br&gt;
-   * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
+   * window. This must be true if you would like to
+   * &lt;a href="https://cloud.google.com/pubsub/docs/replay-overview#seek_to_a_time"&gt;
+   * Seek to a timestamp&lt;/a&gt;.
+   * &lt;br&gt;&lt;br&gt;
+   * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
    * changed in backward-incompatible ways and is not recommended for production
    * use. It is not subject to any SLA or deprecation policy.
    * </pre>
@@ -341,6 +387,8 @@ private static final long serialVersionUID = 0L;
   public static final int MESSAGE_RETENTION_DURATION_FIELD_NUMBER = 8;
   private com.google.protobuf.Duration messageRetentionDuration_;
   /**
+   *
+   *
    * <pre>
    * How long to retain unacknowledged messages in the subscription's backlog,
    * from the moment a message is published.
@@ -348,7 +396,7 @@ private static final long serialVersionUID = 0L;
    * of acknowledged messages, and thus configures how far back in time a `Seek`
    * can be done. Defaults to 7 days. Cannot be more than 7 days or less than 10
    * minutes.&lt;br&gt;&lt;br&gt;
-   * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
+   * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
    * changed in backward-incompatible ways and is not recommended for production
    * use. It is not subject to any SLA or deprecation policy.
    * </pre>
@@ -359,6 +407,8 @@ private static final long serialVersionUID = 0L;
     return messageRetentionDuration_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * How long to retain unacknowledged messages in the subscription's backlog,
    * from the moment a message is published.
@@ -366,7 +416,7 @@ private static final long serialVersionUID = 0L;
    * of acknowledged messages, and thus configures how far back in time a `Seek`
    * can be done. Defaults to 7 days. Cannot be more than 7 days or less than 10
    * minutes.&lt;br&gt;&lt;br&gt;
-   * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
+   * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
    * changed in backward-incompatible ways and is not recommended for production
    * use. It is not subject to any SLA or deprecation policy.
    * </pre>
@@ -374,9 +424,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Duration message_retention_duration = 8;</code>
    */
   public com.google.protobuf.Duration getMessageRetentionDuration() {
-    return messageRetentionDuration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : messageRetentionDuration_;
+    return messageRetentionDuration_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : messageRetentionDuration_;
   }
   /**
+   *
+   *
    * <pre>
    * How long to retain unacknowledged messages in the subscription's backlog,
    * from the moment a message is published.
@@ -384,7 +438,7 @@ private static final long serialVersionUID = 0L;
    * of acknowledged messages, and thus configures how far back in time a `Seek`
    * can be done. Defaults to 7 days. Cannot be more than 7 days or less than 10
    * minutes.&lt;br&gt;&lt;br&gt;
-   * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
+   * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
    * changed in backward-incompatible ways and is not recommended for production
    * use. It is not subject to any SLA or deprecation policy.
    * </pre>
@@ -396,24 +450,23 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int LABELS_FIELD_NUMBER = 9;
+
   private static final class LabelsDefaultEntryHolder {
-    static final com.google.protobuf.MapEntry<
-        java.lang.String, java.lang.String> defaultEntry =
-            com.google.protobuf.MapEntry
-            .<java.lang.String, java.lang.String>newDefaultInstance(
-                com.google.pubsub.v1.PubsubProto.internal_static_google_pubsub_v1_Subscription_LabelsEntry_descriptor, 
-                com.google.protobuf.WireFormat.FieldType.STRING,
-                "",
-                com.google.protobuf.WireFormat.FieldType.STRING,
-                "");
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.pubsub.v1.PubsubProto
+                .internal_static_google_pubsub_v1_Subscription_LabelsEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
   }
-  private com.google.protobuf.MapField<
-      java.lang.String, java.lang.String> labels_;
-  private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-  internalGetLabels() {
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
     if (labels_ == null) {
-      return com.google.protobuf.MapField.emptyMapField(
-          LabelsDefaultEntryHolder.defaultEntry);
+      return com.google.protobuf.MapField.emptyMapField(LabelsDefaultEntryHolder.defaultEntry);
     }
     return labels_;
   }
@@ -422,72 +475,145 @@ private static final long serialVersionUID = 0L;
     return internalGetLabels().getMap().size();
   }
   /**
+   *
+   *
    * <pre>
-   * User labels.
+   * See &lt;a href="https://cloud.google.com/pubsub/docs/labels"&gt; Creating and
+   * managing labels&lt;/a&gt;.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 9;</code>
    */
-
-  public boolean containsLabels(
-      java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+  public boolean containsLabels(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
     return internalGetLabels().getMap().containsKey(key);
   }
-  /**
-   * Use {@link #getLabelsMap()} instead.
-   */
+  /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
   /**
+   *
+   *
    * <pre>
-   * User labels.
+   * See &lt;a href="https://cloud.google.com/pubsub/docs/labels"&gt; Creating and
+   * managing labels&lt;/a&gt;.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 9;</code>
    */
-
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
   /**
+   *
+   *
    * <pre>
-   * User labels.
+   * See &lt;a href="https://cloud.google.com/pubsub/docs/labels"&gt; Creating and
+   * managing labels&lt;/a&gt;.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 9;</code>
    */
-
-  public java.lang.String getLabelsOrDefault(
-      java.lang.String key,
-      java.lang.String defaultValue) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
-    java.util.Map<java.lang.String, java.lang.String> map =
-        internalGetLabels().getMap();
+  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
   /**
+   *
+   *
    * <pre>
-   * User labels.
+   * See &lt;a href="https://cloud.google.com/pubsub/docs/labels"&gt; Creating and
+   * managing labels&lt;/a&gt;.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 9;</code>
    */
-
-  public java.lang.String getLabelsOrThrow(
-      java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
-    java.util.Map<java.lang.String, java.lang.String> map =
-        internalGetLabels().getMap();
+  public java.lang.String getLabelsOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     if (!map.containsKey(key)) {
       throw new java.lang.IllegalArgumentException();
     }
     return map.get(key);
   }
 
+  public static final int EXPIRATION_POLICY_FIELD_NUMBER = 11;
+  private com.google.pubsub.v1.ExpirationPolicy expirationPolicy_;
+  /**
+   *
+   *
+   * <pre>
+   * A policy that specifies the conditions for this subscription's expiration.
+   * A subscription is considered active as long as any connected subscriber is
+   * successfully consuming messages from the subscription or is issuing
+   * operations on the subscription. If `expiration_policy` is not set, a
+   * *default policy* with `ttl` of 31 days will be used. The minimum allowed
+   * value for `expiration_policy.ttl` is 1 day.
+   * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
+   * changed in backward-incompatible ways and is not recommended for production
+   * use. It is not subject to any SLA or deprecation policy.
+   * </pre>
+   *
+   * <code>.google.pubsub.v1.ExpirationPolicy expiration_policy = 11;</code>
+   */
+  public boolean hasExpirationPolicy() {
+    return expirationPolicy_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A policy that specifies the conditions for this subscription's expiration.
+   * A subscription is considered active as long as any connected subscriber is
+   * successfully consuming messages from the subscription or is issuing
+   * operations on the subscription. If `expiration_policy` is not set, a
+   * *default policy* with `ttl` of 31 days will be used. The minimum allowed
+   * value for `expiration_policy.ttl` is 1 day.
+   * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
+   * changed in backward-incompatible ways and is not recommended for production
+   * use. It is not subject to any SLA or deprecation policy.
+   * </pre>
+   *
+   * <code>.google.pubsub.v1.ExpirationPolicy expiration_policy = 11;</code>
+   */
+  public com.google.pubsub.v1.ExpirationPolicy getExpirationPolicy() {
+    return expirationPolicy_ == null
+        ? com.google.pubsub.v1.ExpirationPolicy.getDefaultInstance()
+        : expirationPolicy_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * A policy that specifies the conditions for this subscription's expiration.
+   * A subscription is considered active as long as any connected subscriber is
+   * successfully consuming messages from the subscription or is issuing
+   * operations on the subscription. If `expiration_policy` is not set, a
+   * *default policy* with `ttl` of 31 days will be used. The minimum allowed
+   * value for `expiration_policy.ttl` is 1 day.
+   * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
+   * changed in backward-incompatible ways and is not recommended for production
+   * use. It is not subject to any SLA or deprecation policy.
+   * </pre>
+   *
+   * <code>.google.pubsub.v1.ExpirationPolicy expiration_policy = 11;</code>
+   */
+  public com.google.pubsub.v1.ExpirationPolicyOrBuilder getExpirationPolicyOrBuilder() {
+    return getExpirationPolicy();
+  }
+
   private byte memoizedIsInitialized = -1;
+
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -497,8 +623,8 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  @java.lang.Override
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
@@ -517,15 +643,15 @@ private static final long serialVersionUID = 0L;
     if (messageRetentionDuration_ != null) {
       output.writeMessage(8, getMessageRetentionDuration());
     }
-    com.google.protobuf.GeneratedMessageV3
-      .serializeStringMapTo(
-        output,
-        internalGetLabels(),
-        LabelsDefaultEntryHolder.defaultEntry,
-        9);
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 9);
+    if (expirationPolicy_ != null) {
+      output.writeMessage(11, getExpirationPolicy());
+    }
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -538,30 +664,31 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, topic_);
     }
     if (pushConfig_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, getPushConfig());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getPushConfig());
     }
     if (ackDeadlineSeconds_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(5, ackDeadlineSeconds_);
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(5, ackDeadlineSeconds_);
     }
     if (retainAckedMessages_ != false) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(7, retainAckedMessages_);
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(7, retainAckedMessages_);
     }
     if (messageRetentionDuration_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(8, getMessageRetentionDuration());
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              8, getMessageRetentionDuration());
     }
-    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
-         : internalGetLabels().getMap().entrySet()) {
-      com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-      labels__ = LabelsDefaultEntryHolder.defaultEntry.newBuilderForType()
-          .setKey(entry.getKey())
-          .setValue(entry.getValue())
-          .build();
-      size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(9, labels__);
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetLabels().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+          LabelsDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, labels__);
+    }
+    if (expirationPolicy_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getExpirationPolicy());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -571,7 +698,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.pubsub.v1.Subscription)) {
       return super.equals(obj);
@@ -579,26 +706,23 @@ private static final long serialVersionUID = 0L;
     com.google.pubsub.v1.Subscription other = (com.google.pubsub.v1.Subscription) obj;
 
     boolean result = true;
-    result = result && getName()
-        .equals(other.getName());
-    result = result && getTopic()
-        .equals(other.getTopic());
+    result = result && getName().equals(other.getName());
+    result = result && getTopic().equals(other.getTopic());
     result = result && (hasPushConfig() == other.hasPushConfig());
     if (hasPushConfig()) {
-      result = result && getPushConfig()
-          .equals(other.getPushConfig());
+      result = result && getPushConfig().equals(other.getPushConfig());
     }
-    result = result && (getAckDeadlineSeconds()
-        == other.getAckDeadlineSeconds());
-    result = result && (getRetainAckedMessages()
-        == other.getRetainAckedMessages());
+    result = result && (getAckDeadlineSeconds() == other.getAckDeadlineSeconds());
+    result = result && (getRetainAckedMessages() == other.getRetainAckedMessages());
     result = result && (hasMessageRetentionDuration() == other.hasMessageRetentionDuration());
     if (hasMessageRetentionDuration()) {
-      result = result && getMessageRetentionDuration()
-          .equals(other.getMessageRetentionDuration());
+      result = result && getMessageRetentionDuration().equals(other.getMessageRetentionDuration());
     }
-    result = result && internalGetLabels().equals(
-        other.internalGetLabels());
+    result = result && internalGetLabels().equals(other.internalGetLabels());
+    result = result && (hasExpirationPolicy() == other.hasExpirationPolicy());
+    if (hasExpirationPolicy()) {
+      result = result && getExpirationPolicy().equals(other.getExpirationPolicy());
+    }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -621,8 +745,7 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + ACK_DEADLINE_SECONDS_FIELD_NUMBER;
     hash = (53 * hash) + getAckDeadlineSeconds();
     hash = (37 * hash) + RETAIN_ACKED_MESSAGES_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getRetainAckedMessages());
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getRetainAckedMessages());
     if (hasMessageRetentionDuration()) {
       hash = (37 * hash) + MESSAGE_RETENTION_DURATION_FIELD_NUMBER;
       hash = (53 * hash) + getMessageRetentionDuration().hashCode();
@@ -631,142 +754,155 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + LABELS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetLabels().hashCode();
     }
+    if (hasExpirationPolicy()) {
+      hash = (37 * hash) + EXPIRATION_POLICY_FIELD_NUMBER;
+      hash = (53 * hash) + getExpirationPolicy().hashCode();
+    }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.google.pubsub.v1.Subscription parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.pubsub.v1.Subscription parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.pubsub.v1.Subscription parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.pubsub.v1.Subscription parseFrom(
-      com.google.protobuf.ByteString data)
+
+  public static com.google.pubsub.v1.Subscription parseFrom(com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.pubsub.v1.Subscription parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.pubsub.v1.Subscription parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.pubsub.v1.Subscription parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.pubsub.v1.Subscription parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.pubsub.v1.Subscription parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.pubsub.v1.Subscription parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
   public static com.google.pubsub.v1.Subscription parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.pubsub.v1.Subscription parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.pubsub.v1.Subscription parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  public Builder newBuilderForType() { return newBuilder(); }
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-  public static Builder newBuilder(com.google.pubsub.v1.Subscription prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+
+  public static Builder newBuilder(com.google.pubsub.v1.Subscription prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+
+  @java.lang.Override
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * A subscription resource.
    * </pre>
    *
    * Protobuf type {@code google.pubsub.v1.Subscription}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.pubsub.v1.Subscription)
       com.google.pubsub.v1.SubscriptionOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.pubsub.v1.PubsubProto.internal_static_google_pubsub_v1_Subscription_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.pubsub.v1.PubsubProto
+          .internal_static_google_pubsub_v1_Subscription_descriptor;
     }
 
     @SuppressWarnings({"rawtypes"})
-    protected com.google.protobuf.MapField internalGetMapField(
-        int number) {
+    protected com.google.protobuf.MapField internalGetMapField(int number) {
       switch (number) {
         case 9:
           return internalGetLabels();
         default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
+          throw new RuntimeException("Invalid map field number: " + number);
       }
     }
+
     @SuppressWarnings({"rawtypes"})
-    protected com.google.protobuf.MapField internalGetMutableMapField(
-        int number) {
+    protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
       switch (number) {
         case 9:
           return internalGetMutableLabels();
         default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
+          throw new RuntimeException("Invalid map field number: " + number);
       }
     }
+
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.pubsub.v1.PubsubProto.internal_static_google_pubsub_v1_Subscription_fieldAccessorTable
+      return com.google.pubsub.v1.PubsubProto
+          .internal_static_google_pubsub_v1_Subscription_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.pubsub.v1.Subscription.class, com.google.pubsub.v1.Subscription.Builder.class);
+              com.google.pubsub.v1.Subscription.class,
+              com.google.pubsub.v1.Subscription.Builder.class);
     }
 
     // Construct using com.google.pubsub.v1.Subscription.newBuilder()
@@ -774,16 +910,16 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       name_ = "";
@@ -807,18 +943,27 @@ private static final long serialVersionUID = 0L;
         messageRetentionDurationBuilder_ = null;
       }
       internalGetMutableLabels().clear();
+      if (expirationPolicyBuilder_ == null) {
+        expirationPolicy_ = null;
+      } else {
+        expirationPolicy_ = null;
+        expirationPolicyBuilder_ = null;
+      }
       return this;
     }
 
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.pubsub.v1.PubsubProto.internal_static_google_pubsub_v1_Subscription_descriptor;
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.pubsub.v1.PubsubProto
+          .internal_static_google_pubsub_v1_Subscription_descriptor;
     }
 
+    @java.lang.Override
     public com.google.pubsub.v1.Subscription getDefaultInstanceForType() {
       return com.google.pubsub.v1.Subscription.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.pubsub.v1.Subscription build() {
       com.google.pubsub.v1.Subscription result = buildPartial();
       if (!result.isInitialized()) {
@@ -827,6 +972,7 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.pubsub.v1.Subscription buildPartial() {
       com.google.pubsub.v1.Subscription result = new com.google.pubsub.v1.Subscription(this);
       int from_bitField0_ = bitField0_;
@@ -847,40 +993,53 @@ private static final long serialVersionUID = 0L;
       }
       result.labels_ = internalGetLabels();
       result.labels_.makeImmutable();
+      if (expirationPolicyBuilder_ == null) {
+        result.expirationPolicy_ = expirationPolicy_;
+      } else {
+        result.expirationPolicy_ = expirationPolicyBuilder_.build();
+      }
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+
+    @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+    @java.lang.Override
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+    @java.lang.Override
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
+    @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
+    @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.pubsub.v1.Subscription) {
-        return mergeFrom((com.google.pubsub.v1.Subscription)other);
+        return mergeFrom((com.google.pubsub.v1.Subscription) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -909,17 +1068,21 @@ private static final long serialVersionUID = 0L;
       if (other.hasMessageRetentionDuration()) {
         mergeMessageRetentionDuration(other.getMessageRetentionDuration());
       }
-      internalGetMutableLabels().mergeFrom(
-          other.internalGetLabels());
+      internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      if (other.hasExpirationPolicy()) {
+        mergeExpirationPolicy(other.getExpirationPolicy());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -937,10 +1100,13 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
+     *
+     *
      * <pre>
      * The name of the subscription. It must have the format
      * `"projects/{project}/subscriptions/{subscription}"`. `{subscription}` must
@@ -955,8 +1121,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         name_ = s;
         return s;
@@ -965,6 +1130,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The name of the subscription. It must have the format
      * `"projects/{project}/subscriptions/{subscription}"`. `{subscription}` must
@@ -976,13 +1143,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getNameBytes() {
+    public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         name_ = b;
         return b;
       } else {
@@ -990,6 +1155,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The name of the subscription. It must have the format
      * `"projects/{project}/subscriptions/{subscription}"`. `{subscription}` must
@@ -1001,17 +1168,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public Builder setName(
-        java.lang.String value) {
+    public Builder setName(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       name_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The name of the subscription. It must have the format
      * `"projects/{project}/subscriptions/{subscription}"`. `{subscription}` must
@@ -1024,12 +1192,14 @@ private static final long serialVersionUID = 0L;
      * <code>string name = 1;</code>
      */
     public Builder clearName() {
-      
+
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The name of the subscription. It must have the format
      * `"projects/{project}/subscriptions/{subscription}"`. `{subscription}` must
@@ -1041,13 +1211,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public Builder setNameBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       name_ = value;
       onChanged();
       return this;
@@ -1055,6 +1224,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object topic_ = "";
     /**
+     *
+     *
      * <pre>
      * The name of the topic from which this subscription is receiving messages.
      * Format is `projects/{project}/topics/{topic}`.
@@ -1067,8 +1238,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getTopic() {
       java.lang.Object ref = topic_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         topic_ = s;
         return s;
@@ -1077,6 +1247,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The name of the topic from which this subscription is receiving messages.
      * Format is `projects/{project}/topics/{topic}`.
@@ -1086,13 +1258,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string topic = 2;</code>
      */
-    public com.google.protobuf.ByteString
-        getTopicBytes() {
+    public com.google.protobuf.ByteString getTopicBytes() {
       java.lang.Object ref = topic_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         topic_ = b;
         return b;
       } else {
@@ -1100,6 +1270,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The name of the topic from which this subscription is receiving messages.
      * Format is `projects/{project}/topics/{topic}`.
@@ -1109,17 +1281,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string topic = 2;</code>
      */
-    public Builder setTopic(
-        java.lang.String value) {
+    public Builder setTopic(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       topic_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The name of the topic from which this subscription is receiving messages.
      * Format is `projects/{project}/topics/{topic}`.
@@ -1130,12 +1303,14 @@ private static final long serialVersionUID = 0L;
      * <code>string topic = 2;</code>
      */
     public Builder clearTopic() {
-      
+
       topic_ = getDefaultInstance().getTopic();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The name of the topic from which this subscription is receiving messages.
      * Format is `projects/{project}/topics/{topic}`.
@@ -1145,13 +1320,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string topic = 2;</code>
      */
-    public Builder setTopicBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setTopicBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       topic_ = value;
       onChanged();
       return this;
@@ -1159,8 +1333,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.pubsub.v1.PushConfig pushConfig_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.pubsub.v1.PushConfig, com.google.pubsub.v1.PushConfig.Builder, com.google.pubsub.v1.PushConfigOrBuilder> pushConfigBuilder_;
+            com.google.pubsub.v1.PushConfig,
+            com.google.pubsub.v1.PushConfig.Builder,
+            com.google.pubsub.v1.PushConfigOrBuilder>
+        pushConfigBuilder_;
     /**
+     *
+     *
      * <pre>
      * If push delivery is used with this subscription, this field is
      * used to configure it. An empty `pushConfig` signifies that the subscriber
@@ -1173,6 +1352,8 @@ private static final long serialVersionUID = 0L;
       return pushConfigBuilder_ != null || pushConfig_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * If push delivery is used with this subscription, this field is
      * used to configure it. An empty `pushConfig` signifies that the subscriber
@@ -1183,12 +1364,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.pubsub.v1.PushConfig getPushConfig() {
       if (pushConfigBuilder_ == null) {
-        return pushConfig_ == null ? com.google.pubsub.v1.PushConfig.getDefaultInstance() : pushConfig_;
+        return pushConfig_ == null
+            ? com.google.pubsub.v1.PushConfig.getDefaultInstance()
+            : pushConfig_;
       } else {
         return pushConfigBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * If push delivery is used with this subscription, this field is
      * used to configure it. An empty `pushConfig` signifies that the subscriber
@@ -1211,6 +1396,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If push delivery is used with this subscription, this field is
      * used to configure it. An empty `pushConfig` signifies that the subscriber
@@ -1219,8 +1406,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.pubsub.v1.PushConfig push_config = 4;</code>
      */
-    public Builder setPushConfig(
-        com.google.pubsub.v1.PushConfig.Builder builderForValue) {
+    public Builder setPushConfig(com.google.pubsub.v1.PushConfig.Builder builderForValue) {
       if (pushConfigBuilder_ == null) {
         pushConfig_ = builderForValue.build();
         onChanged();
@@ -1231,6 +1417,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If push delivery is used with this subscription, this field is
      * used to configure it. An empty `pushConfig` signifies that the subscriber
@@ -1243,7 +1431,9 @@ private static final long serialVersionUID = 0L;
       if (pushConfigBuilder_ == null) {
         if (pushConfig_ != null) {
           pushConfig_ =
-            com.google.pubsub.v1.PushConfig.newBuilder(pushConfig_).mergeFrom(value).buildPartial();
+              com.google.pubsub.v1.PushConfig.newBuilder(pushConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           pushConfig_ = value;
         }
@@ -1255,6 +1445,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If push delivery is used with this subscription, this field is
      * used to configure it. An empty `pushConfig` signifies that the subscriber
@@ -1275,6 +1467,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If push delivery is used with this subscription, this field is
      * used to configure it. An empty `pushConfig` signifies that the subscriber
@@ -1284,11 +1478,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.pubsub.v1.PushConfig push_config = 4;</code>
      */
     public com.google.pubsub.v1.PushConfig.Builder getPushConfigBuilder() {
-      
+
       onChanged();
       return getPushConfigFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * If push delivery is used with this subscription, this field is
      * used to configure it. An empty `pushConfig` signifies that the subscriber
@@ -1301,11 +1497,14 @@ private static final long serialVersionUID = 0L;
       if (pushConfigBuilder_ != null) {
         return pushConfigBuilder_.getMessageOrBuilder();
       } else {
-        return pushConfig_ == null ?
-            com.google.pubsub.v1.PushConfig.getDefaultInstance() : pushConfig_;
+        return pushConfig_ == null
+            ? com.google.pubsub.v1.PushConfig.getDefaultInstance()
+            : pushConfig_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * If push delivery is used with this subscription, this field is
      * used to configure it. An empty `pushConfig` signifies that the subscriber
@@ -1315,27 +1514,32 @@ private static final long serialVersionUID = 0L;
      * <code>.google.pubsub.v1.PushConfig push_config = 4;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.pubsub.v1.PushConfig, com.google.pubsub.v1.PushConfig.Builder, com.google.pubsub.v1.PushConfigOrBuilder> 
+            com.google.pubsub.v1.PushConfig,
+            com.google.pubsub.v1.PushConfig.Builder,
+            com.google.pubsub.v1.PushConfigOrBuilder>
         getPushConfigFieldBuilder() {
       if (pushConfigBuilder_ == null) {
-        pushConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.pubsub.v1.PushConfig, com.google.pubsub.v1.PushConfig.Builder, com.google.pubsub.v1.PushConfigOrBuilder>(
-                getPushConfig(),
-                getParentForChildren(),
-                isClean());
+        pushConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.pubsub.v1.PushConfig,
+                com.google.pubsub.v1.PushConfig.Builder,
+                com.google.pubsub.v1.PushConfigOrBuilder>(
+                getPushConfig(), getParentForChildren(), isClean());
         pushConfig_ = null;
       }
       return pushConfigBuilder_;
     }
 
-    private int ackDeadlineSeconds_ ;
+    private int ackDeadlineSeconds_;
     /**
+     *
+     *
      * <pre>
-     * This value is the maximum time after a subscriber receives a message
-     * before the subscriber should acknowledge the message. After message
-     * delivery but before the ack deadline expires and before the message is
-     * acknowledged, it is an outstanding message and will not be delivered
-     * again during that time (on a best-effort basis).
+     * The approximate amount of time (on a best-effort basis) Pub/Sub waits for
+     * the subscriber to acknowledge receipt before resending the message. In the
+     * interval after the message is delivered and before it is acknowledged, it
+     * is considered to be &lt;i&gt;outstanding&lt;/i&gt;. During that time period, the
+     * message will not be redelivered (on a best-effort basis).
      * For pull subscriptions, this value is used as the initial value for the ack
      * deadline. To override this value for a given message, call
      * `ModifyAckDeadline` with the corresponding `ack_id` if using
@@ -1356,12 +1560,14 @@ private static final long serialVersionUID = 0L;
       return ackDeadlineSeconds_;
     }
     /**
+     *
+     *
      * <pre>
-     * This value is the maximum time after a subscriber receives a message
-     * before the subscriber should acknowledge the message. After message
-     * delivery but before the ack deadline expires and before the message is
-     * acknowledged, it is an outstanding message and will not be delivered
-     * again during that time (on a best-effort basis).
+     * The approximate amount of time (on a best-effort basis) Pub/Sub waits for
+     * the subscriber to acknowledge receipt before resending the message. In the
+     * interval after the message is delivered and before it is acknowledged, it
+     * is considered to be &lt;i&gt;outstanding&lt;/i&gt;. During that time period, the
+     * message will not be redelivered (on a best-effort basis).
      * For pull subscriptions, this value is used as the initial value for the ack
      * deadline. To override this value for a given message, call
      * `ModifyAckDeadline` with the corresponding `ack_id` if using
@@ -1379,18 +1585,20 @@ private static final long serialVersionUID = 0L;
      * <code>int32 ack_deadline_seconds = 5;</code>
      */
     public Builder setAckDeadlineSeconds(int value) {
-      
+
       ackDeadlineSeconds_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * This value is the maximum time after a subscriber receives a message
-     * before the subscriber should acknowledge the message. After message
-     * delivery but before the ack deadline expires and before the message is
-     * acknowledged, it is an outstanding message and will not be delivered
-     * again during that time (on a best-effort basis).
+     * The approximate amount of time (on a best-effort basis) Pub/Sub waits for
+     * the subscriber to acknowledge receipt before resending the message. In the
+     * interval after the message is delivered and before it is acknowledged, it
+     * is considered to be &lt;i&gt;outstanding&lt;/i&gt;. During that time period, the
+     * message will not be redelivered (on a best-effort basis).
      * For pull subscriptions, this value is used as the initial value for the ack
      * deadline. To override this value for a given message, call
      * `ModifyAckDeadline` with the corresponding `ack_id` if using
@@ -1408,20 +1616,25 @@ private static final long serialVersionUID = 0L;
      * <code>int32 ack_deadline_seconds = 5;</code>
      */
     public Builder clearAckDeadlineSeconds() {
-      
+
       ackDeadlineSeconds_ = 0;
       onChanged();
       return this;
     }
 
-    private boolean retainAckedMessages_ ;
+    private boolean retainAckedMessages_;
     /**
+     *
+     *
      * <pre>
      * Indicates whether to retain acknowledged messages. If true, then
      * messages are not expunged from the subscription's backlog, even if they are
      * acknowledged, until they fall out of the `message_retention_duration`
-     * window.&lt;br&gt;&lt;br&gt;
-     * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
+     * window. This must be true if you would like to
+     * &lt;a href="https://cloud.google.com/pubsub/docs/replay-overview#seek_to_a_time"&gt;
+     * Seek to a timestamp&lt;/a&gt;.
+     * &lt;br&gt;&lt;br&gt;
+     * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
      * changed in backward-incompatible ways and is not recommended for production
      * use. It is not subject to any SLA or deprecation policy.
      * </pre>
@@ -1432,12 +1645,17 @@ private static final long serialVersionUID = 0L;
       return retainAckedMessages_;
     }
     /**
+     *
+     *
      * <pre>
      * Indicates whether to retain acknowledged messages. If true, then
      * messages are not expunged from the subscription's backlog, even if they are
      * acknowledged, until they fall out of the `message_retention_duration`
-     * window.&lt;br&gt;&lt;br&gt;
-     * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
+     * window. This must be true if you would like to
+     * &lt;a href="https://cloud.google.com/pubsub/docs/replay-overview#seek_to_a_time"&gt;
+     * Seek to a timestamp&lt;/a&gt;.
+     * &lt;br&gt;&lt;br&gt;
+     * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
      * changed in backward-incompatible ways and is not recommended for production
      * use. It is not subject to any SLA or deprecation policy.
      * </pre>
@@ -1445,18 +1663,23 @@ private static final long serialVersionUID = 0L;
      * <code>bool retain_acked_messages = 7;</code>
      */
     public Builder setRetainAckedMessages(boolean value) {
-      
+
       retainAckedMessages_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Indicates whether to retain acknowledged messages. If true, then
      * messages are not expunged from the subscription's backlog, even if they are
      * acknowledged, until they fall out of the `message_retention_duration`
-     * window.&lt;br&gt;&lt;br&gt;
-     * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
+     * window. This must be true if you would like to
+     * &lt;a href="https://cloud.google.com/pubsub/docs/replay-overview#seek_to_a_time"&gt;
+     * Seek to a timestamp&lt;/a&gt;.
+     * &lt;br&gt;&lt;br&gt;
+     * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
      * changed in backward-incompatible ways and is not recommended for production
      * use. It is not subject to any SLA or deprecation policy.
      * </pre>
@@ -1464,7 +1687,7 @@ private static final long serialVersionUID = 0L;
      * <code>bool retain_acked_messages = 7;</code>
      */
     public Builder clearRetainAckedMessages() {
-      
+
       retainAckedMessages_ = false;
       onChanged();
       return this;
@@ -1472,8 +1695,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Duration messageRetentionDuration_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> messageRetentionDurationBuilder_;
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        messageRetentionDurationBuilder_;
     /**
+     *
+     *
      * <pre>
      * How long to retain unacknowledged messages in the subscription's backlog,
      * from the moment a message is published.
@@ -1481,7 +1709,7 @@ private static final long serialVersionUID = 0L;
      * of acknowledged messages, and thus configures how far back in time a `Seek`
      * can be done. Defaults to 7 days. Cannot be more than 7 days or less than 10
      * minutes.&lt;br&gt;&lt;br&gt;
-     * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
+     * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
      * changed in backward-incompatible ways and is not recommended for production
      * use. It is not subject to any SLA or deprecation policy.
      * </pre>
@@ -1492,6 +1720,8 @@ private static final long serialVersionUID = 0L;
       return messageRetentionDurationBuilder_ != null || messageRetentionDuration_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * How long to retain unacknowledged messages in the subscription's backlog,
      * from the moment a message is published.
@@ -1499,7 +1729,7 @@ private static final long serialVersionUID = 0L;
      * of acknowledged messages, and thus configures how far back in time a `Seek`
      * can be done. Defaults to 7 days. Cannot be more than 7 days or less than 10
      * minutes.&lt;br&gt;&lt;br&gt;
-     * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
+     * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
      * changed in backward-incompatible ways and is not recommended for production
      * use. It is not subject to any SLA or deprecation policy.
      * </pre>
@@ -1508,12 +1738,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.Duration getMessageRetentionDuration() {
       if (messageRetentionDurationBuilder_ == null) {
-        return messageRetentionDuration_ == null ? com.google.protobuf.Duration.getDefaultInstance() : messageRetentionDuration_;
+        return messageRetentionDuration_ == null
+            ? com.google.protobuf.Duration.getDefaultInstance()
+            : messageRetentionDuration_;
       } else {
         return messageRetentionDurationBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * How long to retain unacknowledged messages in the subscription's backlog,
      * from the moment a message is published.
@@ -1521,7 +1755,7 @@ private static final long serialVersionUID = 0L;
      * of acknowledged messages, and thus configures how far back in time a `Seek`
      * can be done. Defaults to 7 days. Cannot be more than 7 days or less than 10
      * minutes.&lt;br&gt;&lt;br&gt;
-     * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
+     * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
      * changed in backward-incompatible ways and is not recommended for production
      * use. It is not subject to any SLA or deprecation policy.
      * </pre>
@@ -1542,6 +1776,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * How long to retain unacknowledged messages in the subscription's backlog,
      * from the moment a message is published.
@@ -1549,7 +1785,7 @@ private static final long serialVersionUID = 0L;
      * of acknowledged messages, and thus configures how far back in time a `Seek`
      * can be done. Defaults to 7 days. Cannot be more than 7 days or less than 10
      * minutes.&lt;br&gt;&lt;br&gt;
-     * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
+     * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
      * changed in backward-incompatible ways and is not recommended for production
      * use. It is not subject to any SLA or deprecation policy.
      * </pre>
@@ -1568,6 +1804,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * How long to retain unacknowledged messages in the subscription's backlog,
      * from the moment a message is published.
@@ -1575,7 +1813,7 @@ private static final long serialVersionUID = 0L;
      * of acknowledged messages, and thus configures how far back in time a `Seek`
      * can be done. Defaults to 7 days. Cannot be more than 7 days or less than 10
      * minutes.&lt;br&gt;&lt;br&gt;
-     * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
+     * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
      * changed in backward-incompatible ways and is not recommended for production
      * use. It is not subject to any SLA or deprecation policy.
      * </pre>
@@ -1586,7 +1824,9 @@ private static final long serialVersionUID = 0L;
       if (messageRetentionDurationBuilder_ == null) {
         if (messageRetentionDuration_ != null) {
           messageRetentionDuration_ =
-            com.google.protobuf.Duration.newBuilder(messageRetentionDuration_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Duration.newBuilder(messageRetentionDuration_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           messageRetentionDuration_ = value;
         }
@@ -1598,6 +1838,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * How long to retain unacknowledged messages in the subscription's backlog,
      * from the moment a message is published.
@@ -1605,7 +1847,7 @@ private static final long serialVersionUID = 0L;
      * of acknowledged messages, and thus configures how far back in time a `Seek`
      * can be done. Defaults to 7 days. Cannot be more than 7 days or less than 10
      * minutes.&lt;br&gt;&lt;br&gt;
-     * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
+     * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
      * changed in backward-incompatible ways and is not recommended for production
      * use. It is not subject to any SLA or deprecation policy.
      * </pre>
@@ -1624,6 +1866,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * How long to retain unacknowledged messages in the subscription's backlog,
      * from the moment a message is published.
@@ -1631,7 +1875,7 @@ private static final long serialVersionUID = 0L;
      * of acknowledged messages, and thus configures how far back in time a `Seek`
      * can be done. Defaults to 7 days. Cannot be more than 7 days or less than 10
      * minutes.&lt;br&gt;&lt;br&gt;
-     * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
+     * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
      * changed in backward-incompatible ways and is not recommended for production
      * use. It is not subject to any SLA or deprecation policy.
      * </pre>
@@ -1639,11 +1883,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Duration message_retention_duration = 8;</code>
      */
     public com.google.protobuf.Duration.Builder getMessageRetentionDurationBuilder() {
-      
+
       onChanged();
       return getMessageRetentionDurationFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * How long to retain unacknowledged messages in the subscription's backlog,
      * from the moment a message is published.
@@ -1651,7 +1897,7 @@ private static final long serialVersionUID = 0L;
      * of acknowledged messages, and thus configures how far back in time a `Seek`
      * can be done. Defaults to 7 days. Cannot be more than 7 days or less than 10
      * minutes.&lt;br&gt;&lt;br&gt;
-     * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
+     * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
      * changed in backward-incompatible ways and is not recommended for production
      * use. It is not subject to any SLA or deprecation policy.
      * </pre>
@@ -1662,11 +1908,14 @@ private static final long serialVersionUID = 0L;
       if (messageRetentionDurationBuilder_ != null) {
         return messageRetentionDurationBuilder_.getMessageOrBuilder();
       } else {
-        return messageRetentionDuration_ == null ?
-            com.google.protobuf.Duration.getDefaultInstance() : messageRetentionDuration_;
+        return messageRetentionDuration_ == null
+            ? com.google.protobuf.Duration.getDefaultInstance()
+            : messageRetentionDuration_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * How long to retain unacknowledged messages in the subscription's backlog,
      * from the moment a message is published.
@@ -1674,7 +1923,7 @@ private static final long serialVersionUID = 0L;
      * of acknowledged messages, and thus configures how far back in time a `Seek`
      * can be done. Defaults to 7 days. Cannot be more than 7 days or less than 10
      * minutes.&lt;br&gt;&lt;br&gt;
-     * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
+     * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
      * changed in backward-incompatible ways and is not recommended for production
      * use. It is not subject to any SLA or deprecation policy.
      * </pre>
@@ -1682,35 +1931,37 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Duration message_retention_duration = 8;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> 
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
         getMessageRetentionDurationFieldBuilder() {
       if (messageRetentionDurationBuilder_ == null) {
-        messageRetentionDurationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder>(
-                getMessageRetentionDuration(),
-                getParentForChildren(),
-                isClean());
+        messageRetentionDurationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Duration,
+                com.google.protobuf.Duration.Builder,
+                com.google.protobuf.DurationOrBuilder>(
+                getMessageRetentionDuration(), getParentForChildren(), isClean());
         messageRetentionDuration_ = null;
       }
       return messageRetentionDurationBuilder_;
     }
 
-    private com.google.protobuf.MapField<
-        java.lang.String, java.lang.String> labels_;
-    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetLabels() {
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
       if (labels_ == null) {
-        return com.google.protobuf.MapField.emptyMapField(
-            LabelsDefaultEntryHolder.defaultEntry);
+        return com.google.protobuf.MapField.emptyMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       return labels_;
     }
+
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetMutableLabels() {
-      onChanged();;
+        internalGetMutableLabels() {
+      onChanged();
+      ;
       if (labels_ == null) {
-        labels_ = com.google.protobuf.MapField.newMapField(
-            LabelsDefaultEntryHolder.defaultEntry);
+        labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
@@ -1722,65 +1973,72 @@ private static final long serialVersionUID = 0L;
       return internalGetLabels().getMap().size();
     }
     /**
+     *
+     *
      * <pre>
-     * User labels.
+     * See &lt;a href="https://cloud.google.com/pubsub/docs/labels"&gt; Creating and
+     * managing labels&lt;/a&gt;.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 9;</code>
      */
-
-    public boolean containsLabels(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+    public boolean containsLabels(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
       return internalGetLabels().getMap().containsKey(key);
     }
-    /**
-     * Use {@link #getLabelsMap()} instead.
-     */
+    /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
     /**
+     *
+     *
      * <pre>
-     * User labels.
+     * See &lt;a href="https://cloud.google.com/pubsub/docs/labels"&gt; Creating and
+     * managing labels&lt;/a&gt;.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 9;</code>
      */
-
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
     /**
+     *
+     *
      * <pre>
-     * User labels.
+     * See &lt;a href="https://cloud.google.com/pubsub/docs/labels"&gt; Creating and
+     * managing labels&lt;/a&gt;.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 9;</code>
      */
-
     public java.lang.String getLabelsOrDefault(
-        java.lang.String key,
-        java.lang.String defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetLabels().getMap();
+        java.lang.String key, java.lang.String defaultValue) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
+     *
+     *
      * <pre>
-     * User labels.
+     * See &lt;a href="https://cloud.google.com/pubsub/docs/labels"&gt; Creating and
+     * managing labels&lt;/a&gt;.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 9;</code>
      */
-
-    public java.lang.String getLabelsOrThrow(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetLabels().getMap();
+    public java.lang.String getLabelsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       if (!map.containsKey(key)) {
         throw new java.lang.IllegalArgumentException();
       }
@@ -1788,79 +2046,337 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder clearLabels() {
-      internalGetMutableLabels().getMutableMap()
-          .clear();
+      internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * User labels.
+     * See &lt;a href="https://cloud.google.com/pubsub/docs/labels"&gt; Creating and
+     * managing labels&lt;/a&gt;.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 9;</code>
      */
-
-    public Builder removeLabels(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      internalGetMutableLabels().getMutableMap()
-          .remove(key);
+    public Builder removeLabels(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
-    /**
-     * Use alternate mutation accessors instead.
-     */
+    /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
-    public java.util.Map<java.lang.String, java.lang.String>
-    getMutableLabels() {
+    public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       return internalGetMutableLabels().getMutableMap();
     }
     /**
+     *
+     *
      * <pre>
-     * User labels.
+     * See &lt;a href="https://cloud.google.com/pubsub/docs/labels"&gt; Creating and
+     * managing labels&lt;/a&gt;.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 9;</code>
      */
-    public Builder putLabels(
-        java.lang.String key,
-        java.lang.String value) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      if (value == null) { throw new java.lang.NullPointerException(); }
-      internalGetMutableLabels().getMutableMap()
-          .put(key, value);
+    public Builder putLabels(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      if (value == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableLabels().getMutableMap().put(key, value);
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * User labels.
+     * See &lt;a href="https://cloud.google.com/pubsub/docs/labels"&gt; Creating and
+     * managing labels&lt;/a&gt;.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 9;</code>
      */
-
-    public Builder putAllLabels(
-        java.util.Map<java.lang.String, java.lang.String> values) {
-      internalGetMutableLabels().getMutableMap()
-          .putAll(values);
+    public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableLabels().getMutableMap().putAll(values);
       return this;
     }
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+
+    private com.google.pubsub.v1.ExpirationPolicy expirationPolicy_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.pubsub.v1.ExpirationPolicy,
+            com.google.pubsub.v1.ExpirationPolicy.Builder,
+            com.google.pubsub.v1.ExpirationPolicyOrBuilder>
+        expirationPolicyBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * A policy that specifies the conditions for this subscription's expiration.
+     * A subscription is considered active as long as any connected subscriber is
+     * successfully consuming messages from the subscription or is issuing
+     * operations on the subscription. If `expiration_policy` is not set, a
+     * *default policy* with `ttl` of 31 days will be used. The minimum allowed
+     * value for `expiration_policy.ttl` is 1 day.
+     * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
+     * changed in backward-incompatible ways and is not recommended for production
+     * use. It is not subject to any SLA or deprecation policy.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.ExpirationPolicy expiration_policy = 11;</code>
+     */
+    public boolean hasExpirationPolicy() {
+      return expirationPolicyBuilder_ != null || expirationPolicy_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A policy that specifies the conditions for this subscription's expiration.
+     * A subscription is considered active as long as any connected subscriber is
+     * successfully consuming messages from the subscription or is issuing
+     * operations on the subscription. If `expiration_policy` is not set, a
+     * *default policy* with `ttl` of 31 days will be used. The minimum allowed
+     * value for `expiration_policy.ttl` is 1 day.
+     * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
+     * changed in backward-incompatible ways and is not recommended for production
+     * use. It is not subject to any SLA or deprecation policy.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.ExpirationPolicy expiration_policy = 11;</code>
+     */
+    public com.google.pubsub.v1.ExpirationPolicy getExpirationPolicy() {
+      if (expirationPolicyBuilder_ == null) {
+        return expirationPolicy_ == null
+            ? com.google.pubsub.v1.ExpirationPolicy.getDefaultInstance()
+            : expirationPolicy_;
+      } else {
+        return expirationPolicyBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A policy that specifies the conditions for this subscription's expiration.
+     * A subscription is considered active as long as any connected subscriber is
+     * successfully consuming messages from the subscription or is issuing
+     * operations on the subscription. If `expiration_policy` is not set, a
+     * *default policy* with `ttl` of 31 days will be used. The minimum allowed
+     * value for `expiration_policy.ttl` is 1 day.
+     * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
+     * changed in backward-incompatible ways and is not recommended for production
+     * use. It is not subject to any SLA or deprecation policy.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.ExpirationPolicy expiration_policy = 11;</code>
+     */
+    public Builder setExpirationPolicy(com.google.pubsub.v1.ExpirationPolicy value) {
+      if (expirationPolicyBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        expirationPolicy_ = value;
+        onChanged();
+      } else {
+        expirationPolicyBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A policy that specifies the conditions for this subscription's expiration.
+     * A subscription is considered active as long as any connected subscriber is
+     * successfully consuming messages from the subscription or is issuing
+     * operations on the subscription. If `expiration_policy` is not set, a
+     * *default policy* with `ttl` of 31 days will be used. The minimum allowed
+     * value for `expiration_policy.ttl` is 1 day.
+     * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
+     * changed in backward-incompatible ways and is not recommended for production
+     * use. It is not subject to any SLA or deprecation policy.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.ExpirationPolicy expiration_policy = 11;</code>
+     */
+    public Builder setExpirationPolicy(
+        com.google.pubsub.v1.ExpirationPolicy.Builder builderForValue) {
+      if (expirationPolicyBuilder_ == null) {
+        expirationPolicy_ = builderForValue.build();
+        onChanged();
+      } else {
+        expirationPolicyBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A policy that specifies the conditions for this subscription's expiration.
+     * A subscription is considered active as long as any connected subscriber is
+     * successfully consuming messages from the subscription or is issuing
+     * operations on the subscription. If `expiration_policy` is not set, a
+     * *default policy* with `ttl` of 31 days will be used. The minimum allowed
+     * value for `expiration_policy.ttl` is 1 day.
+     * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
+     * changed in backward-incompatible ways and is not recommended for production
+     * use. It is not subject to any SLA or deprecation policy.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.ExpirationPolicy expiration_policy = 11;</code>
+     */
+    public Builder mergeExpirationPolicy(com.google.pubsub.v1.ExpirationPolicy value) {
+      if (expirationPolicyBuilder_ == null) {
+        if (expirationPolicy_ != null) {
+          expirationPolicy_ =
+              com.google.pubsub.v1.ExpirationPolicy.newBuilder(expirationPolicy_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          expirationPolicy_ = value;
+        }
+        onChanged();
+      } else {
+        expirationPolicyBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A policy that specifies the conditions for this subscription's expiration.
+     * A subscription is considered active as long as any connected subscriber is
+     * successfully consuming messages from the subscription or is issuing
+     * operations on the subscription. If `expiration_policy` is not set, a
+     * *default policy* with `ttl` of 31 days will be used. The minimum allowed
+     * value for `expiration_policy.ttl` is 1 day.
+     * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
+     * changed in backward-incompatible ways and is not recommended for production
+     * use. It is not subject to any SLA or deprecation policy.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.ExpirationPolicy expiration_policy = 11;</code>
+     */
+    public Builder clearExpirationPolicy() {
+      if (expirationPolicyBuilder_ == null) {
+        expirationPolicy_ = null;
+        onChanged();
+      } else {
+        expirationPolicy_ = null;
+        expirationPolicyBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A policy that specifies the conditions for this subscription's expiration.
+     * A subscription is considered active as long as any connected subscriber is
+     * successfully consuming messages from the subscription or is issuing
+     * operations on the subscription. If `expiration_policy` is not set, a
+     * *default policy* with `ttl` of 31 days will be used. The minimum allowed
+     * value for `expiration_policy.ttl` is 1 day.
+     * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
+     * changed in backward-incompatible ways and is not recommended for production
+     * use. It is not subject to any SLA or deprecation policy.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.ExpirationPolicy expiration_policy = 11;</code>
+     */
+    public com.google.pubsub.v1.ExpirationPolicy.Builder getExpirationPolicyBuilder() {
+
+      onChanged();
+      return getExpirationPolicyFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A policy that specifies the conditions for this subscription's expiration.
+     * A subscription is considered active as long as any connected subscriber is
+     * successfully consuming messages from the subscription or is issuing
+     * operations on the subscription. If `expiration_policy` is not set, a
+     * *default policy* with `ttl` of 31 days will be used. The minimum allowed
+     * value for `expiration_policy.ttl` is 1 day.
+     * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
+     * changed in backward-incompatible ways and is not recommended for production
+     * use. It is not subject to any SLA or deprecation policy.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.ExpirationPolicy expiration_policy = 11;</code>
+     */
+    public com.google.pubsub.v1.ExpirationPolicyOrBuilder getExpirationPolicyOrBuilder() {
+      if (expirationPolicyBuilder_ != null) {
+        return expirationPolicyBuilder_.getMessageOrBuilder();
+      } else {
+        return expirationPolicy_ == null
+            ? com.google.pubsub.v1.ExpirationPolicy.getDefaultInstance()
+            : expirationPolicy_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * A policy that specifies the conditions for this subscription's expiration.
+     * A subscription is considered active as long as any connected subscriber is
+     * successfully consuming messages from the subscription or is issuing
+     * operations on the subscription. If `expiration_policy` is not set, a
+     * *default policy* with `ttl` of 31 days will be used. The minimum allowed
+     * value for `expiration_policy.ttl` is 1 day.
+     * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
+     * changed in backward-incompatible ways and is not recommended for production
+     * use. It is not subject to any SLA or deprecation policy.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.ExpirationPolicy expiration_policy = 11;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.pubsub.v1.ExpirationPolicy,
+            com.google.pubsub.v1.ExpirationPolicy.Builder,
+            com.google.pubsub.v1.ExpirationPolicyOrBuilder>
+        getExpirationPolicyFieldBuilder() {
+      if (expirationPolicyBuilder_ == null) {
+        expirationPolicyBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.pubsub.v1.ExpirationPolicy,
+                com.google.pubsub.v1.ExpirationPolicy.Builder,
+                com.google.pubsub.v1.ExpirationPolicyOrBuilder>(
+                getExpirationPolicy(), getParentForChildren(), isClean());
+        expirationPolicy_ = null;
+      }
+      return expirationPolicyBuilder_;
+    }
+
+    @java.lang.Override
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
     }
-
 
     // @@protoc_insertion_point(builder_scope:google.pubsub.v1.Subscription)
   }
 
   // @@protoc_insertion_point(class_scope:google.pubsub.v1.Subscription)
   private static final com.google.pubsub.v1.Subscription DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.pubsub.v1.Subscription();
   }
@@ -1869,15 +2385,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<Subscription>
-      PARSER = new com.google.protobuf.AbstractParser<Subscription>() {
-    public Subscription parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Subscription(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<Subscription> PARSER =
+      new com.google.protobuf.AbstractParser<Subscription>() {
+        @java.lang.Override
+        public Subscription parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new Subscription(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<Subscription> parser() {
     return PARSER;
@@ -1888,9 +2405,8 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.pubsub.v1.Subscription getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

@@ -19,16 +19,14 @@ package com.google.cloud.datastore;
 import static com.google.common.base.Preconditions.checkArgument;
 
 import com.google.common.base.Strings;
-
 import java.util.regex.Pattern;
 
-/**
- * Utility to validate Datastore type/values.
- */
+/** Utility to validate Datastore type/values. */
 final class Validator {
 
-  private static final Pattern PROJECT_ID_PATTERN = Pattern.compile(
-      "([a-z\\d\\-]{1,100}~)?([a-z\\d][a-z\\d\\-\\.]{0,99}:)?([a-z\\d][a-z\\d\\-]{0,99})");
+  private static final Pattern PROJECT_ID_PATTERN =
+      Pattern.compile(
+          "([a-z\\d\\-]{1,100}~)?([a-z\\d][a-z\\d\\-\\.]{0,99}:)?([a-z\\d][a-z\\d\\-]{0,99})");
   private static final int MAX_NAMESPACE_LENGTH = 100;
   private static final Pattern NAMESPACE_PATTERN =
       Pattern.compile("[0-9A-Za-z\\._\\-]{0," + MAX_NAMESPACE_LENGTH + "}");
@@ -39,16 +37,22 @@ final class Validator {
 
   static String validateDatabase(String projectId) {
     checkArgument(!Strings.isNullOrEmpty(projectId), "projectId can't be empty or null");
-    checkArgument(PROJECT_ID_PATTERN.matcher(projectId).matches(),
-        "projectId must match the following pattern: " + PROJECT_ID_PATTERN.pattern());
+    checkArgument(
+        PROJECT_ID_PATTERN.matcher(projectId).matches(),
+        "projectId "
+            + projectId
+            + " does not match the required pattern: "
+            + PROJECT_ID_PATTERN.pattern());
     return projectId;
   }
 
   static String validateNamespace(String namespace) {
     checkArgument(namespace != null, "Namespace cannot be null. Leave unset for default.");
-    checkArgument(namespace.length() <= MAX_NAMESPACE_LENGTH,
+    checkArgument(
+        namespace.length() <= MAX_NAMESPACE_LENGTH,
         "namespace must not contain more than 100 characters");
-    checkArgument(NAMESPACE_PATTERN.matcher(namespace).matches(),
+    checkArgument(
+        NAMESPACE_PATTERN.matcher(namespace).matches(),
         "namespace must the following pattern: " + NAMESPACE_PATTERN.pattern());
     return namespace;
   }
@@ -57,6 +61,4 @@ final class Validator {
     checkArgument(!Strings.isNullOrEmpty(kind), "kind must not be empty or null");
     return kind;
   }
-
-
 }

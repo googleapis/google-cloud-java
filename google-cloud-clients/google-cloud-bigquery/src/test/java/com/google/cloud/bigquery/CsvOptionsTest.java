@@ -18,10 +18,9 @@ package com.google.cloud.bigquery;
 
 import static org.junit.Assert.assertEquals;
 
-import org.junit.Test;
-
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
+import org.junit.Test;
 
 public class CsvOptionsTest {
 
@@ -31,21 +30,20 @@ public class CsvOptionsTest {
   private static final String FIELD_DELIMITER = ",";
   private static final String QUOTE = "\"";
   private static final long SKIP_LEADING_ROWS = 42L;
-  private static final CsvOptions CSV_OPTIONS = CsvOptions.newBuilder()
-      .setAllowJaggedRows(ALLOW_JAGGED_ROWS)
-      .setAllowQuotedNewLines(ALLOW_QUOTED_NEWLINE)
-      .setEncoding(ENCODING)
-      .setFieldDelimiter(FIELD_DELIMITER)
-      .setQuote(QUOTE)
-      .setSkipLeadingRows(SKIP_LEADING_ROWS)
-      .build();
+  private static final CsvOptions CSV_OPTIONS =
+      CsvOptions.newBuilder()
+          .setAllowJaggedRows(ALLOW_JAGGED_ROWS)
+          .setAllowQuotedNewLines(ALLOW_QUOTED_NEWLINE)
+          .setEncoding(ENCODING)
+          .setFieldDelimiter(FIELD_DELIMITER)
+          .setQuote(QUOTE)
+          .setSkipLeadingRows(SKIP_LEADING_ROWS)
+          .build();
 
   @Test
   public void testToBuilder() {
     compareCsvOptions(CSV_OPTIONS, CSV_OPTIONS.toBuilder().build());
-    CsvOptions csvOptions = CSV_OPTIONS.toBuilder()
-        .setFieldDelimiter(";")
-        .build();
+    CsvOptions csvOptions = CSV_OPTIONS.toBuilder().setFieldDelimiter(";").build();
     assertEquals(";", csvOptions.getFieldDelimiter());
     csvOptions = csvOptions.toBuilder().setFieldDelimiter(",").build();
     compareCsvOptions(CSV_OPTIONS, csvOptions);
@@ -67,7 +65,6 @@ public class CsvOptionsTest {
     assertEquals(QUOTE, CSV_OPTIONS.getQuote());
     assertEquals(SKIP_LEADING_ROWS, (long) CSV_OPTIONS.getSkipLeadingRows());
   }
-
 
   @Test
   public void testToAndFromPb() {

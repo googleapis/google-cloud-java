@@ -4,6 +4,8 @@
 package com.google.cloud.language.v1beta2;
 
 /**
+ *
+ *
  * <pre>
  * Represents a phrase in the text that is a known entity, such as
  * a person, an organization, or location. The API associates information, such
@@ -12,15 +14,16 @@ package com.google.cloud.language.v1beta2;
  *
  * Protobuf type {@code google.cloud.language.v1beta2.Entity}
  */
-public  final class Entity extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class Entity extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.language.v1beta2.Entity)
     EntityOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use Entity.newBuilder() to construct.
   private Entity(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private Entity() {
     name_ = "";
     type_ = 0;
@@ -29,15 +32,18 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private Entity(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -49,72 +55,81 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            name_ = s;
-            break;
-          }
-          case 16: {
-            int rawValue = input.readEnum();
+              name_ = s;
+              break;
+            }
+          case 16:
+            {
+              int rawValue = input.readEnum();
 
-            type_ = rawValue;
-            break;
-          }
-          case 26: {
-            if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-              metadata_ = com.google.protobuf.MapField.newMapField(
-                  MetadataDefaultEntryHolder.defaultEntry);
-              mutable_bitField0_ |= 0x00000004;
+              type_ = rawValue;
+              break;
             }
-            com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-            metadata__ = input.readMessage(
-                MetadataDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-            metadata_.getMutableMap().put(
-                metadata__.getKey(), metadata__.getValue());
-            break;
-          }
-          case 37: {
+          case 26:
+            {
+              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+                metadata_ =
+                    com.google.protobuf.MapField.newMapField(
+                        MetadataDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000004;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> metadata__ =
+                  input.readMessage(
+                      MetadataDefaultEntryHolder.defaultEntry.getParserForType(),
+                      extensionRegistry);
+              metadata_.getMutableMap().put(metadata__.getKey(), metadata__.getValue());
+              break;
+            }
+          case 37:
+            {
+              salience_ = input.readFloat();
+              break;
+            }
+          case 42:
+            {
+              if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+                mentions_ =
+                    new java.util.ArrayList<com.google.cloud.language.v1beta2.EntityMention>();
+                mutable_bitField0_ |= 0x00000010;
+              }
+              mentions_.add(
+                  input.readMessage(
+                      com.google.cloud.language.v1beta2.EntityMention.parser(), extensionRegistry));
+              break;
+            }
+          case 50:
+            {
+              com.google.cloud.language.v1beta2.Sentiment.Builder subBuilder = null;
+              if (sentiment_ != null) {
+                subBuilder = sentiment_.toBuilder();
+              }
+              sentiment_ =
+                  input.readMessage(
+                      com.google.cloud.language.v1beta2.Sentiment.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(sentiment_);
+                sentiment_ = subBuilder.buildPartial();
+              }
 
-            salience_ = input.readFloat();
-            break;
-          }
-          case 42: {
-            if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
-              mentions_ = new java.util.ArrayList<com.google.cloud.language.v1beta2.EntityMention>();
-              mutable_bitField0_ |= 0x00000010;
+              break;
             }
-            mentions_.add(
-                input.readMessage(com.google.cloud.language.v1beta2.EntityMention.parser(), extensionRegistry));
-            break;
-          }
-          case 50: {
-            com.google.cloud.language.v1beta2.Sentiment.Builder subBuilder = null;
-            if (sentiment_ != null) {
-              subBuilder = sentiment_.toBuilder();
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
             }
-            sentiment_ = input.readMessage(com.google.cloud.language.v1beta2.Sentiment.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(sentiment_);
-              sentiment_ = subBuilder.buildPartial();
-            }
-
-            break;
-          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
         mentions_ = java.util.Collections.unmodifiableList(mentions_);
@@ -123,39 +138,46 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.language.v1beta2.LanguageServiceProto.internal_static_google_cloud_language_v1beta2_Entity_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.language.v1beta2.LanguageServiceProto
+        .internal_static_google_cloud_language_v1beta2_Entity_descriptor;
   }
 
   @SuppressWarnings({"rawtypes"})
-  protected com.google.protobuf.MapField internalGetMapField(
-      int number) {
+  @java.lang.Override
+  protected com.google.protobuf.MapField internalGetMapField(int number) {
     switch (number) {
       case 3:
         return internalGetMetadata();
       default:
-        throw new RuntimeException(
-            "Invalid map field number: " + number);
+        throw new RuntimeException("Invalid map field number: " + number);
     }
   }
+
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.language.v1beta2.LanguageServiceProto.internal_static_google_cloud_language_v1beta2_Entity_fieldAccessorTable
+    return com.google.cloud.language.v1beta2.LanguageServiceProto
+        .internal_static_google_cloud_language_v1beta2_Entity_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.language.v1beta2.Entity.class, com.google.cloud.language.v1beta2.Entity.Builder.class);
+            com.google.cloud.language.v1beta2.Entity.class,
+            com.google.cloud.language.v1beta2.Entity.Builder.class);
   }
 
   /**
+   *
+   *
    * <pre>
    * The type of the entity.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.language.v1beta2.Entity.Type}
    */
-  public enum Type
-      implements com.google.protobuf.ProtocolMessageEnum {
+  public enum Type implements com.google.protobuf.ProtocolMessageEnum {
     /**
+     *
+     *
      * <pre>
      * Unknown
      * </pre>
@@ -164,6 +186,8 @@ private static final long serialVersionUID = 0L;
      */
     UNKNOWN(0),
     /**
+     *
+     *
      * <pre>
      * Person
      * </pre>
@@ -172,6 +196,8 @@ private static final long serialVersionUID = 0L;
      */
     PERSON(1),
     /**
+     *
+     *
      * <pre>
      * Location
      * </pre>
@@ -180,6 +206,8 @@ private static final long serialVersionUID = 0L;
      */
     LOCATION(2),
     /**
+     *
+     *
      * <pre>
      * Organization
      * </pre>
@@ -188,6 +216,8 @@ private static final long serialVersionUID = 0L;
      */
     ORGANIZATION(3),
     /**
+     *
+     *
      * <pre>
      * Event
      * </pre>
@@ -196,6 +226,8 @@ private static final long serialVersionUID = 0L;
      */
     EVENT(4),
     /**
+     *
+     *
      * <pre>
      * Work of art
      * </pre>
@@ -204,6 +236,8 @@ private static final long serialVersionUID = 0L;
      */
     WORK_OF_ART(5),
     /**
+     *
+     *
      * <pre>
      * Consumer goods
      * </pre>
@@ -212,6 +246,8 @@ private static final long serialVersionUID = 0L;
      */
     CONSUMER_GOOD(6),
     /**
+     *
+     *
      * <pre>
      * Other types
      * </pre>
@@ -223,6 +259,8 @@ private static final long serialVersionUID = 0L;
     ;
 
     /**
+     *
+     *
      * <pre>
      * Unknown
      * </pre>
@@ -231,6 +269,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int UNKNOWN_VALUE = 0;
     /**
+     *
+     *
      * <pre>
      * Person
      * </pre>
@@ -239,6 +279,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int PERSON_VALUE = 1;
     /**
+     *
+     *
      * <pre>
      * Location
      * </pre>
@@ -247,6 +289,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int LOCATION_VALUE = 2;
     /**
+     *
+     *
      * <pre>
      * Organization
      * </pre>
@@ -255,6 +299,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int ORGANIZATION_VALUE = 3;
     /**
+     *
+     *
      * <pre>
      * Event
      * </pre>
@@ -263,6 +309,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int EVENT_VALUE = 4;
     /**
+     *
+     *
      * <pre>
      * Work of art
      * </pre>
@@ -271,6 +319,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int WORK_OF_ART_VALUE = 5;
     /**
+     *
+     *
      * <pre>
      * Consumer goods
      * </pre>
@@ -279,6 +329,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int CONSUMER_GOOD_VALUE = 6;
     /**
+     *
+     *
      * <pre>
      * Other types
      * </pre>
@@ -286,7 +338,6 @@ private static final long serialVersionUID = 0L;
      * <code>OTHER = 7;</code>
      */
     public static final int OTHER_VALUE = 7;
-
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -296,9 +347,7 @@ private static final long serialVersionUID = 0L;
       return value;
     }
 
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static Type valueOf(int value) {
       return forNumber(value);
@@ -306,50 +355,55 @@ private static final long serialVersionUID = 0L;
 
     public static Type forNumber(int value) {
       switch (value) {
-        case 0: return UNKNOWN;
-        case 1: return PERSON;
-        case 2: return LOCATION;
-        case 3: return ORGANIZATION;
-        case 4: return EVENT;
-        case 5: return WORK_OF_ART;
-        case 6: return CONSUMER_GOOD;
-        case 7: return OTHER;
-        default: return null;
+        case 0:
+          return UNKNOWN;
+        case 1:
+          return PERSON;
+        case 2:
+          return LOCATION;
+        case 3:
+          return ORGANIZATION;
+        case 4:
+          return EVENT;
+        case 5:
+          return WORK_OF_ART;
+        case 6:
+          return CONSUMER_GOOD;
+        case 7:
+          return OTHER;
+        default:
+          return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<Type>
-        internalGetValueMap() {
+    public static com.google.protobuf.Internal.EnumLiteMap<Type> internalGetValueMap() {
       return internalValueMap;
     }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        Type> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<Type>() {
-            public Type findValueByNumber(int number) {
-              return Type.forNumber(number);
-            }
-          };
 
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
+    private static final com.google.protobuf.Internal.EnumLiteMap<Type> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Type>() {
+          public Type findValueByNumber(int number) {
+            return Type.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
       return getDescriptor().getValues().get(ordinal());
     }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
       return getDescriptor();
     }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
       return com.google.cloud.language.v1beta2.Entity.getDescriptor().getEnumTypes().get(0);
     }
 
     private static final Type[] VALUES = values();
 
-    public static Type valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+    public static Type valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
         return UNRECOGNIZED;
@@ -370,6 +424,8 @@ private static final long serialVersionUID = 0L;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
+   *
+   *
    * <pre>
    * The representative name for the entity.
    * </pre>
@@ -381,27 +437,26 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       name_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The representative name for the entity.
    * </pre>
    *
    * <code>string name = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getNameBytes() {
+  public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       name_ = b;
       return b;
     } else {
@@ -412,6 +467,8 @@ private static final long serialVersionUID = 0L;
   public static final int TYPE_FIELD_NUMBER = 2;
   private int type_;
   /**
+   *
+   *
    * <pre>
    * The entity type.
    * </pre>
@@ -422,6 +479,8 @@ private static final long serialVersionUID = 0L;
     return type_;
   }
   /**
+   *
+   *
    * <pre>
    * The entity type.
    * </pre>
@@ -429,29 +488,30 @@ private static final long serialVersionUID = 0L;
    * <code>.google.cloud.language.v1beta2.Entity.Type type = 2;</code>
    */
   public com.google.cloud.language.v1beta2.Entity.Type getType() {
-    com.google.cloud.language.v1beta2.Entity.Type result = com.google.cloud.language.v1beta2.Entity.Type.valueOf(type_);
+    @SuppressWarnings("deprecation")
+    com.google.cloud.language.v1beta2.Entity.Type result =
+        com.google.cloud.language.v1beta2.Entity.Type.valueOf(type_);
     return result == null ? com.google.cloud.language.v1beta2.Entity.Type.UNRECOGNIZED : result;
   }
 
   public static final int METADATA_FIELD_NUMBER = 3;
+
   private static final class MetadataDefaultEntryHolder {
-    static final com.google.protobuf.MapEntry<
-        java.lang.String, java.lang.String> defaultEntry =
-            com.google.protobuf.MapEntry
-            .<java.lang.String, java.lang.String>newDefaultInstance(
-                com.google.cloud.language.v1beta2.LanguageServiceProto.internal_static_google_cloud_language_v1beta2_Entity_MetadataEntry_descriptor, 
-                com.google.protobuf.WireFormat.FieldType.STRING,
-                "",
-                com.google.protobuf.WireFormat.FieldType.STRING,
-                "");
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.cloud.language.v1beta2.LanguageServiceProto
+                .internal_static_google_cloud_language_v1beta2_Entity_MetadataEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
   }
-  private com.google.protobuf.MapField<
-      java.lang.String, java.lang.String> metadata_;
-  private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-  internalGetMetadata() {
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> metadata_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetMetadata() {
     if (metadata_ == null) {
-      return com.google.protobuf.MapField.emptyMapField(
-          MetadataDefaultEntryHolder.defaultEntry);
+      return com.google.protobuf.MapField.emptyMapField(MetadataDefaultEntryHolder.defaultEntry);
     }
     return metadata_;
   }
@@ -460,6 +520,8 @@ private static final long serialVersionUID = 0L;
     return internalGetMetadata().getMap().size();
   }
   /**
+   *
+   *
    * <pre>
    * Metadata associated with the entity.
    * Currently, Wikipedia URLs and Knowledge Graph MIDs are provided, if
@@ -468,20 +530,20 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; metadata = 3;</code>
    */
-
-  public boolean containsMetadata(
-      java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+  public boolean containsMetadata(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
     return internalGetMetadata().getMap().containsKey(key);
   }
-  /**
-   * Use {@link #getMetadataMap()} instead.
-   */
+  /** Use {@link #getMetadataMap()} instead. */
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getMetadata() {
     return getMetadataMap();
   }
   /**
+   *
+   *
    * <pre>
    * Metadata associated with the entity.
    * Currently, Wikipedia URLs and Knowledge Graph MIDs are provided, if
@@ -490,11 +552,12 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; metadata = 3;</code>
    */
-
   public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
     return internalGetMetadata().getMap();
   }
   /**
+   *
+   *
    * <pre>
    * Metadata associated with the entity.
    * Currently, Wikipedia URLs and Knowledge Graph MIDs are provided, if
@@ -503,16 +566,17 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; metadata = 3;</code>
    */
-
   public java.lang.String getMetadataOrDefault(
-      java.lang.String key,
-      java.lang.String defaultValue) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
-    java.util.Map<java.lang.String, java.lang.String> map =
-        internalGetMetadata().getMap();
+      java.lang.String key, java.lang.String defaultValue) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetMetadata().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
   /**
+   *
+   *
    * <pre>
    * Metadata associated with the entity.
    * Currently, Wikipedia URLs and Knowledge Graph MIDs are provided, if
@@ -521,12 +585,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; metadata = 3;</code>
    */
-
-  public java.lang.String getMetadataOrThrow(
-      java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
-    java.util.Map<java.lang.String, java.lang.String> map =
-        internalGetMetadata().getMap();
+  public java.lang.String getMetadataOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetMetadata().getMap();
     if (!map.containsKey(key)) {
       throw new java.lang.IllegalArgumentException();
     }
@@ -536,6 +599,8 @@ private static final long serialVersionUID = 0L;
   public static final int SALIENCE_FIELD_NUMBER = 4;
   private float salience_;
   /**
+   *
+   *
    * <pre>
    * The salience score associated with the entity in the [0, 1.0] range.
    * The salience score for an entity provides information about the
@@ -553,6 +618,8 @@ private static final long serialVersionUID = 0L;
   public static final int MENTIONS_FIELD_NUMBER = 5;
   private java.util.List<com.google.cloud.language.v1beta2.EntityMention> mentions_;
   /**
+   *
+   *
    * <pre>
    * The mentions of this entity in the input document. The API currently
    * supports proper noun mentions.
@@ -564,6 +631,8 @@ private static final long serialVersionUID = 0L;
     return mentions_;
   }
   /**
+   *
+   *
    * <pre>
    * The mentions of this entity in the input document. The API currently
    * supports proper noun mentions.
@@ -571,11 +640,13 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.cloud.language.v1beta2.EntityMention mentions = 5;</code>
    */
-  public java.util.List<? extends com.google.cloud.language.v1beta2.EntityMentionOrBuilder> 
+  public java.util.List<? extends com.google.cloud.language.v1beta2.EntityMentionOrBuilder>
       getMentionsOrBuilderList() {
     return mentions_;
   }
   /**
+   *
+   *
    * <pre>
    * The mentions of this entity in the input document. The API currently
    * supports proper noun mentions.
@@ -587,6 +658,8 @@ private static final long serialVersionUID = 0L;
     return mentions_.size();
   }
   /**
+   *
+   *
    * <pre>
    * The mentions of this entity in the input document. The API currently
    * supports proper noun mentions.
@@ -598,6 +671,8 @@ private static final long serialVersionUID = 0L;
     return mentions_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * The mentions of this entity in the input document. The API currently
    * supports proper noun mentions.
@@ -605,14 +680,15 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.cloud.language.v1beta2.EntityMention mentions = 5;</code>
    */
-  public com.google.cloud.language.v1beta2.EntityMentionOrBuilder getMentionsOrBuilder(
-      int index) {
+  public com.google.cloud.language.v1beta2.EntityMentionOrBuilder getMentionsOrBuilder(int index) {
     return mentions_.get(index);
   }
 
   public static final int SENTIMENT_FIELD_NUMBER = 6;
   private com.google.cloud.language.v1beta2.Sentiment sentiment_;
   /**
+   *
+   *
    * <pre>
    * For calls to [AnalyzeEntitySentiment][] or if
    * [AnnotateTextRequest.Features.extract_entity_sentiment][google.cloud.language.v1beta2.AnnotateTextRequest.Features.extract_entity_sentiment] is set to
@@ -626,6 +702,8 @@ private static final long serialVersionUID = 0L;
     return sentiment_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * For calls to [AnalyzeEntitySentiment][] or if
    * [AnnotateTextRequest.Features.extract_entity_sentiment][google.cloud.language.v1beta2.AnnotateTextRequest.Features.extract_entity_sentiment] is set to
@@ -636,9 +714,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.cloud.language.v1beta2.Sentiment sentiment = 6;</code>
    */
   public com.google.cloud.language.v1beta2.Sentiment getSentiment() {
-    return sentiment_ == null ? com.google.cloud.language.v1beta2.Sentiment.getDefaultInstance() : sentiment_;
+    return sentiment_ == null
+        ? com.google.cloud.language.v1beta2.Sentiment.getDefaultInstance()
+        : sentiment_;
   }
   /**
+   *
+   *
    * <pre>
    * For calls to [AnalyzeEntitySentiment][] or if
    * [AnnotateTextRequest.Features.extract_entity_sentiment][google.cloud.language.v1beta2.AnnotateTextRequest.Features.extract_entity_sentiment] is set to
@@ -653,6 +735,8 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -662,20 +746,16 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  @java.lang.Override
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
     if (type_ != com.google.cloud.language.v1beta2.Entity.Type.UNKNOWN.getNumber()) {
       output.writeEnum(2, type_);
     }
-    com.google.protobuf.GeneratedMessageV3
-      .serializeStringMapTo(
-        output,
-        internalGetMetadata(),
-        MetadataDefaultEntryHolder.defaultEntry,
-        3);
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetMetadata(), MetadataDefaultEntryHolder.defaultEntry, 3);
     if (salience_ != 0F) {
       output.writeFloat(4, salience_);
     }
@@ -688,6 +768,7 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -697,30 +778,26 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
     if (type_ != com.google.cloud.language.v1beta2.Entity.Type.UNKNOWN.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(2, type_);
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, type_);
     }
-    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
-         : internalGetMetadata().getMap().entrySet()) {
-      com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-      metadata__ = MetadataDefaultEntryHolder.defaultEntry.newBuilderForType()
-          .setKey(entry.getKey())
-          .setValue(entry.getValue())
-          .build();
-      size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, metadata__);
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetMetadata().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> metadata__ =
+          MetadataDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, metadata__);
     }
     if (salience_ != 0F) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeFloatSize(4, salience_);
+      size += com.google.protobuf.CodedOutputStream.computeFloatSize(4, salience_);
     }
     for (int i = 0; i < mentions_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(5, mentions_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, mentions_.get(i));
     }
     if (sentiment_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(6, getSentiment());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getSentiment());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -730,7 +807,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.language.v1beta2.Entity)) {
       return super.equals(obj);
@@ -738,21 +815,17 @@ private static final long serialVersionUID = 0L;
     com.google.cloud.language.v1beta2.Entity other = (com.google.cloud.language.v1beta2.Entity) obj;
 
     boolean result = true;
-    result = result && getName()
-        .equals(other.getName());
+    result = result && getName().equals(other.getName());
     result = result && type_ == other.type_;
-    result = result && internalGetMetadata().equals(
-        other.internalGetMetadata());
-    result = result && (
-        java.lang.Float.floatToIntBits(getSalience())
-        == java.lang.Float.floatToIntBits(
-            other.getSalience()));
-    result = result && getMentionsList()
-        .equals(other.getMentionsList());
+    result = result && internalGetMetadata().equals(other.internalGetMetadata());
+    result =
+        result
+            && (java.lang.Float.floatToIntBits(getSalience())
+                == java.lang.Float.floatToIntBits(other.getSalience()));
+    result = result && getMentionsList().equals(other.getMentionsList());
     result = result && (hasSentiment() == other.hasSentiment());
     if (hasSentiment()) {
-      result = result && getSentiment()
-          .equals(other.getSentiment());
+      result = result && getSentiment().equals(other.getSentiment());
     }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
@@ -774,8 +847,7 @@ private static final long serialVersionUID = 0L;
       hash = (53 * hash) + internalGetMetadata().hashCode();
     }
     hash = (37 * hash) + SALIENCE_FIELD_NUMBER;
-    hash = (53 * hash) + java.lang.Float.floatToIntBits(
-        getSalience());
+    hash = (53 * hash) + java.lang.Float.floatToIntBits(getSalience());
     if (getMentionsCount() > 0) {
       hash = (37 * hash) + MENTIONS_FIELD_NUMBER;
       hash = (53 * hash) + getMentionsList().hashCode();
@@ -789,95 +861,104 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.cloud.language.v1beta2.Entity parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.cloud.language.v1beta2.Entity parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.language.v1beta2.Entity parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.language.v1beta2.Entity parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.language.v1beta2.Entity parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.language.v1beta2.Entity parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.language.v1beta2.Entity parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.language.v1beta2.Entity parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.language.v1beta2.Entity parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.cloud.language.v1beta2.Entity parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.language.v1beta2.Entity parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.language.v1beta2.Entity parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.language.v1beta2.Entity parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.language.v1beta2.Entity parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  public Builder newBuilderForType() { return newBuilder(); }
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-  public static Builder newBuilder(com.google.cloud.language.v1beta2.Entity prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+
+  public static Builder newBuilder(com.google.cloud.language.v1beta2.Entity prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+
+  @java.lang.Override
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Represents a phrase in the text that is a known entity, such as
    * a person, an organization, or location. The API associates information, such
@@ -886,42 +967,43 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.cloud.language.v1beta2.Entity}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.language.v1beta2.Entity)
       com.google.cloud.language.v1beta2.EntityOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.language.v1beta2.LanguageServiceProto.internal_static_google_cloud_language_v1beta2_Entity_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.language.v1beta2.LanguageServiceProto
+          .internal_static_google_cloud_language_v1beta2_Entity_descriptor;
     }
 
     @SuppressWarnings({"rawtypes"})
-    protected com.google.protobuf.MapField internalGetMapField(
-        int number) {
+    protected com.google.protobuf.MapField internalGetMapField(int number) {
       switch (number) {
         case 3:
           return internalGetMetadata();
         default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
+          throw new RuntimeException("Invalid map field number: " + number);
       }
     }
+
     @SuppressWarnings({"rawtypes"})
-    protected com.google.protobuf.MapField internalGetMutableMapField(
-        int number) {
+    protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
       switch (number) {
         case 3:
           return internalGetMutableMetadata();
         default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
+          throw new RuntimeException("Invalid map field number: " + number);
       }
     }
+
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.language.v1beta2.LanguageServiceProto.internal_static_google_cloud_language_v1beta2_Entity_fieldAccessorTable
+      return com.google.cloud.language.v1beta2.LanguageServiceProto
+          .internal_static_google_cloud_language_v1beta2_Entity_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.language.v1beta2.Entity.class, com.google.cloud.language.v1beta2.Entity.Builder.class);
+              com.google.cloud.language.v1beta2.Entity.class,
+              com.google.cloud.language.v1beta2.Entity.Builder.class);
     }
 
     // Construct using com.google.cloud.language.v1beta2.Entity.newBuilder()
@@ -929,17 +1011,18 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getMentionsFieldBuilder();
       }
     }
+
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       name_ = "";
@@ -964,15 +1047,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.language.v1beta2.LanguageServiceProto.internal_static_google_cloud_language_v1beta2_Entity_descriptor;
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.language.v1beta2.LanguageServiceProto
+          .internal_static_google_cloud_language_v1beta2_Entity_descriptor;
     }
 
+    @java.lang.Override
     public com.google.cloud.language.v1beta2.Entity getDefaultInstanceForType() {
       return com.google.cloud.language.v1beta2.Entity.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.cloud.language.v1beta2.Entity build() {
       com.google.cloud.language.v1beta2.Entity result = buildPartial();
       if (!result.isInitialized()) {
@@ -981,8 +1067,10 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.cloud.language.v1beta2.Entity buildPartial() {
-      com.google.cloud.language.v1beta2.Entity result = new com.google.cloud.language.v1beta2.Entity(this);
+      com.google.cloud.language.v1beta2.Entity result =
+          new com.google.cloud.language.v1beta2.Entity(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       result.name_ = name_;
@@ -1009,35 +1097,43 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+
+    @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+    @java.lang.Override
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+    @java.lang.Override
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
+    @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
+    @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.language.v1beta2.Entity) {
-        return mergeFrom((com.google.cloud.language.v1beta2.Entity)other);
+        return mergeFrom((com.google.cloud.language.v1beta2.Entity) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -1053,8 +1149,7 @@ private static final long serialVersionUID = 0L;
       if (other.type_ != 0) {
         setTypeValue(other.getTypeValue());
       }
-      internalGetMutableMetadata().mergeFrom(
-          other.internalGetMetadata());
+      internalGetMutableMetadata().mergeFrom(other.internalGetMetadata());
       if (other.getSalience() != 0F) {
         setSalience(other.getSalience());
       }
@@ -1076,9 +1171,10 @@ private static final long serialVersionUID = 0L;
             mentionsBuilder_ = null;
             mentions_ = other.mentions_;
             bitField0_ = (bitField0_ & ~0x00000010);
-            mentionsBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getMentionsFieldBuilder() : null;
+            mentionsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getMentionsFieldBuilder()
+                    : null;
           } else {
             mentionsBuilder_.addAllMessages(other.mentions_);
           }
@@ -1092,10 +1188,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1113,10 +1211,13 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
+     *
+     *
      * <pre>
      * The representative name for the entity.
      * </pre>
@@ -1126,8 +1227,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         name_ = s;
         return s;
@@ -1136,19 +1236,19 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The representative name for the entity.
      * </pre>
      *
      * <code>string name = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getNameBytes() {
+    public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         name_ = b;
         return b;
       } else {
@@ -1156,23 +1256,26 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The representative name for the entity.
      * </pre>
      *
      * <code>string name = 1;</code>
      */
-    public Builder setName(
-        java.lang.String value) {
+    public Builder setName(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       name_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The representative name for the entity.
      * </pre>
@@ -1180,25 +1283,26 @@ private static final long serialVersionUID = 0L;
      * <code>string name = 1;</code>
      */
     public Builder clearName() {
-      
+
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The representative name for the entity.
      * </pre>
      *
      * <code>string name = 1;</code>
      */
-    public Builder setNameBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       name_ = value;
       onChanged();
       return this;
@@ -1206,6 +1310,8 @@ private static final long serialVersionUID = 0L;
 
     private int type_ = 0;
     /**
+     *
+     *
      * <pre>
      * The entity type.
      * </pre>
@@ -1216,6 +1322,8 @@ private static final long serialVersionUID = 0L;
       return type_;
     }
     /**
+     *
+     *
      * <pre>
      * The entity type.
      * </pre>
@@ -1228,6 +1336,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The entity type.
      * </pre>
@@ -1235,10 +1345,14 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.language.v1beta2.Entity.Type type = 2;</code>
      */
     public com.google.cloud.language.v1beta2.Entity.Type getType() {
-      com.google.cloud.language.v1beta2.Entity.Type result = com.google.cloud.language.v1beta2.Entity.Type.valueOf(type_);
+      @SuppressWarnings("deprecation")
+      com.google.cloud.language.v1beta2.Entity.Type result =
+          com.google.cloud.language.v1beta2.Entity.Type.valueOf(type_);
       return result == null ? com.google.cloud.language.v1beta2.Entity.Type.UNRECOGNIZED : result;
     }
     /**
+     *
+     *
      * <pre>
      * The entity type.
      * </pre>
@@ -1249,12 +1363,14 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       type_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The entity type.
      * </pre>
@@ -1262,28 +1378,28 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.language.v1beta2.Entity.Type type = 2;</code>
      */
     public Builder clearType() {
-      
+
       type_ = 0;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.MapField<
-        java.lang.String, java.lang.String> metadata_;
-    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetMetadata() {
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> metadata_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetMetadata() {
       if (metadata_ == null) {
-        return com.google.protobuf.MapField.emptyMapField(
-            MetadataDefaultEntryHolder.defaultEntry);
+        return com.google.protobuf.MapField.emptyMapField(MetadataDefaultEntryHolder.defaultEntry);
       }
       return metadata_;
     }
+
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetMutableMetadata() {
-      onChanged();;
+        internalGetMutableMetadata() {
+      onChanged();
+      ;
       if (metadata_ == null) {
-        metadata_ = com.google.protobuf.MapField.newMapField(
-            MetadataDefaultEntryHolder.defaultEntry);
+        metadata_ =
+            com.google.protobuf.MapField.newMapField(MetadataDefaultEntryHolder.defaultEntry);
       }
       if (!metadata_.isMutable()) {
         metadata_ = metadata_.copy();
@@ -1295,6 +1411,8 @@ private static final long serialVersionUID = 0L;
       return internalGetMetadata().getMap().size();
     }
     /**
+     *
+     *
      * <pre>
      * Metadata associated with the entity.
      * Currently, Wikipedia URLs and Knowledge Graph MIDs are provided, if
@@ -1303,20 +1421,20 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; metadata = 3;</code>
      */
-
-    public boolean containsMetadata(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+    public boolean containsMetadata(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
       return internalGetMetadata().getMap().containsKey(key);
     }
-    /**
-     * Use {@link #getMetadataMap()} instead.
-     */
+    /** Use {@link #getMetadataMap()} instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMetadata() {
       return getMetadataMap();
     }
     /**
+     *
+     *
      * <pre>
      * Metadata associated with the entity.
      * Currently, Wikipedia URLs and Knowledge Graph MIDs are provided, if
@@ -1325,11 +1443,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; metadata = 3;</code>
      */
-
     public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
       return internalGetMetadata().getMap();
     }
     /**
+     *
+     *
      * <pre>
      * Metadata associated with the entity.
      * Currently, Wikipedia URLs and Knowledge Graph MIDs are provided, if
@@ -1338,16 +1457,17 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; metadata = 3;</code>
      */
-
     public java.lang.String getMetadataOrDefault(
-        java.lang.String key,
-        java.lang.String defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetMetadata().getMap();
+        java.lang.String key, java.lang.String defaultValue) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetMetadata().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
+     *
+     *
      * <pre>
      * Metadata associated with the entity.
      * Currently, Wikipedia URLs and Knowledge Graph MIDs are provided, if
@@ -1356,12 +1476,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; metadata = 3;</code>
      */
-
-    public java.lang.String getMetadataOrThrow(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetMetadata().getMap();
+    public java.lang.String getMetadataOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetMetadata().getMap();
       if (!map.containsKey(key)) {
         throw new java.lang.IllegalArgumentException();
       }
@@ -1369,11 +1488,12 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder clearMetadata() {
-      internalGetMutableMetadata().getMutableMap()
-          .clear();
+      internalGetMutableMetadata().getMutableMap().clear();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Metadata associated with the entity.
      * Currently, Wikipedia URLs and Knowledge Graph MIDs are provided, if
@@ -1382,23 +1502,21 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; metadata = 3;</code>
      */
-
-    public Builder removeMetadata(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      internalGetMutableMetadata().getMutableMap()
-          .remove(key);
+    public Builder removeMetadata(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableMetadata().getMutableMap().remove(key);
       return this;
     }
-    /**
-     * Use alternate mutation accessors instead.
-     */
+    /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
-    public java.util.Map<java.lang.String, java.lang.String>
-    getMutableMetadata() {
+    public java.util.Map<java.lang.String, java.lang.String> getMutableMetadata() {
       return internalGetMutableMetadata().getMutableMap();
     }
     /**
+     *
+     *
      * <pre>
      * Metadata associated with the entity.
      * Currently, Wikipedia URLs and Knowledge Graph MIDs are provided, if
@@ -1407,16 +1525,19 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; metadata = 3;</code>
      */
-    public Builder putMetadata(
-        java.lang.String key,
-        java.lang.String value) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      if (value == null) { throw new java.lang.NullPointerException(); }
-      internalGetMutableMetadata().getMutableMap()
-          .put(key, value);
+    public Builder putMetadata(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      if (value == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableMetadata().getMutableMap().put(key, value);
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Metadata associated with the entity.
      * Currently, Wikipedia URLs and Knowledge Graph MIDs are provided, if
@@ -1425,16 +1546,15 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; metadata = 3;</code>
      */
-
-    public Builder putAllMetadata(
-        java.util.Map<java.lang.String, java.lang.String> values) {
-      internalGetMutableMetadata().getMutableMap()
-          .putAll(values);
+    public Builder putAllMetadata(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableMetadata().getMutableMap().putAll(values);
       return this;
     }
 
-    private float salience_ ;
+    private float salience_;
     /**
+     *
+     *
      * <pre>
      * The salience score associated with the entity in the [0, 1.0] range.
      * The salience score for an entity provides information about the
@@ -1449,6 +1569,8 @@ private static final long serialVersionUID = 0L;
       return salience_;
     }
     /**
+     *
+     *
      * <pre>
      * The salience score associated with the entity in the [0, 1.0] range.
      * The salience score for an entity provides information about the
@@ -1460,12 +1582,14 @@ private static final long serialVersionUID = 0L;
      * <code>float salience = 4;</code>
      */
     public Builder setSalience(float value) {
-      
+
       salience_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The salience score associated with the entity in the [0, 1.0] range.
      * The salience score for an entity provides information about the
@@ -1477,25 +1601,32 @@ private static final long serialVersionUID = 0L;
      * <code>float salience = 4;</code>
      */
     public Builder clearSalience() {
-      
+
       salience_ = 0F;
       onChanged();
       return this;
     }
 
     private java.util.List<com.google.cloud.language.v1beta2.EntityMention> mentions_ =
-      java.util.Collections.emptyList();
+        java.util.Collections.emptyList();
+
     private void ensureMentionsIsMutable() {
       if (!((bitField0_ & 0x00000010) == 0x00000010)) {
-        mentions_ = new java.util.ArrayList<com.google.cloud.language.v1beta2.EntityMention>(mentions_);
+        mentions_ =
+            new java.util.ArrayList<com.google.cloud.language.v1beta2.EntityMention>(mentions_);
         bitField0_ |= 0x00000010;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.language.v1beta2.EntityMention, com.google.cloud.language.v1beta2.EntityMention.Builder, com.google.cloud.language.v1beta2.EntityMentionOrBuilder> mentionsBuilder_;
+            com.google.cloud.language.v1beta2.EntityMention,
+            com.google.cloud.language.v1beta2.EntityMention.Builder,
+            com.google.cloud.language.v1beta2.EntityMentionOrBuilder>
+        mentionsBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * The mentions of this entity in the input document. The API currently
      * supports proper noun mentions.
@@ -1511,6 +1642,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The mentions of this entity in the input document. The API currently
      * supports proper noun mentions.
@@ -1526,6 +1659,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The mentions of this entity in the input document. The API currently
      * supports proper noun mentions.
@@ -1541,6 +1676,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The mentions of this entity in the input document. The API currently
      * supports proper noun mentions.
@@ -1548,8 +1685,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.cloud.language.v1beta2.EntityMention mentions = 5;</code>
      */
-    public Builder setMentions(
-        int index, com.google.cloud.language.v1beta2.EntityMention value) {
+    public Builder setMentions(int index, com.google.cloud.language.v1beta2.EntityMention value) {
       if (mentionsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1563,6 +1699,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The mentions of this entity in the input document. The API currently
      * supports proper noun mentions.
@@ -1582,6 +1720,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The mentions of this entity in the input document. The API currently
      * supports proper noun mentions.
@@ -1603,6 +1743,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The mentions of this entity in the input document. The API currently
      * supports proper noun mentions.
@@ -1610,8 +1752,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.cloud.language.v1beta2.EntityMention mentions = 5;</code>
      */
-    public Builder addMentions(
-        int index, com.google.cloud.language.v1beta2.EntityMention value) {
+    public Builder addMentions(int index, com.google.cloud.language.v1beta2.EntityMention value) {
       if (mentionsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1625,6 +1766,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The mentions of this entity in the input document. The API currently
      * supports proper noun mentions.
@@ -1644,6 +1787,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The mentions of this entity in the input document. The API currently
      * supports proper noun mentions.
@@ -1663,6 +1808,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The mentions of this entity in the input document. The API currently
      * supports proper noun mentions.
@@ -1674,8 +1821,7 @@ private static final long serialVersionUID = 0L;
         java.lang.Iterable<? extends com.google.cloud.language.v1beta2.EntityMention> values) {
       if (mentionsBuilder_ == null) {
         ensureMentionsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, mentions_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, mentions_);
         onChanged();
       } else {
         mentionsBuilder_.addAllMessages(values);
@@ -1683,6 +1829,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The mentions of this entity in the input document. The API currently
      * supports proper noun mentions.
@@ -1701,6 +1849,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The mentions of this entity in the input document. The API currently
      * supports proper noun mentions.
@@ -1719,6 +1869,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The mentions of this entity in the input document. The API currently
      * supports proper noun mentions.
@@ -1726,11 +1878,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.cloud.language.v1beta2.EntityMention mentions = 5;</code>
      */
-    public com.google.cloud.language.v1beta2.EntityMention.Builder getMentionsBuilder(
-        int index) {
+    public com.google.cloud.language.v1beta2.EntityMention.Builder getMentionsBuilder(int index) {
       return getMentionsFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * The mentions of this entity in the input document. The API currently
      * supports proper noun mentions.
@@ -1741,11 +1894,14 @@ private static final long serialVersionUID = 0L;
     public com.google.cloud.language.v1beta2.EntityMentionOrBuilder getMentionsOrBuilder(
         int index) {
       if (mentionsBuilder_ == null) {
-        return mentions_.get(index);  } else {
+        return mentions_.get(index);
+      } else {
         return mentionsBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * The mentions of this entity in the input document. The API currently
      * supports proper noun mentions.
@@ -1753,8 +1909,8 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.cloud.language.v1beta2.EntityMention mentions = 5;</code>
      */
-    public java.util.List<? extends com.google.cloud.language.v1beta2.EntityMentionOrBuilder> 
-         getMentionsOrBuilderList() {
+    public java.util.List<? extends com.google.cloud.language.v1beta2.EntityMentionOrBuilder>
+        getMentionsOrBuilderList() {
       if (mentionsBuilder_ != null) {
         return mentionsBuilder_.getMessageOrBuilderList();
       } else {
@@ -1762,6 +1918,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The mentions of this entity in the input document. The API currently
      * supports proper noun mentions.
@@ -1770,10 +1928,12 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.cloud.language.v1beta2.EntityMention mentions = 5;</code>
      */
     public com.google.cloud.language.v1beta2.EntityMention.Builder addMentionsBuilder() {
-      return getMentionsFieldBuilder().addBuilder(
-          com.google.cloud.language.v1beta2.EntityMention.getDefaultInstance());
+      return getMentionsFieldBuilder()
+          .addBuilder(com.google.cloud.language.v1beta2.EntityMention.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * The mentions of this entity in the input document. The API currently
      * supports proper noun mentions.
@@ -1781,12 +1941,13 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.cloud.language.v1beta2.EntityMention mentions = 5;</code>
      */
-    public com.google.cloud.language.v1beta2.EntityMention.Builder addMentionsBuilder(
-        int index) {
-      return getMentionsFieldBuilder().addBuilder(
-          index, com.google.cloud.language.v1beta2.EntityMention.getDefaultInstance());
+    public com.google.cloud.language.v1beta2.EntityMention.Builder addMentionsBuilder(int index) {
+      return getMentionsFieldBuilder()
+          .addBuilder(index, com.google.cloud.language.v1beta2.EntityMention.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * The mentions of this entity in the input document. The API currently
      * supports proper noun mentions.
@@ -1794,16 +1955,22 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.cloud.language.v1beta2.EntityMention mentions = 5;</code>
      */
-    public java.util.List<com.google.cloud.language.v1beta2.EntityMention.Builder> 
-         getMentionsBuilderList() {
+    public java.util.List<com.google.cloud.language.v1beta2.EntityMention.Builder>
+        getMentionsBuilderList() {
       return getMentionsFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.language.v1beta2.EntityMention, com.google.cloud.language.v1beta2.EntityMention.Builder, com.google.cloud.language.v1beta2.EntityMentionOrBuilder> 
+            com.google.cloud.language.v1beta2.EntityMention,
+            com.google.cloud.language.v1beta2.EntityMention.Builder,
+            com.google.cloud.language.v1beta2.EntityMentionOrBuilder>
         getMentionsFieldBuilder() {
       if (mentionsBuilder_ == null) {
-        mentionsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.cloud.language.v1beta2.EntityMention, com.google.cloud.language.v1beta2.EntityMention.Builder, com.google.cloud.language.v1beta2.EntityMentionOrBuilder>(
+        mentionsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.language.v1beta2.EntityMention,
+                com.google.cloud.language.v1beta2.EntityMention.Builder,
+                com.google.cloud.language.v1beta2.EntityMentionOrBuilder>(
                 mentions_,
                 ((bitField0_ & 0x00000010) == 0x00000010),
                 getParentForChildren(),
@@ -1815,8 +1982,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.cloud.language.v1beta2.Sentiment sentiment_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.language.v1beta2.Sentiment, com.google.cloud.language.v1beta2.Sentiment.Builder, com.google.cloud.language.v1beta2.SentimentOrBuilder> sentimentBuilder_;
+            com.google.cloud.language.v1beta2.Sentiment,
+            com.google.cloud.language.v1beta2.Sentiment.Builder,
+            com.google.cloud.language.v1beta2.SentimentOrBuilder>
+        sentimentBuilder_;
     /**
+     *
+     *
      * <pre>
      * For calls to [AnalyzeEntitySentiment][] or if
      * [AnnotateTextRequest.Features.extract_entity_sentiment][google.cloud.language.v1beta2.AnnotateTextRequest.Features.extract_entity_sentiment] is set to
@@ -1830,6 +2002,8 @@ private static final long serialVersionUID = 0L;
       return sentimentBuilder_ != null || sentiment_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * For calls to [AnalyzeEntitySentiment][] or if
      * [AnnotateTextRequest.Features.extract_entity_sentiment][google.cloud.language.v1beta2.AnnotateTextRequest.Features.extract_entity_sentiment] is set to
@@ -1841,12 +2015,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.language.v1beta2.Sentiment getSentiment() {
       if (sentimentBuilder_ == null) {
-        return sentiment_ == null ? com.google.cloud.language.v1beta2.Sentiment.getDefaultInstance() : sentiment_;
+        return sentiment_ == null
+            ? com.google.cloud.language.v1beta2.Sentiment.getDefaultInstance()
+            : sentiment_;
       } else {
         return sentimentBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * For calls to [AnalyzeEntitySentiment][] or if
      * [AnnotateTextRequest.Features.extract_entity_sentiment][google.cloud.language.v1beta2.AnnotateTextRequest.Features.extract_entity_sentiment] is set to
@@ -1870,6 +2048,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * For calls to [AnalyzeEntitySentiment][] or if
      * [AnnotateTextRequest.Features.extract_entity_sentiment][google.cloud.language.v1beta2.AnnotateTextRequest.Features.extract_entity_sentiment] is set to
@@ -1891,6 +2071,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * For calls to [AnalyzeEntitySentiment][] or if
      * [AnnotateTextRequest.Features.extract_entity_sentiment][google.cloud.language.v1beta2.AnnotateTextRequest.Features.extract_entity_sentiment] is set to
@@ -1904,7 +2086,9 @@ private static final long serialVersionUID = 0L;
       if (sentimentBuilder_ == null) {
         if (sentiment_ != null) {
           sentiment_ =
-            com.google.cloud.language.v1beta2.Sentiment.newBuilder(sentiment_).mergeFrom(value).buildPartial();
+              com.google.cloud.language.v1beta2.Sentiment.newBuilder(sentiment_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           sentiment_ = value;
         }
@@ -1916,6 +2100,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * For calls to [AnalyzeEntitySentiment][] or if
      * [AnnotateTextRequest.Features.extract_entity_sentiment][google.cloud.language.v1beta2.AnnotateTextRequest.Features.extract_entity_sentiment] is set to
@@ -1937,6 +2123,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * For calls to [AnalyzeEntitySentiment][] or if
      * [AnnotateTextRequest.Features.extract_entity_sentiment][google.cloud.language.v1beta2.AnnotateTextRequest.Features.extract_entity_sentiment] is set to
@@ -1947,11 +2135,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.language.v1beta2.Sentiment sentiment = 6;</code>
      */
     public com.google.cloud.language.v1beta2.Sentiment.Builder getSentimentBuilder() {
-      
+
       onChanged();
       return getSentimentFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * For calls to [AnalyzeEntitySentiment][] or if
      * [AnnotateTextRequest.Features.extract_entity_sentiment][google.cloud.language.v1beta2.AnnotateTextRequest.Features.extract_entity_sentiment] is set to
@@ -1965,11 +2155,14 @@ private static final long serialVersionUID = 0L;
       if (sentimentBuilder_ != null) {
         return sentimentBuilder_.getMessageOrBuilder();
       } else {
-        return sentiment_ == null ?
-            com.google.cloud.language.v1beta2.Sentiment.getDefaultInstance() : sentiment_;
+        return sentiment_ == null
+            ? com.google.cloud.language.v1beta2.Sentiment.getDefaultInstance()
+            : sentiment_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * For calls to [AnalyzeEntitySentiment][] or if
      * [AnnotateTextRequest.Features.extract_entity_sentiment][google.cloud.language.v1beta2.AnnotateTextRequest.Features.extract_entity_sentiment] is set to
@@ -1980,34 +2173,39 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.language.v1beta2.Sentiment sentiment = 6;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.language.v1beta2.Sentiment, com.google.cloud.language.v1beta2.Sentiment.Builder, com.google.cloud.language.v1beta2.SentimentOrBuilder> 
+            com.google.cloud.language.v1beta2.Sentiment,
+            com.google.cloud.language.v1beta2.Sentiment.Builder,
+            com.google.cloud.language.v1beta2.SentimentOrBuilder>
         getSentimentFieldBuilder() {
       if (sentimentBuilder_ == null) {
-        sentimentBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.language.v1beta2.Sentiment, com.google.cloud.language.v1beta2.Sentiment.Builder, com.google.cloud.language.v1beta2.SentimentOrBuilder>(
-                getSentiment(),
-                getParentForChildren(),
-                isClean());
+        sentimentBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.language.v1beta2.Sentiment,
+                com.google.cloud.language.v1beta2.Sentiment.Builder,
+                com.google.cloud.language.v1beta2.SentimentOrBuilder>(
+                getSentiment(), getParentForChildren(), isClean());
         sentiment_ = null;
       }
       return sentimentBuilder_;
     }
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+
+    @java.lang.Override
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
     }
-
 
     // @@protoc_insertion_point(builder_scope:google.cloud.language.v1beta2.Entity)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.language.v1beta2.Entity)
   private static final com.google.cloud.language.v1beta2.Entity DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.language.v1beta2.Entity();
   }
@@ -2016,15 +2214,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<Entity>
-      PARSER = new com.google.protobuf.AbstractParser<Entity>() {
-    public Entity parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Entity(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<Entity> PARSER =
+      new com.google.protobuf.AbstractParser<Entity>() {
+        @java.lang.Override
+        public Entity parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new Entity(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<Entity> parser() {
     return PARSER;
@@ -2035,9 +2234,8 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.cloud.language.v1beta2.Entity getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

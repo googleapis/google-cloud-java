@@ -4,6 +4,8 @@
 package com.google.logging.v2;
 
 /**
+ *
+ *
  * <pre>
  * Additional information about the source code location that produced the log
  * entry.
@@ -11,15 +13,16 @@ package com.google.logging.v2;
  *
  * Protobuf type {@code google.logging.v2.LogEntrySourceLocation}
  */
-public  final class LogEntrySourceLocation extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class LogEntrySourceLocation extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.logging.v2.LogEntrySourceLocation)
     LogEntrySourceLocationOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use LogEntrySourceLocation.newBuilder() to construct.
   private LogEntrySourceLocation(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private LogEntrySourceLocation() {
     file_ = "";
     line_ = 0L;
@@ -27,15 +30,18 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private LogEntrySourceLocation(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -47,57 +53,64 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              file_ = s;
+              break;
             }
-            break;
-          }
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 16:
+            {
+              line_ = input.readInt64();
+              break;
+            }
+          case 26:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            file_ = s;
-            break;
-          }
-          case 16: {
-
-            line_ = input.readInt64();
-            break;
-          }
-          case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            function_ = s;
-            break;
-          }
+              function_ = s;
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.logging.v2.LogEntryProto.internal_static_google_logging_v2_LogEntrySourceLocation_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.logging.v2.LogEntryProto
+        .internal_static_google_logging_v2_LogEntrySourceLocation_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.logging.v2.LogEntryProto.internal_static_google_logging_v2_LogEntrySourceLocation_fieldAccessorTable
+    return com.google.logging.v2.LogEntryProto
+        .internal_static_google_logging_v2_LogEntrySourceLocation_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.logging.v2.LogEntrySourceLocation.class, com.google.logging.v2.LogEntrySourceLocation.Builder.class);
+            com.google.logging.v2.LogEntrySourceLocation.class,
+            com.google.logging.v2.LogEntrySourceLocation.Builder.class);
   }
 
   public static final int FILE_FIELD_NUMBER = 1;
   private volatile java.lang.Object file_;
   /**
+   *
+   *
    * <pre>
    * Optional. Source file name. Depending on the runtime environment, this
    * might be a simple name or a fully-qualified name.
@@ -110,14 +123,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       file_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Optional. Source file name. Depending on the runtime environment, this
    * might be a simple name or a fully-qualified name.
@@ -125,13 +139,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string file = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getFileBytes() {
+  public com.google.protobuf.ByteString getFileBytes() {
     java.lang.Object ref = file_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       file_ = b;
       return b;
     } else {
@@ -142,6 +154,8 @@ private static final long serialVersionUID = 0L;
   public static final int LINE_FIELD_NUMBER = 2;
   private long line_;
   /**
+   *
+   *
    * <pre>
    * Optional. Line within the source file. 1-based; 0 indicates no line number
    * available.
@@ -156,6 +170,8 @@ private static final long serialVersionUID = 0L;
   public static final int FUNCTION_FIELD_NUMBER = 3;
   private volatile java.lang.Object function_;
   /**
+   *
+   *
    * <pre>
    * Optional. Human-readable name of the function or method being invoked, with
    * optional context such as the class or package name. This information may be
@@ -172,14 +188,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       function_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Optional. Human-readable name of the function or method being invoked, with
    * optional context such as the class or package name. This information may be
@@ -191,13 +208,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string function = 3;</code>
    */
-  public com.google.protobuf.ByteString
-      getFunctionBytes() {
+  public com.google.protobuf.ByteString getFunctionBytes() {
     java.lang.Object ref = function_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       function_ = b;
       return b;
     } else {
@@ -206,6 +221,8 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -215,8 +232,8 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  @java.lang.Override
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getFileBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, file_);
     }
@@ -229,6 +246,7 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -238,8 +256,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, file_);
     }
     if (line_ != 0L) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt64Size(2, line_);
+      size += com.google.protobuf.CodedOutputStream.computeInt64Size(2, line_);
     }
     if (!getFunctionBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, function_);
@@ -252,20 +269,18 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.logging.v2.LogEntrySourceLocation)) {
       return super.equals(obj);
     }
-    com.google.logging.v2.LogEntrySourceLocation other = (com.google.logging.v2.LogEntrySourceLocation) obj;
+    com.google.logging.v2.LogEntrySourceLocation other =
+        (com.google.logging.v2.LogEntrySourceLocation) obj;
 
     boolean result = true;
-    result = result && getFile()
-        .equals(other.getFile());
-    result = result && (getLine()
-        == other.getLine());
-    result = result && getFunction()
-        .equals(other.getFunction());
+    result = result && getFile().equals(other.getFile());
+    result = result && (getLine() == other.getLine());
+    result = result && getFunction().equals(other.getFunction());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -280,8 +295,7 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + FILE_FIELD_NUMBER;
     hash = (53 * hash) + getFile().hashCode();
     hash = (37 * hash) + LINE_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getLine());
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getLine());
     hash = (37 * hash) + FUNCTION_FIELD_NUMBER;
     hash = (53 * hash) + getFunction().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
@@ -289,95 +303,104 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.logging.v2.LogEntrySourceLocation parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.logging.v2.LogEntrySourceLocation parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.logging.v2.LogEntrySourceLocation parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.logging.v2.LogEntrySourceLocation parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.logging.v2.LogEntrySourceLocation parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.logging.v2.LogEntrySourceLocation parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.logging.v2.LogEntrySourceLocation parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.logging.v2.LogEntrySourceLocation parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.logging.v2.LogEntrySourceLocation parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.logging.v2.LogEntrySourceLocation parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
+
   public static com.google.logging.v2.LogEntrySourceLocation parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.logging.v2.LogEntrySourceLocation parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.logging.v2.LogEntrySourceLocation parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.logging.v2.LogEntrySourceLocation parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  public Builder newBuilderForType() { return newBuilder(); }
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-  public static Builder newBuilder(com.google.logging.v2.LogEntrySourceLocation prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+
+  public static Builder newBuilder(com.google.logging.v2.LogEntrySourceLocation prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+
+  @java.lang.Override
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Additional information about the source code location that produced the log
    * entry.
@@ -385,20 +408,23 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.logging.v2.LogEntrySourceLocation}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.logging.v2.LogEntrySourceLocation)
       com.google.logging.v2.LogEntrySourceLocationOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.logging.v2.LogEntryProto.internal_static_google_logging_v2_LogEntrySourceLocation_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.logging.v2.LogEntryProto
+          .internal_static_google_logging_v2_LogEntrySourceLocation_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.logging.v2.LogEntryProto.internal_static_google_logging_v2_LogEntrySourceLocation_fieldAccessorTable
+      return com.google.logging.v2.LogEntryProto
+          .internal_static_google_logging_v2_LogEntrySourceLocation_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.logging.v2.LogEntrySourceLocation.class, com.google.logging.v2.LogEntrySourceLocation.Builder.class);
+              com.google.logging.v2.LogEntrySourceLocation.class,
+              com.google.logging.v2.LogEntrySourceLocation.Builder.class);
     }
 
     // Construct using com.google.logging.v2.LogEntrySourceLocation.newBuilder()
@@ -406,16 +432,16 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       file_ = "";
@@ -427,15 +453,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.logging.v2.LogEntryProto.internal_static_google_logging_v2_LogEntrySourceLocation_descriptor;
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.logging.v2.LogEntryProto
+          .internal_static_google_logging_v2_LogEntrySourceLocation_descriptor;
     }
 
+    @java.lang.Override
     public com.google.logging.v2.LogEntrySourceLocation getDefaultInstanceForType() {
       return com.google.logging.v2.LogEntrySourceLocation.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.logging.v2.LogEntrySourceLocation build() {
       com.google.logging.v2.LogEntrySourceLocation result = buildPartial();
       if (!result.isInitialized()) {
@@ -444,8 +473,10 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.logging.v2.LogEntrySourceLocation buildPartial() {
-      com.google.logging.v2.LogEntrySourceLocation result = new com.google.logging.v2.LogEntrySourceLocation(this);
+      com.google.logging.v2.LogEntrySourceLocation result =
+          new com.google.logging.v2.LogEntrySourceLocation(this);
       result.file_ = file_;
       result.line_ = line_;
       result.function_ = function_;
@@ -453,35 +484,43 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+
+    @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+    @java.lang.Override
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+    @java.lang.Override
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
+    @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
+    @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.logging.v2.LogEntrySourceLocation) {
-        return mergeFrom((com.google.logging.v2.LogEntrySourceLocation)other);
+        return mergeFrom((com.google.logging.v2.LogEntrySourceLocation) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -506,10 +545,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -530,6 +571,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object file_ = "";
     /**
+     *
+     *
      * <pre>
      * Optional. Source file name. Depending on the runtime environment, this
      * might be a simple name or a fully-qualified name.
@@ -540,8 +583,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getFile() {
       java.lang.Object ref = file_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         file_ = s;
         return s;
@@ -550,6 +592,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Source file name. Depending on the runtime environment, this
      * might be a simple name or a fully-qualified name.
@@ -557,13 +601,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string file = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getFileBytes() {
+    public com.google.protobuf.ByteString getFileBytes() {
       java.lang.Object ref = file_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         file_ = b;
         return b;
       } else {
@@ -571,6 +613,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Source file name. Depending on the runtime environment, this
      * might be a simple name or a fully-qualified name.
@@ -578,17 +622,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string file = 1;</code>
      */
-    public Builder setFile(
-        java.lang.String value) {
+    public Builder setFile(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       file_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Source file name. Depending on the runtime environment, this
      * might be a simple name or a fully-qualified name.
@@ -597,12 +642,14 @@ private static final long serialVersionUID = 0L;
      * <code>string file = 1;</code>
      */
     public Builder clearFile() {
-      
+
       file_ = getDefaultInstance().getFile();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Source file name. Depending on the runtime environment, this
      * might be a simple name or a fully-qualified name.
@@ -610,20 +657,21 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string file = 1;</code>
      */
-    public Builder setFileBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setFileBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       file_ = value;
       onChanged();
       return this;
     }
 
-    private long line_ ;
+    private long line_;
     /**
+     *
+     *
      * <pre>
      * Optional. Line within the source file. 1-based; 0 indicates no line number
      * available.
@@ -635,6 +683,8 @@ private static final long serialVersionUID = 0L;
       return line_;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Line within the source file. 1-based; 0 indicates no line number
      * available.
@@ -643,12 +693,14 @@ private static final long serialVersionUID = 0L;
      * <code>int64 line = 2;</code>
      */
     public Builder setLine(long value) {
-      
+
       line_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Line within the source file. 1-based; 0 indicates no line number
      * available.
@@ -657,7 +709,7 @@ private static final long serialVersionUID = 0L;
      * <code>int64 line = 2;</code>
      */
     public Builder clearLine() {
-      
+
       line_ = 0L;
       onChanged();
       return this;
@@ -665,6 +717,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object function_ = "";
     /**
+     *
+     *
      * <pre>
      * Optional. Human-readable name of the function or method being invoked, with
      * optional context such as the class or package name. This information may be
@@ -679,8 +733,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getFunction() {
       java.lang.Object ref = function_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         function_ = s;
         return s;
@@ -689,6 +742,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Human-readable name of the function or method being invoked, with
      * optional context such as the class or package name. This information may be
@@ -700,13 +755,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string function = 3;</code>
      */
-    public com.google.protobuf.ByteString
-        getFunctionBytes() {
+    public com.google.protobuf.ByteString getFunctionBytes() {
       java.lang.Object ref = function_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         function_ = b;
         return b;
       } else {
@@ -714,6 +767,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Human-readable name of the function or method being invoked, with
      * optional context such as the class or package name. This information may be
@@ -725,17 +780,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string function = 3;</code>
      */
-    public Builder setFunction(
-        java.lang.String value) {
+    public Builder setFunction(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       function_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Human-readable name of the function or method being invoked, with
      * optional context such as the class or package name. This information may be
@@ -748,12 +804,14 @@ private static final long serialVersionUID = 0L;
      * <code>string function = 3;</code>
      */
     public Builder clearFunction() {
-      
+
       function_ = getDefaultInstance().getFunction();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Human-readable name of the function or method being invoked, with
      * optional context such as the class or package name. This information may be
@@ -765,33 +823,34 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string function = 3;</code>
      */
-    public Builder setFunctionBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setFunctionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       function_ = value;
       onChanged();
       return this;
     }
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+
+    @java.lang.Override
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
     }
-
 
     // @@protoc_insertion_point(builder_scope:google.logging.v2.LogEntrySourceLocation)
   }
 
   // @@protoc_insertion_point(class_scope:google.logging.v2.LogEntrySourceLocation)
   private static final com.google.logging.v2.LogEntrySourceLocation DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.logging.v2.LogEntrySourceLocation();
   }
@@ -800,15 +859,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<LogEntrySourceLocation>
-      PARSER = new com.google.protobuf.AbstractParser<LogEntrySourceLocation>() {
-    public LogEntrySourceLocation parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-        return new LogEntrySourceLocation(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<LogEntrySourceLocation> PARSER =
+      new com.google.protobuf.AbstractParser<LogEntrySourceLocation>() {
+        @java.lang.Override
+        public LogEntrySourceLocation parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new LogEntrySourceLocation(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<LogEntrySourceLocation> parser() {
     return PARSER;
@@ -819,9 +879,8 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.logging.v2.LogEntrySourceLocation getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

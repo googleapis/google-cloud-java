@@ -3,11 +3,14 @@
 
 package com.google.cloud.kms.v1;
 
-public interface CreateCryptoKeyRequestOrBuilder extends
+public interface CreateCryptoKeyRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.kms.v1.CreateCryptoKeyRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The [name][google.cloud.kms.v1.KeyRing.name] of the KeyRing associated with the
    * [CryptoKeys][google.cloud.kms.v1.CryptoKey].
@@ -17,6 +20,8 @@ public interface CreateCryptoKeyRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * Required. The [name][google.cloud.kms.v1.KeyRing.name] of the KeyRing associated with the
    * [CryptoKeys][google.cloud.kms.v1.CryptoKey].
@@ -24,10 +29,11 @@ public interface CreateCryptoKeyRequestOrBuilder extends
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * Required. It must be unique within a KeyRing and match the regular
    * expression `[a-zA-Z0-9_-]{1,63}`
@@ -37,6 +43,8 @@ public interface CreateCryptoKeyRequestOrBuilder extends
    */
   java.lang.String getCryptoKeyId();
   /**
+   *
+   *
    * <pre>
    * Required. It must be unique within a KeyRing and match the regular
    * expression `[a-zA-Z0-9_-]{1,63}`
@@ -44,10 +52,11 @@ public interface CreateCryptoKeyRequestOrBuilder extends
    *
    * <code>string crypto_key_id = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getCryptoKeyIdBytes();
+  com.google.protobuf.ByteString getCryptoKeyIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * A [CryptoKey][google.cloud.kms.v1.CryptoKey] with initial field values.
    * </pre>
@@ -56,6 +65,8 @@ public interface CreateCryptoKeyRequestOrBuilder extends
    */
   boolean hasCryptoKey();
   /**
+   *
+   *
    * <pre>
    * A [CryptoKey][google.cloud.kms.v1.CryptoKey] with initial field values.
    * </pre>
@@ -64,6 +75,8 @@ public interface CreateCryptoKeyRequestOrBuilder extends
    */
   com.google.cloud.kms.v1.CryptoKey getCryptoKey();
   /**
+   *
+   *
    * <pre>
    * A [CryptoKey][google.cloud.kms.v1.CryptoKey] with initial field values.
    * </pre>

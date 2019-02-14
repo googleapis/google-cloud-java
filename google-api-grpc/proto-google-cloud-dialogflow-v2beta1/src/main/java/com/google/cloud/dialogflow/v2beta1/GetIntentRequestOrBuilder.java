@@ -3,11 +3,14 @@
 
 package com.google.cloud.dialogflow.v2beta1;
 
-public interface GetIntentRequestOrBuilder extends
+public interface GetIntentRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2beta1.GetIntentRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The name of the intent.
    * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
@@ -17,6 +20,8 @@ public interface GetIntentRequestOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * Required. The name of the intent.
    * Format: `projects/&lt;Project ID&gt;/agent/intents/&lt;Intent ID&gt;`.
@@ -24,10 +29,11 @@ public interface GetIntentRequestOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * Optional. The language to retrieve training phrases, parameters and rich
    * messages for. If not specified, the agent's default language is used.
@@ -40,6 +46,8 @@ public interface GetIntentRequestOrBuilder extends
    */
   java.lang.String getLanguageCode();
   /**
+   *
+   *
    * <pre>
    * Optional. The language to retrieve training phrases, parameters and rich
    * messages for. If not specified, the agent's default language is used.
@@ -50,10 +58,11 @@ public interface GetIntentRequestOrBuilder extends
    *
    * <code>string language_code = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getLanguageCodeBytes();
+  com.google.protobuf.ByteString getLanguageCodeBytes();
 
   /**
+   *
+   *
    * <pre>
    * Optional. The resource view to apply to the returned intent.
    * </pre>
@@ -62,6 +71,8 @@ public interface GetIntentRequestOrBuilder extends
    */
   int getIntentViewValue();
   /**
+   *
+   *
    * <pre>
    * Optional. The resource view to apply to the returned intent.
    * </pre>

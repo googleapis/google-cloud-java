@@ -24,11 +24,9 @@ import static org.junit.Assert.assertTrue;
 import com.google.api.services.dns.model.ManagedZone;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
-
-import org.junit.Test;
-
 import java.util.LinkedList;
 import java.util.List;
+import org.junit.Test;
 
 public class ZoneInfoTest {
 
@@ -42,12 +40,14 @@ public class ZoneInfoTest {
   private static final String NS2 = "name server 2";
   private static final String NS3 = "name server 3";
   private static final List<String> NAME_SERVERS = ImmutableList.of(NS1, NS2, NS3);
-  private static final ZoneInfo INFO = ZoneInfo.of(NAME, DNS_NAME, DESCRIPTION).toBuilder()
-      .setCreationTimeMillis(CREATION_TIME_MILLIS)
-      .setGeneratedId(GENERATED_ID)
-      .setNameServerSet(NAME_SERVER_SET)
-      .setNameServers(NAME_SERVERS)
-      .build();
+  private static final ZoneInfo INFO =
+      ZoneInfo.of(NAME, DNS_NAME, DESCRIPTION)
+          .toBuilder()
+          .setCreationTimeMillis(CREATION_TIME_MILLIS)
+          .setGeneratedId(GENERATED_ID)
+          .setNameServerSet(NAME_SERVER_SET)
+          .setNameServers(NAME_SERVERS)
+          .build();
 
   @Test
   public void testOf() {
@@ -74,7 +74,6 @@ public class ZoneInfoTest {
     assertEquals(DESCRIPTION, INFO.getDescription());
     assertEquals(DNS_NAME, INFO.getDnsName());
   }
-
 
   @Test
   public void testEqualsAndNotEquals() {
@@ -111,19 +110,25 @@ public class ZoneInfoTest {
     assertEquals(INFO, INFO.toBuilder().build());
     ZoneInfo partial = ZoneInfo.of(NAME, DNS_NAME, DESCRIPTION);
     assertEquals(partial, partial.toBuilder().build());
-    partial = ZoneInfo.of(NAME, DNS_NAME, DESCRIPTION).toBuilder()
-        .setGeneratedId(GENERATED_ID)
-        .build();
+    partial =
+        ZoneInfo.of(NAME, DNS_NAME, DESCRIPTION).toBuilder().setGeneratedId(GENERATED_ID).build();
     assertEquals(partial, partial.toBuilder().build());
-    partial = ZoneInfo.of(NAME, DNS_NAME, DESCRIPTION).toBuilder()
-        .setCreationTimeMillis(CREATION_TIME_MILLIS).build();
+    partial =
+        ZoneInfo.of(NAME, DNS_NAME, DESCRIPTION)
+            .toBuilder()
+            .setCreationTimeMillis(CREATION_TIME_MILLIS)
+            .build();
     assertEquals(partial, partial.toBuilder().build());
     List<String> nameServers = new LinkedList<>();
     nameServers.add(NS1);
-    partial = ZoneInfo.of(NAME, DNS_NAME, DESCRIPTION).toBuilder().setNameServers(nameServers).build();
+    partial =
+        ZoneInfo.of(NAME, DNS_NAME, DESCRIPTION).toBuilder().setNameServers(nameServers).build();
     assertEquals(partial, partial.toBuilder().build());
-    partial = ZoneInfo.of(NAME, DNS_NAME, DESCRIPTION).toBuilder().setNameServerSet(NAME_SERVER_SET)
-        .build();
+    partial =
+        ZoneInfo.of(NAME, DNS_NAME, DESCRIPTION)
+            .toBuilder()
+            .setNameServerSet(NAME_SERVER_SET)
+            .build();
     assertEquals(partial, partial.toBuilder().build());
   }
 
@@ -132,19 +137,25 @@ public class ZoneInfoTest {
     assertEquals(INFO, ZoneInfo.fromPb(INFO.toPb()));
     ZoneInfo partial = ZoneInfo.of(NAME, DNS_NAME, DESCRIPTION);
     assertEquals(partial, ZoneInfo.fromPb(partial.toPb()));
-    partial = ZoneInfo.of(NAME, DNS_NAME, DESCRIPTION).toBuilder()
-        .setGeneratedId(GENERATED_ID)
-        .build();
+    partial =
+        ZoneInfo.of(NAME, DNS_NAME, DESCRIPTION).toBuilder().setGeneratedId(GENERATED_ID).build();
     assertEquals(partial, ZoneInfo.fromPb(partial.toPb()));
-    partial = ZoneInfo.of(NAME, DNS_NAME, DESCRIPTION).toBuilder()
-        .setCreationTimeMillis(CREATION_TIME_MILLIS).build();
+    partial =
+        ZoneInfo.of(NAME, DNS_NAME, DESCRIPTION)
+            .toBuilder()
+            .setCreationTimeMillis(CREATION_TIME_MILLIS)
+            .build();
     assertEquals(partial, ZoneInfo.fromPb(partial.toPb()));
     List<String> nameServers = new LinkedList<>();
     nameServers.add(NS1);
-    partial = ZoneInfo.of(NAME, DNS_NAME, DESCRIPTION).toBuilder().setNameServers(nameServers).build();
+    partial =
+        ZoneInfo.of(NAME, DNS_NAME, DESCRIPTION).toBuilder().setNameServers(nameServers).build();
     assertEquals(partial, ZoneInfo.fromPb(partial.toPb()));
-    partial = ZoneInfo.of(NAME, DNS_NAME, DESCRIPTION).toBuilder().setNameServerSet(NAME_SERVER_SET)
-        .build();
+    partial =
+        ZoneInfo.of(NAME, DNS_NAME, DESCRIPTION)
+            .toBuilder()
+            .setNameServerSet(NAME_SERVER_SET)
+            .build();
     assertEquals(partial, ZoneInfo.fromPb(partial.toPb()));
   }
 

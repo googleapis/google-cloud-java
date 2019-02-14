@@ -3,11 +3,14 @@
 
 package com.google.cloud.vision.v1p1beta1;
 
-public interface SafeSearchAnnotationOrBuilder extends
+public interface SafeSearchAnnotationOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.vision.v1p1beta1.SafeSearchAnnotation)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Represents the adult content likelihood for the image. Adult content may
    * contain elements such as nudity, pornographic images or cartoons, or
@@ -18,6 +21,8 @@ public interface SafeSearchAnnotationOrBuilder extends
    */
   int getAdultValue();
   /**
+   *
+   *
    * <pre>
    * Represents the adult content likelihood for the image. Adult content may
    * contain elements such as nudity, pornographic images or cartoons, or
@@ -29,6 +34,8 @@ public interface SafeSearchAnnotationOrBuilder extends
   com.google.cloud.vision.v1p1beta1.Likelihood getAdult();
 
   /**
+   *
+   *
    * <pre>
    * Spoof likelihood. The likelihood that an modification
    * was made to the image's canonical version to make it appear
@@ -39,6 +46,8 @@ public interface SafeSearchAnnotationOrBuilder extends
    */
   int getSpoofValue();
   /**
+   *
+   *
    * <pre>
    * Spoof likelihood. The likelihood that an modification
    * was made to the image's canonical version to make it appear
@@ -50,6 +59,8 @@ public interface SafeSearchAnnotationOrBuilder extends
   com.google.cloud.vision.v1p1beta1.Likelihood getSpoof();
 
   /**
+   *
+   *
    * <pre>
    * Likelihood that this is a medical image.
    * </pre>
@@ -58,6 +69,8 @@ public interface SafeSearchAnnotationOrBuilder extends
    */
   int getMedicalValue();
   /**
+   *
+   *
    * <pre>
    * Likelihood that this is a medical image.
    * </pre>
@@ -67,6 +80,8 @@ public interface SafeSearchAnnotationOrBuilder extends
   com.google.cloud.vision.v1p1beta1.Likelihood getMedical();
 
   /**
+   *
+   *
    * <pre>
    * Likelihood that this image contains violent content.
    * </pre>
@@ -75,6 +90,8 @@ public interface SafeSearchAnnotationOrBuilder extends
    */
   int getViolenceValue();
   /**
+   *
+   *
    * <pre>
    * Likelihood that this image contains violent content.
    * </pre>
@@ -84,6 +101,8 @@ public interface SafeSearchAnnotationOrBuilder extends
   com.google.cloud.vision.v1p1beta1.Likelihood getViolence();
 
   /**
+   *
+   *
    * <pre>
    * Likelihood that the request image contains racy content. Racy content may
    * include (but is not limited to) skimpy or sheer clothing, strategically
@@ -95,6 +114,8 @@ public interface SafeSearchAnnotationOrBuilder extends
    */
   int getRacyValue();
   /**
+   *
+   *
    * <pre>
    * Likelihood that the request image contains racy content. Racy content may
    * include (but is not limited to) skimpy or sheer clothing, strategically

@@ -128,8 +128,7 @@ public class KeyRangeTest {
   @Test
   public void serialization() throws Exception {
     reserializeAndAssert(KeyRange.closedOpen(Key.of(1), Key.of(2)));
-    reserializeAndAssert(
-            KeyRange.closedClosed(Key.of(1), Key.of(2)));
+    reserializeAndAssert(KeyRange.closedClosed(Key.of(1), Key.of(2)));
     reserializeAndAssert(KeyRange.openOpen(Key.of(1), Key.of(2)));
     reserializeAndAssert(KeyRange.openClosed(Key.of(1), Key.of(2)));
   }

@@ -82,9 +82,10 @@ import java.util.Map;
  *
  * <p>This example demonstrates a simple/typical Compute usage.
  *
- * <p>See the
- * <a href="https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/google-cloud-examples/README.md">
+ * <p>See the <a
+ * href="https://github.com/GoogleCloudPlatform/google-cloud-java/blob/master/google-cloud-examples/README.md">
  * README</a> for compilation instructions. Run this code with
+ *
  * <pre>{@code target/appassembler/bin/ComputeExample [<project_id>]
  * list networks |
  * list region-operations <region> |
@@ -421,8 +422,8 @@ public class ComputeExample {
   /**
    * This class demonstrates how to retrieve information on a Compute region.
    *
-   * @see <a href="https://cloud.google.com/compute/docs/reference/latest/regions/get">
-   *     Regions: get</a>
+   * @see <a href="https://cloud.google.com/compute/docs/reference/latest/regions/get">Regions:
+   *     get</a>
    */
   private static class RegionInfoAction extends ComputeAction<RegionId> {
     @Override
@@ -759,8 +760,8 @@ public class ComputeExample {
   /**
    * This class demonstrates how to list Compute addresses.
    *
-   * @see <a href="https://cloud.google.com/compute/docs/reference/latest/addresses/list">
-   *     Addresses: list</a>
+   * @see <a href="https://cloud.google.com/compute/docs/reference/latest/addresses/list">Addresses:
+   *     list</a>
    * @see <a href="https://cloud.google.com/compute/docs/reference/latest/addresses/aggregatedList">
    *     Addresses: aggerated list</a>
    */
@@ -804,8 +805,8 @@ public class ComputeExample {
   /**
    * This class demonstrates how to retrieve information on a Compute address.
    *
-   * @see <a href="https://cloud.google.com/compute/docs/reference/latest/addresses/get">
-   *     Addresses: get</a>
+   * @see <a href="https://cloud.google.com/compute/docs/reference/latest/addresses/get">Addresses:
+   *     get</a>
    * @see <a href="https://cloud.google.com/compute/docs/reference/latest/globalAddresses/get">
    *     Global Addresses: get</a>
    */
@@ -877,8 +878,8 @@ public class ComputeExample {
   /**
    * This class demonstrates how to list Compute snapshots.
    *
-   * @see <a href="https://cloud.google.com/compute/docs/reference/latest/snapshots/list">
-   *     Snapshots: list</a>
+   * @see <a href="https://cloud.google.com/compute/docs/reference/latest/snapshots/list">Snapshots:
+   *     list</a>
    */
   private static class ListSnapshotsAction extends NoArgsAction {
     @Override
@@ -912,8 +913,8 @@ public class ComputeExample {
   /**
    * This class demonstrates how to retrieve information on a Compute snapshot.
    *
-   * @see <a href="https://cloud.google.com/compute/docs/reference/latest/snapshots/get">
-   *     Snapshots: get</a>
+   * @see <a href="https://cloud.google.com/compute/docs/reference/latest/snapshots/get">Snapshots:
+   *     get</a>
    */
   private static class SnapshotInfoAction extends SnapshotAction {
     @Override
@@ -1143,8 +1144,8 @@ public class ComputeExample {
   /**
    * This class demonstrates how to retrieve information on a Compute disk.
    *
-   * @see <a href="https://cloud.google.com/compute/docs/reference/latest/snapshots/get">
-   *     Snapshots: get</a>
+   * @see <a href="https://cloud.google.com/compute/docs/reference/latest/snapshots/get">Snapshots:
+   *     get</a>
    */
   private static class DiskInfoAction extends DiskAction {
     @Override
@@ -1235,8 +1236,9 @@ public class ComputeExample {
         DiskConfiguration configuration;
         if (args.length == 4) {
           try {
-            configuration = StandardDiskConfiguration.of(DiskTypeId.of(diskId.getZone(), diskType),
-                Integer.parseInt(args[3]));
+            configuration =
+                StandardDiskConfiguration.of(
+                    DiskTypeId.of(diskId.getZone(), diskType), Integer.parseInt(args[3]));
           } catch (NumberFormatException ex) {
             throw new IllegalArgumentException("Error parsing disk size parameter.");
           }
@@ -1453,8 +1455,8 @@ public class ComputeExample {
             throw new IllegalArgumentException(
                 "Couldn't parse autoCreateSubnetworks argument (must be either true or false).");
         }
-        return NetworkInfo.of(NetworkId.of(args[0]),
-            SubnetNetworkConfiguration.of(autoCreateSubnetworks));
+        return NetworkInfo.of(
+            NetworkId.of(args[0]), SubnetNetworkConfiguration.of(autoCreateSubnetworks));
       } else if (args.length > 2) {
         throw new IllegalArgumentException("Too many arguments.");
       } else {
@@ -1733,7 +1735,8 @@ public class ComputeExample {
   /**
    * This class demonstrates how to get the serial port output for a Compute instance.
    *
-   * @see <a href="https://cloud.google.com/compute/docs/reference/latest/instances/getSerialPortOutput">
+   * @see <a
+   *     href="https://cloud.google.com/compute/docs/reference/latest/instances/getSerialPortOutput">
    *     Instances: getSerialPortOutput</a>
    */
   private static class GetSerialPortAction extends ComputeAction<Tuple<InstanceId, Integer>> {
@@ -1784,7 +1787,8 @@ public class ComputeExample {
    * This class demonstrates how to add an access configuration to a Compute instance network
    * interface.
    *
-   * @see <a href="https://cloud.google.com/compute/docs/reference/latest/instances/addAccessConfig">
+   * @see <a
+   *     href="https://cloud.google.com/compute/docs/reference/latest/instances/addAccessConfig">
    *     Instances: addAccessConfig</a>
    */
   private static class AddAccessConfigAction
@@ -1807,10 +1811,12 @@ public class ComputeExample {
       }
       operation = operation.reload();
       if (operation.getErrors() == null) {
-        System.out.printf("Access config added to network interface %s of instance %s%n",
+        System.out.printf(
+            "Access config added to network interface %s of instance %s%n",
             networkInterface, instance);
       } else {
-        System.out.printf("Attempt to add access config to network interface %s of instance %s%n",
+        System.out.printf(
+            "Attempt to add access config to network interface %s of instance %s%n",
             networkInterface, instance);
         System.out.printf("Error: %s%n", operation.getErrors());
       }
@@ -1824,10 +1830,12 @@ public class ComputeExample {
         String networkInterface = args[2];
         String accessConfig = args[3];
         if (args.length == 4) {
-          return Triple.of(instance, networkInterface,
-              AccessConfig.newBuilder().setName(accessConfig).build());
+          return Triple.of(
+              instance, networkInterface, AccessConfig.newBuilder().setName(accessConfig).build());
         } else if (args.length == 5) {
-          return Triple.of(instance, networkInterface,
+          return Triple.of(
+              instance,
+              networkInterface,
               AccessConfig.newBuilder().setName(accessConfig).setNatIp(args[4]).build());
         } else {
           message = "Too many arguments.";
@@ -1848,11 +1856,12 @@ public class ComputeExample {
    * This class demonstrates how to delete an access configuration from a Compute instance network
    * interface.
    *
-   * @see <a href="https://cloud.google.com/compute/docs/reference/latest/instances/deleteAccessConfig">
+   * @see <a
+   *     href="https://cloud.google.com/compute/docs/reference/latest/instances/deleteAccessConfig">
    *     Instances: deleteAccessConfig</a>
    */
-  private static class DeleteAccessConfigAction extends
-      ComputeAction<Triple<InstanceId, String, String>> {
+  private static class DeleteAccessConfigAction
+      extends ComputeAction<Triple<InstanceId, String, String>> {
     @Override
     public void run(Compute compute, Triple<InstanceId, String, String> interfaceAndConfig)
         throws InterruptedException {
@@ -1871,7 +1880,8 @@ public class ComputeExample {
       }
       operation = operation.reload();
       if (operation.getErrors() == null) {
-        System.out.printf("Access config deleted from network interface %s of instance %s%n",
+        System.out.printf(
+            "Access config deleted from network interface %s of instance %s%n",
             networkInterface, instance);
       } else {
         System.out.printf(
@@ -1912,8 +1922,9 @@ public class ComputeExample {
   private static class AttachDiskAction
       extends ComputeAction<Triple<InstanceId, String, PersistentDiskConfiguration>> {
     @Override
-    public void run(Compute compute, Triple<InstanceId, String, PersistentDiskConfiguration>
-        instanceAndDisk) throws InterruptedException {
+    public void run(
+        Compute compute, Triple<InstanceId, String, PersistentDiskConfiguration> instanceAndDisk)
+        throws InterruptedException {
       InstanceId instance = instanceAndDisk.x();
       String deviceName = instanceAndDisk.y();
       PersistentDiskConfiguration diskConfiguration = instanceAndDisk.z();
@@ -1944,7 +1955,9 @@ public class ComputeExample {
         String instance = args[1];
         String deviceName = args[2];
         String disk = args[3];
-        return Triple.of(InstanceId.of(zone, instance), deviceName,
+        return Triple.of(
+            InstanceId.of(zone, instance),
+            deviceName,
             PersistentDiskConfiguration.of(DiskId.of(zone, disk)));
       } else if (args.length > 4) {
         message = "Too many arguments.";
@@ -2017,7 +2030,8 @@ public class ComputeExample {
    * This class demonstrates how to set the auto-delete property of a disk attached to a Compute
    * instance.
    *
-   * @see <a href="https://cloud.google.com/compute/docs/reference/latest/instances/setDiskAutoDelete">
+   * @see <a
+   *     href="https://cloud.google.com/compute/docs/reference/latest/instances/setDiskAutoDelete">
    *     Instances: setDiskAutoDelete</a>
    */
   private static class SetDiskAutoDeleteAction
@@ -2042,7 +2056,8 @@ public class ComputeExample {
       if (operation.getErrors() == null) {
         System.out.printf("Auto-delete set for device %s of instance %s%n", deviceName, instance);
       } else {
-        System.out.printf("Attempt to set auto-delete for device %s of instance %s failed%n",
+        System.out.printf(
+            "Attempt to set auto-delete for device %s of instance %s failed%n",
             deviceName, instance);
         System.out.printf("Error: %s%n", operation.getErrors());
       }
@@ -2191,8 +2206,8 @@ public class ComputeExample {
    * @see <a href="https://cloud.google.com/compute/docs/reference/latest/instances/setMetadata">
    *     Instances: setMetadata</a>
    */
-  private static class SetMetadataAction extends ComputeAction<Tuple<InstanceId,
-      Map<String, String>>> {
+  private static class SetMetadataAction
+      extends ComputeAction<Tuple<InstanceId, Map<String, String>>> {
     @Override
     public void run(Compute compute, Tuple<InstanceId, Map<String, String>> instanceAndMetadata)
         throws InterruptedException {
@@ -2247,8 +2262,8 @@ public class ComputeExample {
    * @see <a href="https://cloud.google.com/compute/docs/reference/latest/instances/setScheduling">
    *     Instances: setScheduling</a>
    */
-  private static class SetSchedulingOptionsAction extends ComputeAction<Tuple<InstanceId,
-      SchedulingOptions>> {
+  private static class SetSchedulingOptionsAction
+      extends ComputeAction<Tuple<InstanceId, SchedulingOptions>> {
     @Override
     public void run(Compute compute, Tuple<InstanceId, SchedulingOptions> instanceAndScheduling)
         throws InterruptedException {
@@ -2268,8 +2283,7 @@ public class ComputeExample {
       if (operation.getErrors() == null) {
         System.out.printf("Scheduling options set for instance %s%n", instanceId);
       } else {
-        System.out.printf(
-            "Attempt to set scheduling options for instance %s failed%n", instanceId);
+        System.out.printf("Attempt to set scheduling options for instance %s failed%n", instanceId);
         System.out.printf("Error: %s%n", operation.getErrors());
       }
     }
@@ -2343,8 +2357,8 @@ public class ComputeExample {
   /**
    * This class demonstrates how to stop a Compute instance.
    *
-   * @see <a href="https://cloud.google.com/compute/docs/reference/latest/instances/stop">
-   *     Instances: stop</a>
+   * @see <a href="https://cloud.google.com/compute/docs/reference/latest/instances/stop">Instances:
+   *     stop</a>
    */
   private static class StopInstanceAction extends InstanceAction {
     @Override
@@ -2477,7 +2491,8 @@ public class ComputeExample {
         actionAndParams.append(' ').append(param.replace("\n", "\n\t\t"));
       }
     }
-    System.out.printf("Usage: %s [<project_id>] operation [entity] <args>*%s%n",
+    System.out.printf(
+        "Usage: %s [<project_id>] operation [entity] <args>*%s%n",
         ComputeExample.class.getSimpleName(), actionAndParams);
   }
 

@@ -4,34 +4,39 @@
 package com.google.cloud.websecurityscanner.v1alpha;
 
 /**
+ *
+ *
  * <pre>
  * Request for the `UpdateScanConfigRequest` method.
  * </pre>
  *
  * Protobuf type {@code google.cloud.websecurityscanner.v1alpha.UpdateScanConfigRequest}
  */
-public  final class UpdateScanConfigRequest extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class UpdateScanConfigRequest extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.websecurityscanner.v1alpha.UpdateScanConfigRequest)
     UpdateScanConfigRequestOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use UpdateScanConfigRequest.newBuilder() to construct.
   private UpdateScanConfigRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private UpdateScanConfigRequest() {
-  }
+
+  private UpdateScanConfigRequest() {}
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private UpdateScanConfigRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -43,66 +48,77 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
-          case 18: {
-            com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Builder subBuilder = null;
-            if (scanConfig_ != null) {
-              subBuilder = scanConfig_.toBuilder();
-            }
-            scanConfig_ = input.readMessage(com.google.cloud.websecurityscanner.v1alpha.ScanConfig.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(scanConfig_);
-              scanConfig_ = subBuilder.buildPartial();
-            }
+          case 18:
+            {
+              com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Builder subBuilder = null;
+              if (scanConfig_ != null) {
+                subBuilder = scanConfig_.toBuilder();
+              }
+              scanConfig_ =
+                  input.readMessage(
+                      com.google.cloud.websecurityscanner.v1alpha.ScanConfig.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(scanConfig_);
+                scanConfig_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 26: {
-            com.google.protobuf.FieldMask.Builder subBuilder = null;
-            if (updateMask_ != null) {
-              subBuilder = updateMask_.toBuilder();
+              break;
             }
-            updateMask_ = input.readMessage(com.google.protobuf.FieldMask.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(updateMask_);
-              updateMask_ = subBuilder.buildPartial();
-            }
+          case 26:
+            {
+              com.google.protobuf.FieldMask.Builder subBuilder = null;
+              if (updateMask_ != null) {
+                subBuilder = updateMask_.toBuilder();
+              }
+              updateMask_ =
+                  input.readMessage(com.google.protobuf.FieldMask.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(updateMask_);
+                updateMask_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.websecurityscanner.v1alpha.WebSecurityScannerProto.internal_static_google_cloud_websecurityscanner_v1alpha_UpdateScanConfigRequest_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.websecurityscanner.v1alpha.WebSecurityScannerProto
+        .internal_static_google_cloud_websecurityscanner_v1alpha_UpdateScanConfigRequest_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.websecurityscanner.v1alpha.WebSecurityScannerProto.internal_static_google_cloud_websecurityscanner_v1alpha_UpdateScanConfigRequest_fieldAccessorTable
+    return com.google.cloud.websecurityscanner.v1alpha.WebSecurityScannerProto
+        .internal_static_google_cloud_websecurityscanner_v1alpha_UpdateScanConfigRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.websecurityscanner.v1alpha.UpdateScanConfigRequest.class, com.google.cloud.websecurityscanner.v1alpha.UpdateScanConfigRequest.Builder.class);
+            com.google.cloud.websecurityscanner.v1alpha.UpdateScanConfigRequest.class,
+            com.google.cloud.websecurityscanner.v1alpha.UpdateScanConfigRequest.Builder.class);
   }
 
   public static final int SCAN_CONFIG_FIELD_NUMBER = 2;
   private com.google.cloud.websecurityscanner.v1alpha.ScanConfig scanConfig_;
   /**
+   *
+   *
    * <pre>
    * Required.
    * The ScanConfig to be updated. The name field must be set to identify the
@@ -116,6 +132,8 @@ private static final long serialVersionUID = 0L;
     return scanConfig_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Required.
    * The ScanConfig to be updated. The name field must be set to identify the
@@ -126,9 +144,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig scan_config = 2;</code>
    */
   public com.google.cloud.websecurityscanner.v1alpha.ScanConfig getScanConfig() {
-    return scanConfig_ == null ? com.google.cloud.websecurityscanner.v1alpha.ScanConfig.getDefaultInstance() : scanConfig_;
+    return scanConfig_ == null
+        ? com.google.cloud.websecurityscanner.v1alpha.ScanConfig.getDefaultInstance()
+        : scanConfig_;
   }
   /**
+   *
+   *
    * <pre>
    * Required.
    * The ScanConfig to be updated. The name field must be set to identify the
@@ -145,6 +167,8 @@ private static final long serialVersionUID = 0L;
   public static final int UPDATE_MASK_FIELD_NUMBER = 3;
   private com.google.protobuf.FieldMask updateMask_;
   /**
+   *
+   *
    * <pre>
    * Required.
    * The update mask applies to the resource. For the `FieldMask` definition,
@@ -158,6 +182,8 @@ private static final long serialVersionUID = 0L;
     return updateMask_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Required.
    * The update mask applies to the resource. For the `FieldMask` definition,
@@ -171,6 +197,8 @@ private static final long serialVersionUID = 0L;
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
   /**
+   *
+   *
    * <pre>
    * Required.
    * The update mask applies to the resource. For the `FieldMask` definition,
@@ -185,6 +213,8 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -194,8 +224,8 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  @java.lang.Override
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (scanConfig_ != null) {
       output.writeMessage(2, getScanConfig());
     }
@@ -205,18 +235,17 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
 
     size = 0;
     if (scanConfig_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getScanConfig());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getScanConfig());
     }
     if (updateMask_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, getUpdateMask());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getUpdateMask());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -226,23 +255,22 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.websecurityscanner.v1alpha.UpdateScanConfigRequest)) {
       return super.equals(obj);
     }
-    com.google.cloud.websecurityscanner.v1alpha.UpdateScanConfigRequest other = (com.google.cloud.websecurityscanner.v1alpha.UpdateScanConfigRequest) obj;
+    com.google.cloud.websecurityscanner.v1alpha.UpdateScanConfigRequest other =
+        (com.google.cloud.websecurityscanner.v1alpha.UpdateScanConfigRequest) obj;
 
     boolean result = true;
     result = result && (hasScanConfig() == other.hasScanConfig());
     if (hasScanConfig()) {
-      result = result && getScanConfig()
-          .equals(other.getScanConfig());
+      result = result && getScanConfig().equals(other.getScanConfig());
     }
     result = result && (hasUpdateMask() == other.hasUpdateMask());
     if (hasUpdateMask()) {
-      result = result && getUpdateMask()
-          .equals(other.getUpdateMask());
+      result = result && getUpdateMask().equals(other.getUpdateMask());
     }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
@@ -269,131 +297,146 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.cloud.websecurityscanner.v1alpha.UpdateScanConfigRequest parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.websecurityscanner.v1alpha.UpdateScanConfigRequest parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.websecurityscanner.v1alpha.UpdateScanConfigRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.websecurityscanner.v1alpha.UpdateScanConfigRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.websecurityscanner.v1alpha.UpdateScanConfigRequest parseFrom(byte[] data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+
+  public static com.google.cloud.websecurityscanner.v1alpha.UpdateScanConfigRequest parseFrom(
+      byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.websecurityscanner.v1alpha.UpdateScanConfigRequest parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.websecurityscanner.v1alpha.UpdateScanConfigRequest parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.websecurityscanner.v1alpha.UpdateScanConfigRequest parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.websecurityscanner.v1alpha.UpdateScanConfigRequest parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
-  public static com.google.cloud.websecurityscanner.v1alpha.UpdateScanConfigRequest parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-  }
+
   public static com.google.cloud.websecurityscanner.v1alpha.UpdateScanConfigRequest parseFrom(
-      com.google.protobuf.CodedInputStream input)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
+  public static com.google.cloud.websecurityscanner.v1alpha.UpdateScanConfigRequest
+      parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+  }
+
+  public static com.google.cloud.websecurityscanner.v1alpha.UpdateScanConfigRequest
+      parseDelimitedFrom(
+          java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
+  public static com.google.cloud.websecurityscanner.v1alpha.UpdateScanConfigRequest parseFrom(
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+  }
+
   public static com.google.cloud.websecurityscanner.v1alpha.UpdateScanConfigRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  public Builder newBuilderForType() { return newBuilder(); }
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-  public static Builder newBuilder(com.google.cloud.websecurityscanner.v1alpha.UpdateScanConfigRequest prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+
+  public static Builder newBuilder(
+      com.google.cloud.websecurityscanner.v1alpha.UpdateScanConfigRequest prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+
+  @java.lang.Override
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Request for the `UpdateScanConfigRequest` method.
    * </pre>
    *
    * Protobuf type {@code google.cloud.websecurityscanner.v1alpha.UpdateScanConfigRequest}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.websecurityscanner.v1alpha.UpdateScanConfigRequest)
       com.google.cloud.websecurityscanner.v1alpha.UpdateScanConfigRequestOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.websecurityscanner.v1alpha.WebSecurityScannerProto.internal_static_google_cloud_websecurityscanner_v1alpha_UpdateScanConfigRequest_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.websecurityscanner.v1alpha.WebSecurityScannerProto
+          .internal_static_google_cloud_websecurityscanner_v1alpha_UpdateScanConfigRequest_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.websecurityscanner.v1alpha.WebSecurityScannerProto.internal_static_google_cloud_websecurityscanner_v1alpha_UpdateScanConfigRequest_fieldAccessorTable
+      return com.google.cloud.websecurityscanner.v1alpha.WebSecurityScannerProto
+          .internal_static_google_cloud_websecurityscanner_v1alpha_UpdateScanConfigRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.websecurityscanner.v1alpha.UpdateScanConfigRequest.class, com.google.cloud.websecurityscanner.v1alpha.UpdateScanConfigRequest.Builder.class);
+              com.google.cloud.websecurityscanner.v1alpha.UpdateScanConfigRequest.class,
+              com.google.cloud.websecurityscanner.v1alpha.UpdateScanConfigRequest.Builder.class);
     }
 
-    // Construct using com.google.cloud.websecurityscanner.v1alpha.UpdateScanConfigRequest.newBuilder()
+    // Construct using
+    // com.google.cloud.websecurityscanner.v1alpha.UpdateScanConfigRequest.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       if (scanConfigBuilder_ == null) {
@@ -411,15 +454,20 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.websecurityscanner.v1alpha.WebSecurityScannerProto.internal_static_google_cloud_websecurityscanner_v1alpha_UpdateScanConfigRequest_descriptor;
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.websecurityscanner.v1alpha.WebSecurityScannerProto
+          .internal_static_google_cloud_websecurityscanner_v1alpha_UpdateScanConfigRequest_descriptor;
     }
 
-    public com.google.cloud.websecurityscanner.v1alpha.UpdateScanConfigRequest getDefaultInstanceForType() {
-      return com.google.cloud.websecurityscanner.v1alpha.UpdateScanConfigRequest.getDefaultInstance();
+    @java.lang.Override
+    public com.google.cloud.websecurityscanner.v1alpha.UpdateScanConfigRequest
+        getDefaultInstanceForType() {
+      return com.google.cloud.websecurityscanner.v1alpha.UpdateScanConfigRequest
+          .getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.cloud.websecurityscanner.v1alpha.UpdateScanConfigRequest build() {
       com.google.cloud.websecurityscanner.v1alpha.UpdateScanConfigRequest result = buildPartial();
       if (!result.isInitialized()) {
@@ -428,8 +476,10 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.cloud.websecurityscanner.v1alpha.UpdateScanConfigRequest buildPartial() {
-      com.google.cloud.websecurityscanner.v1alpha.UpdateScanConfigRequest result = new com.google.cloud.websecurityscanner.v1alpha.UpdateScanConfigRequest(this);
+      com.google.cloud.websecurityscanner.v1alpha.UpdateScanConfigRequest result =
+          new com.google.cloud.websecurityscanner.v1alpha.UpdateScanConfigRequest(this);
       if (scanConfigBuilder_ == null) {
         result.scanConfig_ = scanConfig_;
       } else {
@@ -444,43 +494,55 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+
+    @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+    @java.lang.Override
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+    @java.lang.Override
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
+    @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
+    @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.websecurityscanner.v1alpha.UpdateScanConfigRequest) {
-        return mergeFrom((com.google.cloud.websecurityscanner.v1alpha.UpdateScanConfigRequest)other);
+        return mergeFrom(
+            (com.google.cloud.websecurityscanner.v1alpha.UpdateScanConfigRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.cloud.websecurityscanner.v1alpha.UpdateScanConfigRequest other) {
-      if (other == com.google.cloud.websecurityscanner.v1alpha.UpdateScanConfigRequest.getDefaultInstance()) return this;
+    public Builder mergeFrom(
+        com.google.cloud.websecurityscanner.v1alpha.UpdateScanConfigRequest other) {
+      if (other
+          == com.google.cloud.websecurityscanner.v1alpha.UpdateScanConfigRequest
+              .getDefaultInstance()) return this;
       if (other.hasScanConfig()) {
         mergeScanConfig(other.getScanConfig());
       }
@@ -492,10 +554,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -504,7 +568,9 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.websecurityscanner.v1alpha.UpdateScanConfigRequest) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.cloud.websecurityscanner.v1alpha.UpdateScanConfigRequest)
+                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -516,8 +582,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.cloud.websecurityscanner.v1alpha.ScanConfig scanConfig_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.websecurityscanner.v1alpha.ScanConfig, com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Builder, com.google.cloud.websecurityscanner.v1alpha.ScanConfigOrBuilder> scanConfigBuilder_;
+            com.google.cloud.websecurityscanner.v1alpha.ScanConfig,
+            com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Builder,
+            com.google.cloud.websecurityscanner.v1alpha.ScanConfigOrBuilder>
+        scanConfigBuilder_;
     /**
+     *
+     *
      * <pre>
      * Required.
      * The ScanConfig to be updated. The name field must be set to identify the
@@ -531,6 +602,8 @@ private static final long serialVersionUID = 0L;
       return scanConfigBuilder_ != null || scanConfig_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Required.
      * The ScanConfig to be updated. The name field must be set to identify the
@@ -542,12 +615,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.websecurityscanner.v1alpha.ScanConfig getScanConfig() {
       if (scanConfigBuilder_ == null) {
-        return scanConfig_ == null ? com.google.cloud.websecurityscanner.v1alpha.ScanConfig.getDefaultInstance() : scanConfig_;
+        return scanConfig_ == null
+            ? com.google.cloud.websecurityscanner.v1alpha.ScanConfig.getDefaultInstance()
+            : scanConfig_;
       } else {
         return scanConfigBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required.
      * The ScanConfig to be updated. The name field must be set to identify the
@@ -571,6 +648,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required.
      * The ScanConfig to be updated. The name field must be set to identify the
@@ -592,6 +671,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required.
      * The ScanConfig to be updated. The name field must be set to identify the
@@ -605,7 +686,9 @@ private static final long serialVersionUID = 0L;
       if (scanConfigBuilder_ == null) {
         if (scanConfig_ != null) {
           scanConfig_ =
-            com.google.cloud.websecurityscanner.v1alpha.ScanConfig.newBuilder(scanConfig_).mergeFrom(value).buildPartial();
+              com.google.cloud.websecurityscanner.v1alpha.ScanConfig.newBuilder(scanConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           scanConfig_ = value;
         }
@@ -617,6 +700,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required.
      * The ScanConfig to be updated. The name field must be set to identify the
@@ -638,6 +723,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required.
      * The ScanConfig to be updated. The name field must be set to identify the
@@ -648,11 +735,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig scan_config = 2;</code>
      */
     public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Builder getScanConfigBuilder() {
-      
+
       onChanged();
       return getScanConfigFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Required.
      * The ScanConfig to be updated. The name field must be set to identify the
@@ -662,15 +751,19 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig scan_config = 2;</code>
      */
-    public com.google.cloud.websecurityscanner.v1alpha.ScanConfigOrBuilder getScanConfigOrBuilder() {
+    public com.google.cloud.websecurityscanner.v1alpha.ScanConfigOrBuilder
+        getScanConfigOrBuilder() {
       if (scanConfigBuilder_ != null) {
         return scanConfigBuilder_.getMessageOrBuilder();
       } else {
-        return scanConfig_ == null ?
-            com.google.cloud.websecurityscanner.v1alpha.ScanConfig.getDefaultInstance() : scanConfig_;
+        return scanConfig_ == null
+            ? com.google.cloud.websecurityscanner.v1alpha.ScanConfig.getDefaultInstance()
+            : scanConfig_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required.
      * The ScanConfig to be updated. The name field must be set to identify the
@@ -681,14 +774,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig scan_config = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.websecurityscanner.v1alpha.ScanConfig, com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Builder, com.google.cloud.websecurityscanner.v1alpha.ScanConfigOrBuilder> 
+            com.google.cloud.websecurityscanner.v1alpha.ScanConfig,
+            com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Builder,
+            com.google.cloud.websecurityscanner.v1alpha.ScanConfigOrBuilder>
         getScanConfigFieldBuilder() {
       if (scanConfigBuilder_ == null) {
-        scanConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.websecurityscanner.v1alpha.ScanConfig, com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Builder, com.google.cloud.websecurityscanner.v1alpha.ScanConfigOrBuilder>(
-                getScanConfig(),
-                getParentForChildren(),
-                isClean());
+        scanConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.websecurityscanner.v1alpha.ScanConfig,
+                com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Builder,
+                com.google.cloud.websecurityscanner.v1alpha.ScanConfigOrBuilder>(
+                getScanConfig(), getParentForChildren(), isClean());
         scanConfig_ = null;
       }
       return scanConfigBuilder_;
@@ -696,8 +792,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.FieldMask updateMask_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.FieldMask, com.google.protobuf.FieldMask.Builder, com.google.protobuf.FieldMaskOrBuilder> updateMaskBuilder_;
+            com.google.protobuf.FieldMask,
+            com.google.protobuf.FieldMask.Builder,
+            com.google.protobuf.FieldMaskOrBuilder>
+        updateMaskBuilder_;
     /**
+     *
+     *
      * <pre>
      * Required.
      * The update mask applies to the resource. For the `FieldMask` definition,
@@ -711,6 +812,8 @@ private static final long serialVersionUID = 0L;
       return updateMaskBuilder_ != null || updateMask_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Required.
      * The update mask applies to the resource. For the `FieldMask` definition,
@@ -722,12 +825,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.FieldMask getUpdateMask() {
       if (updateMaskBuilder_ == null) {
-        return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
+        return updateMask_ == null
+            ? com.google.protobuf.FieldMask.getDefaultInstance()
+            : updateMask_;
       } else {
         return updateMaskBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required.
      * The update mask applies to the resource. For the `FieldMask` definition,
@@ -751,6 +858,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required.
      * The update mask applies to the resource. For the `FieldMask` definition,
@@ -760,8 +869,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.FieldMask update_mask = 3;</code>
      */
-    public Builder setUpdateMask(
-        com.google.protobuf.FieldMask.Builder builderForValue) {
+    public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
         onChanged();
@@ -772,6 +880,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required.
      * The update mask applies to the resource. For the `FieldMask` definition,
@@ -785,7 +895,7 @@ private static final long serialVersionUID = 0L;
       if (updateMaskBuilder_ == null) {
         if (updateMask_ != null) {
           updateMask_ =
-            com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
         } else {
           updateMask_ = value;
         }
@@ -797,6 +907,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required.
      * The update mask applies to the resource. For the `FieldMask` definition,
@@ -818,6 +930,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required.
      * The update mask applies to the resource. For the `FieldMask` definition,
@@ -828,11 +942,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.FieldMask update_mask = 3;</code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-      
+
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Required.
      * The update mask applies to the resource. For the `FieldMask` definition,
@@ -846,11 +962,14 @@ private static final long serialVersionUID = 0L;
       if (updateMaskBuilder_ != null) {
         return updateMaskBuilder_.getMessageOrBuilder();
       } else {
-        return updateMask_ == null ?
-            com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
+        return updateMask_ == null
+            ? com.google.protobuf.FieldMask.getDefaultInstance()
+            : updateMask_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required.
      * The update mask applies to the resource. For the `FieldMask` definition,
@@ -861,51 +980,59 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.FieldMask update_mask = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.FieldMask, com.google.protobuf.FieldMask.Builder, com.google.protobuf.FieldMaskOrBuilder> 
+            com.google.protobuf.FieldMask,
+            com.google.protobuf.FieldMask.Builder,
+            com.google.protobuf.FieldMaskOrBuilder>
         getUpdateMaskFieldBuilder() {
       if (updateMaskBuilder_ == null) {
-        updateMaskBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.FieldMask, com.google.protobuf.FieldMask.Builder, com.google.protobuf.FieldMaskOrBuilder>(
-                getUpdateMask(),
-                getParentForChildren(),
-                isClean());
+        updateMaskBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.FieldMask,
+                com.google.protobuf.FieldMask.Builder,
+                com.google.protobuf.FieldMaskOrBuilder>(
+                getUpdateMask(), getParentForChildren(), isClean());
         updateMask_ = null;
       }
       return updateMaskBuilder_;
     }
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+
+    @java.lang.Override
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.websecurityscanner.v1alpha.UpdateScanConfigRequest)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.websecurityscanner.v1alpha.UpdateScanConfigRequest)
-  private static final com.google.cloud.websecurityscanner.v1alpha.UpdateScanConfigRequest DEFAULT_INSTANCE;
+  private static final com.google.cloud.websecurityscanner.v1alpha.UpdateScanConfigRequest
+      DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.websecurityscanner.v1alpha.UpdateScanConfigRequest();
   }
 
-  public static com.google.cloud.websecurityscanner.v1alpha.UpdateScanConfigRequest getDefaultInstance() {
+  public static com.google.cloud.websecurityscanner.v1alpha.UpdateScanConfigRequest
+      getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<UpdateScanConfigRequest>
-      PARSER = new com.google.protobuf.AbstractParser<UpdateScanConfigRequest>() {
-    public UpdateScanConfigRequest parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-        return new UpdateScanConfigRequest(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<UpdateScanConfigRequest> PARSER =
+      new com.google.protobuf.AbstractParser<UpdateScanConfigRequest>() {
+        @java.lang.Override
+        public UpdateScanConfigRequest parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new UpdateScanConfigRequest(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<UpdateScanConfigRequest> parser() {
     return PARSER;
@@ -916,9 +1043,9 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
-  public com.google.cloud.websecurityscanner.v1alpha.UpdateScanConfigRequest getDefaultInstanceForType() {
+  @java.lang.Override
+  public com.google.cloud.websecurityscanner.v1alpha.UpdateScanConfigRequest
+      getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

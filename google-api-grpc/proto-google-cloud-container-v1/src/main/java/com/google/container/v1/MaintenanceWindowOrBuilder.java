@@ -3,11 +3,14 @@
 
 package com.google.container.v1;
 
-public interface MaintenanceWindowOrBuilder extends
+public interface MaintenanceWindowOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.container.v1.MaintenanceWindow)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * DailyMaintenanceWindow specifies a daily maintenance operation window.
    * </pre>
@@ -16,6 +19,8 @@ public interface MaintenanceWindowOrBuilder extends
    */
   boolean hasDailyMaintenanceWindow();
   /**
+   *
+   *
    * <pre>
    * DailyMaintenanceWindow specifies a daily maintenance operation window.
    * </pre>
@@ -24,6 +29,8 @@ public interface MaintenanceWindowOrBuilder extends
    */
   com.google.container.v1.DailyMaintenanceWindow getDailyMaintenanceWindow();
   /**
+   *
+   *
    * <pre>
    * DailyMaintenanceWindow specifies a daily maintenance operation window.
    * </pre>

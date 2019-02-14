@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -30,6 +30,7 @@ public final class HttpSHealthCheck implements ApiMessage {
   private final String portName;
   private final String proxyHeader;
   private final String requestPath;
+  private final String response;
 
   private HttpSHealthCheck() {
     this.host = null;
@@ -37,33 +38,43 @@ public final class HttpSHealthCheck implements ApiMessage {
     this.portName = null;
     this.proxyHeader = null;
     this.requestPath = null;
+    this.response = null;
   }
 
   private HttpSHealthCheck(
-      String host, Integer port, String portName, String proxyHeader, String requestPath) {
+      String host,
+      Integer port,
+      String portName,
+      String proxyHeader,
+      String requestPath,
+      String response) {
     this.host = host;
     this.port = port;
     this.portName = portName;
     this.proxyHeader = proxyHeader;
     this.requestPath = requestPath;
+    this.response = response;
   }
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("host")) {
+    if ("host".equals(fieldName)) {
       return host;
     }
-    if (fieldName.equals("port")) {
+    if ("port".equals(fieldName)) {
       return port;
     }
-    if (fieldName.equals("portName")) {
+    if ("portName".equals(fieldName)) {
       return portName;
     }
-    if (fieldName.equals("proxyHeader")) {
+    if ("proxyHeader".equals(fieldName)) {
       return proxyHeader;
     }
-    if (fieldName.equals("requestPath")) {
+    if ("requestPath".equals(fieldName)) {
       return requestPath;
+    }
+    if ("response".equals(fieldName)) {
+      return response;
     }
     return null;
   }
@@ -76,28 +87,59 @@ public final class HttpSHealthCheck implements ApiMessage {
 
   @Nullable
   @Override
+  /**
+   * The fields that should be serialized (even if they have empty values). If the containing
+   * message object has a non-null fieldmask, then all the fields in the field mask (and only those
+   * fields in the field mask) will be serialized. If the containing object does not have a
+   * fieldmask, then only non-empty fields will be serialized.
+   */
   public List<String> getFieldMask() {
     return null;
   }
 
+  /**
+   * The value of the host header in the HTTPS health check request. If left empty (default value),
+   * the IP on behalf of which this health check is performed will be used.
+   */
   public String getHost() {
     return host;
   }
 
+  /**
+   * The TCP port number for the health check request. The default value is 443. Valid values are 1
+   * through 65535.
+   */
   public Integer getPort() {
     return port;
   }
 
+  /**
+   * Port name as defined in InstanceGroup#NamedPort#name. If both port and port_name are defined,
+   * port takes precedence.
+   */
   public String getPortName() {
     return portName;
   }
 
+  /**
+   * Specifies the type of proxy header to append before sending data to the backend, either NONE or
+   * PROXY_V1. The default is NONE.
+   */
   public String getProxyHeader() {
     return proxyHeader;
   }
 
+  /** The request path of the HTTPS health check request. The default value is /. */
   public String getRequestPath() {
     return requestPath;
+  }
+
+  /**
+   * The string to match anywhere in the first 1024 bytes of the response body. If left empty (the
+   * default value), the status code determines health. The response data can only be ASCII.
+   */
+  public String getResponse() {
+    return response;
   }
 
   public static Builder newBuilder() {
@@ -128,6 +170,7 @@ public final class HttpSHealthCheck implements ApiMessage {
     private String portName;
     private String proxyHeader;
     private String requestPath;
+    private String response;
 
     Builder() {}
 
@@ -148,6 +191,9 @@ public final class HttpSHealthCheck implements ApiMessage {
       if (other.getRequestPath() != null) {
         this.requestPath = other.requestPath;
       }
+      if (other.getResponse() != null) {
+        this.response = other.response;
+      }
       return this;
     }
 
@@ -157,56 +203,108 @@ public final class HttpSHealthCheck implements ApiMessage {
       this.portName = source.portName;
       this.proxyHeader = source.proxyHeader;
       this.requestPath = source.requestPath;
+      this.response = source.response;
     }
 
+    /**
+     * The value of the host header in the HTTPS health check request. If left empty (default
+     * value), the IP on behalf of which this health check is performed will be used.
+     */
     public String getHost() {
       return host;
     }
 
+    /**
+     * The value of the host header in the HTTPS health check request. If left empty (default
+     * value), the IP on behalf of which this health check is performed will be used.
+     */
     public Builder setHost(String host) {
       this.host = host;
       return this;
     }
 
+    /**
+     * The TCP port number for the health check request. The default value is 443. Valid values are
+     * 1 through 65535.
+     */
     public Integer getPort() {
       return port;
     }
 
+    /**
+     * The TCP port number for the health check request. The default value is 443. Valid values are
+     * 1 through 65535.
+     */
     public Builder setPort(Integer port) {
       this.port = port;
       return this;
     }
 
+    /**
+     * Port name as defined in InstanceGroup#NamedPort#name. If both port and port_name are defined,
+     * port takes precedence.
+     */
     public String getPortName() {
       return portName;
     }
 
+    /**
+     * Port name as defined in InstanceGroup#NamedPort#name. If both port and port_name are defined,
+     * port takes precedence.
+     */
     public Builder setPortName(String portName) {
       this.portName = portName;
       return this;
     }
 
+    /**
+     * Specifies the type of proxy header to append before sending data to the backend, either NONE
+     * or PROXY_V1. The default is NONE.
+     */
     public String getProxyHeader() {
       return proxyHeader;
     }
 
+    /**
+     * Specifies the type of proxy header to append before sending data to the backend, either NONE
+     * or PROXY_V1. The default is NONE.
+     */
     public Builder setProxyHeader(String proxyHeader) {
       this.proxyHeader = proxyHeader;
       return this;
     }
 
+    /** The request path of the HTTPS health check request. The default value is /. */
     public String getRequestPath() {
       return requestPath;
     }
 
+    /** The request path of the HTTPS health check request. The default value is /. */
     public Builder setRequestPath(String requestPath) {
       this.requestPath = requestPath;
       return this;
     }
 
+    /**
+     * The string to match anywhere in the first 1024 bytes of the response body. If left empty (the
+     * default value), the status code determines health. The response data can only be ASCII.
+     */
+    public String getResponse() {
+      return response;
+    }
+
+    /**
+     * The string to match anywhere in the first 1024 bytes of the response body. If left empty (the
+     * default value), the status code determines health. The response data can only be ASCII.
+     */
+    public Builder setResponse(String response) {
+      this.response = response;
+      return this;
+    }
+
     public HttpSHealthCheck build() {
 
-      return new HttpSHealthCheck(host, port, portName, proxyHeader, requestPath);
+      return new HttpSHealthCheck(host, port, portName, proxyHeader, requestPath, response);
     }
 
     public Builder clone() {
@@ -216,6 +314,7 @@ public final class HttpSHealthCheck implements ApiMessage {
       newBuilder.setPortName(this.portName);
       newBuilder.setProxyHeader(this.proxyHeader);
       newBuilder.setRequestPath(this.requestPath);
+      newBuilder.setResponse(this.response);
       return newBuilder;
     }
   }
@@ -237,6 +336,9 @@ public final class HttpSHealthCheck implements ApiMessage {
         + ", "
         + "requestPath="
         + requestPath
+        + ", "
+        + "response="
+        + response
         + "}";
   }
 
@@ -251,13 +353,14 @@ public final class HttpSHealthCheck implements ApiMessage {
           && Objects.equals(this.port, that.getPort())
           && Objects.equals(this.portName, that.getPortName())
           && Objects.equals(this.proxyHeader, that.getProxyHeader())
-          && Objects.equals(this.requestPath, that.getRequestPath());
+          && Objects.equals(this.requestPath, that.getRequestPath())
+          && Objects.equals(this.response, that.getResponse());
     }
     return false;
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(host, port, portName, proxyHeader, requestPath);
+    return Objects.hash(host, port, portName, proxyHeader, requestPath, response);
   }
 }

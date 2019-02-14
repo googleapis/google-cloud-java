@@ -3,11 +3,14 @@
 
 package com.google.cloud.automl.v1beta1;
 
-public interface ImageClassificationModelMetadataOrBuilder extends
+public interface ImageClassificationModelMetadataOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.automl.v1beta1.ImageClassificationModelMetadata)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Optional. The ID of the `base` model. If it is specified, the new model
    * will be created based on the `base` model. Otherwise, the new model will be
@@ -19,6 +22,8 @@ public interface ImageClassificationModelMetadataOrBuilder extends
    */
   java.lang.String getBaseModelId();
   /**
+   *
+   *
    * <pre>
    * Optional. The ID of the `base` model. If it is specified, the new model
    * will be created based on the `base` model. Otherwise, the new model will be
@@ -28,10 +33,11 @@ public interface ImageClassificationModelMetadataOrBuilder extends
    *
    * <code>string base_model_id = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getBaseModelIdBytes();
+  com.google.protobuf.ByteString getBaseModelIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * Required. The train budget of creating this model. The actual
    * `train_cost` will be equal or less than this value.
@@ -42,6 +48,8 @@ public interface ImageClassificationModelMetadataOrBuilder extends
   long getTrainBudget();
 
   /**
+   *
+   *
    * <pre>
    * Output only. The actual train cost of creating this model. If this
    * model is created from a `base` model, the train cost used to create the
@@ -53,6 +61,8 @@ public interface ImageClassificationModelMetadataOrBuilder extends
   long getTrainCost();
 
   /**
+   *
+   *
    * <pre>
    * Output only. The reason that this create model operation stopped,
    * e.g. BUDGET_REACHED, CONVERGED.
@@ -62,6 +72,8 @@ public interface ImageClassificationModelMetadataOrBuilder extends
    */
   java.lang.String getStopReason();
   /**
+   *
+   *
    * <pre>
    * Output only. The reason that this create model operation stopped,
    * e.g. BUDGET_REACHED, CONVERGED.
@@ -69,6 +81,5 @@ public interface ImageClassificationModelMetadataOrBuilder extends
    *
    * <code>string stop_reason = 5;</code>
    */
-  com.google.protobuf.ByteString
-      getStopReasonBytes();
+  com.google.protobuf.ByteString getStopReasonBytes();
 }

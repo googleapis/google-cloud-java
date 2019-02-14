@@ -3,11 +3,14 @@
 
 package com.google.spanner.v1;
 
-public interface PartitionOrBuilder extends
+public interface PartitionOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.spanner.v1.Partition)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * This token can be passed to Read, StreamingRead, ExecuteSql, or
    * ExecuteStreamingSql requests to restrict the results to those identified by

@@ -3,11 +3,14 @@
 
 package com.google.pubsub.v1;
 
-public interface DeleteTopicRequestOrBuilder extends
+public interface DeleteTopicRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.pubsub.v1.DeleteTopicRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Name of the topic to delete.
    * Format is `projects/{project}/topics/{topic}`.
@@ -17,6 +20,8 @@ public interface DeleteTopicRequestOrBuilder extends
    */
   java.lang.String getTopic();
   /**
+   *
+   *
    * <pre>
    * Name of the topic to delete.
    * Format is `projects/{project}/topics/{topic}`.
@@ -24,6 +29,5 @@ public interface DeleteTopicRequestOrBuilder extends
    *
    * <code>string topic = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getTopicBytes();
+  com.google.protobuf.ByteString getTopicBytes();
 }

@@ -20,7 +20,6 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.cloud.compute.deprecated.Compute.OperationOption;
 import com.google.cloud.compute.deprecated.Compute.SubnetworkOption;
-
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.util.Objects;
@@ -41,9 +40,7 @@ public class Subnetwork extends SubnetworkInfo {
   private final ComputeOptions options;
   private transient Compute compute;
 
-  /**
-   * A builder for {@code Subnetwork} objects.
-   */
+  /** A builder for {@code Subnetwork} objects. */
   public static class Builder extends SubnetworkInfo.Builder {
 
     private final Compute compute;
@@ -79,7 +76,6 @@ public class Subnetwork extends SubnetworkInfo {
       infoBuilder.setSubnetworkId(subnetworkId);
       return this;
     }
-
 
     @Override
     public Builder setDescription(String description) {
@@ -150,9 +146,7 @@ public class Subnetwork extends SubnetworkInfo {
     return compute.deleteSubnetwork(getSubnetworkId(), options);
   }
 
-  /**
-   * Returns the subnetwork's {@code Compute} object used to issue requests.
-   */
+  /** Returns the subnetwork's {@code Compute} object used to issue requests. */
   public Compute getCompute() {
     return compute;
   }
@@ -184,8 +178,8 @@ public class Subnetwork extends SubnetworkInfo {
     this.compute = options.getService();
   }
 
-  static Subnetwork fromPb(Compute compute,
-      com.google.api.services.compute.model.Subnetwork subnetworkPb) {
+  static Subnetwork fromPb(
+      Compute compute, com.google.api.services.compute.model.Subnetwork subnetworkPb) {
     return new Subnetwork(compute, new SubnetworkInfo.BuilderImpl(subnetworkPb));
   }
 }

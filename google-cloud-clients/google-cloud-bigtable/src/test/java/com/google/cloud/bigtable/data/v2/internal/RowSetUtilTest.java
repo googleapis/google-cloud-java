@@ -23,6 +23,7 @@ import com.google.cloud.bigtable.data.v2.models.Range.ByteStringRange;
 import com.google.common.collect.ImmutableSortedSet;
 import com.google.common.collect.Lists;
 import com.google.protobuf.ByteString;
+import java.util.Arrays;
 import java.util.List;
 import java.util.SortedSet;
 import org.junit.Test;
@@ -571,7 +572,7 @@ public class RowSetUtilTest {
   // Helpers
   private static void verifySplit(RowSet input, SortedSet<ByteString> splits, RowSet... expected) {
     List<RowSet> actualWithNull = RowSetUtil.split(input, splits, true);
-    assertThat(actualWithNull).containsExactly(expected).inOrder();
+    assertThat(actualWithNull).containsExactlyElementsIn(Arrays.asList(expected)).inOrder();
 
     List<RowSet> actualNonnull = RowSetUtil.split(input, splits, false);
     List<RowSet> expectedNonnull = Lists.newArrayList();

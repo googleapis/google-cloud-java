@@ -17,6 +17,7 @@
 package com.google.cloud.spanner;
 
 import static org.mockito.Mockito.any;
+import static org.mockito.Mockito.anyLong;
 import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.spy;
@@ -45,8 +46,7 @@ abstract class BaseSessionPoolTest {
       // To prevent maintenance loop from running.
       doReturn(mockFuture)
           .when(mockExecutor)
-          .scheduleAtFixedRate(
-              any(Runnable.class), any(Long.class), any(Long.class), any(TimeUnit.class));
+          .scheduleAtFixedRate(any(Runnable.class), anyLong(), anyLong(), any(TimeUnit.class));
       return mockExecutor;
     }
 

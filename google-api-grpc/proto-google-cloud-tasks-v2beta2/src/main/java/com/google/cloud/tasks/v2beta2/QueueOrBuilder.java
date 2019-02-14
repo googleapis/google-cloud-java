@@ -3,11 +3,14 @@
 
 package com.google.cloud.tasks.v2beta2;
 
-public interface QueueOrBuilder extends
+public interface QueueOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.tasks.v2beta2.Queue)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Caller-specified and required in [CreateQueue][google.cloud.tasks.v2beta2.CloudTasks.CreateQueue],
    * after which it becomes output only.
@@ -30,6 +33,8 @@ public interface QueueOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * Caller-specified and required in [CreateQueue][google.cloud.tasks.v2beta2.CloudTasks.CreateQueue],
    * after which it becomes output only.
@@ -50,10 +55,11 @@ public interface QueueOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * App Engine HTTP target.
    * An App Engine queue is a queue that has an [AppEngineHttpTarget][google.cloud.tasks.v2beta2.AppEngineHttpTarget].
@@ -63,6 +69,8 @@ public interface QueueOrBuilder extends
    */
   boolean hasAppEngineHttpTarget();
   /**
+   *
+   *
    * <pre>
    * App Engine HTTP target.
    * An App Engine queue is a queue that has an [AppEngineHttpTarget][google.cloud.tasks.v2beta2.AppEngineHttpTarget].
@@ -72,6 +80,8 @@ public interface QueueOrBuilder extends
    */
   com.google.cloud.tasks.v2beta2.AppEngineHttpTarget getAppEngineHttpTarget();
   /**
+   *
+   *
    * <pre>
    * App Engine HTTP target.
    * An App Engine queue is a queue that has an [AppEngineHttpTarget][google.cloud.tasks.v2beta2.AppEngineHttpTarget].
@@ -82,6 +92,8 @@ public interface QueueOrBuilder extends
   com.google.cloud.tasks.v2beta2.AppEngineHttpTargetOrBuilder getAppEngineHttpTargetOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Pull target.
    * A pull queue is a queue that has a [PullTarget][google.cloud.tasks.v2beta2.PullTarget].
@@ -91,6 +103,8 @@ public interface QueueOrBuilder extends
    */
   boolean hasPullTarget();
   /**
+   *
+   *
    * <pre>
    * Pull target.
    * A pull queue is a queue that has a [PullTarget][google.cloud.tasks.v2beta2.PullTarget].
@@ -100,6 +114,8 @@ public interface QueueOrBuilder extends
    */
   com.google.cloud.tasks.v2beta2.PullTarget getPullTarget();
   /**
+   *
+   *
    * <pre>
    * Pull target.
    * A pull queue is a queue that has a [PullTarget][google.cloud.tasks.v2beta2.PullTarget].
@@ -110,6 +126,8 @@ public interface QueueOrBuilder extends
   com.google.cloud.tasks.v2beta2.PullTargetOrBuilder getPullTargetOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Rate limits for task dispatches.
    * [rate_limits][google.cloud.tasks.v2beta2.Queue.rate_limits] and
@@ -130,6 +148,8 @@ public interface QueueOrBuilder extends
    */
   boolean hasRateLimits();
   /**
+   *
+   *
    * <pre>
    * Rate limits for task dispatches.
    * [rate_limits][google.cloud.tasks.v2beta2.Queue.rate_limits] and
@@ -150,6 +170,8 @@ public interface QueueOrBuilder extends
    */
   com.google.cloud.tasks.v2beta2.RateLimits getRateLimits();
   /**
+   *
+   *
    * <pre>
    * Rate limits for task dispatches.
    * [rate_limits][google.cloud.tasks.v2beta2.Queue.rate_limits] and
@@ -171,6 +193,8 @@ public interface QueueOrBuilder extends
   com.google.cloud.tasks.v2beta2.RateLimitsOrBuilder getRateLimitsOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Settings that determine the retry behavior.
    * * For tasks created using Cloud Tasks: the queue-level retry settings
@@ -186,6 +210,8 @@ public interface QueueOrBuilder extends
    */
   boolean hasRetryConfig();
   /**
+   *
+   *
    * <pre>
    * Settings that determine the retry behavior.
    * * For tasks created using Cloud Tasks: the queue-level retry settings
@@ -201,6 +227,8 @@ public interface QueueOrBuilder extends
    */
   com.google.cloud.tasks.v2beta2.RetryConfig getRetryConfig();
   /**
+   *
+   *
    * <pre>
    * Settings that determine the retry behavior.
    * * For tasks created using Cloud Tasks: the queue-level retry settings
@@ -217,6 +245,8 @@ public interface QueueOrBuilder extends
   com.google.cloud.tasks.v2beta2.RetryConfigOrBuilder getRetryConfigOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Output only. The state of the queue.
    * `state` can only be changed by called
@@ -230,6 +260,8 @@ public interface QueueOrBuilder extends
    */
   int getStateValue();
   /**
+   *
+   *
    * <pre>
    * Output only. The state of the queue.
    * `state` can only be changed by called
@@ -244,6 +276,8 @@ public interface QueueOrBuilder extends
   com.google.cloud.tasks.v2beta2.Queue.State getState();
 
   /**
+   *
+   *
    * <pre>
    * Output only. The last time this queue was purged.
    * All tasks that were [created][google.cloud.tasks.v2beta2.Task.create_time] before this time
@@ -258,6 +292,8 @@ public interface QueueOrBuilder extends
    */
   boolean hasPurgeTime();
   /**
+   *
+   *
    * <pre>
    * Output only. The last time this queue was purged.
    * All tasks that were [created][google.cloud.tasks.v2beta2.Task.create_time] before this time
@@ -272,6 +308,8 @@ public interface QueueOrBuilder extends
    */
   com.google.protobuf.Timestamp getPurgeTime();
   /**
+   *
+   *
    * <pre>
    * Output only. The last time this queue was purged.
    * All tasks that were [created][google.cloud.tasks.v2beta2.Task.create_time] before this time

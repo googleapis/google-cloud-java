@@ -3,11 +3,14 @@
 
 package com.google.cloud.tasks.v2beta2;
 
-public interface PullMessageOrBuilder extends
+public interface PullMessageOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.tasks.v2beta2.PullMessage)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * A data payload consumed by the worker to execute the task.
    * </pre>
@@ -17,6 +20,8 @@ public interface PullMessageOrBuilder extends
   com.google.protobuf.ByteString getPayload();
 
   /**
+   *
+   *
    * <pre>
    * The task's tag.
    * Tags allow similar tasks to be processed in a batch. If you label
@@ -38,6 +43,8 @@ public interface PullMessageOrBuilder extends
    */
   java.lang.String getTag();
   /**
+   *
+   *
    * <pre>
    * The task's tag.
    * Tags allow similar tasks to be processed in a batch. If you label
@@ -57,6 +64,5 @@ public interface PullMessageOrBuilder extends
    *
    * <code>string tag = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getTagBytes();
+  com.google.protobuf.ByteString getTagBytes();
 }

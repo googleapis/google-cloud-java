@@ -4,6 +4,8 @@
 package com.google.cloud.vision.v1p2beta1;
 
 /**
+ *
+ *
  * <pre>
  * A vertex represents a 2D point in the image.
  * NOTE: the vertex coordinates are in the same scale as the original image.
@@ -11,30 +13,34 @@ package com.google.cloud.vision.v1p2beta1;
  *
  * Protobuf type {@code google.cloud.vision.v1p2beta1.Vertex}
  */
-public  final class Vertex extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class Vertex extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.vision.v1p2beta1.Vertex)
     VertexOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use Vertex.newBuilder() to construct.
   private Vertex(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private Vertex() {
     x_ = 0;
     y_ = 0;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private Vertex(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -46,50 +52,55 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          case 8:
+            {
+              x_ = input.readInt32();
+              break;
             }
-            break;
-          }
-          case 8: {
-
-            x_ = input.readInt32();
-            break;
-          }
-          case 16: {
-
-            y_ = input.readInt32();
-            break;
-          }
+          case 16:
+            {
+              y_ = input.readInt32();
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.vision.v1p2beta1.GeometryProto.internal_static_google_cloud_vision_v1p2beta1_Vertex_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.vision.v1p2beta1.GeometryProto
+        .internal_static_google_cloud_vision_v1p2beta1_Vertex_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.vision.v1p2beta1.GeometryProto.internal_static_google_cloud_vision_v1p2beta1_Vertex_fieldAccessorTable
+    return com.google.cloud.vision.v1p2beta1.GeometryProto
+        .internal_static_google_cloud_vision_v1p2beta1_Vertex_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.vision.v1p2beta1.Vertex.class, com.google.cloud.vision.v1p2beta1.Vertex.Builder.class);
+            com.google.cloud.vision.v1p2beta1.Vertex.class,
+            com.google.cloud.vision.v1p2beta1.Vertex.Builder.class);
   }
 
   public static final int X_FIELD_NUMBER = 1;
   private int x_;
   /**
+   *
+   *
    * <pre>
    * X coordinate.
    * </pre>
@@ -103,6 +114,8 @@ private static final long serialVersionUID = 0L;
   public static final int Y_FIELD_NUMBER = 2;
   private int y_;
   /**
+   *
+   *
    * <pre>
    * Y coordinate.
    * </pre>
@@ -114,6 +127,8 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -123,8 +138,8 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  @java.lang.Override
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (x_ != 0) {
       output.writeInt32(1, x_);
     }
@@ -134,18 +149,17 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
 
     size = 0;
     if (x_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(1, x_);
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(1, x_);
     }
     if (y_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(2, y_);
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, y_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -155,7 +169,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.vision.v1p2beta1.Vertex)) {
       return super.equals(obj);
@@ -163,10 +177,8 @@ private static final long serialVersionUID = 0L;
     com.google.cloud.vision.v1p2beta1.Vertex other = (com.google.cloud.vision.v1p2beta1.Vertex) obj;
 
     boolean result = true;
-    result = result && (getX()
-        == other.getX());
-    result = result && (getY()
-        == other.getY());
+    result = result && (getX() == other.getX());
+    result = result && (getY() == other.getY());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -187,95 +199,104 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.cloud.vision.v1p2beta1.Vertex parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.cloud.vision.v1p2beta1.Vertex parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.vision.v1p2beta1.Vertex parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.vision.v1p2beta1.Vertex parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.vision.v1p2beta1.Vertex parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.vision.v1p2beta1.Vertex parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.vision.v1p2beta1.Vertex parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.vision.v1p2beta1.Vertex parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.vision.v1p2beta1.Vertex parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.cloud.vision.v1p2beta1.Vertex parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.vision.v1p2beta1.Vertex parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.vision.v1p2beta1.Vertex parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.vision.v1p2beta1.Vertex parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.vision.v1p2beta1.Vertex parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  public Builder newBuilderForType() { return newBuilder(); }
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-  public static Builder newBuilder(com.google.cloud.vision.v1p2beta1.Vertex prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+
+  public static Builder newBuilder(com.google.cloud.vision.v1p2beta1.Vertex prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+
+  @java.lang.Override
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * A vertex represents a 2D point in the image.
    * NOTE: the vertex coordinates are in the same scale as the original image.
@@ -283,20 +304,23 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.cloud.vision.v1p2beta1.Vertex}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.vision.v1p2beta1.Vertex)
       com.google.cloud.vision.v1p2beta1.VertexOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.vision.v1p2beta1.GeometryProto.internal_static_google_cloud_vision_v1p2beta1_Vertex_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.vision.v1p2beta1.GeometryProto
+          .internal_static_google_cloud_vision_v1p2beta1_Vertex_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.vision.v1p2beta1.GeometryProto.internal_static_google_cloud_vision_v1p2beta1_Vertex_fieldAccessorTable
+      return com.google.cloud.vision.v1p2beta1.GeometryProto
+          .internal_static_google_cloud_vision_v1p2beta1_Vertex_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.vision.v1p2beta1.Vertex.class, com.google.cloud.vision.v1p2beta1.Vertex.Builder.class);
+              com.google.cloud.vision.v1p2beta1.Vertex.class,
+              com.google.cloud.vision.v1p2beta1.Vertex.Builder.class);
     }
 
     // Construct using com.google.cloud.vision.v1p2beta1.Vertex.newBuilder()
@@ -304,16 +328,16 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       x_ = 0;
@@ -323,15 +347,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.vision.v1p2beta1.GeometryProto.internal_static_google_cloud_vision_v1p2beta1_Vertex_descriptor;
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.vision.v1p2beta1.GeometryProto
+          .internal_static_google_cloud_vision_v1p2beta1_Vertex_descriptor;
     }
 
+    @java.lang.Override
     public com.google.cloud.vision.v1p2beta1.Vertex getDefaultInstanceForType() {
       return com.google.cloud.vision.v1p2beta1.Vertex.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.cloud.vision.v1p2beta1.Vertex build() {
       com.google.cloud.vision.v1p2beta1.Vertex result = buildPartial();
       if (!result.isInitialized()) {
@@ -340,43 +367,53 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.cloud.vision.v1p2beta1.Vertex buildPartial() {
-      com.google.cloud.vision.v1p2beta1.Vertex result = new com.google.cloud.vision.v1p2beta1.Vertex(this);
+      com.google.cloud.vision.v1p2beta1.Vertex result =
+          new com.google.cloud.vision.v1p2beta1.Vertex(this);
       result.x_ = x_;
       result.y_ = y_;
       onBuilt();
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+
+    @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+    @java.lang.Override
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+    @java.lang.Override
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
+    @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
+    @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.vision.v1p2beta1.Vertex) {
-        return mergeFrom((com.google.cloud.vision.v1p2beta1.Vertex)other);
+        return mergeFrom((com.google.cloud.vision.v1p2beta1.Vertex) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -396,10 +433,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -418,8 +457,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private int x_ ;
+    private int x_;
     /**
+     *
+     *
      * <pre>
      * X coordinate.
      * </pre>
@@ -430,6 +471,8 @@ private static final long serialVersionUID = 0L;
       return x_;
     }
     /**
+     *
+     *
      * <pre>
      * X coordinate.
      * </pre>
@@ -437,12 +480,14 @@ private static final long serialVersionUID = 0L;
      * <code>int32 x = 1;</code>
      */
     public Builder setX(int value) {
-      
+
       x_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * X coordinate.
      * </pre>
@@ -450,14 +495,16 @@ private static final long serialVersionUID = 0L;
      * <code>int32 x = 1;</code>
      */
     public Builder clearX() {
-      
+
       x_ = 0;
       onChanged();
       return this;
     }
 
-    private int y_ ;
+    private int y_;
     /**
+     *
+     *
      * <pre>
      * Y coordinate.
      * </pre>
@@ -468,6 +515,8 @@ private static final long serialVersionUID = 0L;
       return y_;
     }
     /**
+     *
+     *
      * <pre>
      * Y coordinate.
      * </pre>
@@ -475,12 +524,14 @@ private static final long serialVersionUID = 0L;
      * <code>int32 y = 2;</code>
      */
     public Builder setY(int value) {
-      
+
       y_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Y coordinate.
      * </pre>
@@ -488,27 +539,29 @@ private static final long serialVersionUID = 0L;
      * <code>int32 y = 2;</code>
      */
     public Builder clearY() {
-      
+
       y_ = 0;
       onChanged();
       return this;
     }
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+
+    @java.lang.Override
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
     }
-
 
     // @@protoc_insertion_point(builder_scope:google.cloud.vision.v1p2beta1.Vertex)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.vision.v1p2beta1.Vertex)
   private static final com.google.cloud.vision.v1p2beta1.Vertex DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.vision.v1p2beta1.Vertex();
   }
@@ -517,15 +570,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<Vertex>
-      PARSER = new com.google.protobuf.AbstractParser<Vertex>() {
-    public Vertex parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Vertex(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<Vertex> PARSER =
+      new com.google.protobuf.AbstractParser<Vertex>() {
+        @java.lang.Override
+        public Vertex parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new Vertex(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<Vertex> parser() {
     return PARSER;
@@ -536,9 +590,8 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.cloud.vision.v1p2beta1.Vertex getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

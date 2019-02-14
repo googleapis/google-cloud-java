@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -53,8 +53,7 @@ import javax.annotation.Generated;
 
 // AUTO-GENERATED DOCUMENTATION AND SERVICE
 /**
- * Service Description: Service for configuring sinks used to export log entries outside of
- * Stackdriver Logging.
+ * Service Description: Service for configuring sinks used to export log entries out of Logging.
  *
  * <p>This class provides the ability to make remote calls to the backing service through method
  * calls that map to API methods. Sample code to get started:
@@ -75,13 +74,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li> A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li>A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li> A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li>A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -377,7 +376,7 @@ public class ConfigClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final LogSink getSink(GetSinkRequest request) {
+  public final LogSink getSink(GetSinkRequest request) {
     return getSinkCallable().call(request);
   }
 
@@ -558,7 +557,7 @@ public class ConfigClient implements BackgroundResource {
    *     compatibility purposes: destination,filter,includeChildren At some point in the future,
    *     behavior will be removed and specifying an empty updateMask will be an error.
    *     <p>For a detailed `FieldMask` definition, see
-   *     https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
+   *     https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#google.protobuf.FieldMask
    *     <p>Example: `updateMask=filter`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -606,7 +605,7 @@ public class ConfigClient implements BackgroundResource {
    *     compatibility purposes: destination,filter,includeChildren At some point in the future,
    *     behavior will be removed and specifying an empty updateMask will be an error.
    *     <p>For a detailed `FieldMask` definition, see
-   *     https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#fieldmask
+   *     https://developers.google.com/protocol-buffers/docs/reference/google.protobuf#google.protobuf.FieldMask
    *     <p>Example: `updateMask=filter`.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -826,7 +825,7 @@ public class ConfigClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final void deleteSink(DeleteSinkRequest request) {
+  public final void deleteSink(DeleteSinkRequest request) {
     deleteSinkCallable().call(request);
   }
 
@@ -1062,7 +1061,7 @@ public class ConfigClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final LogExclusion getExclusion(GetExclusionRequest request) {
+  public final LogExclusion getExclusion(GetExclusionRequest request) {
     return getExclusionCallable().call(request);
   }
 
@@ -1415,7 +1414,7 @@ public class ConfigClient implements BackgroundResource {
    * @param request The request object containing all of the parameters for the API call.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
-  private final void deleteExclusion(DeleteExclusionRequest request) {
+  public final void deleteExclusion(DeleteExclusionRequest request) {
     deleteExclusionCallable().call(request);
   }
 
@@ -1473,7 +1472,10 @@ public class ConfigClient implements BackgroundResource {
 
   public static class ListSinksPagedResponse
       extends AbstractPagedListResponse<
-          ListSinksRequest, ListSinksResponse, LogSink, ListSinksPage,
+          ListSinksRequest,
+          ListSinksResponse,
+          LogSink,
+          ListSinksPage,
           ListSinksFixedSizeCollection> {
 
     public static ApiFuture<ListSinksPagedResponse> createAsync(
@@ -1526,7 +1528,10 @@ public class ConfigClient implements BackgroundResource {
 
   public static class ListSinksFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListSinksRequest, ListSinksResponse, LogSink, ListSinksPage,
+          ListSinksRequest,
+          ListSinksResponse,
+          LogSink,
+          ListSinksPage,
           ListSinksFixedSizeCollection> {
 
     private ListSinksFixedSizeCollection(List<ListSinksPage> pages, int collectionSize) {
@@ -1546,7 +1551,10 @@ public class ConfigClient implements BackgroundResource {
 
   public static class ListExclusionsPagedResponse
       extends AbstractPagedListResponse<
-          ListExclusionsRequest, ListExclusionsResponse, LogExclusion, ListExclusionsPage,
+          ListExclusionsRequest,
+          ListExclusionsResponse,
+          LogExclusion,
+          ListExclusionsPage,
           ListExclusionsFixedSizeCollection> {
 
     public static ApiFuture<ListExclusionsPagedResponse> createAsync(
@@ -1600,7 +1608,10 @@ public class ConfigClient implements BackgroundResource {
 
   public static class ListExclusionsFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListExclusionsRequest, ListExclusionsResponse, LogExclusion, ListExclusionsPage,
+          ListExclusionsRequest,
+          ListExclusionsResponse,
+          LogExclusion,
+          ListExclusionsPage,
           ListExclusionsFixedSizeCollection> {
 
     private ListExclusionsFixedSizeCollection(List<ListExclusionsPage> pages, int collectionSize) {

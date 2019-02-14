@@ -52,9 +52,7 @@ public final class HttpRequest implements Serializable {
   private final Long cacheFillBytes;
   private final Duration latency;
 
-  /**
-   * The HTTP request method.
-   */
+  /** The HTTP request method. */
   public static final class RequestMethod extends StringEnumValue {
     private static final long serialVersionUID = 2403969065179486996L;
 
@@ -70,9 +68,8 @@ public final class HttpRequest implements Serializable {
           }
         };
 
-    private static final StringEnumType<RequestMethod> type = new StringEnumType(
-        RequestMethod.class,
-        CONSTRUCTOR);
+    private static final StringEnumType<RequestMethod> type =
+        new StringEnumType(RequestMethod.class, CONSTRUCTOR);
 
     public static final RequestMethod GET = type.createAndRegister("GET");
     public static final RequestMethod HEAD = type.createAndRegister("HEAD");
@@ -80,31 +77,25 @@ public final class HttpRequest implements Serializable {
     public static final RequestMethod POST = type.createAndRegister("POST");
 
     /**
-     * Get the RequestMethod for the given String constant, and throw an exception if the constant is
-     * not recognized.
+     * Get the RequestMethod for the given String constant, and throw an exception if the constant
+     * is not recognized.
      */
     public static RequestMethod valueOfStrict(String constant) {
       return type.valueOfStrict(constant);
     }
 
-    /**
-     * Get the RequestMethod for the given String constant, and allow unrecognized values.
-     */
+    /** Get the RequestMethod for the given String constant, and allow unrecognized values. */
     public static RequestMethod valueOf(String constant) {
       return type.valueOf(constant);
     }
 
-    /**
-     * Return the known values for RequestMethod.
-     */
+    /** Return the known values for RequestMethod. */
     public static RequestMethod[] values() {
       return type.values();
     }
   }
 
-  /**
-   * A builder for {@code HttpRequest} objects.
-   */
+  /** A builder for {@code HttpRequest} objects. */
   public static final class Builder {
 
     private RequestMethod requestMethod;
@@ -141,26 +132,21 @@ public final class HttpRequest implements Serializable {
       this.latency = request.latency;
     }
 
-
-    /**
-     * Sets the HTTP request method.
-     */
+    /** Sets the HTTP request method. */
     public Builder setRequestMethod(RequestMethod requestMethod) {
       this.requestMethod = requestMethod;
       return this;
     }
 
-
     /**
      * Sets the requested URL. Request URL contains the scheme ({@code http}, {@code https}), the
-     * host name, the path and the query portion of the URL that was requested. Example:
-     * {@code http://example.com/some/info?color=red}.
+     * host name, the path and the query portion of the URL that was requested. Example: {@code
+     * http://example.com/some/info?color=red}.
      */
     public Builder setRequestUrl(String requestUrl) {
       this.requestUrl = requestUrl;
       return this;
     }
-
 
     /**
      * Sets the size of the HTTP request message in bytes, including the request headers and the
@@ -171,15 +157,11 @@ public final class HttpRequest implements Serializable {
       return this;
     }
 
-
-    /**
-     * Sets the response code indicating the status of response.
-     */
+    /** Sets the response code indicating the status of response. */
     public Builder setStatus(int status) {
       this.status = status;
       return this;
     }
-
 
     /**
      * Sets the size of the HTTP response message sent back to the client, in bytes, including the
@@ -190,16 +172,14 @@ public final class HttpRequest implements Serializable {
       return this;
     }
 
-
     /**
-     * Sets the user agent sent by the client. Example:
-     * {@code Mozilla/4.0 (compatible; MSIE 6.0; Windows 98; Q312461; .NET CLR 1.0.3705)}.
+     * Sets the user agent sent by the client. Example: {@code Mozilla/4.0 (compatible; MSIE 6.0;
+     * Windows 98; Q312461; .NET CLR 1.0.3705)}.
      */
     public Builder setUserAgent(String userAgent) {
       this.userAgent = userAgent;
       return this;
     }
-
 
     /**
      * Sets the IP address (IPv4 or IPv6) of the client that issued the HTTP request. Examples:
@@ -210,7 +190,6 @@ public final class HttpRequest implements Serializable {
       return this;
     }
 
-
     /**
      * Sets the IP address (IPv4 or IPv6) of the origin server that the request was sent to.
      * Examples: {@code 192.168.1.1}, {@code FE80::0202:B3FF:FE1E:8329}.
@@ -219,7 +198,6 @@ public final class HttpRequest implements Serializable {
       this.serverIp = serverIp;
       return this;
     }
-
 
     /**
      * Sets the referer URL of the request, as defined in HTTP/1.1 Header Field Definitions.
@@ -232,15 +210,11 @@ public final class HttpRequest implements Serializable {
       return this;
     }
 
-
-    /**
-     * Sets whether or not a cache lookup was attempted. If not set, {@code false} is used.
-     */
+    /** Sets whether or not a cache lookup was attempted. If not set, {@code false} is used. */
     public Builder setCacheLookup(boolean cacheLookup) {
       this.cacheLookup = cacheLookup;
       return this;
     }
-
 
     /**
      * Sets whether or not an entity was served from cache (with or without validation). If not set,
@@ -251,17 +225,15 @@ public final class HttpRequest implements Serializable {
       return this;
     }
 
-
     /**
      * Sets whether or not the response was validated with the origin server before being served
-     * from cache. This field is only meaningful if {@link #setCacheHit(boolean)} is set to
-     * {@code true}. If not set, {@code false} is used.
+     * from cache. This field is only meaningful if {@link #setCacheHit(boolean)} is set to {@code
+     * true}. If not set, {@code false} is used.
      */
     public Builder setCacheValidatedWithOriginServer(boolean cacheValidatedWithOriginServer) {
       this.cacheValidatedWithOriginServer = cacheValidatedWithOriginServer;
       return this;
     }
-
 
     /**
      * Sets the number of HTTP response bytes inserted into cache. Set only when a cache fill was
@@ -281,9 +253,7 @@ public final class HttpRequest implements Serializable {
       return this;
     }
 
-    /**
-     * Creates a {@code HttpRequest} object for this builder.
-     */
+    /** Creates a {@code HttpRequest} object for this builder. */
     public HttpRequest build() {
       return new HttpRequest(this);
     }
@@ -306,24 +276,19 @@ public final class HttpRequest implements Serializable {
     this.latency = builder.latency;
   }
 
-
-  /**
-   * Returns the HTTP request method.
-   */
+  /** Returns the HTTP request method. */
   public RequestMethod getRequestMethod() {
     return requestMethod;
   }
 
-
   /**
    * Returns the requested URL. Request URL contains the scheme ({@code http}, {@code https}), the
-   * host name, the path and the query portion of the URL that was requested. Example:
-   * {@code http://example.com/some/info?color=red}.
+   * host name, the path and the query portion of the URL that was requested. Example: {@code
+   * http://example.com/some/info?color=red}.
    */
   public String getRequestUrl() {
     return requestUrl;
   }
-
 
   /**
    * Returns the size of the HTTP request message in bytes, including the request headers and the
@@ -333,14 +298,10 @@ public final class HttpRequest implements Serializable {
     return requestSize;
   }
 
-
-  /**
-   * Returns the response code indicating the status of response.
-   */
+  /** Returns the response code indicating the status of response. */
   public Integer getStatus() {
     return status;
   }
-
 
   /**
    * Returns the size of the HTTP response message sent back to the client, in bytes, including the
@@ -350,15 +311,13 @@ public final class HttpRequest implements Serializable {
     return responseSize;
   }
 
-
   /**
-   * Returns the user agent sent by the client. Example:
-   * {@code Mozilla/4.0 (compatible; MSIE 6.0; Windows 98; Q312461; .NET CLR 1.0.3705)}.
+   * Returns the user agent sent by the client. Example: {@code Mozilla/4.0 (compatible; MSIE 6.0;
+   * Windows 98; Q312461; .NET CLR 1.0.3705)}.
    */
   public String getUserAgent() {
     return userAgent;
   }
-
 
   /**
    * Returns the IP address (IPv4 or IPv6) of the client that issued the HTTP request. Examples:
@@ -368,7 +327,6 @@ public final class HttpRequest implements Serializable {
     return remoteIp;
   }
 
-
   /**
    * Returns the IP address (IPv4 or IPv6) of the origin server that the request was sent to.
    * Examples: {@code 192.168.1.1}, {@code FE80::0202:B3FF:FE1E:8329}.
@@ -376,7 +334,6 @@ public final class HttpRequest implements Serializable {
   public String getServerIp() {
     return serverIp;
   }
-
 
   /**
    * Returns the referer URL of the request, as defined in HTTP/1.1 Header Field Definitions.
@@ -389,8 +346,8 @@ public final class HttpRequest implements Serializable {
   }
 
   /**
-   * Returns whether or not a cache lookup was attempted. If not set, this method returns
-   * {@code false}.
+   * Returns whether or not a cache lookup was attempted. If not set, this method returns {@code
+   * false}.
    */
   public boolean cacheLookup() {
     return cacheLookup;
@@ -412,7 +369,6 @@ public final class HttpRequest implements Serializable {
   public boolean cacheValidatedWithOriginServer() {
     return cacheValidatedWithOriginServer;
   }
-
 
   /**
    * Returns the number of HTTP response bytes inserted into cache. Set only when a cache fill was
@@ -496,9 +452,7 @@ public final class HttpRequest implements Serializable {
         && Objects.equals(cacheFillBytes, other.cacheFillBytes);
   }
 
-  /**
-   * Returns a builder for this object.
-   */
+  /** Returns a builder for this object. */
   public Builder toBuilder() {
     return new Builder(this);
   }
@@ -550,10 +504,7 @@ public final class HttpRequest implements Serializable {
     return builder.build();
   }
 
-
-  /**
-   * Returns a builder for {@code HttpRequest} objects.
-   */
+  /** Returns a builder for {@code HttpRequest} objects. */
   public static Builder newBuilder() {
     return new Builder();
   }

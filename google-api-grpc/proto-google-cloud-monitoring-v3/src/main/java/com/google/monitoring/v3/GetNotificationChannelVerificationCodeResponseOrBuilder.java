@@ -3,11 +3,14 @@
 
 package com.google.monitoring.v3;
 
-public interface GetNotificationChannelVerificationCodeResponseOrBuilder extends
+public interface GetNotificationChannelVerificationCodeResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.monitoring.v3.GetNotificationChannelVerificationCodeResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The verification code, which may be used to verify other channels
    * that have an equivalent identity (i.e. other channels of the same
@@ -19,6 +22,8 @@ public interface GetNotificationChannelVerificationCodeResponseOrBuilder extends
    */
   java.lang.String getCode();
   /**
+   *
+   *
    * <pre>
    * The verification code, which may be used to verify other channels
    * that have an equivalent identity (i.e. other channels of the same
@@ -28,10 +33,11 @@ public interface GetNotificationChannelVerificationCodeResponseOrBuilder extends
    *
    * <code>string code = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getCodeBytes();
+  com.google.protobuf.ByteString getCodeBytes();
 
   /**
+   *
+   *
    * <pre>
    * The expiration time associated with the code that was returned. If
    * an expiration was provided in the request, this is the minimum of the
@@ -42,6 +48,8 @@ public interface GetNotificationChannelVerificationCodeResponseOrBuilder extends
    */
   boolean hasExpireTime();
   /**
+   *
+   *
    * <pre>
    * The expiration time associated with the code that was returned. If
    * an expiration was provided in the request, this is the minimum of the
@@ -52,6 +60,8 @@ public interface GetNotificationChannelVerificationCodeResponseOrBuilder extends
    */
   com.google.protobuf.Timestamp getExpireTime();
   /**
+   *
+   *
    * <pre>
    * The expiration time associated with the code that was returned. If
    * an expiration was provided in the request, this is the minimum of the

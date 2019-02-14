@@ -3,11 +3,14 @@
 
 package com.google.cloud.dataproc.v1beta2;
 
-public interface YarnApplicationOrBuilder extends
+public interface YarnApplicationOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dataproc.v1beta2.YarnApplication)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The application name.
    * </pre>
@@ -16,16 +19,19 @@ public interface YarnApplicationOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * Required. The application name.
    * </pre>
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * Required. The application state.
    * </pre>
@@ -34,6 +40,8 @@ public interface YarnApplicationOrBuilder extends
    */
   int getStateValue();
   /**
+   *
+   *
    * <pre>
    * Required. The application state.
    * </pre>
@@ -43,6 +51,8 @@ public interface YarnApplicationOrBuilder extends
   com.google.cloud.dataproc.v1beta2.YarnApplication.State getState();
 
   /**
+   *
+   *
    * <pre>
    * Required. The numerical progress of the application, from 1 to 100.
    * </pre>
@@ -52,6 +62,8 @@ public interface YarnApplicationOrBuilder extends
   float getProgress();
 
   /**
+   *
+   *
    * <pre>
    * Optional. The HTTP URL of the ApplicationMaster, HistoryServer, or
    * TimelineServer that provides application-specific information. The URL uses
@@ -63,6 +75,8 @@ public interface YarnApplicationOrBuilder extends
    */
   java.lang.String getTrackingUrl();
   /**
+   *
+   *
    * <pre>
    * Optional. The HTTP URL of the ApplicationMaster, HistoryServer, or
    * TimelineServer that provides application-specific information. The URL uses
@@ -72,6 +86,5 @@ public interface YarnApplicationOrBuilder extends
    *
    * <code>string tracking_url = 4;</code>
    */
-  com.google.protobuf.ByteString
-      getTrackingUrlBytes();
+  com.google.protobuf.ByteString getTrackingUrlBytes();
 }

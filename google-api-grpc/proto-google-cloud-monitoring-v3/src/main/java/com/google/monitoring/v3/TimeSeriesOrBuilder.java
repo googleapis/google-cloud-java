@@ -3,11 +3,14 @@
 
 package com.google.monitoring.v3;
 
-public interface TimeSeriesOrBuilder extends
+public interface TimeSeriesOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.monitoring.v3.TimeSeries)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The associated metric. A fully-specified metric used to identify the time
    * series.
@@ -17,6 +20,8 @@ public interface TimeSeriesOrBuilder extends
    */
   boolean hasMetric();
   /**
+   *
+   *
    * <pre>
    * The associated metric. A fully-specified metric used to identify the time
    * series.
@@ -26,6 +31,8 @@ public interface TimeSeriesOrBuilder extends
    */
   com.google.api.Metric getMetric();
   /**
+   *
+   *
    * <pre>
    * The associated metric. A fully-specified metric used to identify the time
    * series.
@@ -36,6 +43,8 @@ public interface TimeSeriesOrBuilder extends
   com.google.api.MetricOrBuilder getMetricOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The associated monitored resource.  Custom metrics can use only certain
    * monitored resource types in their time series data.
@@ -45,6 +54,8 @@ public interface TimeSeriesOrBuilder extends
    */
   boolean hasResource();
   /**
+   *
+   *
    * <pre>
    * The associated monitored resource.  Custom metrics can use only certain
    * monitored resource types in their time series data.
@@ -54,6 +65,8 @@ public interface TimeSeriesOrBuilder extends
    */
   com.google.api.MonitoredResource getResource();
   /**
+   *
+   *
    * <pre>
    * The associated monitored resource.  Custom metrics can use only certain
    * monitored resource types in their time series data.
@@ -64,6 +77,8 @@ public interface TimeSeriesOrBuilder extends
   com.google.api.MonitoredResourceOrBuilder getResourceOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Output only. The associated monitored resource metadata. When reading a
    * a timeseries, this field will include metadata labels that are explicitly
@@ -74,6 +89,8 @@ public interface TimeSeriesOrBuilder extends
    */
   boolean hasMetadata();
   /**
+   *
+   *
    * <pre>
    * Output only. The associated monitored resource metadata. When reading a
    * a timeseries, this field will include metadata labels that are explicitly
@@ -84,6 +101,8 @@ public interface TimeSeriesOrBuilder extends
    */
   com.google.api.MonitoredResourceMetadata getMetadata();
   /**
+   *
+   *
    * <pre>
    * Output only. The associated monitored resource metadata. When reading a
    * a timeseries, this field will include metadata labels that are explicitly
@@ -95,6 +114,8 @@ public interface TimeSeriesOrBuilder extends
   com.google.api.MonitoredResourceMetadataOrBuilder getMetadataOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The metric kind of the time series. When listing time series, this metric
    * kind might be different from the metric kind of the associated metric if
@@ -110,6 +131,8 @@ public interface TimeSeriesOrBuilder extends
    */
   int getMetricKindValue();
   /**
+   *
+   *
    * <pre>
    * The metric kind of the time series. When listing time series, this metric
    * kind might be different from the metric kind of the associated metric if
@@ -126,6 +149,8 @@ public interface TimeSeriesOrBuilder extends
   com.google.api.MetricDescriptor.MetricKind getMetricKind();
 
   /**
+   *
+   *
    * <pre>
    * The value type of the time series. When listing time series, this value
    * type might be different from the value type of the associated metric if
@@ -138,6 +163,8 @@ public interface TimeSeriesOrBuilder extends
    */
   int getValueTypeValue();
   /**
+   *
+   *
    * <pre>
    * The value type of the time series. When listing time series, this value
    * type might be different from the value type of the associated metric if
@@ -151,6 +178,8 @@ public interface TimeSeriesOrBuilder extends
   com.google.api.MetricDescriptor.ValueType getValueType();
 
   /**
+   *
+   *
    * <pre>
    * The data points of this time series. When listing time series, points are
    * returned in reverse time order.
@@ -163,9 +192,10 @@ public interface TimeSeriesOrBuilder extends
    *
    * <code>repeated .google.monitoring.v3.Point points = 5;</code>
    */
-  java.util.List<com.google.monitoring.v3.Point> 
-      getPointsList();
+  java.util.List<com.google.monitoring.v3.Point> getPointsList();
   /**
+   *
+   *
    * <pre>
    * The data points of this time series. When listing time series, points are
    * returned in reverse time order.
@@ -180,6 +210,8 @@ public interface TimeSeriesOrBuilder extends
    */
   com.google.monitoring.v3.Point getPoints(int index);
   /**
+   *
+   *
    * <pre>
    * The data points of this time series. When listing time series, points are
    * returned in reverse time order.
@@ -194,6 +226,8 @@ public interface TimeSeriesOrBuilder extends
    */
   int getPointsCount();
   /**
+   *
+   *
    * <pre>
    * The data points of this time series. When listing time series, points are
    * returned in reverse time order.
@@ -206,9 +240,10 @@ public interface TimeSeriesOrBuilder extends
    *
    * <code>repeated .google.monitoring.v3.Point points = 5;</code>
    */
-  java.util.List<? extends com.google.monitoring.v3.PointOrBuilder> 
-      getPointsOrBuilderList();
+  java.util.List<? extends com.google.monitoring.v3.PointOrBuilder> getPointsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * The data points of this time series. When listing time series, points are
    * returned in reverse time order.
@@ -221,6 +256,5 @@ public interface TimeSeriesOrBuilder extends
    *
    * <code>repeated .google.monitoring.v3.Point points = 5;</code>
    */
-  com.google.monitoring.v3.PointOrBuilder getPointsOrBuilder(
-      int index);
+  com.google.monitoring.v3.PointOrBuilder getPointsOrBuilder(int index);
 }

@@ -1,0 +1,72 @@
+{
+  "updateTime": "2019-02-02T08:50:14.214660Z",
+  "sources": [
+    {
+      "generator": {
+        "name": "artman",
+        "version": "0.16.8",
+        "dockerImage": "googleapis/artman@sha256:75bc07ef34a1de9895c18af54dc503ed3b3f3b52e85062e3360a979d2a0741e7"
+      }
+    },
+    {
+      "git": {
+        "name": "googleapis",
+        "remote": "https://github.com/googleapis/googleapis.git",
+        "sha": "bce093dab3e65c40eb9a37efbdc960f34df6037a",
+        "internalRef": "231974277"
+      }
+    }
+  ],
+  "destinations": [
+    {
+      "client": {
+        "source": "googleapis",
+        "apiName": "video-intelligence",
+        "apiVersion": "v1",
+        "language": "java",
+        "generator": "gapic",
+        "config": "google/cloud/videointelligence/artman_videointelligence_v1.yaml"
+      }
+    },
+    {
+      "client": {
+        "source": "googleapis",
+        "apiName": "video-intelligence",
+        "apiVersion": "v1beta1",
+        "language": "java",
+        "generator": "gapic",
+        "config": "google/cloud/videointelligence/artman_videointelligence_v1beta1.yaml"
+      }
+    },
+    {
+      "client": {
+        "source": "googleapis",
+        "apiName": "video-intelligence",
+        "apiVersion": "v1beta2",
+        "language": "java",
+        "generator": "gapic",
+        "config": "google/cloud/videointelligence/artman_videointelligence_v1beta2.yaml"
+      }
+    },
+    {
+      "client": {
+        "source": "googleapis",
+        "apiName": "video-intelligence",
+        "apiVersion": "v1p1beta1",
+        "language": "java",
+        "generator": "gapic",
+        "config": "google/cloud/videointelligence/artman_videointelligence_v1p1beta1.yaml"
+      }
+    },
+    {
+      "client": {
+        "source": "googleapis",
+        "apiName": "video-intelligence",
+        "apiVersion": "v1p2beta1",
+        "language": "java",
+        "generator": "gapic",
+        "config": "google/cloud/videointelligence/artman_videointelligence_v1p2beta1.yaml"
+      }
+    }
+  ]
+}

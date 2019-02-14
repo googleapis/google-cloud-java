@@ -3,11 +3,14 @@
 
 package com.google.monitoring.v3;
 
-public interface ListUptimeCheckIpsResponseOrBuilder extends
+public interface ListUptimeCheckIpsResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.monitoring.v3.ListUptimeCheckIpsResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The returned list of IP addresses (including region and location) that the
    * checkers run from.
@@ -15,9 +18,10 @@ public interface ListUptimeCheckIpsResponseOrBuilder extends
    *
    * <code>repeated .google.monitoring.v3.UptimeCheckIp uptime_check_ips = 1;</code>
    */
-  java.util.List<com.google.monitoring.v3.UptimeCheckIp> 
-      getUptimeCheckIpsList();
+  java.util.List<com.google.monitoring.v3.UptimeCheckIp> getUptimeCheckIpsList();
   /**
+   *
+   *
    * <pre>
    * The returned list of IP addresses (including region and location) that the
    * checkers run from.
@@ -27,6 +31,8 @@ public interface ListUptimeCheckIpsResponseOrBuilder extends
    */
   com.google.monitoring.v3.UptimeCheckIp getUptimeCheckIps(int index);
   /**
+   *
+   *
    * <pre>
    * The returned list of IP addresses (including region and location) that the
    * checkers run from.
@@ -36,6 +42,8 @@ public interface ListUptimeCheckIpsResponseOrBuilder extends
    */
   int getUptimeCheckIpsCount();
   /**
+   *
+   *
    * <pre>
    * The returned list of IP addresses (including region and location) that the
    * checkers run from.
@@ -43,9 +51,11 @@ public interface ListUptimeCheckIpsResponseOrBuilder extends
    *
    * <code>repeated .google.monitoring.v3.UptimeCheckIp uptime_check_ips = 1;</code>
    */
-  java.util.List<? extends com.google.monitoring.v3.UptimeCheckIpOrBuilder> 
+  java.util.List<? extends com.google.monitoring.v3.UptimeCheckIpOrBuilder>
       getUptimeCheckIpsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * The returned list of IP addresses (including region and location) that the
    * checkers run from.
@@ -53,10 +63,11 @@ public interface ListUptimeCheckIpsResponseOrBuilder extends
    *
    * <code>repeated .google.monitoring.v3.UptimeCheckIp uptime_check_ips = 1;</code>
    */
-  com.google.monitoring.v3.UptimeCheckIpOrBuilder getUptimeCheckIpsOrBuilder(
-      int index);
+  com.google.monitoring.v3.UptimeCheckIpOrBuilder getUptimeCheckIpsOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * This field represents the pagination token to retrieve the next page of
    * results. If the value is empty, it means no further results for the
@@ -70,6 +81,8 @@ public interface ListUptimeCheckIpsResponseOrBuilder extends
    */
   java.lang.String getNextPageToken();
   /**
+   *
+   *
    * <pre>
    * This field represents the pagination token to retrieve the next page of
    * results. If the value is empty, it means no further results for the
@@ -81,6 +94,5 @@ public interface ListUptimeCheckIpsResponseOrBuilder extends
    *
    * <code>string next_page_token = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getNextPageTokenBytes();
+  com.google.protobuf.ByteString getNextPageTokenBytes();
 }

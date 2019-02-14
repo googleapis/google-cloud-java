@@ -28,9 +28,7 @@ import java.util.Set;
 import java.util.concurrent.ExecutionException;
 import javax.net.ssl.SSLHandshakeException;
 
-/**
- * Base class for all service exceptions.
- */
+/** Base class for all service exceptions. */
 public class BaseServiceException extends RuntimeException {
 
   private static final long serialVersionUID = 759921776378760835L;
@@ -54,8 +52,14 @@ public class BaseServiceException extends RuntimeException {
     private final String location;
     private final String debugInfo;
 
-    private ExceptionData(String message, Throwable cause, int code, boolean retryable,
-        String reason, String location, String debugInfo) {
+    private ExceptionData(
+        String message,
+        Throwable cause,
+        int code,
+        boolean retryable,
+        String reason,
+        String location,
+        String debugInfo) {
       this.message = message;
       this.cause = cause;
       this.code = code;
@@ -101,10 +105,15 @@ public class BaseServiceException extends RuntimeException {
       return from(code, message, reason, retryable, null);
     }
 
-    public static ExceptionData from(int code, String message, String reason, boolean retryable,
-        Throwable cause) {
-      return newBuilder().setCode(code).setMessage(message).setReason(reason)
-          .setRetryable(retryable).setCause(cause).build();
+    public static ExceptionData from(
+        int code, String message, String reason, boolean retryable, Throwable cause) {
+      return newBuilder()
+          .setCode(code)
+          .setMessage(message)
+          .setReason(reason)
+          .setRetryable(retryable)
+          .setCause(cause)
+          .build();
     }
 
     @InternalApi
@@ -156,8 +165,7 @@ public class BaseServiceException extends RuntimeException {
       }
 
       public ExceptionData build() {
-        return new ExceptionData(message, cause, code, retryable, reason, location,
-            debugInfo);
+        return new ExceptionData(message, cause, code, retryable, reason, location, debugInfo);
       }
     }
   }
@@ -181,14 +189,10 @@ public class BaseServiceException extends RuntimeException {
       this.rejected = rejected;
     }
 
-
-    /**
-     * Returns the code associated with this exception.
-     */
+    /** Returns the code associated with this exception. */
     public Integer getCode() {
       return code;
     }
-
 
     /**
      * Returns true if the error indicates that the API call was certainly not accepted by the
@@ -199,10 +203,7 @@ public class BaseServiceException extends RuntimeException {
       return rejected;
     }
 
-
-    /**
-     * Returns the reason that caused the exception.
-     */
+    /** Returns the reason that caused the exception. */
     public String getReason() {
       return reason;
     }
@@ -238,14 +239,12 @@ public class BaseServiceException extends RuntimeException {
     }
   }
 
-
   @InternalApi
-  public static boolean isRetryable(Integer code, String reason, boolean idempotent,
-      Set<Error> retryableErrors) {
+  public static boolean isRetryable(
+      Integer code, String reason, boolean idempotent, Set<Error> retryableErrors) {
     for (Error retryableError : retryableErrors) {
       if ((retryableError.getCode() == null || retryableError.getCode().equals(code))
-          && (retryableError.getReason() == null
-          || retryableError.getReason().equals(reason))) {
+          && (retryableError.getReason() == null || retryableError.getReason().equals(reason))) {
         return idempotent || retryableError.isRejected();
       }
     }
@@ -288,29 +287,20 @@ public class BaseServiceException extends RuntimeException {
     this.debugInfo = exceptionData.getDebugInfo();
   }
 
-  /**
-   * Returns the code associated with this exception.
-   */
+  /** Returns the code associated with this exception. */
   public int getCode() {
     return code;
   }
 
-
-  /**
-   * Returns the reason that caused the exception.
-   */
+  /** Returns the reason that caused the exception. */
   public String getReason() {
     return reason;
   }
 
-
-  /**
-   * Returns {@code true} when it is safe to retry the operation that caused this exception.
-   */
+  /** Returns {@code true} when it is safe to retry the operation that caused this exception. */
   public boolean isRetryable() {
     return retryable;
   }
-
 
   /**
    * Returns the service location where the error causing the exception occurred. Returns {@code

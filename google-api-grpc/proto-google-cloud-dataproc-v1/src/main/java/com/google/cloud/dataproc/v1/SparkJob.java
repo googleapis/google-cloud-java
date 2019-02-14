@@ -4,6 +4,8 @@
 package com.google.cloud.dataproc.v1;
 
 /**
+ *
+ *
  * <pre>
  * A Cloud Dataproc job for running [Apache Spark](http://spark.apache.org/)
  * applications on YARN.
@@ -11,15 +13,16 @@ package com.google.cloud.dataproc.v1;
  *
  * Protobuf type {@code google.cloud.dataproc.v1.SparkJob}
  */
-public  final class SparkJob extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class SparkJob extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1.SparkJob)
     SparkJobOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use SparkJob.newBuilder() to construct.
   private SparkJob(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private SparkJob() {
     args_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     jarFileUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -28,15 +31,18 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private SparkJob(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -48,94 +54,104 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              driverCase_ = 1;
+              driver_ = s;
+              break;
             }
-            break;
-          }
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
-            driverCase_ = 1;
-            driver_ = s;
-            break;
-          }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
-            driverCase_ = 2;
-            driver_ = s;
-            break;
-          }
-          case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-              args_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000004;
+          case 18:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              driverCase_ = 2;
+              driver_ = s;
+              break;
             }
-            args_.add(s);
-            break;
-          }
-          case 34: {
-            java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-              jarFileUris_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000008;
+          case 26:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+                args_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              args_.add(s);
+              break;
             }
-            jarFileUris_.add(s);
-            break;
-          }
-          case 42: {
-            java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
-              fileUris_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000010;
+          case 34:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+                jarFileUris_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              jarFileUris_.add(s);
+              break;
             }
-            fileUris_.add(s);
-            break;
-          }
-          case 50: {
-            java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
-              archiveUris_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000020;
+          case 42:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+                fileUris_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000010;
+              }
+              fileUris_.add(s);
+              break;
             }
-            archiveUris_.add(s);
-            break;
-          }
-          case 58: {
-            if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
-              properties_ = com.google.protobuf.MapField.newMapField(
-                  PropertiesDefaultEntryHolder.defaultEntry);
-              mutable_bitField0_ |= 0x00000040;
+          case 50:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+                archiveUris_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000020;
+              }
+              archiveUris_.add(s);
+              break;
             }
-            com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-            properties__ = input.readMessage(
-                PropertiesDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-            properties_.getMutableMap().put(
-                properties__.getKey(), properties__.getValue());
-            break;
-          }
-          case 66: {
-            com.google.cloud.dataproc.v1.LoggingConfig.Builder subBuilder = null;
-            if (loggingConfig_ != null) {
-              subBuilder = loggingConfig_.toBuilder();
+          case 58:
+            {
+              if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+                properties_ =
+                    com.google.protobuf.MapField.newMapField(
+                        PropertiesDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000040;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> properties__ =
+                  input.readMessage(
+                      PropertiesDefaultEntryHolder.defaultEntry.getParserForType(),
+                      extensionRegistry);
+              properties_.getMutableMap().put(properties__.getKey(), properties__.getValue());
+              break;
             }
-            loggingConfig_ = input.readMessage(com.google.cloud.dataproc.v1.LoggingConfig.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(loggingConfig_);
-              loggingConfig_ = subBuilder.buildPartial();
-            }
+          case 66:
+            {
+              com.google.cloud.dataproc.v1.LoggingConfig.Builder subBuilder = null;
+              if (loggingConfig_ != null) {
+                subBuilder = loggingConfig_.toBuilder();
+              }
+              loggingConfig_ =
+                  input.readMessage(
+                      com.google.cloud.dataproc.v1.LoggingConfig.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(loggingConfig_);
+                loggingConfig_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
         args_ = args_.getUnmodifiableView();
@@ -153,44 +169,47 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.dataproc.v1.JobsProto.internal_static_google_cloud_dataproc_v1_SparkJob_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.dataproc.v1.JobsProto
+        .internal_static_google_cloud_dataproc_v1_SparkJob_descriptor;
   }
 
   @SuppressWarnings({"rawtypes"})
-  protected com.google.protobuf.MapField internalGetMapField(
-      int number) {
+  @java.lang.Override
+  protected com.google.protobuf.MapField internalGetMapField(int number) {
     switch (number) {
       case 7:
         return internalGetProperties();
       default:
-        throw new RuntimeException(
-            "Invalid map field number: " + number);
+        throw new RuntimeException("Invalid map field number: " + number);
     }
   }
+
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.dataproc.v1.JobsProto.internal_static_google_cloud_dataproc_v1_SparkJob_fieldAccessorTable
+    return com.google.cloud.dataproc.v1.JobsProto
+        .internal_static_google_cloud_dataproc_v1_SparkJob_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.dataproc.v1.SparkJob.class, com.google.cloud.dataproc.v1.SparkJob.Builder.class);
+            com.google.cloud.dataproc.v1.SparkJob.class,
+            com.google.cloud.dataproc.v1.SparkJob.Builder.class);
   }
 
   private int bitField0_;
   private int driverCase_ = 0;
   private java.lang.Object driver_;
-  public enum DriverCase
-      implements com.google.protobuf.Internal.EnumLite {
+
+  public enum DriverCase implements com.google.protobuf.Internal.EnumLite {
     MAIN_JAR_FILE_URI(1),
     MAIN_CLASS(2),
     DRIVER_NOT_SET(0);
     private final int value;
+
     private DriverCase(int value) {
       this.value = value;
     }
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static DriverCase valueOf(int value) {
       return forNumber(value);
@@ -198,25 +217,30 @@ private static final long serialVersionUID = 0L;
 
     public static DriverCase forNumber(int value) {
       switch (value) {
-        case 1: return MAIN_JAR_FILE_URI;
-        case 2: return MAIN_CLASS;
-        case 0: return DRIVER_NOT_SET;
-        default: return null;
+        case 1:
+          return MAIN_JAR_FILE_URI;
+        case 2:
+          return MAIN_CLASS;
+        case 0:
+          return DRIVER_NOT_SET;
+        default:
+          return null;
       }
     }
+
     public int getNumber() {
       return this.value;
     }
   };
 
-  public DriverCase
-  getDriverCase() {
-    return DriverCase.forNumber(
-        driverCase_);
+  public DriverCase getDriverCase() {
+    return DriverCase.forNumber(driverCase_);
   }
 
   public static final int MAIN_JAR_FILE_URI_FIELD_NUMBER = 1;
   /**
+   *
+   *
    * <pre>
    * The HCFS URI of the jar file that contains the main class.
    * </pre>
@@ -231,8 +255,7 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       if (driverCase_ == 1) {
         driver_ = s;
@@ -241,22 +264,22 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The HCFS URI of the jar file that contains the main class.
    * </pre>
    *
    * <code>string main_jar_file_uri = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getMainJarFileUriBytes() {
+  public com.google.protobuf.ByteString getMainJarFileUriBytes() {
     java.lang.Object ref = "";
     if (driverCase_ == 1) {
       ref = driver_;
     }
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       if (driverCase_ == 1) {
         driver_ = b;
       }
@@ -268,6 +291,8 @@ private static final long serialVersionUID = 0L;
 
   public static final int MAIN_CLASS_FIELD_NUMBER = 2;
   /**
+   *
+   *
    * <pre>
    * The name of the driver's main class. The jar file that contains the class
    * must be in the default CLASSPATH or specified in `jar_file_uris`.
@@ -283,8 +308,7 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       if (driverCase_ == 2) {
         driver_ = s;
@@ -293,6 +317,8 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The name of the driver's main class. The jar file that contains the class
    * must be in the default CLASSPATH or specified in `jar_file_uris`.
@@ -300,16 +326,14 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string main_class = 2;</code>
    */
-  public com.google.protobuf.ByteString
-      getMainClassBytes() {
+  public com.google.protobuf.ByteString getMainClassBytes() {
     java.lang.Object ref = "";
     if (driverCase_ == 2) {
       ref = driver_;
     }
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       if (driverCase_ == 2) {
         driver_ = b;
       }
@@ -322,6 +346,8 @@ private static final long serialVersionUID = 0L;
   public static final int ARGS_FIELD_NUMBER = 3;
   private com.google.protobuf.LazyStringList args_;
   /**
+   *
+   *
    * <pre>
    * Optional. The arguments to pass to the driver. Do not include arguments,
    * such as `--conf`, that can be set as job properties, since a collision may
@@ -330,11 +356,12 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string args = 3;</code>
    */
-  public com.google.protobuf.ProtocolStringList
-      getArgsList() {
+  public com.google.protobuf.ProtocolStringList getArgsList() {
     return args_;
   }
   /**
+   *
+   *
    * <pre>
    * Optional. The arguments to pass to the driver. Do not include arguments,
    * such as `--conf`, that can be set as job properties, since a collision may
@@ -347,6 +374,8 @@ private static final long serialVersionUID = 0L;
     return args_.size();
   }
   /**
+   *
+   *
    * <pre>
    * Optional. The arguments to pass to the driver. Do not include arguments,
    * such as `--conf`, that can be set as job properties, since a collision may
@@ -359,6 +388,8 @@ private static final long serialVersionUID = 0L;
     return args_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * Optional. The arguments to pass to the driver. Do not include arguments,
    * such as `--conf`, that can be set as job properties, since a collision may
@@ -367,14 +398,15 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string args = 3;</code>
    */
-  public com.google.protobuf.ByteString
-      getArgsBytes(int index) {
+  public com.google.protobuf.ByteString getArgsBytes(int index) {
     return args_.getByteString(index);
   }
 
   public static final int JAR_FILE_URIS_FIELD_NUMBER = 4;
   private com.google.protobuf.LazyStringList jarFileUris_;
   /**
+   *
+   *
    * <pre>
    * Optional. HCFS URIs of jar files to add to the CLASSPATHs of the
    * Spark driver and tasks.
@@ -382,11 +414,12 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string jar_file_uris = 4;</code>
    */
-  public com.google.protobuf.ProtocolStringList
-      getJarFileUrisList() {
+  public com.google.protobuf.ProtocolStringList getJarFileUrisList() {
     return jarFileUris_;
   }
   /**
+   *
+   *
    * <pre>
    * Optional. HCFS URIs of jar files to add to the CLASSPATHs of the
    * Spark driver and tasks.
@@ -398,6 +431,8 @@ private static final long serialVersionUID = 0L;
     return jarFileUris_.size();
   }
   /**
+   *
+   *
    * <pre>
    * Optional. HCFS URIs of jar files to add to the CLASSPATHs of the
    * Spark driver and tasks.
@@ -409,6 +444,8 @@ private static final long serialVersionUID = 0L;
     return jarFileUris_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * Optional. HCFS URIs of jar files to add to the CLASSPATHs of the
    * Spark driver and tasks.
@@ -416,14 +453,15 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string jar_file_uris = 4;</code>
    */
-  public com.google.protobuf.ByteString
-      getJarFileUrisBytes(int index) {
+  public com.google.protobuf.ByteString getJarFileUrisBytes(int index) {
     return jarFileUris_.getByteString(index);
   }
 
   public static final int FILE_URIS_FIELD_NUMBER = 5;
   private com.google.protobuf.LazyStringList fileUris_;
   /**
+   *
+   *
    * <pre>
    * Optional. HCFS URIs of files to be copied to the working directory of
    * Spark drivers and distributed tasks. Useful for naively parallel tasks.
@@ -431,11 +469,12 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string file_uris = 5;</code>
    */
-  public com.google.protobuf.ProtocolStringList
-      getFileUrisList() {
+  public com.google.protobuf.ProtocolStringList getFileUrisList() {
     return fileUris_;
   }
   /**
+   *
+   *
    * <pre>
    * Optional. HCFS URIs of files to be copied to the working directory of
    * Spark drivers and distributed tasks. Useful for naively parallel tasks.
@@ -447,6 +486,8 @@ private static final long serialVersionUID = 0L;
     return fileUris_.size();
   }
   /**
+   *
+   *
    * <pre>
    * Optional. HCFS URIs of files to be copied to the working directory of
    * Spark drivers and distributed tasks. Useful for naively parallel tasks.
@@ -458,6 +499,8 @@ private static final long serialVersionUID = 0L;
     return fileUris_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * Optional. HCFS URIs of files to be copied to the working directory of
    * Spark drivers and distributed tasks. Useful for naively parallel tasks.
@@ -465,14 +508,15 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string file_uris = 5;</code>
    */
-  public com.google.protobuf.ByteString
-      getFileUrisBytes(int index) {
+  public com.google.protobuf.ByteString getFileUrisBytes(int index) {
     return fileUris_.getByteString(index);
   }
 
   public static final int ARCHIVE_URIS_FIELD_NUMBER = 6;
   private com.google.protobuf.LazyStringList archiveUris_;
   /**
+   *
+   *
    * <pre>
    * Optional. HCFS URIs of archives to be extracted in the working directory
    * of Spark drivers and tasks. Supported file types:
@@ -481,11 +525,12 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string archive_uris = 6;</code>
    */
-  public com.google.protobuf.ProtocolStringList
-      getArchiveUrisList() {
+  public com.google.protobuf.ProtocolStringList getArchiveUrisList() {
     return archiveUris_;
   }
   /**
+   *
+   *
    * <pre>
    * Optional. HCFS URIs of archives to be extracted in the working directory
    * of Spark drivers and tasks. Supported file types:
@@ -498,6 +543,8 @@ private static final long serialVersionUID = 0L;
     return archiveUris_.size();
   }
   /**
+   *
+   *
    * <pre>
    * Optional. HCFS URIs of archives to be extracted in the working directory
    * of Spark drivers and tasks. Supported file types:
@@ -510,6 +557,8 @@ private static final long serialVersionUID = 0L;
     return archiveUris_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * Optional. HCFS URIs of archives to be extracted in the working directory
    * of Spark drivers and tasks. Supported file types:
@@ -518,30 +567,28 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string archive_uris = 6;</code>
    */
-  public com.google.protobuf.ByteString
-      getArchiveUrisBytes(int index) {
+  public com.google.protobuf.ByteString getArchiveUrisBytes(int index) {
     return archiveUris_.getByteString(index);
   }
 
   public static final int PROPERTIES_FIELD_NUMBER = 7;
+
   private static final class PropertiesDefaultEntryHolder {
-    static final com.google.protobuf.MapEntry<
-        java.lang.String, java.lang.String> defaultEntry =
-            com.google.protobuf.MapEntry
-            .<java.lang.String, java.lang.String>newDefaultInstance(
-                com.google.cloud.dataproc.v1.JobsProto.internal_static_google_cloud_dataproc_v1_SparkJob_PropertiesEntry_descriptor, 
-                com.google.protobuf.WireFormat.FieldType.STRING,
-                "",
-                com.google.protobuf.WireFormat.FieldType.STRING,
-                "");
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.cloud.dataproc.v1.JobsProto
+                .internal_static_google_cloud_dataproc_v1_SparkJob_PropertiesEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
   }
-  private com.google.protobuf.MapField<
-      java.lang.String, java.lang.String> properties_;
-  private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-  internalGetProperties() {
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> properties_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetProperties() {
     if (properties_ == null) {
-      return com.google.protobuf.MapField.emptyMapField(
-          PropertiesDefaultEntryHolder.defaultEntry);
+      return com.google.protobuf.MapField.emptyMapField(PropertiesDefaultEntryHolder.defaultEntry);
     }
     return properties_;
   }
@@ -550,6 +597,8 @@ private static final long serialVersionUID = 0L;
     return internalGetProperties().getMap().size();
   }
   /**
+   *
+   *
    * <pre>
    * Optional. A mapping of property names to values, used to configure Spark.
    * Properties that conflict with values set by the Cloud Dataproc API may be
@@ -559,20 +608,20 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; properties = 7;</code>
    */
-
-  public boolean containsProperties(
-      java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+  public boolean containsProperties(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
     return internalGetProperties().getMap().containsKey(key);
   }
-  /**
-   * Use {@link #getPropertiesMap()} instead.
-   */
+  /** Use {@link #getPropertiesMap()} instead. */
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getProperties() {
     return getPropertiesMap();
   }
   /**
+   *
+   *
    * <pre>
    * Optional. A mapping of property names to values, used to configure Spark.
    * Properties that conflict with values set by the Cloud Dataproc API may be
@@ -582,11 +631,12 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; properties = 7;</code>
    */
-
   public java.util.Map<java.lang.String, java.lang.String> getPropertiesMap() {
     return internalGetProperties().getMap();
   }
   /**
+   *
+   *
    * <pre>
    * Optional. A mapping of property names to values, used to configure Spark.
    * Properties that conflict with values set by the Cloud Dataproc API may be
@@ -596,16 +646,17 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; properties = 7;</code>
    */
-
   public java.lang.String getPropertiesOrDefault(
-      java.lang.String key,
-      java.lang.String defaultValue) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
-    java.util.Map<java.lang.String, java.lang.String> map =
-        internalGetProperties().getMap();
+      java.lang.String key, java.lang.String defaultValue) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetProperties().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
   /**
+   *
+   *
    * <pre>
    * Optional. A mapping of property names to values, used to configure Spark.
    * Properties that conflict with values set by the Cloud Dataproc API may be
@@ -615,12 +666,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; properties = 7;</code>
    */
-
-  public java.lang.String getPropertiesOrThrow(
-      java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
-    java.util.Map<java.lang.String, java.lang.String> map =
-        internalGetProperties().getMap();
+  public java.lang.String getPropertiesOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetProperties().getMap();
     if (!map.containsKey(key)) {
       throw new java.lang.IllegalArgumentException();
     }
@@ -630,6 +680,8 @@ private static final long serialVersionUID = 0L;
   public static final int LOGGING_CONFIG_FIELD_NUMBER = 8;
   private com.google.cloud.dataproc.v1.LoggingConfig loggingConfig_;
   /**
+   *
+   *
    * <pre>
    * Optional. The runtime log config for job execution.
    * </pre>
@@ -640,6 +692,8 @@ private static final long serialVersionUID = 0L;
     return loggingConfig_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Optional. The runtime log config for job execution.
    * </pre>
@@ -647,9 +701,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.cloud.dataproc.v1.LoggingConfig logging_config = 8;</code>
    */
   public com.google.cloud.dataproc.v1.LoggingConfig getLoggingConfig() {
-    return loggingConfig_ == null ? com.google.cloud.dataproc.v1.LoggingConfig.getDefaultInstance() : loggingConfig_;
+    return loggingConfig_ == null
+        ? com.google.cloud.dataproc.v1.LoggingConfig.getDefaultInstance()
+        : loggingConfig_;
   }
   /**
+   *
+   *
    * <pre>
    * Optional. The runtime log config for job execution.
    * </pre>
@@ -661,6 +719,8 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -670,8 +730,8 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  @java.lang.Override
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (driverCase_ == 1) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, driver_);
     }
@@ -690,18 +750,15 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < archiveUris_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, archiveUris_.getRaw(i));
     }
-    com.google.protobuf.GeneratedMessageV3
-      .serializeStringMapTo(
-        output,
-        internalGetProperties(),
-        PropertiesDefaultEntryHolder.defaultEntry,
-        7);
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetProperties(), PropertiesDefaultEntryHolder.defaultEntry, 7);
     if (loggingConfig_ != null) {
       output.writeMessage(8, getLoggingConfig());
     }
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -745,19 +802,18 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getArchiveUrisList().size();
     }
-    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
-         : internalGetProperties().getMap().entrySet()) {
-      com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-      properties__ = PropertiesDefaultEntryHolder.defaultEntry.newBuilderForType()
-          .setKey(entry.getKey())
-          .setValue(entry.getValue())
-          .build();
-      size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(7, properties__);
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetProperties().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> properties__ =
+          PropertiesDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, properties__);
     }
     if (loggingConfig_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(8, getLoggingConfig());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getLoggingConfig());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -767,7 +823,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.dataproc.v1.SparkJob)) {
       return super.equals(obj);
@@ -775,32 +831,23 @@ private static final long serialVersionUID = 0L;
     com.google.cloud.dataproc.v1.SparkJob other = (com.google.cloud.dataproc.v1.SparkJob) obj;
 
     boolean result = true;
-    result = result && getArgsList()
-        .equals(other.getArgsList());
-    result = result && getJarFileUrisList()
-        .equals(other.getJarFileUrisList());
-    result = result && getFileUrisList()
-        .equals(other.getFileUrisList());
-    result = result && getArchiveUrisList()
-        .equals(other.getArchiveUrisList());
-    result = result && internalGetProperties().equals(
-        other.internalGetProperties());
+    result = result && getArgsList().equals(other.getArgsList());
+    result = result && getJarFileUrisList().equals(other.getJarFileUrisList());
+    result = result && getFileUrisList().equals(other.getFileUrisList());
+    result = result && getArchiveUrisList().equals(other.getArchiveUrisList());
+    result = result && internalGetProperties().equals(other.internalGetProperties());
     result = result && (hasLoggingConfig() == other.hasLoggingConfig());
     if (hasLoggingConfig()) {
-      result = result && getLoggingConfig()
-          .equals(other.getLoggingConfig());
+      result = result && getLoggingConfig().equals(other.getLoggingConfig());
     }
-    result = result && getDriverCase().equals(
-        other.getDriverCase());
+    result = result && getDriverCase().equals(other.getDriverCase());
     if (!result) return false;
     switch (driverCase_) {
       case 1:
-        result = result && getMainJarFileUri()
-            .equals(other.getMainJarFileUri());
+        result = result && getMainJarFileUri().equals(other.getMainJarFileUri());
         break;
       case 2:
-        result = result && getMainClass()
-            .equals(other.getMainClass());
+        result = result && getMainClass().equals(other.getMainClass());
         break;
       case 0:
       default:
@@ -857,95 +904,103 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.cloud.dataproc.v1.SparkJob parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.cloud.dataproc.v1.SparkJob parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dataproc.v1.SparkJob parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.dataproc.v1.SparkJob parseFrom(
-      com.google.protobuf.ByteString data)
+
+  public static com.google.cloud.dataproc.v1.SparkJob parseFrom(com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dataproc.v1.SparkJob parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.dataproc.v1.SparkJob parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dataproc.v1.SparkJob parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.dataproc.v1.SparkJob parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.dataproc.v1.SparkJob parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.cloud.dataproc.v1.SparkJob parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.dataproc.v1.SparkJob parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.cloud.dataproc.v1.SparkJob parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.dataproc.v1.SparkJob parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  public Builder newBuilderForType() { return newBuilder(); }
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-  public static Builder newBuilder(com.google.cloud.dataproc.v1.SparkJob prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+
+  public static Builder newBuilder(com.google.cloud.dataproc.v1.SparkJob prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+
+  @java.lang.Override
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * A Cloud Dataproc job for running [Apache Spark](http://spark.apache.org/)
    * applications on YARN.
@@ -953,42 +1008,43 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.cloud.dataproc.v1.SparkJob}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.dataproc.v1.SparkJob)
       com.google.cloud.dataproc.v1.SparkJobOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.dataproc.v1.JobsProto.internal_static_google_cloud_dataproc_v1_SparkJob_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dataproc.v1.JobsProto
+          .internal_static_google_cloud_dataproc_v1_SparkJob_descriptor;
     }
 
     @SuppressWarnings({"rawtypes"})
-    protected com.google.protobuf.MapField internalGetMapField(
-        int number) {
+    protected com.google.protobuf.MapField internalGetMapField(int number) {
       switch (number) {
         case 7:
           return internalGetProperties();
         default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
+          throw new RuntimeException("Invalid map field number: " + number);
       }
     }
+
     @SuppressWarnings({"rawtypes"})
-    protected com.google.protobuf.MapField internalGetMutableMapField(
-        int number) {
+    protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
       switch (number) {
         case 7:
           return internalGetMutableProperties();
         default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
+          throw new RuntimeException("Invalid map field number: " + number);
       }
     }
+
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.dataproc.v1.JobsProto.internal_static_google_cloud_dataproc_v1_SparkJob_fieldAccessorTable
+      return com.google.cloud.dataproc.v1.JobsProto
+          .internal_static_google_cloud_dataproc_v1_SparkJob_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.dataproc.v1.SparkJob.class, com.google.cloud.dataproc.v1.SparkJob.Builder.class);
+              com.google.cloud.dataproc.v1.SparkJob.class,
+              com.google.cloud.dataproc.v1.SparkJob.Builder.class);
     }
 
     // Construct using com.google.cloud.dataproc.v1.SparkJob.newBuilder()
@@ -996,16 +1052,16 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       args_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -1028,15 +1084,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.dataproc.v1.JobsProto.internal_static_google_cloud_dataproc_v1_SparkJob_descriptor;
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.dataproc.v1.JobsProto
+          .internal_static_google_cloud_dataproc_v1_SparkJob_descriptor;
     }
 
+    @java.lang.Override
     public com.google.cloud.dataproc.v1.SparkJob getDefaultInstanceForType() {
       return com.google.cloud.dataproc.v1.SparkJob.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.cloud.dataproc.v1.SparkJob build() {
       com.google.cloud.dataproc.v1.SparkJob result = buildPartial();
       if (!result.isInitialized()) {
@@ -1045,8 +1104,10 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.cloud.dataproc.v1.SparkJob buildPartial() {
-      com.google.cloud.dataproc.v1.SparkJob result = new com.google.cloud.dataproc.v1.SparkJob(this);
+      com.google.cloud.dataproc.v1.SparkJob result =
+          new com.google.cloud.dataproc.v1.SparkJob(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (driverCase_ == 1) {
@@ -1088,35 +1149,43 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+
+    @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+    @java.lang.Override
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+    @java.lang.Override
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
+    @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
+    @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.dataproc.v1.SparkJob) {
-        return mergeFrom((com.google.cloud.dataproc.v1.SparkJob)other);
+        return mergeFrom((com.google.cloud.dataproc.v1.SparkJob) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -1165,37 +1234,41 @@ private static final long serialVersionUID = 0L;
         }
         onChanged();
       }
-      internalGetMutableProperties().mergeFrom(
-          other.internalGetProperties());
+      internalGetMutableProperties().mergeFrom(other.internalGetProperties());
       if (other.hasLoggingConfig()) {
         mergeLoggingConfig(other.getLoggingConfig());
       }
       switch (other.getDriverCase()) {
-        case MAIN_JAR_FILE_URI: {
-          driverCase_ = 1;
-          driver_ = other.driver_;
-          onChanged();
-          break;
-        }
-        case MAIN_CLASS: {
-          driverCase_ = 2;
-          driver_ = other.driver_;
-          onChanged();
-          break;
-        }
-        case DRIVER_NOT_SET: {
-          break;
-        }
+        case MAIN_JAR_FILE_URI:
+          {
+            driverCase_ = 1;
+            driver_ = other.driver_;
+            onChanged();
+            break;
+          }
+        case MAIN_CLASS:
+          {
+            driverCase_ = 2;
+            driver_ = other.driver_;
+            onChanged();
+            break;
+          }
+        case DRIVER_NOT_SET:
+          {
+            break;
+          }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1213,12 +1286,12 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int driverCase_ = 0;
     private java.lang.Object driver_;
-    public DriverCase
-        getDriverCase() {
-      return DriverCase.forNumber(
-          driverCase_);
+
+    public DriverCase getDriverCase() {
+      return DriverCase.forNumber(driverCase_);
     }
 
     public Builder clearDriver() {
@@ -1231,6 +1304,8 @@ private static final long serialVersionUID = 0L;
     private int bitField0_;
 
     /**
+     *
+     *
      * <pre>
      * The HCFS URI of the jar file that contains the main class.
      * </pre>
@@ -1243,8 +1318,7 @@ private static final long serialVersionUID = 0L;
         ref = driver_;
       }
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (driverCase_ == 1) {
           driver_ = s;
@@ -1255,22 +1329,22 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The HCFS URI of the jar file that contains the main class.
      * </pre>
      *
      * <code>string main_jar_file_uri = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getMainJarFileUriBytes() {
+    public com.google.protobuf.ByteString getMainJarFileUriBytes() {
       java.lang.Object ref = "";
       if (driverCase_ == 1) {
         ref = driver_;
       }
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         if (driverCase_ == 1) {
           driver_ = b;
         }
@@ -1280,23 +1354,26 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The HCFS URI of the jar file that contains the main class.
      * </pre>
      *
      * <code>string main_jar_file_uri = 1;</code>
      */
-    public Builder setMainJarFileUri(
-        java.lang.String value) {
+    public Builder setMainJarFileUri(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  driverCase_ = 1;
+        throw new NullPointerException();
+      }
+      driverCase_ = 1;
       driver_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The HCFS URI of the jar file that contains the main class.
      * </pre>
@@ -1312,18 +1389,19 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The HCFS URI of the jar file that contains the main class.
      * </pre>
      *
      * <code>string main_jar_file_uri = 1;</code>
      */
-    public Builder setMainJarFileUriBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setMainJarFileUriBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
       driverCase_ = 1;
       driver_ = value;
       onChanged();
@@ -1331,6 +1409,8 @@ private static final long serialVersionUID = 0L;
     }
 
     /**
+     *
+     *
      * <pre>
      * The name of the driver's main class. The jar file that contains the class
      * must be in the default CLASSPATH or specified in `jar_file_uris`.
@@ -1344,8 +1424,7 @@ private static final long serialVersionUID = 0L;
         ref = driver_;
       }
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (driverCase_ == 2) {
           driver_ = s;
@@ -1356,6 +1435,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The name of the driver's main class. The jar file that contains the class
      * must be in the default CLASSPATH or specified in `jar_file_uris`.
@@ -1363,16 +1444,14 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string main_class = 2;</code>
      */
-    public com.google.protobuf.ByteString
-        getMainClassBytes() {
+    public com.google.protobuf.ByteString getMainClassBytes() {
       java.lang.Object ref = "";
       if (driverCase_ == 2) {
         ref = driver_;
       }
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         if (driverCase_ == 2) {
           driver_ = b;
         }
@@ -1382,6 +1461,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The name of the driver's main class. The jar file that contains the class
      * must be in the default CLASSPATH or specified in `jar_file_uris`.
@@ -1389,17 +1470,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string main_class = 2;</code>
      */
-    public Builder setMainClass(
-        java.lang.String value) {
+    public Builder setMainClass(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  driverCase_ = 2;
+        throw new NullPointerException();
+      }
+      driverCase_ = 2;
       driver_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The name of the driver's main class. The jar file that contains the class
      * must be in the default CLASSPATH or specified in `jar_file_uris`.
@@ -1416,6 +1498,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The name of the driver's main class. The jar file that contains the class
      * must be in the default CLASSPATH or specified in `jar_file_uris`.
@@ -1423,26 +1507,29 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string main_class = 2;</code>
      */
-    public Builder setMainClassBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setMainClassBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
       driverCase_ = 2;
       driver_ = value;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList args_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringList args_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
     private void ensureArgsIsMutable() {
       if (!((bitField0_ & 0x00000004) == 0x00000004)) {
         args_ = new com.google.protobuf.LazyStringArrayList(args_);
         bitField0_ |= 0x00000004;
-       }
+      }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The arguments to pass to the driver. Do not include arguments,
      * such as `--conf`, that can be set as job properties, since a collision may
@@ -1451,11 +1538,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string args = 3;</code>
      */
-    public com.google.protobuf.ProtocolStringList
-        getArgsList() {
+    public com.google.protobuf.ProtocolStringList getArgsList() {
       return args_.getUnmodifiableView();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The arguments to pass to the driver. Do not include arguments,
      * such as `--conf`, that can be set as job properties, since a collision may
@@ -1468,6 +1556,8 @@ private static final long serialVersionUID = 0L;
       return args_.size();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The arguments to pass to the driver. Do not include arguments,
      * such as `--conf`, that can be set as job properties, since a collision may
@@ -1480,6 +1570,8 @@ private static final long serialVersionUID = 0L;
       return args_.get(index);
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The arguments to pass to the driver. Do not include arguments,
      * such as `--conf`, that can be set as job properties, since a collision may
@@ -1488,11 +1580,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string args = 3;</code>
      */
-    public com.google.protobuf.ByteString
-        getArgsBytes(int index) {
+    public com.google.protobuf.ByteString getArgsBytes(int index) {
       return args_.getByteString(index);
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The arguments to pass to the driver. Do not include arguments,
      * such as `--conf`, that can be set as job properties, since a collision may
@@ -1501,17 +1594,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string args = 3;</code>
      */
-    public Builder setArgs(
-        int index, java.lang.String value) {
+    public Builder setArgs(int index, java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureArgsIsMutable();
+        throw new NullPointerException();
+      }
+      ensureArgsIsMutable();
       args_.set(index, value);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The arguments to pass to the driver. Do not include arguments,
      * such as `--conf`, that can be set as job properties, since a collision may
@@ -1520,17 +1614,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string args = 3;</code>
      */
-    public Builder addArgs(
-        java.lang.String value) {
+    public Builder addArgs(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureArgsIsMutable();
+        throw new NullPointerException();
+      }
+      ensureArgsIsMutable();
       args_.add(value);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The arguments to pass to the driver. Do not include arguments,
      * such as `--conf`, that can be set as job properties, since a collision may
@@ -1539,15 +1634,15 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string args = 3;</code>
      */
-    public Builder addAllArgs(
-        java.lang.Iterable<java.lang.String> values) {
+    public Builder addAllArgs(java.lang.Iterable<java.lang.String> values) {
       ensureArgsIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(
-          values, args_);
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, args_);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The arguments to pass to the driver. Do not include arguments,
      * such as `--conf`, that can be set as job properties, since a collision may
@@ -1563,6 +1658,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The arguments to pass to the driver. Do not include arguments,
      * such as `--conf`, that can be set as job properties, since a collision may
@@ -1571,26 +1668,29 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string args = 3;</code>
      */
-    public Builder addArgsBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder addArgsBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
       ensureArgsIsMutable();
       args_.add(value);
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList jarFileUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringList jarFileUris_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
     private void ensureJarFileUrisIsMutable() {
       if (!((bitField0_ & 0x00000008) == 0x00000008)) {
         jarFileUris_ = new com.google.protobuf.LazyStringArrayList(jarFileUris_);
         bitField0_ |= 0x00000008;
-       }
+      }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. HCFS URIs of jar files to add to the CLASSPATHs of the
      * Spark driver and tasks.
@@ -1598,11 +1698,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string jar_file_uris = 4;</code>
      */
-    public com.google.protobuf.ProtocolStringList
-        getJarFileUrisList() {
+    public com.google.protobuf.ProtocolStringList getJarFileUrisList() {
       return jarFileUris_.getUnmodifiableView();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. HCFS URIs of jar files to add to the CLASSPATHs of the
      * Spark driver and tasks.
@@ -1614,6 +1715,8 @@ private static final long serialVersionUID = 0L;
       return jarFileUris_.size();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. HCFS URIs of jar files to add to the CLASSPATHs of the
      * Spark driver and tasks.
@@ -1625,6 +1728,8 @@ private static final long serialVersionUID = 0L;
       return jarFileUris_.get(index);
     }
     /**
+     *
+     *
      * <pre>
      * Optional. HCFS URIs of jar files to add to the CLASSPATHs of the
      * Spark driver and tasks.
@@ -1632,11 +1737,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string jar_file_uris = 4;</code>
      */
-    public com.google.protobuf.ByteString
-        getJarFileUrisBytes(int index) {
+    public com.google.protobuf.ByteString getJarFileUrisBytes(int index) {
       return jarFileUris_.getByteString(index);
     }
     /**
+     *
+     *
      * <pre>
      * Optional. HCFS URIs of jar files to add to the CLASSPATHs of the
      * Spark driver and tasks.
@@ -1644,17 +1750,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string jar_file_uris = 4;</code>
      */
-    public Builder setJarFileUris(
-        int index, java.lang.String value) {
+    public Builder setJarFileUris(int index, java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureJarFileUrisIsMutable();
+        throw new NullPointerException();
+      }
+      ensureJarFileUrisIsMutable();
       jarFileUris_.set(index, value);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. HCFS URIs of jar files to add to the CLASSPATHs of the
      * Spark driver and tasks.
@@ -1662,17 +1769,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string jar_file_uris = 4;</code>
      */
-    public Builder addJarFileUris(
-        java.lang.String value) {
+    public Builder addJarFileUris(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureJarFileUrisIsMutable();
+        throw new NullPointerException();
+      }
+      ensureJarFileUrisIsMutable();
       jarFileUris_.add(value);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. HCFS URIs of jar files to add to the CLASSPATHs of the
      * Spark driver and tasks.
@@ -1680,15 +1788,15 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string jar_file_uris = 4;</code>
      */
-    public Builder addAllJarFileUris(
-        java.lang.Iterable<java.lang.String> values) {
+    public Builder addAllJarFileUris(java.lang.Iterable<java.lang.String> values) {
       ensureJarFileUrisIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(
-          values, jarFileUris_);
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, jarFileUris_);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. HCFS URIs of jar files to add to the CLASSPATHs of the
      * Spark driver and tasks.
@@ -1703,6 +1811,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. HCFS URIs of jar files to add to the CLASSPATHs of the
      * Spark driver and tasks.
@@ -1710,26 +1820,29 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string jar_file_uris = 4;</code>
      */
-    public Builder addJarFileUrisBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder addJarFileUrisBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
       ensureJarFileUrisIsMutable();
       jarFileUris_.add(value);
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList fileUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringList fileUris_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
     private void ensureFileUrisIsMutable() {
       if (!((bitField0_ & 0x00000010) == 0x00000010)) {
         fileUris_ = new com.google.protobuf.LazyStringArrayList(fileUris_);
         bitField0_ |= 0x00000010;
-       }
+      }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. HCFS URIs of files to be copied to the working directory of
      * Spark drivers and distributed tasks. Useful for naively parallel tasks.
@@ -1737,11 +1850,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string file_uris = 5;</code>
      */
-    public com.google.protobuf.ProtocolStringList
-        getFileUrisList() {
+    public com.google.protobuf.ProtocolStringList getFileUrisList() {
       return fileUris_.getUnmodifiableView();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. HCFS URIs of files to be copied to the working directory of
      * Spark drivers and distributed tasks. Useful for naively parallel tasks.
@@ -1753,6 +1867,8 @@ private static final long serialVersionUID = 0L;
       return fileUris_.size();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. HCFS URIs of files to be copied to the working directory of
      * Spark drivers and distributed tasks. Useful for naively parallel tasks.
@@ -1764,6 +1880,8 @@ private static final long serialVersionUID = 0L;
       return fileUris_.get(index);
     }
     /**
+     *
+     *
      * <pre>
      * Optional. HCFS URIs of files to be copied to the working directory of
      * Spark drivers and distributed tasks. Useful for naively parallel tasks.
@@ -1771,11 +1889,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string file_uris = 5;</code>
      */
-    public com.google.protobuf.ByteString
-        getFileUrisBytes(int index) {
+    public com.google.protobuf.ByteString getFileUrisBytes(int index) {
       return fileUris_.getByteString(index);
     }
     /**
+     *
+     *
      * <pre>
      * Optional. HCFS URIs of files to be copied to the working directory of
      * Spark drivers and distributed tasks. Useful for naively parallel tasks.
@@ -1783,17 +1902,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string file_uris = 5;</code>
      */
-    public Builder setFileUris(
-        int index, java.lang.String value) {
+    public Builder setFileUris(int index, java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureFileUrisIsMutable();
+        throw new NullPointerException();
+      }
+      ensureFileUrisIsMutable();
       fileUris_.set(index, value);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. HCFS URIs of files to be copied to the working directory of
      * Spark drivers and distributed tasks. Useful for naively parallel tasks.
@@ -1801,17 +1921,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string file_uris = 5;</code>
      */
-    public Builder addFileUris(
-        java.lang.String value) {
+    public Builder addFileUris(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureFileUrisIsMutable();
+        throw new NullPointerException();
+      }
+      ensureFileUrisIsMutable();
       fileUris_.add(value);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. HCFS URIs of files to be copied to the working directory of
      * Spark drivers and distributed tasks. Useful for naively parallel tasks.
@@ -1819,15 +1940,15 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string file_uris = 5;</code>
      */
-    public Builder addAllFileUris(
-        java.lang.Iterable<java.lang.String> values) {
+    public Builder addAllFileUris(java.lang.Iterable<java.lang.String> values) {
       ensureFileUrisIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(
-          values, fileUris_);
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, fileUris_);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. HCFS URIs of files to be copied to the working directory of
      * Spark drivers and distributed tasks. Useful for naively parallel tasks.
@@ -1842,6 +1963,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. HCFS URIs of files to be copied to the working directory of
      * Spark drivers and distributed tasks. Useful for naively parallel tasks.
@@ -1849,26 +1972,29 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string file_uris = 5;</code>
      */
-    public Builder addFileUrisBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder addFileUrisBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
       ensureFileUrisIsMutable();
       fileUris_.add(value);
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList archiveUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringList archiveUris_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
     private void ensureArchiveUrisIsMutable() {
       if (!((bitField0_ & 0x00000020) == 0x00000020)) {
         archiveUris_ = new com.google.protobuf.LazyStringArrayList(archiveUris_);
         bitField0_ |= 0x00000020;
-       }
+      }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. HCFS URIs of archives to be extracted in the working directory
      * of Spark drivers and tasks. Supported file types:
@@ -1877,11 +2003,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string archive_uris = 6;</code>
      */
-    public com.google.protobuf.ProtocolStringList
-        getArchiveUrisList() {
+    public com.google.protobuf.ProtocolStringList getArchiveUrisList() {
       return archiveUris_.getUnmodifiableView();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. HCFS URIs of archives to be extracted in the working directory
      * of Spark drivers and tasks. Supported file types:
@@ -1894,6 +2021,8 @@ private static final long serialVersionUID = 0L;
       return archiveUris_.size();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. HCFS URIs of archives to be extracted in the working directory
      * of Spark drivers and tasks. Supported file types:
@@ -1906,6 +2035,8 @@ private static final long serialVersionUID = 0L;
       return archiveUris_.get(index);
     }
     /**
+     *
+     *
      * <pre>
      * Optional. HCFS URIs of archives to be extracted in the working directory
      * of Spark drivers and tasks. Supported file types:
@@ -1914,11 +2045,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string archive_uris = 6;</code>
      */
-    public com.google.protobuf.ByteString
-        getArchiveUrisBytes(int index) {
+    public com.google.protobuf.ByteString getArchiveUrisBytes(int index) {
       return archiveUris_.getByteString(index);
     }
     /**
+     *
+     *
      * <pre>
      * Optional. HCFS URIs of archives to be extracted in the working directory
      * of Spark drivers and tasks. Supported file types:
@@ -1927,17 +2059,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string archive_uris = 6;</code>
      */
-    public Builder setArchiveUris(
-        int index, java.lang.String value) {
+    public Builder setArchiveUris(int index, java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureArchiveUrisIsMutable();
+        throw new NullPointerException();
+      }
+      ensureArchiveUrisIsMutable();
       archiveUris_.set(index, value);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. HCFS URIs of archives to be extracted in the working directory
      * of Spark drivers and tasks. Supported file types:
@@ -1946,17 +2079,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string archive_uris = 6;</code>
      */
-    public Builder addArchiveUris(
-        java.lang.String value) {
+    public Builder addArchiveUris(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureArchiveUrisIsMutable();
+        throw new NullPointerException();
+      }
+      ensureArchiveUrisIsMutable();
       archiveUris_.add(value);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. HCFS URIs of archives to be extracted in the working directory
      * of Spark drivers and tasks. Supported file types:
@@ -1965,15 +2099,15 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string archive_uris = 6;</code>
      */
-    public Builder addAllArchiveUris(
-        java.lang.Iterable<java.lang.String> values) {
+    public Builder addAllArchiveUris(java.lang.Iterable<java.lang.String> values) {
       ensureArchiveUrisIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(
-          values, archiveUris_);
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, archiveUris_);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. HCFS URIs of archives to be extracted in the working directory
      * of Spark drivers and tasks. Supported file types:
@@ -1989,6 +2123,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. HCFS URIs of archives to be extracted in the working directory
      * of Spark drivers and tasks. Supported file types:
@@ -1997,34 +2133,35 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string archive_uris = 6;</code>
      */
-    public Builder addArchiveUrisBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder addArchiveUrisBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
       ensureArchiveUrisIsMutable();
       archiveUris_.add(value);
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.MapField<
-        java.lang.String, java.lang.String> properties_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> properties_;
+
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetProperties() {
+        internalGetProperties() {
       if (properties_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
             PropertiesDefaultEntryHolder.defaultEntry);
       }
       return properties_;
     }
+
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetMutableProperties() {
-      onChanged();;
+        internalGetMutableProperties() {
+      onChanged();
+      ;
       if (properties_ == null) {
-        properties_ = com.google.protobuf.MapField.newMapField(
-            PropertiesDefaultEntryHolder.defaultEntry);
+        properties_ =
+            com.google.protobuf.MapField.newMapField(PropertiesDefaultEntryHolder.defaultEntry);
       }
       if (!properties_.isMutable()) {
         properties_ = properties_.copy();
@@ -2036,6 +2173,8 @@ private static final long serialVersionUID = 0L;
       return internalGetProperties().getMap().size();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. A mapping of property names to values, used to configure Spark.
      * Properties that conflict with values set by the Cloud Dataproc API may be
@@ -2045,20 +2184,20 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; properties = 7;</code>
      */
-
-    public boolean containsProperties(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+    public boolean containsProperties(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
       return internalGetProperties().getMap().containsKey(key);
     }
-    /**
-     * Use {@link #getPropertiesMap()} instead.
-     */
+    /** Use {@link #getPropertiesMap()} instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getProperties() {
       return getPropertiesMap();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. A mapping of property names to values, used to configure Spark.
      * Properties that conflict with values set by the Cloud Dataproc API may be
@@ -2068,11 +2207,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; properties = 7;</code>
      */
-
     public java.util.Map<java.lang.String, java.lang.String> getPropertiesMap() {
       return internalGetProperties().getMap();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. A mapping of property names to values, used to configure Spark.
      * Properties that conflict with values set by the Cloud Dataproc API may be
@@ -2082,16 +2222,17 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; properties = 7;</code>
      */
-
     public java.lang.String getPropertiesOrDefault(
-        java.lang.String key,
-        java.lang.String defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetProperties().getMap();
+        java.lang.String key, java.lang.String defaultValue) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetProperties().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. A mapping of property names to values, used to configure Spark.
      * Properties that conflict with values set by the Cloud Dataproc API may be
@@ -2101,12 +2242,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; properties = 7;</code>
      */
-
-    public java.lang.String getPropertiesOrThrow(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetProperties().getMap();
+    public java.lang.String getPropertiesOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetProperties().getMap();
       if (!map.containsKey(key)) {
         throw new java.lang.IllegalArgumentException();
       }
@@ -2114,11 +2254,12 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder clearProperties() {
-      internalGetMutableProperties().getMutableMap()
-          .clear();
+      internalGetMutableProperties().getMutableMap().clear();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. A mapping of property names to values, used to configure Spark.
      * Properties that conflict with values set by the Cloud Dataproc API may be
@@ -2128,23 +2269,21 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; properties = 7;</code>
      */
-
-    public Builder removeProperties(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      internalGetMutableProperties().getMutableMap()
-          .remove(key);
+    public Builder removeProperties(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableProperties().getMutableMap().remove(key);
       return this;
     }
-    /**
-     * Use alternate mutation accessors instead.
-     */
+    /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
-    public java.util.Map<java.lang.String, java.lang.String>
-    getMutableProperties() {
+    public java.util.Map<java.lang.String, java.lang.String> getMutableProperties() {
       return internalGetMutableProperties().getMutableMap();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. A mapping of property names to values, used to configure Spark.
      * Properties that conflict with values set by the Cloud Dataproc API may be
@@ -2154,16 +2293,19 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; properties = 7;</code>
      */
-    public Builder putProperties(
-        java.lang.String key,
-        java.lang.String value) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      if (value == null) { throw new java.lang.NullPointerException(); }
-      internalGetMutableProperties().getMutableMap()
-          .put(key, value);
+    public Builder putProperties(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      if (value == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableProperties().getMutableMap().put(key, value);
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. A mapping of property names to values, used to configure Spark.
      * Properties that conflict with values set by the Cloud Dataproc API may be
@@ -2173,18 +2315,20 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; properties = 7;</code>
      */
-
-    public Builder putAllProperties(
-        java.util.Map<java.lang.String, java.lang.String> values) {
-      internalGetMutableProperties().getMutableMap()
-          .putAll(values);
+    public Builder putAllProperties(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableProperties().getMutableMap().putAll(values);
       return this;
     }
 
     private com.google.cloud.dataproc.v1.LoggingConfig loggingConfig_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dataproc.v1.LoggingConfig, com.google.cloud.dataproc.v1.LoggingConfig.Builder, com.google.cloud.dataproc.v1.LoggingConfigOrBuilder> loggingConfigBuilder_;
+            com.google.cloud.dataproc.v1.LoggingConfig,
+            com.google.cloud.dataproc.v1.LoggingConfig.Builder,
+            com.google.cloud.dataproc.v1.LoggingConfigOrBuilder>
+        loggingConfigBuilder_;
     /**
+     *
+     *
      * <pre>
      * Optional. The runtime log config for job execution.
      * </pre>
@@ -2195,6 +2339,8 @@ private static final long serialVersionUID = 0L;
       return loggingConfigBuilder_ != null || loggingConfig_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The runtime log config for job execution.
      * </pre>
@@ -2203,12 +2349,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.dataproc.v1.LoggingConfig getLoggingConfig() {
       if (loggingConfigBuilder_ == null) {
-        return loggingConfig_ == null ? com.google.cloud.dataproc.v1.LoggingConfig.getDefaultInstance() : loggingConfig_;
+        return loggingConfig_ == null
+            ? com.google.cloud.dataproc.v1.LoggingConfig.getDefaultInstance()
+            : loggingConfig_;
       } else {
         return loggingConfigBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The runtime log config for job execution.
      * </pre>
@@ -2229,6 +2379,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The runtime log config for job execution.
      * </pre>
@@ -2247,6 +2399,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The runtime log config for job execution.
      * </pre>
@@ -2257,7 +2411,9 @@ private static final long serialVersionUID = 0L;
       if (loggingConfigBuilder_ == null) {
         if (loggingConfig_ != null) {
           loggingConfig_ =
-            com.google.cloud.dataproc.v1.LoggingConfig.newBuilder(loggingConfig_).mergeFrom(value).buildPartial();
+              com.google.cloud.dataproc.v1.LoggingConfig.newBuilder(loggingConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           loggingConfig_ = value;
         }
@@ -2269,6 +2425,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The runtime log config for job execution.
      * </pre>
@@ -2287,6 +2445,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The runtime log config for job execution.
      * </pre>
@@ -2294,11 +2454,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.dataproc.v1.LoggingConfig logging_config = 8;</code>
      */
     public com.google.cloud.dataproc.v1.LoggingConfig.Builder getLoggingConfigBuilder() {
-      
+
       onChanged();
       return getLoggingConfigFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The runtime log config for job execution.
      * </pre>
@@ -2309,11 +2471,14 @@ private static final long serialVersionUID = 0L;
       if (loggingConfigBuilder_ != null) {
         return loggingConfigBuilder_.getMessageOrBuilder();
       } else {
-        return loggingConfig_ == null ?
-            com.google.cloud.dataproc.v1.LoggingConfig.getDefaultInstance() : loggingConfig_;
+        return loggingConfig_ == null
+            ? com.google.cloud.dataproc.v1.LoggingConfig.getDefaultInstance()
+            : loggingConfig_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The runtime log config for job execution.
      * </pre>
@@ -2321,34 +2486,39 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.dataproc.v1.LoggingConfig logging_config = 8;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dataproc.v1.LoggingConfig, com.google.cloud.dataproc.v1.LoggingConfig.Builder, com.google.cloud.dataproc.v1.LoggingConfigOrBuilder> 
+            com.google.cloud.dataproc.v1.LoggingConfig,
+            com.google.cloud.dataproc.v1.LoggingConfig.Builder,
+            com.google.cloud.dataproc.v1.LoggingConfigOrBuilder>
         getLoggingConfigFieldBuilder() {
       if (loggingConfigBuilder_ == null) {
-        loggingConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.dataproc.v1.LoggingConfig, com.google.cloud.dataproc.v1.LoggingConfig.Builder, com.google.cloud.dataproc.v1.LoggingConfigOrBuilder>(
-                getLoggingConfig(),
-                getParentForChildren(),
-                isClean());
+        loggingConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataproc.v1.LoggingConfig,
+                com.google.cloud.dataproc.v1.LoggingConfig.Builder,
+                com.google.cloud.dataproc.v1.LoggingConfigOrBuilder>(
+                getLoggingConfig(), getParentForChildren(), isClean());
         loggingConfig_ = null;
       }
       return loggingConfigBuilder_;
     }
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+
+    @java.lang.Override
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
     }
-
 
     // @@protoc_insertion_point(builder_scope:google.cloud.dataproc.v1.SparkJob)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.dataproc.v1.SparkJob)
   private static final com.google.cloud.dataproc.v1.SparkJob DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.dataproc.v1.SparkJob();
   }
@@ -2357,15 +2527,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<SparkJob>
-      PARSER = new com.google.protobuf.AbstractParser<SparkJob>() {
-    public SparkJob parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SparkJob(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<SparkJob> PARSER =
+      new com.google.protobuf.AbstractParser<SparkJob>() {
+        @java.lang.Override
+        public SparkJob parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new SparkJob(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<SparkJob> parser() {
     return PARSER;
@@ -2376,9 +2547,8 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.cloud.dataproc.v1.SparkJob getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

@@ -20,14 +20,11 @@ import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
-
 import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
- * Identity for a Google Compute Engine region's forwarding rule.
- */
+/** Identity for a Google Compute Engine region's forwarding rule. */
 public final class RegionForwardingRuleId extends ForwardingRuleId {
 
   static final Function<String, RegionForwardingRuleId> FROM_URL_FUNCTION =
@@ -61,16 +58,12 @@ public final class RegionForwardingRuleId extends ForwardingRuleId {
     return Type.REGION;
   }
 
-  /**
-   * Returns the name of the region this forwarding rule belongs to.
-   */
+  /** Returns the name of the region this forwarding rule belongs to. */
   public String getRegion() {
     return region;
   }
 
-  /**
-   * Returns the identity of the region this forwarding rule belongs to.
-   */
+  /** Returns the identity of the region this forwarding rule belongs to. */
   public RegionId getRegionId() {
     return RegionId.of(getProject(), region);
   }

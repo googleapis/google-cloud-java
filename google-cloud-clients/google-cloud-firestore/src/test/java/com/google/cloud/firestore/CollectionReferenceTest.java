@@ -24,9 +24,9 @@ import static org.mockito.Mockito.doReturn;
 
 import com.google.api.core.ApiFuture;
 import com.google.api.gax.rpc.UnaryCallable;
-import com.google.cloud.firestore.spi.v1beta1.FirestoreRpc;
-import com.google.firestore.v1beta1.CommitRequest;
-import com.google.firestore.v1beta1.CommitResponse;
+import com.google.cloud.firestore.spi.v1.FirestoreRpc;
+import com.google.firestore.v1.CommitRequest;
+import com.google.firestore.v1.CommitResponse;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -43,10 +43,7 @@ public class CollectionReferenceTest {
   @Spy
   private FirestoreImpl firestoreMock =
       new FirestoreImpl(
-          FirestoreOptions.newBuilder()
-              .setProjectId("test-project")
-              .setTimestampsInSnapshotsEnabled(true)
-              .build(),
+          FirestoreOptions.newBuilder().setProjectId("test-project").build(),
           Mockito.mock(FirestoreRpc.class));
 
   @Captor private ArgumentCaptor<CommitRequest> argCaptor;

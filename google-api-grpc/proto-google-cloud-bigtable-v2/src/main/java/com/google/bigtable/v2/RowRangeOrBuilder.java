@@ -3,11 +3,14 @@
 
 package com.google.bigtable.v2;
 
-public interface RowRangeOrBuilder extends
+public interface RowRangeOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.bigtable.v2.RowRange)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Used when giving an inclusive lower bound for the range.
    * </pre>
@@ -17,6 +20,8 @@ public interface RowRangeOrBuilder extends
   com.google.protobuf.ByteString getStartKeyClosed();
 
   /**
+   *
+   *
    * <pre>
    * Used when giving an exclusive lower bound for the range.
    * </pre>
@@ -26,6 +31,8 @@ public interface RowRangeOrBuilder extends
   com.google.protobuf.ByteString getStartKeyOpen();
 
   /**
+   *
+   *
    * <pre>
    * Used when giving an exclusive upper bound for the range.
    * </pre>
@@ -35,6 +42,8 @@ public interface RowRangeOrBuilder extends
   com.google.protobuf.ByteString getEndKeyOpen();
 
   /**
+   *
+   *
    * <pre>
    * Used when giving an inclusive upper bound for the range.
    * </pre>

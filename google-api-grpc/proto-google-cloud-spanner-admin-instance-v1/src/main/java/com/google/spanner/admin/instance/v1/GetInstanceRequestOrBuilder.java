@@ -3,11 +3,14 @@
 
 package com.google.spanner.admin.instance.v1;
 
-public interface GetInstanceRequestOrBuilder extends
+public interface GetInstanceRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.spanner.admin.instance.v1.GetInstanceRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The name of the requested instance. Values are of the form
    * `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
@@ -17,6 +20,8 @@ public interface GetInstanceRequestOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * Required. The name of the requested instance. Values are of the form
    * `projects/&lt;project&gt;/instances/&lt;instance&gt;`.
@@ -24,6 +29,5 @@ public interface GetInstanceRequestOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 }

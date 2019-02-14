@@ -3,11 +3,14 @@
 
 package com.google.spanner.admin.instance.v1;
 
-public interface UpdateInstanceRequestOrBuilder extends
+public interface UpdateInstanceRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.spanner.admin.instance.v1.UpdateInstanceRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The instance to update, which must always include the instance
    * name.  Otherwise, only fields mentioned in [][google.spanner.admin.instance.v1.UpdateInstanceRequest.field_mask] need be included.
@@ -17,6 +20,8 @@ public interface UpdateInstanceRequestOrBuilder extends
    */
   boolean hasInstance();
   /**
+   *
+   *
    * <pre>
    * Required. The instance to update, which must always include the instance
    * name.  Otherwise, only fields mentioned in [][google.spanner.admin.instance.v1.UpdateInstanceRequest.field_mask] need be included.
@@ -26,6 +31,8 @@ public interface UpdateInstanceRequestOrBuilder extends
    */
   com.google.spanner.admin.instance.v1.Instance getInstance();
   /**
+   *
+   *
    * <pre>
    * Required. The instance to update, which must always include the instance
    * name.  Otherwise, only fields mentioned in [][google.spanner.admin.instance.v1.UpdateInstanceRequest.field_mask] need be included.
@@ -36,6 +43,8 @@ public interface UpdateInstanceRequestOrBuilder extends
   com.google.spanner.admin.instance.v1.InstanceOrBuilder getInstanceOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Required. A mask specifying which fields in [][google.spanner.admin.instance.v1.UpdateInstanceRequest.instance] should be updated.
    * The field mask must always be specified; this prevents any future fields in
@@ -47,6 +56,8 @@ public interface UpdateInstanceRequestOrBuilder extends
    */
   boolean hasFieldMask();
   /**
+   *
+   *
    * <pre>
    * Required. A mask specifying which fields in [][google.spanner.admin.instance.v1.UpdateInstanceRequest.instance] should be updated.
    * The field mask must always be specified; this prevents any future fields in
@@ -58,6 +69,8 @@ public interface UpdateInstanceRequestOrBuilder extends
    */
   com.google.protobuf.FieldMask getFieldMask();
   /**
+   *
+   *
    * <pre>
    * Required. A mask specifying which fields in [][google.spanner.admin.instance.v1.UpdateInstanceRequest.instance] should be updated.
    * The field mask must always be specified; this prevents any future fields in

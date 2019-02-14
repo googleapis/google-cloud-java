@@ -21,10 +21,10 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import com.google.cloud.bigquery.BigQuery.JobOption;
 import com.google.cloud.bigquery.BigQuery.TableDataListOption;
 import com.google.cloud.bigquery.BigQuery.TableOption;
-import com.google.cloud.bigquery.TableInfo.Builder;
 import com.google.common.collect.ImmutableList;
 import java.io.IOException;
 import java.io.ObjectInputStream;
+import java.math.BigInteger;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
@@ -33,10 +33,8 @@ import java.util.Objects;
  * A Google BigQuery Table.
  *
  * <p>Objects of this class are immutable. Operations that modify the table like {@link #update}
- * return a new object. To get a {@code Table} object with the most recent information use
- * {@link #reload}. {@code Table} adds a layer of service-related functionality over
- * {@link TableInfo}.
- * </p>
+ * return a new object. To get a {@code Table} object with the most recent information use {@link
+ * #reload}. {@code Table} adds a layer of service-related functionality over {@link TableInfo}.
  */
 public class Table extends TableInfo {
 
@@ -45,9 +43,7 @@ public class Table extends TableInfo {
   private final BigQueryOptions options;
   private transient BigQuery bigquery;
 
-  /**
-   * A builder for {@code Table} objects.
-   */
+  /** A builder for {@code Table} objects. */
   public static class Builder extends TableInfo.Builder {
 
     private final BigQuery bigquery;
@@ -70,7 +66,6 @@ public class Table extends TableInfo {
       return this;
     }
 
-
     @Override
     public Builder setDescription(String description) {
       infoBuilder.setDescription(description);
@@ -83,13 +78,11 @@ public class Table extends TableInfo {
       return this;
     }
 
-
     @Override
     public Builder setExpirationTime(Long expirationTime) {
       infoBuilder.setExpirationTime(expirationTime);
       return this;
     }
-
 
     @Override
     public Builder setFriendlyName(String friendlyName) {
@@ -110,18 +103,28 @@ public class Table extends TableInfo {
     }
 
     @Override
+    Builder setNumBytes(Long numBytes) {
+      infoBuilder.setNumBytes(numBytes);
+      return this;
+    }
+
+    @Override
+    Builder setNumRows(BigInteger numRows) {
+      infoBuilder.setNumRows(numRows);
+      return this;
+    }
+
+    @Override
     Builder setSelfLink(String selfLink) {
       infoBuilder.setSelfLink(selfLink);
       return this;
     }
-
 
     @Override
     public Builder setTableId(TableId tableId) {
       infoBuilder.setTableId(tableId);
       return this;
     }
-
 
     @Override
     public Builder setDefinition(TableDefinition definition) {
@@ -157,7 +160,8 @@ public class Table extends TableInfo {
    * Checks if this table exists.
    *
    * <p>Example of checking if the table exists.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * boolean exists = table.exists();
    * if (exists) {
    *   // the table exists
@@ -178,7 +182,8 @@ public class Table extends TableInfo {
    *
    * <p>Example of fetching the table's latest information, specifying particular table fields to
    * get.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * TableField field1 = TableField.LAST_MODIFIED_TIME;
    * TableField field2 = TableField.NUM_ROWS;
    * Table latestTable = table.reload(TableOption.fields(field1, field2));
@@ -200,7 +205,8 @@ public class Table extends TableInfo {
    * user-defined ids cannot be changed. A new {@code Table} object is returned.
    *
    * <p>Example of updating the table's information.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * Table updatedTable = table.toBuilder().setDescription("new description").build().update();
    * }</pre>
    *
@@ -216,7 +222,8 @@ public class Table extends TableInfo {
    * Deletes this table.
    *
    * <p>Example of deleting the table.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * boolean deleted = table.delete();
    * if (deleted) {
    *   // the table was deleted
@@ -242,7 +249,8 @@ public class Table extends TableInfo {
    * output.
    *
    * <p>Example of inserting rows into the table.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String rowId1 = "rowId1";
    * String rowId2 = "rowId2";
    * List<RowToInsert> rows = new ArrayList<>();
@@ -276,7 +284,8 @@ public class Table extends TableInfo {
    * output.
    *
    * <p>Example of inserting rows into the table, ignoring invalid rows.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String rowId1 = "rowId1";
    * String rowId2 = "rowId2";
    * List<RowToInsert> rows = new ArrayList<>();
@@ -300,12 +309,16 @@ public class Table extends TableInfo {
    *     to be invalid
    * @throws BigQueryException upon failure
    */
-  public InsertAllResponse insert(Iterable<InsertAllRequest.RowToInsert> rows,
-      boolean skipInvalidRows, boolean ignoreUnknownValues) throws BigQueryException {
-    InsertAllRequest request = InsertAllRequest.newBuilder(getTableId(), rows)
-        .setSkipInvalidRows(skipInvalidRows)
-        .setIgnoreUnknownValues(ignoreUnknownValues)
-        .build();
+  public InsertAllResponse insert(
+      Iterable<InsertAllRequest.RowToInsert> rows,
+      boolean skipInvalidRows,
+      boolean ignoreUnknownValues)
+      throws BigQueryException {
+    InsertAllRequest request =
+        InsertAllRequest.newBuilder(getTableId(), rows)
+            .setSkipInvalidRows(skipInvalidRows)
+            .setIgnoreUnknownValues(ignoreUnknownValues)
+            .build();
     return bigquery.insertAll(request);
   }
 
@@ -313,7 +326,8 @@ public class Table extends TableInfo {
    * Returns the paginated list rows in this table.
    *
    * <p>Example of listing rows in the table.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * // This example reads the result 100 rows per RPC call. If there's no need to limit the number,
    * // simply omit the option.
    * Page<FieldValueList> page = table.list(TableDataListOption.pageSize(100));
@@ -333,7 +347,8 @@ public class Table extends TableInfo {
    * Returns the paginated list rows in this table.
    *
    * <p>Example of listing rows in the table given a schema.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * Schema schema = ...;
    * String field = "my_field";
    * Page<FieldValueList> page = table.list(schema);
@@ -345,8 +360,7 @@ public class Table extends TableInfo {
    * @param options table data list options
    * @throws BigQueryException upon failure
    */
-  public TableResult list(Schema schema, TableDataListOption... options)
-      throws BigQueryException {
+  public TableResult list(Schema schema, TableDataListOption... options) throws BigQueryException {
     return bigquery.listTableData(getTableId(), schema, options);
   }
 
@@ -355,7 +369,8 @@ public class Table extends TableInfo {
    * started {@link Job} object.
    *
    * <p>Example of copying the table to a destination table.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String datasetName = "my_dataset";
    * String tableName = "my_destination_table";
    * Job job = table.copy(datasetName, tableName);
@@ -388,7 +403,8 @@ public class Table extends TableInfo {
    * started {@link Job} object.
    *
    * <p>Example copying the table to a destination table.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String dataset = "my_dataset";
    * String tableName = "my_destination_table";
    * TableId destinationId = TableId.of(dataset, tableName);
@@ -412,8 +428,7 @@ public class Table extends TableInfo {
    * @param options job options
    * @throws BigQueryException upon failure
    */
-  public Job copy(TableId destinationTable, JobOption... options)
-      throws BigQueryException {
+  public Job copy(TableId destinationTable, JobOption... options) throws BigQueryException {
     CopyJobConfiguration configuration = CopyJobConfiguration.of(destinationTable, getTableId());
     return bigquery.create(JobInfo.of(configuration), options);
   }
@@ -423,7 +438,8 @@ public class Table extends TableInfo {
    * started {@link Job} object.
    *
    * <p>Example extracting data to single Google Cloud Storage file.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String format = "CSV";
    * String gcsUrl = "gs://my_bucket/filename.csv";
    * Job job = table.extract(format, gcsUrl);
@@ -457,7 +473,8 @@ public class Table extends TableInfo {
    * the started {@link Job} object.
    *
    * <p>Example of partitioning data to a list of Google Cloud Storage files.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String format = "CSV";
    * String gcsUrl1 = "gs://my_bucket/PartitionA_*.csv";
    * String gcsUrl2 = "gs://my_bucket/PartitionB_*.csv";
@@ -497,7 +514,8 @@ public class Table extends TableInfo {
    * the started {@link Job} object.
    *
    * <p>Example loading data from a single Google Cloud Storage file.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String sourceUri = "gs://my_bucket/filename.csv";
    * Job job = table.load(FormatOptions.csv(), sourceUri);
    * // Wait for the job to complete
@@ -530,7 +548,8 @@ public class Table extends TableInfo {
    * Returns the started {@link Job} object.
    *
    * <p>Example loading data from a list of Google Cloud Storage files.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String gcsUrl1 = "gs://my_bucket/filename1.csv";
    * String gcsUrl2 = "gs://my_bucket/filename2.csv";
    * List<String> sourceUris = new ArrayList<>();
@@ -563,10 +582,7 @@ public class Table extends TableInfo {
     return bigquery.create(JobInfo.of(loadConfig), options);
   }
 
-
-  /**
-   * Returns the table's {@code BigQuery} object used to issue requests.
-   */
+  /** Returns the table's {@code BigQuery} object used to issue requests. */
   public BigQuery getBigQuery() {
     return bigquery;
   }
@@ -585,8 +601,7 @@ public class Table extends TableInfo {
       return false;
     }
     Table other = (Table) obj;
-    return Objects.equals(toPb(), other.toPb())
-        && Objects.equals(options, other.options);
+    return Objects.equals(toPb(), other.toPb()) && Objects.equals(options, other.options);
   }
 
   @Override

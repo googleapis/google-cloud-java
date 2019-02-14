@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -84,7 +84,8 @@ public class KeyManagementServiceSettings extends ClientSettings<KeyManagementSe
 
   /** Returns the object with the settings used for calls to listCryptoKeyVersions. */
   public PagedCallSettings<
-          ListCryptoKeyVersionsRequest, ListCryptoKeyVersionsResponse,
+          ListCryptoKeyVersionsRequest,
+          ListCryptoKeyVersionsResponse,
           ListCryptoKeyVersionsPagedResponse>
       listCryptoKeyVersionsSettings() {
     return ((KeyManagementServiceStubSettings) getStubSettings()).listCryptoKeyVersionsSettings();
@@ -160,6 +161,22 @@ public class KeyManagementServiceSettings extends ClientSettings<KeyManagementSe
   public UnaryCallSettings<RestoreCryptoKeyVersionRequest, CryptoKeyVersion>
       restoreCryptoKeyVersionSettings() {
     return ((KeyManagementServiceStubSettings) getStubSettings()).restoreCryptoKeyVersionSettings();
+  }
+
+  /** Returns the object with the settings used for calls to getPublicKey. */
+  public UnaryCallSettings<GetPublicKeyRequest, PublicKey> getPublicKeySettings() {
+    return ((KeyManagementServiceStubSettings) getStubSettings()).getPublicKeySettings();
+  }
+
+  /** Returns the object with the settings used for calls to asymmetricDecrypt. */
+  public UnaryCallSettings<AsymmetricDecryptRequest, AsymmetricDecryptResponse>
+      asymmetricDecryptSettings() {
+    return ((KeyManagementServiceStubSettings) getStubSettings()).asymmetricDecryptSettings();
+  }
+
+  /** Returns the object with the settings used for calls to asymmetricSign. */
+  public UnaryCallSettings<AsymmetricSignRequest, AsymmetricSignResponse> asymmetricSignSettings() {
+    return ((KeyManagementServiceStubSettings) getStubSettings()).asymmetricSignSettings();
   }
 
   /** Returns the object with the settings used for calls to setIamPolicy. */
@@ -292,7 +309,8 @@ public class KeyManagementServiceSettings extends ClientSettings<KeyManagementSe
 
     /** Returns the builder for the settings used for calls to listCryptoKeyVersions. */
     public PagedCallSettings.Builder<
-            ListCryptoKeyVersionsRequest, ListCryptoKeyVersionsResponse,
+            ListCryptoKeyVersionsRequest,
+            ListCryptoKeyVersionsResponse,
             ListCryptoKeyVersionsPagedResponse>
         listCryptoKeyVersionsSettings() {
       return getStubSettingsBuilder().listCryptoKeyVersionsSettings();
@@ -367,6 +385,23 @@ public class KeyManagementServiceSettings extends ClientSettings<KeyManagementSe
     public UnaryCallSettings.Builder<RestoreCryptoKeyVersionRequest, CryptoKeyVersion>
         restoreCryptoKeyVersionSettings() {
       return getStubSettingsBuilder().restoreCryptoKeyVersionSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to getPublicKey. */
+    public UnaryCallSettings.Builder<GetPublicKeyRequest, PublicKey> getPublicKeySettings() {
+      return getStubSettingsBuilder().getPublicKeySettings();
+    }
+
+    /** Returns the builder for the settings used for calls to asymmetricDecrypt. */
+    public UnaryCallSettings.Builder<AsymmetricDecryptRequest, AsymmetricDecryptResponse>
+        asymmetricDecryptSettings() {
+      return getStubSettingsBuilder().asymmetricDecryptSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to asymmetricSign. */
+    public UnaryCallSettings.Builder<AsymmetricSignRequest, AsymmetricSignResponse>
+        asymmetricSignSettings() {
+      return getStubSettingsBuilder().asymmetricSignSettings();
     }
 
     /** Returns the builder for the settings used for calls to setIamPolicy. */

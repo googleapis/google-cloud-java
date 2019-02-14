@@ -4,6 +4,8 @@
 package com.google.container.v1;
 
 /**
+ *
+ *
  * <pre>
  * Configuration for the addons that can be automatically spun up in the
  * cluster, enabling additional functionality.
@@ -11,28 +13,31 @@ package com.google.container.v1;
  *
  * Protobuf type {@code google.container.v1.AddonsConfig}
  */
-public  final class AddonsConfig extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class AddonsConfig extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.container.v1.AddonsConfig)
     AddonsConfigOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use AddonsConfig.newBuilder() to construct.
   private AddonsConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private AddonsConfig() {
-  }
+
+  private AddonsConfig() {}
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private AddonsConfig(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -44,92 +49,109 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
-          case 10: {
-            com.google.container.v1.HttpLoadBalancing.Builder subBuilder = null;
-            if (httpLoadBalancing_ != null) {
-              subBuilder = httpLoadBalancing_.toBuilder();
-            }
-            httpLoadBalancing_ = input.readMessage(com.google.container.v1.HttpLoadBalancing.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(httpLoadBalancing_);
-              httpLoadBalancing_ = subBuilder.buildPartial();
-            }
+          case 10:
+            {
+              com.google.container.v1.HttpLoadBalancing.Builder subBuilder = null;
+              if (httpLoadBalancing_ != null) {
+                subBuilder = httpLoadBalancing_.toBuilder();
+              }
+              httpLoadBalancing_ =
+                  input.readMessage(
+                      com.google.container.v1.HttpLoadBalancing.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(httpLoadBalancing_);
+                httpLoadBalancing_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 18: {
-            com.google.container.v1.HorizontalPodAutoscaling.Builder subBuilder = null;
-            if (horizontalPodAutoscaling_ != null) {
-              subBuilder = horizontalPodAutoscaling_.toBuilder();
+              break;
             }
-            horizontalPodAutoscaling_ = input.readMessage(com.google.container.v1.HorizontalPodAutoscaling.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(horizontalPodAutoscaling_);
-              horizontalPodAutoscaling_ = subBuilder.buildPartial();
-            }
+          case 18:
+            {
+              com.google.container.v1.HorizontalPodAutoscaling.Builder subBuilder = null;
+              if (horizontalPodAutoscaling_ != null) {
+                subBuilder = horizontalPodAutoscaling_.toBuilder();
+              }
+              horizontalPodAutoscaling_ =
+                  input.readMessage(
+                      com.google.container.v1.HorizontalPodAutoscaling.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(horizontalPodAutoscaling_);
+                horizontalPodAutoscaling_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 26: {
-            com.google.container.v1.KubernetesDashboard.Builder subBuilder = null;
-            if (kubernetesDashboard_ != null) {
-              subBuilder = kubernetesDashboard_.toBuilder();
+              break;
             }
-            kubernetesDashboard_ = input.readMessage(com.google.container.v1.KubernetesDashboard.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(kubernetesDashboard_);
-              kubernetesDashboard_ = subBuilder.buildPartial();
-            }
+          case 26:
+            {
+              com.google.container.v1.KubernetesDashboard.Builder subBuilder = null;
+              if (kubernetesDashboard_ != null) {
+                subBuilder = kubernetesDashboard_.toBuilder();
+              }
+              kubernetesDashboard_ =
+                  input.readMessage(
+                      com.google.container.v1.KubernetesDashboard.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(kubernetesDashboard_);
+                kubernetesDashboard_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 34: {
-            com.google.container.v1.NetworkPolicyConfig.Builder subBuilder = null;
-            if (networkPolicyConfig_ != null) {
-              subBuilder = networkPolicyConfig_.toBuilder();
+              break;
             }
-            networkPolicyConfig_ = input.readMessage(com.google.container.v1.NetworkPolicyConfig.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(networkPolicyConfig_);
-              networkPolicyConfig_ = subBuilder.buildPartial();
-            }
+          case 34:
+            {
+              com.google.container.v1.NetworkPolicyConfig.Builder subBuilder = null;
+              if (networkPolicyConfig_ != null) {
+                subBuilder = networkPolicyConfig_.toBuilder();
+              }
+              networkPolicyConfig_ =
+                  input.readMessage(
+                      com.google.container.v1.NetworkPolicyConfig.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(networkPolicyConfig_);
+                networkPolicyConfig_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_AddonsConfig_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.container.v1.ClusterServiceProto
+        .internal_static_google_container_v1_AddonsConfig_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_AddonsConfig_fieldAccessorTable
+    return com.google.container.v1.ClusterServiceProto
+        .internal_static_google_container_v1_AddonsConfig_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.container.v1.AddonsConfig.class, com.google.container.v1.AddonsConfig.Builder.class);
+            com.google.container.v1.AddonsConfig.class,
+            com.google.container.v1.AddonsConfig.Builder.class);
   }
 
   public static final int HTTP_LOAD_BALANCING_FIELD_NUMBER = 1;
   private com.google.container.v1.HttpLoadBalancing httpLoadBalancing_;
   /**
+   *
+   *
    * <pre>
    * Configuration for the HTTP (L7) load balancing controller addon, which
    * makes it easy to set up HTTP load balancers for services in a cluster.
@@ -141,6 +163,8 @@ private static final long serialVersionUID = 0L;
     return httpLoadBalancing_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Configuration for the HTTP (L7) load balancing controller addon, which
    * makes it easy to set up HTTP load balancers for services in a cluster.
@@ -149,9 +173,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.container.v1.HttpLoadBalancing http_load_balancing = 1;</code>
    */
   public com.google.container.v1.HttpLoadBalancing getHttpLoadBalancing() {
-    return httpLoadBalancing_ == null ? com.google.container.v1.HttpLoadBalancing.getDefaultInstance() : httpLoadBalancing_;
+    return httpLoadBalancing_ == null
+        ? com.google.container.v1.HttpLoadBalancing.getDefaultInstance()
+        : httpLoadBalancing_;
   }
   /**
+   *
+   *
    * <pre>
    * Configuration for the HTTP (L7) load balancing controller addon, which
    * makes it easy to set up HTTP load balancers for services in a cluster.
@@ -166,6 +194,8 @@ private static final long serialVersionUID = 0L;
   public static final int HORIZONTAL_POD_AUTOSCALING_FIELD_NUMBER = 2;
   private com.google.container.v1.HorizontalPodAutoscaling horizontalPodAutoscaling_;
   /**
+   *
+   *
    * <pre>
    * Configuration for the horizontal pod autoscaling feature, which
    * increases or decreases the number of replica pods a replication controller
@@ -178,6 +208,8 @@ private static final long serialVersionUID = 0L;
     return horizontalPodAutoscaling_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Configuration for the horizontal pod autoscaling feature, which
    * increases or decreases the number of replica pods a replication controller
@@ -187,9 +219,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.container.v1.HorizontalPodAutoscaling horizontal_pod_autoscaling = 2;</code>
    */
   public com.google.container.v1.HorizontalPodAutoscaling getHorizontalPodAutoscaling() {
-    return horizontalPodAutoscaling_ == null ? com.google.container.v1.HorizontalPodAutoscaling.getDefaultInstance() : horizontalPodAutoscaling_;
+    return horizontalPodAutoscaling_ == null
+        ? com.google.container.v1.HorizontalPodAutoscaling.getDefaultInstance()
+        : horizontalPodAutoscaling_;
   }
   /**
+   *
+   *
    * <pre>
    * Configuration for the horizontal pod autoscaling feature, which
    * increases or decreases the number of replica pods a replication controller
@@ -198,13 +234,16 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.container.v1.HorizontalPodAutoscaling horizontal_pod_autoscaling = 2;</code>
    */
-  public com.google.container.v1.HorizontalPodAutoscalingOrBuilder getHorizontalPodAutoscalingOrBuilder() {
+  public com.google.container.v1.HorizontalPodAutoscalingOrBuilder
+      getHorizontalPodAutoscalingOrBuilder() {
     return getHorizontalPodAutoscaling();
   }
 
   public static final int KUBERNETES_DASHBOARD_FIELD_NUMBER = 3;
   private com.google.container.v1.KubernetesDashboard kubernetesDashboard_;
   /**
+   *
+   *
    * <pre>
    * Configuration for the Kubernetes Dashboard.
    * </pre>
@@ -215,6 +254,8 @@ private static final long serialVersionUID = 0L;
     return kubernetesDashboard_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Configuration for the Kubernetes Dashboard.
    * </pre>
@@ -222,9 +263,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.container.v1.KubernetesDashboard kubernetes_dashboard = 3;</code>
    */
   public com.google.container.v1.KubernetesDashboard getKubernetesDashboard() {
-    return kubernetesDashboard_ == null ? com.google.container.v1.KubernetesDashboard.getDefaultInstance() : kubernetesDashboard_;
+    return kubernetesDashboard_ == null
+        ? com.google.container.v1.KubernetesDashboard.getDefaultInstance()
+        : kubernetesDashboard_;
   }
   /**
+   *
+   *
    * <pre>
    * Configuration for the Kubernetes Dashboard.
    * </pre>
@@ -238,6 +283,8 @@ private static final long serialVersionUID = 0L;
   public static final int NETWORK_POLICY_CONFIG_FIELD_NUMBER = 4;
   private com.google.container.v1.NetworkPolicyConfig networkPolicyConfig_;
   /**
+   *
+   *
    * <pre>
    * Configuration for NetworkPolicy. This only tracks whether the addon
    * is enabled or not on the Master, it does not track whether network policy
@@ -250,6 +297,8 @@ private static final long serialVersionUID = 0L;
     return networkPolicyConfig_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Configuration for NetworkPolicy. This only tracks whether the addon
    * is enabled or not on the Master, it does not track whether network policy
@@ -259,9 +308,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.container.v1.NetworkPolicyConfig network_policy_config = 4;</code>
    */
   public com.google.container.v1.NetworkPolicyConfig getNetworkPolicyConfig() {
-    return networkPolicyConfig_ == null ? com.google.container.v1.NetworkPolicyConfig.getDefaultInstance() : networkPolicyConfig_;
+    return networkPolicyConfig_ == null
+        ? com.google.container.v1.NetworkPolicyConfig.getDefaultInstance()
+        : networkPolicyConfig_;
   }
   /**
+   *
+   *
    * <pre>
    * Configuration for NetworkPolicy. This only tracks whether the addon
    * is enabled or not on the Master, it does not track whether network policy
@@ -275,6 +328,8 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -284,8 +339,8 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  @java.lang.Override
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (httpLoadBalancing_ != null) {
       output.writeMessage(1, getHttpLoadBalancing());
     }
@@ -301,26 +356,25 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
 
     size = 0;
     if (httpLoadBalancing_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getHttpLoadBalancing());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getHttpLoadBalancing());
     }
     if (horizontalPodAutoscaling_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getHorizontalPodAutoscaling());
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              2, getHorizontalPodAutoscaling());
     }
     if (kubernetesDashboard_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, getKubernetesDashboard());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getKubernetesDashboard());
     }
     if (networkPolicyConfig_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, getNetworkPolicyConfig());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getNetworkPolicyConfig());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -330,7 +384,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.container.v1.AddonsConfig)) {
       return super.equals(obj);
@@ -340,23 +394,19 @@ private static final long serialVersionUID = 0L;
     boolean result = true;
     result = result && (hasHttpLoadBalancing() == other.hasHttpLoadBalancing());
     if (hasHttpLoadBalancing()) {
-      result = result && getHttpLoadBalancing()
-          .equals(other.getHttpLoadBalancing());
+      result = result && getHttpLoadBalancing().equals(other.getHttpLoadBalancing());
     }
     result = result && (hasHorizontalPodAutoscaling() == other.hasHorizontalPodAutoscaling());
     if (hasHorizontalPodAutoscaling()) {
-      result = result && getHorizontalPodAutoscaling()
-          .equals(other.getHorizontalPodAutoscaling());
+      result = result && getHorizontalPodAutoscaling().equals(other.getHorizontalPodAutoscaling());
     }
     result = result && (hasKubernetesDashboard() == other.hasKubernetesDashboard());
     if (hasKubernetesDashboard()) {
-      result = result && getKubernetesDashboard()
-          .equals(other.getKubernetesDashboard());
+      result = result && getKubernetesDashboard().equals(other.getKubernetesDashboard());
     }
     result = result && (hasNetworkPolicyConfig() == other.hasNetworkPolicyConfig());
     if (hasNetworkPolicyConfig()) {
-      result = result && getNetworkPolicyConfig()
-          .equals(other.getNetworkPolicyConfig());
+      result = result && getNetworkPolicyConfig().equals(other.getNetworkPolicyConfig());
     }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
@@ -390,95 +440,103 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.container.v1.AddonsConfig parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.container.v1.AddonsConfig parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.container.v1.AddonsConfig parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.container.v1.AddonsConfig parseFrom(
-      com.google.protobuf.ByteString data)
+
+  public static com.google.container.v1.AddonsConfig parseFrom(com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.container.v1.AddonsConfig parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.container.v1.AddonsConfig parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.container.v1.AddonsConfig parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.container.v1.AddonsConfig parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.container.v1.AddonsConfig parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.container.v1.AddonsConfig parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
   public static com.google.container.v1.AddonsConfig parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.container.v1.AddonsConfig parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.container.v1.AddonsConfig parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  public Builder newBuilderForType() { return newBuilder(); }
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-  public static Builder newBuilder(com.google.container.v1.AddonsConfig prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+
+  public static Builder newBuilder(com.google.container.v1.AddonsConfig prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+
+  @java.lang.Override
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Configuration for the addons that can be automatically spun up in the
    * cluster, enabling additional functionality.
@@ -486,20 +544,23 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.container.v1.AddonsConfig}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.container.v1.AddonsConfig)
       com.google.container.v1.AddonsConfigOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_AddonsConfig_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.container.v1.ClusterServiceProto
+          .internal_static_google_container_v1_AddonsConfig_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_AddonsConfig_fieldAccessorTable
+      return com.google.container.v1.ClusterServiceProto
+          .internal_static_google_container_v1_AddonsConfig_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.container.v1.AddonsConfig.class, com.google.container.v1.AddonsConfig.Builder.class);
+              com.google.container.v1.AddonsConfig.class,
+              com.google.container.v1.AddonsConfig.Builder.class);
     }
 
     // Construct using com.google.container.v1.AddonsConfig.newBuilder()
@@ -507,16 +568,16 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       if (httpLoadBalancingBuilder_ == null) {
@@ -546,15 +607,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_AddonsConfig_descriptor;
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.container.v1.ClusterServiceProto
+          .internal_static_google_container_v1_AddonsConfig_descriptor;
     }
 
+    @java.lang.Override
     public com.google.container.v1.AddonsConfig getDefaultInstanceForType() {
       return com.google.container.v1.AddonsConfig.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.container.v1.AddonsConfig build() {
       com.google.container.v1.AddonsConfig result = buildPartial();
       if (!result.isInitialized()) {
@@ -563,6 +627,7 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.container.v1.AddonsConfig buildPartial() {
       com.google.container.v1.AddonsConfig result = new com.google.container.v1.AddonsConfig(this);
       if (httpLoadBalancingBuilder_ == null) {
@@ -589,35 +654,43 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+
+    @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+    @java.lang.Override
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+    @java.lang.Override
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
+    @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
+    @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.container.v1.AddonsConfig) {
-        return mergeFrom((com.google.container.v1.AddonsConfig)other);
+        return mergeFrom((com.google.container.v1.AddonsConfig) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -643,10 +716,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -667,8 +742,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.container.v1.HttpLoadBalancing httpLoadBalancing_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.container.v1.HttpLoadBalancing, com.google.container.v1.HttpLoadBalancing.Builder, com.google.container.v1.HttpLoadBalancingOrBuilder> httpLoadBalancingBuilder_;
+            com.google.container.v1.HttpLoadBalancing,
+            com.google.container.v1.HttpLoadBalancing.Builder,
+            com.google.container.v1.HttpLoadBalancingOrBuilder>
+        httpLoadBalancingBuilder_;
     /**
+     *
+     *
      * <pre>
      * Configuration for the HTTP (L7) load balancing controller addon, which
      * makes it easy to set up HTTP load balancers for services in a cluster.
@@ -680,6 +760,8 @@ private static final long serialVersionUID = 0L;
       return httpLoadBalancingBuilder_ != null || httpLoadBalancing_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Configuration for the HTTP (L7) load balancing controller addon, which
      * makes it easy to set up HTTP load balancers for services in a cluster.
@@ -689,12 +771,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.container.v1.HttpLoadBalancing getHttpLoadBalancing() {
       if (httpLoadBalancingBuilder_ == null) {
-        return httpLoadBalancing_ == null ? com.google.container.v1.HttpLoadBalancing.getDefaultInstance() : httpLoadBalancing_;
+        return httpLoadBalancing_ == null
+            ? com.google.container.v1.HttpLoadBalancing.getDefaultInstance()
+            : httpLoadBalancing_;
       } else {
         return httpLoadBalancingBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Configuration for the HTTP (L7) load balancing controller addon, which
      * makes it easy to set up HTTP load balancers for services in a cluster.
@@ -716,6 +802,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Configuration for the HTTP (L7) load balancing controller addon, which
      * makes it easy to set up HTTP load balancers for services in a cluster.
@@ -735,6 +823,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Configuration for the HTTP (L7) load balancing controller addon, which
      * makes it easy to set up HTTP load balancers for services in a cluster.
@@ -746,7 +836,9 @@ private static final long serialVersionUID = 0L;
       if (httpLoadBalancingBuilder_ == null) {
         if (httpLoadBalancing_ != null) {
           httpLoadBalancing_ =
-            com.google.container.v1.HttpLoadBalancing.newBuilder(httpLoadBalancing_).mergeFrom(value).buildPartial();
+              com.google.container.v1.HttpLoadBalancing.newBuilder(httpLoadBalancing_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           httpLoadBalancing_ = value;
         }
@@ -758,6 +850,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Configuration for the HTTP (L7) load balancing controller addon, which
      * makes it easy to set up HTTP load balancers for services in a cluster.
@@ -777,6 +871,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Configuration for the HTTP (L7) load balancing controller addon, which
      * makes it easy to set up HTTP load balancers for services in a cluster.
@@ -785,11 +881,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.container.v1.HttpLoadBalancing http_load_balancing = 1;</code>
      */
     public com.google.container.v1.HttpLoadBalancing.Builder getHttpLoadBalancingBuilder() {
-      
+
       onChanged();
       return getHttpLoadBalancingFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Configuration for the HTTP (L7) load balancing controller addon, which
      * makes it easy to set up HTTP load balancers for services in a cluster.
@@ -801,11 +899,14 @@ private static final long serialVersionUID = 0L;
       if (httpLoadBalancingBuilder_ != null) {
         return httpLoadBalancingBuilder_.getMessageOrBuilder();
       } else {
-        return httpLoadBalancing_ == null ?
-            com.google.container.v1.HttpLoadBalancing.getDefaultInstance() : httpLoadBalancing_;
+        return httpLoadBalancing_ == null
+            ? com.google.container.v1.HttpLoadBalancing.getDefaultInstance()
+            : httpLoadBalancing_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Configuration for the HTTP (L7) load balancing controller addon, which
      * makes it easy to set up HTTP load balancers for services in a cluster.
@@ -814,14 +915,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.container.v1.HttpLoadBalancing http_load_balancing = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.container.v1.HttpLoadBalancing, com.google.container.v1.HttpLoadBalancing.Builder, com.google.container.v1.HttpLoadBalancingOrBuilder> 
+            com.google.container.v1.HttpLoadBalancing,
+            com.google.container.v1.HttpLoadBalancing.Builder,
+            com.google.container.v1.HttpLoadBalancingOrBuilder>
         getHttpLoadBalancingFieldBuilder() {
       if (httpLoadBalancingBuilder_ == null) {
-        httpLoadBalancingBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.container.v1.HttpLoadBalancing, com.google.container.v1.HttpLoadBalancing.Builder, com.google.container.v1.HttpLoadBalancingOrBuilder>(
-                getHttpLoadBalancing(),
-                getParentForChildren(),
-                isClean());
+        httpLoadBalancingBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.HttpLoadBalancing,
+                com.google.container.v1.HttpLoadBalancing.Builder,
+                com.google.container.v1.HttpLoadBalancingOrBuilder>(
+                getHttpLoadBalancing(), getParentForChildren(), isClean());
         httpLoadBalancing_ = null;
       }
       return httpLoadBalancingBuilder_;
@@ -829,8 +933,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.container.v1.HorizontalPodAutoscaling horizontalPodAutoscaling_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.container.v1.HorizontalPodAutoscaling, com.google.container.v1.HorizontalPodAutoscaling.Builder, com.google.container.v1.HorizontalPodAutoscalingOrBuilder> horizontalPodAutoscalingBuilder_;
+            com.google.container.v1.HorizontalPodAutoscaling,
+            com.google.container.v1.HorizontalPodAutoscaling.Builder,
+            com.google.container.v1.HorizontalPodAutoscalingOrBuilder>
+        horizontalPodAutoscalingBuilder_;
     /**
+     *
+     *
      * <pre>
      * Configuration for the horizontal pod autoscaling feature, which
      * increases or decreases the number of replica pods a replication controller
@@ -843,6 +952,8 @@ private static final long serialVersionUID = 0L;
       return horizontalPodAutoscalingBuilder_ != null || horizontalPodAutoscaling_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Configuration for the horizontal pod autoscaling feature, which
      * increases or decreases the number of replica pods a replication controller
@@ -853,12 +964,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.container.v1.HorizontalPodAutoscaling getHorizontalPodAutoscaling() {
       if (horizontalPodAutoscalingBuilder_ == null) {
-        return horizontalPodAutoscaling_ == null ? com.google.container.v1.HorizontalPodAutoscaling.getDefaultInstance() : horizontalPodAutoscaling_;
+        return horizontalPodAutoscaling_ == null
+            ? com.google.container.v1.HorizontalPodAutoscaling.getDefaultInstance()
+            : horizontalPodAutoscaling_;
       } else {
         return horizontalPodAutoscalingBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Configuration for the horizontal pod autoscaling feature, which
      * increases or decreases the number of replica pods a replication controller
@@ -867,7 +982,8 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.container.v1.HorizontalPodAutoscaling horizontal_pod_autoscaling = 2;</code>
      */
-    public Builder setHorizontalPodAutoscaling(com.google.container.v1.HorizontalPodAutoscaling value) {
+    public Builder setHorizontalPodAutoscaling(
+        com.google.container.v1.HorizontalPodAutoscaling value) {
       if (horizontalPodAutoscalingBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -881,6 +997,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Configuration for the horizontal pod autoscaling feature, which
      * increases or decreases the number of replica pods a replication controller
@@ -901,6 +1019,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Configuration for the horizontal pod autoscaling feature, which
      * increases or decreases the number of replica pods a replication controller
@@ -909,11 +1029,14 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.container.v1.HorizontalPodAutoscaling horizontal_pod_autoscaling = 2;</code>
      */
-    public Builder mergeHorizontalPodAutoscaling(com.google.container.v1.HorizontalPodAutoscaling value) {
+    public Builder mergeHorizontalPodAutoscaling(
+        com.google.container.v1.HorizontalPodAutoscaling value) {
       if (horizontalPodAutoscalingBuilder_ == null) {
         if (horizontalPodAutoscaling_ != null) {
           horizontalPodAutoscaling_ =
-            com.google.container.v1.HorizontalPodAutoscaling.newBuilder(horizontalPodAutoscaling_).mergeFrom(value).buildPartial();
+              com.google.container.v1.HorizontalPodAutoscaling.newBuilder(horizontalPodAutoscaling_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           horizontalPodAutoscaling_ = value;
         }
@@ -925,6 +1048,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Configuration for the horizontal pod autoscaling feature, which
      * increases or decreases the number of replica pods a replication controller
@@ -945,6 +1070,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Configuration for the horizontal pod autoscaling feature, which
      * increases or decreases the number of replica pods a replication controller
@@ -953,12 +1080,15 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.container.v1.HorizontalPodAutoscaling horizontal_pod_autoscaling = 2;</code>
      */
-    public com.google.container.v1.HorizontalPodAutoscaling.Builder getHorizontalPodAutoscalingBuilder() {
-      
+    public com.google.container.v1.HorizontalPodAutoscaling.Builder
+        getHorizontalPodAutoscalingBuilder() {
+
       onChanged();
       return getHorizontalPodAutoscalingFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Configuration for the horizontal pod autoscaling feature, which
      * increases or decreases the number of replica pods a replication controller
@@ -967,15 +1097,19 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.container.v1.HorizontalPodAutoscaling horizontal_pod_autoscaling = 2;</code>
      */
-    public com.google.container.v1.HorizontalPodAutoscalingOrBuilder getHorizontalPodAutoscalingOrBuilder() {
+    public com.google.container.v1.HorizontalPodAutoscalingOrBuilder
+        getHorizontalPodAutoscalingOrBuilder() {
       if (horizontalPodAutoscalingBuilder_ != null) {
         return horizontalPodAutoscalingBuilder_.getMessageOrBuilder();
       } else {
-        return horizontalPodAutoscaling_ == null ?
-            com.google.container.v1.HorizontalPodAutoscaling.getDefaultInstance() : horizontalPodAutoscaling_;
+        return horizontalPodAutoscaling_ == null
+            ? com.google.container.v1.HorizontalPodAutoscaling.getDefaultInstance()
+            : horizontalPodAutoscaling_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Configuration for the horizontal pod autoscaling feature, which
      * increases or decreases the number of replica pods a replication controller
@@ -985,14 +1119,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.container.v1.HorizontalPodAutoscaling horizontal_pod_autoscaling = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.container.v1.HorizontalPodAutoscaling, com.google.container.v1.HorizontalPodAutoscaling.Builder, com.google.container.v1.HorizontalPodAutoscalingOrBuilder> 
+            com.google.container.v1.HorizontalPodAutoscaling,
+            com.google.container.v1.HorizontalPodAutoscaling.Builder,
+            com.google.container.v1.HorizontalPodAutoscalingOrBuilder>
         getHorizontalPodAutoscalingFieldBuilder() {
       if (horizontalPodAutoscalingBuilder_ == null) {
-        horizontalPodAutoscalingBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.container.v1.HorizontalPodAutoscaling, com.google.container.v1.HorizontalPodAutoscaling.Builder, com.google.container.v1.HorizontalPodAutoscalingOrBuilder>(
-                getHorizontalPodAutoscaling(),
-                getParentForChildren(),
-                isClean());
+        horizontalPodAutoscalingBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.HorizontalPodAutoscaling,
+                com.google.container.v1.HorizontalPodAutoscaling.Builder,
+                com.google.container.v1.HorizontalPodAutoscalingOrBuilder>(
+                getHorizontalPodAutoscaling(), getParentForChildren(), isClean());
         horizontalPodAutoscaling_ = null;
       }
       return horizontalPodAutoscalingBuilder_;
@@ -1000,8 +1137,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.container.v1.KubernetesDashboard kubernetesDashboard_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.container.v1.KubernetesDashboard, com.google.container.v1.KubernetesDashboard.Builder, com.google.container.v1.KubernetesDashboardOrBuilder> kubernetesDashboardBuilder_;
+            com.google.container.v1.KubernetesDashboard,
+            com.google.container.v1.KubernetesDashboard.Builder,
+            com.google.container.v1.KubernetesDashboardOrBuilder>
+        kubernetesDashboardBuilder_;
     /**
+     *
+     *
      * <pre>
      * Configuration for the Kubernetes Dashboard.
      * </pre>
@@ -1012,6 +1154,8 @@ private static final long serialVersionUID = 0L;
       return kubernetesDashboardBuilder_ != null || kubernetesDashboard_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Configuration for the Kubernetes Dashboard.
      * </pre>
@@ -1020,12 +1164,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.container.v1.KubernetesDashboard getKubernetesDashboard() {
       if (kubernetesDashboardBuilder_ == null) {
-        return kubernetesDashboard_ == null ? com.google.container.v1.KubernetesDashboard.getDefaultInstance() : kubernetesDashboard_;
+        return kubernetesDashboard_ == null
+            ? com.google.container.v1.KubernetesDashboard.getDefaultInstance()
+            : kubernetesDashboard_;
       } else {
         return kubernetesDashboardBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Configuration for the Kubernetes Dashboard.
      * </pre>
@@ -1046,6 +1194,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Configuration for the Kubernetes Dashboard.
      * </pre>
@@ -1064,6 +1214,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Configuration for the Kubernetes Dashboard.
      * </pre>
@@ -1074,7 +1226,9 @@ private static final long serialVersionUID = 0L;
       if (kubernetesDashboardBuilder_ == null) {
         if (kubernetesDashboard_ != null) {
           kubernetesDashboard_ =
-            com.google.container.v1.KubernetesDashboard.newBuilder(kubernetesDashboard_).mergeFrom(value).buildPartial();
+              com.google.container.v1.KubernetesDashboard.newBuilder(kubernetesDashboard_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           kubernetesDashboard_ = value;
         }
@@ -1086,6 +1240,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Configuration for the Kubernetes Dashboard.
      * </pre>
@@ -1104,6 +1260,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Configuration for the Kubernetes Dashboard.
      * </pre>
@@ -1111,11 +1269,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.container.v1.KubernetesDashboard kubernetes_dashboard = 3;</code>
      */
     public com.google.container.v1.KubernetesDashboard.Builder getKubernetesDashboardBuilder() {
-      
+
       onChanged();
       return getKubernetesDashboardFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Configuration for the Kubernetes Dashboard.
      * </pre>
@@ -1126,11 +1286,14 @@ private static final long serialVersionUID = 0L;
       if (kubernetesDashboardBuilder_ != null) {
         return kubernetesDashboardBuilder_.getMessageOrBuilder();
       } else {
-        return kubernetesDashboard_ == null ?
-            com.google.container.v1.KubernetesDashboard.getDefaultInstance() : kubernetesDashboard_;
+        return kubernetesDashboard_ == null
+            ? com.google.container.v1.KubernetesDashboard.getDefaultInstance()
+            : kubernetesDashboard_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Configuration for the Kubernetes Dashboard.
      * </pre>
@@ -1138,14 +1301,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.container.v1.KubernetesDashboard kubernetes_dashboard = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.container.v1.KubernetesDashboard, com.google.container.v1.KubernetesDashboard.Builder, com.google.container.v1.KubernetesDashboardOrBuilder> 
+            com.google.container.v1.KubernetesDashboard,
+            com.google.container.v1.KubernetesDashboard.Builder,
+            com.google.container.v1.KubernetesDashboardOrBuilder>
         getKubernetesDashboardFieldBuilder() {
       if (kubernetesDashboardBuilder_ == null) {
-        kubernetesDashboardBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.container.v1.KubernetesDashboard, com.google.container.v1.KubernetesDashboard.Builder, com.google.container.v1.KubernetesDashboardOrBuilder>(
-                getKubernetesDashboard(),
-                getParentForChildren(),
-                isClean());
+        kubernetesDashboardBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.KubernetesDashboard,
+                com.google.container.v1.KubernetesDashboard.Builder,
+                com.google.container.v1.KubernetesDashboardOrBuilder>(
+                getKubernetesDashboard(), getParentForChildren(), isClean());
         kubernetesDashboard_ = null;
       }
       return kubernetesDashboardBuilder_;
@@ -1153,8 +1319,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.container.v1.NetworkPolicyConfig networkPolicyConfig_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.container.v1.NetworkPolicyConfig, com.google.container.v1.NetworkPolicyConfig.Builder, com.google.container.v1.NetworkPolicyConfigOrBuilder> networkPolicyConfigBuilder_;
+            com.google.container.v1.NetworkPolicyConfig,
+            com.google.container.v1.NetworkPolicyConfig.Builder,
+            com.google.container.v1.NetworkPolicyConfigOrBuilder>
+        networkPolicyConfigBuilder_;
     /**
+     *
+     *
      * <pre>
      * Configuration for NetworkPolicy. This only tracks whether the addon
      * is enabled or not on the Master, it does not track whether network policy
@@ -1167,6 +1338,8 @@ private static final long serialVersionUID = 0L;
       return networkPolicyConfigBuilder_ != null || networkPolicyConfig_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Configuration for NetworkPolicy. This only tracks whether the addon
      * is enabled or not on the Master, it does not track whether network policy
@@ -1177,12 +1350,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.container.v1.NetworkPolicyConfig getNetworkPolicyConfig() {
       if (networkPolicyConfigBuilder_ == null) {
-        return networkPolicyConfig_ == null ? com.google.container.v1.NetworkPolicyConfig.getDefaultInstance() : networkPolicyConfig_;
+        return networkPolicyConfig_ == null
+            ? com.google.container.v1.NetworkPolicyConfig.getDefaultInstance()
+            : networkPolicyConfig_;
       } else {
         return networkPolicyConfigBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Configuration for NetworkPolicy. This only tracks whether the addon
      * is enabled or not on the Master, it does not track whether network policy
@@ -1205,6 +1382,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Configuration for NetworkPolicy. This only tracks whether the addon
      * is enabled or not on the Master, it does not track whether network policy
@@ -1225,6 +1404,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Configuration for NetworkPolicy. This only tracks whether the addon
      * is enabled or not on the Master, it does not track whether network policy
@@ -1237,7 +1418,9 @@ private static final long serialVersionUID = 0L;
       if (networkPolicyConfigBuilder_ == null) {
         if (networkPolicyConfig_ != null) {
           networkPolicyConfig_ =
-            com.google.container.v1.NetworkPolicyConfig.newBuilder(networkPolicyConfig_).mergeFrom(value).buildPartial();
+              com.google.container.v1.NetworkPolicyConfig.newBuilder(networkPolicyConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           networkPolicyConfig_ = value;
         }
@@ -1249,6 +1432,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Configuration for NetworkPolicy. This only tracks whether the addon
      * is enabled or not on the Master, it does not track whether network policy
@@ -1269,6 +1454,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Configuration for NetworkPolicy. This only tracks whether the addon
      * is enabled or not on the Master, it does not track whether network policy
@@ -1278,11 +1465,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.container.v1.NetworkPolicyConfig network_policy_config = 4;</code>
      */
     public com.google.container.v1.NetworkPolicyConfig.Builder getNetworkPolicyConfigBuilder() {
-      
+
       onChanged();
       return getNetworkPolicyConfigFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Configuration for NetworkPolicy. This only tracks whether the addon
      * is enabled or not on the Master, it does not track whether network policy
@@ -1295,11 +1484,14 @@ private static final long serialVersionUID = 0L;
       if (networkPolicyConfigBuilder_ != null) {
         return networkPolicyConfigBuilder_.getMessageOrBuilder();
       } else {
-        return networkPolicyConfig_ == null ?
-            com.google.container.v1.NetworkPolicyConfig.getDefaultInstance() : networkPolicyConfig_;
+        return networkPolicyConfig_ == null
+            ? com.google.container.v1.NetworkPolicyConfig.getDefaultInstance()
+            : networkPolicyConfig_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Configuration for NetworkPolicy. This only tracks whether the addon
      * is enabled or not on the Master, it does not track whether network policy
@@ -1309,34 +1501,39 @@ private static final long serialVersionUID = 0L;
      * <code>.google.container.v1.NetworkPolicyConfig network_policy_config = 4;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.container.v1.NetworkPolicyConfig, com.google.container.v1.NetworkPolicyConfig.Builder, com.google.container.v1.NetworkPolicyConfigOrBuilder> 
+            com.google.container.v1.NetworkPolicyConfig,
+            com.google.container.v1.NetworkPolicyConfig.Builder,
+            com.google.container.v1.NetworkPolicyConfigOrBuilder>
         getNetworkPolicyConfigFieldBuilder() {
       if (networkPolicyConfigBuilder_ == null) {
-        networkPolicyConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.container.v1.NetworkPolicyConfig, com.google.container.v1.NetworkPolicyConfig.Builder, com.google.container.v1.NetworkPolicyConfigOrBuilder>(
-                getNetworkPolicyConfig(),
-                getParentForChildren(),
-                isClean());
+        networkPolicyConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.NetworkPolicyConfig,
+                com.google.container.v1.NetworkPolicyConfig.Builder,
+                com.google.container.v1.NetworkPolicyConfigOrBuilder>(
+                getNetworkPolicyConfig(), getParentForChildren(), isClean());
         networkPolicyConfig_ = null;
       }
       return networkPolicyConfigBuilder_;
     }
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+
+    @java.lang.Override
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
     }
-
 
     // @@protoc_insertion_point(builder_scope:google.container.v1.AddonsConfig)
   }
 
   // @@protoc_insertion_point(class_scope:google.container.v1.AddonsConfig)
   private static final com.google.container.v1.AddonsConfig DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.container.v1.AddonsConfig();
   }
@@ -1345,15 +1542,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<AddonsConfig>
-      PARSER = new com.google.protobuf.AbstractParser<AddonsConfig>() {
-    public AddonsConfig parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-        return new AddonsConfig(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<AddonsConfig> PARSER =
+      new com.google.protobuf.AbstractParser<AddonsConfig>() {
+        @java.lang.Override
+        public AddonsConfig parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new AddonsConfig(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<AddonsConfig> parser() {
     return PARSER;
@@ -1364,9 +1562,8 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.container.v1.AddonsConfig getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

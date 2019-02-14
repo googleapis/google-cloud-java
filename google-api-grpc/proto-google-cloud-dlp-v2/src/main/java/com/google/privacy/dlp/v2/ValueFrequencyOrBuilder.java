@@ -3,11 +3,14 @@
 
 package com.google.privacy.dlp.v2;
 
-public interface ValueFrequencyOrBuilder extends
+public interface ValueFrequencyOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.ValueFrequency)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * A value contained in the field in question.
    * </pre>
@@ -16,6 +19,8 @@ public interface ValueFrequencyOrBuilder extends
    */
   boolean hasValue();
   /**
+   *
+   *
    * <pre>
    * A value contained in the field in question.
    * </pre>
@@ -24,6 +29,8 @@ public interface ValueFrequencyOrBuilder extends
    */
   com.google.privacy.dlp.v2.Value getValue();
   /**
+   *
+   *
    * <pre>
    * A value contained in the field in question.
    * </pre>
@@ -33,6 +40,8 @@ public interface ValueFrequencyOrBuilder extends
   com.google.privacy.dlp.v2.ValueOrBuilder getValueOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * How many times the value is contained in the field.
    * </pre>

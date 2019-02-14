@@ -4,15 +4,18 @@
 package com.google.cloud.videointelligence.v1beta1;
 
 /**
+ *
+ *
  * <pre>
  * Label level (scope).
  * </pre>
  *
  * Protobuf enum {@code google.cloud.videointelligence.v1beta1.LabelLevel}
  */
-public enum LabelLevel
-    implements com.google.protobuf.ProtocolMessageEnum {
+public enum LabelLevel implements com.google.protobuf.ProtocolMessageEnum {
   /**
+   *
+   *
    * <pre>
    * Unspecified.
    * </pre>
@@ -21,6 +24,8 @@ public enum LabelLevel
    */
   LABEL_LEVEL_UNSPECIFIED(0),
   /**
+   *
+   *
    * <pre>
    * Video-level. Corresponds to the whole video.
    * </pre>
@@ -29,6 +34,8 @@ public enum LabelLevel
    */
   VIDEO_LEVEL(1),
   /**
+   *
+   *
    * <pre>
    * Segment-level. Corresponds to one of `AnnotateSpec.segments`.
    * </pre>
@@ -37,6 +44,8 @@ public enum LabelLevel
    */
   SEGMENT_LEVEL(2),
   /**
+   *
+   *
    * <pre>
    * Shot-level. Corresponds to a single shot (i.e. a series of frames
    * without a major camera position or background change).
@@ -46,6 +55,8 @@ public enum LabelLevel
    */
   SHOT_LEVEL(3),
   /**
+   *
+   *
    * <pre>
    * Frame-level. Corresponds to a single video frame.
    * </pre>
@@ -57,6 +68,8 @@ public enum LabelLevel
   ;
 
   /**
+   *
+   *
    * <pre>
    * Unspecified.
    * </pre>
@@ -65,6 +78,8 @@ public enum LabelLevel
    */
   public static final int LABEL_LEVEL_UNSPECIFIED_VALUE = 0;
   /**
+   *
+   *
    * <pre>
    * Video-level. Corresponds to the whole video.
    * </pre>
@@ -73,6 +88,8 @@ public enum LabelLevel
    */
   public static final int VIDEO_LEVEL_VALUE = 1;
   /**
+   *
+   *
    * <pre>
    * Segment-level. Corresponds to one of `AnnotateSpec.segments`.
    * </pre>
@@ -81,6 +98,8 @@ public enum LabelLevel
    */
   public static final int SEGMENT_LEVEL_VALUE = 2;
   /**
+   *
+   *
    * <pre>
    * Shot-level. Corresponds to a single shot (i.e. a series of frames
    * without a major camera position or background change).
@@ -90,6 +109,8 @@ public enum LabelLevel
    */
   public static final int SHOT_LEVEL_VALUE = 3;
   /**
+   *
+   *
    * <pre>
    * Frame-level. Corresponds to a single video frame.
    * </pre>
@@ -97,7 +118,6 @@ public enum LabelLevel
    * <code>FRAME_LEVEL = 4;</code>
    */
   public static final int FRAME_LEVEL_VALUE = 4;
-
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -107,9 +127,7 @@ public enum LabelLevel
     return value;
   }
 
-  /**
-   * @deprecated Use {@link #forNumber(int)} instead.
-   */
+  /** @deprecated Use {@link #forNumber(int)} instead. */
   @java.lang.Deprecated
   public static LabelLevel valueOf(int value) {
     return forNumber(value);
@@ -117,47 +135,51 @@ public enum LabelLevel
 
   public static LabelLevel forNumber(int value) {
     switch (value) {
-      case 0: return LABEL_LEVEL_UNSPECIFIED;
-      case 1: return VIDEO_LEVEL;
-      case 2: return SEGMENT_LEVEL;
-      case 3: return SHOT_LEVEL;
-      case 4: return FRAME_LEVEL;
-      default: return null;
+      case 0:
+        return LABEL_LEVEL_UNSPECIFIED;
+      case 1:
+        return VIDEO_LEVEL;
+      case 2:
+        return SEGMENT_LEVEL;
+      case 3:
+        return SHOT_LEVEL;
+      case 4:
+        return FRAME_LEVEL;
+      default:
+        return null;
     }
   }
 
-  public static com.google.protobuf.Internal.EnumLiteMap<LabelLevel>
-      internalGetValueMap() {
+  public static com.google.protobuf.Internal.EnumLiteMap<LabelLevel> internalGetValueMap() {
     return internalValueMap;
   }
-  private static final com.google.protobuf.Internal.EnumLiteMap<
-      LabelLevel> internalValueMap =
-        new com.google.protobuf.Internal.EnumLiteMap<LabelLevel>() {
-          public LabelLevel findValueByNumber(int number) {
-            return LabelLevel.forNumber(number);
-          }
-        };
 
-  public final com.google.protobuf.Descriptors.EnumValueDescriptor
-      getValueDescriptor() {
+  private static final com.google.protobuf.Internal.EnumLiteMap<LabelLevel> internalValueMap =
+      new com.google.protobuf.Internal.EnumLiteMap<LabelLevel>() {
+        public LabelLevel findValueByNumber(int number) {
+          return LabelLevel.forNumber(number);
+        }
+      };
+
+  public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
     return getDescriptor().getValues().get(ordinal());
   }
-  public final com.google.protobuf.Descriptors.EnumDescriptor
-      getDescriptorForType() {
+
+  public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
     return getDescriptor();
   }
-  public static final com.google.protobuf.Descriptors.EnumDescriptor
-      getDescriptor() {
-    return com.google.cloud.videointelligence.v1beta1.VideoIntelligenceServiceProto.getDescriptor().getEnumTypes().get(1);
+
+  public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+    return com.google.cloud.videointelligence.v1beta1.VideoIntelligenceServiceProto.getDescriptor()
+        .getEnumTypes()
+        .get(1);
   }
 
   private static final LabelLevel[] VALUES = values();
 
-  public static LabelLevel valueOf(
-      com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+  public static LabelLevel valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
     if (desc.getType() != getDescriptor()) {
-      throw new java.lang.IllegalArgumentException(
-        "EnumValueDescriptor is not for this type.");
+      throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
     }
     if (desc.getIndex() == -1) {
       return UNRECOGNIZED;
@@ -173,4 +195,3 @@ public enum LabelLevel
 
   // @@protoc_insertion_point(enum_scope:google.cloud.videointelligence.v1beta1.LabelLevel)
 }
-

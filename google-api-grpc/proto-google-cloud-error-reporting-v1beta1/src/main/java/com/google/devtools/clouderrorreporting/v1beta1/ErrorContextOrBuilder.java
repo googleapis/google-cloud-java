@@ -3,11 +3,14 @@
 
 package com.google.devtools.clouderrorreporting.v1beta1;
 
-public interface ErrorContextOrBuilder extends
+public interface ErrorContextOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.devtools.clouderrorreporting.v1beta1.ErrorContext)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The HTTP request which was processed when the error was
    * triggered.
@@ -17,6 +20,8 @@ public interface ErrorContextOrBuilder extends
    */
   boolean hasHttpRequest();
   /**
+   *
+   *
    * <pre>
    * The HTTP request which was processed when the error was
    * triggered.
@@ -26,6 +31,8 @@ public interface ErrorContextOrBuilder extends
    */
   com.google.devtools.clouderrorreporting.v1beta1.HttpRequestContext getHttpRequest();
   /**
+   *
+   *
    * <pre>
    * The HTTP request which was processed when the error was
    * triggered.
@@ -33,9 +40,12 @@ public interface ErrorContextOrBuilder extends
    *
    * <code>.google.devtools.clouderrorreporting.v1beta1.HttpRequestContext http_request = 1;</code>
    */
-  com.google.devtools.clouderrorreporting.v1beta1.HttpRequestContextOrBuilder getHttpRequestOrBuilder();
+  com.google.devtools.clouderrorreporting.v1beta1.HttpRequestContextOrBuilder
+      getHttpRequestOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The user who caused or was affected by the crash.
    * This can be a user ID, an email address, or an arbitrary token that
@@ -51,6 +61,8 @@ public interface ErrorContextOrBuilder extends
    */
   java.lang.String getUser();
   /**
+   *
+   *
    * <pre>
    * The user who caused or was affected by the crash.
    * This can be a user ID, an email address, or an arbitrary token that
@@ -64,10 +76,11 @@ public interface ErrorContextOrBuilder extends
    *
    * <code>string user = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getUserBytes();
+  com.google.protobuf.ByteString getUserBytes();
 
   /**
+   *
+   *
    * <pre>
    * The location in the source code where the decision was made to
    * report the error, usually the place where it was logged.
@@ -81,6 +94,8 @@ public interface ErrorContextOrBuilder extends
    */
   boolean hasReportLocation();
   /**
+   *
+   *
    * <pre>
    * The location in the source code where the decision was made to
    * report the error, usually the place where it was logged.
@@ -94,6 +109,8 @@ public interface ErrorContextOrBuilder extends
    */
   com.google.devtools.clouderrorreporting.v1beta1.SourceLocation getReportLocation();
   /**
+   *
+   *
    * <pre>
    * The location in the source code where the decision was made to
    * report the error, usually the place where it was logged.
@@ -105,5 +122,6 @@ public interface ErrorContextOrBuilder extends
    *
    * <code>.google.devtools.clouderrorreporting.v1beta1.SourceLocation report_location = 3;</code>
    */
-  com.google.devtools.clouderrorreporting.v1beta1.SourceLocationOrBuilder getReportLocationOrBuilder();
+  com.google.devtools.clouderrorreporting.v1beta1.SourceLocationOrBuilder
+      getReportLocationOrBuilder();
 }

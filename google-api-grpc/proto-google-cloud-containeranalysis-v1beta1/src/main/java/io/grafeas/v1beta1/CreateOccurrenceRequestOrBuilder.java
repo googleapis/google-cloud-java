@@ -3,11 +3,14 @@
 
 package io.grafeas.v1beta1;
 
-public interface CreateOccurrenceRequestOrBuilder extends
+public interface CreateOccurrenceRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:grafeas.v1beta1.CreateOccurrenceRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The name of the project in the form of `projects/[PROJECT_ID]`, under which
    * the occurrence is to be created.
@@ -17,6 +20,8 @@ public interface CreateOccurrenceRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * The name of the project in the form of `projects/[PROJECT_ID]`, under which
    * the occurrence is to be created.
@@ -24,10 +29,11 @@ public interface CreateOccurrenceRequestOrBuilder extends
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * The occurrence to create.
    * </pre>
@@ -36,6 +42,8 @@ public interface CreateOccurrenceRequestOrBuilder extends
    */
   boolean hasOccurrence();
   /**
+   *
+   *
    * <pre>
    * The occurrence to create.
    * </pre>
@@ -44,6 +52,8 @@ public interface CreateOccurrenceRequestOrBuilder extends
    */
   io.grafeas.v1beta1.Occurrence getOccurrence();
   /**
+   *
+   *
    * <pre>
    * The occurrence to create.
    * </pre>

@@ -3,11 +3,14 @@
 
 package com.google.spanner.v1;
 
-public interface BeginTransactionRequestOrBuilder extends
+public interface BeginTransactionRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.spanner.v1.BeginTransactionRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The session in which the transaction runs.
    * </pre>
@@ -16,16 +19,19 @@ public interface BeginTransactionRequestOrBuilder extends
    */
   java.lang.String getSession();
   /**
+   *
+   *
    * <pre>
    * Required. The session in which the transaction runs.
    * </pre>
    *
    * <code>string session = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getSessionBytes();
+  com.google.protobuf.ByteString getSessionBytes();
 
   /**
+   *
+   *
    * <pre>
    * Required. Options for the new transaction.
    * </pre>
@@ -34,6 +40,8 @@ public interface BeginTransactionRequestOrBuilder extends
    */
   boolean hasOptions();
   /**
+   *
+   *
    * <pre>
    * Required. Options for the new transaction.
    * </pre>
@@ -42,6 +50,8 @@ public interface BeginTransactionRequestOrBuilder extends
    */
   com.google.spanner.v1.TransactionOptions getOptions();
   /**
+   *
+   *
    * <pre>
    * Required. Options for the new transaction.
    * </pre>

@@ -14,13 +14,13 @@
 
 package com.google.monitoring.v3;
 
-import com.google.common.base.Preconditions;
-import com.google.common.collect.ImmutableMap;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.resourcenames.ResourceName;
-import java.util.Map;
+import com.google.common.base.Preconditions;
+import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 @javax.annotation.Generated("by GAPIC protoc plugin")
@@ -56,18 +56,11 @@ public class GroupName implements ResourceName {
   }
 
   public static GroupName of(String project, String group) {
-    return newBuilder()
-      .setProject(project)
-      .setGroup(group)
-      .build();
+    return newBuilder().setProject(project).setGroup(group).build();
   }
 
   public static String format(String project, String group) {
-    return newBuilder()
-      .setProject(project)
-      .setGroup(group)
-      .build()
-      .toString();
+    return newBuilder().setProject(project).setGroup(group).build().toString();
   }
 
   public static GroupName parse(String formattedString) {
@@ -75,7 +68,8 @@ public class GroupName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(formattedString, "GroupName.parse: formattedString not in valid format");
+        PATH_TEMPLATE.validatedMatch(
+            formattedString, "GroupName.parse: formattedString not in valid format");
     return of(matchMap.get("project"), matchMap.get("group"));
   }
 
@@ -150,8 +144,7 @@ public class GroupName implements ResourceName {
       return this;
     }
 
-    private Builder() {
-    }
+    private Builder() {}
 
     private Builder(GroupName groupName) {
       project = groupName.project;
@@ -170,8 +163,7 @@ public class GroupName implements ResourceName {
     }
     if (o instanceof GroupName) {
       GroupName that = (GroupName) o;
-      return (this.project.equals(that.project))
-          && (this.group.equals(that.group));
+      return (this.project.equals(that.project)) && (this.group.equals(that.group));
     }
     return false;
   }
@@ -186,4 +178,3 @@ public class GroupName implements ResourceName {
     return h;
   }
 }
-

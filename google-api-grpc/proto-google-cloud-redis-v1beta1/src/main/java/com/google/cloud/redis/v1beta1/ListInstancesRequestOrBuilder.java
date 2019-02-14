@@ -3,11 +3,14 @@
 
 package com.google.cloud.redis.v1beta1;
 
-public interface ListInstancesRequestOrBuilder extends
+public interface ListInstancesRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.redis.v1beta1.ListInstancesRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The resource name of the instance location using the form:
    *     `projects/{project_id}/locations/{location_id}`
@@ -18,6 +21,8 @@ public interface ListInstancesRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * Required. The resource name of the instance location using the form:
    *     `projects/{project_id}/locations/{location_id}`
@@ -26,10 +31,11 @@ public interface ListInstancesRequestOrBuilder extends
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * The maximum number of items to return.
    * If not specified, a default value of 1000 will be used by the service.
@@ -44,6 +50,8 @@ public interface ListInstancesRequestOrBuilder extends
   int getPageSize();
 
   /**
+   *
+   *
    * <pre>
    * The next_page_token value returned from a previous List request,
    * if any.
@@ -53,6 +61,8 @@ public interface ListInstancesRequestOrBuilder extends
    */
   java.lang.String getPageToken();
   /**
+   *
+   *
    * <pre>
    * The next_page_token value returned from a previous List request,
    * if any.
@@ -60,6 +70,5 @@ public interface ListInstancesRequestOrBuilder extends
    *
    * <code>string page_token = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getPageTokenBytes();
+  com.google.protobuf.ByteString getPageTokenBytes();
 }

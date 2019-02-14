@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -58,13 +58,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li> A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li>A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li> A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li>A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -169,10 +169,10 @@ public class AssetServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Exports assets with time and resource types to a given Google Cloud Storage location. The
-   * output format is newline-delimited JSON. This API implements the
-   * [google.longrunning.Operation][google.longrunning.Operation] API allowing users to keep track
-   * of the export.
+   * Exports assets with time and resource types to a given Cloud Storage location. The output
+   * format is newline-delimited JSON. This API implements the
+   * [google.longrunning.Operation][google.longrunning.Operation] API allowing you to keep track of
+   * the export.
    *
    * <p>Sample code:
    *
@@ -200,10 +200,10 @@ public class AssetServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Exports assets with time and resource types to a given Google Cloud Storage location. The
-   * output format is newline-delimited JSON. This API implements the
-   * [google.longrunning.Operation][google.longrunning.Operation] API allowing users to keep track
-   * of the export.
+   * Exports assets with time and resource types to a given Cloud Storage location. The output
+   * format is newline-delimited JSON. This API implements the
+   * [google.longrunning.Operation][google.longrunning.Operation] API allowing you to keep track of
+   * the export.
    *
    * <p>Sample code:
    *
@@ -215,7 +215,7 @@ public class AssetServiceClient implements BackgroundResource {
    *     .setParent(parent.toString())
    *     .setOutputConfig(outputConfig)
    *     .build();
-   *   OperationFuture&lt;Operation&gt; future = assetServiceClient.exportAssetsOperationCallable().futureCall(request);
+   *   OperationFuture&lt;ExportAssetsResponse, ExportAssetsRequest&gt; future = assetServiceClient.exportAssetsOperationCallable().futureCall(request);
    *   // Do something
    *   ExportAssetsResponse response = future.get();
    * }
@@ -229,10 +229,10 @@ public class AssetServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Exports assets with time and resource types to a given Google Cloud Storage location. The
-   * output format is newline-delimited JSON. This API implements the
-   * [google.longrunning.Operation][google.longrunning.Operation] API allowing users to keep track
-   * of the export.
+   * Exports assets with time and resource types to a given Cloud Storage location. The output
+   * format is newline-delimited JSON. This API implements the
+   * [google.longrunning.Operation][google.longrunning.Operation] API allowing you to keep track of
+   * the export.
    *
    * <p>Sample code:
    *
@@ -256,9 +256,9 @@ public class AssetServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Batch gets assets update history that overlaps a time window. For RESOURCE content, this API
-   * outputs history with asset in both non-delete or deleted status. For IAM_POLICY content, this
-   * API only outputs history when asset and its attached IAM POLICY both exist. So there may be
+   * Batch gets the update history of assets that overlap a time window. For RESOURCE content, this
+   * API outputs history with asset in both non-delete or deleted status. For IAM_POLICY content,
+   * this API outputs history when the asset and its attached IAM POLICY both exist. This can create
    * gaps in the output history.
    *
    * <p>Sample code:
@@ -287,9 +287,9 @@ public class AssetServiceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Batch gets assets update history that overlaps a time window. For RESOURCE content, this API
-   * outputs history with asset in both non-delete or deleted status. For IAM_POLICY content, this
-   * API only outputs history when asset and its attached IAM POLICY both exist. So there may be
+   * Batch gets the update history of assets that overlap a time window. For RESOURCE content, this
+   * API outputs history with asset in both non-delete or deleted status. For IAM_POLICY content,
+   * this API outputs history when the asset and its attached IAM POLICY both exist. This can create
    * gaps in the output history.
    *
    * <p>Sample code:

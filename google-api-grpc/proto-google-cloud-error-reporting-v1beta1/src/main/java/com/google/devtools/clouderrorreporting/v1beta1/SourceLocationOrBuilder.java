@@ -3,11 +3,14 @@
 
 package com.google.devtools.clouderrorreporting.v1beta1;
 
-public interface SourceLocationOrBuilder extends
+public interface SourceLocationOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.devtools.clouderrorreporting.v1beta1.SourceLocation)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The source code filename, which can include a truncated relative
    * path, or a full path from a production machine.
@@ -17,6 +20,8 @@ public interface SourceLocationOrBuilder extends
    */
   java.lang.String getFilePath();
   /**
+   *
+   *
    * <pre>
    * The source code filename, which can include a truncated relative
    * path, or a full path from a production machine.
@@ -24,10 +29,11 @@ public interface SourceLocationOrBuilder extends
    *
    * <code>string file_path = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getFilePathBytes();
+  com.google.protobuf.ByteString getFilePathBytes();
 
   /**
+   *
+   *
    * <pre>
    * 1-based. 0 indicates that the line number is unknown.
    * </pre>
@@ -37,6 +43,8 @@ public interface SourceLocationOrBuilder extends
   int getLineNumber();
 
   /**
+   *
+   *
    * <pre>
    * Human-readable name of a function or method.
    * The value can include optional context like the class or package name.
@@ -47,6 +55,8 @@ public interface SourceLocationOrBuilder extends
    */
   java.lang.String getFunctionName();
   /**
+   *
+   *
    * <pre>
    * Human-readable name of a function or method.
    * The value can include optional context like the class or package name.
@@ -55,6 +65,5 @@ public interface SourceLocationOrBuilder extends
    *
    * <code>string function_name = 4;</code>
    */
-  com.google.protobuf.ByteString
-      getFunctionNameBytes();
+  com.google.protobuf.ByteString getFunctionNameBytes();
 }

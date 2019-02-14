@@ -16,6 +16,7 @@
 
 package com.google.cloud.spanner;
 
+import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.Page;
 import com.google.cloud.spanner.Options.ListOption;
 import com.google.spanner.admin.instance.v1.CreateInstanceMetadata;
@@ -51,29 +52,30 @@ public interface InstanceAdminClient {
    * upon completion of this request:
    *
    * <ul>
-   *   <li> The instance is readable via the API, with all requested attributes but no allocated
+   *   <li>The instance is readable via the API, with all requested attributes but no allocated
    *       resources.
-   *   <li> Its state is {@code CREATING}.
+   *   <li>Its state is {@code CREATING}.
    * </ul>
    *
    * Until completion of the returned operation:
    *
    * <ul>
-   *   <li> Cancelling the operation renders the instance immediately unreadable via the API.
-   *   <li> The instance can be deleted.
-   *   <li> All other attempts to modify the instance are rejected.
+   *   <li>Cancelling the operation renders the instance immediately unreadable via the API.
+   *   <li>The instance can be deleted.
+   *   <li>All other attempts to modify the instance are rejected.
    * </ul>
    *
    * Upon completion of the returned operation:
    *
    * <ul>
-   *   <li> Billing for all successfully-allocated resources begins (some types may have lower than
+   *   <li>Billing for all successfully-allocated resources begins (some types may have lower than
    *       the requested levels).
-   *   <li> Databases can be created in the instance.
-   *   <li> The instance's allocated resource levels are readable via the
+   *   <li>Databases can be created in the instance.
+   *   <li>The instance's allocated resource levels are readable via the
    * </ul>
    *
    * <!--SNIPPET instance_admin_client_create_instance-->
+   *
    * <pre>{@code
    * final String instanceId = my_instance_id;
    * final String configId = my_config_id;
@@ -88,9 +90,10 @@ public interface InstanceAdminClient {
    *         .build());
    * op.waitFor();
    * }</pre>
+   *
    * <!--SNIPPET instance_admin_client_create_instance-->
    */
-  Operation<Instance, CreateInstanceMetadata> createInstance(InstanceInfo instance)
+  OperationFuture<Instance, CreateInstanceMetadata> createInstance(InstanceInfo instance)
       throws SpannerException;
 
   /** Gets an instance. */
@@ -109,18 +112,17 @@ public interface InstanceAdminClient {
    * @param options Options to control the instances returned. It also supports {@link
    *     Options#filter(String)} option. The fields eligible for filtering are:
    *     <ul>
-   *       <li> name
-   *       <li> display_name
-   *       <li> labels.key where key is the name of a label
+   *       <li>name
+   *       <li>display_name
+   *       <li>labels.key where key is the name of a label
    *     </ul>
-   *
-   * <!--SNIPPET instance_admin_client_list_instances-->
-   * <pre>{@code
+   *     <!--SNIPPET instance_admin_client_list_instances-->
+   *     <pre>{@code
    * List<Instance> instances =
    *     Lists.newArrayList(
    *         instanceAdminClient.listInstances(Options.pageSize(1)).iterateAll());
    * }</pre>
-   * <!--SNIPPET instance_admin_client_list_instances-->
+   *     <!--SNIPPET instance_admin_client_list_instances-->
    */
   Page<Instance> listInstances(ListOption... options) throws SpannerException;
 
@@ -142,31 +144,32 @@ public interface InstanceAdminClient {
    * <p>Immediately upon completion of this request:
    *
    * <ul>
-   *   <li> For resource types for which a decrease in the instance's allocation has been requested,
+   *   <li>For resource types for which a decrease in the instance's allocation has been requested,
    *       billing is based on the newly-requested level.
    * </ul>
    *
    * Until completion of the returned operation:
    *
    * <ul>
-   *   <li> Cancelling the operation sets its metadata's
+   *   <li>Cancelling the operation sets its metadata's
    *       [cancel_time][UpdateInstanceMetadata.cancel_time], and begins restoring resources to
    *       their pre-request values. The operation is guaranteed to succeed at undoing all resource
    *       changes, after which point it terminates with a `CANCELLED` status.
-   *   <li> All other attempts to modify the instance are rejected.
-   *   <li> Reading the instance via the API continues to give the pre-request resource levels.
+   *   <li>All other attempts to modify the instance are rejected.
+   *   <li>Reading the instance via the API continues to give the pre-request resource levels.
    * </ul>
    *
    * Upon completion of the returned operation:
    *
    * <ul>
-   *   <li> Billing begins for all successfully-allocated resources (some types may have lower than
+   *   <li>Billing begins for all successfully-allocated resources (some types may have lower than
    *       the requested levels).
-   *   <li> All newly-reserved resources are available for serving the instance's tables.
-   *   <li> The instance's new resource levels are readable via the API.
+   *   <li>All newly-reserved resources are available for serving the instance's tables.
+   *   <li>The instance's new resource levels are readable via the API.
    * </ul>
    *
    * <!--SNIPPET instance_admin_client_update_instance-->
+   *
    * <pre>{@code
    * Instance instance = my_instance;
    * final String clientProject = my_client_project;
@@ -184,9 +187,10 @@ public interface InstanceAdminClient {
    *     instanceAdminClient.updateInstance(toUpdate, InstanceInfo.InstanceField.DISPLAY_NAME);
    * op.waitFor().getResult();
    * }</pre>
+   *
    * <!--SNIPPET instance_admin_client_update_instance-->
    */
-  Operation<Instance, UpdateInstanceMetadata> updateInstance(
+  OperationFuture<Instance, UpdateInstanceMetadata> updateInstance(
       InstanceInfo instance, InstanceInfo.InstanceField... fieldsToUpdate);
 
   /** Returns a builder for {@code Instance} object with the given id. */

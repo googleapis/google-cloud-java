@@ -4,6 +4,8 @@
 package com.google.cloud.dataproc.v1;
 
 /**
+ *
+ *
  * <pre>
  * A Cloud Dataproc job for running [Apache Spark SQL](http://spark.apache.org/sql/)
  * queries.
@@ -11,29 +13,33 @@ package com.google.cloud.dataproc.v1;
  *
  * Protobuf type {@code google.cloud.dataproc.v1.SparkSqlJob}
  */
-public  final class SparkSqlJob extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1.SparkSqlJob)
     SparkSqlJobOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use SparkSqlJob.newBuilder() to construct.
   private SparkSqlJob(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private SparkSqlJob() {
     jarFileUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private SparkSqlJob(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -45,88 +51,100 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              queriesCase_ = 1;
+              queries_ = s;
+              break;
             }
-            break;
-          }
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
-            queriesCase_ = 1;
-            queries_ = s;
-            break;
-          }
-          case 18: {
-            com.google.cloud.dataproc.v1.QueryList.Builder subBuilder = null;
-            if (queriesCase_ == 2) {
-              subBuilder = ((com.google.cloud.dataproc.v1.QueryList) queries_).toBuilder();
+          case 18:
+            {
+              com.google.cloud.dataproc.v1.QueryList.Builder subBuilder = null;
+              if (queriesCase_ == 2) {
+                subBuilder = ((com.google.cloud.dataproc.v1.QueryList) queries_).toBuilder();
+              }
+              queries_ =
+                  input.readMessage(
+                      com.google.cloud.dataproc.v1.QueryList.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.cloud.dataproc.v1.QueryList) queries_);
+                queries_ = subBuilder.buildPartial();
+              }
+              queriesCase_ = 2;
+              break;
             }
-            queries_ =
-                input.readMessage(com.google.cloud.dataproc.v1.QueryList.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.google.cloud.dataproc.v1.QueryList) queries_);
-              queries_ = subBuilder.buildPartial();
+          case 26:
+            {
+              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+                scriptVariables_ =
+                    com.google.protobuf.MapField.newMapField(
+                        ScriptVariablesDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000004;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> scriptVariables__ =
+                  input.readMessage(
+                      ScriptVariablesDefaultEntryHolder.defaultEntry.getParserForType(),
+                      extensionRegistry);
+              scriptVariables_
+                  .getMutableMap()
+                  .put(scriptVariables__.getKey(), scriptVariables__.getValue());
+              break;
             }
-            queriesCase_ = 2;
-            break;
-          }
-          case 26: {
-            if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-              scriptVariables_ = com.google.protobuf.MapField.newMapField(
-                  ScriptVariablesDefaultEntryHolder.defaultEntry);
-              mutable_bitField0_ |= 0x00000004;
+          case 34:
+            {
+              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+                properties_ =
+                    com.google.protobuf.MapField.newMapField(
+                        PropertiesDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000008;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> properties__ =
+                  input.readMessage(
+                      PropertiesDefaultEntryHolder.defaultEntry.getParserForType(),
+                      extensionRegistry);
+              properties_.getMutableMap().put(properties__.getKey(), properties__.getValue());
+              break;
             }
-            com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-            scriptVariables__ = input.readMessage(
-                ScriptVariablesDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-            scriptVariables_.getMutableMap().put(
-                scriptVariables__.getKey(), scriptVariables__.getValue());
-            break;
-          }
-          case 34: {
-            if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-              properties_ = com.google.protobuf.MapField.newMapField(
-                  PropertiesDefaultEntryHolder.defaultEntry);
-              mutable_bitField0_ |= 0x00000008;
-            }
-            com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-            properties__ = input.readMessage(
-                PropertiesDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-            properties_.getMutableMap().put(
-                properties__.getKey(), properties__.getValue());
-            break;
-          }
-          case 50: {
-            com.google.cloud.dataproc.v1.LoggingConfig.Builder subBuilder = null;
-            if (loggingConfig_ != null) {
-              subBuilder = loggingConfig_.toBuilder();
-            }
-            loggingConfig_ = input.readMessage(com.google.cloud.dataproc.v1.LoggingConfig.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(loggingConfig_);
-              loggingConfig_ = subBuilder.buildPartial();
-            }
+          case 50:
+            {
+              com.google.cloud.dataproc.v1.LoggingConfig.Builder subBuilder = null;
+              if (loggingConfig_ != null) {
+                subBuilder = loggingConfig_.toBuilder();
+              }
+              loggingConfig_ =
+                  input.readMessage(
+                      com.google.cloud.dataproc.v1.LoggingConfig.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(loggingConfig_);
+                loggingConfig_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 450: {
-            java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
-              jarFileUris_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000010;
+              break;
             }
-            jarFileUris_.add(s);
-            break;
-          }
+          case 450:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+                jarFileUris_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000010;
+              }
+              jarFileUris_.add(s);
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
         jarFileUris_ = jarFileUris_.getUnmodifiableView();
@@ -135,46 +153,49 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.dataproc.v1.JobsProto.internal_static_google_cloud_dataproc_v1_SparkSqlJob_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.dataproc.v1.JobsProto
+        .internal_static_google_cloud_dataproc_v1_SparkSqlJob_descriptor;
   }
 
   @SuppressWarnings({"rawtypes"})
-  protected com.google.protobuf.MapField internalGetMapField(
-      int number) {
+  @java.lang.Override
+  protected com.google.protobuf.MapField internalGetMapField(int number) {
     switch (number) {
       case 3:
         return internalGetScriptVariables();
       case 4:
         return internalGetProperties();
       default:
-        throw new RuntimeException(
-            "Invalid map field number: " + number);
+        throw new RuntimeException("Invalid map field number: " + number);
     }
   }
+
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.dataproc.v1.JobsProto.internal_static_google_cloud_dataproc_v1_SparkSqlJob_fieldAccessorTable
+    return com.google.cloud.dataproc.v1.JobsProto
+        .internal_static_google_cloud_dataproc_v1_SparkSqlJob_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.dataproc.v1.SparkSqlJob.class, com.google.cloud.dataproc.v1.SparkSqlJob.Builder.class);
+            com.google.cloud.dataproc.v1.SparkSqlJob.class,
+            com.google.cloud.dataproc.v1.SparkSqlJob.Builder.class);
   }
 
   private int bitField0_;
   private int queriesCase_ = 0;
   private java.lang.Object queries_;
-  public enum QueriesCase
-      implements com.google.protobuf.Internal.EnumLite {
+
+  public enum QueriesCase implements com.google.protobuf.Internal.EnumLite {
     QUERY_FILE_URI(1),
     QUERY_LIST(2),
     QUERIES_NOT_SET(0);
     private final int value;
+
     private QueriesCase(int value) {
       this.value = value;
     }
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static QueriesCase valueOf(int value) {
       return forNumber(value);
@@ -182,25 +203,30 @@ private static final long serialVersionUID = 0L;
 
     public static QueriesCase forNumber(int value) {
       switch (value) {
-        case 1: return QUERY_FILE_URI;
-        case 2: return QUERY_LIST;
-        case 0: return QUERIES_NOT_SET;
-        default: return null;
+        case 1:
+          return QUERY_FILE_URI;
+        case 2:
+          return QUERY_LIST;
+        case 0:
+          return QUERIES_NOT_SET;
+        default:
+          return null;
       }
     }
+
     public int getNumber() {
       return this.value;
     }
   };
 
-  public QueriesCase
-  getQueriesCase() {
-    return QueriesCase.forNumber(
-        queriesCase_);
+  public QueriesCase getQueriesCase() {
+    return QueriesCase.forNumber(queriesCase_);
   }
 
   public static final int QUERY_FILE_URI_FIELD_NUMBER = 1;
   /**
+   *
+   *
    * <pre>
    * The HCFS URI of the script that contains SQL queries.
    * </pre>
@@ -215,8 +241,7 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       if (queriesCase_ == 1) {
         queries_ = s;
@@ -225,22 +250,22 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The HCFS URI of the script that contains SQL queries.
    * </pre>
    *
    * <code>string query_file_uri = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getQueryFileUriBytes() {
+  public com.google.protobuf.ByteString getQueryFileUriBytes() {
     java.lang.Object ref = "";
     if (queriesCase_ == 1) {
       ref = queries_;
     }
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       if (queriesCase_ == 1) {
         queries_ = b;
       }
@@ -252,6 +277,8 @@ private static final long serialVersionUID = 0L;
 
   public static final int QUERY_LIST_FIELD_NUMBER = 2;
   /**
+   *
+   *
    * <pre>
    * A list of queries.
    * </pre>
@@ -262,6 +289,8 @@ private static final long serialVersionUID = 0L;
     return queriesCase_ == 2;
   }
   /**
+   *
+   *
    * <pre>
    * A list of queries.
    * </pre>
@@ -270,11 +299,13 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.cloud.dataproc.v1.QueryList getQueryList() {
     if (queriesCase_ == 2) {
-       return (com.google.cloud.dataproc.v1.QueryList) queries_;
+      return (com.google.cloud.dataproc.v1.QueryList) queries_;
     }
     return com.google.cloud.dataproc.v1.QueryList.getDefaultInstance();
   }
   /**
+   *
+   *
    * <pre>
    * A list of queries.
    * </pre>
@@ -283,27 +314,28 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.cloud.dataproc.v1.QueryListOrBuilder getQueryListOrBuilder() {
     if (queriesCase_ == 2) {
-       return (com.google.cloud.dataproc.v1.QueryList) queries_;
+      return (com.google.cloud.dataproc.v1.QueryList) queries_;
     }
     return com.google.cloud.dataproc.v1.QueryList.getDefaultInstance();
   }
 
   public static final int SCRIPT_VARIABLES_FIELD_NUMBER = 3;
+
   private static final class ScriptVariablesDefaultEntryHolder {
-    static final com.google.protobuf.MapEntry<
-        java.lang.String, java.lang.String> defaultEntry =
-            com.google.protobuf.MapEntry
-            .<java.lang.String, java.lang.String>newDefaultInstance(
-                com.google.cloud.dataproc.v1.JobsProto.internal_static_google_cloud_dataproc_v1_SparkSqlJob_ScriptVariablesEntry_descriptor, 
-                com.google.protobuf.WireFormat.FieldType.STRING,
-                "",
-                com.google.protobuf.WireFormat.FieldType.STRING,
-                "");
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.cloud.dataproc.v1.JobsProto
+                .internal_static_google_cloud_dataproc_v1_SparkSqlJob_ScriptVariablesEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
   }
-  private com.google.protobuf.MapField<
-      java.lang.String, java.lang.String> scriptVariables_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> scriptVariables_;
+
   private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-  internalGetScriptVariables() {
+      internalGetScriptVariables() {
     if (scriptVariables_ == null) {
       return com.google.protobuf.MapField.emptyMapField(
           ScriptVariablesDefaultEntryHolder.defaultEntry);
@@ -315,6 +347,8 @@ private static final long serialVersionUID = 0L;
     return internalGetScriptVariables().getMap().size();
   }
   /**
+   *
+   *
    * <pre>
    * Optional. Mapping of query variable names to values (equivalent to the
    * Spark SQL command: SET `name="value";`).
@@ -322,20 +356,20 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; script_variables = 3;</code>
    */
-
-  public boolean containsScriptVariables(
-      java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+  public boolean containsScriptVariables(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
     return internalGetScriptVariables().getMap().containsKey(key);
   }
-  /**
-   * Use {@link #getScriptVariablesMap()} instead.
-   */
+  /** Use {@link #getScriptVariablesMap()} instead. */
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getScriptVariables() {
     return getScriptVariablesMap();
   }
   /**
+   *
+   *
    * <pre>
    * Optional. Mapping of query variable names to values (equivalent to the
    * Spark SQL command: SET `name="value";`).
@@ -343,11 +377,12 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; script_variables = 3;</code>
    */
-
   public java.util.Map<java.lang.String, java.lang.String> getScriptVariablesMap() {
     return internalGetScriptVariables().getMap();
   }
   /**
+   *
+   *
    * <pre>
    * Optional. Mapping of query variable names to values (equivalent to the
    * Spark SQL command: SET `name="value";`).
@@ -355,16 +390,17 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; script_variables = 3;</code>
    */
-
   public java.lang.String getScriptVariablesOrDefault(
-      java.lang.String key,
-      java.lang.String defaultValue) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
-    java.util.Map<java.lang.String, java.lang.String> map =
-        internalGetScriptVariables().getMap();
+      java.lang.String key, java.lang.String defaultValue) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetScriptVariables().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
   /**
+   *
+   *
    * <pre>
    * Optional. Mapping of query variable names to values (equivalent to the
    * Spark SQL command: SET `name="value";`).
@@ -372,12 +408,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; script_variables = 3;</code>
    */
-
-  public java.lang.String getScriptVariablesOrThrow(
-      java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
-    java.util.Map<java.lang.String, java.lang.String> map =
-        internalGetScriptVariables().getMap();
+  public java.lang.String getScriptVariablesOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetScriptVariables().getMap();
     if (!map.containsKey(key)) {
       throw new java.lang.IllegalArgumentException();
     }
@@ -385,24 +420,23 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int PROPERTIES_FIELD_NUMBER = 4;
+
   private static final class PropertiesDefaultEntryHolder {
-    static final com.google.protobuf.MapEntry<
-        java.lang.String, java.lang.String> defaultEntry =
-            com.google.protobuf.MapEntry
-            .<java.lang.String, java.lang.String>newDefaultInstance(
-                com.google.cloud.dataproc.v1.JobsProto.internal_static_google_cloud_dataproc_v1_SparkSqlJob_PropertiesEntry_descriptor, 
-                com.google.protobuf.WireFormat.FieldType.STRING,
-                "",
-                com.google.protobuf.WireFormat.FieldType.STRING,
-                "");
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.cloud.dataproc.v1.JobsProto
+                .internal_static_google_cloud_dataproc_v1_SparkSqlJob_PropertiesEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
   }
-  private com.google.protobuf.MapField<
-      java.lang.String, java.lang.String> properties_;
-  private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-  internalGetProperties() {
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> properties_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetProperties() {
     if (properties_ == null) {
-      return com.google.protobuf.MapField.emptyMapField(
-          PropertiesDefaultEntryHolder.defaultEntry);
+      return com.google.protobuf.MapField.emptyMapField(PropertiesDefaultEntryHolder.defaultEntry);
     }
     return properties_;
   }
@@ -411,6 +445,8 @@ private static final long serialVersionUID = 0L;
     return internalGetProperties().getMap().size();
   }
   /**
+   *
+   *
    * <pre>
    * Optional. A mapping of property names to values, used to configure
    * Spark SQL's SparkConf. Properties that conflict with values set by the
@@ -419,20 +455,20 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; properties = 4;</code>
    */
-
-  public boolean containsProperties(
-      java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+  public boolean containsProperties(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
     return internalGetProperties().getMap().containsKey(key);
   }
-  /**
-   * Use {@link #getPropertiesMap()} instead.
-   */
+  /** Use {@link #getPropertiesMap()} instead. */
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getProperties() {
     return getPropertiesMap();
   }
   /**
+   *
+   *
    * <pre>
    * Optional. A mapping of property names to values, used to configure
    * Spark SQL's SparkConf. Properties that conflict with values set by the
@@ -441,11 +477,12 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; properties = 4;</code>
    */
-
   public java.util.Map<java.lang.String, java.lang.String> getPropertiesMap() {
     return internalGetProperties().getMap();
   }
   /**
+   *
+   *
    * <pre>
    * Optional. A mapping of property names to values, used to configure
    * Spark SQL's SparkConf. Properties that conflict with values set by the
@@ -454,16 +491,17 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; properties = 4;</code>
    */
-
   public java.lang.String getPropertiesOrDefault(
-      java.lang.String key,
-      java.lang.String defaultValue) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
-    java.util.Map<java.lang.String, java.lang.String> map =
-        internalGetProperties().getMap();
+      java.lang.String key, java.lang.String defaultValue) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetProperties().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
   /**
+   *
+   *
    * <pre>
    * Optional. A mapping of property names to values, used to configure
    * Spark SQL's SparkConf. Properties that conflict with values set by the
@@ -472,12 +510,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; properties = 4;</code>
    */
-
-  public java.lang.String getPropertiesOrThrow(
-      java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
-    java.util.Map<java.lang.String, java.lang.String> map =
-        internalGetProperties().getMap();
+  public java.lang.String getPropertiesOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetProperties().getMap();
     if (!map.containsKey(key)) {
       throw new java.lang.IllegalArgumentException();
     }
@@ -487,17 +524,20 @@ private static final long serialVersionUID = 0L;
   public static final int JAR_FILE_URIS_FIELD_NUMBER = 56;
   private com.google.protobuf.LazyStringList jarFileUris_;
   /**
+   *
+   *
    * <pre>
    * Optional. HCFS URIs of jar files to be added to the Spark CLASSPATH.
    * </pre>
    *
    * <code>repeated string jar_file_uris = 56;</code>
    */
-  public com.google.protobuf.ProtocolStringList
-      getJarFileUrisList() {
+  public com.google.protobuf.ProtocolStringList getJarFileUrisList() {
     return jarFileUris_;
   }
   /**
+   *
+   *
    * <pre>
    * Optional. HCFS URIs of jar files to be added to the Spark CLASSPATH.
    * </pre>
@@ -508,6 +548,8 @@ private static final long serialVersionUID = 0L;
     return jarFileUris_.size();
   }
   /**
+   *
+   *
    * <pre>
    * Optional. HCFS URIs of jar files to be added to the Spark CLASSPATH.
    * </pre>
@@ -518,20 +560,23 @@ private static final long serialVersionUID = 0L;
     return jarFileUris_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * Optional. HCFS URIs of jar files to be added to the Spark CLASSPATH.
    * </pre>
    *
    * <code>repeated string jar_file_uris = 56;</code>
    */
-  public com.google.protobuf.ByteString
-      getJarFileUrisBytes(int index) {
+  public com.google.protobuf.ByteString getJarFileUrisBytes(int index) {
     return jarFileUris_.getByteString(index);
   }
 
   public static final int LOGGING_CONFIG_FIELD_NUMBER = 6;
   private com.google.cloud.dataproc.v1.LoggingConfig loggingConfig_;
   /**
+   *
+   *
    * <pre>
    * Optional. The runtime log config for job execution.
    * </pre>
@@ -542,6 +587,8 @@ private static final long serialVersionUID = 0L;
     return loggingConfig_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Optional. The runtime log config for job execution.
    * </pre>
@@ -549,9 +596,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.cloud.dataproc.v1.LoggingConfig logging_config = 6;</code>
    */
   public com.google.cloud.dataproc.v1.LoggingConfig getLoggingConfig() {
-    return loggingConfig_ == null ? com.google.cloud.dataproc.v1.LoggingConfig.getDefaultInstance() : loggingConfig_;
+    return loggingConfig_ == null
+        ? com.google.cloud.dataproc.v1.LoggingConfig.getDefaultInstance()
+        : loggingConfig_;
   }
   /**
+   *
+   *
    * <pre>
    * Optional. The runtime log config for job execution.
    * </pre>
@@ -563,6 +614,8 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -572,26 +625,18 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  @java.lang.Override
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (queriesCase_ == 1) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, queries_);
     }
     if (queriesCase_ == 2) {
       output.writeMessage(2, (com.google.cloud.dataproc.v1.QueryList) queries_);
     }
-    com.google.protobuf.GeneratedMessageV3
-      .serializeStringMapTo(
-        output,
-        internalGetScriptVariables(),
-        ScriptVariablesDefaultEntryHolder.defaultEntry,
-        3);
-    com.google.protobuf.GeneratedMessageV3
-      .serializeStringMapTo(
-        output,
-        internalGetProperties(),
-        PropertiesDefaultEntryHolder.defaultEntry,
-        4);
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetScriptVariables(), ScriptVariablesDefaultEntryHolder.defaultEntry, 3);
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetProperties(), PropertiesDefaultEntryHolder.defaultEntry, 4);
     if (loggingConfig_ != null) {
       output.writeMessage(6, getLoggingConfig());
     }
@@ -601,6 +646,7 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -610,32 +656,32 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, queries_);
     }
     if (queriesCase_ == 2) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, (com.google.cloud.dataproc.v1.QueryList) queries_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              2, (com.google.cloud.dataproc.v1.QueryList) queries_);
     }
-    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
-         : internalGetScriptVariables().getMap().entrySet()) {
-      com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-      scriptVariables__ = ScriptVariablesDefaultEntryHolder.defaultEntry.newBuilderForType()
-          .setKey(entry.getKey())
-          .setValue(entry.getValue())
-          .build();
-      size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, scriptVariables__);
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetScriptVariables().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> scriptVariables__ =
+          ScriptVariablesDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, scriptVariables__);
     }
-    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
-         : internalGetProperties().getMap().entrySet()) {
-      com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-      properties__ = PropertiesDefaultEntryHolder.defaultEntry.newBuilderForType()
-          .setKey(entry.getKey())
-          .setValue(entry.getValue())
-          .build();
-      size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, properties__);
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetProperties().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> properties__ =
+          PropertiesDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, properties__);
     }
     if (loggingConfig_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(6, getLoggingConfig());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getLoggingConfig());
     }
     {
       int dataSize = 0;
@@ -653,7 +699,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.dataproc.v1.SparkSqlJob)) {
       return super.equals(obj);
@@ -661,28 +707,21 @@ private static final long serialVersionUID = 0L;
     com.google.cloud.dataproc.v1.SparkSqlJob other = (com.google.cloud.dataproc.v1.SparkSqlJob) obj;
 
     boolean result = true;
-    result = result && internalGetScriptVariables().equals(
-        other.internalGetScriptVariables());
-    result = result && internalGetProperties().equals(
-        other.internalGetProperties());
-    result = result && getJarFileUrisList()
-        .equals(other.getJarFileUrisList());
+    result = result && internalGetScriptVariables().equals(other.internalGetScriptVariables());
+    result = result && internalGetProperties().equals(other.internalGetProperties());
+    result = result && getJarFileUrisList().equals(other.getJarFileUrisList());
     result = result && (hasLoggingConfig() == other.hasLoggingConfig());
     if (hasLoggingConfig()) {
-      result = result && getLoggingConfig()
-          .equals(other.getLoggingConfig());
+      result = result && getLoggingConfig().equals(other.getLoggingConfig());
     }
-    result = result && getQueriesCase().equals(
-        other.getQueriesCase());
+    result = result && getQueriesCase().equals(other.getQueriesCase());
     if (!result) return false;
     switch (queriesCase_) {
       case 1:
-        result = result && getQueryFileUri()
-            .equals(other.getQueryFileUri());
+        result = result && getQueryFileUri().equals(other.getQueryFileUri());
         break;
       case 2:
-        result = result && getQueryList()
-            .equals(other.getQueryList());
+        result = result && getQueryList().equals(other.getQueryList());
         break;
       case 0:
       default:
@@ -731,95 +770,104 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.cloud.dataproc.v1.SparkSqlJob parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.cloud.dataproc.v1.SparkSqlJob parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dataproc.v1.SparkSqlJob parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.dataproc.v1.SparkSqlJob parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dataproc.v1.SparkSqlJob parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.dataproc.v1.SparkSqlJob parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dataproc.v1.SparkSqlJob parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.dataproc.v1.SparkSqlJob parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.dataproc.v1.SparkSqlJob parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.cloud.dataproc.v1.SparkSqlJob parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.dataproc.v1.SparkSqlJob parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.dataproc.v1.SparkSqlJob parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.dataproc.v1.SparkSqlJob parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.dataproc.v1.SparkSqlJob parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  public Builder newBuilderForType() { return newBuilder(); }
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-  public static Builder newBuilder(com.google.cloud.dataproc.v1.SparkSqlJob prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+
+  public static Builder newBuilder(com.google.cloud.dataproc.v1.SparkSqlJob prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+
+  @java.lang.Override
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * A Cloud Dataproc job for running [Apache Spark SQL](http://spark.apache.org/sql/)
    * queries.
@@ -827,46 +875,47 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.cloud.dataproc.v1.SparkSqlJob}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.dataproc.v1.SparkSqlJob)
       com.google.cloud.dataproc.v1.SparkSqlJobOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.dataproc.v1.JobsProto.internal_static_google_cloud_dataproc_v1_SparkSqlJob_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dataproc.v1.JobsProto
+          .internal_static_google_cloud_dataproc_v1_SparkSqlJob_descriptor;
     }
 
     @SuppressWarnings({"rawtypes"})
-    protected com.google.protobuf.MapField internalGetMapField(
-        int number) {
+    protected com.google.protobuf.MapField internalGetMapField(int number) {
       switch (number) {
         case 3:
           return internalGetScriptVariables();
         case 4:
           return internalGetProperties();
         default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
+          throw new RuntimeException("Invalid map field number: " + number);
       }
     }
+
     @SuppressWarnings({"rawtypes"})
-    protected com.google.protobuf.MapField internalGetMutableMapField(
-        int number) {
+    protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
       switch (number) {
         case 3:
           return internalGetMutableScriptVariables();
         case 4:
           return internalGetMutableProperties();
         default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
+          throw new RuntimeException("Invalid map field number: " + number);
       }
     }
+
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.dataproc.v1.JobsProto.internal_static_google_cloud_dataproc_v1_SparkSqlJob_fieldAccessorTable
+      return com.google.cloud.dataproc.v1.JobsProto
+          .internal_static_google_cloud_dataproc_v1_SparkSqlJob_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.dataproc.v1.SparkSqlJob.class, com.google.cloud.dataproc.v1.SparkSqlJob.Builder.class);
+              com.google.cloud.dataproc.v1.SparkSqlJob.class,
+              com.google.cloud.dataproc.v1.SparkSqlJob.Builder.class);
     }
 
     // Construct using com.google.cloud.dataproc.v1.SparkSqlJob.newBuilder()
@@ -874,16 +923,16 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       internalGetMutableScriptVariables().clear();
@@ -901,15 +950,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.dataproc.v1.JobsProto.internal_static_google_cloud_dataproc_v1_SparkSqlJob_descriptor;
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.dataproc.v1.JobsProto
+          .internal_static_google_cloud_dataproc_v1_SparkSqlJob_descriptor;
     }
 
+    @java.lang.Override
     public com.google.cloud.dataproc.v1.SparkSqlJob getDefaultInstanceForType() {
       return com.google.cloud.dataproc.v1.SparkSqlJob.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.cloud.dataproc.v1.SparkSqlJob build() {
       com.google.cloud.dataproc.v1.SparkSqlJob result = buildPartial();
       if (!result.isInitialized()) {
@@ -918,8 +970,10 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.cloud.dataproc.v1.SparkSqlJob buildPartial() {
-      com.google.cloud.dataproc.v1.SparkSqlJob result = new com.google.cloud.dataproc.v1.SparkSqlJob(this);
+      com.google.cloud.dataproc.v1.SparkSqlJob result =
+          new com.google.cloud.dataproc.v1.SparkSqlJob(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (queriesCase_ == 1) {
@@ -952,35 +1006,43 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+
+    @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+    @java.lang.Override
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+    @java.lang.Override
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
+    @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
+    @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.dataproc.v1.SparkSqlJob) {
-        return mergeFrom((com.google.cloud.dataproc.v1.SparkSqlJob)other);
+        return mergeFrom((com.google.cloud.dataproc.v1.SparkSqlJob) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -989,10 +1051,8 @@ private static final long serialVersionUID = 0L;
 
     public Builder mergeFrom(com.google.cloud.dataproc.v1.SparkSqlJob other) {
       if (other == com.google.cloud.dataproc.v1.SparkSqlJob.getDefaultInstance()) return this;
-      internalGetMutableScriptVariables().mergeFrom(
-          other.internalGetScriptVariables());
-      internalGetMutableProperties().mergeFrom(
-          other.internalGetProperties());
+      internalGetMutableScriptVariables().mergeFrom(other.internalGetScriptVariables());
+      internalGetMutableProperties().mergeFrom(other.internalGetProperties());
       if (!other.jarFileUris_.isEmpty()) {
         if (jarFileUris_.isEmpty()) {
           jarFileUris_ = other.jarFileUris_;
@@ -1007,29 +1067,34 @@ private static final long serialVersionUID = 0L;
         mergeLoggingConfig(other.getLoggingConfig());
       }
       switch (other.getQueriesCase()) {
-        case QUERY_FILE_URI: {
-          queriesCase_ = 1;
-          queries_ = other.queries_;
-          onChanged();
-          break;
-        }
-        case QUERY_LIST: {
-          mergeQueryList(other.getQueryList());
-          break;
-        }
-        case QUERIES_NOT_SET: {
-          break;
-        }
+        case QUERY_FILE_URI:
+          {
+            queriesCase_ = 1;
+            queries_ = other.queries_;
+            onChanged();
+            break;
+          }
+        case QUERY_LIST:
+          {
+            mergeQueryList(other.getQueryList());
+            break;
+          }
+        case QUERIES_NOT_SET:
+          {
+            break;
+          }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1047,12 +1112,12 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int queriesCase_ = 0;
     private java.lang.Object queries_;
-    public QueriesCase
-        getQueriesCase() {
-      return QueriesCase.forNumber(
-          queriesCase_);
+
+    public QueriesCase getQueriesCase() {
+      return QueriesCase.forNumber(queriesCase_);
     }
 
     public Builder clearQueries() {
@@ -1065,6 +1130,8 @@ private static final long serialVersionUID = 0L;
     private int bitField0_;
 
     /**
+     *
+     *
      * <pre>
      * The HCFS URI of the script that contains SQL queries.
      * </pre>
@@ -1077,8 +1144,7 @@ private static final long serialVersionUID = 0L;
         ref = queries_;
       }
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (queriesCase_ == 1) {
           queries_ = s;
@@ -1089,22 +1155,22 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The HCFS URI of the script that contains SQL queries.
      * </pre>
      *
      * <code>string query_file_uri = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getQueryFileUriBytes() {
+    public com.google.protobuf.ByteString getQueryFileUriBytes() {
       java.lang.Object ref = "";
       if (queriesCase_ == 1) {
         ref = queries_;
       }
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         if (queriesCase_ == 1) {
           queries_ = b;
         }
@@ -1114,23 +1180,26 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The HCFS URI of the script that contains SQL queries.
      * </pre>
      *
      * <code>string query_file_uri = 1;</code>
      */
-    public Builder setQueryFileUri(
-        java.lang.String value) {
+    public Builder setQueryFileUri(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  queriesCase_ = 1;
+        throw new NullPointerException();
+      }
+      queriesCase_ = 1;
       queries_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The HCFS URI of the script that contains SQL queries.
      * </pre>
@@ -1146,18 +1215,19 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The HCFS URI of the script that contains SQL queries.
      * </pre>
      *
      * <code>string query_file_uri = 1;</code>
      */
-    public Builder setQueryFileUriBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setQueryFileUriBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
       queriesCase_ = 1;
       queries_ = value;
       onChanged();
@@ -1165,8 +1235,13 @@ private static final long serialVersionUID = 0L;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dataproc.v1.QueryList, com.google.cloud.dataproc.v1.QueryList.Builder, com.google.cloud.dataproc.v1.QueryListOrBuilder> queryListBuilder_;
+            com.google.cloud.dataproc.v1.QueryList,
+            com.google.cloud.dataproc.v1.QueryList.Builder,
+            com.google.cloud.dataproc.v1.QueryListOrBuilder>
+        queryListBuilder_;
     /**
+     *
+     *
      * <pre>
      * A list of queries.
      * </pre>
@@ -1177,6 +1252,8 @@ private static final long serialVersionUID = 0L;
       return queriesCase_ == 2;
     }
     /**
+     *
+     *
      * <pre>
      * A list of queries.
      * </pre>
@@ -1197,6 +1274,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A list of queries.
      * </pre>
@@ -1217,14 +1296,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of queries.
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1.QueryList query_list = 2;</code>
      */
-    public Builder setQueryList(
-        com.google.cloud.dataproc.v1.QueryList.Builder builderForValue) {
+    public Builder setQueryList(com.google.cloud.dataproc.v1.QueryList.Builder builderForValue) {
       if (queryListBuilder_ == null) {
         queries_ = builderForValue.build();
         onChanged();
@@ -1235,6 +1315,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of queries.
      * </pre>
@@ -1243,10 +1325,13 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeQueryList(com.google.cloud.dataproc.v1.QueryList value) {
       if (queryListBuilder_ == null) {
-        if (queriesCase_ == 2 &&
-            queries_ != com.google.cloud.dataproc.v1.QueryList.getDefaultInstance()) {
-          queries_ = com.google.cloud.dataproc.v1.QueryList.newBuilder((com.google.cloud.dataproc.v1.QueryList) queries_)
-              .mergeFrom(value).buildPartial();
+        if (queriesCase_ == 2
+            && queries_ != com.google.cloud.dataproc.v1.QueryList.getDefaultInstance()) {
+          queries_ =
+              com.google.cloud.dataproc.v1.QueryList.newBuilder(
+                      (com.google.cloud.dataproc.v1.QueryList) queries_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           queries_ = value;
         }
@@ -1261,6 +1346,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of queries.
      * </pre>
@@ -1284,6 +1371,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of queries.
      * </pre>
@@ -1294,6 +1383,8 @@ private static final long serialVersionUID = 0L;
       return getQueryListFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * A list of queries.
      * </pre>
@@ -1311,6 +1402,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A list of queries.
      * </pre>
@@ -1318,40 +1411,49 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.dataproc.v1.QueryList query_list = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dataproc.v1.QueryList, com.google.cloud.dataproc.v1.QueryList.Builder, com.google.cloud.dataproc.v1.QueryListOrBuilder> 
+            com.google.cloud.dataproc.v1.QueryList,
+            com.google.cloud.dataproc.v1.QueryList.Builder,
+            com.google.cloud.dataproc.v1.QueryListOrBuilder>
         getQueryListFieldBuilder() {
       if (queryListBuilder_ == null) {
         if (!(queriesCase_ == 2)) {
           queries_ = com.google.cloud.dataproc.v1.QueryList.getDefaultInstance();
         }
-        queryListBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.dataproc.v1.QueryList, com.google.cloud.dataproc.v1.QueryList.Builder, com.google.cloud.dataproc.v1.QueryListOrBuilder>(
+        queryListBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataproc.v1.QueryList,
+                com.google.cloud.dataproc.v1.QueryList.Builder,
+                com.google.cloud.dataproc.v1.QueryListOrBuilder>(
                 (com.google.cloud.dataproc.v1.QueryList) queries_,
                 getParentForChildren(),
                 isClean());
         queries_ = null;
       }
       queriesCase_ = 2;
-      onChanged();;
+      onChanged();
+      ;
       return queryListBuilder_;
     }
 
-    private com.google.protobuf.MapField<
-        java.lang.String, java.lang.String> scriptVariables_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> scriptVariables_;
+
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetScriptVariables() {
+        internalGetScriptVariables() {
       if (scriptVariables_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
             ScriptVariablesDefaultEntryHolder.defaultEntry);
       }
       return scriptVariables_;
     }
+
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetMutableScriptVariables() {
-      onChanged();;
+        internalGetMutableScriptVariables() {
+      onChanged();
+      ;
       if (scriptVariables_ == null) {
-        scriptVariables_ = com.google.protobuf.MapField.newMapField(
-            ScriptVariablesDefaultEntryHolder.defaultEntry);
+        scriptVariables_ =
+            com.google.protobuf.MapField.newMapField(
+                ScriptVariablesDefaultEntryHolder.defaultEntry);
       }
       if (!scriptVariables_.isMutable()) {
         scriptVariables_ = scriptVariables_.copy();
@@ -1363,6 +1465,8 @@ private static final long serialVersionUID = 0L;
       return internalGetScriptVariables().getMap().size();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Mapping of query variable names to values (equivalent to the
      * Spark SQL command: SET `name="value";`).
@@ -1370,20 +1474,20 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; script_variables = 3;</code>
      */
-
-    public boolean containsScriptVariables(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+    public boolean containsScriptVariables(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
       return internalGetScriptVariables().getMap().containsKey(key);
     }
-    /**
-     * Use {@link #getScriptVariablesMap()} instead.
-     */
+    /** Use {@link #getScriptVariablesMap()} instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getScriptVariables() {
       return getScriptVariablesMap();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Mapping of query variable names to values (equivalent to the
      * Spark SQL command: SET `name="value";`).
@@ -1391,11 +1495,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; script_variables = 3;</code>
      */
-
     public java.util.Map<java.lang.String, java.lang.String> getScriptVariablesMap() {
       return internalGetScriptVariables().getMap();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Mapping of query variable names to values (equivalent to the
      * Spark SQL command: SET `name="value";`).
@@ -1403,16 +1508,17 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; script_variables = 3;</code>
      */
-
     public java.lang.String getScriptVariablesOrDefault(
-        java.lang.String key,
-        java.lang.String defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetScriptVariables().getMap();
+        java.lang.String key, java.lang.String defaultValue) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetScriptVariables().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Mapping of query variable names to values (equivalent to the
      * Spark SQL command: SET `name="value";`).
@@ -1420,12 +1526,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; script_variables = 3;</code>
      */
-
-    public java.lang.String getScriptVariablesOrThrow(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetScriptVariables().getMap();
+    public java.lang.String getScriptVariablesOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetScriptVariables().getMap();
       if (!map.containsKey(key)) {
         throw new java.lang.IllegalArgumentException();
       }
@@ -1433,11 +1538,12 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder clearScriptVariables() {
-      internalGetMutableScriptVariables().getMutableMap()
-          .clear();
+      internalGetMutableScriptVariables().getMutableMap().clear();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Mapping of query variable names to values (equivalent to the
      * Spark SQL command: SET `name="value";`).
@@ -1445,23 +1551,21 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; script_variables = 3;</code>
      */
-
-    public Builder removeScriptVariables(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      internalGetMutableScriptVariables().getMutableMap()
-          .remove(key);
+    public Builder removeScriptVariables(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableScriptVariables().getMutableMap().remove(key);
       return this;
     }
-    /**
-     * Use alternate mutation accessors instead.
-     */
+    /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
-    public java.util.Map<java.lang.String, java.lang.String>
-    getMutableScriptVariables() {
+    public java.util.Map<java.lang.String, java.lang.String> getMutableScriptVariables() {
       return internalGetMutableScriptVariables().getMutableMap();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Mapping of query variable names to values (equivalent to the
      * Spark SQL command: SET `name="value";`).
@@ -1469,16 +1573,19 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; script_variables = 3;</code>
      */
-    public Builder putScriptVariables(
-        java.lang.String key,
-        java.lang.String value) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      if (value == null) { throw new java.lang.NullPointerException(); }
-      internalGetMutableScriptVariables().getMutableMap()
-          .put(key, value);
+    public Builder putScriptVariables(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      if (value == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableScriptVariables().getMutableMap().put(key, value);
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Mapping of query variable names to values (equivalent to the
      * Spark SQL command: SET `name="value";`).
@@ -1486,30 +1593,29 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; script_variables = 3;</code>
      */
-
-    public Builder putAllScriptVariables(
-        java.util.Map<java.lang.String, java.lang.String> values) {
-      internalGetMutableScriptVariables().getMutableMap()
-          .putAll(values);
+    public Builder putAllScriptVariables(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableScriptVariables().getMutableMap().putAll(values);
       return this;
     }
 
-    private com.google.protobuf.MapField<
-        java.lang.String, java.lang.String> properties_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> properties_;
+
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetProperties() {
+        internalGetProperties() {
       if (properties_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
             PropertiesDefaultEntryHolder.defaultEntry);
       }
       return properties_;
     }
+
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetMutableProperties() {
-      onChanged();;
+        internalGetMutableProperties() {
+      onChanged();
+      ;
       if (properties_ == null) {
-        properties_ = com.google.protobuf.MapField.newMapField(
-            PropertiesDefaultEntryHolder.defaultEntry);
+        properties_ =
+            com.google.protobuf.MapField.newMapField(PropertiesDefaultEntryHolder.defaultEntry);
       }
       if (!properties_.isMutable()) {
         properties_ = properties_.copy();
@@ -1521,6 +1627,8 @@ private static final long serialVersionUID = 0L;
       return internalGetProperties().getMap().size();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. A mapping of property names to values, used to configure
      * Spark SQL's SparkConf. Properties that conflict with values set by the
@@ -1529,20 +1637,20 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; properties = 4;</code>
      */
-
-    public boolean containsProperties(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+    public boolean containsProperties(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
       return internalGetProperties().getMap().containsKey(key);
     }
-    /**
-     * Use {@link #getPropertiesMap()} instead.
-     */
+    /** Use {@link #getPropertiesMap()} instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getProperties() {
       return getPropertiesMap();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. A mapping of property names to values, used to configure
      * Spark SQL's SparkConf. Properties that conflict with values set by the
@@ -1551,11 +1659,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; properties = 4;</code>
      */
-
     public java.util.Map<java.lang.String, java.lang.String> getPropertiesMap() {
       return internalGetProperties().getMap();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. A mapping of property names to values, used to configure
      * Spark SQL's SparkConf. Properties that conflict with values set by the
@@ -1564,16 +1673,17 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; properties = 4;</code>
      */
-
     public java.lang.String getPropertiesOrDefault(
-        java.lang.String key,
-        java.lang.String defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetProperties().getMap();
+        java.lang.String key, java.lang.String defaultValue) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetProperties().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. A mapping of property names to values, used to configure
      * Spark SQL's SparkConf. Properties that conflict with values set by the
@@ -1582,12 +1692,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; properties = 4;</code>
      */
-
-    public java.lang.String getPropertiesOrThrow(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetProperties().getMap();
+    public java.lang.String getPropertiesOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetProperties().getMap();
       if (!map.containsKey(key)) {
         throw new java.lang.IllegalArgumentException();
       }
@@ -1595,11 +1704,12 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder clearProperties() {
-      internalGetMutableProperties().getMutableMap()
-          .clear();
+      internalGetMutableProperties().getMutableMap().clear();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. A mapping of property names to values, used to configure
      * Spark SQL's SparkConf. Properties that conflict with values set by the
@@ -1608,23 +1718,21 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; properties = 4;</code>
      */
-
-    public Builder removeProperties(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      internalGetMutableProperties().getMutableMap()
-          .remove(key);
+    public Builder removeProperties(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableProperties().getMutableMap().remove(key);
       return this;
     }
-    /**
-     * Use alternate mutation accessors instead.
-     */
+    /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
-    public java.util.Map<java.lang.String, java.lang.String>
-    getMutableProperties() {
+    public java.util.Map<java.lang.String, java.lang.String> getMutableProperties() {
       return internalGetMutableProperties().getMutableMap();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. A mapping of property names to values, used to configure
      * Spark SQL's SparkConf. Properties that conflict with values set by the
@@ -1633,16 +1741,19 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; properties = 4;</code>
      */
-    public Builder putProperties(
-        java.lang.String key,
-        java.lang.String value) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      if (value == null) { throw new java.lang.NullPointerException(); }
-      internalGetMutableProperties().getMutableMap()
-          .put(key, value);
+    public Builder putProperties(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      if (value == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableProperties().getMutableMap().put(key, value);
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. A mapping of property names to values, used to configure
      * Spark SQL's SparkConf. Properties that conflict with values set by the
@@ -1651,33 +1762,35 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; properties = 4;</code>
      */
-
-    public Builder putAllProperties(
-        java.util.Map<java.lang.String, java.lang.String> values) {
-      internalGetMutableProperties().getMutableMap()
-          .putAll(values);
+    public Builder putAllProperties(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableProperties().getMutableMap().putAll(values);
       return this;
     }
 
-    private com.google.protobuf.LazyStringList jarFileUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringList jarFileUris_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
     private void ensureJarFileUrisIsMutable() {
       if (!((bitField0_ & 0x00000010) == 0x00000010)) {
         jarFileUris_ = new com.google.protobuf.LazyStringArrayList(jarFileUris_);
         bitField0_ |= 0x00000010;
-       }
+      }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. HCFS URIs of jar files to be added to the Spark CLASSPATH.
      * </pre>
      *
      * <code>repeated string jar_file_uris = 56;</code>
      */
-    public com.google.protobuf.ProtocolStringList
-        getJarFileUrisList() {
+    public com.google.protobuf.ProtocolStringList getJarFileUrisList() {
       return jarFileUris_.getUnmodifiableView();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. HCFS URIs of jar files to be added to the Spark CLASSPATH.
      * </pre>
@@ -1688,6 +1801,8 @@ private static final long serialVersionUID = 0L;
       return jarFileUris_.size();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. HCFS URIs of jar files to be added to the Spark CLASSPATH.
      * </pre>
@@ -1698,66 +1813,71 @@ private static final long serialVersionUID = 0L;
       return jarFileUris_.get(index);
     }
     /**
+     *
+     *
      * <pre>
      * Optional. HCFS URIs of jar files to be added to the Spark CLASSPATH.
      * </pre>
      *
      * <code>repeated string jar_file_uris = 56;</code>
      */
-    public com.google.protobuf.ByteString
-        getJarFileUrisBytes(int index) {
+    public com.google.protobuf.ByteString getJarFileUrisBytes(int index) {
       return jarFileUris_.getByteString(index);
     }
     /**
+     *
+     *
      * <pre>
      * Optional. HCFS URIs of jar files to be added to the Spark CLASSPATH.
      * </pre>
      *
      * <code>repeated string jar_file_uris = 56;</code>
      */
-    public Builder setJarFileUris(
-        int index, java.lang.String value) {
+    public Builder setJarFileUris(int index, java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureJarFileUrisIsMutable();
+        throw new NullPointerException();
+      }
+      ensureJarFileUrisIsMutable();
       jarFileUris_.set(index, value);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. HCFS URIs of jar files to be added to the Spark CLASSPATH.
      * </pre>
      *
      * <code>repeated string jar_file_uris = 56;</code>
      */
-    public Builder addJarFileUris(
-        java.lang.String value) {
+    public Builder addJarFileUris(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureJarFileUrisIsMutable();
+        throw new NullPointerException();
+      }
+      ensureJarFileUrisIsMutable();
       jarFileUris_.add(value);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. HCFS URIs of jar files to be added to the Spark CLASSPATH.
      * </pre>
      *
      * <code>repeated string jar_file_uris = 56;</code>
      */
-    public Builder addAllJarFileUris(
-        java.lang.Iterable<java.lang.String> values) {
+    public Builder addAllJarFileUris(java.lang.Iterable<java.lang.String> values) {
       ensureJarFileUrisIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(
-          values, jarFileUris_);
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, jarFileUris_);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. HCFS URIs of jar files to be added to the Spark CLASSPATH.
      * </pre>
@@ -1771,18 +1891,19 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. HCFS URIs of jar files to be added to the Spark CLASSPATH.
      * </pre>
      *
      * <code>repeated string jar_file_uris = 56;</code>
      */
-    public Builder addJarFileUrisBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder addJarFileUrisBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
       ensureJarFileUrisIsMutable();
       jarFileUris_.add(value);
       onChanged();
@@ -1791,8 +1912,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.cloud.dataproc.v1.LoggingConfig loggingConfig_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dataproc.v1.LoggingConfig, com.google.cloud.dataproc.v1.LoggingConfig.Builder, com.google.cloud.dataproc.v1.LoggingConfigOrBuilder> loggingConfigBuilder_;
+            com.google.cloud.dataproc.v1.LoggingConfig,
+            com.google.cloud.dataproc.v1.LoggingConfig.Builder,
+            com.google.cloud.dataproc.v1.LoggingConfigOrBuilder>
+        loggingConfigBuilder_;
     /**
+     *
+     *
      * <pre>
      * Optional. The runtime log config for job execution.
      * </pre>
@@ -1803,6 +1929,8 @@ private static final long serialVersionUID = 0L;
       return loggingConfigBuilder_ != null || loggingConfig_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The runtime log config for job execution.
      * </pre>
@@ -1811,12 +1939,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.dataproc.v1.LoggingConfig getLoggingConfig() {
       if (loggingConfigBuilder_ == null) {
-        return loggingConfig_ == null ? com.google.cloud.dataproc.v1.LoggingConfig.getDefaultInstance() : loggingConfig_;
+        return loggingConfig_ == null
+            ? com.google.cloud.dataproc.v1.LoggingConfig.getDefaultInstance()
+            : loggingConfig_;
       } else {
         return loggingConfigBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The runtime log config for job execution.
      * </pre>
@@ -1837,6 +1969,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The runtime log config for job execution.
      * </pre>
@@ -1855,6 +1989,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The runtime log config for job execution.
      * </pre>
@@ -1865,7 +2001,9 @@ private static final long serialVersionUID = 0L;
       if (loggingConfigBuilder_ == null) {
         if (loggingConfig_ != null) {
           loggingConfig_ =
-            com.google.cloud.dataproc.v1.LoggingConfig.newBuilder(loggingConfig_).mergeFrom(value).buildPartial();
+              com.google.cloud.dataproc.v1.LoggingConfig.newBuilder(loggingConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           loggingConfig_ = value;
         }
@@ -1877,6 +2015,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The runtime log config for job execution.
      * </pre>
@@ -1895,6 +2035,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The runtime log config for job execution.
      * </pre>
@@ -1902,11 +2044,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.dataproc.v1.LoggingConfig logging_config = 6;</code>
      */
     public com.google.cloud.dataproc.v1.LoggingConfig.Builder getLoggingConfigBuilder() {
-      
+
       onChanged();
       return getLoggingConfigFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The runtime log config for job execution.
      * </pre>
@@ -1917,11 +2061,14 @@ private static final long serialVersionUID = 0L;
       if (loggingConfigBuilder_ != null) {
         return loggingConfigBuilder_.getMessageOrBuilder();
       } else {
-        return loggingConfig_ == null ?
-            com.google.cloud.dataproc.v1.LoggingConfig.getDefaultInstance() : loggingConfig_;
+        return loggingConfig_ == null
+            ? com.google.cloud.dataproc.v1.LoggingConfig.getDefaultInstance()
+            : loggingConfig_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The runtime log config for job execution.
      * </pre>
@@ -1929,34 +2076,39 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.dataproc.v1.LoggingConfig logging_config = 6;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dataproc.v1.LoggingConfig, com.google.cloud.dataproc.v1.LoggingConfig.Builder, com.google.cloud.dataproc.v1.LoggingConfigOrBuilder> 
+            com.google.cloud.dataproc.v1.LoggingConfig,
+            com.google.cloud.dataproc.v1.LoggingConfig.Builder,
+            com.google.cloud.dataproc.v1.LoggingConfigOrBuilder>
         getLoggingConfigFieldBuilder() {
       if (loggingConfigBuilder_ == null) {
-        loggingConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.dataproc.v1.LoggingConfig, com.google.cloud.dataproc.v1.LoggingConfig.Builder, com.google.cloud.dataproc.v1.LoggingConfigOrBuilder>(
-                getLoggingConfig(),
-                getParentForChildren(),
-                isClean());
+        loggingConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataproc.v1.LoggingConfig,
+                com.google.cloud.dataproc.v1.LoggingConfig.Builder,
+                com.google.cloud.dataproc.v1.LoggingConfigOrBuilder>(
+                getLoggingConfig(), getParentForChildren(), isClean());
         loggingConfig_ = null;
       }
       return loggingConfigBuilder_;
     }
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+
+    @java.lang.Override
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
     }
-
 
     // @@protoc_insertion_point(builder_scope:google.cloud.dataproc.v1.SparkSqlJob)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.dataproc.v1.SparkSqlJob)
   private static final com.google.cloud.dataproc.v1.SparkSqlJob DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.dataproc.v1.SparkSqlJob();
   }
@@ -1965,15 +2117,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<SparkSqlJob>
-      PARSER = new com.google.protobuf.AbstractParser<SparkSqlJob>() {
-    public SparkSqlJob parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SparkSqlJob(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<SparkSqlJob> PARSER =
+      new com.google.protobuf.AbstractParser<SparkSqlJob>() {
+        @java.lang.Override
+        public SparkSqlJob parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new SparkSqlJob(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<SparkSqlJob> parser() {
     return PARSER;
@@ -1984,9 +2137,8 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.cloud.dataproc.v1.SparkSqlJob getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

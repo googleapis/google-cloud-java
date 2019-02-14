@@ -3,11 +3,14 @@
 
 package io.grafeas.v1beta1;
 
-public interface UpdateNoteRequestOrBuilder extends
+public interface UpdateNoteRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:grafeas.v1beta1.UpdateNoteRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The name of the note in the form of
    * `projects/[PROVIDER_ID]/notes/[NOTE_ID]`.
@@ -17,6 +20,8 @@ public interface UpdateNoteRequestOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The name of the note in the form of
    * `projects/[PROVIDER_ID]/notes/[NOTE_ID]`.
@@ -24,10 +29,11 @@ public interface UpdateNoteRequestOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * The updated note.
    * </pre>
@@ -36,6 +42,8 @@ public interface UpdateNoteRequestOrBuilder extends
    */
   boolean hasNote();
   /**
+   *
+   *
    * <pre>
    * The updated note.
    * </pre>
@@ -44,6 +52,8 @@ public interface UpdateNoteRequestOrBuilder extends
    */
   io.grafeas.v1beta1.Note getNote();
   /**
+   *
+   *
    * <pre>
    * The updated note.
    * </pre>
@@ -53,6 +63,8 @@ public interface UpdateNoteRequestOrBuilder extends
   io.grafeas.v1beta1.NoteOrBuilder getNoteOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The fields to update.
    * </pre>
@@ -61,6 +73,8 @@ public interface UpdateNoteRequestOrBuilder extends
    */
   boolean hasUpdateMask();
   /**
+   *
+   *
    * <pre>
    * The fields to update.
    * </pre>
@@ -69,6 +83,8 @@ public interface UpdateNoteRequestOrBuilder extends
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**
+   *
+   *
    * <pre>
    * The fields to update.
    * </pre>

@@ -3,11 +3,14 @@
 
 package com.google.cloud.vision.v1;
 
-public interface WordOrBuilder extends
+public interface WordOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.vision.v1.Word)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Additional information detected for the word.
    * </pre>
@@ -16,6 +19,8 @@ public interface WordOrBuilder extends
    */
   boolean hasProperty();
   /**
+   *
+   *
    * <pre>
    * Additional information detected for the word.
    * </pre>
@@ -24,6 +29,8 @@ public interface WordOrBuilder extends
    */
   com.google.cloud.vision.v1.TextAnnotation.TextProperty getProperty();
   /**
+   *
+   *
    * <pre>
    * Additional information detected for the word.
    * </pre>
@@ -33,6 +40,8 @@ public interface WordOrBuilder extends
   com.google.cloud.vision.v1.TextAnnotation.TextPropertyOrBuilder getPropertyOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The bounding box for the word.
    * The vertices are in the order of top-left, top-right, bottom-right,
@@ -55,6 +64,8 @@ public interface WordOrBuilder extends
    */
   boolean hasBoundingBox();
   /**
+   *
+   *
    * <pre>
    * The bounding box for the word.
    * The vertices are in the order of top-left, top-right, bottom-right,
@@ -77,6 +88,8 @@ public interface WordOrBuilder extends
    */
   com.google.cloud.vision.v1.BoundingPoly getBoundingBox();
   /**
+   *
+   *
    * <pre>
    * The bounding box for the word.
    * The vertices are in the order of top-left, top-right, bottom-right,
@@ -100,6 +113,8 @@ public interface WordOrBuilder extends
   com.google.cloud.vision.v1.BoundingPolyOrBuilder getBoundingBoxOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * List of symbols in the word.
    * The order of the symbols follows the natural reading order.
@@ -107,9 +122,10 @@ public interface WordOrBuilder extends
    *
    * <code>repeated .google.cloud.vision.v1.Symbol symbols = 3;</code>
    */
-  java.util.List<com.google.cloud.vision.v1.Symbol> 
-      getSymbolsList();
+  java.util.List<com.google.cloud.vision.v1.Symbol> getSymbolsList();
   /**
+   *
+   *
    * <pre>
    * List of symbols in the word.
    * The order of the symbols follows the natural reading order.
@@ -119,6 +135,8 @@ public interface WordOrBuilder extends
    */
   com.google.cloud.vision.v1.Symbol getSymbols(int index);
   /**
+   *
+   *
    * <pre>
    * List of symbols in the word.
    * The order of the symbols follows the natural reading order.
@@ -128,6 +146,8 @@ public interface WordOrBuilder extends
    */
   int getSymbolsCount();
   /**
+   *
+   *
    * <pre>
    * List of symbols in the word.
    * The order of the symbols follows the natural reading order.
@@ -135,9 +155,10 @@ public interface WordOrBuilder extends
    *
    * <code>repeated .google.cloud.vision.v1.Symbol symbols = 3;</code>
    */
-  java.util.List<? extends com.google.cloud.vision.v1.SymbolOrBuilder> 
-      getSymbolsOrBuilderList();
+  java.util.List<? extends com.google.cloud.vision.v1.SymbolOrBuilder> getSymbolsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * List of symbols in the word.
    * The order of the symbols follows the natural reading order.
@@ -145,10 +166,11 @@ public interface WordOrBuilder extends
    *
    * <code>repeated .google.cloud.vision.v1.Symbol symbols = 3;</code>
    */
-  com.google.cloud.vision.v1.SymbolOrBuilder getSymbolsOrBuilder(
-      int index);
+  com.google.cloud.vision.v1.SymbolOrBuilder getSymbolsOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * Confidence of the OCR results for the word. Range [0, 1].
    * </pre>

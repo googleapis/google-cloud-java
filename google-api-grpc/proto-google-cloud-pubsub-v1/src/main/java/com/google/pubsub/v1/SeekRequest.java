@@ -4,38 +4,44 @@
 package com.google.pubsub.v1;
 
 /**
+ *
+ *
  * <pre>
- * Request for the `Seek` method.&lt;br&gt;&lt;br&gt;
- * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
+ * Request for the `Seek` method. &lt;br&gt;&lt;br&gt;
+ * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
  * changed in backward-incompatible ways and is not recommended for production
  * use. It is not subject to any SLA or deprecation policy.
  * </pre>
  *
  * Protobuf type {@code google.pubsub.v1.SeekRequest}
  */
-public  final class SeekRequest extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class SeekRequest extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.pubsub.v1.SeekRequest)
     SeekRequestOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use SeekRequest.newBuilder() to construct.
   private SeekRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private SeekRequest() {
     subscription_ = "";
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private SeekRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -47,77 +53,80 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            subscription_ = s;
-            break;
-          }
-          case 18: {
-            com.google.protobuf.Timestamp.Builder subBuilder = null;
-            if (targetCase_ == 2) {
-              subBuilder = ((com.google.protobuf.Timestamp) target_).toBuilder();
+              subscription_ = s;
+              break;
             }
-            target_ =
-                input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.google.protobuf.Timestamp) target_);
-              target_ = subBuilder.buildPartial();
+          case 18:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (targetCase_ == 2) {
+                subBuilder = ((com.google.protobuf.Timestamp) target_).toBuilder();
+              }
+              target_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.protobuf.Timestamp) target_);
+                target_ = subBuilder.buildPartial();
+              }
+              targetCase_ = 2;
+              break;
             }
-            targetCase_ = 2;
-            break;
-          }
-          case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
-            targetCase_ = 3;
-            target_ = s;
-            break;
-          }
+          case 26:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              targetCase_ = 3;
+              target_ = s;
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return com.google.pubsub.v1.PubsubProto.internal_static_google_pubsub_v1_SeekRequest_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.pubsub.v1.PubsubProto.internal_static_google_pubsub_v1_SeekRequest_fieldAccessorTable
+    return com.google.pubsub.v1.PubsubProto
+        .internal_static_google_pubsub_v1_SeekRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.pubsub.v1.SeekRequest.class, com.google.pubsub.v1.SeekRequest.Builder.class);
   }
 
   private int targetCase_ = 0;
   private java.lang.Object target_;
-  public enum TargetCase
-      implements com.google.protobuf.Internal.EnumLite {
+
+  public enum TargetCase implements com.google.protobuf.Internal.EnumLite {
     TIME(2),
     SNAPSHOT(3),
     TARGET_NOT_SET(0);
     private final int value;
+
     private TargetCase(int value) {
       this.value = value;
     }
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static TargetCase valueOf(int value) {
       return forNumber(value);
@@ -125,26 +134,31 @@ private static final long serialVersionUID = 0L;
 
     public static TargetCase forNumber(int value) {
       switch (value) {
-        case 2: return TIME;
-        case 3: return SNAPSHOT;
-        case 0: return TARGET_NOT_SET;
-        default: return null;
+        case 2:
+          return TIME;
+        case 3:
+          return SNAPSHOT;
+        case 0:
+          return TARGET_NOT_SET;
+        default:
+          return null;
       }
     }
+
     public int getNumber() {
       return this.value;
     }
   };
 
-  public TargetCase
-  getTargetCase() {
-    return TargetCase.forNumber(
-        targetCase_);
+  public TargetCase getTargetCase() {
+    return TargetCase.forNumber(targetCase_);
   }
 
   public static final int SUBSCRIPTION_FIELD_NUMBER = 1;
   private volatile java.lang.Object subscription_;
   /**
+   *
+   *
    * <pre>
    * The subscription to affect.
    * </pre>
@@ -156,27 +170,26 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       subscription_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The subscription to affect.
    * </pre>
    *
    * <code>string subscription = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getSubscriptionBytes() {
+  public com.google.protobuf.ByteString getSubscriptionBytes() {
     java.lang.Object ref = subscription_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       subscription_ = b;
       return b;
     } else {
@@ -186,6 +199,8 @@ private static final long serialVersionUID = 0L;
 
   public static final int TIME_FIELD_NUMBER = 2;
   /**
+   *
+   *
    * <pre>
    * The time to seek to.
    * Messages retained in the subscription that were published before this
@@ -206,6 +221,8 @@ private static final long serialVersionUID = 0L;
     return targetCase_ == 2;
   }
   /**
+   *
+   *
    * <pre>
    * The time to seek to.
    * Messages retained in the subscription that were published before this
@@ -224,11 +241,13 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.protobuf.Timestamp getTime() {
     if (targetCase_ == 2) {
-       return (com.google.protobuf.Timestamp) target_;
+      return (com.google.protobuf.Timestamp) target_;
     }
     return com.google.protobuf.Timestamp.getDefaultInstance();
   }
   /**
+   *
+   *
    * <pre>
    * The time to seek to.
    * Messages retained in the subscription that were published before this
@@ -247,13 +266,15 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.protobuf.TimestampOrBuilder getTimeOrBuilder() {
     if (targetCase_ == 2) {
-       return (com.google.protobuf.Timestamp) target_;
+      return (com.google.protobuf.Timestamp) target_;
     }
     return com.google.protobuf.Timestamp.getDefaultInstance();
   }
 
   public static final int SNAPSHOT_FIELD_NUMBER = 3;
   /**
+   *
+   *
    * <pre>
    * The snapshot to seek to. The snapshot's topic must be the same as that of
    * the provided subscription.
@@ -270,8 +291,7 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       if (targetCase_ == 3) {
         target_ = s;
@@ -280,6 +300,8 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The snapshot to seek to. The snapshot's topic must be the same as that of
    * the provided subscription.
@@ -288,16 +310,14 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string snapshot = 3;</code>
    */
-  public com.google.protobuf.ByteString
-      getSnapshotBytes() {
+  public com.google.protobuf.ByteString getSnapshotBytes() {
     java.lang.Object ref = "";
     if (targetCase_ == 3) {
       ref = target_;
     }
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       if (targetCase_ == 3) {
         target_ = b;
       }
@@ -308,6 +328,8 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -317,8 +339,8 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  @java.lang.Override
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getSubscriptionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, subscription_);
     }
@@ -331,6 +353,7 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -340,8 +363,9 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, subscription_);
     }
     if (targetCase_ == 2) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, (com.google.protobuf.Timestamp) target_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              2, (com.google.protobuf.Timestamp) target_);
     }
     if (targetCase_ == 3) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, target_);
@@ -354,7 +378,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.pubsub.v1.SeekRequest)) {
       return super.equals(obj);
@@ -362,19 +386,15 @@ private static final long serialVersionUID = 0L;
     com.google.pubsub.v1.SeekRequest other = (com.google.pubsub.v1.SeekRequest) obj;
 
     boolean result = true;
-    result = result && getSubscription()
-        .equals(other.getSubscription());
-    result = result && getTargetCase().equals(
-        other.getTargetCase());
+    result = result && getSubscription().equals(other.getSubscription());
+    result = result && getTargetCase().equals(other.getTargetCase());
     if (!result) return false;
     switch (targetCase_) {
       case 2:
-        result = result && getTime()
-            .equals(other.getTime());
+        result = result && getTime().equals(other.getTime());
         break;
       case 3:
-        result = result && getSnapshot()
-            .equals(other.getSnapshot());
+        result = result && getSnapshot().equals(other.getSnapshot());
         break;
       case 0:
       default:
@@ -409,118 +429,129 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.pubsub.v1.SeekRequest parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.pubsub.v1.SeekRequest parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.pubsub.v1.SeekRequest parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.pubsub.v1.SeekRequest parseFrom(
-      com.google.protobuf.ByteString data)
+
+  public static com.google.pubsub.v1.SeekRequest parseFrom(com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.pubsub.v1.SeekRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.pubsub.v1.SeekRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.pubsub.v1.SeekRequest parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.pubsub.v1.SeekRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.pubsub.v1.SeekRequest parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.pubsub.v1.SeekRequest parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
   public static com.google.pubsub.v1.SeekRequest parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.pubsub.v1.SeekRequest parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.pubsub.v1.SeekRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  public Builder newBuilderForType() { return newBuilder(); }
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-  public static Builder newBuilder(com.google.pubsub.v1.SeekRequest prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+
+  public static Builder newBuilder(com.google.pubsub.v1.SeekRequest prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+
+  @java.lang.Override
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
-   * Request for the `Seek` method.&lt;br&gt;&lt;br&gt;
-   * &lt;b&gt;ALPHA:&lt;/b&gt; This feature is part of an alpha release. This API might be
+   * Request for the `Seek` method. &lt;br&gt;&lt;br&gt;
+   * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
    * changed in backward-incompatible ways and is not recommended for production
    * use. It is not subject to any SLA or deprecation policy.
    * </pre>
    *
    * Protobuf type {@code google.pubsub.v1.SeekRequest}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.pubsub.v1.SeekRequest)
       com.google.pubsub.v1.SeekRequestOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.pubsub.v1.PubsubProto.internal_static_google_pubsub_v1_SeekRequest_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.pubsub.v1.PubsubProto
+          .internal_static_google_pubsub_v1_SeekRequest_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.pubsub.v1.PubsubProto.internal_static_google_pubsub_v1_SeekRequest_fieldAccessorTable
+      return com.google.pubsub.v1.PubsubProto
+          .internal_static_google_pubsub_v1_SeekRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.pubsub.v1.SeekRequest.class, com.google.pubsub.v1.SeekRequest.Builder.class);
+              com.google.pubsub.v1.SeekRequest.class,
+              com.google.pubsub.v1.SeekRequest.Builder.class);
     }
 
     // Construct using com.google.pubsub.v1.SeekRequest.newBuilder()
@@ -528,16 +559,16 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       subscription_ = "";
@@ -547,15 +578,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.pubsub.v1.PubsubProto.internal_static_google_pubsub_v1_SeekRequest_descriptor;
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.pubsub.v1.PubsubProto
+          .internal_static_google_pubsub_v1_SeekRequest_descriptor;
     }
 
+    @java.lang.Override
     public com.google.pubsub.v1.SeekRequest getDefaultInstanceForType() {
       return com.google.pubsub.v1.SeekRequest.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.pubsub.v1.SeekRequest build() {
       com.google.pubsub.v1.SeekRequest result = buildPartial();
       if (!result.isInitialized()) {
@@ -564,6 +598,7 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.pubsub.v1.SeekRequest buildPartial() {
       com.google.pubsub.v1.SeekRequest result = new com.google.pubsub.v1.SeekRequest(this);
       result.subscription_ = subscription_;
@@ -582,35 +617,43 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+
+    @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+    @java.lang.Override
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+    @java.lang.Override
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
+    @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
+    @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.pubsub.v1.SeekRequest) {
-        return mergeFrom((com.google.pubsub.v1.SeekRequest)other);
+        return mergeFrom((com.google.pubsub.v1.SeekRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -624,29 +667,34 @@ private static final long serialVersionUID = 0L;
         onChanged();
       }
       switch (other.getTargetCase()) {
-        case TIME: {
-          mergeTime(other.getTime());
-          break;
-        }
-        case SNAPSHOT: {
-          targetCase_ = 3;
-          target_ = other.target_;
-          onChanged();
-          break;
-        }
-        case TARGET_NOT_SET: {
-          break;
-        }
+        case TIME:
+          {
+            mergeTime(other.getTime());
+            break;
+          }
+        case SNAPSHOT:
+          {
+            targetCase_ = 3;
+            target_ = other.target_;
+            onChanged();
+            break;
+          }
+        case TARGET_NOT_SET:
+          {
+            break;
+          }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -664,12 +712,12 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int targetCase_ = 0;
     private java.lang.Object target_;
-    public TargetCase
-        getTargetCase() {
-      return TargetCase.forNumber(
-          targetCase_);
+
+    public TargetCase getTargetCase() {
+      return TargetCase.forNumber(targetCase_);
     }
 
     public Builder clearTarget() {
@@ -679,9 +727,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-
     private java.lang.Object subscription_ = "";
     /**
+     *
+     *
      * <pre>
      * The subscription to affect.
      * </pre>
@@ -691,8 +740,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getSubscription() {
       java.lang.Object ref = subscription_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         subscription_ = s;
         return s;
@@ -701,19 +749,19 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The subscription to affect.
      * </pre>
      *
      * <code>string subscription = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getSubscriptionBytes() {
+    public com.google.protobuf.ByteString getSubscriptionBytes() {
       java.lang.Object ref = subscription_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         subscription_ = b;
         return b;
       } else {
@@ -721,23 +769,26 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The subscription to affect.
      * </pre>
      *
      * <code>string subscription = 1;</code>
      */
-    public Builder setSubscription(
-        java.lang.String value) {
+    public Builder setSubscription(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       subscription_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The subscription to affect.
      * </pre>
@@ -745,33 +796,39 @@ private static final long serialVersionUID = 0L;
      * <code>string subscription = 1;</code>
      */
     public Builder clearSubscription() {
-      
+
       subscription_ = getDefaultInstance().getSubscription();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The subscription to affect.
      * </pre>
      *
      * <code>string subscription = 1;</code>
      */
-    public Builder setSubscriptionBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setSubscriptionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       subscription_ = value;
       onChanged();
       return this;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> timeBuilder_;
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        timeBuilder_;
     /**
+     *
+     *
      * <pre>
      * The time to seek to.
      * Messages retained in the subscription that were published before this
@@ -792,6 +849,8 @@ private static final long serialVersionUID = 0L;
       return targetCase_ == 2;
     }
     /**
+     *
+     *
      * <pre>
      * The time to seek to.
      * Messages retained in the subscription that were published before this
@@ -822,6 +881,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The time to seek to.
      * Messages retained in the subscription that were published before this
@@ -852,6 +913,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The time to seek to.
      * Messages retained in the subscription that were published before this
@@ -868,8 +931,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.Timestamp time = 2;</code>
      */
-    public Builder setTime(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
+    public Builder setTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (timeBuilder_ == null) {
         target_ = builderForValue.build();
         onChanged();
@@ -880,6 +942,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The time to seek to.
      * Messages retained in the subscription that were published before this
@@ -898,10 +962,11 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeTime(com.google.protobuf.Timestamp value) {
       if (timeBuilder_ == null) {
-        if (targetCase_ == 2 &&
-            target_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
-          target_ = com.google.protobuf.Timestamp.newBuilder((com.google.protobuf.Timestamp) target_)
-              .mergeFrom(value).buildPartial();
+        if (targetCase_ == 2 && target_ != com.google.protobuf.Timestamp.getDefaultInstance()) {
+          target_ =
+              com.google.protobuf.Timestamp.newBuilder((com.google.protobuf.Timestamp) target_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           target_ = value;
         }
@@ -916,6 +981,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The time to seek to.
      * Messages retained in the subscription that were published before this
@@ -949,6 +1016,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The time to seek to.
      * Messages retained in the subscription that were published before this
@@ -969,6 +1038,8 @@ private static final long serialVersionUID = 0L;
       return getTimeFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * The time to seek to.
      * Messages retained in the subscription that were published before this
@@ -996,6 +1067,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The time to seek to.
      * Messages retained in the subscription that were published before this
@@ -1013,25 +1086,31 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp time = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
         getTimeFieldBuilder() {
       if (timeBuilder_ == null) {
         if (!(targetCase_ == 2)) {
           target_ = com.google.protobuf.Timestamp.getDefaultInstance();
         }
-        timeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                (com.google.protobuf.Timestamp) target_,
-                getParentForChildren(),
-                isClean());
+        timeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                (com.google.protobuf.Timestamp) target_, getParentForChildren(), isClean());
         target_ = null;
       }
       targetCase_ = 2;
-      onChanged();;
+      onChanged();
+      ;
       return timeBuilder_;
     }
 
     /**
+     *
+     *
      * <pre>
      * The snapshot to seek to. The snapshot's topic must be the same as that of
      * the provided subscription.
@@ -1046,8 +1125,7 @@ private static final long serialVersionUID = 0L;
         ref = target_;
       }
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (targetCase_ == 3) {
           target_ = s;
@@ -1058,6 +1136,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The snapshot to seek to. The snapshot's topic must be the same as that of
      * the provided subscription.
@@ -1066,16 +1146,14 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string snapshot = 3;</code>
      */
-    public com.google.protobuf.ByteString
-        getSnapshotBytes() {
+    public com.google.protobuf.ByteString getSnapshotBytes() {
       java.lang.Object ref = "";
       if (targetCase_ == 3) {
         ref = target_;
       }
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         if (targetCase_ == 3) {
           target_ = b;
         }
@@ -1085,6 +1163,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The snapshot to seek to. The snapshot's topic must be the same as that of
      * the provided subscription.
@@ -1093,17 +1173,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string snapshot = 3;</code>
      */
-    public Builder setSnapshot(
-        java.lang.String value) {
+    public Builder setSnapshot(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  targetCase_ = 3;
+        throw new NullPointerException();
+      }
+      targetCase_ = 3;
       target_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The snapshot to seek to. The snapshot's topic must be the same as that of
      * the provided subscription.
@@ -1121,6 +1202,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The snapshot to seek to. The snapshot's topic must be the same as that of
      * the provided subscription.
@@ -1129,33 +1212,34 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string snapshot = 3;</code>
      */
-    public Builder setSnapshotBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setSnapshotBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
       targetCase_ = 3;
       target_ = value;
       onChanged();
       return this;
     }
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+
+    @java.lang.Override
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
     }
-
 
     // @@protoc_insertion_point(builder_scope:google.pubsub.v1.SeekRequest)
   }
 
   // @@protoc_insertion_point(class_scope:google.pubsub.v1.SeekRequest)
   private static final com.google.pubsub.v1.SeekRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.pubsub.v1.SeekRequest();
   }
@@ -1164,15 +1248,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<SeekRequest>
-      PARSER = new com.google.protobuf.AbstractParser<SeekRequest>() {
-    public SeekRequest parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SeekRequest(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<SeekRequest> PARSER =
+      new com.google.protobuf.AbstractParser<SeekRequest>() {
+        @java.lang.Override
+        public SeekRequest parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new SeekRequest(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<SeekRequest> parser() {
     return PARSER;
@@ -1183,9 +1268,8 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.pubsub.v1.SeekRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

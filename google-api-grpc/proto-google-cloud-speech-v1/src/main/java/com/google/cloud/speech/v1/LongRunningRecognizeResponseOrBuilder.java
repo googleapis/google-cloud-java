@@ -3,11 +3,14 @@
 
 package com.google.cloud.speech.v1;
 
-public interface LongRunningRecognizeResponseOrBuilder extends
+public interface LongRunningRecognizeResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.speech.v1.LongRunningRecognizeResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Output only. Sequential list of transcription results corresponding to
    * sequential portions of audio.
@@ -15,9 +18,10 @@ public interface LongRunningRecognizeResponseOrBuilder extends
    *
    * <code>repeated .google.cloud.speech.v1.SpeechRecognitionResult results = 2;</code>
    */
-  java.util.List<com.google.cloud.speech.v1.SpeechRecognitionResult> 
-      getResultsList();
+  java.util.List<com.google.cloud.speech.v1.SpeechRecognitionResult> getResultsList();
   /**
+   *
+   *
    * <pre>
    * Output only. Sequential list of transcription results corresponding to
    * sequential portions of audio.
@@ -27,6 +31,8 @@ public interface LongRunningRecognizeResponseOrBuilder extends
    */
   com.google.cloud.speech.v1.SpeechRecognitionResult getResults(int index);
   /**
+   *
+   *
    * <pre>
    * Output only. Sequential list of transcription results corresponding to
    * sequential portions of audio.
@@ -36,6 +42,8 @@ public interface LongRunningRecognizeResponseOrBuilder extends
    */
   int getResultsCount();
   /**
+   *
+   *
    * <pre>
    * Output only. Sequential list of transcription results corresponding to
    * sequential portions of audio.
@@ -43,9 +51,11 @@ public interface LongRunningRecognizeResponseOrBuilder extends
    *
    * <code>repeated .google.cloud.speech.v1.SpeechRecognitionResult results = 2;</code>
    */
-  java.util.List<? extends com.google.cloud.speech.v1.SpeechRecognitionResultOrBuilder> 
+  java.util.List<? extends com.google.cloud.speech.v1.SpeechRecognitionResultOrBuilder>
       getResultsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * Output only. Sequential list of transcription results corresponding to
    * sequential portions of audio.
@@ -53,6 +63,5 @@ public interface LongRunningRecognizeResponseOrBuilder extends
    *
    * <code>repeated .google.cloud.speech.v1.SpeechRecognitionResult results = 2;</code>
    */
-  com.google.cloud.speech.v1.SpeechRecognitionResultOrBuilder getResultsOrBuilder(
-      int index);
+  com.google.cloud.speech.v1.SpeechRecognitionResultOrBuilder getResultsOrBuilder(int index);
 }

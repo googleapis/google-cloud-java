@@ -66,9 +66,7 @@ final class CloudStorageUtil {
     }
   }
 
-  /**
-   * Makes {@code NullPointerTester} happy.
-   */
+  /** Makes {@code NullPointerTester} happy. */
   @SafeVarargs
   static <T> void checkNotNullArray(T... values) {
     for (T value : values) {

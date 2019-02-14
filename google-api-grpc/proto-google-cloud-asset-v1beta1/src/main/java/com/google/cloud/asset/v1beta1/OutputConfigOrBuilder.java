@@ -3,29 +3,36 @@
 
 package com.google.cloud.asset.v1beta1;
 
-public interface OutputConfigOrBuilder extends
+public interface OutputConfigOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.asset.v1beta1.OutputConfig)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
-   * Destination on Google Cloud Storage (GCS).
+   * Destination on Cloud Storage.
    * </pre>
    *
    * <code>.google.cloud.asset.v1beta1.GcsDestination gcs_destination = 1;</code>
    */
   boolean hasGcsDestination();
   /**
+   *
+   *
    * <pre>
-   * Destination on Google Cloud Storage (GCS).
+   * Destination on Cloud Storage.
    * </pre>
    *
    * <code>.google.cloud.asset.v1beta1.GcsDestination gcs_destination = 1;</code>
    */
   com.google.cloud.asset.v1beta1.GcsDestination getGcsDestination();
   /**
+   *
+   *
    * <pre>
-   * Destination on Google Cloud Storage (GCS).
+   * Destination on Cloud Storage.
    * </pre>
    *
    * <code>.google.cloud.asset.v1beta1.GcsDestination gcs_destination = 1;</code>

@@ -36,8 +36,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.concurrent.Callable;
 
-final class ResourceManagerImpl
-    extends BaseService<ResourceManagerOptions> implements ResourceManager {
+final class ResourceManagerImpl extends BaseService<ResourceManagerOptions>
+    implements ResourceManager {
 
   private final ResourceManagerRpc resourceManagerRpc;
 
@@ -49,13 +49,18 @@ final class ResourceManagerImpl
   @Override
   public Project create(final ProjectInfo project) {
     try {
-      return Project.fromPb(this, runWithRetries(
-          new Callable<com.google.api.services.cloudresourcemanager.model.Project>() {
-            @Override
-            public com.google.api.services.cloudresourcemanager.model.Project call() {
-              return resourceManagerRpc.create(project.toPb());
-            }
-          }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock()));
+      return Project.fromPb(
+          this,
+          runWithRetries(
+              new Callable<com.google.api.services.cloudresourcemanager.model.Project>() {
+                @Override
+                public com.google.api.services.cloudresourcemanager.model.Project call() {
+                  return resourceManagerRpc.create(project.toPb());
+                }
+              },
+              getOptions().getRetrySettings(),
+              EXCEPTION_HANDLER,
+              getOptions().getClock()));
     } catch (RetryHelperException ex) {
       throw ResourceManagerException.translateAndThrow(ex);
     }
@@ -64,13 +69,17 @@ final class ResourceManagerImpl
   @Override
   public void delete(final String projectId) {
     try {
-      runWithRetries(new Callable<Void>() {
-        @Override
-        public Void call() {
-          resourceManagerRpc.delete(projectId);
-          return null;
-        }
-      }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
+      runWithRetries(
+          new Callable<Void>() {
+            @Override
+            public Void call() {
+              resourceManagerRpc.delete(projectId);
+              return null;
+            }
+          },
+          getOptions().getRetrySettings(),
+          EXCEPTION_HANDLER,
+          getOptions().getClock());
     } catch (RetryHelperException ex) {
       throw ResourceManagerException.translateAndThrow(ex);
     }
@@ -80,13 +89,17 @@ final class ResourceManagerImpl
   public Project get(final String projectId, ProjectGetOption... options) {
     final Map<ResourceManagerRpc.Option, ?> optionsMap = optionMap(options);
     try {
-      com.google.api.services.cloudresourcemanager.model.Project answer = runWithRetries(
-          new Callable<com.google.api.services.cloudresourcemanager.model.Project>() {
-            @Override
-            public com.google.api.services.cloudresourcemanager.model.Project call() {
-              return resourceManagerRpc.get(projectId, optionsMap);
-            }
-          }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
+      com.google.api.services.cloudresourcemanager.model.Project answer =
+          runWithRetries(
+              new Callable<com.google.api.services.cloudresourcemanager.model.Project>() {
+                @Override
+                public com.google.api.services.cloudresourcemanager.model.Project call() {
+                  return resourceManagerRpc.get(projectId, optionsMap);
+                }
+              },
+              getOptions().getRetrySettings(),
+              EXCEPTION_HANDLER,
+              getOptions().getClock());
       return answer == null ? null : Project.fromPb(this, answer);
     } catch (RetryHelperException ex) {
       throw ResourceManagerException.translateAndThrow(ex);
@@ -99,13 +112,14 @@ final class ResourceManagerImpl
     private final Map<ResourceManagerRpc.Option, ?> requestOptions;
     private final ResourceManagerOptions serviceOptions;
 
-    ProjectPageFetcher(ResourceManagerOptions serviceOptions, String cursor,
+    ProjectPageFetcher(
+        ResourceManagerOptions serviceOptions,
+        String cursor,
         Map<ResourceManagerRpc.Option, ?> optionMap) {
       this.requestOptions =
           PageImpl.nextRequestOptions(ResourceManagerRpc.Option.PAGE_TOKEN, cursor, optionMap);
       this.serviceOptions = serviceOptions;
     }
-
 
     @Override
     public Page<Project> getNextPage() {
@@ -118,26 +132,35 @@ final class ResourceManagerImpl
     return listProjects(getOptions(), optionMap(options));
   }
 
-  private static Page<Project> listProjects(final ResourceManagerOptions serviceOptions,
+  private static Page<Project> listProjects(
+      final ResourceManagerOptions serviceOptions,
       final Map<ResourceManagerRpc.Option, ?> optionsMap) {
     try {
       Tuple<String, Iterable<com.google.api.services.cloudresourcemanager.model.Project>> result =
-          runWithRetries(new Callable<Tuple<String,
-              Iterable<com.google.api.services.cloudresourcemanager.model.Project>>>() {
+          runWithRetries(
+              new Callable<
+                  Tuple<
+                      String,
+                      Iterable<com.google.api.services.cloudresourcemanager.model.Project>>>() {
                 @Override
-                public Tuple<String,
-                    Iterable<com.google.api.services.cloudresourcemanager.model.Project>> call() {
+                public Tuple<
+                        String,
+                        Iterable<com.google.api.services.cloudresourcemanager.model.Project>>
+                    call() {
                   return serviceOptions.getResourceManagerRpcV1Beta1().list(optionsMap);
                 }
               },
-              serviceOptions.getRetrySettings(), EXCEPTION_HANDLER, serviceOptions.getClock());
+              serviceOptions.getRetrySettings(),
+              EXCEPTION_HANDLER,
+              serviceOptions.getClock());
       String cursor = result.x();
       Iterable<Project> projects =
           result.y() == null
-              ? ImmutableList.<Project>of() : Iterables.transform(
+              ? ImmutableList.<Project>of()
+              : Iterables.transform(
                   result.y(),
-                  new Function<com.google.api.services.cloudresourcemanager.model.Project,
-                      Project>() {
+                  new Function<
+                      com.google.api.services.cloudresourcemanager.model.Project, Project>() {
                     @Override
                     public Project apply(
                         com.google.api.services.cloudresourcemanager.model.Project projectPb) {
@@ -156,13 +179,18 @@ final class ResourceManagerImpl
   @Override
   public Project replace(final ProjectInfo newProject) {
     try {
-      return Project.fromPb(this, runWithRetries(
-          new Callable<com.google.api.services.cloudresourcemanager.model.Project>() {
-            @Override
-            public com.google.api.services.cloudresourcemanager.model.Project call() {
-              return resourceManagerRpc.replace(newProject.toPb());
-            }
-          }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock()));
+      return Project.fromPb(
+          this,
+          runWithRetries(
+              new Callable<com.google.api.services.cloudresourcemanager.model.Project>() {
+                @Override
+                public com.google.api.services.cloudresourcemanager.model.Project call() {
+                  return resourceManagerRpc.replace(newProject.toPb());
+                }
+              },
+              getOptions().getRetrySettings(),
+              EXCEPTION_HANDLER,
+              getOptions().getClock()));
     } catch (RetryHelperException ex) {
       throw ResourceManagerException.translateAndThrow(ex);
     }
@@ -171,13 +199,17 @@ final class ResourceManagerImpl
   @Override
   public void undelete(final String projectId) {
     try {
-      runWithRetries(new Callable<Void>() {
-        @Override
-        public Void call() {
-          resourceManagerRpc.undelete(projectId);
-          return null;
-        }
-      }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
+      runWithRetries(
+          new Callable<Void>() {
+            @Override
+            public Void call() {
+              resourceManagerRpc.undelete(projectId);
+              return null;
+            }
+          },
+          getOptions().getRetrySettings(),
+          EXCEPTION_HANDLER,
+          getOptions().getClock());
     } catch (RetryHelperException ex) {
       throw ResourceManagerException.translateAndThrow(ex);
     }
@@ -193,7 +225,10 @@ final class ResourceManagerImpl
                 public com.google.api.services.cloudresourcemanager.model.Policy call() {
                   return resourceManagerRpc.getPolicy(projectId);
                 }
-              }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
+              },
+              getOptions().getRetrySettings(),
+              EXCEPTION_HANDLER,
+              getOptions().getClock());
       return answer == null ? null : PolicyMarshaller.INSTANCE.fromPb(answer);
     } catch (RetryHelperException ex) {
       throw ResourceManagerException.translateAndThrow(ex);
@@ -203,14 +238,18 @@ final class ResourceManagerImpl
   @Override
   public Policy replacePolicy(final String projectId, final Policy newPolicy) {
     try {
-      return PolicyMarshaller.INSTANCE.fromPb(runWithRetries(
-          new Callable<com.google.api.services.cloudresourcemanager.model.Policy>() {
-            @Override
-            public com.google.api.services.cloudresourcemanager.model.Policy call() {
-              return resourceManagerRpc.replacePolicy(projectId,
-                  PolicyMarshaller.INSTANCE.toPb(newPolicy));
-            }
-          }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock()));
+      return PolicyMarshaller.INSTANCE.fromPb(
+          runWithRetries(
+              new Callable<com.google.api.services.cloudresourcemanager.model.Policy>() {
+                @Override
+                public com.google.api.services.cloudresourcemanager.model.Policy call() {
+                  return resourceManagerRpc.replacePolicy(
+                      projectId, PolicyMarshaller.INSTANCE.toPb(newPolicy));
+                }
+              },
+              getOptions().getRetrySettings(),
+              EXCEPTION_HANDLER,
+              getOptions().getClock()));
     } catch (RetryHelperException ex) {
       throw ResourceManagerException.translateAndThrow(ex);
     }
@@ -225,7 +264,10 @@ final class ResourceManagerImpl
             public List<Boolean> call() {
               return resourceManagerRpc.testPermissions(projectId, permissions);
             }
-          }, getOptions().getRetrySettings(), EXCEPTION_HANDLER, getOptions().getClock());
+          },
+          getOptions().getRetrySettings(),
+          EXCEPTION_HANDLER,
+          getOptions().getClock());
     } catch (RetryHelperException ex) {
       throw ResourceManagerException.translateAndThrow(ex);
     }

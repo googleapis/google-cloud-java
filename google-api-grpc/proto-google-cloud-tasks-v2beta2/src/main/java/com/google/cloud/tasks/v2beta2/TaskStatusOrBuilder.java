@@ -3,11 +3,14 @@
 
 package com.google.cloud.tasks.v2beta2;
 
-public interface TaskStatusOrBuilder extends
+public interface TaskStatusOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.tasks.v2beta2.TaskStatus)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Output only. The number of attempts dispatched.
    * This count includes tasks which have been dispatched but haven't
@@ -19,6 +22,8 @@ public interface TaskStatusOrBuilder extends
   int getAttemptDispatchCount();
 
   /**
+   *
+   *
    * <pre>
    * Output only. The number of attempts which have received a response.
    * This field is not calculated for [pull tasks][google.cloud.tasks.v2beta2.PullMessage].
@@ -29,6 +34,8 @@ public interface TaskStatusOrBuilder extends
   int getAttemptResponseCount();
 
   /**
+   *
+   *
    * <pre>
    * Output only. The status of the task's first attempt.
    * Only [dispatch_time][google.cloud.tasks.v2beta2.AttemptStatus.dispatch_time] will be set.
@@ -40,6 +47,8 @@ public interface TaskStatusOrBuilder extends
    */
   boolean hasFirstAttemptStatus();
   /**
+   *
+   *
    * <pre>
    * Output only. The status of the task's first attempt.
    * Only [dispatch_time][google.cloud.tasks.v2beta2.AttemptStatus.dispatch_time] will be set.
@@ -51,6 +60,8 @@ public interface TaskStatusOrBuilder extends
    */
   com.google.cloud.tasks.v2beta2.AttemptStatus getFirstAttemptStatus();
   /**
+   *
+   *
    * <pre>
    * Output only. The status of the task's first attempt.
    * Only [dispatch_time][google.cloud.tasks.v2beta2.AttemptStatus.dispatch_time] will be set.
@@ -63,6 +74,8 @@ public interface TaskStatusOrBuilder extends
   com.google.cloud.tasks.v2beta2.AttemptStatusOrBuilder getFirstAttemptStatusOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Output only. The status of the task's last attempt.
    * This field is not calculated for [pull tasks][google.cloud.tasks.v2beta2.PullMessage].
@@ -72,6 +85,8 @@ public interface TaskStatusOrBuilder extends
    */
   boolean hasLastAttemptStatus();
   /**
+   *
+   *
    * <pre>
    * Output only. The status of the task's last attempt.
    * This field is not calculated for [pull tasks][google.cloud.tasks.v2beta2.PullMessage].
@@ -81,6 +96,8 @@ public interface TaskStatusOrBuilder extends
    */
   com.google.cloud.tasks.v2beta2.AttemptStatus getLastAttemptStatus();
   /**
+   *
+   *
    * <pre>
    * Output only. The status of the task's last attempt.
    * This field is not calculated for [pull tasks][google.cloud.tasks.v2beta2.PullMessage].

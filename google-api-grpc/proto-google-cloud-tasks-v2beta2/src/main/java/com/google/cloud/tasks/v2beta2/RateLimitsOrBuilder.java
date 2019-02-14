@@ -3,11 +3,14 @@
 
 package com.google.cloud.tasks.v2beta2;
 
-public interface RateLimitsOrBuilder extends
+public interface RateLimitsOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.tasks.v2beta2.RateLimits)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The maximum rate at which tasks are dispatched from this queue.
    * If unspecified when the queue is created, Cloud Tasks will pick the
@@ -26,6 +29,8 @@ public interface RateLimitsOrBuilder extends
   double getMaxTasksDispatchedPerSecond();
 
   /**
+   *
+   *
    * <pre>
    * Output only. The max burst size.
    * Max burst size limits how fast tasks in queue are processed when
@@ -62,6 +67,8 @@ public interface RateLimitsOrBuilder extends
   int getMaxBurstSize();
 
   /**
+   *
+   *
    * <pre>
    * The maximum number of concurrent tasks that Cloud Tasks allows
    * to be dispatched for this queue. After this threshold has been

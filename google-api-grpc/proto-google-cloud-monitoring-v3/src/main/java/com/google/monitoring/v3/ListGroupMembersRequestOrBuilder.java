@@ -3,11 +3,14 @@
 
 package com.google.monitoring.v3;
 
-public interface ListGroupMembersRequestOrBuilder extends
+public interface ListGroupMembersRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.monitoring.v3.ListGroupMembersRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The group whose members are listed. The format is
    * `"projects/{project_id_or_number}/groups/{group_id}"`.
@@ -17,6 +20,8 @@ public interface ListGroupMembersRequestOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The group whose members are listed. The format is
    * `"projects/{project_id_or_number}/groups/{group_id}"`.
@@ -24,10 +29,11 @@ public interface ListGroupMembersRequestOrBuilder extends
    *
    * <code>string name = 7;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * A positive number that is the maximum number of results to return.
    * </pre>
@@ -37,6 +43,8 @@ public interface ListGroupMembersRequestOrBuilder extends
   int getPageSize();
 
   /**
+   *
+   *
    * <pre>
    * If this field is not empty then it must contain the `nextPageToken` value
    * returned by a previous call to this method.  Using this field causes the
@@ -47,6 +55,8 @@ public interface ListGroupMembersRequestOrBuilder extends
    */
   java.lang.String getPageToken();
   /**
+   *
+   *
    * <pre>
    * If this field is not empty then it must contain the `nextPageToken` value
    * returned by a previous call to this method.  Using this field causes the
@@ -55,10 +65,11 @@ public interface ListGroupMembersRequestOrBuilder extends
    *
    * <code>string page_token = 4;</code>
    */
-  com.google.protobuf.ByteString
-      getPageTokenBytes();
+  com.google.protobuf.ByteString getPageTokenBytes();
 
   /**
+   *
+   *
    * <pre>
    * An optional [list filter](/monitoring/api/learn_more#filtering) describing
    * the members to be returned.  The filter may reference the type, labels, and
@@ -72,6 +83,8 @@ public interface ListGroupMembersRequestOrBuilder extends
    */
   java.lang.String getFilter();
   /**
+   *
+   *
    * <pre>
    * An optional [list filter](/monitoring/api/learn_more#filtering) describing
    * the members to be returned.  The filter may reference the type, labels, and
@@ -83,10 +96,11 @@ public interface ListGroupMembersRequestOrBuilder extends
    *
    * <code>string filter = 5;</code>
    */
-  com.google.protobuf.ByteString
-      getFilterBytes();
+  com.google.protobuf.ByteString getFilterBytes();
 
   /**
+   *
+   *
    * <pre>
    * An optional time interval for which results should be returned. Only
    * members that were part of the group during the specified interval are
@@ -98,6 +112,8 @@ public interface ListGroupMembersRequestOrBuilder extends
    */
   boolean hasInterval();
   /**
+   *
+   *
    * <pre>
    * An optional time interval for which results should be returned. Only
    * members that were part of the group during the specified interval are
@@ -109,6 +125,8 @@ public interface ListGroupMembersRequestOrBuilder extends
    */
   com.google.monitoring.v3.TimeInterval getInterval();
   /**
+   *
+   *
    * <pre>
    * An optional time interval for which results should be returned. Only
    * members that were part of the group during the specified interval are

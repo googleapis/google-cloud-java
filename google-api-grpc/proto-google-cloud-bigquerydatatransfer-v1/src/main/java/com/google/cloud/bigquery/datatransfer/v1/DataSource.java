@@ -4,6 +4,8 @@
 package com.google.cloud.bigquery.datatransfer.v1;
 
 /**
+ *
+ *
  * <pre>
  * Represents data source metadata. Metadata is sufficient to
  * render UI and request proper OAuth tokens.
@@ -11,15 +13,16 @@ package com.google.cloud.bigquery.datatransfer.v1;
  *
  * Protobuf type {@code google.cloud.bigquery.datatransfer.v1.DataSource}
  */
-public  final class DataSource extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class DataSource extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.bigquery.datatransfer.v1.DataSource)
     DataSourceOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use DataSource.newBuilder() to construct.
   private DataSource(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private DataSource() {
     name_ = "";
     dataSourceId_ = "";
@@ -41,15 +44,18 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private DataSource(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -61,136 +67,153 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              name_ = s;
+              break;
             }
-            break;
-          }
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 18:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            name_ = s;
-            break;
-          }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            dataSourceId_ = s;
-            break;
-          }
-          case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            displayName_ = s;
-            break;
-          }
-          case 34: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            description_ = s;
-            break;
-          }
-          case 42: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            clientId_ = s;
-            break;
-          }
-          case 50: {
-            java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
-              scopes_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000020;
+              dataSourceId_ = s;
+              break;
             }
-            scopes_.add(s);
-            break;
-          }
-          case 56: {
-            int rawValue = input.readEnum();
+          case 26:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            transferType_ = rawValue;
-            break;
-          }
-          case 64: {
-
-            supportsMultipleTransfers_ = input.readBool();
-            break;
-          }
-          case 72: {
-
-            updateDeadlineSeconds_ = input.readInt32();
-            break;
-          }
-          case 82: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            defaultSchedule_ = s;
-            break;
-          }
-          case 88: {
-
-            supportsCustomSchedule_ = input.readBool();
-            break;
-          }
-          case 98: {
-            if (!((mutable_bitField0_ & 0x00000800) == 0x00000800)) {
-              parameters_ = new java.util.ArrayList<com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter>();
-              mutable_bitField0_ |= 0x00000800;
+              displayName_ = s;
+              break;
             }
-            parameters_.add(
-                input.readMessage(com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter.parser(), extensionRegistry));
-            break;
-          }
-          case 106: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 34:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            helpUrl_ = s;
-            break;
-          }
-          case 112: {
-            int rawValue = input.readEnum();
-
-            authorizationType_ = rawValue;
-            break;
-          }
-          case 120: {
-            int rawValue = input.readEnum();
-
-            dataRefreshType_ = rawValue;
-            break;
-          }
-          case 128: {
-
-            defaultDataRefreshWindowDays_ = input.readInt32();
-            break;
-          }
-          case 136: {
-
-            manualRunsDisabled_ = input.readBool();
-            break;
-          }
-          case 146: {
-            com.google.protobuf.Duration.Builder subBuilder = null;
-            if (minimumScheduleInterval_ != null) {
-              subBuilder = minimumScheduleInterval_.toBuilder();
+              description_ = s;
+              break;
             }
-            minimumScheduleInterval_ = input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(minimumScheduleInterval_);
-              minimumScheduleInterval_ = subBuilder.buildPartial();
-            }
+          case 42:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            break;
-          }
+              clientId_ = s;
+              break;
+            }
+          case 50:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+                scopes_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000020;
+              }
+              scopes_.add(s);
+              break;
+            }
+          case 56:
+            {
+              int rawValue = input.readEnum();
+
+              transferType_ = rawValue;
+              break;
+            }
+          case 64:
+            {
+              supportsMultipleTransfers_ = input.readBool();
+              break;
+            }
+          case 72:
+            {
+              updateDeadlineSeconds_ = input.readInt32();
+              break;
+            }
+          case 82:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              defaultSchedule_ = s;
+              break;
+            }
+          case 88:
+            {
+              supportsCustomSchedule_ = input.readBool();
+              break;
+            }
+          case 98:
+            {
+              if (!((mutable_bitField0_ & 0x00000800) == 0x00000800)) {
+                parameters_ =
+                    new java.util.ArrayList<
+                        com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter>();
+                mutable_bitField0_ |= 0x00000800;
+              }
+              parameters_.add(
+                  input.readMessage(
+                      com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter.parser(),
+                      extensionRegistry));
+              break;
+            }
+          case 106:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              helpUrl_ = s;
+              break;
+            }
+          case 112:
+            {
+              int rawValue = input.readEnum();
+
+              authorizationType_ = rawValue;
+              break;
+            }
+          case 120:
+            {
+              int rawValue = input.readEnum();
+
+              dataRefreshType_ = rawValue;
+              break;
+            }
+          case 128:
+            {
+              defaultDataRefreshWindowDays_ = input.readInt32();
+              break;
+            }
+          case 136:
+            {
+              manualRunsDisabled_ = input.readBool();
+              break;
+            }
+          case 146:
+            {
+              com.google.protobuf.Duration.Builder subBuilder = null;
+              if (minimumScheduleInterval_ != null) {
+                subBuilder = minimumScheduleInterval_.toBuilder();
+              }
+              minimumScheduleInterval_ =
+                  input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(minimumScheduleInterval_);
+                minimumScheduleInterval_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
         scopes_ = scopes_.getUnmodifiableView();
@@ -202,28 +225,35 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.bigquery.datatransfer.v1.DataTransferProto.internal_static_google_cloud_bigquery_datatransfer_v1_DataSource_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.bigquery.datatransfer.v1.DataTransferProto
+        .internal_static_google_cloud_bigquery_datatransfer_v1_DataSource_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.bigquery.datatransfer.v1.DataTransferProto.internal_static_google_cloud_bigquery_datatransfer_v1_DataSource_fieldAccessorTable
+    return com.google.cloud.bigquery.datatransfer.v1.DataTransferProto
+        .internal_static_google_cloud_bigquery_datatransfer_v1_DataSource_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.bigquery.datatransfer.v1.DataSource.class, com.google.cloud.bigquery.datatransfer.v1.DataSource.Builder.class);
+            com.google.cloud.bigquery.datatransfer.v1.DataSource.class,
+            com.google.cloud.bigquery.datatransfer.v1.DataSource.Builder.class);
   }
 
   /**
+   *
+   *
    * <pre>
    * The type of authorization needed for this data source.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.bigquery.datatransfer.v1.DataSource.AuthorizationType}
    */
-  public enum AuthorizationType
-      implements com.google.protobuf.ProtocolMessageEnum {
+  public enum AuthorizationType implements com.google.protobuf.ProtocolMessageEnum {
     /**
+     *
+     *
      * <pre>
      * Type unspecified.
      * </pre>
@@ -232,6 +262,8 @@ private static final long serialVersionUID = 0L;
      */
     AUTHORIZATION_TYPE_UNSPECIFIED(0),
     /**
+     *
+     *
      * <pre>
      * Use OAuth 2 authorization codes that can be exchanged
      * for a refresh token on the backend.
@@ -241,6 +273,8 @@ private static final long serialVersionUID = 0L;
      */
     AUTHORIZATION_CODE(1),
     /**
+     *
+     *
      * <pre>
      * Return an authorization code for a given Google+ page that can then be
      * exchanged for a refresh token on the backend.
@@ -253,6 +287,8 @@ private static final long serialVersionUID = 0L;
     ;
 
     /**
+     *
+     *
      * <pre>
      * Type unspecified.
      * </pre>
@@ -261,6 +297,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int AUTHORIZATION_TYPE_UNSPECIFIED_VALUE = 0;
     /**
+     *
+     *
      * <pre>
      * Use OAuth 2 authorization codes that can be exchanged
      * for a refresh token on the backend.
@@ -270,6 +308,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int AUTHORIZATION_CODE_VALUE = 1;
     /**
+     *
+     *
      * <pre>
      * Return an authorization code for a given Google+ page that can then be
      * exchanged for a refresh token on the backend.
@@ -279,7 +319,6 @@ private static final long serialVersionUID = 0L;
      */
     public static final int GOOGLE_PLUS_AUTHORIZATION_CODE_VALUE = 2;
 
-
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -288,9 +327,7 @@ private static final long serialVersionUID = 0L;
       return value;
     }
 
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static AuthorizationType valueOf(int value) {
       return forNumber(value);
@@ -298,10 +335,14 @@ private static final long serialVersionUID = 0L;
 
     public static AuthorizationType forNumber(int value) {
       switch (value) {
-        case 0: return AUTHORIZATION_TYPE_UNSPECIFIED;
-        case 1: return AUTHORIZATION_CODE;
-        case 2: return GOOGLE_PLUS_AUTHORIZATION_CODE;
-        default: return null;
+        case 0:
+          return AUTHORIZATION_TYPE_UNSPECIFIED;
+        case 1:
+          return AUTHORIZATION_CODE;
+        case 2:
+          return GOOGLE_PLUS_AUTHORIZATION_CODE;
+        default:
+          return null;
       }
     }
 
@@ -309,25 +350,27 @@ private static final long serialVersionUID = 0L;
         internalGetValueMap() {
       return internalValueMap;
     }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        AuthorizationType> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<AuthorizationType>() {
-            public AuthorizationType findValueByNumber(int number) {
-              return AuthorizationType.forNumber(number);
-            }
-          };
 
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
+    private static final com.google.protobuf.Internal.EnumLiteMap<AuthorizationType>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<AuthorizationType>() {
+              public AuthorizationType findValueByNumber(int number) {
+                return AuthorizationType.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
       return getDescriptor().getValues().get(ordinal());
     }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
       return getDescriptor();
     }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
-      return com.google.cloud.bigquery.datatransfer.v1.DataSource.getDescriptor().getEnumTypes().get(0);
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.bigquery.datatransfer.v1.DataSource.getDescriptor()
+          .getEnumTypes()
+          .get(0);
     }
 
     private static final AuthorizationType[] VALUES = values();
@@ -335,8 +378,7 @@ private static final long serialVersionUID = 0L;
     public static AuthorizationType valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
         return UNRECOGNIZED;
@@ -354,15 +396,18 @@ private static final long serialVersionUID = 0L;
   }
 
   /**
+   *
+   *
    * <pre>
    * Represents how the data source supports data auto refresh.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.bigquery.datatransfer.v1.DataSource.DataRefreshType}
    */
-  public enum DataRefreshType
-      implements com.google.protobuf.ProtocolMessageEnum {
+  public enum DataRefreshType implements com.google.protobuf.ProtocolMessageEnum {
     /**
+     *
+     *
      * <pre>
      * The data source won't support data auto refresh, which is default value.
      * </pre>
@@ -371,6 +416,8 @@ private static final long serialVersionUID = 0L;
      */
     DATA_REFRESH_TYPE_UNSPECIFIED(0),
     /**
+     *
+     *
      * <pre>
      * The data source supports data auto refresh, and runs will be scheduled
      * for the past few days. Does not allow custom values to be set for each
@@ -381,6 +428,8 @@ private static final long serialVersionUID = 0L;
      */
     SLIDING_WINDOW(1),
     /**
+     *
+     *
      * <pre>
      * The data source supports data auto refresh, and runs will be scheduled
      * for the past few days. Allows custom values to be set for each transfer
@@ -394,6 +443,8 @@ private static final long serialVersionUID = 0L;
     ;
 
     /**
+     *
+     *
      * <pre>
      * The data source won't support data auto refresh, which is default value.
      * </pre>
@@ -402,6 +453,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int DATA_REFRESH_TYPE_UNSPECIFIED_VALUE = 0;
     /**
+     *
+     *
      * <pre>
      * The data source supports data auto refresh, and runs will be scheduled
      * for the past few days. Does not allow custom values to be set for each
@@ -412,6 +465,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int SLIDING_WINDOW_VALUE = 1;
     /**
+     *
+     *
      * <pre>
      * The data source supports data auto refresh, and runs will be scheduled
      * for the past few days. Allows custom values to be set for each transfer
@@ -422,7 +477,6 @@ private static final long serialVersionUID = 0L;
      */
     public static final int CUSTOM_SLIDING_WINDOW_VALUE = 2;
 
-
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -431,9 +485,7 @@ private static final long serialVersionUID = 0L;
       return value;
     }
 
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static DataRefreshType valueOf(int value) {
       return forNumber(value);
@@ -441,36 +493,41 @@ private static final long serialVersionUID = 0L;
 
     public static DataRefreshType forNumber(int value) {
       switch (value) {
-        case 0: return DATA_REFRESH_TYPE_UNSPECIFIED;
-        case 1: return SLIDING_WINDOW;
-        case 2: return CUSTOM_SLIDING_WINDOW;
-        default: return null;
+        case 0:
+          return DATA_REFRESH_TYPE_UNSPECIFIED;
+        case 1:
+          return SLIDING_WINDOW;
+        case 2:
+          return CUSTOM_SLIDING_WINDOW;
+        default:
+          return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<DataRefreshType>
-        internalGetValueMap() {
+    public static com.google.protobuf.Internal.EnumLiteMap<DataRefreshType> internalGetValueMap() {
       return internalValueMap;
     }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        DataRefreshType> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<DataRefreshType>() {
-            public DataRefreshType findValueByNumber(int number) {
-              return DataRefreshType.forNumber(number);
-            }
-          };
 
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
+    private static final com.google.protobuf.Internal.EnumLiteMap<DataRefreshType>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<DataRefreshType>() {
+              public DataRefreshType findValueByNumber(int number) {
+                return DataRefreshType.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
       return getDescriptor().getValues().get(ordinal());
     }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
       return getDescriptor();
     }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
-      return com.google.cloud.bigquery.datatransfer.v1.DataSource.getDescriptor().getEnumTypes().get(1);
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.bigquery.datatransfer.v1.DataSource.getDescriptor()
+          .getEnumTypes()
+          .get(1);
     }
 
     private static final DataRefreshType[] VALUES = values();
@@ -478,8 +535,7 @@ private static final long serialVersionUID = 0L;
     public static DataRefreshType valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
         return UNRECOGNIZED;
@@ -500,6 +556,8 @@ private static final long serialVersionUID = 0L;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
+   *
+   *
    * <pre>
    * Output only. Data source resource name.
    * </pre>
@@ -511,27 +569,26 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       name_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Output only. Data source resource name.
    * </pre>
    *
    * <code>string name = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getNameBytes() {
+  public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       name_ = b;
       return b;
     } else {
@@ -542,6 +599,8 @@ private static final long serialVersionUID = 0L;
   public static final int DATA_SOURCE_ID_FIELD_NUMBER = 2;
   private volatile java.lang.Object dataSourceId_;
   /**
+   *
+   *
    * <pre>
    * Data source id.
    * </pre>
@@ -553,27 +612,26 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       dataSourceId_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Data source id.
    * </pre>
    *
    * <code>string data_source_id = 2;</code>
    */
-  public com.google.protobuf.ByteString
-      getDataSourceIdBytes() {
+  public com.google.protobuf.ByteString getDataSourceIdBytes() {
     java.lang.Object ref = dataSourceId_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       dataSourceId_ = b;
       return b;
     } else {
@@ -584,6 +642,8 @@ private static final long serialVersionUID = 0L;
   public static final int DISPLAY_NAME_FIELD_NUMBER = 3;
   private volatile java.lang.Object displayName_;
   /**
+   *
+   *
    * <pre>
    * User friendly data source name.
    * </pre>
@@ -595,27 +655,26 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       displayName_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * User friendly data source name.
    * </pre>
    *
    * <code>string display_name = 3;</code>
    */
-  public com.google.protobuf.ByteString
-      getDisplayNameBytes() {
+  public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       displayName_ = b;
       return b;
     } else {
@@ -626,6 +685,8 @@ private static final long serialVersionUID = 0L;
   public static final int DESCRIPTION_FIELD_NUMBER = 4;
   private volatile java.lang.Object description_;
   /**
+   *
+   *
    * <pre>
    * User friendly data source description string.
    * </pre>
@@ -637,27 +698,26 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       description_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * User friendly data source description string.
    * </pre>
    *
    * <code>string description = 4;</code>
    */
-  public com.google.protobuf.ByteString
-      getDescriptionBytes() {
+  public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       description_ = b;
       return b;
     } else {
@@ -668,6 +728,8 @@ private static final long serialVersionUID = 0L;
   public static final int CLIENT_ID_FIELD_NUMBER = 5;
   private volatile java.lang.Object clientId_;
   /**
+   *
+   *
    * <pre>
    * Data source client id which should be used to receive refresh token.
    * When not supplied, no offline credentials are populated for data transfer.
@@ -680,14 +742,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       clientId_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Data source client id which should be used to receive refresh token.
    * When not supplied, no offline credentials are populated for data transfer.
@@ -695,13 +758,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string client_id = 5;</code>
    */
-  public com.google.protobuf.ByteString
-      getClientIdBytes() {
+  public com.google.protobuf.ByteString getClientIdBytes() {
     java.lang.Object ref = clientId_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       clientId_ = b;
       return b;
     } else {
@@ -712,6 +773,8 @@ private static final long serialVersionUID = 0L;
   public static final int SCOPES_FIELD_NUMBER = 6;
   private com.google.protobuf.LazyStringList scopes_;
   /**
+   *
+   *
    * <pre>
    * Api auth scopes for which refresh token needs to be obtained. Only valid
    * when `client_id` is specified. Ignored otherwise. These are scopes needed
@@ -721,11 +784,12 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string scopes = 6;</code>
    */
-  public com.google.protobuf.ProtocolStringList
-      getScopesList() {
+  public com.google.protobuf.ProtocolStringList getScopesList() {
     return scopes_;
   }
   /**
+   *
+   *
    * <pre>
    * Api auth scopes for which refresh token needs to be obtained. Only valid
    * when `client_id` is specified. Ignored otherwise. These are scopes needed
@@ -739,6 +803,8 @@ private static final long serialVersionUID = 0L;
     return scopes_.size();
   }
   /**
+   *
+   *
    * <pre>
    * Api auth scopes for which refresh token needs to be obtained. Only valid
    * when `client_id` is specified. Ignored otherwise. These are scopes needed
@@ -752,6 +818,8 @@ private static final long serialVersionUID = 0L;
     return scopes_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * Api auth scopes for which refresh token needs to be obtained. Only valid
    * when `client_id` is specified. Ignored otherwise. These are scopes needed
@@ -761,14 +829,15 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string scopes = 6;</code>
    */
-  public com.google.protobuf.ByteString
-      getScopesBytes(int index) {
+  public com.google.protobuf.ByteString getScopesBytes(int index) {
     return scopes_.getByteString(index);
   }
 
   public static final int TRANSFER_TYPE_FIELD_NUMBER = 7;
   private int transferType_;
   /**
+   *
+   *
    * <pre>
    * Deprecated. This field has no effect.
    * </pre>
@@ -779,6 +848,8 @@ private static final long serialVersionUID = 0L;
     return transferType_;
   }
   /**
+   *
+   *
    * <pre>
    * Deprecated. This field has no effect.
    * </pre>
@@ -786,13 +857,19 @@ private static final long serialVersionUID = 0L;
    * <code>.google.cloud.bigquery.datatransfer.v1.TransferType transfer_type = 7;</code>
    */
   public com.google.cloud.bigquery.datatransfer.v1.TransferType getTransferType() {
-    com.google.cloud.bigquery.datatransfer.v1.TransferType result = com.google.cloud.bigquery.datatransfer.v1.TransferType.valueOf(transferType_);
-    return result == null ? com.google.cloud.bigquery.datatransfer.v1.TransferType.UNRECOGNIZED : result;
+    @SuppressWarnings("deprecation")
+    com.google.cloud.bigquery.datatransfer.v1.TransferType result =
+        com.google.cloud.bigquery.datatransfer.v1.TransferType.valueOf(transferType_);
+    return result == null
+        ? com.google.cloud.bigquery.datatransfer.v1.TransferType.UNRECOGNIZED
+        : result;
   }
 
   public static final int SUPPORTS_MULTIPLE_TRANSFERS_FIELD_NUMBER = 8;
   private boolean supportsMultipleTransfers_;
   /**
+   *
+   *
    * <pre>
    * Indicates whether the data source supports multiple transfers
    * to different BigQuery targets.
@@ -807,6 +884,8 @@ private static final long serialVersionUID = 0L;
   public static final int UPDATE_DEADLINE_SECONDS_FIELD_NUMBER = 9;
   private int updateDeadlineSeconds_;
   /**
+   *
+   *
    * <pre>
    * The number of seconds to wait for an update from the data source
    * before BigQuery marks the transfer as failed.
@@ -821,6 +900,8 @@ private static final long serialVersionUID = 0L;
   public static final int DEFAULT_SCHEDULE_FIELD_NUMBER = 10;
   private volatile java.lang.Object defaultSchedule_;
   /**
+   *
+   *
    * <pre>
    * Default data transfer schedule.
    * Examples of valid schedules include:
@@ -836,14 +917,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       defaultSchedule_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Default data transfer schedule.
    * Examples of valid schedules include:
@@ -854,13 +936,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string default_schedule = 10;</code>
    */
-  public com.google.protobuf.ByteString
-      getDefaultScheduleBytes() {
+  public com.google.protobuf.ByteString getDefaultScheduleBytes() {
     java.lang.Object ref = defaultSchedule_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       defaultSchedule_ = b;
       return b;
     } else {
@@ -871,6 +951,8 @@ private static final long serialVersionUID = 0L;
   public static final int SUPPORTS_CUSTOM_SCHEDULE_FIELD_NUMBER = 11;
   private boolean supportsCustomSchedule_;
   /**
+   *
+   *
    * <pre>
    * Specifies whether the data source supports a user defined schedule, or
    * operates on the default schedule.
@@ -886,61 +968,80 @@ private static final long serialVersionUID = 0L;
   public static final int PARAMETERS_FIELD_NUMBER = 12;
   private java.util.List<com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter> parameters_;
   /**
+   *
+   *
    * <pre>
    * Data source parameters.
    * </pre>
    *
-   * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter parameters = 12;</code>
+   * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter parameters = 12;
+   * </code>
    */
-  public java.util.List<com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter> getParametersList() {
+  public java.util.List<com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter>
+      getParametersList() {
     return parameters_;
   }
   /**
+   *
+   *
    * <pre>
    * Data source parameters.
    * </pre>
    *
-   * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter parameters = 12;</code>
+   * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter parameters = 12;
+   * </code>
    */
-  public java.util.List<? extends com.google.cloud.bigquery.datatransfer.v1.DataSourceParameterOrBuilder> 
+  public java.util.List<
+          ? extends com.google.cloud.bigquery.datatransfer.v1.DataSourceParameterOrBuilder>
       getParametersOrBuilderList() {
     return parameters_;
   }
   /**
+   *
+   *
    * <pre>
    * Data source parameters.
    * </pre>
    *
-   * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter parameters = 12;</code>
+   * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter parameters = 12;
+   * </code>
    */
   public int getParametersCount() {
     return parameters_.size();
   }
   /**
+   *
+   *
    * <pre>
    * Data source parameters.
    * </pre>
    *
-   * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter parameters = 12;</code>
+   * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter parameters = 12;
+   * </code>
    */
   public com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter getParameters(int index) {
     return parameters_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * Data source parameters.
    * </pre>
    *
-   * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter parameters = 12;</code>
+   * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter parameters = 12;
+   * </code>
    */
-  public com.google.cloud.bigquery.datatransfer.v1.DataSourceParameterOrBuilder getParametersOrBuilder(
-      int index) {
+  public com.google.cloud.bigquery.datatransfer.v1.DataSourceParameterOrBuilder
+      getParametersOrBuilder(int index) {
     return parameters_.get(index);
   }
 
   public static final int HELP_URL_FIELD_NUMBER = 13;
   private volatile java.lang.Object helpUrl_;
   /**
+   *
+   *
    * <pre>
    * Url for the help document for this data source.
    * </pre>
@@ -952,27 +1053,26 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       helpUrl_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Url for the help document for this data source.
    * </pre>
    *
    * <code>string help_url = 13;</code>
    */
-  public com.google.protobuf.ByteString
-      getHelpUrlBytes() {
+  public com.google.protobuf.ByteString getHelpUrlBytes() {
     java.lang.Object ref = helpUrl_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       helpUrl_ = b;
       return b;
     } else {
@@ -983,30 +1083,46 @@ private static final long serialVersionUID = 0L;
   public static final int AUTHORIZATION_TYPE_FIELD_NUMBER = 14;
   private int authorizationType_;
   /**
+   *
+   *
    * <pre>
    * Indicates the type of authorization.
    * </pre>
    *
-   * <code>.google.cloud.bigquery.datatransfer.v1.DataSource.AuthorizationType authorization_type = 14;</code>
+   * <code>
+   * .google.cloud.bigquery.datatransfer.v1.DataSource.AuthorizationType authorization_type = 14;
+   * </code>
    */
   public int getAuthorizationTypeValue() {
     return authorizationType_;
   }
   /**
+   *
+   *
    * <pre>
    * Indicates the type of authorization.
    * </pre>
    *
-   * <code>.google.cloud.bigquery.datatransfer.v1.DataSource.AuthorizationType authorization_type = 14;</code>
+   * <code>
+   * .google.cloud.bigquery.datatransfer.v1.DataSource.AuthorizationType authorization_type = 14;
+   * </code>
    */
-  public com.google.cloud.bigquery.datatransfer.v1.DataSource.AuthorizationType getAuthorizationType() {
-    com.google.cloud.bigquery.datatransfer.v1.DataSource.AuthorizationType result = com.google.cloud.bigquery.datatransfer.v1.DataSource.AuthorizationType.valueOf(authorizationType_);
-    return result == null ? com.google.cloud.bigquery.datatransfer.v1.DataSource.AuthorizationType.UNRECOGNIZED : result;
+  public com.google.cloud.bigquery.datatransfer.v1.DataSource.AuthorizationType
+      getAuthorizationType() {
+    @SuppressWarnings("deprecation")
+    com.google.cloud.bigquery.datatransfer.v1.DataSource.AuthorizationType result =
+        com.google.cloud.bigquery.datatransfer.v1.DataSource.AuthorizationType.valueOf(
+            authorizationType_);
+    return result == null
+        ? com.google.cloud.bigquery.datatransfer.v1.DataSource.AuthorizationType.UNRECOGNIZED
+        : result;
   }
 
   public static final int DATA_REFRESH_TYPE_FIELD_NUMBER = 15;
   private int dataRefreshType_;
   /**
+   *
+   *
    * <pre>
    * Specifies whether the data source supports automatic data refresh for the
    * past few days, and how it's supported.
@@ -1014,12 +1130,15 @@ private static final long serialVersionUID = 0L;
    * so it's useful to refresh data automatically.
    * </pre>
    *
-   * <code>.google.cloud.bigquery.datatransfer.v1.DataSource.DataRefreshType data_refresh_type = 15;</code>
+   * <code>.google.cloud.bigquery.datatransfer.v1.DataSource.DataRefreshType data_refresh_type = 15;
+   * </code>
    */
   public int getDataRefreshTypeValue() {
     return dataRefreshType_;
   }
   /**
+   *
+   *
    * <pre>
    * Specifies whether the data source supports automatic data refresh for the
    * past few days, and how it's supported.
@@ -1027,16 +1146,24 @@ private static final long serialVersionUID = 0L;
    * so it's useful to refresh data automatically.
    * </pre>
    *
-   * <code>.google.cloud.bigquery.datatransfer.v1.DataSource.DataRefreshType data_refresh_type = 15;</code>
+   * <code>.google.cloud.bigquery.datatransfer.v1.DataSource.DataRefreshType data_refresh_type = 15;
+   * </code>
    */
   public com.google.cloud.bigquery.datatransfer.v1.DataSource.DataRefreshType getDataRefreshType() {
-    com.google.cloud.bigquery.datatransfer.v1.DataSource.DataRefreshType result = com.google.cloud.bigquery.datatransfer.v1.DataSource.DataRefreshType.valueOf(dataRefreshType_);
-    return result == null ? com.google.cloud.bigquery.datatransfer.v1.DataSource.DataRefreshType.UNRECOGNIZED : result;
+    @SuppressWarnings("deprecation")
+    com.google.cloud.bigquery.datatransfer.v1.DataSource.DataRefreshType result =
+        com.google.cloud.bigquery.datatransfer.v1.DataSource.DataRefreshType.valueOf(
+            dataRefreshType_);
+    return result == null
+        ? com.google.cloud.bigquery.datatransfer.v1.DataSource.DataRefreshType.UNRECOGNIZED
+        : result;
   }
 
   public static final int DEFAULT_DATA_REFRESH_WINDOW_DAYS_FIELD_NUMBER = 16;
   private int defaultDataRefreshWindowDays_;
   /**
+   *
+   *
    * <pre>
    * Default data refresh window on days.
    * Only meaningful when `data_refresh_type` = `SLIDING_WINDOW`.
@@ -1051,6 +1178,8 @@ private static final long serialVersionUID = 0L;
   public static final int MANUAL_RUNS_DISABLED_FIELD_NUMBER = 17;
   private boolean manualRunsDisabled_;
   /**
+   *
+   *
    * <pre>
    * Disables backfilling and manual run scheduling
    * for the data source.
@@ -1065,6 +1194,8 @@ private static final long serialVersionUID = 0L;
   public static final int MINIMUM_SCHEDULE_INTERVAL_FIELD_NUMBER = 18;
   private com.google.protobuf.Duration minimumScheduleInterval_;
   /**
+   *
+   *
    * <pre>
    * The minimum interval for scheduler to schedule runs.
    * </pre>
@@ -1075,6 +1206,8 @@ private static final long serialVersionUID = 0L;
     return minimumScheduleInterval_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * The minimum interval for scheduler to schedule runs.
    * </pre>
@@ -1082,9 +1215,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Duration minimum_schedule_interval = 18;</code>
    */
   public com.google.protobuf.Duration getMinimumScheduleInterval() {
-    return minimumScheduleInterval_ == null ? com.google.protobuf.Duration.getDefaultInstance() : minimumScheduleInterval_;
+    return minimumScheduleInterval_ == null
+        ? com.google.protobuf.Duration.getDefaultInstance()
+        : minimumScheduleInterval_;
   }
   /**
+   *
+   *
    * <pre>
    * The minimum interval for scheduler to schedule runs.
    * </pre>
@@ -1096,6 +1233,8 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -1105,8 +1244,8 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  @java.lang.Override
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
@@ -1125,7 +1264,9 @@ private static final long serialVersionUID = 0L;
     for (int i = 0; i < scopes_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, scopes_.getRaw(i));
     }
-    if (transferType_ != com.google.cloud.bigquery.datatransfer.v1.TransferType.TRANSFER_TYPE_UNSPECIFIED.getNumber()) {
+    if (transferType_
+        != com.google.cloud.bigquery.datatransfer.v1.TransferType.TRANSFER_TYPE_UNSPECIFIED
+            .getNumber()) {
       output.writeEnum(7, transferType_);
     }
     if (supportsMultipleTransfers_ != false) {
@@ -1146,10 +1287,16 @@ private static final long serialVersionUID = 0L;
     if (!getHelpUrlBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 13, helpUrl_);
     }
-    if (authorizationType_ != com.google.cloud.bigquery.datatransfer.v1.DataSource.AuthorizationType.AUTHORIZATION_TYPE_UNSPECIFIED.getNumber()) {
+    if (authorizationType_
+        != com.google.cloud.bigquery.datatransfer.v1.DataSource.AuthorizationType
+            .AUTHORIZATION_TYPE_UNSPECIFIED
+            .getNumber()) {
       output.writeEnum(14, authorizationType_);
     }
-    if (dataRefreshType_ != com.google.cloud.bigquery.datatransfer.v1.DataSource.DataRefreshType.DATA_REFRESH_TYPE_UNSPECIFIED.getNumber()) {
+    if (dataRefreshType_
+        != com.google.cloud.bigquery.datatransfer.v1.DataSource.DataRefreshType
+            .DATA_REFRESH_TYPE_UNSPECIFIED
+            .getNumber()) {
       output.writeEnum(15, dataRefreshType_);
     }
     if (defaultDataRefreshWindowDays_ != 0) {
@@ -1164,6 +1311,7 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -1192,51 +1340,52 @@ private static final long serialVersionUID = 0L;
       size += dataSize;
       size += 1 * getScopesList().size();
     }
-    if (transferType_ != com.google.cloud.bigquery.datatransfer.v1.TransferType.TRANSFER_TYPE_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(7, transferType_);
+    if (transferType_
+        != com.google.cloud.bigquery.datatransfer.v1.TransferType.TRANSFER_TYPE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(7, transferType_);
     }
     if (supportsMultipleTransfers_ != false) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(8, supportsMultipleTransfers_);
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(8, supportsMultipleTransfers_);
     }
     if (updateDeadlineSeconds_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(9, updateDeadlineSeconds_);
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(9, updateDeadlineSeconds_);
     }
     if (!getDefaultScheduleBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, defaultSchedule_);
     }
     if (supportsCustomSchedule_ != false) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(11, supportsCustomSchedule_);
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(11, supportsCustomSchedule_);
     }
     for (int i = 0; i < parameters_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(12, parameters_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, parameters_.get(i));
     }
     if (!getHelpUrlBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(13, helpUrl_);
     }
-    if (authorizationType_ != com.google.cloud.bigquery.datatransfer.v1.DataSource.AuthorizationType.AUTHORIZATION_TYPE_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(14, authorizationType_);
+    if (authorizationType_
+        != com.google.cloud.bigquery.datatransfer.v1.DataSource.AuthorizationType
+            .AUTHORIZATION_TYPE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(14, authorizationType_);
     }
-    if (dataRefreshType_ != com.google.cloud.bigquery.datatransfer.v1.DataSource.DataRefreshType.DATA_REFRESH_TYPE_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(15, dataRefreshType_);
+    if (dataRefreshType_
+        != com.google.cloud.bigquery.datatransfer.v1.DataSource.DataRefreshType
+            .DATA_REFRESH_TYPE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(15, dataRefreshType_);
     }
     if (defaultDataRefreshWindowDays_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(16, defaultDataRefreshWindowDays_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeInt32Size(16, defaultDataRefreshWindowDays_);
     }
     if (manualRunsDisabled_ != false) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(17, manualRunsDisabled_);
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(17, manualRunsDisabled_);
     }
     if (minimumScheduleInterval_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(18, getMinimumScheduleInterval());
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              18, getMinimumScheduleInterval());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1246,49 +1395,36 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.bigquery.datatransfer.v1.DataSource)) {
       return super.equals(obj);
     }
-    com.google.cloud.bigquery.datatransfer.v1.DataSource other = (com.google.cloud.bigquery.datatransfer.v1.DataSource) obj;
+    com.google.cloud.bigquery.datatransfer.v1.DataSource other =
+        (com.google.cloud.bigquery.datatransfer.v1.DataSource) obj;
 
     boolean result = true;
-    result = result && getName()
-        .equals(other.getName());
-    result = result && getDataSourceId()
-        .equals(other.getDataSourceId());
-    result = result && getDisplayName()
-        .equals(other.getDisplayName());
-    result = result && getDescription()
-        .equals(other.getDescription());
-    result = result && getClientId()
-        .equals(other.getClientId());
-    result = result && getScopesList()
-        .equals(other.getScopesList());
+    result = result && getName().equals(other.getName());
+    result = result && getDataSourceId().equals(other.getDataSourceId());
+    result = result && getDisplayName().equals(other.getDisplayName());
+    result = result && getDescription().equals(other.getDescription());
+    result = result && getClientId().equals(other.getClientId());
+    result = result && getScopesList().equals(other.getScopesList());
     result = result && transferType_ == other.transferType_;
-    result = result && (getSupportsMultipleTransfers()
-        == other.getSupportsMultipleTransfers());
-    result = result && (getUpdateDeadlineSeconds()
-        == other.getUpdateDeadlineSeconds());
-    result = result && getDefaultSchedule()
-        .equals(other.getDefaultSchedule());
-    result = result && (getSupportsCustomSchedule()
-        == other.getSupportsCustomSchedule());
-    result = result && getParametersList()
-        .equals(other.getParametersList());
-    result = result && getHelpUrl()
-        .equals(other.getHelpUrl());
+    result = result && (getSupportsMultipleTransfers() == other.getSupportsMultipleTransfers());
+    result = result && (getUpdateDeadlineSeconds() == other.getUpdateDeadlineSeconds());
+    result = result && getDefaultSchedule().equals(other.getDefaultSchedule());
+    result = result && (getSupportsCustomSchedule() == other.getSupportsCustomSchedule());
+    result = result && getParametersList().equals(other.getParametersList());
+    result = result && getHelpUrl().equals(other.getHelpUrl());
     result = result && authorizationType_ == other.authorizationType_;
     result = result && dataRefreshType_ == other.dataRefreshType_;
-    result = result && (getDefaultDataRefreshWindowDays()
-        == other.getDefaultDataRefreshWindowDays());
-    result = result && (getManualRunsDisabled()
-        == other.getManualRunsDisabled());
+    result =
+        result && (getDefaultDataRefreshWindowDays() == other.getDefaultDataRefreshWindowDays());
+    result = result && (getManualRunsDisabled() == other.getManualRunsDisabled());
     result = result && (hasMinimumScheduleInterval() == other.hasMinimumScheduleInterval());
     if (hasMinimumScheduleInterval()) {
-      result = result && getMinimumScheduleInterval()
-          .equals(other.getMinimumScheduleInterval());
+      result = result && getMinimumScheduleInterval().equals(other.getMinimumScheduleInterval());
     }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
@@ -1318,15 +1454,13 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + TRANSFER_TYPE_FIELD_NUMBER;
     hash = (53 * hash) + transferType_;
     hash = (37 * hash) + SUPPORTS_MULTIPLE_TRANSFERS_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getSupportsMultipleTransfers());
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSupportsMultipleTransfers());
     hash = (37 * hash) + UPDATE_DEADLINE_SECONDS_FIELD_NUMBER;
     hash = (53 * hash) + getUpdateDeadlineSeconds();
     hash = (37 * hash) + DEFAULT_SCHEDULE_FIELD_NUMBER;
     hash = (53 * hash) + getDefaultSchedule().hashCode();
     hash = (37 * hash) + SUPPORTS_CUSTOM_SCHEDULE_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getSupportsCustomSchedule());
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getSupportsCustomSchedule());
     if (getParametersCount() > 0) {
       hash = (37 * hash) + PARAMETERS_FIELD_NUMBER;
       hash = (53 * hash) + getParametersList().hashCode();
@@ -1340,8 +1474,7 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + DEFAULT_DATA_REFRESH_WINDOW_DAYS_FIELD_NUMBER;
     hash = (53 * hash) + getDefaultDataRefreshWindowDays();
     hash = (37 * hash) + MANUAL_RUNS_DISABLED_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getManualRunsDisabled());
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getManualRunsDisabled());
     if (hasMinimumScheduleInterval()) {
       hash = (37 * hash) + MINIMUM_SCHEDULE_INTERVAL_FIELD_NUMBER;
       hash = (53 * hash) + getMinimumScheduleInterval().hashCode();
@@ -1352,94 +1485,103 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.cloud.bigquery.datatransfer.v1.DataSource parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.bigquery.datatransfer.v1.DataSource parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.bigquery.datatransfer.v1.DataSource parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.bigquery.datatransfer.v1.DataSource parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.bigquery.datatransfer.v1.DataSource parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.bigquery.datatransfer.v1.DataSource parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.bigquery.datatransfer.v1.DataSource parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.bigquery.datatransfer.v1.DataSource parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.bigquery.datatransfer.v1.DataSource parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.cloud.bigquery.datatransfer.v1.DataSource parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.cloud.bigquery.datatransfer.v1.DataSource parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.bigquery.datatransfer.v1.DataSource parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.bigquery.datatransfer.v1.DataSource parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.bigquery.datatransfer.v1.DataSource parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  public Builder newBuilderForType() { return newBuilder(); }
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-  public static Builder newBuilder(com.google.cloud.bigquery.datatransfer.v1.DataSource prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+
+  public static Builder newBuilder(com.google.cloud.bigquery.datatransfer.v1.DataSource prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+
+  @java.lang.Override
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Represents data source metadata. Metadata is sufficient to
    * render UI and request proper OAuth tokens.
@@ -1447,20 +1589,23 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.cloud.bigquery.datatransfer.v1.DataSource}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.bigquery.datatransfer.v1.DataSource)
       com.google.cloud.bigquery.datatransfer.v1.DataSourceOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.bigquery.datatransfer.v1.DataTransferProto.internal_static_google_cloud_bigquery_datatransfer_v1_DataSource_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.bigquery.datatransfer.v1.DataTransferProto
+          .internal_static_google_cloud_bigquery_datatransfer_v1_DataSource_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.bigquery.datatransfer.v1.DataTransferProto.internal_static_google_cloud_bigquery_datatransfer_v1_DataSource_fieldAccessorTable
+      return com.google.cloud.bigquery.datatransfer.v1.DataTransferProto
+          .internal_static_google_cloud_bigquery_datatransfer_v1_DataSource_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.bigquery.datatransfer.v1.DataSource.class, com.google.cloud.bigquery.datatransfer.v1.DataSource.Builder.class);
+              com.google.cloud.bigquery.datatransfer.v1.DataSource.class,
+              com.google.cloud.bigquery.datatransfer.v1.DataSource.Builder.class);
     }
 
     // Construct using com.google.cloud.bigquery.datatransfer.v1.DataSource.newBuilder()
@@ -1468,17 +1613,18 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getParametersFieldBuilder();
       }
     }
+
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       name_ = "";
@@ -1528,15 +1674,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.bigquery.datatransfer.v1.DataTransferProto.internal_static_google_cloud_bigquery_datatransfer_v1_DataSource_descriptor;
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.bigquery.datatransfer.v1.DataTransferProto
+          .internal_static_google_cloud_bigquery_datatransfer_v1_DataSource_descriptor;
     }
 
+    @java.lang.Override
     public com.google.cloud.bigquery.datatransfer.v1.DataSource getDefaultInstanceForType() {
       return com.google.cloud.bigquery.datatransfer.v1.DataSource.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.cloud.bigquery.datatransfer.v1.DataSource build() {
       com.google.cloud.bigquery.datatransfer.v1.DataSource result = buildPartial();
       if (!result.isInitialized()) {
@@ -1545,8 +1694,10 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.cloud.bigquery.datatransfer.v1.DataSource buildPartial() {
-      com.google.cloud.bigquery.datatransfer.v1.DataSource result = new com.google.cloud.bigquery.datatransfer.v1.DataSource(this);
+      com.google.cloud.bigquery.datatransfer.v1.DataSource result =
+          new com.google.cloud.bigquery.datatransfer.v1.DataSource(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       result.name_ = name_;
@@ -1588,35 +1739,43 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+
+    @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+    @java.lang.Override
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+    @java.lang.Override
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
+    @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
+    @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.bigquery.datatransfer.v1.DataSource) {
-        return mergeFrom((com.google.cloud.bigquery.datatransfer.v1.DataSource)other);
+        return mergeFrom((com.google.cloud.bigquery.datatransfer.v1.DataSource) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -1624,7 +1783,8 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.cloud.bigquery.datatransfer.v1.DataSource other) {
-      if (other == com.google.cloud.bigquery.datatransfer.v1.DataSource.getDefaultInstance()) return this;
+      if (other == com.google.cloud.bigquery.datatransfer.v1.DataSource.getDefaultInstance())
+        return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
         onChanged();
@@ -1689,9 +1849,10 @@ private static final long serialVersionUID = 0L;
             parametersBuilder_ = null;
             parameters_ = other.parameters_;
             bitField0_ = (bitField0_ & ~0x00000800);
-            parametersBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getParametersFieldBuilder() : null;
+            parametersBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getParametersFieldBuilder()
+                    : null;
           } else {
             parametersBuilder_.addAllMessages(other.parameters_);
           }
@@ -1721,10 +1882,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1733,7 +1896,8 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.bigquery.datatransfer.v1.DataSource) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.cloud.bigquery.datatransfer.v1.DataSource) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -1742,10 +1906,13 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
+     *
+     *
      * <pre>
      * Output only. Data source resource name.
      * </pre>
@@ -1755,8 +1922,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         name_ = s;
         return s;
@@ -1765,19 +1931,19 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Data source resource name.
      * </pre>
      *
      * <code>string name = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getNameBytes() {
+    public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         name_ = b;
         return b;
       } else {
@@ -1785,23 +1951,26 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Data source resource name.
      * </pre>
      *
      * <code>string name = 1;</code>
      */
-    public Builder setName(
-        java.lang.String value) {
+    public Builder setName(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       name_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Data source resource name.
      * </pre>
@@ -1809,25 +1978,26 @@ private static final long serialVersionUID = 0L;
      * <code>string name = 1;</code>
      */
     public Builder clearName() {
-      
+
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Data source resource name.
      * </pre>
      *
      * <code>string name = 1;</code>
      */
-    public Builder setNameBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       name_ = value;
       onChanged();
       return this;
@@ -1835,6 +2005,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object dataSourceId_ = "";
     /**
+     *
+     *
      * <pre>
      * Data source id.
      * </pre>
@@ -1844,8 +2016,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getDataSourceId() {
       java.lang.Object ref = dataSourceId_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         dataSourceId_ = s;
         return s;
@@ -1854,19 +2025,19 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Data source id.
      * </pre>
      *
      * <code>string data_source_id = 2;</code>
      */
-    public com.google.protobuf.ByteString
-        getDataSourceIdBytes() {
+    public com.google.protobuf.ByteString getDataSourceIdBytes() {
       java.lang.Object ref = dataSourceId_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         dataSourceId_ = b;
         return b;
       } else {
@@ -1874,23 +2045,26 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Data source id.
      * </pre>
      *
      * <code>string data_source_id = 2;</code>
      */
-    public Builder setDataSourceId(
-        java.lang.String value) {
+    public Builder setDataSourceId(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       dataSourceId_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Data source id.
      * </pre>
@@ -1898,25 +2072,26 @@ private static final long serialVersionUID = 0L;
      * <code>string data_source_id = 2;</code>
      */
     public Builder clearDataSourceId() {
-      
+
       dataSourceId_ = getDefaultInstance().getDataSourceId();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Data source id.
      * </pre>
      *
      * <code>string data_source_id = 2;</code>
      */
-    public Builder setDataSourceIdBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setDataSourceIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       dataSourceId_ = value;
       onChanged();
       return this;
@@ -1924,6 +2099,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object displayName_ = "";
     /**
+     *
+     *
      * <pre>
      * User friendly data source name.
      * </pre>
@@ -1933,8 +2110,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getDisplayName() {
       java.lang.Object ref = displayName_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         displayName_ = s;
         return s;
@@ -1943,19 +2119,19 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * User friendly data source name.
      * </pre>
      *
      * <code>string display_name = 3;</code>
      */
-    public com.google.protobuf.ByteString
-        getDisplayNameBytes() {
+    public com.google.protobuf.ByteString getDisplayNameBytes() {
       java.lang.Object ref = displayName_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         displayName_ = b;
         return b;
       } else {
@@ -1963,23 +2139,26 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * User friendly data source name.
      * </pre>
      *
      * <code>string display_name = 3;</code>
      */
-    public Builder setDisplayName(
-        java.lang.String value) {
+    public Builder setDisplayName(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       displayName_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * User friendly data source name.
      * </pre>
@@ -1987,25 +2166,26 @@ private static final long serialVersionUID = 0L;
      * <code>string display_name = 3;</code>
      */
     public Builder clearDisplayName() {
-      
+
       displayName_ = getDefaultInstance().getDisplayName();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * User friendly data source name.
      * </pre>
      *
      * <code>string display_name = 3;</code>
      */
-    public Builder setDisplayNameBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       displayName_ = value;
       onChanged();
       return this;
@@ -2013,6 +2193,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object description_ = "";
     /**
+     *
+     *
      * <pre>
      * User friendly data source description string.
      * </pre>
@@ -2022,8 +2204,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         description_ = s;
         return s;
@@ -2032,19 +2213,19 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * User friendly data source description string.
      * </pre>
      *
      * <code>string description = 4;</code>
      */
-    public com.google.protobuf.ByteString
-        getDescriptionBytes() {
+    public com.google.protobuf.ByteString getDescriptionBytes() {
       java.lang.Object ref = description_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         description_ = b;
         return b;
       } else {
@@ -2052,23 +2233,26 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * User friendly data source description string.
      * </pre>
      *
      * <code>string description = 4;</code>
      */
-    public Builder setDescription(
-        java.lang.String value) {
+    public Builder setDescription(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       description_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * User friendly data source description string.
      * </pre>
@@ -2076,25 +2260,26 @@ private static final long serialVersionUID = 0L;
      * <code>string description = 4;</code>
      */
     public Builder clearDescription() {
-      
+
       description_ = getDefaultInstance().getDescription();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * User friendly data source description string.
      * </pre>
      *
      * <code>string description = 4;</code>
      */
-    public Builder setDescriptionBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       description_ = value;
       onChanged();
       return this;
@@ -2102,6 +2287,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object clientId_ = "";
     /**
+     *
+     *
      * <pre>
      * Data source client id which should be used to receive refresh token.
      * When not supplied, no offline credentials are populated for data transfer.
@@ -2112,8 +2299,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getClientId() {
       java.lang.Object ref = clientId_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         clientId_ = s;
         return s;
@@ -2122,6 +2308,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Data source client id which should be used to receive refresh token.
      * When not supplied, no offline credentials are populated for data transfer.
@@ -2129,13 +2317,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string client_id = 5;</code>
      */
-    public com.google.protobuf.ByteString
-        getClientIdBytes() {
+    public com.google.protobuf.ByteString getClientIdBytes() {
       java.lang.Object ref = clientId_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         clientId_ = b;
         return b;
       } else {
@@ -2143,6 +2329,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Data source client id which should be used to receive refresh token.
      * When not supplied, no offline credentials are populated for data transfer.
@@ -2150,17 +2338,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string client_id = 5;</code>
      */
-    public Builder setClientId(
-        java.lang.String value) {
+    public Builder setClientId(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       clientId_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Data source client id which should be used to receive refresh token.
      * When not supplied, no offline credentials are populated for data transfer.
@@ -2169,12 +2358,14 @@ private static final long serialVersionUID = 0L;
      * <code>string client_id = 5;</code>
      */
     public Builder clearClientId() {
-      
+
       clientId_ = getDefaultInstance().getClientId();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Data source client id which should be used to receive refresh token.
      * When not supplied, no offline credentials are populated for data transfer.
@@ -2182,26 +2373,29 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string client_id = 5;</code>
      */
-    public Builder setClientIdBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setClientIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       clientId_ = value;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList scopes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringList scopes_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
     private void ensureScopesIsMutable() {
       if (!((bitField0_ & 0x00000020) == 0x00000020)) {
         scopes_ = new com.google.protobuf.LazyStringArrayList(scopes_);
         bitField0_ |= 0x00000020;
-       }
+      }
     }
     /**
+     *
+     *
      * <pre>
      * Api auth scopes for which refresh token needs to be obtained. Only valid
      * when `client_id` is specified. Ignored otherwise. These are scopes needed
@@ -2211,11 +2405,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string scopes = 6;</code>
      */
-    public com.google.protobuf.ProtocolStringList
-        getScopesList() {
+    public com.google.protobuf.ProtocolStringList getScopesList() {
       return scopes_.getUnmodifiableView();
     }
     /**
+     *
+     *
      * <pre>
      * Api auth scopes for which refresh token needs to be obtained. Only valid
      * when `client_id` is specified. Ignored otherwise. These are scopes needed
@@ -2229,6 +2424,8 @@ private static final long serialVersionUID = 0L;
       return scopes_.size();
     }
     /**
+     *
+     *
      * <pre>
      * Api auth scopes for which refresh token needs to be obtained. Only valid
      * when `client_id` is specified. Ignored otherwise. These are scopes needed
@@ -2242,6 +2439,8 @@ private static final long serialVersionUID = 0L;
       return scopes_.get(index);
     }
     /**
+     *
+     *
      * <pre>
      * Api auth scopes for which refresh token needs to be obtained. Only valid
      * when `client_id` is specified. Ignored otherwise. These are scopes needed
@@ -2251,11 +2450,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string scopes = 6;</code>
      */
-    public com.google.protobuf.ByteString
-        getScopesBytes(int index) {
+    public com.google.protobuf.ByteString getScopesBytes(int index) {
       return scopes_.getByteString(index);
     }
     /**
+     *
+     *
      * <pre>
      * Api auth scopes for which refresh token needs to be obtained. Only valid
      * when `client_id` is specified. Ignored otherwise. These are scopes needed
@@ -2265,17 +2465,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string scopes = 6;</code>
      */
-    public Builder setScopes(
-        int index, java.lang.String value) {
+    public Builder setScopes(int index, java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureScopesIsMutable();
+        throw new NullPointerException();
+      }
+      ensureScopesIsMutable();
       scopes_.set(index, value);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Api auth scopes for which refresh token needs to be obtained. Only valid
      * when `client_id` is specified. Ignored otherwise. These are scopes needed
@@ -2285,17 +2486,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string scopes = 6;</code>
      */
-    public Builder addScopes(
-        java.lang.String value) {
+    public Builder addScopes(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureScopesIsMutable();
+        throw new NullPointerException();
+      }
+      ensureScopesIsMutable();
       scopes_.add(value);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Api auth scopes for which refresh token needs to be obtained. Only valid
      * when `client_id` is specified. Ignored otherwise. These are scopes needed
@@ -2305,15 +2507,15 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string scopes = 6;</code>
      */
-    public Builder addAllScopes(
-        java.lang.Iterable<java.lang.String> values) {
+    public Builder addAllScopes(java.lang.Iterable<java.lang.String> values) {
       ensureScopesIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(
-          values, scopes_);
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, scopes_);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Api auth scopes for which refresh token needs to be obtained. Only valid
      * when `client_id` is specified. Ignored otherwise. These are scopes needed
@@ -2330,6 +2532,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Api auth scopes for which refresh token needs to be obtained. Only valid
      * when `client_id` is specified. Ignored otherwise. These are scopes needed
@@ -2339,12 +2543,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string scopes = 6;</code>
      */
-    public Builder addScopesBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder addScopesBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
       ensureScopesIsMutable();
       scopes_.add(value);
       onChanged();
@@ -2353,6 +2556,8 @@ private static final long serialVersionUID = 0L;
 
     private int transferType_ = 0;
     /**
+     *
+     *
      * <pre>
      * Deprecated. This field has no effect.
      * </pre>
@@ -2363,6 +2568,8 @@ private static final long serialVersionUID = 0L;
       return transferType_;
     }
     /**
+     *
+     *
      * <pre>
      * Deprecated. This field has no effect.
      * </pre>
@@ -2375,6 +2582,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Deprecated. This field has no effect.
      * </pre>
@@ -2382,10 +2591,16 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.bigquery.datatransfer.v1.TransferType transfer_type = 7;</code>
      */
     public com.google.cloud.bigquery.datatransfer.v1.TransferType getTransferType() {
-      com.google.cloud.bigquery.datatransfer.v1.TransferType result = com.google.cloud.bigquery.datatransfer.v1.TransferType.valueOf(transferType_);
-      return result == null ? com.google.cloud.bigquery.datatransfer.v1.TransferType.UNRECOGNIZED : result;
+      @SuppressWarnings("deprecation")
+      com.google.cloud.bigquery.datatransfer.v1.TransferType result =
+          com.google.cloud.bigquery.datatransfer.v1.TransferType.valueOf(transferType_);
+      return result == null
+          ? com.google.cloud.bigquery.datatransfer.v1.TransferType.UNRECOGNIZED
+          : result;
     }
     /**
+     *
+     *
      * <pre>
      * Deprecated. This field has no effect.
      * </pre>
@@ -2396,12 +2611,14 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       transferType_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Deprecated. This field has no effect.
      * </pre>
@@ -2409,14 +2626,16 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.bigquery.datatransfer.v1.TransferType transfer_type = 7;</code>
      */
     public Builder clearTransferType() {
-      
+
       transferType_ = 0;
       onChanged();
       return this;
     }
 
-    private boolean supportsMultipleTransfers_ ;
+    private boolean supportsMultipleTransfers_;
     /**
+     *
+     *
      * <pre>
      * Indicates whether the data source supports multiple transfers
      * to different BigQuery targets.
@@ -2428,6 +2647,8 @@ private static final long serialVersionUID = 0L;
       return supportsMultipleTransfers_;
     }
     /**
+     *
+     *
      * <pre>
      * Indicates whether the data source supports multiple transfers
      * to different BigQuery targets.
@@ -2436,12 +2657,14 @@ private static final long serialVersionUID = 0L;
      * <code>bool supports_multiple_transfers = 8;</code>
      */
     public Builder setSupportsMultipleTransfers(boolean value) {
-      
+
       supportsMultipleTransfers_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Indicates whether the data source supports multiple transfers
      * to different BigQuery targets.
@@ -2450,14 +2673,16 @@ private static final long serialVersionUID = 0L;
      * <code>bool supports_multiple_transfers = 8;</code>
      */
     public Builder clearSupportsMultipleTransfers() {
-      
+
       supportsMultipleTransfers_ = false;
       onChanged();
       return this;
     }
 
-    private int updateDeadlineSeconds_ ;
+    private int updateDeadlineSeconds_;
     /**
+     *
+     *
      * <pre>
      * The number of seconds to wait for an update from the data source
      * before BigQuery marks the transfer as failed.
@@ -2469,6 +2694,8 @@ private static final long serialVersionUID = 0L;
       return updateDeadlineSeconds_;
     }
     /**
+     *
+     *
      * <pre>
      * The number of seconds to wait for an update from the data source
      * before BigQuery marks the transfer as failed.
@@ -2477,12 +2704,14 @@ private static final long serialVersionUID = 0L;
      * <code>int32 update_deadline_seconds = 9;</code>
      */
     public Builder setUpdateDeadlineSeconds(int value) {
-      
+
       updateDeadlineSeconds_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The number of seconds to wait for an update from the data source
      * before BigQuery marks the transfer as failed.
@@ -2491,7 +2720,7 @@ private static final long serialVersionUID = 0L;
      * <code>int32 update_deadline_seconds = 9;</code>
      */
     public Builder clearUpdateDeadlineSeconds() {
-      
+
       updateDeadlineSeconds_ = 0;
       onChanged();
       return this;
@@ -2499,6 +2728,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object defaultSchedule_ = "";
     /**
+     *
+     *
      * <pre>
      * Default data transfer schedule.
      * Examples of valid schedules include:
@@ -2512,8 +2743,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getDefaultSchedule() {
       java.lang.Object ref = defaultSchedule_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         defaultSchedule_ = s;
         return s;
@@ -2522,6 +2752,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Default data transfer schedule.
      * Examples of valid schedules include:
@@ -2532,13 +2764,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string default_schedule = 10;</code>
      */
-    public com.google.protobuf.ByteString
-        getDefaultScheduleBytes() {
+    public com.google.protobuf.ByteString getDefaultScheduleBytes() {
       java.lang.Object ref = defaultSchedule_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         defaultSchedule_ = b;
         return b;
       } else {
@@ -2546,6 +2776,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Default data transfer schedule.
      * Examples of valid schedules include:
@@ -2556,17 +2788,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string default_schedule = 10;</code>
      */
-    public Builder setDefaultSchedule(
-        java.lang.String value) {
+    public Builder setDefaultSchedule(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       defaultSchedule_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Default data transfer schedule.
      * Examples of valid schedules include:
@@ -2578,12 +2811,14 @@ private static final long serialVersionUID = 0L;
      * <code>string default_schedule = 10;</code>
      */
     public Builder clearDefaultSchedule() {
-      
+
       defaultSchedule_ = getDefaultInstance().getDefaultSchedule();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Default data transfer schedule.
      * Examples of valid schedules include:
@@ -2594,20 +2829,21 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string default_schedule = 10;</code>
      */
-    public Builder setDefaultScheduleBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setDefaultScheduleBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       defaultSchedule_ = value;
       onChanged();
       return this;
     }
 
-    private boolean supportsCustomSchedule_ ;
+    private boolean supportsCustomSchedule_;
     /**
+     *
+     *
      * <pre>
      * Specifies whether the data source supports a user defined schedule, or
      * operates on the default schedule.
@@ -2620,6 +2856,8 @@ private static final long serialVersionUID = 0L;
       return supportsCustomSchedule_;
     }
     /**
+     *
+     *
      * <pre>
      * Specifies whether the data source supports a user defined schedule, or
      * operates on the default schedule.
@@ -2629,12 +2867,14 @@ private static final long serialVersionUID = 0L;
      * <code>bool supports_custom_schedule = 11;</code>
      */
     public Builder setSupportsCustomSchedule(boolean value) {
-      
+
       supportsCustomSchedule_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Specifies whether the data source supports a user defined schedule, or
      * operates on the default schedule.
@@ -2644,32 +2884,42 @@ private static final long serialVersionUID = 0L;
      * <code>bool supports_custom_schedule = 11;</code>
      */
     public Builder clearSupportsCustomSchedule() {
-      
+
       supportsCustomSchedule_ = false;
       onChanged();
       return this;
     }
 
-    private java.util.List<com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter> parameters_ =
-      java.util.Collections.emptyList();
+    private java.util.List<com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter>
+        parameters_ = java.util.Collections.emptyList();
+
     private void ensureParametersIsMutable() {
       if (!((bitField0_ & 0x00000800) == 0x00000800)) {
-        parameters_ = new java.util.ArrayList<com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter>(parameters_);
+        parameters_ =
+            new java.util.ArrayList<com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter>(
+                parameters_);
         bitField0_ |= 0x00000800;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter, com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter.Builder, com.google.cloud.bigquery.datatransfer.v1.DataSourceParameterOrBuilder> parametersBuilder_;
+            com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter,
+            com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter.Builder,
+            com.google.cloud.bigquery.datatransfer.v1.DataSourceParameterOrBuilder>
+        parametersBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * Data source parameters.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter parameters = 12;</code>
+     * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter parameters = 12;
+     * </code>
      */
-    public java.util.List<com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter> getParametersList() {
+    public java.util.List<com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter>
+        getParametersList() {
       if (parametersBuilder_ == null) {
         return java.util.Collections.unmodifiableList(parameters_);
       } else {
@@ -2677,11 +2927,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Data source parameters.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter parameters = 12;</code>
+     * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter parameters = 12;
+     * </code>
      */
     public int getParametersCount() {
       if (parametersBuilder_ == null) {
@@ -2691,11 +2944,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Data source parameters.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter parameters = 12;</code>
+     * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter parameters = 12;
+     * </code>
      */
     public com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter getParameters(int index) {
       if (parametersBuilder_ == null) {
@@ -2705,11 +2961,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Data source parameters.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter parameters = 12;</code>
+     * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter parameters = 12;
+     * </code>
      */
     public Builder setParameters(
         int index, com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter value) {
@@ -2726,14 +2985,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Data source parameters.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter parameters = 12;</code>
+     * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter parameters = 12;
+     * </code>
      */
     public Builder setParameters(
-        int index, com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter.Builder builderForValue) {
+        int index,
+        com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter.Builder builderForValue) {
       if (parametersBuilder_ == null) {
         ensureParametersIsMutable();
         parameters_.set(index, builderForValue.build());
@@ -2744,13 +3007,17 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Data source parameters.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter parameters = 12;</code>
+     * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter parameters = 12;
+     * </code>
      */
-    public Builder addParameters(com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter value) {
+    public Builder addParameters(
+        com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter value) {
       if (parametersBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -2764,11 +3031,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Data source parameters.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter parameters = 12;</code>
+     * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter parameters = 12;
+     * </code>
      */
     public Builder addParameters(
         int index, com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter value) {
@@ -2785,11 +3055,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Data source parameters.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter parameters = 12;</code>
+     * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter parameters = 12;
+     * </code>
      */
     public Builder addParameters(
         com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter.Builder builderForValue) {
@@ -2803,14 +3076,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Data source parameters.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter parameters = 12;</code>
+     * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter parameters = 12;
+     * </code>
      */
     public Builder addParameters(
-        int index, com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter.Builder builderForValue) {
+        int index,
+        com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter.Builder builderForValue) {
       if (parametersBuilder_ == null) {
         ensureParametersIsMutable();
         parameters_.add(index, builderForValue.build());
@@ -2821,18 +3098,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Data source parameters.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter parameters = 12;</code>
+     * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter parameters = 12;
+     * </code>
      */
     public Builder addAllParameters(
-        java.lang.Iterable<? extends com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter> values) {
+        java.lang.Iterable<? extends com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter>
+            values) {
       if (parametersBuilder_ == null) {
         ensureParametersIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, parameters_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, parameters_);
         onChanged();
       } else {
         parametersBuilder_.addAllMessages(values);
@@ -2840,11 +3120,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Data source parameters.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter parameters = 12;</code>
+     * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter parameters = 12;
+     * </code>
      */
     public Builder clearParameters() {
       if (parametersBuilder_ == null) {
@@ -2857,11 +3140,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Data source parameters.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter parameters = 12;</code>
+     * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter parameters = 12;
+     * </code>
      */
     public Builder removeParameters(int index) {
       if (parametersBuilder_ == null) {
@@ -2874,39 +3160,50 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Data source parameters.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter parameters = 12;</code>
+     * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter parameters = 12;
+     * </code>
      */
-    public com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter.Builder getParametersBuilder(
-        int index) {
+    public com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter.Builder
+        getParametersBuilder(int index) {
       return getParametersFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * Data source parameters.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter parameters = 12;</code>
+     * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter parameters = 12;
+     * </code>
      */
-    public com.google.cloud.bigquery.datatransfer.v1.DataSourceParameterOrBuilder getParametersOrBuilder(
-        int index) {
+    public com.google.cloud.bigquery.datatransfer.v1.DataSourceParameterOrBuilder
+        getParametersOrBuilder(int index) {
       if (parametersBuilder_ == null) {
-        return parameters_.get(index);  } else {
+        return parameters_.get(index);
+      } else {
         return parametersBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * Data source parameters.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter parameters = 12;</code>
+     * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter parameters = 12;
+     * </code>
      */
-    public java.util.List<? extends com.google.cloud.bigquery.datatransfer.v1.DataSourceParameterOrBuilder> 
-         getParametersOrBuilderList() {
+    public java.util.List<
+            ? extends com.google.cloud.bigquery.datatransfer.v1.DataSourceParameterOrBuilder>
+        getParametersOrBuilderList() {
       if (parametersBuilder_ != null) {
         return parametersBuilder_.getMessageOrBuilderList();
       } else {
@@ -2914,45 +3211,64 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Data source parameters.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter parameters = 12;</code>
+     * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter parameters = 12;
+     * </code>
      */
-    public com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter.Builder addParametersBuilder() {
-      return getParametersFieldBuilder().addBuilder(
-          com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter.getDefaultInstance());
+    public com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter.Builder
+        addParametersBuilder() {
+      return getParametersFieldBuilder()
+          .addBuilder(
+              com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Data source parameters.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter parameters = 12;</code>
+     * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter parameters = 12;
+     * </code>
      */
-    public com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter.Builder addParametersBuilder(
-        int index) {
-      return getParametersFieldBuilder().addBuilder(
-          index, com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter.getDefaultInstance());
+    public com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter.Builder
+        addParametersBuilder(int index) {
+      return getParametersFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Data source parameters.
      * </pre>
      *
-     * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter parameters = 12;</code>
+     * <code>repeated .google.cloud.bigquery.datatransfer.v1.DataSourceParameter parameters = 12;
+     * </code>
      */
-    public java.util.List<com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter.Builder> 
-         getParametersBuilderList() {
+    public java.util.List<com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter.Builder>
+        getParametersBuilderList() {
       return getParametersFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter, com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter.Builder, com.google.cloud.bigquery.datatransfer.v1.DataSourceParameterOrBuilder> 
+            com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter,
+            com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter.Builder,
+            com.google.cloud.bigquery.datatransfer.v1.DataSourceParameterOrBuilder>
         getParametersFieldBuilder() {
       if (parametersBuilder_ == null) {
-        parametersBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter, com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter.Builder, com.google.cloud.bigquery.datatransfer.v1.DataSourceParameterOrBuilder>(
+        parametersBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter,
+                com.google.cloud.bigquery.datatransfer.v1.DataSourceParameter.Builder,
+                com.google.cloud.bigquery.datatransfer.v1.DataSourceParameterOrBuilder>(
                 parameters_,
                 ((bitField0_ & 0x00000800) == 0x00000800),
                 getParentForChildren(),
@@ -2964,6 +3280,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object helpUrl_ = "";
     /**
+     *
+     *
      * <pre>
      * Url for the help document for this data source.
      * </pre>
@@ -2973,8 +3291,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getHelpUrl() {
       java.lang.Object ref = helpUrl_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         helpUrl_ = s;
         return s;
@@ -2983,19 +3300,19 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Url for the help document for this data source.
      * </pre>
      *
      * <code>string help_url = 13;</code>
      */
-    public com.google.protobuf.ByteString
-        getHelpUrlBytes() {
+    public com.google.protobuf.ByteString getHelpUrlBytes() {
       java.lang.Object ref = helpUrl_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         helpUrl_ = b;
         return b;
       } else {
@@ -3003,23 +3320,26 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Url for the help document for this data source.
      * </pre>
      *
      * <code>string help_url = 13;</code>
      */
-    public Builder setHelpUrl(
-        java.lang.String value) {
+    public Builder setHelpUrl(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       helpUrl_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Url for the help document for this data source.
      * </pre>
@@ -3027,25 +3347,26 @@ private static final long serialVersionUID = 0L;
      * <code>string help_url = 13;</code>
      */
     public Builder clearHelpUrl() {
-      
+
       helpUrl_ = getDefaultInstance().getHelpUrl();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Url for the help document for this data source.
      * </pre>
      *
      * <code>string help_url = 13;</code>
      */
-    public Builder setHelpUrlBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setHelpUrlBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       helpUrl_ = value;
       onChanged();
       return this;
@@ -3053,21 +3374,29 @@ private static final long serialVersionUID = 0L;
 
     private int authorizationType_ = 0;
     /**
+     *
+     *
      * <pre>
      * Indicates the type of authorization.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.datatransfer.v1.DataSource.AuthorizationType authorization_type = 14;</code>
+     * <code>
+     * .google.cloud.bigquery.datatransfer.v1.DataSource.AuthorizationType authorization_type = 14;
+     * </code>
      */
     public int getAuthorizationTypeValue() {
       return authorizationType_;
     }
     /**
+     *
+     *
      * <pre>
      * Indicates the type of authorization.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.datatransfer.v1.DataSource.AuthorizationType authorization_type = 14;</code>
+     * <code>
+     * .google.cloud.bigquery.datatransfer.v1.DataSource.AuthorizationType authorization_type = 14;
+     * </code>
      */
     public Builder setAuthorizationTypeValue(int value) {
       authorizationType_ = value;
@@ -3075,41 +3404,60 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Indicates the type of authorization.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.datatransfer.v1.DataSource.AuthorizationType authorization_type = 14;</code>
+     * <code>
+     * .google.cloud.bigquery.datatransfer.v1.DataSource.AuthorizationType authorization_type = 14;
+     * </code>
      */
-    public com.google.cloud.bigquery.datatransfer.v1.DataSource.AuthorizationType getAuthorizationType() {
-      com.google.cloud.bigquery.datatransfer.v1.DataSource.AuthorizationType result = com.google.cloud.bigquery.datatransfer.v1.DataSource.AuthorizationType.valueOf(authorizationType_);
-      return result == null ? com.google.cloud.bigquery.datatransfer.v1.DataSource.AuthorizationType.UNRECOGNIZED : result;
+    public com.google.cloud.bigquery.datatransfer.v1.DataSource.AuthorizationType
+        getAuthorizationType() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.bigquery.datatransfer.v1.DataSource.AuthorizationType result =
+          com.google.cloud.bigquery.datatransfer.v1.DataSource.AuthorizationType.valueOf(
+              authorizationType_);
+      return result == null
+          ? com.google.cloud.bigquery.datatransfer.v1.DataSource.AuthorizationType.UNRECOGNIZED
+          : result;
     }
     /**
+     *
+     *
      * <pre>
      * Indicates the type of authorization.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.datatransfer.v1.DataSource.AuthorizationType authorization_type = 14;</code>
+     * <code>
+     * .google.cloud.bigquery.datatransfer.v1.DataSource.AuthorizationType authorization_type = 14;
+     * </code>
      */
-    public Builder setAuthorizationType(com.google.cloud.bigquery.datatransfer.v1.DataSource.AuthorizationType value) {
+    public Builder setAuthorizationType(
+        com.google.cloud.bigquery.datatransfer.v1.DataSource.AuthorizationType value) {
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       authorizationType_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Indicates the type of authorization.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.datatransfer.v1.DataSource.AuthorizationType authorization_type = 14;</code>
+     * <code>
+     * .google.cloud.bigquery.datatransfer.v1.DataSource.AuthorizationType authorization_type = 14;
+     * </code>
      */
     public Builder clearAuthorizationType() {
-      
+
       authorizationType_ = 0;
       onChanged();
       return this;
@@ -3117,6 +3465,8 @@ private static final long serialVersionUID = 0L;
 
     private int dataRefreshType_ = 0;
     /**
+     *
+     *
      * <pre>
      * Specifies whether the data source supports automatic data refresh for the
      * past few days, and how it's supported.
@@ -3124,12 +3474,16 @@ private static final long serialVersionUID = 0L;
      * so it's useful to refresh data automatically.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.datatransfer.v1.DataSource.DataRefreshType data_refresh_type = 15;</code>
+     * <code>
+     * .google.cloud.bigquery.datatransfer.v1.DataSource.DataRefreshType data_refresh_type = 15;
+     * </code>
      */
     public int getDataRefreshTypeValue() {
       return dataRefreshType_;
     }
     /**
+     *
+     *
      * <pre>
      * Specifies whether the data source supports automatic data refresh for the
      * past few days, and how it's supported.
@@ -3137,7 +3491,9 @@ private static final long serialVersionUID = 0L;
      * so it's useful to refresh data automatically.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.datatransfer.v1.DataSource.DataRefreshType data_refresh_type = 15;</code>
+     * <code>
+     * .google.cloud.bigquery.datatransfer.v1.DataSource.DataRefreshType data_refresh_type = 15;
+     * </code>
      */
     public Builder setDataRefreshTypeValue(int value) {
       dataRefreshType_ = value;
@@ -3145,6 +3501,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Specifies whether the data source supports automatic data refresh for the
      * past few days, and how it's supported.
@@ -3152,13 +3510,23 @@ private static final long serialVersionUID = 0L;
      * so it's useful to refresh data automatically.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.datatransfer.v1.DataSource.DataRefreshType data_refresh_type = 15;</code>
+     * <code>
+     * .google.cloud.bigquery.datatransfer.v1.DataSource.DataRefreshType data_refresh_type = 15;
+     * </code>
      */
-    public com.google.cloud.bigquery.datatransfer.v1.DataSource.DataRefreshType getDataRefreshType() {
-      com.google.cloud.bigquery.datatransfer.v1.DataSource.DataRefreshType result = com.google.cloud.bigquery.datatransfer.v1.DataSource.DataRefreshType.valueOf(dataRefreshType_);
-      return result == null ? com.google.cloud.bigquery.datatransfer.v1.DataSource.DataRefreshType.UNRECOGNIZED : result;
+    public com.google.cloud.bigquery.datatransfer.v1.DataSource.DataRefreshType
+        getDataRefreshType() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.bigquery.datatransfer.v1.DataSource.DataRefreshType result =
+          com.google.cloud.bigquery.datatransfer.v1.DataSource.DataRefreshType.valueOf(
+              dataRefreshType_);
+      return result == null
+          ? com.google.cloud.bigquery.datatransfer.v1.DataSource.DataRefreshType.UNRECOGNIZED
+          : result;
     }
     /**
+     *
+     *
      * <pre>
      * Specifies whether the data source supports automatic data refresh for the
      * past few days, and how it's supported.
@@ -3166,18 +3534,23 @@ private static final long serialVersionUID = 0L;
      * so it's useful to refresh data automatically.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.datatransfer.v1.DataSource.DataRefreshType data_refresh_type = 15;</code>
+     * <code>
+     * .google.cloud.bigquery.datatransfer.v1.DataSource.DataRefreshType data_refresh_type = 15;
+     * </code>
      */
-    public Builder setDataRefreshType(com.google.cloud.bigquery.datatransfer.v1.DataSource.DataRefreshType value) {
+    public Builder setDataRefreshType(
+        com.google.cloud.bigquery.datatransfer.v1.DataSource.DataRefreshType value) {
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       dataRefreshType_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Specifies whether the data source supports automatic data refresh for the
      * past few days, and how it's supported.
@@ -3185,17 +3558,21 @@ private static final long serialVersionUID = 0L;
      * so it's useful to refresh data automatically.
      * </pre>
      *
-     * <code>.google.cloud.bigquery.datatransfer.v1.DataSource.DataRefreshType data_refresh_type = 15;</code>
+     * <code>
+     * .google.cloud.bigquery.datatransfer.v1.DataSource.DataRefreshType data_refresh_type = 15;
+     * </code>
      */
     public Builder clearDataRefreshType() {
-      
+
       dataRefreshType_ = 0;
       onChanged();
       return this;
     }
 
-    private int defaultDataRefreshWindowDays_ ;
+    private int defaultDataRefreshWindowDays_;
     /**
+     *
+     *
      * <pre>
      * Default data refresh window on days.
      * Only meaningful when `data_refresh_type` = `SLIDING_WINDOW`.
@@ -3207,6 +3584,8 @@ private static final long serialVersionUID = 0L;
       return defaultDataRefreshWindowDays_;
     }
     /**
+     *
+     *
      * <pre>
      * Default data refresh window on days.
      * Only meaningful when `data_refresh_type` = `SLIDING_WINDOW`.
@@ -3215,12 +3594,14 @@ private static final long serialVersionUID = 0L;
      * <code>int32 default_data_refresh_window_days = 16;</code>
      */
     public Builder setDefaultDataRefreshWindowDays(int value) {
-      
+
       defaultDataRefreshWindowDays_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Default data refresh window on days.
      * Only meaningful when `data_refresh_type` = `SLIDING_WINDOW`.
@@ -3229,14 +3610,16 @@ private static final long serialVersionUID = 0L;
      * <code>int32 default_data_refresh_window_days = 16;</code>
      */
     public Builder clearDefaultDataRefreshWindowDays() {
-      
+
       defaultDataRefreshWindowDays_ = 0;
       onChanged();
       return this;
     }
 
-    private boolean manualRunsDisabled_ ;
+    private boolean manualRunsDisabled_;
     /**
+     *
+     *
      * <pre>
      * Disables backfilling and manual run scheduling
      * for the data source.
@@ -3248,6 +3631,8 @@ private static final long serialVersionUID = 0L;
       return manualRunsDisabled_;
     }
     /**
+     *
+     *
      * <pre>
      * Disables backfilling and manual run scheduling
      * for the data source.
@@ -3256,12 +3641,14 @@ private static final long serialVersionUID = 0L;
      * <code>bool manual_runs_disabled = 17;</code>
      */
     public Builder setManualRunsDisabled(boolean value) {
-      
+
       manualRunsDisabled_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Disables backfilling and manual run scheduling
      * for the data source.
@@ -3270,7 +3657,7 @@ private static final long serialVersionUID = 0L;
      * <code>bool manual_runs_disabled = 17;</code>
      */
     public Builder clearManualRunsDisabled() {
-      
+
       manualRunsDisabled_ = false;
       onChanged();
       return this;
@@ -3278,8 +3665,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Duration minimumScheduleInterval_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> minimumScheduleIntervalBuilder_;
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        minimumScheduleIntervalBuilder_;
     /**
+     *
+     *
      * <pre>
      * The minimum interval for scheduler to schedule runs.
      * </pre>
@@ -3290,6 +3682,8 @@ private static final long serialVersionUID = 0L;
       return minimumScheduleIntervalBuilder_ != null || minimumScheduleInterval_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * The minimum interval for scheduler to schedule runs.
      * </pre>
@@ -3298,12 +3692,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.Duration getMinimumScheduleInterval() {
       if (minimumScheduleIntervalBuilder_ == null) {
-        return minimumScheduleInterval_ == null ? com.google.protobuf.Duration.getDefaultInstance() : minimumScheduleInterval_;
+        return minimumScheduleInterval_ == null
+            ? com.google.protobuf.Duration.getDefaultInstance()
+            : minimumScheduleInterval_;
       } else {
         return minimumScheduleIntervalBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * The minimum interval for scheduler to schedule runs.
      * </pre>
@@ -3324,6 +3722,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The minimum interval for scheduler to schedule runs.
      * </pre>
@@ -3342,6 +3742,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The minimum interval for scheduler to schedule runs.
      * </pre>
@@ -3352,7 +3754,9 @@ private static final long serialVersionUID = 0L;
       if (minimumScheduleIntervalBuilder_ == null) {
         if (minimumScheduleInterval_ != null) {
           minimumScheduleInterval_ =
-            com.google.protobuf.Duration.newBuilder(minimumScheduleInterval_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Duration.newBuilder(minimumScheduleInterval_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           minimumScheduleInterval_ = value;
         }
@@ -3364,6 +3768,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The minimum interval for scheduler to schedule runs.
      * </pre>
@@ -3382,6 +3788,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The minimum interval for scheduler to schedule runs.
      * </pre>
@@ -3389,11 +3797,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Duration minimum_schedule_interval = 18;</code>
      */
     public com.google.protobuf.Duration.Builder getMinimumScheduleIntervalBuilder() {
-      
+
       onChanged();
       return getMinimumScheduleIntervalFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * The minimum interval for scheduler to schedule runs.
      * </pre>
@@ -3404,11 +3814,14 @@ private static final long serialVersionUID = 0L;
       if (minimumScheduleIntervalBuilder_ != null) {
         return minimumScheduleIntervalBuilder_.getMessageOrBuilder();
       } else {
-        return minimumScheduleInterval_ == null ?
-            com.google.protobuf.Duration.getDefaultInstance() : minimumScheduleInterval_;
+        return minimumScheduleInterval_ == null
+            ? com.google.protobuf.Duration.getDefaultInstance()
+            : minimumScheduleInterval_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The minimum interval for scheduler to schedule runs.
      * </pre>
@@ -3416,34 +3829,39 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Duration minimum_schedule_interval = 18;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> 
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
         getMinimumScheduleIntervalFieldBuilder() {
       if (minimumScheduleIntervalBuilder_ == null) {
-        minimumScheduleIntervalBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder>(
-                getMinimumScheduleInterval(),
-                getParentForChildren(),
-                isClean());
+        minimumScheduleIntervalBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Duration,
+                com.google.protobuf.Duration.Builder,
+                com.google.protobuf.DurationOrBuilder>(
+                getMinimumScheduleInterval(), getParentForChildren(), isClean());
         minimumScheduleInterval_ = null;
       }
       return minimumScheduleIntervalBuilder_;
     }
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+
+    @java.lang.Override
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
     }
-
 
     // @@protoc_insertion_point(builder_scope:google.cloud.bigquery.datatransfer.v1.DataSource)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.bigquery.datatransfer.v1.DataSource)
   private static final com.google.cloud.bigquery.datatransfer.v1.DataSource DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.bigquery.datatransfer.v1.DataSource();
   }
@@ -3452,15 +3870,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<DataSource>
-      PARSER = new com.google.protobuf.AbstractParser<DataSource>() {
-    public DataSource parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-        return new DataSource(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<DataSource> PARSER =
+      new com.google.protobuf.AbstractParser<DataSource>() {
+        @java.lang.Override
+        public DataSource parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new DataSource(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<DataSource> parser() {
     return PARSER;
@@ -3471,9 +3890,8 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.cloud.bigquery.datatransfer.v1.DataSource getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

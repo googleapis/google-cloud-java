@@ -21,13 +21,12 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotEquals;
 
-import org.junit.Before;
-import org.junit.Test;
-
 import java.io.ByteArrayInputStream;
 import java.io.InputStream;
 import java.nio.ByteBuffer;
 import java.util.Random;
+import org.junit.Before;
+import org.junit.Test;
 
 public class BlobTest {
 
@@ -35,7 +34,6 @@ public class BlobTest {
   private static final byte[] bytes2 = new byte[11];
   private Blob blob1;
   private Blob blob2;
-
 
   @Before
   public void setUp() {
@@ -58,7 +56,6 @@ public class BlobTest {
     assertEquals(bytes1.length, blob1.getLength());
     assertEquals(bytes2.length, blob2.getLength());
   }
-
 
   @Test
   public void testToByteArray() throws Exception {

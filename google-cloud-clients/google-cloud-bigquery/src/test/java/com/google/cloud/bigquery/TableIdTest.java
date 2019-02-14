@@ -35,7 +35,6 @@ public class TableIdTest {
     assertEquals("table", TABLE_COMPLETE.getTable());
   }
 
-
   @Test
   public void testEquals() {
     compareTableIds(TABLE, TableId.of("dataset", "table"));
@@ -50,7 +49,8 @@ public class TableIdTest {
 
   @Test
   public void testSetProjectId() {
-    assertEquals(TABLE_COMPLETE, TABLE.setProjectId("project"));
+    TableId differentProjectTable = TableId.of("differentProject", "dataset", "table");
+    assertEquals(differentProjectTable, TABLE.setProjectId("differentProject"));
   }
 
   private void compareTableIds(TableId expected, TableId value) {

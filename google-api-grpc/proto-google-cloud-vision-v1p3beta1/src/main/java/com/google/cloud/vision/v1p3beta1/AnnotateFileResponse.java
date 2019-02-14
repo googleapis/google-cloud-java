@@ -4,6 +4,8 @@
 package com.google.cloud.vision.v1p3beta1;
 
 /**
+ *
+ *
  * <pre>
  * Response to a single file annotation request. A file may contain one or more
  * images, which individually have their own responses.
@@ -11,29 +13,33 @@ package com.google.cloud.vision.v1p3beta1;
  *
  * Protobuf type {@code google.cloud.vision.v1p3beta1.AnnotateFileResponse}
  */
-public  final class AnnotateFileResponse extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class AnnotateFileResponse extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.vision.v1p3beta1.AnnotateFileResponse)
     AnnotateFileResponseOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use AnnotateFileResponse.newBuilder() to construct.
   private AnnotateFileResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private AnnotateFileResponse() {
     responses_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private AnnotateFileResponse(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -45,42 +51,49 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
-          case 10: {
-            com.google.cloud.vision.v1p3beta1.InputConfig.Builder subBuilder = null;
-            if (inputConfig_ != null) {
-              subBuilder = inputConfig_.toBuilder();
-            }
-            inputConfig_ = input.readMessage(com.google.cloud.vision.v1p3beta1.InputConfig.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(inputConfig_);
-              inputConfig_ = subBuilder.buildPartial();
-            }
+          case 10:
+            {
+              com.google.cloud.vision.v1p3beta1.InputConfig.Builder subBuilder = null;
+              if (inputConfig_ != null) {
+                subBuilder = inputConfig_.toBuilder();
+              }
+              inputConfig_ =
+                  input.readMessage(
+                      com.google.cloud.vision.v1p3beta1.InputConfig.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(inputConfig_);
+                inputConfig_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 18: {
-            if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-              responses_ = new java.util.ArrayList<com.google.cloud.vision.v1p3beta1.AnnotateImageResponse>();
-              mutable_bitField0_ |= 0x00000002;
+              break;
             }
-            responses_.add(
-                input.readMessage(com.google.cloud.vision.v1p3beta1.AnnotateImageResponse.parser(), extensionRegistry));
-            break;
-          }
+          case 18:
+            {
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                responses_ =
+                    new java.util.ArrayList<
+                        com.google.cloud.vision.v1p3beta1.AnnotateImageResponse>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              responses_.add(
+                  input.readMessage(
+                      com.google.cloud.vision.v1p3beta1.AnnotateImageResponse.parser(),
+                      extensionRegistry));
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
         responses_ = java.util.Collections.unmodifiableList(responses_);
@@ -89,22 +102,28 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.vision.v1p3beta1.ImageAnnotatorProto.internal_static_google_cloud_vision_v1p3beta1_AnnotateFileResponse_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.vision.v1p3beta1.ImageAnnotatorProto
+        .internal_static_google_cloud_vision_v1p3beta1_AnnotateFileResponse_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.vision.v1p3beta1.ImageAnnotatorProto.internal_static_google_cloud_vision_v1p3beta1_AnnotateFileResponse_fieldAccessorTable
+    return com.google.cloud.vision.v1p3beta1.ImageAnnotatorProto
+        .internal_static_google_cloud_vision_v1p3beta1_AnnotateFileResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.vision.v1p3beta1.AnnotateFileResponse.class, com.google.cloud.vision.v1p3beta1.AnnotateFileResponse.Builder.class);
+            com.google.cloud.vision.v1p3beta1.AnnotateFileResponse.class,
+            com.google.cloud.vision.v1p3beta1.AnnotateFileResponse.Builder.class);
   }
 
   private int bitField0_;
   public static final int INPUT_CONFIG_FIELD_NUMBER = 1;
   private com.google.cloud.vision.v1p3beta1.InputConfig inputConfig_;
   /**
+   *
+   *
    * <pre>
    * Information about the file for which this response is generated.
    * </pre>
@@ -115,6 +134,8 @@ private static final long serialVersionUID = 0L;
     return inputConfig_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Information about the file for which this response is generated.
    * </pre>
@@ -122,9 +143,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.cloud.vision.v1p3beta1.InputConfig input_config = 1;</code>
    */
   public com.google.cloud.vision.v1p3beta1.InputConfig getInputConfig() {
-    return inputConfig_ == null ? com.google.cloud.vision.v1p3beta1.InputConfig.getDefaultInstance() : inputConfig_;
+    return inputConfig_ == null
+        ? com.google.cloud.vision.v1p3beta1.InputConfig.getDefaultInstance()
+        : inputConfig_;
   }
   /**
+   *
+   *
    * <pre>
    * Information about the file for which this response is generated.
    * </pre>
@@ -138,27 +163,34 @@ private static final long serialVersionUID = 0L;
   public static final int RESPONSES_FIELD_NUMBER = 2;
   private java.util.List<com.google.cloud.vision.v1p3beta1.AnnotateImageResponse> responses_;
   /**
+   *
+   *
    * <pre>
    * Individual responses to images found within the file.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1p3beta1.AnnotateImageResponse responses = 2;</code>
    */
-  public java.util.List<com.google.cloud.vision.v1p3beta1.AnnotateImageResponse> getResponsesList() {
+  public java.util.List<com.google.cloud.vision.v1p3beta1.AnnotateImageResponse>
+      getResponsesList() {
     return responses_;
   }
   /**
+   *
+   *
    * <pre>
    * Individual responses to images found within the file.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1p3beta1.AnnotateImageResponse responses = 2;</code>
    */
-  public java.util.List<? extends com.google.cloud.vision.v1p3beta1.AnnotateImageResponseOrBuilder> 
+  public java.util.List<? extends com.google.cloud.vision.v1p3beta1.AnnotateImageResponseOrBuilder>
       getResponsesOrBuilderList() {
     return responses_;
   }
   /**
+   *
+   *
    * <pre>
    * Individual responses to images found within the file.
    * </pre>
@@ -169,6 +201,8 @@ private static final long serialVersionUID = 0L;
     return responses_.size();
   }
   /**
+   *
+   *
    * <pre>
    * Individual responses to images found within the file.
    * </pre>
@@ -179,6 +213,8 @@ private static final long serialVersionUID = 0L;
     return responses_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * Individual responses to images found within the file.
    * </pre>
@@ -191,6 +227,8 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -200,8 +238,8 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  @java.lang.Override
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (inputConfig_ != null) {
       output.writeMessage(1, getInputConfig());
     }
@@ -211,18 +249,17 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
 
     size = 0;
     if (inputConfig_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getInputConfig());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getInputConfig());
     }
     for (int i = 0; i < responses_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, responses_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, responses_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -232,21 +269,20 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.vision.v1p3beta1.AnnotateFileResponse)) {
       return super.equals(obj);
     }
-    com.google.cloud.vision.v1p3beta1.AnnotateFileResponse other = (com.google.cloud.vision.v1p3beta1.AnnotateFileResponse) obj;
+    com.google.cloud.vision.v1p3beta1.AnnotateFileResponse other =
+        (com.google.cloud.vision.v1p3beta1.AnnotateFileResponse) obj;
 
     boolean result = true;
     result = result && (hasInputConfig() == other.hasInputConfig());
     if (hasInputConfig()) {
-      result = result && getInputConfig()
-          .equals(other.getInputConfig());
+      result = result && getInputConfig().equals(other.getInputConfig());
     }
-    result = result && getResponsesList()
-        .equals(other.getResponsesList());
+    result = result && getResponsesList().equals(other.getResponsesList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -272,94 +308,104 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.cloud.vision.v1p3beta1.AnnotateFileResponse parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.vision.v1p3beta1.AnnotateFileResponse parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.vision.v1p3beta1.AnnotateFileResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.vision.v1p3beta1.AnnotateFileResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.vision.v1p3beta1.AnnotateFileResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.vision.v1p3beta1.AnnotateFileResponse parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.vision.v1p3beta1.AnnotateFileResponse parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.vision.v1p3beta1.AnnotateFileResponse parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.vision.v1p3beta1.AnnotateFileResponse parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.cloud.vision.v1p3beta1.AnnotateFileResponse parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.cloud.vision.v1p3beta1.AnnotateFileResponse parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.vision.v1p3beta1.AnnotateFileResponse parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.vision.v1p3beta1.AnnotateFileResponse parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.vision.v1p3beta1.AnnotateFileResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  public Builder newBuilderForType() { return newBuilder(); }
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-  public static Builder newBuilder(com.google.cloud.vision.v1p3beta1.AnnotateFileResponse prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+
+  public static Builder newBuilder(
+      com.google.cloud.vision.v1p3beta1.AnnotateFileResponse prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+
+  @java.lang.Override
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Response to a single file annotation request. A file may contain one or more
    * images, which individually have their own responses.
@@ -367,20 +413,23 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.cloud.vision.v1p3beta1.AnnotateFileResponse}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.vision.v1p3beta1.AnnotateFileResponse)
       com.google.cloud.vision.v1p3beta1.AnnotateFileResponseOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.vision.v1p3beta1.ImageAnnotatorProto.internal_static_google_cloud_vision_v1p3beta1_AnnotateFileResponse_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.vision.v1p3beta1.ImageAnnotatorProto
+          .internal_static_google_cloud_vision_v1p3beta1_AnnotateFileResponse_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.vision.v1p3beta1.ImageAnnotatorProto.internal_static_google_cloud_vision_v1p3beta1_AnnotateFileResponse_fieldAccessorTable
+      return com.google.cloud.vision.v1p3beta1.ImageAnnotatorProto
+          .internal_static_google_cloud_vision_v1p3beta1_AnnotateFileResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.vision.v1p3beta1.AnnotateFileResponse.class, com.google.cloud.vision.v1p3beta1.AnnotateFileResponse.Builder.class);
+              com.google.cloud.vision.v1p3beta1.AnnotateFileResponse.class,
+              com.google.cloud.vision.v1p3beta1.AnnotateFileResponse.Builder.class);
     }
 
     // Construct using com.google.cloud.vision.v1p3beta1.AnnotateFileResponse.newBuilder()
@@ -388,17 +437,18 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getResponsesFieldBuilder();
       }
     }
+
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       if (inputConfigBuilder_ == null) {
@@ -416,15 +466,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.vision.v1p3beta1.ImageAnnotatorProto.internal_static_google_cloud_vision_v1p3beta1_AnnotateFileResponse_descriptor;
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.vision.v1p3beta1.ImageAnnotatorProto
+          .internal_static_google_cloud_vision_v1p3beta1_AnnotateFileResponse_descriptor;
     }
 
+    @java.lang.Override
     public com.google.cloud.vision.v1p3beta1.AnnotateFileResponse getDefaultInstanceForType() {
       return com.google.cloud.vision.v1p3beta1.AnnotateFileResponse.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.cloud.vision.v1p3beta1.AnnotateFileResponse build() {
       com.google.cloud.vision.v1p3beta1.AnnotateFileResponse result = buildPartial();
       if (!result.isInitialized()) {
@@ -433,8 +486,10 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.cloud.vision.v1p3beta1.AnnotateFileResponse buildPartial() {
-      com.google.cloud.vision.v1p3beta1.AnnotateFileResponse result = new com.google.cloud.vision.v1p3beta1.AnnotateFileResponse(this);
+      com.google.cloud.vision.v1p3beta1.AnnotateFileResponse result =
+          new com.google.cloud.vision.v1p3beta1.AnnotateFileResponse(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (inputConfigBuilder_ == null) {
@@ -456,35 +511,43 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+
+    @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+    @java.lang.Override
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+    @java.lang.Override
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
+    @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
+    @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.vision.v1p3beta1.AnnotateFileResponse) {
-        return mergeFrom((com.google.cloud.vision.v1p3beta1.AnnotateFileResponse)other);
+        return mergeFrom((com.google.cloud.vision.v1p3beta1.AnnotateFileResponse) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -492,7 +555,8 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.cloud.vision.v1p3beta1.AnnotateFileResponse other) {
-      if (other == com.google.cloud.vision.v1p3beta1.AnnotateFileResponse.getDefaultInstance()) return this;
+      if (other == com.google.cloud.vision.v1p3beta1.AnnotateFileResponse.getDefaultInstance())
+        return this;
       if (other.hasInputConfig()) {
         mergeInputConfig(other.getInputConfig());
       }
@@ -514,9 +578,10 @@ private static final long serialVersionUID = 0L;
             responsesBuilder_ = null;
             responses_ = other.responses_;
             bitField0_ = (bitField0_ & ~0x00000002);
-            responsesBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getResponsesFieldBuilder() : null;
+            responsesBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getResponsesFieldBuilder()
+                    : null;
           } else {
             responsesBuilder_.addAllMessages(other.responses_);
           }
@@ -527,10 +592,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -539,7 +606,8 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.vision.v1p3beta1.AnnotateFileResponse) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.cloud.vision.v1p3beta1.AnnotateFileResponse) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -548,12 +616,18 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private com.google.cloud.vision.v1p3beta1.InputConfig inputConfig_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.vision.v1p3beta1.InputConfig, com.google.cloud.vision.v1p3beta1.InputConfig.Builder, com.google.cloud.vision.v1p3beta1.InputConfigOrBuilder> inputConfigBuilder_;
+            com.google.cloud.vision.v1p3beta1.InputConfig,
+            com.google.cloud.vision.v1p3beta1.InputConfig.Builder,
+            com.google.cloud.vision.v1p3beta1.InputConfigOrBuilder>
+        inputConfigBuilder_;
     /**
+     *
+     *
      * <pre>
      * Information about the file for which this response is generated.
      * </pre>
@@ -564,6 +638,8 @@ private static final long serialVersionUID = 0L;
       return inputConfigBuilder_ != null || inputConfig_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Information about the file for which this response is generated.
      * </pre>
@@ -572,12 +648,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.vision.v1p3beta1.InputConfig getInputConfig() {
       if (inputConfigBuilder_ == null) {
-        return inputConfig_ == null ? com.google.cloud.vision.v1p3beta1.InputConfig.getDefaultInstance() : inputConfig_;
+        return inputConfig_ == null
+            ? com.google.cloud.vision.v1p3beta1.InputConfig.getDefaultInstance()
+            : inputConfig_;
       } else {
         return inputConfigBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Information about the file for which this response is generated.
      * </pre>
@@ -598,6 +678,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Information about the file for which this response is generated.
      * </pre>
@@ -616,6 +698,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Information about the file for which this response is generated.
      * </pre>
@@ -626,7 +710,9 @@ private static final long serialVersionUID = 0L;
       if (inputConfigBuilder_ == null) {
         if (inputConfig_ != null) {
           inputConfig_ =
-            com.google.cloud.vision.v1p3beta1.InputConfig.newBuilder(inputConfig_).mergeFrom(value).buildPartial();
+              com.google.cloud.vision.v1p3beta1.InputConfig.newBuilder(inputConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           inputConfig_ = value;
         }
@@ -638,6 +724,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Information about the file for which this response is generated.
      * </pre>
@@ -656,6 +744,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Information about the file for which this response is generated.
      * </pre>
@@ -663,11 +753,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.vision.v1p3beta1.InputConfig input_config = 1;</code>
      */
     public com.google.cloud.vision.v1p3beta1.InputConfig.Builder getInputConfigBuilder() {
-      
+
       onChanged();
       return getInputConfigFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Information about the file for which this response is generated.
      * </pre>
@@ -678,11 +770,14 @@ private static final long serialVersionUID = 0L;
       if (inputConfigBuilder_ != null) {
         return inputConfigBuilder_.getMessageOrBuilder();
       } else {
-        return inputConfig_ == null ?
-            com.google.cloud.vision.v1p3beta1.InputConfig.getDefaultInstance() : inputConfig_;
+        return inputConfig_ == null
+            ? com.google.cloud.vision.v1p3beta1.InputConfig.getDefaultInstance()
+            : inputConfig_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Information about the file for which this response is generated.
      * </pre>
@@ -690,39 +785,51 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.vision.v1p3beta1.InputConfig input_config = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.vision.v1p3beta1.InputConfig, com.google.cloud.vision.v1p3beta1.InputConfig.Builder, com.google.cloud.vision.v1p3beta1.InputConfigOrBuilder> 
+            com.google.cloud.vision.v1p3beta1.InputConfig,
+            com.google.cloud.vision.v1p3beta1.InputConfig.Builder,
+            com.google.cloud.vision.v1p3beta1.InputConfigOrBuilder>
         getInputConfigFieldBuilder() {
       if (inputConfigBuilder_ == null) {
-        inputConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.vision.v1p3beta1.InputConfig, com.google.cloud.vision.v1p3beta1.InputConfig.Builder, com.google.cloud.vision.v1p3beta1.InputConfigOrBuilder>(
-                getInputConfig(),
-                getParentForChildren(),
-                isClean());
+        inputConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.vision.v1p3beta1.InputConfig,
+                com.google.cloud.vision.v1p3beta1.InputConfig.Builder,
+                com.google.cloud.vision.v1p3beta1.InputConfigOrBuilder>(
+                getInputConfig(), getParentForChildren(), isClean());
         inputConfig_ = null;
       }
       return inputConfigBuilder_;
     }
 
     private java.util.List<com.google.cloud.vision.v1p3beta1.AnnotateImageResponse> responses_ =
-      java.util.Collections.emptyList();
+        java.util.Collections.emptyList();
+
     private void ensureResponsesIsMutable() {
       if (!((bitField0_ & 0x00000002) == 0x00000002)) {
-        responses_ = new java.util.ArrayList<com.google.cloud.vision.v1p3beta1.AnnotateImageResponse>(responses_);
+        responses_ =
+            new java.util.ArrayList<com.google.cloud.vision.v1p3beta1.AnnotateImageResponse>(
+                responses_);
         bitField0_ |= 0x00000002;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.vision.v1p3beta1.AnnotateImageResponse, com.google.cloud.vision.v1p3beta1.AnnotateImageResponse.Builder, com.google.cloud.vision.v1p3beta1.AnnotateImageResponseOrBuilder> responsesBuilder_;
+            com.google.cloud.vision.v1p3beta1.AnnotateImageResponse,
+            com.google.cloud.vision.v1p3beta1.AnnotateImageResponse.Builder,
+            com.google.cloud.vision.v1p3beta1.AnnotateImageResponseOrBuilder>
+        responsesBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * Individual responses to images found within the file.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1p3beta1.AnnotateImageResponse responses = 2;</code>
      */
-    public java.util.List<com.google.cloud.vision.v1p3beta1.AnnotateImageResponse> getResponsesList() {
+    public java.util.List<com.google.cloud.vision.v1p3beta1.AnnotateImageResponse>
+        getResponsesList() {
       if (responsesBuilder_ == null) {
         return java.util.Collections.unmodifiableList(responses_);
       } else {
@@ -730,6 +837,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Individual responses to images found within the file.
      * </pre>
@@ -744,6 +853,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Individual responses to images found within the file.
      * </pre>
@@ -758,6 +869,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Individual responses to images found within the file.
      * </pre>
@@ -779,6 +892,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Individual responses to images found within the file.
      * </pre>
@@ -786,7 +901,8 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.cloud.vision.v1p3beta1.AnnotateImageResponse responses = 2;</code>
      */
     public Builder setResponses(
-        int index, com.google.cloud.vision.v1p3beta1.AnnotateImageResponse.Builder builderForValue) {
+        int index,
+        com.google.cloud.vision.v1p3beta1.AnnotateImageResponse.Builder builderForValue) {
       if (responsesBuilder_ == null) {
         ensureResponsesIsMutable();
         responses_.set(index, builderForValue.build());
@@ -797,6 +913,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Individual responses to images found within the file.
      * </pre>
@@ -817,6 +935,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Individual responses to images found within the file.
      * </pre>
@@ -838,6 +958,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Individual responses to images found within the file.
      * </pre>
@@ -856,6 +978,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Individual responses to images found within the file.
      * </pre>
@@ -863,7 +987,8 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.cloud.vision.v1p3beta1.AnnotateImageResponse responses = 2;</code>
      */
     public Builder addResponses(
-        int index, com.google.cloud.vision.v1p3beta1.AnnotateImageResponse.Builder builderForValue) {
+        int index,
+        com.google.cloud.vision.v1p3beta1.AnnotateImageResponse.Builder builderForValue) {
       if (responsesBuilder_ == null) {
         ensureResponsesIsMutable();
         responses_.add(index, builderForValue.build());
@@ -874,6 +999,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Individual responses to images found within the file.
      * </pre>
@@ -881,11 +1008,11 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.cloud.vision.v1p3beta1.AnnotateImageResponse responses = 2;</code>
      */
     public Builder addAllResponses(
-        java.lang.Iterable<? extends com.google.cloud.vision.v1p3beta1.AnnotateImageResponse> values) {
+        java.lang.Iterable<? extends com.google.cloud.vision.v1p3beta1.AnnotateImageResponse>
+            values) {
       if (responsesBuilder_ == null) {
         ensureResponsesIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, responses_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, responses_);
         onChanged();
       } else {
         responsesBuilder_.addAllMessages(values);
@@ -893,6 +1020,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Individual responses to images found within the file.
      * </pre>
@@ -910,6 +1039,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Individual responses to images found within the file.
      * </pre>
@@ -927,6 +1058,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Individual responses to images found within the file.
      * </pre>
@@ -938,6 +1071,8 @@ private static final long serialVersionUID = 0L;
       return getResponsesFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * Individual responses to images found within the file.
      * </pre>
@@ -947,19 +1082,23 @@ private static final long serialVersionUID = 0L;
     public com.google.cloud.vision.v1p3beta1.AnnotateImageResponseOrBuilder getResponsesOrBuilder(
         int index) {
       if (responsesBuilder_ == null) {
-        return responses_.get(index);  } else {
+        return responses_.get(index);
+      } else {
         return responsesBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * Individual responses to images found within the file.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1p3beta1.AnnotateImageResponse responses = 2;</code>
      */
-    public java.util.List<? extends com.google.cloud.vision.v1p3beta1.AnnotateImageResponseOrBuilder> 
-         getResponsesOrBuilderList() {
+    public java.util.List<
+            ? extends com.google.cloud.vision.v1p3beta1.AnnotateImageResponseOrBuilder>
+        getResponsesOrBuilderList() {
       if (responsesBuilder_ != null) {
         return responsesBuilder_.getMessageOrBuilderList();
       } else {
@@ -967,6 +1106,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Individual responses to images found within the file.
      * </pre>
@@ -974,10 +1115,12 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.cloud.vision.v1p3beta1.AnnotateImageResponse responses = 2;</code>
      */
     public com.google.cloud.vision.v1p3beta1.AnnotateImageResponse.Builder addResponsesBuilder() {
-      return getResponsesFieldBuilder().addBuilder(
-          com.google.cloud.vision.v1p3beta1.AnnotateImageResponse.getDefaultInstance());
+      return getResponsesFieldBuilder()
+          .addBuilder(com.google.cloud.vision.v1p3beta1.AnnotateImageResponse.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Individual responses to images found within the file.
      * </pre>
@@ -986,26 +1129,35 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.vision.v1p3beta1.AnnotateImageResponse.Builder addResponsesBuilder(
         int index) {
-      return getResponsesFieldBuilder().addBuilder(
-          index, com.google.cloud.vision.v1p3beta1.AnnotateImageResponse.getDefaultInstance());
+      return getResponsesFieldBuilder()
+          .addBuilder(
+              index, com.google.cloud.vision.v1p3beta1.AnnotateImageResponse.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Individual responses to images found within the file.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1p3beta1.AnnotateImageResponse responses = 2;</code>
      */
-    public java.util.List<com.google.cloud.vision.v1p3beta1.AnnotateImageResponse.Builder> 
-         getResponsesBuilderList() {
+    public java.util.List<com.google.cloud.vision.v1p3beta1.AnnotateImageResponse.Builder>
+        getResponsesBuilderList() {
       return getResponsesFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.vision.v1p3beta1.AnnotateImageResponse, com.google.cloud.vision.v1p3beta1.AnnotateImageResponse.Builder, com.google.cloud.vision.v1p3beta1.AnnotateImageResponseOrBuilder> 
+            com.google.cloud.vision.v1p3beta1.AnnotateImageResponse,
+            com.google.cloud.vision.v1p3beta1.AnnotateImageResponse.Builder,
+            com.google.cloud.vision.v1p3beta1.AnnotateImageResponseOrBuilder>
         getResponsesFieldBuilder() {
       if (responsesBuilder_ == null) {
-        responsesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.cloud.vision.v1p3beta1.AnnotateImageResponse, com.google.cloud.vision.v1p3beta1.AnnotateImageResponse.Builder, com.google.cloud.vision.v1p3beta1.AnnotateImageResponseOrBuilder>(
+        responsesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.vision.v1p3beta1.AnnotateImageResponse,
+                com.google.cloud.vision.v1p3beta1.AnnotateImageResponse.Builder,
+                com.google.cloud.vision.v1p3beta1.AnnotateImageResponseOrBuilder>(
                 responses_,
                 ((bitField0_ & 0x00000002) == 0x00000002),
                 getParentForChildren(),
@@ -1014,22 +1166,24 @@ private static final long serialVersionUID = 0L;
       }
       return responsesBuilder_;
     }
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+
+    @java.lang.Override
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
     }
-
 
     // @@protoc_insertion_point(builder_scope:google.cloud.vision.v1p3beta1.AnnotateFileResponse)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.vision.v1p3beta1.AnnotateFileResponse)
   private static final com.google.cloud.vision.v1p3beta1.AnnotateFileResponse DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.vision.v1p3beta1.AnnotateFileResponse();
   }
@@ -1038,15 +1192,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<AnnotateFileResponse>
-      PARSER = new com.google.protobuf.AbstractParser<AnnotateFileResponse>() {
-    public AnnotateFileResponse parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-        return new AnnotateFileResponse(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<AnnotateFileResponse> PARSER =
+      new com.google.protobuf.AbstractParser<AnnotateFileResponse>() {
+        @java.lang.Override
+        public AnnotateFileResponse parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new AnnotateFileResponse(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<AnnotateFileResponse> parser() {
     return PARSER;
@@ -1057,9 +1212,8 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.cloud.vision.v1p3beta1.AnnotateFileResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

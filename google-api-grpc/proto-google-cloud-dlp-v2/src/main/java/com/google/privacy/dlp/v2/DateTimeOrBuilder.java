@@ -3,11 +3,14 @@
 
 package com.google.privacy.dlp.v2;
 
-public interface DateTimeOrBuilder extends
+public interface DateTimeOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.DateTime)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * One or more of the following must be set. All fields are optional, but
    * when set must be valid date or time values.
@@ -17,6 +20,8 @@ public interface DateTimeOrBuilder extends
    */
   boolean hasDate();
   /**
+   *
+   *
    * <pre>
    * One or more of the following must be set. All fields are optional, but
    * when set must be valid date or time values.
@@ -26,6 +31,8 @@ public interface DateTimeOrBuilder extends
    */
   com.google.type.Date getDate();
   /**
+   *
+   *
    * <pre>
    * One or more of the following must be set. All fields are optional, but
    * when set must be valid date or time values.
@@ -35,38 +42,22 @@ public interface DateTimeOrBuilder extends
    */
   com.google.type.DateOrBuilder getDateOrBuilder();
 
-  /**
-   * <code>.google.type.DayOfWeek day_of_week = 2;</code>
-   */
+  /** <code>.google.type.DayOfWeek day_of_week = 2;</code> */
   int getDayOfWeekValue();
-  /**
-   * <code>.google.type.DayOfWeek day_of_week = 2;</code>
-   */
+  /** <code>.google.type.DayOfWeek day_of_week = 2;</code> */
   com.google.type.DayOfWeek getDayOfWeek();
 
-  /**
-   * <code>.google.type.TimeOfDay time = 3;</code>
-   */
+  /** <code>.google.type.TimeOfDay time = 3;</code> */
   boolean hasTime();
-  /**
-   * <code>.google.type.TimeOfDay time = 3;</code>
-   */
+  /** <code>.google.type.TimeOfDay time = 3;</code> */
   com.google.type.TimeOfDay getTime();
-  /**
-   * <code>.google.type.TimeOfDay time = 3;</code>
-   */
+  /** <code>.google.type.TimeOfDay time = 3;</code> */
   com.google.type.TimeOfDayOrBuilder getTimeOrBuilder();
 
-  /**
-   * <code>.google.privacy.dlp.v2.DateTime.TimeZone time_zone = 4;</code>
-   */
+  /** <code>.google.privacy.dlp.v2.DateTime.TimeZone time_zone = 4;</code> */
   boolean hasTimeZone();
-  /**
-   * <code>.google.privacy.dlp.v2.DateTime.TimeZone time_zone = 4;</code>
-   */
+  /** <code>.google.privacy.dlp.v2.DateTime.TimeZone time_zone = 4;</code> */
   com.google.privacy.dlp.v2.DateTime.TimeZone getTimeZone();
-  /**
-   * <code>.google.privacy.dlp.v2.DateTime.TimeZone time_zone = 4;</code>
-   */
+  /** <code>.google.privacy.dlp.v2.DateTime.TimeZone time_zone = 4;</code> */
   com.google.privacy.dlp.v2.DateTime.TimeZoneOrBuilder getTimeZoneOrBuilder();
 }

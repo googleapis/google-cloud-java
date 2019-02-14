@@ -3,11 +3,14 @@
 
 package com.google.privacy.dlp.v2;
 
-public interface GetDlpJobRequestOrBuilder extends
+public interface GetDlpJobRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.GetDlpJobRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The name of the DlpJob resource.
    * </pre>
@@ -16,12 +19,13 @@ public interface GetDlpJobRequestOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The name of the DlpJob resource.
    * </pre>
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 }

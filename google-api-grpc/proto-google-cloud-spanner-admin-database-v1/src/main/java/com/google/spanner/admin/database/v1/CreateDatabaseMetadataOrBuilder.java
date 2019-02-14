@@ -3,11 +3,14 @@
 
 package com.google.spanner.admin.database.v1;
 
-public interface CreateDatabaseMetadataOrBuilder extends
+public interface CreateDatabaseMetadataOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.spanner.admin.database.v1.CreateDatabaseMetadata)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The database being created.
    * </pre>
@@ -16,12 +19,13 @@ public interface CreateDatabaseMetadataOrBuilder extends
    */
   java.lang.String getDatabase();
   /**
+   *
+   *
    * <pre>
    * The database being created.
    * </pre>
    *
    * <code>string database = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getDatabaseBytes();
+  com.google.protobuf.ByteString getDatabaseBytes();
 }

@@ -3,11 +3,14 @@
 
 package com.google.cloud.language.v1beta2;
 
-public interface EntityOrBuilder extends
+public interface EntityOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.language.v1beta2.Entity)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The representative name for the entity.
    * </pre>
@@ -16,16 +19,19 @@ public interface EntityOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The representative name for the entity.
    * </pre>
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * The entity type.
    * </pre>
@@ -34,6 +40,8 @@ public interface EntityOrBuilder extends
    */
   int getTypeValue();
   /**
+   *
+   *
    * <pre>
    * The entity type.
    * </pre>
@@ -43,6 +51,8 @@ public interface EntityOrBuilder extends
   com.google.cloud.language.v1beta2.Entity.Type getType();
 
   /**
+   *
+   *
    * <pre>
    * Metadata associated with the entity.
    * Currently, Wikipedia URLs and Knowledge Graph MIDs are provided, if
@@ -53,6 +63,8 @@ public interface EntityOrBuilder extends
    */
   int getMetadataCount();
   /**
+   *
+   *
    * <pre>
    * Metadata associated with the entity.
    * Currently, Wikipedia URLs and Knowledge Graph MIDs are provided, if
@@ -61,15 +73,13 @@ public interface EntityOrBuilder extends
    *
    * <code>map&lt;string, string&gt; metadata = 3;</code>
    */
-  boolean containsMetadata(
-      java.lang.String key);
-  /**
-   * Use {@link #getMetadataMap()} instead.
-   */
+  boolean containsMetadata(java.lang.String key);
+  /** Use {@link #getMetadataMap()} instead. */
   @java.lang.Deprecated
-  java.util.Map<java.lang.String, java.lang.String>
-  getMetadata();
+  java.util.Map<java.lang.String, java.lang.String> getMetadata();
   /**
+   *
+   *
    * <pre>
    * Metadata associated with the entity.
    * Currently, Wikipedia URLs and Knowledge Graph MIDs are provided, if
@@ -78,9 +88,10 @@ public interface EntityOrBuilder extends
    *
    * <code>map&lt;string, string&gt; metadata = 3;</code>
    */
-  java.util.Map<java.lang.String, java.lang.String>
-  getMetadataMap();
+  java.util.Map<java.lang.String, java.lang.String> getMetadataMap();
   /**
+   *
+   *
    * <pre>
    * Metadata associated with the entity.
    * Currently, Wikipedia URLs and Knowledge Graph MIDs are provided, if
@@ -89,11 +100,10 @@ public interface EntityOrBuilder extends
    *
    * <code>map&lt;string, string&gt; metadata = 3;</code>
    */
-
-  java.lang.String getMetadataOrDefault(
-      java.lang.String key,
-      java.lang.String defaultValue);
+  java.lang.String getMetadataOrDefault(java.lang.String key, java.lang.String defaultValue);
   /**
+   *
+   *
    * <pre>
    * Metadata associated with the entity.
    * Currently, Wikipedia URLs and Knowledge Graph MIDs are provided, if
@@ -102,11 +112,11 @@ public interface EntityOrBuilder extends
    *
    * <code>map&lt;string, string&gt; metadata = 3;</code>
    */
-
-  java.lang.String getMetadataOrThrow(
-      java.lang.String key);
+  java.lang.String getMetadataOrThrow(java.lang.String key);
 
   /**
+   *
+   *
    * <pre>
    * The salience score associated with the entity in the [0, 1.0] range.
    * The salience score for an entity provides information about the
@@ -120,6 +130,8 @@ public interface EntityOrBuilder extends
   float getSalience();
 
   /**
+   *
+   *
    * <pre>
    * The mentions of this entity in the input document. The API currently
    * supports proper noun mentions.
@@ -127,9 +139,10 @@ public interface EntityOrBuilder extends
    *
    * <code>repeated .google.cloud.language.v1beta2.EntityMention mentions = 5;</code>
    */
-  java.util.List<com.google.cloud.language.v1beta2.EntityMention> 
-      getMentionsList();
+  java.util.List<com.google.cloud.language.v1beta2.EntityMention> getMentionsList();
   /**
+   *
+   *
    * <pre>
    * The mentions of this entity in the input document. The API currently
    * supports proper noun mentions.
@@ -139,6 +152,8 @@ public interface EntityOrBuilder extends
    */
   com.google.cloud.language.v1beta2.EntityMention getMentions(int index);
   /**
+   *
+   *
    * <pre>
    * The mentions of this entity in the input document. The API currently
    * supports proper noun mentions.
@@ -148,6 +163,8 @@ public interface EntityOrBuilder extends
    */
   int getMentionsCount();
   /**
+   *
+   *
    * <pre>
    * The mentions of this entity in the input document. The API currently
    * supports proper noun mentions.
@@ -155,9 +172,11 @@ public interface EntityOrBuilder extends
    *
    * <code>repeated .google.cloud.language.v1beta2.EntityMention mentions = 5;</code>
    */
-  java.util.List<? extends com.google.cloud.language.v1beta2.EntityMentionOrBuilder> 
+  java.util.List<? extends com.google.cloud.language.v1beta2.EntityMentionOrBuilder>
       getMentionsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * The mentions of this entity in the input document. The API currently
    * supports proper noun mentions.
@@ -165,10 +184,11 @@ public interface EntityOrBuilder extends
    *
    * <code>repeated .google.cloud.language.v1beta2.EntityMention mentions = 5;</code>
    */
-  com.google.cloud.language.v1beta2.EntityMentionOrBuilder getMentionsOrBuilder(
-      int index);
+  com.google.cloud.language.v1beta2.EntityMentionOrBuilder getMentionsOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * For calls to [AnalyzeEntitySentiment][] or if
    * [AnnotateTextRequest.Features.extract_entity_sentiment][google.cloud.language.v1beta2.AnnotateTextRequest.Features.extract_entity_sentiment] is set to
@@ -180,6 +200,8 @@ public interface EntityOrBuilder extends
    */
   boolean hasSentiment();
   /**
+   *
+   *
    * <pre>
    * For calls to [AnalyzeEntitySentiment][] or if
    * [AnnotateTextRequest.Features.extract_entity_sentiment][google.cloud.language.v1beta2.AnnotateTextRequest.Features.extract_entity_sentiment] is set to
@@ -191,6 +213,8 @@ public interface EntityOrBuilder extends
    */
   com.google.cloud.language.v1beta2.Sentiment getSentiment();
   /**
+   *
+   *
    * <pre>
    * For calls to [AnalyzeEntitySentiment][] or if
    * [AnnotateTextRequest.Features.extract_entity_sentiment][google.cloud.language.v1beta2.AnnotateTextRequest.Features.extract_entity_sentiment] is set to

@@ -4,36 +4,42 @@
 package io.grafeas.v1beta1.discovery;
 
 /**
+ *
+ *
  * <pre>
  * Provides information about the analysis status of a discovered resource.
  * </pre>
  *
  * Protobuf type {@code grafeas.v1beta1.discovery.Discovered}
  */
-public  final class Discovered extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class Discovered extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:grafeas.v1beta1.discovery.Discovered)
     DiscoveredOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use Discovered.newBuilder() to construct.
   private Discovered(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private Discovered() {
     continuousAnalysis_ = 0;
     analysisStatus_ = 0;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private Discovered(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -45,85 +51,97 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
-          case 8: {
-            int rawValue = input.readEnum();
+          case 8:
+            {
+              int rawValue = input.readEnum();
 
-            continuousAnalysis_ = rawValue;
-            break;
-          }
-          case 18: {
-            com.google.protobuf.Timestamp.Builder subBuilder = null;
-            if (lastAnalysisTime_ != null) {
-              subBuilder = lastAnalysisTime_.toBuilder();
+              continuousAnalysis_ = rawValue;
+              break;
             }
-            lastAnalysisTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(lastAnalysisTime_);
-              lastAnalysisTime_ = subBuilder.buildPartial();
-            }
+          case 18:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (lastAnalysisTime_ != null) {
+                subBuilder = lastAnalysisTime_.toBuilder();
+              }
+              lastAnalysisTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(lastAnalysisTime_);
+                lastAnalysisTime_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 24: {
-            int rawValue = input.readEnum();
-
-            analysisStatus_ = rawValue;
-            break;
-          }
-          case 34: {
-            com.google.rpc.Status.Builder subBuilder = null;
-            if (analysisStatusError_ != null) {
-              subBuilder = analysisStatusError_.toBuilder();
+              break;
             }
-            analysisStatusError_ = input.readMessage(com.google.rpc.Status.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(analysisStatusError_);
-              analysisStatusError_ = subBuilder.buildPartial();
-            }
+          case 24:
+            {
+              int rawValue = input.readEnum();
 
-            break;
-          }
+              analysisStatus_ = rawValue;
+              break;
+            }
+          case 34:
+            {
+              com.google.rpc.Status.Builder subBuilder = null;
+              if (analysisStatusError_ != null) {
+                subBuilder = analysisStatusError_.toBuilder();
+              }
+              analysisStatusError_ =
+                  input.readMessage(com.google.rpc.Status.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(analysisStatusError_);
+                analysisStatusError_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return io.grafeas.v1beta1.discovery.DiscoveryOuterClass.internal_static_grafeas_v1beta1_discovery_Discovered_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return io.grafeas.v1beta1.discovery.DiscoveryOuterClass
+        .internal_static_grafeas_v1beta1_discovery_Discovered_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return io.grafeas.v1beta1.discovery.DiscoveryOuterClass.internal_static_grafeas_v1beta1_discovery_Discovered_fieldAccessorTable
+    return io.grafeas.v1beta1.discovery.DiscoveryOuterClass
+        .internal_static_grafeas_v1beta1_discovery_Discovered_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            io.grafeas.v1beta1.discovery.Discovered.class, io.grafeas.v1beta1.discovery.Discovered.Builder.class);
+            io.grafeas.v1beta1.discovery.Discovered.class,
+            io.grafeas.v1beta1.discovery.Discovered.Builder.class);
   }
 
   /**
+   *
+   *
    * <pre>
    * Whether the resource is continuously analyzed.
    * </pre>
    *
    * Protobuf enum {@code grafeas.v1beta1.discovery.Discovered.ContinuousAnalysis}
    */
-  public enum ContinuousAnalysis
-      implements com.google.protobuf.ProtocolMessageEnum {
+  public enum ContinuousAnalysis implements com.google.protobuf.ProtocolMessageEnum {
     /**
+     *
+     *
      * <pre>
      * Unknown.
      * </pre>
@@ -132,6 +150,8 @@ private static final long serialVersionUID = 0L;
      */
     CONTINUOUS_ANALYSIS_UNSPECIFIED(0),
     /**
+     *
+     *
      * <pre>
      * The resource is continuously analyzed.
      * </pre>
@@ -140,6 +160,8 @@ private static final long serialVersionUID = 0L;
      */
     ACTIVE(1),
     /**
+     *
+     *
      * <pre>
      * The resource is ignored for continuous analysis.
      * </pre>
@@ -151,6 +173,8 @@ private static final long serialVersionUID = 0L;
     ;
 
     /**
+     *
+     *
      * <pre>
      * Unknown.
      * </pre>
@@ -159,6 +183,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int CONTINUOUS_ANALYSIS_UNSPECIFIED_VALUE = 0;
     /**
+     *
+     *
      * <pre>
      * The resource is continuously analyzed.
      * </pre>
@@ -167,6 +193,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int ACTIVE_VALUE = 1;
     /**
+     *
+     *
      * <pre>
      * The resource is ignored for continuous analysis.
      * </pre>
@@ -174,7 +202,6 @@ private static final long serialVersionUID = 0L;
      * <code>INACTIVE = 2;</code>
      */
     public static final int INACTIVE_VALUE = 2;
-
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -184,9 +211,7 @@ private static final long serialVersionUID = 0L;
       return value;
     }
 
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static ContinuousAnalysis valueOf(int value) {
       return forNumber(value);
@@ -194,10 +219,14 @@ private static final long serialVersionUID = 0L;
 
     public static ContinuousAnalysis forNumber(int value) {
       switch (value) {
-        case 0: return CONTINUOUS_ANALYSIS_UNSPECIFIED;
-        case 1: return ACTIVE;
-        case 2: return INACTIVE;
-        default: return null;
+        case 0:
+          return CONTINUOUS_ANALYSIS_UNSPECIFIED;
+        case 1:
+          return ACTIVE;
+        case 2:
+          return INACTIVE;
+        default:
+          return null;
       }
     }
 
@@ -205,24 +234,24 @@ private static final long serialVersionUID = 0L;
         internalGetValueMap() {
       return internalValueMap;
     }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        ContinuousAnalysis> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<ContinuousAnalysis>() {
-            public ContinuousAnalysis findValueByNumber(int number) {
-              return ContinuousAnalysis.forNumber(number);
-            }
-          };
 
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
+    private static final com.google.protobuf.Internal.EnumLiteMap<ContinuousAnalysis>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<ContinuousAnalysis>() {
+              public ContinuousAnalysis findValueByNumber(int number) {
+                return ContinuousAnalysis.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
       return getDescriptor().getValues().get(ordinal());
     }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
       return getDescriptor();
     }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
       return io.grafeas.v1beta1.discovery.Discovered.getDescriptor().getEnumTypes().get(0);
     }
 
@@ -231,8 +260,7 @@ private static final long serialVersionUID = 0L;
     public static ContinuousAnalysis valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
         return UNRECOGNIZED;
@@ -250,6 +278,8 @@ private static final long serialVersionUID = 0L;
   }
 
   /**
+   *
+   *
    * <pre>
    * Analysis status for a resource. Currently for initial analysis only (not
    * updated in continuous analysis).
@@ -257,9 +287,10 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf enum {@code grafeas.v1beta1.discovery.Discovered.AnalysisStatus}
    */
-  public enum AnalysisStatus
-      implements com.google.protobuf.ProtocolMessageEnum {
+  public enum AnalysisStatus implements com.google.protobuf.ProtocolMessageEnum {
     /**
+     *
+     *
      * <pre>
      * Unknown.
      * </pre>
@@ -268,6 +299,8 @@ private static final long serialVersionUID = 0L;
      */
     ANALYSIS_STATUS_UNSPECIFIED(0),
     /**
+     *
+     *
      * <pre>
      * Resource is known but no action has been taken yet.
      * </pre>
@@ -276,6 +309,8 @@ private static final long serialVersionUID = 0L;
      */
     PENDING(1),
     /**
+     *
+     *
      * <pre>
      * Resource is being analyzed.
      * </pre>
@@ -284,6 +319,8 @@ private static final long serialVersionUID = 0L;
      */
     SCANNING(2),
     /**
+     *
+     *
      * <pre>
      * Analysis has finished successfully.
      * </pre>
@@ -292,6 +329,8 @@ private static final long serialVersionUID = 0L;
      */
     FINISHED_SUCCESS(3),
     /**
+     *
+     *
      * <pre>
      * Analysis has finished unsuccessfully, the analysis itself is in a bad
      * state.
@@ -301,6 +340,8 @@ private static final long serialVersionUID = 0L;
      */
     FINISHED_FAILED(4),
     /**
+     *
+     *
      * <pre>
      * The resource is known not to be supported
      * </pre>
@@ -312,6 +353,8 @@ private static final long serialVersionUID = 0L;
     ;
 
     /**
+     *
+     *
      * <pre>
      * Unknown.
      * </pre>
@@ -320,6 +363,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int ANALYSIS_STATUS_UNSPECIFIED_VALUE = 0;
     /**
+     *
+     *
      * <pre>
      * Resource is known but no action has been taken yet.
      * </pre>
@@ -328,6 +373,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int PENDING_VALUE = 1;
     /**
+     *
+     *
      * <pre>
      * Resource is being analyzed.
      * </pre>
@@ -336,6 +383,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int SCANNING_VALUE = 2;
     /**
+     *
+     *
      * <pre>
      * Analysis has finished successfully.
      * </pre>
@@ -344,6 +393,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int FINISHED_SUCCESS_VALUE = 3;
     /**
+     *
+     *
      * <pre>
      * Analysis has finished unsuccessfully, the analysis itself is in a bad
      * state.
@@ -353,6 +404,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int FINISHED_FAILED_VALUE = 4;
     /**
+     *
+     *
      * <pre>
      * The resource is known not to be supported
      * </pre>
@@ -360,7 +413,6 @@ private static final long serialVersionUID = 0L;
      * <code>FINISHED_UNSUPPORTED = 5;</code>
      */
     public static final int FINISHED_UNSUPPORTED_VALUE = 5;
-
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -370,9 +422,7 @@ private static final long serialVersionUID = 0L;
       return value;
     }
 
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static AnalysisStatus valueOf(int value) {
       return forNumber(value);
@@ -380,48 +430,51 @@ private static final long serialVersionUID = 0L;
 
     public static AnalysisStatus forNumber(int value) {
       switch (value) {
-        case 0: return ANALYSIS_STATUS_UNSPECIFIED;
-        case 1: return PENDING;
-        case 2: return SCANNING;
-        case 3: return FINISHED_SUCCESS;
-        case 4: return FINISHED_FAILED;
-        case 5: return FINISHED_UNSUPPORTED;
-        default: return null;
+        case 0:
+          return ANALYSIS_STATUS_UNSPECIFIED;
+        case 1:
+          return PENDING;
+        case 2:
+          return SCANNING;
+        case 3:
+          return FINISHED_SUCCESS;
+        case 4:
+          return FINISHED_FAILED;
+        case 5:
+          return FINISHED_UNSUPPORTED;
+        default:
+          return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<AnalysisStatus>
-        internalGetValueMap() {
+    public static com.google.protobuf.Internal.EnumLiteMap<AnalysisStatus> internalGetValueMap() {
       return internalValueMap;
     }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        AnalysisStatus> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<AnalysisStatus>() {
-            public AnalysisStatus findValueByNumber(int number) {
-              return AnalysisStatus.forNumber(number);
-            }
-          };
 
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
+    private static final com.google.protobuf.Internal.EnumLiteMap<AnalysisStatus> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<AnalysisStatus>() {
+          public AnalysisStatus findValueByNumber(int number) {
+            return AnalysisStatus.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
       return getDescriptor().getValues().get(ordinal());
     }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
       return getDescriptor();
     }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
       return io.grafeas.v1beta1.discovery.Discovered.getDescriptor().getEnumTypes().get(1);
     }
 
     private static final AnalysisStatus[] VALUES = values();
 
-    public static AnalysisStatus valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+    public static AnalysisStatus valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
         return UNRECOGNIZED;
@@ -441,6 +494,8 @@ private static final long serialVersionUID = 0L;
   public static final int CONTINUOUS_ANALYSIS_FIELD_NUMBER = 1;
   private int continuousAnalysis_;
   /**
+   *
+   *
    * <pre>
    * Whether the resource is continuously analyzed.
    * </pre>
@@ -451,6 +506,8 @@ private static final long serialVersionUID = 0L;
     return continuousAnalysis_;
   }
   /**
+   *
+   *
    * <pre>
    * Whether the resource is continuously analyzed.
    * </pre>
@@ -458,13 +515,19 @@ private static final long serialVersionUID = 0L;
    * <code>.grafeas.v1beta1.discovery.Discovered.ContinuousAnalysis continuous_analysis = 1;</code>
    */
   public io.grafeas.v1beta1.discovery.Discovered.ContinuousAnalysis getContinuousAnalysis() {
-    io.grafeas.v1beta1.discovery.Discovered.ContinuousAnalysis result = io.grafeas.v1beta1.discovery.Discovered.ContinuousAnalysis.valueOf(continuousAnalysis_);
-    return result == null ? io.grafeas.v1beta1.discovery.Discovered.ContinuousAnalysis.UNRECOGNIZED : result;
+    @SuppressWarnings("deprecation")
+    io.grafeas.v1beta1.discovery.Discovered.ContinuousAnalysis result =
+        io.grafeas.v1beta1.discovery.Discovered.ContinuousAnalysis.valueOf(continuousAnalysis_);
+    return result == null
+        ? io.grafeas.v1beta1.discovery.Discovered.ContinuousAnalysis.UNRECOGNIZED
+        : result;
   }
 
   public static final int LAST_ANALYSIS_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Timestamp lastAnalysisTime_;
   /**
+   *
+   *
    * <pre>
    * The last time continuous analysis was done for this resource.
    * </pre>
@@ -475,6 +538,8 @@ private static final long serialVersionUID = 0L;
     return lastAnalysisTime_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * The last time continuous analysis was done for this resource.
    * </pre>
@@ -482,9 +547,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp last_analysis_time = 2;</code>
    */
   public com.google.protobuf.Timestamp getLastAnalysisTime() {
-    return lastAnalysisTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : lastAnalysisTime_;
+    return lastAnalysisTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : lastAnalysisTime_;
   }
   /**
+   *
+   *
    * <pre>
    * The last time continuous analysis was done for this resource.
    * </pre>
@@ -498,6 +567,8 @@ private static final long serialVersionUID = 0L;
   public static final int ANALYSIS_STATUS_FIELD_NUMBER = 3;
   private int analysisStatus_;
   /**
+   *
+   *
    * <pre>
    * The status of discovery for the resource.
    * </pre>
@@ -508,6 +579,8 @@ private static final long serialVersionUID = 0L;
     return analysisStatus_;
   }
   /**
+   *
+   *
    * <pre>
    * The status of discovery for the resource.
    * </pre>
@@ -515,13 +588,19 @@ private static final long serialVersionUID = 0L;
    * <code>.grafeas.v1beta1.discovery.Discovered.AnalysisStatus analysis_status = 3;</code>
    */
   public io.grafeas.v1beta1.discovery.Discovered.AnalysisStatus getAnalysisStatus() {
-    io.grafeas.v1beta1.discovery.Discovered.AnalysisStatus result = io.grafeas.v1beta1.discovery.Discovered.AnalysisStatus.valueOf(analysisStatus_);
-    return result == null ? io.grafeas.v1beta1.discovery.Discovered.AnalysisStatus.UNRECOGNIZED : result;
+    @SuppressWarnings("deprecation")
+    io.grafeas.v1beta1.discovery.Discovered.AnalysisStatus result =
+        io.grafeas.v1beta1.discovery.Discovered.AnalysisStatus.valueOf(analysisStatus_);
+    return result == null
+        ? io.grafeas.v1beta1.discovery.Discovered.AnalysisStatus.UNRECOGNIZED
+        : result;
   }
 
   public static final int ANALYSIS_STATUS_ERROR_FIELD_NUMBER = 4;
   private com.google.rpc.Status analysisStatusError_;
   /**
+   *
+   *
    * <pre>
    * When an error is encountered this will contain a LocalizedMessage under
    * details to show to the user. The LocalizedMessage is output only and
@@ -534,6 +613,8 @@ private static final long serialVersionUID = 0L;
     return analysisStatusError_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * When an error is encountered this will contain a LocalizedMessage under
    * details to show to the user. The LocalizedMessage is output only and
@@ -543,9 +624,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.rpc.Status analysis_status_error = 4;</code>
    */
   public com.google.rpc.Status getAnalysisStatusError() {
-    return analysisStatusError_ == null ? com.google.rpc.Status.getDefaultInstance() : analysisStatusError_;
+    return analysisStatusError_ == null
+        ? com.google.rpc.Status.getDefaultInstance()
+        : analysisStatusError_;
   }
   /**
+   *
+   *
    * <pre>
    * When an error is encountered this will contain a LocalizedMessage under
    * details to show to the user. The LocalizedMessage is output only and
@@ -559,6 +644,8 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -568,15 +655,20 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
-    if (continuousAnalysis_ != io.grafeas.v1beta1.discovery.Discovered.ContinuousAnalysis.CONTINUOUS_ANALYSIS_UNSPECIFIED.getNumber()) {
+  @java.lang.Override
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+    if (continuousAnalysis_
+        != io.grafeas.v1beta1.discovery.Discovered.ContinuousAnalysis
+            .CONTINUOUS_ANALYSIS_UNSPECIFIED
+            .getNumber()) {
       output.writeEnum(1, continuousAnalysis_);
     }
     if (lastAnalysisTime_ != null) {
       output.writeMessage(2, getLastAnalysisTime());
     }
-    if (analysisStatus_ != io.grafeas.v1beta1.discovery.Discovered.AnalysisStatus.ANALYSIS_STATUS_UNSPECIFIED.getNumber()) {
+    if (analysisStatus_
+        != io.grafeas.v1beta1.discovery.Discovered.AnalysisStatus.ANALYSIS_STATUS_UNSPECIFIED
+            .getNumber()) {
       output.writeEnum(3, analysisStatus_);
     }
     if (analysisStatusError_ != null) {
@@ -585,26 +677,28 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
 
     size = 0;
-    if (continuousAnalysis_ != io.grafeas.v1beta1.discovery.Discovered.ContinuousAnalysis.CONTINUOUS_ANALYSIS_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(1, continuousAnalysis_);
+    if (continuousAnalysis_
+        != io.grafeas.v1beta1.discovery.Discovered.ContinuousAnalysis
+            .CONTINUOUS_ANALYSIS_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, continuousAnalysis_);
     }
     if (lastAnalysisTime_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getLastAnalysisTime());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getLastAnalysisTime());
     }
-    if (analysisStatus_ != io.grafeas.v1beta1.discovery.Discovered.AnalysisStatus.ANALYSIS_STATUS_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(3, analysisStatus_);
+    if (analysisStatus_
+        != io.grafeas.v1beta1.discovery.Discovered.AnalysisStatus.ANALYSIS_STATUS_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(3, analysisStatus_);
     }
     if (analysisStatusError_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, getAnalysisStatusError());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getAnalysisStatusError());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -614,7 +708,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof io.grafeas.v1beta1.discovery.Discovered)) {
       return super.equals(obj);
@@ -625,14 +719,12 @@ private static final long serialVersionUID = 0L;
     result = result && continuousAnalysis_ == other.continuousAnalysis_;
     result = result && (hasLastAnalysisTime() == other.hasLastAnalysisTime());
     if (hasLastAnalysisTime()) {
-      result = result && getLastAnalysisTime()
-          .equals(other.getLastAnalysisTime());
+      result = result && getLastAnalysisTime().equals(other.getLastAnalysisTime());
     }
     result = result && analysisStatus_ == other.analysisStatus_;
     result = result && (hasAnalysisStatusError() == other.hasAnalysisStatusError());
     if (hasAnalysisStatusError()) {
-      result = result && getAnalysisStatusError()
-          .equals(other.getAnalysisStatusError());
+      result = result && getAnalysisStatusError().equals(other.getAnalysisStatusError());
     }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
@@ -662,115 +754,127 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static io.grafeas.v1beta1.discovery.Discovered parseFrom(
-      java.nio.ByteBuffer data)
+  public static io.grafeas.v1beta1.discovery.Discovered parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static io.grafeas.v1beta1.discovery.Discovered parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static io.grafeas.v1beta1.discovery.Discovered parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static io.grafeas.v1beta1.discovery.Discovered parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static io.grafeas.v1beta1.discovery.Discovered parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static io.grafeas.v1beta1.discovery.Discovered parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static io.grafeas.v1beta1.discovery.Discovered parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static io.grafeas.v1beta1.discovery.Discovered parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static io.grafeas.v1beta1.discovery.Discovered parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
+
   public static io.grafeas.v1beta1.discovery.Discovered parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static io.grafeas.v1beta1.discovery.Discovered parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static io.grafeas.v1beta1.discovery.Discovered parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static io.grafeas.v1beta1.discovery.Discovered parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  public Builder newBuilderForType() { return newBuilder(); }
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-  public static Builder newBuilder(io.grafeas.v1beta1.discovery.Discovered prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+
+  public static Builder newBuilder(io.grafeas.v1beta1.discovery.Discovered prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+
+  @java.lang.Override
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Provides information about the analysis status of a discovered resource.
    * </pre>
    *
    * Protobuf type {@code grafeas.v1beta1.discovery.Discovered}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:grafeas.v1beta1.discovery.Discovered)
       io.grafeas.v1beta1.discovery.DiscoveredOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return io.grafeas.v1beta1.discovery.DiscoveryOuterClass.internal_static_grafeas_v1beta1_discovery_Discovered_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return io.grafeas.v1beta1.discovery.DiscoveryOuterClass
+          .internal_static_grafeas_v1beta1_discovery_Discovered_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.grafeas.v1beta1.discovery.DiscoveryOuterClass.internal_static_grafeas_v1beta1_discovery_Discovered_fieldAccessorTable
+      return io.grafeas.v1beta1.discovery.DiscoveryOuterClass
+          .internal_static_grafeas_v1beta1_discovery_Discovered_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              io.grafeas.v1beta1.discovery.Discovered.class, io.grafeas.v1beta1.discovery.Discovered.Builder.class);
+              io.grafeas.v1beta1.discovery.Discovered.class,
+              io.grafeas.v1beta1.discovery.Discovered.Builder.class);
     }
 
     // Construct using io.grafeas.v1beta1.discovery.Discovered.newBuilder()
@@ -778,16 +882,16 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       continuousAnalysis_ = 0;
@@ -809,15 +913,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return io.grafeas.v1beta1.discovery.DiscoveryOuterClass.internal_static_grafeas_v1beta1_discovery_Discovered_descriptor;
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return io.grafeas.v1beta1.discovery.DiscoveryOuterClass
+          .internal_static_grafeas_v1beta1_discovery_Discovered_descriptor;
     }
 
+    @java.lang.Override
     public io.grafeas.v1beta1.discovery.Discovered getDefaultInstanceForType() {
       return io.grafeas.v1beta1.discovery.Discovered.getDefaultInstance();
     }
 
+    @java.lang.Override
     public io.grafeas.v1beta1.discovery.Discovered build() {
       io.grafeas.v1beta1.discovery.Discovered result = buildPartial();
       if (!result.isInitialized()) {
@@ -826,8 +933,10 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public io.grafeas.v1beta1.discovery.Discovered buildPartial() {
-      io.grafeas.v1beta1.discovery.Discovered result = new io.grafeas.v1beta1.discovery.Discovered(this);
+      io.grafeas.v1beta1.discovery.Discovered result =
+          new io.grafeas.v1beta1.discovery.Discovered(this);
       result.continuousAnalysis_ = continuousAnalysis_;
       if (lastAnalysisTimeBuilder_ == null) {
         result.lastAnalysisTime_ = lastAnalysisTime_;
@@ -844,35 +953,43 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+
+    @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+    @java.lang.Override
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+    @java.lang.Override
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
+    @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
+    @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof io.grafeas.v1beta1.discovery.Discovered) {
-        return mergeFrom((io.grafeas.v1beta1.discovery.Discovered)other);
+        return mergeFrom((io.grafeas.v1beta1.discovery.Discovered) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -898,10 +1015,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -922,21 +1041,27 @@ private static final long serialVersionUID = 0L;
 
     private int continuousAnalysis_ = 0;
     /**
+     *
+     *
      * <pre>
      * Whether the resource is continuously analyzed.
      * </pre>
      *
-     * <code>.grafeas.v1beta1.discovery.Discovered.ContinuousAnalysis continuous_analysis = 1;</code>
+     * <code>.grafeas.v1beta1.discovery.Discovered.ContinuousAnalysis continuous_analysis = 1;
+     * </code>
      */
     public int getContinuousAnalysisValue() {
       return continuousAnalysis_;
     }
     /**
+     *
+     *
      * <pre>
      * Whether the resource is continuously analyzed.
      * </pre>
      *
-     * <code>.grafeas.v1beta1.discovery.Discovered.ContinuousAnalysis continuous_analysis = 1;</code>
+     * <code>.grafeas.v1beta1.discovery.Discovered.ContinuousAnalysis continuous_analysis = 1;
+     * </code>
      */
     public Builder setContinuousAnalysisValue(int value) {
       continuousAnalysis_ = value;
@@ -944,41 +1069,55 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Whether the resource is continuously analyzed.
      * </pre>
      *
-     * <code>.grafeas.v1beta1.discovery.Discovered.ContinuousAnalysis continuous_analysis = 1;</code>
+     * <code>.grafeas.v1beta1.discovery.Discovered.ContinuousAnalysis continuous_analysis = 1;
+     * </code>
      */
     public io.grafeas.v1beta1.discovery.Discovered.ContinuousAnalysis getContinuousAnalysis() {
-      io.grafeas.v1beta1.discovery.Discovered.ContinuousAnalysis result = io.grafeas.v1beta1.discovery.Discovered.ContinuousAnalysis.valueOf(continuousAnalysis_);
-      return result == null ? io.grafeas.v1beta1.discovery.Discovered.ContinuousAnalysis.UNRECOGNIZED : result;
+      @SuppressWarnings("deprecation")
+      io.grafeas.v1beta1.discovery.Discovered.ContinuousAnalysis result =
+          io.grafeas.v1beta1.discovery.Discovered.ContinuousAnalysis.valueOf(continuousAnalysis_);
+      return result == null
+          ? io.grafeas.v1beta1.discovery.Discovered.ContinuousAnalysis.UNRECOGNIZED
+          : result;
     }
     /**
+     *
+     *
      * <pre>
      * Whether the resource is continuously analyzed.
      * </pre>
      *
-     * <code>.grafeas.v1beta1.discovery.Discovered.ContinuousAnalysis continuous_analysis = 1;</code>
+     * <code>.grafeas.v1beta1.discovery.Discovered.ContinuousAnalysis continuous_analysis = 1;
+     * </code>
      */
-    public Builder setContinuousAnalysis(io.grafeas.v1beta1.discovery.Discovered.ContinuousAnalysis value) {
+    public Builder setContinuousAnalysis(
+        io.grafeas.v1beta1.discovery.Discovered.ContinuousAnalysis value) {
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       continuousAnalysis_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Whether the resource is continuously analyzed.
      * </pre>
      *
-     * <code>.grafeas.v1beta1.discovery.Discovered.ContinuousAnalysis continuous_analysis = 1;</code>
+     * <code>.grafeas.v1beta1.discovery.Discovered.ContinuousAnalysis continuous_analysis = 1;
+     * </code>
      */
     public Builder clearContinuousAnalysis() {
-      
+
       continuousAnalysis_ = 0;
       onChanged();
       return this;
@@ -986,8 +1125,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Timestamp lastAnalysisTime_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> lastAnalysisTimeBuilder_;
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        lastAnalysisTimeBuilder_;
     /**
+     *
+     *
      * <pre>
      * The last time continuous analysis was done for this resource.
      * </pre>
@@ -998,6 +1142,8 @@ private static final long serialVersionUID = 0L;
       return lastAnalysisTimeBuilder_ != null || lastAnalysisTime_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * The last time continuous analysis was done for this resource.
      * </pre>
@@ -1006,12 +1152,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.Timestamp getLastAnalysisTime() {
       if (lastAnalysisTimeBuilder_ == null) {
-        return lastAnalysisTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : lastAnalysisTime_;
+        return lastAnalysisTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : lastAnalysisTime_;
       } else {
         return lastAnalysisTimeBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * The last time continuous analysis was done for this resource.
      * </pre>
@@ -1032,14 +1182,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The last time continuous analysis was done for this resource.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp last_analysis_time = 2;</code>
      */
-    public Builder setLastAnalysisTime(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
+    public Builder setLastAnalysisTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (lastAnalysisTimeBuilder_ == null) {
         lastAnalysisTime_ = builderForValue.build();
         onChanged();
@@ -1050,6 +1201,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The last time continuous analysis was done for this resource.
      * </pre>
@@ -1060,7 +1213,9 @@ private static final long serialVersionUID = 0L;
       if (lastAnalysisTimeBuilder_ == null) {
         if (lastAnalysisTime_ != null) {
           lastAnalysisTime_ =
-            com.google.protobuf.Timestamp.newBuilder(lastAnalysisTime_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Timestamp.newBuilder(lastAnalysisTime_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           lastAnalysisTime_ = value;
         }
@@ -1072,6 +1227,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The last time continuous analysis was done for this resource.
      * </pre>
@@ -1090,6 +1247,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The last time continuous analysis was done for this resource.
      * </pre>
@@ -1097,11 +1256,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp last_analysis_time = 2;</code>
      */
     public com.google.protobuf.Timestamp.Builder getLastAnalysisTimeBuilder() {
-      
+
       onChanged();
       return getLastAnalysisTimeFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * The last time continuous analysis was done for this resource.
      * </pre>
@@ -1112,11 +1273,14 @@ private static final long serialVersionUID = 0L;
       if (lastAnalysisTimeBuilder_ != null) {
         return lastAnalysisTimeBuilder_.getMessageOrBuilder();
       } else {
-        return lastAnalysisTime_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : lastAnalysisTime_;
+        return lastAnalysisTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : lastAnalysisTime_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The last time continuous analysis was done for this resource.
      * </pre>
@@ -1124,14 +1288,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp last_analysis_time = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
         getLastAnalysisTimeFieldBuilder() {
       if (lastAnalysisTimeBuilder_ == null) {
-        lastAnalysisTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getLastAnalysisTime(),
-                getParentForChildren(),
-                isClean());
+        lastAnalysisTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getLastAnalysisTime(), getParentForChildren(), isClean());
         lastAnalysisTime_ = null;
       }
       return lastAnalysisTimeBuilder_;
@@ -1139,6 +1306,8 @@ private static final long serialVersionUID = 0L;
 
     private int analysisStatus_ = 0;
     /**
+     *
+     *
      * <pre>
      * The status of discovery for the resource.
      * </pre>
@@ -1149,6 +1318,8 @@ private static final long serialVersionUID = 0L;
       return analysisStatus_;
     }
     /**
+     *
+     *
      * <pre>
      * The status of discovery for the resource.
      * </pre>
@@ -1161,6 +1332,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The status of discovery for the resource.
      * </pre>
@@ -1168,10 +1341,16 @@ private static final long serialVersionUID = 0L;
      * <code>.grafeas.v1beta1.discovery.Discovered.AnalysisStatus analysis_status = 3;</code>
      */
     public io.grafeas.v1beta1.discovery.Discovered.AnalysisStatus getAnalysisStatus() {
-      io.grafeas.v1beta1.discovery.Discovered.AnalysisStatus result = io.grafeas.v1beta1.discovery.Discovered.AnalysisStatus.valueOf(analysisStatus_);
-      return result == null ? io.grafeas.v1beta1.discovery.Discovered.AnalysisStatus.UNRECOGNIZED : result;
+      @SuppressWarnings("deprecation")
+      io.grafeas.v1beta1.discovery.Discovered.AnalysisStatus result =
+          io.grafeas.v1beta1.discovery.Discovered.AnalysisStatus.valueOf(analysisStatus_);
+      return result == null
+          ? io.grafeas.v1beta1.discovery.Discovered.AnalysisStatus.UNRECOGNIZED
+          : result;
     }
     /**
+     *
+     *
      * <pre>
      * The status of discovery for the resource.
      * </pre>
@@ -1182,12 +1361,14 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       analysisStatus_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The status of discovery for the resource.
      * </pre>
@@ -1195,7 +1376,7 @@ private static final long serialVersionUID = 0L;
      * <code>.grafeas.v1beta1.discovery.Discovered.AnalysisStatus analysis_status = 3;</code>
      */
     public Builder clearAnalysisStatus() {
-      
+
       analysisStatus_ = 0;
       onChanged();
       return this;
@@ -1203,8 +1384,11 @@ private static final long serialVersionUID = 0L;
 
     private com.google.rpc.Status analysisStatusError_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder> analysisStatusErrorBuilder_;
+            com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
+        analysisStatusErrorBuilder_;
     /**
+     *
+     *
      * <pre>
      * When an error is encountered this will contain a LocalizedMessage under
      * details to show to the user. The LocalizedMessage is output only and
@@ -1217,6 +1401,8 @@ private static final long serialVersionUID = 0L;
       return analysisStatusErrorBuilder_ != null || analysisStatusError_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * When an error is encountered this will contain a LocalizedMessage under
      * details to show to the user. The LocalizedMessage is output only and
@@ -1227,12 +1413,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.rpc.Status getAnalysisStatusError() {
       if (analysisStatusErrorBuilder_ == null) {
-        return analysisStatusError_ == null ? com.google.rpc.Status.getDefaultInstance() : analysisStatusError_;
+        return analysisStatusError_ == null
+            ? com.google.rpc.Status.getDefaultInstance()
+            : analysisStatusError_;
       } else {
         return analysisStatusErrorBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * When an error is encountered this will contain a LocalizedMessage under
      * details to show to the user. The LocalizedMessage is output only and
@@ -1255,6 +1445,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * When an error is encountered this will contain a LocalizedMessage under
      * details to show to the user. The LocalizedMessage is output only and
@@ -1263,8 +1455,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.rpc.Status analysis_status_error = 4;</code>
      */
-    public Builder setAnalysisStatusError(
-        com.google.rpc.Status.Builder builderForValue) {
+    public Builder setAnalysisStatusError(com.google.rpc.Status.Builder builderForValue) {
       if (analysisStatusErrorBuilder_ == null) {
         analysisStatusError_ = builderForValue.build();
         onChanged();
@@ -1275,6 +1466,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * When an error is encountered this will contain a LocalizedMessage under
      * details to show to the user. The LocalizedMessage is output only and
@@ -1287,7 +1480,9 @@ private static final long serialVersionUID = 0L;
       if (analysisStatusErrorBuilder_ == null) {
         if (analysisStatusError_ != null) {
           analysisStatusError_ =
-            com.google.rpc.Status.newBuilder(analysisStatusError_).mergeFrom(value).buildPartial();
+              com.google.rpc.Status.newBuilder(analysisStatusError_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           analysisStatusError_ = value;
         }
@@ -1299,6 +1494,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * When an error is encountered this will contain a LocalizedMessage under
      * details to show to the user. The LocalizedMessage is output only and
@@ -1319,6 +1516,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * When an error is encountered this will contain a LocalizedMessage under
      * details to show to the user. The LocalizedMessage is output only and
@@ -1328,11 +1527,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.rpc.Status analysis_status_error = 4;</code>
      */
     public com.google.rpc.Status.Builder getAnalysisStatusErrorBuilder() {
-      
+
       onChanged();
       return getAnalysisStatusErrorFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * When an error is encountered this will contain a LocalizedMessage under
      * details to show to the user. The LocalizedMessage is output only and
@@ -1345,11 +1546,14 @@ private static final long serialVersionUID = 0L;
       if (analysisStatusErrorBuilder_ != null) {
         return analysisStatusErrorBuilder_.getMessageOrBuilder();
       } else {
-        return analysisStatusError_ == null ?
-            com.google.rpc.Status.getDefaultInstance() : analysisStatusError_;
+        return analysisStatusError_ == null
+            ? com.google.rpc.Status.getDefaultInstance()
+            : analysisStatusError_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * When an error is encountered this will contain a LocalizedMessage under
      * details to show to the user. The LocalizedMessage is output only and
@@ -1359,34 +1563,37 @@ private static final long serialVersionUID = 0L;
      * <code>.google.rpc.Status analysis_status_error = 4;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder> 
+            com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
         getAnalysisStatusErrorFieldBuilder() {
       if (analysisStatusErrorBuilder_ == null) {
-        analysisStatusErrorBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>(
-                getAnalysisStatusError(),
-                getParentForChildren(),
-                isClean());
+        analysisStatusErrorBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.rpc.Status,
+                com.google.rpc.Status.Builder,
+                com.google.rpc.StatusOrBuilder>(
+                getAnalysisStatusError(), getParentForChildren(), isClean());
         analysisStatusError_ = null;
       }
       return analysisStatusErrorBuilder_;
     }
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+
+    @java.lang.Override
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
     }
-
 
     // @@protoc_insertion_point(builder_scope:grafeas.v1beta1.discovery.Discovered)
   }
 
   // @@protoc_insertion_point(class_scope:grafeas.v1beta1.discovery.Discovered)
   private static final io.grafeas.v1beta1.discovery.Discovered DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new io.grafeas.v1beta1.discovery.Discovered();
   }
@@ -1395,15 +1602,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<Discovered>
-      PARSER = new com.google.protobuf.AbstractParser<Discovered>() {
-    public Discovered parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Discovered(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<Discovered> PARSER =
+      new com.google.protobuf.AbstractParser<Discovered>() {
+        @java.lang.Override
+        public Discovered parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new Discovered(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<Discovered> parser() {
     return PARSER;
@@ -1414,9 +1622,8 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public io.grafeas.v1beta1.discovery.Discovered getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

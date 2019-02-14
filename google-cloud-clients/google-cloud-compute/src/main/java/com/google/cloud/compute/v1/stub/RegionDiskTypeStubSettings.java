@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -224,7 +224,9 @@ public class RegionDiskTypeStubSettings extends StubSettings<RegionDiskTypeStubS
 
             @Override
             public Iterable<DiskType> extractResources(RegionDiskTypeList payload) {
-              return payload.getItemsList();
+              return payload.getItemsList() != null
+                  ? payload.getItemsList()
+                  : ImmutableList.<DiskType>of();
             }
           };
 
@@ -232,7 +234,8 @@ public class RegionDiskTypeStubSettings extends StubSettings<RegionDiskTypeStubS
           ListRegionDiskTypesHttpRequest, RegionDiskTypeList, ListRegionDiskTypesPagedResponse>
       LIST_REGION_DISK_TYPES_PAGE_STR_FACT =
           new PagedListResponseFactory<
-              ListRegionDiskTypesHttpRequest, RegionDiskTypeList,
+              ListRegionDiskTypesHttpRequest,
+              RegionDiskTypeList,
               ListRegionDiskTypesPagedResponse>() {
             @Override
             public ApiFuture<ListRegionDiskTypesPagedResponse> getFuturePagedResponse(

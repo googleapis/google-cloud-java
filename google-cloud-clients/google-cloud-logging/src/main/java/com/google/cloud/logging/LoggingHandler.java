@@ -35,8 +35,8 @@ import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
 
 /**
- * A logging handler that outputs logs generated with {@link java.util.logging.Logger}
- * to Stackdriver Logging.
+ * A logging handler that outputs logs generated with {@link java.util.logging.Logger} to
+ * Stackdriver Logging.
  *
  * <p>Java logging levels (see {@link java.util.logging.Level}) are mapped to the following Google
  * Stackdriver Logging severities:
@@ -75,8 +75,8 @@ import java.util.logging.SimpleFormatter;
  *       When a log with this level is published, logs are transmitted to the Stackdriver Logging
  *       service (defaults to {@link LoggingLevel#ERROR}).
  *   <li>{@code com.google.cloud.logging.LoggingHandler.enhancers} specifies a comma separated list
- *       of {@link LoggingEnhancer} classes. This handler will call each enhancer list whenever it builds a
- *       {@link LogEntry} instance (defaults to empty list).
+ *       of {@link LoggingEnhancer} classes. This handler will call each enhancer list whenever it
+ *       builds a {@link LogEntry} instance (defaults to empty list).
  *   <li>{@code com.google.cloud.logging.LoggingHandler.resourceType} the type name to use when
  *       creating the default {@link MonitoredResource} (defaults to auto-detected resource type,
  *       else "global").
@@ -108,7 +108,7 @@ public class LoggingHandler extends Handler {
   // Logs with the same severity with the base could be more efficiently sent to Stackdriver.
   // Defaults to level of the handler or Level.FINEST if the handler is set to Level.ALL.
   // Currently there is no way to modify the base level, see
-  // https://github.com/GoogleCloudPlatform/google-cloud-java/issues/1740 .
+  // https://github.com/googleapis/google-cloud-java/issues/1740 .
   private final Level baseLevel;
 
   private volatile Level flushLevel;
@@ -182,8 +182,8 @@ public class LoggingHandler extends Handler {
               monitoredResource, config.getMonitoredResource(loggingOptions.getProjectId()));
       defaultWriteOptions =
           new WriteOption[] {
-          WriteOption.logName(logName),
-          WriteOption.resource(resource),
+            WriteOption.logName(logName),
+            WriteOption.resource(resource),
             WriteOption.labels(
                 ImmutableMap.of(
                     LEVEL_NAME_KEY,
@@ -197,8 +197,10 @@ public class LoggingHandler extends Handler {
 
       this.enhancers = new LinkedList<>();
 
-      List<LoggingEnhancer> enhancersParam = firstNonNull(enhancers,
-          firstNonNull(config.getEnhancers(), Collections.<LoggingEnhancer>emptyList()));
+      List<LoggingEnhancer> enhancersParam =
+          firstNonNull(
+              enhancers,
+              firstNonNull(config.getEnhancers(), Collections.<LoggingEnhancer>emptyList()));
 
       this.enhancers.addAll(enhancersParam);
 
@@ -289,6 +291,7 @@ public class LoggingHandler extends Handler {
 
   /**
    * Sets minimum logging level to log immediately and flush any pending writes.
+   *
    * @param flushLevel minimum log level to trigger flush
    */
   public void setFlushLevel(Level flushLevel) {
@@ -298,6 +301,7 @@ public class LoggingHandler extends Handler {
 
   /**
    * Sets synchronicity of logging writes. By default, writes are asynchronous.
+   *
    * @param synchronicity {@link Synchronicity}
    */
   public void setSynchronicity(Synchronicity synchronicity) {
@@ -350,9 +354,7 @@ public class LoggingHandler extends Handler {
     }
   }
 
-  /**
-   * Returns an instance of the logging service.
-   */
+  /** Returns an instance of the logging service. */
   private Logging getLogging() {
     if (logging == null) {
       synchronized (this) {

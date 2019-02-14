@@ -4,21 +4,24 @@
 package com.google.cloud.dialogflow.v2beta1;
 
 /**
+ *
+ *
  * <pre>
  * The request message for [EntityTypes.BatchCreateEntities][google.cloud.dialogflow.v2beta1.EntityTypes.BatchCreateEntities].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2beta1.BatchCreateEntitiesRequest}
  */
-public  final class BatchCreateEntitiesRequest extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class BatchCreateEntitiesRequest extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.BatchCreateEntitiesRequest)
     BatchCreateEntitiesRequestOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use BatchCreateEntitiesRequest.newBuilder() to construct.
   private BatchCreateEntitiesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private BatchCreateEntitiesRequest() {
     parent_ = "";
     entities_ = java.util.Collections.emptyList();
@@ -26,15 +29,18 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private BatchCreateEntitiesRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -46,41 +52,47 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            parent_ = s;
-            break;
-          }
-          case 18: {
-            if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-              entities_ = new java.util.ArrayList<com.google.cloud.dialogflow.v2beta1.EntityType.Entity>();
-              mutable_bitField0_ |= 0x00000002;
+              parent_ = s;
+              break;
             }
-            entities_.add(
-                input.readMessage(com.google.cloud.dialogflow.v2beta1.EntityType.Entity.parser(), extensionRegistry));
-            break;
-          }
-          case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 18:
+            {
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                entities_ =
+                    new java.util.ArrayList<
+                        com.google.cloud.dialogflow.v2beta1.EntityType.Entity>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              entities_.add(
+                  input.readMessage(
+                      com.google.cloud.dialogflow.v2beta1.EntityType.Entity.parser(),
+                      extensionRegistry));
+              break;
+            }
+          case 26:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            languageCode_ = s;
-            break;
-          }
+              languageCode_ = s;
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
         entities_ = java.util.Collections.unmodifiableList(entities_);
@@ -89,22 +101,28 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.dialogflow.v2beta1.EntityTypeProto.internal_static_google_cloud_dialogflow_v2beta1_BatchCreateEntitiesRequest_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.dialogflow.v2beta1.EntityTypeProto
+        .internal_static_google_cloud_dialogflow_v2beta1_BatchCreateEntitiesRequest_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.dialogflow.v2beta1.EntityTypeProto.internal_static_google_cloud_dialogflow_v2beta1_BatchCreateEntitiesRequest_fieldAccessorTable
+    return com.google.cloud.dialogflow.v2beta1.EntityTypeProto
+        .internal_static_google_cloud_dialogflow_v2beta1_BatchCreateEntitiesRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.dialogflow.v2beta1.BatchCreateEntitiesRequest.class, com.google.cloud.dialogflow.v2beta1.BatchCreateEntitiesRequest.Builder.class);
+            com.google.cloud.dialogflow.v2beta1.BatchCreateEntitiesRequest.class,
+            com.google.cloud.dialogflow.v2beta1.BatchCreateEntitiesRequest.Builder.class);
   }
 
   private int bitField0_;
   public static final int PARENT_FIELD_NUMBER = 1;
   private volatile java.lang.Object parent_;
   /**
+   *
+   *
    * <pre>
    * Required. The name of the entity type to create entities in. Format:
    * `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`.
@@ -117,14 +135,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       parent_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Required. The name of the entity type to create entities in. Format:
    * `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`.
@@ -132,13 +151,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string parent = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getParentBytes() {
+  public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       parent_ = b;
       return b;
     } else {
@@ -149,6 +166,8 @@ private static final long serialVersionUID = 0L;
   public static final int ENTITIES_FIELD_NUMBER = 2;
   private java.util.List<com.google.cloud.dialogflow.v2beta1.EntityType.Entity> entities_;
   /**
+   *
+   *
    * <pre>
    * Required. The collection of entities to create.
    * </pre>
@@ -159,17 +178,21 @@ private static final long serialVersionUID = 0L;
     return entities_;
   }
   /**
+   *
+   *
    * <pre>
    * Required. The collection of entities to create.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 2;</code>
    */
-  public java.util.List<? extends com.google.cloud.dialogflow.v2beta1.EntityType.EntityOrBuilder> 
+  public java.util.List<? extends com.google.cloud.dialogflow.v2beta1.EntityType.EntityOrBuilder>
       getEntitiesOrBuilderList() {
     return entities_;
   }
   /**
+   *
+   *
    * <pre>
    * Required. The collection of entities to create.
    * </pre>
@@ -180,6 +203,8 @@ private static final long serialVersionUID = 0L;
     return entities_.size();
   }
   /**
+   *
+   *
    * <pre>
    * Required. The collection of entities to create.
    * </pre>
@@ -190,6 +215,8 @@ private static final long serialVersionUID = 0L;
     return entities_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * Required. The collection of entities to create.
    * </pre>
@@ -204,6 +231,8 @@ private static final long serialVersionUID = 0L;
   public static final int LANGUAGE_CODE_FIELD_NUMBER = 3;
   private volatile java.lang.Object languageCode_;
   /**
+   *
+   *
    * <pre>
    * Optional. The language of entity synonyms defined in `entities`. If not
    * specified, the agent's default language is used.
@@ -219,14 +248,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       languageCode_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Optional. The language of entity synonyms defined in `entities`. If not
    * specified, the agent's default language is used.
@@ -237,13 +267,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string language_code = 3;</code>
    */
-  public com.google.protobuf.ByteString
-      getLanguageCodeBytes() {
+  public com.google.protobuf.ByteString getLanguageCodeBytes() {
     java.lang.Object ref = languageCode_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       languageCode_ = b;
       return b;
     } else {
@@ -252,6 +280,8 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -261,8 +291,8 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  @java.lang.Override
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getParentBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, parent_);
     }
@@ -275,6 +305,7 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -284,8 +315,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, parent_);
     }
     for (int i = 0; i < entities_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, entities_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, entities_.get(i));
     }
     if (!getLanguageCodeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, languageCode_);
@@ -298,20 +328,18 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.dialogflow.v2beta1.BatchCreateEntitiesRequest)) {
       return super.equals(obj);
     }
-    com.google.cloud.dialogflow.v2beta1.BatchCreateEntitiesRequest other = (com.google.cloud.dialogflow.v2beta1.BatchCreateEntitiesRequest) obj;
+    com.google.cloud.dialogflow.v2beta1.BatchCreateEntitiesRequest other =
+        (com.google.cloud.dialogflow.v2beta1.BatchCreateEntitiesRequest) obj;
 
     boolean result = true;
-    result = result && getParent()
-        .equals(other.getParent());
-    result = result && getEntitiesList()
-        .equals(other.getEntitiesList());
-    result = result && getLanguageCode()
-        .equals(other.getLanguageCode());
+    result = result && getParent().equals(other.getParent());
+    result = result && getEntitiesList().equals(other.getEntitiesList());
+    result = result && getLanguageCode().equals(other.getLanguageCode());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -337,114 +365,127 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.cloud.dialogflow.v2beta1.BatchCreateEntitiesRequest parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dialogflow.v2beta1.BatchCreateEntitiesRequest parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.dialogflow.v2beta1.BatchCreateEntitiesRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dialogflow.v2beta1.BatchCreateEntitiesRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.dialogflow.v2beta1.BatchCreateEntitiesRequest parseFrom(byte[] data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+
+  public static com.google.cloud.dialogflow.v2beta1.BatchCreateEntitiesRequest parseFrom(
+      byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dialogflow.v2beta1.BatchCreateEntitiesRequest parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.dialogflow.v2beta1.BatchCreateEntitiesRequest parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.dialogflow.v2beta1.BatchCreateEntitiesRequest parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.dialogflow.v2beta1.BatchCreateEntitiesRequest parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.cloud.dialogflow.v2beta1.BatchCreateEntitiesRequest parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.cloud.dialogflow.v2beta1.BatchCreateEntitiesRequest parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.dialogflow.v2beta1.BatchCreateEntitiesRequest parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.dialogflow.v2beta1.BatchCreateEntitiesRequest parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.dialogflow.v2beta1.BatchCreateEntitiesRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  public Builder newBuilderForType() { return newBuilder(); }
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-  public static Builder newBuilder(com.google.cloud.dialogflow.v2beta1.BatchCreateEntitiesRequest prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+
+  public static Builder newBuilder(
+      com.google.cloud.dialogflow.v2beta1.BatchCreateEntitiesRequest prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+
+  @java.lang.Override
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * The request message for [EntityTypes.BatchCreateEntities][google.cloud.dialogflow.v2beta1.EntityTypes.BatchCreateEntities].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2beta1.BatchCreateEntitiesRequest}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.v2beta1.BatchCreateEntitiesRequest)
       com.google.cloud.dialogflow.v2beta1.BatchCreateEntitiesRequestOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.dialogflow.v2beta1.EntityTypeProto.internal_static_google_cloud_dialogflow_v2beta1_BatchCreateEntitiesRequest_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dialogflow.v2beta1.EntityTypeProto
+          .internal_static_google_cloud_dialogflow_v2beta1_BatchCreateEntitiesRequest_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.dialogflow.v2beta1.EntityTypeProto.internal_static_google_cloud_dialogflow_v2beta1_BatchCreateEntitiesRequest_fieldAccessorTable
+      return com.google.cloud.dialogflow.v2beta1.EntityTypeProto
+          .internal_static_google_cloud_dialogflow_v2beta1_BatchCreateEntitiesRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.dialogflow.v2beta1.BatchCreateEntitiesRequest.class, com.google.cloud.dialogflow.v2beta1.BatchCreateEntitiesRequest.Builder.class);
+              com.google.cloud.dialogflow.v2beta1.BatchCreateEntitiesRequest.class,
+              com.google.cloud.dialogflow.v2beta1.BatchCreateEntitiesRequest.Builder.class);
     }
 
     // Construct using com.google.cloud.dialogflow.v2beta1.BatchCreateEntitiesRequest.newBuilder()
@@ -452,17 +493,18 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getEntitiesFieldBuilder();
       }
     }
+
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       parent_ = "";
@@ -478,15 +520,19 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.dialogflow.v2beta1.EntityTypeProto.internal_static_google_cloud_dialogflow_v2beta1_BatchCreateEntitiesRequest_descriptor;
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.dialogflow.v2beta1.EntityTypeProto
+          .internal_static_google_cloud_dialogflow_v2beta1_BatchCreateEntitiesRequest_descriptor;
     }
 
-    public com.google.cloud.dialogflow.v2beta1.BatchCreateEntitiesRequest getDefaultInstanceForType() {
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2beta1.BatchCreateEntitiesRequest
+        getDefaultInstanceForType() {
       return com.google.cloud.dialogflow.v2beta1.BatchCreateEntitiesRequest.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2beta1.BatchCreateEntitiesRequest build() {
       com.google.cloud.dialogflow.v2beta1.BatchCreateEntitiesRequest result = buildPartial();
       if (!result.isInitialized()) {
@@ -495,8 +541,10 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2beta1.BatchCreateEntitiesRequest buildPartial() {
-      com.google.cloud.dialogflow.v2beta1.BatchCreateEntitiesRequest result = new com.google.cloud.dialogflow.v2beta1.BatchCreateEntitiesRequest(this);
+      com.google.cloud.dialogflow.v2beta1.BatchCreateEntitiesRequest result =
+          new com.google.cloud.dialogflow.v2beta1.BatchCreateEntitiesRequest(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       result.parent_ = parent_;
@@ -515,35 +563,43 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+
+    @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+    @java.lang.Override
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+    @java.lang.Override
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
+    @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
+    @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.dialogflow.v2beta1.BatchCreateEntitiesRequest) {
-        return mergeFrom((com.google.cloud.dialogflow.v2beta1.BatchCreateEntitiesRequest)other);
+        return mergeFrom((com.google.cloud.dialogflow.v2beta1.BatchCreateEntitiesRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -551,7 +607,9 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.cloud.dialogflow.v2beta1.BatchCreateEntitiesRequest other) {
-      if (other == com.google.cloud.dialogflow.v2beta1.BatchCreateEntitiesRequest.getDefaultInstance()) return this;
+      if (other
+          == com.google.cloud.dialogflow.v2beta1.BatchCreateEntitiesRequest.getDefaultInstance())
+        return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
         onChanged();
@@ -574,9 +632,10 @@ private static final long serialVersionUID = 0L;
             entitiesBuilder_ = null;
             entities_ = other.entities_;
             bitField0_ = (bitField0_ & ~0x00000002);
-            entitiesBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getEntitiesFieldBuilder() : null;
+            entitiesBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getEntitiesFieldBuilder()
+                    : null;
           } else {
             entitiesBuilder_.addAllMessages(other.entities_);
           }
@@ -591,10 +650,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -603,7 +664,9 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.dialogflow.v2beta1.BatchCreateEntitiesRequest) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.cloud.dialogflow.v2beta1.BatchCreateEntitiesRequest)
+                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -612,10 +675,13 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
+     *
+     *
      * <pre>
      * Required. The name of the entity type to create entities in. Format:
      * `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`.
@@ -626,8 +692,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         parent_ = s;
         return s;
@@ -636,6 +701,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The name of the entity type to create entities in. Format:
      * `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`.
@@ -643,13 +710,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string parent = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getParentBytes() {
+    public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         parent_ = b;
         return b;
       } else {
@@ -657,6 +722,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The name of the entity type to create entities in. Format:
      * `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`.
@@ -664,17 +731,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string parent = 1;</code>
      */
-    public Builder setParent(
-        java.lang.String value) {
+    public Builder setParent(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       parent_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The name of the entity type to create entities in. Format:
      * `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`.
@@ -683,12 +751,14 @@ private static final long serialVersionUID = 0L;
      * <code>string parent = 1;</code>
      */
     public Builder clearParent() {
-      
+
       parent_ = getDefaultInstance().getParent();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The name of the entity type to create entities in. Format:
      * `projects/&lt;Project ID&gt;/agent/entityTypes/&lt;Entity Type ID&gt;`.
@@ -696,31 +766,38 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string parent = 1;</code>
      */
-    public Builder setParentBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       parent_ = value;
       onChanged();
       return this;
     }
 
     private java.util.List<com.google.cloud.dialogflow.v2beta1.EntityType.Entity> entities_ =
-      java.util.Collections.emptyList();
+        java.util.Collections.emptyList();
+
     private void ensureEntitiesIsMutable() {
       if (!((bitField0_ & 0x00000002) == 0x00000002)) {
-        entities_ = new java.util.ArrayList<com.google.cloud.dialogflow.v2beta1.EntityType.Entity>(entities_);
+        entities_ =
+            new java.util.ArrayList<com.google.cloud.dialogflow.v2beta1.EntityType.Entity>(
+                entities_);
         bitField0_ |= 0x00000002;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.dialogflow.v2beta1.EntityType.Entity, com.google.cloud.dialogflow.v2beta1.EntityType.Entity.Builder, com.google.cloud.dialogflow.v2beta1.EntityType.EntityOrBuilder> entitiesBuilder_;
+            com.google.cloud.dialogflow.v2beta1.EntityType.Entity,
+            com.google.cloud.dialogflow.v2beta1.EntityType.Entity.Builder,
+            com.google.cloud.dialogflow.v2beta1.EntityType.EntityOrBuilder>
+        entitiesBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * Required. The collection of entities to create.
      * </pre>
@@ -735,6 +812,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The collection of entities to create.
      * </pre>
@@ -749,6 +828,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The collection of entities to create.
      * </pre>
@@ -763,6 +844,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The collection of entities to create.
      * </pre>
@@ -784,6 +867,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The collection of entities to create.
      * </pre>
@@ -802,6 +887,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The collection of entities to create.
      * </pre>
@@ -822,6 +909,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The collection of entities to create.
      * </pre>
@@ -843,6 +932,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The collection of entities to create.
      * </pre>
@@ -861,6 +952,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The collection of entities to create.
      * </pre>
@@ -879,6 +972,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The collection of entities to create.
      * </pre>
@@ -886,11 +981,11 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 2;</code>
      */
     public Builder addAllEntities(
-        java.lang.Iterable<? extends com.google.cloud.dialogflow.v2beta1.EntityType.Entity> values) {
+        java.lang.Iterable<? extends com.google.cloud.dialogflow.v2beta1.EntityType.Entity>
+            values) {
       if (entitiesBuilder_ == null) {
         ensureEntitiesIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, entities_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, entities_);
         onChanged();
       } else {
         entitiesBuilder_.addAllMessages(values);
@@ -898,6 +993,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The collection of entities to create.
      * </pre>
@@ -915,6 +1012,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The collection of entities to create.
      * </pre>
@@ -932,6 +1031,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The collection of entities to create.
      * </pre>
@@ -943,6 +1044,8 @@ private static final long serialVersionUID = 0L;
       return getEntitiesFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * Required. The collection of entities to create.
      * </pre>
@@ -952,19 +1055,22 @@ private static final long serialVersionUID = 0L;
     public com.google.cloud.dialogflow.v2beta1.EntityType.EntityOrBuilder getEntitiesOrBuilder(
         int index) {
       if (entitiesBuilder_ == null) {
-        return entities_.get(index);  } else {
+        return entities_.get(index);
+      } else {
         return entitiesBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The collection of entities to create.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 2;</code>
      */
-    public java.util.List<? extends com.google.cloud.dialogflow.v2beta1.EntityType.EntityOrBuilder> 
-         getEntitiesOrBuilderList() {
+    public java.util.List<? extends com.google.cloud.dialogflow.v2beta1.EntityType.EntityOrBuilder>
+        getEntitiesOrBuilderList() {
       if (entitiesBuilder_ != null) {
         return entitiesBuilder_.getMessageOrBuilderList();
       } else {
@@ -972,6 +1078,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The collection of entities to create.
      * </pre>
@@ -979,10 +1087,12 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 2;</code>
      */
     public com.google.cloud.dialogflow.v2beta1.EntityType.Entity.Builder addEntitiesBuilder() {
-      return getEntitiesFieldBuilder().addBuilder(
-          com.google.cloud.dialogflow.v2beta1.EntityType.Entity.getDefaultInstance());
+      return getEntitiesFieldBuilder()
+          .addBuilder(com.google.cloud.dialogflow.v2beta1.EntityType.Entity.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Required. The collection of entities to create.
      * </pre>
@@ -991,26 +1101,35 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.dialogflow.v2beta1.EntityType.Entity.Builder addEntitiesBuilder(
         int index) {
-      return getEntitiesFieldBuilder().addBuilder(
-          index, com.google.cloud.dialogflow.v2beta1.EntityType.Entity.getDefaultInstance());
+      return getEntitiesFieldBuilder()
+          .addBuilder(
+              index, com.google.cloud.dialogflow.v2beta1.EntityType.Entity.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Required. The collection of entities to create.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2beta1.EntityType.Entity entities = 2;</code>
      */
-    public java.util.List<com.google.cloud.dialogflow.v2beta1.EntityType.Entity.Builder> 
-         getEntitiesBuilderList() {
+    public java.util.List<com.google.cloud.dialogflow.v2beta1.EntityType.Entity.Builder>
+        getEntitiesBuilderList() {
       return getEntitiesFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.dialogflow.v2beta1.EntityType.Entity, com.google.cloud.dialogflow.v2beta1.EntityType.Entity.Builder, com.google.cloud.dialogflow.v2beta1.EntityType.EntityOrBuilder> 
+            com.google.cloud.dialogflow.v2beta1.EntityType.Entity,
+            com.google.cloud.dialogflow.v2beta1.EntityType.Entity.Builder,
+            com.google.cloud.dialogflow.v2beta1.EntityType.EntityOrBuilder>
         getEntitiesFieldBuilder() {
       if (entitiesBuilder_ == null) {
-        entitiesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.cloud.dialogflow.v2beta1.EntityType.Entity, com.google.cloud.dialogflow.v2beta1.EntityType.Entity.Builder, com.google.cloud.dialogflow.v2beta1.EntityType.EntityOrBuilder>(
+        entitiesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.dialogflow.v2beta1.EntityType.Entity,
+                com.google.cloud.dialogflow.v2beta1.EntityType.Entity.Builder,
+                com.google.cloud.dialogflow.v2beta1.EntityType.EntityOrBuilder>(
                 entities_,
                 ((bitField0_ & 0x00000002) == 0x00000002),
                 getParentForChildren(),
@@ -1022,6 +1141,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object languageCode_ = "";
     /**
+     *
+     *
      * <pre>
      * Optional. The language of entity synonyms defined in `entities`. If not
      * specified, the agent's default language is used.
@@ -1035,8 +1156,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getLanguageCode() {
       java.lang.Object ref = languageCode_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         languageCode_ = s;
         return s;
@@ -1045,6 +1165,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The language of entity synonyms defined in `entities`. If not
      * specified, the agent's default language is used.
@@ -1055,13 +1177,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string language_code = 3;</code>
      */
-    public com.google.protobuf.ByteString
-        getLanguageCodeBytes() {
+    public com.google.protobuf.ByteString getLanguageCodeBytes() {
       java.lang.Object ref = languageCode_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         languageCode_ = b;
         return b;
       } else {
@@ -1069,6 +1189,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The language of entity synonyms defined in `entities`. If not
      * specified, the agent's default language is used.
@@ -1079,17 +1201,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string language_code = 3;</code>
      */
-    public Builder setLanguageCode(
-        java.lang.String value) {
+    public Builder setLanguageCode(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       languageCode_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The language of entity synonyms defined in `entities`. If not
      * specified, the agent's default language is used.
@@ -1101,12 +1224,14 @@ private static final long serialVersionUID = 0L;
      * <code>string language_code = 3;</code>
      */
     public Builder clearLanguageCode() {
-      
+
       languageCode_ = getDefaultInstance().getLanguageCode();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The language of entity synonyms defined in `entities`. If not
      * specified, the agent's default language is used.
@@ -1117,50 +1242,54 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string language_code = 3;</code>
      */
-    public Builder setLanguageCodeBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setLanguageCodeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       languageCode_ = value;
       onChanged();
       return this;
     }
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+
+    @java.lang.Override
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.v2beta1.BatchCreateEntitiesRequest)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.v2beta1.BatchCreateEntitiesRequest)
-  private static final com.google.cloud.dialogflow.v2beta1.BatchCreateEntitiesRequest DEFAULT_INSTANCE;
+  private static final com.google.cloud.dialogflow.v2beta1.BatchCreateEntitiesRequest
+      DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.dialogflow.v2beta1.BatchCreateEntitiesRequest();
   }
 
-  public static com.google.cloud.dialogflow.v2beta1.BatchCreateEntitiesRequest getDefaultInstance() {
+  public static com.google.cloud.dialogflow.v2beta1.BatchCreateEntitiesRequest
+      getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<BatchCreateEntitiesRequest>
-      PARSER = new com.google.protobuf.AbstractParser<BatchCreateEntitiesRequest>() {
-    public BatchCreateEntitiesRequest parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-        return new BatchCreateEntitiesRequest(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<BatchCreateEntitiesRequest> PARSER =
+      new com.google.protobuf.AbstractParser<BatchCreateEntitiesRequest>() {
+        @java.lang.Override
+        public BatchCreateEntitiesRequest parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new BatchCreateEntitiesRequest(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<BatchCreateEntitiesRequest> parser() {
     return PARSER;
@@ -1171,9 +1300,9 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
-  public com.google.cloud.dialogflow.v2beta1.BatchCreateEntitiesRequest getDefaultInstanceForType() {
+  @java.lang.Override
+  public com.google.cloud.dialogflow.v2beta1.BatchCreateEntitiesRequest
+      getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

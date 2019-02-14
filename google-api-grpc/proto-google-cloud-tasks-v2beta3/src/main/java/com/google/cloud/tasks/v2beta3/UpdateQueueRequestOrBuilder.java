@@ -3,11 +3,14 @@
 
 package com.google.cloud.tasks.v2beta3;
 
-public interface UpdateQueueRequestOrBuilder extends
+public interface UpdateQueueRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.tasks.v2beta3.UpdateQueueRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required.
    * The queue to create or update.
@@ -21,6 +24,8 @@ public interface UpdateQueueRequestOrBuilder extends
    */
   boolean hasQueue();
   /**
+   *
+   *
    * <pre>
    * Required.
    * The queue to create or update.
@@ -34,6 +39,8 @@ public interface UpdateQueueRequestOrBuilder extends
    */
   com.google.cloud.tasks.v2beta3.Queue getQueue();
   /**
+   *
+   *
    * <pre>
    * Required.
    * The queue to create or update.
@@ -48,6 +55,8 @@ public interface UpdateQueueRequestOrBuilder extends
   com.google.cloud.tasks.v2beta3.QueueOrBuilder getQueueOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * A mask used to specify which fields of the queue are being updated.
    * If empty, then all fields will be updated.
@@ -57,6 +66,8 @@ public interface UpdateQueueRequestOrBuilder extends
    */
   boolean hasUpdateMask();
   /**
+   *
+   *
    * <pre>
    * A mask used to specify which fields of the queue are being updated.
    * If empty, then all fields will be updated.
@@ -66,6 +77,8 @@ public interface UpdateQueueRequestOrBuilder extends
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**
+   *
+   *
    * <pre>
    * A mask used to specify which fields of the queue are being updated.
    * If empty, then all fields will be updated.

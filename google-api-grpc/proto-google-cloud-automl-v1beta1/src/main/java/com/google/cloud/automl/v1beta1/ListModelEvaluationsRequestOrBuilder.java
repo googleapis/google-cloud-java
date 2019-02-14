@@ -3,11 +3,14 @@
 
 package com.google.cloud.automl.v1beta1;
 
-public interface ListModelEvaluationsRequestOrBuilder extends
+public interface ListModelEvaluationsRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.automl.v1beta1.ListModelEvaluationsRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Resource name of the model to list the model evaluations for.
    * If modelId is set as "-", this will list model evaluations from across all
@@ -18,6 +21,8 @@ public interface ListModelEvaluationsRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * Resource name of the model to list the model evaluations for.
    * If modelId is set as "-", this will list model evaluations from across all
@@ -26,10 +31,11 @@ public interface ListModelEvaluationsRequestOrBuilder extends
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * An expression for filtering the results of the request.
    *   * `annotation_spec_id` - for =, !=  or existence. See example below for
@@ -45,6 +51,8 @@ public interface ListModelEvaluationsRequestOrBuilder extends
    */
   java.lang.String getFilter();
   /**
+   *
+   *
    * <pre>
    * An expression for filtering the results of the request.
    *   * `annotation_spec_id` - for =, !=  or existence. See example below for
@@ -58,10 +66,11 @@ public interface ListModelEvaluationsRequestOrBuilder extends
    *
    * <code>string filter = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getFilterBytes();
+  com.google.protobuf.ByteString getFilterBytes();
 
   /**
+   *
+   *
    * <pre>
    * Requested page size.
    * </pre>
@@ -71,6 +80,8 @@ public interface ListModelEvaluationsRequestOrBuilder extends
   int getPageSize();
 
   /**
+   *
+   *
    * <pre>
    * A token identifying a page of results for the server to return.
    * Typically obtained via
@@ -82,6 +93,8 @@ public interface ListModelEvaluationsRequestOrBuilder extends
    */
   java.lang.String getPageToken();
   /**
+   *
+   *
    * <pre>
    * A token identifying a page of results for the server to return.
    * Typically obtained via
@@ -91,6 +104,5 @@ public interface ListModelEvaluationsRequestOrBuilder extends
    *
    * <code>string page_token = 6;</code>
    */
-  com.google.protobuf.ByteString
-      getPageTokenBytes();
+  com.google.protobuf.ByteString getPageTokenBytes();
 }

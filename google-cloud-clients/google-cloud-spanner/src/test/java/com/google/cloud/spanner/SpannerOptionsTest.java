@@ -18,13 +18,9 @@ package com.google.cloud.spanner;
 
 import static com.google.common.truth.Truth.assertThat;
 
+import com.google.cloud.TransportOptions;
 import java.util.HashMap;
 import java.util.Map;
-
-import com.google.cloud.TransportOptions;
-
-import io.grpc.ManagedChannel;
-import io.grpc.netty.shaded.io.grpc.netty.NettyChannelBuilder;
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
@@ -36,26 +32,13 @@ import org.mockito.Mockito;
 @RunWith(JUnit4.class)
 public class SpannerOptionsTest {
 
-  @Rule
-  public ExpectedException thrown = ExpectedException.none();
-
-  private static class TestChannelFactory implements SpannerOptions.RpcChannelFactory {
-    @Override
-    public ManagedChannel newChannel(String host, int port) {
-      // Disable SSL to avoid a dependency on ALPN/NPN.
-      return NettyChannelBuilder.forAddress(host, port).usePlaintext(true).build();
-    }
-  }
+  @Rule public ExpectedException thrown = ExpectedException.none();
 
   @Test
   public void defaultBuilder() {
     // We need to set the project id since in test environment we cannot obtain a default project
     // id.
-    SpannerOptions options =
-        SpannerOptions.newBuilder()
-            .setProjectId("test-project")
-            .setRpcChannelFactory(new TestChannelFactory())
-            .build();
+    SpannerOptions options = SpannerOptions.newBuilder().setProjectId("test-project").build();
     assertThat(options.getHost()).isEqualTo("https://spanner.googleapis.com");
     assertThat(options.getPrefetchChunks()).isEqualTo(4);
     assertThat(options.getSessionLabels()).isNull();
@@ -69,7 +52,6 @@ public class SpannerOptionsTest {
     labels.put("env", "dev");
     SpannerOptions options =
         SpannerOptions.newBuilder()
-            .setRpcChannelFactory(new TestChannelFactory())
             .setHost(host)
             .setProjectId(projectId)
             .setPrefetchChunks(2)

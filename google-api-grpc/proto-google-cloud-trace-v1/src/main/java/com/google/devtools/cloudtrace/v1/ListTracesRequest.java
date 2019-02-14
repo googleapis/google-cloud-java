@@ -4,6 +4,8 @@
 package com.google.devtools.cloudtrace.v1;
 
 /**
+ *
+ *
  * <pre>
  * The request message for the `ListTraces` method. All fields are required
  * unless specified.
@@ -11,15 +13,16 @@ package com.google.devtools.cloudtrace.v1;
  *
  * Protobuf type {@code google.devtools.cloudtrace.v1.ListTracesRequest}
  */
-public  final class ListTracesRequest extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class ListTracesRequest extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.devtools.cloudtrace.v1.ListTracesRequest)
     ListTracesRequestOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use ListTracesRequest.newBuilder() to construct.
   private ListTracesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private ListTracesRequest() {
     projectId_ = "";
     view_ = 0;
@@ -30,15 +33,18 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private ListTracesRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -50,108 +56,123 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              projectId_ = s;
+              break;
             }
-            break;
-          }
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 16:
+            {
+              int rawValue = input.readEnum();
 
-            projectId_ = s;
-            break;
-          }
-          case 16: {
-            int rawValue = input.readEnum();
-
-            view_ = rawValue;
-            break;
-          }
-          case 24: {
-
-            pageSize_ = input.readInt32();
-            break;
-          }
-          case 34: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            pageToken_ = s;
-            break;
-          }
-          case 42: {
-            com.google.protobuf.Timestamp.Builder subBuilder = null;
-            if (startTime_ != null) {
-              subBuilder = startTime_.toBuilder();
+              view_ = rawValue;
+              break;
             }
-            startTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(startTime_);
-              startTime_ = subBuilder.buildPartial();
+          case 24:
+            {
+              pageSize_ = input.readInt32();
+              break;
             }
+          case 34:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            break;
-          }
-          case 50: {
-            com.google.protobuf.Timestamp.Builder subBuilder = null;
-            if (endTime_ != null) {
-              subBuilder = endTime_.toBuilder();
+              pageToken_ = s;
+              break;
             }
-            endTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(endTime_);
-              endTime_ = subBuilder.buildPartial();
+          case 42:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (startTime_ != null) {
+                subBuilder = startTime_.toBuilder();
+              }
+              startTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(startTime_);
+                startTime_ = subBuilder.buildPartial();
+              }
+
+              break;
             }
+          case 50:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (endTime_ != null) {
+                subBuilder = endTime_.toBuilder();
+              }
+              endTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(endTime_);
+                endTime_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 58: {
-            java.lang.String s = input.readStringRequireUtf8();
+              break;
+            }
+          case 58:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            filter_ = s;
-            break;
-          }
-          case 66: {
-            java.lang.String s = input.readStringRequireUtf8();
+              filter_ = s;
+              break;
+            }
+          case 66:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            orderBy_ = s;
-            break;
-          }
+              orderBy_ = s;
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.devtools.cloudtrace.v1.TraceProto.internal_static_google_devtools_cloudtrace_v1_ListTracesRequest_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.devtools.cloudtrace.v1.TraceProto
+        .internal_static_google_devtools_cloudtrace_v1_ListTracesRequest_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.devtools.cloudtrace.v1.TraceProto.internal_static_google_devtools_cloudtrace_v1_ListTracesRequest_fieldAccessorTable
+    return com.google.devtools.cloudtrace.v1.TraceProto
+        .internal_static_google_devtools_cloudtrace_v1_ListTracesRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.devtools.cloudtrace.v1.ListTracesRequest.class, com.google.devtools.cloudtrace.v1.ListTracesRequest.Builder.class);
+            com.google.devtools.cloudtrace.v1.ListTracesRequest.class,
+            com.google.devtools.cloudtrace.v1.ListTracesRequest.Builder.class);
   }
 
   /**
+   *
+   *
    * <pre>
    * Type of data returned for traces in the list.
    * </pre>
    *
    * Protobuf enum {@code google.devtools.cloudtrace.v1.ListTracesRequest.ViewType}
    */
-  public enum ViewType
-      implements com.google.protobuf.ProtocolMessageEnum {
+  public enum ViewType implements com.google.protobuf.ProtocolMessageEnum {
     /**
+     *
+     *
      * <pre>
      * Default is `MINIMAL` if unspecified.
      * </pre>
@@ -160,6 +181,8 @@ private static final long serialVersionUID = 0L;
      */
     VIEW_TYPE_UNSPECIFIED(0),
     /**
+     *
+     *
      * <pre>
      * Minimal view of the trace record that contains only the project
      * and trace IDs.
@@ -169,6 +192,8 @@ private static final long serialVersionUID = 0L;
      */
     MINIMAL(1),
     /**
+     *
+     *
      * <pre>
      * Root span view of the trace record that returns the root spans along
      * with the minimal trace data.
@@ -178,6 +203,8 @@ private static final long serialVersionUID = 0L;
      */
     ROOTSPAN(2),
     /**
+     *
+     *
      * <pre>
      * Complete view of the trace record that contains the actual trace data.
      * This is equivalent to calling the REST `get` or RPC `GetTrace` method
@@ -191,6 +218,8 @@ private static final long serialVersionUID = 0L;
     ;
 
     /**
+     *
+     *
      * <pre>
      * Default is `MINIMAL` if unspecified.
      * </pre>
@@ -199,6 +228,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int VIEW_TYPE_UNSPECIFIED_VALUE = 0;
     /**
+     *
+     *
      * <pre>
      * Minimal view of the trace record that contains only the project
      * and trace IDs.
@@ -208,6 +239,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int MINIMAL_VALUE = 1;
     /**
+     *
+     *
      * <pre>
      * Root span view of the trace record that returns the root spans along
      * with the minimal trace data.
@@ -217,6 +250,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int ROOTSPAN_VALUE = 2;
     /**
+     *
+     *
      * <pre>
      * Complete view of the trace record that contains the actual trace data.
      * This is equivalent to calling the REST `get` or RPC `GetTrace` method
@@ -227,7 +262,6 @@ private static final long serialVersionUID = 0L;
      */
     public static final int COMPLETE_VALUE = 3;
 
-
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -236,9 +270,7 @@ private static final long serialVersionUID = 0L;
       return value;
     }
 
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static ViewType valueOf(int value) {
       return forNumber(value);
@@ -246,46 +278,49 @@ private static final long serialVersionUID = 0L;
 
     public static ViewType forNumber(int value) {
       switch (value) {
-        case 0: return VIEW_TYPE_UNSPECIFIED;
-        case 1: return MINIMAL;
-        case 2: return ROOTSPAN;
-        case 3: return COMPLETE;
-        default: return null;
+        case 0:
+          return VIEW_TYPE_UNSPECIFIED;
+        case 1:
+          return MINIMAL;
+        case 2:
+          return ROOTSPAN;
+        case 3:
+          return COMPLETE;
+        default:
+          return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<ViewType>
-        internalGetValueMap() {
+    public static com.google.protobuf.Internal.EnumLiteMap<ViewType> internalGetValueMap() {
       return internalValueMap;
     }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        ViewType> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<ViewType>() {
-            public ViewType findValueByNumber(int number) {
-              return ViewType.forNumber(number);
-            }
-          };
 
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
+    private static final com.google.protobuf.Internal.EnumLiteMap<ViewType> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<ViewType>() {
+          public ViewType findValueByNumber(int number) {
+            return ViewType.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
       return getDescriptor().getValues().get(ordinal());
     }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
       return getDescriptor();
     }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
-      return com.google.devtools.cloudtrace.v1.ListTracesRequest.getDescriptor().getEnumTypes().get(0);
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.devtools.cloudtrace.v1.ListTracesRequest.getDescriptor()
+          .getEnumTypes()
+          .get(0);
     }
 
     private static final ViewType[] VALUES = values();
 
-    public static ViewType valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+    public static ViewType valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
         return UNRECOGNIZED;
@@ -305,6 +340,8 @@ private static final long serialVersionUID = 0L;
   public static final int PROJECT_ID_FIELD_NUMBER = 1;
   private volatile java.lang.Object projectId_;
   /**
+   *
+   *
    * <pre>
    * ID of the Cloud project where the trace data is stored.
    * </pre>
@@ -316,27 +353,26 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       projectId_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * ID of the Cloud project where the trace data is stored.
    * </pre>
    *
    * <code>string project_id = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getProjectIdBytes() {
+  public com.google.protobuf.ByteString getProjectIdBytes() {
     java.lang.Object ref = projectId_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       projectId_ = b;
       return b;
     } else {
@@ -347,6 +383,8 @@ private static final long serialVersionUID = 0L;
   public static final int VIEW_FIELD_NUMBER = 2;
   private int view_;
   /**
+   *
+   *
    * <pre>
    * Type of data returned for traces in the list. Optional. Default is
    * `MINIMAL`.
@@ -358,6 +396,8 @@ private static final long serialVersionUID = 0L;
     return view_;
   }
   /**
+   *
+   *
    * <pre>
    * Type of data returned for traces in the list. Optional. Default is
    * `MINIMAL`.
@@ -366,13 +406,19 @@ private static final long serialVersionUID = 0L;
    * <code>.google.devtools.cloudtrace.v1.ListTracesRequest.ViewType view = 2;</code>
    */
   public com.google.devtools.cloudtrace.v1.ListTracesRequest.ViewType getView() {
-    com.google.devtools.cloudtrace.v1.ListTracesRequest.ViewType result = com.google.devtools.cloudtrace.v1.ListTracesRequest.ViewType.valueOf(view_);
-    return result == null ? com.google.devtools.cloudtrace.v1.ListTracesRequest.ViewType.UNRECOGNIZED : result;
+    @SuppressWarnings("deprecation")
+    com.google.devtools.cloudtrace.v1.ListTracesRequest.ViewType result =
+        com.google.devtools.cloudtrace.v1.ListTracesRequest.ViewType.valueOf(view_);
+    return result == null
+        ? com.google.devtools.cloudtrace.v1.ListTracesRequest.ViewType.UNRECOGNIZED
+        : result;
   }
 
   public static final int PAGE_SIZE_FIELD_NUMBER = 3;
   private int pageSize_;
   /**
+   *
+   *
    * <pre>
    * Maximum number of traces to return. If not specified or &lt;= 0, the
    * implementation selects a reasonable value.  The implementation may
@@ -388,6 +434,8 @@ private static final long serialVersionUID = 0L;
   public static final int PAGE_TOKEN_FIELD_NUMBER = 4;
   private volatile java.lang.Object pageToken_;
   /**
+   *
+   *
    * <pre>
    * Token identifying the page of results to return. If provided, use the
    * value of the `next_page_token` field from a previous request. Optional.
@@ -400,14 +448,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       pageToken_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Token identifying the page of results to return. If provided, use the
    * value of the `next_page_token` field from a previous request. Optional.
@@ -415,13 +464,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string page_token = 4;</code>
    */
-  public com.google.protobuf.ByteString
-      getPageTokenBytes() {
+  public com.google.protobuf.ByteString getPageTokenBytes() {
     java.lang.Object ref = pageToken_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       pageToken_ = b;
       return b;
     } else {
@@ -432,6 +479,8 @@ private static final long serialVersionUID = 0L;
   public static final int START_TIME_FIELD_NUMBER = 5;
   private com.google.protobuf.Timestamp startTime_;
   /**
+   *
+   *
    * <pre>
    * Start of the time interval (inclusive) during which the trace data was
    * collected from the application.
@@ -443,6 +492,8 @@ private static final long serialVersionUID = 0L;
     return startTime_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Start of the time interval (inclusive) during which the trace data was
    * collected from the application.
@@ -454,6 +505,8 @@ private static final long serialVersionUID = 0L;
     return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
   }
   /**
+   *
+   *
    * <pre>
    * Start of the time interval (inclusive) during which the trace data was
    * collected from the application.
@@ -468,6 +521,8 @@ private static final long serialVersionUID = 0L;
   public static final int END_TIME_FIELD_NUMBER = 6;
   private com.google.protobuf.Timestamp endTime_;
   /**
+   *
+   *
    * <pre>
    * End of the time interval (inclusive) during which the trace data was
    * collected from the application.
@@ -479,6 +534,8 @@ private static final long serialVersionUID = 0L;
     return endTime_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * End of the time interval (inclusive) during which the trace data was
    * collected from the application.
@@ -490,6 +547,8 @@ private static final long serialVersionUID = 0L;
     return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
   }
   /**
+   *
+   *
    * <pre>
    * End of the time interval (inclusive) during which the trace data was
    * collected from the application.
@@ -504,6 +563,8 @@ private static final long serialVersionUID = 0L;
   public static final int FILTER_FIELD_NUMBER = 7;
   private volatile java.lang.Object filter_;
   /**
+   *
+   *
    * <pre>
    * An optional filter against labels for the request.
    * By default, searches use prefix matching. To specify exact match, prepend
@@ -542,14 +603,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       filter_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * An optional filter against labels for the request.
    * By default, searches use prefix matching. To specify exact match, prepend
@@ -583,13 +645,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string filter = 7;</code>
    */
-  public com.google.protobuf.ByteString
-      getFilterBytes() {
+  public com.google.protobuf.ByteString getFilterBytes() {
     java.lang.Object ref = filter_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       filter_ = b;
       return b;
     } else {
@@ -600,6 +660,8 @@ private static final long serialVersionUID = 0L;
   public static final int ORDER_BY_FIELD_NUMBER = 8;
   private volatile java.lang.Object orderBy_;
   /**
+   *
+   *
    * <pre>
    * Field used to sort the returned traces. Optional.
    * Can be one of the following:
@@ -620,14 +682,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       orderBy_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Field used to sort the returned traces. Optional.
    * Can be one of the following:
@@ -643,13 +706,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string order_by = 8;</code>
    */
-  public com.google.protobuf.ByteString
-      getOrderByBytes() {
+  public com.google.protobuf.ByteString getOrderByBytes() {
     java.lang.Object ref = orderBy_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       orderBy_ = b;
       return b;
     } else {
@@ -658,6 +719,8 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -667,12 +730,14 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  @java.lang.Override
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getProjectIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, projectId_);
     }
-    if (view_ != com.google.devtools.cloudtrace.v1.ListTracesRequest.ViewType.VIEW_TYPE_UNSPECIFIED.getNumber()) {
+    if (view_
+        != com.google.devtools.cloudtrace.v1.ListTracesRequest.ViewType.VIEW_TYPE_UNSPECIFIED
+            .getNumber()) {
       output.writeEnum(2, view_);
     }
     if (pageSize_ != 0) {
@@ -696,6 +761,7 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -704,24 +770,22 @@ private static final long serialVersionUID = 0L;
     if (!getProjectIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, projectId_);
     }
-    if (view_ != com.google.devtools.cloudtrace.v1.ListTracesRequest.ViewType.VIEW_TYPE_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(2, view_);
+    if (view_
+        != com.google.devtools.cloudtrace.v1.ListTracesRequest.ViewType.VIEW_TYPE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, view_);
     }
     if (pageSize_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(3, pageSize_);
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(3, pageSize_);
     }
     if (!getPageTokenBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, pageToken_);
     }
     if (startTime_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(5, getStartTime());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getStartTime());
     }
     if (endTime_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(6, getEndTime());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getEndTime());
     }
     if (!getFilterBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, filter_);
@@ -737,35 +801,29 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.devtools.cloudtrace.v1.ListTracesRequest)) {
       return super.equals(obj);
     }
-    com.google.devtools.cloudtrace.v1.ListTracesRequest other = (com.google.devtools.cloudtrace.v1.ListTracesRequest) obj;
+    com.google.devtools.cloudtrace.v1.ListTracesRequest other =
+        (com.google.devtools.cloudtrace.v1.ListTracesRequest) obj;
 
     boolean result = true;
-    result = result && getProjectId()
-        .equals(other.getProjectId());
+    result = result && getProjectId().equals(other.getProjectId());
     result = result && view_ == other.view_;
-    result = result && (getPageSize()
-        == other.getPageSize());
-    result = result && getPageToken()
-        .equals(other.getPageToken());
+    result = result && (getPageSize() == other.getPageSize());
+    result = result && getPageToken().equals(other.getPageToken());
     result = result && (hasStartTime() == other.hasStartTime());
     if (hasStartTime()) {
-      result = result && getStartTime()
-          .equals(other.getStartTime());
+      result = result && getStartTime().equals(other.getStartTime());
     }
     result = result && (hasEndTime() == other.hasEndTime());
     if (hasEndTime()) {
-      result = result && getEndTime()
-          .equals(other.getEndTime());
+      result = result && getEndTime().equals(other.getEndTime());
     }
-    result = result && getFilter()
-        .equals(other.getFilter());
-    result = result && getOrderBy()
-        .equals(other.getOrderBy());
+    result = result && getFilter().equals(other.getFilter());
+    result = result && getOrderBy().equals(other.getOrderBy());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -803,94 +861,103 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.devtools.cloudtrace.v1.ListTracesRequest parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.devtools.cloudtrace.v1.ListTracesRequest parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.devtools.cloudtrace.v1.ListTracesRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.devtools.cloudtrace.v1.ListTracesRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.devtools.cloudtrace.v1.ListTracesRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.devtools.cloudtrace.v1.ListTracesRequest parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.devtools.cloudtrace.v1.ListTracesRequest parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.devtools.cloudtrace.v1.ListTracesRequest parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.devtools.cloudtrace.v1.ListTracesRequest parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.devtools.cloudtrace.v1.ListTracesRequest parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.devtools.cloudtrace.v1.ListTracesRequest parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.devtools.cloudtrace.v1.ListTracesRequest parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.devtools.cloudtrace.v1.ListTracesRequest parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.devtools.cloudtrace.v1.ListTracesRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  public Builder newBuilderForType() { return newBuilder(); }
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-  public static Builder newBuilder(com.google.devtools.cloudtrace.v1.ListTracesRequest prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+
+  public static Builder newBuilder(com.google.devtools.cloudtrace.v1.ListTracesRequest prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+
+  @java.lang.Override
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * The request message for the `ListTraces` method. All fields are required
    * unless specified.
@@ -898,20 +965,23 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.devtools.cloudtrace.v1.ListTracesRequest}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.devtools.cloudtrace.v1.ListTracesRequest)
       com.google.devtools.cloudtrace.v1.ListTracesRequestOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.devtools.cloudtrace.v1.TraceProto.internal_static_google_devtools_cloudtrace_v1_ListTracesRequest_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.devtools.cloudtrace.v1.TraceProto
+          .internal_static_google_devtools_cloudtrace_v1_ListTracesRequest_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.devtools.cloudtrace.v1.TraceProto.internal_static_google_devtools_cloudtrace_v1_ListTracesRequest_fieldAccessorTable
+      return com.google.devtools.cloudtrace.v1.TraceProto
+          .internal_static_google_devtools_cloudtrace_v1_ListTracesRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.devtools.cloudtrace.v1.ListTracesRequest.class, com.google.devtools.cloudtrace.v1.ListTracesRequest.Builder.class);
+              com.google.devtools.cloudtrace.v1.ListTracesRequest.class,
+              com.google.devtools.cloudtrace.v1.ListTracesRequest.Builder.class);
     }
 
     // Construct using com.google.devtools.cloudtrace.v1.ListTracesRequest.newBuilder()
@@ -919,16 +989,16 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       projectId_ = "";
@@ -958,15 +1028,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.devtools.cloudtrace.v1.TraceProto.internal_static_google_devtools_cloudtrace_v1_ListTracesRequest_descriptor;
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.devtools.cloudtrace.v1.TraceProto
+          .internal_static_google_devtools_cloudtrace_v1_ListTracesRequest_descriptor;
     }
 
+    @java.lang.Override
     public com.google.devtools.cloudtrace.v1.ListTracesRequest getDefaultInstanceForType() {
       return com.google.devtools.cloudtrace.v1.ListTracesRequest.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.devtools.cloudtrace.v1.ListTracesRequest build() {
       com.google.devtools.cloudtrace.v1.ListTracesRequest result = buildPartial();
       if (!result.isInitialized()) {
@@ -975,8 +1048,10 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.devtools.cloudtrace.v1.ListTracesRequest buildPartial() {
-      com.google.devtools.cloudtrace.v1.ListTracesRequest result = new com.google.devtools.cloudtrace.v1.ListTracesRequest(this);
+      com.google.devtools.cloudtrace.v1.ListTracesRequest result =
+          new com.google.devtools.cloudtrace.v1.ListTracesRequest(this);
       result.projectId_ = projectId_;
       result.view_ = view_;
       result.pageSize_ = pageSize_;
@@ -997,35 +1072,43 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+
+    @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+    @java.lang.Override
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+    @java.lang.Override
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
+    @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
+    @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.devtools.cloudtrace.v1.ListTracesRequest) {
-        return mergeFrom((com.google.devtools.cloudtrace.v1.ListTracesRequest)other);
+        return mergeFrom((com.google.devtools.cloudtrace.v1.ListTracesRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -1033,7 +1116,8 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.devtools.cloudtrace.v1.ListTracesRequest other) {
-      if (other == com.google.devtools.cloudtrace.v1.ListTracesRequest.getDefaultInstance()) return this;
+      if (other == com.google.devtools.cloudtrace.v1.ListTracesRequest.getDefaultInstance())
+        return this;
       if (!other.getProjectId().isEmpty()) {
         projectId_ = other.projectId_;
         onChanged();
@@ -1067,10 +1151,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1079,7 +1165,8 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.devtools.cloudtrace.v1.ListTracesRequest) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.devtools.cloudtrace.v1.ListTracesRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -1091,6 +1178,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object projectId_ = "";
     /**
+     *
+     *
      * <pre>
      * ID of the Cloud project where the trace data is stored.
      * </pre>
@@ -1100,8 +1189,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getProjectId() {
       java.lang.Object ref = projectId_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         projectId_ = s;
         return s;
@@ -1110,19 +1198,19 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * ID of the Cloud project where the trace data is stored.
      * </pre>
      *
      * <code>string project_id = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getProjectIdBytes() {
+    public com.google.protobuf.ByteString getProjectIdBytes() {
       java.lang.Object ref = projectId_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         projectId_ = b;
         return b;
       } else {
@@ -1130,23 +1218,26 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * ID of the Cloud project where the trace data is stored.
      * </pre>
      *
      * <code>string project_id = 1;</code>
      */
-    public Builder setProjectId(
-        java.lang.String value) {
+    public Builder setProjectId(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       projectId_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * ID of the Cloud project where the trace data is stored.
      * </pre>
@@ -1154,25 +1245,26 @@ private static final long serialVersionUID = 0L;
      * <code>string project_id = 1;</code>
      */
     public Builder clearProjectId() {
-      
+
       projectId_ = getDefaultInstance().getProjectId();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * ID of the Cloud project where the trace data is stored.
      * </pre>
      *
      * <code>string project_id = 1;</code>
      */
-    public Builder setProjectIdBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setProjectIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       projectId_ = value;
       onChanged();
       return this;
@@ -1180,6 +1272,8 @@ private static final long serialVersionUID = 0L;
 
     private int view_ = 0;
     /**
+     *
+     *
      * <pre>
      * Type of data returned for traces in the list. Optional. Default is
      * `MINIMAL`.
@@ -1191,6 +1285,8 @@ private static final long serialVersionUID = 0L;
       return view_;
     }
     /**
+     *
+     *
      * <pre>
      * Type of data returned for traces in the list. Optional. Default is
      * `MINIMAL`.
@@ -1204,6 +1300,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Type of data returned for traces in the list. Optional. Default is
      * `MINIMAL`.
@@ -1212,10 +1310,16 @@ private static final long serialVersionUID = 0L;
      * <code>.google.devtools.cloudtrace.v1.ListTracesRequest.ViewType view = 2;</code>
      */
     public com.google.devtools.cloudtrace.v1.ListTracesRequest.ViewType getView() {
-      com.google.devtools.cloudtrace.v1.ListTracesRequest.ViewType result = com.google.devtools.cloudtrace.v1.ListTracesRequest.ViewType.valueOf(view_);
-      return result == null ? com.google.devtools.cloudtrace.v1.ListTracesRequest.ViewType.UNRECOGNIZED : result;
+      @SuppressWarnings("deprecation")
+      com.google.devtools.cloudtrace.v1.ListTracesRequest.ViewType result =
+          com.google.devtools.cloudtrace.v1.ListTracesRequest.ViewType.valueOf(view_);
+      return result == null
+          ? com.google.devtools.cloudtrace.v1.ListTracesRequest.ViewType.UNRECOGNIZED
+          : result;
     }
     /**
+     *
+     *
      * <pre>
      * Type of data returned for traces in the list. Optional. Default is
      * `MINIMAL`.
@@ -1227,12 +1331,14 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       view_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Type of data returned for traces in the list. Optional. Default is
      * `MINIMAL`.
@@ -1241,14 +1347,16 @@ private static final long serialVersionUID = 0L;
      * <code>.google.devtools.cloudtrace.v1.ListTracesRequest.ViewType view = 2;</code>
      */
     public Builder clearView() {
-      
+
       view_ = 0;
       onChanged();
       return this;
     }
 
-    private int pageSize_ ;
+    private int pageSize_;
     /**
+     *
+     *
      * <pre>
      * Maximum number of traces to return. If not specified or &lt;= 0, the
      * implementation selects a reasonable value.  The implementation may
@@ -1261,6 +1369,8 @@ private static final long serialVersionUID = 0L;
       return pageSize_;
     }
     /**
+     *
+     *
      * <pre>
      * Maximum number of traces to return. If not specified or &lt;= 0, the
      * implementation selects a reasonable value.  The implementation may
@@ -1270,12 +1380,14 @@ private static final long serialVersionUID = 0L;
      * <code>int32 page_size = 3;</code>
      */
     public Builder setPageSize(int value) {
-      
+
       pageSize_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Maximum number of traces to return. If not specified or &lt;= 0, the
      * implementation selects a reasonable value.  The implementation may
@@ -1285,7 +1397,7 @@ private static final long serialVersionUID = 0L;
      * <code>int32 page_size = 3;</code>
      */
     public Builder clearPageSize() {
-      
+
       pageSize_ = 0;
       onChanged();
       return this;
@@ -1293,6 +1405,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object pageToken_ = "";
     /**
+     *
+     *
      * <pre>
      * Token identifying the page of results to return. If provided, use the
      * value of the `next_page_token` field from a previous request. Optional.
@@ -1303,8 +1417,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getPageToken() {
       java.lang.Object ref = pageToken_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         pageToken_ = s;
         return s;
@@ -1313,6 +1426,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Token identifying the page of results to return. If provided, use the
      * value of the `next_page_token` field from a previous request. Optional.
@@ -1320,13 +1435,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string page_token = 4;</code>
      */
-    public com.google.protobuf.ByteString
-        getPageTokenBytes() {
+    public com.google.protobuf.ByteString getPageTokenBytes() {
       java.lang.Object ref = pageToken_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         pageToken_ = b;
         return b;
       } else {
@@ -1334,6 +1447,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Token identifying the page of results to return. If provided, use the
      * value of the `next_page_token` field from a previous request. Optional.
@@ -1341,17 +1456,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string page_token = 4;</code>
      */
-    public Builder setPageToken(
-        java.lang.String value) {
+    public Builder setPageToken(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       pageToken_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Token identifying the page of results to return. If provided, use the
      * value of the `next_page_token` field from a previous request. Optional.
@@ -1360,12 +1476,14 @@ private static final long serialVersionUID = 0L;
      * <code>string page_token = 4;</code>
      */
     public Builder clearPageToken() {
-      
+
       pageToken_ = getDefaultInstance().getPageToken();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Token identifying the page of results to return. If provided, use the
      * value of the `next_page_token` field from a previous request. Optional.
@@ -1373,13 +1491,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string page_token = 4;</code>
      */
-    public Builder setPageTokenBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setPageTokenBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       pageToken_ = value;
       onChanged();
       return this;
@@ -1387,8 +1504,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Timestamp startTime_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> startTimeBuilder_;
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        startTimeBuilder_;
     /**
+     *
+     *
      * <pre>
      * Start of the time interval (inclusive) during which the trace data was
      * collected from the application.
@@ -1400,6 +1522,8 @@ private static final long serialVersionUID = 0L;
       return startTimeBuilder_ != null || startTime_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Start of the time interval (inclusive) during which the trace data was
      * collected from the application.
@@ -1415,6 +1539,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Start of the time interval (inclusive) during which the trace data was
      * collected from the application.
@@ -1436,6 +1562,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Start of the time interval (inclusive) during which the trace data was
      * collected from the application.
@@ -1443,8 +1571,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.Timestamp start_time = 5;</code>
      */
-    public Builder setStartTime(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
+    public Builder setStartTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (startTimeBuilder_ == null) {
         startTime_ = builderForValue.build();
         onChanged();
@@ -1455,6 +1582,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Start of the time interval (inclusive) during which the trace data was
      * collected from the application.
@@ -1466,7 +1595,7 @@ private static final long serialVersionUID = 0L;
       if (startTimeBuilder_ == null) {
         if (startTime_ != null) {
           startTime_ =
-            com.google.protobuf.Timestamp.newBuilder(startTime_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Timestamp.newBuilder(startTime_).mergeFrom(value).buildPartial();
         } else {
           startTime_ = value;
         }
@@ -1478,6 +1607,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Start of the time interval (inclusive) during which the trace data was
      * collected from the application.
@@ -1497,6 +1628,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Start of the time interval (inclusive) during which the trace data was
      * collected from the application.
@@ -1505,11 +1638,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp start_time = 5;</code>
      */
     public com.google.protobuf.Timestamp.Builder getStartTimeBuilder() {
-      
+
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Start of the time interval (inclusive) during which the trace data was
      * collected from the application.
@@ -1521,11 +1656,12 @@ private static final long serialVersionUID = 0L;
       if (startTimeBuilder_ != null) {
         return startTimeBuilder_.getMessageOrBuilder();
       } else {
-        return startTime_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
+        return startTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : startTime_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Start of the time interval (inclusive) during which the trace data was
      * collected from the application.
@@ -1534,14 +1670,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp start_time = 5;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
         getStartTimeFieldBuilder() {
       if (startTimeBuilder_ == null) {
-        startTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getStartTime(),
-                getParentForChildren(),
-                isClean());
+        startTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getStartTime(), getParentForChildren(), isClean());
         startTime_ = null;
       }
       return startTimeBuilder_;
@@ -1549,8 +1688,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Timestamp endTime_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> endTimeBuilder_;
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        endTimeBuilder_;
     /**
+     *
+     *
      * <pre>
      * End of the time interval (inclusive) during which the trace data was
      * collected from the application.
@@ -1562,6 +1706,8 @@ private static final long serialVersionUID = 0L;
       return endTimeBuilder_ != null || endTime_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * End of the time interval (inclusive) during which the trace data was
      * collected from the application.
@@ -1577,6 +1723,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * End of the time interval (inclusive) during which the trace data was
      * collected from the application.
@@ -1598,6 +1746,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * End of the time interval (inclusive) during which the trace data was
      * collected from the application.
@@ -1605,8 +1755,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.Timestamp end_time = 6;</code>
      */
-    public Builder setEndTime(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
+    public Builder setEndTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (endTimeBuilder_ == null) {
         endTime_ = builderForValue.build();
         onChanged();
@@ -1617,6 +1766,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * End of the time interval (inclusive) during which the trace data was
      * collected from the application.
@@ -1628,7 +1779,7 @@ private static final long serialVersionUID = 0L;
       if (endTimeBuilder_ == null) {
         if (endTime_ != null) {
           endTime_ =
-            com.google.protobuf.Timestamp.newBuilder(endTime_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Timestamp.newBuilder(endTime_).mergeFrom(value).buildPartial();
         } else {
           endTime_ = value;
         }
@@ -1640,6 +1791,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * End of the time interval (inclusive) during which the trace data was
      * collected from the application.
@@ -1659,6 +1812,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * End of the time interval (inclusive) during which the trace data was
      * collected from the application.
@@ -1667,11 +1822,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp end_time = 6;</code>
      */
     public com.google.protobuf.Timestamp.Builder getEndTimeBuilder() {
-      
+
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * End of the time interval (inclusive) during which the trace data was
      * collected from the application.
@@ -1683,11 +1840,12 @@ private static final long serialVersionUID = 0L;
       if (endTimeBuilder_ != null) {
         return endTimeBuilder_.getMessageOrBuilder();
       } else {
-        return endTime_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
+        return endTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : endTime_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * End of the time interval (inclusive) during which the trace data was
      * collected from the application.
@@ -1696,14 +1854,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp end_time = 6;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
         getEndTimeFieldBuilder() {
       if (endTimeBuilder_ == null) {
-        endTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getEndTime(),
-                getParentForChildren(),
-                isClean());
+        endTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getEndTime(), getParentForChildren(), isClean());
         endTime_ = null;
       }
       return endTimeBuilder_;
@@ -1711,6 +1872,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object filter_ = "";
     /**
+     *
+     *
      * <pre>
      * An optional filter against labels for the request.
      * By default, searches use prefix matching. To specify exact match, prepend
@@ -1747,8 +1910,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getFilter() {
       java.lang.Object ref = filter_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         filter_ = s;
         return s;
@@ -1757,6 +1919,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * An optional filter against labels for the request.
      * By default, searches use prefix matching. To specify exact match, prepend
@@ -1790,13 +1954,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string filter = 7;</code>
      */
-    public com.google.protobuf.ByteString
-        getFilterBytes() {
+    public com.google.protobuf.ByteString getFilterBytes() {
       java.lang.Object ref = filter_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         filter_ = b;
         return b;
       } else {
@@ -1804,6 +1966,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * An optional filter against labels for the request.
      * By default, searches use prefix matching. To specify exact match, prepend
@@ -1837,17 +2001,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string filter = 7;</code>
      */
-    public Builder setFilter(
-        java.lang.String value) {
+    public Builder setFilter(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       filter_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * An optional filter against labels for the request.
      * By default, searches use prefix matching. To specify exact match, prepend
@@ -1882,12 +2047,14 @@ private static final long serialVersionUID = 0L;
      * <code>string filter = 7;</code>
      */
     public Builder clearFilter() {
-      
+
       filter_ = getDefaultInstance().getFilter();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * An optional filter against labels for the request.
      * By default, searches use prefix matching. To specify exact match, prepend
@@ -1921,13 +2088,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string filter = 7;</code>
      */
-    public Builder setFilterBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setFilterBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       filter_ = value;
       onChanged();
       return this;
@@ -1935,6 +2101,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object orderBy_ = "";
     /**
+     *
+     *
      * <pre>
      * Field used to sort the returned traces. Optional.
      * Can be one of the following:
@@ -1953,8 +2121,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getOrderBy() {
       java.lang.Object ref = orderBy_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         orderBy_ = s;
         return s;
@@ -1963,6 +2130,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Field used to sort the returned traces. Optional.
      * Can be one of the following:
@@ -1978,13 +2147,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string order_by = 8;</code>
      */
-    public com.google.protobuf.ByteString
-        getOrderByBytes() {
+    public com.google.protobuf.ByteString getOrderByBytes() {
       java.lang.Object ref = orderBy_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         orderBy_ = b;
         return b;
       } else {
@@ -1992,6 +2159,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Field used to sort the returned traces. Optional.
      * Can be one of the following:
@@ -2007,17 +2176,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string order_by = 8;</code>
      */
-    public Builder setOrderBy(
-        java.lang.String value) {
+    public Builder setOrderBy(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       orderBy_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Field used to sort the returned traces. Optional.
      * Can be one of the following:
@@ -2034,12 +2204,14 @@ private static final long serialVersionUID = 0L;
      * <code>string order_by = 8;</code>
      */
     public Builder clearOrderBy() {
-      
+
       orderBy_ = getDefaultInstance().getOrderBy();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Field used to sort the returned traces. Optional.
      * Can be one of the following:
@@ -2055,33 +2227,34 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string order_by = 8;</code>
      */
-    public Builder setOrderByBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setOrderByBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       orderBy_ = value;
       onChanged();
       return this;
     }
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+
+    @java.lang.Override
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
     }
-
 
     // @@protoc_insertion_point(builder_scope:google.devtools.cloudtrace.v1.ListTracesRequest)
   }
 
   // @@protoc_insertion_point(class_scope:google.devtools.cloudtrace.v1.ListTracesRequest)
   private static final com.google.devtools.cloudtrace.v1.ListTracesRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.devtools.cloudtrace.v1.ListTracesRequest();
   }
@@ -2090,15 +2263,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ListTracesRequest>
-      PARSER = new com.google.protobuf.AbstractParser<ListTracesRequest>() {
-    public ListTracesRequest parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ListTracesRequest(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<ListTracesRequest> PARSER =
+      new com.google.protobuf.AbstractParser<ListTracesRequest>() {
+        @java.lang.Override
+        public ListTracesRequest parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new ListTracesRequest(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<ListTracesRequest> parser() {
     return PARSER;
@@ -2109,9 +2283,8 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.devtools.cloudtrace.v1.ListTracesRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

@@ -3,11 +3,14 @@
 
 package com.google.bigtable.v2;
 
-public interface CheckAndMutateRowRequestOrBuilder extends
+public interface CheckAndMutateRowRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.bigtable.v2.CheckAndMutateRowRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The unique name of the table to which the conditional mutation should be
    * applied.
@@ -19,6 +22,8 @@ public interface CheckAndMutateRowRequestOrBuilder extends
    */
   java.lang.String getTableName();
   /**
+   *
+   *
    * <pre>
    * The unique name of the table to which the conditional mutation should be
    * applied.
@@ -28,10 +33,11 @@ public interface CheckAndMutateRowRequestOrBuilder extends
    *
    * <code>string table_name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getTableNameBytes();
+  com.google.protobuf.ByteString getTableNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * This value specifies routing for replication. If not specified, the
    * "default" application profile will be used.
@@ -41,6 +47,8 @@ public interface CheckAndMutateRowRequestOrBuilder extends
    */
   java.lang.String getAppProfileId();
   /**
+   *
+   *
    * <pre>
    * This value specifies routing for replication. If not specified, the
    * "default" application profile will be used.
@@ -48,10 +56,11 @@ public interface CheckAndMutateRowRequestOrBuilder extends
    *
    * <code>string app_profile_id = 7;</code>
    */
-  com.google.protobuf.ByteString
-      getAppProfileIdBytes();
+  com.google.protobuf.ByteString getAppProfileIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * The key of the row to which the conditional mutation should be applied.
    * </pre>
@@ -61,6 +70,8 @@ public interface CheckAndMutateRowRequestOrBuilder extends
   com.google.protobuf.ByteString getRowKey();
 
   /**
+   *
+   *
    * <pre>
    * The filter to be applied to the contents of the specified row. Depending
    * on whether or not any results are yielded, either `true_mutations` or
@@ -72,6 +83,8 @@ public interface CheckAndMutateRowRequestOrBuilder extends
    */
   boolean hasPredicateFilter();
   /**
+   *
+   *
    * <pre>
    * The filter to be applied to the contents of the specified row. Depending
    * on whether or not any results are yielded, either `true_mutations` or
@@ -83,6 +96,8 @@ public interface CheckAndMutateRowRequestOrBuilder extends
    */
   com.google.bigtable.v2.RowFilter getPredicateFilter();
   /**
+   *
+   *
    * <pre>
    * The filter to be applied to the contents of the specified row. Depending
    * on whether or not any results are yielded, either `true_mutations` or
@@ -95,6 +110,8 @@ public interface CheckAndMutateRowRequestOrBuilder extends
   com.google.bigtable.v2.RowFilterOrBuilder getPredicateFilterOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Changes to be atomically applied to the specified row if `predicate_filter`
    * yields at least one cell when applied to `row_key`. Entries are applied in
@@ -105,9 +122,10 @@ public interface CheckAndMutateRowRequestOrBuilder extends
    *
    * <code>repeated .google.bigtable.v2.Mutation true_mutations = 4;</code>
    */
-  java.util.List<com.google.bigtable.v2.Mutation> 
-      getTrueMutationsList();
+  java.util.List<com.google.bigtable.v2.Mutation> getTrueMutationsList();
   /**
+   *
+   *
    * <pre>
    * Changes to be atomically applied to the specified row if `predicate_filter`
    * yields at least one cell when applied to `row_key`. Entries are applied in
@@ -120,6 +138,8 @@ public interface CheckAndMutateRowRequestOrBuilder extends
    */
   com.google.bigtable.v2.Mutation getTrueMutations(int index);
   /**
+   *
+   *
    * <pre>
    * Changes to be atomically applied to the specified row if `predicate_filter`
    * yields at least one cell when applied to `row_key`. Entries are applied in
@@ -132,6 +152,8 @@ public interface CheckAndMutateRowRequestOrBuilder extends
    */
   int getTrueMutationsCount();
   /**
+   *
+   *
    * <pre>
    * Changes to be atomically applied to the specified row if `predicate_filter`
    * yields at least one cell when applied to `row_key`. Entries are applied in
@@ -142,9 +164,11 @@ public interface CheckAndMutateRowRequestOrBuilder extends
    *
    * <code>repeated .google.bigtable.v2.Mutation true_mutations = 4;</code>
    */
-  java.util.List<? extends com.google.bigtable.v2.MutationOrBuilder> 
+  java.util.List<? extends com.google.bigtable.v2.MutationOrBuilder>
       getTrueMutationsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * Changes to be atomically applied to the specified row if `predicate_filter`
    * yields at least one cell when applied to `row_key`. Entries are applied in
@@ -155,10 +179,11 @@ public interface CheckAndMutateRowRequestOrBuilder extends
    *
    * <code>repeated .google.bigtable.v2.Mutation true_mutations = 4;</code>
    */
-  com.google.bigtable.v2.MutationOrBuilder getTrueMutationsOrBuilder(
-      int index);
+  com.google.bigtable.v2.MutationOrBuilder getTrueMutationsOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * Changes to be atomically applied to the specified row if `predicate_filter`
    * does not yield any cells when applied to `row_key`. Entries are applied in
@@ -169,9 +194,10 @@ public interface CheckAndMutateRowRequestOrBuilder extends
    *
    * <code>repeated .google.bigtable.v2.Mutation false_mutations = 5;</code>
    */
-  java.util.List<com.google.bigtable.v2.Mutation> 
-      getFalseMutationsList();
+  java.util.List<com.google.bigtable.v2.Mutation> getFalseMutationsList();
   /**
+   *
+   *
    * <pre>
    * Changes to be atomically applied to the specified row if `predicate_filter`
    * does not yield any cells when applied to `row_key`. Entries are applied in
@@ -184,6 +210,8 @@ public interface CheckAndMutateRowRequestOrBuilder extends
    */
   com.google.bigtable.v2.Mutation getFalseMutations(int index);
   /**
+   *
+   *
    * <pre>
    * Changes to be atomically applied to the specified row if `predicate_filter`
    * does not yield any cells when applied to `row_key`. Entries are applied in
@@ -196,6 +224,8 @@ public interface CheckAndMutateRowRequestOrBuilder extends
    */
   int getFalseMutationsCount();
   /**
+   *
+   *
    * <pre>
    * Changes to be atomically applied to the specified row if `predicate_filter`
    * does not yield any cells when applied to `row_key`. Entries are applied in
@@ -206,9 +236,11 @@ public interface CheckAndMutateRowRequestOrBuilder extends
    *
    * <code>repeated .google.bigtable.v2.Mutation false_mutations = 5;</code>
    */
-  java.util.List<? extends com.google.bigtable.v2.MutationOrBuilder> 
+  java.util.List<? extends com.google.bigtable.v2.MutationOrBuilder>
       getFalseMutationsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * Changes to be atomically applied to the specified row if `predicate_filter`
    * does not yield any cells when applied to `row_key`. Entries are applied in
@@ -219,6 +251,5 @@ public interface CheckAndMutateRowRequestOrBuilder extends
    *
    * <code>repeated .google.bigtable.v2.Mutation false_mutations = 5;</code>
    */
-  com.google.bigtable.v2.MutationOrBuilder getFalseMutationsOrBuilder(
-      int index);
+  com.google.bigtable.v2.MutationOrBuilder getFalseMutationsOrBuilder(int index);
 }

@@ -3,7 +3,7 @@
 
 package com.google.datastore.v1;
 
-public interface ReserveIdsResponseOrBuilder extends
+public interface ReserveIdsResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.datastore.v1.ReserveIdsResponse)
-    com.google.protobuf.MessageOrBuilder {
-}
+    com.google.protobuf.MessageOrBuilder {}

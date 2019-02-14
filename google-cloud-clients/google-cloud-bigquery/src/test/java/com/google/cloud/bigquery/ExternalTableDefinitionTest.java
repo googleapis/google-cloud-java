@@ -19,10 +19,8 @@ package com.google.cloud.bigquery;
 import static org.junit.Assert.assertEquals;
 
 import com.google.common.collect.ImmutableList;
-
-import org.junit.Test;
-
 import java.util.List;
+import org.junit.Test;
 
 public class ExternalTableDefinitionTest {
 
@@ -58,14 +56,13 @@ public class ExternalTableDefinitionTest {
 
   @Test
   public void testToBuilder() {
-    compareExternalTableDefinition(EXTERNAL_TABLE_DEFINITION,
-        EXTERNAL_TABLE_DEFINITION.toBuilder().build());
+    compareExternalTableDefinition(
+        EXTERNAL_TABLE_DEFINITION, EXTERNAL_TABLE_DEFINITION.toBuilder().build());
     ExternalTableDefinition externalTableDefinition =
         EXTERNAL_TABLE_DEFINITION.toBuilder().setCompression("NONE").build();
     assertEquals("NONE", externalTableDefinition.getCompression());
-    externalTableDefinition = externalTableDefinition.toBuilder()
-        .setCompression(COMPRESSION)
-        .build();
+    externalTableDefinition =
+        externalTableDefinition.toBuilder().setCompression(COMPRESSION).build();
     compareExternalTableDefinition(EXTERNAL_TABLE_DEFINITION, externalTableDefinition);
   }
 
@@ -88,19 +85,19 @@ public class ExternalTableDefinitionTest {
     assertEquals(AUTODETECT, EXTERNAL_TABLE_DEFINITION.getAutodetect());
   }
 
-
   @Test
   public void testToAndFromPb() {
-    compareExternalTableDefinition(EXTERNAL_TABLE_DEFINITION,
+    compareExternalTableDefinition(
+        EXTERNAL_TABLE_DEFINITION,
         ExternalTableDefinition.fromPb(EXTERNAL_TABLE_DEFINITION.toPb()));
     ExternalTableDefinition externalTableDefinition =
         ExternalTableDefinition.newBuilder(SOURCE_URIS, TABLE_SCHEMA, CSV_OPTIONS).build();
-    compareExternalTableDefinition(externalTableDefinition,
-        ExternalTableDefinition.fromPb(externalTableDefinition.toPb()));
+    compareExternalTableDefinition(
+        externalTableDefinition, ExternalTableDefinition.fromPb(externalTableDefinition.toPb()));
   }
 
-  private void compareExternalTableDefinition(ExternalTableDefinition expected,
-      ExternalTableDefinition value) {
+  private void compareExternalTableDefinition(
+      ExternalTableDefinition expected, ExternalTableDefinition value) {
     assertEquals(expected, value);
     assertEquals(expected.getCompression(), value.getCompression());
     assertEquals(expected.getFormatOptions(), value.getFormatOptions());

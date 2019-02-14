@@ -3,11 +3,14 @@
 
 package com.google.privacy.dlp.v2;
 
-public interface CryptoHashConfigOrBuilder extends
+public interface CryptoHashConfigOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.CryptoHashConfig)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The key used by the hash function.
    * </pre>
@@ -16,6 +19,8 @@ public interface CryptoHashConfigOrBuilder extends
    */
   boolean hasCryptoKey();
   /**
+   *
+   *
    * <pre>
    * The key used by the hash function.
    * </pre>
@@ -24,6 +29,8 @@ public interface CryptoHashConfigOrBuilder extends
    */
   com.google.privacy.dlp.v2.CryptoKey getCryptoKey();
   /**
+   *
+   *
    * <pre>
    * The key used by the hash function.
    * </pre>

@@ -4,21 +4,25 @@
 package com.google.monitoring.v3;
 
 /**
+ *
+ *
  * <pre>
  * The protocol for the `ListUptimeCheckConfigs` response.
  * </pre>
  *
  * Protobuf type {@code google.monitoring.v3.ListUptimeCheckConfigsResponse}
  */
-public  final class ListUptimeCheckConfigsResponse extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class ListUptimeCheckConfigsResponse extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.monitoring.v3.ListUptimeCheckConfigsResponse)
     ListUptimeCheckConfigsResponseOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use ListUptimeCheckConfigsResponse.newBuilder() to construct.
-  private ListUptimeCheckConfigsResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  private ListUptimeCheckConfigsResponse(
+      com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private ListUptimeCheckConfigsResponse() {
     uptimeCheckConfigs_ = java.util.Collections.emptyList();
     nextPageToken_ = "";
@@ -26,15 +30,18 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private ListUptimeCheckConfigsResponse(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -46,40 +53,43 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          case 10:
+            {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                uptimeCheckConfigs_ =
+                    new java.util.ArrayList<com.google.monitoring.v3.UptimeCheckConfig>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              uptimeCheckConfigs_.add(
+                  input.readMessage(
+                      com.google.monitoring.v3.UptimeCheckConfig.parser(), extensionRegistry));
+              break;
             }
-            break;
-          }
-          case 10: {
-            if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-              uptimeCheckConfigs_ = new java.util.ArrayList<com.google.monitoring.v3.UptimeCheckConfig>();
-              mutable_bitField0_ |= 0x00000001;
+          case 18:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              nextPageToken_ = s;
+              break;
             }
-            uptimeCheckConfigs_.add(
-                input.readMessage(com.google.monitoring.v3.UptimeCheckConfig.parser(), extensionRegistry));
-            break;
-          }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            nextPageToken_ = s;
-            break;
-          }
-          case 24: {
-
-            totalSize_ = input.readInt32();
-            break;
-          }
+          case 24:
+            {
+              totalSize_ = input.readInt32();
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
         uptimeCheckConfigs_ = java.util.Collections.unmodifiableList(uptimeCheckConfigs_);
@@ -88,22 +98,28 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.monitoring.v3.UptimeServiceProto.internal_static_google_monitoring_v3_ListUptimeCheckConfigsResponse_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.monitoring.v3.UptimeServiceProto
+        .internal_static_google_monitoring_v3_ListUptimeCheckConfigsResponse_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.monitoring.v3.UptimeServiceProto.internal_static_google_monitoring_v3_ListUptimeCheckConfigsResponse_fieldAccessorTable
+    return com.google.monitoring.v3.UptimeServiceProto
+        .internal_static_google_monitoring_v3_ListUptimeCheckConfigsResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.monitoring.v3.ListUptimeCheckConfigsResponse.class, com.google.monitoring.v3.ListUptimeCheckConfigsResponse.Builder.class);
+            com.google.monitoring.v3.ListUptimeCheckConfigsResponse.class,
+            com.google.monitoring.v3.ListUptimeCheckConfigsResponse.Builder.class);
   }
 
   private int bitField0_;
   public static final int UPTIME_CHECK_CONFIGS_FIELD_NUMBER = 1;
   private java.util.List<com.google.monitoring.v3.UptimeCheckConfig> uptimeCheckConfigs_;
   /**
+   *
+   *
    * <pre>
    * The returned uptime check configurations.
    * </pre>
@@ -114,17 +130,21 @@ private static final long serialVersionUID = 0L;
     return uptimeCheckConfigs_;
   }
   /**
+   *
+   *
    * <pre>
    * The returned uptime check configurations.
    * </pre>
    *
    * <code>repeated .google.monitoring.v3.UptimeCheckConfig uptime_check_configs = 1;</code>
    */
-  public java.util.List<? extends com.google.monitoring.v3.UptimeCheckConfigOrBuilder> 
+  public java.util.List<? extends com.google.monitoring.v3.UptimeCheckConfigOrBuilder>
       getUptimeCheckConfigsOrBuilderList() {
     return uptimeCheckConfigs_;
   }
   /**
+   *
+   *
    * <pre>
    * The returned uptime check configurations.
    * </pre>
@@ -135,6 +155,8 @@ private static final long serialVersionUID = 0L;
     return uptimeCheckConfigs_.size();
   }
   /**
+   *
+   *
    * <pre>
    * The returned uptime check configurations.
    * </pre>
@@ -145,6 +167,8 @@ private static final long serialVersionUID = 0L;
     return uptimeCheckConfigs_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * The returned uptime check configurations.
    * </pre>
@@ -159,6 +183,8 @@ private static final long serialVersionUID = 0L;
   public static final int NEXT_PAGE_TOKEN_FIELD_NUMBER = 2;
   private volatile java.lang.Object nextPageToken_;
   /**
+   *
+   *
    * <pre>
    * This field represents the pagination token to retrieve the next page of
    * results. If the value is empty, it means no further results for the
@@ -174,14 +200,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       nextPageToken_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * This field represents the pagination token to retrieve the next page of
    * results. If the value is empty, it means no further results for the
@@ -192,13 +219,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string next_page_token = 2;</code>
    */
-  public com.google.protobuf.ByteString
-      getNextPageTokenBytes() {
+  public com.google.protobuf.ByteString getNextPageTokenBytes() {
     java.lang.Object ref = nextPageToken_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       nextPageToken_ = b;
       return b;
     } else {
@@ -209,6 +234,8 @@ private static final long serialVersionUID = 0L;
   public static final int TOTAL_SIZE_FIELD_NUMBER = 3;
   private int totalSize_;
   /**
+   *
+   *
    * <pre>
    * The total number of uptime check configurations for the project,
    * irrespective of any pagination.
@@ -221,6 +248,8 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -230,8 +259,8 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  @java.lang.Override
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     for (int i = 0; i < uptimeCheckConfigs_.size(); i++) {
       output.writeMessage(1, uptimeCheckConfigs_.get(i));
     }
@@ -244,21 +273,21 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
 
     size = 0;
     for (int i = 0; i < uptimeCheckConfigs_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, uptimeCheckConfigs_.get(i));
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(1, uptimeCheckConfigs_.get(i));
     }
     if (!getNextPageTokenBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, nextPageToken_);
     }
     if (totalSize_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(3, totalSize_);
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(3, totalSize_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -268,20 +297,18 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.monitoring.v3.ListUptimeCheckConfigsResponse)) {
       return super.equals(obj);
     }
-    com.google.monitoring.v3.ListUptimeCheckConfigsResponse other = (com.google.monitoring.v3.ListUptimeCheckConfigsResponse) obj;
+    com.google.monitoring.v3.ListUptimeCheckConfigsResponse other =
+        (com.google.monitoring.v3.ListUptimeCheckConfigsResponse) obj;
 
     boolean result = true;
-    result = result && getUptimeCheckConfigsList()
-        .equals(other.getUptimeCheckConfigsList());
-    result = result && getNextPageToken()
-        .equals(other.getNextPageToken());
-    result = result && (getTotalSize()
-        == other.getTotalSize());
+    result = result && getUptimeCheckConfigsList().equals(other.getUptimeCheckConfigsList());
+    result = result && getNextPageToken().equals(other.getNextPageToken());
+    result = result && (getTotalSize() == other.getTotalSize());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -307,114 +334,127 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.monitoring.v3.ListUptimeCheckConfigsResponse parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.monitoring.v3.ListUptimeCheckConfigsResponse parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.monitoring.v3.ListUptimeCheckConfigsResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.monitoring.v3.ListUptimeCheckConfigsResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.monitoring.v3.ListUptimeCheckConfigsResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.monitoring.v3.ListUptimeCheckConfigsResponse parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.monitoring.v3.ListUptimeCheckConfigsResponse parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.monitoring.v3.ListUptimeCheckConfigsResponse parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.monitoring.v3.ListUptimeCheckConfigsResponse parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.monitoring.v3.ListUptimeCheckConfigsResponse parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.monitoring.v3.ListUptimeCheckConfigsResponse parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.monitoring.v3.ListUptimeCheckConfigsResponse parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.monitoring.v3.ListUptimeCheckConfigsResponse parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.monitoring.v3.ListUptimeCheckConfigsResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  public Builder newBuilderForType() { return newBuilder(); }
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-  public static Builder newBuilder(com.google.monitoring.v3.ListUptimeCheckConfigsResponse prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+
+  public static Builder newBuilder(
+      com.google.monitoring.v3.ListUptimeCheckConfigsResponse prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+
+  @java.lang.Override
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * The protocol for the `ListUptimeCheckConfigs` response.
    * </pre>
    *
    * Protobuf type {@code google.monitoring.v3.ListUptimeCheckConfigsResponse}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.monitoring.v3.ListUptimeCheckConfigsResponse)
       com.google.monitoring.v3.ListUptimeCheckConfigsResponseOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.monitoring.v3.UptimeServiceProto.internal_static_google_monitoring_v3_ListUptimeCheckConfigsResponse_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.monitoring.v3.UptimeServiceProto
+          .internal_static_google_monitoring_v3_ListUptimeCheckConfigsResponse_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.monitoring.v3.UptimeServiceProto.internal_static_google_monitoring_v3_ListUptimeCheckConfigsResponse_fieldAccessorTable
+      return com.google.monitoring.v3.UptimeServiceProto
+          .internal_static_google_monitoring_v3_ListUptimeCheckConfigsResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.monitoring.v3.ListUptimeCheckConfigsResponse.class, com.google.monitoring.v3.ListUptimeCheckConfigsResponse.Builder.class);
+              com.google.monitoring.v3.ListUptimeCheckConfigsResponse.class,
+              com.google.monitoring.v3.ListUptimeCheckConfigsResponse.Builder.class);
     }
 
     // Construct using com.google.monitoring.v3.ListUptimeCheckConfigsResponse.newBuilder()
@@ -422,17 +462,18 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getUptimeCheckConfigsFieldBuilder();
       }
     }
+
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       if (uptimeCheckConfigsBuilder_ == null) {
@@ -448,15 +489,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.monitoring.v3.UptimeServiceProto.internal_static_google_monitoring_v3_ListUptimeCheckConfigsResponse_descriptor;
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.monitoring.v3.UptimeServiceProto
+          .internal_static_google_monitoring_v3_ListUptimeCheckConfigsResponse_descriptor;
     }
 
+    @java.lang.Override
     public com.google.monitoring.v3.ListUptimeCheckConfigsResponse getDefaultInstanceForType() {
       return com.google.monitoring.v3.ListUptimeCheckConfigsResponse.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.monitoring.v3.ListUptimeCheckConfigsResponse build() {
       com.google.monitoring.v3.ListUptimeCheckConfigsResponse result = buildPartial();
       if (!result.isInitialized()) {
@@ -465,8 +509,10 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.monitoring.v3.ListUptimeCheckConfigsResponse buildPartial() {
-      com.google.monitoring.v3.ListUptimeCheckConfigsResponse result = new com.google.monitoring.v3.ListUptimeCheckConfigsResponse(this);
+      com.google.monitoring.v3.ListUptimeCheckConfigsResponse result =
+          new com.google.monitoring.v3.ListUptimeCheckConfigsResponse(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (uptimeCheckConfigsBuilder_ == null) {
@@ -485,35 +531,43 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+
+    @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+    @java.lang.Override
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+    @java.lang.Override
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
+    @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
+    @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.monitoring.v3.ListUptimeCheckConfigsResponse) {
-        return mergeFrom((com.google.monitoring.v3.ListUptimeCheckConfigsResponse)other);
+        return mergeFrom((com.google.monitoring.v3.ListUptimeCheckConfigsResponse) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -521,7 +575,8 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.monitoring.v3.ListUptimeCheckConfigsResponse other) {
-      if (other == com.google.monitoring.v3.ListUptimeCheckConfigsResponse.getDefaultInstance()) return this;
+      if (other == com.google.monitoring.v3.ListUptimeCheckConfigsResponse.getDefaultInstance())
+        return this;
       if (uptimeCheckConfigsBuilder_ == null) {
         if (!other.uptimeCheckConfigs_.isEmpty()) {
           if (uptimeCheckConfigs_.isEmpty()) {
@@ -540,9 +595,10 @@ private static final long serialVersionUID = 0L;
             uptimeCheckConfigsBuilder_ = null;
             uptimeCheckConfigs_ = other.uptimeCheckConfigs_;
             bitField0_ = (bitField0_ & ~0x00000001);
-            uptimeCheckConfigsBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getUptimeCheckConfigsFieldBuilder() : null;
+            uptimeCheckConfigsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getUptimeCheckConfigsFieldBuilder()
+                    : null;
           } else {
             uptimeCheckConfigsBuilder_.addAllMessages(other.uptimeCheckConfigs_);
           }
@@ -560,10 +616,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -572,7 +630,8 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.monitoring.v3.ListUptimeCheckConfigsResponse) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.monitoring.v3.ListUptimeCheckConfigsResponse) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -581,21 +640,30 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private java.util.List<com.google.monitoring.v3.UptimeCheckConfig> uptimeCheckConfigs_ =
-      java.util.Collections.emptyList();
+        java.util.Collections.emptyList();
+
     private void ensureUptimeCheckConfigsIsMutable() {
       if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-        uptimeCheckConfigs_ = new java.util.ArrayList<com.google.monitoring.v3.UptimeCheckConfig>(uptimeCheckConfigs_);
+        uptimeCheckConfigs_ =
+            new java.util.ArrayList<com.google.monitoring.v3.UptimeCheckConfig>(
+                uptimeCheckConfigs_);
         bitField0_ |= 0x00000001;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.monitoring.v3.UptimeCheckConfig, com.google.monitoring.v3.UptimeCheckConfig.Builder, com.google.monitoring.v3.UptimeCheckConfigOrBuilder> uptimeCheckConfigsBuilder_;
+            com.google.monitoring.v3.UptimeCheckConfig,
+            com.google.monitoring.v3.UptimeCheckConfig.Builder,
+            com.google.monitoring.v3.UptimeCheckConfigOrBuilder>
+        uptimeCheckConfigsBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * The returned uptime check configurations.
      * </pre>
@@ -610,6 +678,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The returned uptime check configurations.
      * </pre>
@@ -624,6 +694,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The returned uptime check configurations.
      * </pre>
@@ -638,6 +710,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The returned uptime check configurations.
      * </pre>
@@ -659,6 +733,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The returned uptime check configurations.
      * </pre>
@@ -677,6 +753,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The returned uptime check configurations.
      * </pre>
@@ -697,6 +775,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The returned uptime check configurations.
      * </pre>
@@ -718,6 +798,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The returned uptime check configurations.
      * </pre>
@@ -736,6 +818,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The returned uptime check configurations.
      * </pre>
@@ -754,6 +838,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The returned uptime check configurations.
      * </pre>
@@ -764,8 +850,7 @@ private static final long serialVersionUID = 0L;
         java.lang.Iterable<? extends com.google.monitoring.v3.UptimeCheckConfig> values) {
       if (uptimeCheckConfigsBuilder_ == null) {
         ensureUptimeCheckConfigsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, uptimeCheckConfigs_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, uptimeCheckConfigs_);
         onChanged();
       } else {
         uptimeCheckConfigsBuilder_.addAllMessages(values);
@@ -773,6 +858,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The returned uptime check configurations.
      * </pre>
@@ -790,6 +877,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The returned uptime check configurations.
      * </pre>
@@ -807,6 +896,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The returned uptime check configurations.
      * </pre>
@@ -818,6 +909,8 @@ private static final long serialVersionUID = 0L;
       return getUptimeCheckConfigsFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * The returned uptime check configurations.
      * </pre>
@@ -827,19 +920,22 @@ private static final long serialVersionUID = 0L;
     public com.google.monitoring.v3.UptimeCheckConfigOrBuilder getUptimeCheckConfigsOrBuilder(
         int index) {
       if (uptimeCheckConfigsBuilder_ == null) {
-        return uptimeCheckConfigs_.get(index);  } else {
+        return uptimeCheckConfigs_.get(index);
+      } else {
         return uptimeCheckConfigsBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * The returned uptime check configurations.
      * </pre>
      *
      * <code>repeated .google.monitoring.v3.UptimeCheckConfig uptime_check_configs = 1;</code>
      */
-    public java.util.List<? extends com.google.monitoring.v3.UptimeCheckConfigOrBuilder> 
-         getUptimeCheckConfigsOrBuilderList() {
+    public java.util.List<? extends com.google.monitoring.v3.UptimeCheckConfigOrBuilder>
+        getUptimeCheckConfigsOrBuilderList() {
       if (uptimeCheckConfigsBuilder_ != null) {
         return uptimeCheckConfigsBuilder_.getMessageOrBuilderList();
       } else {
@@ -847,6 +943,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The returned uptime check configurations.
      * </pre>
@@ -854,10 +952,12 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.monitoring.v3.UptimeCheckConfig uptime_check_configs = 1;</code>
      */
     public com.google.monitoring.v3.UptimeCheckConfig.Builder addUptimeCheckConfigsBuilder() {
-      return getUptimeCheckConfigsFieldBuilder().addBuilder(
-          com.google.monitoring.v3.UptimeCheckConfig.getDefaultInstance());
+      return getUptimeCheckConfigsFieldBuilder()
+          .addBuilder(com.google.monitoring.v3.UptimeCheckConfig.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * The returned uptime check configurations.
      * </pre>
@@ -866,26 +966,34 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.monitoring.v3.UptimeCheckConfig.Builder addUptimeCheckConfigsBuilder(
         int index) {
-      return getUptimeCheckConfigsFieldBuilder().addBuilder(
-          index, com.google.monitoring.v3.UptimeCheckConfig.getDefaultInstance());
+      return getUptimeCheckConfigsFieldBuilder()
+          .addBuilder(index, com.google.monitoring.v3.UptimeCheckConfig.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * The returned uptime check configurations.
      * </pre>
      *
      * <code>repeated .google.monitoring.v3.UptimeCheckConfig uptime_check_configs = 1;</code>
      */
-    public java.util.List<com.google.monitoring.v3.UptimeCheckConfig.Builder> 
-         getUptimeCheckConfigsBuilderList() {
+    public java.util.List<com.google.monitoring.v3.UptimeCheckConfig.Builder>
+        getUptimeCheckConfigsBuilderList() {
       return getUptimeCheckConfigsFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.monitoring.v3.UptimeCheckConfig, com.google.monitoring.v3.UptimeCheckConfig.Builder, com.google.monitoring.v3.UptimeCheckConfigOrBuilder> 
+            com.google.monitoring.v3.UptimeCheckConfig,
+            com.google.monitoring.v3.UptimeCheckConfig.Builder,
+            com.google.monitoring.v3.UptimeCheckConfigOrBuilder>
         getUptimeCheckConfigsFieldBuilder() {
       if (uptimeCheckConfigsBuilder_ == null) {
-        uptimeCheckConfigsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.monitoring.v3.UptimeCheckConfig, com.google.monitoring.v3.UptimeCheckConfig.Builder, com.google.monitoring.v3.UptimeCheckConfigOrBuilder>(
+        uptimeCheckConfigsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.monitoring.v3.UptimeCheckConfig,
+                com.google.monitoring.v3.UptimeCheckConfig.Builder,
+                com.google.monitoring.v3.UptimeCheckConfigOrBuilder>(
                 uptimeCheckConfigs_,
                 ((bitField0_ & 0x00000001) == 0x00000001),
                 getParentForChildren(),
@@ -897,6 +1005,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object nextPageToken_ = "";
     /**
+     *
+     *
      * <pre>
      * This field represents the pagination token to retrieve the next page of
      * results. If the value is empty, it means no further results for the
@@ -910,8 +1020,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getNextPageToken() {
       java.lang.Object ref = nextPageToken_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         nextPageToken_ = s;
         return s;
@@ -920,6 +1029,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * This field represents the pagination token to retrieve the next page of
      * results. If the value is empty, it means no further results for the
@@ -930,13 +1041,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string next_page_token = 2;</code>
      */
-    public com.google.protobuf.ByteString
-        getNextPageTokenBytes() {
+    public com.google.protobuf.ByteString getNextPageTokenBytes() {
       java.lang.Object ref = nextPageToken_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         nextPageToken_ = b;
         return b;
       } else {
@@ -944,6 +1053,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * This field represents the pagination token to retrieve the next page of
      * results. If the value is empty, it means no further results for the
@@ -954,17 +1065,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string next_page_token = 2;</code>
      */
-    public Builder setNextPageToken(
-        java.lang.String value) {
+    public Builder setNextPageToken(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       nextPageToken_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * This field represents the pagination token to retrieve the next page of
      * results. If the value is empty, it means no further results for the
@@ -976,12 +1088,14 @@ private static final long serialVersionUID = 0L;
      * <code>string next_page_token = 2;</code>
      */
     public Builder clearNextPageToken() {
-      
+
       nextPageToken_ = getDefaultInstance().getNextPageToken();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * This field represents the pagination token to retrieve the next page of
      * results. If the value is empty, it means no further results for the
@@ -992,20 +1106,21 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string next_page_token = 2;</code>
      */
-    public Builder setNextPageTokenBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setNextPageTokenBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       nextPageToken_ = value;
       onChanged();
       return this;
     }
 
-    private int totalSize_ ;
+    private int totalSize_;
     /**
+     *
+     *
      * <pre>
      * The total number of uptime check configurations for the project,
      * irrespective of any pagination.
@@ -1017,6 +1132,8 @@ private static final long serialVersionUID = 0L;
       return totalSize_;
     }
     /**
+     *
+     *
      * <pre>
      * The total number of uptime check configurations for the project,
      * irrespective of any pagination.
@@ -1025,12 +1142,14 @@ private static final long serialVersionUID = 0L;
      * <code>int32 total_size = 3;</code>
      */
     public Builder setTotalSize(int value) {
-      
+
       totalSize_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The total number of uptime check configurations for the project,
      * irrespective of any pagination.
@@ -1039,27 +1158,29 @@ private static final long serialVersionUID = 0L;
      * <code>int32 total_size = 3;</code>
      */
     public Builder clearTotalSize() {
-      
+
       totalSize_ = 0;
       onChanged();
       return this;
     }
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+
+    @java.lang.Override
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
     }
-
 
     // @@protoc_insertion_point(builder_scope:google.monitoring.v3.ListUptimeCheckConfigsResponse)
   }
 
   // @@protoc_insertion_point(class_scope:google.monitoring.v3.ListUptimeCheckConfigsResponse)
   private static final com.google.monitoring.v3.ListUptimeCheckConfigsResponse DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.monitoring.v3.ListUptimeCheckConfigsResponse();
   }
@@ -1068,15 +1189,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ListUptimeCheckConfigsResponse>
-      PARSER = new com.google.protobuf.AbstractParser<ListUptimeCheckConfigsResponse>() {
-    public ListUptimeCheckConfigsResponse parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ListUptimeCheckConfigsResponse(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<ListUptimeCheckConfigsResponse> PARSER =
+      new com.google.protobuf.AbstractParser<ListUptimeCheckConfigsResponse>() {
+        @java.lang.Override
+        public ListUptimeCheckConfigsResponse parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new ListUptimeCheckConfigsResponse(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<ListUptimeCheckConfigsResponse> parser() {
     return PARSER;
@@ -1087,9 +1209,8 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.monitoring.v3.ListUptimeCheckConfigsResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

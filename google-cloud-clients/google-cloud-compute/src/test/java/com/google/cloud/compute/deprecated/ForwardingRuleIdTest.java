@@ -33,11 +33,11 @@ public class ForwardingRuleIdTest {
   private static final String NAME = "rule";
   private static final String GLOBAL_URL =
       "https://www.googleapis.com/compute/v1/projects/project/global/forwardingRules/rule";
-  private static final String REGION_URL = "https://www.googleapis.com/compute/v1/projects/"
-      + "project/regions/region/forwardingRules/rule";
+  private static final String REGION_URL =
+      "https://www.googleapis.com/compute/v1/projects/"
+          + "project/regions/region/forwardingRules/rule";
 
-  @Rule
-  public ExpectedException thrown = ExpectedException.none();
+  @Rule public ExpectedException thrown = ExpectedException.none();
 
   @Test
   public void testOf() {
@@ -73,11 +73,12 @@ public class ForwardingRuleIdTest {
   @Test
   public void testToAndFromUrlGlobal() {
     GlobalForwardingRuleId forwardingRuleId = GlobalForwardingRuleId.of(PROJECT, NAME);
-    compareGlobalForwardingRuleId(forwardingRuleId,
-        GlobalForwardingRuleId.fromUrl(forwardingRuleId.getSelfLink()));
+    compareGlobalForwardingRuleId(
+        forwardingRuleId, GlobalForwardingRuleId.fromUrl(forwardingRuleId.getSelfLink()));
     RegionForwardingRuleId regionForwardingRuleId =
         RegionForwardingRuleId.of(PROJECT, REGION, NAME);
-    compareRegionForwardingRuleId(regionForwardingRuleId,
+    compareRegionForwardingRuleId(
+        regionForwardingRuleId,
         RegionForwardingRuleId.fromUrl(regionForwardingRuleId.getSelfLink()));
     thrown.expect(IllegalArgumentException.class);
     thrown.expectMessage("notMatchingUrl is not a valid global forwarding rule URL");
@@ -88,7 +89,8 @@ public class ForwardingRuleIdTest {
   public void testToAndFromUrlRegion() {
     RegionForwardingRuleId regionForwardingRuleId =
         RegionForwardingRuleId.of(PROJECT, REGION, NAME);
-    compareRegionForwardingRuleId(regionForwardingRuleId,
+    compareRegionForwardingRuleId(
+        regionForwardingRuleId,
         RegionForwardingRuleId.fromUrl(regionForwardingRuleId.getSelfLink()));
     thrown.expect(IllegalArgumentException.class);
     thrown.expectMessage("notMatchingUrl is not a valid region forwarding rule URL");
@@ -99,27 +101,28 @@ public class ForwardingRuleIdTest {
   public void testSetProjectId() {
     GlobalForwardingRuleId forwardingRuleId = GlobalForwardingRuleId.of(PROJECT, NAME);
     assertSame(forwardingRuleId, forwardingRuleId.setProjectId(PROJECT));
-    compareGlobalForwardingRuleId(forwardingRuleId,
-        GlobalForwardingRuleId.of(NAME).setProjectId(PROJECT));
+    compareGlobalForwardingRuleId(
+        forwardingRuleId, GlobalForwardingRuleId.of(NAME).setProjectId(PROJECT));
     RegionForwardingRuleId regionForwardingRuleId =
         RegionForwardingRuleId.of(PROJECT, REGION, NAME);
     assertSame(regionForwardingRuleId, regionForwardingRuleId.setProjectId(PROJECT));
-    compareRegionForwardingRuleId(regionForwardingRuleId,
-        RegionForwardingRuleId.of(REGION, NAME).setProjectId(PROJECT));
+    compareRegionForwardingRuleId(
+        regionForwardingRuleId, RegionForwardingRuleId.of(REGION, NAME).setProjectId(PROJECT));
   }
 
   @Test
   public void testMatchesUrl() {
-    assertTrue(GlobalForwardingRuleId.matchesUrl(
-        GlobalForwardingRuleId.of(PROJECT, NAME).getSelfLink()));
+    assertTrue(
+        GlobalForwardingRuleId.matchesUrl(GlobalForwardingRuleId.of(PROJECT, NAME).getSelfLink()));
     assertFalse(GlobalForwardingRuleId.matchesUrl("notMatchingUrl"));
-    assertTrue(RegionForwardingRuleId.matchesUrl(
-        RegionForwardingRuleId.of(PROJECT, REGION, NAME).getSelfLink()));
+    assertTrue(
+        RegionForwardingRuleId.matchesUrl(
+            RegionForwardingRuleId.of(PROJECT, REGION, NAME).getSelfLink()));
     assertFalse(RegionForwardingRuleId.matchesUrl("notMatchingUrl"));
   }
 
-  private void compareGlobalForwardingRuleId(GlobalForwardingRuleId expected,
-      GlobalForwardingRuleId value) {
+  private void compareGlobalForwardingRuleId(
+      GlobalForwardingRuleId expected, GlobalForwardingRuleId value) {
     assertEquals(expected, value);
     assertEquals(expected.getProject(), expected.getProject());
     assertEquals(expected.getRule(), expected.getRule());
@@ -127,8 +130,8 @@ public class ForwardingRuleIdTest {
     assertEquals(expected.hashCode(), expected.hashCode());
   }
 
-  private void compareRegionForwardingRuleId(RegionForwardingRuleId expected,
-      RegionForwardingRuleId value) {
+  private void compareRegionForwardingRuleId(
+      RegionForwardingRuleId expected, RegionForwardingRuleId value) {
     assertEquals(expected, value);
     assertEquals(expected.getProject(), expected.getProject());
     assertEquals(expected.getRegion(), expected.getRegion());

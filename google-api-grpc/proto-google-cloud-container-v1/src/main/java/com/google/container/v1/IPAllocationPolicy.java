@@ -4,21 +4,24 @@
 package com.google.container.v1;
 
 /**
+ *
+ *
  * <pre>
  * Configuration for controlling how IPs are allocated in the cluster.
  * </pre>
  *
  * Protobuf type {@code google.container.v1.IPAllocationPolicy}
  */
-public  final class IPAllocationPolicy extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class IPAllocationPolicy extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.container.v1.IPAllocationPolicy)
     IPAllocationPolicyOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use IPAllocationPolicy.newBuilder() to construct.
   private IPAllocationPolicy(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private IPAllocationPolicy() {
     useIpAliases_ = false;
     createSubnetwork_ = false;
@@ -34,15 +37,18 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private IPAllocationPolicy(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -54,104 +60,118 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          case 8:
+            {
+              useIpAliases_ = input.readBool();
+              break;
             }
-            break;
-          }
-          case 8: {
+          case 16:
+            {
+              createSubnetwork_ = input.readBool();
+              break;
+            }
+          case 26:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            useIpAliases_ = input.readBool();
-            break;
-          }
-          case 16: {
+              subnetworkName_ = s;
+              break;
+            }
+          case 34:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            createSubnetwork_ = input.readBool();
-            break;
-          }
-          case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
+              clusterIpv4Cidr_ = s;
+              break;
+            }
+          case 42:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            subnetworkName_ = s;
-            break;
-          }
-          case 34: {
-            java.lang.String s = input.readStringRequireUtf8();
+              nodeIpv4Cidr_ = s;
+              break;
+            }
+          case 50:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            clusterIpv4Cidr_ = s;
-            break;
-          }
-          case 42: {
-            java.lang.String s = input.readStringRequireUtf8();
+              servicesIpv4Cidr_ = s;
+              break;
+            }
+          case 58:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            nodeIpv4Cidr_ = s;
-            break;
-          }
-          case 50: {
-            java.lang.String s = input.readStringRequireUtf8();
+              clusterSecondaryRangeName_ = s;
+              break;
+            }
+          case 66:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            servicesIpv4Cidr_ = s;
-            break;
-          }
-          case 58: {
-            java.lang.String s = input.readStringRequireUtf8();
+              servicesSecondaryRangeName_ = s;
+              break;
+            }
+          case 74:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            clusterSecondaryRangeName_ = s;
-            break;
-          }
-          case 66: {
-            java.lang.String s = input.readStringRequireUtf8();
+              clusterIpv4CidrBlock_ = s;
+              break;
+            }
+          case 82:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            servicesSecondaryRangeName_ = s;
-            break;
-          }
-          case 74: {
-            java.lang.String s = input.readStringRequireUtf8();
+              nodeIpv4CidrBlock_ = s;
+              break;
+            }
+          case 90:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            clusterIpv4CidrBlock_ = s;
-            break;
-          }
-          case 82: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            nodeIpv4CidrBlock_ = s;
-            break;
-          }
-          case 90: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            servicesIpv4CidrBlock_ = s;
-            break;
-          }
+              servicesIpv4CidrBlock_ = s;
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_IPAllocationPolicy_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.container.v1.ClusterServiceProto
+        .internal_static_google_container_v1_IPAllocationPolicy_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_IPAllocationPolicy_fieldAccessorTable
+    return com.google.container.v1.ClusterServiceProto
+        .internal_static_google_container_v1_IPAllocationPolicy_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.container.v1.IPAllocationPolicy.class, com.google.container.v1.IPAllocationPolicy.Builder.class);
+            com.google.container.v1.IPAllocationPolicy.class,
+            com.google.container.v1.IPAllocationPolicy.Builder.class);
   }
 
   public static final int USE_IP_ALIASES_FIELD_NUMBER = 1;
   private boolean useIpAliases_;
   /**
+   *
+   *
    * <pre>
    * Whether alias IPs will be used for pod IPs in the cluster.
    * </pre>
@@ -165,6 +185,8 @@ private static final long serialVersionUID = 0L;
   public static final int CREATE_SUBNETWORK_FIELD_NUMBER = 2;
   private boolean createSubnetwork_;
   /**
+   *
+   *
    * <pre>
    * Whether a new subnetwork will be created automatically for the cluster.
    * This field is only applicable when `use_ip_aliases` is true.
@@ -179,6 +201,8 @@ private static final long serialVersionUID = 0L;
   public static final int SUBNETWORK_NAME_FIELD_NUMBER = 3;
   private volatile java.lang.Object subnetworkName_;
   /**
+   *
+   *
    * <pre>
    * A custom subnetwork name to be used if `create_subnetwork` is true.  If
    * this field is empty, then an automatic name will be chosen for the new
@@ -192,14 +216,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       subnetworkName_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * A custom subnetwork name to be used if `create_subnetwork` is true.  If
    * this field is empty, then an automatic name will be chosen for the new
@@ -208,13 +233,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string subnetwork_name = 3;</code>
    */
-  public com.google.protobuf.ByteString
-      getSubnetworkNameBytes() {
+  public com.google.protobuf.ByteString getSubnetworkNameBytes() {
     java.lang.Object ref = subnetworkName_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       subnetworkName_ = b;
       return b;
     } else {
@@ -225,38 +248,41 @@ private static final long serialVersionUID = 0L;
   public static final int CLUSTER_IPV4_CIDR_FIELD_NUMBER = 4;
   private volatile java.lang.Object clusterIpv4Cidr_;
   /**
+   *
+   *
    * <pre>
    * This field is deprecated, use cluster_ipv4_cidr_block.
    * </pre>
    *
-   * <code>string cluster_ipv4_cidr = 4;</code>
+   * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   public java.lang.String getClusterIpv4Cidr() {
     java.lang.Object ref = clusterIpv4Cidr_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       clusterIpv4Cidr_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * This field is deprecated, use cluster_ipv4_cidr_block.
    * </pre>
    *
-   * <code>string cluster_ipv4_cidr = 4;</code>
+   * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
    */
-  public com.google.protobuf.ByteString
-      getClusterIpv4CidrBytes() {
+  @java.lang.Deprecated
+  public com.google.protobuf.ByteString getClusterIpv4CidrBytes() {
     java.lang.Object ref = clusterIpv4Cidr_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       clusterIpv4Cidr_ = b;
       return b;
     } else {
@@ -267,38 +293,41 @@ private static final long serialVersionUID = 0L;
   public static final int NODE_IPV4_CIDR_FIELD_NUMBER = 5;
   private volatile java.lang.Object nodeIpv4Cidr_;
   /**
+   *
+   *
    * <pre>
    * This field is deprecated, use node_ipv4_cidr_block.
    * </pre>
    *
-   * <code>string node_ipv4_cidr = 5;</code>
+   * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   public java.lang.String getNodeIpv4Cidr() {
     java.lang.Object ref = nodeIpv4Cidr_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       nodeIpv4Cidr_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * This field is deprecated, use node_ipv4_cidr_block.
    * </pre>
    *
-   * <code>string node_ipv4_cidr = 5;</code>
+   * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
    */
-  public com.google.protobuf.ByteString
-      getNodeIpv4CidrBytes() {
+  @java.lang.Deprecated
+  public com.google.protobuf.ByteString getNodeIpv4CidrBytes() {
     java.lang.Object ref = nodeIpv4Cidr_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       nodeIpv4Cidr_ = b;
       return b;
     } else {
@@ -309,38 +338,41 @@ private static final long serialVersionUID = 0L;
   public static final int SERVICES_IPV4_CIDR_FIELD_NUMBER = 6;
   private volatile java.lang.Object servicesIpv4Cidr_;
   /**
+   *
+   *
    * <pre>
    * This field is deprecated, use services_ipv4_cidr_block.
    * </pre>
    *
-   * <code>string services_ipv4_cidr = 6;</code>
+   * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   public java.lang.String getServicesIpv4Cidr() {
     java.lang.Object ref = servicesIpv4Cidr_;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       servicesIpv4Cidr_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * This field is deprecated, use services_ipv4_cidr_block.
    * </pre>
    *
-   * <code>string services_ipv4_cidr = 6;</code>
+   * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
    */
-  public com.google.protobuf.ByteString
-      getServicesIpv4CidrBytes() {
+  @java.lang.Deprecated
+  public com.google.protobuf.ByteString getServicesIpv4CidrBytes() {
     java.lang.Object ref = servicesIpv4Cidr_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       servicesIpv4Cidr_ = b;
       return b;
     } else {
@@ -351,6 +383,8 @@ private static final long serialVersionUID = 0L;
   public static final int CLUSTER_SECONDARY_RANGE_NAME_FIELD_NUMBER = 7;
   private volatile java.lang.Object clusterSecondaryRangeName_;
   /**
+   *
+   *
    * <pre>
    * The name of the secondary range to be used for the cluster CIDR
    * block.  The secondary range will be used for pod IP
@@ -367,14 +401,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       clusterSecondaryRangeName_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The name of the secondary range to be used for the cluster CIDR
    * block.  The secondary range will be used for pod IP
@@ -386,13 +421,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string cluster_secondary_range_name = 7;</code>
    */
-  public com.google.protobuf.ByteString
-      getClusterSecondaryRangeNameBytes() {
+  public com.google.protobuf.ByteString getClusterSecondaryRangeNameBytes() {
     java.lang.Object ref = clusterSecondaryRangeName_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       clusterSecondaryRangeName_ = b;
       return b;
     } else {
@@ -403,6 +436,8 @@ private static final long serialVersionUID = 0L;
   public static final int SERVICES_SECONDARY_RANGE_NAME_FIELD_NUMBER = 8;
   private volatile java.lang.Object servicesSecondaryRangeName_;
   /**
+   *
+   *
    * <pre>
    * The name of the secondary range to be used as for the services
    * CIDR block.  The secondary range will be used for service
@@ -419,14 +454,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       servicesSecondaryRangeName_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The name of the secondary range to be used as for the services
    * CIDR block.  The secondary range will be used for service
@@ -438,13 +474,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string services_secondary_range_name = 8;</code>
    */
-  public com.google.protobuf.ByteString
-      getServicesSecondaryRangeNameBytes() {
+  public com.google.protobuf.ByteString getServicesSecondaryRangeNameBytes() {
     java.lang.Object ref = servicesSecondaryRangeName_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       servicesSecondaryRangeName_ = b;
       return b;
     } else {
@@ -455,6 +489,8 @@ private static final long serialVersionUID = 0L;
   public static final int CLUSTER_IPV4_CIDR_BLOCK_FIELD_NUMBER = 9;
   private volatile java.lang.Object clusterIpv4CidrBlock_;
   /**
+   *
+   *
    * <pre>
    * The IP address range for the cluster pod IPs. If this field is set, then
    * `cluster.cluster_ipv4_cidr` must be left blank.
@@ -476,14 +512,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       clusterIpv4CidrBlock_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The IP address range for the cluster pod IPs. If this field is set, then
    * `cluster.cluster_ipv4_cidr` must be left blank.
@@ -500,13 +537,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string cluster_ipv4_cidr_block = 9;</code>
    */
-  public com.google.protobuf.ByteString
-      getClusterIpv4CidrBlockBytes() {
+  public com.google.protobuf.ByteString getClusterIpv4CidrBlockBytes() {
     java.lang.Object ref = clusterIpv4CidrBlock_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       clusterIpv4CidrBlock_ = b;
       return b;
     } else {
@@ -517,6 +552,8 @@ private static final long serialVersionUID = 0L;
   public static final int NODE_IPV4_CIDR_BLOCK_FIELD_NUMBER = 10;
   private volatile java.lang.Object nodeIpv4CidrBlock_;
   /**
+   *
+   *
    * <pre>
    * The IP address range of the instance IPs in this cluster.
    * This is applicable only if `create_subnetwork` is true.
@@ -537,14 +574,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       nodeIpv4CidrBlock_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The IP address range of the instance IPs in this cluster.
    * This is applicable only if `create_subnetwork` is true.
@@ -560,13 +598,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string node_ipv4_cidr_block = 10;</code>
    */
-  public com.google.protobuf.ByteString
-      getNodeIpv4CidrBlockBytes() {
+  public com.google.protobuf.ByteString getNodeIpv4CidrBlockBytes() {
     java.lang.Object ref = nodeIpv4CidrBlock_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       nodeIpv4CidrBlock_ = b;
       return b;
     } else {
@@ -577,6 +613,8 @@ private static final long serialVersionUID = 0L;
   public static final int SERVICES_IPV4_CIDR_BLOCK_FIELD_NUMBER = 11;
   private volatile java.lang.Object servicesIpv4CidrBlock_;
   /**
+   *
+   *
    * <pre>
    * The IP address range of the services IPs in this cluster. If blank, a range
    * will be automatically chosen with the default size.
@@ -598,14 +636,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       servicesIpv4CidrBlock_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The IP address range of the services IPs in this cluster. If blank, a range
    * will be automatically chosen with the default size.
@@ -622,13 +661,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string services_ipv4_cidr_block = 11;</code>
    */
-  public com.google.protobuf.ByteString
-      getServicesIpv4CidrBlockBytes() {
+  public com.google.protobuf.ByteString getServicesIpv4CidrBlockBytes() {
     java.lang.Object ref = servicesIpv4CidrBlock_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       servicesIpv4CidrBlock_ = b;
       return b;
     } else {
@@ -637,6 +674,8 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -646,8 +685,8 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  @java.lang.Override
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (useIpAliases_ != false) {
       output.writeBool(1, useIpAliases_);
     }
@@ -684,18 +723,17 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
 
     size = 0;
     if (useIpAliases_ != false) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(1, useIpAliases_);
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, useIpAliases_);
     }
     if (createSubnetwork_ != false) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(2, createSubnetwork_);
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, createSubnetwork_);
     }
     if (!getSubnetworkNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, subnetworkName_);
@@ -710,10 +748,12 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, servicesIpv4Cidr_);
     }
     if (!getClusterSecondaryRangeNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(7, clusterSecondaryRangeName_);
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(7, clusterSecondaryRangeName_);
     }
     if (!getServicesSecondaryRangeNameBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(8, servicesSecondaryRangeName_);
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(8, servicesSecondaryRangeName_);
     }
     if (!getClusterIpv4CidrBlockBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(9, clusterIpv4CidrBlock_);
@@ -732,36 +772,27 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.container.v1.IPAllocationPolicy)) {
       return super.equals(obj);
     }
-    com.google.container.v1.IPAllocationPolicy other = (com.google.container.v1.IPAllocationPolicy) obj;
+    com.google.container.v1.IPAllocationPolicy other =
+        (com.google.container.v1.IPAllocationPolicy) obj;
 
     boolean result = true;
-    result = result && (getUseIpAliases()
-        == other.getUseIpAliases());
-    result = result && (getCreateSubnetwork()
-        == other.getCreateSubnetwork());
-    result = result && getSubnetworkName()
-        .equals(other.getSubnetworkName());
-    result = result && getClusterIpv4Cidr()
-        .equals(other.getClusterIpv4Cidr());
-    result = result && getNodeIpv4Cidr()
-        .equals(other.getNodeIpv4Cidr());
-    result = result && getServicesIpv4Cidr()
-        .equals(other.getServicesIpv4Cidr());
-    result = result && getClusterSecondaryRangeName()
-        .equals(other.getClusterSecondaryRangeName());
-    result = result && getServicesSecondaryRangeName()
-        .equals(other.getServicesSecondaryRangeName());
-    result = result && getClusterIpv4CidrBlock()
-        .equals(other.getClusterIpv4CidrBlock());
-    result = result && getNodeIpv4CidrBlock()
-        .equals(other.getNodeIpv4CidrBlock());
-    result = result && getServicesIpv4CidrBlock()
-        .equals(other.getServicesIpv4CidrBlock());
+    result = result && (getUseIpAliases() == other.getUseIpAliases());
+    result = result && (getCreateSubnetwork() == other.getCreateSubnetwork());
+    result = result && getSubnetworkName().equals(other.getSubnetworkName());
+    result = result && getClusterIpv4Cidr().equals(other.getClusterIpv4Cidr());
+    result = result && getNodeIpv4Cidr().equals(other.getNodeIpv4Cidr());
+    result = result && getServicesIpv4Cidr().equals(other.getServicesIpv4Cidr());
+    result = result && getClusterSecondaryRangeName().equals(other.getClusterSecondaryRangeName());
+    result =
+        result && getServicesSecondaryRangeName().equals(other.getServicesSecondaryRangeName());
+    result = result && getClusterIpv4CidrBlock().equals(other.getClusterIpv4CidrBlock());
+    result = result && getNodeIpv4CidrBlock().equals(other.getNodeIpv4CidrBlock());
+    result = result && getServicesIpv4CidrBlock().equals(other.getServicesIpv4CidrBlock());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -774,11 +805,9 @@ private static final long serialVersionUID = 0L;
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + USE_IP_ALIASES_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getUseIpAliases());
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getUseIpAliases());
     hash = (37 * hash) + CREATE_SUBNETWORK_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getCreateSubnetwork());
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getCreateSubnetwork());
     hash = (37 * hash) + SUBNETWORK_NAME_FIELD_NUMBER;
     hash = (53 * hash) + getSubnetworkName().hashCode();
     hash = (37 * hash) + CLUSTER_IPV4_CIDR_FIELD_NUMBER;
@@ -802,115 +831,127 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.container.v1.IPAllocationPolicy parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.container.v1.IPAllocationPolicy parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.container.v1.IPAllocationPolicy parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.container.v1.IPAllocationPolicy parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.container.v1.IPAllocationPolicy parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.container.v1.IPAllocationPolicy parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.container.v1.IPAllocationPolicy parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.container.v1.IPAllocationPolicy parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.container.v1.IPAllocationPolicy parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.container.v1.IPAllocationPolicy parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
+
   public static com.google.container.v1.IPAllocationPolicy parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.container.v1.IPAllocationPolicy parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.container.v1.IPAllocationPolicy parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.container.v1.IPAllocationPolicy parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  public Builder newBuilderForType() { return newBuilder(); }
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-  public static Builder newBuilder(com.google.container.v1.IPAllocationPolicy prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+
+  public static Builder newBuilder(com.google.container.v1.IPAllocationPolicy prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+
+  @java.lang.Override
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Configuration for controlling how IPs are allocated in the cluster.
    * </pre>
    *
    * Protobuf type {@code google.container.v1.IPAllocationPolicy}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.container.v1.IPAllocationPolicy)
       com.google.container.v1.IPAllocationPolicyOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_IPAllocationPolicy_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.container.v1.ClusterServiceProto
+          .internal_static_google_container_v1_IPAllocationPolicy_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_IPAllocationPolicy_fieldAccessorTable
+      return com.google.container.v1.ClusterServiceProto
+          .internal_static_google_container_v1_IPAllocationPolicy_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.container.v1.IPAllocationPolicy.class, com.google.container.v1.IPAllocationPolicy.Builder.class);
+              com.google.container.v1.IPAllocationPolicy.class,
+              com.google.container.v1.IPAllocationPolicy.Builder.class);
     }
 
     // Construct using com.google.container.v1.IPAllocationPolicy.newBuilder()
@@ -918,16 +959,16 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       useIpAliases_ = false;
@@ -955,15 +996,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_IPAllocationPolicy_descriptor;
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.container.v1.ClusterServiceProto
+          .internal_static_google_container_v1_IPAllocationPolicy_descriptor;
     }
 
+    @java.lang.Override
     public com.google.container.v1.IPAllocationPolicy getDefaultInstanceForType() {
       return com.google.container.v1.IPAllocationPolicy.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.container.v1.IPAllocationPolicy build() {
       com.google.container.v1.IPAllocationPolicy result = buildPartial();
       if (!result.isInitialized()) {
@@ -972,8 +1016,10 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.container.v1.IPAllocationPolicy buildPartial() {
-      com.google.container.v1.IPAllocationPolicy result = new com.google.container.v1.IPAllocationPolicy(this);
+      com.google.container.v1.IPAllocationPolicy result =
+          new com.google.container.v1.IPAllocationPolicy(this);
       result.useIpAliases_ = useIpAliases_;
       result.createSubnetwork_ = createSubnetwork_;
       result.subnetworkName_ = subnetworkName_;
@@ -989,35 +1035,43 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+
+    @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+    @java.lang.Override
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+    @java.lang.Override
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
+    @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
+    @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.container.v1.IPAllocationPolicy) {
-        return mergeFrom((com.google.container.v1.IPAllocationPolicy)other);
+        return mergeFrom((com.google.container.v1.IPAllocationPolicy) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -1073,10 +1127,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1095,8 +1151,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private boolean useIpAliases_ ;
+    private boolean useIpAliases_;
     /**
+     *
+     *
      * <pre>
      * Whether alias IPs will be used for pod IPs in the cluster.
      * </pre>
@@ -1107,6 +1165,8 @@ private static final long serialVersionUID = 0L;
       return useIpAliases_;
     }
     /**
+     *
+     *
      * <pre>
      * Whether alias IPs will be used for pod IPs in the cluster.
      * </pre>
@@ -1114,12 +1174,14 @@ private static final long serialVersionUID = 0L;
      * <code>bool use_ip_aliases = 1;</code>
      */
     public Builder setUseIpAliases(boolean value) {
-      
+
       useIpAliases_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Whether alias IPs will be used for pod IPs in the cluster.
      * </pre>
@@ -1127,14 +1189,16 @@ private static final long serialVersionUID = 0L;
      * <code>bool use_ip_aliases = 1;</code>
      */
     public Builder clearUseIpAliases() {
-      
+
       useIpAliases_ = false;
       onChanged();
       return this;
     }
 
-    private boolean createSubnetwork_ ;
+    private boolean createSubnetwork_;
     /**
+     *
+     *
      * <pre>
      * Whether a new subnetwork will be created automatically for the cluster.
      * This field is only applicable when `use_ip_aliases` is true.
@@ -1146,6 +1210,8 @@ private static final long serialVersionUID = 0L;
       return createSubnetwork_;
     }
     /**
+     *
+     *
      * <pre>
      * Whether a new subnetwork will be created automatically for the cluster.
      * This field is only applicable when `use_ip_aliases` is true.
@@ -1154,12 +1220,14 @@ private static final long serialVersionUID = 0L;
      * <code>bool create_subnetwork = 2;</code>
      */
     public Builder setCreateSubnetwork(boolean value) {
-      
+
       createSubnetwork_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Whether a new subnetwork will be created automatically for the cluster.
      * This field is only applicable when `use_ip_aliases` is true.
@@ -1168,7 +1236,7 @@ private static final long serialVersionUID = 0L;
      * <code>bool create_subnetwork = 2;</code>
      */
     public Builder clearCreateSubnetwork() {
-      
+
       createSubnetwork_ = false;
       onChanged();
       return this;
@@ -1176,6 +1244,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object subnetworkName_ = "";
     /**
+     *
+     *
      * <pre>
      * A custom subnetwork name to be used if `create_subnetwork` is true.  If
      * this field is empty, then an automatic name will be chosen for the new
@@ -1187,8 +1257,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getSubnetworkName() {
       java.lang.Object ref = subnetworkName_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         subnetworkName_ = s;
         return s;
@@ -1197,6 +1266,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A custom subnetwork name to be used if `create_subnetwork` is true.  If
      * this field is empty, then an automatic name will be chosen for the new
@@ -1205,13 +1276,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string subnetwork_name = 3;</code>
      */
-    public com.google.protobuf.ByteString
-        getSubnetworkNameBytes() {
+    public com.google.protobuf.ByteString getSubnetworkNameBytes() {
       java.lang.Object ref = subnetworkName_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         subnetworkName_ = b;
         return b;
       } else {
@@ -1219,6 +1288,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A custom subnetwork name to be used if `create_subnetwork` is true.  If
      * this field is empty, then an automatic name will be chosen for the new
@@ -1227,17 +1298,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string subnetwork_name = 3;</code>
      */
-    public Builder setSubnetworkName(
-        java.lang.String value) {
+    public Builder setSubnetworkName(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       subnetworkName_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A custom subnetwork name to be used if `create_subnetwork` is true.  If
      * this field is empty, then an automatic name will be chosen for the new
@@ -1247,12 +1319,14 @@ private static final long serialVersionUID = 0L;
      * <code>string subnetwork_name = 3;</code>
      */
     public Builder clearSubnetworkName() {
-      
+
       subnetworkName_ = getDefaultInstance().getSubnetworkName();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A custom subnetwork name to be used if `create_subnetwork` is true.  If
      * this field is empty, then an automatic name will be chosen for the new
@@ -1261,13 +1335,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string subnetwork_name = 3;</code>
      */
-    public Builder setSubnetworkNameBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setSubnetworkNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       subnetworkName_ = value;
       onChanged();
       return this;
@@ -1275,17 +1348,19 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object clusterIpv4Cidr_ = "";
     /**
+     *
+     *
      * <pre>
      * This field is deprecated, use cluster_ipv4_cidr_block.
      * </pre>
      *
-     * <code>string cluster_ipv4_cidr = 4;</code>
+     * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public java.lang.String getClusterIpv4Cidr() {
       java.lang.Object ref = clusterIpv4Cidr_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         clusterIpv4Cidr_ = s;
         return s;
@@ -1294,19 +1369,20 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * This field is deprecated, use cluster_ipv4_cidr_block.
      * </pre>
      *
-     * <code>string cluster_ipv4_cidr = 4;</code>
+     * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
      */
-    public com.google.protobuf.ByteString
-        getClusterIpv4CidrBytes() {
+    @java.lang.Deprecated
+    public com.google.protobuf.ByteString getClusterIpv4CidrBytes() {
       java.lang.Object ref = clusterIpv4Cidr_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         clusterIpv4Cidr_ = b;
         return b;
       } else {
@@ -1314,49 +1390,56 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * This field is deprecated, use cluster_ipv4_cidr_block.
      * </pre>
      *
-     * <code>string cluster_ipv4_cidr = 4;</code>
+     * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
      */
-    public Builder setClusterIpv4Cidr(
-        java.lang.String value) {
+    @java.lang.Deprecated
+    public Builder setClusterIpv4Cidr(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       clusterIpv4Cidr_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * This field is deprecated, use cluster_ipv4_cidr_block.
      * </pre>
      *
-     * <code>string cluster_ipv4_cidr = 4;</code>
+     * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder clearClusterIpv4Cidr() {
-      
+
       clusterIpv4Cidr_ = getDefaultInstance().getClusterIpv4Cidr();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * This field is deprecated, use cluster_ipv4_cidr_block.
      * </pre>
      *
-     * <code>string cluster_ipv4_cidr = 4;</code>
+     * <code>string cluster_ipv4_cidr = 4 [deprecated = true];</code>
      */
-    public Builder setClusterIpv4CidrBytes(
-        com.google.protobuf.ByteString value) {
+    @java.lang.Deprecated
+    public Builder setClusterIpv4CidrBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       clusterIpv4Cidr_ = value;
       onChanged();
       return this;
@@ -1364,17 +1447,19 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object nodeIpv4Cidr_ = "";
     /**
+     *
+     *
      * <pre>
      * This field is deprecated, use node_ipv4_cidr_block.
      * </pre>
      *
-     * <code>string node_ipv4_cidr = 5;</code>
+     * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public java.lang.String getNodeIpv4Cidr() {
       java.lang.Object ref = nodeIpv4Cidr_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         nodeIpv4Cidr_ = s;
         return s;
@@ -1383,19 +1468,20 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * This field is deprecated, use node_ipv4_cidr_block.
      * </pre>
      *
-     * <code>string node_ipv4_cidr = 5;</code>
+     * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
      */
-    public com.google.protobuf.ByteString
-        getNodeIpv4CidrBytes() {
+    @java.lang.Deprecated
+    public com.google.protobuf.ByteString getNodeIpv4CidrBytes() {
       java.lang.Object ref = nodeIpv4Cidr_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         nodeIpv4Cidr_ = b;
         return b;
       } else {
@@ -1403,49 +1489,56 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * This field is deprecated, use node_ipv4_cidr_block.
      * </pre>
      *
-     * <code>string node_ipv4_cidr = 5;</code>
+     * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
      */
-    public Builder setNodeIpv4Cidr(
-        java.lang.String value) {
+    @java.lang.Deprecated
+    public Builder setNodeIpv4Cidr(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       nodeIpv4Cidr_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * This field is deprecated, use node_ipv4_cidr_block.
      * </pre>
      *
-     * <code>string node_ipv4_cidr = 5;</code>
+     * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder clearNodeIpv4Cidr() {
-      
+
       nodeIpv4Cidr_ = getDefaultInstance().getNodeIpv4Cidr();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * This field is deprecated, use node_ipv4_cidr_block.
      * </pre>
      *
-     * <code>string node_ipv4_cidr = 5;</code>
+     * <code>string node_ipv4_cidr = 5 [deprecated = true];</code>
      */
-    public Builder setNodeIpv4CidrBytes(
-        com.google.protobuf.ByteString value) {
+    @java.lang.Deprecated
+    public Builder setNodeIpv4CidrBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       nodeIpv4Cidr_ = value;
       onChanged();
       return this;
@@ -1453,17 +1546,19 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object servicesIpv4Cidr_ = "";
     /**
+     *
+     *
      * <pre>
      * This field is deprecated, use services_ipv4_cidr_block.
      * </pre>
      *
-     * <code>string services_ipv4_cidr = 6;</code>
+     * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public java.lang.String getServicesIpv4Cidr() {
       java.lang.Object ref = servicesIpv4Cidr_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         servicesIpv4Cidr_ = s;
         return s;
@@ -1472,19 +1567,20 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * This field is deprecated, use services_ipv4_cidr_block.
      * </pre>
      *
-     * <code>string services_ipv4_cidr = 6;</code>
+     * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
      */
-    public com.google.protobuf.ByteString
-        getServicesIpv4CidrBytes() {
+    @java.lang.Deprecated
+    public com.google.protobuf.ByteString getServicesIpv4CidrBytes() {
       java.lang.Object ref = servicesIpv4Cidr_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         servicesIpv4Cidr_ = b;
         return b;
       } else {
@@ -1492,49 +1588,56 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * This field is deprecated, use services_ipv4_cidr_block.
      * </pre>
      *
-     * <code>string services_ipv4_cidr = 6;</code>
+     * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
      */
-    public Builder setServicesIpv4Cidr(
-        java.lang.String value) {
+    @java.lang.Deprecated
+    public Builder setServicesIpv4Cidr(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       servicesIpv4Cidr_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * This field is deprecated, use services_ipv4_cidr_block.
      * </pre>
      *
-     * <code>string services_ipv4_cidr = 6;</code>
+     * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
      */
+    @java.lang.Deprecated
     public Builder clearServicesIpv4Cidr() {
-      
+
       servicesIpv4Cidr_ = getDefaultInstance().getServicesIpv4Cidr();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * This field is deprecated, use services_ipv4_cidr_block.
      * </pre>
      *
-     * <code>string services_ipv4_cidr = 6;</code>
+     * <code>string services_ipv4_cidr = 6 [deprecated = true];</code>
      */
-    public Builder setServicesIpv4CidrBytes(
-        com.google.protobuf.ByteString value) {
+    @java.lang.Deprecated
+    public Builder setServicesIpv4CidrBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       servicesIpv4Cidr_ = value;
       onChanged();
       return this;
@@ -1542,6 +1645,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object clusterSecondaryRangeName_ = "";
     /**
+     *
+     *
      * <pre>
      * The name of the secondary range to be used for the cluster CIDR
      * block.  The secondary range will be used for pod IP
@@ -1556,8 +1661,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getClusterSecondaryRangeName() {
       java.lang.Object ref = clusterSecondaryRangeName_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         clusterSecondaryRangeName_ = s;
         return s;
@@ -1566,6 +1670,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The name of the secondary range to be used for the cluster CIDR
      * block.  The secondary range will be used for pod IP
@@ -1577,13 +1683,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string cluster_secondary_range_name = 7;</code>
      */
-    public com.google.protobuf.ByteString
-        getClusterSecondaryRangeNameBytes() {
+    public com.google.protobuf.ByteString getClusterSecondaryRangeNameBytes() {
       java.lang.Object ref = clusterSecondaryRangeName_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         clusterSecondaryRangeName_ = b;
         return b;
       } else {
@@ -1591,6 +1695,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The name of the secondary range to be used for the cluster CIDR
      * block.  The secondary range will be used for pod IP
@@ -1602,17 +1708,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string cluster_secondary_range_name = 7;</code>
      */
-    public Builder setClusterSecondaryRangeName(
-        java.lang.String value) {
+    public Builder setClusterSecondaryRangeName(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       clusterSecondaryRangeName_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The name of the secondary range to be used for the cluster CIDR
      * block.  The secondary range will be used for pod IP
@@ -1625,12 +1732,14 @@ private static final long serialVersionUID = 0L;
      * <code>string cluster_secondary_range_name = 7;</code>
      */
     public Builder clearClusterSecondaryRangeName() {
-      
+
       clusterSecondaryRangeName_ = getDefaultInstance().getClusterSecondaryRangeName();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The name of the secondary range to be used for the cluster CIDR
      * block.  The secondary range will be used for pod IP
@@ -1642,13 +1751,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string cluster_secondary_range_name = 7;</code>
      */
-    public Builder setClusterSecondaryRangeNameBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setClusterSecondaryRangeNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       clusterSecondaryRangeName_ = value;
       onChanged();
       return this;
@@ -1656,6 +1764,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object servicesSecondaryRangeName_ = "";
     /**
+     *
+     *
      * <pre>
      * The name of the secondary range to be used as for the services
      * CIDR block.  The secondary range will be used for service
@@ -1670,8 +1780,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getServicesSecondaryRangeName() {
       java.lang.Object ref = servicesSecondaryRangeName_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         servicesSecondaryRangeName_ = s;
         return s;
@@ -1680,6 +1789,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The name of the secondary range to be used as for the services
      * CIDR block.  The secondary range will be used for service
@@ -1691,13 +1802,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string services_secondary_range_name = 8;</code>
      */
-    public com.google.protobuf.ByteString
-        getServicesSecondaryRangeNameBytes() {
+    public com.google.protobuf.ByteString getServicesSecondaryRangeNameBytes() {
       java.lang.Object ref = servicesSecondaryRangeName_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         servicesSecondaryRangeName_ = b;
         return b;
       } else {
@@ -1705,6 +1814,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The name of the secondary range to be used as for the services
      * CIDR block.  The secondary range will be used for service
@@ -1716,17 +1827,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string services_secondary_range_name = 8;</code>
      */
-    public Builder setServicesSecondaryRangeName(
-        java.lang.String value) {
+    public Builder setServicesSecondaryRangeName(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       servicesSecondaryRangeName_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The name of the secondary range to be used as for the services
      * CIDR block.  The secondary range will be used for service
@@ -1739,12 +1851,14 @@ private static final long serialVersionUID = 0L;
      * <code>string services_secondary_range_name = 8;</code>
      */
     public Builder clearServicesSecondaryRangeName() {
-      
+
       servicesSecondaryRangeName_ = getDefaultInstance().getServicesSecondaryRangeName();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The name of the secondary range to be used as for the services
      * CIDR block.  The secondary range will be used for service
@@ -1756,13 +1870,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string services_secondary_range_name = 8;</code>
      */
-    public Builder setServicesSecondaryRangeNameBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setServicesSecondaryRangeNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       servicesSecondaryRangeName_ = value;
       onChanged();
       return this;
@@ -1770,6 +1883,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object clusterIpv4CidrBlock_ = "";
     /**
+     *
+     *
      * <pre>
      * The IP address range for the cluster pod IPs. If this field is set, then
      * `cluster.cluster_ipv4_cidr` must be left blank.
@@ -1789,8 +1904,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getClusterIpv4CidrBlock() {
       java.lang.Object ref = clusterIpv4CidrBlock_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         clusterIpv4CidrBlock_ = s;
         return s;
@@ -1799,6 +1913,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The IP address range for the cluster pod IPs. If this field is set, then
      * `cluster.cluster_ipv4_cidr` must be left blank.
@@ -1815,13 +1931,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string cluster_ipv4_cidr_block = 9;</code>
      */
-    public com.google.protobuf.ByteString
-        getClusterIpv4CidrBlockBytes() {
+    public com.google.protobuf.ByteString getClusterIpv4CidrBlockBytes() {
       java.lang.Object ref = clusterIpv4CidrBlock_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         clusterIpv4CidrBlock_ = b;
         return b;
       } else {
@@ -1829,6 +1943,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The IP address range for the cluster pod IPs. If this field is set, then
      * `cluster.cluster_ipv4_cidr` must be left blank.
@@ -1845,17 +1961,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string cluster_ipv4_cidr_block = 9;</code>
      */
-    public Builder setClusterIpv4CidrBlock(
-        java.lang.String value) {
+    public Builder setClusterIpv4CidrBlock(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       clusterIpv4CidrBlock_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The IP address range for the cluster pod IPs. If this field is set, then
      * `cluster.cluster_ipv4_cidr` must be left blank.
@@ -1873,12 +1990,14 @@ private static final long serialVersionUID = 0L;
      * <code>string cluster_ipv4_cidr_block = 9;</code>
      */
     public Builder clearClusterIpv4CidrBlock() {
-      
+
       clusterIpv4CidrBlock_ = getDefaultInstance().getClusterIpv4CidrBlock();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The IP address range for the cluster pod IPs. If this field is set, then
      * `cluster.cluster_ipv4_cidr` must be left blank.
@@ -1895,13 +2014,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string cluster_ipv4_cidr_block = 9;</code>
      */
-    public Builder setClusterIpv4CidrBlockBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setClusterIpv4CidrBlockBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       clusterIpv4CidrBlock_ = value;
       onChanged();
       return this;
@@ -1909,6 +2027,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object nodeIpv4CidrBlock_ = "";
     /**
+     *
+     *
      * <pre>
      * The IP address range of the instance IPs in this cluster.
      * This is applicable only if `create_subnetwork` is true.
@@ -1927,8 +2047,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getNodeIpv4CidrBlock() {
       java.lang.Object ref = nodeIpv4CidrBlock_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         nodeIpv4CidrBlock_ = s;
         return s;
@@ -1937,6 +2056,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The IP address range of the instance IPs in this cluster.
      * This is applicable only if `create_subnetwork` is true.
@@ -1952,13 +2073,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string node_ipv4_cidr_block = 10;</code>
      */
-    public com.google.protobuf.ByteString
-        getNodeIpv4CidrBlockBytes() {
+    public com.google.protobuf.ByteString getNodeIpv4CidrBlockBytes() {
       java.lang.Object ref = nodeIpv4CidrBlock_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         nodeIpv4CidrBlock_ = b;
         return b;
       } else {
@@ -1966,6 +2085,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The IP address range of the instance IPs in this cluster.
      * This is applicable only if `create_subnetwork` is true.
@@ -1981,17 +2102,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string node_ipv4_cidr_block = 10;</code>
      */
-    public Builder setNodeIpv4CidrBlock(
-        java.lang.String value) {
+    public Builder setNodeIpv4CidrBlock(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       nodeIpv4CidrBlock_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The IP address range of the instance IPs in this cluster.
      * This is applicable only if `create_subnetwork` is true.
@@ -2008,12 +2130,14 @@ private static final long serialVersionUID = 0L;
      * <code>string node_ipv4_cidr_block = 10;</code>
      */
     public Builder clearNodeIpv4CidrBlock() {
-      
+
       nodeIpv4CidrBlock_ = getDefaultInstance().getNodeIpv4CidrBlock();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The IP address range of the instance IPs in this cluster.
      * This is applicable only if `create_subnetwork` is true.
@@ -2029,13 +2153,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string node_ipv4_cidr_block = 10;</code>
      */
-    public Builder setNodeIpv4CidrBlockBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setNodeIpv4CidrBlockBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       nodeIpv4CidrBlock_ = value;
       onChanged();
       return this;
@@ -2043,6 +2166,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object servicesIpv4CidrBlock_ = "";
     /**
+     *
+     *
      * <pre>
      * The IP address range of the services IPs in this cluster. If blank, a range
      * will be automatically chosen with the default size.
@@ -2062,8 +2187,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getServicesIpv4CidrBlock() {
       java.lang.Object ref = servicesIpv4CidrBlock_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         servicesIpv4CidrBlock_ = s;
         return s;
@@ -2072,6 +2196,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The IP address range of the services IPs in this cluster. If blank, a range
      * will be automatically chosen with the default size.
@@ -2088,13 +2214,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string services_ipv4_cidr_block = 11;</code>
      */
-    public com.google.protobuf.ByteString
-        getServicesIpv4CidrBlockBytes() {
+    public com.google.protobuf.ByteString getServicesIpv4CidrBlockBytes() {
       java.lang.Object ref = servicesIpv4CidrBlock_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         servicesIpv4CidrBlock_ = b;
         return b;
       } else {
@@ -2102,6 +2226,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The IP address range of the services IPs in this cluster. If blank, a range
      * will be automatically chosen with the default size.
@@ -2118,17 +2244,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string services_ipv4_cidr_block = 11;</code>
      */
-    public Builder setServicesIpv4CidrBlock(
-        java.lang.String value) {
+    public Builder setServicesIpv4CidrBlock(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       servicesIpv4CidrBlock_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The IP address range of the services IPs in this cluster. If blank, a range
      * will be automatically chosen with the default size.
@@ -2146,12 +2273,14 @@ private static final long serialVersionUID = 0L;
      * <code>string services_ipv4_cidr_block = 11;</code>
      */
     public Builder clearServicesIpv4CidrBlock() {
-      
+
       servicesIpv4CidrBlock_ = getDefaultInstance().getServicesIpv4CidrBlock();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The IP address range of the services IPs in this cluster. If blank, a range
      * will be automatically chosen with the default size.
@@ -2168,33 +2297,34 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string services_ipv4_cidr_block = 11;</code>
      */
-    public Builder setServicesIpv4CidrBlockBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setServicesIpv4CidrBlockBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       servicesIpv4CidrBlock_ = value;
       onChanged();
       return this;
     }
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+
+    @java.lang.Override
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
     }
-
 
     // @@protoc_insertion_point(builder_scope:google.container.v1.IPAllocationPolicy)
   }
 
   // @@protoc_insertion_point(class_scope:google.container.v1.IPAllocationPolicy)
   private static final com.google.container.v1.IPAllocationPolicy DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.container.v1.IPAllocationPolicy();
   }
@@ -2203,15 +2333,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<IPAllocationPolicy>
-      PARSER = new com.google.protobuf.AbstractParser<IPAllocationPolicy>() {
-    public IPAllocationPolicy parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-        return new IPAllocationPolicy(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<IPAllocationPolicy> PARSER =
+      new com.google.protobuf.AbstractParser<IPAllocationPolicy>() {
+        @java.lang.Override
+        public IPAllocationPolicy parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new IPAllocationPolicy(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<IPAllocationPolicy> parser() {
     return PARSER;
@@ -2222,9 +2353,8 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.container.v1.IPAllocationPolicy getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

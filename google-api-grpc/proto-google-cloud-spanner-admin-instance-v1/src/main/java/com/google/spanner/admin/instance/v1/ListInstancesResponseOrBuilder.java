@@ -3,20 +3,24 @@
 
 package com.google.spanner.admin.instance.v1;
 
-public interface ListInstancesResponseOrBuilder extends
+public interface ListInstancesResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.spanner.admin.instance.v1.ListInstancesResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The list of requested instances.
    * </pre>
    *
    * <code>repeated .google.spanner.admin.instance.v1.Instance instances = 1;</code>
    */
-  java.util.List<com.google.spanner.admin.instance.v1.Instance> 
-      getInstancesList();
+  java.util.List<com.google.spanner.admin.instance.v1.Instance> getInstancesList();
   /**
+   *
+   *
    * <pre>
    * The list of requested instances.
    * </pre>
@@ -25,6 +29,8 @@ public interface ListInstancesResponseOrBuilder extends
    */
   com.google.spanner.admin.instance.v1.Instance getInstances(int index);
   /**
+   *
+   *
    * <pre>
    * The list of requested instances.
    * </pre>
@@ -33,25 +39,30 @@ public interface ListInstancesResponseOrBuilder extends
    */
   int getInstancesCount();
   /**
+   *
+   *
    * <pre>
    * The list of requested instances.
    * </pre>
    *
    * <code>repeated .google.spanner.admin.instance.v1.Instance instances = 1;</code>
    */
-  java.util.List<? extends com.google.spanner.admin.instance.v1.InstanceOrBuilder> 
+  java.util.List<? extends com.google.spanner.admin.instance.v1.InstanceOrBuilder>
       getInstancesOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * The list of requested instances.
    * </pre>
    *
    * <code>repeated .google.spanner.admin.instance.v1.Instance instances = 1;</code>
    */
-  com.google.spanner.admin.instance.v1.InstanceOrBuilder getInstancesOrBuilder(
-      int index);
+  com.google.spanner.admin.instance.v1.InstanceOrBuilder getInstancesOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * `next_page_token` can be sent in a subsequent
    * [ListInstances][google.spanner.admin.instance.v1.InstanceAdmin.ListInstances] call to fetch more
@@ -62,6 +73,8 @@ public interface ListInstancesResponseOrBuilder extends
    */
   java.lang.String getNextPageToken();
   /**
+   *
+   *
    * <pre>
    * `next_page_token` can be sent in a subsequent
    * [ListInstances][google.spanner.admin.instance.v1.InstanceAdmin.ListInstances] call to fetch more
@@ -70,6 +83,5 @@ public interface ListInstancesResponseOrBuilder extends
    *
    * <code>string next_page_token = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getNextPageTokenBytes();
+  com.google.protobuf.ByteString getNextPageTokenBytes();
 }

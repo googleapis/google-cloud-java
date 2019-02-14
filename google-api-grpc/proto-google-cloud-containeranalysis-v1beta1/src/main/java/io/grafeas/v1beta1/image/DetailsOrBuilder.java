@@ -3,11 +3,14 @@
 
 package io.grafeas.v1beta1.image;
 
-public interface DetailsOrBuilder extends
+public interface DetailsOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:grafeas.v1beta1.image.Details)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The child image derived from the base image.
    * </pre>
@@ -16,6 +19,8 @@ public interface DetailsOrBuilder extends
    */
   boolean hasDerivedImage();
   /**
+   *
+   *
    * <pre>
    * The child image derived from the base image.
    * </pre>
@@ -24,6 +29,8 @@ public interface DetailsOrBuilder extends
    */
   io.grafeas.v1beta1.image.Derived getDerivedImage();
   /**
+   *
+   *
    * <pre>
    * The child image derived from the base image.
    * </pre>

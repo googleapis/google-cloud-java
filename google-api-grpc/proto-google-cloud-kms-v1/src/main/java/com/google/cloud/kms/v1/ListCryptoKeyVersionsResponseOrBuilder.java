@@ -3,20 +3,24 @@
 
 package com.google.cloud.kms.v1;
 
-public interface ListCryptoKeyVersionsResponseOrBuilder extends
+public interface ListCryptoKeyVersionsResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.kms.v1.ListCryptoKeyVersionsResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The list of [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion].
    * </pre>
    *
    * <code>repeated .google.cloud.kms.v1.CryptoKeyVersion crypto_key_versions = 1;</code>
    */
-  java.util.List<com.google.cloud.kms.v1.CryptoKeyVersion> 
-      getCryptoKeyVersionsList();
+  java.util.List<com.google.cloud.kms.v1.CryptoKeyVersion> getCryptoKeyVersionsList();
   /**
+   *
+   *
    * <pre>
    * The list of [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion].
    * </pre>
@@ -25,6 +29,8 @@ public interface ListCryptoKeyVersionsResponseOrBuilder extends
    */
   com.google.cloud.kms.v1.CryptoKeyVersion getCryptoKeyVersions(int index);
   /**
+   *
+   *
    * <pre>
    * The list of [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion].
    * </pre>
@@ -33,25 +39,30 @@ public interface ListCryptoKeyVersionsResponseOrBuilder extends
    */
   int getCryptoKeyVersionsCount();
   /**
+   *
+   *
    * <pre>
    * The list of [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion].
    * </pre>
    *
    * <code>repeated .google.cloud.kms.v1.CryptoKeyVersion crypto_key_versions = 1;</code>
    */
-  java.util.List<? extends com.google.cloud.kms.v1.CryptoKeyVersionOrBuilder> 
+  java.util.List<? extends com.google.cloud.kms.v1.CryptoKeyVersionOrBuilder>
       getCryptoKeyVersionsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * The list of [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion].
    * </pre>
    *
    * <code>repeated .google.cloud.kms.v1.CryptoKeyVersion crypto_key_versions = 1;</code>
    */
-  com.google.cloud.kms.v1.CryptoKeyVersionOrBuilder getCryptoKeyVersionsOrBuilder(
-      int index);
+  com.google.cloud.kms.v1.CryptoKeyVersionOrBuilder getCryptoKeyVersionsOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * A token to retrieve next page of results. Pass this value in
    * [ListCryptoKeyVersionsRequest.page_token][google.cloud.kms.v1.ListCryptoKeyVersionsRequest.page_token] to retrieve the next page of
@@ -62,6 +73,8 @@ public interface ListCryptoKeyVersionsResponseOrBuilder extends
    */
   java.lang.String getNextPageToken();
   /**
+   *
+   *
    * <pre>
    * A token to retrieve next page of results. Pass this value in
    * [ListCryptoKeyVersionsRequest.page_token][google.cloud.kms.v1.ListCryptoKeyVersionsRequest.page_token] to retrieve the next page of
@@ -70,10 +83,11 @@ public interface ListCryptoKeyVersionsResponseOrBuilder extends
    *
    * <code>string next_page_token = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getNextPageTokenBytes();
+  com.google.protobuf.ByteString getNextPageTokenBytes();
 
   /**
+   *
+   *
    * <pre>
    * The total number of [CryptoKeyVersions][google.cloud.kms.v1.CryptoKeyVersion] that matched the
    * query.

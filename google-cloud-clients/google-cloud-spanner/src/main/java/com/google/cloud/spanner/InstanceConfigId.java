@@ -77,7 +77,7 @@ public final class InstanceConfigId {
    * @param name the instance config name of the form {@code
    *     projects/PROJECT_ID/instanceConfigs/INSTANCE_CONFIG_ID}
    * @throws IllegalArgumentException if {@code instanceName} does not conform to the expected
-   * pattern.
+   *     pattern.
    */
   static InstanceConfigId of(String name) {
     Map<String, String> parts = NAME_TEMPLATE.match(name);
@@ -86,9 +86,7 @@ public final class InstanceConfigId {
     return new InstanceConfigId(parts.get("project"), parts.get("instanceconfig"));
   }
 
-  /**
-   * Creates an {@code InstanceConfigId} given project and instance config IDs.
-   */
+  /** Creates an {@code InstanceConfigId} given project and instance config IDs. */
   public static InstanceConfigId of(String project, String instanceConfig) {
     return new InstanceConfigId(project, instanceConfig);
   }

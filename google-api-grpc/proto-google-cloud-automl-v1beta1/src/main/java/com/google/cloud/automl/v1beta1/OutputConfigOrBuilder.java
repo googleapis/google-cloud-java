@@ -3,11 +3,14 @@
 
 package com.google.cloud.automl.v1beta1;
 
-public interface OutputConfigOrBuilder extends
+public interface OutputConfigOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.automl.v1beta1.OutputConfig)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The GCS location where the output must be written to.
    * </pre>
@@ -16,6 +19,8 @@ public interface OutputConfigOrBuilder extends
    */
   boolean hasGcsDestination();
   /**
+   *
+   *
    * <pre>
    * The GCS location where the output must be written to.
    * </pre>
@@ -24,6 +29,8 @@ public interface OutputConfigOrBuilder extends
    */
   com.google.cloud.automl.v1beta1.GcsDestination getGcsDestination();
   /**
+   *
+   *
    * <pre>
    * The GCS location where the output must be written to.
    * </pre>

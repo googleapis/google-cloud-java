@@ -3,11 +3,14 @@
 
 package com.google.monitoring.v3;
 
-public interface TypedValueOrBuilder extends
+public interface TypedValueOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.monitoring.v3.TypedValue)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * A Boolean value: `true` or `false`.
    * </pre>
@@ -17,6 +20,8 @@ public interface TypedValueOrBuilder extends
   boolean getBoolValue();
 
   /**
+   *
+   *
    * <pre>
    * A 64-bit integer. Its range is approximately &amp;plusmn;9.2x10&lt;sup&gt;18&lt;/sup&gt;.
    * </pre>
@@ -26,6 +31,8 @@ public interface TypedValueOrBuilder extends
   long getInt64Value();
 
   /**
+   *
+   *
    * <pre>
    * A 64-bit double-precision floating-point number. Its magnitude
    * is approximately &amp;plusmn;10&lt;sup&gt;&amp;plusmn;300&lt;/sup&gt; and it has 16
@@ -37,6 +44,8 @@ public interface TypedValueOrBuilder extends
   double getDoubleValue();
 
   /**
+   *
+   *
    * <pre>
    * A variable-length string value.
    * </pre>
@@ -45,16 +54,19 @@ public interface TypedValueOrBuilder extends
    */
   java.lang.String getStringValue();
   /**
+   *
+   *
    * <pre>
    * A variable-length string value.
    * </pre>
    *
    * <code>string string_value = 4;</code>
    */
-  com.google.protobuf.ByteString
-      getStringValueBytes();
+  com.google.protobuf.ByteString getStringValueBytes();
 
   /**
+   *
+   *
    * <pre>
    * A distribution value.
    * </pre>
@@ -63,6 +75,8 @@ public interface TypedValueOrBuilder extends
    */
   boolean hasDistributionValue();
   /**
+   *
+   *
    * <pre>
    * A distribution value.
    * </pre>
@@ -71,6 +85,8 @@ public interface TypedValueOrBuilder extends
    */
   com.google.api.Distribution getDistributionValue();
   /**
+   *
+   *
    * <pre>
    * A distribution value.
    * </pre>

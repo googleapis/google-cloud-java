@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,13 +56,13 @@ import javax.annotation.Generated;
  * methods:
  *
  * <ol>
- *   <li> A "flattened" method. With this type of method, the fields of the request type have been
+ *   <li>A "flattened" method. With this type of method, the fields of the request type have been
  *       converted into function parameters. It may be the case that not all fields are available as
  *       parameters, and not every API method will have a flattened method entry point.
- *   <li> A "request object" method. This type of method only takes one parameter, a request object,
+ *   <li>A "request object" method. This type of method only takes one parameter, a request object,
  *       which must be constructed before the call. Not every API method will have a request object
  *       method.
- *   <li> A "callable" method. This type of method takes no parameters and returns an immutable API
+ *   <li>A "callable" method. This type of method takes no parameters and returns an immutable API
  *       callable object, which can be used to initiate calls to the service.
  * </ol>
  *
@@ -156,7 +156,8 @@ public class InstanceTemplateClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Deletes the specified instance template. Deleting an instance template is permanent and cannot
-   * be undone. It's not possible to delete templates which are in use by an instance group.
+   * be undone. It is not possible to delete templates that are already in use by a managed instance
+   * group.
    *
    * <p>Sample code:
    *
@@ -184,7 +185,8 @@ public class InstanceTemplateClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Deletes the specified instance template. Deleting an instance template is permanent and cannot
-   * be undone. It's not possible to delete templates which are in use by an instance group.
+   * be undone. It is not possible to delete templates that are already in use by a managed instance
+   * group.
    *
    * <p>Sample code:
    *
@@ -211,7 +213,8 @@ public class InstanceTemplateClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Deletes the specified instance template. Deleting an instance template is permanent and cannot
-   * be undone. It's not possible to delete templates which are in use by an instance group.
+   * be undone. It is not possible to delete templates that are already in use by a managed instance
+   * group.
    *
    * <p>Sample code:
    *
@@ -236,7 +239,8 @@ public class InstanceTemplateClient implements BackgroundResource {
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
    * Deletes the specified instance template. Deleting an instance template is permanent and cannot
-   * be undone. It's not possible to delete templates which are in use by an instance group.
+   * be undone. It is not possible to delete templates that are already in use by a managed instance
+   * group.
    *
    * <p>Sample code:
    *
@@ -359,6 +363,110 @@ public class InstanceTemplateClient implements BackgroundResource {
   public final UnaryCallable<GetInstanceTemplateHttpRequest, InstanceTemplate>
       getInstanceTemplateCallable() {
     return stub.getInstanceTemplateCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets the access control policy for a resource. May be empty if no such policy or resource
+   * exists.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InstanceTemplateClient instanceTemplateClient = InstanceTemplateClient.create()) {
+   *   ProjectGlobalInstanceTemplateResourceName resource = ProjectGlobalInstanceTemplateResourceName.of("[PROJECT]", "[RESOURCE]");
+   *   Policy response = instanceTemplateClient.getIamPolicyInstanceTemplate(resource);
+   * }
+   * </code></pre>
+   *
+   * @param resource Name or id of the resource for this request.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Policy getIamPolicyInstanceTemplate(
+      ProjectGlobalInstanceTemplateResourceName resource) {
+
+    GetIamPolicyInstanceTemplateHttpRequest request =
+        GetIamPolicyInstanceTemplateHttpRequest.newBuilder()
+            .setResource(resource == null ? null : resource.toString())
+            .build();
+    return getIamPolicyInstanceTemplate(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets the access control policy for a resource. May be empty if no such policy or resource
+   * exists.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InstanceTemplateClient instanceTemplateClient = InstanceTemplateClient.create()) {
+   *   ProjectGlobalInstanceTemplateResourceName resource = ProjectGlobalInstanceTemplateResourceName.of("[PROJECT]", "[RESOURCE]");
+   *   Policy response = instanceTemplateClient.getIamPolicyInstanceTemplate(resource.toString());
+   * }
+   * </code></pre>
+   *
+   * @param resource Name or id of the resource for this request.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Policy getIamPolicyInstanceTemplate(String resource) {
+
+    GetIamPolicyInstanceTemplateHttpRequest request =
+        GetIamPolicyInstanceTemplateHttpRequest.newBuilder().setResource(resource).build();
+    return getIamPolicyInstanceTemplate(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets the access control policy for a resource. May be empty if no such policy or resource
+   * exists.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InstanceTemplateClient instanceTemplateClient = InstanceTemplateClient.create()) {
+   *   ProjectGlobalInstanceTemplateResourceName resource = ProjectGlobalInstanceTemplateResourceName.of("[PROJECT]", "[RESOURCE]");
+   *   GetIamPolicyInstanceTemplateHttpRequest request = GetIamPolicyInstanceTemplateHttpRequest.newBuilder()
+   *     .setResource(resource.toString())
+   *     .build();
+   *   Policy response = instanceTemplateClient.getIamPolicyInstanceTemplate(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Policy getIamPolicyInstanceTemplate(
+      GetIamPolicyInstanceTemplateHttpRequest request) {
+    return getIamPolicyInstanceTemplateCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Gets the access control policy for a resource. May be empty if no such policy or resource
+   * exists.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InstanceTemplateClient instanceTemplateClient = InstanceTemplateClient.create()) {
+   *   ProjectGlobalInstanceTemplateResourceName resource = ProjectGlobalInstanceTemplateResourceName.of("[PROJECT]", "[RESOURCE]");
+   *   GetIamPolicyInstanceTemplateHttpRequest request = GetIamPolicyInstanceTemplateHttpRequest.newBuilder()
+   *     .setResource(resource.toString())
+   *     .build();
+   *   ApiFuture&lt;Policy&gt; future = instanceTemplateClient.getIamPolicyInstanceTemplateCallable().futureCall(request);
+   *   // Do something
+   *   Policy response = future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi
+  public final UnaryCallable<GetIamPolicyInstanceTemplateHttpRequest, Policy>
+      getIamPolicyInstanceTemplateCallable() {
+    return stub.getIamPolicyInstanceTemplateCallable();
   }
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
@@ -489,8 +597,7 @@ public class InstanceTemplateClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of instance templates that are contained within the specified project and
-   * zone.
+   * Retrieves a list of instance templates that are contained within the specified project.
    *
    * <p>Sample code:
    *
@@ -517,8 +624,7 @@ public class InstanceTemplateClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of instance templates that are contained within the specified project and
-   * zone.
+   * Retrieves a list of instance templates that are contained within the specified project.
    *
    * <p>Sample code:
    *
@@ -543,8 +649,7 @@ public class InstanceTemplateClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of instance templates that are contained within the specified project and
-   * zone.
+   * Retrieves a list of instance templates that are contained within the specified project.
    *
    * <p>Sample code:
    *
@@ -571,8 +676,7 @@ public class InstanceTemplateClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of instance templates that are contained within the specified project and
-   * zone.
+   * Retrieves a list of instance templates that are contained within the specified project.
    *
    * <p>Sample code:
    *
@@ -598,8 +702,7 @@ public class InstanceTemplateClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Retrieves a list of instance templates that are contained within the specified project and
-   * zone.
+   * Retrieves a list of instance templates that are contained within the specified project.
    *
    * <p>Sample code:
    *
@@ -628,6 +731,234 @@ public class InstanceTemplateClient implements BackgroundResource {
   public final UnaryCallable<ListInstanceTemplatesHttpRequest, InstanceTemplateList>
       listInstanceTemplatesCallable() {
     return stub.listInstanceTemplatesCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sets the access control policy on the specified resource. Replaces any existing policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InstanceTemplateClient instanceTemplateClient = InstanceTemplateClient.create()) {
+   *   ProjectGlobalInstanceTemplateResourceName resource = ProjectGlobalInstanceTemplateResourceName.of("[PROJECT]", "[RESOURCE]");
+   *   GlobalSetPolicyRequest globalSetPolicyRequestResource = GlobalSetPolicyRequest.newBuilder().build();
+   *   Policy response = instanceTemplateClient.setIamPolicyInstanceTemplate(resource, globalSetPolicyRequestResource);
+   * }
+   * </code></pre>
+   *
+   * @param resource Name or id of the resource for this request.
+   * @param globalSetPolicyRequestResource
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Policy setIamPolicyInstanceTemplate(
+      ProjectGlobalInstanceTemplateResourceName resource,
+      GlobalSetPolicyRequest globalSetPolicyRequestResource) {
+
+    SetIamPolicyInstanceTemplateHttpRequest request =
+        SetIamPolicyInstanceTemplateHttpRequest.newBuilder()
+            .setResource(resource == null ? null : resource.toString())
+            .setGlobalSetPolicyRequestResource(globalSetPolicyRequestResource)
+            .build();
+    return setIamPolicyInstanceTemplate(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sets the access control policy on the specified resource. Replaces any existing policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InstanceTemplateClient instanceTemplateClient = InstanceTemplateClient.create()) {
+   *   ProjectGlobalInstanceTemplateResourceName resource = ProjectGlobalInstanceTemplateResourceName.of("[PROJECT]", "[RESOURCE]");
+   *   GlobalSetPolicyRequest globalSetPolicyRequestResource = GlobalSetPolicyRequest.newBuilder().build();
+   *   Policy response = instanceTemplateClient.setIamPolicyInstanceTemplate(resource.toString(), globalSetPolicyRequestResource);
+   * }
+   * </code></pre>
+   *
+   * @param resource Name or id of the resource for this request.
+   * @param globalSetPolicyRequestResource
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Policy setIamPolicyInstanceTemplate(
+      String resource, GlobalSetPolicyRequest globalSetPolicyRequestResource) {
+
+    SetIamPolicyInstanceTemplateHttpRequest request =
+        SetIamPolicyInstanceTemplateHttpRequest.newBuilder()
+            .setResource(resource)
+            .setGlobalSetPolicyRequestResource(globalSetPolicyRequestResource)
+            .build();
+    return setIamPolicyInstanceTemplate(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sets the access control policy on the specified resource. Replaces any existing policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InstanceTemplateClient instanceTemplateClient = InstanceTemplateClient.create()) {
+   *   ProjectGlobalInstanceTemplateResourceName resource = ProjectGlobalInstanceTemplateResourceName.of("[PROJECT]", "[RESOURCE]");
+   *   GlobalSetPolicyRequest globalSetPolicyRequestResource = GlobalSetPolicyRequest.newBuilder().build();
+   *   SetIamPolicyInstanceTemplateHttpRequest request = SetIamPolicyInstanceTemplateHttpRequest.newBuilder()
+   *     .setResource(resource.toString())
+   *     .setGlobalSetPolicyRequestResource(globalSetPolicyRequestResource)
+   *     .build();
+   *   Policy response = instanceTemplateClient.setIamPolicyInstanceTemplate(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final Policy setIamPolicyInstanceTemplate(
+      SetIamPolicyInstanceTemplateHttpRequest request) {
+    return setIamPolicyInstanceTemplateCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Sets the access control policy on the specified resource. Replaces any existing policy.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InstanceTemplateClient instanceTemplateClient = InstanceTemplateClient.create()) {
+   *   ProjectGlobalInstanceTemplateResourceName resource = ProjectGlobalInstanceTemplateResourceName.of("[PROJECT]", "[RESOURCE]");
+   *   GlobalSetPolicyRequest globalSetPolicyRequestResource = GlobalSetPolicyRequest.newBuilder().build();
+   *   SetIamPolicyInstanceTemplateHttpRequest request = SetIamPolicyInstanceTemplateHttpRequest.newBuilder()
+   *     .setResource(resource.toString())
+   *     .setGlobalSetPolicyRequestResource(globalSetPolicyRequestResource)
+   *     .build();
+   *   ApiFuture&lt;Policy&gt; future = instanceTemplateClient.setIamPolicyInstanceTemplateCallable().futureCall(request);
+   *   // Do something
+   *   Policy response = future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi
+  public final UnaryCallable<SetIamPolicyInstanceTemplateHttpRequest, Policy>
+      setIamPolicyInstanceTemplateCallable() {
+    return stub.setIamPolicyInstanceTemplateCallable();
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns permissions that a caller has on the specified resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InstanceTemplateClient instanceTemplateClient = InstanceTemplateClient.create()) {
+   *   ProjectGlobalInstanceTemplateResourceName resource = ProjectGlobalInstanceTemplateResourceName.of("[PROJECT]", "[RESOURCE]");
+   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
+   *   TestPermissionsResponse response = instanceTemplateClient.testIamPermissionsInstanceTemplate(resource, testPermissionsRequestResource);
+   * }
+   * </code></pre>
+   *
+   * @param resource Name or id of the resource for this request.
+   * @param testPermissionsRequestResource
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final TestPermissionsResponse testIamPermissionsInstanceTemplate(
+      ProjectGlobalInstanceTemplateResourceName resource,
+      TestPermissionsRequest testPermissionsRequestResource) {
+
+    TestIamPermissionsInstanceTemplateHttpRequest request =
+        TestIamPermissionsInstanceTemplateHttpRequest.newBuilder()
+            .setResource(resource == null ? null : resource.toString())
+            .setTestPermissionsRequestResource(testPermissionsRequestResource)
+            .build();
+    return testIamPermissionsInstanceTemplate(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns permissions that a caller has on the specified resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InstanceTemplateClient instanceTemplateClient = InstanceTemplateClient.create()) {
+   *   ProjectGlobalInstanceTemplateResourceName resource = ProjectGlobalInstanceTemplateResourceName.of("[PROJECT]", "[RESOURCE]");
+   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
+   *   TestPermissionsResponse response = instanceTemplateClient.testIamPermissionsInstanceTemplate(resource.toString(), testPermissionsRequestResource);
+   * }
+   * </code></pre>
+   *
+   * @param resource Name or id of the resource for this request.
+   * @param testPermissionsRequestResource
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final TestPermissionsResponse testIamPermissionsInstanceTemplate(
+      String resource, TestPermissionsRequest testPermissionsRequestResource) {
+
+    TestIamPermissionsInstanceTemplateHttpRequest request =
+        TestIamPermissionsInstanceTemplateHttpRequest.newBuilder()
+            .setResource(resource)
+            .setTestPermissionsRequestResource(testPermissionsRequestResource)
+            .build();
+    return testIamPermissionsInstanceTemplate(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns permissions that a caller has on the specified resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InstanceTemplateClient instanceTemplateClient = InstanceTemplateClient.create()) {
+   *   ProjectGlobalInstanceTemplateResourceName resource = ProjectGlobalInstanceTemplateResourceName.of("[PROJECT]", "[RESOURCE]");
+   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
+   *   TestIamPermissionsInstanceTemplateHttpRequest request = TestIamPermissionsInstanceTemplateHttpRequest.newBuilder()
+   *     .setResource(resource.toString())
+   *     .setTestPermissionsRequestResource(testPermissionsRequestResource)
+   *     .build();
+   *   TestPermissionsResponse response = instanceTemplateClient.testIamPermissionsInstanceTemplate(request);
+   * }
+   * </code></pre>
+   *
+   * @param request The request object containing all of the parameters for the API call.
+   * @throws com.google.api.gax.rpc.ApiException if the remote call fails
+   */
+  @BetaApi
+  public final TestPermissionsResponse testIamPermissionsInstanceTemplate(
+      TestIamPermissionsInstanceTemplateHttpRequest request) {
+    return testIamPermissionsInstanceTemplateCallable().call(request);
+  }
+
+  // AUTO-GENERATED DOCUMENTATION AND METHOD
+  /**
+   * Returns permissions that a caller has on the specified resource.
+   *
+   * <p>Sample code:
+   *
+   * <pre><code>
+   * try (InstanceTemplateClient instanceTemplateClient = InstanceTemplateClient.create()) {
+   *   ProjectGlobalInstanceTemplateResourceName resource = ProjectGlobalInstanceTemplateResourceName.of("[PROJECT]", "[RESOURCE]");
+   *   TestPermissionsRequest testPermissionsRequestResource = TestPermissionsRequest.newBuilder().build();
+   *   TestIamPermissionsInstanceTemplateHttpRequest request = TestIamPermissionsInstanceTemplateHttpRequest.newBuilder()
+   *     .setResource(resource.toString())
+   *     .setTestPermissionsRequestResource(testPermissionsRequestResource)
+   *     .build();
+   *   ApiFuture&lt;TestPermissionsResponse&gt; future = instanceTemplateClient.testIamPermissionsInstanceTemplateCallable().futureCall(request);
+   *   // Do something
+   *   TestPermissionsResponse response = future.get();
+   * }
+   * </code></pre>
+   */
+  @BetaApi
+  public final UnaryCallable<TestIamPermissionsInstanceTemplateHttpRequest, TestPermissionsResponse>
+      testIamPermissionsInstanceTemplateCallable() {
+    return stub.testIamPermissionsInstanceTemplateCallable();
   }
 
   @Override
@@ -662,8 +993,11 @@ public class InstanceTemplateClient implements BackgroundResource {
 
   public static class ListInstanceTemplatesPagedResponse
       extends AbstractPagedListResponse<
-          ListInstanceTemplatesHttpRequest, InstanceTemplateList, InstanceTemplate,
-          ListInstanceTemplatesPage, ListInstanceTemplatesFixedSizeCollection> {
+          ListInstanceTemplatesHttpRequest,
+          InstanceTemplateList,
+          InstanceTemplate,
+          ListInstanceTemplatesPage,
+          ListInstanceTemplatesFixedSizeCollection> {
 
     public static ApiFuture<ListInstanceTemplatesPagedResponse> createAsync(
         PageContext<ListInstanceTemplatesHttpRequest, InstanceTemplateList, InstanceTemplate>
@@ -688,7 +1022,9 @@ public class InstanceTemplateClient implements BackgroundResource {
 
   public static class ListInstanceTemplatesPage
       extends AbstractPage<
-          ListInstanceTemplatesHttpRequest, InstanceTemplateList, InstanceTemplate,
+          ListInstanceTemplatesHttpRequest,
+          InstanceTemplateList,
+          InstanceTemplate,
           ListInstanceTemplatesPage> {
 
     private ListInstanceTemplatesPage(
@@ -721,8 +1057,11 @@ public class InstanceTemplateClient implements BackgroundResource {
 
   public static class ListInstanceTemplatesFixedSizeCollection
       extends AbstractFixedSizeCollection<
-          ListInstanceTemplatesHttpRequest, InstanceTemplateList, InstanceTemplate,
-          ListInstanceTemplatesPage, ListInstanceTemplatesFixedSizeCollection> {
+          ListInstanceTemplatesHttpRequest,
+          InstanceTemplateList,
+          InstanceTemplate,
+          ListInstanceTemplatesPage,
+          ListInstanceTemplatesFixedSizeCollection> {
 
     private ListInstanceTemplatesFixedSizeCollection(
         List<ListInstanceTemplatesPage> pages, int collectionSize) {

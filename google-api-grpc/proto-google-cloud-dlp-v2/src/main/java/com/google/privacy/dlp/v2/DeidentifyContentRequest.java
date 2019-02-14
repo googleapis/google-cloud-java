@@ -4,21 +4,24 @@
 package com.google.privacy.dlp.v2;
 
 /**
+ *
+ *
  * <pre>
  * Request to de-identify a list of items.
  * </pre>
  *
  * Protobuf type {@code google.privacy.dlp.v2.DeidentifyContentRequest}
  */
-public  final class DeidentifyContentRequest extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class DeidentifyContentRequest extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.DeidentifyContentRequest)
     DeidentifyContentRequestOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use DeidentifyContentRequest.newBuilder() to construct.
   private DeidentifyContentRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private DeidentifyContentRequest() {
     parent_ = "";
     inspectTemplateName_ = "";
@@ -26,15 +29,18 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private DeidentifyContentRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -46,97 +52,114 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            parent_ = s;
-            break;
-          }
-          case 18: {
-            com.google.privacy.dlp.v2.DeidentifyConfig.Builder subBuilder = null;
-            if (deidentifyConfig_ != null) {
-              subBuilder = deidentifyConfig_.toBuilder();
+              parent_ = s;
+              break;
             }
-            deidentifyConfig_ = input.readMessage(com.google.privacy.dlp.v2.DeidentifyConfig.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(deidentifyConfig_);
-              deidentifyConfig_ = subBuilder.buildPartial();
-            }
+          case 18:
+            {
+              com.google.privacy.dlp.v2.DeidentifyConfig.Builder subBuilder = null;
+              if (deidentifyConfig_ != null) {
+                subBuilder = deidentifyConfig_.toBuilder();
+              }
+              deidentifyConfig_ =
+                  input.readMessage(
+                      com.google.privacy.dlp.v2.DeidentifyConfig.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(deidentifyConfig_);
+                deidentifyConfig_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 26: {
-            com.google.privacy.dlp.v2.InspectConfig.Builder subBuilder = null;
-            if (inspectConfig_ != null) {
-              subBuilder = inspectConfig_.toBuilder();
+              break;
             }
-            inspectConfig_ = input.readMessage(com.google.privacy.dlp.v2.InspectConfig.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(inspectConfig_);
-              inspectConfig_ = subBuilder.buildPartial();
+          case 26:
+            {
+              com.google.privacy.dlp.v2.InspectConfig.Builder subBuilder = null;
+              if (inspectConfig_ != null) {
+                subBuilder = inspectConfig_.toBuilder();
+              }
+              inspectConfig_ =
+                  input.readMessage(
+                      com.google.privacy.dlp.v2.InspectConfig.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(inspectConfig_);
+                inspectConfig_ = subBuilder.buildPartial();
+              }
+
+              break;
             }
+          case 34:
+            {
+              com.google.privacy.dlp.v2.ContentItem.Builder subBuilder = null;
+              if (item_ != null) {
+                subBuilder = item_.toBuilder();
+              }
+              item_ =
+                  input.readMessage(
+                      com.google.privacy.dlp.v2.ContentItem.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(item_);
+                item_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 34: {
-            com.google.privacy.dlp.v2.ContentItem.Builder subBuilder = null;
-            if (item_ != null) {
-              subBuilder = item_.toBuilder();
+              break;
             }
-            item_ = input.readMessage(com.google.privacy.dlp.v2.ContentItem.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(item_);
-              item_ = subBuilder.buildPartial();
+          case 42:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              inspectTemplateName_ = s;
+              break;
             }
+          case 50:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            break;
-          }
-          case 42: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            inspectTemplateName_ = s;
-            break;
-          }
-          case 50: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            deidentifyTemplateName_ = s;
-            break;
-          }
+              deidentifyTemplateName_ = s;
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_DeidentifyContentRequest_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.privacy.dlp.v2.DlpProto
+        .internal_static_google_privacy_dlp_v2_DeidentifyContentRequest_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_DeidentifyContentRequest_fieldAccessorTable
+    return com.google.privacy.dlp.v2.DlpProto
+        .internal_static_google_privacy_dlp_v2_DeidentifyContentRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.privacy.dlp.v2.DeidentifyContentRequest.class, com.google.privacy.dlp.v2.DeidentifyContentRequest.Builder.class);
+            com.google.privacy.dlp.v2.DeidentifyContentRequest.class,
+            com.google.privacy.dlp.v2.DeidentifyContentRequest.Builder.class);
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
   private volatile java.lang.Object parent_;
   /**
+   *
+   *
    * <pre>
    * The parent resource name, for example projects/my-project-id.
    * </pre>
@@ -148,27 +171,26 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       parent_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The parent resource name, for example projects/my-project-id.
    * </pre>
    *
    * <code>string parent = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getParentBytes() {
+  public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       parent_ = b;
       return b;
     } else {
@@ -179,6 +201,8 @@ private static final long serialVersionUID = 0L;
   public static final int DEIDENTIFY_CONFIG_FIELD_NUMBER = 2;
   private com.google.privacy.dlp.v2.DeidentifyConfig deidentifyConfig_;
   /**
+   *
+   *
    * <pre>
    * Configuration for the de-identification of the content item.
    * Items specified here will override the template referenced by the
@@ -191,6 +215,8 @@ private static final long serialVersionUID = 0L;
     return deidentifyConfig_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Configuration for the de-identification of the content item.
    * Items specified here will override the template referenced by the
@@ -200,9 +226,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.privacy.dlp.v2.DeidentifyConfig deidentify_config = 2;</code>
    */
   public com.google.privacy.dlp.v2.DeidentifyConfig getDeidentifyConfig() {
-    return deidentifyConfig_ == null ? com.google.privacy.dlp.v2.DeidentifyConfig.getDefaultInstance() : deidentifyConfig_;
+    return deidentifyConfig_ == null
+        ? com.google.privacy.dlp.v2.DeidentifyConfig.getDefaultInstance()
+        : deidentifyConfig_;
   }
   /**
+   *
+   *
    * <pre>
    * Configuration for the de-identification of the content item.
    * Items specified here will override the template referenced by the
@@ -218,6 +248,8 @@ private static final long serialVersionUID = 0L;
   public static final int INSPECT_CONFIG_FIELD_NUMBER = 3;
   private com.google.privacy.dlp.v2.InspectConfig inspectConfig_;
   /**
+   *
+   *
    * <pre>
    * Configuration for the inspector.
    * Items specified here will override the template referenced by the
@@ -230,6 +262,8 @@ private static final long serialVersionUID = 0L;
     return inspectConfig_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Configuration for the inspector.
    * Items specified here will override the template referenced by the
@@ -239,9 +273,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.privacy.dlp.v2.InspectConfig inspect_config = 3;</code>
    */
   public com.google.privacy.dlp.v2.InspectConfig getInspectConfig() {
-    return inspectConfig_ == null ? com.google.privacy.dlp.v2.InspectConfig.getDefaultInstance() : inspectConfig_;
+    return inspectConfig_ == null
+        ? com.google.privacy.dlp.v2.InspectConfig.getDefaultInstance()
+        : inspectConfig_;
   }
   /**
+   *
+   *
    * <pre>
    * Configuration for the inspector.
    * Items specified here will override the template referenced by the
@@ -257,6 +295,8 @@ private static final long serialVersionUID = 0L;
   public static final int ITEM_FIELD_NUMBER = 4;
   private com.google.privacy.dlp.v2.ContentItem item_;
   /**
+   *
+   *
    * <pre>
    * The item to de-identify. Will be treated as text.
    * </pre>
@@ -267,6 +307,8 @@ private static final long serialVersionUID = 0L;
     return item_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * The item to de-identify. Will be treated as text.
    * </pre>
@@ -277,6 +319,8 @@ private static final long serialVersionUID = 0L;
     return item_ == null ? com.google.privacy.dlp.v2.ContentItem.getDefaultInstance() : item_;
   }
   /**
+   *
+   *
    * <pre>
    * The item to de-identify. Will be treated as text.
    * </pre>
@@ -290,6 +334,8 @@ private static final long serialVersionUID = 0L;
   public static final int INSPECT_TEMPLATE_NAME_FIELD_NUMBER = 5;
   private volatile java.lang.Object inspectTemplateName_;
   /**
+   *
+   *
    * <pre>
    * Optional template to use. Any configuration directly specified in
    * inspect_config will override those set in the template. Singular fields
@@ -305,14 +351,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       inspectTemplateName_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Optional template to use. Any configuration directly specified in
    * inspect_config will override those set in the template. Singular fields
@@ -323,13 +370,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string inspect_template_name = 5;</code>
    */
-  public com.google.protobuf.ByteString
-      getInspectTemplateNameBytes() {
+  public com.google.protobuf.ByteString getInspectTemplateNameBytes() {
     java.lang.Object ref = inspectTemplateName_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       inspectTemplateName_ = b;
       return b;
     } else {
@@ -340,6 +385,8 @@ private static final long serialVersionUID = 0L;
   public static final int DEIDENTIFY_TEMPLATE_NAME_FIELD_NUMBER = 6;
   private volatile java.lang.Object deidentifyTemplateName_;
   /**
+   *
+   *
    * <pre>
    * Optional template to use. Any configuration directly specified in
    * deidentify_config will override those set in the template. Singular fields
@@ -355,14 +402,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       deidentifyTemplateName_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Optional template to use. Any configuration directly specified in
    * deidentify_config will override those set in the template. Singular fields
@@ -373,13 +421,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string deidentify_template_name = 6;</code>
    */
-  public com.google.protobuf.ByteString
-      getDeidentifyTemplateNameBytes() {
+  public com.google.protobuf.ByteString getDeidentifyTemplateNameBytes() {
     java.lang.Object ref = deidentifyTemplateName_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       deidentifyTemplateName_ = b;
       return b;
     } else {
@@ -388,6 +434,8 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -397,8 +445,8 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  @java.lang.Override
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getParentBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, parent_);
     }
@@ -420,6 +468,7 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -429,16 +478,13 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, parent_);
     }
     if (deidentifyConfig_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getDeidentifyConfig());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getDeidentifyConfig());
     }
     if (inspectConfig_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, getInspectConfig());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getInspectConfig());
     }
     if (item_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, getItem());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getItem());
     }
     if (!getInspectTemplateNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, inspectTemplateName_);
@@ -454,35 +500,30 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.privacy.dlp.v2.DeidentifyContentRequest)) {
       return super.equals(obj);
     }
-    com.google.privacy.dlp.v2.DeidentifyContentRequest other = (com.google.privacy.dlp.v2.DeidentifyContentRequest) obj;
+    com.google.privacy.dlp.v2.DeidentifyContentRequest other =
+        (com.google.privacy.dlp.v2.DeidentifyContentRequest) obj;
 
     boolean result = true;
-    result = result && getParent()
-        .equals(other.getParent());
+    result = result && getParent().equals(other.getParent());
     result = result && (hasDeidentifyConfig() == other.hasDeidentifyConfig());
     if (hasDeidentifyConfig()) {
-      result = result && getDeidentifyConfig()
-          .equals(other.getDeidentifyConfig());
+      result = result && getDeidentifyConfig().equals(other.getDeidentifyConfig());
     }
     result = result && (hasInspectConfig() == other.hasInspectConfig());
     if (hasInspectConfig()) {
-      result = result && getInspectConfig()
-          .equals(other.getInspectConfig());
+      result = result && getInspectConfig().equals(other.getInspectConfig());
     }
     result = result && (hasItem() == other.hasItem());
     if (hasItem()) {
-      result = result && getItem()
-          .equals(other.getItem());
+      result = result && getItem().equals(other.getItem());
     }
-    result = result && getInspectTemplateName()
-        .equals(other.getInspectTemplateName());
-    result = result && getDeidentifyTemplateName()
-        .equals(other.getDeidentifyTemplateName());
+    result = result && getInspectTemplateName().equals(other.getInspectTemplateName());
+    result = result && getDeidentifyTemplateName().equals(other.getDeidentifyTemplateName());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -518,114 +559,126 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.privacy.dlp.v2.DeidentifyContentRequest parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.privacy.dlp.v2.DeidentifyContentRequest parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.privacy.dlp.v2.DeidentifyContentRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.privacy.dlp.v2.DeidentifyContentRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.privacy.dlp.v2.DeidentifyContentRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.privacy.dlp.v2.DeidentifyContentRequest parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.privacy.dlp.v2.DeidentifyContentRequest parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.privacy.dlp.v2.DeidentifyContentRequest parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.privacy.dlp.v2.DeidentifyContentRequest parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.privacy.dlp.v2.DeidentifyContentRequest parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.privacy.dlp.v2.DeidentifyContentRequest parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.privacy.dlp.v2.DeidentifyContentRequest parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.privacy.dlp.v2.DeidentifyContentRequest parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.privacy.dlp.v2.DeidentifyContentRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  public Builder newBuilderForType() { return newBuilder(); }
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-  public static Builder newBuilder(com.google.privacy.dlp.v2.DeidentifyContentRequest prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+
+  public static Builder newBuilder(com.google.privacy.dlp.v2.DeidentifyContentRequest prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+
+  @java.lang.Override
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Request to de-identify a list of items.
    * </pre>
    *
    * Protobuf type {@code google.privacy.dlp.v2.DeidentifyContentRequest}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.privacy.dlp.v2.DeidentifyContentRequest)
       com.google.privacy.dlp.v2.DeidentifyContentRequestOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_DeidentifyContentRequest_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_DeidentifyContentRequest_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_DeidentifyContentRequest_fieldAccessorTable
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_DeidentifyContentRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.privacy.dlp.v2.DeidentifyContentRequest.class, com.google.privacy.dlp.v2.DeidentifyContentRequest.Builder.class);
+              com.google.privacy.dlp.v2.DeidentifyContentRequest.class,
+              com.google.privacy.dlp.v2.DeidentifyContentRequest.Builder.class);
     }
 
     // Construct using com.google.privacy.dlp.v2.DeidentifyContentRequest.newBuilder()
@@ -633,16 +686,16 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       parent_ = "";
@@ -672,15 +725,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_DeidentifyContentRequest_descriptor;
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_DeidentifyContentRequest_descriptor;
     }
 
+    @java.lang.Override
     public com.google.privacy.dlp.v2.DeidentifyContentRequest getDefaultInstanceForType() {
       return com.google.privacy.dlp.v2.DeidentifyContentRequest.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.privacy.dlp.v2.DeidentifyContentRequest build() {
       com.google.privacy.dlp.v2.DeidentifyContentRequest result = buildPartial();
       if (!result.isInitialized()) {
@@ -689,8 +745,10 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.privacy.dlp.v2.DeidentifyContentRequest buildPartial() {
-      com.google.privacy.dlp.v2.DeidentifyContentRequest result = new com.google.privacy.dlp.v2.DeidentifyContentRequest(this);
+      com.google.privacy.dlp.v2.DeidentifyContentRequest result =
+          new com.google.privacy.dlp.v2.DeidentifyContentRequest(this);
       result.parent_ = parent_;
       if (deidentifyConfigBuilder_ == null) {
         result.deidentifyConfig_ = deidentifyConfig_;
@@ -713,35 +771,43 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+
+    @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+    @java.lang.Override
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+    @java.lang.Override
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
+    @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
+    @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.privacy.dlp.v2.DeidentifyContentRequest) {
-        return mergeFrom((com.google.privacy.dlp.v2.DeidentifyContentRequest)other);
+        return mergeFrom((com.google.privacy.dlp.v2.DeidentifyContentRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -749,7 +815,8 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.privacy.dlp.v2.DeidentifyContentRequest other) {
-      if (other == com.google.privacy.dlp.v2.DeidentifyContentRequest.getDefaultInstance()) return this;
+      if (other == com.google.privacy.dlp.v2.DeidentifyContentRequest.getDefaultInstance())
+        return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
         onChanged();
@@ -776,10 +843,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -788,7 +857,8 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.privacy.dlp.v2.DeidentifyContentRequest) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.privacy.dlp.v2.DeidentifyContentRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -800,6 +870,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object parent_ = "";
     /**
+     *
+     *
      * <pre>
      * The parent resource name, for example projects/my-project-id.
      * </pre>
@@ -809,8 +881,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         parent_ = s;
         return s;
@@ -819,19 +890,19 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The parent resource name, for example projects/my-project-id.
      * </pre>
      *
      * <code>string parent = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getParentBytes() {
+    public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         parent_ = b;
         return b;
       } else {
@@ -839,23 +910,26 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The parent resource name, for example projects/my-project-id.
      * </pre>
      *
      * <code>string parent = 1;</code>
      */
-    public Builder setParent(
-        java.lang.String value) {
+    public Builder setParent(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       parent_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The parent resource name, for example projects/my-project-id.
      * </pre>
@@ -863,25 +937,26 @@ private static final long serialVersionUID = 0L;
      * <code>string parent = 1;</code>
      */
     public Builder clearParent() {
-      
+
       parent_ = getDefaultInstance().getParent();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The parent resource name, for example projects/my-project-id.
      * </pre>
      *
      * <code>string parent = 1;</code>
      */
-    public Builder setParentBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       parent_ = value;
       onChanged();
       return this;
@@ -889,8 +964,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.privacy.dlp.v2.DeidentifyConfig deidentifyConfig_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.privacy.dlp.v2.DeidentifyConfig, com.google.privacy.dlp.v2.DeidentifyConfig.Builder, com.google.privacy.dlp.v2.DeidentifyConfigOrBuilder> deidentifyConfigBuilder_;
+            com.google.privacy.dlp.v2.DeidentifyConfig,
+            com.google.privacy.dlp.v2.DeidentifyConfig.Builder,
+            com.google.privacy.dlp.v2.DeidentifyConfigOrBuilder>
+        deidentifyConfigBuilder_;
     /**
+     *
+     *
      * <pre>
      * Configuration for the de-identification of the content item.
      * Items specified here will override the template referenced by the
@@ -903,6 +983,8 @@ private static final long serialVersionUID = 0L;
       return deidentifyConfigBuilder_ != null || deidentifyConfig_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Configuration for the de-identification of the content item.
      * Items specified here will override the template referenced by the
@@ -913,12 +995,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.privacy.dlp.v2.DeidentifyConfig getDeidentifyConfig() {
       if (deidentifyConfigBuilder_ == null) {
-        return deidentifyConfig_ == null ? com.google.privacy.dlp.v2.DeidentifyConfig.getDefaultInstance() : deidentifyConfig_;
+        return deidentifyConfig_ == null
+            ? com.google.privacy.dlp.v2.DeidentifyConfig.getDefaultInstance()
+            : deidentifyConfig_;
       } else {
         return deidentifyConfigBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Configuration for the de-identification of the content item.
      * Items specified here will override the template referenced by the
@@ -941,6 +1027,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Configuration for the de-identification of the content item.
      * Items specified here will override the template referenced by the
@@ -961,6 +1049,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Configuration for the de-identification of the content item.
      * Items specified here will override the template referenced by the
@@ -973,7 +1063,9 @@ private static final long serialVersionUID = 0L;
       if (deidentifyConfigBuilder_ == null) {
         if (deidentifyConfig_ != null) {
           deidentifyConfig_ =
-            com.google.privacy.dlp.v2.DeidentifyConfig.newBuilder(deidentifyConfig_).mergeFrom(value).buildPartial();
+              com.google.privacy.dlp.v2.DeidentifyConfig.newBuilder(deidentifyConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           deidentifyConfig_ = value;
         }
@@ -985,6 +1077,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Configuration for the de-identification of the content item.
      * Items specified here will override the template referenced by the
@@ -1005,6 +1099,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Configuration for the de-identification of the content item.
      * Items specified here will override the template referenced by the
@@ -1014,11 +1110,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.privacy.dlp.v2.DeidentifyConfig deidentify_config = 2;</code>
      */
     public com.google.privacy.dlp.v2.DeidentifyConfig.Builder getDeidentifyConfigBuilder() {
-      
+
       onChanged();
       return getDeidentifyConfigFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Configuration for the de-identification of the content item.
      * Items specified here will override the template referenced by the
@@ -1031,11 +1129,14 @@ private static final long serialVersionUID = 0L;
       if (deidentifyConfigBuilder_ != null) {
         return deidentifyConfigBuilder_.getMessageOrBuilder();
       } else {
-        return deidentifyConfig_ == null ?
-            com.google.privacy.dlp.v2.DeidentifyConfig.getDefaultInstance() : deidentifyConfig_;
+        return deidentifyConfig_ == null
+            ? com.google.privacy.dlp.v2.DeidentifyConfig.getDefaultInstance()
+            : deidentifyConfig_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Configuration for the de-identification of the content item.
      * Items specified here will override the template referenced by the
@@ -1045,14 +1146,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.privacy.dlp.v2.DeidentifyConfig deidentify_config = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.privacy.dlp.v2.DeidentifyConfig, com.google.privacy.dlp.v2.DeidentifyConfig.Builder, com.google.privacy.dlp.v2.DeidentifyConfigOrBuilder> 
+            com.google.privacy.dlp.v2.DeidentifyConfig,
+            com.google.privacy.dlp.v2.DeidentifyConfig.Builder,
+            com.google.privacy.dlp.v2.DeidentifyConfigOrBuilder>
         getDeidentifyConfigFieldBuilder() {
       if (deidentifyConfigBuilder_ == null) {
-        deidentifyConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.privacy.dlp.v2.DeidentifyConfig, com.google.privacy.dlp.v2.DeidentifyConfig.Builder, com.google.privacy.dlp.v2.DeidentifyConfigOrBuilder>(
-                getDeidentifyConfig(),
-                getParentForChildren(),
-                isClean());
+        deidentifyConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.privacy.dlp.v2.DeidentifyConfig,
+                com.google.privacy.dlp.v2.DeidentifyConfig.Builder,
+                com.google.privacy.dlp.v2.DeidentifyConfigOrBuilder>(
+                getDeidentifyConfig(), getParentForChildren(), isClean());
         deidentifyConfig_ = null;
       }
       return deidentifyConfigBuilder_;
@@ -1060,8 +1164,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.privacy.dlp.v2.InspectConfig inspectConfig_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.privacy.dlp.v2.InspectConfig, com.google.privacy.dlp.v2.InspectConfig.Builder, com.google.privacy.dlp.v2.InspectConfigOrBuilder> inspectConfigBuilder_;
+            com.google.privacy.dlp.v2.InspectConfig,
+            com.google.privacy.dlp.v2.InspectConfig.Builder,
+            com.google.privacy.dlp.v2.InspectConfigOrBuilder>
+        inspectConfigBuilder_;
     /**
+     *
+     *
      * <pre>
      * Configuration for the inspector.
      * Items specified here will override the template referenced by the
@@ -1074,6 +1183,8 @@ private static final long serialVersionUID = 0L;
       return inspectConfigBuilder_ != null || inspectConfig_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Configuration for the inspector.
      * Items specified here will override the template referenced by the
@@ -1084,12 +1195,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.privacy.dlp.v2.InspectConfig getInspectConfig() {
       if (inspectConfigBuilder_ == null) {
-        return inspectConfig_ == null ? com.google.privacy.dlp.v2.InspectConfig.getDefaultInstance() : inspectConfig_;
+        return inspectConfig_ == null
+            ? com.google.privacy.dlp.v2.InspectConfig.getDefaultInstance()
+            : inspectConfig_;
       } else {
         return inspectConfigBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Configuration for the inspector.
      * Items specified here will override the template referenced by the
@@ -1112,6 +1227,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Configuration for the inspector.
      * Items specified here will override the template referenced by the
@@ -1132,6 +1249,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Configuration for the inspector.
      * Items specified here will override the template referenced by the
@@ -1144,7 +1263,9 @@ private static final long serialVersionUID = 0L;
       if (inspectConfigBuilder_ == null) {
         if (inspectConfig_ != null) {
           inspectConfig_ =
-            com.google.privacy.dlp.v2.InspectConfig.newBuilder(inspectConfig_).mergeFrom(value).buildPartial();
+              com.google.privacy.dlp.v2.InspectConfig.newBuilder(inspectConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           inspectConfig_ = value;
         }
@@ -1156,6 +1277,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Configuration for the inspector.
      * Items specified here will override the template referenced by the
@@ -1176,6 +1299,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Configuration for the inspector.
      * Items specified here will override the template referenced by the
@@ -1185,11 +1310,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.privacy.dlp.v2.InspectConfig inspect_config = 3;</code>
      */
     public com.google.privacy.dlp.v2.InspectConfig.Builder getInspectConfigBuilder() {
-      
+
       onChanged();
       return getInspectConfigFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Configuration for the inspector.
      * Items specified here will override the template referenced by the
@@ -1202,11 +1329,14 @@ private static final long serialVersionUID = 0L;
       if (inspectConfigBuilder_ != null) {
         return inspectConfigBuilder_.getMessageOrBuilder();
       } else {
-        return inspectConfig_ == null ?
-            com.google.privacy.dlp.v2.InspectConfig.getDefaultInstance() : inspectConfig_;
+        return inspectConfig_ == null
+            ? com.google.privacy.dlp.v2.InspectConfig.getDefaultInstance()
+            : inspectConfig_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Configuration for the inspector.
      * Items specified here will override the template referenced by the
@@ -1216,14 +1346,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.privacy.dlp.v2.InspectConfig inspect_config = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.privacy.dlp.v2.InspectConfig, com.google.privacy.dlp.v2.InspectConfig.Builder, com.google.privacy.dlp.v2.InspectConfigOrBuilder> 
+            com.google.privacy.dlp.v2.InspectConfig,
+            com.google.privacy.dlp.v2.InspectConfig.Builder,
+            com.google.privacy.dlp.v2.InspectConfigOrBuilder>
         getInspectConfigFieldBuilder() {
       if (inspectConfigBuilder_ == null) {
-        inspectConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.privacy.dlp.v2.InspectConfig, com.google.privacy.dlp.v2.InspectConfig.Builder, com.google.privacy.dlp.v2.InspectConfigOrBuilder>(
-                getInspectConfig(),
-                getParentForChildren(),
-                isClean());
+        inspectConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.privacy.dlp.v2.InspectConfig,
+                com.google.privacy.dlp.v2.InspectConfig.Builder,
+                com.google.privacy.dlp.v2.InspectConfigOrBuilder>(
+                getInspectConfig(), getParentForChildren(), isClean());
         inspectConfig_ = null;
       }
       return inspectConfigBuilder_;
@@ -1231,8 +1364,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.privacy.dlp.v2.ContentItem item_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.privacy.dlp.v2.ContentItem, com.google.privacy.dlp.v2.ContentItem.Builder, com.google.privacy.dlp.v2.ContentItemOrBuilder> itemBuilder_;
+            com.google.privacy.dlp.v2.ContentItem,
+            com.google.privacy.dlp.v2.ContentItem.Builder,
+            com.google.privacy.dlp.v2.ContentItemOrBuilder>
+        itemBuilder_;
     /**
+     *
+     *
      * <pre>
      * The item to de-identify. Will be treated as text.
      * </pre>
@@ -1243,6 +1381,8 @@ private static final long serialVersionUID = 0L;
       return itemBuilder_ != null || item_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * The item to de-identify. Will be treated as text.
      * </pre>
@@ -1257,6 +1397,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The item to de-identify. Will be treated as text.
      * </pre>
@@ -1277,14 +1419,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The item to de-identify. Will be treated as text.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.ContentItem item = 4;</code>
      */
-    public Builder setItem(
-        com.google.privacy.dlp.v2.ContentItem.Builder builderForValue) {
+    public Builder setItem(com.google.privacy.dlp.v2.ContentItem.Builder builderForValue) {
       if (itemBuilder_ == null) {
         item_ = builderForValue.build();
         onChanged();
@@ -1295,6 +1438,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The item to de-identify. Will be treated as text.
      * </pre>
@@ -1305,7 +1450,9 @@ private static final long serialVersionUID = 0L;
       if (itemBuilder_ == null) {
         if (item_ != null) {
           item_ =
-            com.google.privacy.dlp.v2.ContentItem.newBuilder(item_).mergeFrom(value).buildPartial();
+              com.google.privacy.dlp.v2.ContentItem.newBuilder(item_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           item_ = value;
         }
@@ -1317,6 +1464,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The item to de-identify. Will be treated as text.
      * </pre>
@@ -1335,6 +1484,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The item to de-identify. Will be treated as text.
      * </pre>
@@ -1342,11 +1493,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.privacy.dlp.v2.ContentItem item = 4;</code>
      */
     public com.google.privacy.dlp.v2.ContentItem.Builder getItemBuilder() {
-      
+
       onChanged();
       return getItemFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * The item to de-identify. Will be treated as text.
      * </pre>
@@ -1357,11 +1510,12 @@ private static final long serialVersionUID = 0L;
       if (itemBuilder_ != null) {
         return itemBuilder_.getMessageOrBuilder();
       } else {
-        return item_ == null ?
-            com.google.privacy.dlp.v2.ContentItem.getDefaultInstance() : item_;
+        return item_ == null ? com.google.privacy.dlp.v2.ContentItem.getDefaultInstance() : item_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The item to de-identify. Will be treated as text.
      * </pre>
@@ -1369,14 +1523,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.privacy.dlp.v2.ContentItem item = 4;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.privacy.dlp.v2.ContentItem, com.google.privacy.dlp.v2.ContentItem.Builder, com.google.privacy.dlp.v2.ContentItemOrBuilder> 
+            com.google.privacy.dlp.v2.ContentItem,
+            com.google.privacy.dlp.v2.ContentItem.Builder,
+            com.google.privacy.dlp.v2.ContentItemOrBuilder>
         getItemFieldBuilder() {
       if (itemBuilder_ == null) {
-        itemBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.privacy.dlp.v2.ContentItem, com.google.privacy.dlp.v2.ContentItem.Builder, com.google.privacy.dlp.v2.ContentItemOrBuilder>(
-                getItem(),
-                getParentForChildren(),
-                isClean());
+        itemBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.privacy.dlp.v2.ContentItem,
+                com.google.privacy.dlp.v2.ContentItem.Builder,
+                com.google.privacy.dlp.v2.ContentItemOrBuilder>(
+                getItem(), getParentForChildren(), isClean());
         item_ = null;
       }
       return itemBuilder_;
@@ -1384,6 +1541,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object inspectTemplateName_ = "";
     /**
+     *
+     *
      * <pre>
      * Optional template to use. Any configuration directly specified in
      * inspect_config will override those set in the template. Singular fields
@@ -1397,8 +1556,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getInspectTemplateName() {
       java.lang.Object ref = inspectTemplateName_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         inspectTemplateName_ = s;
         return s;
@@ -1407,6 +1565,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional template to use. Any configuration directly specified in
      * inspect_config will override those set in the template. Singular fields
@@ -1417,13 +1577,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string inspect_template_name = 5;</code>
      */
-    public com.google.protobuf.ByteString
-        getInspectTemplateNameBytes() {
+    public com.google.protobuf.ByteString getInspectTemplateNameBytes() {
       java.lang.Object ref = inspectTemplateName_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         inspectTemplateName_ = b;
         return b;
       } else {
@@ -1431,6 +1589,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional template to use. Any configuration directly specified in
      * inspect_config will override those set in the template. Singular fields
@@ -1441,17 +1601,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string inspect_template_name = 5;</code>
      */
-    public Builder setInspectTemplateName(
-        java.lang.String value) {
+    public Builder setInspectTemplateName(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       inspectTemplateName_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional template to use. Any configuration directly specified in
      * inspect_config will override those set in the template. Singular fields
@@ -1463,12 +1624,14 @@ private static final long serialVersionUID = 0L;
      * <code>string inspect_template_name = 5;</code>
      */
     public Builder clearInspectTemplateName() {
-      
+
       inspectTemplateName_ = getDefaultInstance().getInspectTemplateName();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional template to use. Any configuration directly specified in
      * inspect_config will override those set in the template. Singular fields
@@ -1479,13 +1642,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string inspect_template_name = 5;</code>
      */
-    public Builder setInspectTemplateNameBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setInspectTemplateNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       inspectTemplateName_ = value;
       onChanged();
       return this;
@@ -1493,6 +1655,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object deidentifyTemplateName_ = "";
     /**
+     *
+     *
      * <pre>
      * Optional template to use. Any configuration directly specified in
      * deidentify_config will override those set in the template. Singular fields
@@ -1506,8 +1670,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getDeidentifyTemplateName() {
       java.lang.Object ref = deidentifyTemplateName_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         deidentifyTemplateName_ = s;
         return s;
@@ -1516,6 +1679,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional template to use. Any configuration directly specified in
      * deidentify_config will override those set in the template. Singular fields
@@ -1526,13 +1691,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string deidentify_template_name = 6;</code>
      */
-    public com.google.protobuf.ByteString
-        getDeidentifyTemplateNameBytes() {
+    public com.google.protobuf.ByteString getDeidentifyTemplateNameBytes() {
       java.lang.Object ref = deidentifyTemplateName_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         deidentifyTemplateName_ = b;
         return b;
       } else {
@@ -1540,6 +1703,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional template to use. Any configuration directly specified in
      * deidentify_config will override those set in the template. Singular fields
@@ -1550,17 +1715,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string deidentify_template_name = 6;</code>
      */
-    public Builder setDeidentifyTemplateName(
-        java.lang.String value) {
+    public Builder setDeidentifyTemplateName(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       deidentifyTemplateName_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional template to use. Any configuration directly specified in
      * deidentify_config will override those set in the template. Singular fields
@@ -1572,12 +1738,14 @@ private static final long serialVersionUID = 0L;
      * <code>string deidentify_template_name = 6;</code>
      */
     public Builder clearDeidentifyTemplateName() {
-      
+
       deidentifyTemplateName_ = getDefaultInstance().getDeidentifyTemplateName();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional template to use. Any configuration directly specified in
      * deidentify_config will override those set in the template. Singular fields
@@ -1588,33 +1756,34 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string deidentify_template_name = 6;</code>
      */
-    public Builder setDeidentifyTemplateNameBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setDeidentifyTemplateNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       deidentifyTemplateName_ = value;
       onChanged();
       return this;
     }
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+
+    @java.lang.Override
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
     }
-
 
     // @@protoc_insertion_point(builder_scope:google.privacy.dlp.v2.DeidentifyContentRequest)
   }
 
   // @@protoc_insertion_point(class_scope:google.privacy.dlp.v2.DeidentifyContentRequest)
   private static final com.google.privacy.dlp.v2.DeidentifyContentRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.privacy.dlp.v2.DeidentifyContentRequest();
   }
@@ -1623,15 +1792,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<DeidentifyContentRequest>
-      PARSER = new com.google.protobuf.AbstractParser<DeidentifyContentRequest>() {
-    public DeidentifyContentRequest parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-        return new DeidentifyContentRequest(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<DeidentifyContentRequest> PARSER =
+      new com.google.protobuf.AbstractParser<DeidentifyContentRequest>() {
+        @java.lang.Override
+        public DeidentifyContentRequest parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new DeidentifyContentRequest(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<DeidentifyContentRequest> parser() {
     return PARSER;
@@ -1642,9 +1812,8 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.privacy.dlp.v2.DeidentifyContentRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

@@ -3,11 +3,14 @@
 
 package com.google.privacy.dlp.v2;
 
-public interface ContentItemOrBuilder extends
+public interface ContentItemOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.ContentItem)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * String data to inspect or redact.
    * </pre>
@@ -16,16 +19,19 @@ public interface ContentItemOrBuilder extends
    */
   java.lang.String getValue();
   /**
+   *
+   *
    * <pre>
    * String data to inspect or redact.
    * </pre>
    *
    * <code>string value = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getValueBytes();
+  com.google.protobuf.ByteString getValueBytes();
 
   /**
+   *
+   *
    * <pre>
    * Structured content for inspection. See
    * https://cloud.google.com/dlp/docs/inspecting-text#inspecting_a_table to
@@ -36,6 +42,8 @@ public interface ContentItemOrBuilder extends
    */
   boolean hasTable();
   /**
+   *
+   *
    * <pre>
    * Structured content for inspection. See
    * https://cloud.google.com/dlp/docs/inspecting-text#inspecting_a_table to
@@ -46,6 +54,8 @@ public interface ContentItemOrBuilder extends
    */
   com.google.privacy.dlp.v2.Table getTable();
   /**
+   *
+   *
    * <pre>
    * Structured content for inspection. See
    * https://cloud.google.com/dlp/docs/inspecting-text#inspecting_a_table to
@@ -57,6 +67,8 @@ public interface ContentItemOrBuilder extends
   com.google.privacy.dlp.v2.TableOrBuilder getTableOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Content data to inspect or redact. Replaces `type` and `data`.
    * </pre>
@@ -65,6 +77,8 @@ public interface ContentItemOrBuilder extends
    */
   boolean hasByteItem();
   /**
+   *
+   *
    * <pre>
    * Content data to inspect or redact. Replaces `type` and `data`.
    * </pre>
@@ -73,6 +87,8 @@ public interface ContentItemOrBuilder extends
    */
   com.google.privacy.dlp.v2.ByteContentItem getByteItem();
   /**
+   *
+   *
    * <pre>
    * Content data to inspect or redact. Replaces `type` and `data`.
    * </pre>

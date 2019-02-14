@@ -3,11 +3,14 @@
 
 package com.google.monitoring.v3;
 
-public interface ListNotificationChannelDescriptorsRequestOrBuilder extends
+public interface ListNotificationChannelDescriptorsRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.monitoring.v3.ListNotificationChannelDescriptorsRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The REST resource name of the parent from which to retrieve
    * the notification channel descriptors. The expected syntax is:
@@ -22,6 +25,8 @@ public interface ListNotificationChannelDescriptorsRequestOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The REST resource name of the parent from which to retrieve
    * the notification channel descriptors. The expected syntax is:
@@ -34,10 +39,11 @@ public interface ListNotificationChannelDescriptorsRequestOrBuilder extends
    *
    * <code>string name = 4;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * The maximum number of results to return in a single response. If
    * not set to a positive number, a reasonable value will be chosen by the
@@ -49,6 +55,8 @@ public interface ListNotificationChannelDescriptorsRequestOrBuilder extends
   int getPageSize();
 
   /**
+   *
+   *
    * <pre>
    * If non-empty, `page_token` must contain a value returned as the
    * `next_page_token` in a previous response to request the next set
@@ -59,6 +67,8 @@ public interface ListNotificationChannelDescriptorsRequestOrBuilder extends
    */
   java.lang.String getPageToken();
   /**
+   *
+   *
    * <pre>
    * If non-empty, `page_token` must contain a value returned as the
    * `next_page_token` in a previous response to request the next set
@@ -67,6 +77,5 @@ public interface ListNotificationChannelDescriptorsRequestOrBuilder extends
    *
    * <code>string page_token = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getPageTokenBytes();
+  com.google.protobuf.ByteString getPageTokenBytes();
 }

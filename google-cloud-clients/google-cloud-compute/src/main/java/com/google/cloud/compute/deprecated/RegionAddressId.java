@@ -19,14 +19,11 @@ package com.google.cloud.compute.deprecated;
 import static com.google.common.base.Preconditions.checkNotNull;
 
 import com.google.common.base.MoreObjects;
-
 import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
- * Identity for a Google Compute Engine region address.
- */
+/** Identity for a Google Compute Engine region address. */
 public final class RegionAddressId extends AddressId {
 
   private static final String REGEX = ResourceId.REGEX + "regions/([^/]+)/addresses/([^/]+)";
@@ -45,16 +42,12 @@ public final class RegionAddressId extends AddressId {
     return Type.REGION;
   }
 
-  /**
-   * Returns the name of the region this address belongs to.
-   */
+  /** Returns the name of the region this address belongs to. */
   public String getRegion() {
     return region;
   }
 
-  /**
-   * Returns the identity of the region this address belongs to.
-   */
+  /** Returns the identity of the region this address belongs to. */
   public RegionId getRegionId() {
     return RegionId.of(getProject(), region);
   }

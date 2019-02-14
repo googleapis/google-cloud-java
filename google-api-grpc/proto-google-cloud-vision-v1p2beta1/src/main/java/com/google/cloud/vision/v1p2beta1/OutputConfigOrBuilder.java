@@ -3,11 +3,14 @@
 
 package com.google.cloud.vision.v1p2beta1;
 
-public interface OutputConfigOrBuilder extends
+public interface OutputConfigOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.vision.v1p2beta1.OutputConfig)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The Google Cloud Storage location to write the output(s) to.
    * </pre>
@@ -16,6 +19,8 @@ public interface OutputConfigOrBuilder extends
    */
   boolean hasGcsDestination();
   /**
+   *
+   *
    * <pre>
    * The Google Cloud Storage location to write the output(s) to.
    * </pre>
@@ -24,6 +29,8 @@ public interface OutputConfigOrBuilder extends
    */
   com.google.cloud.vision.v1p2beta1.GcsDestination getGcsDestination();
   /**
+   *
+   *
    * <pre>
    * The Google Cloud Storage location to write the output(s) to.
    * </pre>
@@ -33,6 +40,8 @@ public interface OutputConfigOrBuilder extends
   com.google.cloud.vision.v1p2beta1.GcsDestinationOrBuilder getGcsDestinationOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The max number of response protos to put into each output JSON file on GCS.
    * The valid range is [1, 100]. If not specified, the default value is 20.

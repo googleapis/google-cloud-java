@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,7 +31,9 @@ public final class ProjectGlobalUrlMapName implements ResourceName {
   private final String project;
   private final String urlMap;
   private static final PathTemplate PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}/global/urlMaps/{urlMap}");
+      PathTemplate.createWithoutUrlEncoding("{project}/global/urlMaps/{urlMap}");
+
+  public static final String SERVICE_ADDRESS = "https://www.googleapis.com/compute/v1/projects/";
 
   private volatile Map<String, String> fieldValuesMap;
 
@@ -92,14 +94,22 @@ public final class ProjectGlobalUrlMapName implements ResourceName {
   }
 
   public static ProjectGlobalUrlMapName parse(String formattedString) {
+    String resourcePath = formattedString;
+    if (formattedString.startsWith(SERVICE_ADDRESS)) {
+      resourcePath = formattedString.substring(SERVICE_ADDRESS.length());
+    }
     Map<String, String> matchMap =
         PATH_TEMPLATE.validatedMatch(
-            formattedString, "ProjectGlobalUrlMapName.parse: formattedString not in valid format");
+            resourcePath, "ProjectGlobalUrlMapName.parse: formattedString not in valid format");
     return of(matchMap.get("project"), matchMap.get("urlMap"));
   }
 
   public static boolean isParsableFrom(String formattedString) {
-    return PATH_TEMPLATE.matches(formattedString);
+    String resourcePath = formattedString;
+    if (formattedString.startsWith(SERVICE_ADDRESS)) {
+      resourcePath = formattedString.substring(SERVICE_ADDRESS.length());
+    }
+    return PATH_TEMPLATE.matches(resourcePath);
   }
 
   public static class Builder {
@@ -138,9 +148,10 @@ public final class ProjectGlobalUrlMapName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate(
-        "project", project,
-        "urlMap", urlMap);
+    return SERVICE_ADDRESS
+        + PATH_TEMPLATE.instantiate(
+            "project", project,
+            "urlMap", urlMap);
   }
 
   @Override

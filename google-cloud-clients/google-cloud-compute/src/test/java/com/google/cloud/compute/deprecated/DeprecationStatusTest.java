@@ -20,19 +20,24 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.fail;
 
-import org.joda.time.format.DateTimeFormatter;
-import org.joda.time.format.ISODateTimeFormat;
 import org.junit.Test;
+import org.threeten.bp.Instant;
+import org.threeten.bp.ZoneOffset;
+import org.threeten.bp.format.DateTimeFormatter;
 
 public class DeprecationStatusTest {
 
-  private static final DateTimeFormatter TIMESTAMP_FORMATTER = ISODateTimeFormat.dateTime();
+  private static final DateTimeFormatter TIMESTAMP_FORMATTER =
+      DateTimeFormatter.ISO_INSTANT.withZone(ZoneOffset.UTC);
   private static final Long DELETED_MILLIS = 1453293540000L;
   private static final Long DEPRECATED_MILLIS = 1453293420000L;
   private static final Long OBSOLETE_MILLIS = 1453293480000L;
-  private static final String DELETED = TIMESTAMP_FORMATTER.print(DELETED_MILLIS);
-  private static final String DEPRECATED = TIMESTAMP_FORMATTER.print(DEPRECATED_MILLIS);
-  private static final String OBSOLETE = TIMESTAMP_FORMATTER.print(OBSOLETE_MILLIS);
+  private static final String DELETED =
+      TIMESTAMP_FORMATTER.format(Instant.ofEpochMilli(DELETED_MILLIS));
+  private static final String DEPRECATED =
+      TIMESTAMP_FORMATTER.format(Instant.ofEpochMilli(DEPRECATED_MILLIS));
+  private static final String OBSOLETE =
+      TIMESTAMP_FORMATTER.format(Instant.ofEpochMilli(OBSOLETE_MILLIS));
   private static final DiskTypeId DISK_TYPE_ID = DiskTypeId.of("project", "zone", "diskType");
   private static final MachineTypeId MACHINE_TYPE_ID =
       MachineTypeId.of("project", "zone", "machineType");
@@ -122,9 +127,8 @@ public class DeprecationStatusTest {
   public void testToBuilder() {
     compareDeprecationStatus(DISK_TYPE_STATUS, DISK_TYPE_STATUS.toBuilder().build());
     compareDeprecationStatus(MACHINE_TYPE_STATUS, MACHINE_TYPE_STATUS.toBuilder().build());
-    DeprecationStatus<DiskTypeId> deprecationStatus = DISK_TYPE_STATUS.toBuilder()
-        .setDeleted(DEPRECATED)
-        .build();
+    DeprecationStatus<DiskTypeId> deprecationStatus =
+        DISK_TYPE_STATUS.toBuilder().setDeleted(DEPRECATED).build();
     assertEquals(DEPRECATED, deprecationStatus.getDeleted());
     deprecationStatus = deprecationStatus.toBuilder().setDeleted(DELETED).build();
     compareDeprecationStatus(DISK_TYPE_STATUS, deprecationStatus);
@@ -154,18 +158,18 @@ public class DeprecationStatusTest {
     DeprecationStatus<MachineTypeId> machineStatus =
         DeprecationStatus.fromPb(MACHINE_TYPE_STATUS.toPb(), MachineTypeId.FROM_URL_FUNCTION);
     compareDeprecationStatus(MACHINE_TYPE_STATUS, machineStatus);
-    diskStatus = DeprecationStatus.newBuilder(STATUS, DISK_TYPE_ID)
-        .setDeprecated(DEPRECATED)
-        .build();
-    assertEquals(diskStatus,
-        DeprecationStatus.fromPb(diskStatus.toPb(), DiskTypeId.FROM_URL_FUNCTION));
+    diskStatus =
+        DeprecationStatus.newBuilder(STATUS, DISK_TYPE_ID).setDeprecated(DEPRECATED).build();
+    assertEquals(
+        diskStatus, DeprecationStatus.fromPb(diskStatus.toPb(), DiskTypeId.FROM_URL_FUNCTION));
     machineStatus =
         DeprecationStatus.newBuilder(STATUS, MACHINE_TYPE_ID).setDeprecated(DEPRECATED).build();
-    assertEquals(machineStatus,
+    assertEquals(
+        machineStatus,
         DeprecationStatus.fromPb(machineStatus.toPb(), MachineTypeId.FROM_URL_FUNCTION));
     diskStatus = DeprecationStatus.of(STATUS, DISK_TYPE_ID);
-    assertEquals(diskStatus,
-        DeprecationStatus.fromPb(diskStatus.toPb(), DiskTypeId.FROM_URL_FUNCTION));
+    assertEquals(
+        diskStatus, DeprecationStatus.fromPb(diskStatus.toPb(), DiskTypeId.FROM_URL_FUNCTION));
   }
 
   private void compareDeprecationStatus(DeprecationStatus expected, DeprecationStatus value) {

@@ -3,11 +3,14 @@
 
 package com.google.cloud.kms.v1;
 
-public interface KeyRingOrBuilder extends
+public interface KeyRingOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.kms.v1.KeyRing)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Output only. The resource name for the [KeyRing][google.cloud.kms.v1.KeyRing] in the format
    * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;`.
@@ -17,6 +20,8 @@ public interface KeyRingOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * Output only. The resource name for the [KeyRing][google.cloud.kms.v1.KeyRing] in the format
    * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;`.
@@ -24,10 +29,11 @@ public interface KeyRingOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * Output only. The time at which this [KeyRing][google.cloud.kms.v1.KeyRing] was created.
    * </pre>
@@ -36,6 +42,8 @@ public interface KeyRingOrBuilder extends
    */
   boolean hasCreateTime();
   /**
+   *
+   *
    * <pre>
    * Output only. The time at which this [KeyRing][google.cloud.kms.v1.KeyRing] was created.
    * </pre>
@@ -44,6 +52,8 @@ public interface KeyRingOrBuilder extends
    */
   com.google.protobuf.Timestamp getCreateTime();
   /**
+   *
+   *
    * <pre>
    * Output only. The time at which this [KeyRing][google.cloud.kms.v1.KeyRing] was created.
    * </pre>

@@ -26,7 +26,6 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 import com.google.api.gax.grpc.GrpcStatusCode;
-import com.google.api.gax.rpc.ApiException;
 import com.google.api.gax.rpc.InternalException;
 import com.google.cloud.BaseServiceException;
 import com.google.cloud.RetryHelper;
@@ -104,5 +103,4 @@ public class BaseGrpcServiceExceptionTest {
       verify(exceptionMock);
     }
   }
-
 }

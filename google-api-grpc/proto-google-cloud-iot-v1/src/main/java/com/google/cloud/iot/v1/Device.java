@@ -4,39 +4,46 @@
 package com.google.cloud.iot.v1;
 
 /**
+ *
+ *
  * <pre>
  * The device resource.
  * </pre>
  *
  * Protobuf type {@code google.cloud.iot.v1.Device}
  */
-public  final class Device extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class Device extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.iot.v1.Device)
     DeviceOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use Device.newBuilder() to construct.
   private Device(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private Device() {
     id_ = "";
     name_ = "";
     numId_ = 0L;
     credentials_ = java.util.Collections.emptyList();
     blocked_ = false;
+    logLevel_ = 0;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private Device(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -48,181 +55,229 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            id_ = s;
-            break;
-          }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
+              id_ = s;
+              break;
+            }
+          case 18:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            name_ = s;
-            break;
-          }
-          case 24: {
+              name_ = s;
+              break;
+            }
+          case 24:
+            {
+              numId_ = input.readUInt64();
+              break;
+            }
+          case 58:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (lastHeartbeatTime_ != null) {
+                subBuilder = lastHeartbeatTime_.toBuilder();
+              }
+              lastHeartbeatTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(lastHeartbeatTime_);
+                lastHeartbeatTime_ = subBuilder.buildPartial();
+              }
 
-            numId_ = input.readUInt64();
-            break;
-          }
-          case 58: {
-            com.google.protobuf.Timestamp.Builder subBuilder = null;
-            if (lastHeartbeatTime_ != null) {
-              subBuilder = lastHeartbeatTime_.toBuilder();
+              break;
             }
-            lastHeartbeatTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(lastHeartbeatTime_);
-              lastHeartbeatTime_ = subBuilder.buildPartial();
-            }
+          case 66:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (lastEventTime_ != null) {
+                subBuilder = lastEventTime_.toBuilder();
+              }
+              lastEventTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(lastEventTime_);
+                lastEventTime_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 66: {
-            com.google.protobuf.Timestamp.Builder subBuilder = null;
-            if (lastEventTime_ != null) {
-              subBuilder = lastEventTime_.toBuilder();
+              break;
             }
-            lastEventTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(lastEventTime_);
-              lastEventTime_ = subBuilder.buildPartial();
-            }
+          case 82:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (lastErrorTime_ != null) {
+                subBuilder = lastErrorTime_.toBuilder();
+              }
+              lastErrorTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(lastErrorTime_);
+                lastErrorTime_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 82: {
-            com.google.protobuf.Timestamp.Builder subBuilder = null;
-            if (lastErrorTime_ != null) {
-              subBuilder = lastErrorTime_.toBuilder();
+              break;
             }
-            lastErrorTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(lastErrorTime_);
-              lastErrorTime_ = subBuilder.buildPartial();
-            }
+          case 90:
+            {
+              com.google.rpc.Status.Builder subBuilder = null;
+              if (lastErrorStatus_ != null) {
+                subBuilder = lastErrorStatus_.toBuilder();
+              }
+              lastErrorStatus_ =
+                  input.readMessage(com.google.rpc.Status.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(lastErrorStatus_);
+                lastErrorStatus_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 90: {
-            com.google.rpc.Status.Builder subBuilder = null;
-            if (lastErrorStatus_ != null) {
-              subBuilder = lastErrorStatus_.toBuilder();
+              break;
             }
-            lastErrorStatus_ = input.readMessage(com.google.rpc.Status.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(lastErrorStatus_);
-              lastErrorStatus_ = subBuilder.buildPartial();
+          case 98:
+            {
+              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+                credentials_ = new java.util.ArrayList<com.google.cloud.iot.v1.DeviceCredential>();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              credentials_.add(
+                  input.readMessage(
+                      com.google.cloud.iot.v1.DeviceCredential.parser(), extensionRegistry));
+              break;
             }
+          case 106:
+            {
+              com.google.cloud.iot.v1.DeviceConfig.Builder subBuilder = null;
+              if (config_ != null) {
+                subBuilder = config_.toBuilder();
+              }
+              config_ =
+                  input.readMessage(
+                      com.google.cloud.iot.v1.DeviceConfig.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(config_);
+                config_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 98: {
-            if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-              credentials_ = new java.util.ArrayList<com.google.cloud.iot.v1.DeviceCredential>();
-              mutable_bitField0_ |= 0x00000008;
+              break;
             }
-            credentials_.add(
-                input.readMessage(com.google.cloud.iot.v1.DeviceCredential.parser(), extensionRegistry));
-            break;
-          }
-          case 106: {
-            com.google.cloud.iot.v1.DeviceConfig.Builder subBuilder = null;
-            if (config_ != null) {
-              subBuilder = config_.toBuilder();
-            }
-            config_ = input.readMessage(com.google.cloud.iot.v1.DeviceConfig.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(config_);
-              config_ = subBuilder.buildPartial();
-            }
+          case 114:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (lastConfigAckTime_ != null) {
+                subBuilder = lastConfigAckTime_.toBuilder();
+              }
+              lastConfigAckTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(lastConfigAckTime_);
+                lastConfigAckTime_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 114: {
-            com.google.protobuf.Timestamp.Builder subBuilder = null;
-            if (lastConfigAckTime_ != null) {
-              subBuilder = lastConfigAckTime_.toBuilder();
+              break;
             }
-            lastConfigAckTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(lastConfigAckTime_);
-              lastConfigAckTime_ = subBuilder.buildPartial();
-            }
+          case 130:
+            {
+              com.google.cloud.iot.v1.DeviceState.Builder subBuilder = null;
+              if (state_ != null) {
+                subBuilder = state_.toBuilder();
+              }
+              state_ =
+                  input.readMessage(
+                      com.google.cloud.iot.v1.DeviceState.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(state_);
+                state_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 130: {
-            com.google.cloud.iot.v1.DeviceState.Builder subBuilder = null;
-            if (state_ != null) {
-              subBuilder = state_.toBuilder();
+              break;
             }
-            state_ = input.readMessage(com.google.cloud.iot.v1.DeviceState.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(state_);
-              state_ = subBuilder.buildPartial();
+          case 138:
+            {
+              if (!((mutable_bitField0_ & 0x00008000) == 0x00008000)) {
+                metadata_ =
+                    com.google.protobuf.MapField.newMapField(
+                        MetadataDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00008000;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> metadata__ =
+                  input.readMessage(
+                      MetadataDefaultEntryHolder.defaultEntry.getParserForType(),
+                      extensionRegistry);
+              metadata_.getMutableMap().put(metadata__.getKey(), metadata__.getValue());
+              break;
             }
+          case 146:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (lastConfigSendTime_ != null) {
+                subBuilder = lastConfigSendTime_.toBuilder();
+              }
+              lastConfigSendTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(lastConfigSendTime_);
+                lastConfigSendTime_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 138: {
-            if (!((mutable_bitField0_ & 0x00004000) == 0x00004000)) {
-              metadata_ = com.google.protobuf.MapField.newMapField(
-                  MetadataDefaultEntryHolder.defaultEntry);
-              mutable_bitField0_ |= 0x00004000;
+              break;
             }
-            com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-            metadata__ = input.readMessage(
-                MetadataDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-            metadata_.getMutableMap().put(
-                metadata__.getKey(), metadata__.getValue());
-            break;
-          }
-          case 146: {
-            com.google.protobuf.Timestamp.Builder subBuilder = null;
-            if (lastConfigSendTime_ != null) {
-              subBuilder = lastConfigSendTime_.toBuilder();
+          case 152:
+            {
+              blocked_ = input.readBool();
+              break;
             }
-            lastConfigSendTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(lastConfigSendTime_);
-              lastConfigSendTime_ = subBuilder.buildPartial();
-            }
+          case 162:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (lastStateTime_ != null) {
+                subBuilder = lastStateTime_.toBuilder();
+              }
+              lastStateTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(lastStateTime_);
+                lastStateTime_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 152: {
-
-            blocked_ = input.readBool();
-            break;
-          }
-          case 162: {
-            com.google.protobuf.Timestamp.Builder subBuilder = null;
-            if (lastStateTime_ != null) {
-              subBuilder = lastStateTime_.toBuilder();
+              break;
             }
-            lastStateTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(lastStateTime_);
-              lastStateTime_ = subBuilder.buildPartial();
-            }
+          case 168:
+            {
+              int rawValue = input.readEnum();
 
-            break;
-          }
+              logLevel_ = rawValue;
+              break;
+            }
+          case 194:
+            {
+              com.google.cloud.iot.v1.GatewayConfig.Builder subBuilder = null;
+              if (gatewayConfig_ != null) {
+                subBuilder = gatewayConfig_.toBuilder();
+              }
+              gatewayConfig_ =
+                  input.readMessage(
+                      com.google.cloud.iot.v1.GatewayConfig.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(gatewayConfig_);
+                gatewayConfig_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
         credentials_ = java.util.Collections.unmodifiableList(credentials_);
@@ -231,25 +286,28 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.iot.v1.ResourcesProto.internal_static_google_cloud_iot_v1_Device_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.iot.v1.ResourcesProto
+        .internal_static_google_cloud_iot_v1_Device_descriptor;
   }
 
   @SuppressWarnings({"rawtypes"})
-  protected com.google.protobuf.MapField internalGetMapField(
-      int number) {
+  @java.lang.Override
+  protected com.google.protobuf.MapField internalGetMapField(int number) {
     switch (number) {
       case 17:
         return internalGetMetadata();
       default:
-        throw new RuntimeException(
-            "Invalid map field number: " + number);
+        throw new RuntimeException("Invalid map field number: " + number);
     }
   }
+
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.iot.v1.ResourcesProto.internal_static_google_cloud_iot_v1_Device_fieldAccessorTable
+    return com.google.cloud.iot.v1.ResourcesProto
+        .internal_static_google_cloud_iot_v1_Device_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.cloud.iot.v1.Device.class, com.google.cloud.iot.v1.Device.Builder.class);
   }
@@ -258,6 +316,8 @@ private static final long serialVersionUID = 0L;
   public static final int ID_FIELD_NUMBER = 1;
   private volatile java.lang.Object id_;
   /**
+   *
+   *
    * <pre>
    * The user-defined device identifier. The device ID must be unique
    * within a device registry.
@@ -270,14 +330,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       id_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The user-defined device identifier. The device ID must be unique
    * within a device registry.
@@ -285,13 +346,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string id = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getIdBytes() {
+  public com.google.protobuf.ByteString getIdBytes() {
     java.lang.Object ref = id_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       id_ = b;
       return b;
     } else {
@@ -302,6 +361,8 @@ private static final long serialVersionUID = 0L;
   public static final int NAME_FIELD_NUMBER = 2;
   private volatile java.lang.Object name_;
   /**
+   *
+   *
    * <pre>
    * The resource path name. For example,
    * `projects/p1/locations/us-central1/registries/registry0/devices/dev0` or
@@ -317,14 +378,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       name_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The resource path name. For example,
    * `projects/p1/locations/us-central1/registries/registry0/devices/dev0` or
@@ -335,13 +397,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string name = 2;</code>
    */
-  public com.google.protobuf.ByteString
-      getNameBytes() {
+  public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       name_ = b;
       return b;
     } else {
@@ -352,6 +412,8 @@ private static final long serialVersionUID = 0L;
   public static final int NUM_ID_FIELD_NUMBER = 3;
   private long numId_;
   /**
+   *
+   *
    * <pre>
    * [Output only] A server-defined unique numeric ID for the device. This is a
    * more compact way to identify devices, and it is globally unique.
@@ -366,6 +428,8 @@ private static final long serialVersionUID = 0L;
   public static final int CREDENTIALS_FIELD_NUMBER = 12;
   private java.util.List<com.google.cloud.iot.v1.DeviceCredential> credentials_;
   /**
+   *
+   *
    * <pre>
    * The credentials used to authenticate this device. To allow credential
    * rotation without interruption, multiple device credentials can be bound to
@@ -381,6 +445,8 @@ private static final long serialVersionUID = 0L;
     return credentials_;
   }
   /**
+   *
+   *
    * <pre>
    * The credentials used to authenticate this device. To allow credential
    * rotation without interruption, multiple device credentials can be bound to
@@ -392,11 +458,13 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.cloud.iot.v1.DeviceCredential credentials = 12;</code>
    */
-  public java.util.List<? extends com.google.cloud.iot.v1.DeviceCredentialOrBuilder> 
+  public java.util.List<? extends com.google.cloud.iot.v1.DeviceCredentialOrBuilder>
       getCredentialsOrBuilderList() {
     return credentials_;
   }
   /**
+   *
+   *
    * <pre>
    * The credentials used to authenticate this device. To allow credential
    * rotation without interruption, multiple device credentials can be bound to
@@ -412,6 +480,8 @@ private static final long serialVersionUID = 0L;
     return credentials_.size();
   }
   /**
+   *
+   *
    * <pre>
    * The credentials used to authenticate this device. To allow credential
    * rotation without interruption, multiple device credentials can be bound to
@@ -427,6 +497,8 @@ private static final long serialVersionUID = 0L;
     return credentials_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * The credentials used to authenticate this device. To allow credential
    * rotation without interruption, multiple device credentials can be bound to
@@ -438,14 +510,15 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.cloud.iot.v1.DeviceCredential credentials = 12;</code>
    */
-  public com.google.cloud.iot.v1.DeviceCredentialOrBuilder getCredentialsOrBuilder(
-      int index) {
+  public com.google.cloud.iot.v1.DeviceCredentialOrBuilder getCredentialsOrBuilder(int index) {
     return credentials_.get(index);
   }
 
   public static final int LAST_HEARTBEAT_TIME_FIELD_NUMBER = 7;
   private com.google.protobuf.Timestamp lastHeartbeatTime_;
   /**
+   *
+   *
    * <pre>
    * [Output only] The last time an MQTT `PINGREQ` was received. This field
    * applies only to devices connecting through MQTT. MQTT clients usually only
@@ -460,6 +533,8 @@ private static final long serialVersionUID = 0L;
     return lastHeartbeatTime_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * [Output only] The last time an MQTT `PINGREQ` was received. This field
    * applies only to devices connecting through MQTT. MQTT clients usually only
@@ -471,9 +546,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp last_heartbeat_time = 7;</code>
    */
   public com.google.protobuf.Timestamp getLastHeartbeatTime() {
-    return lastHeartbeatTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : lastHeartbeatTime_;
+    return lastHeartbeatTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : lastHeartbeatTime_;
   }
   /**
+   *
+   *
    * <pre>
    * [Output only] The last time an MQTT `PINGREQ` was received. This field
    * applies only to devices connecting through MQTT. MQTT clients usually only
@@ -491,6 +570,8 @@ private static final long serialVersionUID = 0L;
   public static final int LAST_EVENT_TIME_FIELD_NUMBER = 8;
   private com.google.protobuf.Timestamp lastEventTime_;
   /**
+   *
+   *
    * <pre>
    * [Output only] The last time a telemetry event was received. Timestamps are
    * periodically collected and written to storage; they may be stale by a few
@@ -503,6 +584,8 @@ private static final long serialVersionUID = 0L;
     return lastEventTime_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * [Output only] The last time a telemetry event was received. Timestamps are
    * periodically collected and written to storage; they may be stale by a few
@@ -512,9 +595,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp last_event_time = 8;</code>
    */
   public com.google.protobuf.Timestamp getLastEventTime() {
-    return lastEventTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : lastEventTime_;
+    return lastEventTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : lastEventTime_;
   }
   /**
+   *
+   *
    * <pre>
    * [Output only] The last time a telemetry event was received. Timestamps are
    * periodically collected and written to storage; they may be stale by a few
@@ -530,6 +617,8 @@ private static final long serialVersionUID = 0L;
   public static final int LAST_STATE_TIME_FIELD_NUMBER = 20;
   private com.google.protobuf.Timestamp lastStateTime_;
   /**
+   *
+   *
    * <pre>
    * [Output only] The last time a state event was received. Timestamps are
    * periodically collected and written to storage; they may be stale by a few
@@ -542,6 +631,8 @@ private static final long serialVersionUID = 0L;
     return lastStateTime_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * [Output only] The last time a state event was received. Timestamps are
    * periodically collected and written to storage; they may be stale by a few
@@ -551,9 +642,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp last_state_time = 20;</code>
    */
   public com.google.protobuf.Timestamp getLastStateTime() {
-    return lastStateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : lastStateTime_;
+    return lastStateTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : lastStateTime_;
   }
   /**
+   *
+   *
    * <pre>
    * [Output only] The last time a state event was received. Timestamps are
    * periodically collected and written to storage; they may be stale by a few
@@ -569,6 +664,8 @@ private static final long serialVersionUID = 0L;
   public static final int LAST_CONFIG_ACK_TIME_FIELD_NUMBER = 14;
   private com.google.protobuf.Timestamp lastConfigAckTime_;
   /**
+   *
+   *
    * <pre>
    * [Output only] The last time a cloud-to-device config version acknowledgment
    * was received from the device. This field is only for configurations
@@ -581,6 +678,8 @@ private static final long serialVersionUID = 0L;
     return lastConfigAckTime_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * [Output only] The last time a cloud-to-device config version acknowledgment
    * was received from the device. This field is only for configurations
@@ -590,9 +689,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp last_config_ack_time = 14;</code>
    */
   public com.google.protobuf.Timestamp getLastConfigAckTime() {
-    return lastConfigAckTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : lastConfigAckTime_;
+    return lastConfigAckTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : lastConfigAckTime_;
   }
   /**
+   *
+   *
    * <pre>
    * [Output only] The last time a cloud-to-device config version acknowledgment
    * was received from the device. This field is only for configurations
@@ -608,6 +711,8 @@ private static final long serialVersionUID = 0L;
   public static final int LAST_CONFIG_SEND_TIME_FIELD_NUMBER = 18;
   private com.google.protobuf.Timestamp lastConfigSendTime_;
   /**
+   *
+   *
    * <pre>
    * [Output only] The last time a cloud-to-device config version was sent to
    * the device.
@@ -619,6 +724,8 @@ private static final long serialVersionUID = 0L;
     return lastConfigSendTime_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * [Output only] The last time a cloud-to-device config version was sent to
    * the device.
@@ -627,9 +734,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp last_config_send_time = 18;</code>
    */
   public com.google.protobuf.Timestamp getLastConfigSendTime() {
-    return lastConfigSendTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : lastConfigSendTime_;
+    return lastConfigSendTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : lastConfigSendTime_;
   }
   /**
+   *
+   *
    * <pre>
    * [Output only] The last time a cloud-to-device config version was sent to
    * the device.
@@ -644,6 +755,8 @@ private static final long serialVersionUID = 0L;
   public static final int BLOCKED_FIELD_NUMBER = 19;
   private boolean blocked_;
   /**
+   *
+   *
    * <pre>
    * If a device is blocked, connections or requests from this device will fail.
    * Can be used to temporarily prevent the device from connecting if, for
@@ -659,6 +772,8 @@ private static final long serialVersionUID = 0L;
   public static final int LAST_ERROR_TIME_FIELD_NUMBER = 10;
   private com.google.protobuf.Timestamp lastErrorTime_;
   /**
+   *
+   *
    * <pre>
    * [Output only] The time the most recent error occurred, such as a failure to
    * publish to Cloud Pub/Sub. This field is the timestamp of
@@ -671,6 +786,8 @@ private static final long serialVersionUID = 0L;
     return lastErrorTime_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * [Output only] The time the most recent error occurred, such as a failure to
    * publish to Cloud Pub/Sub. This field is the timestamp of
@@ -680,9 +797,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.protobuf.Timestamp last_error_time = 10;</code>
    */
   public com.google.protobuf.Timestamp getLastErrorTime() {
-    return lastErrorTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : lastErrorTime_;
+    return lastErrorTime_ == null
+        ? com.google.protobuf.Timestamp.getDefaultInstance()
+        : lastErrorTime_;
   }
   /**
+   *
+   *
    * <pre>
    * [Output only] The time the most recent error occurred, such as a failure to
    * publish to Cloud Pub/Sub. This field is the timestamp of
@@ -698,6 +819,8 @@ private static final long serialVersionUID = 0L;
   public static final int LAST_ERROR_STATUS_FIELD_NUMBER = 11;
   private com.google.rpc.Status lastErrorStatus_;
   /**
+   *
+   *
    * <pre>
    * [Output only] The error message of the most recent error, such as a failure
    * to publish to Cloud Pub/Sub. 'last_error_time' is the timestamp of this
@@ -712,6 +835,8 @@ private static final long serialVersionUID = 0L;
     return lastErrorStatus_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * [Output only] The error message of the most recent error, such as a failure
    * to publish to Cloud Pub/Sub. 'last_error_time' is the timestamp of this
@@ -726,6 +851,8 @@ private static final long serialVersionUID = 0L;
     return lastErrorStatus_ == null ? com.google.rpc.Status.getDefaultInstance() : lastErrorStatus_;
   }
   /**
+   *
+   *
    * <pre>
    * [Output only] The error message of the most recent error, such as a failure
    * to publish to Cloud Pub/Sub. 'last_error_time' is the timestamp of this
@@ -743,6 +870,8 @@ private static final long serialVersionUID = 0L;
   public static final int CONFIG_FIELD_NUMBER = 13;
   private com.google.cloud.iot.v1.DeviceConfig config_;
   /**
+   *
+   *
    * <pre>
    * The most recent device configuration, which is eventually sent from
    * Cloud IoT Core to the device. If not present on creation, the
@@ -757,6 +886,8 @@ private static final long serialVersionUID = 0L;
     return config_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * The most recent device configuration, which is eventually sent from
    * Cloud IoT Core to the device. If not present on creation, the
@@ -771,6 +902,8 @@ private static final long serialVersionUID = 0L;
     return config_ == null ? com.google.cloud.iot.v1.DeviceConfig.getDefaultInstance() : config_;
   }
   /**
+   *
+   *
    * <pre>
    * The most recent device configuration, which is eventually sent from
    * Cloud IoT Core to the device. If not present on creation, the
@@ -788,6 +921,8 @@ private static final long serialVersionUID = 0L;
   public static final int STATE_FIELD_NUMBER = 16;
   private com.google.cloud.iot.v1.DeviceState state_;
   /**
+   *
+   *
    * <pre>
    * [Output only] The state most recently received from the device. If no state
    * has been reported, this field is not present.
@@ -799,6 +934,8 @@ private static final long serialVersionUID = 0L;
     return state_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * [Output only] The state most recently received from the device. If no state
    * has been reported, this field is not present.
@@ -810,6 +947,8 @@ private static final long serialVersionUID = 0L;
     return state_ == null ? com.google.cloud.iot.v1.DeviceState.getDefaultInstance() : state_;
   }
   /**
+   *
+   *
    * <pre>
    * [Output only] The state most recently received from the device. If no state
    * has been reported, this field is not present.
@@ -821,25 +960,57 @@ private static final long serialVersionUID = 0L;
     return getState();
   }
 
-  public static final int METADATA_FIELD_NUMBER = 17;
-  private static final class MetadataDefaultEntryHolder {
-    static final com.google.protobuf.MapEntry<
-        java.lang.String, java.lang.String> defaultEntry =
-            com.google.protobuf.MapEntry
-            .<java.lang.String, java.lang.String>newDefaultInstance(
-                com.google.cloud.iot.v1.ResourcesProto.internal_static_google_cloud_iot_v1_Device_MetadataEntry_descriptor, 
-                com.google.protobuf.WireFormat.FieldType.STRING,
-                "",
-                com.google.protobuf.WireFormat.FieldType.STRING,
-                "");
+  public static final int LOG_LEVEL_FIELD_NUMBER = 21;
+  private int logLevel_;
+  /**
+   *
+   *
+   * <pre>
+   * **Beta Feature**
+   * The logging verbosity for device activity. If unspecified,
+   * DeviceRegistry.log_level will be used.
+   * </pre>
+   *
+   * <code>.google.cloud.iot.v1.LogLevel log_level = 21;</code>
+   */
+  public int getLogLevelValue() {
+    return logLevel_;
   }
-  private com.google.protobuf.MapField<
-      java.lang.String, java.lang.String> metadata_;
-  private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-  internalGetMetadata() {
+  /**
+   *
+   *
+   * <pre>
+   * **Beta Feature**
+   * The logging verbosity for device activity. If unspecified,
+   * DeviceRegistry.log_level will be used.
+   * </pre>
+   *
+   * <code>.google.cloud.iot.v1.LogLevel log_level = 21;</code>
+   */
+  public com.google.cloud.iot.v1.LogLevel getLogLevel() {
+    @SuppressWarnings("deprecation")
+    com.google.cloud.iot.v1.LogLevel result = com.google.cloud.iot.v1.LogLevel.valueOf(logLevel_);
+    return result == null ? com.google.cloud.iot.v1.LogLevel.UNRECOGNIZED : result;
+  }
+
+  public static final int METADATA_FIELD_NUMBER = 17;
+
+  private static final class MetadataDefaultEntryHolder {
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.cloud.iot.v1.ResourcesProto
+                .internal_static_google_cloud_iot_v1_Device_MetadataEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
+  }
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> metadata_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetMetadata() {
     if (metadata_ == null) {
-      return com.google.protobuf.MapField.emptyMapField(
-          MetadataDefaultEntryHolder.defaultEntry);
+      return com.google.protobuf.MapField.emptyMapField(MetadataDefaultEntryHolder.defaultEntry);
     }
     return metadata_;
   }
@@ -848,6 +1019,8 @@ private static final long serialVersionUID = 0L;
     return internalGetMetadata().getMap().size();
   }
   /**
+   *
+   *
    * <pre>
    * The metadata key-value pairs assigned to the device. This metadata is not
    * interpreted or indexed by Cloud IoT Core. It can be used to add contextual
@@ -862,20 +1035,20 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; metadata = 17;</code>
    */
-
-  public boolean containsMetadata(
-      java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+  public boolean containsMetadata(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
     return internalGetMetadata().getMap().containsKey(key);
   }
-  /**
-   * Use {@link #getMetadataMap()} instead.
-   */
+  /** Use {@link #getMetadataMap()} instead. */
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getMetadata() {
     return getMetadataMap();
   }
   /**
+   *
+   *
    * <pre>
    * The metadata key-value pairs assigned to the device. This metadata is not
    * interpreted or indexed by Cloud IoT Core. It can be used to add contextual
@@ -890,11 +1063,12 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; metadata = 17;</code>
    */
-
   public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
     return internalGetMetadata().getMap();
   }
   /**
+   *
+   *
    * <pre>
    * The metadata key-value pairs assigned to the device. This metadata is not
    * interpreted or indexed by Cloud IoT Core. It can be used to add contextual
@@ -909,16 +1083,17 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; metadata = 17;</code>
    */
-
   public java.lang.String getMetadataOrDefault(
-      java.lang.String key,
-      java.lang.String defaultValue) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
-    java.util.Map<java.lang.String, java.lang.String> map =
-        internalGetMetadata().getMap();
+      java.lang.String key, java.lang.String defaultValue) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetMetadata().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
   /**
+   *
+   *
    * <pre>
    * The metadata key-value pairs assigned to the device. This metadata is not
    * interpreted or indexed by Cloud IoT Core. It can be used to add contextual
@@ -933,19 +1108,61 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; metadata = 17;</code>
    */
-
-  public java.lang.String getMetadataOrThrow(
-      java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
-    java.util.Map<java.lang.String, java.lang.String> map =
-        internalGetMetadata().getMap();
+  public java.lang.String getMetadataOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetMetadata().getMap();
     if (!map.containsKey(key)) {
       throw new java.lang.IllegalArgumentException();
     }
     return map.get(key);
   }
 
+  public static final int GATEWAY_CONFIG_FIELD_NUMBER = 24;
+  private com.google.cloud.iot.v1.GatewayConfig gatewayConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Gateway-related configuration and state.
+   * </pre>
+   *
+   * <code>.google.cloud.iot.v1.GatewayConfig gateway_config = 24;</code>
+   */
+  public boolean hasGatewayConfig() {
+    return gatewayConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Gateway-related configuration and state.
+   * </pre>
+   *
+   * <code>.google.cloud.iot.v1.GatewayConfig gateway_config = 24;</code>
+   */
+  public com.google.cloud.iot.v1.GatewayConfig getGatewayConfig() {
+    return gatewayConfig_ == null
+        ? com.google.cloud.iot.v1.GatewayConfig.getDefaultInstance()
+        : gatewayConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Gateway-related configuration and state.
+   * </pre>
+   *
+   * <code>.google.cloud.iot.v1.GatewayConfig gateway_config = 24;</code>
+   */
+  public com.google.cloud.iot.v1.GatewayConfigOrBuilder getGatewayConfigOrBuilder() {
+    return getGatewayConfig();
+  }
+
   private byte memoizedIsInitialized = -1;
+
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -955,8 +1172,8 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  @java.lang.Override
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
     }
@@ -990,12 +1207,8 @@ private static final long serialVersionUID = 0L;
     if (state_ != null) {
       output.writeMessage(16, getState());
     }
-    com.google.protobuf.GeneratedMessageV3
-      .serializeStringMapTo(
-        output,
-        internalGetMetadata(),
-        MetadataDefaultEntryHolder.defaultEntry,
-        17);
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetMetadata(), MetadataDefaultEntryHolder.defaultEntry, 17);
     if (lastConfigSendTime_ != null) {
       output.writeMessage(18, getLastConfigSendTime());
     }
@@ -1005,9 +1218,16 @@ private static final long serialVersionUID = 0L;
     if (lastStateTime_ != null) {
       output.writeMessage(20, getLastStateTime());
     }
+    if (logLevel_ != com.google.cloud.iot.v1.LogLevel.LOG_LEVEL_UNSPECIFIED.getNumber()) {
+      output.writeEnum(21, logLevel_);
+    }
+    if (gatewayConfig_ != null) {
+      output.writeMessage(24, getGatewayConfig());
+    }
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -1020,62 +1240,56 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, name_);
     }
     if (numId_ != 0L) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeUInt64Size(3, numId_);
+      size += com.google.protobuf.CodedOutputStream.computeUInt64Size(3, numId_);
     }
     if (lastHeartbeatTime_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(7, getLastHeartbeatTime());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getLastHeartbeatTime());
     }
     if (lastEventTime_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(8, getLastEventTime());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getLastEventTime());
     }
     if (lastErrorTime_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(10, getLastErrorTime());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, getLastErrorTime());
     }
     if (lastErrorStatus_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(11, getLastErrorStatus());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getLastErrorStatus());
     }
     for (int i = 0; i < credentials_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(12, credentials_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, credentials_.get(i));
     }
     if (config_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(13, getConfig());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, getConfig());
     }
     if (lastConfigAckTime_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(14, getLastConfigAckTime());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(14, getLastConfigAckTime());
     }
     if (state_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(16, getState());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(16, getState());
     }
-    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
-         : internalGetMetadata().getMap().entrySet()) {
-      com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-      metadata__ = MetadataDefaultEntryHolder.defaultEntry.newBuilderForType()
-          .setKey(entry.getKey())
-          .setValue(entry.getValue())
-          .build();
-      size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(17, metadata__);
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetMetadata().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> metadata__ =
+          MetadataDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(17, metadata__);
     }
     if (lastConfigSendTime_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(18, getLastConfigSendTime());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(18, getLastConfigSendTime());
     }
     if (blocked_ != false) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(19, blocked_);
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(19, blocked_);
     }
     if (lastStateTime_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(20, getLastStateTime());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(20, getLastStateTime());
+    }
+    if (logLevel_ != com.google.cloud.iot.v1.LogLevel.LOG_LEVEL_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(21, logLevel_);
+    }
+    if (gatewayConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(24, getGatewayConfig());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1085,7 +1299,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.iot.v1.Device)) {
       return super.equals(obj);
@@ -1093,63 +1307,53 @@ private static final long serialVersionUID = 0L;
     com.google.cloud.iot.v1.Device other = (com.google.cloud.iot.v1.Device) obj;
 
     boolean result = true;
-    result = result && getId()
-        .equals(other.getId());
-    result = result && getName()
-        .equals(other.getName());
-    result = result && (getNumId()
-        == other.getNumId());
-    result = result && getCredentialsList()
-        .equals(other.getCredentialsList());
+    result = result && getId().equals(other.getId());
+    result = result && getName().equals(other.getName());
+    result = result && (getNumId() == other.getNumId());
+    result = result && getCredentialsList().equals(other.getCredentialsList());
     result = result && (hasLastHeartbeatTime() == other.hasLastHeartbeatTime());
     if (hasLastHeartbeatTime()) {
-      result = result && getLastHeartbeatTime()
-          .equals(other.getLastHeartbeatTime());
+      result = result && getLastHeartbeatTime().equals(other.getLastHeartbeatTime());
     }
     result = result && (hasLastEventTime() == other.hasLastEventTime());
     if (hasLastEventTime()) {
-      result = result && getLastEventTime()
-          .equals(other.getLastEventTime());
+      result = result && getLastEventTime().equals(other.getLastEventTime());
     }
     result = result && (hasLastStateTime() == other.hasLastStateTime());
     if (hasLastStateTime()) {
-      result = result && getLastStateTime()
-          .equals(other.getLastStateTime());
+      result = result && getLastStateTime().equals(other.getLastStateTime());
     }
     result = result && (hasLastConfigAckTime() == other.hasLastConfigAckTime());
     if (hasLastConfigAckTime()) {
-      result = result && getLastConfigAckTime()
-          .equals(other.getLastConfigAckTime());
+      result = result && getLastConfigAckTime().equals(other.getLastConfigAckTime());
     }
     result = result && (hasLastConfigSendTime() == other.hasLastConfigSendTime());
     if (hasLastConfigSendTime()) {
-      result = result && getLastConfigSendTime()
-          .equals(other.getLastConfigSendTime());
+      result = result && getLastConfigSendTime().equals(other.getLastConfigSendTime());
     }
-    result = result && (getBlocked()
-        == other.getBlocked());
+    result = result && (getBlocked() == other.getBlocked());
     result = result && (hasLastErrorTime() == other.hasLastErrorTime());
     if (hasLastErrorTime()) {
-      result = result && getLastErrorTime()
-          .equals(other.getLastErrorTime());
+      result = result && getLastErrorTime().equals(other.getLastErrorTime());
     }
     result = result && (hasLastErrorStatus() == other.hasLastErrorStatus());
     if (hasLastErrorStatus()) {
-      result = result && getLastErrorStatus()
-          .equals(other.getLastErrorStatus());
+      result = result && getLastErrorStatus().equals(other.getLastErrorStatus());
     }
     result = result && (hasConfig() == other.hasConfig());
     if (hasConfig()) {
-      result = result && getConfig()
-          .equals(other.getConfig());
+      result = result && getConfig().equals(other.getConfig());
     }
     result = result && (hasState() == other.hasState());
     if (hasState()) {
-      result = result && getState()
-          .equals(other.getState());
+      result = result && getState().equals(other.getState());
     }
-    result = result && internalGetMetadata().equals(
-        other.internalGetMetadata());
+    result = result && logLevel_ == other.logLevel_;
+    result = result && internalGetMetadata().equals(other.internalGetMetadata());
+    result = result && (hasGatewayConfig() == other.hasGatewayConfig());
+    if (hasGatewayConfig()) {
+      result = result && getGatewayConfig().equals(other.getGatewayConfig());
+    }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -1166,8 +1370,7 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + NAME_FIELD_NUMBER;
     hash = (53 * hash) + getName().hashCode();
     hash = (37 * hash) + NUM_ID_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-        getNumId());
+    hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getNumId());
     if (getCredentialsCount() > 0) {
       hash = (37 * hash) + CREDENTIALS_FIELD_NUMBER;
       hash = (53 * hash) + getCredentialsList().hashCode();
@@ -1193,8 +1396,7 @@ private static final long serialVersionUID = 0L;
       hash = (53 * hash) + getLastConfigSendTime().hashCode();
     }
     hash = (37 * hash) + BLOCKED_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getBlocked());
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getBlocked());
     if (hasLastErrorTime()) {
       hash = (37 * hash) + LAST_ERROR_TIME_FIELD_NUMBER;
       hash = (53 * hash) + getLastErrorTime().hashCode();
@@ -1211,144 +1413,158 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + STATE_FIELD_NUMBER;
       hash = (53 * hash) + getState().hashCode();
     }
+    hash = (37 * hash) + LOG_LEVEL_FIELD_NUMBER;
+    hash = (53 * hash) + logLevel_;
     if (!internalGetMetadata().getMap().isEmpty()) {
       hash = (37 * hash) + METADATA_FIELD_NUMBER;
       hash = (53 * hash) + internalGetMetadata().hashCode();
+    }
+    if (hasGatewayConfig()) {
+      hash = (37 * hash) + GATEWAY_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getGatewayConfig().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
-  public static com.google.cloud.iot.v1.Device parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.cloud.iot.v1.Device parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.iot.v1.Device parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.iot.v1.Device parseFrom(
-      com.google.protobuf.ByteString data)
+
+  public static com.google.cloud.iot.v1.Device parseFrom(com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.iot.v1.Device parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.iot.v1.Device parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.iot.v1.Device parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.iot.v1.Device parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.iot.v1.Device parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.cloud.iot.v1.Device parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.iot.v1.Device parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.cloud.iot.v1.Device parseFrom(
-      com.google.protobuf.CodedInputStream input)
+
+  public static com.google.cloud.iot.v1.Device parseFrom(com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.iot.v1.Device parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  public Builder newBuilderForType() { return newBuilder(); }
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-  public static Builder newBuilder(com.google.cloud.iot.v1.Device prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+
+  public static Builder newBuilder(com.google.cloud.iot.v1.Device prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+
+  @java.lang.Override
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * The device resource.
    * </pre>
    *
    * Protobuf type {@code google.cloud.iot.v1.Device}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.iot.v1.Device)
       com.google.cloud.iot.v1.DeviceOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.iot.v1.ResourcesProto.internal_static_google_cloud_iot_v1_Device_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.iot.v1.ResourcesProto
+          .internal_static_google_cloud_iot_v1_Device_descriptor;
     }
 
     @SuppressWarnings({"rawtypes"})
-    protected com.google.protobuf.MapField internalGetMapField(
-        int number) {
+    protected com.google.protobuf.MapField internalGetMapField(int number) {
       switch (number) {
         case 17:
           return internalGetMetadata();
         default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
+          throw new RuntimeException("Invalid map field number: " + number);
       }
     }
+
     @SuppressWarnings({"rawtypes"})
-    protected com.google.protobuf.MapField internalGetMutableMapField(
-        int number) {
+    protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
       switch (number) {
         case 17:
           return internalGetMutableMetadata();
         default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
+          throw new RuntimeException("Invalid map field number: " + number);
       }
     }
+
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.iot.v1.ResourcesProto.internal_static_google_cloud_iot_v1_Device_fieldAccessorTable
+      return com.google.cloud.iot.v1.ResourcesProto
+          .internal_static_google_cloud_iot_v1_Device_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.cloud.iot.v1.Device.class, com.google.cloud.iot.v1.Device.Builder.class);
     }
@@ -1358,17 +1574,18 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getCredentialsFieldBuilder();
       }
     }
+
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       id_ = "";
@@ -1439,19 +1656,30 @@ private static final long serialVersionUID = 0L;
         state_ = null;
         stateBuilder_ = null;
       }
+      logLevel_ = 0;
+
       internalGetMutableMetadata().clear();
+      if (gatewayConfigBuilder_ == null) {
+        gatewayConfig_ = null;
+      } else {
+        gatewayConfig_ = null;
+        gatewayConfigBuilder_ = null;
+      }
       return this;
     }
 
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.iot.v1.ResourcesProto.internal_static_google_cloud_iot_v1_Device_descriptor;
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.iot.v1.ResourcesProto
+          .internal_static_google_cloud_iot_v1_Device_descriptor;
     }
 
+    @java.lang.Override
     public com.google.cloud.iot.v1.Device getDefaultInstanceForType() {
       return com.google.cloud.iot.v1.Device.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.cloud.iot.v1.Device build() {
       com.google.cloud.iot.v1.Device result = buildPartial();
       if (!result.isInitialized()) {
@@ -1460,6 +1688,7 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.cloud.iot.v1.Device buildPartial() {
       com.google.cloud.iot.v1.Device result = new com.google.cloud.iot.v1.Device(this);
       int from_bitField0_ = bitField0_;
@@ -1522,42 +1751,56 @@ private static final long serialVersionUID = 0L;
       } else {
         result.state_ = stateBuilder_.build();
       }
+      result.logLevel_ = logLevel_;
       result.metadata_ = internalGetMetadata();
       result.metadata_.makeImmutable();
+      if (gatewayConfigBuilder_ == null) {
+        result.gatewayConfig_ = gatewayConfig_;
+      } else {
+        result.gatewayConfig_ = gatewayConfigBuilder_.build();
+      }
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+
+    @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+    @java.lang.Override
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+    @java.lang.Override
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
+    @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
+    @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.iot.v1.Device) {
-        return mergeFrom((com.google.cloud.iot.v1.Device)other);
+        return mergeFrom((com.google.cloud.iot.v1.Device) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -1595,9 +1838,10 @@ private static final long serialVersionUID = 0L;
             credentialsBuilder_ = null;
             credentials_ = other.credentials_;
             bitField0_ = (bitField0_ & ~0x00000008);
-            credentialsBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getCredentialsFieldBuilder() : null;
+            credentialsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getCredentialsFieldBuilder()
+                    : null;
           } else {
             credentialsBuilder_.addAllMessages(other.credentials_);
           }
@@ -1633,17 +1877,24 @@ private static final long serialVersionUID = 0L;
       if (other.hasState()) {
         mergeState(other.getState());
       }
-      internalGetMutableMetadata().mergeFrom(
-          other.internalGetMetadata());
+      if (other.logLevel_ != 0) {
+        setLogLevelValue(other.getLogLevelValue());
+      }
+      internalGetMutableMetadata().mergeFrom(other.internalGetMetadata());
+      if (other.hasGatewayConfig()) {
+        mergeGatewayConfig(other.getGatewayConfig());
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1661,10 +1912,13 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private java.lang.Object id_ = "";
     /**
+     *
+     *
      * <pre>
      * The user-defined device identifier. The device ID must be unique
      * within a device registry.
@@ -1675,8 +1929,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getId() {
       java.lang.Object ref = id_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         id_ = s;
         return s;
@@ -1685,6 +1938,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The user-defined device identifier. The device ID must be unique
      * within a device registry.
@@ -1692,13 +1947,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string id = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getIdBytes() {
+    public com.google.protobuf.ByteString getIdBytes() {
       java.lang.Object ref = id_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         id_ = b;
         return b;
       } else {
@@ -1706,6 +1959,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The user-defined device identifier. The device ID must be unique
      * within a device registry.
@@ -1713,17 +1968,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string id = 1;</code>
      */
-    public Builder setId(
-        java.lang.String value) {
+    public Builder setId(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       id_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The user-defined device identifier. The device ID must be unique
      * within a device registry.
@@ -1732,12 +1988,14 @@ private static final long serialVersionUID = 0L;
      * <code>string id = 1;</code>
      */
     public Builder clearId() {
-      
+
       id_ = getDefaultInstance().getId();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The user-defined device identifier. The device ID must be unique
      * within a device registry.
@@ -1745,13 +2003,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string id = 1;</code>
      */
-    public Builder setIdBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       id_ = value;
       onChanged();
       return this;
@@ -1759,6 +2016,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object name_ = "";
     /**
+     *
+     *
      * <pre>
      * The resource path name. For example,
      * `projects/p1/locations/us-central1/registries/registry0/devices/dev0` or
@@ -1772,8 +2031,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         name_ = s;
         return s;
@@ -1782,6 +2040,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The resource path name. For example,
      * `projects/p1/locations/us-central1/registries/registry0/devices/dev0` or
@@ -1792,13 +2052,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 2;</code>
      */
-    public com.google.protobuf.ByteString
-        getNameBytes() {
+    public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         name_ = b;
         return b;
       } else {
@@ -1806,6 +2064,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The resource path name. For example,
      * `projects/p1/locations/us-central1/registries/registry0/devices/dev0` or
@@ -1816,17 +2076,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 2;</code>
      */
-    public Builder setName(
-        java.lang.String value) {
+    public Builder setName(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       name_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The resource path name. For example,
      * `projects/p1/locations/us-central1/registries/registry0/devices/dev0` or
@@ -1838,12 +2099,14 @@ private static final long serialVersionUID = 0L;
      * <code>string name = 2;</code>
      */
     public Builder clearName() {
-      
+
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The resource path name. For example,
      * `projects/p1/locations/us-central1/registries/registry0/devices/dev0` or
@@ -1854,20 +2117,21 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 2;</code>
      */
-    public Builder setNameBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       name_ = value;
       onChanged();
       return this;
     }
 
-    private long numId_ ;
+    private long numId_;
     /**
+     *
+     *
      * <pre>
      * [Output only] A server-defined unique numeric ID for the device. This is a
      * more compact way to identify devices, and it is globally unique.
@@ -1879,6 +2143,8 @@ private static final long serialVersionUID = 0L;
       return numId_;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] A server-defined unique numeric ID for the device. This is a
      * more compact way to identify devices, and it is globally unique.
@@ -1887,12 +2153,14 @@ private static final long serialVersionUID = 0L;
      * <code>uint64 num_id = 3;</code>
      */
     public Builder setNumId(long value) {
-      
+
       numId_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] A server-defined unique numeric ID for the device. This is a
      * more compact way to identify devices, and it is globally unique.
@@ -1901,25 +2169,32 @@ private static final long serialVersionUID = 0L;
      * <code>uint64 num_id = 3;</code>
      */
     public Builder clearNumId() {
-      
+
       numId_ = 0L;
       onChanged();
       return this;
     }
 
     private java.util.List<com.google.cloud.iot.v1.DeviceCredential> credentials_ =
-      java.util.Collections.emptyList();
+        java.util.Collections.emptyList();
+
     private void ensureCredentialsIsMutable() {
       if (!((bitField0_ & 0x00000008) == 0x00000008)) {
-        credentials_ = new java.util.ArrayList<com.google.cloud.iot.v1.DeviceCredential>(credentials_);
+        credentials_ =
+            new java.util.ArrayList<com.google.cloud.iot.v1.DeviceCredential>(credentials_);
         bitField0_ |= 0x00000008;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.iot.v1.DeviceCredential, com.google.cloud.iot.v1.DeviceCredential.Builder, com.google.cloud.iot.v1.DeviceCredentialOrBuilder> credentialsBuilder_;
+            com.google.cloud.iot.v1.DeviceCredential,
+            com.google.cloud.iot.v1.DeviceCredential.Builder,
+            com.google.cloud.iot.v1.DeviceCredentialOrBuilder>
+        credentialsBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * The credentials used to authenticate this device. To allow credential
      * rotation without interruption, multiple device credentials can be bound to
@@ -1939,6 +2214,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The credentials used to authenticate this device. To allow credential
      * rotation without interruption, multiple device credentials can be bound to
@@ -1958,6 +2235,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The credentials used to authenticate this device. To allow credential
      * rotation without interruption, multiple device credentials can be bound to
@@ -1977,6 +2256,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The credentials used to authenticate this device. To allow credential
      * rotation without interruption, multiple device credentials can be bound to
@@ -1988,8 +2269,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.cloud.iot.v1.DeviceCredential credentials = 12;</code>
      */
-    public Builder setCredentials(
-        int index, com.google.cloud.iot.v1.DeviceCredential value) {
+    public Builder setCredentials(int index, com.google.cloud.iot.v1.DeviceCredential value) {
       if (credentialsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -2003,6 +2283,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The credentials used to authenticate this device. To allow credential
      * rotation without interruption, multiple device credentials can be bound to
@@ -2026,6 +2308,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The credentials used to authenticate this device. To allow credential
      * rotation without interruption, multiple device credentials can be bound to
@@ -2051,6 +2335,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The credentials used to authenticate this device. To allow credential
      * rotation without interruption, multiple device credentials can be bound to
@@ -2062,8 +2348,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.cloud.iot.v1.DeviceCredential credentials = 12;</code>
      */
-    public Builder addCredentials(
-        int index, com.google.cloud.iot.v1.DeviceCredential value) {
+    public Builder addCredentials(int index, com.google.cloud.iot.v1.DeviceCredential value) {
       if (credentialsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -2077,6 +2362,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The credentials used to authenticate this device. To allow credential
      * rotation without interruption, multiple device credentials can be bound to
@@ -2100,6 +2387,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The credentials used to authenticate this device. To allow credential
      * rotation without interruption, multiple device credentials can be bound to
@@ -2123,6 +2412,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The credentials used to authenticate this device. To allow credential
      * rotation without interruption, multiple device credentials can be bound to
@@ -2138,8 +2429,7 @@ private static final long serialVersionUID = 0L;
         java.lang.Iterable<? extends com.google.cloud.iot.v1.DeviceCredential> values) {
       if (credentialsBuilder_ == null) {
         ensureCredentialsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, credentials_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, credentials_);
         onChanged();
       } else {
         credentialsBuilder_.addAllMessages(values);
@@ -2147,6 +2437,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The credentials used to authenticate this device. To allow credential
      * rotation without interruption, multiple device credentials can be bound to
@@ -2169,6 +2461,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The credentials used to authenticate this device. To allow credential
      * rotation without interruption, multiple device credentials can be bound to
@@ -2191,6 +2485,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The credentials used to authenticate this device. To allow credential
      * rotation without interruption, multiple device credentials can be bound to
@@ -2202,11 +2498,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.cloud.iot.v1.DeviceCredential credentials = 12;</code>
      */
-    public com.google.cloud.iot.v1.DeviceCredential.Builder getCredentialsBuilder(
-        int index) {
+    public com.google.cloud.iot.v1.DeviceCredential.Builder getCredentialsBuilder(int index) {
       return getCredentialsFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * The credentials used to authenticate this device. To allow credential
      * rotation without interruption, multiple device credentials can be bound to
@@ -2218,14 +2515,16 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.cloud.iot.v1.DeviceCredential credentials = 12;</code>
      */
-    public com.google.cloud.iot.v1.DeviceCredentialOrBuilder getCredentialsOrBuilder(
-        int index) {
+    public com.google.cloud.iot.v1.DeviceCredentialOrBuilder getCredentialsOrBuilder(int index) {
       if (credentialsBuilder_ == null) {
-        return credentials_.get(index);  } else {
+        return credentials_.get(index);
+      } else {
         return credentialsBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * The credentials used to authenticate this device. To allow credential
      * rotation without interruption, multiple device credentials can be bound to
@@ -2237,8 +2536,8 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.cloud.iot.v1.DeviceCredential credentials = 12;</code>
      */
-    public java.util.List<? extends com.google.cloud.iot.v1.DeviceCredentialOrBuilder> 
-         getCredentialsOrBuilderList() {
+    public java.util.List<? extends com.google.cloud.iot.v1.DeviceCredentialOrBuilder>
+        getCredentialsOrBuilderList() {
       if (credentialsBuilder_ != null) {
         return credentialsBuilder_.getMessageOrBuilderList();
       } else {
@@ -2246,6 +2545,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The credentials used to authenticate this device. To allow credential
      * rotation without interruption, multiple device credentials can be bound to
@@ -2258,10 +2559,12 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.cloud.iot.v1.DeviceCredential credentials = 12;</code>
      */
     public com.google.cloud.iot.v1.DeviceCredential.Builder addCredentialsBuilder() {
-      return getCredentialsFieldBuilder().addBuilder(
-          com.google.cloud.iot.v1.DeviceCredential.getDefaultInstance());
+      return getCredentialsFieldBuilder()
+          .addBuilder(com.google.cloud.iot.v1.DeviceCredential.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * The credentials used to authenticate this device. To allow credential
      * rotation without interruption, multiple device credentials can be bound to
@@ -2273,12 +2576,13 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.cloud.iot.v1.DeviceCredential credentials = 12;</code>
      */
-    public com.google.cloud.iot.v1.DeviceCredential.Builder addCredentialsBuilder(
-        int index) {
-      return getCredentialsFieldBuilder().addBuilder(
-          index, com.google.cloud.iot.v1.DeviceCredential.getDefaultInstance());
+    public com.google.cloud.iot.v1.DeviceCredential.Builder addCredentialsBuilder(int index) {
+      return getCredentialsFieldBuilder()
+          .addBuilder(index, com.google.cloud.iot.v1.DeviceCredential.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * The credentials used to authenticate this device. To allow credential
      * rotation without interruption, multiple device credentials can be bound to
@@ -2290,16 +2594,22 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.cloud.iot.v1.DeviceCredential credentials = 12;</code>
      */
-    public java.util.List<com.google.cloud.iot.v1.DeviceCredential.Builder> 
-         getCredentialsBuilderList() {
+    public java.util.List<com.google.cloud.iot.v1.DeviceCredential.Builder>
+        getCredentialsBuilderList() {
       return getCredentialsFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.iot.v1.DeviceCredential, com.google.cloud.iot.v1.DeviceCredential.Builder, com.google.cloud.iot.v1.DeviceCredentialOrBuilder> 
+            com.google.cloud.iot.v1.DeviceCredential,
+            com.google.cloud.iot.v1.DeviceCredential.Builder,
+            com.google.cloud.iot.v1.DeviceCredentialOrBuilder>
         getCredentialsFieldBuilder() {
       if (credentialsBuilder_ == null) {
-        credentialsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.cloud.iot.v1.DeviceCredential, com.google.cloud.iot.v1.DeviceCredential.Builder, com.google.cloud.iot.v1.DeviceCredentialOrBuilder>(
+        credentialsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.iot.v1.DeviceCredential,
+                com.google.cloud.iot.v1.DeviceCredential.Builder,
+                com.google.cloud.iot.v1.DeviceCredentialOrBuilder>(
                 credentials_,
                 ((bitField0_ & 0x00000008) == 0x00000008),
                 getParentForChildren(),
@@ -2311,8 +2621,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Timestamp lastHeartbeatTime_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> lastHeartbeatTimeBuilder_;
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        lastHeartbeatTimeBuilder_;
     /**
+     *
+     *
      * <pre>
      * [Output only] The last time an MQTT `PINGREQ` was received. This field
      * applies only to devices connecting through MQTT. MQTT clients usually only
@@ -2327,6 +2642,8 @@ private static final long serialVersionUID = 0L;
       return lastHeartbeatTimeBuilder_ != null || lastHeartbeatTime_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The last time an MQTT `PINGREQ` was received. This field
      * applies only to devices connecting through MQTT. MQTT clients usually only
@@ -2339,12 +2656,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.Timestamp getLastHeartbeatTime() {
       if (lastHeartbeatTimeBuilder_ == null) {
-        return lastHeartbeatTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : lastHeartbeatTime_;
+        return lastHeartbeatTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : lastHeartbeatTime_;
       } else {
         return lastHeartbeatTimeBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The last time an MQTT `PINGREQ` was received. This field
      * applies only to devices connecting through MQTT. MQTT clients usually only
@@ -2369,6 +2690,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The last time an MQTT `PINGREQ` was received. This field
      * applies only to devices connecting through MQTT. MQTT clients usually only
@@ -2379,8 +2702,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.Timestamp last_heartbeat_time = 7;</code>
      */
-    public Builder setLastHeartbeatTime(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
+    public Builder setLastHeartbeatTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (lastHeartbeatTimeBuilder_ == null) {
         lastHeartbeatTime_ = builderForValue.build();
         onChanged();
@@ -2391,6 +2713,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The last time an MQTT `PINGREQ` was received. This field
      * applies only to devices connecting through MQTT. MQTT clients usually only
@@ -2405,7 +2729,9 @@ private static final long serialVersionUID = 0L;
       if (lastHeartbeatTimeBuilder_ == null) {
         if (lastHeartbeatTime_ != null) {
           lastHeartbeatTime_ =
-            com.google.protobuf.Timestamp.newBuilder(lastHeartbeatTime_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Timestamp.newBuilder(lastHeartbeatTime_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           lastHeartbeatTime_ = value;
         }
@@ -2417,6 +2743,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The last time an MQTT `PINGREQ` was received. This field
      * applies only to devices connecting through MQTT. MQTT clients usually only
@@ -2439,6 +2767,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The last time an MQTT `PINGREQ` was received. This field
      * applies only to devices connecting through MQTT. MQTT clients usually only
@@ -2450,11 +2780,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp last_heartbeat_time = 7;</code>
      */
     public com.google.protobuf.Timestamp.Builder getLastHeartbeatTimeBuilder() {
-      
+
       onChanged();
       return getLastHeartbeatTimeFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The last time an MQTT `PINGREQ` was received. This field
      * applies only to devices connecting through MQTT. MQTT clients usually only
@@ -2469,11 +2801,14 @@ private static final long serialVersionUID = 0L;
       if (lastHeartbeatTimeBuilder_ != null) {
         return lastHeartbeatTimeBuilder_.getMessageOrBuilder();
       } else {
-        return lastHeartbeatTime_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : lastHeartbeatTime_;
+        return lastHeartbeatTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : lastHeartbeatTime_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The last time an MQTT `PINGREQ` was received. This field
      * applies only to devices connecting through MQTT. MQTT clients usually only
@@ -2485,14 +2820,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp last_heartbeat_time = 7;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
         getLastHeartbeatTimeFieldBuilder() {
       if (lastHeartbeatTimeBuilder_ == null) {
-        lastHeartbeatTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getLastHeartbeatTime(),
-                getParentForChildren(),
-                isClean());
+        lastHeartbeatTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getLastHeartbeatTime(), getParentForChildren(), isClean());
         lastHeartbeatTime_ = null;
       }
       return lastHeartbeatTimeBuilder_;
@@ -2500,8 +2838,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Timestamp lastEventTime_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> lastEventTimeBuilder_;
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        lastEventTimeBuilder_;
     /**
+     *
+     *
      * <pre>
      * [Output only] The last time a telemetry event was received. Timestamps are
      * periodically collected and written to storage; they may be stale by a few
@@ -2514,6 +2857,8 @@ private static final long serialVersionUID = 0L;
       return lastEventTimeBuilder_ != null || lastEventTime_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The last time a telemetry event was received. Timestamps are
      * periodically collected and written to storage; they may be stale by a few
@@ -2524,12 +2869,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.Timestamp getLastEventTime() {
       if (lastEventTimeBuilder_ == null) {
-        return lastEventTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : lastEventTime_;
+        return lastEventTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : lastEventTime_;
       } else {
         return lastEventTimeBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The last time a telemetry event was received. Timestamps are
      * periodically collected and written to storage; they may be stale by a few
@@ -2552,6 +2901,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The last time a telemetry event was received. Timestamps are
      * periodically collected and written to storage; they may be stale by a few
@@ -2560,8 +2911,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.Timestamp last_event_time = 8;</code>
      */
-    public Builder setLastEventTime(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
+    public Builder setLastEventTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (lastEventTimeBuilder_ == null) {
         lastEventTime_ = builderForValue.build();
         onChanged();
@@ -2572,6 +2922,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The last time a telemetry event was received. Timestamps are
      * periodically collected and written to storage; they may be stale by a few
@@ -2584,7 +2936,9 @@ private static final long serialVersionUID = 0L;
       if (lastEventTimeBuilder_ == null) {
         if (lastEventTime_ != null) {
           lastEventTime_ =
-            com.google.protobuf.Timestamp.newBuilder(lastEventTime_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Timestamp.newBuilder(lastEventTime_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           lastEventTime_ = value;
         }
@@ -2596,6 +2950,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The last time a telemetry event was received. Timestamps are
      * periodically collected and written to storage; they may be stale by a few
@@ -2616,6 +2972,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The last time a telemetry event was received. Timestamps are
      * periodically collected and written to storage; they may be stale by a few
@@ -2625,11 +2983,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp last_event_time = 8;</code>
      */
     public com.google.protobuf.Timestamp.Builder getLastEventTimeBuilder() {
-      
+
       onChanged();
       return getLastEventTimeFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The last time a telemetry event was received. Timestamps are
      * periodically collected and written to storage; they may be stale by a few
@@ -2642,11 +3002,14 @@ private static final long serialVersionUID = 0L;
       if (lastEventTimeBuilder_ != null) {
         return lastEventTimeBuilder_.getMessageOrBuilder();
       } else {
-        return lastEventTime_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : lastEventTime_;
+        return lastEventTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : lastEventTime_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The last time a telemetry event was received. Timestamps are
      * periodically collected and written to storage; they may be stale by a few
@@ -2656,14 +3019,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp last_event_time = 8;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
         getLastEventTimeFieldBuilder() {
       if (lastEventTimeBuilder_ == null) {
-        lastEventTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getLastEventTime(),
-                getParentForChildren(),
-                isClean());
+        lastEventTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getLastEventTime(), getParentForChildren(), isClean());
         lastEventTime_ = null;
       }
       return lastEventTimeBuilder_;
@@ -2671,8 +3037,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Timestamp lastStateTime_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> lastStateTimeBuilder_;
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        lastStateTimeBuilder_;
     /**
+     *
+     *
      * <pre>
      * [Output only] The last time a state event was received. Timestamps are
      * periodically collected and written to storage; they may be stale by a few
@@ -2685,6 +3056,8 @@ private static final long serialVersionUID = 0L;
       return lastStateTimeBuilder_ != null || lastStateTime_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The last time a state event was received. Timestamps are
      * periodically collected and written to storage; they may be stale by a few
@@ -2695,12 +3068,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.Timestamp getLastStateTime() {
       if (lastStateTimeBuilder_ == null) {
-        return lastStateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : lastStateTime_;
+        return lastStateTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : lastStateTime_;
       } else {
         return lastStateTimeBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The last time a state event was received. Timestamps are
      * periodically collected and written to storage; they may be stale by a few
@@ -2723,6 +3100,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The last time a state event was received. Timestamps are
      * periodically collected and written to storage; they may be stale by a few
@@ -2731,8 +3110,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.Timestamp last_state_time = 20;</code>
      */
-    public Builder setLastStateTime(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
+    public Builder setLastStateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (lastStateTimeBuilder_ == null) {
         lastStateTime_ = builderForValue.build();
         onChanged();
@@ -2743,6 +3121,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The last time a state event was received. Timestamps are
      * periodically collected and written to storage; they may be stale by a few
@@ -2755,7 +3135,9 @@ private static final long serialVersionUID = 0L;
       if (lastStateTimeBuilder_ == null) {
         if (lastStateTime_ != null) {
           lastStateTime_ =
-            com.google.protobuf.Timestamp.newBuilder(lastStateTime_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Timestamp.newBuilder(lastStateTime_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           lastStateTime_ = value;
         }
@@ -2767,6 +3149,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The last time a state event was received. Timestamps are
      * periodically collected and written to storage; they may be stale by a few
@@ -2787,6 +3171,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The last time a state event was received. Timestamps are
      * periodically collected and written to storage; they may be stale by a few
@@ -2796,11 +3182,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp last_state_time = 20;</code>
      */
     public com.google.protobuf.Timestamp.Builder getLastStateTimeBuilder() {
-      
+
       onChanged();
       return getLastStateTimeFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The last time a state event was received. Timestamps are
      * periodically collected and written to storage; they may be stale by a few
@@ -2813,11 +3201,14 @@ private static final long serialVersionUID = 0L;
       if (lastStateTimeBuilder_ != null) {
         return lastStateTimeBuilder_.getMessageOrBuilder();
       } else {
-        return lastStateTime_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : lastStateTime_;
+        return lastStateTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : lastStateTime_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The last time a state event was received. Timestamps are
      * periodically collected and written to storage; they may be stale by a few
@@ -2827,14 +3218,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp last_state_time = 20;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
         getLastStateTimeFieldBuilder() {
       if (lastStateTimeBuilder_ == null) {
-        lastStateTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getLastStateTime(),
-                getParentForChildren(),
-                isClean());
+        lastStateTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getLastStateTime(), getParentForChildren(), isClean());
         lastStateTime_ = null;
       }
       return lastStateTimeBuilder_;
@@ -2842,8 +3236,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Timestamp lastConfigAckTime_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> lastConfigAckTimeBuilder_;
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        lastConfigAckTimeBuilder_;
     /**
+     *
+     *
      * <pre>
      * [Output only] The last time a cloud-to-device config version acknowledgment
      * was received from the device. This field is only for configurations
@@ -2856,6 +3255,8 @@ private static final long serialVersionUID = 0L;
       return lastConfigAckTimeBuilder_ != null || lastConfigAckTime_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The last time a cloud-to-device config version acknowledgment
      * was received from the device. This field is only for configurations
@@ -2866,12 +3267,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.Timestamp getLastConfigAckTime() {
       if (lastConfigAckTimeBuilder_ == null) {
-        return lastConfigAckTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : lastConfigAckTime_;
+        return lastConfigAckTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : lastConfigAckTime_;
       } else {
         return lastConfigAckTimeBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The last time a cloud-to-device config version acknowledgment
      * was received from the device. This field is only for configurations
@@ -2894,6 +3299,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The last time a cloud-to-device config version acknowledgment
      * was received from the device. This field is only for configurations
@@ -2902,8 +3309,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.Timestamp last_config_ack_time = 14;</code>
      */
-    public Builder setLastConfigAckTime(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
+    public Builder setLastConfigAckTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (lastConfigAckTimeBuilder_ == null) {
         lastConfigAckTime_ = builderForValue.build();
         onChanged();
@@ -2914,6 +3320,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The last time a cloud-to-device config version acknowledgment
      * was received from the device. This field is only for configurations
@@ -2926,7 +3334,9 @@ private static final long serialVersionUID = 0L;
       if (lastConfigAckTimeBuilder_ == null) {
         if (lastConfigAckTime_ != null) {
           lastConfigAckTime_ =
-            com.google.protobuf.Timestamp.newBuilder(lastConfigAckTime_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Timestamp.newBuilder(lastConfigAckTime_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           lastConfigAckTime_ = value;
         }
@@ -2938,6 +3348,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The last time a cloud-to-device config version acknowledgment
      * was received from the device. This field is only for configurations
@@ -2958,6 +3370,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The last time a cloud-to-device config version acknowledgment
      * was received from the device. This field is only for configurations
@@ -2967,11 +3381,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp last_config_ack_time = 14;</code>
      */
     public com.google.protobuf.Timestamp.Builder getLastConfigAckTimeBuilder() {
-      
+
       onChanged();
       return getLastConfigAckTimeFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The last time a cloud-to-device config version acknowledgment
      * was received from the device. This field is only for configurations
@@ -2984,11 +3400,14 @@ private static final long serialVersionUID = 0L;
       if (lastConfigAckTimeBuilder_ != null) {
         return lastConfigAckTimeBuilder_.getMessageOrBuilder();
       } else {
-        return lastConfigAckTime_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : lastConfigAckTime_;
+        return lastConfigAckTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : lastConfigAckTime_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The last time a cloud-to-device config version acknowledgment
      * was received from the device. This field is only for configurations
@@ -2998,14 +3417,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp last_config_ack_time = 14;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
         getLastConfigAckTimeFieldBuilder() {
       if (lastConfigAckTimeBuilder_ == null) {
-        lastConfigAckTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getLastConfigAckTime(),
-                getParentForChildren(),
-                isClean());
+        lastConfigAckTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getLastConfigAckTime(), getParentForChildren(), isClean());
         lastConfigAckTime_ = null;
       }
       return lastConfigAckTimeBuilder_;
@@ -3013,8 +3435,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Timestamp lastConfigSendTime_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> lastConfigSendTimeBuilder_;
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        lastConfigSendTimeBuilder_;
     /**
+     *
+     *
      * <pre>
      * [Output only] The last time a cloud-to-device config version was sent to
      * the device.
@@ -3026,6 +3453,8 @@ private static final long serialVersionUID = 0L;
       return lastConfigSendTimeBuilder_ != null || lastConfigSendTime_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The last time a cloud-to-device config version was sent to
      * the device.
@@ -3035,12 +3464,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.Timestamp getLastConfigSendTime() {
       if (lastConfigSendTimeBuilder_ == null) {
-        return lastConfigSendTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : lastConfigSendTime_;
+        return lastConfigSendTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : lastConfigSendTime_;
       } else {
         return lastConfigSendTimeBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The last time a cloud-to-device config version was sent to
      * the device.
@@ -3062,6 +3495,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The last time a cloud-to-device config version was sent to
      * the device.
@@ -3069,8 +3504,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.Timestamp last_config_send_time = 18;</code>
      */
-    public Builder setLastConfigSendTime(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
+    public Builder setLastConfigSendTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (lastConfigSendTimeBuilder_ == null) {
         lastConfigSendTime_ = builderForValue.build();
         onChanged();
@@ -3081,6 +3515,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The last time a cloud-to-device config version was sent to
      * the device.
@@ -3092,7 +3528,9 @@ private static final long serialVersionUID = 0L;
       if (lastConfigSendTimeBuilder_ == null) {
         if (lastConfigSendTime_ != null) {
           lastConfigSendTime_ =
-            com.google.protobuf.Timestamp.newBuilder(lastConfigSendTime_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Timestamp.newBuilder(lastConfigSendTime_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           lastConfigSendTime_ = value;
         }
@@ -3104,6 +3542,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The last time a cloud-to-device config version was sent to
      * the device.
@@ -3123,6 +3563,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The last time a cloud-to-device config version was sent to
      * the device.
@@ -3131,11 +3573,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp last_config_send_time = 18;</code>
      */
     public com.google.protobuf.Timestamp.Builder getLastConfigSendTimeBuilder() {
-      
+
       onChanged();
       return getLastConfigSendTimeFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The last time a cloud-to-device config version was sent to
      * the device.
@@ -3147,11 +3591,14 @@ private static final long serialVersionUID = 0L;
       if (lastConfigSendTimeBuilder_ != null) {
         return lastConfigSendTimeBuilder_.getMessageOrBuilder();
       } else {
-        return lastConfigSendTime_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : lastConfigSendTime_;
+        return lastConfigSendTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : lastConfigSendTime_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The last time a cloud-to-device config version was sent to
      * the device.
@@ -3160,21 +3607,26 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp last_config_send_time = 18;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
         getLastConfigSendTimeFieldBuilder() {
       if (lastConfigSendTimeBuilder_ == null) {
-        lastConfigSendTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getLastConfigSendTime(),
-                getParentForChildren(),
-                isClean());
+        lastConfigSendTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getLastConfigSendTime(), getParentForChildren(), isClean());
         lastConfigSendTime_ = null;
       }
       return lastConfigSendTimeBuilder_;
     }
 
-    private boolean blocked_ ;
+    private boolean blocked_;
     /**
+     *
+     *
      * <pre>
      * If a device is blocked, connections or requests from this device will fail.
      * Can be used to temporarily prevent the device from connecting if, for
@@ -3187,6 +3639,8 @@ private static final long serialVersionUID = 0L;
       return blocked_;
     }
     /**
+     *
+     *
      * <pre>
      * If a device is blocked, connections or requests from this device will fail.
      * Can be used to temporarily prevent the device from connecting if, for
@@ -3196,12 +3650,14 @@ private static final long serialVersionUID = 0L;
      * <code>bool blocked = 19;</code>
      */
     public Builder setBlocked(boolean value) {
-      
+
       blocked_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If a device is blocked, connections or requests from this device will fail.
      * Can be used to temporarily prevent the device from connecting if, for
@@ -3211,7 +3667,7 @@ private static final long serialVersionUID = 0L;
      * <code>bool blocked = 19;</code>
      */
     public Builder clearBlocked() {
-      
+
       blocked_ = false;
       onChanged();
       return this;
@@ -3219,8 +3675,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Timestamp lastErrorTime_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> lastErrorTimeBuilder_;
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        lastErrorTimeBuilder_;
     /**
+     *
+     *
      * <pre>
      * [Output only] The time the most recent error occurred, such as a failure to
      * publish to Cloud Pub/Sub. This field is the timestamp of
@@ -3233,6 +3694,8 @@ private static final long serialVersionUID = 0L;
       return lastErrorTimeBuilder_ != null || lastErrorTime_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The time the most recent error occurred, such as a failure to
      * publish to Cloud Pub/Sub. This field is the timestamp of
@@ -3243,12 +3706,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.Timestamp getLastErrorTime() {
       if (lastErrorTimeBuilder_ == null) {
-        return lastErrorTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : lastErrorTime_;
+        return lastErrorTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : lastErrorTime_;
       } else {
         return lastErrorTimeBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The time the most recent error occurred, such as a failure to
      * publish to Cloud Pub/Sub. This field is the timestamp of
@@ -3271,6 +3738,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The time the most recent error occurred, such as a failure to
      * publish to Cloud Pub/Sub. This field is the timestamp of
@@ -3279,8 +3748,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.Timestamp last_error_time = 10;</code>
      */
-    public Builder setLastErrorTime(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
+    public Builder setLastErrorTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (lastErrorTimeBuilder_ == null) {
         lastErrorTime_ = builderForValue.build();
         onChanged();
@@ -3291,6 +3759,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The time the most recent error occurred, such as a failure to
      * publish to Cloud Pub/Sub. This field is the timestamp of
@@ -3303,7 +3773,9 @@ private static final long serialVersionUID = 0L;
       if (lastErrorTimeBuilder_ == null) {
         if (lastErrorTime_ != null) {
           lastErrorTime_ =
-            com.google.protobuf.Timestamp.newBuilder(lastErrorTime_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Timestamp.newBuilder(lastErrorTime_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           lastErrorTime_ = value;
         }
@@ -3315,6 +3787,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The time the most recent error occurred, such as a failure to
      * publish to Cloud Pub/Sub. This field is the timestamp of
@@ -3335,6 +3809,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The time the most recent error occurred, such as a failure to
      * publish to Cloud Pub/Sub. This field is the timestamp of
@@ -3344,11 +3820,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp last_error_time = 10;</code>
      */
     public com.google.protobuf.Timestamp.Builder getLastErrorTimeBuilder() {
-      
+
       onChanged();
       return getLastErrorTimeFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The time the most recent error occurred, such as a failure to
      * publish to Cloud Pub/Sub. This field is the timestamp of
@@ -3361,11 +3839,14 @@ private static final long serialVersionUID = 0L;
       if (lastErrorTimeBuilder_ != null) {
         return lastErrorTimeBuilder_.getMessageOrBuilder();
       } else {
-        return lastErrorTime_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : lastErrorTime_;
+        return lastErrorTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : lastErrorTime_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The time the most recent error occurred, such as a failure to
      * publish to Cloud Pub/Sub. This field is the timestamp of
@@ -3375,14 +3856,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp last_error_time = 10;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
         getLastErrorTimeFieldBuilder() {
       if (lastErrorTimeBuilder_ == null) {
-        lastErrorTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getLastErrorTime(),
-                getParentForChildren(),
-                isClean());
+        lastErrorTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getLastErrorTime(), getParentForChildren(), isClean());
         lastErrorTime_ = null;
       }
       return lastErrorTimeBuilder_;
@@ -3390,8 +3874,11 @@ private static final long serialVersionUID = 0L;
 
     private com.google.rpc.Status lastErrorStatus_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder> lastErrorStatusBuilder_;
+            com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
+        lastErrorStatusBuilder_;
     /**
+     *
+     *
      * <pre>
      * [Output only] The error message of the most recent error, such as a failure
      * to publish to Cloud Pub/Sub. 'last_error_time' is the timestamp of this
@@ -3406,6 +3893,8 @@ private static final long serialVersionUID = 0L;
       return lastErrorStatusBuilder_ != null || lastErrorStatus_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The error message of the most recent error, such as a failure
      * to publish to Cloud Pub/Sub. 'last_error_time' is the timestamp of this
@@ -3418,12 +3907,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.rpc.Status getLastErrorStatus() {
       if (lastErrorStatusBuilder_ == null) {
-        return lastErrorStatus_ == null ? com.google.rpc.Status.getDefaultInstance() : lastErrorStatus_;
+        return lastErrorStatus_ == null
+            ? com.google.rpc.Status.getDefaultInstance()
+            : lastErrorStatus_;
       } else {
         return lastErrorStatusBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The error message of the most recent error, such as a failure
      * to publish to Cloud Pub/Sub. 'last_error_time' is the timestamp of this
@@ -3448,6 +3941,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The error message of the most recent error, such as a failure
      * to publish to Cloud Pub/Sub. 'last_error_time' is the timestamp of this
@@ -3458,8 +3953,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.rpc.Status last_error_status = 11;</code>
      */
-    public Builder setLastErrorStatus(
-        com.google.rpc.Status.Builder builderForValue) {
+    public Builder setLastErrorStatus(com.google.rpc.Status.Builder builderForValue) {
       if (lastErrorStatusBuilder_ == null) {
         lastErrorStatus_ = builderForValue.build();
         onChanged();
@@ -3470,6 +3964,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The error message of the most recent error, such as a failure
      * to publish to Cloud Pub/Sub. 'last_error_time' is the timestamp of this
@@ -3484,7 +3980,7 @@ private static final long serialVersionUID = 0L;
       if (lastErrorStatusBuilder_ == null) {
         if (lastErrorStatus_ != null) {
           lastErrorStatus_ =
-            com.google.rpc.Status.newBuilder(lastErrorStatus_).mergeFrom(value).buildPartial();
+              com.google.rpc.Status.newBuilder(lastErrorStatus_).mergeFrom(value).buildPartial();
         } else {
           lastErrorStatus_ = value;
         }
@@ -3496,6 +3992,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The error message of the most recent error, such as a failure
      * to publish to Cloud Pub/Sub. 'last_error_time' is the timestamp of this
@@ -3518,6 +4016,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The error message of the most recent error, such as a failure
      * to publish to Cloud Pub/Sub. 'last_error_time' is the timestamp of this
@@ -3529,11 +4029,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.rpc.Status last_error_status = 11;</code>
      */
     public com.google.rpc.Status.Builder getLastErrorStatusBuilder() {
-      
+
       onChanged();
       return getLastErrorStatusFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The error message of the most recent error, such as a failure
      * to publish to Cloud Pub/Sub. 'last_error_time' is the timestamp of this
@@ -3548,11 +4050,14 @@ private static final long serialVersionUID = 0L;
       if (lastErrorStatusBuilder_ != null) {
         return lastErrorStatusBuilder_.getMessageOrBuilder();
       } else {
-        return lastErrorStatus_ == null ?
-            com.google.rpc.Status.getDefaultInstance() : lastErrorStatus_;
+        return lastErrorStatus_ == null
+            ? com.google.rpc.Status.getDefaultInstance()
+            : lastErrorStatus_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The error message of the most recent error, such as a failure
      * to publish to Cloud Pub/Sub. 'last_error_time' is the timestamp of this
@@ -3564,14 +4069,15 @@ private static final long serialVersionUID = 0L;
      * <code>.google.rpc.Status last_error_status = 11;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder> 
+            com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
         getLastErrorStatusFieldBuilder() {
       if (lastErrorStatusBuilder_ == null) {
-        lastErrorStatusBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>(
-                getLastErrorStatus(),
-                getParentForChildren(),
-                isClean());
+        lastErrorStatusBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.rpc.Status,
+                com.google.rpc.Status.Builder,
+                com.google.rpc.StatusOrBuilder>(
+                getLastErrorStatus(), getParentForChildren(), isClean());
         lastErrorStatus_ = null;
       }
       return lastErrorStatusBuilder_;
@@ -3579,8 +4085,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.cloud.iot.v1.DeviceConfig config_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.iot.v1.DeviceConfig, com.google.cloud.iot.v1.DeviceConfig.Builder, com.google.cloud.iot.v1.DeviceConfigOrBuilder> configBuilder_;
+            com.google.cloud.iot.v1.DeviceConfig,
+            com.google.cloud.iot.v1.DeviceConfig.Builder,
+            com.google.cloud.iot.v1.DeviceConfigOrBuilder>
+        configBuilder_;
     /**
+     *
+     *
      * <pre>
      * The most recent device configuration, which is eventually sent from
      * Cloud IoT Core to the device. If not present on creation, the
@@ -3595,6 +4106,8 @@ private static final long serialVersionUID = 0L;
       return configBuilder_ != null || config_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * The most recent device configuration, which is eventually sent from
      * Cloud IoT Core to the device. If not present on creation, the
@@ -3607,12 +4120,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.iot.v1.DeviceConfig getConfig() {
       if (configBuilder_ == null) {
-        return config_ == null ? com.google.cloud.iot.v1.DeviceConfig.getDefaultInstance() : config_;
+        return config_ == null
+            ? com.google.cloud.iot.v1.DeviceConfig.getDefaultInstance()
+            : config_;
       } else {
         return configBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * The most recent device configuration, which is eventually sent from
      * Cloud IoT Core to the device. If not present on creation, the
@@ -3637,6 +4154,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The most recent device configuration, which is eventually sent from
      * Cloud IoT Core to the device. If not present on creation, the
@@ -3647,8 +4166,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.cloud.iot.v1.DeviceConfig config = 13;</code>
      */
-    public Builder setConfig(
-        com.google.cloud.iot.v1.DeviceConfig.Builder builderForValue) {
+    public Builder setConfig(com.google.cloud.iot.v1.DeviceConfig.Builder builderForValue) {
       if (configBuilder_ == null) {
         config_ = builderForValue.build();
         onChanged();
@@ -3659,6 +4177,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The most recent device configuration, which is eventually sent from
      * Cloud IoT Core to the device. If not present on creation, the
@@ -3673,7 +4193,9 @@ private static final long serialVersionUID = 0L;
       if (configBuilder_ == null) {
         if (config_ != null) {
           config_ =
-            com.google.cloud.iot.v1.DeviceConfig.newBuilder(config_).mergeFrom(value).buildPartial();
+              com.google.cloud.iot.v1.DeviceConfig.newBuilder(config_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           config_ = value;
         }
@@ -3685,6 +4207,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The most recent device configuration, which is eventually sent from
      * Cloud IoT Core to the device. If not present on creation, the
@@ -3707,6 +4231,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The most recent device configuration, which is eventually sent from
      * Cloud IoT Core to the device. If not present on creation, the
@@ -3718,11 +4244,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.iot.v1.DeviceConfig config = 13;</code>
      */
     public com.google.cloud.iot.v1.DeviceConfig.Builder getConfigBuilder() {
-      
+
       onChanged();
       return getConfigFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * The most recent device configuration, which is eventually sent from
      * Cloud IoT Core to the device. If not present on creation, the
@@ -3737,11 +4265,14 @@ private static final long serialVersionUID = 0L;
       if (configBuilder_ != null) {
         return configBuilder_.getMessageOrBuilder();
       } else {
-        return config_ == null ?
-            com.google.cloud.iot.v1.DeviceConfig.getDefaultInstance() : config_;
+        return config_ == null
+            ? com.google.cloud.iot.v1.DeviceConfig.getDefaultInstance()
+            : config_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The most recent device configuration, which is eventually sent from
      * Cloud IoT Core to the device. If not present on creation, the
@@ -3753,14 +4284,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.iot.v1.DeviceConfig config = 13;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.iot.v1.DeviceConfig, com.google.cloud.iot.v1.DeviceConfig.Builder, com.google.cloud.iot.v1.DeviceConfigOrBuilder> 
+            com.google.cloud.iot.v1.DeviceConfig,
+            com.google.cloud.iot.v1.DeviceConfig.Builder,
+            com.google.cloud.iot.v1.DeviceConfigOrBuilder>
         getConfigFieldBuilder() {
       if (configBuilder_ == null) {
-        configBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.iot.v1.DeviceConfig, com.google.cloud.iot.v1.DeviceConfig.Builder, com.google.cloud.iot.v1.DeviceConfigOrBuilder>(
-                getConfig(),
-                getParentForChildren(),
-                isClean());
+        configBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.iot.v1.DeviceConfig,
+                com.google.cloud.iot.v1.DeviceConfig.Builder,
+                com.google.cloud.iot.v1.DeviceConfigOrBuilder>(
+                getConfig(), getParentForChildren(), isClean());
         config_ = null;
       }
       return configBuilder_;
@@ -3768,8 +4302,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.cloud.iot.v1.DeviceState state_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.iot.v1.DeviceState, com.google.cloud.iot.v1.DeviceState.Builder, com.google.cloud.iot.v1.DeviceStateOrBuilder> stateBuilder_;
+            com.google.cloud.iot.v1.DeviceState,
+            com.google.cloud.iot.v1.DeviceState.Builder,
+            com.google.cloud.iot.v1.DeviceStateOrBuilder>
+        stateBuilder_;
     /**
+     *
+     *
      * <pre>
      * [Output only] The state most recently received from the device. If no state
      * has been reported, this field is not present.
@@ -3781,6 +4320,8 @@ private static final long serialVersionUID = 0L;
       return stateBuilder_ != null || state_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The state most recently received from the device. If no state
      * has been reported, this field is not present.
@@ -3796,6 +4337,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The state most recently received from the device. If no state
      * has been reported, this field is not present.
@@ -3817,6 +4360,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The state most recently received from the device. If no state
      * has been reported, this field is not present.
@@ -3824,8 +4369,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.cloud.iot.v1.DeviceState state = 16;</code>
      */
-    public Builder setState(
-        com.google.cloud.iot.v1.DeviceState.Builder builderForValue) {
+    public Builder setState(com.google.cloud.iot.v1.DeviceState.Builder builderForValue) {
       if (stateBuilder_ == null) {
         state_ = builderForValue.build();
         onChanged();
@@ -3836,6 +4380,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The state most recently received from the device. If no state
      * has been reported, this field is not present.
@@ -3847,7 +4393,9 @@ private static final long serialVersionUID = 0L;
       if (stateBuilder_ == null) {
         if (state_ != null) {
           state_ =
-            com.google.cloud.iot.v1.DeviceState.newBuilder(state_).mergeFrom(value).buildPartial();
+              com.google.cloud.iot.v1.DeviceState.newBuilder(state_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           state_ = value;
         }
@@ -3859,6 +4407,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The state most recently received from the device. If no state
      * has been reported, this field is not present.
@@ -3878,6 +4428,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The state most recently received from the device. If no state
      * has been reported, this field is not present.
@@ -3886,11 +4438,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.iot.v1.DeviceState state = 16;</code>
      */
     public com.google.cloud.iot.v1.DeviceState.Builder getStateBuilder() {
-      
+
       onChanged();
       return getStateFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The state most recently received from the device. If no state
      * has been reported, this field is not present.
@@ -3902,11 +4456,12 @@ private static final long serialVersionUID = 0L;
       if (stateBuilder_ != null) {
         return stateBuilder_.getMessageOrBuilder();
       } else {
-        return state_ == null ?
-            com.google.cloud.iot.v1.DeviceState.getDefaultInstance() : state_;
+        return state_ == null ? com.google.cloud.iot.v1.DeviceState.getDefaultInstance() : state_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * [Output only] The state most recently received from the device. If no state
      * has been reported, this field is not present.
@@ -3915,35 +4470,123 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.iot.v1.DeviceState state = 16;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.iot.v1.DeviceState, com.google.cloud.iot.v1.DeviceState.Builder, com.google.cloud.iot.v1.DeviceStateOrBuilder> 
+            com.google.cloud.iot.v1.DeviceState,
+            com.google.cloud.iot.v1.DeviceState.Builder,
+            com.google.cloud.iot.v1.DeviceStateOrBuilder>
         getStateFieldBuilder() {
       if (stateBuilder_ == null) {
-        stateBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.iot.v1.DeviceState, com.google.cloud.iot.v1.DeviceState.Builder, com.google.cloud.iot.v1.DeviceStateOrBuilder>(
-                getState(),
-                getParentForChildren(),
-                isClean());
+        stateBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.iot.v1.DeviceState,
+                com.google.cloud.iot.v1.DeviceState.Builder,
+                com.google.cloud.iot.v1.DeviceStateOrBuilder>(
+                getState(), getParentForChildren(), isClean());
         state_ = null;
       }
       return stateBuilder_;
     }
 
-    private com.google.protobuf.MapField<
-        java.lang.String, java.lang.String> metadata_;
-    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetMetadata() {
+    private int logLevel_ = 0;
+    /**
+     *
+     *
+     * <pre>
+     * **Beta Feature**
+     * The logging verbosity for device activity. If unspecified,
+     * DeviceRegistry.log_level will be used.
+     * </pre>
+     *
+     * <code>.google.cloud.iot.v1.LogLevel log_level = 21;</code>
+     */
+    public int getLogLevelValue() {
+      return logLevel_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * **Beta Feature**
+     * The logging verbosity for device activity. If unspecified,
+     * DeviceRegistry.log_level will be used.
+     * </pre>
+     *
+     * <code>.google.cloud.iot.v1.LogLevel log_level = 21;</code>
+     */
+    public Builder setLogLevelValue(int value) {
+      logLevel_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * **Beta Feature**
+     * The logging verbosity for device activity. If unspecified,
+     * DeviceRegistry.log_level will be used.
+     * </pre>
+     *
+     * <code>.google.cloud.iot.v1.LogLevel log_level = 21;</code>
+     */
+    public com.google.cloud.iot.v1.LogLevel getLogLevel() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.iot.v1.LogLevel result = com.google.cloud.iot.v1.LogLevel.valueOf(logLevel_);
+      return result == null ? com.google.cloud.iot.v1.LogLevel.UNRECOGNIZED : result;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * **Beta Feature**
+     * The logging verbosity for device activity. If unspecified,
+     * DeviceRegistry.log_level will be used.
+     * </pre>
+     *
+     * <code>.google.cloud.iot.v1.LogLevel log_level = 21;</code>
+     */
+    public Builder setLogLevel(com.google.cloud.iot.v1.LogLevel value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      logLevel_ = value.getNumber();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * **Beta Feature**
+     * The logging verbosity for device activity. If unspecified,
+     * DeviceRegistry.log_level will be used.
+     * </pre>
+     *
+     * <code>.google.cloud.iot.v1.LogLevel log_level = 21;</code>
+     */
+    public Builder clearLogLevel() {
+
+      logLevel_ = 0;
+      onChanged();
+      return this;
+    }
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> metadata_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetMetadata() {
       if (metadata_ == null) {
-        return com.google.protobuf.MapField.emptyMapField(
-            MetadataDefaultEntryHolder.defaultEntry);
+        return com.google.protobuf.MapField.emptyMapField(MetadataDefaultEntryHolder.defaultEntry);
       }
       return metadata_;
     }
+
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetMutableMetadata() {
-      onChanged();;
+        internalGetMutableMetadata() {
+      onChanged();
+      ;
       if (metadata_ == null) {
-        metadata_ = com.google.protobuf.MapField.newMapField(
-            MetadataDefaultEntryHolder.defaultEntry);
+        metadata_ =
+            com.google.protobuf.MapField.newMapField(MetadataDefaultEntryHolder.defaultEntry);
       }
       if (!metadata_.isMutable()) {
         metadata_ = metadata_.copy();
@@ -3955,6 +4598,8 @@ private static final long serialVersionUID = 0L;
       return internalGetMetadata().getMap().size();
     }
     /**
+     *
+     *
      * <pre>
      * The metadata key-value pairs assigned to the device. This metadata is not
      * interpreted or indexed by Cloud IoT Core. It can be used to add contextual
@@ -3969,20 +4614,20 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; metadata = 17;</code>
      */
-
-    public boolean containsMetadata(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+    public boolean containsMetadata(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
       return internalGetMetadata().getMap().containsKey(key);
     }
-    /**
-     * Use {@link #getMetadataMap()} instead.
-     */
+    /** Use {@link #getMetadataMap()} instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getMetadata() {
       return getMetadataMap();
     }
     /**
+     *
+     *
      * <pre>
      * The metadata key-value pairs assigned to the device. This metadata is not
      * interpreted or indexed by Cloud IoT Core. It can be used to add contextual
@@ -3997,11 +4642,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; metadata = 17;</code>
      */
-
     public java.util.Map<java.lang.String, java.lang.String> getMetadataMap() {
       return internalGetMetadata().getMap();
     }
     /**
+     *
+     *
      * <pre>
      * The metadata key-value pairs assigned to the device. This metadata is not
      * interpreted or indexed by Cloud IoT Core. It can be used to add contextual
@@ -4016,16 +4662,17 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; metadata = 17;</code>
      */
-
     public java.lang.String getMetadataOrDefault(
-        java.lang.String key,
-        java.lang.String defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetMetadata().getMap();
+        java.lang.String key, java.lang.String defaultValue) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetMetadata().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
+     *
+     *
      * <pre>
      * The metadata key-value pairs assigned to the device. This metadata is not
      * interpreted or indexed by Cloud IoT Core. It can be used to add contextual
@@ -4040,12 +4687,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; metadata = 17;</code>
      */
-
-    public java.lang.String getMetadataOrThrow(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetMetadata().getMap();
+    public java.lang.String getMetadataOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetMetadata().getMap();
       if (!map.containsKey(key)) {
         throw new java.lang.IllegalArgumentException();
       }
@@ -4053,11 +4699,12 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder clearMetadata() {
-      internalGetMutableMetadata().getMutableMap()
-          .clear();
+      internalGetMutableMetadata().getMutableMap().clear();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The metadata key-value pairs assigned to the device. This metadata is not
      * interpreted or indexed by Cloud IoT Core. It can be used to add contextual
@@ -4072,23 +4719,21 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; metadata = 17;</code>
      */
-
-    public Builder removeMetadata(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      internalGetMutableMetadata().getMutableMap()
-          .remove(key);
+    public Builder removeMetadata(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableMetadata().getMutableMap().remove(key);
       return this;
     }
-    /**
-     * Use alternate mutation accessors instead.
-     */
+    /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
-    public java.util.Map<java.lang.String, java.lang.String>
-    getMutableMetadata() {
+    public java.util.Map<java.lang.String, java.lang.String> getMutableMetadata() {
       return internalGetMutableMetadata().getMutableMap();
     }
     /**
+     *
+     *
      * <pre>
      * The metadata key-value pairs assigned to the device. This metadata is not
      * interpreted or indexed by Cloud IoT Core. It can be used to add contextual
@@ -4103,16 +4748,19 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; metadata = 17;</code>
      */
-    public Builder putMetadata(
-        java.lang.String key,
-        java.lang.String value) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      if (value == null) { throw new java.lang.NullPointerException(); }
-      internalGetMutableMetadata().getMutableMap()
-          .put(key, value);
+    public Builder putMetadata(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      if (value == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableMetadata().getMutableMap().put(key, value);
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The metadata key-value pairs assigned to the device. This metadata is not
      * interpreted or indexed by Cloud IoT Core. It can be used to add contextual
@@ -4127,29 +4775,209 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; metadata = 17;</code>
      */
-
-    public Builder putAllMetadata(
-        java.util.Map<java.lang.String, java.lang.String> values) {
-      internalGetMutableMetadata().getMutableMap()
-          .putAll(values);
+    public Builder putAllMetadata(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableMetadata().getMutableMap().putAll(values);
       return this;
     }
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+
+    private com.google.cloud.iot.v1.GatewayConfig gatewayConfig_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.iot.v1.GatewayConfig,
+            com.google.cloud.iot.v1.GatewayConfig.Builder,
+            com.google.cloud.iot.v1.GatewayConfigOrBuilder>
+        gatewayConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Gateway-related configuration and state.
+     * </pre>
+     *
+     * <code>.google.cloud.iot.v1.GatewayConfig gateway_config = 24;</code>
+     */
+    public boolean hasGatewayConfig() {
+      return gatewayConfigBuilder_ != null || gatewayConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Gateway-related configuration and state.
+     * </pre>
+     *
+     * <code>.google.cloud.iot.v1.GatewayConfig gateway_config = 24;</code>
+     */
+    public com.google.cloud.iot.v1.GatewayConfig getGatewayConfig() {
+      if (gatewayConfigBuilder_ == null) {
+        return gatewayConfig_ == null
+            ? com.google.cloud.iot.v1.GatewayConfig.getDefaultInstance()
+            : gatewayConfig_;
+      } else {
+        return gatewayConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Gateway-related configuration and state.
+     * </pre>
+     *
+     * <code>.google.cloud.iot.v1.GatewayConfig gateway_config = 24;</code>
+     */
+    public Builder setGatewayConfig(com.google.cloud.iot.v1.GatewayConfig value) {
+      if (gatewayConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        gatewayConfig_ = value;
+        onChanged();
+      } else {
+        gatewayConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Gateway-related configuration and state.
+     * </pre>
+     *
+     * <code>.google.cloud.iot.v1.GatewayConfig gateway_config = 24;</code>
+     */
+    public Builder setGatewayConfig(com.google.cloud.iot.v1.GatewayConfig.Builder builderForValue) {
+      if (gatewayConfigBuilder_ == null) {
+        gatewayConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        gatewayConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Gateway-related configuration and state.
+     * </pre>
+     *
+     * <code>.google.cloud.iot.v1.GatewayConfig gateway_config = 24;</code>
+     */
+    public Builder mergeGatewayConfig(com.google.cloud.iot.v1.GatewayConfig value) {
+      if (gatewayConfigBuilder_ == null) {
+        if (gatewayConfig_ != null) {
+          gatewayConfig_ =
+              com.google.cloud.iot.v1.GatewayConfig.newBuilder(gatewayConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          gatewayConfig_ = value;
+        }
+        onChanged();
+      } else {
+        gatewayConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Gateway-related configuration and state.
+     * </pre>
+     *
+     * <code>.google.cloud.iot.v1.GatewayConfig gateway_config = 24;</code>
+     */
+    public Builder clearGatewayConfig() {
+      if (gatewayConfigBuilder_ == null) {
+        gatewayConfig_ = null;
+        onChanged();
+      } else {
+        gatewayConfig_ = null;
+        gatewayConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Gateway-related configuration and state.
+     * </pre>
+     *
+     * <code>.google.cloud.iot.v1.GatewayConfig gateway_config = 24;</code>
+     */
+    public com.google.cloud.iot.v1.GatewayConfig.Builder getGatewayConfigBuilder() {
+
+      onChanged();
+      return getGatewayConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Gateway-related configuration and state.
+     * </pre>
+     *
+     * <code>.google.cloud.iot.v1.GatewayConfig gateway_config = 24;</code>
+     */
+    public com.google.cloud.iot.v1.GatewayConfigOrBuilder getGatewayConfigOrBuilder() {
+      if (gatewayConfigBuilder_ != null) {
+        return gatewayConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return gatewayConfig_ == null
+            ? com.google.cloud.iot.v1.GatewayConfig.getDefaultInstance()
+            : gatewayConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Gateway-related configuration and state.
+     * </pre>
+     *
+     * <code>.google.cloud.iot.v1.GatewayConfig gateway_config = 24;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.iot.v1.GatewayConfig,
+            com.google.cloud.iot.v1.GatewayConfig.Builder,
+            com.google.cloud.iot.v1.GatewayConfigOrBuilder>
+        getGatewayConfigFieldBuilder() {
+      if (gatewayConfigBuilder_ == null) {
+        gatewayConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.iot.v1.GatewayConfig,
+                com.google.cloud.iot.v1.GatewayConfig.Builder,
+                com.google.cloud.iot.v1.GatewayConfigOrBuilder>(
+                getGatewayConfig(), getParentForChildren(), isClean());
+        gatewayConfig_ = null;
+      }
+      return gatewayConfigBuilder_;
+    }
+
+    @java.lang.Override
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
     }
-
 
     // @@protoc_insertion_point(builder_scope:google.cloud.iot.v1.Device)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.iot.v1.Device)
   private static final com.google.cloud.iot.v1.Device DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.iot.v1.Device();
   }
@@ -4158,15 +4986,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<Device>
-      PARSER = new com.google.protobuf.AbstractParser<Device>() {
-    public Device parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Device(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<Device> PARSER =
+      new com.google.protobuf.AbstractParser<Device>() {
+        @java.lang.Override
+        public Device parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new Device(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<Device> parser() {
     return PARSER;
@@ -4177,9 +5006,8 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.cloud.iot.v1.Device getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

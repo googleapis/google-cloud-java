@@ -28,7 +28,6 @@ import java.util.List;
  *
  * @param <T> the type of the result
  * @param <E> the type of the service-dependent exception thrown when a processing error occurs
- *
  */
 public abstract class BatchResult<T, E extends BaseServiceException> {
 
@@ -38,8 +37,7 @@ public abstract class BatchResult<T, E extends BaseServiceException> {
   private final List<Callback<T, E>> toBeNotified = new LinkedList<>();
 
   @InternalApi("This class should only be extended within google-cloud-java")
-  protected BatchResult() {
-  }
+  protected BatchResult() {}
 
   /**
    * Returns {@code true} if the batch has been completed and the result is available; {@code false}
@@ -69,14 +67,14 @@ public abstract class BatchResult<T, E extends BaseServiceException> {
    * @throws IllegalStateException if the batch has been completed already
    */
   public void notify(Callback<T, E> callback) {
-    checkState(!completed, "The batch has been completed. All the calls to the notify()"
-          + " method should be done prior to submitting the batch.");
+    checkState(
+        !completed,
+        "The batch has been completed. All the calls to the notify()"
+            + " method should be done prior to submitting the batch.");
     toBeNotified.add(callback);
   }
 
-  /**
-   * Sets an error and status as completed. Notifies all callbacks.
-   */
+  /** Sets an error and status as completed. Notifies all callbacks. */
   protected void error(E error) {
     this.error = checkNotNull(error);
     this.completed = true;
@@ -85,9 +83,7 @@ public abstract class BatchResult<T, E extends BaseServiceException> {
     }
   }
 
-  /**
-   * Sets a result and status as completed. Notifies all callbacks.
-   */
+  /** Sets a result and status as completed. Notifies all callbacks. */
   protected void success(T result) {
     this.result = result;
     this.completed = true;
@@ -96,18 +92,12 @@ public abstract class BatchResult<T, E extends BaseServiceException> {
     }
   }
 
-  /**
-   * An interface for the batch callbacks.
-   */
+  /** An interface for the batch callbacks. */
   public interface Callback<T, E> {
-    /**
-     * The method to be called when the batched operation succeeds.
-     */
+    /** The method to be called when the batched operation succeeds. */
     void success(T result);
 
-    /**
-     * The method to be called when the batched operation fails.
-     */
+    /** The method to be called when the batched operation fails. */
     void error(E exception);
   }
 }

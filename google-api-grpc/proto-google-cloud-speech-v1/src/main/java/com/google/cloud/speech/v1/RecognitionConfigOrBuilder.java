@@ -3,11 +3,14 @@
 
 package com.google.cloud.speech.v1;
 
-public interface RecognitionConfigOrBuilder extends
+public interface RecognitionConfigOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.speech.v1.RecognitionConfig)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Encoding of audio data sent in all `RecognitionAudio` messages.
    * This field is optional for `FLAC` and `WAV` audio files and required
@@ -18,6 +21,8 @@ public interface RecognitionConfigOrBuilder extends
    */
   int getEncodingValue();
   /**
+   *
+   *
    * <pre>
    * Encoding of audio data sent in all `RecognitionAudio` messages.
    * This field is optional for `FLAC` and `WAV` audio files and required
@@ -29,6 +34,8 @@ public interface RecognitionConfigOrBuilder extends
   com.google.cloud.speech.v1.RecognitionConfig.AudioEncoding getEncoding();
 
   /**
+   *
+   *
    * <pre>
    * Sample rate in Hertz of the audio data sent in all
    * `RecognitionAudio` messages. Valid values are: 8000-48000.
@@ -44,6 +51,43 @@ public interface RecognitionConfigOrBuilder extends
   int getSampleRateHertz();
 
   /**
+   *
+   *
+   * <pre>
+   * *Optional* The number of channels in the input audio data.
+   * ONLY set this for MULTI-CHANNEL recognition.
+   * Valid values for LINEAR16 and FLAC are `1`-`8`.
+   * Valid values for OGG_OPUS are '1'-'254'.
+   * Valid value for MULAW, AMR, AMR_WB and SPEEX_WITH_HEADER_BYTE is only `1`.
+   * If `0` or omitted, defaults to one channel (mono).
+   * Note: We only recognize the first channel by default.
+   * To perform independent recognition on each channel set
+   * `enable_separate_recognition_per_channel` to 'true'.
+   * </pre>
+   *
+   * <code>int32 audio_channel_count = 7;</code>
+   */
+  int getAudioChannelCount();
+
+  /**
+   *
+   *
+   * <pre>
+   * This needs to be set to `true` explicitly and `audio_channel_count` &gt; 1
+   * to get each channel recognized separately. The recognition result will
+   * contain a `channel_tag` field to state which channel that result belongs
+   * to. If this is not true, we will only recognize the first channel. The
+   * request is billed cumulatively for all channels recognized:
+   * `audio_channel_count` multiplied by the length of the audio.
+   * </pre>
+   *
+   * <code>bool enable_separate_recognition_per_channel = 12;</code>
+   */
+  boolean getEnableSeparateRecognitionPerChannel();
+
+  /**
+   *
+   *
    * <pre>
    * *Required* The language of the supplied audio as a
    * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
@@ -56,6 +100,8 @@ public interface RecognitionConfigOrBuilder extends
    */
   java.lang.String getLanguageCode();
   /**
+   *
+   *
    * <pre>
    * *Required* The language of the supplied audio as a
    * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
@@ -66,10 +112,11 @@ public interface RecognitionConfigOrBuilder extends
    *
    * <code>string language_code = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getLanguageCodeBytes();
+  com.google.protobuf.ByteString getLanguageCodeBytes();
 
   /**
+   *
+   *
    * <pre>
    * *Optional* Maximum number of recognition hypotheses to be returned.
    * Specifically, the maximum number of `SpeechRecognitionAlternative` messages
@@ -84,6 +131,8 @@ public interface RecognitionConfigOrBuilder extends
   int getMaxAlternatives();
 
   /**
+   *
+   *
    * <pre>
    * *Optional* If set to `true`, the server will attempt to filter out
    * profanities, replacing all but the initial character in each filtered word
@@ -96,6 +145,8 @@ public interface RecognitionConfigOrBuilder extends
   boolean getProfanityFilter();
 
   /**
+   *
+   *
    * <pre>
    * *Optional* array of [SpeechContext][google.cloud.speech.v1.SpeechContext].
    * A means to provide context to assist the speech recognition. For more
@@ -104,9 +155,10 @@ public interface RecognitionConfigOrBuilder extends
    *
    * <code>repeated .google.cloud.speech.v1.SpeechContext speech_contexts = 6;</code>
    */
-  java.util.List<com.google.cloud.speech.v1.SpeechContext> 
-      getSpeechContextsList();
+  java.util.List<com.google.cloud.speech.v1.SpeechContext> getSpeechContextsList();
   /**
+   *
+   *
    * <pre>
    * *Optional* array of [SpeechContext][google.cloud.speech.v1.SpeechContext].
    * A means to provide context to assist the speech recognition. For more
@@ -117,6 +169,8 @@ public interface RecognitionConfigOrBuilder extends
    */
   com.google.cloud.speech.v1.SpeechContext getSpeechContexts(int index);
   /**
+   *
+   *
    * <pre>
    * *Optional* array of [SpeechContext][google.cloud.speech.v1.SpeechContext].
    * A means to provide context to assist the speech recognition. For more
@@ -127,6 +181,8 @@ public interface RecognitionConfigOrBuilder extends
    */
   int getSpeechContextsCount();
   /**
+   *
+   *
    * <pre>
    * *Optional* array of [SpeechContext][google.cloud.speech.v1.SpeechContext].
    * A means to provide context to assist the speech recognition. For more
@@ -135,9 +191,11 @@ public interface RecognitionConfigOrBuilder extends
    *
    * <code>repeated .google.cloud.speech.v1.SpeechContext speech_contexts = 6;</code>
    */
-  java.util.List<? extends com.google.cloud.speech.v1.SpeechContextOrBuilder> 
+  java.util.List<? extends com.google.cloud.speech.v1.SpeechContextOrBuilder>
       getSpeechContextsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * *Optional* array of [SpeechContext][google.cloud.speech.v1.SpeechContext].
    * A means to provide context to assist the speech recognition. For more
@@ -146,10 +204,11 @@ public interface RecognitionConfigOrBuilder extends
    *
    * <code>repeated .google.cloud.speech.v1.SpeechContext speech_contexts = 6;</code>
    */
-  com.google.cloud.speech.v1.SpeechContextOrBuilder getSpeechContextsOrBuilder(
-      int index);
+  com.google.cloud.speech.v1.SpeechContextOrBuilder getSpeechContextsOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * *Optional* If `true`, the top result includes a list of words and
    * the start and end time offsets (timestamps) for those words. If
@@ -162,6 +221,8 @@ public interface RecognitionConfigOrBuilder extends
   boolean getEnableWordTimeOffsets();
 
   /**
+   *
+   *
    * <pre>
    * *Optional* If 'true', adds punctuation to recognition result hypotheses.
    * This feature is only available in select languages. Setting this for
@@ -177,6 +238,8 @@ public interface RecognitionConfigOrBuilder extends
   boolean getEnableAutomaticPunctuation();
 
   /**
+   *
+   *
    * <pre>
    * *Optional* Which model to select for the given request. Select the model
    * best suited to your domain to get best results. If a model is not
@@ -216,6 +279,8 @@ public interface RecognitionConfigOrBuilder extends
    */
   java.lang.String getModel();
   /**
+   *
+   *
    * <pre>
    * *Optional* Which model to select for the given request. Select the model
    * best suited to your domain to get best results. If a model is not
@@ -253,21 +318,25 @@ public interface RecognitionConfigOrBuilder extends
    *
    * <code>string model = 13;</code>
    */
-  com.google.protobuf.ByteString
-      getModelBytes();
+  com.google.protobuf.ByteString getModelBytes();
 
   /**
+   *
+   *
    * <pre>
    * *Optional* Set to true to use an enhanced model for speech recognition.
-   * You must also set the `model` field to a valid, enhanced model. If
-   * `use_enhanced` is set to true and the `model` field is not set, then
-   * `use_enhanced` is ignored. If `use_enhanced` is true and an enhanced
-   * version of the specified model does not exist, then the speech is
-   * recognized using the standard version of the specified model.
+   * If `use_enhanced` is set to true and the `model` field is not set, then
+   * an appropriate enhanced model is chosen if:
+   * 1. project is eligible for requesting enhanced models
+   * 2. an enhanced model exists for the audio
+   * If `use_enhanced` is true and an enhanced version of the specified model
+   * does not exist, then the speech is recognized using the standard version
+   * of the specified model.
    * Enhanced speech models require that you opt-in to data logging using
-   * instructions in the [documentation](/speech-to-text/enable-data-logging).
-   * If you set `use_enhanced` to true and you have not enabled audio logging,
-   * then you will receive an error.
+   * instructions in the
+   * [documentation](/speech-to-text/docs/enable-data-logging). If you set
+   * `use_enhanced` to true and you have not enabled audio logging, then you
+   * will receive an error.
    * </pre>
    *
    * <code>bool use_enhanced = 14;</code>

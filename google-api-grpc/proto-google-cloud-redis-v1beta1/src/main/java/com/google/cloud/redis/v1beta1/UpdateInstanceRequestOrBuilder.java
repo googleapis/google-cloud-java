@@ -3,11 +3,14 @@
 
 package com.google.cloud.redis.v1beta1;
 
-public interface UpdateInstanceRequestOrBuilder extends
+public interface UpdateInstanceRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.redis.v1beta1.UpdateInstanceRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. Mask of fields to update. At least one path must be supplied in
    * this field. The elements of the repeated paths field may only include these
@@ -22,6 +25,8 @@ public interface UpdateInstanceRequestOrBuilder extends
    */
   boolean hasUpdateMask();
   /**
+   *
+   *
    * <pre>
    * Required. Mask of fields to update. At least one path must be supplied in
    * this field. The elements of the repeated paths field may only include these
@@ -36,6 +41,8 @@ public interface UpdateInstanceRequestOrBuilder extends
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**
+   *
+   *
    * <pre>
    * Required. Mask of fields to update. At least one path must be supplied in
    * this field. The elements of the repeated paths field may only include these
@@ -51,6 +58,8 @@ public interface UpdateInstanceRequestOrBuilder extends
   com.google.protobuf.FieldMaskOrBuilder getUpdateMaskOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Required. Update description.
    * Only fields specified in update_mask are updated.
@@ -60,6 +69,8 @@ public interface UpdateInstanceRequestOrBuilder extends
    */
   boolean hasInstance();
   /**
+   *
+   *
    * <pre>
    * Required. Update description.
    * Only fields specified in update_mask are updated.
@@ -69,6 +80,8 @@ public interface UpdateInstanceRequestOrBuilder extends
    */
   com.google.cloud.redis.v1beta1.Instance getInstance();
   /**
+   *
+   *
    * <pre>
    * Required. Update description.
    * Only fields specified in update_mask are updated.

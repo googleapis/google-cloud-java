@@ -4,35 +4,41 @@
 package com.google.cloud.dialogflow.v2beta1;
 
 /**
+ *
+ *
  * <pre>
  * Represents the result of querying a Knowledge base.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2beta1.KnowledgeAnswers}
  */
-public  final class KnowledgeAnswers extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class KnowledgeAnswers extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.KnowledgeAnswers)
     KnowledgeAnswersOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use KnowledgeAnswers.newBuilder() to construct.
   private KnowledgeAnswers(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private KnowledgeAnswers() {
     answers_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private KnowledgeAnswers(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -44,29 +50,33 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          case 10:
+            {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                answers_ =
+                    new java.util.ArrayList<
+                        com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              answers_.add(
+                  input.readMessage(
+                      com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.parser(),
+                      extensionRegistry));
+              break;
             }
-            break;
-          }
-          case 10: {
-            if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-              answers_ = new java.util.ArrayList<com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer>();
-              mutable_bitField0_ |= 0x00000001;
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
             }
-            answers_.add(
-                input.readMessage(com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.parser(), extensionRegistry));
-            break;
-          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
         answers_ = java.util.Collections.unmodifiableList(answers_);
@@ -75,23 +85,30 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.dialogflow.v2beta1.SessionProto.internal_static_google_cloud_dialogflow_v2beta1_KnowledgeAnswers_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.dialogflow.v2beta1.SessionProto
+        .internal_static_google_cloud_dialogflow_v2beta1_KnowledgeAnswers_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.dialogflow.v2beta1.SessionProto.internal_static_google_cloud_dialogflow_v2beta1_KnowledgeAnswers_fieldAccessorTable
+    return com.google.cloud.dialogflow.v2beta1.SessionProto
+        .internal_static_google_cloud_dialogflow_v2beta1_KnowledgeAnswers_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.class, com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Builder.class);
+            com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.class,
+            com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Builder.class);
   }
 
-  public interface AnswerOrBuilder extends
+  public interface AnswerOrBuilder
+      extends
       // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer)
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     *
+     *
      * <pre>
      * Indicates which Knowledge Document this answer was extracted from.
      * Format: `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base
@@ -102,6 +119,8 @@ private static final long serialVersionUID = 0L;
      */
     java.lang.String getSource();
     /**
+     *
+     *
      * <pre>
      * Indicates which Knowledge Document this answer was extracted from.
      * Format: `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base
@@ -110,10 +129,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string source = 1;</code>
      */
-    com.google.protobuf.ByteString
-        getSourceBytes();
+    com.google.protobuf.ByteString getSourceBytes();
 
     /**
+     *
+     *
      * <pre>
      * The corresponding FAQ question if the answer was extracted from a FAQ
      * Document, empty otherwise.
@@ -123,6 +143,8 @@ private static final long serialVersionUID = 0L;
      */
     java.lang.String getFaqQuestion();
     /**
+     *
+     *
      * <pre>
      * The corresponding FAQ question if the answer was extracted from a FAQ
      * Document, empty otherwise.
@@ -130,10 +152,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string faq_question = 2;</code>
      */
-    com.google.protobuf.ByteString
-        getFaqQuestionBytes();
+    com.google.protobuf.ByteString getFaqQuestionBytes();
 
     /**
+     *
+     *
      * <pre>
      * The piece of text from the `source` knowledge base document that answers
      * this conversational query.
@@ -143,6 +166,8 @@ private static final long serialVersionUID = 0L;
      */
     java.lang.String getAnswer();
     /**
+     *
+     *
      * <pre>
      * The piece of text from the `source` knowledge base document that answers
      * this conversational query.
@@ -150,10 +175,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string answer = 3;</code>
      */
-    com.google.protobuf.ByteString
-        getAnswerBytes();
+    com.google.protobuf.ByteString getAnswerBytes();
 
     /**
+     *
+     *
      * <pre>
      * The system's confidence level that this knowledge answer is a good match
      * for this conversational query.
@@ -164,10 +190,14 @@ private static final long serialVersionUID = 0L;
      * answer.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.MatchConfidenceLevel match_confidence_level = 4;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.MatchConfidenceLevel match_confidence_level = 4;
+     * </code>
      */
     int getMatchConfidenceLevelValue();
     /**
+     *
+     *
      * <pre>
      * The system's confidence level that this knowledge answer is a good match
      * for this conversational query.
@@ -178,11 +208,16 @@ private static final long serialVersionUID = 0L;
      * answer.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.MatchConfidenceLevel match_confidence_level = 4;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.MatchConfidenceLevel match_confidence_level = 4;
+     * </code>
      */
-    com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.MatchConfidenceLevel getMatchConfidenceLevel();
+    com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.MatchConfidenceLevel
+        getMatchConfidenceLevel();
 
     /**
+     *
+     *
      * <pre>
      * The system's confidence score that this Knowledge answer is a good match
      * for this converstational query, range from 0.0 (completely uncertain)
@@ -198,21 +233,24 @@ private static final long serialVersionUID = 0L;
     float getMatchConfidence();
   }
   /**
+   *
+   *
    * <pre>
    * An answer from Knowledge Connector.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer}
    */
-  public  static final class Answer extends
-      com.google.protobuf.GeneratedMessageV3 implements
+  public static final class Answer extends com.google.protobuf.GeneratedMessageV3
+      implements
       // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer)
       AnswerOrBuilder {
-  private static final long serialVersionUID = 0L;
+    private static final long serialVersionUID = 0L;
     // Use Answer.newBuilder() to construct.
     private Answer(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
+
     private Answer() {
       source_ = "";
       faqQuestion_ = "";
@@ -222,15 +260,18 @@ private static final long serialVersionUID = 0L;
     }
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
+
     private Answer(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -242,77 +283,88 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
+            case 10:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                source_ = s;
+                break;
               }
-              break;
-            }
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 18:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
 
-              source_ = s;
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
+                faqQuestion_ = s;
+                break;
+              }
+            case 26:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
 
-              faqQuestion_ = s;
-              break;
-            }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
+                answer_ = s;
+                break;
+              }
+            case 32:
+              {
+                int rawValue = input.readEnum();
 
-              answer_ = s;
-              break;
-            }
-            case 32: {
-              int rawValue = input.readEnum();
-
-              matchConfidenceLevel_ = rawValue;
-              break;
-            }
-            case 45: {
-
-              matchConfidence_ = input.readFloat();
-              break;
-            }
+                matchConfidenceLevel_ = rawValue;
+                break;
+              }
+            case 45:
+              {
+                matchConfidence_ = input.readFloat();
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.dialogflow.v2beta1.SessionProto.internal_static_google_cloud_dialogflow_v2beta1_KnowledgeAnswers_Answer_descriptor;
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dialogflow.v2beta1.SessionProto
+          .internal_static_google_cloud_dialogflow_v2beta1_KnowledgeAnswers_Answer_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.dialogflow.v2beta1.SessionProto.internal_static_google_cloud_dialogflow_v2beta1_KnowledgeAnswers_Answer_fieldAccessorTable
+      return com.google.cloud.dialogflow.v2beta1.SessionProto
+          .internal_static_google_cloud_dialogflow_v2beta1_KnowledgeAnswers_Answer_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.class, com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.Builder.class);
+              com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.class,
+              com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.Builder.class);
     }
 
     /**
+     *
+     *
      * <pre>
      * Represents the system's confidence that this knowledge answer is a good
      * match for this conversational query.
      * </pre>
      *
-     * Protobuf enum {@code google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.MatchConfidenceLevel}
+     * Protobuf enum {@code
+     * google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.MatchConfidenceLevel}
      */
-    public enum MatchConfidenceLevel
-        implements com.google.protobuf.ProtocolMessageEnum {
+    public enum MatchConfidenceLevel implements com.google.protobuf.ProtocolMessageEnum {
       /**
+       *
+       *
        * <pre>
        * Not specified.
        * </pre>
@@ -321,6 +373,8 @@ private static final long serialVersionUID = 0L;
        */
       MATCH_CONFIDENCE_LEVEL_UNSPECIFIED(0),
       /**
+       *
+       *
        * <pre>
        * Indicates that the confidence is low.
        * </pre>
@@ -329,6 +383,8 @@ private static final long serialVersionUID = 0L;
        */
       LOW(1),
       /**
+       *
+       *
        * <pre>
        * Indicates our confidence is medium.
        * </pre>
@@ -337,6 +393,8 @@ private static final long serialVersionUID = 0L;
        */
       MEDIUM(2),
       /**
+       *
+       *
        * <pre>
        * Indicates our confidence is high.
        * </pre>
@@ -348,6 +406,8 @@ private static final long serialVersionUID = 0L;
       ;
 
       /**
+       *
+       *
        * <pre>
        * Not specified.
        * </pre>
@@ -356,6 +416,8 @@ private static final long serialVersionUID = 0L;
        */
       public static final int MATCH_CONFIDENCE_LEVEL_UNSPECIFIED_VALUE = 0;
       /**
+       *
+       *
        * <pre>
        * Indicates that the confidence is low.
        * </pre>
@@ -364,6 +426,8 @@ private static final long serialVersionUID = 0L;
        */
       public static final int LOW_VALUE = 1;
       /**
+       *
+       *
        * <pre>
        * Indicates our confidence is medium.
        * </pre>
@@ -372,6 +436,8 @@ private static final long serialVersionUID = 0L;
        */
       public static final int MEDIUM_VALUE = 2;
       /**
+       *
+       *
        * <pre>
        * Indicates our confidence is high.
        * </pre>
@@ -379,7 +445,6 @@ private static final long serialVersionUID = 0L;
        * <code>HIGH = 3;</code>
        */
       public static final int HIGH_VALUE = 3;
-
 
       public final int getNumber() {
         if (this == UNRECOGNIZED) {
@@ -389,9 +454,7 @@ private static final long serialVersionUID = 0L;
         return value;
       }
 
-      /**
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
+      /** @deprecated Use {@link #forNumber(int)} instead. */
       @java.lang.Deprecated
       public static MatchConfidenceLevel valueOf(int value) {
         return forNumber(value);
@@ -399,11 +462,16 @@ private static final long serialVersionUID = 0L;
 
       public static MatchConfidenceLevel forNumber(int value) {
         switch (value) {
-          case 0: return MATCH_CONFIDENCE_LEVEL_UNSPECIFIED;
-          case 1: return LOW;
-          case 2: return MEDIUM;
-          case 3: return HIGH;
-          default: return null;
+          case 0:
+            return MATCH_CONFIDENCE_LEVEL_UNSPECIFIED;
+          case 1:
+            return LOW;
+          case 2:
+            return MEDIUM;
+          case 3:
+            return HIGH;
+          default:
+            return null;
         }
       }
 
@@ -411,25 +479,27 @@ private static final long serialVersionUID = 0L;
           internalGetValueMap() {
         return internalValueMap;
       }
-      private static final com.google.protobuf.Internal.EnumLiteMap<
-          MatchConfidenceLevel> internalValueMap =
-            new com.google.protobuf.Internal.EnumLiteMap<MatchConfidenceLevel>() {
-              public MatchConfidenceLevel findValueByNumber(int number) {
-                return MatchConfidenceLevel.forNumber(number);
-              }
-            };
 
-      public final com.google.protobuf.Descriptors.EnumValueDescriptor
-          getValueDescriptor() {
+      private static final com.google.protobuf.Internal.EnumLiteMap<MatchConfidenceLevel>
+          internalValueMap =
+              new com.google.protobuf.Internal.EnumLiteMap<MatchConfidenceLevel>() {
+                public MatchConfidenceLevel findValueByNumber(int number) {
+                  return MatchConfidenceLevel.forNumber(number);
+                }
+              };
+
+      public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
         return getDescriptor().getValues().get(ordinal());
       }
-      public final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptorForType() {
+
+      public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
         return getDescriptor();
       }
-      public static final com.google.protobuf.Descriptors.EnumDescriptor
-          getDescriptor() {
-        return com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.getDescriptor().getEnumTypes().get(0);
+
+      public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+        return com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.getDescriptor()
+            .getEnumTypes()
+            .get(0);
       }
 
       private static final MatchConfidenceLevel[] VALUES = values();
@@ -437,8 +507,7 @@ private static final long serialVersionUID = 0L;
       public static MatchConfidenceLevel valueOf(
           com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
         if (desc.getType() != getDescriptor()) {
-          throw new java.lang.IllegalArgumentException(
-            "EnumValueDescriptor is not for this type.");
+          throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
         }
         if (desc.getIndex() == -1) {
           return UNRECOGNIZED;
@@ -458,6 +527,8 @@ private static final long serialVersionUID = 0L;
     public static final int SOURCE_FIELD_NUMBER = 1;
     private volatile java.lang.Object source_;
     /**
+     *
+     *
      * <pre>
      * Indicates which Knowledge Document this answer was extracted from.
      * Format: `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base
@@ -471,14 +542,15 @@ private static final long serialVersionUID = 0L;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         source_ = s;
         return s;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Indicates which Knowledge Document this answer was extracted from.
      * Format: `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base
@@ -487,13 +559,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string source = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getSourceBytes() {
+    public com.google.protobuf.ByteString getSourceBytes() {
       java.lang.Object ref = source_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         source_ = b;
         return b;
       } else {
@@ -504,6 +574,8 @@ private static final long serialVersionUID = 0L;
     public static final int FAQ_QUESTION_FIELD_NUMBER = 2;
     private volatile java.lang.Object faqQuestion_;
     /**
+     *
+     *
      * <pre>
      * The corresponding FAQ question if the answer was extracted from a FAQ
      * Document, empty otherwise.
@@ -516,14 +588,15 @@ private static final long serialVersionUID = 0L;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         faqQuestion_ = s;
         return s;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The corresponding FAQ question if the answer was extracted from a FAQ
      * Document, empty otherwise.
@@ -531,13 +604,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string faq_question = 2;</code>
      */
-    public com.google.protobuf.ByteString
-        getFaqQuestionBytes() {
+    public com.google.protobuf.ByteString getFaqQuestionBytes() {
       java.lang.Object ref = faqQuestion_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         faqQuestion_ = b;
         return b;
       } else {
@@ -548,6 +619,8 @@ private static final long serialVersionUID = 0L;
     public static final int ANSWER_FIELD_NUMBER = 3;
     private volatile java.lang.Object answer_;
     /**
+     *
+     *
      * <pre>
      * The piece of text from the `source` knowledge base document that answers
      * this conversational query.
@@ -560,14 +633,15 @@ private static final long serialVersionUID = 0L;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         answer_ = s;
         return s;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The piece of text from the `source` knowledge base document that answers
      * this conversational query.
@@ -575,13 +649,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string answer = 3;</code>
      */
-    public com.google.protobuf.ByteString
-        getAnswerBytes() {
+    public com.google.protobuf.ByteString getAnswerBytes() {
       java.lang.Object ref = answer_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         answer_ = b;
         return b;
       } else {
@@ -592,6 +664,8 @@ private static final long serialVersionUID = 0L;
     public static final int MATCH_CONFIDENCE_LEVEL_FIELD_NUMBER = 4;
     private int matchConfidenceLevel_;
     /**
+     *
+     *
      * <pre>
      * The system's confidence level that this knowledge answer is a good match
      * for this conversational query.
@@ -602,12 +676,16 @@ private static final long serialVersionUID = 0L;
      * answer.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.MatchConfidenceLevel match_confidence_level = 4;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.MatchConfidenceLevel match_confidence_level = 4;
+     * </code>
      */
     public int getMatchConfidenceLevelValue() {
       return matchConfidenceLevel_;
     }
     /**
+     *
+     *
      * <pre>
      * The system's confidence level that this knowledge answer is a good match
      * for this conversational query.
@@ -618,16 +696,27 @@ private static final long serialVersionUID = 0L;
      * answer.
      * </pre>
      *
-     * <code>.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.MatchConfidenceLevel match_confidence_level = 4;</code>
+     * <code>
+     * .google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.MatchConfidenceLevel match_confidence_level = 4;
+     * </code>
      */
-    public com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.MatchConfidenceLevel getMatchConfidenceLevel() {
-      com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.MatchConfidenceLevel result = com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.MatchConfidenceLevel.valueOf(matchConfidenceLevel_);
-      return result == null ? com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.MatchConfidenceLevel.UNRECOGNIZED : result;
+    public com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.MatchConfidenceLevel
+        getMatchConfidenceLevel() {
+      @SuppressWarnings("deprecation")
+      com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.MatchConfidenceLevel result =
+          com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.MatchConfidenceLevel.valueOf(
+              matchConfidenceLevel_);
+      return result == null
+          ? com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.MatchConfidenceLevel
+              .UNRECOGNIZED
+          : result;
     }
 
     public static final int MATCH_CONFIDENCE_FIELD_NUMBER = 5;
     private float matchConfidence_;
     /**
+     *
+     *
      * <pre>
      * The system's confidence score that this Knowledge answer is a good match
      * for this converstational query, range from 0.0 (completely uncertain)
@@ -645,6 +734,8 @@ private static final long serialVersionUID = 0L;
     }
 
     private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -654,8 +745,8 @@ private static final long serialVersionUID = 0L;
       return true;
     }
 
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
       if (!getSourceBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, source_);
       }
@@ -665,7 +756,10 @@ private static final long serialVersionUID = 0L;
       if (!getAnswerBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 3, answer_);
       }
-      if (matchConfidenceLevel_ != com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.MatchConfidenceLevel.MATCH_CONFIDENCE_LEVEL_UNSPECIFIED.getNumber()) {
+      if (matchConfidenceLevel_
+          != com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.MatchConfidenceLevel
+              .MATCH_CONFIDENCE_LEVEL_UNSPECIFIED
+              .getNumber()) {
         output.writeEnum(4, matchConfidenceLevel_);
       }
       if (matchConfidence_ != 0F) {
@@ -674,6 +768,7 @@ private static final long serialVersionUID = 0L;
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -688,13 +783,14 @@ private static final long serialVersionUID = 0L;
       if (!getAnswerBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, answer_);
       }
-      if (matchConfidenceLevel_ != com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.MatchConfidenceLevel.MATCH_CONFIDENCE_LEVEL_UNSPECIFIED.getNumber()) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeEnumSize(4, matchConfidenceLevel_);
+      if (matchConfidenceLevel_
+          != com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.MatchConfidenceLevel
+              .MATCH_CONFIDENCE_LEVEL_UNSPECIFIED
+              .getNumber()) {
+        size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, matchConfidenceLevel_);
       }
       if (matchConfidence_ != 0F) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeFloatSize(5, matchConfidence_);
+        size += com.google.protobuf.CodedOutputStream.computeFloatSize(5, matchConfidence_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -704,25 +800,23 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-       return true;
+        return true;
       }
       if (!(obj instanceof com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer)) {
         return super.equals(obj);
       }
-      com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer other = (com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer) obj;
+      com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer other =
+          (com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer) obj;
 
       boolean result = true;
-      result = result && getSource()
-          .equals(other.getSource());
-      result = result && getFaqQuestion()
-          .equals(other.getFaqQuestion());
-      result = result && getAnswer()
-          .equals(other.getAnswer());
+      result = result && getSource().equals(other.getSource());
+      result = result && getFaqQuestion().equals(other.getFaqQuestion());
+      result = result && getAnswer().equals(other.getAnswer());
       result = result && matchConfidenceLevel_ == other.matchConfidenceLevel_;
-      result = result && (
-          java.lang.Float.floatToIntBits(getMatchConfidence())
-          == java.lang.Float.floatToIntBits(
-              other.getMatchConfidence()));
+      result =
+          result
+              && (java.lang.Float.floatToIntBits(getMatchConfidence())
+                  == java.lang.Float.floatToIntBits(other.getMatchConfidence()));
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -743,93 +837,101 @@ private static final long serialVersionUID = 0L;
       hash = (37 * hash) + MATCH_CONFIDENCE_LEVEL_FIELD_NUMBER;
       hash = (53 * hash) + matchConfidenceLevel_;
       hash = (37 * hash) + MATCH_CONFIDENCE_FIELD_NUMBER;
-      hash = (53 * hash) + java.lang.Float.floatToIntBits(
-          getMatchConfidence());
+      hash = (53 * hash) + java.lang.Float.floatToIntBits(getMatchConfidence());
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
     }
 
     public static com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
+
     public static com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
-    public static com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer parseDelimitedFrom(java.io.InputStream input)
+
+    public static com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
+
     public static com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
     }
+
+    public static com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
     public static com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
+
     public static com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
 
-    public Builder newBuilderForType() { return newBuilder(); }
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer prototype) {
+
+    public static Builder newBuilder(
+        com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+
+    @java.lang.Override
     public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
     @java.lang.Override
@@ -839,26 +941,32 @@ private static final long serialVersionUID = 0L;
       return builder;
     }
     /**
+     *
+     *
      * <pre>
      * An answer from Knowledge Connector.
      * </pre>
      *
      * Protobuf type {@code google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
         // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer)
         com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.AnswerOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.google.cloud.dialogflow.v2beta1.SessionProto.internal_static_google_cloud_dialogflow_v2beta1_KnowledgeAnswers_Answer_descriptor;
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.dialogflow.v2beta1.SessionProto
+            .internal_static_google_cloud_dialogflow_v2beta1_KnowledgeAnswers_Answer_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.google.cloud.dialogflow.v2beta1.SessionProto.internal_static_google_cloud_dialogflow_v2beta1_KnowledgeAnswers_Answer_fieldAccessorTable
+        return com.google.cloud.dialogflow.v2beta1.SessionProto
+            .internal_static_google_cloud_dialogflow_v2beta1_KnowledgeAnswers_Answer_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.class, com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.Builder.class);
+                com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.class,
+                com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.Builder.class);
       }
 
       // Construct using com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.newBuilder()
@@ -866,16 +974,16 @@ private static final long serialVersionUID = 0L;
         maybeForceBuilderInitialization();
       }
 
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
+
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
+
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         source_ = "";
@@ -891,15 +999,19 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.google.cloud.dialogflow.v2beta1.SessionProto.internal_static_google_cloud_dialogflow_v2beta1_KnowledgeAnswers_Answer_descriptor;
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.dialogflow.v2beta1.SessionProto
+            .internal_static_google_cloud_dialogflow_v2beta1_KnowledgeAnswers_Answer_descriptor;
       }
 
-      public com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer getDefaultInstanceForType() {
+      @java.lang.Override
+      public com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer
+          getDefaultInstanceForType() {
         return com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.getDefaultInstance();
       }
 
+      @java.lang.Override
       public com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer build() {
         com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer result = buildPartial();
         if (!result.isInitialized()) {
@@ -908,8 +1020,10 @@ private static final long serialVersionUID = 0L;
         return result;
       }
 
+      @java.lang.Override
       public com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer buildPartial() {
-        com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer result = new com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer(this);
+        com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer result =
+            new com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer(this);
         result.source_ = source_;
         result.faqQuestion_ = faqQuestion_;
         result.answer_ = answer_;
@@ -919,35 +1033,45 @@ private static final long serialVersionUID = 0L;
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+
+      @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index,
+          java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+
+      @java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer) {
-          return mergeFrom((com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer)other);
+          return mergeFrom((com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer) other);
         } else {
           super.mergeFrom(other);
           return this;
@@ -955,7 +1079,9 @@ private static final long serialVersionUID = 0L;
       }
 
       public Builder mergeFrom(com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer other) {
-        if (other == com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.getDefaultInstance()) return this;
+        if (other
+            == com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.getDefaultInstance())
+          return this;
         if (!other.getSource().isEmpty()) {
           source_ = other.source_;
           onChanged();
@@ -979,10 +1105,12 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -991,7 +1119,9 @@ private static final long serialVersionUID = 0L;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer) e.getUnfinishedMessage();
+          parsedMessage =
+              (com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer)
+                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -1003,6 +1133,8 @@ private static final long serialVersionUID = 0L;
 
       private java.lang.Object source_ = "";
       /**
+       *
+       *
        * <pre>
        * Indicates which Knowledge Document this answer was extracted from.
        * Format: `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base
@@ -1014,8 +1146,7 @@ private static final long serialVersionUID = 0L;
       public java.lang.String getSource() {
         java.lang.Object ref = source_;
         if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           source_ = s;
           return s;
@@ -1024,6 +1155,8 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * Indicates which Knowledge Document this answer was extracted from.
        * Format: `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base
@@ -1032,13 +1165,11 @@ private static final long serialVersionUID = 0L;
        *
        * <code>string source = 1;</code>
        */
-      public com.google.protobuf.ByteString
-          getSourceBytes() {
+      public com.google.protobuf.ByteString getSourceBytes() {
         java.lang.Object ref = source_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
           source_ = b;
           return b;
         } else {
@@ -1046,6 +1177,8 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * Indicates which Knowledge Document this answer was extracted from.
        * Format: `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base
@@ -1054,17 +1187,18 @@ private static final long serialVersionUID = 0L;
        *
        * <code>string source = 1;</code>
        */
-      public Builder setSource(
-          java.lang.String value) {
+      public Builder setSource(java.lang.String value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  
+          throw new NullPointerException();
+        }
+
         source_ = value;
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Indicates which Knowledge Document this answer was extracted from.
        * Format: `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base
@@ -1074,12 +1208,14 @@ private static final long serialVersionUID = 0L;
        * <code>string source = 1;</code>
        */
       public Builder clearSource() {
-        
+
         source_ = getDefaultInstance().getSource();
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Indicates which Knowledge Document this answer was extracted from.
        * Format: `projects/&lt;Project ID&gt;/knowledgeBases/&lt;Knowledge Base
@@ -1088,13 +1224,12 @@ private static final long serialVersionUID = 0L;
        *
        * <code>string source = 1;</code>
        */
-      public Builder setSourceBytes(
-          com.google.protobuf.ByteString value) {
+      public Builder setSourceBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
         source_ = value;
         onChanged();
         return this;
@@ -1102,6 +1237,8 @@ private static final long serialVersionUID = 0L;
 
       private java.lang.Object faqQuestion_ = "";
       /**
+       *
+       *
        * <pre>
        * The corresponding FAQ question if the answer was extracted from a FAQ
        * Document, empty otherwise.
@@ -1112,8 +1249,7 @@ private static final long serialVersionUID = 0L;
       public java.lang.String getFaqQuestion() {
         java.lang.Object ref = faqQuestion_;
         if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           faqQuestion_ = s;
           return s;
@@ -1122,6 +1258,8 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * The corresponding FAQ question if the answer was extracted from a FAQ
        * Document, empty otherwise.
@@ -1129,13 +1267,11 @@ private static final long serialVersionUID = 0L;
        *
        * <code>string faq_question = 2;</code>
        */
-      public com.google.protobuf.ByteString
-          getFaqQuestionBytes() {
+      public com.google.protobuf.ByteString getFaqQuestionBytes() {
         java.lang.Object ref = faqQuestion_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
           faqQuestion_ = b;
           return b;
         } else {
@@ -1143,6 +1279,8 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * The corresponding FAQ question if the answer was extracted from a FAQ
        * Document, empty otherwise.
@@ -1150,17 +1288,18 @@ private static final long serialVersionUID = 0L;
        *
        * <code>string faq_question = 2;</code>
        */
-      public Builder setFaqQuestion(
-          java.lang.String value) {
+      public Builder setFaqQuestion(java.lang.String value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  
+          throw new NullPointerException();
+        }
+
         faqQuestion_ = value;
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The corresponding FAQ question if the answer was extracted from a FAQ
        * Document, empty otherwise.
@@ -1169,12 +1308,14 @@ private static final long serialVersionUID = 0L;
        * <code>string faq_question = 2;</code>
        */
       public Builder clearFaqQuestion() {
-        
+
         faqQuestion_ = getDefaultInstance().getFaqQuestion();
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The corresponding FAQ question if the answer was extracted from a FAQ
        * Document, empty otherwise.
@@ -1182,13 +1323,12 @@ private static final long serialVersionUID = 0L;
        *
        * <code>string faq_question = 2;</code>
        */
-      public Builder setFaqQuestionBytes(
-          com.google.protobuf.ByteString value) {
+      public Builder setFaqQuestionBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
         faqQuestion_ = value;
         onChanged();
         return this;
@@ -1196,6 +1336,8 @@ private static final long serialVersionUID = 0L;
 
       private java.lang.Object answer_ = "";
       /**
+       *
+       *
        * <pre>
        * The piece of text from the `source` knowledge base document that answers
        * this conversational query.
@@ -1206,8 +1348,7 @@ private static final long serialVersionUID = 0L;
       public java.lang.String getAnswer() {
         java.lang.Object ref = answer_;
         if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           answer_ = s;
           return s;
@@ -1216,6 +1357,8 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * The piece of text from the `source` knowledge base document that answers
        * this conversational query.
@@ -1223,13 +1366,11 @@ private static final long serialVersionUID = 0L;
        *
        * <code>string answer = 3;</code>
        */
-      public com.google.protobuf.ByteString
-          getAnswerBytes() {
+      public com.google.protobuf.ByteString getAnswerBytes() {
         java.lang.Object ref = answer_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
           answer_ = b;
           return b;
         } else {
@@ -1237,6 +1378,8 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * The piece of text from the `source` knowledge base document that answers
        * this conversational query.
@@ -1244,17 +1387,18 @@ private static final long serialVersionUID = 0L;
        *
        * <code>string answer = 3;</code>
        */
-      public Builder setAnswer(
-          java.lang.String value) {
+      public Builder setAnswer(java.lang.String value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  
+          throw new NullPointerException();
+        }
+
         answer_ = value;
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The piece of text from the `source` knowledge base document that answers
        * this conversational query.
@@ -1263,12 +1407,14 @@ private static final long serialVersionUID = 0L;
        * <code>string answer = 3;</code>
        */
       public Builder clearAnswer() {
-        
+
         answer_ = getDefaultInstance().getAnswer();
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The piece of text from the `source` knowledge base document that answers
        * this conversational query.
@@ -1276,13 +1422,12 @@ private static final long serialVersionUID = 0L;
        *
        * <code>string answer = 3;</code>
        */
-      public Builder setAnswerBytes(
-          com.google.protobuf.ByteString value) {
+      public Builder setAnswerBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
         answer_ = value;
         onChanged();
         return this;
@@ -1290,6 +1435,8 @@ private static final long serialVersionUID = 0L;
 
       private int matchConfidenceLevel_ = 0;
       /**
+       *
+       *
        * <pre>
        * The system's confidence level that this knowledge answer is a good match
        * for this conversational query.
@@ -1300,12 +1447,16 @@ private static final long serialVersionUID = 0L;
        * answer.
        * </pre>
        *
-       * <code>.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.MatchConfidenceLevel match_confidence_level = 4;</code>
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.MatchConfidenceLevel match_confidence_level = 4;
+       * </code>
        */
       public int getMatchConfidenceLevelValue() {
         return matchConfidenceLevel_;
       }
       /**
+       *
+       *
        * <pre>
        * The system's confidence level that this knowledge answer is a good match
        * for this conversational query.
@@ -1316,7 +1467,9 @@ private static final long serialVersionUID = 0L;
        * answer.
        * </pre>
        *
-       * <code>.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.MatchConfidenceLevel match_confidence_level = 4;</code>
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.MatchConfidenceLevel match_confidence_level = 4;
+       * </code>
        */
       public Builder setMatchConfidenceLevelValue(int value) {
         matchConfidenceLevel_ = value;
@@ -1324,6 +1477,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The system's confidence level that this knowledge answer is a good match
        * for this conversational query.
@@ -1334,13 +1489,24 @@ private static final long serialVersionUID = 0L;
        * answer.
        * </pre>
        *
-       * <code>.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.MatchConfidenceLevel match_confidence_level = 4;</code>
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.MatchConfidenceLevel match_confidence_level = 4;
+       * </code>
        */
-      public com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.MatchConfidenceLevel getMatchConfidenceLevel() {
-        com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.MatchConfidenceLevel result = com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.MatchConfidenceLevel.valueOf(matchConfidenceLevel_);
-        return result == null ? com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.MatchConfidenceLevel.UNRECOGNIZED : result;
+      public com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.MatchConfidenceLevel
+          getMatchConfidenceLevel() {
+        @SuppressWarnings("deprecation")
+        com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.MatchConfidenceLevel result =
+            com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.MatchConfidenceLevel
+                .valueOf(matchConfidenceLevel_);
+        return result == null
+            ? com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.MatchConfidenceLevel
+                .UNRECOGNIZED
+            : result;
       }
       /**
+       *
+       *
        * <pre>
        * The system's confidence level that this knowledge answer is a good match
        * for this conversational query.
@@ -1351,18 +1517,23 @@ private static final long serialVersionUID = 0L;
        * answer.
        * </pre>
        *
-       * <code>.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.MatchConfidenceLevel match_confidence_level = 4;</code>
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.MatchConfidenceLevel match_confidence_level = 4;
+       * </code>
        */
-      public Builder setMatchConfidenceLevel(com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.MatchConfidenceLevel value) {
+      public Builder setMatchConfidenceLevel(
+          com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.MatchConfidenceLevel value) {
         if (value == null) {
           throw new NullPointerException();
         }
-        
+
         matchConfidenceLevel_ = value.getNumber();
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The system's confidence level that this knowledge answer is a good match
        * for this conversational query.
@@ -1373,17 +1544,21 @@ private static final long serialVersionUID = 0L;
        * answer.
        * </pre>
        *
-       * <code>.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.MatchConfidenceLevel match_confidence_level = 4;</code>
+       * <code>
+       * .google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.MatchConfidenceLevel match_confidence_level = 4;
+       * </code>
        */
       public Builder clearMatchConfidenceLevel() {
-        
+
         matchConfidenceLevel_ = 0;
         onChanged();
         return this;
       }
 
-      private float matchConfidence_ ;
+      private float matchConfidence_;
       /**
+       *
+       *
        * <pre>
        * The system's confidence score that this Knowledge answer is a good match
        * for this converstational query, range from 0.0 (completely uncertain)
@@ -1400,6 +1575,8 @@ private static final long serialVersionUID = 0L;
         return matchConfidence_;
       }
       /**
+       *
+       *
        * <pre>
        * The system's confidence score that this Knowledge answer is a good match
        * for this converstational query, range from 0.0 (completely uncertain)
@@ -1413,12 +1590,14 @@ private static final long serialVersionUID = 0L;
        * <code>float match_confidence = 5;</code>
        */
       public Builder setMatchConfidence(float value) {
-        
+
         matchConfidence_ = value;
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The system's confidence score that this Knowledge answer is a good match
        * for this converstational query, range from 0.0 (completely uncertain)
@@ -1432,27 +1611,31 @@ private static final long serialVersionUID = 0L;
        * <code>float match_confidence = 5;</code>
        */
       public Builder clearMatchConfidence() {
-        
+
         matchConfidence_ = 0F;
         onChanged();
         return this;
       }
+
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
       }
 
-
       // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer)
     }
 
     // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer)
-    private static final com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer DEFAULT_INSTANCE;
+    private static final com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer
+        DEFAULT_INSTANCE;
+
     static {
       DEFAULT_INSTANCE = new com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer();
     }
@@ -1461,15 +1644,16 @@ private static final long serialVersionUID = 0L;
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<Answer>
-        PARSER = new com.google.protobuf.AbstractParser<Answer>() {
-      public Answer parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Answer(input, extensionRegistry);
-      }
-    };
+    private static final com.google.protobuf.Parser<Answer> PARSER =
+        new com.google.protobuf.AbstractParser<Answer>() {
+          @java.lang.Override
+          public Answer parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new Answer(input, extensionRegistry);
+          }
+        };
 
     public static com.google.protobuf.Parser<Answer> parser() {
       return PARSER;
@@ -1480,36 +1664,44 @@ private static final long serialVersionUID = 0L;
       return PARSER;
     }
 
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
-
   }
 
   public static final int ANSWERS_FIELD_NUMBER = 1;
   private java.util.List<com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer> answers_;
   /**
+   *
+   *
    * <pre>
    * A list of answers from Knowledge Connector.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer answers = 1;</code>
    */
-  public java.util.List<com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer> getAnswersList() {
+  public java.util.List<com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer>
+      getAnswersList() {
     return answers_;
   }
   /**
+   *
+   *
    * <pre>
    * A list of answers from Knowledge Connector.
    * </pre>
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer answers = 1;</code>
    */
-  public java.util.List<? extends com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.AnswerOrBuilder> 
+  public java.util.List<
+          ? extends com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.AnswerOrBuilder>
       getAnswersOrBuilderList() {
     return answers_;
   }
   /**
+   *
+   *
    * <pre>
    * A list of answers from Knowledge Connector.
    * </pre>
@@ -1520,6 +1712,8 @@ private static final long serialVersionUID = 0L;
     return answers_.size();
   }
   /**
+   *
+   *
    * <pre>
    * A list of answers from Knowledge Connector.
    * </pre>
@@ -1530,6 +1724,8 @@ private static final long serialVersionUID = 0L;
     return answers_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * A list of answers from Knowledge Connector.
    * </pre>
@@ -1542,6 +1738,8 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -1551,22 +1749,22 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  @java.lang.Override
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     for (int i = 0; i < answers_.size(); i++) {
       output.writeMessage(1, answers_.get(i));
     }
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
 
     size = 0;
     for (int i = 0; i < answers_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, answers_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, answers_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1576,16 +1774,16 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers)) {
       return super.equals(obj);
     }
-    com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers other = (com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers) obj;
+    com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers other =
+        (com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers) obj;
 
     boolean result = true;
-    result = result && getAnswersList()
-        .equals(other.getAnswersList());
+    result = result && getAnswersList().equals(other.getAnswersList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -1607,114 +1805,126 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  public Builder newBuilderForType() { return newBuilder(); }
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-  public static Builder newBuilder(com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+
+  public static Builder newBuilder(com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+
+  @java.lang.Override
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Represents the result of querying a Knowledge base.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2beta1.KnowledgeAnswers}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.v2beta1.KnowledgeAnswers)
       com.google.cloud.dialogflow.v2beta1.KnowledgeAnswersOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.dialogflow.v2beta1.SessionProto.internal_static_google_cloud_dialogflow_v2beta1_KnowledgeAnswers_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dialogflow.v2beta1.SessionProto
+          .internal_static_google_cloud_dialogflow_v2beta1_KnowledgeAnswers_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.dialogflow.v2beta1.SessionProto.internal_static_google_cloud_dialogflow_v2beta1_KnowledgeAnswers_fieldAccessorTable
+      return com.google.cloud.dialogflow.v2beta1.SessionProto
+          .internal_static_google_cloud_dialogflow_v2beta1_KnowledgeAnswers_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.class, com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Builder.class);
+              com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.class,
+              com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Builder.class);
     }
 
     // Construct using com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.newBuilder()
@@ -1722,17 +1932,18 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getAnswersFieldBuilder();
       }
     }
+
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       if (answersBuilder_ == null) {
@@ -1744,15 +1955,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.dialogflow.v2beta1.SessionProto.internal_static_google_cloud_dialogflow_v2beta1_KnowledgeAnswers_descriptor;
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.dialogflow.v2beta1.SessionProto
+          .internal_static_google_cloud_dialogflow_v2beta1_KnowledgeAnswers_descriptor;
     }
 
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers getDefaultInstanceForType() {
       return com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers build() {
       com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers result = buildPartial();
       if (!result.isInitialized()) {
@@ -1761,8 +1975,10 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers buildPartial() {
-      com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers result = new com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers(this);
+      com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers result =
+          new com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers(this);
       int from_bitField0_ = bitField0_;
       if (answersBuilder_ == null) {
         if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -1777,35 +1993,43 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+
+    @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+    @java.lang.Override
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+    @java.lang.Override
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
+    @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
+    @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers) {
-        return mergeFrom((com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers)other);
+        return mergeFrom((com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -1813,7 +2037,8 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers other) {
-      if (other == com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.getDefaultInstance()) return this;
+      if (other == com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.getDefaultInstance())
+        return this;
       if (answersBuilder_ == null) {
         if (!other.answers_.isEmpty()) {
           if (answers_.isEmpty()) {
@@ -1832,9 +2057,10 @@ private static final long serialVersionUID = 0L;
             answersBuilder_ = null;
             answers_ = other.answers_;
             bitField0_ = (bitField0_ & ~0x00000001);
-            answersBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getAnswersFieldBuilder() : null;
+            answersBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getAnswersFieldBuilder()
+                    : null;
           } else {
             answersBuilder_.addAllMessages(other.answers_);
           }
@@ -1845,10 +2071,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1857,7 +2085,8 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -1866,28 +2095,38 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private java.util.List<com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer> answers_ =
-      java.util.Collections.emptyList();
+        java.util.Collections.emptyList();
+
     private void ensureAnswersIsMutable() {
       if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-        answers_ = new java.util.ArrayList<com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer>(answers_);
+        answers_ =
+            new java.util.ArrayList<com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer>(
+                answers_);
         bitField0_ |= 0x00000001;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer, com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.Builder, com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.AnswerOrBuilder> answersBuilder_;
+            com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer,
+            com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.Builder,
+            com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.AnswerOrBuilder>
+        answersBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * A list of answers from Knowledge Connector.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer answers = 1;</code>
      */
-    public java.util.List<com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer> getAnswersList() {
+    public java.util.List<com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer>
+        getAnswersList() {
       if (answersBuilder_ == null) {
         return java.util.Collections.unmodifiableList(answers_);
       } else {
@@ -1895,6 +2134,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A list of answers from Knowledge Connector.
      * </pre>
@@ -1909,6 +2150,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A list of answers from Knowledge Connector.
      * </pre>
@@ -1923,6 +2166,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A list of answers from Knowledge Connector.
      * </pre>
@@ -1944,6 +2189,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of answers from Knowledge Connector.
      * </pre>
@@ -1951,7 +2198,8 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer answers = 1;</code>
      */
     public Builder setAnswers(
-        int index, com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.Builder builderForValue) {
+        int index,
+        com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.Builder builderForValue) {
       if (answersBuilder_ == null) {
         ensureAnswersIsMutable();
         answers_.set(index, builderForValue.build());
@@ -1962,6 +2210,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of answers from Knowledge Connector.
      * </pre>
@@ -1982,6 +2232,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of answers from Knowledge Connector.
      * </pre>
@@ -2003,6 +2255,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of answers from Knowledge Connector.
      * </pre>
@@ -2021,6 +2275,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of answers from Knowledge Connector.
      * </pre>
@@ -2028,7 +2284,8 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer answers = 1;</code>
      */
     public Builder addAnswers(
-        int index, com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.Builder builderForValue) {
+        int index,
+        com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.Builder builderForValue) {
       if (answersBuilder_ == null) {
         ensureAnswersIsMutable();
         answers_.add(index, builderForValue.build());
@@ -2039,6 +2296,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of answers from Knowledge Connector.
      * </pre>
@@ -2046,11 +2305,11 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer answers = 1;</code>
      */
     public Builder addAllAnswers(
-        java.lang.Iterable<? extends com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer> values) {
+        java.lang.Iterable<? extends com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer>
+            values) {
       if (answersBuilder_ == null) {
         ensureAnswersIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, answers_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, answers_);
         onChanged();
       } else {
         answersBuilder_.addAllMessages(values);
@@ -2058,6 +2317,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of answers from Knowledge Connector.
      * </pre>
@@ -2075,6 +2336,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of answers from Knowledge Connector.
      * </pre>
@@ -2092,6 +2355,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of answers from Knowledge Connector.
      * </pre>
@@ -2103,6 +2368,8 @@ private static final long serialVersionUID = 0L;
       return getAnswersFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * A list of answers from Knowledge Connector.
      * </pre>
@@ -2112,19 +2379,23 @@ private static final long serialVersionUID = 0L;
     public com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.AnswerOrBuilder getAnswersOrBuilder(
         int index) {
       if (answersBuilder_ == null) {
-        return answers_.get(index);  } else {
+        return answers_.get(index);
+      } else {
         return answersBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * A list of answers from Knowledge Connector.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer answers = 1;</code>
      */
-    public java.util.List<? extends com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.AnswerOrBuilder> 
-         getAnswersOrBuilderList() {
+    public java.util.List<
+            ? extends com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.AnswerOrBuilder>
+        getAnswersOrBuilderList() {
       if (answersBuilder_ != null) {
         return answersBuilder_.getMessageOrBuilderList();
       } else {
@@ -2132,6 +2403,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A list of answers from Knowledge Connector.
      * </pre>
@@ -2139,10 +2412,13 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer answers = 1;</code>
      */
     public com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.Builder addAnswersBuilder() {
-      return getAnswersFieldBuilder().addBuilder(
-          com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.getDefaultInstance());
+      return getAnswersFieldBuilder()
+          .addBuilder(
+              com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * A list of answers from Knowledge Connector.
      * </pre>
@@ -2151,26 +2427,36 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.Builder addAnswersBuilder(
         int index) {
-      return getAnswersFieldBuilder().addBuilder(
-          index, com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.getDefaultInstance());
+      return getAnswersFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * A list of answers from Knowledge Connector.
      * </pre>
      *
      * <code>repeated .google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer answers = 1;</code>
      */
-    public java.util.List<com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.Builder> 
-         getAnswersBuilderList() {
+    public java.util.List<com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.Builder>
+        getAnswersBuilderList() {
       return getAnswersFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer, com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.Builder, com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.AnswerOrBuilder> 
+            com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer,
+            com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.Builder,
+            com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.AnswerOrBuilder>
         getAnswersFieldBuilder() {
       if (answersBuilder_ == null) {
-        answersBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer, com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.Builder, com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.AnswerOrBuilder>(
+        answersBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer,
+                com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.Answer.Builder,
+                com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers.AnswerOrBuilder>(
                 answers_,
                 ((bitField0_ & 0x00000001) == 0x00000001),
                 getParentForChildren(),
@@ -2179,22 +2465,24 @@ private static final long serialVersionUID = 0L;
       }
       return answersBuilder_;
     }
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+
+    @java.lang.Override
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
     }
-
 
     // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.v2beta1.KnowledgeAnswers)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.v2beta1.KnowledgeAnswers)
   private static final com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers();
   }
@@ -2203,15 +2491,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<KnowledgeAnswers>
-      PARSER = new com.google.protobuf.AbstractParser<KnowledgeAnswers>() {
-    public KnowledgeAnswers parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-        return new KnowledgeAnswers(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<KnowledgeAnswers> PARSER =
+      new com.google.protobuf.AbstractParser<KnowledgeAnswers>() {
+        @java.lang.Override
+        public KnowledgeAnswers parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new KnowledgeAnswers(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<KnowledgeAnswers> parser() {
     return PARSER;
@@ -2222,9 +2511,8 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.KnowledgeAnswers getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

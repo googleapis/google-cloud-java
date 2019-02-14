@@ -14,7 +14,6 @@
  * limitations under the License.
  */
 
-
 package com.google.cloud.testing;
 
 import static com.google.common.base.Preconditions.checkNotNull;
@@ -23,9 +22,7 @@ import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
- * Simplified wrapper for emulator's versions.
- */
+/** Simplified wrapper for emulator's versions. */
 class Version implements Comparable<Version> {
 
   private static final Pattern VERSION_PATTERN = Pattern.compile("^(\\d+)\\.(\\d+)\\.(\\d+)$");

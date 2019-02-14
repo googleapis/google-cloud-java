@@ -4,35 +4,41 @@
 package com.google.spanner.v1;
 
 /**
+ *
+ *
  * <pre>
  * Contains an ordered list of nodes appearing in the query plan.
  * </pre>
  *
  * Protobuf type {@code google.spanner.v1.QueryPlan}
  */
-public  final class QueryPlan extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class QueryPlan extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.spanner.v1.QueryPlan)
     QueryPlanOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use QueryPlan.newBuilder() to construct.
   private QueryPlan(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private QueryPlan() {
     planNodes_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private QueryPlan(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -44,29 +50,29 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          case 10:
+            {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                planNodes_ = new java.util.ArrayList<com.google.spanner.v1.PlanNode>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              planNodes_.add(
+                  input.readMessage(com.google.spanner.v1.PlanNode.parser(), extensionRegistry));
+              break;
             }
-            break;
-          }
-          case 10: {
-            if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-              planNodes_ = new java.util.ArrayList<com.google.spanner.v1.PlanNode>();
-              mutable_bitField0_ |= 0x00000001;
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
             }
-            planNodes_.add(
-                input.readMessage(com.google.spanner.v1.PlanNode.parser(), extensionRegistry));
-            break;
-          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
         planNodes_ = java.util.Collections.unmodifiableList(planNodes_);
@@ -75,14 +81,17 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.spanner.v1.QueryPlanProto.internal_static_google_spanner_v1_QueryPlan_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.spanner.v1.QueryPlanProto
+        .internal_static_google_spanner_v1_QueryPlan_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.spanner.v1.QueryPlanProto.internal_static_google_spanner_v1_QueryPlan_fieldAccessorTable
+    return com.google.spanner.v1.QueryPlanProto
+        .internal_static_google_spanner_v1_QueryPlan_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.spanner.v1.QueryPlan.class, com.google.spanner.v1.QueryPlan.Builder.class);
   }
@@ -90,6 +99,8 @@ private static final long serialVersionUID = 0L;
   public static final int PLAN_NODES_FIELD_NUMBER = 1;
   private java.util.List<com.google.spanner.v1.PlanNode> planNodes_;
   /**
+   *
+   *
    * <pre>
    * The nodes in the query plan. Plan nodes are returned in pre-order starting
    * with the plan root. Each [PlanNode][google.spanner.v1.PlanNode]'s `id` corresponds to its index in
@@ -102,6 +113,8 @@ private static final long serialVersionUID = 0L;
     return planNodes_;
   }
   /**
+   *
+   *
    * <pre>
    * The nodes in the query plan. Plan nodes are returned in pre-order starting
    * with the plan root. Each [PlanNode][google.spanner.v1.PlanNode]'s `id` corresponds to its index in
@@ -110,11 +123,13 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.spanner.v1.PlanNode plan_nodes = 1;</code>
    */
-  public java.util.List<? extends com.google.spanner.v1.PlanNodeOrBuilder> 
+  public java.util.List<? extends com.google.spanner.v1.PlanNodeOrBuilder>
       getPlanNodesOrBuilderList() {
     return planNodes_;
   }
   /**
+   *
+   *
    * <pre>
    * The nodes in the query plan. Plan nodes are returned in pre-order starting
    * with the plan root. Each [PlanNode][google.spanner.v1.PlanNode]'s `id` corresponds to its index in
@@ -127,6 +142,8 @@ private static final long serialVersionUID = 0L;
     return planNodes_.size();
   }
   /**
+   *
+   *
    * <pre>
    * The nodes in the query plan. Plan nodes are returned in pre-order starting
    * with the plan root. Each [PlanNode][google.spanner.v1.PlanNode]'s `id` corresponds to its index in
@@ -139,6 +156,8 @@ private static final long serialVersionUID = 0L;
     return planNodes_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * The nodes in the query plan. Plan nodes are returned in pre-order starting
    * with the plan root. Each [PlanNode][google.spanner.v1.PlanNode]'s `id` corresponds to its index in
@@ -147,12 +166,13 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.spanner.v1.PlanNode plan_nodes = 1;</code>
    */
-  public com.google.spanner.v1.PlanNodeOrBuilder getPlanNodesOrBuilder(
-      int index) {
+  public com.google.spanner.v1.PlanNodeOrBuilder getPlanNodesOrBuilder(int index) {
     return planNodes_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
+
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -162,22 +182,22 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  @java.lang.Override
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     for (int i = 0; i < planNodes_.size(); i++) {
       output.writeMessage(1, planNodes_.get(i));
     }
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
 
     size = 0;
     for (int i = 0; i < planNodes_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, planNodes_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, planNodes_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -187,7 +207,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.spanner.v1.QueryPlan)) {
       return super.equals(obj);
@@ -195,8 +215,7 @@ private static final long serialVersionUID = 0L;
     com.google.spanner.v1.QueryPlan other = (com.google.spanner.v1.QueryPlan) obj;
 
     boolean result = true;
-    result = result && getPlanNodesList()
-        .equals(other.getPlanNodesList());
+    result = result && getPlanNodesList().equals(other.getPlanNodesList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -217,113 +236,123 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.spanner.v1.QueryPlan parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.spanner.v1.QueryPlan parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.spanner.v1.QueryPlan parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.spanner.v1.QueryPlan parseFrom(
-      com.google.protobuf.ByteString data)
+
+  public static com.google.spanner.v1.QueryPlan parseFrom(com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.spanner.v1.QueryPlan parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.spanner.v1.QueryPlan parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.spanner.v1.QueryPlan parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.spanner.v1.QueryPlan parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.spanner.v1.QueryPlan parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.spanner.v1.QueryPlan parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
   public static com.google.spanner.v1.QueryPlan parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.spanner.v1.QueryPlan parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.spanner.v1.QueryPlan parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  public Builder newBuilderForType() { return newBuilder(); }
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-  public static Builder newBuilder(com.google.spanner.v1.QueryPlan prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+
+  public static Builder newBuilder(com.google.spanner.v1.QueryPlan prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+
+  @java.lang.Override
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Contains an ordered list of nodes appearing in the query plan.
    * </pre>
    *
    * Protobuf type {@code google.spanner.v1.QueryPlan}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.spanner.v1.QueryPlan)
       com.google.spanner.v1.QueryPlanOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.spanner.v1.QueryPlanProto.internal_static_google_spanner_v1_QueryPlan_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.spanner.v1.QueryPlanProto
+          .internal_static_google_spanner_v1_QueryPlan_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.spanner.v1.QueryPlanProto.internal_static_google_spanner_v1_QueryPlan_fieldAccessorTable
+      return com.google.spanner.v1.QueryPlanProto
+          .internal_static_google_spanner_v1_QueryPlan_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.spanner.v1.QueryPlan.class, com.google.spanner.v1.QueryPlan.Builder.class);
     }
@@ -333,17 +362,18 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getPlanNodesFieldBuilder();
       }
     }
+
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       if (planNodesBuilder_ == null) {
@@ -355,15 +385,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.spanner.v1.QueryPlanProto.internal_static_google_spanner_v1_QueryPlan_descriptor;
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.spanner.v1.QueryPlanProto
+          .internal_static_google_spanner_v1_QueryPlan_descriptor;
     }
 
+    @java.lang.Override
     public com.google.spanner.v1.QueryPlan getDefaultInstanceForType() {
       return com.google.spanner.v1.QueryPlan.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.spanner.v1.QueryPlan build() {
       com.google.spanner.v1.QueryPlan result = buildPartial();
       if (!result.isInitialized()) {
@@ -372,6 +405,7 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.spanner.v1.QueryPlan buildPartial() {
       com.google.spanner.v1.QueryPlan result = new com.google.spanner.v1.QueryPlan(this);
       int from_bitField0_ = bitField0_;
@@ -388,35 +422,43 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+
+    @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+    @java.lang.Override
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+    @java.lang.Override
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
+    @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
+    @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.spanner.v1.QueryPlan) {
-        return mergeFrom((com.google.spanner.v1.QueryPlan)other);
+        return mergeFrom((com.google.spanner.v1.QueryPlan) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -443,9 +485,10 @@ private static final long serialVersionUID = 0L;
             planNodesBuilder_ = null;
             planNodes_ = other.planNodes_;
             bitField0_ = (bitField0_ & ~0x00000001);
-            planNodesBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getPlanNodesFieldBuilder() : null;
+            planNodesBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getPlanNodesFieldBuilder()
+                    : null;
           } else {
             planNodesBuilder_.addAllMessages(other.planNodes_);
           }
@@ -456,10 +499,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -477,21 +522,28 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private java.util.List<com.google.spanner.v1.PlanNode> planNodes_ =
-      java.util.Collections.emptyList();
+        java.util.Collections.emptyList();
+
     private void ensurePlanNodesIsMutable() {
       if (!((bitField0_ & 0x00000001) == 0x00000001)) {
         planNodes_ = new java.util.ArrayList<com.google.spanner.v1.PlanNode>(planNodes_);
         bitField0_ |= 0x00000001;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.spanner.v1.PlanNode, com.google.spanner.v1.PlanNode.Builder, com.google.spanner.v1.PlanNodeOrBuilder> planNodesBuilder_;
+            com.google.spanner.v1.PlanNode,
+            com.google.spanner.v1.PlanNode.Builder,
+            com.google.spanner.v1.PlanNodeOrBuilder>
+        planNodesBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * The nodes in the query plan. Plan nodes are returned in pre-order starting
      * with the plan root. Each [PlanNode][google.spanner.v1.PlanNode]'s `id` corresponds to its index in
@@ -508,6 +560,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The nodes in the query plan. Plan nodes are returned in pre-order starting
      * with the plan root. Each [PlanNode][google.spanner.v1.PlanNode]'s `id` corresponds to its index in
@@ -524,6 +578,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The nodes in the query plan. Plan nodes are returned in pre-order starting
      * with the plan root. Each [PlanNode][google.spanner.v1.PlanNode]'s `id` corresponds to its index in
@@ -540,6 +596,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The nodes in the query plan. Plan nodes are returned in pre-order starting
      * with the plan root. Each [PlanNode][google.spanner.v1.PlanNode]'s `id` corresponds to its index in
@@ -548,8 +606,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.spanner.v1.PlanNode plan_nodes = 1;</code>
      */
-    public Builder setPlanNodes(
-        int index, com.google.spanner.v1.PlanNode value) {
+    public Builder setPlanNodes(int index, com.google.spanner.v1.PlanNode value) {
       if (planNodesBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -563,6 +620,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The nodes in the query plan. Plan nodes are returned in pre-order starting
      * with the plan root. Each [PlanNode][google.spanner.v1.PlanNode]'s `id` corresponds to its index in
@@ -571,8 +630,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.spanner.v1.PlanNode plan_nodes = 1;</code>
      */
-    public Builder setPlanNodes(
-        int index, com.google.spanner.v1.PlanNode.Builder builderForValue) {
+    public Builder setPlanNodes(int index, com.google.spanner.v1.PlanNode.Builder builderForValue) {
       if (planNodesBuilder_ == null) {
         ensurePlanNodesIsMutable();
         planNodes_.set(index, builderForValue.build());
@@ -583,6 +641,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The nodes in the query plan. Plan nodes are returned in pre-order starting
      * with the plan root. Each [PlanNode][google.spanner.v1.PlanNode]'s `id` corresponds to its index in
@@ -605,6 +665,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The nodes in the query plan. Plan nodes are returned in pre-order starting
      * with the plan root. Each [PlanNode][google.spanner.v1.PlanNode]'s `id` corresponds to its index in
@@ -613,8 +675,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.spanner.v1.PlanNode plan_nodes = 1;</code>
      */
-    public Builder addPlanNodes(
-        int index, com.google.spanner.v1.PlanNode value) {
+    public Builder addPlanNodes(int index, com.google.spanner.v1.PlanNode value) {
       if (planNodesBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -628,6 +689,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The nodes in the query plan. Plan nodes are returned in pre-order starting
      * with the plan root. Each [PlanNode][google.spanner.v1.PlanNode]'s `id` corresponds to its index in
@@ -636,8 +699,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.spanner.v1.PlanNode plan_nodes = 1;</code>
      */
-    public Builder addPlanNodes(
-        com.google.spanner.v1.PlanNode.Builder builderForValue) {
+    public Builder addPlanNodes(com.google.spanner.v1.PlanNode.Builder builderForValue) {
       if (planNodesBuilder_ == null) {
         ensurePlanNodesIsMutable();
         planNodes_.add(builderForValue.build());
@@ -648,6 +710,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The nodes in the query plan. Plan nodes are returned in pre-order starting
      * with the plan root. Each [PlanNode][google.spanner.v1.PlanNode]'s `id` corresponds to its index in
@@ -656,8 +720,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.spanner.v1.PlanNode plan_nodes = 1;</code>
      */
-    public Builder addPlanNodes(
-        int index, com.google.spanner.v1.PlanNode.Builder builderForValue) {
+    public Builder addPlanNodes(int index, com.google.spanner.v1.PlanNode.Builder builderForValue) {
       if (planNodesBuilder_ == null) {
         ensurePlanNodesIsMutable();
         planNodes_.add(index, builderForValue.build());
@@ -668,6 +731,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The nodes in the query plan. Plan nodes are returned in pre-order starting
      * with the plan root. Each [PlanNode][google.spanner.v1.PlanNode]'s `id` corresponds to its index in
@@ -680,8 +745,7 @@ private static final long serialVersionUID = 0L;
         java.lang.Iterable<? extends com.google.spanner.v1.PlanNode> values) {
       if (planNodesBuilder_ == null) {
         ensurePlanNodesIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, planNodes_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, planNodes_);
         onChanged();
       } else {
         planNodesBuilder_.addAllMessages(values);
@@ -689,6 +753,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The nodes in the query plan. Plan nodes are returned in pre-order starting
      * with the plan root. Each [PlanNode][google.spanner.v1.PlanNode]'s `id` corresponds to its index in
@@ -708,6 +774,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The nodes in the query plan. Plan nodes are returned in pre-order starting
      * with the plan root. Each [PlanNode][google.spanner.v1.PlanNode]'s `id` corresponds to its index in
@@ -727,6 +795,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The nodes in the query plan. Plan nodes are returned in pre-order starting
      * with the plan root. Each [PlanNode][google.spanner.v1.PlanNode]'s `id` corresponds to its index in
@@ -735,11 +805,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.spanner.v1.PlanNode plan_nodes = 1;</code>
      */
-    public com.google.spanner.v1.PlanNode.Builder getPlanNodesBuilder(
-        int index) {
+    public com.google.spanner.v1.PlanNode.Builder getPlanNodesBuilder(int index) {
       return getPlanNodesFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * The nodes in the query plan. Plan nodes are returned in pre-order starting
      * with the plan root. Each [PlanNode][google.spanner.v1.PlanNode]'s `id` corresponds to its index in
@@ -748,14 +819,16 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.spanner.v1.PlanNode plan_nodes = 1;</code>
      */
-    public com.google.spanner.v1.PlanNodeOrBuilder getPlanNodesOrBuilder(
-        int index) {
+    public com.google.spanner.v1.PlanNodeOrBuilder getPlanNodesOrBuilder(int index) {
       if (planNodesBuilder_ == null) {
-        return planNodes_.get(index);  } else {
+        return planNodes_.get(index);
+      } else {
         return planNodesBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * The nodes in the query plan. Plan nodes are returned in pre-order starting
      * with the plan root. Each [PlanNode][google.spanner.v1.PlanNode]'s `id` corresponds to its index in
@@ -764,8 +837,8 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.spanner.v1.PlanNode plan_nodes = 1;</code>
      */
-    public java.util.List<? extends com.google.spanner.v1.PlanNodeOrBuilder> 
-         getPlanNodesOrBuilderList() {
+    public java.util.List<? extends com.google.spanner.v1.PlanNodeOrBuilder>
+        getPlanNodesOrBuilderList() {
       if (planNodesBuilder_ != null) {
         return planNodesBuilder_.getMessageOrBuilderList();
       } else {
@@ -773,6 +846,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The nodes in the query plan. Plan nodes are returned in pre-order starting
      * with the plan root. Each [PlanNode][google.spanner.v1.PlanNode]'s `id` corresponds to its index in
@@ -782,10 +857,12 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.spanner.v1.PlanNode plan_nodes = 1;</code>
      */
     public com.google.spanner.v1.PlanNode.Builder addPlanNodesBuilder() {
-      return getPlanNodesFieldBuilder().addBuilder(
-          com.google.spanner.v1.PlanNode.getDefaultInstance());
+      return getPlanNodesFieldBuilder()
+          .addBuilder(com.google.spanner.v1.PlanNode.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * The nodes in the query plan. Plan nodes are returned in pre-order starting
      * with the plan root. Each [PlanNode][google.spanner.v1.PlanNode]'s `id` corresponds to its index in
@@ -794,12 +871,13 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.spanner.v1.PlanNode plan_nodes = 1;</code>
      */
-    public com.google.spanner.v1.PlanNode.Builder addPlanNodesBuilder(
-        int index) {
-      return getPlanNodesFieldBuilder().addBuilder(
-          index, com.google.spanner.v1.PlanNode.getDefaultInstance());
+    public com.google.spanner.v1.PlanNode.Builder addPlanNodesBuilder(int index) {
+      return getPlanNodesFieldBuilder()
+          .addBuilder(index, com.google.spanner.v1.PlanNode.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * The nodes in the query plan. Plan nodes are returned in pre-order starting
      * with the plan root. Each [PlanNode][google.spanner.v1.PlanNode]'s `id` corresponds to its index in
@@ -808,16 +886,21 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.spanner.v1.PlanNode plan_nodes = 1;</code>
      */
-    public java.util.List<com.google.spanner.v1.PlanNode.Builder> 
-         getPlanNodesBuilderList() {
+    public java.util.List<com.google.spanner.v1.PlanNode.Builder> getPlanNodesBuilderList() {
       return getPlanNodesFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.spanner.v1.PlanNode, com.google.spanner.v1.PlanNode.Builder, com.google.spanner.v1.PlanNodeOrBuilder> 
+            com.google.spanner.v1.PlanNode,
+            com.google.spanner.v1.PlanNode.Builder,
+            com.google.spanner.v1.PlanNodeOrBuilder>
         getPlanNodesFieldBuilder() {
       if (planNodesBuilder_ == null) {
-        planNodesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.spanner.v1.PlanNode, com.google.spanner.v1.PlanNode.Builder, com.google.spanner.v1.PlanNodeOrBuilder>(
+        planNodesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.spanner.v1.PlanNode,
+                com.google.spanner.v1.PlanNode.Builder,
+                com.google.spanner.v1.PlanNodeOrBuilder>(
                 planNodes_,
                 ((bitField0_ & 0x00000001) == 0x00000001),
                 getParentForChildren(),
@@ -826,22 +909,24 @@ private static final long serialVersionUID = 0L;
       }
       return planNodesBuilder_;
     }
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+
+    @java.lang.Override
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
     }
-
 
     // @@protoc_insertion_point(builder_scope:google.spanner.v1.QueryPlan)
   }
 
   // @@protoc_insertion_point(class_scope:google.spanner.v1.QueryPlan)
   private static final com.google.spanner.v1.QueryPlan DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.spanner.v1.QueryPlan();
   }
@@ -850,15 +935,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<QueryPlan>
-      PARSER = new com.google.protobuf.AbstractParser<QueryPlan>() {
-    public QueryPlan parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-        return new QueryPlan(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<QueryPlan> PARSER =
+      new com.google.protobuf.AbstractParser<QueryPlan>() {
+        @java.lang.Override
+        public QueryPlan parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new QueryPlan(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<QueryPlan> parser() {
     return PARSER;
@@ -869,9 +955,8 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.spanner.v1.QueryPlan getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

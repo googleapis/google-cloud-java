@@ -4,6 +4,8 @@
 package com.google.bigtable.admin.v2;
 
 /**
+ *
+ *
  * <pre>
  * Request message for
  * [google.bigtable.admin.v2.BigtableTableAdmin.ModifyColumnFamilies][google.bigtable.admin.v2.BigtableTableAdmin.ModifyColumnFamilies]
@@ -11,30 +13,34 @@ package com.google.bigtable.admin.v2;
  *
  * Protobuf type {@code google.bigtable.admin.v2.ModifyColumnFamiliesRequest}
  */
-public  final class ModifyColumnFamiliesRequest extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class ModifyColumnFamiliesRequest extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.ModifyColumnFamiliesRequest)
     ModifyColumnFamiliesRequestOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use ModifyColumnFamiliesRequest.newBuilder() to construct.
   private ModifyColumnFamiliesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private ModifyColumnFamiliesRequest() {
     name_ = "";
     modifications_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private ModifyColumnFamiliesRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -46,35 +52,41 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            name_ = s;
-            break;
-          }
-          case 18: {
-            if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-              modifications_ = new java.util.ArrayList<com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification>();
-              mutable_bitField0_ |= 0x00000002;
+              name_ = s;
+              break;
             }
-            modifications_.add(
-                input.readMessage(com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification.parser(), extensionRegistry));
-            break;
-          }
+          case 18:
+            {
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                modifications_ =
+                    new java.util.ArrayList<
+                        com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              modifications_.add(
+                  input.readMessage(
+                      com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification
+                          .parser(),
+                      extensionRegistry));
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
         modifications_ = java.util.Collections.unmodifiableList(modifications_);
@@ -83,23 +95,30 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.bigtable.admin.v2.BigtableTableAdminProto.internal_static_google_bigtable_admin_v2_ModifyColumnFamiliesRequest_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.bigtable.admin.v2.BigtableTableAdminProto
+        .internal_static_google_bigtable_admin_v2_ModifyColumnFamiliesRequest_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.bigtable.admin.v2.BigtableTableAdminProto.internal_static_google_bigtable_admin_v2_ModifyColumnFamiliesRequest_fieldAccessorTable
+    return com.google.bigtable.admin.v2.BigtableTableAdminProto
+        .internal_static_google_bigtable_admin_v2_ModifyColumnFamiliesRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.class, com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Builder.class);
+            com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.class,
+            com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Builder.class);
   }
 
-  public interface ModificationOrBuilder extends
+  public interface ModificationOrBuilder
+      extends
       // @@protoc_insertion_point(interface_extends:google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification)
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     *
+     *
      * <pre>
      * The ID of the column family to be modified.
      * </pre>
@@ -108,16 +127,19 @@ private static final long serialVersionUID = 0L;
      */
     java.lang.String getId();
     /**
+     *
+     *
      * <pre>
      * The ID of the column family to be modified.
      * </pre>
      *
      * <code>string id = 1;</code>
      */
-    com.google.protobuf.ByteString
-        getIdBytes();
+    com.google.protobuf.ByteString getIdBytes();
 
     /**
+     *
+     *
      * <pre>
      * Create a new column family with the specified schema, or fail if
      * one already exists with the given ID.
@@ -127,6 +149,8 @@ private static final long serialVersionUID = 0L;
      */
     boolean hasCreate();
     /**
+     *
+     *
      * <pre>
      * Create a new column family with the specified schema, or fail if
      * one already exists with the given ID.
@@ -136,6 +160,8 @@ private static final long serialVersionUID = 0L;
      */
     com.google.bigtable.admin.v2.ColumnFamily getCreate();
     /**
+     *
+     *
      * <pre>
      * Create a new column family with the specified schema, or fail if
      * one already exists with the given ID.
@@ -146,6 +172,8 @@ private static final long serialVersionUID = 0L;
     com.google.bigtable.admin.v2.ColumnFamilyOrBuilder getCreateOrBuilder();
 
     /**
+     *
+     *
      * <pre>
      * Update an existing column family to the specified schema, or fail
      * if no column family exists with the given ID.
@@ -155,6 +183,8 @@ private static final long serialVersionUID = 0L;
      */
     boolean hasUpdate();
     /**
+     *
+     *
      * <pre>
      * Update an existing column family to the specified schema, or fail
      * if no column family exists with the given ID.
@@ -164,6 +194,8 @@ private static final long serialVersionUID = 0L;
      */
     com.google.bigtable.admin.v2.ColumnFamily getUpdate();
     /**
+     *
+     *
      * <pre>
      * Update an existing column family to the specified schema, or fail
      * if no column family exists with the given ID.
@@ -174,6 +206,8 @@ private static final long serialVersionUID = 0L;
     com.google.bigtable.admin.v2.ColumnFamilyOrBuilder getUpdateOrBuilder();
 
     /**
+     *
+     *
      * <pre>
      * Drop (delete) the column family with the given ID, or fail if no such
      * family exists.
@@ -183,38 +217,45 @@ private static final long serialVersionUID = 0L;
      */
     boolean getDrop();
 
-    public com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification.ModCase getModCase();
+    public com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification.ModCase
+        getModCase();
   }
   /**
+   *
+   *
    * <pre>
    * A create, update, or delete of a particular column family.
    * </pre>
    *
    * Protobuf type {@code google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification}
    */
-  public  static final class Modification extends
-      com.google.protobuf.GeneratedMessageV3 implements
+  public static final class Modification extends com.google.protobuf.GeneratedMessageV3
+      implements
       // @@protoc_insertion_point(message_implements:google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification)
       ModificationOrBuilder {
-  private static final long serialVersionUID = 0L;
+    private static final long serialVersionUID = 0L;
     // Use Modification.newBuilder() to construct.
     private Modification(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
+
     private Modification() {
       id_ = "";
     }
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
+
     private Modification(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -226,91 +267,99 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 10:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
 
-              id_ = s;
-              break;
-            }
-            case 18: {
-              com.google.bigtable.admin.v2.ColumnFamily.Builder subBuilder = null;
-              if (modCase_ == 2) {
-                subBuilder = ((com.google.bigtable.admin.v2.ColumnFamily) mod_).toBuilder();
+                id_ = s;
+                break;
               }
-              mod_ =
-                  input.readMessage(com.google.bigtable.admin.v2.ColumnFamily.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.bigtable.admin.v2.ColumnFamily) mod_);
-                mod_ = subBuilder.buildPartial();
+            case 18:
+              {
+                com.google.bigtable.admin.v2.ColumnFamily.Builder subBuilder = null;
+                if (modCase_ == 2) {
+                  subBuilder = ((com.google.bigtable.admin.v2.ColumnFamily) mod_).toBuilder();
+                }
+                mod_ =
+                    input.readMessage(
+                        com.google.bigtable.admin.v2.ColumnFamily.parser(), extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom((com.google.bigtable.admin.v2.ColumnFamily) mod_);
+                  mod_ = subBuilder.buildPartial();
+                }
+                modCase_ = 2;
+                break;
               }
-              modCase_ = 2;
-              break;
-            }
-            case 26: {
-              com.google.bigtable.admin.v2.ColumnFamily.Builder subBuilder = null;
-              if (modCase_ == 3) {
-                subBuilder = ((com.google.bigtable.admin.v2.ColumnFamily) mod_).toBuilder();
+            case 26:
+              {
+                com.google.bigtable.admin.v2.ColumnFamily.Builder subBuilder = null;
+                if (modCase_ == 3) {
+                  subBuilder = ((com.google.bigtable.admin.v2.ColumnFamily) mod_).toBuilder();
+                }
+                mod_ =
+                    input.readMessage(
+                        com.google.bigtable.admin.v2.ColumnFamily.parser(), extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom((com.google.bigtable.admin.v2.ColumnFamily) mod_);
+                  mod_ = subBuilder.buildPartial();
+                }
+                modCase_ = 3;
+                break;
               }
-              mod_ =
-                  input.readMessage(com.google.bigtable.admin.v2.ColumnFamily.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.bigtable.admin.v2.ColumnFamily) mod_);
-                mod_ = subBuilder.buildPartial();
+            case 32:
+              {
+                modCase_ = 4;
+                mod_ = input.readBool();
+                break;
               }
-              modCase_ = 3;
-              break;
-            }
-            case 32: {
-              modCase_ = 4;
-              mod_ = input.readBool();
-              break;
-            }
+            default:
+              {
+                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.bigtable.admin.v2.BigtableTableAdminProto.internal_static_google_bigtable_admin_v2_ModifyColumnFamiliesRequest_Modification_descriptor;
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.bigtable.admin.v2.BigtableTableAdminProto
+          .internal_static_google_bigtable_admin_v2_ModifyColumnFamiliesRequest_Modification_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.bigtable.admin.v2.BigtableTableAdminProto.internal_static_google_bigtable_admin_v2_ModifyColumnFamiliesRequest_Modification_fieldAccessorTable
+      return com.google.bigtable.admin.v2.BigtableTableAdminProto
+          .internal_static_google_bigtable_admin_v2_ModifyColumnFamiliesRequest_Modification_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification.class, com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification.Builder.class);
+              com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification.class,
+              com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification.Builder.class);
     }
 
     private int modCase_ = 0;
     private java.lang.Object mod_;
-    public enum ModCase
-        implements com.google.protobuf.Internal.EnumLite {
+
+    public enum ModCase implements com.google.protobuf.Internal.EnumLite {
       CREATE(2),
       UPDATE(3),
       DROP(4),
       MOD_NOT_SET(0);
       private final int value;
+
       private ModCase(int value) {
         this.value = value;
       }
-      /**
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
+      /** @deprecated Use {@link #forNumber(int)} instead. */
       @java.lang.Deprecated
       public static ModCase valueOf(int value) {
         return forNumber(value);
@@ -318,27 +367,33 @@ private static final long serialVersionUID = 0L;
 
       public static ModCase forNumber(int value) {
         switch (value) {
-          case 2: return CREATE;
-          case 3: return UPDATE;
-          case 4: return DROP;
-          case 0: return MOD_NOT_SET;
-          default: return null;
+          case 2:
+            return CREATE;
+          case 3:
+            return UPDATE;
+          case 4:
+            return DROP;
+          case 0:
+            return MOD_NOT_SET;
+          default:
+            return null;
         }
       }
+
       public int getNumber() {
         return this.value;
       }
     };
 
-    public ModCase
-    getModCase() {
-      return ModCase.forNumber(
-          modCase_);
+    public ModCase getModCase() {
+      return ModCase.forNumber(modCase_);
     }
 
     public static final int ID_FIELD_NUMBER = 1;
     private volatile java.lang.Object id_;
     /**
+     *
+     *
      * <pre>
      * The ID of the column family to be modified.
      * </pre>
@@ -350,27 +405,26 @@ private static final long serialVersionUID = 0L;
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         id_ = s;
         return s;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The ID of the column family to be modified.
      * </pre>
      *
      * <code>string id = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getIdBytes() {
+    public com.google.protobuf.ByteString getIdBytes() {
       java.lang.Object ref = id_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         id_ = b;
         return b;
       } else {
@@ -380,6 +434,8 @@ private static final long serialVersionUID = 0L;
 
     public static final int CREATE_FIELD_NUMBER = 2;
     /**
+     *
+     *
      * <pre>
      * Create a new column family with the specified schema, or fail if
      * one already exists with the given ID.
@@ -391,6 +447,8 @@ private static final long serialVersionUID = 0L;
       return modCase_ == 2;
     }
     /**
+     *
+     *
      * <pre>
      * Create a new column family with the specified schema, or fail if
      * one already exists with the given ID.
@@ -400,11 +458,13 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.bigtable.admin.v2.ColumnFamily getCreate() {
       if (modCase_ == 2) {
-         return (com.google.bigtable.admin.v2.ColumnFamily) mod_;
+        return (com.google.bigtable.admin.v2.ColumnFamily) mod_;
       }
       return com.google.bigtable.admin.v2.ColumnFamily.getDefaultInstance();
     }
     /**
+     *
+     *
      * <pre>
      * Create a new column family with the specified schema, or fail if
      * one already exists with the given ID.
@@ -414,13 +474,15 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.bigtable.admin.v2.ColumnFamilyOrBuilder getCreateOrBuilder() {
       if (modCase_ == 2) {
-         return (com.google.bigtable.admin.v2.ColumnFamily) mod_;
+        return (com.google.bigtable.admin.v2.ColumnFamily) mod_;
       }
       return com.google.bigtable.admin.v2.ColumnFamily.getDefaultInstance();
     }
 
     public static final int UPDATE_FIELD_NUMBER = 3;
     /**
+     *
+     *
      * <pre>
      * Update an existing column family to the specified schema, or fail
      * if no column family exists with the given ID.
@@ -432,6 +494,8 @@ private static final long serialVersionUID = 0L;
       return modCase_ == 3;
     }
     /**
+     *
+     *
      * <pre>
      * Update an existing column family to the specified schema, or fail
      * if no column family exists with the given ID.
@@ -441,11 +505,13 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.bigtable.admin.v2.ColumnFamily getUpdate() {
       if (modCase_ == 3) {
-         return (com.google.bigtable.admin.v2.ColumnFamily) mod_;
+        return (com.google.bigtable.admin.v2.ColumnFamily) mod_;
       }
       return com.google.bigtable.admin.v2.ColumnFamily.getDefaultInstance();
     }
     /**
+     *
+     *
      * <pre>
      * Update an existing column family to the specified schema, or fail
      * if no column family exists with the given ID.
@@ -455,13 +521,15 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.bigtable.admin.v2.ColumnFamilyOrBuilder getUpdateOrBuilder() {
       if (modCase_ == 3) {
-         return (com.google.bigtable.admin.v2.ColumnFamily) mod_;
+        return (com.google.bigtable.admin.v2.ColumnFamily) mod_;
       }
       return com.google.bigtable.admin.v2.ColumnFamily.getDefaultInstance();
     }
 
     public static final int DROP_FIELD_NUMBER = 4;
     /**
+     *
+     *
      * <pre>
      * Drop (delete) the column family with the given ID, or fail if no such
      * family exists.
@@ -477,6 +545,8 @@ private static final long serialVersionUID = 0L;
     }
 
     private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -486,8 +556,8 @@ private static final long serialVersionUID = 0L;
       return true;
     }
 
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
       if (!getIdBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, id_);
       }
@@ -498,12 +568,12 @@ private static final long serialVersionUID = 0L;
         output.writeMessage(3, (com.google.bigtable.admin.v2.ColumnFamily) mod_);
       }
       if (modCase_ == 4) {
-        output.writeBool(
-            4, (boolean)((java.lang.Boolean) mod_));
+        output.writeBool(4, (boolean) ((java.lang.Boolean) mod_));
       }
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -513,17 +583,19 @@ private static final long serialVersionUID = 0L;
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, id_);
       }
       if (modCase_ == 2) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, (com.google.bigtable.admin.v2.ColumnFamily) mod_);
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                2, (com.google.bigtable.admin.v2.ColumnFamily) mod_);
       }
       if (modCase_ == 3) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, (com.google.bigtable.admin.v2.ColumnFamily) mod_);
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                3, (com.google.bigtable.admin.v2.ColumnFamily) mod_);
       }
       if (modCase_ == 4) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(
-              4, (boolean)((java.lang.Boolean) mod_));
+        size +=
+            com.google.protobuf.CodedOutputStream.computeBoolSize(
+                4, (boolean) ((java.lang.Boolean) mod_));
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -533,31 +605,27 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-       return true;
+        return true;
       }
       if (!(obj instanceof com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification)) {
         return super.equals(obj);
       }
-      com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification other = (com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification) obj;
+      com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification other =
+          (com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification) obj;
 
       boolean result = true;
-      result = result && getId()
-          .equals(other.getId());
-      result = result && getModCase().equals(
-          other.getModCase());
+      result = result && getId().equals(other.getId());
+      result = result && getModCase().equals(other.getModCase());
       if (!result) return false;
       switch (modCase_) {
         case 2:
-          result = result && getCreate()
-              .equals(other.getCreate());
+          result = result && getCreate().equals(other.getCreate());
           break;
         case 3:
-          result = result && getUpdate()
-              .equals(other.getUpdate());
+          result = result && getUpdate().equals(other.getUpdate());
           break;
         case 4:
-          result = result && (getDrop()
-              == other.getDrop());
+          result = result && (getDrop() == other.getDrop());
           break;
         case 0:
         default:
@@ -586,8 +654,7 @@ private static final long serialVersionUID = 0L;
           break;
         case 4:
           hash = (37 * hash) + DROP_FIELD_NUMBER;
-          hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-              getDrop());
+          hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getDrop());
           break;
         case 0:
         default:
@@ -598,85 +665,95 @@ private static final long serialVersionUID = 0L;
     }
 
     public static com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+
+    public static com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
+
     public static com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
-    public static com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
+
     public static com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification parseFrom(
-        com.google.protobuf.CodedInputStream input)
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
+
+    public static com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
     public static com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
 
-    public Builder newBuilderForType() { return newBuilder(); }
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification prototype) {
+
+    public static Builder newBuilder(
+        com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+
+    @java.lang.Override
     public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
     @java.lang.Override
@@ -686,43 +763,51 @@ private static final long serialVersionUID = 0L;
       return builder;
     }
     /**
+     *
+     *
      * <pre>
      * A create, update, or delete of a particular column family.
      * </pre>
      *
      * Protobuf type {@code google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
         // @@protoc_insertion_point(builder_implements:google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification)
         com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.ModificationOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.google.bigtable.admin.v2.BigtableTableAdminProto.internal_static_google_bigtable_admin_v2_ModifyColumnFamiliesRequest_Modification_descriptor;
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.bigtable.admin.v2.BigtableTableAdminProto
+            .internal_static_google_bigtable_admin_v2_ModifyColumnFamiliesRequest_Modification_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.google.bigtable.admin.v2.BigtableTableAdminProto.internal_static_google_bigtable_admin_v2_ModifyColumnFamiliesRequest_Modification_fieldAccessorTable
+        return com.google.bigtable.admin.v2.BigtableTableAdminProto
+            .internal_static_google_bigtable_admin_v2_ModifyColumnFamiliesRequest_Modification_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification.class, com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification.Builder.class);
+                com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification.class,
+                com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification.Builder
+                    .class);
       }
 
-      // Construct using com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification.newBuilder()
+      // Construct using
+      // com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
 
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
+
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
+
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         id_ = "";
@@ -732,25 +817,33 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.google.bigtable.admin.v2.BigtableTableAdminProto.internal_static_google_bigtable_admin_v2_ModifyColumnFamiliesRequest_Modification_descriptor;
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.bigtable.admin.v2.BigtableTableAdminProto
+            .internal_static_google_bigtable_admin_v2_ModifyColumnFamiliesRequest_Modification_descriptor;
       }
 
-      public com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification getDefaultInstanceForType() {
-        return com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification.getDefaultInstance();
+      @java.lang.Override
+      public com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification
+          getDefaultInstanceForType() {
+        return com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification
+            .getDefaultInstance();
       }
 
+      @java.lang.Override
       public com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification build() {
-        com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification result = buildPartial();
+        com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification result =
+            buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
+      @java.lang.Override
       public com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification buildPartial() {
-        com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification result = new com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification(this);
+        com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification result =
+            new com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification(this);
         result.id_ = id_;
         if (modCase_ == 2) {
           if (createBuilder_ == null) {
@@ -774,73 +867,94 @@ private static final long serialVersionUID = 0L;
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+
+      @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index,
+          java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+
+      @java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification) {
-          return mergeFrom((com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification)other);
+        if (other
+            instanceof com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification) {
+          return mergeFrom(
+              (com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification) other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification other) {
-        if (other == com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification.getDefaultInstance()) return this;
+      public Builder mergeFrom(
+          com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification other) {
+        if (other
+            == com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification
+                .getDefaultInstance()) return this;
         if (!other.getId().isEmpty()) {
           id_ = other.id_;
           onChanged();
         }
         switch (other.getModCase()) {
-          case CREATE: {
-            mergeCreate(other.getCreate());
-            break;
-          }
-          case UPDATE: {
-            mergeUpdate(other.getUpdate());
-            break;
-          }
-          case DROP: {
-            setDrop(other.getDrop());
-            break;
-          }
-          case MOD_NOT_SET: {
-            break;
-          }
+          case CREATE:
+            {
+              mergeCreate(other.getCreate());
+              break;
+            }
+          case UPDATE:
+            {
+              mergeUpdate(other.getUpdate());
+              break;
+            }
+          case DROP:
+            {
+              setDrop(other.getDrop());
+              break;
+            }
+          case MOD_NOT_SET:
+            {
+              break;
+            }
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -849,7 +963,9 @@ private static final long serialVersionUID = 0L;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification) e.getUnfinishedMessage();
+          parsedMessage =
+              (com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification)
+                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -858,12 +974,12 @@ private static final long serialVersionUID = 0L;
         }
         return this;
       }
+
       private int modCase_ = 0;
       private java.lang.Object mod_;
-      public ModCase
-          getModCase() {
-        return ModCase.forNumber(
-            modCase_);
+
+      public ModCase getModCase() {
+        return ModCase.forNumber(modCase_);
       }
 
       public Builder clearMod() {
@@ -873,9 +989,10 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
-
       private java.lang.Object id_ = "";
       /**
+       *
+       *
        * <pre>
        * The ID of the column family to be modified.
        * </pre>
@@ -885,8 +1002,7 @@ private static final long serialVersionUID = 0L;
       public java.lang.String getId() {
         java.lang.Object ref = id_;
         if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           id_ = s;
           return s;
@@ -895,19 +1011,19 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * The ID of the column family to be modified.
        * </pre>
        *
        * <code>string id = 1;</code>
        */
-      public com.google.protobuf.ByteString
-          getIdBytes() {
+      public com.google.protobuf.ByteString getIdBytes() {
         java.lang.Object ref = id_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
           id_ = b;
           return b;
         } else {
@@ -915,23 +1031,26 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * The ID of the column family to be modified.
        * </pre>
        *
        * <code>string id = 1;</code>
        */
-      public Builder setId(
-          java.lang.String value) {
+      public Builder setId(java.lang.String value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  
+          throw new NullPointerException();
+        }
+
         id_ = value;
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The ID of the column family to be modified.
        * </pre>
@@ -939,33 +1058,39 @@ private static final long serialVersionUID = 0L;
        * <code>string id = 1;</code>
        */
       public Builder clearId() {
-        
+
         id_ = getDefaultInstance().getId();
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The ID of the column family to be modified.
        * </pre>
        *
        * <code>string id = 1;</code>
        */
-      public Builder setIdBytes(
-          com.google.protobuf.ByteString value) {
+      public Builder setIdBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
         id_ = value;
         onChanged();
         return this;
       }
 
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.bigtable.admin.v2.ColumnFamily, com.google.bigtable.admin.v2.ColumnFamily.Builder, com.google.bigtable.admin.v2.ColumnFamilyOrBuilder> createBuilder_;
+              com.google.bigtable.admin.v2.ColumnFamily,
+              com.google.bigtable.admin.v2.ColumnFamily.Builder,
+              com.google.bigtable.admin.v2.ColumnFamilyOrBuilder>
+          createBuilder_;
       /**
+       *
+       *
        * <pre>
        * Create a new column family with the specified schema, or fail if
        * one already exists with the given ID.
@@ -977,6 +1102,8 @@ private static final long serialVersionUID = 0L;
         return modCase_ == 2;
       }
       /**
+       *
+       *
        * <pre>
        * Create a new column family with the specified schema, or fail if
        * one already exists with the given ID.
@@ -998,6 +1125,8 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * Create a new column family with the specified schema, or fail if
        * one already exists with the given ID.
@@ -1019,6 +1148,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Create a new column family with the specified schema, or fail if
        * one already exists with the given ID.
@@ -1026,8 +1157,7 @@ private static final long serialVersionUID = 0L;
        *
        * <code>.google.bigtable.admin.v2.ColumnFamily create = 2;</code>
        */
-      public Builder setCreate(
-          com.google.bigtable.admin.v2.ColumnFamily.Builder builderForValue) {
+      public Builder setCreate(com.google.bigtable.admin.v2.ColumnFamily.Builder builderForValue) {
         if (createBuilder_ == null) {
           mod_ = builderForValue.build();
           onChanged();
@@ -1038,6 +1168,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Create a new column family with the specified schema, or fail if
        * one already exists with the given ID.
@@ -1047,10 +1179,13 @@ private static final long serialVersionUID = 0L;
        */
       public Builder mergeCreate(com.google.bigtable.admin.v2.ColumnFamily value) {
         if (createBuilder_ == null) {
-          if (modCase_ == 2 &&
-              mod_ != com.google.bigtable.admin.v2.ColumnFamily.getDefaultInstance()) {
-            mod_ = com.google.bigtable.admin.v2.ColumnFamily.newBuilder((com.google.bigtable.admin.v2.ColumnFamily) mod_)
-                .mergeFrom(value).buildPartial();
+          if (modCase_ == 2
+              && mod_ != com.google.bigtable.admin.v2.ColumnFamily.getDefaultInstance()) {
+            mod_ =
+                com.google.bigtable.admin.v2.ColumnFamily.newBuilder(
+                        (com.google.bigtable.admin.v2.ColumnFamily) mod_)
+                    .mergeFrom(value)
+                    .buildPartial();
           } else {
             mod_ = value;
           }
@@ -1065,6 +1200,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Create a new column family with the specified schema, or fail if
        * one already exists with the given ID.
@@ -1089,6 +1226,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Create a new column family with the specified schema, or fail if
        * one already exists with the given ID.
@@ -1100,6 +1239,8 @@ private static final long serialVersionUID = 0L;
         return getCreateFieldBuilder().getBuilder();
       }
       /**
+       *
+       *
        * <pre>
        * Create a new column family with the specified schema, or fail if
        * one already exists with the given ID.
@@ -1118,6 +1259,8 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * Create a new column family with the specified schema, or fail if
        * one already exists with the given ID.
@@ -1126,27 +1269,38 @@ private static final long serialVersionUID = 0L;
        * <code>.google.bigtable.admin.v2.ColumnFamily create = 2;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.bigtable.admin.v2.ColumnFamily, com.google.bigtable.admin.v2.ColumnFamily.Builder, com.google.bigtable.admin.v2.ColumnFamilyOrBuilder> 
+              com.google.bigtable.admin.v2.ColumnFamily,
+              com.google.bigtable.admin.v2.ColumnFamily.Builder,
+              com.google.bigtable.admin.v2.ColumnFamilyOrBuilder>
           getCreateFieldBuilder() {
         if (createBuilder_ == null) {
           if (!(modCase_ == 2)) {
             mod_ = com.google.bigtable.admin.v2.ColumnFamily.getDefaultInstance();
           }
-          createBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.bigtable.admin.v2.ColumnFamily, com.google.bigtable.admin.v2.ColumnFamily.Builder, com.google.bigtable.admin.v2.ColumnFamilyOrBuilder>(
+          createBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.bigtable.admin.v2.ColumnFamily,
+                  com.google.bigtable.admin.v2.ColumnFamily.Builder,
+                  com.google.bigtable.admin.v2.ColumnFamilyOrBuilder>(
                   (com.google.bigtable.admin.v2.ColumnFamily) mod_,
                   getParentForChildren(),
                   isClean());
           mod_ = null;
         }
         modCase_ = 2;
-        onChanged();;
+        onChanged();
+        ;
         return createBuilder_;
       }
 
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.bigtable.admin.v2.ColumnFamily, com.google.bigtable.admin.v2.ColumnFamily.Builder, com.google.bigtable.admin.v2.ColumnFamilyOrBuilder> updateBuilder_;
+              com.google.bigtable.admin.v2.ColumnFamily,
+              com.google.bigtable.admin.v2.ColumnFamily.Builder,
+              com.google.bigtable.admin.v2.ColumnFamilyOrBuilder>
+          updateBuilder_;
       /**
+       *
+       *
        * <pre>
        * Update an existing column family to the specified schema, or fail
        * if no column family exists with the given ID.
@@ -1158,6 +1312,8 @@ private static final long serialVersionUID = 0L;
         return modCase_ == 3;
       }
       /**
+       *
+       *
        * <pre>
        * Update an existing column family to the specified schema, or fail
        * if no column family exists with the given ID.
@@ -1179,6 +1335,8 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * Update an existing column family to the specified schema, or fail
        * if no column family exists with the given ID.
@@ -1200,6 +1358,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Update an existing column family to the specified schema, or fail
        * if no column family exists with the given ID.
@@ -1207,8 +1367,7 @@ private static final long serialVersionUID = 0L;
        *
        * <code>.google.bigtable.admin.v2.ColumnFamily update = 3;</code>
        */
-      public Builder setUpdate(
-          com.google.bigtable.admin.v2.ColumnFamily.Builder builderForValue) {
+      public Builder setUpdate(com.google.bigtable.admin.v2.ColumnFamily.Builder builderForValue) {
         if (updateBuilder_ == null) {
           mod_ = builderForValue.build();
           onChanged();
@@ -1219,6 +1378,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Update an existing column family to the specified schema, or fail
        * if no column family exists with the given ID.
@@ -1228,10 +1389,13 @@ private static final long serialVersionUID = 0L;
        */
       public Builder mergeUpdate(com.google.bigtable.admin.v2.ColumnFamily value) {
         if (updateBuilder_ == null) {
-          if (modCase_ == 3 &&
-              mod_ != com.google.bigtable.admin.v2.ColumnFamily.getDefaultInstance()) {
-            mod_ = com.google.bigtable.admin.v2.ColumnFamily.newBuilder((com.google.bigtable.admin.v2.ColumnFamily) mod_)
-                .mergeFrom(value).buildPartial();
+          if (modCase_ == 3
+              && mod_ != com.google.bigtable.admin.v2.ColumnFamily.getDefaultInstance()) {
+            mod_ =
+                com.google.bigtable.admin.v2.ColumnFamily.newBuilder(
+                        (com.google.bigtable.admin.v2.ColumnFamily) mod_)
+                    .mergeFrom(value)
+                    .buildPartial();
           } else {
             mod_ = value;
           }
@@ -1246,6 +1410,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Update an existing column family to the specified schema, or fail
        * if no column family exists with the given ID.
@@ -1270,6 +1436,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Update an existing column family to the specified schema, or fail
        * if no column family exists with the given ID.
@@ -1281,6 +1449,8 @@ private static final long serialVersionUID = 0L;
         return getUpdateFieldBuilder().getBuilder();
       }
       /**
+       *
+       *
        * <pre>
        * Update an existing column family to the specified schema, or fail
        * if no column family exists with the given ID.
@@ -1299,6 +1469,8 @@ private static final long serialVersionUID = 0L;
         }
       }
       /**
+       *
+       *
        * <pre>
        * Update an existing column family to the specified schema, or fail
        * if no column family exists with the given ID.
@@ -1307,25 +1479,33 @@ private static final long serialVersionUID = 0L;
        * <code>.google.bigtable.admin.v2.ColumnFamily update = 3;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.bigtable.admin.v2.ColumnFamily, com.google.bigtable.admin.v2.ColumnFamily.Builder, com.google.bigtable.admin.v2.ColumnFamilyOrBuilder> 
+              com.google.bigtable.admin.v2.ColumnFamily,
+              com.google.bigtable.admin.v2.ColumnFamily.Builder,
+              com.google.bigtable.admin.v2.ColumnFamilyOrBuilder>
           getUpdateFieldBuilder() {
         if (updateBuilder_ == null) {
           if (!(modCase_ == 3)) {
             mod_ = com.google.bigtable.admin.v2.ColumnFamily.getDefaultInstance();
           }
-          updateBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.bigtable.admin.v2.ColumnFamily, com.google.bigtable.admin.v2.ColumnFamily.Builder, com.google.bigtable.admin.v2.ColumnFamilyOrBuilder>(
+          updateBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.bigtable.admin.v2.ColumnFamily,
+                  com.google.bigtable.admin.v2.ColumnFamily.Builder,
+                  com.google.bigtable.admin.v2.ColumnFamilyOrBuilder>(
                   (com.google.bigtable.admin.v2.ColumnFamily) mod_,
                   getParentForChildren(),
                   isClean());
           mod_ = null;
         }
         modCase_ = 3;
-        onChanged();;
+        onChanged();
+        ;
         return updateBuilder_;
       }
 
       /**
+       *
+       *
        * <pre>
        * Drop (delete) the column family with the given ID, or fail if no such
        * family exists.
@@ -1340,6 +1520,8 @@ private static final long serialVersionUID = 0L;
         return false;
       }
       /**
+       *
+       *
        * <pre>
        * Drop (delete) the column family with the given ID, or fail if no such
        * family exists.
@@ -1354,6 +1536,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Drop (delete) the column family with the given ID, or fail if no such
        * family exists.
@@ -1369,39 +1553,46 @@ private static final long serialVersionUID = 0L;
         }
         return this;
       }
+
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
       }
 
-
       // @@protoc_insertion_point(builder_scope:google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification)
     }
 
     // @@protoc_insertion_point(class_scope:google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification)
-    private static final com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification DEFAULT_INSTANCE;
+    private static final com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification
+        DEFAULT_INSTANCE;
+
     static {
-      DEFAULT_INSTANCE = new com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification();
+      DEFAULT_INSTANCE =
+          new com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification();
     }
 
-    public static com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification getDefaultInstance() {
+    public static com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification
+        getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<Modification>
-        PARSER = new com.google.protobuf.AbstractParser<Modification>() {
-      public Modification parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Modification(input, extensionRegistry);
-      }
-    };
+    private static final com.google.protobuf.Parser<Modification> PARSER =
+        new com.google.protobuf.AbstractParser<Modification>() {
+          @java.lang.Override
+          public Modification parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new Modification(input, extensionRegistry);
+          }
+        };
 
     public static com.google.protobuf.Parser<Modification> parser() {
       return PARSER;
@@ -1412,16 +1603,19 @@ private static final long serialVersionUID = 0L;
       return PARSER;
     }
 
-    public com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification getDefaultInstanceForType() {
+    @java.lang.Override
+    public com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification
+        getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
-
   }
 
   private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
+   *
+   *
    * <pre>
    * The unique name of the table whose families should be modified.
    * Values are of the form
@@ -1435,14 +1629,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       name_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The unique name of the table whose families should be modified.
    * Values are of the form
@@ -1451,13 +1646,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string name = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getNameBytes() {
+  public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       name_ = b;
       return b;
     } else {
@@ -1466,8 +1659,11 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int MODIFICATIONS_FIELD_NUMBER = 2;
-  private java.util.List<com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification> modifications_;
+  private java.util.List<com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification>
+      modifications_;
   /**
+   *
+   *
    * <pre>
    * Modifications to be atomically applied to the specified table's families.
    * Entries are applied in order, meaning that earlier modifications can be
@@ -1475,12 +1671,17 @@ private static final long serialVersionUID = 0L;
    * for example).
    * </pre>
    *
-   * <code>repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2;</code>
+   * <code>
+   * repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2;
+   * </code>
    */
-  public java.util.List<com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification> getModificationsList() {
+  public java.util.List<com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification>
+      getModificationsList() {
     return modifications_;
   }
   /**
+   *
+   *
    * <pre>
    * Modifications to be atomically applied to the specified table's families.
    * Entries are applied in order, meaning that earlier modifications can be
@@ -1488,13 +1689,18 @@ private static final long serialVersionUID = 0L;
    * for example).
    * </pre>
    *
-   * <code>repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2;</code>
+   * <code>
+   * repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2;
+   * </code>
    */
-  public java.util.List<? extends com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.ModificationOrBuilder> 
+  public java.util.List<
+          ? extends com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.ModificationOrBuilder>
       getModificationsOrBuilderList() {
     return modifications_;
   }
   /**
+   *
+   *
    * <pre>
    * Modifications to be atomically applied to the specified table's families.
    * Entries are applied in order, meaning that earlier modifications can be
@@ -1502,12 +1708,16 @@ private static final long serialVersionUID = 0L;
    * for example).
    * </pre>
    *
-   * <code>repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2;</code>
+   * <code>
+   * repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2;
+   * </code>
    */
   public int getModificationsCount() {
     return modifications_.size();
   }
   /**
+   *
+   *
    * <pre>
    * Modifications to be atomically applied to the specified table's families.
    * Entries are applied in order, meaning that earlier modifications can be
@@ -1515,12 +1725,17 @@ private static final long serialVersionUID = 0L;
    * for example).
    * </pre>
    *
-   * <code>repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2;</code>
+   * <code>
+   * repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2;
+   * </code>
    */
-  public com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification getModifications(int index) {
+  public com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification getModifications(
+      int index) {
     return modifications_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * Modifications to be atomically applied to the specified table's families.
    * Entries are applied in order, meaning that earlier modifications can be
@@ -1528,14 +1743,18 @@ private static final long serialVersionUID = 0L;
    * for example).
    * </pre>
    *
-   * <code>repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2;</code>
+   * <code>
+   * repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2;
+   * </code>
    */
-  public com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.ModificationOrBuilder getModificationsOrBuilder(
-      int index) {
+  public com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.ModificationOrBuilder
+      getModificationsOrBuilder(int index) {
     return modifications_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
+
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -1545,8 +1764,8 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  @java.lang.Override
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
@@ -1556,6 +1775,7 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -1565,8 +1785,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
     for (int i = 0; i < modifications_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, modifications_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, modifications_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1576,18 +1795,17 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest)) {
       return super.equals(obj);
     }
-    com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest other = (com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest) obj;
+    com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest other =
+        (com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest) obj;
 
     boolean result = true;
-    result = result && getName()
-        .equals(other.getName());
-    result = result && getModificationsList()
-        .equals(other.getModificationsList());
+    result = result && getName().equals(other.getName());
+    result = result && getModificationsList().equals(other.getModificationsList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -1611,94 +1829,104 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  public Builder newBuilderForType() { return newBuilder(); }
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-  public static Builder newBuilder(com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+
+  public static Builder newBuilder(
+      com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+
+  @java.lang.Override
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Request message for
    * [google.bigtable.admin.v2.BigtableTableAdmin.ModifyColumnFamilies][google.bigtable.admin.v2.BigtableTableAdmin.ModifyColumnFamilies]
@@ -1706,20 +1934,23 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.bigtable.admin.v2.ModifyColumnFamiliesRequest}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.bigtable.admin.v2.ModifyColumnFamiliesRequest)
       com.google.bigtable.admin.v2.ModifyColumnFamiliesRequestOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.bigtable.admin.v2.BigtableTableAdminProto.internal_static_google_bigtable_admin_v2_ModifyColumnFamiliesRequest_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.bigtable.admin.v2.BigtableTableAdminProto
+          .internal_static_google_bigtable_admin_v2_ModifyColumnFamiliesRequest_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.bigtable.admin.v2.BigtableTableAdminProto.internal_static_google_bigtable_admin_v2_ModifyColumnFamiliesRequest_fieldAccessorTable
+      return com.google.bigtable.admin.v2.BigtableTableAdminProto
+          .internal_static_google_bigtable_admin_v2_ModifyColumnFamiliesRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.class, com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Builder.class);
+              com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.class,
+              com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Builder.class);
     }
 
     // Construct using com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.newBuilder()
@@ -1727,17 +1958,18 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getModificationsFieldBuilder();
       }
     }
+
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       name_ = "";
@@ -1751,15 +1983,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.bigtable.admin.v2.BigtableTableAdminProto.internal_static_google_bigtable_admin_v2_ModifyColumnFamiliesRequest_descriptor;
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.bigtable.admin.v2.BigtableTableAdminProto
+          .internal_static_google_bigtable_admin_v2_ModifyColumnFamiliesRequest_descriptor;
     }
 
+    @java.lang.Override
     public com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest getDefaultInstanceForType() {
       return com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest build() {
       com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest result = buildPartial();
       if (!result.isInitialized()) {
@@ -1768,8 +2003,10 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest buildPartial() {
-      com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest result = new com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest(this);
+      com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest result =
+          new com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       result.name_ = name_;
@@ -1787,35 +2024,43 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+
+    @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+    @java.lang.Override
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+    @java.lang.Override
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
+    @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
+    @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest) {
-        return mergeFrom((com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest)other);
+        return mergeFrom((com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -1823,7 +2068,8 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest other) {
-      if (other == com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.getDefaultInstance()) return this;
+      if (other == com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.getDefaultInstance())
+        return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
         onChanged();
@@ -1846,9 +2092,10 @@ private static final long serialVersionUID = 0L;
             modificationsBuilder_ = null;
             modifications_ = other.modifications_;
             bitField0_ = (bitField0_ & ~0x00000002);
-            modificationsBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getModificationsFieldBuilder() : null;
+            modificationsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getModificationsFieldBuilder()
+                    : null;
           } else {
             modificationsBuilder_.addAllMessages(other.modifications_);
           }
@@ -1859,10 +2106,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1871,7 +2120,8 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -1880,10 +2130,13 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
+     *
+     *
      * <pre>
      * The unique name of the table whose families should be modified.
      * Values are of the form
@@ -1895,8 +2148,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         name_ = s;
         return s;
@@ -1905,6 +2157,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The unique name of the table whose families should be modified.
      * Values are of the form
@@ -1913,13 +2167,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getNameBytes() {
+    public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         name_ = b;
         return b;
       } else {
@@ -1927,6 +2179,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The unique name of the table whose families should be modified.
      * Values are of the form
@@ -1935,17 +2189,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public Builder setName(
-        java.lang.String value) {
+    public Builder setName(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       name_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The unique name of the table whose families should be modified.
      * Values are of the form
@@ -1955,12 +2210,14 @@ private static final long serialVersionUID = 0L;
      * <code>string name = 1;</code>
      */
     public Builder clearName() {
-      
+
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The unique name of the table whose families should be modified.
      * Values are of the form
@@ -1969,31 +2226,39 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public Builder setNameBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       name_ = value;
       onChanged();
       return this;
     }
 
-    private java.util.List<com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification> modifications_ =
-      java.util.Collections.emptyList();
+    private java.util.List<com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification>
+        modifications_ = java.util.Collections.emptyList();
+
     private void ensureModificationsIsMutable() {
       if (!((bitField0_ & 0x00000002) == 0x00000002)) {
-        modifications_ = new java.util.ArrayList<com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification>(modifications_);
+        modifications_ =
+            new java.util.ArrayList<
+                com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification>(
+                modifications_);
         bitField0_ |= 0x00000002;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification, com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification.Builder, com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.ModificationOrBuilder> modificationsBuilder_;
+            com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification,
+            com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification.Builder,
+            com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.ModificationOrBuilder>
+        modificationsBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * Modifications to be atomically applied to the specified table's families.
      * Entries are applied in order, meaning that earlier modifications can be
@@ -2001,9 +2266,12 @@ private static final long serialVersionUID = 0L;
      * for example).
      * </pre>
      *
-     * <code>repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2;</code>
+     * <code>
+     * repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2;
+     * </code>
      */
-    public java.util.List<com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification> getModificationsList() {
+    public java.util.List<com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification>
+        getModificationsList() {
       if (modificationsBuilder_ == null) {
         return java.util.Collections.unmodifiableList(modifications_);
       } else {
@@ -2011,6 +2279,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Modifications to be atomically applied to the specified table's families.
      * Entries are applied in order, meaning that earlier modifications can be
@@ -2018,7 +2288,9 @@ private static final long serialVersionUID = 0L;
      * for example).
      * </pre>
      *
-     * <code>repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2;</code>
+     * <code>
+     * repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2;
+     * </code>
      */
     public int getModificationsCount() {
       if (modificationsBuilder_ == null) {
@@ -2028,6 +2300,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Modifications to be atomically applied to the specified table's families.
      * Entries are applied in order, meaning that earlier modifications can be
@@ -2035,9 +2309,12 @@ private static final long serialVersionUID = 0L;
      * for example).
      * </pre>
      *
-     * <code>repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2;</code>
+     * <code>
+     * repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2;
+     * </code>
      */
-    public com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification getModifications(int index) {
+    public com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification getModifications(
+        int index) {
       if (modificationsBuilder_ == null) {
         return modifications_.get(index);
       } else {
@@ -2045,6 +2322,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Modifications to be atomically applied to the specified table's families.
      * Entries are applied in order, meaning that earlier modifications can be
@@ -2052,7 +2331,9 @@ private static final long serialVersionUID = 0L;
      * for example).
      * </pre>
      *
-     * <code>repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2;</code>
+     * <code>
+     * repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2;
+     * </code>
      */
     public Builder setModifications(
         int index, com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification value) {
@@ -2069,6 +2350,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Modifications to be atomically applied to the specified table's families.
      * Entries are applied in order, meaning that earlier modifications can be
@@ -2076,10 +2359,14 @@ private static final long serialVersionUID = 0L;
      * for example).
      * </pre>
      *
-     * <code>repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2;</code>
+     * <code>
+     * repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2;
+     * </code>
      */
     public Builder setModifications(
-        int index, com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification.Builder builderForValue) {
+        int index,
+        com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification.Builder
+            builderForValue) {
       if (modificationsBuilder_ == null) {
         ensureModificationsIsMutable();
         modifications_.set(index, builderForValue.build());
@@ -2090,6 +2377,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Modifications to be atomically applied to the specified table's families.
      * Entries are applied in order, meaning that earlier modifications can be
@@ -2097,9 +2386,12 @@ private static final long serialVersionUID = 0L;
      * for example).
      * </pre>
      *
-     * <code>repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2;</code>
+     * <code>
+     * repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2;
+     * </code>
      */
-    public Builder addModifications(com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification value) {
+    public Builder addModifications(
+        com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification value) {
       if (modificationsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -2113,6 +2405,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Modifications to be atomically applied to the specified table's families.
      * Entries are applied in order, meaning that earlier modifications can be
@@ -2120,7 +2414,9 @@ private static final long serialVersionUID = 0L;
      * for example).
      * </pre>
      *
-     * <code>repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2;</code>
+     * <code>
+     * repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2;
+     * </code>
      */
     public Builder addModifications(
         int index, com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification value) {
@@ -2137,6 +2433,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Modifications to be atomically applied to the specified table's families.
      * Entries are applied in order, meaning that earlier modifications can be
@@ -2144,10 +2442,13 @@ private static final long serialVersionUID = 0L;
      * for example).
      * </pre>
      *
-     * <code>repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2;</code>
+     * <code>
+     * repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2;
+     * </code>
      */
     public Builder addModifications(
-        com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification.Builder builderForValue) {
+        com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification.Builder
+            builderForValue) {
       if (modificationsBuilder_ == null) {
         ensureModificationsIsMutable();
         modifications_.add(builderForValue.build());
@@ -2158,6 +2459,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Modifications to be atomically applied to the specified table's families.
      * Entries are applied in order, meaning that earlier modifications can be
@@ -2165,10 +2468,14 @@ private static final long serialVersionUID = 0L;
      * for example).
      * </pre>
      *
-     * <code>repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2;</code>
+     * <code>
+     * repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2;
+     * </code>
      */
     public Builder addModifications(
-        int index, com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification.Builder builderForValue) {
+        int index,
+        com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification.Builder
+            builderForValue) {
       if (modificationsBuilder_ == null) {
         ensureModificationsIsMutable();
         modifications_.add(index, builderForValue.build());
@@ -2179,6 +2486,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Modifications to be atomically applied to the specified table's families.
      * Entries are applied in order, meaning that earlier modifications can be
@@ -2186,14 +2495,17 @@ private static final long serialVersionUID = 0L;
      * for example).
      * </pre>
      *
-     * <code>repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2;</code>
+     * <code>
+     * repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2;
+     * </code>
      */
     public Builder addAllModifications(
-        java.lang.Iterable<? extends com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification> values) {
+        java.lang.Iterable<
+                ? extends com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification>
+            values) {
       if (modificationsBuilder_ == null) {
         ensureModificationsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, modifications_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, modifications_);
         onChanged();
       } else {
         modificationsBuilder_.addAllMessages(values);
@@ -2201,6 +2513,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Modifications to be atomically applied to the specified table's families.
      * Entries are applied in order, meaning that earlier modifications can be
@@ -2208,7 +2522,9 @@ private static final long serialVersionUID = 0L;
      * for example).
      * </pre>
      *
-     * <code>repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2;</code>
+     * <code>
+     * repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2;
+     * </code>
      */
     public Builder clearModifications() {
       if (modificationsBuilder_ == null) {
@@ -2221,6 +2537,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Modifications to be atomically applied to the specified table's families.
      * Entries are applied in order, meaning that earlier modifications can be
@@ -2228,7 +2546,9 @@ private static final long serialVersionUID = 0L;
      * for example).
      * </pre>
      *
-     * <code>repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2;</code>
+     * <code>
+     * repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2;
+     * </code>
      */
     public Builder removeModifications(int index) {
       if (modificationsBuilder_ == null) {
@@ -2241,6 +2561,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Modifications to be atomically applied to the specified table's families.
      * Entries are applied in order, meaning that earlier modifications can be
@@ -2248,13 +2570,17 @@ private static final long serialVersionUID = 0L;
      * for example).
      * </pre>
      *
-     * <code>repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2;</code>
+     * <code>
+     * repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2;
+     * </code>
      */
-    public com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification.Builder getModificationsBuilder(
-        int index) {
+    public com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification.Builder
+        getModificationsBuilder(int index) {
       return getModificationsFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * Modifications to be atomically applied to the specified table's families.
      * Entries are applied in order, meaning that earlier modifications can be
@@ -2262,16 +2588,21 @@ private static final long serialVersionUID = 0L;
      * for example).
      * </pre>
      *
-     * <code>repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2;</code>
+     * <code>
+     * repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2;
+     * </code>
      */
-    public com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.ModificationOrBuilder getModificationsOrBuilder(
-        int index) {
+    public com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.ModificationOrBuilder
+        getModificationsOrBuilder(int index) {
       if (modificationsBuilder_ == null) {
-        return modifications_.get(index);  } else {
+        return modifications_.get(index);
+      } else {
         return modificationsBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * Modifications to be atomically applied to the specified table's families.
      * Entries are applied in order, meaning that earlier modifications can be
@@ -2279,10 +2610,14 @@ private static final long serialVersionUID = 0L;
      * for example).
      * </pre>
      *
-     * <code>repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2;</code>
+     * <code>
+     * repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2;
+     * </code>
      */
-    public java.util.List<? extends com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.ModificationOrBuilder> 
-         getModificationsOrBuilderList() {
+    public java.util.List<
+            ? extends
+                com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.ModificationOrBuilder>
+        getModificationsOrBuilderList() {
       if (modificationsBuilder_ != null) {
         return modificationsBuilder_.getMessageOrBuilderList();
       } else {
@@ -2290,6 +2625,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Modifications to be atomically applied to the specified table's families.
      * Entries are applied in order, meaning that earlier modifications can be
@@ -2297,13 +2634,20 @@ private static final long serialVersionUID = 0L;
      * for example).
      * </pre>
      *
-     * <code>repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2;</code>
+     * <code>
+     * repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2;
+     * </code>
      */
-    public com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification.Builder addModificationsBuilder() {
-      return getModificationsFieldBuilder().addBuilder(
-          com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification.getDefaultInstance());
+    public com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification.Builder
+        addModificationsBuilder() {
+      return getModificationsFieldBuilder()
+          .addBuilder(
+              com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification
+                  .getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Modifications to be atomically applied to the specified table's families.
      * Entries are applied in order, meaning that earlier modifications can be
@@ -2311,14 +2655,21 @@ private static final long serialVersionUID = 0L;
      * for example).
      * </pre>
      *
-     * <code>repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2;</code>
+     * <code>
+     * repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2;
+     * </code>
      */
-    public com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification.Builder addModificationsBuilder(
-        int index) {
-      return getModificationsFieldBuilder().addBuilder(
-          index, com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification.getDefaultInstance());
+    public com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification.Builder
+        addModificationsBuilder(int index) {
+      return getModificationsFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification
+                  .getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Modifications to be atomically applied to the specified table's families.
      * Entries are applied in order, meaning that earlier modifications can be
@@ -2326,18 +2677,27 @@ private static final long serialVersionUID = 0L;
      * for example).
      * </pre>
      *
-     * <code>repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2;</code>
+     * <code>
+     * repeated .google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification modifications = 2;
+     * </code>
      */
-    public java.util.List<com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification.Builder> 
-         getModificationsBuilderList() {
+    public java.util.List<
+            com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification.Builder>
+        getModificationsBuilderList() {
       return getModificationsFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification, com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification.Builder, com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.ModificationOrBuilder> 
+            com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification,
+            com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification.Builder,
+            com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.ModificationOrBuilder>
         getModificationsFieldBuilder() {
       if (modificationsBuilder_ == null) {
-        modificationsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification, com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification.Builder, com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.ModificationOrBuilder>(
+        modificationsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification,
+                com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.Modification.Builder,
+                com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest.ModificationOrBuilder>(
                 modifications_,
                 ((bitField0_ & 0x00000002) == 0x00000002),
                 getParentForChildren(),
@@ -2346,22 +2706,24 @@ private static final long serialVersionUID = 0L;
       }
       return modificationsBuilder_;
     }
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+
+    @java.lang.Override
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
     }
-
 
     // @@protoc_insertion_point(builder_scope:google.bigtable.admin.v2.ModifyColumnFamiliesRequest)
   }
 
   // @@protoc_insertion_point(class_scope:google.bigtable.admin.v2.ModifyColumnFamiliesRequest)
   private static final com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest();
   }
@@ -2370,15 +2732,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ModifyColumnFamiliesRequest>
-      PARSER = new com.google.protobuf.AbstractParser<ModifyColumnFamiliesRequest>() {
-    public ModifyColumnFamiliesRequest parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ModifyColumnFamiliesRequest(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<ModifyColumnFamiliesRequest> PARSER =
+      new com.google.protobuf.AbstractParser<ModifyColumnFamiliesRequest>() {
+        @java.lang.Override
+        public ModifyColumnFamiliesRequest parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new ModifyColumnFamiliesRequest(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<ModifyColumnFamiliesRequest> parser() {
     return PARSER;
@@ -2389,9 +2752,8 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.bigtable.admin.v2.ModifyColumnFamiliesRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

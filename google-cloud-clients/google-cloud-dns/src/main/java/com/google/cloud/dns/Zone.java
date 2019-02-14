@@ -18,9 +18,8 @@ package com.google.cloud.dns;
 
 import static com.google.common.base.Preconditions.checkNotNull;
 
-import com.google.api.services.dns.model.ManagedZone;
 import com.google.api.gax.paging.Page;
-
+import com.google.api.services.dns.model.ManagedZone;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.util.List;
@@ -35,7 +34,7 @@ import java.util.Objects;
  * record sets that it can include.
  *
  * @see <a href="https://cloud.google.com/dns/zones/">Google Cloud DNS managed zone
- * documentation</a>
+ *     documentation</a>
  */
 public class Zone extends ZoneInfo {
 
@@ -43,9 +42,7 @@ public class Zone extends ZoneInfo {
   private final DnsOptions options;
   private transient Dns dns;
 
-  /**
-   * Builder for {@code Zone}.
-   */
+  /** Builder for {@code Zone}. */
   public static class Builder extends ZoneInfo.Builder {
     private final Dns dns;
     private final ZoneInfo.BuilderImpl infoBuilder;
@@ -54,7 +51,6 @@ public class Zone extends ZoneInfo {
       this.dns = zone.dns;
       this.infoBuilder = new ZoneInfo.BuilderImpl(zone);
     }
-
 
     @Override
     public Builder setName(String name) {
@@ -74,13 +70,11 @@ public class Zone extends ZoneInfo {
       return this;
     }
 
-
     @Override
     public Builder setDnsName(String dnsName) {
       infoBuilder.setDnsName(dnsName);
       return this;
     }
-
 
     @Override
     public Builder setDescription(String description) {
@@ -157,8 +151,8 @@ public class Zone extends ZoneInfo {
    * @return ChangeRequest with server-assigned ID
    * @throws DnsException upon failure or if the zone is not found
    */
-  public ChangeRequest applyChangeRequest(ChangeRequestInfo changeRequest,
-      Dns.ChangeRequestOption... options) {
+  public ChangeRequest applyChangeRequest(
+      ChangeRequestInfo changeRequest, Dns.ChangeRequestOption... options) {
     checkNotNull(changeRequest);
     return dns.applyChangeRequest(getName(), changeRequest, options);
   }
@@ -173,8 +167,8 @@ public class Zone extends ZoneInfo {
    * @throws DnsException upon failure or if the zone is not found
    * @throws NullPointerException if {@code changeRequestId} is null
    */
-  public ChangeRequest getChangeRequest(String changeRequestId,
-      Dns.ChangeRequestOption... options) {
+  public ChangeRequest getChangeRequest(
+      String changeRequestId, Dns.ChangeRequestOption... options) {
     checkNotNull(changeRequestId);
     return dns.getChangeRequest(getName(), changeRequestId, options);
   }
@@ -191,10 +185,7 @@ public class Zone extends ZoneInfo {
     return dns.listChangeRequests(getName(), options);
   }
 
-
-  /**
-   * Returns the {@link Dns} service object associated with this zone.
-   */
+  /** Returns the {@link Dns} service object associated with this zone. */
   public Dns getDns() {
     return this.dns;
   }
@@ -208,8 +199,7 @@ public class Zone extends ZoneInfo {
       return false;
     }
     Zone other = (Zone) obj;
-    return Objects.equals(toPb(), other.toPb())
-        && Objects.equals(options, other.options);
+    return Objects.equals(toPb(), other.toPb()) && Objects.equals(options, other.options);
   }
 
   @Override

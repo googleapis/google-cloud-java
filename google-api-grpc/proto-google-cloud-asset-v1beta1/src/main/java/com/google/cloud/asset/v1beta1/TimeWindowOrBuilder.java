@@ -3,29 +3,36 @@
 
 package com.google.cloud.asset.v1beta1;
 
-public interface TimeWindowOrBuilder extends
+public interface TimeWindowOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.asset.v1beta1.TimeWindow)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
-   * Start time of the time window (inclusive).
+   * Start time of the time window (exclusive).
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 1;</code>
    */
   boolean hasStartTime();
   /**
+   *
+   *
    * <pre>
-   * Start time of the time window (inclusive).
+   * Start time of the time window (exclusive).
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 1;</code>
    */
   com.google.protobuf.Timestamp getStartTime();
   /**
+   *
+   *
    * <pre>
-   * Start time of the time window (inclusive).
+   * Start time of the time window (exclusive).
    * </pre>
    *
    * <code>.google.protobuf.Timestamp start_time = 1;</code>
@@ -33,8 +40,10 @@ public interface TimeWindowOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
-   * End time of the time window (exclusive).
+   * End time of the time window (inclusive).
    * Current timestamp if not specified.
    * </pre>
    *
@@ -42,8 +51,10 @@ public interface TimeWindowOrBuilder extends
    */
   boolean hasEndTime();
   /**
+   *
+   *
    * <pre>
-   * End time of the time window (exclusive).
+   * End time of the time window (inclusive).
    * Current timestamp if not specified.
    * </pre>
    *
@@ -51,8 +62,10 @@ public interface TimeWindowOrBuilder extends
    */
   com.google.protobuf.Timestamp getEndTime();
   /**
+   *
+   *
    * <pre>
-   * End time of the time window (exclusive).
+   * End time of the time window (inclusive).
    * Current timestamp if not specified.
    * </pre>
    *

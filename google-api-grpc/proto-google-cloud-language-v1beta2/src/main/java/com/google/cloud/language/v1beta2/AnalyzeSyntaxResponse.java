@@ -4,21 +4,24 @@
 package com.google.cloud.language.v1beta2;
 
 /**
+ *
+ *
  * <pre>
  * The syntax analysis response message.
  * </pre>
  *
  * Protobuf type {@code google.cloud.language.v1beta2.AnalyzeSyntaxResponse}
  */
-public  final class AnalyzeSyntaxResponse extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class AnalyzeSyntaxResponse extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.language.v1beta2.AnalyzeSyntaxResponse)
     AnalyzeSyntaxResponseOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use AnalyzeSyntaxResponse.newBuilder() to construct.
   private AnalyzeSyntaxResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private AnalyzeSyntaxResponse() {
     sentences_ = java.util.Collections.emptyList();
     tokens_ = java.util.Collections.emptyList();
@@ -26,15 +29,18 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private AnalyzeSyntaxResponse(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -46,44 +52,48 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          case 10:
+            {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                sentences_ = new java.util.ArrayList<com.google.cloud.language.v1beta2.Sentence>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              sentences_.add(
+                  input.readMessage(
+                      com.google.cloud.language.v1beta2.Sentence.parser(), extensionRegistry));
+              break;
             }
-            break;
-          }
-          case 10: {
-            if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-              sentences_ = new java.util.ArrayList<com.google.cloud.language.v1beta2.Sentence>();
-              mutable_bitField0_ |= 0x00000001;
+          case 18:
+            {
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                tokens_ = new java.util.ArrayList<com.google.cloud.language.v1beta2.Token>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              tokens_.add(
+                  input.readMessage(
+                      com.google.cloud.language.v1beta2.Token.parser(), extensionRegistry));
+              break;
             }
-            sentences_.add(
-                input.readMessage(com.google.cloud.language.v1beta2.Sentence.parser(), extensionRegistry));
-            break;
-          }
-          case 18: {
-            if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-              tokens_ = new java.util.ArrayList<com.google.cloud.language.v1beta2.Token>();
-              mutable_bitField0_ |= 0x00000002;
-            }
-            tokens_.add(
-                input.readMessage(com.google.cloud.language.v1beta2.Token.parser(), extensionRegistry));
-            break;
-          }
-          case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 26:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            language_ = s;
-            break;
-          }
+              language_ = s;
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
         sentences_ = java.util.Collections.unmodifiableList(sentences_);
@@ -95,22 +105,28 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.language.v1beta2.LanguageServiceProto.internal_static_google_cloud_language_v1beta2_AnalyzeSyntaxResponse_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.language.v1beta2.LanguageServiceProto
+        .internal_static_google_cloud_language_v1beta2_AnalyzeSyntaxResponse_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.language.v1beta2.LanguageServiceProto.internal_static_google_cloud_language_v1beta2_AnalyzeSyntaxResponse_fieldAccessorTable
+    return com.google.cloud.language.v1beta2.LanguageServiceProto
+        .internal_static_google_cloud_language_v1beta2_AnalyzeSyntaxResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.language.v1beta2.AnalyzeSyntaxResponse.class, com.google.cloud.language.v1beta2.AnalyzeSyntaxResponse.Builder.class);
+            com.google.cloud.language.v1beta2.AnalyzeSyntaxResponse.class,
+            com.google.cloud.language.v1beta2.AnalyzeSyntaxResponse.Builder.class);
   }
 
   private int bitField0_;
   public static final int SENTENCES_FIELD_NUMBER = 1;
   private java.util.List<com.google.cloud.language.v1beta2.Sentence> sentences_;
   /**
+   *
+   *
    * <pre>
    * Sentences in the input document.
    * </pre>
@@ -121,17 +137,21 @@ private static final long serialVersionUID = 0L;
     return sentences_;
   }
   /**
+   *
+   *
    * <pre>
    * Sentences in the input document.
    * </pre>
    *
    * <code>repeated .google.cloud.language.v1beta2.Sentence sentences = 1;</code>
    */
-  public java.util.List<? extends com.google.cloud.language.v1beta2.SentenceOrBuilder> 
+  public java.util.List<? extends com.google.cloud.language.v1beta2.SentenceOrBuilder>
       getSentencesOrBuilderList() {
     return sentences_;
   }
   /**
+   *
+   *
    * <pre>
    * Sentences in the input document.
    * </pre>
@@ -142,6 +162,8 @@ private static final long serialVersionUID = 0L;
     return sentences_.size();
   }
   /**
+   *
+   *
    * <pre>
    * Sentences in the input document.
    * </pre>
@@ -152,20 +174,23 @@ private static final long serialVersionUID = 0L;
     return sentences_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * Sentences in the input document.
    * </pre>
    *
    * <code>repeated .google.cloud.language.v1beta2.Sentence sentences = 1;</code>
    */
-  public com.google.cloud.language.v1beta2.SentenceOrBuilder getSentencesOrBuilder(
-      int index) {
+  public com.google.cloud.language.v1beta2.SentenceOrBuilder getSentencesOrBuilder(int index) {
     return sentences_.get(index);
   }
 
   public static final int TOKENS_FIELD_NUMBER = 2;
   private java.util.List<com.google.cloud.language.v1beta2.Token> tokens_;
   /**
+   *
+   *
    * <pre>
    * Tokens, along with their syntactic information, in the input document.
    * </pre>
@@ -176,17 +201,21 @@ private static final long serialVersionUID = 0L;
     return tokens_;
   }
   /**
+   *
+   *
    * <pre>
    * Tokens, along with their syntactic information, in the input document.
    * </pre>
    *
    * <code>repeated .google.cloud.language.v1beta2.Token tokens = 2;</code>
    */
-  public java.util.List<? extends com.google.cloud.language.v1beta2.TokenOrBuilder> 
+  public java.util.List<? extends com.google.cloud.language.v1beta2.TokenOrBuilder>
       getTokensOrBuilderList() {
     return tokens_;
   }
   /**
+   *
+   *
    * <pre>
    * Tokens, along with their syntactic information, in the input document.
    * </pre>
@@ -197,6 +226,8 @@ private static final long serialVersionUID = 0L;
     return tokens_.size();
   }
   /**
+   *
+   *
    * <pre>
    * Tokens, along with their syntactic information, in the input document.
    * </pre>
@@ -207,20 +238,23 @@ private static final long serialVersionUID = 0L;
     return tokens_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * Tokens, along with their syntactic information, in the input document.
    * </pre>
    *
    * <code>repeated .google.cloud.language.v1beta2.Token tokens = 2;</code>
    */
-  public com.google.cloud.language.v1beta2.TokenOrBuilder getTokensOrBuilder(
-      int index) {
+  public com.google.cloud.language.v1beta2.TokenOrBuilder getTokensOrBuilder(int index) {
     return tokens_.get(index);
   }
 
   public static final int LANGUAGE_FIELD_NUMBER = 3;
   private volatile java.lang.Object language_;
   /**
+   *
+   *
    * <pre>
    * The language of the text, which will be the same as the language specified
    * in the request or, if not specified, the automatically-detected language.
@@ -234,14 +268,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       language_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The language of the text, which will be the same as the language specified
    * in the request or, if not specified, the automatically-detected language.
@@ -250,13 +285,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string language = 3;</code>
    */
-  public com.google.protobuf.ByteString
-      getLanguageBytes() {
+  public com.google.protobuf.ByteString getLanguageBytes() {
     java.lang.Object ref = language_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       language_ = b;
       return b;
     } else {
@@ -265,6 +298,8 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -274,8 +309,8 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  @java.lang.Override
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     for (int i = 0; i < sentences_.size(); i++) {
       output.writeMessage(1, sentences_.get(i));
     }
@@ -288,18 +323,17 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
 
     size = 0;
     for (int i = 0; i < sentences_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, sentences_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, sentences_.get(i));
     }
     for (int i = 0; i < tokens_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, tokens_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, tokens_.get(i));
     }
     if (!getLanguageBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, language_);
@@ -312,20 +346,18 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.language.v1beta2.AnalyzeSyntaxResponse)) {
       return super.equals(obj);
     }
-    com.google.cloud.language.v1beta2.AnalyzeSyntaxResponse other = (com.google.cloud.language.v1beta2.AnalyzeSyntaxResponse) obj;
+    com.google.cloud.language.v1beta2.AnalyzeSyntaxResponse other =
+        (com.google.cloud.language.v1beta2.AnalyzeSyntaxResponse) obj;
 
     boolean result = true;
-    result = result && getSentencesList()
-        .equals(other.getSentencesList());
-    result = result && getTokensList()
-        .equals(other.getTokensList());
-    result = result && getLanguage()
-        .equals(other.getLanguage());
+    result = result && getSentencesList().equals(other.getSentencesList());
+    result = result && getTokensList().equals(other.getTokensList());
+    result = result && getLanguage().equals(other.getLanguage());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -353,114 +385,127 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.cloud.language.v1beta2.AnalyzeSyntaxResponse parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.language.v1beta2.AnalyzeSyntaxResponse parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.language.v1beta2.AnalyzeSyntaxResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.language.v1beta2.AnalyzeSyntaxResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.language.v1beta2.AnalyzeSyntaxResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.language.v1beta2.AnalyzeSyntaxResponse parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.language.v1beta2.AnalyzeSyntaxResponse parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.language.v1beta2.AnalyzeSyntaxResponse parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.language.v1beta2.AnalyzeSyntaxResponse parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.cloud.language.v1beta2.AnalyzeSyntaxResponse parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.cloud.language.v1beta2.AnalyzeSyntaxResponse parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.language.v1beta2.AnalyzeSyntaxResponse parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.language.v1beta2.AnalyzeSyntaxResponse parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.language.v1beta2.AnalyzeSyntaxResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  public Builder newBuilderForType() { return newBuilder(); }
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-  public static Builder newBuilder(com.google.cloud.language.v1beta2.AnalyzeSyntaxResponse prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+
+  public static Builder newBuilder(
+      com.google.cloud.language.v1beta2.AnalyzeSyntaxResponse prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+
+  @java.lang.Override
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * The syntax analysis response message.
    * </pre>
    *
    * Protobuf type {@code google.cloud.language.v1beta2.AnalyzeSyntaxResponse}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.language.v1beta2.AnalyzeSyntaxResponse)
       com.google.cloud.language.v1beta2.AnalyzeSyntaxResponseOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.language.v1beta2.LanguageServiceProto.internal_static_google_cloud_language_v1beta2_AnalyzeSyntaxResponse_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.language.v1beta2.LanguageServiceProto
+          .internal_static_google_cloud_language_v1beta2_AnalyzeSyntaxResponse_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.language.v1beta2.LanguageServiceProto.internal_static_google_cloud_language_v1beta2_AnalyzeSyntaxResponse_fieldAccessorTable
+      return com.google.cloud.language.v1beta2.LanguageServiceProto
+          .internal_static_google_cloud_language_v1beta2_AnalyzeSyntaxResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.language.v1beta2.AnalyzeSyntaxResponse.class, com.google.cloud.language.v1beta2.AnalyzeSyntaxResponse.Builder.class);
+              com.google.cloud.language.v1beta2.AnalyzeSyntaxResponse.class,
+              com.google.cloud.language.v1beta2.AnalyzeSyntaxResponse.Builder.class);
     }
 
     // Construct using com.google.cloud.language.v1beta2.AnalyzeSyntaxResponse.newBuilder()
@@ -468,18 +513,19 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getSentencesFieldBuilder();
         getTokensFieldBuilder();
       }
     }
+
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       if (sentencesBuilder_ == null) {
@@ -499,15 +545,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.language.v1beta2.LanguageServiceProto.internal_static_google_cloud_language_v1beta2_AnalyzeSyntaxResponse_descriptor;
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.language.v1beta2.LanguageServiceProto
+          .internal_static_google_cloud_language_v1beta2_AnalyzeSyntaxResponse_descriptor;
     }
 
+    @java.lang.Override
     public com.google.cloud.language.v1beta2.AnalyzeSyntaxResponse getDefaultInstanceForType() {
       return com.google.cloud.language.v1beta2.AnalyzeSyntaxResponse.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.cloud.language.v1beta2.AnalyzeSyntaxResponse build() {
       com.google.cloud.language.v1beta2.AnalyzeSyntaxResponse result = buildPartial();
       if (!result.isInitialized()) {
@@ -516,8 +565,10 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.cloud.language.v1beta2.AnalyzeSyntaxResponse buildPartial() {
-      com.google.cloud.language.v1beta2.AnalyzeSyntaxResponse result = new com.google.cloud.language.v1beta2.AnalyzeSyntaxResponse(this);
+      com.google.cloud.language.v1beta2.AnalyzeSyntaxResponse result =
+          new com.google.cloud.language.v1beta2.AnalyzeSyntaxResponse(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (sentencesBuilder_ == null) {
@@ -544,35 +595,43 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+
+    @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+    @java.lang.Override
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+    @java.lang.Override
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
+    @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
+    @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.language.v1beta2.AnalyzeSyntaxResponse) {
-        return mergeFrom((com.google.cloud.language.v1beta2.AnalyzeSyntaxResponse)other);
+        return mergeFrom((com.google.cloud.language.v1beta2.AnalyzeSyntaxResponse) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -580,7 +639,8 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.cloud.language.v1beta2.AnalyzeSyntaxResponse other) {
-      if (other == com.google.cloud.language.v1beta2.AnalyzeSyntaxResponse.getDefaultInstance()) return this;
+      if (other == com.google.cloud.language.v1beta2.AnalyzeSyntaxResponse.getDefaultInstance())
+        return this;
       if (sentencesBuilder_ == null) {
         if (!other.sentences_.isEmpty()) {
           if (sentences_.isEmpty()) {
@@ -599,9 +659,10 @@ private static final long serialVersionUID = 0L;
             sentencesBuilder_ = null;
             sentences_ = other.sentences_;
             bitField0_ = (bitField0_ & ~0x00000001);
-            sentencesBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getSentencesFieldBuilder() : null;
+            sentencesBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getSentencesFieldBuilder()
+                    : null;
           } else {
             sentencesBuilder_.addAllMessages(other.sentences_);
           }
@@ -625,9 +686,10 @@ private static final long serialVersionUID = 0L;
             tokensBuilder_ = null;
             tokens_ = other.tokens_;
             bitField0_ = (bitField0_ & ~0x00000002);
-            tokensBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getTokensFieldBuilder() : null;
+            tokensBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getTokensFieldBuilder()
+                    : null;
           } else {
             tokensBuilder_.addAllMessages(other.tokens_);
           }
@@ -642,10 +704,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -654,7 +718,8 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.language.v1beta2.AnalyzeSyntaxResponse) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.cloud.language.v1beta2.AnalyzeSyntaxResponse) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -663,21 +728,29 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private java.util.List<com.google.cloud.language.v1beta2.Sentence> sentences_ =
-      java.util.Collections.emptyList();
+        java.util.Collections.emptyList();
+
     private void ensureSentencesIsMutable() {
       if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-        sentences_ = new java.util.ArrayList<com.google.cloud.language.v1beta2.Sentence>(sentences_);
+        sentences_ =
+            new java.util.ArrayList<com.google.cloud.language.v1beta2.Sentence>(sentences_);
         bitField0_ |= 0x00000001;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.language.v1beta2.Sentence, com.google.cloud.language.v1beta2.Sentence.Builder, com.google.cloud.language.v1beta2.SentenceOrBuilder> sentencesBuilder_;
+            com.google.cloud.language.v1beta2.Sentence,
+            com.google.cloud.language.v1beta2.Sentence.Builder,
+            com.google.cloud.language.v1beta2.SentenceOrBuilder>
+        sentencesBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * Sentences in the input document.
      * </pre>
@@ -692,6 +765,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Sentences in the input document.
      * </pre>
@@ -706,6 +781,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Sentences in the input document.
      * </pre>
@@ -720,14 +797,15 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Sentences in the input document.
      * </pre>
      *
      * <code>repeated .google.cloud.language.v1beta2.Sentence sentences = 1;</code>
      */
-    public Builder setSentences(
-        int index, com.google.cloud.language.v1beta2.Sentence value) {
+    public Builder setSentences(int index, com.google.cloud.language.v1beta2.Sentence value) {
       if (sentencesBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -741,6 +819,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Sentences in the input document.
      * </pre>
@@ -759,6 +839,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Sentences in the input document.
      * </pre>
@@ -779,14 +861,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Sentences in the input document.
      * </pre>
      *
      * <code>repeated .google.cloud.language.v1beta2.Sentence sentences = 1;</code>
      */
-    public Builder addSentences(
-        int index, com.google.cloud.language.v1beta2.Sentence value) {
+    public Builder addSentences(int index, com.google.cloud.language.v1beta2.Sentence value) {
       if (sentencesBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -800,6 +883,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Sentences in the input document.
      * </pre>
@@ -818,6 +903,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Sentences in the input document.
      * </pre>
@@ -836,6 +923,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Sentences in the input document.
      * </pre>
@@ -846,8 +935,7 @@ private static final long serialVersionUID = 0L;
         java.lang.Iterable<? extends com.google.cloud.language.v1beta2.Sentence> values) {
       if (sentencesBuilder_ == null) {
         ensureSentencesIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, sentences_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, sentences_);
         onChanged();
       } else {
         sentencesBuilder_.addAllMessages(values);
@@ -855,6 +943,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Sentences in the input document.
      * </pre>
@@ -872,6 +962,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Sentences in the input document.
      * </pre>
@@ -889,39 +981,44 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Sentences in the input document.
      * </pre>
      *
      * <code>repeated .google.cloud.language.v1beta2.Sentence sentences = 1;</code>
      */
-    public com.google.cloud.language.v1beta2.Sentence.Builder getSentencesBuilder(
-        int index) {
+    public com.google.cloud.language.v1beta2.Sentence.Builder getSentencesBuilder(int index) {
       return getSentencesFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * Sentences in the input document.
      * </pre>
      *
      * <code>repeated .google.cloud.language.v1beta2.Sentence sentences = 1;</code>
      */
-    public com.google.cloud.language.v1beta2.SentenceOrBuilder getSentencesOrBuilder(
-        int index) {
+    public com.google.cloud.language.v1beta2.SentenceOrBuilder getSentencesOrBuilder(int index) {
       if (sentencesBuilder_ == null) {
-        return sentences_.get(index);  } else {
+        return sentences_.get(index);
+      } else {
         return sentencesBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * Sentences in the input document.
      * </pre>
      *
      * <code>repeated .google.cloud.language.v1beta2.Sentence sentences = 1;</code>
      */
-    public java.util.List<? extends com.google.cloud.language.v1beta2.SentenceOrBuilder> 
-         getSentencesOrBuilderList() {
+    public java.util.List<? extends com.google.cloud.language.v1beta2.SentenceOrBuilder>
+        getSentencesOrBuilderList() {
       if (sentencesBuilder_ != null) {
         return sentencesBuilder_.getMessageOrBuilderList();
       } else {
@@ -929,6 +1026,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Sentences in the input document.
      * </pre>
@@ -936,38 +1035,47 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.cloud.language.v1beta2.Sentence sentences = 1;</code>
      */
     public com.google.cloud.language.v1beta2.Sentence.Builder addSentencesBuilder() {
-      return getSentencesFieldBuilder().addBuilder(
-          com.google.cloud.language.v1beta2.Sentence.getDefaultInstance());
+      return getSentencesFieldBuilder()
+          .addBuilder(com.google.cloud.language.v1beta2.Sentence.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Sentences in the input document.
      * </pre>
      *
      * <code>repeated .google.cloud.language.v1beta2.Sentence sentences = 1;</code>
      */
-    public com.google.cloud.language.v1beta2.Sentence.Builder addSentencesBuilder(
-        int index) {
-      return getSentencesFieldBuilder().addBuilder(
-          index, com.google.cloud.language.v1beta2.Sentence.getDefaultInstance());
+    public com.google.cloud.language.v1beta2.Sentence.Builder addSentencesBuilder(int index) {
+      return getSentencesFieldBuilder()
+          .addBuilder(index, com.google.cloud.language.v1beta2.Sentence.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Sentences in the input document.
      * </pre>
      *
      * <code>repeated .google.cloud.language.v1beta2.Sentence sentences = 1;</code>
      */
-    public java.util.List<com.google.cloud.language.v1beta2.Sentence.Builder> 
-         getSentencesBuilderList() {
+    public java.util.List<com.google.cloud.language.v1beta2.Sentence.Builder>
+        getSentencesBuilderList() {
       return getSentencesFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.language.v1beta2.Sentence, com.google.cloud.language.v1beta2.Sentence.Builder, com.google.cloud.language.v1beta2.SentenceOrBuilder> 
+            com.google.cloud.language.v1beta2.Sentence,
+            com.google.cloud.language.v1beta2.Sentence.Builder,
+            com.google.cloud.language.v1beta2.SentenceOrBuilder>
         getSentencesFieldBuilder() {
       if (sentencesBuilder_ == null) {
-        sentencesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.cloud.language.v1beta2.Sentence, com.google.cloud.language.v1beta2.Sentence.Builder, com.google.cloud.language.v1beta2.SentenceOrBuilder>(
+        sentencesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.language.v1beta2.Sentence,
+                com.google.cloud.language.v1beta2.Sentence.Builder,
+                com.google.cloud.language.v1beta2.SentenceOrBuilder>(
                 sentences_,
                 ((bitField0_ & 0x00000001) == 0x00000001),
                 getParentForChildren(),
@@ -978,18 +1086,24 @@ private static final long serialVersionUID = 0L;
     }
 
     private java.util.List<com.google.cloud.language.v1beta2.Token> tokens_ =
-      java.util.Collections.emptyList();
+        java.util.Collections.emptyList();
+
     private void ensureTokensIsMutable() {
       if (!((bitField0_ & 0x00000002) == 0x00000002)) {
         tokens_ = new java.util.ArrayList<com.google.cloud.language.v1beta2.Token>(tokens_);
         bitField0_ |= 0x00000002;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.language.v1beta2.Token, com.google.cloud.language.v1beta2.Token.Builder, com.google.cloud.language.v1beta2.TokenOrBuilder> tokensBuilder_;
+            com.google.cloud.language.v1beta2.Token,
+            com.google.cloud.language.v1beta2.Token.Builder,
+            com.google.cloud.language.v1beta2.TokenOrBuilder>
+        tokensBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * Tokens, along with their syntactic information, in the input document.
      * </pre>
@@ -1004,6 +1118,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Tokens, along with their syntactic information, in the input document.
      * </pre>
@@ -1018,6 +1134,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Tokens, along with their syntactic information, in the input document.
      * </pre>
@@ -1032,14 +1150,15 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Tokens, along with their syntactic information, in the input document.
      * </pre>
      *
      * <code>repeated .google.cloud.language.v1beta2.Token tokens = 2;</code>
      */
-    public Builder setTokens(
-        int index, com.google.cloud.language.v1beta2.Token value) {
+    public Builder setTokens(int index, com.google.cloud.language.v1beta2.Token value) {
       if (tokensBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1053,6 +1172,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Tokens, along with their syntactic information, in the input document.
      * </pre>
@@ -1071,6 +1192,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Tokens, along with their syntactic information, in the input document.
      * </pre>
@@ -1091,14 +1214,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Tokens, along with their syntactic information, in the input document.
      * </pre>
      *
      * <code>repeated .google.cloud.language.v1beta2.Token tokens = 2;</code>
      */
-    public Builder addTokens(
-        int index, com.google.cloud.language.v1beta2.Token value) {
+    public Builder addTokens(int index, com.google.cloud.language.v1beta2.Token value) {
       if (tokensBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1112,14 +1236,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Tokens, along with their syntactic information, in the input document.
      * </pre>
      *
      * <code>repeated .google.cloud.language.v1beta2.Token tokens = 2;</code>
      */
-    public Builder addTokens(
-        com.google.cloud.language.v1beta2.Token.Builder builderForValue) {
+    public Builder addTokens(com.google.cloud.language.v1beta2.Token.Builder builderForValue) {
       if (tokensBuilder_ == null) {
         ensureTokensIsMutable();
         tokens_.add(builderForValue.build());
@@ -1130,6 +1255,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Tokens, along with their syntactic information, in the input document.
      * </pre>
@@ -1148,6 +1275,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Tokens, along with their syntactic information, in the input document.
      * </pre>
@@ -1158,8 +1287,7 @@ private static final long serialVersionUID = 0L;
         java.lang.Iterable<? extends com.google.cloud.language.v1beta2.Token> values) {
       if (tokensBuilder_ == null) {
         ensureTokensIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, tokens_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, tokens_);
         onChanged();
       } else {
         tokensBuilder_.addAllMessages(values);
@@ -1167,6 +1295,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Tokens, along with their syntactic information, in the input document.
      * </pre>
@@ -1184,6 +1314,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Tokens, along with their syntactic information, in the input document.
      * </pre>
@@ -1201,39 +1333,44 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Tokens, along with their syntactic information, in the input document.
      * </pre>
      *
      * <code>repeated .google.cloud.language.v1beta2.Token tokens = 2;</code>
      */
-    public com.google.cloud.language.v1beta2.Token.Builder getTokensBuilder(
-        int index) {
+    public com.google.cloud.language.v1beta2.Token.Builder getTokensBuilder(int index) {
       return getTokensFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * Tokens, along with their syntactic information, in the input document.
      * </pre>
      *
      * <code>repeated .google.cloud.language.v1beta2.Token tokens = 2;</code>
      */
-    public com.google.cloud.language.v1beta2.TokenOrBuilder getTokensOrBuilder(
-        int index) {
+    public com.google.cloud.language.v1beta2.TokenOrBuilder getTokensOrBuilder(int index) {
       if (tokensBuilder_ == null) {
-        return tokens_.get(index);  } else {
+        return tokens_.get(index);
+      } else {
         return tokensBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * Tokens, along with their syntactic information, in the input document.
      * </pre>
      *
      * <code>repeated .google.cloud.language.v1beta2.Token tokens = 2;</code>
      */
-    public java.util.List<? extends com.google.cloud.language.v1beta2.TokenOrBuilder> 
-         getTokensOrBuilderList() {
+    public java.util.List<? extends com.google.cloud.language.v1beta2.TokenOrBuilder>
+        getTokensOrBuilderList() {
       if (tokensBuilder_ != null) {
         return tokensBuilder_.getMessageOrBuilderList();
       } else {
@@ -1241,6 +1378,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Tokens, along with their syntactic information, in the input document.
      * </pre>
@@ -1248,38 +1387,46 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.cloud.language.v1beta2.Token tokens = 2;</code>
      */
     public com.google.cloud.language.v1beta2.Token.Builder addTokensBuilder() {
-      return getTokensFieldBuilder().addBuilder(
-          com.google.cloud.language.v1beta2.Token.getDefaultInstance());
+      return getTokensFieldBuilder()
+          .addBuilder(com.google.cloud.language.v1beta2.Token.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Tokens, along with their syntactic information, in the input document.
      * </pre>
      *
      * <code>repeated .google.cloud.language.v1beta2.Token tokens = 2;</code>
      */
-    public com.google.cloud.language.v1beta2.Token.Builder addTokensBuilder(
-        int index) {
-      return getTokensFieldBuilder().addBuilder(
-          index, com.google.cloud.language.v1beta2.Token.getDefaultInstance());
+    public com.google.cloud.language.v1beta2.Token.Builder addTokensBuilder(int index) {
+      return getTokensFieldBuilder()
+          .addBuilder(index, com.google.cloud.language.v1beta2.Token.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Tokens, along with their syntactic information, in the input document.
      * </pre>
      *
      * <code>repeated .google.cloud.language.v1beta2.Token tokens = 2;</code>
      */
-    public java.util.List<com.google.cloud.language.v1beta2.Token.Builder> 
-         getTokensBuilderList() {
+    public java.util.List<com.google.cloud.language.v1beta2.Token.Builder> getTokensBuilderList() {
       return getTokensFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.language.v1beta2.Token, com.google.cloud.language.v1beta2.Token.Builder, com.google.cloud.language.v1beta2.TokenOrBuilder> 
+            com.google.cloud.language.v1beta2.Token,
+            com.google.cloud.language.v1beta2.Token.Builder,
+            com.google.cloud.language.v1beta2.TokenOrBuilder>
         getTokensFieldBuilder() {
       if (tokensBuilder_ == null) {
-        tokensBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.cloud.language.v1beta2.Token, com.google.cloud.language.v1beta2.Token.Builder, com.google.cloud.language.v1beta2.TokenOrBuilder>(
+        tokensBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.language.v1beta2.Token,
+                com.google.cloud.language.v1beta2.Token.Builder,
+                com.google.cloud.language.v1beta2.TokenOrBuilder>(
                 tokens_,
                 ((bitField0_ & 0x00000002) == 0x00000002),
                 getParentForChildren(),
@@ -1291,6 +1438,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object language_ = "";
     /**
+     *
+     *
      * <pre>
      * The language of the text, which will be the same as the language specified
      * in the request or, if not specified, the automatically-detected language.
@@ -1302,8 +1451,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getLanguage() {
       java.lang.Object ref = language_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         language_ = s;
         return s;
@@ -1312,6 +1460,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The language of the text, which will be the same as the language specified
      * in the request or, if not specified, the automatically-detected language.
@@ -1320,13 +1470,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string language = 3;</code>
      */
-    public com.google.protobuf.ByteString
-        getLanguageBytes() {
+    public com.google.protobuf.ByteString getLanguageBytes() {
       java.lang.Object ref = language_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         language_ = b;
         return b;
       } else {
@@ -1334,6 +1482,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The language of the text, which will be the same as the language specified
      * in the request or, if not specified, the automatically-detected language.
@@ -1342,17 +1492,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string language = 3;</code>
      */
-    public Builder setLanguage(
-        java.lang.String value) {
+    public Builder setLanguage(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       language_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The language of the text, which will be the same as the language specified
      * in the request or, if not specified, the automatically-detected language.
@@ -1362,12 +1513,14 @@ private static final long serialVersionUID = 0L;
      * <code>string language = 3;</code>
      */
     public Builder clearLanguage() {
-      
+
       language_ = getDefaultInstance().getLanguage();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The language of the text, which will be the same as the language specified
      * in the request or, if not specified, the automatically-detected language.
@@ -1376,33 +1529,34 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string language = 3;</code>
      */
-    public Builder setLanguageBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setLanguageBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       language_ = value;
       onChanged();
       return this;
     }
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+
+    @java.lang.Override
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
     }
-
 
     // @@protoc_insertion_point(builder_scope:google.cloud.language.v1beta2.AnalyzeSyntaxResponse)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.language.v1beta2.AnalyzeSyntaxResponse)
   private static final com.google.cloud.language.v1beta2.AnalyzeSyntaxResponse DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.language.v1beta2.AnalyzeSyntaxResponse();
   }
@@ -1411,15 +1565,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<AnalyzeSyntaxResponse>
-      PARSER = new com.google.protobuf.AbstractParser<AnalyzeSyntaxResponse>() {
-    public AnalyzeSyntaxResponse parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-        return new AnalyzeSyntaxResponse(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<AnalyzeSyntaxResponse> PARSER =
+      new com.google.protobuf.AbstractParser<AnalyzeSyntaxResponse>() {
+        @java.lang.Override
+        public AnalyzeSyntaxResponse parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new AnalyzeSyntaxResponse(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<AnalyzeSyntaxResponse> parser() {
     return PARSER;
@@ -1430,9 +1585,8 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.cloud.language.v1beta2.AnalyzeSyntaxResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

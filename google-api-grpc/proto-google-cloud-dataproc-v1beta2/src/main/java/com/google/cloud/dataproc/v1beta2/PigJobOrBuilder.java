@@ -3,11 +3,14 @@
 
 package com.google.cloud.dataproc.v1beta2;
 
-public interface PigJobOrBuilder extends
+public interface PigJobOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dataproc.v1beta2.PigJob)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The HCFS URI of the script that contains the Pig queries.
    * </pre>
@@ -16,16 +19,19 @@ public interface PigJobOrBuilder extends
    */
   java.lang.String getQueryFileUri();
   /**
+   *
+   *
    * <pre>
    * The HCFS URI of the script that contains the Pig queries.
    * </pre>
    *
    * <code>string query_file_uri = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getQueryFileUriBytes();
+  com.google.protobuf.ByteString getQueryFileUriBytes();
 
   /**
+   *
+   *
    * <pre>
    * A list of queries.
    * </pre>
@@ -34,6 +40,8 @@ public interface PigJobOrBuilder extends
    */
   boolean hasQueryList();
   /**
+   *
+   *
    * <pre>
    * A list of queries.
    * </pre>
@@ -42,6 +50,8 @@ public interface PigJobOrBuilder extends
    */
   com.google.cloud.dataproc.v1beta2.QueryList getQueryList();
   /**
+   *
+   *
    * <pre>
    * A list of queries.
    * </pre>
@@ -51,6 +61,8 @@ public interface PigJobOrBuilder extends
   com.google.cloud.dataproc.v1beta2.QueryListOrBuilder getQueryListOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Optional. Whether to continue executing queries if a query fails.
    * The default value is `false`. Setting to `true` can be useful when executing
@@ -62,6 +74,8 @@ public interface PigJobOrBuilder extends
   boolean getContinueOnFailure();
 
   /**
+   *
+   *
    * <pre>
    * Optional. Mapping of query variable names to values (equivalent to the Pig
    * command: `name=[value]`).
@@ -71,6 +85,8 @@ public interface PigJobOrBuilder extends
    */
   int getScriptVariablesCount();
   /**
+   *
+   *
    * <pre>
    * Optional. Mapping of query variable names to values (equivalent to the Pig
    * command: `name=[value]`).
@@ -78,15 +94,13 @@ public interface PigJobOrBuilder extends
    *
    * <code>map&lt;string, string&gt; script_variables = 4;</code>
    */
-  boolean containsScriptVariables(
-      java.lang.String key);
-  /**
-   * Use {@link #getScriptVariablesMap()} instead.
-   */
+  boolean containsScriptVariables(java.lang.String key);
+  /** Use {@link #getScriptVariablesMap()} instead. */
   @java.lang.Deprecated
-  java.util.Map<java.lang.String, java.lang.String>
-  getScriptVariables();
+  java.util.Map<java.lang.String, java.lang.String> getScriptVariables();
   /**
+   *
+   *
    * <pre>
    * Optional. Mapping of query variable names to values (equivalent to the Pig
    * command: `name=[value]`).
@@ -94,9 +108,10 @@ public interface PigJobOrBuilder extends
    *
    * <code>map&lt;string, string&gt; script_variables = 4;</code>
    */
-  java.util.Map<java.lang.String, java.lang.String>
-  getScriptVariablesMap();
+  java.util.Map<java.lang.String, java.lang.String> getScriptVariablesMap();
   /**
+   *
+   *
    * <pre>
    * Optional. Mapping of query variable names to values (equivalent to the Pig
    * command: `name=[value]`).
@@ -104,11 +119,10 @@ public interface PigJobOrBuilder extends
    *
    * <code>map&lt;string, string&gt; script_variables = 4;</code>
    */
-
-  java.lang.String getScriptVariablesOrDefault(
-      java.lang.String key,
-      java.lang.String defaultValue);
+  java.lang.String getScriptVariablesOrDefault(java.lang.String key, java.lang.String defaultValue);
   /**
+   *
+   *
    * <pre>
    * Optional. Mapping of query variable names to values (equivalent to the Pig
    * command: `name=[value]`).
@@ -116,11 +130,11 @@ public interface PigJobOrBuilder extends
    *
    * <code>map&lt;string, string&gt; script_variables = 4;</code>
    */
-
-  java.lang.String getScriptVariablesOrThrow(
-      java.lang.String key);
+  java.lang.String getScriptVariablesOrThrow(java.lang.String key);
 
   /**
+   *
+   *
    * <pre>
    * Optional. A mapping of property names to values, used to configure Pig.
    * Properties that conflict with values set by the Cloud Dataproc API may be
@@ -132,6 +146,8 @@ public interface PigJobOrBuilder extends
    */
   int getPropertiesCount();
   /**
+   *
+   *
    * <pre>
    * Optional. A mapping of property names to values, used to configure Pig.
    * Properties that conflict with values set by the Cloud Dataproc API may be
@@ -141,15 +157,13 @@ public interface PigJobOrBuilder extends
    *
    * <code>map&lt;string, string&gt; properties = 5;</code>
    */
-  boolean containsProperties(
-      java.lang.String key);
-  /**
-   * Use {@link #getPropertiesMap()} instead.
-   */
+  boolean containsProperties(java.lang.String key);
+  /** Use {@link #getPropertiesMap()} instead. */
   @java.lang.Deprecated
-  java.util.Map<java.lang.String, java.lang.String>
-  getProperties();
+  java.util.Map<java.lang.String, java.lang.String> getProperties();
   /**
+   *
+   *
    * <pre>
    * Optional. A mapping of property names to values, used to configure Pig.
    * Properties that conflict with values set by the Cloud Dataproc API may be
@@ -159,9 +173,10 @@ public interface PigJobOrBuilder extends
    *
    * <code>map&lt;string, string&gt; properties = 5;</code>
    */
-  java.util.Map<java.lang.String, java.lang.String>
-  getPropertiesMap();
+  java.util.Map<java.lang.String, java.lang.String> getPropertiesMap();
   /**
+   *
+   *
    * <pre>
    * Optional. A mapping of property names to values, used to configure Pig.
    * Properties that conflict with values set by the Cloud Dataproc API may be
@@ -171,11 +186,10 @@ public interface PigJobOrBuilder extends
    *
    * <code>map&lt;string, string&gt; properties = 5;</code>
    */
-
-  java.lang.String getPropertiesOrDefault(
-      java.lang.String key,
-      java.lang.String defaultValue);
+  java.lang.String getPropertiesOrDefault(java.lang.String key, java.lang.String defaultValue);
   /**
+   *
+   *
    * <pre>
    * Optional. A mapping of property names to values, used to configure Pig.
    * Properties that conflict with values set by the Cloud Dataproc API may be
@@ -185,11 +199,11 @@ public interface PigJobOrBuilder extends
    *
    * <code>map&lt;string, string&gt; properties = 5;</code>
    */
-
-  java.lang.String getPropertiesOrThrow(
-      java.lang.String key);
+  java.lang.String getPropertiesOrThrow(java.lang.String key);
 
   /**
+   *
+   *
    * <pre>
    * Optional. HCFS URIs of jar files to add to the CLASSPATH of
    * the Pig Client and Hadoop MapReduce (MR) tasks. Can contain Pig UDFs.
@@ -197,9 +211,10 @@ public interface PigJobOrBuilder extends
    *
    * <code>repeated string jar_file_uris = 6;</code>
    */
-  java.util.List<java.lang.String>
-      getJarFileUrisList();
+  java.util.List<java.lang.String> getJarFileUrisList();
   /**
+   *
+   *
    * <pre>
    * Optional. HCFS URIs of jar files to add to the CLASSPATH of
    * the Pig Client and Hadoop MapReduce (MR) tasks. Can contain Pig UDFs.
@@ -209,6 +224,8 @@ public interface PigJobOrBuilder extends
    */
   int getJarFileUrisCount();
   /**
+   *
+   *
    * <pre>
    * Optional. HCFS URIs of jar files to add to the CLASSPATH of
    * the Pig Client and Hadoop MapReduce (MR) tasks. Can contain Pig UDFs.
@@ -218,6 +235,8 @@ public interface PigJobOrBuilder extends
    */
   java.lang.String getJarFileUris(int index);
   /**
+   *
+   *
    * <pre>
    * Optional. HCFS URIs of jar files to add to the CLASSPATH of
    * the Pig Client and Hadoop MapReduce (MR) tasks. Can contain Pig UDFs.
@@ -225,10 +244,11 @@ public interface PigJobOrBuilder extends
    *
    * <code>repeated string jar_file_uris = 6;</code>
    */
-  com.google.protobuf.ByteString
-      getJarFileUrisBytes(int index);
+  com.google.protobuf.ByteString getJarFileUrisBytes(int index);
 
   /**
+   *
+   *
    * <pre>
    * Optional. The runtime log config for job execution.
    * </pre>
@@ -237,6 +257,8 @@ public interface PigJobOrBuilder extends
    */
   boolean hasLoggingConfig();
   /**
+   *
+   *
    * <pre>
    * Optional. The runtime log config for job execution.
    * </pre>
@@ -245,6 +267,8 @@ public interface PigJobOrBuilder extends
    */
   com.google.cloud.dataproc.v1beta2.LoggingConfig getLoggingConfig();
   /**
+   *
+   *
    * <pre>
    * Optional. The runtime log config for job execution.
    * </pre>

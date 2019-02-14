@@ -18,27 +18,18 @@ package com.google.cloud.storage.spi.v1;
 
 import com.google.api.client.googleapis.json.GoogleJsonError;
 import com.google.api.services.storage.model.StorageObject;
-
 import java.util.Map;
 
-/**
- * An interface for the collection of batch operations.
- */
+/** An interface for the collection of batch operations. */
 public interface RpcBatch {
 
-  /**
-   * An interface for batch callbacks.
-   */
+  /** An interface for batch callbacks. */
   interface Callback<T> {
 
-    /**
-     * This method will be called upon success of the batch operation.
-     */
+    /** This method will be called upon success of the batch operation. */
     void onSuccess(T response);
 
-    /**
-     * This method will be called upon failure of the batch operation.
-     */
+    /** This method will be called upon failure of the batch operation. */
     void onFailure(GoogleJsonError googleJsonError);
   }
 
@@ -46,25 +37,27 @@ public interface RpcBatch {
    * Adds a call to "delete storage object" to the batch, with the provided {@code callback} and
    * {@code options}.
    */
-  void addDelete(StorageObject storageObject, Callback<Void> callback,
-      Map<StorageRpc.Option, ?> options);
+  void addDelete(
+      StorageObject storageObject, Callback<Void> callback, Map<StorageRpc.Option, ?> options);
 
   /**
    * Adds a call to "patch storage object" to the batch, with the provided {@code callback} and
    * {@code options}.
    */
-  void addPatch(StorageObject storageObject, Callback<StorageObject> callback,
+  void addPatch(
+      StorageObject storageObject,
+      Callback<StorageObject> callback,
       Map<StorageRpc.Option, ?> options);
 
   /**
-   * Adds a call to "get storage object" to the batch, with the provided {@code callback} and
-   * {@code options}.
+   * Adds a call to "get storage object" to the batch, with the provided {@code callback} and {@code
+   * options}.
    */
-  void addGet(StorageObject storageObject, Callback<StorageObject> callback,
+  void addGet(
+      StorageObject storageObject,
+      Callback<StorageObject> callback,
       Map<StorageRpc.Option, ?> options);
 
-  /**
-   * Submits a batch of requests for processing using a single RPC request to Cloud Storage.
-   */
+  /** Submits a batch of requests for processing using a single RPC request to Cloud Storage. */
   void submit();
 }

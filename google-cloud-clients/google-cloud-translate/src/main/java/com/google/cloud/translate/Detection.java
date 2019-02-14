@@ -18,7 +18,6 @@ package com.google.cloud.translate;
 
 import com.google.api.services.translate.model.DetectionsResourceItems;
 import com.google.common.base.MoreObjects;
-
 import java.io.Serializable;
 import java.util.Objects;
 
@@ -41,7 +40,6 @@ public class Detection implements Serializable {
     this.confidence = confidence;
   }
 
-
   /**
    * Returns the code of the detected language.
    *
@@ -51,7 +49,6 @@ public class Detection implements Serializable {
   public String getLanguage() {
     return language;
   }
-
 
   /**
    * Returns an optional confidence value in the interval [0,1]. The closer this value is to 1, the
@@ -84,8 +81,7 @@ public class Detection implements Serializable {
       return false;
     }
     Detection other = (Detection) obj;
-    return Objects.equals(language, other.language)
-        && Objects.equals(confidence, other.confidence);
+    return Objects.equals(language, other.language) && Objects.equals(confidence, other.confidence);
   }
 
   static Detection fromPb(DetectionsResourceItems detectionPb) {

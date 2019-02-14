@@ -4,21 +4,24 @@
 package com.google.cloud.automl.v1beta1;
 
 /**
+ *
+ *
  * <pre>
  * API proto representing a trained machine learning model.
  * </pre>
  *
  * Protobuf type {@code google.cloud.automl.v1beta1.Model}
  */
-public  final class Model extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class Model extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.automl.v1beta1.Model)
     ModelOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use Model.newBuilder() to construct.
   private Model(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private Model() {
     name_ = "";
     displayName_ = "";
@@ -27,15 +30,18 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private Model(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -47,139 +53,177 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            name_ = s;
-            break;
-          }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
+              name_ = s;
+              break;
+            }
+          case 18:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            displayName_ = s;
-            break;
-          }
-          case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
+              displayName_ = s;
+              break;
+            }
+          case 26:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            datasetId_ = s;
-            break;
-          }
-          case 58: {
-            com.google.protobuf.Timestamp.Builder subBuilder = null;
-            if (createTime_ != null) {
-              subBuilder = createTime_.toBuilder();
+              datasetId_ = s;
+              break;
             }
-            createTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(createTime_);
-              createTime_ = subBuilder.buildPartial();
-            }
+          case 58:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (createTime_ != null) {
+                subBuilder = createTime_.toBuilder();
+              }
+              createTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(createTime_);
+                createTime_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 64: {
-            int rawValue = input.readEnum();
+              break;
+            }
+          case 64:
+            {
+              int rawValue = input.readEnum();
 
-            deploymentState_ = rawValue;
-            break;
-          }
-          case 90: {
-            com.google.protobuf.Timestamp.Builder subBuilder = null;
-            if (updateTime_ != null) {
-              subBuilder = updateTime_.toBuilder();
+              deploymentState_ = rawValue;
+              break;
             }
-            updateTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(updateTime_);
-              updateTime_ = subBuilder.buildPartial();
-            }
+          case 90:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (updateTime_ != null) {
+                subBuilder = updateTime_.toBuilder();
+              }
+              updateTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(updateTime_);
+                updateTime_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 106: {
-            com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata.Builder subBuilder = null;
-            if (modelMetadataCase_ == 13) {
-              subBuilder = ((com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata) modelMetadata_).toBuilder();
+              break;
             }
-            modelMetadata_ =
-                input.readMessage(com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata) modelMetadata_);
-              modelMetadata_ = subBuilder.buildPartial();
+          case 106:
+            {
+              com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata.Builder subBuilder =
+                  null;
+              if (modelMetadataCase_ == 13) {
+                subBuilder =
+                    ((com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata)
+                            modelMetadata_)
+                        .toBuilder();
+              }
+              modelMetadata_ =
+                  input.readMessage(
+                      com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata)
+                        modelMetadata_);
+                modelMetadata_ = subBuilder.buildPartial();
+              }
+              modelMetadataCase_ = 13;
+              break;
             }
-            modelMetadataCase_ = 13;
-            break;
-          }
-          case 114: {
-            com.google.cloud.automl.v1beta1.TextClassificationModelMetadata.Builder subBuilder = null;
-            if (modelMetadataCase_ == 14) {
-              subBuilder = ((com.google.cloud.automl.v1beta1.TextClassificationModelMetadata) modelMetadata_).toBuilder();
+          case 114:
+            {
+              com.google.cloud.automl.v1beta1.TextClassificationModelMetadata.Builder subBuilder =
+                  null;
+              if (modelMetadataCase_ == 14) {
+                subBuilder =
+                    ((com.google.cloud.automl.v1beta1.TextClassificationModelMetadata)
+                            modelMetadata_)
+                        .toBuilder();
+              }
+              modelMetadata_ =
+                  input.readMessage(
+                      com.google.cloud.automl.v1beta1.TextClassificationModelMetadata.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.automl.v1beta1.TextClassificationModelMetadata)
+                        modelMetadata_);
+                modelMetadata_ = subBuilder.buildPartial();
+              }
+              modelMetadataCase_ = 14;
+              break;
             }
-            modelMetadata_ =
-                input.readMessage(com.google.cloud.automl.v1beta1.TextClassificationModelMetadata.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.google.cloud.automl.v1beta1.TextClassificationModelMetadata) modelMetadata_);
-              modelMetadata_ = subBuilder.buildPartial();
+          case 122:
+            {
+              com.google.cloud.automl.v1beta1.TranslationModelMetadata.Builder subBuilder = null;
+              if (modelMetadataCase_ == 15) {
+                subBuilder =
+                    ((com.google.cloud.automl.v1beta1.TranslationModelMetadata) modelMetadata_)
+                        .toBuilder();
+              }
+              modelMetadata_ =
+                  input.readMessage(
+                      com.google.cloud.automl.v1beta1.TranslationModelMetadata.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.automl.v1beta1.TranslationModelMetadata) modelMetadata_);
+                modelMetadata_ = subBuilder.buildPartial();
+              }
+              modelMetadataCase_ = 15;
+              break;
             }
-            modelMetadataCase_ = 14;
-            break;
-          }
-          case 122: {
-            com.google.cloud.automl.v1beta1.TranslationModelMetadata.Builder subBuilder = null;
-            if (modelMetadataCase_ == 15) {
-              subBuilder = ((com.google.cloud.automl.v1beta1.TranslationModelMetadata) modelMetadata_).toBuilder();
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
             }
-            modelMetadata_ =
-                input.readMessage(com.google.cloud.automl.v1beta1.TranslationModelMetadata.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.google.cloud.automl.v1beta1.TranslationModelMetadata) modelMetadata_);
-              modelMetadata_ = subBuilder.buildPartial();
-            }
-            modelMetadataCase_ = 15;
-            break;
-          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.automl.v1beta1.ModelOuterClass.internal_static_google_cloud_automl_v1beta1_Model_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.automl.v1beta1.ModelOuterClass
+        .internal_static_google_cloud_automl_v1beta1_Model_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.automl.v1beta1.ModelOuterClass.internal_static_google_cloud_automl_v1beta1_Model_fieldAccessorTable
+    return com.google.cloud.automl.v1beta1.ModelOuterClass
+        .internal_static_google_cloud_automl_v1beta1_Model_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.automl.v1beta1.Model.class, com.google.cloud.automl.v1beta1.Model.Builder.class);
+            com.google.cloud.automl.v1beta1.Model.class,
+            com.google.cloud.automl.v1beta1.Model.Builder.class);
   }
 
   /**
+   *
+   *
    * <pre>
    * Deployment state of the model.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.automl.v1beta1.Model.DeploymentState}
    */
-  public enum DeploymentState
-      implements com.google.protobuf.ProtocolMessageEnum {
+  public enum DeploymentState implements com.google.protobuf.ProtocolMessageEnum {
     /**
+     *
+     *
      * <pre>
      * Should not be used, an un-set enum has this value by default.
      * </pre>
@@ -188,6 +232,8 @@ private static final long serialVersionUID = 0L;
      */
     DEPLOYMENT_STATE_UNSPECIFIED(0),
     /**
+     *
+     *
      * <pre>
      * Model is deployed.
      * </pre>
@@ -196,6 +242,8 @@ private static final long serialVersionUID = 0L;
      */
     DEPLOYED(1),
     /**
+     *
+     *
      * <pre>
      * Model is not deployed.
      * </pre>
@@ -207,6 +255,8 @@ private static final long serialVersionUID = 0L;
     ;
 
     /**
+     *
+     *
      * <pre>
      * Should not be used, an un-set enum has this value by default.
      * </pre>
@@ -215,6 +265,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int DEPLOYMENT_STATE_UNSPECIFIED_VALUE = 0;
     /**
+     *
+     *
      * <pre>
      * Model is deployed.
      * </pre>
@@ -223,6 +275,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int DEPLOYED_VALUE = 1;
     /**
+     *
+     *
      * <pre>
      * Model is not deployed.
      * </pre>
@@ -230,7 +284,6 @@ private static final long serialVersionUID = 0L;
      * <code>UNDEPLOYED = 2;</code>
      */
     public static final int UNDEPLOYED_VALUE = 2;
-
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -240,9 +293,7 @@ private static final long serialVersionUID = 0L;
       return value;
     }
 
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static DeploymentState valueOf(int value) {
       return forNumber(value);
@@ -250,35 +301,38 @@ private static final long serialVersionUID = 0L;
 
     public static DeploymentState forNumber(int value) {
       switch (value) {
-        case 0: return DEPLOYMENT_STATE_UNSPECIFIED;
-        case 1: return DEPLOYED;
-        case 2: return UNDEPLOYED;
-        default: return null;
+        case 0:
+          return DEPLOYMENT_STATE_UNSPECIFIED;
+        case 1:
+          return DEPLOYED;
+        case 2:
+          return UNDEPLOYED;
+        default:
+          return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<DeploymentState>
-        internalGetValueMap() {
+    public static com.google.protobuf.Internal.EnumLiteMap<DeploymentState> internalGetValueMap() {
       return internalValueMap;
     }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        DeploymentState> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<DeploymentState>() {
-            public DeploymentState findValueByNumber(int number) {
-              return DeploymentState.forNumber(number);
-            }
-          };
 
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
+    private static final com.google.protobuf.Internal.EnumLiteMap<DeploymentState>
+        internalValueMap =
+            new com.google.protobuf.Internal.EnumLiteMap<DeploymentState>() {
+              public DeploymentState findValueByNumber(int number) {
+                return DeploymentState.forNumber(number);
+              }
+            };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
       return getDescriptor().getValues().get(ordinal());
     }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
       return getDescriptor();
     }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
       return com.google.cloud.automl.v1beta1.Model.getDescriptor().getEnumTypes().get(0);
     }
 
@@ -287,8 +341,7 @@ private static final long serialVersionUID = 0L;
     public static DeploymentState valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
         return UNRECOGNIZED;
@@ -307,19 +360,18 @@ private static final long serialVersionUID = 0L;
 
   private int modelMetadataCase_ = 0;
   private java.lang.Object modelMetadata_;
-  public enum ModelMetadataCase
-      implements com.google.protobuf.Internal.EnumLite {
+
+  public enum ModelMetadataCase implements com.google.protobuf.Internal.EnumLite {
     IMAGE_CLASSIFICATION_MODEL_METADATA(13),
     TEXT_CLASSIFICATION_MODEL_METADATA(14),
     TRANSLATION_MODEL_METADATA(15),
     MODELMETADATA_NOT_SET(0);
     private final int value;
+
     private ModelMetadataCase(int value) {
       this.value = value;
     }
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static ModelMetadataCase valueOf(int value) {
       return forNumber(value);
@@ -327,134 +379,176 @@ private static final long serialVersionUID = 0L;
 
     public static ModelMetadataCase forNumber(int value) {
       switch (value) {
-        case 13: return IMAGE_CLASSIFICATION_MODEL_METADATA;
-        case 14: return TEXT_CLASSIFICATION_MODEL_METADATA;
-        case 15: return TRANSLATION_MODEL_METADATA;
-        case 0: return MODELMETADATA_NOT_SET;
-        default: return null;
+        case 13:
+          return IMAGE_CLASSIFICATION_MODEL_METADATA;
+        case 14:
+          return TEXT_CLASSIFICATION_MODEL_METADATA;
+        case 15:
+          return TRANSLATION_MODEL_METADATA;
+        case 0:
+          return MODELMETADATA_NOT_SET;
+        default:
+          return null;
       }
     }
+
     public int getNumber() {
       return this.value;
     }
   };
 
-  public ModelMetadataCase
-  getModelMetadataCase() {
-    return ModelMetadataCase.forNumber(
-        modelMetadataCase_);
+  public ModelMetadataCase getModelMetadataCase() {
+    return ModelMetadataCase.forNumber(modelMetadataCase_);
   }
 
   public static final int IMAGE_CLASSIFICATION_MODEL_METADATA_FIELD_NUMBER = 13;
   /**
+   *
+   *
    * <pre>
    * Metadata for image classification models.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1beta1.ImageClassificationModelMetadata image_classification_model_metadata = 13;</code>
+   * <code>
+   * .google.cloud.automl.v1beta1.ImageClassificationModelMetadata image_classification_model_metadata = 13;
+   * </code>
    */
   public boolean hasImageClassificationModelMetadata() {
     return modelMetadataCase_ == 13;
   }
   /**
+   *
+   *
    * <pre>
    * Metadata for image classification models.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1beta1.ImageClassificationModelMetadata image_classification_model_metadata = 13;</code>
+   * <code>
+   * .google.cloud.automl.v1beta1.ImageClassificationModelMetadata image_classification_model_metadata = 13;
+   * </code>
    */
-  public com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata getImageClassificationModelMetadata() {
+  public com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata
+      getImageClassificationModelMetadata() {
     if (modelMetadataCase_ == 13) {
-       return (com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata) modelMetadata_;
+      return (com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata) modelMetadata_;
     }
     return com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata.getDefaultInstance();
   }
   /**
+   *
+   *
    * <pre>
    * Metadata for image classification models.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1beta1.ImageClassificationModelMetadata image_classification_model_metadata = 13;</code>
+   * <code>
+   * .google.cloud.automl.v1beta1.ImageClassificationModelMetadata image_classification_model_metadata = 13;
+   * </code>
    */
-  public com.google.cloud.automl.v1beta1.ImageClassificationModelMetadataOrBuilder getImageClassificationModelMetadataOrBuilder() {
+  public com.google.cloud.automl.v1beta1.ImageClassificationModelMetadataOrBuilder
+      getImageClassificationModelMetadataOrBuilder() {
     if (modelMetadataCase_ == 13) {
-       return (com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata) modelMetadata_;
+      return (com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata) modelMetadata_;
     }
     return com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata.getDefaultInstance();
   }
 
   public static final int TEXT_CLASSIFICATION_MODEL_METADATA_FIELD_NUMBER = 14;
   /**
+   *
+   *
    * <pre>
    * Metadata for text classification models.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1beta1.TextClassificationModelMetadata text_classification_model_metadata = 14;</code>
+   * <code>
+   * .google.cloud.automl.v1beta1.TextClassificationModelMetadata text_classification_model_metadata = 14;
+   * </code>
    */
   public boolean hasTextClassificationModelMetadata() {
     return modelMetadataCase_ == 14;
   }
   /**
+   *
+   *
    * <pre>
    * Metadata for text classification models.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1beta1.TextClassificationModelMetadata text_classification_model_metadata = 14;</code>
+   * <code>
+   * .google.cloud.automl.v1beta1.TextClassificationModelMetadata text_classification_model_metadata = 14;
+   * </code>
    */
-  public com.google.cloud.automl.v1beta1.TextClassificationModelMetadata getTextClassificationModelMetadata() {
+  public com.google.cloud.automl.v1beta1.TextClassificationModelMetadata
+      getTextClassificationModelMetadata() {
     if (modelMetadataCase_ == 14) {
-       return (com.google.cloud.automl.v1beta1.TextClassificationModelMetadata) modelMetadata_;
+      return (com.google.cloud.automl.v1beta1.TextClassificationModelMetadata) modelMetadata_;
     }
     return com.google.cloud.automl.v1beta1.TextClassificationModelMetadata.getDefaultInstance();
   }
   /**
+   *
+   *
    * <pre>
    * Metadata for text classification models.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1beta1.TextClassificationModelMetadata text_classification_model_metadata = 14;</code>
+   * <code>
+   * .google.cloud.automl.v1beta1.TextClassificationModelMetadata text_classification_model_metadata = 14;
+   * </code>
    */
-  public com.google.cloud.automl.v1beta1.TextClassificationModelMetadataOrBuilder getTextClassificationModelMetadataOrBuilder() {
+  public com.google.cloud.automl.v1beta1.TextClassificationModelMetadataOrBuilder
+      getTextClassificationModelMetadataOrBuilder() {
     if (modelMetadataCase_ == 14) {
-       return (com.google.cloud.automl.v1beta1.TextClassificationModelMetadata) modelMetadata_;
+      return (com.google.cloud.automl.v1beta1.TextClassificationModelMetadata) modelMetadata_;
     }
     return com.google.cloud.automl.v1beta1.TextClassificationModelMetadata.getDefaultInstance();
   }
 
   public static final int TRANSLATION_MODEL_METADATA_FIELD_NUMBER = 15;
   /**
+   *
+   *
    * <pre>
    * Metadata for translation models.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1beta1.TranslationModelMetadata translation_model_metadata = 15;</code>
+   * <code>.google.cloud.automl.v1beta1.TranslationModelMetadata translation_model_metadata = 15;
+   * </code>
    */
   public boolean hasTranslationModelMetadata() {
     return modelMetadataCase_ == 15;
   }
   /**
+   *
+   *
    * <pre>
    * Metadata for translation models.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1beta1.TranslationModelMetadata translation_model_metadata = 15;</code>
+   * <code>.google.cloud.automl.v1beta1.TranslationModelMetadata translation_model_metadata = 15;
+   * </code>
    */
   public com.google.cloud.automl.v1beta1.TranslationModelMetadata getTranslationModelMetadata() {
     if (modelMetadataCase_ == 15) {
-       return (com.google.cloud.automl.v1beta1.TranslationModelMetadata) modelMetadata_;
+      return (com.google.cloud.automl.v1beta1.TranslationModelMetadata) modelMetadata_;
     }
     return com.google.cloud.automl.v1beta1.TranslationModelMetadata.getDefaultInstance();
   }
   /**
+   *
+   *
    * <pre>
    * Metadata for translation models.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1beta1.TranslationModelMetadata translation_model_metadata = 15;</code>
+   * <code>.google.cloud.automl.v1beta1.TranslationModelMetadata translation_model_metadata = 15;
+   * </code>
    */
-  public com.google.cloud.automl.v1beta1.TranslationModelMetadataOrBuilder getTranslationModelMetadataOrBuilder() {
+  public com.google.cloud.automl.v1beta1.TranslationModelMetadataOrBuilder
+      getTranslationModelMetadataOrBuilder() {
     if (modelMetadataCase_ == 15) {
-       return (com.google.cloud.automl.v1beta1.TranslationModelMetadata) modelMetadata_;
+      return (com.google.cloud.automl.v1beta1.TranslationModelMetadata) modelMetadata_;
     }
     return com.google.cloud.automl.v1beta1.TranslationModelMetadata.getDefaultInstance();
   }
@@ -462,6 +556,8 @@ private static final long serialVersionUID = 0L;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
+   *
+   *
    * <pre>
    * Output only.
    * Resource name of the model.
@@ -475,14 +571,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       name_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Output only.
    * Resource name of the model.
@@ -491,13 +588,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string name = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getNameBytes() {
+  public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       name_ = b;
       return b;
     } else {
@@ -508,6 +603,8 @@ private static final long serialVersionUID = 0L;
   public static final int DISPLAY_NAME_FIELD_NUMBER = 2;
   private volatile java.lang.Object displayName_;
   /**
+   *
+   *
    * <pre>
    * Required. The name of the model to show in the interface. The name can be
    * up to 32 characters
@@ -522,14 +619,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       displayName_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Required. The name of the model to show in the interface. The name can be
    * up to 32 characters
@@ -539,13 +637,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string display_name = 2;</code>
    */
-  public com.google.protobuf.ByteString
-      getDisplayNameBytes() {
+  public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       displayName_ = b;
       return b;
     } else {
@@ -556,6 +652,8 @@ private static final long serialVersionUID = 0L;
   public static final int DATASET_ID_FIELD_NUMBER = 3;
   private volatile java.lang.Object datasetId_;
   /**
+   *
+   *
    * <pre>
    * Required.
    * The resource ID of the dataset used to create the model. The dataset must
@@ -570,14 +668,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       datasetId_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Required.
    * The resource ID of the dataset used to create the model. The dataset must
@@ -587,13 +686,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string dataset_id = 3;</code>
    */
-  public com.google.protobuf.ByteString
-      getDatasetIdBytes() {
+  public com.google.protobuf.ByteString getDatasetIdBytes() {
     java.lang.Object ref = datasetId_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       datasetId_ = b;
       return b;
     } else {
@@ -604,6 +701,8 @@ private static final long serialVersionUID = 0L;
   public static final int CREATE_TIME_FIELD_NUMBER = 7;
   private com.google.protobuf.Timestamp createTime_;
   /**
+   *
+   *
    * <pre>
    * Output only.
    * Timestamp when this model was created.
@@ -615,6 +714,8 @@ private static final long serialVersionUID = 0L;
     return createTime_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Output only.
    * Timestamp when this model was created.
@@ -626,6 +727,8 @@ private static final long serialVersionUID = 0L;
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
   /**
+   *
+   *
    * <pre>
    * Output only.
    * Timestamp when this model was created.
@@ -640,6 +743,8 @@ private static final long serialVersionUID = 0L;
   public static final int UPDATE_TIME_FIELD_NUMBER = 11;
   private com.google.protobuf.Timestamp updateTime_;
   /**
+   *
+   *
    * <pre>
    * Output only.
    * Timestamp when this model was last updated.
@@ -651,6 +756,8 @@ private static final long serialVersionUID = 0L;
     return updateTime_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Output only.
    * Timestamp when this model was last updated.
@@ -662,6 +769,8 @@ private static final long serialVersionUID = 0L;
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
   /**
+   *
+   *
    * <pre>
    * Output only.
    * Timestamp when this model was last updated.
@@ -676,6 +785,8 @@ private static final long serialVersionUID = 0L;
   public static final int DEPLOYMENT_STATE_FIELD_NUMBER = 8;
   private int deploymentState_;
   /**
+   *
+   *
    * <pre>
    * Output only. Deployment state of the model.
    * </pre>
@@ -686,6 +797,8 @@ private static final long serialVersionUID = 0L;
     return deploymentState_;
   }
   /**
+   *
+   *
    * <pre>
    * Output only. Deployment state of the model.
    * </pre>
@@ -693,11 +806,17 @@ private static final long serialVersionUID = 0L;
    * <code>.google.cloud.automl.v1beta1.Model.DeploymentState deployment_state = 8;</code>
    */
   public com.google.cloud.automl.v1beta1.Model.DeploymentState getDeploymentState() {
-    com.google.cloud.automl.v1beta1.Model.DeploymentState result = com.google.cloud.automl.v1beta1.Model.DeploymentState.valueOf(deploymentState_);
-    return result == null ? com.google.cloud.automl.v1beta1.Model.DeploymentState.UNRECOGNIZED : result;
+    @SuppressWarnings("deprecation")
+    com.google.cloud.automl.v1beta1.Model.DeploymentState result =
+        com.google.cloud.automl.v1beta1.Model.DeploymentState.valueOf(deploymentState_);
+    return result == null
+        ? com.google.cloud.automl.v1beta1.Model.DeploymentState.UNRECOGNIZED
+        : result;
   }
 
   private byte memoizedIsInitialized = -1;
+
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -707,8 +826,8 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  @java.lang.Override
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
@@ -721,24 +840,30 @@ private static final long serialVersionUID = 0L;
     if (createTime_ != null) {
       output.writeMessage(7, getCreateTime());
     }
-    if (deploymentState_ != com.google.cloud.automl.v1beta1.Model.DeploymentState.DEPLOYMENT_STATE_UNSPECIFIED.getNumber()) {
+    if (deploymentState_
+        != com.google.cloud.automl.v1beta1.Model.DeploymentState.DEPLOYMENT_STATE_UNSPECIFIED
+            .getNumber()) {
       output.writeEnum(8, deploymentState_);
     }
     if (updateTime_ != null) {
       output.writeMessage(11, getUpdateTime());
     }
     if (modelMetadataCase_ == 13) {
-      output.writeMessage(13, (com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata) modelMetadata_);
+      output.writeMessage(
+          13, (com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata) modelMetadata_);
     }
     if (modelMetadataCase_ == 14) {
-      output.writeMessage(14, (com.google.cloud.automl.v1beta1.TextClassificationModelMetadata) modelMetadata_);
+      output.writeMessage(
+          14, (com.google.cloud.automl.v1beta1.TextClassificationModelMetadata) modelMetadata_);
     }
     if (modelMetadataCase_ == 15) {
-      output.writeMessage(15, (com.google.cloud.automl.v1beta1.TranslationModelMetadata) modelMetadata_);
+      output.writeMessage(
+          15, (com.google.cloud.automl.v1beta1.TranslationModelMetadata) modelMetadata_);
     }
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -754,28 +879,31 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, datasetId_);
     }
     if (createTime_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(7, getCreateTime());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getCreateTime());
     }
-    if (deploymentState_ != com.google.cloud.automl.v1beta1.Model.DeploymentState.DEPLOYMENT_STATE_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(8, deploymentState_);
+    if (deploymentState_
+        != com.google.cloud.automl.v1beta1.Model.DeploymentState.DEPLOYMENT_STATE_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(8, deploymentState_);
     }
     if (updateTime_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(11, getUpdateTime());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getUpdateTime());
     }
     if (modelMetadataCase_ == 13) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(13, (com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata) modelMetadata_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              13,
+              (com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata) modelMetadata_);
     }
     if (modelMetadataCase_ == 14) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(14, (com.google.cloud.automl.v1beta1.TextClassificationModelMetadata) modelMetadata_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              14, (com.google.cloud.automl.v1beta1.TextClassificationModelMetadata) modelMetadata_);
     }
     if (modelMetadataCase_ == 15) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(15, (com.google.cloud.automl.v1beta1.TranslationModelMetadata) modelMetadata_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              15, (com.google.cloud.automl.v1beta1.TranslationModelMetadata) modelMetadata_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -785,7 +913,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.automl.v1beta1.Model)) {
       return super.equals(obj);
@@ -793,38 +921,36 @@ private static final long serialVersionUID = 0L;
     com.google.cloud.automl.v1beta1.Model other = (com.google.cloud.automl.v1beta1.Model) obj;
 
     boolean result = true;
-    result = result && getName()
-        .equals(other.getName());
-    result = result && getDisplayName()
-        .equals(other.getDisplayName());
-    result = result && getDatasetId()
-        .equals(other.getDatasetId());
+    result = result && getName().equals(other.getName());
+    result = result && getDisplayName().equals(other.getDisplayName());
+    result = result && getDatasetId().equals(other.getDatasetId());
     result = result && (hasCreateTime() == other.hasCreateTime());
     if (hasCreateTime()) {
-      result = result && getCreateTime()
-          .equals(other.getCreateTime());
+      result = result && getCreateTime().equals(other.getCreateTime());
     }
     result = result && (hasUpdateTime() == other.hasUpdateTime());
     if (hasUpdateTime()) {
-      result = result && getUpdateTime()
-          .equals(other.getUpdateTime());
+      result = result && getUpdateTime().equals(other.getUpdateTime());
     }
     result = result && deploymentState_ == other.deploymentState_;
-    result = result && getModelMetadataCase().equals(
-        other.getModelMetadataCase());
+    result = result && getModelMetadataCase().equals(other.getModelMetadataCase());
     if (!result) return false;
     switch (modelMetadataCase_) {
       case 13:
-        result = result && getImageClassificationModelMetadata()
-            .equals(other.getImageClassificationModelMetadata());
+        result =
+            result
+                && getImageClassificationModelMetadata()
+                    .equals(other.getImageClassificationModelMetadata());
         break;
       case 14:
-        result = result && getTextClassificationModelMetadata()
-            .equals(other.getTextClassificationModelMetadata());
+        result =
+            result
+                && getTextClassificationModelMetadata()
+                    .equals(other.getTextClassificationModelMetadata());
         break;
       case 15:
-        result = result && getTranslationModelMetadata()
-            .equals(other.getTranslationModelMetadata());
+        result =
+            result && getTranslationModelMetadata().equals(other.getTranslationModelMetadata());
         break;
       case 0:
       default:
@@ -877,115 +1003,126 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.cloud.automl.v1beta1.Model parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.cloud.automl.v1beta1.Model parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.automl.v1beta1.Model parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.automl.v1beta1.Model parseFrom(
-      com.google.protobuf.ByteString data)
+
+  public static com.google.cloud.automl.v1beta1.Model parseFrom(com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.automl.v1beta1.Model parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.automl.v1beta1.Model parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.automl.v1beta1.Model parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.automl.v1beta1.Model parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.automl.v1beta1.Model parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.cloud.automl.v1beta1.Model parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.automl.v1beta1.Model parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.cloud.automl.v1beta1.Model parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.automl.v1beta1.Model parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  public Builder newBuilderForType() { return newBuilder(); }
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-  public static Builder newBuilder(com.google.cloud.automl.v1beta1.Model prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+
+  public static Builder newBuilder(com.google.cloud.automl.v1beta1.Model prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+
+  @java.lang.Override
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * API proto representing a trained machine learning model.
    * </pre>
    *
    * Protobuf type {@code google.cloud.automl.v1beta1.Model}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.automl.v1beta1.Model)
       com.google.cloud.automl.v1beta1.ModelOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.automl.v1beta1.ModelOuterClass.internal_static_google_cloud_automl_v1beta1_Model_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.automl.v1beta1.ModelOuterClass
+          .internal_static_google_cloud_automl_v1beta1_Model_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.automl.v1beta1.ModelOuterClass.internal_static_google_cloud_automl_v1beta1_Model_fieldAccessorTable
+      return com.google.cloud.automl.v1beta1.ModelOuterClass
+          .internal_static_google_cloud_automl_v1beta1_Model_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.automl.v1beta1.Model.class, com.google.cloud.automl.v1beta1.Model.Builder.class);
+              com.google.cloud.automl.v1beta1.Model.class,
+              com.google.cloud.automl.v1beta1.Model.Builder.class);
     }
 
     // Construct using com.google.cloud.automl.v1beta1.Model.newBuilder()
@@ -993,16 +1130,16 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       name_ = "";
@@ -1030,15 +1167,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.automl.v1beta1.ModelOuterClass.internal_static_google_cloud_automl_v1beta1_Model_descriptor;
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.automl.v1beta1.ModelOuterClass
+          .internal_static_google_cloud_automl_v1beta1_Model_descriptor;
     }
 
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.Model getDefaultInstanceForType() {
       return com.google.cloud.automl.v1beta1.Model.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.Model build() {
       com.google.cloud.automl.v1beta1.Model result = buildPartial();
       if (!result.isInitialized()) {
@@ -1047,8 +1187,10 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.Model buildPartial() {
-      com.google.cloud.automl.v1beta1.Model result = new com.google.cloud.automl.v1beta1.Model(this);
+      com.google.cloud.automl.v1beta1.Model result =
+          new com.google.cloud.automl.v1beta1.Model(this);
       if (modelMetadataCase_ == 13) {
         if (imageClassificationModelMetadataBuilder_ == null) {
           result.modelMetadata_ = modelMetadata_;
@@ -1089,35 +1231,43 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+
+    @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+    @java.lang.Override
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+    @java.lang.Override
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
+    @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
+    @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.automl.v1beta1.Model) {
-        return mergeFrom((com.google.cloud.automl.v1beta1.Model)other);
+        return mergeFrom((com.google.cloud.automl.v1beta1.Model) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -1148,31 +1298,37 @@ private static final long serialVersionUID = 0L;
         setDeploymentStateValue(other.getDeploymentStateValue());
       }
       switch (other.getModelMetadataCase()) {
-        case IMAGE_CLASSIFICATION_MODEL_METADATA: {
-          mergeImageClassificationModelMetadata(other.getImageClassificationModelMetadata());
-          break;
-        }
-        case TEXT_CLASSIFICATION_MODEL_METADATA: {
-          mergeTextClassificationModelMetadata(other.getTextClassificationModelMetadata());
-          break;
-        }
-        case TRANSLATION_MODEL_METADATA: {
-          mergeTranslationModelMetadata(other.getTranslationModelMetadata());
-          break;
-        }
-        case MODELMETADATA_NOT_SET: {
-          break;
-        }
+        case IMAGE_CLASSIFICATION_MODEL_METADATA:
+          {
+            mergeImageClassificationModelMetadata(other.getImageClassificationModelMetadata());
+            break;
+          }
+        case TEXT_CLASSIFICATION_MODEL_METADATA:
+          {
+            mergeTextClassificationModelMetadata(other.getTextClassificationModelMetadata());
+            break;
+          }
+        case TRANSLATION_MODEL_METADATA:
+          {
+            mergeTranslationModelMetadata(other.getTranslationModelMetadata());
+            break;
+          }
+        case MODELMETADATA_NOT_SET:
+          {
+            break;
+          }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1190,12 +1346,12 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int modelMetadataCase_ = 0;
     private java.lang.Object modelMetadata_;
-    public ModelMetadataCase
-        getModelMetadataCase() {
-      return ModelMetadataCase.forNumber(
-          modelMetadataCase_);
+
+    public ModelMetadataCase getModelMetadataCase() {
+      return ModelMetadataCase.forNumber(modelMetadataCase_);
     }
 
     public Builder clearModelMetadata() {
@@ -1205,47 +1361,65 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata, com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata.Builder, com.google.cloud.automl.v1beta1.ImageClassificationModelMetadataOrBuilder> imageClassificationModelMetadataBuilder_;
+            com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata,
+            com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata.Builder,
+            com.google.cloud.automl.v1beta1.ImageClassificationModelMetadataOrBuilder>
+        imageClassificationModelMetadataBuilder_;
     /**
+     *
+     *
      * <pre>
      * Metadata for image classification models.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.ImageClassificationModelMetadata image_classification_model_metadata = 13;</code>
+     * <code>
+     * .google.cloud.automl.v1beta1.ImageClassificationModelMetadata image_classification_model_metadata = 13;
+     * </code>
      */
     public boolean hasImageClassificationModelMetadata() {
       return modelMetadataCase_ == 13;
     }
     /**
+     *
+     *
      * <pre>
      * Metadata for image classification models.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.ImageClassificationModelMetadata image_classification_model_metadata = 13;</code>
+     * <code>
+     * .google.cloud.automl.v1beta1.ImageClassificationModelMetadata image_classification_model_metadata = 13;
+     * </code>
      */
-    public com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata getImageClassificationModelMetadata() {
+    public com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata
+        getImageClassificationModelMetadata() {
       if (imageClassificationModelMetadataBuilder_ == null) {
         if (modelMetadataCase_ == 13) {
           return (com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata) modelMetadata_;
         }
-        return com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata.getDefaultInstance();
+        return com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata
+            .getDefaultInstance();
       } else {
         if (modelMetadataCase_ == 13) {
           return imageClassificationModelMetadataBuilder_.getMessage();
         }
-        return com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata.getDefaultInstance();
+        return com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata
+            .getDefaultInstance();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Metadata for image classification models.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.ImageClassificationModelMetadata image_classification_model_metadata = 13;</code>
+     * <code>
+     * .google.cloud.automl.v1beta1.ImageClassificationModelMetadata image_classification_model_metadata = 13;
+     * </code>
      */
-    public Builder setImageClassificationModelMetadata(com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata value) {
+    public Builder setImageClassificationModelMetadata(
+        com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata value) {
       if (imageClassificationModelMetadataBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1259,11 +1433,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Metadata for image classification models.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.ImageClassificationModelMetadata image_classification_model_metadata = 13;</code>
+     * <code>
+     * .google.cloud.automl.v1beta1.ImageClassificationModelMetadata image_classification_model_metadata = 13;
+     * </code>
      */
     public Builder setImageClassificationModelMetadata(
         com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata.Builder builderForValue) {
@@ -1277,18 +1455,29 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Metadata for image classification models.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.ImageClassificationModelMetadata image_classification_model_metadata = 13;</code>
+     * <code>
+     * .google.cloud.automl.v1beta1.ImageClassificationModelMetadata image_classification_model_metadata = 13;
+     * </code>
      */
-    public Builder mergeImageClassificationModelMetadata(com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata value) {
+    public Builder mergeImageClassificationModelMetadata(
+        com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata value) {
       if (imageClassificationModelMetadataBuilder_ == null) {
-        if (modelMetadataCase_ == 13 &&
-            modelMetadata_ != com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata.getDefaultInstance()) {
-          modelMetadata_ = com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata.newBuilder((com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata) modelMetadata_)
-              .mergeFrom(value).buildPartial();
+        if (modelMetadataCase_ == 13
+            && modelMetadata_
+                != com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata
+                    .getDefaultInstance()) {
+          modelMetadata_ =
+              com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata.newBuilder(
+                      (com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata)
+                          modelMetadata_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           modelMetadata_ = value;
         }
@@ -1303,11 +1492,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Metadata for image classification models.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.ImageClassificationModelMetadata image_classification_model_metadata = 13;</code>
+     * <code>
+     * .google.cloud.automl.v1beta1.ImageClassificationModelMetadata image_classification_model_metadata = 13;
+     * </code>
      */
     public Builder clearImageClassificationModelMetadata() {
       if (imageClassificationModelMetadataBuilder_ == null) {
@@ -1326,78 +1519,112 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Metadata for image classification models.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.ImageClassificationModelMetadata image_classification_model_metadata = 13;</code>
+     * <code>
+     * .google.cloud.automl.v1beta1.ImageClassificationModelMetadata image_classification_model_metadata = 13;
+     * </code>
      */
-    public com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata.Builder getImageClassificationModelMetadataBuilder() {
+    public com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata.Builder
+        getImageClassificationModelMetadataBuilder() {
       return getImageClassificationModelMetadataFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Metadata for image classification models.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.ImageClassificationModelMetadata image_classification_model_metadata = 13;</code>
+     * <code>
+     * .google.cloud.automl.v1beta1.ImageClassificationModelMetadata image_classification_model_metadata = 13;
+     * </code>
      */
-    public com.google.cloud.automl.v1beta1.ImageClassificationModelMetadataOrBuilder getImageClassificationModelMetadataOrBuilder() {
+    public com.google.cloud.automl.v1beta1.ImageClassificationModelMetadataOrBuilder
+        getImageClassificationModelMetadataOrBuilder() {
       if ((modelMetadataCase_ == 13) && (imageClassificationModelMetadataBuilder_ != null)) {
         return imageClassificationModelMetadataBuilder_.getMessageOrBuilder();
       } else {
         if (modelMetadataCase_ == 13) {
           return (com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata) modelMetadata_;
         }
-        return com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata.getDefaultInstance();
+        return com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata
+            .getDefaultInstance();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Metadata for image classification models.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.ImageClassificationModelMetadata image_classification_model_metadata = 13;</code>
+     * <code>
+     * .google.cloud.automl.v1beta1.ImageClassificationModelMetadata image_classification_model_metadata = 13;
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata, com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata.Builder, com.google.cloud.automl.v1beta1.ImageClassificationModelMetadataOrBuilder> 
+            com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata,
+            com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata.Builder,
+            com.google.cloud.automl.v1beta1.ImageClassificationModelMetadataOrBuilder>
         getImageClassificationModelMetadataFieldBuilder() {
       if (imageClassificationModelMetadataBuilder_ == null) {
         if (!(modelMetadataCase_ == 13)) {
-          modelMetadata_ = com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata.getDefaultInstance();
+          modelMetadata_ =
+              com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata.getDefaultInstance();
         }
-        imageClassificationModelMetadataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata, com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata.Builder, com.google.cloud.automl.v1beta1.ImageClassificationModelMetadataOrBuilder>(
+        imageClassificationModelMetadataBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata,
+                com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata.Builder,
+                com.google.cloud.automl.v1beta1.ImageClassificationModelMetadataOrBuilder>(
                 (com.google.cloud.automl.v1beta1.ImageClassificationModelMetadata) modelMetadata_,
                 getParentForChildren(),
                 isClean());
         modelMetadata_ = null;
       }
       modelMetadataCase_ = 13;
-      onChanged();;
+      onChanged();
+      ;
       return imageClassificationModelMetadataBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.automl.v1beta1.TextClassificationModelMetadata, com.google.cloud.automl.v1beta1.TextClassificationModelMetadata.Builder, com.google.cloud.automl.v1beta1.TextClassificationModelMetadataOrBuilder> textClassificationModelMetadataBuilder_;
+            com.google.cloud.automl.v1beta1.TextClassificationModelMetadata,
+            com.google.cloud.automl.v1beta1.TextClassificationModelMetadata.Builder,
+            com.google.cloud.automl.v1beta1.TextClassificationModelMetadataOrBuilder>
+        textClassificationModelMetadataBuilder_;
     /**
+     *
+     *
      * <pre>
      * Metadata for text classification models.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.TextClassificationModelMetadata text_classification_model_metadata = 14;</code>
+     * <code>
+     * .google.cloud.automl.v1beta1.TextClassificationModelMetadata text_classification_model_metadata = 14;
+     * </code>
      */
     public boolean hasTextClassificationModelMetadata() {
       return modelMetadataCase_ == 14;
     }
     /**
+     *
+     *
      * <pre>
      * Metadata for text classification models.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.TextClassificationModelMetadata text_classification_model_metadata = 14;</code>
+     * <code>
+     * .google.cloud.automl.v1beta1.TextClassificationModelMetadata text_classification_model_metadata = 14;
+     * </code>
      */
-    public com.google.cloud.automl.v1beta1.TextClassificationModelMetadata getTextClassificationModelMetadata() {
+    public com.google.cloud.automl.v1beta1.TextClassificationModelMetadata
+        getTextClassificationModelMetadata() {
       if (textClassificationModelMetadataBuilder_ == null) {
         if (modelMetadataCase_ == 14) {
           return (com.google.cloud.automl.v1beta1.TextClassificationModelMetadata) modelMetadata_;
@@ -1411,13 +1638,18 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Metadata for text classification models.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.TextClassificationModelMetadata text_classification_model_metadata = 14;</code>
+     * <code>
+     * .google.cloud.automl.v1beta1.TextClassificationModelMetadata text_classification_model_metadata = 14;
+     * </code>
      */
-    public Builder setTextClassificationModelMetadata(com.google.cloud.automl.v1beta1.TextClassificationModelMetadata value) {
+    public Builder setTextClassificationModelMetadata(
+        com.google.cloud.automl.v1beta1.TextClassificationModelMetadata value) {
       if (textClassificationModelMetadataBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1431,11 +1663,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Metadata for text classification models.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.TextClassificationModelMetadata text_classification_model_metadata = 14;</code>
+     * <code>
+     * .google.cloud.automl.v1beta1.TextClassificationModelMetadata text_classification_model_metadata = 14;
+     * </code>
      */
     public Builder setTextClassificationModelMetadata(
         com.google.cloud.automl.v1beta1.TextClassificationModelMetadata.Builder builderForValue) {
@@ -1449,18 +1685,29 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Metadata for text classification models.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.TextClassificationModelMetadata text_classification_model_metadata = 14;</code>
+     * <code>
+     * .google.cloud.automl.v1beta1.TextClassificationModelMetadata text_classification_model_metadata = 14;
+     * </code>
      */
-    public Builder mergeTextClassificationModelMetadata(com.google.cloud.automl.v1beta1.TextClassificationModelMetadata value) {
+    public Builder mergeTextClassificationModelMetadata(
+        com.google.cloud.automl.v1beta1.TextClassificationModelMetadata value) {
       if (textClassificationModelMetadataBuilder_ == null) {
-        if (modelMetadataCase_ == 14 &&
-            modelMetadata_ != com.google.cloud.automl.v1beta1.TextClassificationModelMetadata.getDefaultInstance()) {
-          modelMetadata_ = com.google.cloud.automl.v1beta1.TextClassificationModelMetadata.newBuilder((com.google.cloud.automl.v1beta1.TextClassificationModelMetadata) modelMetadata_)
-              .mergeFrom(value).buildPartial();
+        if (modelMetadataCase_ == 14
+            && modelMetadata_
+                != com.google.cloud.automl.v1beta1.TextClassificationModelMetadata
+                    .getDefaultInstance()) {
+          modelMetadata_ =
+              com.google.cloud.automl.v1beta1.TextClassificationModelMetadata.newBuilder(
+                      (com.google.cloud.automl.v1beta1.TextClassificationModelMetadata)
+                          modelMetadata_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           modelMetadata_ = value;
         }
@@ -1475,11 +1722,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Metadata for text classification models.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.TextClassificationModelMetadata text_classification_model_metadata = 14;</code>
+     * <code>
+     * .google.cloud.automl.v1beta1.TextClassificationModelMetadata text_classification_model_metadata = 14;
+     * </code>
      */
     public Builder clearTextClassificationModelMetadata() {
       if (textClassificationModelMetadataBuilder_ == null) {
@@ -1498,23 +1749,33 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Metadata for text classification models.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.TextClassificationModelMetadata text_classification_model_metadata = 14;</code>
+     * <code>
+     * .google.cloud.automl.v1beta1.TextClassificationModelMetadata text_classification_model_metadata = 14;
+     * </code>
      */
-    public com.google.cloud.automl.v1beta1.TextClassificationModelMetadata.Builder getTextClassificationModelMetadataBuilder() {
+    public com.google.cloud.automl.v1beta1.TextClassificationModelMetadata.Builder
+        getTextClassificationModelMetadataBuilder() {
       return getTextClassificationModelMetadataFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Metadata for text classification models.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.TextClassificationModelMetadata text_classification_model_metadata = 14;</code>
+     * <code>
+     * .google.cloud.automl.v1beta1.TextClassificationModelMetadata text_classification_model_metadata = 14;
+     * </code>
      */
-    public com.google.cloud.automl.v1beta1.TextClassificationModelMetadataOrBuilder getTextClassificationModelMetadataOrBuilder() {
+    public com.google.cloud.automl.v1beta1.TextClassificationModelMetadataOrBuilder
+        getTextClassificationModelMetadataOrBuilder() {
       if ((modelMetadataCase_ == 14) && (textClassificationModelMetadataBuilder_ != null)) {
         return textClassificationModelMetadataBuilder_.getMessageOrBuilder();
       } else {
@@ -1525,49 +1786,69 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Metadata for text classification models.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.TextClassificationModelMetadata text_classification_model_metadata = 14;</code>
+     * <code>
+     * .google.cloud.automl.v1beta1.TextClassificationModelMetadata text_classification_model_metadata = 14;
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.automl.v1beta1.TextClassificationModelMetadata, com.google.cloud.automl.v1beta1.TextClassificationModelMetadata.Builder, com.google.cloud.automl.v1beta1.TextClassificationModelMetadataOrBuilder> 
+            com.google.cloud.automl.v1beta1.TextClassificationModelMetadata,
+            com.google.cloud.automl.v1beta1.TextClassificationModelMetadata.Builder,
+            com.google.cloud.automl.v1beta1.TextClassificationModelMetadataOrBuilder>
         getTextClassificationModelMetadataFieldBuilder() {
       if (textClassificationModelMetadataBuilder_ == null) {
         if (!(modelMetadataCase_ == 14)) {
-          modelMetadata_ = com.google.cloud.automl.v1beta1.TextClassificationModelMetadata.getDefaultInstance();
+          modelMetadata_ =
+              com.google.cloud.automl.v1beta1.TextClassificationModelMetadata.getDefaultInstance();
         }
-        textClassificationModelMetadataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.automl.v1beta1.TextClassificationModelMetadata, com.google.cloud.automl.v1beta1.TextClassificationModelMetadata.Builder, com.google.cloud.automl.v1beta1.TextClassificationModelMetadataOrBuilder>(
+        textClassificationModelMetadataBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.automl.v1beta1.TextClassificationModelMetadata,
+                com.google.cloud.automl.v1beta1.TextClassificationModelMetadata.Builder,
+                com.google.cloud.automl.v1beta1.TextClassificationModelMetadataOrBuilder>(
                 (com.google.cloud.automl.v1beta1.TextClassificationModelMetadata) modelMetadata_,
                 getParentForChildren(),
                 isClean());
         modelMetadata_ = null;
       }
       modelMetadataCase_ = 14;
-      onChanged();;
+      onChanged();
+      ;
       return textClassificationModelMetadataBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.automl.v1beta1.TranslationModelMetadata, com.google.cloud.automl.v1beta1.TranslationModelMetadata.Builder, com.google.cloud.automl.v1beta1.TranslationModelMetadataOrBuilder> translationModelMetadataBuilder_;
+            com.google.cloud.automl.v1beta1.TranslationModelMetadata,
+            com.google.cloud.automl.v1beta1.TranslationModelMetadata.Builder,
+            com.google.cloud.automl.v1beta1.TranslationModelMetadataOrBuilder>
+        translationModelMetadataBuilder_;
     /**
+     *
+     *
      * <pre>
      * Metadata for translation models.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.TranslationModelMetadata translation_model_metadata = 15;</code>
+     * <code>.google.cloud.automl.v1beta1.TranslationModelMetadata translation_model_metadata = 15;
+     * </code>
      */
     public boolean hasTranslationModelMetadata() {
       return modelMetadataCase_ == 15;
     }
     /**
+     *
+     *
      * <pre>
      * Metadata for translation models.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.TranslationModelMetadata translation_model_metadata = 15;</code>
+     * <code>.google.cloud.automl.v1beta1.TranslationModelMetadata translation_model_metadata = 15;
+     * </code>
      */
     public com.google.cloud.automl.v1beta1.TranslationModelMetadata getTranslationModelMetadata() {
       if (translationModelMetadataBuilder_ == null) {
@@ -1583,13 +1864,17 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Metadata for translation models.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.TranslationModelMetadata translation_model_metadata = 15;</code>
+     * <code>.google.cloud.automl.v1beta1.TranslationModelMetadata translation_model_metadata = 15;
+     * </code>
      */
-    public Builder setTranslationModelMetadata(com.google.cloud.automl.v1beta1.TranslationModelMetadata value) {
+    public Builder setTranslationModelMetadata(
+        com.google.cloud.automl.v1beta1.TranslationModelMetadata value) {
       if (translationModelMetadataBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1603,11 +1888,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Metadata for translation models.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.TranslationModelMetadata translation_model_metadata = 15;</code>
+     * <code>.google.cloud.automl.v1beta1.TranslationModelMetadata translation_model_metadata = 15;
+     * </code>
      */
     public Builder setTranslationModelMetadata(
         com.google.cloud.automl.v1beta1.TranslationModelMetadata.Builder builderForValue) {
@@ -1621,18 +1909,26 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Metadata for translation models.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.TranslationModelMetadata translation_model_metadata = 15;</code>
+     * <code>.google.cloud.automl.v1beta1.TranslationModelMetadata translation_model_metadata = 15;
+     * </code>
      */
-    public Builder mergeTranslationModelMetadata(com.google.cloud.automl.v1beta1.TranslationModelMetadata value) {
+    public Builder mergeTranslationModelMetadata(
+        com.google.cloud.automl.v1beta1.TranslationModelMetadata value) {
       if (translationModelMetadataBuilder_ == null) {
-        if (modelMetadataCase_ == 15 &&
-            modelMetadata_ != com.google.cloud.automl.v1beta1.TranslationModelMetadata.getDefaultInstance()) {
-          modelMetadata_ = com.google.cloud.automl.v1beta1.TranslationModelMetadata.newBuilder((com.google.cloud.automl.v1beta1.TranslationModelMetadata) modelMetadata_)
-              .mergeFrom(value).buildPartial();
+        if (modelMetadataCase_ == 15
+            && modelMetadata_
+                != com.google.cloud.automl.v1beta1.TranslationModelMetadata.getDefaultInstance()) {
+          modelMetadata_ =
+              com.google.cloud.automl.v1beta1.TranslationModelMetadata.newBuilder(
+                      (com.google.cloud.automl.v1beta1.TranslationModelMetadata) modelMetadata_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           modelMetadata_ = value;
         }
@@ -1647,11 +1943,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Metadata for translation models.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.TranslationModelMetadata translation_model_metadata = 15;</code>
+     * <code>.google.cloud.automl.v1beta1.TranslationModelMetadata translation_model_metadata = 15;
+     * </code>
      */
     public Builder clearTranslationModelMetadata() {
       if (translationModelMetadataBuilder_ == null) {
@@ -1670,23 +1969,31 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Metadata for translation models.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.TranslationModelMetadata translation_model_metadata = 15;</code>
+     * <code>.google.cloud.automl.v1beta1.TranslationModelMetadata translation_model_metadata = 15;
+     * </code>
      */
-    public com.google.cloud.automl.v1beta1.TranslationModelMetadata.Builder getTranslationModelMetadataBuilder() {
+    public com.google.cloud.automl.v1beta1.TranslationModelMetadata.Builder
+        getTranslationModelMetadataBuilder() {
       return getTranslationModelMetadataFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Metadata for translation models.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.TranslationModelMetadata translation_model_metadata = 15;</code>
+     * <code>.google.cloud.automl.v1beta1.TranslationModelMetadata translation_model_metadata = 15;
+     * </code>
      */
-    public com.google.cloud.automl.v1beta1.TranslationModelMetadataOrBuilder getTranslationModelMetadataOrBuilder() {
+    public com.google.cloud.automl.v1beta1.TranslationModelMetadataOrBuilder
+        getTranslationModelMetadataOrBuilder() {
       if ((modelMetadataCase_ == 15) && (translationModelMetadataBuilder_ != null)) {
         return translationModelMetadataBuilder_.getMessageOrBuilder();
       } else {
@@ -1697,33 +2004,45 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Metadata for translation models.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.TranslationModelMetadata translation_model_metadata = 15;</code>
+     * <code>.google.cloud.automl.v1beta1.TranslationModelMetadata translation_model_metadata = 15;
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.automl.v1beta1.TranslationModelMetadata, com.google.cloud.automl.v1beta1.TranslationModelMetadata.Builder, com.google.cloud.automl.v1beta1.TranslationModelMetadataOrBuilder> 
+            com.google.cloud.automl.v1beta1.TranslationModelMetadata,
+            com.google.cloud.automl.v1beta1.TranslationModelMetadata.Builder,
+            com.google.cloud.automl.v1beta1.TranslationModelMetadataOrBuilder>
         getTranslationModelMetadataFieldBuilder() {
       if (translationModelMetadataBuilder_ == null) {
         if (!(modelMetadataCase_ == 15)) {
-          modelMetadata_ = com.google.cloud.automl.v1beta1.TranslationModelMetadata.getDefaultInstance();
+          modelMetadata_ =
+              com.google.cloud.automl.v1beta1.TranslationModelMetadata.getDefaultInstance();
         }
-        translationModelMetadataBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.automl.v1beta1.TranslationModelMetadata, com.google.cloud.automl.v1beta1.TranslationModelMetadata.Builder, com.google.cloud.automl.v1beta1.TranslationModelMetadataOrBuilder>(
+        translationModelMetadataBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.automl.v1beta1.TranslationModelMetadata,
+                com.google.cloud.automl.v1beta1.TranslationModelMetadata.Builder,
+                com.google.cloud.automl.v1beta1.TranslationModelMetadataOrBuilder>(
                 (com.google.cloud.automl.v1beta1.TranslationModelMetadata) modelMetadata_,
                 getParentForChildren(),
                 isClean());
         modelMetadata_ = null;
       }
       modelMetadataCase_ = 15;
-      onChanged();;
+      onChanged();
+      ;
       return translationModelMetadataBuilder_;
     }
 
     private java.lang.Object name_ = "";
     /**
+     *
+     *
      * <pre>
      * Output only.
      * Resource name of the model.
@@ -1735,8 +2054,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         name_ = s;
         return s;
@@ -1745,6 +2063,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * Resource name of the model.
@@ -1753,13 +2073,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getNameBytes() {
+    public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         name_ = b;
         return b;
       } else {
@@ -1767,6 +2085,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * Resource name of the model.
@@ -1775,17 +2095,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public Builder setName(
-        java.lang.String value) {
+    public Builder setName(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       name_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * Resource name of the model.
@@ -1795,12 +2116,14 @@ private static final long serialVersionUID = 0L;
      * <code>string name = 1;</code>
      */
     public Builder clearName() {
-      
+
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * Resource name of the model.
@@ -1809,13 +2132,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public Builder setNameBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       name_ = value;
       onChanged();
       return this;
@@ -1823,6 +2145,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object displayName_ = "";
     /**
+     *
+     *
      * <pre>
      * Required. The name of the model to show in the interface. The name can be
      * up to 32 characters
@@ -1835,8 +2159,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getDisplayName() {
       java.lang.Object ref = displayName_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         displayName_ = s;
         return s;
@@ -1845,6 +2168,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The name of the model to show in the interface. The name can be
      * up to 32 characters
@@ -1854,13 +2179,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string display_name = 2;</code>
      */
-    public com.google.protobuf.ByteString
-        getDisplayNameBytes() {
+    public com.google.protobuf.ByteString getDisplayNameBytes() {
       java.lang.Object ref = displayName_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         displayName_ = b;
         return b;
       } else {
@@ -1868,6 +2191,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The name of the model to show in the interface. The name can be
      * up to 32 characters
@@ -1877,17 +2202,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string display_name = 2;</code>
      */
-    public Builder setDisplayName(
-        java.lang.String value) {
+    public Builder setDisplayName(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       displayName_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The name of the model to show in the interface. The name can be
      * up to 32 characters
@@ -1898,12 +2224,14 @@ private static final long serialVersionUID = 0L;
      * <code>string display_name = 2;</code>
      */
     public Builder clearDisplayName() {
-      
+
       displayName_ = getDefaultInstance().getDisplayName();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The name of the model to show in the interface. The name can be
      * up to 32 characters
@@ -1913,13 +2241,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string display_name = 2;</code>
      */
-    public Builder setDisplayNameBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       displayName_ = value;
       onChanged();
       return this;
@@ -1927,6 +2254,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object datasetId_ = "";
     /**
+     *
+     *
      * <pre>
      * Required.
      * The resource ID of the dataset used to create the model. The dataset must
@@ -1939,8 +2268,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getDatasetId() {
       java.lang.Object ref = datasetId_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         datasetId_ = s;
         return s;
@@ -1949,6 +2277,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required.
      * The resource ID of the dataset used to create the model. The dataset must
@@ -1958,13 +2288,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string dataset_id = 3;</code>
      */
-    public com.google.protobuf.ByteString
-        getDatasetIdBytes() {
+    public com.google.protobuf.ByteString getDatasetIdBytes() {
       java.lang.Object ref = datasetId_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         datasetId_ = b;
         return b;
       } else {
@@ -1972,6 +2300,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required.
      * The resource ID of the dataset used to create the model. The dataset must
@@ -1981,17 +2311,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string dataset_id = 3;</code>
      */
-    public Builder setDatasetId(
-        java.lang.String value) {
+    public Builder setDatasetId(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       datasetId_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required.
      * The resource ID of the dataset used to create the model. The dataset must
@@ -2002,12 +2333,14 @@ private static final long serialVersionUID = 0L;
      * <code>string dataset_id = 3;</code>
      */
     public Builder clearDatasetId() {
-      
+
       datasetId_ = getDefaultInstance().getDatasetId();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required.
      * The resource ID of the dataset used to create the model. The dataset must
@@ -2017,13 +2350,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string dataset_id = 3;</code>
      */
-    public Builder setDatasetIdBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setDatasetIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       datasetId_ = value;
       onChanged();
       return this;
@@ -2031,8 +2363,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Timestamp createTime_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> createTimeBuilder_;
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        createTimeBuilder_;
     /**
+     *
+     *
      * <pre>
      * Output only.
      * Timestamp when this model was created.
@@ -2044,6 +2381,8 @@ private static final long serialVersionUID = 0L;
       return createTimeBuilder_ != null || createTime_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * Timestamp when this model was created.
@@ -2053,12 +2392,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.Timestamp getCreateTime() {
       if (createTimeBuilder_ == null) {
-        return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
+        return createTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : createTime_;
       } else {
         return createTimeBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * Timestamp when this model was created.
@@ -2080,6 +2423,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * Timestamp when this model was created.
@@ -2087,8 +2432,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.Timestamp create_time = 7;</code>
      */
-    public Builder setCreateTime(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
+    public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
         onChanged();
@@ -2099,6 +2443,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * Timestamp when this model was created.
@@ -2110,7 +2456,7 @@ private static final long serialVersionUID = 0L;
       if (createTimeBuilder_ == null) {
         if (createTime_ != null) {
           createTime_ =
-            com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
         } else {
           createTime_ = value;
         }
@@ -2122,6 +2468,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * Timestamp when this model was created.
@@ -2141,6 +2489,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * Timestamp when this model was created.
@@ -2149,11 +2499,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp create_time = 7;</code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-      
+
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * Timestamp when this model was created.
@@ -2165,11 +2517,14 @@ private static final long serialVersionUID = 0L;
       if (createTimeBuilder_ != null) {
         return createTimeBuilder_.getMessageOrBuilder();
       } else {
-        return createTime_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
+        return createTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : createTime_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * Timestamp when this model was created.
@@ -2178,14 +2533,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp create_time = 7;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
         getCreateTimeFieldBuilder() {
       if (createTimeBuilder_ == null) {
-        createTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getCreateTime(),
-                getParentForChildren(),
-                isClean());
+        createTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getCreateTime(), getParentForChildren(), isClean());
         createTime_ = null;
       }
       return createTimeBuilder_;
@@ -2193,8 +2551,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Timestamp updateTime_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> updateTimeBuilder_;
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        updateTimeBuilder_;
     /**
+     *
+     *
      * <pre>
      * Output only.
      * Timestamp when this model was last updated.
@@ -2206,6 +2569,8 @@ private static final long serialVersionUID = 0L;
       return updateTimeBuilder_ != null || updateTime_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * Timestamp when this model was last updated.
@@ -2215,12 +2580,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.Timestamp getUpdateTime() {
       if (updateTimeBuilder_ == null) {
-        return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
+        return updateTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : updateTime_;
       } else {
         return updateTimeBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * Timestamp when this model was last updated.
@@ -2242,6 +2611,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * Timestamp when this model was last updated.
@@ -2249,8 +2620,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.Timestamp update_time = 11;</code>
      */
-    public Builder setUpdateTime(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
+    public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
         updateTime_ = builderForValue.build();
         onChanged();
@@ -2261,6 +2631,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * Timestamp when this model was last updated.
@@ -2272,7 +2644,7 @@ private static final long serialVersionUID = 0L;
       if (updateTimeBuilder_ == null) {
         if (updateTime_ != null) {
           updateTime_ =
-            com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
         } else {
           updateTime_ = value;
         }
@@ -2284,6 +2656,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * Timestamp when this model was last updated.
@@ -2303,6 +2677,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * Timestamp when this model was last updated.
@@ -2311,11 +2687,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp update_time = 11;</code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-      
+
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * Timestamp when this model was last updated.
@@ -2327,11 +2705,14 @@ private static final long serialVersionUID = 0L;
       if (updateTimeBuilder_ != null) {
         return updateTimeBuilder_.getMessageOrBuilder();
       } else {
-        return updateTime_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
+        return updateTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : updateTime_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only.
      * Timestamp when this model was last updated.
@@ -2340,14 +2721,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp update_time = 11;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
         getUpdateTimeFieldBuilder() {
       if (updateTimeBuilder_ == null) {
-        updateTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getUpdateTime(),
-                getParentForChildren(),
-                isClean());
+        updateTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getUpdateTime(), getParentForChildren(), isClean());
         updateTime_ = null;
       }
       return updateTimeBuilder_;
@@ -2355,6 +2739,8 @@ private static final long serialVersionUID = 0L;
 
     private int deploymentState_ = 0;
     /**
+     *
+     *
      * <pre>
      * Output only. Deployment state of the model.
      * </pre>
@@ -2365,6 +2751,8 @@ private static final long serialVersionUID = 0L;
       return deploymentState_;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Deployment state of the model.
      * </pre>
@@ -2377,6 +2765,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Deployment state of the model.
      * </pre>
@@ -2384,10 +2774,16 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.automl.v1beta1.Model.DeploymentState deployment_state = 8;</code>
      */
     public com.google.cloud.automl.v1beta1.Model.DeploymentState getDeploymentState() {
-      com.google.cloud.automl.v1beta1.Model.DeploymentState result = com.google.cloud.automl.v1beta1.Model.DeploymentState.valueOf(deploymentState_);
-      return result == null ? com.google.cloud.automl.v1beta1.Model.DeploymentState.UNRECOGNIZED : result;
+      @SuppressWarnings("deprecation")
+      com.google.cloud.automl.v1beta1.Model.DeploymentState result =
+          com.google.cloud.automl.v1beta1.Model.DeploymentState.valueOf(deploymentState_);
+      return result == null
+          ? com.google.cloud.automl.v1beta1.Model.DeploymentState.UNRECOGNIZED
+          : result;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Deployment state of the model.
      * </pre>
@@ -2398,12 +2794,14 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       deploymentState_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Deployment state of the model.
      * </pre>
@@ -2411,27 +2809,29 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.automl.v1beta1.Model.DeploymentState deployment_state = 8;</code>
      */
     public Builder clearDeploymentState() {
-      
+
       deploymentState_ = 0;
       onChanged();
       return this;
     }
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+
+    @java.lang.Override
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
     }
-
 
     // @@protoc_insertion_point(builder_scope:google.cloud.automl.v1beta1.Model)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.automl.v1beta1.Model)
   private static final com.google.cloud.automl.v1beta1.Model DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.automl.v1beta1.Model();
   }
@@ -2440,15 +2840,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<Model>
-      PARSER = new com.google.protobuf.AbstractParser<Model>() {
-    public Model parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Model(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<Model> PARSER =
+      new com.google.protobuf.AbstractParser<Model>() {
+        @java.lang.Override
+        public Model parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new Model(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<Model> parser() {
     return PARSER;
@@ -2459,9 +2860,8 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.Model getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

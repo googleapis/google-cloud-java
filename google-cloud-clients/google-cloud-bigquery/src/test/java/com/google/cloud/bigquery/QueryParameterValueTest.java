@@ -99,11 +99,13 @@ public class QueryParameterValueTest {
 
   @Test
   public void testBoolArray() {
-    QueryParameterValue value = QueryParameterValue.array(new Boolean[] {true, false}, Boolean.class);
+    QueryParameterValue value =
+        QueryParameterValue.array(new Boolean[] {true, false}, Boolean.class);
     assertThat(value.getValue()).isNull();
     assertThat(value.getType()).isEqualTo(StandardSQLTypeName.ARRAY);
     assertThat(value.getArrayType()).isEqualTo(StandardSQLTypeName.BOOL);
-    assertArrayDataEquals(new String[]{"true", "false"}, StandardSQLTypeName.BOOL, value.getArrayValues());
+    assertArrayDataEquals(
+        new String[] {"true", "false"}, StandardSQLTypeName.BOOL, value.getArrayValues());
   }
 
   @Test
@@ -112,7 +114,8 @@ public class QueryParameterValueTest {
     assertThat(value.getValue()).isNull();
     assertThat(value.getType()).isEqualTo(StandardSQLTypeName.ARRAY);
     assertThat(value.getArrayType()).isEqualTo(StandardSQLTypeName.INT64);
-    assertArrayDataEquals(new String[]{"2", "5"}, StandardSQLTypeName.INT64, value.getArrayValues());
+    assertArrayDataEquals(
+        new String[] {"2", "5"}, StandardSQLTypeName.INT64, value.getArrayValues());
   }
 
   @Test
@@ -121,7 +124,8 @@ public class QueryParameterValueTest {
     assertThat(value.getValue()).isNull();
     assertThat(value.getType()).isEqualTo(StandardSQLTypeName.ARRAY);
     assertThat(value.getArrayType()).isEqualTo(StandardSQLTypeName.INT64);
-    assertArrayDataEquals(new String[]{"2", "5"}, StandardSQLTypeName.INT64, value.getArrayValues());
+    assertArrayDataEquals(
+        new String[] {"2", "5"}, StandardSQLTypeName.INT64, value.getArrayValues());
   }
 
   @Test
@@ -130,7 +134,8 @@ public class QueryParameterValueTest {
     assertThat(value.getValue()).isNull();
     assertThat(value.getType()).isEqualTo(StandardSQLTypeName.ARRAY);
     assertThat(value.getArrayType()).isEqualTo(StandardSQLTypeName.FLOAT64);
-    assertArrayDataEquals(new String[]{"2.6", "5.4"}, StandardSQLTypeName.FLOAT64, value.getArrayValues());
+    assertArrayDataEquals(
+        new String[] {"2.6", "5.4"}, StandardSQLTypeName.FLOAT64, value.getArrayValues());
   }
 
   @Test
@@ -139,26 +144,31 @@ public class QueryParameterValueTest {
     assertThat(value.getValue()).isNull();
     assertThat(value.getType()).isEqualTo(StandardSQLTypeName.ARRAY);
     assertThat(value.getArrayType()).isEqualTo(StandardSQLTypeName.FLOAT64);
-    assertArrayDataEquals(new String[]{"2.6", "5.4"}, StandardSQLTypeName.FLOAT64, value.getArrayValues());
+    assertArrayDataEquals(
+        new String[] {"2.6", "5.4"}, StandardSQLTypeName.FLOAT64, value.getArrayValues());
   }
 
   @Test
   public void testNumericArray() {
-    QueryParameterValue value = QueryParameterValue.array(
-        new BigDecimal[] {new BigDecimal("3.14"), new BigDecimal("1.59")}, BigDecimal.class);
+    QueryParameterValue value =
+        QueryParameterValue.array(
+            new BigDecimal[] {new BigDecimal("3.14"), new BigDecimal("1.59")}, BigDecimal.class);
     assertThat(value.getValue()).isNull();
     assertThat(value.getType()).isEqualTo(StandardSQLTypeName.ARRAY);
     assertThat(value.getArrayType()).isEqualTo(StandardSQLTypeName.NUMERIC);
-    assertArrayDataEquals(new String[]{"3.14", "1.59"}, StandardSQLTypeName.NUMERIC, value.getArrayValues());
+    assertArrayDataEquals(
+        new String[] {"3.14", "1.59"}, StandardSQLTypeName.NUMERIC, value.getArrayValues());
   }
 
   @Test
   public void testStringArray() {
-    QueryParameterValue value = QueryParameterValue.array(new String[] {"Ana", "Marv"}, String.class);
+    QueryParameterValue value =
+        QueryParameterValue.array(new String[] {"Ana", "Marv"}, String.class);
     assertThat(value.getValue()).isNull();
     assertThat(value.getType()).isEqualTo(StandardSQLTypeName.ARRAY);
     assertThat(value.getArrayType()).isEqualTo(StandardSQLTypeName.STRING);
-    assertArrayDataEquals(new String[]{"Ana", "Marv"}, StandardSQLTypeName.STRING, value.getArrayValues());
+    assertArrayDataEquals(
+        new String[] {"Ana", "Marv"}, StandardSQLTypeName.STRING, value.getArrayValues());
   }
 
   @Test
@@ -233,12 +243,13 @@ public class QueryParameterValueTest {
   @Test
   public void testTimestampArrayFromLongs() {
     QueryParameterValue value =
-        QueryParameterValue.array(new Long[] {1408452095220000L, 1481041545110000L}, StandardSQLTypeName.TIMESTAMP);
+        QueryParameterValue.array(
+            new Long[] {1408452095220000L, 1481041545110000L}, StandardSQLTypeName.TIMESTAMP);
     assertThat(value.getValue()).isNull();
     assertThat(value.getType()).isEqualTo(StandardSQLTypeName.ARRAY);
     assertThat(value.getArrayType()).isEqualTo(StandardSQLTypeName.TIMESTAMP);
     assertArrayDataEquals(
-        new String[]{"2014-08-19 12:41:35.220000+00:00", "2016-12-06 16:25:45.110000+00:00"},
+        new String[] {"2014-08-19 12:41:35.220000+00:00", "2016-12-06 16:25:45.110000+00:00"},
         StandardSQLTypeName.TIMESTAMP,
         value.getArrayValues());
   }
@@ -253,7 +264,7 @@ public class QueryParameterValueTest {
     assertThat(value.getType()).isEqualTo(StandardSQLTypeName.ARRAY);
     assertThat(value.getArrayType()).isEqualTo(StandardSQLTypeName.TIMESTAMP);
     assertArrayDataEquals(
-        new String[]{"2014-08-19 12:41:35.220000+00:00", "2016-12-06 16:25:45.110000+00:00"},
+        new String[] {"2014-08-19 12:41:35.220000+00:00", "2016-12-06 16:25:45.110000+00:00"},
         StandardSQLTypeName.TIMESTAMP,
         value.getArrayValues());
   }
@@ -272,8 +283,10 @@ public class QueryParameterValueTest {
     assertThat(value.getArrayValues()).isEmpty();
   }
 
-  private static void assertArrayDataEquals(String[] expectedValues,
-      StandardSQLTypeName expectedType, List<QueryParameterValue> actualValues) {
+  private static void assertArrayDataEquals(
+      String[] expectedValues,
+      StandardSQLTypeName expectedType,
+      List<QueryParameterValue> actualValues) {
     assertThat(actualValues.size()).isEqualTo(expectedValues.length);
     for (int i = 0; i < expectedValues.length; i++) {
       QueryParameterValue value = actualValues.get(i);

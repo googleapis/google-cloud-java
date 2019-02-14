@@ -4,21 +4,24 @@
 package com.google.container.v1;
 
 /**
+ *
+ *
  * <pre>
- * Container Engine service configuration.
+ * Kubernetes Engine service configuration.
  * </pre>
  *
  * Protobuf type {@code google.container.v1.ServerConfig}
  */
-public  final class ServerConfig extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class ServerConfig extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.container.v1.ServerConfig)
     ServerConfigOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use ServerConfig.newBuilder() to construct.
   private ServerConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private ServerConfig() {
     defaultClusterVersion_ = "";
     validNodeVersions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
@@ -28,15 +31,18 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private ServerConfig(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -48,59 +54,63 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            defaultClusterVersion_ = s;
-            break;
-          }
-          case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-              validNodeVersions_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000002;
+              defaultClusterVersion_ = s;
+              break;
             }
-            validNodeVersions_.add(s);
-            break;
-          }
-          case 34: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 26:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                validNodeVersions_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              validNodeVersions_.add(s);
+              break;
+            }
+          case 34:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            defaultImageType_ = s;
-            break;
-          }
-          case 42: {
-            java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-              validImageTypes_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000008;
+              defaultImageType_ = s;
+              break;
             }
-            validImageTypes_.add(s);
-            break;
-          }
-          case 50: {
-            java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
-              validMasterVersions_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000010;
+          case 42:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+                validImageTypes_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              validImageTypes_.add(s);
+              break;
             }
-            validMasterVersions_.add(s);
-            break;
-          }
+          case 50:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+                validMasterVersions_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000010;
+              }
+              validMasterVersions_.add(s);
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
         validNodeVersions_ = validNodeVersions_.getUnmodifiableView();
@@ -115,22 +125,28 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_ServerConfig_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.container.v1.ClusterServiceProto
+        .internal_static_google_container_v1_ServerConfig_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_ServerConfig_fieldAccessorTable
+    return com.google.container.v1.ClusterServiceProto
+        .internal_static_google_container_v1_ServerConfig_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.container.v1.ServerConfig.class, com.google.container.v1.ServerConfig.Builder.class);
+            com.google.container.v1.ServerConfig.class,
+            com.google.container.v1.ServerConfig.Builder.class);
   }
 
   private int bitField0_;
   public static final int DEFAULT_CLUSTER_VERSION_FIELD_NUMBER = 1;
   private volatile java.lang.Object defaultClusterVersion_;
   /**
+   *
+   *
    * <pre>
    * Version of Kubernetes the service deploys by default.
    * </pre>
@@ -142,27 +158,26 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       defaultClusterVersion_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Version of Kubernetes the service deploys by default.
    * </pre>
    *
    * <code>string default_cluster_version = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getDefaultClusterVersionBytes() {
+  public com.google.protobuf.ByteString getDefaultClusterVersionBytes() {
     java.lang.Object ref = defaultClusterVersion_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       defaultClusterVersion_ = b;
       return b;
     } else {
@@ -173,17 +188,20 @@ private static final long serialVersionUID = 0L;
   public static final int VALID_NODE_VERSIONS_FIELD_NUMBER = 3;
   private com.google.protobuf.LazyStringList validNodeVersions_;
   /**
+   *
+   *
    * <pre>
    * List of valid node upgrade target versions.
    * </pre>
    *
    * <code>repeated string valid_node_versions = 3;</code>
    */
-  public com.google.protobuf.ProtocolStringList
-      getValidNodeVersionsList() {
+  public com.google.protobuf.ProtocolStringList getValidNodeVersionsList() {
     return validNodeVersions_;
   }
   /**
+   *
+   *
    * <pre>
    * List of valid node upgrade target versions.
    * </pre>
@@ -194,6 +212,8 @@ private static final long serialVersionUID = 0L;
     return validNodeVersions_.size();
   }
   /**
+   *
+   *
    * <pre>
    * List of valid node upgrade target versions.
    * </pre>
@@ -204,20 +224,23 @@ private static final long serialVersionUID = 0L;
     return validNodeVersions_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * List of valid node upgrade target versions.
    * </pre>
    *
    * <code>repeated string valid_node_versions = 3;</code>
    */
-  public com.google.protobuf.ByteString
-      getValidNodeVersionsBytes(int index) {
+  public com.google.protobuf.ByteString getValidNodeVersionsBytes(int index) {
     return validNodeVersions_.getByteString(index);
   }
 
   public static final int DEFAULT_IMAGE_TYPE_FIELD_NUMBER = 4;
   private volatile java.lang.Object defaultImageType_;
   /**
+   *
+   *
    * <pre>
    * Default image type.
    * </pre>
@@ -229,27 +252,26 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       defaultImageType_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Default image type.
    * </pre>
    *
    * <code>string default_image_type = 4;</code>
    */
-  public com.google.protobuf.ByteString
-      getDefaultImageTypeBytes() {
+  public com.google.protobuf.ByteString getDefaultImageTypeBytes() {
     java.lang.Object ref = defaultImageType_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       defaultImageType_ = b;
       return b;
     } else {
@@ -260,17 +282,20 @@ private static final long serialVersionUID = 0L;
   public static final int VALID_IMAGE_TYPES_FIELD_NUMBER = 5;
   private com.google.protobuf.LazyStringList validImageTypes_;
   /**
+   *
+   *
    * <pre>
    * List of valid image types.
    * </pre>
    *
    * <code>repeated string valid_image_types = 5;</code>
    */
-  public com.google.protobuf.ProtocolStringList
-      getValidImageTypesList() {
+  public com.google.protobuf.ProtocolStringList getValidImageTypesList() {
     return validImageTypes_;
   }
   /**
+   *
+   *
    * <pre>
    * List of valid image types.
    * </pre>
@@ -281,6 +306,8 @@ private static final long serialVersionUID = 0L;
     return validImageTypes_.size();
   }
   /**
+   *
+   *
    * <pre>
    * List of valid image types.
    * </pre>
@@ -291,31 +318,35 @@ private static final long serialVersionUID = 0L;
     return validImageTypes_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * List of valid image types.
    * </pre>
    *
    * <code>repeated string valid_image_types = 5;</code>
    */
-  public com.google.protobuf.ByteString
-      getValidImageTypesBytes(int index) {
+  public com.google.protobuf.ByteString getValidImageTypesBytes(int index) {
     return validImageTypes_.getByteString(index);
   }
 
   public static final int VALID_MASTER_VERSIONS_FIELD_NUMBER = 6;
   private com.google.protobuf.LazyStringList validMasterVersions_;
   /**
+   *
+   *
    * <pre>
    * List of valid master versions.
    * </pre>
    *
    * <code>repeated string valid_master_versions = 6;</code>
    */
-  public com.google.protobuf.ProtocolStringList
-      getValidMasterVersionsList() {
+  public com.google.protobuf.ProtocolStringList getValidMasterVersionsList() {
     return validMasterVersions_;
   }
   /**
+   *
+   *
    * <pre>
    * List of valid master versions.
    * </pre>
@@ -326,6 +357,8 @@ private static final long serialVersionUID = 0L;
     return validMasterVersions_.size();
   }
   /**
+   *
+   *
    * <pre>
    * List of valid master versions.
    * </pre>
@@ -336,18 +369,21 @@ private static final long serialVersionUID = 0L;
     return validMasterVersions_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * List of valid master versions.
    * </pre>
    *
    * <code>repeated string valid_master_versions = 6;</code>
    */
-  public com.google.protobuf.ByteString
-      getValidMasterVersionsBytes(int index) {
+  public com.google.protobuf.ByteString getValidMasterVersionsBytes(int index) {
     return validMasterVersions_.getByteString(index);
   }
 
   private byte memoizedIsInitialized = -1;
+
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -357,8 +393,8 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  @java.lang.Override
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getDefaultClusterVersionBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, defaultClusterVersion_);
     }
@@ -377,6 +413,7 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -420,7 +457,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.container.v1.ServerConfig)) {
       return super.equals(obj);
@@ -428,16 +465,11 @@ private static final long serialVersionUID = 0L;
     com.google.container.v1.ServerConfig other = (com.google.container.v1.ServerConfig) obj;
 
     boolean result = true;
-    result = result && getDefaultClusterVersion()
-        .equals(other.getDefaultClusterVersion());
-    result = result && getValidNodeVersionsList()
-        .equals(other.getValidNodeVersionsList());
-    result = result && getDefaultImageType()
-        .equals(other.getDefaultImageType());
-    result = result && getValidImageTypesList()
-        .equals(other.getValidImageTypesList());
-    result = result && getValidMasterVersionsList()
-        .equals(other.getValidMasterVersionsList());
+    result = result && getDefaultClusterVersion().equals(other.getDefaultClusterVersion());
+    result = result && getValidNodeVersionsList().equals(other.getValidNodeVersionsList());
+    result = result && getDefaultImageType().equals(other.getDefaultImageType());
+    result = result && getValidImageTypesList().equals(other.getValidImageTypesList());
+    result = result && getValidMasterVersionsList().equals(other.getValidMasterVersionsList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -470,115 +502,126 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.container.v1.ServerConfig parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.container.v1.ServerConfig parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.container.v1.ServerConfig parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.container.v1.ServerConfig parseFrom(
-      com.google.protobuf.ByteString data)
+
+  public static com.google.container.v1.ServerConfig parseFrom(com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.container.v1.ServerConfig parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.container.v1.ServerConfig parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.container.v1.ServerConfig parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.container.v1.ServerConfig parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.container.v1.ServerConfig parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.container.v1.ServerConfig parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
   public static com.google.container.v1.ServerConfig parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.container.v1.ServerConfig parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.container.v1.ServerConfig parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  public Builder newBuilderForType() { return newBuilder(); }
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-  public static Builder newBuilder(com.google.container.v1.ServerConfig prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+
+  public static Builder newBuilder(com.google.container.v1.ServerConfig prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+
+  @java.lang.Override
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
-   * Container Engine service configuration.
+   * Kubernetes Engine service configuration.
    * </pre>
    *
    * Protobuf type {@code google.container.v1.ServerConfig}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.container.v1.ServerConfig)
       com.google.container.v1.ServerConfigOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_ServerConfig_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.container.v1.ClusterServiceProto
+          .internal_static_google_container_v1_ServerConfig_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_ServerConfig_fieldAccessorTable
+      return com.google.container.v1.ClusterServiceProto
+          .internal_static_google_container_v1_ServerConfig_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.container.v1.ServerConfig.class, com.google.container.v1.ServerConfig.Builder.class);
+              com.google.container.v1.ServerConfig.class,
+              com.google.container.v1.ServerConfig.Builder.class);
     }
 
     // Construct using com.google.container.v1.ServerConfig.newBuilder()
@@ -586,16 +629,16 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       defaultClusterVersion_ = "";
@@ -611,15 +654,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_ServerConfig_descriptor;
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.container.v1.ClusterServiceProto
+          .internal_static_google_container_v1_ServerConfig_descriptor;
     }
 
+    @java.lang.Override
     public com.google.container.v1.ServerConfig getDefaultInstanceForType() {
       return com.google.container.v1.ServerConfig.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.container.v1.ServerConfig build() {
       com.google.container.v1.ServerConfig result = buildPartial();
       if (!result.isInitialized()) {
@@ -628,6 +674,7 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.container.v1.ServerConfig buildPartial() {
       com.google.container.v1.ServerConfig result = new com.google.container.v1.ServerConfig(this);
       int from_bitField0_ = bitField0_;
@@ -654,35 +701,43 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+
+    @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+    @java.lang.Override
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+    @java.lang.Override
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
+    @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
+    @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.container.v1.ServerConfig) {
-        return mergeFrom((com.google.container.v1.ServerConfig)other);
+        return mergeFrom((com.google.container.v1.ServerConfig) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -734,10 +789,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -755,10 +812,13 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private java.lang.Object defaultClusterVersion_ = "";
     /**
+     *
+     *
      * <pre>
      * Version of Kubernetes the service deploys by default.
      * </pre>
@@ -768,8 +828,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getDefaultClusterVersion() {
       java.lang.Object ref = defaultClusterVersion_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         defaultClusterVersion_ = s;
         return s;
@@ -778,19 +837,19 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Version of Kubernetes the service deploys by default.
      * </pre>
      *
      * <code>string default_cluster_version = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getDefaultClusterVersionBytes() {
+    public com.google.protobuf.ByteString getDefaultClusterVersionBytes() {
       java.lang.Object ref = defaultClusterVersion_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         defaultClusterVersion_ = b;
         return b;
       } else {
@@ -798,23 +857,26 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Version of Kubernetes the service deploys by default.
      * </pre>
      *
      * <code>string default_cluster_version = 1;</code>
      */
-    public Builder setDefaultClusterVersion(
-        java.lang.String value) {
+    public Builder setDefaultClusterVersion(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       defaultClusterVersion_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Version of Kubernetes the service deploys by default.
      * </pre>
@@ -822,49 +884,55 @@ private static final long serialVersionUID = 0L;
      * <code>string default_cluster_version = 1;</code>
      */
     public Builder clearDefaultClusterVersion() {
-      
+
       defaultClusterVersion_ = getDefaultInstance().getDefaultClusterVersion();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Version of Kubernetes the service deploys by default.
      * </pre>
      *
      * <code>string default_cluster_version = 1;</code>
      */
-    public Builder setDefaultClusterVersionBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setDefaultClusterVersionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       defaultClusterVersion_ = value;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList validNodeVersions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringList validNodeVersions_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
     private void ensureValidNodeVersionsIsMutable() {
       if (!((bitField0_ & 0x00000002) == 0x00000002)) {
         validNodeVersions_ = new com.google.protobuf.LazyStringArrayList(validNodeVersions_);
         bitField0_ |= 0x00000002;
-       }
+      }
     }
     /**
+     *
+     *
      * <pre>
      * List of valid node upgrade target versions.
      * </pre>
      *
      * <code>repeated string valid_node_versions = 3;</code>
      */
-    public com.google.protobuf.ProtocolStringList
-        getValidNodeVersionsList() {
+    public com.google.protobuf.ProtocolStringList getValidNodeVersionsList() {
       return validNodeVersions_.getUnmodifiableView();
     }
     /**
+     *
+     *
      * <pre>
      * List of valid node upgrade target versions.
      * </pre>
@@ -875,6 +943,8 @@ private static final long serialVersionUID = 0L;
       return validNodeVersions_.size();
     }
     /**
+     *
+     *
      * <pre>
      * List of valid node upgrade target versions.
      * </pre>
@@ -885,66 +955,71 @@ private static final long serialVersionUID = 0L;
       return validNodeVersions_.get(index);
     }
     /**
+     *
+     *
      * <pre>
      * List of valid node upgrade target versions.
      * </pre>
      *
      * <code>repeated string valid_node_versions = 3;</code>
      */
-    public com.google.protobuf.ByteString
-        getValidNodeVersionsBytes(int index) {
+    public com.google.protobuf.ByteString getValidNodeVersionsBytes(int index) {
       return validNodeVersions_.getByteString(index);
     }
     /**
+     *
+     *
      * <pre>
      * List of valid node upgrade target versions.
      * </pre>
      *
      * <code>repeated string valid_node_versions = 3;</code>
      */
-    public Builder setValidNodeVersions(
-        int index, java.lang.String value) {
+    public Builder setValidNodeVersions(int index, java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureValidNodeVersionsIsMutable();
+        throw new NullPointerException();
+      }
+      ensureValidNodeVersionsIsMutable();
       validNodeVersions_.set(index, value);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * List of valid node upgrade target versions.
      * </pre>
      *
      * <code>repeated string valid_node_versions = 3;</code>
      */
-    public Builder addValidNodeVersions(
-        java.lang.String value) {
+    public Builder addValidNodeVersions(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureValidNodeVersionsIsMutable();
+        throw new NullPointerException();
+      }
+      ensureValidNodeVersionsIsMutable();
       validNodeVersions_.add(value);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * List of valid node upgrade target versions.
      * </pre>
      *
      * <code>repeated string valid_node_versions = 3;</code>
      */
-    public Builder addAllValidNodeVersions(
-        java.lang.Iterable<java.lang.String> values) {
+    public Builder addAllValidNodeVersions(java.lang.Iterable<java.lang.String> values) {
       ensureValidNodeVersionsIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(
-          values, validNodeVersions_);
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, validNodeVersions_);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * List of valid node upgrade target versions.
      * </pre>
@@ -958,18 +1033,19 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * List of valid node upgrade target versions.
      * </pre>
      *
      * <code>repeated string valid_node_versions = 3;</code>
      */
-    public Builder addValidNodeVersionsBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder addValidNodeVersionsBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
       ensureValidNodeVersionsIsMutable();
       validNodeVersions_.add(value);
       onChanged();
@@ -978,6 +1054,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object defaultImageType_ = "";
     /**
+     *
+     *
      * <pre>
      * Default image type.
      * </pre>
@@ -987,8 +1065,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getDefaultImageType() {
       java.lang.Object ref = defaultImageType_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         defaultImageType_ = s;
         return s;
@@ -997,19 +1074,19 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Default image type.
      * </pre>
      *
      * <code>string default_image_type = 4;</code>
      */
-    public com.google.protobuf.ByteString
-        getDefaultImageTypeBytes() {
+    public com.google.protobuf.ByteString getDefaultImageTypeBytes() {
       java.lang.Object ref = defaultImageType_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         defaultImageType_ = b;
         return b;
       } else {
@@ -1017,23 +1094,26 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Default image type.
      * </pre>
      *
      * <code>string default_image_type = 4;</code>
      */
-    public Builder setDefaultImageType(
-        java.lang.String value) {
+    public Builder setDefaultImageType(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       defaultImageType_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Default image type.
      * </pre>
@@ -1041,49 +1121,55 @@ private static final long serialVersionUID = 0L;
      * <code>string default_image_type = 4;</code>
      */
     public Builder clearDefaultImageType() {
-      
+
       defaultImageType_ = getDefaultInstance().getDefaultImageType();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Default image type.
      * </pre>
      *
      * <code>string default_image_type = 4;</code>
      */
-    public Builder setDefaultImageTypeBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setDefaultImageTypeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       defaultImageType_ = value;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList validImageTypes_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringList validImageTypes_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
     private void ensureValidImageTypesIsMutable() {
       if (!((bitField0_ & 0x00000008) == 0x00000008)) {
         validImageTypes_ = new com.google.protobuf.LazyStringArrayList(validImageTypes_);
         bitField0_ |= 0x00000008;
-       }
+      }
     }
     /**
+     *
+     *
      * <pre>
      * List of valid image types.
      * </pre>
      *
      * <code>repeated string valid_image_types = 5;</code>
      */
-    public com.google.protobuf.ProtocolStringList
-        getValidImageTypesList() {
+    public com.google.protobuf.ProtocolStringList getValidImageTypesList() {
       return validImageTypes_.getUnmodifiableView();
     }
     /**
+     *
+     *
      * <pre>
      * List of valid image types.
      * </pre>
@@ -1094,6 +1180,8 @@ private static final long serialVersionUID = 0L;
       return validImageTypes_.size();
     }
     /**
+     *
+     *
      * <pre>
      * List of valid image types.
      * </pre>
@@ -1104,66 +1192,71 @@ private static final long serialVersionUID = 0L;
       return validImageTypes_.get(index);
     }
     /**
+     *
+     *
      * <pre>
      * List of valid image types.
      * </pre>
      *
      * <code>repeated string valid_image_types = 5;</code>
      */
-    public com.google.protobuf.ByteString
-        getValidImageTypesBytes(int index) {
+    public com.google.protobuf.ByteString getValidImageTypesBytes(int index) {
       return validImageTypes_.getByteString(index);
     }
     /**
+     *
+     *
      * <pre>
      * List of valid image types.
      * </pre>
      *
      * <code>repeated string valid_image_types = 5;</code>
      */
-    public Builder setValidImageTypes(
-        int index, java.lang.String value) {
+    public Builder setValidImageTypes(int index, java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureValidImageTypesIsMutable();
+        throw new NullPointerException();
+      }
+      ensureValidImageTypesIsMutable();
       validImageTypes_.set(index, value);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * List of valid image types.
      * </pre>
      *
      * <code>repeated string valid_image_types = 5;</code>
      */
-    public Builder addValidImageTypes(
-        java.lang.String value) {
+    public Builder addValidImageTypes(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureValidImageTypesIsMutable();
+        throw new NullPointerException();
+      }
+      ensureValidImageTypesIsMutable();
       validImageTypes_.add(value);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * List of valid image types.
      * </pre>
      *
      * <code>repeated string valid_image_types = 5;</code>
      */
-    public Builder addAllValidImageTypes(
-        java.lang.Iterable<java.lang.String> values) {
+    public Builder addAllValidImageTypes(java.lang.Iterable<java.lang.String> values) {
       ensureValidImageTypesIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(
-          values, validImageTypes_);
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, validImageTypes_);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * List of valid image types.
      * </pre>
@@ -1177,43 +1270,49 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * List of valid image types.
      * </pre>
      *
      * <code>repeated string valid_image_types = 5;</code>
      */
-    public Builder addValidImageTypesBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder addValidImageTypesBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
       ensureValidImageTypesIsMutable();
       validImageTypes_.add(value);
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList validMasterVersions_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringList validMasterVersions_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
     private void ensureValidMasterVersionsIsMutable() {
       if (!((bitField0_ & 0x00000010) == 0x00000010)) {
         validMasterVersions_ = new com.google.protobuf.LazyStringArrayList(validMasterVersions_);
         bitField0_ |= 0x00000010;
-       }
+      }
     }
     /**
+     *
+     *
      * <pre>
      * List of valid master versions.
      * </pre>
      *
      * <code>repeated string valid_master_versions = 6;</code>
      */
-    public com.google.protobuf.ProtocolStringList
-        getValidMasterVersionsList() {
+    public com.google.protobuf.ProtocolStringList getValidMasterVersionsList() {
       return validMasterVersions_.getUnmodifiableView();
     }
     /**
+     *
+     *
      * <pre>
      * List of valid master versions.
      * </pre>
@@ -1224,6 +1323,8 @@ private static final long serialVersionUID = 0L;
       return validMasterVersions_.size();
     }
     /**
+     *
+     *
      * <pre>
      * List of valid master versions.
      * </pre>
@@ -1234,66 +1335,71 @@ private static final long serialVersionUID = 0L;
       return validMasterVersions_.get(index);
     }
     /**
+     *
+     *
      * <pre>
      * List of valid master versions.
      * </pre>
      *
      * <code>repeated string valid_master_versions = 6;</code>
      */
-    public com.google.protobuf.ByteString
-        getValidMasterVersionsBytes(int index) {
+    public com.google.protobuf.ByteString getValidMasterVersionsBytes(int index) {
       return validMasterVersions_.getByteString(index);
     }
     /**
+     *
+     *
      * <pre>
      * List of valid master versions.
      * </pre>
      *
      * <code>repeated string valid_master_versions = 6;</code>
      */
-    public Builder setValidMasterVersions(
-        int index, java.lang.String value) {
+    public Builder setValidMasterVersions(int index, java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureValidMasterVersionsIsMutable();
+        throw new NullPointerException();
+      }
+      ensureValidMasterVersionsIsMutable();
       validMasterVersions_.set(index, value);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * List of valid master versions.
      * </pre>
      *
      * <code>repeated string valid_master_versions = 6;</code>
      */
-    public Builder addValidMasterVersions(
-        java.lang.String value) {
+    public Builder addValidMasterVersions(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureValidMasterVersionsIsMutable();
+        throw new NullPointerException();
+      }
+      ensureValidMasterVersionsIsMutable();
       validMasterVersions_.add(value);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * List of valid master versions.
      * </pre>
      *
      * <code>repeated string valid_master_versions = 6;</code>
      */
-    public Builder addAllValidMasterVersions(
-        java.lang.Iterable<java.lang.String> values) {
+    public Builder addAllValidMasterVersions(java.lang.Iterable<java.lang.String> values) {
       ensureValidMasterVersionsIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(
-          values, validMasterVersions_);
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, validMasterVersions_);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * List of valid master versions.
      * </pre>
@@ -1307,39 +1413,42 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * List of valid master versions.
      * </pre>
      *
      * <code>repeated string valid_master_versions = 6;</code>
      */
-    public Builder addValidMasterVersionsBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder addValidMasterVersionsBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
       ensureValidMasterVersionsIsMutable();
       validMasterVersions_.add(value);
       onChanged();
       return this;
     }
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+
+    @java.lang.Override
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
     }
-
 
     // @@protoc_insertion_point(builder_scope:google.container.v1.ServerConfig)
   }
 
   // @@protoc_insertion_point(class_scope:google.container.v1.ServerConfig)
   private static final com.google.container.v1.ServerConfig DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.container.v1.ServerConfig();
   }
@@ -1348,15 +1457,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ServerConfig>
-      PARSER = new com.google.protobuf.AbstractParser<ServerConfig>() {
-    public ServerConfig parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ServerConfig(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<ServerConfig> PARSER =
+      new com.google.protobuf.AbstractParser<ServerConfig>() {
+        @java.lang.Override
+        public ServerConfig parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new ServerConfig(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<ServerConfig> parser() {
     return PARSER;
@@ -1367,9 +1477,8 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.container.v1.ServerConfig getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

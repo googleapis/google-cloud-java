@@ -14,20 +14,21 @@
 
 package com.google.spanner.v1;
 
-import com.google.common.base.Preconditions;
-import com.google.common.collect.ImmutableMap;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.resourcenames.ResourceName;
-import java.util.Map;
+import com.google.common.base.Preconditions;
+import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 @javax.annotation.Generated("by GAPIC protoc plugin")
 public class SessionName implements ResourceName {
 
   private static final PathTemplate PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}/instances/{instance}/databases/{database}/sessions/{session}");
+      PathTemplate.createWithoutUrlEncoding(
+          "projects/{project}/instances/{instance}/databases/{database}/sessions/{session}");
 
   private volatile Map<String, String> fieldValuesMap;
 
@@ -69,21 +70,21 @@ public class SessionName implements ResourceName {
 
   public static SessionName of(String project, String instance, String database, String session) {
     return newBuilder()
-      .setProject(project)
-      .setInstance(instance)
-      .setDatabase(database)
-      .setSession(session)
-      .build();
+        .setProject(project)
+        .setInstance(instance)
+        .setDatabase(database)
+        .setSession(session)
+        .build();
   }
 
   public static String format(String project, String instance, String database, String session) {
     return newBuilder()
-      .setProject(project)
-      .setInstance(instance)
-      .setDatabase(database)
-      .setSession(session)
-      .build()
-      .toString();
+        .setProject(project)
+        .setInstance(instance)
+        .setDatabase(database)
+        .setSession(session)
+        .build()
+        .toString();
   }
 
   public static SessionName parse(String formattedString) {
@@ -91,8 +92,13 @@ public class SessionName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(formattedString, "SessionName.parse: formattedString not in valid format");
-    return of(matchMap.get("project"), matchMap.get("instance"), matchMap.get("database"), matchMap.get("session"));
+        PATH_TEMPLATE.validatedMatch(
+            formattedString, "SessionName.parse: formattedString not in valid format");
+    return of(
+        matchMap.get("project"),
+        matchMap.get("instance"),
+        matchMap.get("database"),
+        matchMap.get("session"));
   }
 
   public static List<SessionName> parseList(List<String> formattedStrings) {
@@ -141,7 +147,8 @@ public class SessionName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate("project", project, "instance", instance, "database", database, "session", session);
+    return PATH_TEMPLATE.instantiate(
+        "project", project, "instance", instance, "database", database, "session", session);
   }
 
   /** Builder for SessionName. */
@@ -188,8 +195,7 @@ public class SessionName implements ResourceName {
       return this;
     }
 
-    private Builder() {
-    }
+    private Builder() {}
 
     private Builder(SessionName sessionName) {
       project = sessionName.project;
@@ -232,4 +238,3 @@ public class SessionName implements ResourceName {
     return h;
   }
 }
-

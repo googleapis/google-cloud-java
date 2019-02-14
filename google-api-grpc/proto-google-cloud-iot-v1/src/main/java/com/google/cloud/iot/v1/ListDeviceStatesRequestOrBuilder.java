@@ -3,11 +3,14 @@
 
 package com.google.cloud.iot.v1;
 
-public interface ListDeviceStatesRequestOrBuilder extends
+public interface ListDeviceStatesRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.iot.v1.ListDeviceStatesRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The name of the device. For example,
    * `projects/p0/locations/us-central1/registries/registry0/devices/device0` or
@@ -18,6 +21,8 @@ public interface ListDeviceStatesRequestOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The name of the device. For example,
    * `projects/p0/locations/us-central1/registries/registry0/devices/device0` or
@@ -26,10 +31,11 @@ public interface ListDeviceStatesRequestOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * The number of states to list. States are listed in descending order of
    * update time. The maximum number of states retained is 10. If this

@@ -4,36 +4,42 @@
 package com.google.cloud.dialogflow.v2;
 
 /**
+ *
+ *
  * <pre>
  * The request message for [Intents.BatchDeleteIntents][google.cloud.dialogflow.v2.Intents.BatchDeleteIntents].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2.BatchDeleteIntentsRequest}
  */
-public  final class BatchDeleteIntentsRequest extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class BatchDeleteIntentsRequest extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.BatchDeleteIntentsRequest)
     BatchDeleteIntentsRequestOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use BatchDeleteIntentsRequest.newBuilder() to construct.
   private BatchDeleteIntentsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private BatchDeleteIntentsRequest() {
     parent_ = "";
     intents_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private BatchDeleteIntentsRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -45,35 +51,37 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            parent_ = s;
-            break;
-          }
-          case 18: {
-            if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-              intents_ = new java.util.ArrayList<com.google.cloud.dialogflow.v2.Intent>();
-              mutable_bitField0_ |= 0x00000002;
+              parent_ = s;
+              break;
             }
-            intents_.add(
-                input.readMessage(com.google.cloud.dialogflow.v2.Intent.parser(), extensionRegistry));
-            break;
-          }
+          case 18:
+            {
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                intents_ = new java.util.ArrayList<com.google.cloud.dialogflow.v2.Intent>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              intents_.add(
+                  input.readMessage(
+                      com.google.cloud.dialogflow.v2.Intent.parser(), extensionRegistry));
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
         intents_ = java.util.Collections.unmodifiableList(intents_);
@@ -82,22 +90,28 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_BatchDeleteIntentsRequest_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.dialogflow.v2.IntentProto
+        .internal_static_google_cloud_dialogflow_v2_BatchDeleteIntentsRequest_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_BatchDeleteIntentsRequest_fieldAccessorTable
+    return com.google.cloud.dialogflow.v2.IntentProto
+        .internal_static_google_cloud_dialogflow_v2_BatchDeleteIntentsRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.dialogflow.v2.BatchDeleteIntentsRequest.class, com.google.cloud.dialogflow.v2.BatchDeleteIntentsRequest.Builder.class);
+            com.google.cloud.dialogflow.v2.BatchDeleteIntentsRequest.class,
+            com.google.cloud.dialogflow.v2.BatchDeleteIntentsRequest.Builder.class);
   }
 
   private int bitField0_;
   public static final int PARENT_FIELD_NUMBER = 1;
   private volatile java.lang.Object parent_;
   /**
+   *
+   *
    * <pre>
    * Required. The name of the agent to delete all entities types for. Format:
    * `projects/&lt;Project ID&gt;/agent`.
@@ -110,14 +124,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       parent_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Required. The name of the agent to delete all entities types for. Format:
    * `projects/&lt;Project ID&gt;/agent`.
@@ -125,13 +140,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string parent = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getParentBytes() {
+  public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       parent_ = b;
       return b;
     } else {
@@ -142,6 +155,8 @@ private static final long serialVersionUID = 0L;
   public static final int INTENTS_FIELD_NUMBER = 2;
   private java.util.List<com.google.cloud.dialogflow.v2.Intent> intents_;
   /**
+   *
+   *
    * <pre>
    * Required. The collection of intents to delete. Only intent `name` must be
    * filled in.
@@ -153,6 +168,8 @@ private static final long serialVersionUID = 0L;
     return intents_;
   }
   /**
+   *
+   *
    * <pre>
    * Required. The collection of intents to delete. Only intent `name` must be
    * filled in.
@@ -160,11 +177,13 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.cloud.dialogflow.v2.Intent intents = 2;</code>
    */
-  public java.util.List<? extends com.google.cloud.dialogflow.v2.IntentOrBuilder> 
+  public java.util.List<? extends com.google.cloud.dialogflow.v2.IntentOrBuilder>
       getIntentsOrBuilderList() {
     return intents_;
   }
   /**
+   *
+   *
    * <pre>
    * Required. The collection of intents to delete. Only intent `name` must be
    * filled in.
@@ -176,6 +195,8 @@ private static final long serialVersionUID = 0L;
     return intents_.size();
   }
   /**
+   *
+   *
    * <pre>
    * Required. The collection of intents to delete. Only intent `name` must be
    * filled in.
@@ -187,6 +208,8 @@ private static final long serialVersionUID = 0L;
     return intents_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * Required. The collection of intents to delete. Only intent `name` must be
    * filled in.
@@ -194,12 +217,13 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.cloud.dialogflow.v2.Intent intents = 2;</code>
    */
-  public com.google.cloud.dialogflow.v2.IntentOrBuilder getIntentsOrBuilder(
-      int index) {
+  public com.google.cloud.dialogflow.v2.IntentOrBuilder getIntentsOrBuilder(int index) {
     return intents_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
+
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -209,8 +233,8 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  @java.lang.Override
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getParentBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, parent_);
     }
@@ -220,6 +244,7 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -229,8 +254,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, parent_);
     }
     for (int i = 0; i < intents_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, intents_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, intents_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -240,18 +264,17 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.dialogflow.v2.BatchDeleteIntentsRequest)) {
       return super.equals(obj);
     }
-    com.google.cloud.dialogflow.v2.BatchDeleteIntentsRequest other = (com.google.cloud.dialogflow.v2.BatchDeleteIntentsRequest) obj;
+    com.google.cloud.dialogflow.v2.BatchDeleteIntentsRequest other =
+        (com.google.cloud.dialogflow.v2.BatchDeleteIntentsRequest) obj;
 
     boolean result = true;
-    result = result && getParent()
-        .equals(other.getParent());
-    result = result && getIntentsList()
-        .equals(other.getIntentsList());
+    result = result && getParent().equals(other.getParent());
+    result = result && getIntentsList().equals(other.getIntentsList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -275,114 +298,127 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.cloud.dialogflow.v2.BatchDeleteIntentsRequest parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dialogflow.v2.BatchDeleteIntentsRequest parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.dialogflow.v2.BatchDeleteIntentsRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dialogflow.v2.BatchDeleteIntentsRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.dialogflow.v2.BatchDeleteIntentsRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dialogflow.v2.BatchDeleteIntentsRequest parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.dialogflow.v2.BatchDeleteIntentsRequest parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.dialogflow.v2.BatchDeleteIntentsRequest parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.dialogflow.v2.BatchDeleteIntentsRequest parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.cloud.dialogflow.v2.BatchDeleteIntentsRequest parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.cloud.dialogflow.v2.BatchDeleteIntentsRequest parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.dialogflow.v2.BatchDeleteIntentsRequest parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.dialogflow.v2.BatchDeleteIntentsRequest parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.dialogflow.v2.BatchDeleteIntentsRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  public Builder newBuilderForType() { return newBuilder(); }
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-  public static Builder newBuilder(com.google.cloud.dialogflow.v2.BatchDeleteIntentsRequest prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+
+  public static Builder newBuilder(
+      com.google.cloud.dialogflow.v2.BatchDeleteIntentsRequest prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+
+  @java.lang.Override
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * The request message for [Intents.BatchDeleteIntents][google.cloud.dialogflow.v2.Intents.BatchDeleteIntents].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2.BatchDeleteIntentsRequest}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.v2.BatchDeleteIntentsRequest)
       com.google.cloud.dialogflow.v2.BatchDeleteIntentsRequestOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_BatchDeleteIntentsRequest_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dialogflow.v2.IntentProto
+          .internal_static_google_cloud_dialogflow_v2_BatchDeleteIntentsRequest_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_BatchDeleteIntentsRequest_fieldAccessorTable
+      return com.google.cloud.dialogflow.v2.IntentProto
+          .internal_static_google_cloud_dialogflow_v2_BatchDeleteIntentsRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.dialogflow.v2.BatchDeleteIntentsRequest.class, com.google.cloud.dialogflow.v2.BatchDeleteIntentsRequest.Builder.class);
+              com.google.cloud.dialogflow.v2.BatchDeleteIntentsRequest.class,
+              com.google.cloud.dialogflow.v2.BatchDeleteIntentsRequest.Builder.class);
     }
 
     // Construct using com.google.cloud.dialogflow.v2.BatchDeleteIntentsRequest.newBuilder()
@@ -390,17 +426,18 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getIntentsFieldBuilder();
       }
     }
+
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       parent_ = "";
@@ -414,15 +451,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.dialogflow.v2.IntentProto.internal_static_google_cloud_dialogflow_v2_BatchDeleteIntentsRequest_descriptor;
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.dialogflow.v2.IntentProto
+          .internal_static_google_cloud_dialogflow_v2_BatchDeleteIntentsRequest_descriptor;
     }
 
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2.BatchDeleteIntentsRequest getDefaultInstanceForType() {
       return com.google.cloud.dialogflow.v2.BatchDeleteIntentsRequest.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2.BatchDeleteIntentsRequest build() {
       com.google.cloud.dialogflow.v2.BatchDeleteIntentsRequest result = buildPartial();
       if (!result.isInitialized()) {
@@ -431,8 +471,10 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2.BatchDeleteIntentsRequest buildPartial() {
-      com.google.cloud.dialogflow.v2.BatchDeleteIntentsRequest result = new com.google.cloud.dialogflow.v2.BatchDeleteIntentsRequest(this);
+      com.google.cloud.dialogflow.v2.BatchDeleteIntentsRequest result =
+          new com.google.cloud.dialogflow.v2.BatchDeleteIntentsRequest(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       result.parent_ = parent_;
@@ -450,35 +492,43 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+
+    @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+    @java.lang.Override
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+    @java.lang.Override
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
+    @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
+    @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.dialogflow.v2.BatchDeleteIntentsRequest) {
-        return mergeFrom((com.google.cloud.dialogflow.v2.BatchDeleteIntentsRequest)other);
+        return mergeFrom((com.google.cloud.dialogflow.v2.BatchDeleteIntentsRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -486,7 +536,8 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.cloud.dialogflow.v2.BatchDeleteIntentsRequest other) {
-      if (other == com.google.cloud.dialogflow.v2.BatchDeleteIntentsRequest.getDefaultInstance()) return this;
+      if (other == com.google.cloud.dialogflow.v2.BatchDeleteIntentsRequest.getDefaultInstance())
+        return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
         onChanged();
@@ -509,9 +560,10 @@ private static final long serialVersionUID = 0L;
             intentsBuilder_ = null;
             intents_ = other.intents_;
             bitField0_ = (bitField0_ & ~0x00000002);
-            intentsBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getIntentsFieldBuilder() : null;
+            intentsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getIntentsFieldBuilder()
+                    : null;
           } else {
             intentsBuilder_.addAllMessages(other.intents_);
           }
@@ -522,10 +574,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -534,7 +588,8 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.dialogflow.v2.BatchDeleteIntentsRequest) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.cloud.dialogflow.v2.BatchDeleteIntentsRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -543,10 +598,13 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private java.lang.Object parent_ = "";
     /**
+     *
+     *
      * <pre>
      * Required. The name of the agent to delete all entities types for. Format:
      * `projects/&lt;Project ID&gt;/agent`.
@@ -557,8 +615,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         parent_ = s;
         return s;
@@ -567,6 +624,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The name of the agent to delete all entities types for. Format:
      * `projects/&lt;Project ID&gt;/agent`.
@@ -574,13 +633,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string parent = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getParentBytes() {
+    public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         parent_ = b;
         return b;
       } else {
@@ -588,6 +645,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The name of the agent to delete all entities types for. Format:
      * `projects/&lt;Project ID&gt;/agent`.
@@ -595,17 +654,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string parent = 1;</code>
      */
-    public Builder setParent(
-        java.lang.String value) {
+    public Builder setParent(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       parent_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The name of the agent to delete all entities types for. Format:
      * `projects/&lt;Project ID&gt;/agent`.
@@ -614,12 +674,14 @@ private static final long serialVersionUID = 0L;
      * <code>string parent = 1;</code>
      */
     public Builder clearParent() {
-      
+
       parent_ = getDefaultInstance().getParent();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The name of the agent to delete all entities types for. Format:
      * `projects/&lt;Project ID&gt;/agent`.
@@ -627,31 +689,36 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string parent = 1;</code>
      */
-    public Builder setParentBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       parent_ = value;
       onChanged();
       return this;
     }
 
     private java.util.List<com.google.cloud.dialogflow.v2.Intent> intents_ =
-      java.util.Collections.emptyList();
+        java.util.Collections.emptyList();
+
     private void ensureIntentsIsMutable() {
       if (!((bitField0_ & 0x00000002) == 0x00000002)) {
         intents_ = new java.util.ArrayList<com.google.cloud.dialogflow.v2.Intent>(intents_);
         bitField0_ |= 0x00000002;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.dialogflow.v2.Intent, com.google.cloud.dialogflow.v2.Intent.Builder, com.google.cloud.dialogflow.v2.IntentOrBuilder> intentsBuilder_;
+            com.google.cloud.dialogflow.v2.Intent,
+            com.google.cloud.dialogflow.v2.Intent.Builder,
+            com.google.cloud.dialogflow.v2.IntentOrBuilder>
+        intentsBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * Required. The collection of intents to delete. Only intent `name` must be
      * filled in.
@@ -667,6 +734,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The collection of intents to delete. Only intent `name` must be
      * filled in.
@@ -682,6 +751,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The collection of intents to delete. Only intent `name` must be
      * filled in.
@@ -697,6 +768,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The collection of intents to delete. Only intent `name` must be
      * filled in.
@@ -704,8 +777,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.cloud.dialogflow.v2.Intent intents = 2;</code>
      */
-    public Builder setIntents(
-        int index, com.google.cloud.dialogflow.v2.Intent value) {
+    public Builder setIntents(int index, com.google.cloud.dialogflow.v2.Intent value) {
       if (intentsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -719,6 +791,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The collection of intents to delete. Only intent `name` must be
      * filled in.
@@ -738,6 +812,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The collection of intents to delete. Only intent `name` must be
      * filled in.
@@ -759,6 +835,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The collection of intents to delete. Only intent `name` must be
      * filled in.
@@ -766,8 +844,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.cloud.dialogflow.v2.Intent intents = 2;</code>
      */
-    public Builder addIntents(
-        int index, com.google.cloud.dialogflow.v2.Intent value) {
+    public Builder addIntents(int index, com.google.cloud.dialogflow.v2.Intent value) {
       if (intentsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -781,6 +858,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The collection of intents to delete. Only intent `name` must be
      * filled in.
@@ -788,8 +867,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.cloud.dialogflow.v2.Intent intents = 2;</code>
      */
-    public Builder addIntents(
-        com.google.cloud.dialogflow.v2.Intent.Builder builderForValue) {
+    public Builder addIntents(com.google.cloud.dialogflow.v2.Intent.Builder builderForValue) {
       if (intentsBuilder_ == null) {
         ensureIntentsIsMutable();
         intents_.add(builderForValue.build());
@@ -800,6 +878,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The collection of intents to delete. Only intent `name` must be
      * filled in.
@@ -819,6 +899,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The collection of intents to delete. Only intent `name` must be
      * filled in.
@@ -830,8 +912,7 @@ private static final long serialVersionUID = 0L;
         java.lang.Iterable<? extends com.google.cloud.dialogflow.v2.Intent> values) {
       if (intentsBuilder_ == null) {
         ensureIntentsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, intents_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, intents_);
         onChanged();
       } else {
         intentsBuilder_.addAllMessages(values);
@@ -839,6 +920,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The collection of intents to delete. Only intent `name` must be
      * filled in.
@@ -857,6 +940,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The collection of intents to delete. Only intent `name` must be
      * filled in.
@@ -875,6 +960,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The collection of intents to delete. Only intent `name` must be
      * filled in.
@@ -882,11 +969,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.cloud.dialogflow.v2.Intent intents = 2;</code>
      */
-    public com.google.cloud.dialogflow.v2.Intent.Builder getIntentsBuilder(
-        int index) {
+    public com.google.cloud.dialogflow.v2.Intent.Builder getIntentsBuilder(int index) {
       return getIntentsFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * Required. The collection of intents to delete. Only intent `name` must be
      * filled in.
@@ -894,14 +982,16 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.cloud.dialogflow.v2.Intent intents = 2;</code>
      */
-    public com.google.cloud.dialogflow.v2.IntentOrBuilder getIntentsOrBuilder(
-        int index) {
+    public com.google.cloud.dialogflow.v2.IntentOrBuilder getIntentsOrBuilder(int index) {
       if (intentsBuilder_ == null) {
-        return intents_.get(index);  } else {
+        return intents_.get(index);
+      } else {
         return intentsBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The collection of intents to delete. Only intent `name` must be
      * filled in.
@@ -909,8 +999,8 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.cloud.dialogflow.v2.Intent intents = 2;</code>
      */
-    public java.util.List<? extends com.google.cloud.dialogflow.v2.IntentOrBuilder> 
-         getIntentsOrBuilderList() {
+    public java.util.List<? extends com.google.cloud.dialogflow.v2.IntentOrBuilder>
+        getIntentsOrBuilderList() {
       if (intentsBuilder_ != null) {
         return intentsBuilder_.getMessageOrBuilderList();
       } else {
@@ -918,6 +1008,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The collection of intents to delete. Only intent `name` must be
      * filled in.
@@ -926,10 +1018,12 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.cloud.dialogflow.v2.Intent intents = 2;</code>
      */
     public com.google.cloud.dialogflow.v2.Intent.Builder addIntentsBuilder() {
-      return getIntentsFieldBuilder().addBuilder(
-          com.google.cloud.dialogflow.v2.Intent.getDefaultInstance());
+      return getIntentsFieldBuilder()
+          .addBuilder(com.google.cloud.dialogflow.v2.Intent.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Required. The collection of intents to delete. Only intent `name` must be
      * filled in.
@@ -937,12 +1031,13 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.cloud.dialogflow.v2.Intent intents = 2;</code>
      */
-    public com.google.cloud.dialogflow.v2.Intent.Builder addIntentsBuilder(
-        int index) {
-      return getIntentsFieldBuilder().addBuilder(
-          index, com.google.cloud.dialogflow.v2.Intent.getDefaultInstance());
+    public com.google.cloud.dialogflow.v2.Intent.Builder addIntentsBuilder(int index) {
+      return getIntentsFieldBuilder()
+          .addBuilder(index, com.google.cloud.dialogflow.v2.Intent.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Required. The collection of intents to delete. Only intent `name` must be
      * filled in.
@@ -950,16 +1045,21 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.cloud.dialogflow.v2.Intent intents = 2;</code>
      */
-    public java.util.List<com.google.cloud.dialogflow.v2.Intent.Builder> 
-         getIntentsBuilderList() {
+    public java.util.List<com.google.cloud.dialogflow.v2.Intent.Builder> getIntentsBuilderList() {
       return getIntentsFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.dialogflow.v2.Intent, com.google.cloud.dialogflow.v2.Intent.Builder, com.google.cloud.dialogflow.v2.IntentOrBuilder> 
+            com.google.cloud.dialogflow.v2.Intent,
+            com.google.cloud.dialogflow.v2.Intent.Builder,
+            com.google.cloud.dialogflow.v2.IntentOrBuilder>
         getIntentsFieldBuilder() {
       if (intentsBuilder_ == null) {
-        intentsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.cloud.dialogflow.v2.Intent, com.google.cloud.dialogflow.v2.Intent.Builder, com.google.cloud.dialogflow.v2.IntentOrBuilder>(
+        intentsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.dialogflow.v2.Intent,
+                com.google.cloud.dialogflow.v2.Intent.Builder,
+                com.google.cloud.dialogflow.v2.IntentOrBuilder>(
                 intents_,
                 ((bitField0_ & 0x00000002) == 0x00000002),
                 getParentForChildren(),
@@ -968,22 +1068,24 @@ private static final long serialVersionUID = 0L;
       }
       return intentsBuilder_;
     }
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+
+    @java.lang.Override
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
     }
-
 
     // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.v2.BatchDeleteIntentsRequest)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.v2.BatchDeleteIntentsRequest)
   private static final com.google.cloud.dialogflow.v2.BatchDeleteIntentsRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.dialogflow.v2.BatchDeleteIntentsRequest();
   }
@@ -992,15 +1094,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<BatchDeleteIntentsRequest>
-      PARSER = new com.google.protobuf.AbstractParser<BatchDeleteIntentsRequest>() {
-    public BatchDeleteIntentsRequest parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-        return new BatchDeleteIntentsRequest(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<BatchDeleteIntentsRequest> PARSER =
+      new com.google.protobuf.AbstractParser<BatchDeleteIntentsRequest>() {
+        @java.lang.Override
+        public BatchDeleteIntentsRequest parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new BatchDeleteIntentsRequest(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<BatchDeleteIntentsRequest> parser() {
     return PARSER;
@@ -1011,9 +1114,8 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2.BatchDeleteIntentsRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

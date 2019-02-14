@@ -3,33 +3,35 @@
 
 package com.google.privacy.dlp.v2;
 
-/**
- * Protobuf type {@code google.privacy.dlp.v2.InspectJobConfig}
- */
-public  final class InspectJobConfig extends
-    com.google.protobuf.GeneratedMessageV3 implements
+/** Protobuf type {@code google.privacy.dlp.v2.InspectJobConfig} */
+public final class InspectJobConfig extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.InspectJobConfig)
     InspectJobConfigOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use InspectJobConfig.newBuilder() to construct.
   private InspectJobConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private InspectJobConfig() {
     inspectTemplateName_ = "";
     actions_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private InspectJobConfig(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -41,61 +43,68 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
-          case 10: {
-            com.google.privacy.dlp.v2.StorageConfig.Builder subBuilder = null;
-            if (storageConfig_ != null) {
-              subBuilder = storageConfig_.toBuilder();
-            }
-            storageConfig_ = input.readMessage(com.google.privacy.dlp.v2.StorageConfig.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(storageConfig_);
-              storageConfig_ = subBuilder.buildPartial();
-            }
+          case 10:
+            {
+              com.google.privacy.dlp.v2.StorageConfig.Builder subBuilder = null;
+              if (storageConfig_ != null) {
+                subBuilder = storageConfig_.toBuilder();
+              }
+              storageConfig_ =
+                  input.readMessage(
+                      com.google.privacy.dlp.v2.StorageConfig.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(storageConfig_);
+                storageConfig_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 18: {
-            com.google.privacy.dlp.v2.InspectConfig.Builder subBuilder = null;
-            if (inspectConfig_ != null) {
-              subBuilder = inspectConfig_.toBuilder();
+              break;
             }
-            inspectConfig_ = input.readMessage(com.google.privacy.dlp.v2.InspectConfig.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(inspectConfig_);
-              inspectConfig_ = subBuilder.buildPartial();
-            }
+          case 18:
+            {
+              com.google.privacy.dlp.v2.InspectConfig.Builder subBuilder = null;
+              if (inspectConfig_ != null) {
+                subBuilder = inspectConfig_.toBuilder();
+              }
+              inspectConfig_ =
+                  input.readMessage(
+                      com.google.privacy.dlp.v2.InspectConfig.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(inspectConfig_);
+                inspectConfig_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            inspectTemplateName_ = s;
-            break;
-          }
-          case 34: {
-            if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-              actions_ = new java.util.ArrayList<com.google.privacy.dlp.v2.Action>();
-              mutable_bitField0_ |= 0x00000008;
+              break;
             }
-            actions_.add(
-                input.readMessage(com.google.privacy.dlp.v2.Action.parser(), extensionRegistry));
-            break;
-          }
+          case 26:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              inspectTemplateName_ = s;
+              break;
+            }
+          case 34:
+            {
+              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+                actions_ = new java.util.ArrayList<com.google.privacy.dlp.v2.Action>();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              actions_.add(
+                  input.readMessage(com.google.privacy.dlp.v2.Action.parser(), extensionRegistry));
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
         actions_ = java.util.Collections.unmodifiableList(actions_);
@@ -104,22 +113,28 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_InspectJobConfig_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.privacy.dlp.v2.DlpProto
+        .internal_static_google_privacy_dlp_v2_InspectJobConfig_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_InspectJobConfig_fieldAccessorTable
+    return com.google.privacy.dlp.v2.DlpProto
+        .internal_static_google_privacy_dlp_v2_InspectJobConfig_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.privacy.dlp.v2.InspectJobConfig.class, com.google.privacy.dlp.v2.InspectJobConfig.Builder.class);
+            com.google.privacy.dlp.v2.InspectJobConfig.class,
+            com.google.privacy.dlp.v2.InspectJobConfig.Builder.class);
   }
 
   private int bitField0_;
   public static final int STORAGE_CONFIG_FIELD_NUMBER = 1;
   private com.google.privacy.dlp.v2.StorageConfig storageConfig_;
   /**
+   *
+   *
    * <pre>
    * The data to scan.
    * </pre>
@@ -130,6 +145,8 @@ private static final long serialVersionUID = 0L;
     return storageConfig_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * The data to scan.
    * </pre>
@@ -137,9 +154,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.privacy.dlp.v2.StorageConfig storage_config = 1;</code>
    */
   public com.google.privacy.dlp.v2.StorageConfig getStorageConfig() {
-    return storageConfig_ == null ? com.google.privacy.dlp.v2.StorageConfig.getDefaultInstance() : storageConfig_;
+    return storageConfig_ == null
+        ? com.google.privacy.dlp.v2.StorageConfig.getDefaultInstance()
+        : storageConfig_;
   }
   /**
+   *
+   *
    * <pre>
    * The data to scan.
    * </pre>
@@ -153,6 +174,8 @@ private static final long serialVersionUID = 0L;
   public static final int INSPECT_CONFIG_FIELD_NUMBER = 2;
   private com.google.privacy.dlp.v2.InspectConfig inspectConfig_;
   /**
+   *
+   *
    * <pre>
    * How and what to scan for.
    * </pre>
@@ -163,6 +186,8 @@ private static final long serialVersionUID = 0L;
     return inspectConfig_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * How and what to scan for.
    * </pre>
@@ -170,9 +195,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.privacy.dlp.v2.InspectConfig inspect_config = 2;</code>
    */
   public com.google.privacy.dlp.v2.InspectConfig getInspectConfig() {
-    return inspectConfig_ == null ? com.google.privacy.dlp.v2.InspectConfig.getDefaultInstance() : inspectConfig_;
+    return inspectConfig_ == null
+        ? com.google.privacy.dlp.v2.InspectConfig.getDefaultInstance()
+        : inspectConfig_;
   }
   /**
+   *
+   *
    * <pre>
    * How and what to scan for.
    * </pre>
@@ -186,6 +215,8 @@ private static final long serialVersionUID = 0L;
   public static final int INSPECT_TEMPLATE_NAME_FIELD_NUMBER = 3;
   private volatile java.lang.Object inspectTemplateName_;
   /**
+   *
+   *
    * <pre>
    * If provided, will be used as the default for all values in InspectConfig.
    * `inspect_config` will be merged into the values persisted as part of the
@@ -199,14 +230,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       inspectTemplateName_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * If provided, will be used as the default for all values in InspectConfig.
    * `inspect_config` will be merged into the values persisted as part of the
@@ -215,13 +247,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string inspect_template_name = 3;</code>
    */
-  public com.google.protobuf.ByteString
-      getInspectTemplateNameBytes() {
+  public com.google.protobuf.ByteString getInspectTemplateNameBytes() {
     java.lang.Object ref = inspectTemplateName_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       inspectTemplateName_ = b;
       return b;
     } else {
@@ -232,6 +262,8 @@ private static final long serialVersionUID = 0L;
   public static final int ACTIONS_FIELD_NUMBER = 4;
   private java.util.List<com.google.privacy.dlp.v2.Action> actions_;
   /**
+   *
+   *
    * <pre>
    * Actions to execute at the completion of the job. Are executed in the order
    * provided.
@@ -243,6 +275,8 @@ private static final long serialVersionUID = 0L;
     return actions_;
   }
   /**
+   *
+   *
    * <pre>
    * Actions to execute at the completion of the job. Are executed in the order
    * provided.
@@ -250,11 +284,13 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.privacy.dlp.v2.Action actions = 4;</code>
    */
-  public java.util.List<? extends com.google.privacy.dlp.v2.ActionOrBuilder> 
+  public java.util.List<? extends com.google.privacy.dlp.v2.ActionOrBuilder>
       getActionsOrBuilderList() {
     return actions_;
   }
   /**
+   *
+   *
    * <pre>
    * Actions to execute at the completion of the job. Are executed in the order
    * provided.
@@ -266,6 +302,8 @@ private static final long serialVersionUID = 0L;
     return actions_.size();
   }
   /**
+   *
+   *
    * <pre>
    * Actions to execute at the completion of the job. Are executed in the order
    * provided.
@@ -277,6 +315,8 @@ private static final long serialVersionUID = 0L;
     return actions_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * Actions to execute at the completion of the job. Are executed in the order
    * provided.
@@ -284,12 +324,13 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.privacy.dlp.v2.Action actions = 4;</code>
    */
-  public com.google.privacy.dlp.v2.ActionOrBuilder getActionsOrBuilder(
-      int index) {
+  public com.google.privacy.dlp.v2.ActionOrBuilder getActionsOrBuilder(int index) {
     return actions_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
+
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -299,8 +340,8 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  @java.lang.Override
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (storageConfig_ != null) {
       output.writeMessage(1, getStorageConfig());
     }
@@ -316,25 +357,23 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
 
     size = 0;
     if (storageConfig_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getStorageConfig());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getStorageConfig());
     }
     if (inspectConfig_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getInspectConfig());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getInspectConfig());
     }
     if (!getInspectTemplateNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, inspectTemplateName_);
     }
     for (int i = 0; i < actions_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, actions_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, actions_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -344,28 +383,25 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.privacy.dlp.v2.InspectJobConfig)) {
       return super.equals(obj);
     }
-    com.google.privacy.dlp.v2.InspectJobConfig other = (com.google.privacy.dlp.v2.InspectJobConfig) obj;
+    com.google.privacy.dlp.v2.InspectJobConfig other =
+        (com.google.privacy.dlp.v2.InspectJobConfig) obj;
 
     boolean result = true;
     result = result && (hasStorageConfig() == other.hasStorageConfig());
     if (hasStorageConfig()) {
-      result = result && getStorageConfig()
-          .equals(other.getStorageConfig());
+      result = result && getStorageConfig().equals(other.getStorageConfig());
     }
     result = result && (hasInspectConfig() == other.hasInspectConfig());
     if (hasInspectConfig()) {
-      result = result && getInspectConfig()
-          .equals(other.getInspectConfig());
+      result = result && getInspectConfig().equals(other.getInspectConfig());
     }
-    result = result && getInspectTemplateName()
-        .equals(other.getInspectTemplateName());
-    result = result && getActionsList()
-        .equals(other.getActionsList());
+    result = result && getInspectTemplateName().equals(other.getInspectTemplateName());
+    result = result && getActionsList().equals(other.getActionsList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -396,111 +432,119 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.privacy.dlp.v2.InspectJobConfig parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.privacy.dlp.v2.InspectJobConfig parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.privacy.dlp.v2.InspectJobConfig parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.privacy.dlp.v2.InspectJobConfig parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.privacy.dlp.v2.InspectJobConfig parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.privacy.dlp.v2.InspectJobConfig parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.privacy.dlp.v2.InspectJobConfig parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.privacy.dlp.v2.InspectJobConfig parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.privacy.dlp.v2.InspectJobConfig parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.privacy.dlp.v2.InspectJobConfig parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
+
   public static com.google.privacy.dlp.v2.InspectJobConfig parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.privacy.dlp.v2.InspectJobConfig parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.privacy.dlp.v2.InspectJobConfig parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.privacy.dlp.v2.InspectJobConfig parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  public Builder newBuilderForType() { return newBuilder(); }
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-  public static Builder newBuilder(com.google.privacy.dlp.v2.InspectJobConfig prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+
+  public static Builder newBuilder(com.google.privacy.dlp.v2.InspectJobConfig prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+
+  @java.lang.Override
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
-  /**
-   * Protobuf type {@code google.privacy.dlp.v2.InspectJobConfig}
-   */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  /** Protobuf type {@code google.privacy.dlp.v2.InspectJobConfig} */
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.privacy.dlp.v2.InspectJobConfig)
       com.google.privacy.dlp.v2.InspectJobConfigOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_InspectJobConfig_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_InspectJobConfig_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_InspectJobConfig_fieldAccessorTable
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_InspectJobConfig_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.privacy.dlp.v2.InspectJobConfig.class, com.google.privacy.dlp.v2.InspectJobConfig.Builder.class);
+              com.google.privacy.dlp.v2.InspectJobConfig.class,
+              com.google.privacy.dlp.v2.InspectJobConfig.Builder.class);
     }
 
     // Construct using com.google.privacy.dlp.v2.InspectJobConfig.newBuilder()
@@ -508,17 +552,18 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getActionsFieldBuilder();
       }
     }
+
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       if (storageConfigBuilder_ == null) {
@@ -544,15 +589,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_InspectJobConfig_descriptor;
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_InspectJobConfig_descriptor;
     }
 
+    @java.lang.Override
     public com.google.privacy.dlp.v2.InspectJobConfig getDefaultInstanceForType() {
       return com.google.privacy.dlp.v2.InspectJobConfig.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.privacy.dlp.v2.InspectJobConfig build() {
       com.google.privacy.dlp.v2.InspectJobConfig result = buildPartial();
       if (!result.isInitialized()) {
@@ -561,8 +609,10 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.privacy.dlp.v2.InspectJobConfig buildPartial() {
-      com.google.privacy.dlp.v2.InspectJobConfig result = new com.google.privacy.dlp.v2.InspectJobConfig(this);
+      com.google.privacy.dlp.v2.InspectJobConfig result =
+          new com.google.privacy.dlp.v2.InspectJobConfig(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (storageConfigBuilder_ == null) {
@@ -590,35 +640,43 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+
+    @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+    @java.lang.Override
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+    @java.lang.Override
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
+    @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
+    @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.privacy.dlp.v2.InspectJobConfig) {
-        return mergeFrom((com.google.privacy.dlp.v2.InspectJobConfig)other);
+        return mergeFrom((com.google.privacy.dlp.v2.InspectJobConfig) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -655,9 +713,10 @@ private static final long serialVersionUID = 0L;
             actionsBuilder_ = null;
             actions_ = other.actions_;
             bitField0_ = (bitField0_ & ~0x00000008);
-            actionsBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getActionsFieldBuilder() : null;
+            actionsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getActionsFieldBuilder()
+                    : null;
           } else {
             actionsBuilder_.addAllMessages(other.actions_);
           }
@@ -668,10 +727,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -689,12 +750,18 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private com.google.privacy.dlp.v2.StorageConfig storageConfig_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.privacy.dlp.v2.StorageConfig, com.google.privacy.dlp.v2.StorageConfig.Builder, com.google.privacy.dlp.v2.StorageConfigOrBuilder> storageConfigBuilder_;
+            com.google.privacy.dlp.v2.StorageConfig,
+            com.google.privacy.dlp.v2.StorageConfig.Builder,
+            com.google.privacy.dlp.v2.StorageConfigOrBuilder>
+        storageConfigBuilder_;
     /**
+     *
+     *
      * <pre>
      * The data to scan.
      * </pre>
@@ -705,6 +772,8 @@ private static final long serialVersionUID = 0L;
       return storageConfigBuilder_ != null || storageConfig_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * The data to scan.
      * </pre>
@@ -713,12 +782,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.privacy.dlp.v2.StorageConfig getStorageConfig() {
       if (storageConfigBuilder_ == null) {
-        return storageConfig_ == null ? com.google.privacy.dlp.v2.StorageConfig.getDefaultInstance() : storageConfig_;
+        return storageConfig_ == null
+            ? com.google.privacy.dlp.v2.StorageConfig.getDefaultInstance()
+            : storageConfig_;
       } else {
         return storageConfigBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * The data to scan.
      * </pre>
@@ -739,6 +812,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The data to scan.
      * </pre>
@@ -757,6 +832,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The data to scan.
      * </pre>
@@ -767,7 +844,9 @@ private static final long serialVersionUID = 0L;
       if (storageConfigBuilder_ == null) {
         if (storageConfig_ != null) {
           storageConfig_ =
-            com.google.privacy.dlp.v2.StorageConfig.newBuilder(storageConfig_).mergeFrom(value).buildPartial();
+              com.google.privacy.dlp.v2.StorageConfig.newBuilder(storageConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           storageConfig_ = value;
         }
@@ -779,6 +858,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The data to scan.
      * </pre>
@@ -797,6 +878,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The data to scan.
      * </pre>
@@ -804,11 +887,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.privacy.dlp.v2.StorageConfig storage_config = 1;</code>
      */
     public com.google.privacy.dlp.v2.StorageConfig.Builder getStorageConfigBuilder() {
-      
+
       onChanged();
       return getStorageConfigFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * The data to scan.
      * </pre>
@@ -819,11 +904,14 @@ private static final long serialVersionUID = 0L;
       if (storageConfigBuilder_ != null) {
         return storageConfigBuilder_.getMessageOrBuilder();
       } else {
-        return storageConfig_ == null ?
-            com.google.privacy.dlp.v2.StorageConfig.getDefaultInstance() : storageConfig_;
+        return storageConfig_ == null
+            ? com.google.privacy.dlp.v2.StorageConfig.getDefaultInstance()
+            : storageConfig_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The data to scan.
      * </pre>
@@ -831,14 +919,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.privacy.dlp.v2.StorageConfig storage_config = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.privacy.dlp.v2.StorageConfig, com.google.privacy.dlp.v2.StorageConfig.Builder, com.google.privacy.dlp.v2.StorageConfigOrBuilder> 
+            com.google.privacy.dlp.v2.StorageConfig,
+            com.google.privacy.dlp.v2.StorageConfig.Builder,
+            com.google.privacy.dlp.v2.StorageConfigOrBuilder>
         getStorageConfigFieldBuilder() {
       if (storageConfigBuilder_ == null) {
-        storageConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.privacy.dlp.v2.StorageConfig, com.google.privacy.dlp.v2.StorageConfig.Builder, com.google.privacy.dlp.v2.StorageConfigOrBuilder>(
-                getStorageConfig(),
-                getParentForChildren(),
-                isClean());
+        storageConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.privacy.dlp.v2.StorageConfig,
+                com.google.privacy.dlp.v2.StorageConfig.Builder,
+                com.google.privacy.dlp.v2.StorageConfigOrBuilder>(
+                getStorageConfig(), getParentForChildren(), isClean());
         storageConfig_ = null;
       }
       return storageConfigBuilder_;
@@ -846,8 +937,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.privacy.dlp.v2.InspectConfig inspectConfig_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.privacy.dlp.v2.InspectConfig, com.google.privacy.dlp.v2.InspectConfig.Builder, com.google.privacy.dlp.v2.InspectConfigOrBuilder> inspectConfigBuilder_;
+            com.google.privacy.dlp.v2.InspectConfig,
+            com.google.privacy.dlp.v2.InspectConfig.Builder,
+            com.google.privacy.dlp.v2.InspectConfigOrBuilder>
+        inspectConfigBuilder_;
     /**
+     *
+     *
      * <pre>
      * How and what to scan for.
      * </pre>
@@ -858,6 +954,8 @@ private static final long serialVersionUID = 0L;
       return inspectConfigBuilder_ != null || inspectConfig_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * How and what to scan for.
      * </pre>
@@ -866,12 +964,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.privacy.dlp.v2.InspectConfig getInspectConfig() {
       if (inspectConfigBuilder_ == null) {
-        return inspectConfig_ == null ? com.google.privacy.dlp.v2.InspectConfig.getDefaultInstance() : inspectConfig_;
+        return inspectConfig_ == null
+            ? com.google.privacy.dlp.v2.InspectConfig.getDefaultInstance()
+            : inspectConfig_;
       } else {
         return inspectConfigBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * How and what to scan for.
      * </pre>
@@ -892,6 +994,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * How and what to scan for.
      * </pre>
@@ -910,6 +1014,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * How and what to scan for.
      * </pre>
@@ -920,7 +1026,9 @@ private static final long serialVersionUID = 0L;
       if (inspectConfigBuilder_ == null) {
         if (inspectConfig_ != null) {
           inspectConfig_ =
-            com.google.privacy.dlp.v2.InspectConfig.newBuilder(inspectConfig_).mergeFrom(value).buildPartial();
+              com.google.privacy.dlp.v2.InspectConfig.newBuilder(inspectConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           inspectConfig_ = value;
         }
@@ -932,6 +1040,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * How and what to scan for.
      * </pre>
@@ -950,6 +1060,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * How and what to scan for.
      * </pre>
@@ -957,11 +1069,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.privacy.dlp.v2.InspectConfig inspect_config = 2;</code>
      */
     public com.google.privacy.dlp.v2.InspectConfig.Builder getInspectConfigBuilder() {
-      
+
       onChanged();
       return getInspectConfigFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * How and what to scan for.
      * </pre>
@@ -972,11 +1086,14 @@ private static final long serialVersionUID = 0L;
       if (inspectConfigBuilder_ != null) {
         return inspectConfigBuilder_.getMessageOrBuilder();
       } else {
-        return inspectConfig_ == null ?
-            com.google.privacy.dlp.v2.InspectConfig.getDefaultInstance() : inspectConfig_;
+        return inspectConfig_ == null
+            ? com.google.privacy.dlp.v2.InspectConfig.getDefaultInstance()
+            : inspectConfig_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * How and what to scan for.
      * </pre>
@@ -984,14 +1101,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.privacy.dlp.v2.InspectConfig inspect_config = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.privacy.dlp.v2.InspectConfig, com.google.privacy.dlp.v2.InspectConfig.Builder, com.google.privacy.dlp.v2.InspectConfigOrBuilder> 
+            com.google.privacy.dlp.v2.InspectConfig,
+            com.google.privacy.dlp.v2.InspectConfig.Builder,
+            com.google.privacy.dlp.v2.InspectConfigOrBuilder>
         getInspectConfigFieldBuilder() {
       if (inspectConfigBuilder_ == null) {
-        inspectConfigBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.privacy.dlp.v2.InspectConfig, com.google.privacy.dlp.v2.InspectConfig.Builder, com.google.privacy.dlp.v2.InspectConfigOrBuilder>(
-                getInspectConfig(),
-                getParentForChildren(),
-                isClean());
+        inspectConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.privacy.dlp.v2.InspectConfig,
+                com.google.privacy.dlp.v2.InspectConfig.Builder,
+                com.google.privacy.dlp.v2.InspectConfigOrBuilder>(
+                getInspectConfig(), getParentForChildren(), isClean());
         inspectConfig_ = null;
       }
       return inspectConfigBuilder_;
@@ -999,6 +1119,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object inspectTemplateName_ = "";
     /**
+     *
+     *
      * <pre>
      * If provided, will be used as the default for all values in InspectConfig.
      * `inspect_config` will be merged into the values persisted as part of the
@@ -1010,8 +1132,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getInspectTemplateName() {
       java.lang.Object ref = inspectTemplateName_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         inspectTemplateName_ = s;
         return s;
@@ -1020,6 +1141,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * If provided, will be used as the default for all values in InspectConfig.
      * `inspect_config` will be merged into the values persisted as part of the
@@ -1028,13 +1151,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string inspect_template_name = 3;</code>
      */
-    public com.google.protobuf.ByteString
-        getInspectTemplateNameBytes() {
+    public com.google.protobuf.ByteString getInspectTemplateNameBytes() {
       java.lang.Object ref = inspectTemplateName_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         inspectTemplateName_ = b;
         return b;
       } else {
@@ -1042,6 +1163,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * If provided, will be used as the default for all values in InspectConfig.
      * `inspect_config` will be merged into the values persisted as part of the
@@ -1050,17 +1173,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string inspect_template_name = 3;</code>
      */
-    public Builder setInspectTemplateName(
-        java.lang.String value) {
+    public Builder setInspectTemplateName(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       inspectTemplateName_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If provided, will be used as the default for all values in InspectConfig.
      * `inspect_config` will be merged into the values persisted as part of the
@@ -1070,12 +1194,14 @@ private static final long serialVersionUID = 0L;
      * <code>string inspect_template_name = 3;</code>
      */
     public Builder clearInspectTemplateName() {
-      
+
       inspectTemplateName_ = getDefaultInstance().getInspectTemplateName();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If provided, will be used as the default for all values in InspectConfig.
      * `inspect_config` will be merged into the values persisted as part of the
@@ -1084,31 +1210,36 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string inspect_template_name = 3;</code>
      */
-    public Builder setInspectTemplateNameBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setInspectTemplateNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       inspectTemplateName_ = value;
       onChanged();
       return this;
     }
 
     private java.util.List<com.google.privacy.dlp.v2.Action> actions_ =
-      java.util.Collections.emptyList();
+        java.util.Collections.emptyList();
+
     private void ensureActionsIsMutable() {
       if (!((bitField0_ & 0x00000008) == 0x00000008)) {
         actions_ = new java.util.ArrayList<com.google.privacy.dlp.v2.Action>(actions_);
         bitField0_ |= 0x00000008;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.privacy.dlp.v2.Action, com.google.privacy.dlp.v2.Action.Builder, com.google.privacy.dlp.v2.ActionOrBuilder> actionsBuilder_;
+            com.google.privacy.dlp.v2.Action,
+            com.google.privacy.dlp.v2.Action.Builder,
+            com.google.privacy.dlp.v2.ActionOrBuilder>
+        actionsBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * Actions to execute at the completion of the job. Are executed in the order
      * provided.
@@ -1124,6 +1255,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Actions to execute at the completion of the job. Are executed in the order
      * provided.
@@ -1139,6 +1272,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Actions to execute at the completion of the job. Are executed in the order
      * provided.
@@ -1154,6 +1289,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Actions to execute at the completion of the job. Are executed in the order
      * provided.
@@ -1161,8 +1298,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.privacy.dlp.v2.Action actions = 4;</code>
      */
-    public Builder setActions(
-        int index, com.google.privacy.dlp.v2.Action value) {
+    public Builder setActions(int index, com.google.privacy.dlp.v2.Action value) {
       if (actionsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1176,6 +1312,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Actions to execute at the completion of the job. Are executed in the order
      * provided.
@@ -1183,8 +1321,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.privacy.dlp.v2.Action actions = 4;</code>
      */
-    public Builder setActions(
-        int index, com.google.privacy.dlp.v2.Action.Builder builderForValue) {
+    public Builder setActions(int index, com.google.privacy.dlp.v2.Action.Builder builderForValue) {
       if (actionsBuilder_ == null) {
         ensureActionsIsMutable();
         actions_.set(index, builderForValue.build());
@@ -1195,6 +1332,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Actions to execute at the completion of the job. Are executed in the order
      * provided.
@@ -1216,6 +1355,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Actions to execute at the completion of the job. Are executed in the order
      * provided.
@@ -1223,8 +1364,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.privacy.dlp.v2.Action actions = 4;</code>
      */
-    public Builder addActions(
-        int index, com.google.privacy.dlp.v2.Action value) {
+    public Builder addActions(int index, com.google.privacy.dlp.v2.Action value) {
       if (actionsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1238,6 +1378,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Actions to execute at the completion of the job. Are executed in the order
      * provided.
@@ -1245,8 +1387,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.privacy.dlp.v2.Action actions = 4;</code>
      */
-    public Builder addActions(
-        com.google.privacy.dlp.v2.Action.Builder builderForValue) {
+    public Builder addActions(com.google.privacy.dlp.v2.Action.Builder builderForValue) {
       if (actionsBuilder_ == null) {
         ensureActionsIsMutable();
         actions_.add(builderForValue.build());
@@ -1257,6 +1398,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Actions to execute at the completion of the job. Are executed in the order
      * provided.
@@ -1264,8 +1407,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.privacy.dlp.v2.Action actions = 4;</code>
      */
-    public Builder addActions(
-        int index, com.google.privacy.dlp.v2.Action.Builder builderForValue) {
+    public Builder addActions(int index, com.google.privacy.dlp.v2.Action.Builder builderForValue) {
       if (actionsBuilder_ == null) {
         ensureActionsIsMutable();
         actions_.add(index, builderForValue.build());
@@ -1276,6 +1418,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Actions to execute at the completion of the job. Are executed in the order
      * provided.
@@ -1287,8 +1431,7 @@ private static final long serialVersionUID = 0L;
         java.lang.Iterable<? extends com.google.privacy.dlp.v2.Action> values) {
       if (actionsBuilder_ == null) {
         ensureActionsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, actions_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, actions_);
         onChanged();
       } else {
         actionsBuilder_.addAllMessages(values);
@@ -1296,6 +1439,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Actions to execute at the completion of the job. Are executed in the order
      * provided.
@@ -1314,6 +1459,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Actions to execute at the completion of the job. Are executed in the order
      * provided.
@@ -1332,6 +1479,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Actions to execute at the completion of the job. Are executed in the order
      * provided.
@@ -1339,11 +1488,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.privacy.dlp.v2.Action actions = 4;</code>
      */
-    public com.google.privacy.dlp.v2.Action.Builder getActionsBuilder(
-        int index) {
+    public com.google.privacy.dlp.v2.Action.Builder getActionsBuilder(int index) {
       return getActionsFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * Actions to execute at the completion of the job. Are executed in the order
      * provided.
@@ -1351,14 +1501,16 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.privacy.dlp.v2.Action actions = 4;</code>
      */
-    public com.google.privacy.dlp.v2.ActionOrBuilder getActionsOrBuilder(
-        int index) {
+    public com.google.privacy.dlp.v2.ActionOrBuilder getActionsOrBuilder(int index) {
       if (actionsBuilder_ == null) {
-        return actions_.get(index);  } else {
+        return actions_.get(index);
+      } else {
         return actionsBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * Actions to execute at the completion of the job. Are executed in the order
      * provided.
@@ -1366,8 +1518,8 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.privacy.dlp.v2.Action actions = 4;</code>
      */
-    public java.util.List<? extends com.google.privacy.dlp.v2.ActionOrBuilder> 
-         getActionsOrBuilderList() {
+    public java.util.List<? extends com.google.privacy.dlp.v2.ActionOrBuilder>
+        getActionsOrBuilderList() {
       if (actionsBuilder_ != null) {
         return actionsBuilder_.getMessageOrBuilderList();
       } else {
@@ -1375,6 +1527,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Actions to execute at the completion of the job. Are executed in the order
      * provided.
@@ -1383,10 +1537,12 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.privacy.dlp.v2.Action actions = 4;</code>
      */
     public com.google.privacy.dlp.v2.Action.Builder addActionsBuilder() {
-      return getActionsFieldBuilder().addBuilder(
-          com.google.privacy.dlp.v2.Action.getDefaultInstance());
+      return getActionsFieldBuilder()
+          .addBuilder(com.google.privacy.dlp.v2.Action.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Actions to execute at the completion of the job. Are executed in the order
      * provided.
@@ -1394,12 +1550,13 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.privacy.dlp.v2.Action actions = 4;</code>
      */
-    public com.google.privacy.dlp.v2.Action.Builder addActionsBuilder(
-        int index) {
-      return getActionsFieldBuilder().addBuilder(
-          index, com.google.privacy.dlp.v2.Action.getDefaultInstance());
+    public com.google.privacy.dlp.v2.Action.Builder addActionsBuilder(int index) {
+      return getActionsFieldBuilder()
+          .addBuilder(index, com.google.privacy.dlp.v2.Action.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Actions to execute at the completion of the job. Are executed in the order
      * provided.
@@ -1407,16 +1564,21 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.privacy.dlp.v2.Action actions = 4;</code>
      */
-    public java.util.List<com.google.privacy.dlp.v2.Action.Builder> 
-         getActionsBuilderList() {
+    public java.util.List<com.google.privacy.dlp.v2.Action.Builder> getActionsBuilderList() {
       return getActionsFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.privacy.dlp.v2.Action, com.google.privacy.dlp.v2.Action.Builder, com.google.privacy.dlp.v2.ActionOrBuilder> 
+            com.google.privacy.dlp.v2.Action,
+            com.google.privacy.dlp.v2.Action.Builder,
+            com.google.privacy.dlp.v2.ActionOrBuilder>
         getActionsFieldBuilder() {
       if (actionsBuilder_ == null) {
-        actionsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.privacy.dlp.v2.Action, com.google.privacy.dlp.v2.Action.Builder, com.google.privacy.dlp.v2.ActionOrBuilder>(
+        actionsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.privacy.dlp.v2.Action,
+                com.google.privacy.dlp.v2.Action.Builder,
+                com.google.privacy.dlp.v2.ActionOrBuilder>(
                 actions_,
                 ((bitField0_ & 0x00000008) == 0x00000008),
                 getParentForChildren(),
@@ -1425,22 +1587,24 @@ private static final long serialVersionUID = 0L;
       }
       return actionsBuilder_;
     }
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+
+    @java.lang.Override
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
     }
-
 
     // @@protoc_insertion_point(builder_scope:google.privacy.dlp.v2.InspectJobConfig)
   }
 
   // @@protoc_insertion_point(class_scope:google.privacy.dlp.v2.InspectJobConfig)
   private static final com.google.privacy.dlp.v2.InspectJobConfig DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.privacy.dlp.v2.InspectJobConfig();
   }
@@ -1449,15 +1613,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<InspectJobConfig>
-      PARSER = new com.google.protobuf.AbstractParser<InspectJobConfig>() {
-    public InspectJobConfig parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-        return new InspectJobConfig(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<InspectJobConfig> PARSER =
+      new com.google.protobuf.AbstractParser<InspectJobConfig>() {
+        @java.lang.Override
+        public InspectJobConfig parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new InspectJobConfig(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<InspectJobConfig> parser() {
     return PARSER;
@@ -1468,9 +1633,8 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.privacy.dlp.v2.InspectJobConfig getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

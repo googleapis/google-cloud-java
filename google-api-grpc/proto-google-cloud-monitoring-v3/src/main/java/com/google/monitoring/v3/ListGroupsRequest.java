@@ -4,21 +4,24 @@
 package com.google.monitoring.v3;
 
 /**
+ *
+ *
  * <pre>
  * The `ListGroup` request.
  * </pre>
  *
  * Protobuf type {@code google.monitoring.v3.ListGroupsRequest}
  */
-public  final class ListGroupsRequest extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class ListGroupsRequest extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.monitoring.v3.ListGroupsRequest)
     ListGroupsRequestOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use ListGroupsRequest.newBuilder() to construct.
   private ListGroupsRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private ListGroupsRequest() {
     name_ = "";
     pageSize_ = 0;
@@ -26,15 +29,18 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private ListGroupsRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -46,87 +52,94 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          case 18:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              filterCase_ = 2;
+              filter_ = s;
+              break;
             }
-            break;
-          }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
-            filterCase_ = 2;
-            filter_ = s;
-            break;
-          }
-          case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
-            filterCase_ = 3;
-            filter_ = s;
-            break;
-          }
-          case 34: {
-            java.lang.String s = input.readStringRequireUtf8();
-            filterCase_ = 4;
-            filter_ = s;
-            break;
-          }
-          case 40: {
+          case 26:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              filterCase_ = 3;
+              filter_ = s;
+              break;
+            }
+          case 34:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              filterCase_ = 4;
+              filter_ = s;
+              break;
+            }
+          case 40:
+            {
+              pageSize_ = input.readInt32();
+              break;
+            }
+          case 50:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            pageSize_ = input.readInt32();
-            break;
-          }
-          case 50: {
-            java.lang.String s = input.readStringRequireUtf8();
+              pageToken_ = s;
+              break;
+            }
+          case 58:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            pageToken_ = s;
-            break;
-          }
-          case 58: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            name_ = s;
-            break;
-          }
+              name_ = s;
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.monitoring.v3.GroupServiceProto.internal_static_google_monitoring_v3_ListGroupsRequest_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.monitoring.v3.GroupServiceProto
+        .internal_static_google_monitoring_v3_ListGroupsRequest_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.monitoring.v3.GroupServiceProto.internal_static_google_monitoring_v3_ListGroupsRequest_fieldAccessorTable
+    return com.google.monitoring.v3.GroupServiceProto
+        .internal_static_google_monitoring_v3_ListGroupsRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.monitoring.v3.ListGroupsRequest.class, com.google.monitoring.v3.ListGroupsRequest.Builder.class);
+            com.google.monitoring.v3.ListGroupsRequest.class,
+            com.google.monitoring.v3.ListGroupsRequest.Builder.class);
   }
 
   private int filterCase_ = 0;
   private java.lang.Object filter_;
-  public enum FilterCase
-      implements com.google.protobuf.Internal.EnumLite {
+
+  public enum FilterCase implements com.google.protobuf.Internal.EnumLite {
     CHILDREN_OF_GROUP(2),
     ANCESTORS_OF_GROUP(3),
     DESCENDANTS_OF_GROUP(4),
     FILTER_NOT_SET(0);
     private final int value;
+
     private FilterCase(int value) {
       this.value = value;
     }
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static FilterCase valueOf(int value) {
       return forNumber(value);
@@ -134,27 +147,33 @@ private static final long serialVersionUID = 0L;
 
     public static FilterCase forNumber(int value) {
       switch (value) {
-        case 2: return CHILDREN_OF_GROUP;
-        case 3: return ANCESTORS_OF_GROUP;
-        case 4: return DESCENDANTS_OF_GROUP;
-        case 0: return FILTER_NOT_SET;
-        default: return null;
+        case 2:
+          return CHILDREN_OF_GROUP;
+        case 3:
+          return ANCESTORS_OF_GROUP;
+        case 4:
+          return DESCENDANTS_OF_GROUP;
+        case 0:
+          return FILTER_NOT_SET;
+        default:
+          return null;
       }
     }
+
     public int getNumber() {
       return this.value;
     }
   };
 
-  public FilterCase
-  getFilterCase() {
-    return FilterCase.forNumber(
-        filterCase_);
+  public FilterCase getFilterCase() {
+    return FilterCase.forNumber(filterCase_);
   }
 
   public static final int NAME_FIELD_NUMBER = 7;
   private volatile java.lang.Object name_;
   /**
+   *
+   *
    * <pre>
    * The project whose groups are to be listed. The format is
    * `"projects/{project_id_or_number}"`.
@@ -167,14 +186,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       name_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The project whose groups are to be listed. The format is
    * `"projects/{project_id_or_number}"`.
@@ -182,13 +202,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string name = 7;</code>
    */
-  public com.google.protobuf.ByteString
-      getNameBytes() {
+  public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       name_ = b;
       return b;
     } else {
@@ -198,6 +216,8 @@ private static final long serialVersionUID = 0L;
 
   public static final int CHILDREN_OF_GROUP_FIELD_NUMBER = 2;
   /**
+   *
+   *
    * <pre>
    * A group name: `"projects/{project_id_or_number}/groups/{group_id}"`.
    * Returns groups whose `parentName` field contains the group
@@ -214,8 +234,7 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       if (filterCase_ == 2) {
         filter_ = s;
@@ -224,6 +243,8 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   *
+   *
    * <pre>
    * A group name: `"projects/{project_id_or_number}/groups/{group_id}"`.
    * Returns groups whose `parentName` field contains the group
@@ -232,16 +253,14 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string children_of_group = 2;</code>
    */
-  public com.google.protobuf.ByteString
-      getChildrenOfGroupBytes() {
+  public com.google.protobuf.ByteString getChildrenOfGroupBytes() {
     java.lang.Object ref = "";
     if (filterCase_ == 2) {
       ref = filter_;
     }
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       if (filterCase_ == 2) {
         filter_ = b;
       }
@@ -253,6 +272,8 @@ private static final long serialVersionUID = 0L;
 
   public static final int ANCESTORS_OF_GROUP_FIELD_NUMBER = 3;
   /**
+   *
+   *
    * <pre>
    * A group name: `"projects/{project_id_or_number}/groups/{group_id}"`.
    * Returns groups that are ancestors of the specified group.
@@ -271,8 +292,7 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       if (filterCase_ == 3) {
         filter_ = s;
@@ -281,6 +301,8 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   *
+   *
    * <pre>
    * A group name: `"projects/{project_id_or_number}/groups/{group_id}"`.
    * Returns groups that are ancestors of the specified group.
@@ -291,16 +313,14 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string ancestors_of_group = 3;</code>
    */
-  public com.google.protobuf.ByteString
-      getAncestorsOfGroupBytes() {
+  public com.google.protobuf.ByteString getAncestorsOfGroupBytes() {
     java.lang.Object ref = "";
     if (filterCase_ == 3) {
       ref = filter_;
     }
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       if (filterCase_ == 3) {
         filter_ = b;
       }
@@ -312,6 +332,8 @@ private static final long serialVersionUID = 0L;
 
   public static final int DESCENDANTS_OF_GROUP_FIELD_NUMBER = 4;
   /**
+   *
+   *
    * <pre>
    * A group name: `"projects/{project_id_or_number}/groups/{group_id}"`.
    * Returns the descendants of the specified group.  This is a superset of
@@ -329,8 +351,7 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       if (filterCase_ == 4) {
         filter_ = s;
@@ -339,6 +360,8 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   *
+   *
    * <pre>
    * A group name: `"projects/{project_id_or_number}/groups/{group_id}"`.
    * Returns the descendants of the specified group.  This is a superset of
@@ -348,16 +371,14 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string descendants_of_group = 4;</code>
    */
-  public com.google.protobuf.ByteString
-      getDescendantsOfGroupBytes() {
+  public com.google.protobuf.ByteString getDescendantsOfGroupBytes() {
     java.lang.Object ref = "";
     if (filterCase_ == 4) {
       ref = filter_;
     }
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       if (filterCase_ == 4) {
         filter_ = b;
       }
@@ -370,6 +391,8 @@ private static final long serialVersionUID = 0L;
   public static final int PAGE_SIZE_FIELD_NUMBER = 5;
   private int pageSize_;
   /**
+   *
+   *
    * <pre>
    * A positive number that is the maximum number of results to return.
    * </pre>
@@ -383,6 +406,8 @@ private static final long serialVersionUID = 0L;
   public static final int PAGE_TOKEN_FIELD_NUMBER = 6;
   private volatile java.lang.Object pageToken_;
   /**
+   *
+   *
    * <pre>
    * If this field is not empty then it must contain the `nextPageToken` value
    * returned by a previous call to this method.  Using this field causes the
@@ -396,14 +421,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       pageToken_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * If this field is not empty then it must contain the `nextPageToken` value
    * returned by a previous call to this method.  Using this field causes the
@@ -412,13 +438,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string page_token = 6;</code>
    */
-  public com.google.protobuf.ByteString
-      getPageTokenBytes() {
+  public com.google.protobuf.ByteString getPageTokenBytes() {
     java.lang.Object ref = pageToken_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       pageToken_ = b;
       return b;
     } else {
@@ -427,6 +451,8 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -436,8 +462,8 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  @java.lang.Override
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (filterCase_ == 2) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, filter_);
     }
@@ -459,6 +485,7 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -474,8 +501,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, filter_);
     }
     if (pageSize_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(5, pageSize_);
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(5, pageSize_);
     }
     if (!getPageTokenBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, pageToken_);
@@ -491,35 +517,29 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.monitoring.v3.ListGroupsRequest)) {
       return super.equals(obj);
     }
-    com.google.monitoring.v3.ListGroupsRequest other = (com.google.monitoring.v3.ListGroupsRequest) obj;
+    com.google.monitoring.v3.ListGroupsRequest other =
+        (com.google.monitoring.v3.ListGroupsRequest) obj;
 
     boolean result = true;
-    result = result && getName()
-        .equals(other.getName());
-    result = result && (getPageSize()
-        == other.getPageSize());
-    result = result && getPageToken()
-        .equals(other.getPageToken());
-    result = result && getFilterCase().equals(
-        other.getFilterCase());
+    result = result && getName().equals(other.getName());
+    result = result && (getPageSize() == other.getPageSize());
+    result = result && getPageToken().equals(other.getPageToken());
+    result = result && getFilterCase().equals(other.getFilterCase());
     if (!result) return false;
     switch (filterCase_) {
       case 2:
-        result = result && getChildrenOfGroup()
-            .equals(other.getChildrenOfGroup());
+        result = result && getChildrenOfGroup().equals(other.getChildrenOfGroup());
         break;
       case 3:
-        result = result && getAncestorsOfGroup()
-            .equals(other.getAncestorsOfGroup());
+        result = result && getAncestorsOfGroup().equals(other.getAncestorsOfGroup());
         break;
       case 4:
-        result = result && getDescendantsOfGroup()
-            .equals(other.getDescendantsOfGroup());
+        result = result && getDescendantsOfGroup().equals(other.getDescendantsOfGroup());
         break;
       case 0:
       default:
@@ -562,115 +582,127 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.monitoring.v3.ListGroupsRequest parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.monitoring.v3.ListGroupsRequest parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.monitoring.v3.ListGroupsRequest parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.monitoring.v3.ListGroupsRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.monitoring.v3.ListGroupsRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.monitoring.v3.ListGroupsRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.monitoring.v3.ListGroupsRequest parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.monitoring.v3.ListGroupsRequest parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.monitoring.v3.ListGroupsRequest parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.monitoring.v3.ListGroupsRequest parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
+
   public static com.google.monitoring.v3.ListGroupsRequest parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.monitoring.v3.ListGroupsRequest parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.monitoring.v3.ListGroupsRequest parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.monitoring.v3.ListGroupsRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  public Builder newBuilderForType() { return newBuilder(); }
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-  public static Builder newBuilder(com.google.monitoring.v3.ListGroupsRequest prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+
+  public static Builder newBuilder(com.google.monitoring.v3.ListGroupsRequest prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+
+  @java.lang.Override
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * The `ListGroup` request.
    * </pre>
    *
    * Protobuf type {@code google.monitoring.v3.ListGroupsRequest}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.monitoring.v3.ListGroupsRequest)
       com.google.monitoring.v3.ListGroupsRequestOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.monitoring.v3.GroupServiceProto.internal_static_google_monitoring_v3_ListGroupsRequest_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.monitoring.v3.GroupServiceProto
+          .internal_static_google_monitoring_v3_ListGroupsRequest_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.monitoring.v3.GroupServiceProto.internal_static_google_monitoring_v3_ListGroupsRequest_fieldAccessorTable
+      return com.google.monitoring.v3.GroupServiceProto
+          .internal_static_google_monitoring_v3_ListGroupsRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.monitoring.v3.ListGroupsRequest.class, com.google.monitoring.v3.ListGroupsRequest.Builder.class);
+              com.google.monitoring.v3.ListGroupsRequest.class,
+              com.google.monitoring.v3.ListGroupsRequest.Builder.class);
     }
 
     // Construct using com.google.monitoring.v3.ListGroupsRequest.newBuilder()
@@ -678,16 +710,16 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       name_ = "";
@@ -701,15 +733,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.monitoring.v3.GroupServiceProto.internal_static_google_monitoring_v3_ListGroupsRequest_descriptor;
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.monitoring.v3.GroupServiceProto
+          .internal_static_google_monitoring_v3_ListGroupsRequest_descriptor;
     }
 
+    @java.lang.Override
     public com.google.monitoring.v3.ListGroupsRequest getDefaultInstanceForType() {
       return com.google.monitoring.v3.ListGroupsRequest.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.monitoring.v3.ListGroupsRequest build() {
       com.google.monitoring.v3.ListGroupsRequest result = buildPartial();
       if (!result.isInitialized()) {
@@ -718,8 +753,10 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.monitoring.v3.ListGroupsRequest buildPartial() {
-      com.google.monitoring.v3.ListGroupsRequest result = new com.google.monitoring.v3.ListGroupsRequest(this);
+      com.google.monitoring.v3.ListGroupsRequest result =
+          new com.google.monitoring.v3.ListGroupsRequest(this);
       result.name_ = name_;
       if (filterCase_ == 2) {
         result.filter_ = filter_;
@@ -737,35 +774,43 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+
+    @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+    @java.lang.Override
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+    @java.lang.Override
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
+    @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
+    @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.monitoring.v3.ListGroupsRequest) {
-        return mergeFrom((com.google.monitoring.v3.ListGroupsRequest)other);
+        return mergeFrom((com.google.monitoring.v3.ListGroupsRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -786,37 +831,43 @@ private static final long serialVersionUID = 0L;
         onChanged();
       }
       switch (other.getFilterCase()) {
-        case CHILDREN_OF_GROUP: {
-          filterCase_ = 2;
-          filter_ = other.filter_;
-          onChanged();
-          break;
-        }
-        case ANCESTORS_OF_GROUP: {
-          filterCase_ = 3;
-          filter_ = other.filter_;
-          onChanged();
-          break;
-        }
-        case DESCENDANTS_OF_GROUP: {
-          filterCase_ = 4;
-          filter_ = other.filter_;
-          onChanged();
-          break;
-        }
-        case FILTER_NOT_SET: {
-          break;
-        }
+        case CHILDREN_OF_GROUP:
+          {
+            filterCase_ = 2;
+            filter_ = other.filter_;
+            onChanged();
+            break;
+          }
+        case ANCESTORS_OF_GROUP:
+          {
+            filterCase_ = 3;
+            filter_ = other.filter_;
+            onChanged();
+            break;
+          }
+        case DESCENDANTS_OF_GROUP:
+          {
+            filterCase_ = 4;
+            filter_ = other.filter_;
+            onChanged();
+            break;
+          }
+        case FILTER_NOT_SET:
+          {
+            break;
+          }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -834,12 +885,12 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int filterCase_ = 0;
     private java.lang.Object filter_;
-    public FilterCase
-        getFilterCase() {
-      return FilterCase.forNumber(
-          filterCase_);
+
+    public FilterCase getFilterCase() {
+      return FilterCase.forNumber(filterCase_);
     }
 
     public Builder clearFilter() {
@@ -849,9 +900,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-
     private java.lang.Object name_ = "";
     /**
+     *
+     *
      * <pre>
      * The project whose groups are to be listed. The format is
      * `"projects/{project_id_or_number}"`.
@@ -862,8 +914,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         name_ = s;
         return s;
@@ -872,6 +923,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The project whose groups are to be listed. The format is
      * `"projects/{project_id_or_number}"`.
@@ -879,13 +932,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 7;</code>
      */
-    public com.google.protobuf.ByteString
-        getNameBytes() {
+    public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         name_ = b;
         return b;
       } else {
@@ -893,6 +944,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The project whose groups are to be listed. The format is
      * `"projects/{project_id_or_number}"`.
@@ -900,17 +953,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 7;</code>
      */
-    public Builder setName(
-        java.lang.String value) {
+    public Builder setName(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       name_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The project whose groups are to be listed. The format is
      * `"projects/{project_id_or_number}"`.
@@ -919,12 +973,14 @@ private static final long serialVersionUID = 0L;
      * <code>string name = 7;</code>
      */
     public Builder clearName() {
-      
+
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The project whose groups are to be listed. The format is
      * `"projects/{project_id_or_number}"`.
@@ -932,19 +988,20 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 7;</code>
      */
-    public Builder setNameBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       name_ = value;
       onChanged();
       return this;
     }
 
     /**
+     *
+     *
      * <pre>
      * A group name: `"projects/{project_id_or_number}/groups/{group_id}"`.
      * Returns groups whose `parentName` field contains the group
@@ -959,8 +1016,7 @@ private static final long serialVersionUID = 0L;
         ref = filter_;
       }
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (filterCase_ == 2) {
           filter_ = s;
@@ -971,6 +1027,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A group name: `"projects/{project_id_or_number}/groups/{group_id}"`.
      * Returns groups whose `parentName` field contains the group
@@ -979,16 +1037,14 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string children_of_group = 2;</code>
      */
-    public com.google.protobuf.ByteString
-        getChildrenOfGroupBytes() {
+    public com.google.protobuf.ByteString getChildrenOfGroupBytes() {
       java.lang.Object ref = "";
       if (filterCase_ == 2) {
         ref = filter_;
       }
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         if (filterCase_ == 2) {
           filter_ = b;
         }
@@ -998,6 +1054,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A group name: `"projects/{project_id_or_number}/groups/{group_id}"`.
      * Returns groups whose `parentName` field contains the group
@@ -1006,17 +1064,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string children_of_group = 2;</code>
      */
-    public Builder setChildrenOfGroup(
-        java.lang.String value) {
+    public Builder setChildrenOfGroup(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  filterCase_ = 2;
+        throw new NullPointerException();
+      }
+      filterCase_ = 2;
       filter_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A group name: `"projects/{project_id_or_number}/groups/{group_id}"`.
      * Returns groups whose `parentName` field contains the group
@@ -1034,6 +1093,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A group name: `"projects/{project_id_or_number}/groups/{group_id}"`.
      * Returns groups whose `parentName` field contains the group
@@ -1042,12 +1103,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string children_of_group = 2;</code>
      */
-    public Builder setChildrenOfGroupBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setChildrenOfGroupBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
       filterCase_ = 2;
       filter_ = value;
       onChanged();
@@ -1055,6 +1115,8 @@ private static final long serialVersionUID = 0L;
     }
 
     /**
+     *
+     *
      * <pre>
      * A group name: `"projects/{project_id_or_number}/groups/{group_id}"`.
      * Returns groups that are ancestors of the specified group.
@@ -1071,8 +1133,7 @@ private static final long serialVersionUID = 0L;
         ref = filter_;
       }
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (filterCase_ == 3) {
           filter_ = s;
@@ -1083,6 +1144,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A group name: `"projects/{project_id_or_number}/groups/{group_id}"`.
      * Returns groups that are ancestors of the specified group.
@@ -1093,16 +1156,14 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string ancestors_of_group = 3;</code>
      */
-    public com.google.protobuf.ByteString
-        getAncestorsOfGroupBytes() {
+    public com.google.protobuf.ByteString getAncestorsOfGroupBytes() {
       java.lang.Object ref = "";
       if (filterCase_ == 3) {
         ref = filter_;
       }
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         if (filterCase_ == 3) {
           filter_ = b;
         }
@@ -1112,6 +1173,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A group name: `"projects/{project_id_or_number}/groups/{group_id}"`.
      * Returns groups that are ancestors of the specified group.
@@ -1122,17 +1185,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string ancestors_of_group = 3;</code>
      */
-    public Builder setAncestorsOfGroup(
-        java.lang.String value) {
+    public Builder setAncestorsOfGroup(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  filterCase_ = 3;
+        throw new NullPointerException();
+      }
+      filterCase_ = 3;
       filter_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A group name: `"projects/{project_id_or_number}/groups/{group_id}"`.
      * Returns groups that are ancestors of the specified group.
@@ -1152,6 +1216,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A group name: `"projects/{project_id_or_number}/groups/{group_id}"`.
      * Returns groups that are ancestors of the specified group.
@@ -1162,12 +1228,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string ancestors_of_group = 3;</code>
      */
-    public Builder setAncestorsOfGroupBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setAncestorsOfGroupBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
       filterCase_ = 3;
       filter_ = value;
       onChanged();
@@ -1175,6 +1240,8 @@ private static final long serialVersionUID = 0L;
     }
 
     /**
+     *
+     *
      * <pre>
      * A group name: `"projects/{project_id_or_number}/groups/{group_id}"`.
      * Returns the descendants of the specified group.  This is a superset of
@@ -1190,8 +1257,7 @@ private static final long serialVersionUID = 0L;
         ref = filter_;
       }
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (filterCase_ == 4) {
           filter_ = s;
@@ -1202,6 +1268,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A group name: `"projects/{project_id_or_number}/groups/{group_id}"`.
      * Returns the descendants of the specified group.  This is a superset of
@@ -1211,16 +1279,14 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string descendants_of_group = 4;</code>
      */
-    public com.google.protobuf.ByteString
-        getDescendantsOfGroupBytes() {
+    public com.google.protobuf.ByteString getDescendantsOfGroupBytes() {
       java.lang.Object ref = "";
       if (filterCase_ == 4) {
         ref = filter_;
       }
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         if (filterCase_ == 4) {
           filter_ = b;
         }
@@ -1230,6 +1296,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A group name: `"projects/{project_id_or_number}/groups/{group_id}"`.
      * Returns the descendants of the specified group.  This is a superset of
@@ -1239,17 +1307,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string descendants_of_group = 4;</code>
      */
-    public Builder setDescendantsOfGroup(
-        java.lang.String value) {
+    public Builder setDescendantsOfGroup(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  filterCase_ = 4;
+        throw new NullPointerException();
+      }
+      filterCase_ = 4;
       filter_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A group name: `"projects/{project_id_or_number}/groups/{group_id}"`.
      * Returns the descendants of the specified group.  This is a superset of
@@ -1268,6 +1337,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A group name: `"projects/{project_id_or_number}/groups/{group_id}"`.
      * Returns the descendants of the specified group.  This is a superset of
@@ -1277,20 +1348,21 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string descendants_of_group = 4;</code>
      */
-    public Builder setDescendantsOfGroupBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setDescendantsOfGroupBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
       filterCase_ = 4;
       filter_ = value;
       onChanged();
       return this;
     }
 
-    private int pageSize_ ;
+    private int pageSize_;
     /**
+     *
+     *
      * <pre>
      * A positive number that is the maximum number of results to return.
      * </pre>
@@ -1301,6 +1373,8 @@ private static final long serialVersionUID = 0L;
       return pageSize_;
     }
     /**
+     *
+     *
      * <pre>
      * A positive number that is the maximum number of results to return.
      * </pre>
@@ -1308,12 +1382,14 @@ private static final long serialVersionUID = 0L;
      * <code>int32 page_size = 5;</code>
      */
     public Builder setPageSize(int value) {
-      
+
       pageSize_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A positive number that is the maximum number of results to return.
      * </pre>
@@ -1321,7 +1397,7 @@ private static final long serialVersionUID = 0L;
      * <code>int32 page_size = 5;</code>
      */
     public Builder clearPageSize() {
-      
+
       pageSize_ = 0;
       onChanged();
       return this;
@@ -1329,6 +1405,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object pageToken_ = "";
     /**
+     *
+     *
      * <pre>
      * If this field is not empty then it must contain the `nextPageToken` value
      * returned by a previous call to this method.  Using this field causes the
@@ -1340,8 +1418,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getPageToken() {
       java.lang.Object ref = pageToken_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         pageToken_ = s;
         return s;
@@ -1350,6 +1427,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * If this field is not empty then it must contain the `nextPageToken` value
      * returned by a previous call to this method.  Using this field causes the
@@ -1358,13 +1437,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string page_token = 6;</code>
      */
-    public com.google.protobuf.ByteString
-        getPageTokenBytes() {
+    public com.google.protobuf.ByteString getPageTokenBytes() {
       java.lang.Object ref = pageToken_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         pageToken_ = b;
         return b;
       } else {
@@ -1372,6 +1449,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * If this field is not empty then it must contain the `nextPageToken` value
      * returned by a previous call to this method.  Using this field causes the
@@ -1380,17 +1459,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string page_token = 6;</code>
      */
-    public Builder setPageToken(
-        java.lang.String value) {
+    public Builder setPageToken(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       pageToken_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If this field is not empty then it must contain the `nextPageToken` value
      * returned by a previous call to this method.  Using this field causes the
@@ -1400,12 +1480,14 @@ private static final long serialVersionUID = 0L;
      * <code>string page_token = 6;</code>
      */
     public Builder clearPageToken() {
-      
+
       pageToken_ = getDefaultInstance().getPageToken();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If this field is not empty then it must contain the `nextPageToken` value
      * returned by a previous call to this method.  Using this field causes the
@@ -1414,33 +1496,34 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string page_token = 6;</code>
      */
-    public Builder setPageTokenBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setPageTokenBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       pageToken_ = value;
       onChanged();
       return this;
     }
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+
+    @java.lang.Override
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
     }
-
 
     // @@protoc_insertion_point(builder_scope:google.monitoring.v3.ListGroupsRequest)
   }
 
   // @@protoc_insertion_point(class_scope:google.monitoring.v3.ListGroupsRequest)
   private static final com.google.monitoring.v3.ListGroupsRequest DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.monitoring.v3.ListGroupsRequest();
   }
@@ -1449,15 +1532,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ListGroupsRequest>
-      PARSER = new com.google.protobuf.AbstractParser<ListGroupsRequest>() {
-    public ListGroupsRequest parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ListGroupsRequest(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<ListGroupsRequest> PARSER =
+      new com.google.protobuf.AbstractParser<ListGroupsRequest>() {
+        @java.lang.Override
+        public ListGroupsRequest parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new ListGroupsRequest(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<ListGroupsRequest> parser() {
     return PARSER;
@@ -1468,9 +1552,8 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.monitoring.v3.ListGroupsRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

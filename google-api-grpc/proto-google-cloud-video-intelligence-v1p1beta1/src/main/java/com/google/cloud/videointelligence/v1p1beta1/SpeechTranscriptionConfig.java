@@ -4,21 +4,24 @@
 package com.google.cloud.videointelligence.v1p1beta1;
 
 /**
+ *
+ *
  * <pre>
  * Config for SPEECH_TRANSCRIPTION.
  * </pre>
  *
  * Protobuf type {@code google.cloud.videointelligence.v1p1beta1.SpeechTranscriptionConfig}
  */
-public  final class SpeechTranscriptionConfig extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class SpeechTranscriptionConfig extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.videointelligence.v1p1beta1.SpeechTranscriptionConfig)
     SpeechTranscriptionConfigOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use SpeechTranscriptionConfig.newBuilder() to construct.
   private SpeechTranscriptionConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private SpeechTranscriptionConfig() {
     languageCode_ = "";
     maxAlternatives_ = 0;
@@ -29,15 +32,18 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private SpeechTranscriptionConfig(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -49,71 +55,79 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            languageCode_ = s;
-            break;
-          }
-          case 16: {
-
-            maxAlternatives_ = input.readInt32();
-            break;
-          }
-          case 24: {
-
-            filterProfanity_ = input.readBool();
-            break;
-          }
-          case 34: {
-            if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-              speechContexts_ = new java.util.ArrayList<com.google.cloud.videointelligence.v1p1beta1.SpeechContext>();
-              mutable_bitField0_ |= 0x00000008;
+              languageCode_ = s;
+              break;
             }
-            speechContexts_.add(
-                input.readMessage(com.google.cloud.videointelligence.v1p1beta1.SpeechContext.parser(), extensionRegistry));
-            break;
-          }
-          case 40: {
-
-            enableAutomaticPunctuation_ = input.readBool();
-            break;
-          }
-          case 48: {
-            if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
-              audioTracks_ = new java.util.ArrayList<java.lang.Integer>();
-              mutable_bitField0_ |= 0x00000020;
+          case 16:
+            {
+              maxAlternatives_ = input.readInt32();
+              break;
             }
-            audioTracks_.add(input.readInt32());
-            break;
-          }
-          case 50: {
-            int length = input.readRawVarint32();
-            int limit = input.pushLimit(length);
-            if (!((mutable_bitField0_ & 0x00000020) == 0x00000020) && input.getBytesUntilLimit() > 0) {
-              audioTracks_ = new java.util.ArrayList<java.lang.Integer>();
-              mutable_bitField0_ |= 0x00000020;
+          case 24:
+            {
+              filterProfanity_ = input.readBool();
+              break;
             }
-            while (input.getBytesUntilLimit() > 0) {
+          case 34:
+            {
+              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+                speechContexts_ =
+                    new java.util.ArrayList<
+                        com.google.cloud.videointelligence.v1p1beta1.SpeechContext>();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              speechContexts_.add(
+                  input.readMessage(
+                      com.google.cloud.videointelligence.v1p1beta1.SpeechContext.parser(),
+                      extensionRegistry));
+              break;
+            }
+          case 40:
+            {
+              enableAutomaticPunctuation_ = input.readBool();
+              break;
+            }
+          case 48:
+            {
+              if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+                audioTracks_ = new java.util.ArrayList<java.lang.Integer>();
+                mutable_bitField0_ |= 0x00000020;
+              }
               audioTracks_.add(input.readInt32());
+              break;
             }
-            input.popLimit(limit);
-            break;
-          }
+          case 50:
+            {
+              int length = input.readRawVarint32();
+              int limit = input.pushLimit(length);
+              if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)
+                  && input.getBytesUntilLimit() > 0) {
+                audioTracks_ = new java.util.ArrayList<java.lang.Integer>();
+                mutable_bitField0_ |= 0x00000020;
+              }
+              while (input.getBytesUntilLimit() > 0) {
+                audioTracks_.add(input.readInt32());
+              }
+              input.popLimit(limit);
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
         speechContexts_ = java.util.Collections.unmodifiableList(speechContexts_);
@@ -125,22 +139,28 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.videointelligence.v1p1beta1.VideoIntelligenceServiceProto.internal_static_google_cloud_videointelligence_v1p1beta1_SpeechTranscriptionConfig_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.videointelligence.v1p1beta1.VideoIntelligenceServiceProto
+        .internal_static_google_cloud_videointelligence_v1p1beta1_SpeechTranscriptionConfig_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.videointelligence.v1p1beta1.VideoIntelligenceServiceProto.internal_static_google_cloud_videointelligence_v1p1beta1_SpeechTranscriptionConfig_fieldAccessorTable
+    return com.google.cloud.videointelligence.v1p1beta1.VideoIntelligenceServiceProto
+        .internal_static_google_cloud_videointelligence_v1p1beta1_SpeechTranscriptionConfig_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.videointelligence.v1p1beta1.SpeechTranscriptionConfig.class, com.google.cloud.videointelligence.v1p1beta1.SpeechTranscriptionConfig.Builder.class);
+            com.google.cloud.videointelligence.v1p1beta1.SpeechTranscriptionConfig.class,
+            com.google.cloud.videointelligence.v1p1beta1.SpeechTranscriptionConfig.Builder.class);
   }
 
   private int bitField0_;
   public static final int LANGUAGE_CODE_FIELD_NUMBER = 1;
   private volatile java.lang.Object languageCode_;
   /**
+   *
+   *
    * <pre>
    * *Required* The language of the supplied audio as a
    * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
@@ -156,14 +176,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       languageCode_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * *Required* The language of the supplied audio as a
    * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
@@ -174,13 +195,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string language_code = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getLanguageCodeBytes() {
+  public com.google.protobuf.ByteString getLanguageCodeBytes() {
     java.lang.Object ref = languageCode_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       languageCode_ = b;
       return b;
     } else {
@@ -191,6 +210,8 @@ private static final long serialVersionUID = 0L;
   public static final int MAX_ALTERNATIVES_FIELD_NUMBER = 2;
   private int maxAlternatives_;
   /**
+   *
+   *
    * <pre>
    * *Optional* Maximum number of recognition hypotheses to be returned.
    * Specifically, the maximum number of `SpeechRecognitionAlternative` messages
@@ -208,6 +229,8 @@ private static final long serialVersionUID = 0L;
   public static final int FILTER_PROFANITY_FIELD_NUMBER = 3;
   private boolean filterProfanity_;
   /**
+   *
+   *
    * <pre>
    * *Optional* If set to `true`, the server will attempt to filter out
    * profanities, replacing all but the initial character in each filtered word
@@ -222,63 +245,83 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int SPEECH_CONTEXTS_FIELD_NUMBER = 4;
-  private java.util.List<com.google.cloud.videointelligence.v1p1beta1.SpeechContext> speechContexts_;
+  private java.util.List<com.google.cloud.videointelligence.v1p1beta1.SpeechContext>
+      speechContexts_;
   /**
+   *
+   *
    * <pre>
    * *Optional* A means to provide context to assist the speech recognition.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1p1beta1.SpeechContext speech_contexts = 4;</code>
+   * <code>repeated .google.cloud.videointelligence.v1p1beta1.SpeechContext speech_contexts = 4;
+   * </code>
    */
-  public java.util.List<com.google.cloud.videointelligence.v1p1beta1.SpeechContext> getSpeechContextsList() {
+  public java.util.List<com.google.cloud.videointelligence.v1p1beta1.SpeechContext>
+      getSpeechContextsList() {
     return speechContexts_;
   }
   /**
+   *
+   *
    * <pre>
    * *Optional* A means to provide context to assist the speech recognition.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1p1beta1.SpeechContext speech_contexts = 4;</code>
+   * <code>repeated .google.cloud.videointelligence.v1p1beta1.SpeechContext speech_contexts = 4;
+   * </code>
    */
-  public java.util.List<? extends com.google.cloud.videointelligence.v1p1beta1.SpeechContextOrBuilder> 
+  public java.util.List<
+          ? extends com.google.cloud.videointelligence.v1p1beta1.SpeechContextOrBuilder>
       getSpeechContextsOrBuilderList() {
     return speechContexts_;
   }
   /**
+   *
+   *
    * <pre>
    * *Optional* A means to provide context to assist the speech recognition.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1p1beta1.SpeechContext speech_contexts = 4;</code>
+   * <code>repeated .google.cloud.videointelligence.v1p1beta1.SpeechContext speech_contexts = 4;
+   * </code>
    */
   public int getSpeechContextsCount() {
     return speechContexts_.size();
   }
   /**
+   *
+   *
    * <pre>
    * *Optional* A means to provide context to assist the speech recognition.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1p1beta1.SpeechContext speech_contexts = 4;</code>
+   * <code>repeated .google.cloud.videointelligence.v1p1beta1.SpeechContext speech_contexts = 4;
+   * </code>
    */
   public com.google.cloud.videointelligence.v1p1beta1.SpeechContext getSpeechContexts(int index) {
     return speechContexts_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * *Optional* A means to provide context to assist the speech recognition.
    * </pre>
    *
-   * <code>repeated .google.cloud.videointelligence.v1p1beta1.SpeechContext speech_contexts = 4;</code>
+   * <code>repeated .google.cloud.videointelligence.v1p1beta1.SpeechContext speech_contexts = 4;
+   * </code>
    */
-  public com.google.cloud.videointelligence.v1p1beta1.SpeechContextOrBuilder getSpeechContextsOrBuilder(
-      int index) {
+  public com.google.cloud.videointelligence.v1p1beta1.SpeechContextOrBuilder
+      getSpeechContextsOrBuilder(int index) {
     return speechContexts_.get(index);
   }
 
   public static final int ENABLE_AUTOMATIC_PUNCTUATION_FIELD_NUMBER = 5;
   private boolean enableAutomaticPunctuation_;
   /**
+   *
+   *
    * <pre>
    * *Optional* If 'true', adds punctuation to recognition result hypotheses.
    * This feature is only available in select languages. Setting this for
@@ -297,6 +340,8 @@ private static final long serialVersionUID = 0L;
   public static final int AUDIO_TRACKS_FIELD_NUMBER = 6;
   private java.util.List<java.lang.Integer> audioTracks_;
   /**
+   *
+   *
    * <pre>
    * *Optional* For file formats, such as MXF or MKV, supporting multiple audio
    * tracks, specify up to two tracks. Default: track 0.
@@ -304,11 +349,12 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated int32 audio_tracks = 6;</code>
    */
-  public java.util.List<java.lang.Integer>
-      getAudioTracksList() {
+  public java.util.List<java.lang.Integer> getAudioTracksList() {
     return audioTracks_;
   }
   /**
+   *
+   *
    * <pre>
    * *Optional* For file formats, such as MXF or MKV, supporting multiple audio
    * tracks, specify up to two tracks. Default: track 0.
@@ -320,6 +366,8 @@ private static final long serialVersionUID = 0L;
     return audioTracks_.size();
   }
   /**
+   *
+   *
    * <pre>
    * *Optional* For file formats, such as MXF or MKV, supporting multiple audio
    * tracks, specify up to two tracks. Default: track 0.
@@ -330,9 +378,12 @@ private static final long serialVersionUID = 0L;
   public int getAudioTracks(int index) {
     return audioTracks_.get(index);
   }
+
   private int audioTracksMemoizedSerializedSize = -1;
 
   private byte memoizedIsInitialized = -1;
+
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -342,8 +393,8 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  @java.lang.Override
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     getSerializedSize();
     if (!getLanguageCodeBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, languageCode_);
@@ -370,6 +421,7 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -379,32 +431,27 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, languageCode_);
     }
     if (maxAlternatives_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(2, maxAlternatives_);
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, maxAlternatives_);
     }
     if (filterProfanity_ != false) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(3, filterProfanity_);
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, filterProfanity_);
     }
     for (int i = 0; i < speechContexts_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, speechContexts_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, speechContexts_.get(i));
     }
     if (enableAutomaticPunctuation_ != false) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(5, enableAutomaticPunctuation_);
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(5, enableAutomaticPunctuation_);
     }
     {
       int dataSize = 0;
       for (int i = 0; i < audioTracks_.size(); i++) {
-        dataSize += com.google.protobuf.CodedOutputStream
-          .computeInt32SizeNoTag(audioTracks_.get(i));
+        dataSize +=
+            com.google.protobuf.CodedOutputStream.computeInt32SizeNoTag(audioTracks_.get(i));
       }
       size += dataSize;
       if (!getAudioTracksList().isEmpty()) {
         size += 1;
-        size += com.google.protobuf.CodedOutputStream
-            .computeInt32SizeNoTag(dataSize);
+        size += com.google.protobuf.CodedOutputStream.computeInt32SizeNoTag(dataSize);
       }
       audioTracksMemoizedSerializedSize = dataSize;
     }
@@ -416,26 +463,21 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.videointelligence.v1p1beta1.SpeechTranscriptionConfig)) {
       return super.equals(obj);
     }
-    com.google.cloud.videointelligence.v1p1beta1.SpeechTranscriptionConfig other = (com.google.cloud.videointelligence.v1p1beta1.SpeechTranscriptionConfig) obj;
+    com.google.cloud.videointelligence.v1p1beta1.SpeechTranscriptionConfig other =
+        (com.google.cloud.videointelligence.v1p1beta1.SpeechTranscriptionConfig) obj;
 
     boolean result = true;
-    result = result && getLanguageCode()
-        .equals(other.getLanguageCode());
-    result = result && (getMaxAlternatives()
-        == other.getMaxAlternatives());
-    result = result && (getFilterProfanity()
-        == other.getFilterProfanity());
-    result = result && getSpeechContextsList()
-        .equals(other.getSpeechContextsList());
-    result = result && (getEnableAutomaticPunctuation()
-        == other.getEnableAutomaticPunctuation());
-    result = result && getAudioTracksList()
-        .equals(other.getAudioTracksList());
+    result = result && getLanguageCode().equals(other.getLanguageCode());
+    result = result && (getMaxAlternatives() == other.getMaxAlternatives());
+    result = result && (getFilterProfanity() == other.getFilterProfanity());
+    result = result && getSpeechContextsList().equals(other.getSpeechContextsList());
+    result = result && (getEnableAutomaticPunctuation() == other.getEnableAutomaticPunctuation());
+    result = result && getAudioTracksList().equals(other.getAudioTracksList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -452,15 +494,13 @@ private static final long serialVersionUID = 0L;
     hash = (37 * hash) + MAX_ALTERNATIVES_FIELD_NUMBER;
     hash = (53 * hash) + getMaxAlternatives();
     hash = (37 * hash) + FILTER_PROFANITY_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getFilterProfanity());
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getFilterProfanity());
     if (getSpeechContextsCount() > 0) {
       hash = (37 * hash) + SPEECH_CONTEXTS_FIELD_NUMBER;
       hash = (53 * hash) + getSpeechContextsList().hashCode();
     }
     hash = (37 * hash) + ENABLE_AUTOMATIC_PUNCTUATION_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getEnableAutomaticPunctuation());
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableAutomaticPunctuation());
     if (getAudioTracksCount() > 0) {
       hash = (37 * hash) + AUDIO_TRACKS_FIELD_NUMBER;
       hash = (53 * hash) + getAudioTracksList().hashCode();
@@ -471,132 +511,148 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.cloud.videointelligence.v1p1beta1.SpeechTranscriptionConfig parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.videointelligence.v1p1beta1.SpeechTranscriptionConfig parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.videointelligence.v1p1beta1.SpeechTranscriptionConfig parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.videointelligence.v1p1beta1.SpeechTranscriptionConfig parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.videointelligence.v1p1beta1.SpeechTranscriptionConfig parseFrom(byte[] data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+
+  public static com.google.cloud.videointelligence.v1p1beta1.SpeechTranscriptionConfig parseFrom(
+      byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.videointelligence.v1p1beta1.SpeechTranscriptionConfig parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.videointelligence.v1p1beta1.SpeechTranscriptionConfig parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.videointelligence.v1p1beta1.SpeechTranscriptionConfig parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.videointelligence.v1p1beta1.SpeechTranscriptionConfig parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
-  public static com.google.cloud.videointelligence.v1p1beta1.SpeechTranscriptionConfig parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-  }
+
   public static com.google.cloud.videointelligence.v1p1beta1.SpeechTranscriptionConfig parseFrom(
-      com.google.protobuf.CodedInputStream input)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
+  public static com.google.cloud.videointelligence.v1p1beta1.SpeechTranscriptionConfig
+      parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+  }
+
+  public static com.google.cloud.videointelligence.v1p1beta1.SpeechTranscriptionConfig
+      parseDelimitedFrom(
+          java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
+  public static com.google.cloud.videointelligence.v1p1beta1.SpeechTranscriptionConfig parseFrom(
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+  }
+
   public static com.google.cloud.videointelligence.v1p1beta1.SpeechTranscriptionConfig parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  public Builder newBuilderForType() { return newBuilder(); }
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-  public static Builder newBuilder(com.google.cloud.videointelligence.v1p1beta1.SpeechTranscriptionConfig prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+
+  public static Builder newBuilder(
+      com.google.cloud.videointelligence.v1p1beta1.SpeechTranscriptionConfig prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+
+  @java.lang.Override
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Config for SPEECH_TRANSCRIPTION.
    * </pre>
    *
    * Protobuf type {@code google.cloud.videointelligence.v1p1beta1.SpeechTranscriptionConfig}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.videointelligence.v1p1beta1.SpeechTranscriptionConfig)
       com.google.cloud.videointelligence.v1p1beta1.SpeechTranscriptionConfigOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.videointelligence.v1p1beta1.VideoIntelligenceServiceProto.internal_static_google_cloud_videointelligence_v1p1beta1_SpeechTranscriptionConfig_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.videointelligence.v1p1beta1.VideoIntelligenceServiceProto
+          .internal_static_google_cloud_videointelligence_v1p1beta1_SpeechTranscriptionConfig_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.videointelligence.v1p1beta1.VideoIntelligenceServiceProto.internal_static_google_cloud_videointelligence_v1p1beta1_SpeechTranscriptionConfig_fieldAccessorTable
+      return com.google.cloud.videointelligence.v1p1beta1.VideoIntelligenceServiceProto
+          .internal_static_google_cloud_videointelligence_v1p1beta1_SpeechTranscriptionConfig_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.videointelligence.v1p1beta1.SpeechTranscriptionConfig.class, com.google.cloud.videointelligence.v1p1beta1.SpeechTranscriptionConfig.Builder.class);
+              com.google.cloud.videointelligence.v1p1beta1.SpeechTranscriptionConfig.class,
+              com.google.cloud.videointelligence.v1p1beta1.SpeechTranscriptionConfig.Builder.class);
     }
 
-    // Construct using com.google.cloud.videointelligence.v1p1beta1.SpeechTranscriptionConfig.newBuilder()
+    // Construct using
+    // com.google.cloud.videointelligence.v1p1beta1.SpeechTranscriptionConfig.newBuilder()
     private Builder() {
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getSpeechContextsFieldBuilder();
       }
     }
+
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       languageCode_ = "";
@@ -618,25 +674,33 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.videointelligence.v1p1beta1.VideoIntelligenceServiceProto.internal_static_google_cloud_videointelligence_v1p1beta1_SpeechTranscriptionConfig_descriptor;
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.videointelligence.v1p1beta1.VideoIntelligenceServiceProto
+          .internal_static_google_cloud_videointelligence_v1p1beta1_SpeechTranscriptionConfig_descriptor;
     }
 
-    public com.google.cloud.videointelligence.v1p1beta1.SpeechTranscriptionConfig getDefaultInstanceForType() {
-      return com.google.cloud.videointelligence.v1p1beta1.SpeechTranscriptionConfig.getDefaultInstance();
+    @java.lang.Override
+    public com.google.cloud.videointelligence.v1p1beta1.SpeechTranscriptionConfig
+        getDefaultInstanceForType() {
+      return com.google.cloud.videointelligence.v1p1beta1.SpeechTranscriptionConfig
+          .getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.cloud.videointelligence.v1p1beta1.SpeechTranscriptionConfig build() {
-      com.google.cloud.videointelligence.v1p1beta1.SpeechTranscriptionConfig result = buildPartial();
+      com.google.cloud.videointelligence.v1p1beta1.SpeechTranscriptionConfig result =
+          buildPartial();
       if (!result.isInitialized()) {
         throw newUninitializedMessageException(result);
       }
       return result;
     }
 
+    @java.lang.Override
     public com.google.cloud.videointelligence.v1p1beta1.SpeechTranscriptionConfig buildPartial() {
-      com.google.cloud.videointelligence.v1p1beta1.SpeechTranscriptionConfig result = new com.google.cloud.videointelligence.v1p1beta1.SpeechTranscriptionConfig(this);
+      com.google.cloud.videointelligence.v1p1beta1.SpeechTranscriptionConfig result =
+          new com.google.cloud.videointelligence.v1p1beta1.SpeechTranscriptionConfig(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       result.languageCode_ = languageCode_;
@@ -662,43 +726,55 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+
+    @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+    @java.lang.Override
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+    @java.lang.Override
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
+    @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
+    @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.videointelligence.v1p1beta1.SpeechTranscriptionConfig) {
-        return mergeFrom((com.google.cloud.videointelligence.v1p1beta1.SpeechTranscriptionConfig)other);
+        return mergeFrom(
+            (com.google.cloud.videointelligence.v1p1beta1.SpeechTranscriptionConfig) other);
       } else {
         super.mergeFrom(other);
         return this;
       }
     }
 
-    public Builder mergeFrom(com.google.cloud.videointelligence.v1p1beta1.SpeechTranscriptionConfig other) {
-      if (other == com.google.cloud.videointelligence.v1p1beta1.SpeechTranscriptionConfig.getDefaultInstance()) return this;
+    public Builder mergeFrom(
+        com.google.cloud.videointelligence.v1p1beta1.SpeechTranscriptionConfig other) {
+      if (other
+          == com.google.cloud.videointelligence.v1p1beta1.SpeechTranscriptionConfig
+              .getDefaultInstance()) return this;
       if (!other.getLanguageCode().isEmpty()) {
         languageCode_ = other.languageCode_;
         onChanged();
@@ -727,9 +803,10 @@ private static final long serialVersionUID = 0L;
             speechContextsBuilder_ = null;
             speechContexts_ = other.speechContexts_;
             bitField0_ = (bitField0_ & ~0x00000008);
-            speechContextsBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getSpeechContextsFieldBuilder() : null;
+            speechContextsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getSpeechContextsFieldBuilder()
+                    : null;
           } else {
             speechContextsBuilder_.addAllMessages(other.speechContexts_);
           }
@@ -753,10 +830,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -765,7 +844,9 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.videointelligence.v1p1beta1.SpeechTranscriptionConfig) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.cloud.videointelligence.v1p1beta1.SpeechTranscriptionConfig)
+                e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -774,10 +855,13 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private java.lang.Object languageCode_ = "";
     /**
+     *
+     *
      * <pre>
      * *Required* The language of the supplied audio as a
      * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
@@ -791,8 +875,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getLanguageCode() {
       java.lang.Object ref = languageCode_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         languageCode_ = s;
         return s;
@@ -801,6 +884,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * *Required* The language of the supplied audio as a
      * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
@@ -811,13 +896,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string language_code = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getLanguageCodeBytes() {
+    public com.google.protobuf.ByteString getLanguageCodeBytes() {
       java.lang.Object ref = languageCode_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         languageCode_ = b;
         return b;
       } else {
@@ -825,6 +908,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * *Required* The language of the supplied audio as a
      * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
@@ -835,17 +920,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string language_code = 1;</code>
      */
-    public Builder setLanguageCode(
-        java.lang.String value) {
+    public Builder setLanguageCode(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       languageCode_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * *Required* The language of the supplied audio as a
      * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
@@ -857,12 +943,14 @@ private static final long serialVersionUID = 0L;
      * <code>string language_code = 1;</code>
      */
     public Builder clearLanguageCode() {
-      
+
       languageCode_ = getDefaultInstance().getLanguageCode();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * *Required* The language of the supplied audio as a
      * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag.
@@ -873,20 +961,21 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string language_code = 1;</code>
      */
-    public Builder setLanguageCodeBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setLanguageCodeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       languageCode_ = value;
       onChanged();
       return this;
     }
 
-    private int maxAlternatives_ ;
+    private int maxAlternatives_;
     /**
+     *
+     *
      * <pre>
      * *Optional* Maximum number of recognition hypotheses to be returned.
      * Specifically, the maximum number of `SpeechRecognitionAlternative` messages
@@ -901,6 +990,8 @@ private static final long serialVersionUID = 0L;
       return maxAlternatives_;
     }
     /**
+     *
+     *
      * <pre>
      * *Optional* Maximum number of recognition hypotheses to be returned.
      * Specifically, the maximum number of `SpeechRecognitionAlternative` messages
@@ -912,12 +1003,14 @@ private static final long serialVersionUID = 0L;
      * <code>int32 max_alternatives = 2;</code>
      */
     public Builder setMaxAlternatives(int value) {
-      
+
       maxAlternatives_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * *Optional* Maximum number of recognition hypotheses to be returned.
      * Specifically, the maximum number of `SpeechRecognitionAlternative` messages
@@ -929,14 +1022,16 @@ private static final long serialVersionUID = 0L;
      * <code>int32 max_alternatives = 2;</code>
      */
     public Builder clearMaxAlternatives() {
-      
+
       maxAlternatives_ = 0;
       onChanged();
       return this;
     }
 
-    private boolean filterProfanity_ ;
+    private boolean filterProfanity_;
     /**
+     *
+     *
      * <pre>
      * *Optional* If set to `true`, the server will attempt to filter out
      * profanities, replacing all but the initial character in each filtered word
@@ -950,6 +1045,8 @@ private static final long serialVersionUID = 0L;
       return filterProfanity_;
     }
     /**
+     *
+     *
      * <pre>
      * *Optional* If set to `true`, the server will attempt to filter out
      * profanities, replacing all but the initial character in each filtered word
@@ -960,12 +1057,14 @@ private static final long serialVersionUID = 0L;
      * <code>bool filter_profanity = 3;</code>
      */
     public Builder setFilterProfanity(boolean value) {
-      
+
       filterProfanity_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * *Optional* If set to `true`, the server will attempt to filter out
      * profanities, replacing all but the initial character in each filtered word
@@ -976,32 +1075,42 @@ private static final long serialVersionUID = 0L;
      * <code>bool filter_profanity = 3;</code>
      */
     public Builder clearFilterProfanity() {
-      
+
       filterProfanity_ = false;
       onChanged();
       return this;
     }
 
-    private java.util.List<com.google.cloud.videointelligence.v1p1beta1.SpeechContext> speechContexts_ =
-      java.util.Collections.emptyList();
+    private java.util.List<com.google.cloud.videointelligence.v1p1beta1.SpeechContext>
+        speechContexts_ = java.util.Collections.emptyList();
+
     private void ensureSpeechContextsIsMutable() {
       if (!((bitField0_ & 0x00000008) == 0x00000008)) {
-        speechContexts_ = new java.util.ArrayList<com.google.cloud.videointelligence.v1p1beta1.SpeechContext>(speechContexts_);
+        speechContexts_ =
+            new java.util.ArrayList<com.google.cloud.videointelligence.v1p1beta1.SpeechContext>(
+                speechContexts_);
         bitField0_ |= 0x00000008;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.videointelligence.v1p1beta1.SpeechContext, com.google.cloud.videointelligence.v1p1beta1.SpeechContext.Builder, com.google.cloud.videointelligence.v1p1beta1.SpeechContextOrBuilder> speechContextsBuilder_;
+            com.google.cloud.videointelligence.v1p1beta1.SpeechContext,
+            com.google.cloud.videointelligence.v1p1beta1.SpeechContext.Builder,
+            com.google.cloud.videointelligence.v1p1beta1.SpeechContextOrBuilder>
+        speechContextsBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * *Optional* A means to provide context to assist the speech recognition.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p1beta1.SpeechContext speech_contexts = 4;</code>
+     * <code>repeated .google.cloud.videointelligence.v1p1beta1.SpeechContext speech_contexts = 4;
+     * </code>
      */
-    public java.util.List<com.google.cloud.videointelligence.v1p1beta1.SpeechContext> getSpeechContextsList() {
+    public java.util.List<com.google.cloud.videointelligence.v1p1beta1.SpeechContext>
+        getSpeechContextsList() {
       if (speechContextsBuilder_ == null) {
         return java.util.Collections.unmodifiableList(speechContexts_);
       } else {
@@ -1009,11 +1118,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * *Optional* A means to provide context to assist the speech recognition.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p1beta1.SpeechContext speech_contexts = 4;</code>
+     * <code>repeated .google.cloud.videointelligence.v1p1beta1.SpeechContext speech_contexts = 4;
+     * </code>
      */
     public int getSpeechContextsCount() {
       if (speechContextsBuilder_ == null) {
@@ -1023,11 +1135,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * *Optional* A means to provide context to assist the speech recognition.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p1beta1.SpeechContext speech_contexts = 4;</code>
+     * <code>repeated .google.cloud.videointelligence.v1p1beta1.SpeechContext speech_contexts = 4;
+     * </code>
      */
     public com.google.cloud.videointelligence.v1p1beta1.SpeechContext getSpeechContexts(int index) {
       if (speechContextsBuilder_ == null) {
@@ -1037,11 +1152,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * *Optional* A means to provide context to assist the speech recognition.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p1beta1.SpeechContext speech_contexts = 4;</code>
+     * <code>repeated .google.cloud.videointelligence.v1p1beta1.SpeechContext speech_contexts = 4;
+     * </code>
      */
     public Builder setSpeechContexts(
         int index, com.google.cloud.videointelligence.v1p1beta1.SpeechContext value) {
@@ -1058,14 +1176,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * *Optional* A means to provide context to assist the speech recognition.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p1beta1.SpeechContext speech_contexts = 4;</code>
+     * <code>repeated .google.cloud.videointelligence.v1p1beta1.SpeechContext speech_contexts = 4;
+     * </code>
      */
     public Builder setSpeechContexts(
-        int index, com.google.cloud.videointelligence.v1p1beta1.SpeechContext.Builder builderForValue) {
+        int index,
+        com.google.cloud.videointelligence.v1p1beta1.SpeechContext.Builder builderForValue) {
       if (speechContextsBuilder_ == null) {
         ensureSpeechContextsIsMutable();
         speechContexts_.set(index, builderForValue.build());
@@ -1076,13 +1198,17 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * *Optional* A means to provide context to assist the speech recognition.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p1beta1.SpeechContext speech_contexts = 4;</code>
+     * <code>repeated .google.cloud.videointelligence.v1p1beta1.SpeechContext speech_contexts = 4;
+     * </code>
      */
-    public Builder addSpeechContexts(com.google.cloud.videointelligence.v1p1beta1.SpeechContext value) {
+    public Builder addSpeechContexts(
+        com.google.cloud.videointelligence.v1p1beta1.SpeechContext value) {
       if (speechContextsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1096,11 +1222,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * *Optional* A means to provide context to assist the speech recognition.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p1beta1.SpeechContext speech_contexts = 4;</code>
+     * <code>repeated .google.cloud.videointelligence.v1p1beta1.SpeechContext speech_contexts = 4;
+     * </code>
      */
     public Builder addSpeechContexts(
         int index, com.google.cloud.videointelligence.v1p1beta1.SpeechContext value) {
@@ -1117,11 +1246,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * *Optional* A means to provide context to assist the speech recognition.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p1beta1.SpeechContext speech_contexts = 4;</code>
+     * <code>repeated .google.cloud.videointelligence.v1p1beta1.SpeechContext speech_contexts = 4;
+     * </code>
      */
     public Builder addSpeechContexts(
         com.google.cloud.videointelligence.v1p1beta1.SpeechContext.Builder builderForValue) {
@@ -1135,14 +1267,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * *Optional* A means to provide context to assist the speech recognition.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p1beta1.SpeechContext speech_contexts = 4;</code>
+     * <code>repeated .google.cloud.videointelligence.v1p1beta1.SpeechContext speech_contexts = 4;
+     * </code>
      */
     public Builder addSpeechContexts(
-        int index, com.google.cloud.videointelligence.v1p1beta1.SpeechContext.Builder builderForValue) {
+        int index,
+        com.google.cloud.videointelligence.v1p1beta1.SpeechContext.Builder builderForValue) {
       if (speechContextsBuilder_ == null) {
         ensureSpeechContextsIsMutable();
         speechContexts_.add(index, builderForValue.build());
@@ -1153,18 +1289,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * *Optional* A means to provide context to assist the speech recognition.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p1beta1.SpeechContext speech_contexts = 4;</code>
+     * <code>repeated .google.cloud.videointelligence.v1p1beta1.SpeechContext speech_contexts = 4;
+     * </code>
      */
     public Builder addAllSpeechContexts(
-        java.lang.Iterable<? extends com.google.cloud.videointelligence.v1p1beta1.SpeechContext> values) {
+        java.lang.Iterable<? extends com.google.cloud.videointelligence.v1p1beta1.SpeechContext>
+            values) {
       if (speechContextsBuilder_ == null) {
         ensureSpeechContextsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, speechContexts_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, speechContexts_);
         onChanged();
       } else {
         speechContextsBuilder_.addAllMessages(values);
@@ -1172,11 +1311,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * *Optional* A means to provide context to assist the speech recognition.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p1beta1.SpeechContext speech_contexts = 4;</code>
+     * <code>repeated .google.cloud.videointelligence.v1p1beta1.SpeechContext speech_contexts = 4;
+     * </code>
      */
     public Builder clearSpeechContexts() {
       if (speechContextsBuilder_ == null) {
@@ -1189,11 +1331,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * *Optional* A means to provide context to assist the speech recognition.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p1beta1.SpeechContext speech_contexts = 4;</code>
+     * <code>repeated .google.cloud.videointelligence.v1p1beta1.SpeechContext speech_contexts = 4;
+     * </code>
      */
     public Builder removeSpeechContexts(int index) {
       if (speechContextsBuilder_ == null) {
@@ -1206,39 +1351,50 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * *Optional* A means to provide context to assist the speech recognition.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p1beta1.SpeechContext speech_contexts = 4;</code>
+     * <code>repeated .google.cloud.videointelligence.v1p1beta1.SpeechContext speech_contexts = 4;
+     * </code>
      */
-    public com.google.cloud.videointelligence.v1p1beta1.SpeechContext.Builder getSpeechContextsBuilder(
-        int index) {
+    public com.google.cloud.videointelligence.v1p1beta1.SpeechContext.Builder
+        getSpeechContextsBuilder(int index) {
       return getSpeechContextsFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * *Optional* A means to provide context to assist the speech recognition.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p1beta1.SpeechContext speech_contexts = 4;</code>
+     * <code>repeated .google.cloud.videointelligence.v1p1beta1.SpeechContext speech_contexts = 4;
+     * </code>
      */
-    public com.google.cloud.videointelligence.v1p1beta1.SpeechContextOrBuilder getSpeechContextsOrBuilder(
-        int index) {
+    public com.google.cloud.videointelligence.v1p1beta1.SpeechContextOrBuilder
+        getSpeechContextsOrBuilder(int index) {
       if (speechContextsBuilder_ == null) {
-        return speechContexts_.get(index);  } else {
+        return speechContexts_.get(index);
+      } else {
         return speechContextsBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * *Optional* A means to provide context to assist the speech recognition.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p1beta1.SpeechContext speech_contexts = 4;</code>
+     * <code>repeated .google.cloud.videointelligence.v1p1beta1.SpeechContext speech_contexts = 4;
+     * </code>
      */
-    public java.util.List<? extends com.google.cloud.videointelligence.v1p1beta1.SpeechContextOrBuilder> 
-         getSpeechContextsOrBuilderList() {
+    public java.util.List<
+            ? extends com.google.cloud.videointelligence.v1p1beta1.SpeechContextOrBuilder>
+        getSpeechContextsOrBuilderList() {
       if (speechContextsBuilder_ != null) {
         return speechContextsBuilder_.getMessageOrBuilderList();
       } else {
@@ -1246,45 +1402,64 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * *Optional* A means to provide context to assist the speech recognition.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p1beta1.SpeechContext speech_contexts = 4;</code>
+     * <code>repeated .google.cloud.videointelligence.v1p1beta1.SpeechContext speech_contexts = 4;
+     * </code>
      */
-    public com.google.cloud.videointelligence.v1p1beta1.SpeechContext.Builder addSpeechContextsBuilder() {
-      return getSpeechContextsFieldBuilder().addBuilder(
-          com.google.cloud.videointelligence.v1p1beta1.SpeechContext.getDefaultInstance());
+    public com.google.cloud.videointelligence.v1p1beta1.SpeechContext.Builder
+        addSpeechContextsBuilder() {
+      return getSpeechContextsFieldBuilder()
+          .addBuilder(
+              com.google.cloud.videointelligence.v1p1beta1.SpeechContext.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * *Optional* A means to provide context to assist the speech recognition.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p1beta1.SpeechContext speech_contexts = 4;</code>
+     * <code>repeated .google.cloud.videointelligence.v1p1beta1.SpeechContext speech_contexts = 4;
+     * </code>
      */
-    public com.google.cloud.videointelligence.v1p1beta1.SpeechContext.Builder addSpeechContextsBuilder(
-        int index) {
-      return getSpeechContextsFieldBuilder().addBuilder(
-          index, com.google.cloud.videointelligence.v1p1beta1.SpeechContext.getDefaultInstance());
+    public com.google.cloud.videointelligence.v1p1beta1.SpeechContext.Builder
+        addSpeechContextsBuilder(int index) {
+      return getSpeechContextsFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.cloud.videointelligence.v1p1beta1.SpeechContext.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * *Optional* A means to provide context to assist the speech recognition.
      * </pre>
      *
-     * <code>repeated .google.cloud.videointelligence.v1p1beta1.SpeechContext speech_contexts = 4;</code>
+     * <code>repeated .google.cloud.videointelligence.v1p1beta1.SpeechContext speech_contexts = 4;
+     * </code>
      */
-    public java.util.List<com.google.cloud.videointelligence.v1p1beta1.SpeechContext.Builder> 
-         getSpeechContextsBuilderList() {
+    public java.util.List<com.google.cloud.videointelligence.v1p1beta1.SpeechContext.Builder>
+        getSpeechContextsBuilderList() {
       return getSpeechContextsFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.videointelligence.v1p1beta1.SpeechContext, com.google.cloud.videointelligence.v1p1beta1.SpeechContext.Builder, com.google.cloud.videointelligence.v1p1beta1.SpeechContextOrBuilder> 
+            com.google.cloud.videointelligence.v1p1beta1.SpeechContext,
+            com.google.cloud.videointelligence.v1p1beta1.SpeechContext.Builder,
+            com.google.cloud.videointelligence.v1p1beta1.SpeechContextOrBuilder>
         getSpeechContextsFieldBuilder() {
       if (speechContextsBuilder_ == null) {
-        speechContextsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.cloud.videointelligence.v1p1beta1.SpeechContext, com.google.cloud.videointelligence.v1p1beta1.SpeechContext.Builder, com.google.cloud.videointelligence.v1p1beta1.SpeechContextOrBuilder>(
+        speechContextsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.videointelligence.v1p1beta1.SpeechContext,
+                com.google.cloud.videointelligence.v1p1beta1.SpeechContext.Builder,
+                com.google.cloud.videointelligence.v1p1beta1.SpeechContextOrBuilder>(
                 speechContexts_,
                 ((bitField0_ & 0x00000008) == 0x00000008),
                 getParentForChildren(),
@@ -1294,8 +1469,10 @@ private static final long serialVersionUID = 0L;
       return speechContextsBuilder_;
     }
 
-    private boolean enableAutomaticPunctuation_ ;
+    private boolean enableAutomaticPunctuation_;
     /**
+     *
+     *
      * <pre>
      * *Optional* If 'true', adds punctuation to recognition result hypotheses.
      * This feature is only available in select languages. Setting this for
@@ -1311,6 +1488,8 @@ private static final long serialVersionUID = 0L;
       return enableAutomaticPunctuation_;
     }
     /**
+     *
+     *
      * <pre>
      * *Optional* If 'true', adds punctuation to recognition result hypotheses.
      * This feature is only available in select languages. Setting this for
@@ -1323,12 +1502,14 @@ private static final long serialVersionUID = 0L;
      * <code>bool enable_automatic_punctuation = 5;</code>
      */
     public Builder setEnableAutomaticPunctuation(boolean value) {
-      
+
       enableAutomaticPunctuation_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * *Optional* If 'true', adds punctuation to recognition result hypotheses.
      * This feature is only available in select languages. Setting this for
@@ -1341,20 +1522,23 @@ private static final long serialVersionUID = 0L;
      * <code>bool enable_automatic_punctuation = 5;</code>
      */
     public Builder clearEnableAutomaticPunctuation() {
-      
+
       enableAutomaticPunctuation_ = false;
       onChanged();
       return this;
     }
 
     private java.util.List<java.lang.Integer> audioTracks_ = java.util.Collections.emptyList();
+
     private void ensureAudioTracksIsMutable() {
       if (!((bitField0_ & 0x00000020) == 0x00000020)) {
         audioTracks_ = new java.util.ArrayList<java.lang.Integer>(audioTracks_);
         bitField0_ |= 0x00000020;
-       }
+      }
     }
     /**
+     *
+     *
      * <pre>
      * *Optional* For file formats, such as MXF or MKV, supporting multiple audio
      * tracks, specify up to two tracks. Default: track 0.
@@ -1362,11 +1546,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated int32 audio_tracks = 6;</code>
      */
-    public java.util.List<java.lang.Integer>
-        getAudioTracksList() {
+    public java.util.List<java.lang.Integer> getAudioTracksList() {
       return java.util.Collections.unmodifiableList(audioTracks_);
     }
     /**
+     *
+     *
      * <pre>
      * *Optional* For file formats, such as MXF or MKV, supporting multiple audio
      * tracks, specify up to two tracks. Default: track 0.
@@ -1378,6 +1563,8 @@ private static final long serialVersionUID = 0L;
       return audioTracks_.size();
     }
     /**
+     *
+     *
      * <pre>
      * *Optional* For file formats, such as MXF or MKV, supporting multiple audio
      * tracks, specify up to two tracks. Default: track 0.
@@ -1389,6 +1576,8 @@ private static final long serialVersionUID = 0L;
       return audioTracks_.get(index);
     }
     /**
+     *
+     *
      * <pre>
      * *Optional* For file formats, such as MXF or MKV, supporting multiple audio
      * tracks, specify up to two tracks. Default: track 0.
@@ -1396,14 +1585,15 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated int32 audio_tracks = 6;</code>
      */
-    public Builder setAudioTracks(
-        int index, int value) {
+    public Builder setAudioTracks(int index, int value) {
       ensureAudioTracksIsMutable();
       audioTracks_.set(index, value);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * *Optional* For file formats, such as MXF or MKV, supporting multiple audio
      * tracks, specify up to two tracks. Default: track 0.
@@ -1418,6 +1608,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * *Optional* For file formats, such as MXF or MKV, supporting multiple audio
      * tracks, specify up to two tracks. Default: track 0.
@@ -1425,15 +1617,15 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated int32 audio_tracks = 6;</code>
      */
-    public Builder addAllAudioTracks(
-        java.lang.Iterable<? extends java.lang.Integer> values) {
+    public Builder addAllAudioTracks(java.lang.Iterable<? extends java.lang.Integer> values) {
       ensureAudioTracksIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(
-          values, audioTracks_);
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, audioTracks_);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * *Optional* For file formats, such as MXF or MKV, supporting multiple audio
      * tracks, specify up to two tracks. Default: track 0.
@@ -1447,39 +1639,44 @@ private static final long serialVersionUID = 0L;
       onChanged();
       return this;
     }
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+
+    @java.lang.Override
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.videointelligence.v1p1beta1.SpeechTranscriptionConfig)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.videointelligence.v1p1beta1.SpeechTranscriptionConfig)
-  private static final com.google.cloud.videointelligence.v1p1beta1.SpeechTranscriptionConfig DEFAULT_INSTANCE;
+  private static final com.google.cloud.videointelligence.v1p1beta1.SpeechTranscriptionConfig
+      DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.videointelligence.v1p1beta1.SpeechTranscriptionConfig();
   }
 
-  public static com.google.cloud.videointelligence.v1p1beta1.SpeechTranscriptionConfig getDefaultInstance() {
+  public static com.google.cloud.videointelligence.v1p1beta1.SpeechTranscriptionConfig
+      getDefaultInstance() {
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<SpeechTranscriptionConfig>
-      PARSER = new com.google.protobuf.AbstractParser<SpeechTranscriptionConfig>() {
-    public SpeechTranscriptionConfig parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SpeechTranscriptionConfig(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<SpeechTranscriptionConfig> PARSER =
+      new com.google.protobuf.AbstractParser<SpeechTranscriptionConfig>() {
+        @java.lang.Override
+        public SpeechTranscriptionConfig parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new SpeechTranscriptionConfig(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<SpeechTranscriptionConfig> parser() {
     return PARSER;
@@ -1490,9 +1687,9 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
-  public com.google.cloud.videointelligence.v1p1beta1.SpeechTranscriptionConfig getDefaultInstanceForType() {
+  @java.lang.Override
+  public com.google.cloud.videointelligence.v1p1beta1.SpeechTranscriptionConfig
+      getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

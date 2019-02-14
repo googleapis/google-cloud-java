@@ -32,6 +32,7 @@ import com.google.cloud.firestore.DocumentChange.Type;
 import com.google.cloud.firestore.DocumentReference;
 import com.google.cloud.firestore.DocumentSnapshot;
 import com.google.cloud.firestore.EventListener;
+import com.google.cloud.firestore.FieldMask;
 import com.google.cloud.firestore.FieldValue;
 import com.google.cloud.firestore.Firestore;
 import com.google.cloud.firestore.FirestoreException;
@@ -85,8 +86,7 @@ public class ITSystemTest {
 
   @Before
   public void before() {
-    FirestoreOptions firestoreOptions =
-        FirestoreOptions.newBuilder().setTimestampsInSnapshotsEnabled(true).build();
+    FirestoreOptions firestoreOptions = FirestoreOptions.newBuilder().build();
     firestore = firestoreOptions.getService();
     randomColl =
         firestore.collection(
@@ -120,6 +120,15 @@ public class ITSystemTest {
     assertEquals(SINGLE_FIELD_OBJECT, documentSnapshots.get(0).toObject(SingleField.class));
     assertEquals("doc2", documentSnapshots.get(1).getId());
     assertEquals(SINGLE_FIELD_OBJECT, documentSnapshots.get(1).toObject(SingleField.class));
+  }
+
+  @Test
+  public void getAllWithFieldMask() throws Exception {
+    DocumentReference ref = randomColl.document("doc1");
+    ref.set(ALL_SUPPORTED_TYPES_MAP).get();
+    List<DocumentSnapshot> documentSnapshots =
+        firestore.getAll(new DocumentReference[] {ref}, FieldMask.of("foo")).get();
+    assertEquals(map("foo", "bar"), documentSnapshots.get(0).getData());
   }
 
   @Test
@@ -552,7 +561,7 @@ public class ITSystemTest {
   }
 
   @Test
-  public void getCollections() throws Exception {
+  public void listCollections() throws Exception {
     // We test with 21 collections since 20 collections are by default returned in a single paged
     // response.
     String[] collections =
@@ -568,13 +577,46 @@ public class ITSystemTest {
     }
     batch.commit().get();
 
-    Iterable<CollectionReference> collectionRefs = randomDoc.getCollections();
+    Iterable<CollectionReference> collectionRefs = randomDoc.listCollections();
 
     int count = 0;
     for (CollectionReference collectionRef : collectionRefs) {
       assertEquals(collections[count++], collectionRef.getId());
     }
     assertEquals(collections.length, count);
+  }
+
+  @Test
+  public void listDocuments() throws Exception {
+    // We test with 21 documents since 20 documents are by default returned in a single paged
+    // response.
+    String[] documents =
+        new String[] {
+          "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16",
+          "17", "18", "19", "20", "21"
+        };
+    Arrays.sort(documents); // Sort in alphabetical (non-numeric) order.
+
+    WriteBatch batch = firestore.batch();
+    for (String document : documents) {
+      batch.create(randomColl.document(document), SINGLE_FIELD_OBJECT);
+    }
+    batch.commit().get();
+
+    Iterable<DocumentReference> collectionRefs = randomColl.listDocuments();
+
+    int count = 0;
+    for (DocumentReference documentRef : collectionRefs) {
+      assertEquals(documents[count++], documentRef.getId());
+    }
+    assertEquals(documents.length, count);
+  }
+
+  @Test
+  public void listDocumentsListsMissingDocument() throws Exception {
+    randomColl.document("missing/foo/bar").set(SINGLE_FIELD_MAP).get();
+    Iterable<DocumentReference> collectionRefs = randomColl.listDocuments();
+    assertEquals(randomColl.document("missing"), collectionRefs.iterator().next());
   }
 
   @Test

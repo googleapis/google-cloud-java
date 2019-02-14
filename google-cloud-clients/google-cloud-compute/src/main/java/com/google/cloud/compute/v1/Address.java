@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -25,6 +25,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * A reserved address resource. (== resource_for beta.addresses ==) (== resource_for v1.addresses
+ * ==) (== resource_for beta.globalAddresses ==) (== resource_for v1.globalAddresses ==)
+ */
 public final class Address implements ApiMessage {
   private final String address;
   private final String addressType;
@@ -34,7 +38,10 @@ public final class Address implements ApiMessage {
   private final String ipVersion;
   private final String kind;
   private final String name;
+  private final String network;
   private final String networkTier;
+  private final Integer prefixLength;
+  private final String purpose;
   private final String region;
   private final String selfLink;
   private final String status;
@@ -50,7 +57,10 @@ public final class Address implements ApiMessage {
     this.ipVersion = null;
     this.kind = null;
     this.name = null;
+    this.network = null;
     this.networkTier = null;
+    this.prefixLength = null;
+    this.purpose = null;
     this.region = null;
     this.selfLink = null;
     this.status = null;
@@ -67,7 +77,10 @@ public final class Address implements ApiMessage {
       String ipVersion,
       String kind,
       String name,
+      String network,
       String networkTier,
+      Integer prefixLength,
+      String purpose,
       String region,
       String selfLink,
       String status,
@@ -81,7 +94,10 @@ public final class Address implements ApiMessage {
     this.ipVersion = ipVersion;
     this.kind = kind;
     this.name = name;
+    this.network = network;
     this.networkTier = networkTier;
+    this.prefixLength = prefixLength;
+    this.purpose = purpose;
     this.region = region;
     this.selfLink = selfLink;
     this.status = status;
@@ -91,46 +107,55 @@ public final class Address implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("address")) {
+    if ("address".equals(fieldName)) {
       return address;
     }
-    if (fieldName.equals("addressType")) {
+    if ("addressType".equals(fieldName)) {
       return addressType;
     }
-    if (fieldName.equals("creationTimestamp")) {
+    if ("creationTimestamp".equals(fieldName)) {
       return creationTimestamp;
     }
-    if (fieldName.equals("description")) {
+    if ("description".equals(fieldName)) {
       return description;
     }
-    if (fieldName.equals("id")) {
+    if ("id".equals(fieldName)) {
       return id;
     }
-    if (fieldName.equals("ipVersion")) {
+    if ("ipVersion".equals(fieldName)) {
       return ipVersion;
     }
-    if (fieldName.equals("kind")) {
+    if ("kind".equals(fieldName)) {
       return kind;
     }
-    if (fieldName.equals("name")) {
+    if ("name".equals(fieldName)) {
       return name;
     }
-    if (fieldName.equals("networkTier")) {
+    if ("network".equals(fieldName)) {
+      return network;
+    }
+    if ("networkTier".equals(fieldName)) {
       return networkTier;
     }
-    if (fieldName.equals("region")) {
+    if ("prefixLength".equals(fieldName)) {
+      return prefixLength;
+    }
+    if ("purpose".equals(fieldName)) {
+      return purpose;
+    }
+    if ("region".equals(fieldName)) {
       return region;
     }
-    if (fieldName.equals("selfLink")) {
+    if ("selfLink".equals(fieldName)) {
       return selfLink;
     }
-    if (fieldName.equals("status")) {
+    if ("status".equals(fieldName)) {
       return status;
     }
-    if (fieldName.equals("subnetwork")) {
+    if ("subnetwork".equals(fieldName)) {
       return subnetwork;
     }
-    if (fieldName.equals("users")) {
+    if ("users".equals(fieldName)) {
       return users;
     }
     return null;
@@ -144,62 +169,137 @@ public final class Address implements ApiMessage {
 
   @Nullable
   @Override
+  /**
+   * The fields that should be serialized (even if they have empty values). If the containing
+   * message object has a non-null fieldmask, then all the fields in the field mask (and only those
+   * fields in the field mask) will be serialized. If the containing object does not have a
+   * fieldmask, then only non-empty fields will be serialized.
+   */
   public List<String> getFieldMask() {
     return null;
   }
 
+  /** The static IP address represented by this resource. */
   public String getAddress() {
     return address;
   }
 
+  /**
+   * The type of address to reserve, either INTERNAL or EXTERNAL. If unspecified, defaults to
+   * EXTERNAL.
+   */
   public String getAddressType() {
     return addressType;
   }
 
+  /** [Output Only] Creation timestamp in RFC3339 text format. */
   public String getCreationTimestamp() {
     return creationTimestamp;
   }
 
+  /**
+   * An optional description of this resource. Provide this property when you create the resource.
+   */
   public String getDescription() {
     return description;
   }
 
+  /**
+   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   */
   public String getId() {
     return id;
   }
 
+  /**
+   * The IP Version that will be used by this address. Valid options are IPV4 or IPV6. This can only
+   * be specified for a global address.
+   */
   public String getIpVersion() {
     return ipVersion;
   }
 
+  /** [Output Only] Type of the resource. Always compute#address for addresses. */
   public String getKind() {
     return kind;
   }
 
+  /**
+   * Name of the resource. Provided by the client when the resource is created. The name must be
+   * 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters
+   * long and match the regular expression `[a-z]([-a-z0-9]&#42;[a-z0-9])?` which means the first
+   * character must be a lowercase letter, and all following characters must be a dash, lowercase
+   * letter, or digit, except the last character, which cannot be a dash.
+   */
   public String getName() {
     return name;
   }
 
+  /**
+   * The URL of the network in which to reserve the address. This field can only be used with
+   * INTERNAL type with VPC_PEERING purpose.
+   */
+  public String getNetwork() {
+    return network;
+  }
+
+  /**
+   * This signifies the networking tier used for configuring this Address and can only take the
+   * following values: PREMIUM, STANDARD. Global forwarding rules can only be Premium Tier. Regional
+   * forwarding rules can be either Premium or Standard Tier. Standard Tier addresses applied to
+   * regional forwarding rules can be used with any external load balancer. Regional forwarding
+   * rules in Premium Tier can only be used with a Network load balancer.
+   *
+   * <p>If this field is not specified, it is assumed to be PREMIUM.
+   */
   public String getNetworkTier() {
     return networkTier;
   }
 
+  /** The prefix length if the resource reprensents an IP range. */
+  public Integer getPrefixLength() {
+    return prefixLength;
+  }
+
+  /** The purpose of resource, only used with INTERNAL type. */
+  public String getPurpose() {
+    return purpose;
+  }
+
+  /**
+   * [Output Only] URL of the region where the regional address resides. This field is not
+   * applicable to global addresses. You must specify this field as part of the HTTP request URL.
+   * You cannot set this field in the request body.
+   */
   public String getRegion() {
     return region;
   }
 
+  /** [Output Only] Server-defined URL for the resource. */
   public String getSelfLink() {
     return selfLink;
   }
 
+  /**
+   * [Output Only] The status of the address, which can be one of RESERVING, RESERVED, or IN_USE. An
+   * address that is RESERVING is currently in the process of being reserved. A RESERVED address is
+   * currently reserved and available to use. An IN_USE address is currently being used by another
+   * resource and is not available.
+   */
   public String getStatus() {
     return status;
   }
 
+  /**
+   * The URL of the subnetwork in which to reserve the address. If an IP address is specified, it
+   * must be within the subnetwork's IP range. This field can only be used with INTERNAL type with
+   * GCE_ENDPOINT/DNS_RESOLVER purposes.
+   */
   public String getSubnetwork() {
     return subnetwork;
   }
 
+  /** [Output Only] The URLs of the resources that are using this address. */
   public List<String> getUsersList() {
     return users;
   }
@@ -235,7 +335,10 @@ public final class Address implements ApiMessage {
     private String ipVersion;
     private String kind;
     private String name;
+    private String network;
     private String networkTier;
+    private Integer prefixLength;
+    private String purpose;
     private String region;
     private String selfLink;
     private String status;
@@ -270,8 +373,17 @@ public final class Address implements ApiMessage {
       if (other.getName() != null) {
         this.name = other.name;
       }
+      if (other.getNetwork() != null) {
+        this.network = other.network;
+      }
       if (other.getNetworkTier() != null) {
         this.networkTier = other.networkTier;
+      }
+      if (other.getPrefixLength() != null) {
+        this.prefixLength = other.prefixLength;
+      }
+      if (other.getPurpose() != null) {
+        this.purpose = other.purpose;
       }
       if (other.getRegion() != null) {
         this.region = other.region;
@@ -300,7 +412,10 @@ public final class Address implements ApiMessage {
       this.ipVersion = source.ipVersion;
       this.kind = source.kind;
       this.name = source.name;
+      this.network = source.network;
       this.networkTier = source.networkTier;
+      this.prefixLength = source.prefixLength;
+      this.purpose = source.purpose;
       this.region = source.region;
       this.selfLink = source.selfLink;
       this.status = source.status;
@@ -308,127 +423,270 @@ public final class Address implements ApiMessage {
       this.users = source.users;
     }
 
+    /** The static IP address represented by this resource. */
     public String getAddress() {
       return address;
     }
 
+    /** The static IP address represented by this resource. */
     public Builder setAddress(String address) {
       this.address = address;
       return this;
     }
 
+    /**
+     * The type of address to reserve, either INTERNAL or EXTERNAL. If unspecified, defaults to
+     * EXTERNAL.
+     */
     public String getAddressType() {
       return addressType;
     }
 
+    /**
+     * The type of address to reserve, either INTERNAL or EXTERNAL. If unspecified, defaults to
+     * EXTERNAL.
+     */
     public Builder setAddressType(String addressType) {
       this.addressType = addressType;
       return this;
     }
 
+    /** [Output Only] Creation timestamp in RFC3339 text format. */
     public String getCreationTimestamp() {
       return creationTimestamp;
     }
 
+    /** [Output Only] Creation timestamp in RFC3339 text format. */
     public Builder setCreationTimestamp(String creationTimestamp) {
       this.creationTimestamp = creationTimestamp;
       return this;
     }
 
+    /**
+     * An optional description of this resource. Provide this property when you create the resource.
+     */
     public String getDescription() {
       return description;
     }
 
+    /**
+     * An optional description of this resource. Provide this property when you create the resource.
+     */
     public Builder setDescription(String description) {
       this.description = description;
       return this;
     }
 
+    /**
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the
+     * server.
+     */
     public String getId() {
       return id;
     }
 
+    /**
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the
+     * server.
+     */
     public Builder setId(String id) {
       this.id = id;
       return this;
     }
 
+    /**
+     * The IP Version that will be used by this address. Valid options are IPV4 or IPV6. This can
+     * only be specified for a global address.
+     */
     public String getIpVersion() {
       return ipVersion;
     }
 
+    /**
+     * The IP Version that will be used by this address. Valid options are IPV4 or IPV6. This can
+     * only be specified for a global address.
+     */
     public Builder setIpVersion(String ipVersion) {
       this.ipVersion = ipVersion;
       return this;
     }
 
+    /** [Output Only] Type of the resource. Always compute#address for addresses. */
     public String getKind() {
       return kind;
     }
 
+    /** [Output Only] Type of the resource. Always compute#address for addresses. */
     public Builder setKind(String kind) {
       this.kind = kind;
       return this;
     }
 
+    /**
+     * Name of the resource. Provided by the client when the resource is created. The name must be
+     * 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters
+     * long and match the regular expression `[a-z]([-a-z0-9]&#42;[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must be a dash, lowercase
+     * letter, or digit, except the last character, which cannot be a dash.
+     */
     public String getName() {
       return name;
     }
 
+    /**
+     * Name of the resource. Provided by the client when the resource is created. The name must be
+     * 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters
+     * long and match the regular expression `[a-z]([-a-z0-9]&#42;[a-z0-9])?` which means the first
+     * character must be a lowercase letter, and all following characters must be a dash, lowercase
+     * letter, or digit, except the last character, which cannot be a dash.
+     */
     public Builder setName(String name) {
       this.name = name;
       return this;
     }
 
+    /**
+     * The URL of the network in which to reserve the address. This field can only be used with
+     * INTERNAL type with VPC_PEERING purpose.
+     */
+    public String getNetwork() {
+      return network;
+    }
+
+    /**
+     * The URL of the network in which to reserve the address. This field can only be used with
+     * INTERNAL type with VPC_PEERING purpose.
+     */
+    public Builder setNetwork(String network) {
+      this.network = network;
+      return this;
+    }
+
+    /**
+     * This signifies the networking tier used for configuring this Address and can only take the
+     * following values: PREMIUM, STANDARD. Global forwarding rules can only be Premium Tier.
+     * Regional forwarding rules can be either Premium or Standard Tier. Standard Tier addresses
+     * applied to regional forwarding rules can be used with any external load balancer. Regional
+     * forwarding rules in Premium Tier can only be used with a Network load balancer.
+     *
+     * <p>If this field is not specified, it is assumed to be PREMIUM.
+     */
     public String getNetworkTier() {
       return networkTier;
     }
 
+    /**
+     * This signifies the networking tier used for configuring this Address and can only take the
+     * following values: PREMIUM, STANDARD. Global forwarding rules can only be Premium Tier.
+     * Regional forwarding rules can be either Premium or Standard Tier. Standard Tier addresses
+     * applied to regional forwarding rules can be used with any external load balancer. Regional
+     * forwarding rules in Premium Tier can only be used with a Network load balancer.
+     *
+     * <p>If this field is not specified, it is assumed to be PREMIUM.
+     */
     public Builder setNetworkTier(String networkTier) {
       this.networkTier = networkTier;
       return this;
     }
 
+    /** The prefix length if the resource reprensents an IP range. */
+    public Integer getPrefixLength() {
+      return prefixLength;
+    }
+
+    /** The prefix length if the resource reprensents an IP range. */
+    public Builder setPrefixLength(Integer prefixLength) {
+      this.prefixLength = prefixLength;
+      return this;
+    }
+
+    /** The purpose of resource, only used with INTERNAL type. */
+    public String getPurpose() {
+      return purpose;
+    }
+
+    /** The purpose of resource, only used with INTERNAL type. */
+    public Builder setPurpose(String purpose) {
+      this.purpose = purpose;
+      return this;
+    }
+
+    /**
+     * [Output Only] URL of the region where the regional address resides. This field is not
+     * applicable to global addresses. You must specify this field as part of the HTTP request URL.
+     * You cannot set this field in the request body.
+     */
     public String getRegion() {
       return region;
     }
 
+    /**
+     * [Output Only] URL of the region where the regional address resides. This field is not
+     * applicable to global addresses. You must specify this field as part of the HTTP request URL.
+     * You cannot set this field in the request body.
+     */
     public Builder setRegion(String region) {
       this.region = region;
       return this;
     }
 
+    /** [Output Only] Server-defined URL for the resource. */
     public String getSelfLink() {
       return selfLink;
     }
 
+    /** [Output Only] Server-defined URL for the resource. */
     public Builder setSelfLink(String selfLink) {
       this.selfLink = selfLink;
       return this;
     }
 
+    /**
+     * [Output Only] The status of the address, which can be one of RESERVING, RESERVED, or IN_USE.
+     * An address that is RESERVING is currently in the process of being reserved. A RESERVED
+     * address is currently reserved and available to use. An IN_USE address is currently being used
+     * by another resource and is not available.
+     */
     public String getStatus() {
       return status;
     }
 
+    /**
+     * [Output Only] The status of the address, which can be one of RESERVING, RESERVED, or IN_USE.
+     * An address that is RESERVING is currently in the process of being reserved. A RESERVED
+     * address is currently reserved and available to use. An IN_USE address is currently being used
+     * by another resource and is not available.
+     */
     public Builder setStatus(String status) {
       this.status = status;
       return this;
     }
 
+    /**
+     * The URL of the subnetwork in which to reserve the address. If an IP address is specified, it
+     * must be within the subnetwork's IP range. This field can only be used with INTERNAL type with
+     * GCE_ENDPOINT/DNS_RESOLVER purposes.
+     */
     public String getSubnetwork() {
       return subnetwork;
     }
 
+    /**
+     * The URL of the subnetwork in which to reserve the address. If an IP address is specified, it
+     * must be within the subnetwork's IP range. This field can only be used with INTERNAL type with
+     * GCE_ENDPOINT/DNS_RESOLVER purposes.
+     */
     public Builder setSubnetwork(String subnetwork) {
       this.subnetwork = subnetwork;
       return this;
     }
 
+    /** [Output Only] The URLs of the resources that are using this address. */
     public List<String> getUsersList() {
       return users;
     }
 
+    /** [Output Only] The URLs of the resources that are using this address. */
     public Builder addAllUsers(List<String> users) {
       if (this.users == null) {
         this.users = new LinkedList<>();
@@ -437,6 +695,7 @@ public final class Address implements ApiMessage {
       return this;
     }
 
+    /** [Output Only] The URLs of the resources that are using this address. */
     public Builder addUsers(String users) {
       if (this.users == null) {
         this.users = new LinkedList<>();
@@ -456,7 +715,10 @@ public final class Address implements ApiMessage {
           ipVersion,
           kind,
           name,
+          network,
           networkTier,
+          prefixLength,
+          purpose,
           region,
           selfLink,
           status,
@@ -474,7 +736,10 @@ public final class Address implements ApiMessage {
       newBuilder.setIpVersion(this.ipVersion);
       newBuilder.setKind(this.kind);
       newBuilder.setName(this.name);
+      newBuilder.setNetwork(this.network);
       newBuilder.setNetworkTier(this.networkTier);
+      newBuilder.setPrefixLength(this.prefixLength);
+      newBuilder.setPurpose(this.purpose);
       newBuilder.setRegion(this.region);
       newBuilder.setSelfLink(this.selfLink);
       newBuilder.setStatus(this.status);
@@ -511,8 +776,17 @@ public final class Address implements ApiMessage {
         + "name="
         + name
         + ", "
+        + "network="
+        + network
+        + ", "
         + "networkTier="
         + networkTier
+        + ", "
+        + "prefixLength="
+        + prefixLength
+        + ", "
+        + "purpose="
+        + purpose
         + ", "
         + "region="
         + region
@@ -546,7 +820,10 @@ public final class Address implements ApiMessage {
           && Objects.equals(this.ipVersion, that.getIpVersion())
           && Objects.equals(this.kind, that.getKind())
           && Objects.equals(this.name, that.getName())
+          && Objects.equals(this.network, that.getNetwork())
           && Objects.equals(this.networkTier, that.getNetworkTier())
+          && Objects.equals(this.prefixLength, that.getPrefixLength())
+          && Objects.equals(this.purpose, that.getPurpose())
           && Objects.equals(this.region, that.getRegion())
           && Objects.equals(this.selfLink, that.getSelfLink())
           && Objects.equals(this.status, that.getStatus())
@@ -567,7 +844,10 @@ public final class Address implements ApiMessage {
         ipVersion,
         kind,
         name,
+        network,
         networkTier,
+        prefixLength,
+        purpose,
         region,
         selfLink,
         status,

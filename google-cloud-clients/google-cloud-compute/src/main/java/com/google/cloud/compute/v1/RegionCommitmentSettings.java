@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -66,7 +66,8 @@ import javax.annotation.Generated;
 public class RegionCommitmentSettings extends ClientSettings<RegionCommitmentSettings> {
   /** Returns the object with the settings used for calls to aggregatedListRegionCommitments. */
   public PagedCallSettings<
-          AggregatedListRegionCommitmentsHttpRequest, CommitmentAggregatedList,
+          AggregatedListRegionCommitmentsHttpRequest,
+          CommitmentAggregatedList,
           AggregatedListRegionCommitmentsPagedResponse>
       aggregatedListRegionCommitmentsSettings() {
     return ((RegionCommitmentStubSettings) getStubSettings())
@@ -196,7 +197,8 @@ public class RegionCommitmentSettings extends ClientSettings<RegionCommitmentSet
 
     /** Returns the builder for the settings used for calls to aggregatedListRegionCommitments. */
     public PagedCallSettings.Builder<
-            AggregatedListRegionCommitmentsHttpRequest, CommitmentAggregatedList,
+            AggregatedListRegionCommitmentsHttpRequest,
+            CommitmentAggregatedList,
             AggregatedListRegionCommitmentsPagedResponse>
         aggregatedListRegionCommitmentsSettings() {
       return getStubSettingsBuilder().aggregatedListRegionCommitmentsSettings();

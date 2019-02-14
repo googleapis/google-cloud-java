@@ -3,11 +3,14 @@
 
 package com.google.cloud.videointelligence.v1beta2;
 
-public interface ExplicitContentFrameOrBuilder extends
+public interface ExplicitContentFrameOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.videointelligence.v1beta2.ExplicitContentFrame)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Time-offset, relative to the beginning of the video, corresponding to the
    * video frame for this location.
@@ -17,6 +20,8 @@ public interface ExplicitContentFrameOrBuilder extends
    */
   boolean hasTimeOffset();
   /**
+   *
+   *
    * <pre>
    * Time-offset, relative to the beginning of the video, corresponding to the
    * video frame for this location.
@@ -26,6 +31,8 @@ public interface ExplicitContentFrameOrBuilder extends
    */
   com.google.protobuf.Duration getTimeOffset();
   /**
+   *
+   *
    * <pre>
    * Time-offset, relative to the beginning of the video, corresponding to the
    * video frame for this location.
@@ -36,6 +43,8 @@ public interface ExplicitContentFrameOrBuilder extends
   com.google.protobuf.DurationOrBuilder getTimeOffsetOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Likelihood of the pornography content..
    * </pre>
@@ -44,6 +53,8 @@ public interface ExplicitContentFrameOrBuilder extends
    */
   int getPornographyLikelihoodValue();
   /**
+   *
+   *
    * <pre>
    * Likelihood of the pornography content..
    * </pre>

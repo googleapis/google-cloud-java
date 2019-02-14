@@ -36,7 +36,6 @@ public class UserDefinedFunctionTest {
     assertEquals(UserDefinedFunction.Type.FROM_URI, URI_FUNCTION.getType());
   }
 
-
   @Test
   public void testFactoryMethod() {
     compareUserDefinedFunction(INLINE_FUNCTION, UserDefinedFunction.inline(INLINE));

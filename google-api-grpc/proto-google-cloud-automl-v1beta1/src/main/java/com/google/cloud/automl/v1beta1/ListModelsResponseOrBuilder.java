@@ -3,20 +3,24 @@
 
 package com.google.cloud.automl.v1beta1;
 
-public interface ListModelsResponseOrBuilder extends
+public interface ListModelsResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.automl.v1beta1.ListModelsResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * List of models in the requested page.
    * </pre>
    *
    * <code>repeated .google.cloud.automl.v1beta1.Model model = 1;</code>
    */
-  java.util.List<com.google.cloud.automl.v1beta1.Model> 
-      getModelList();
+  java.util.List<com.google.cloud.automl.v1beta1.Model> getModelList();
   /**
+   *
+   *
    * <pre>
    * List of models in the requested page.
    * </pre>
@@ -25,6 +29,8 @@ public interface ListModelsResponseOrBuilder extends
    */
   com.google.cloud.automl.v1beta1.Model getModel(int index);
   /**
+   *
+   *
    * <pre>
    * List of models in the requested page.
    * </pre>
@@ -33,25 +39,29 @@ public interface ListModelsResponseOrBuilder extends
    */
   int getModelCount();
   /**
+   *
+   *
    * <pre>
    * List of models in the requested page.
    * </pre>
    *
    * <code>repeated .google.cloud.automl.v1beta1.Model model = 1;</code>
    */
-  java.util.List<? extends com.google.cloud.automl.v1beta1.ModelOrBuilder> 
-      getModelOrBuilderList();
+  java.util.List<? extends com.google.cloud.automl.v1beta1.ModelOrBuilder> getModelOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * List of models in the requested page.
    * </pre>
    *
    * <code>repeated .google.cloud.automl.v1beta1.Model model = 1;</code>
    */
-  com.google.cloud.automl.v1beta1.ModelOrBuilder getModelOrBuilder(
-      int index);
+  com.google.cloud.automl.v1beta1.ModelOrBuilder getModelOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * A token to retrieve next page of results.
    * Pass to [ListModels.page_token][] to obtain that page.
@@ -61,6 +71,8 @@ public interface ListModelsResponseOrBuilder extends
    */
   java.lang.String getNextPageToken();
   /**
+   *
+   *
    * <pre>
    * A token to retrieve next page of results.
    * Pass to [ListModels.page_token][] to obtain that page.
@@ -68,6 +80,5 @@ public interface ListModelsResponseOrBuilder extends
    *
    * <code>string next_page_token = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getNextPageTokenBytes();
+  com.google.protobuf.ByteString getNextPageTokenBytes();
 }

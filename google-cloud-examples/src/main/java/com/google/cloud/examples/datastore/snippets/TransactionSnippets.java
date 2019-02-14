@@ -35,13 +35,10 @@ import com.google.cloud.datastore.QueryResults;
 import com.google.cloud.datastore.StructuredQuery.PropertyFilter;
 import com.google.cloud.datastore.Transaction;
 import com.google.cloud.datastore.Transaction.Response;
-
 import java.util.Iterator;
 import java.util.List;
 
-/**
- * This class contains a number of snippets for the {@link Transaction} interface.
- */
+/** This class contains a number of snippets for the {@link Transaction} interface. */
 public class TransactionSnippets {
 
   private final Transaction transaction;
@@ -50,9 +47,7 @@ public class TransactionSnippets {
     this.transaction = transaction;
   }
 
-  /**
-   * Example of getting an entity for a given key.
-   */
+  /** Example of getting an entity for a given key. */
   // [TARGET get(Key)]
   // [VARIABLE "my_key_name"]
   public Entity get(String keyName) {
@@ -66,9 +61,7 @@ public class TransactionSnippets {
     return entity;
   }
 
-  /**
-   * Example of getting entities for several keys.
-   */
+  /** Example of getting entities for several keys. */
   // [TARGET get(Key...)]
   // [VARIABLE "my_first_key_name"]
   // [VARIABLE "my_second_key_name"]
@@ -91,9 +84,7 @@ public class TransactionSnippets {
     return entities;
   }
 
-  /**
-   * Example of fetching a list of entities for several keys.
-   */
+  /** Example of fetching a list of entities for several keys. */
   // [TARGET fetch(Key...)]
   // [VARIABLE "my_first_key_name"]
   // [VARIABLE "my_second_key_name"]
@@ -112,9 +103,7 @@ public class TransactionSnippets {
     return entities;
   }
 
-  /**
-   * Example of running a query to find all entities with an ancestor.
-   */
+  /** Example of running a query to find all entities with an ancestor. */
   // [TARGET run(Query)]
   // [VARIABLE "my_parent_key_name"]
   public List<Entity> run(String parentKeyName) {
@@ -123,10 +112,11 @@ public class TransactionSnippets {
     KeyFactory keyFactory = datastore.newKeyFactory().setKind("ParentKind");
     Key parentKey = keyFactory.newKey(parentKeyName);
     // Build a query
-    Query<Entity> query = Query.newEntityQueryBuilder()
-        .setKind("MyKind")
-        .setFilter(PropertyFilter.hasAncestor(parentKey))
-        .build();
+    Query<Entity> query =
+        Query.newEntityQueryBuilder()
+            .setKind("MyKind")
+            .setFilter(PropertyFilter.hasAncestor(parentKey))
+            .build();
     QueryResults<Entity> results = transaction.run(query);
     List<Entity> entities = Lists.newArrayList();
     while (results.hasNext()) {
@@ -139,9 +129,7 @@ public class TransactionSnippets {
     return entities;
   }
 
-  /**
-   * Example of adding a single entity.
-   */
+  /** Example of adding a single entity. */
   // [TARGET add(FullEntity)]
   // [VARIABLE "my_key_name"]
   public void addSingleEntity(String keyName) {
@@ -156,9 +144,7 @@ public class TransactionSnippets {
     // [END addSingleEntity]
   }
 
-  /**
-   * Example of adding multiple entities.
-   */
+  /** Example of adding multiple entities. */
   // [TARGET add(FullEntity...)]
   // [VARIABLE "my_key_name1"]
   // [VARIABLE "my_key_name2"]
@@ -180,9 +166,7 @@ public class TransactionSnippets {
     // [END multipleAddEntities]
   }
 
-  /**
-   * Example of updating multiple entities.
-   */
+  /** Example of updating multiple entities. */
   // [TARGET update(Entity...)]
   // [VARIABLE "my_key_name1"]
   // [VARIABLE "my_key_name2"]
@@ -204,9 +188,7 @@ public class TransactionSnippets {
     // [END multipleUpdateEntities]
   }
 
-  /**
-   * Example of adding multiple entities with deferred id allocation.
-   */
+  /** Example of adding multiple entities with deferred id allocation. */
   // [TARGET addWithDeferredIdAllocation(FullEntity...)]
   public List<Key> multipleAddEntitiesDeferredId() {
     Datastore datastore = transaction.getDatastore();
@@ -227,9 +209,7 @@ public class TransactionSnippets {
     return response.getGeneratedKeys();
   }
 
-  /**
-   * Example of putting multiple entities with deferred id allocation.
-   */
+  /** Example of putting multiple entities with deferred id allocation. */
   // [TARGET putWithDeferredIdAllocation(FullEntity...)]
   public List<Key> multiplePutEntitiesDeferredId() {
     Datastore datastore = transaction.getDatastore();
@@ -250,9 +230,7 @@ public class TransactionSnippets {
     return response.getGeneratedKeys();
   }
 
-  /**
-   * Example of deleting multiple entities.
-   */
+  /** Example of deleting multiple entities. */
   // [TARGET delete(Key...)]
   // [VARIABLE "my_key_name1"]
   // [VARIABLE "my_key_name2"]
@@ -266,9 +244,7 @@ public class TransactionSnippets {
     // [END multipleDeleteEntities]
   }
 
-  /**
-   * Example of putting a single entity.
-   */
+  /** Example of putting a single entity. */
   // [TARGET put(FullEntity)]
   // [VARIABLE "my_key_name"]
   public void putSingleEntity(String keyName) {
@@ -283,9 +259,7 @@ public class TransactionSnippets {
     // [END putSingleEntity]
   }
 
-  /**
-   * Example of putting multiple entities.
-   */
+  /** Example of putting multiple entities. */
   // [TARGET put(FullEntity...)]
   // [VARIABLE "my_key_name1"]
   // [VARIABLE "my_key_name2"]
@@ -307,9 +281,7 @@ public class TransactionSnippets {
     // [END multiplePutEntities]
   }
 
-  /**
-   * Example of committing a transaction.
-   */
+  /** Example of committing a transaction. */
   // [TARGET commit()]
   public Key commit() {
     Datastore datastore = transaction.getDatastore();
@@ -331,9 +303,7 @@ public class TransactionSnippets {
     return key;
   }
 
-  /**
-   * Example of rolling back a transaction.
-   */
+  /** Example of rolling back a transaction. */
   // [TARGET rollback()]
   public Key rollback() {
     Datastore datastore = transaction.getDatastore();
@@ -351,9 +321,7 @@ public class TransactionSnippets {
     return key;
   }
 
-  /**
-   * Example of verifying if a transaction is active.
-   */
+  /** Example of verifying if a transaction is active. */
   // [TARGET active()]
   public Key active() {
     Datastore datastore = transaction.getDatastore();
@@ -379,9 +347,7 @@ public class TransactionSnippets {
     return key;
   }
 
-  /**
-   * Example of verifying if a transaction is active.
-   */
+  /** Example of verifying if a transaction is active. */
   // [TARGET isActive()]
   public Key isActive() {
     Datastore datastore = transaction.getDatastore();

@@ -157,7 +157,8 @@ public class ProductSearchSettings extends ClientSettings<ProductSearchSettings>
 
   /** Returns the object with the settings used for calls to listProductsInProductSet. */
   public PagedCallSettings<
-          ListProductsInProductSetRequest, ListProductsInProductSetResponse,
+          ListProductsInProductSetRequest,
+          ListProductsInProductSetResponse,
           ListProductsInProductSetPagedResponse>
       listProductsInProductSetSettings() {
     return ((ProductSearchStubSettings) getStubSettings()).listProductsInProductSetSettings();
@@ -344,7 +345,8 @@ public class ProductSearchSettings extends ClientSettings<ProductSearchSettings>
 
     /** Returns the builder for the settings used for calls to listReferenceImages. */
     public PagedCallSettings.Builder<
-            ListReferenceImagesRequest, ListReferenceImagesResponse,
+            ListReferenceImagesRequest,
+            ListReferenceImagesResponse,
             ListReferenceImagesPagedResponse>
         listReferenceImagesSettings() {
       return getStubSettingsBuilder().listReferenceImagesSettings();
@@ -370,7 +372,8 @@ public class ProductSearchSettings extends ClientSettings<ProductSearchSettings>
 
     /** Returns the builder for the settings used for calls to listProductsInProductSet. */
     public PagedCallSettings.Builder<
-            ListProductsInProductSetRequest, ListProductsInProductSetResponse,
+            ListProductsInProductSetRequest,
+            ListProductsInProductSetResponse,
             ListProductsInProductSetPagedResponse>
         listProductsInProductSetSettings() {
       return getStubSettingsBuilder().listProductsInProductSetSettings();

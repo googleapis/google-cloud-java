@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,7 +37,7 @@ public final class ProjectsSetDefaultNetworkTierRequest implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("networkTier")) {
+    if ("networkTier".equals(fieldName)) {
       return networkTier;
     }
     return null;
@@ -51,10 +51,17 @@ public final class ProjectsSetDefaultNetworkTierRequest implements ApiMessage {
 
   @Nullable
   @Override
+  /**
+   * The fields that should be serialized (even if they have empty values). If the containing
+   * message object has a non-null fieldmask, then all the fields in the field mask (and only those
+   * fields in the field mask) will be serialized. If the containing object does not have a
+   * fieldmask, then only non-empty fields will be serialized.
+   */
   public List<String> getFieldMask() {
     return null;
   }
 
+  /** Default network tier to be set. */
   public String getNetworkTier() {
     return networkTier;
   }
@@ -98,10 +105,12 @@ public final class ProjectsSetDefaultNetworkTierRequest implements ApiMessage {
       this.networkTier = source.networkTier;
     }
 
+    /** Default network tier to be set. */
     public String getNetworkTier() {
       return networkTier;
     }
 
+    /** Default network tier to be set. */
     public Builder setNetworkTier(String networkTier) {
       this.networkTier = networkTier;
       return this;

@@ -4,36 +4,42 @@
 package com.google.cloud.dialogflow.v2;
 
 /**
+ *
+ *
  * <pre>
  * The request message for [EntityTypes.BatchUpdateEntityTypes][google.cloud.dialogflow.v2.EntityTypes.BatchUpdateEntityTypes].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2.BatchUpdateEntityTypesRequest}
  */
-public  final class BatchUpdateEntityTypesRequest extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class BatchUpdateEntityTypesRequest extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2.BatchUpdateEntityTypesRequest)
     BatchUpdateEntityTypesRequestOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use BatchUpdateEntityTypesRequest.newBuilder() to construct.
   private BatchUpdateEntityTypesRequest(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private BatchUpdateEntityTypesRequest() {
     parent_ = "";
     languageCode_ = "";
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private BatchUpdateEntityTypesRequest(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -45,96 +51,107 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            parent_ = s;
-            break;
-          }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
-            entityTypeBatchCase_ = 2;
-            entityTypeBatch_ = s;
-            break;
-          }
-          case 26: {
-            com.google.cloud.dialogflow.v2.EntityTypeBatch.Builder subBuilder = null;
-            if (entityTypeBatchCase_ == 3) {
-              subBuilder = ((com.google.cloud.dialogflow.v2.EntityTypeBatch) entityTypeBatch_).toBuilder();
+              parent_ = s;
+              break;
             }
-            entityTypeBatch_ =
-                input.readMessage(com.google.cloud.dialogflow.v2.EntityTypeBatch.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.google.cloud.dialogflow.v2.EntityTypeBatch) entityTypeBatch_);
-              entityTypeBatch_ = subBuilder.buildPartial();
+          case 18:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              entityTypeBatchCase_ = 2;
+              entityTypeBatch_ = s;
+              break;
             }
-            entityTypeBatchCase_ = 3;
-            break;
-          }
-          case 34: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 26:
+            {
+              com.google.cloud.dialogflow.v2.EntityTypeBatch.Builder subBuilder = null;
+              if (entityTypeBatchCase_ == 3) {
+                subBuilder =
+                    ((com.google.cloud.dialogflow.v2.EntityTypeBatch) entityTypeBatch_).toBuilder();
+              }
+              entityTypeBatch_ =
+                  input.readMessage(
+                      com.google.cloud.dialogflow.v2.EntityTypeBatch.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.dialogflow.v2.EntityTypeBatch) entityTypeBatch_);
+                entityTypeBatch_ = subBuilder.buildPartial();
+              }
+              entityTypeBatchCase_ = 3;
+              break;
+            }
+          case 34:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            languageCode_ = s;
-            break;
-          }
-          case 42: {
-            com.google.protobuf.FieldMask.Builder subBuilder = null;
-            if (updateMask_ != null) {
-              subBuilder = updateMask_.toBuilder();
+              languageCode_ = s;
+              break;
             }
-            updateMask_ = input.readMessage(com.google.protobuf.FieldMask.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(updateMask_);
-              updateMask_ = subBuilder.buildPartial();
-            }
+          case 42:
+            {
+              com.google.protobuf.FieldMask.Builder subBuilder = null;
+              if (updateMask_ != null) {
+                subBuilder = updateMask_.toBuilder();
+              }
+              updateMask_ =
+                  input.readMessage(com.google.protobuf.FieldMask.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(updateMask_);
+                updateMask_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.dialogflow.v2.EntityTypeProto.internal_static_google_cloud_dialogflow_v2_BatchUpdateEntityTypesRequest_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.dialogflow.v2.EntityTypeProto
+        .internal_static_google_cloud_dialogflow_v2_BatchUpdateEntityTypesRequest_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.dialogflow.v2.EntityTypeProto.internal_static_google_cloud_dialogflow_v2_BatchUpdateEntityTypesRequest_fieldAccessorTable
+    return com.google.cloud.dialogflow.v2.EntityTypeProto
+        .internal_static_google_cloud_dialogflow_v2_BatchUpdateEntityTypesRequest_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.dialogflow.v2.BatchUpdateEntityTypesRequest.class, com.google.cloud.dialogflow.v2.BatchUpdateEntityTypesRequest.Builder.class);
+            com.google.cloud.dialogflow.v2.BatchUpdateEntityTypesRequest.class,
+            com.google.cloud.dialogflow.v2.BatchUpdateEntityTypesRequest.Builder.class);
   }
 
   private int entityTypeBatchCase_ = 0;
   private java.lang.Object entityTypeBatch_;
-  public enum EntityTypeBatchCase
-      implements com.google.protobuf.Internal.EnumLite {
+
+  public enum EntityTypeBatchCase implements com.google.protobuf.Internal.EnumLite {
     ENTITY_TYPE_BATCH_URI(2),
     ENTITY_TYPE_BATCH_INLINE(3),
     ENTITYTYPEBATCH_NOT_SET(0);
     private final int value;
+
     private EntityTypeBatchCase(int value) {
       this.value = value;
     }
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static EntityTypeBatchCase valueOf(int value) {
       return forNumber(value);
@@ -142,26 +159,31 @@ private static final long serialVersionUID = 0L;
 
     public static EntityTypeBatchCase forNumber(int value) {
       switch (value) {
-        case 2: return ENTITY_TYPE_BATCH_URI;
-        case 3: return ENTITY_TYPE_BATCH_INLINE;
-        case 0: return ENTITYTYPEBATCH_NOT_SET;
-        default: return null;
+        case 2:
+          return ENTITY_TYPE_BATCH_URI;
+        case 3:
+          return ENTITY_TYPE_BATCH_INLINE;
+        case 0:
+          return ENTITYTYPEBATCH_NOT_SET;
+        default:
+          return null;
       }
     }
+
     public int getNumber() {
       return this.value;
     }
   };
 
-  public EntityTypeBatchCase
-  getEntityTypeBatchCase() {
-    return EntityTypeBatchCase.forNumber(
-        entityTypeBatchCase_);
+  public EntityTypeBatchCase getEntityTypeBatchCase() {
+    return EntityTypeBatchCase.forNumber(entityTypeBatchCase_);
   }
 
   public static final int PARENT_FIELD_NUMBER = 1;
   private volatile java.lang.Object parent_;
   /**
+   *
+   *
    * <pre>
    * Required. The name of the agent to update or create entity types in.
    * Format: `projects/&lt;Project ID&gt;/agent`.
@@ -174,14 +196,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       parent_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Required. The name of the agent to update or create entity types in.
    * Format: `projects/&lt;Project ID&gt;/agent`.
@@ -189,13 +212,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string parent = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getParentBytes() {
+  public com.google.protobuf.ByteString getParentBytes() {
     java.lang.Object ref = parent_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       parent_ = b;
       return b;
     } else {
@@ -205,6 +226,8 @@ private static final long serialVersionUID = 0L;
 
   public static final int ENTITY_TYPE_BATCH_URI_FIELD_NUMBER = 2;
   /**
+   *
+   *
    * <pre>
    * The URI to a Google Cloud Storage file containing entity types to update
    * or create. The file format can either be a serialized proto (of
@@ -222,8 +245,7 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       if (entityTypeBatchCase_ == 2) {
         entityTypeBatch_ = s;
@@ -232,6 +254,8 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The URI to a Google Cloud Storage file containing entity types to update
    * or create. The file format can either be a serialized proto (of
@@ -241,16 +265,14 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string entity_type_batch_uri = 2;</code>
    */
-  public com.google.protobuf.ByteString
-      getEntityTypeBatchUriBytes() {
+  public com.google.protobuf.ByteString getEntityTypeBatchUriBytes() {
     java.lang.Object ref = "";
     if (entityTypeBatchCase_ == 2) {
       ref = entityTypeBatch_;
     }
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       if (entityTypeBatchCase_ == 2) {
         entityTypeBatch_ = b;
       }
@@ -262,6 +284,8 @@ private static final long serialVersionUID = 0L;
 
   public static final int ENTITY_TYPE_BATCH_INLINE_FIELD_NUMBER = 3;
   /**
+   *
+   *
    * <pre>
    * The collection of entity type to update or create.
    * </pre>
@@ -272,6 +296,8 @@ private static final long serialVersionUID = 0L;
     return entityTypeBatchCase_ == 3;
   }
   /**
+   *
+   *
    * <pre>
    * The collection of entity type to update or create.
    * </pre>
@@ -280,20 +306,23 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.cloud.dialogflow.v2.EntityTypeBatch getEntityTypeBatchInline() {
     if (entityTypeBatchCase_ == 3) {
-       return (com.google.cloud.dialogflow.v2.EntityTypeBatch) entityTypeBatch_;
+      return (com.google.cloud.dialogflow.v2.EntityTypeBatch) entityTypeBatch_;
     }
     return com.google.cloud.dialogflow.v2.EntityTypeBatch.getDefaultInstance();
   }
   /**
+   *
+   *
    * <pre>
    * The collection of entity type to update or create.
    * </pre>
    *
    * <code>.google.cloud.dialogflow.v2.EntityTypeBatch entity_type_batch_inline = 3;</code>
    */
-  public com.google.cloud.dialogflow.v2.EntityTypeBatchOrBuilder getEntityTypeBatchInlineOrBuilder() {
+  public com.google.cloud.dialogflow.v2.EntityTypeBatchOrBuilder
+      getEntityTypeBatchInlineOrBuilder() {
     if (entityTypeBatchCase_ == 3) {
-       return (com.google.cloud.dialogflow.v2.EntityTypeBatch) entityTypeBatch_;
+      return (com.google.cloud.dialogflow.v2.EntityTypeBatch) entityTypeBatch_;
     }
     return com.google.cloud.dialogflow.v2.EntityTypeBatch.getDefaultInstance();
   }
@@ -301,6 +330,8 @@ private static final long serialVersionUID = 0L;
   public static final int LANGUAGE_CODE_FIELD_NUMBER = 4;
   private volatile java.lang.Object languageCode_;
   /**
+   *
+   *
    * <pre>
    * Optional. The language of entity synonyms defined in `entity_types`. If not
    * specified, the agent's default language is used.
@@ -316,14 +347,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       languageCode_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Optional. The language of entity synonyms defined in `entity_types`. If not
    * specified, the agent's default language is used.
@@ -334,13 +366,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string language_code = 4;</code>
    */
-  public com.google.protobuf.ByteString
-      getLanguageCodeBytes() {
+  public com.google.protobuf.ByteString getLanguageCodeBytes() {
     java.lang.Object ref = languageCode_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       languageCode_ = b;
       return b;
     } else {
@@ -351,6 +381,8 @@ private static final long serialVersionUID = 0L;
   public static final int UPDATE_MASK_FIELD_NUMBER = 5;
   private com.google.protobuf.FieldMask updateMask_;
   /**
+   *
+   *
    * <pre>
    * Optional. The mask to control which fields get updated.
    * </pre>
@@ -361,6 +393,8 @@ private static final long serialVersionUID = 0L;
     return updateMask_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Optional. The mask to control which fields get updated.
    * </pre>
@@ -371,6 +405,8 @@ private static final long serialVersionUID = 0L;
     return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
   }
   /**
+   *
+   *
    * <pre>
    * Optional. The mask to control which fields get updated.
    * </pre>
@@ -382,6 +418,8 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -391,8 +429,8 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  @java.lang.Override
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getParentBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, parent_);
     }
@@ -411,6 +449,7 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -423,15 +462,15 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, entityTypeBatch_);
     }
     if (entityTypeBatchCase_ == 3) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, (com.google.cloud.dialogflow.v2.EntityTypeBatch) entityTypeBatch_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              3, (com.google.cloud.dialogflow.v2.EntityTypeBatch) entityTypeBatch_);
     }
     if (!getLanguageCodeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, languageCode_);
     }
     if (updateMask_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(5, getUpdateMask());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getUpdateMask());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -441,34 +480,29 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.dialogflow.v2.BatchUpdateEntityTypesRequest)) {
       return super.equals(obj);
     }
-    com.google.cloud.dialogflow.v2.BatchUpdateEntityTypesRequest other = (com.google.cloud.dialogflow.v2.BatchUpdateEntityTypesRequest) obj;
+    com.google.cloud.dialogflow.v2.BatchUpdateEntityTypesRequest other =
+        (com.google.cloud.dialogflow.v2.BatchUpdateEntityTypesRequest) obj;
 
     boolean result = true;
-    result = result && getParent()
-        .equals(other.getParent());
-    result = result && getLanguageCode()
-        .equals(other.getLanguageCode());
+    result = result && getParent().equals(other.getParent());
+    result = result && getLanguageCode().equals(other.getLanguageCode());
     result = result && (hasUpdateMask() == other.hasUpdateMask());
     if (hasUpdateMask()) {
-      result = result && getUpdateMask()
-          .equals(other.getUpdateMask());
+      result = result && getUpdateMask().equals(other.getUpdateMask());
     }
-    result = result && getEntityTypeBatchCase().equals(
-        other.getEntityTypeBatchCase());
+    result = result && getEntityTypeBatchCase().equals(other.getEntityTypeBatchCase());
     if (!result) return false;
     switch (entityTypeBatchCase_) {
       case 2:
-        result = result && getEntityTypeBatchUri()
-            .equals(other.getEntityTypeBatchUri());
+        result = result && getEntityTypeBatchUri().equals(other.getEntityTypeBatchUri());
         break;
       case 3:
-        result = result && getEntityTypeBatchInline()
-            .equals(other.getEntityTypeBatchInline());
+        result = result && getEntityTypeBatchInline().equals(other.getEntityTypeBatchInline());
         break;
       case 0:
       default:
@@ -510,114 +544,127 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.cloud.dialogflow.v2.BatchUpdateEntityTypesRequest parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dialogflow.v2.BatchUpdateEntityTypesRequest parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.dialogflow.v2.BatchUpdateEntityTypesRequest parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dialogflow.v2.BatchUpdateEntityTypesRequest parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.dialogflow.v2.BatchUpdateEntityTypesRequest parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dialogflow.v2.BatchUpdateEntityTypesRequest parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.dialogflow.v2.BatchUpdateEntityTypesRequest parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.dialogflow.v2.BatchUpdateEntityTypesRequest parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.dialogflow.v2.BatchUpdateEntityTypesRequest parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.cloud.dialogflow.v2.BatchUpdateEntityTypesRequest parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.cloud.dialogflow.v2.BatchUpdateEntityTypesRequest parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.dialogflow.v2.BatchUpdateEntityTypesRequest parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.dialogflow.v2.BatchUpdateEntityTypesRequest parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.dialogflow.v2.BatchUpdateEntityTypesRequest parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  public Builder newBuilderForType() { return newBuilder(); }
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-  public static Builder newBuilder(com.google.cloud.dialogflow.v2.BatchUpdateEntityTypesRequest prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+
+  public static Builder newBuilder(
+      com.google.cloud.dialogflow.v2.BatchUpdateEntityTypesRequest prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+
+  @java.lang.Override
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * The request message for [EntityTypes.BatchUpdateEntityTypes][google.cloud.dialogflow.v2.EntityTypes.BatchUpdateEntityTypes].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2.BatchUpdateEntityTypesRequest}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.v2.BatchUpdateEntityTypesRequest)
       com.google.cloud.dialogflow.v2.BatchUpdateEntityTypesRequestOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.dialogflow.v2.EntityTypeProto.internal_static_google_cloud_dialogflow_v2_BatchUpdateEntityTypesRequest_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dialogflow.v2.EntityTypeProto
+          .internal_static_google_cloud_dialogflow_v2_BatchUpdateEntityTypesRequest_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.dialogflow.v2.EntityTypeProto.internal_static_google_cloud_dialogflow_v2_BatchUpdateEntityTypesRequest_fieldAccessorTable
+      return com.google.cloud.dialogflow.v2.EntityTypeProto
+          .internal_static_google_cloud_dialogflow_v2_BatchUpdateEntityTypesRequest_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.dialogflow.v2.BatchUpdateEntityTypesRequest.class, com.google.cloud.dialogflow.v2.BatchUpdateEntityTypesRequest.Builder.class);
+              com.google.cloud.dialogflow.v2.BatchUpdateEntityTypesRequest.class,
+              com.google.cloud.dialogflow.v2.BatchUpdateEntityTypesRequest.Builder.class);
     }
 
     // Construct using com.google.cloud.dialogflow.v2.BatchUpdateEntityTypesRequest.newBuilder()
@@ -625,16 +672,16 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       parent_ = "";
@@ -652,15 +699,19 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.dialogflow.v2.EntityTypeProto.internal_static_google_cloud_dialogflow_v2_BatchUpdateEntityTypesRequest_descriptor;
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.dialogflow.v2.EntityTypeProto
+          .internal_static_google_cloud_dialogflow_v2_BatchUpdateEntityTypesRequest_descriptor;
     }
 
-    public com.google.cloud.dialogflow.v2.BatchUpdateEntityTypesRequest getDefaultInstanceForType() {
+    @java.lang.Override
+    public com.google.cloud.dialogflow.v2.BatchUpdateEntityTypesRequest
+        getDefaultInstanceForType() {
       return com.google.cloud.dialogflow.v2.BatchUpdateEntityTypesRequest.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2.BatchUpdateEntityTypesRequest build() {
       com.google.cloud.dialogflow.v2.BatchUpdateEntityTypesRequest result = buildPartial();
       if (!result.isInitialized()) {
@@ -669,8 +720,10 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2.BatchUpdateEntityTypesRequest buildPartial() {
-      com.google.cloud.dialogflow.v2.BatchUpdateEntityTypesRequest result = new com.google.cloud.dialogflow.v2.BatchUpdateEntityTypesRequest(this);
+      com.google.cloud.dialogflow.v2.BatchUpdateEntityTypesRequest result =
+          new com.google.cloud.dialogflow.v2.BatchUpdateEntityTypesRequest(this);
       result.parent_ = parent_;
       if (entityTypeBatchCase_ == 2) {
         result.entityTypeBatch_ = entityTypeBatch_;
@@ -693,35 +746,43 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+
+    @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+    @java.lang.Override
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+    @java.lang.Override
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
+    @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
+    @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.dialogflow.v2.BatchUpdateEntityTypesRequest) {
-        return mergeFrom((com.google.cloud.dialogflow.v2.BatchUpdateEntityTypesRequest)other);
+        return mergeFrom((com.google.cloud.dialogflow.v2.BatchUpdateEntityTypesRequest) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -729,7 +790,9 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.cloud.dialogflow.v2.BatchUpdateEntityTypesRequest other) {
-      if (other == com.google.cloud.dialogflow.v2.BatchUpdateEntityTypesRequest.getDefaultInstance()) return this;
+      if (other
+          == com.google.cloud.dialogflow.v2.BatchUpdateEntityTypesRequest.getDefaultInstance())
+        return this;
       if (!other.getParent().isEmpty()) {
         parent_ = other.parent_;
         onChanged();
@@ -742,29 +805,34 @@ private static final long serialVersionUID = 0L;
         mergeUpdateMask(other.getUpdateMask());
       }
       switch (other.getEntityTypeBatchCase()) {
-        case ENTITY_TYPE_BATCH_URI: {
-          entityTypeBatchCase_ = 2;
-          entityTypeBatch_ = other.entityTypeBatch_;
-          onChanged();
-          break;
-        }
-        case ENTITY_TYPE_BATCH_INLINE: {
-          mergeEntityTypeBatchInline(other.getEntityTypeBatchInline());
-          break;
-        }
-        case ENTITYTYPEBATCH_NOT_SET: {
-          break;
-        }
+        case ENTITY_TYPE_BATCH_URI:
+          {
+            entityTypeBatchCase_ = 2;
+            entityTypeBatch_ = other.entityTypeBatch_;
+            onChanged();
+            break;
+          }
+        case ENTITY_TYPE_BATCH_INLINE:
+          {
+            mergeEntityTypeBatchInline(other.getEntityTypeBatchInline());
+            break;
+          }
+        case ENTITYTYPEBATCH_NOT_SET:
+          {
+            break;
+          }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -773,7 +841,8 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.dialogflow.v2.BatchUpdateEntityTypesRequest) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.cloud.dialogflow.v2.BatchUpdateEntityTypesRequest) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -782,12 +851,12 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int entityTypeBatchCase_ = 0;
     private java.lang.Object entityTypeBatch_;
-    public EntityTypeBatchCase
-        getEntityTypeBatchCase() {
-      return EntityTypeBatchCase.forNumber(
-          entityTypeBatchCase_);
+
+    public EntityTypeBatchCase getEntityTypeBatchCase() {
+      return EntityTypeBatchCase.forNumber(entityTypeBatchCase_);
     }
 
     public Builder clearEntityTypeBatch() {
@@ -797,9 +866,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-
     private java.lang.Object parent_ = "";
     /**
+     *
+     *
      * <pre>
      * Required. The name of the agent to update or create entity types in.
      * Format: `projects/&lt;Project ID&gt;/agent`.
@@ -810,8 +880,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getParent() {
       java.lang.Object ref = parent_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         parent_ = s;
         return s;
@@ -820,6 +889,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The name of the agent to update or create entity types in.
      * Format: `projects/&lt;Project ID&gt;/agent`.
@@ -827,13 +898,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string parent = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getParentBytes() {
+    public com.google.protobuf.ByteString getParentBytes() {
       java.lang.Object ref = parent_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         parent_ = b;
         return b;
       } else {
@@ -841,6 +910,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The name of the agent to update or create entity types in.
      * Format: `projects/&lt;Project ID&gt;/agent`.
@@ -848,17 +919,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string parent = 1;</code>
      */
-    public Builder setParent(
-        java.lang.String value) {
+    public Builder setParent(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       parent_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The name of the agent to update or create entity types in.
      * Format: `projects/&lt;Project ID&gt;/agent`.
@@ -867,12 +939,14 @@ private static final long serialVersionUID = 0L;
      * <code>string parent = 1;</code>
      */
     public Builder clearParent() {
-      
+
       parent_ = getDefaultInstance().getParent();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The name of the agent to update or create entity types in.
      * Format: `projects/&lt;Project ID&gt;/agent`.
@@ -880,19 +954,20 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string parent = 1;</code>
      */
-    public Builder setParentBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setParentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       parent_ = value;
       onChanged();
       return this;
     }
 
     /**
+     *
+     *
      * <pre>
      * The URI to a Google Cloud Storage file containing entity types to update
      * or create. The file format can either be a serialized proto (of
@@ -908,8 +983,7 @@ private static final long serialVersionUID = 0L;
         ref = entityTypeBatch_;
       }
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (entityTypeBatchCase_ == 2) {
           entityTypeBatch_ = s;
@@ -920,6 +994,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The URI to a Google Cloud Storage file containing entity types to update
      * or create. The file format can either be a serialized proto (of
@@ -929,16 +1005,14 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string entity_type_batch_uri = 2;</code>
      */
-    public com.google.protobuf.ByteString
-        getEntityTypeBatchUriBytes() {
+    public com.google.protobuf.ByteString getEntityTypeBatchUriBytes() {
       java.lang.Object ref = "";
       if (entityTypeBatchCase_ == 2) {
         ref = entityTypeBatch_;
       }
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         if (entityTypeBatchCase_ == 2) {
           entityTypeBatch_ = b;
         }
@@ -948,6 +1022,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The URI to a Google Cloud Storage file containing entity types to update
      * or create. The file format can either be a serialized proto (of
@@ -957,17 +1033,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string entity_type_batch_uri = 2;</code>
      */
-    public Builder setEntityTypeBatchUri(
-        java.lang.String value) {
+    public Builder setEntityTypeBatchUri(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  entityTypeBatchCase_ = 2;
+        throw new NullPointerException();
+      }
+      entityTypeBatchCase_ = 2;
       entityTypeBatch_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The URI to a Google Cloud Storage file containing entity types to update
      * or create. The file format can either be a serialized proto (of
@@ -986,6 +1063,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The URI to a Google Cloud Storage file containing entity types to update
      * or create. The file format can either be a serialized proto (of
@@ -995,12 +1074,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string entity_type_batch_uri = 2;</code>
      */
-    public Builder setEntityTypeBatchUriBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setEntityTypeBatchUriBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
       entityTypeBatchCase_ = 2;
       entityTypeBatch_ = value;
       onChanged();
@@ -1008,8 +1086,13 @@ private static final long serialVersionUID = 0L;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dialogflow.v2.EntityTypeBatch, com.google.cloud.dialogflow.v2.EntityTypeBatch.Builder, com.google.cloud.dialogflow.v2.EntityTypeBatchOrBuilder> entityTypeBatchInlineBuilder_;
+            com.google.cloud.dialogflow.v2.EntityTypeBatch,
+            com.google.cloud.dialogflow.v2.EntityTypeBatch.Builder,
+            com.google.cloud.dialogflow.v2.EntityTypeBatchOrBuilder>
+        entityTypeBatchInlineBuilder_;
     /**
+     *
+     *
      * <pre>
      * The collection of entity type to update or create.
      * </pre>
@@ -1020,6 +1103,8 @@ private static final long serialVersionUID = 0L;
       return entityTypeBatchCase_ == 3;
     }
     /**
+     *
+     *
      * <pre>
      * The collection of entity type to update or create.
      * </pre>
@@ -1040,6 +1125,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The collection of entity type to update or create.
      * </pre>
@@ -1060,6 +1147,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The collection of entity type to update or create.
      * </pre>
@@ -1078,18 +1167,25 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The collection of entity type to update or create.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.EntityTypeBatch entity_type_batch_inline = 3;</code>
      */
-    public Builder mergeEntityTypeBatchInline(com.google.cloud.dialogflow.v2.EntityTypeBatch value) {
+    public Builder mergeEntityTypeBatchInline(
+        com.google.cloud.dialogflow.v2.EntityTypeBatch value) {
       if (entityTypeBatchInlineBuilder_ == null) {
-        if (entityTypeBatchCase_ == 3 &&
-            entityTypeBatch_ != com.google.cloud.dialogflow.v2.EntityTypeBatch.getDefaultInstance()) {
-          entityTypeBatch_ = com.google.cloud.dialogflow.v2.EntityTypeBatch.newBuilder((com.google.cloud.dialogflow.v2.EntityTypeBatch) entityTypeBatch_)
-              .mergeFrom(value).buildPartial();
+        if (entityTypeBatchCase_ == 3
+            && entityTypeBatch_
+                != com.google.cloud.dialogflow.v2.EntityTypeBatch.getDefaultInstance()) {
+          entityTypeBatch_ =
+              com.google.cloud.dialogflow.v2.EntityTypeBatch.newBuilder(
+                      (com.google.cloud.dialogflow.v2.EntityTypeBatch) entityTypeBatch_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           entityTypeBatch_ = value;
         }
@@ -1104,6 +1200,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The collection of entity type to update or create.
      * </pre>
@@ -1127,23 +1225,29 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The collection of entity type to update or create.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.EntityTypeBatch entity_type_batch_inline = 3;</code>
      */
-    public com.google.cloud.dialogflow.v2.EntityTypeBatch.Builder getEntityTypeBatchInlineBuilder() {
+    public com.google.cloud.dialogflow.v2.EntityTypeBatch.Builder
+        getEntityTypeBatchInlineBuilder() {
       return getEntityTypeBatchInlineFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * The collection of entity type to update or create.
      * </pre>
      *
      * <code>.google.cloud.dialogflow.v2.EntityTypeBatch entity_type_batch_inline = 3;</code>
      */
-    public com.google.cloud.dialogflow.v2.EntityTypeBatchOrBuilder getEntityTypeBatchInlineOrBuilder() {
+    public com.google.cloud.dialogflow.v2.EntityTypeBatchOrBuilder
+        getEntityTypeBatchInlineOrBuilder() {
       if ((entityTypeBatchCase_ == 3) && (entityTypeBatchInlineBuilder_ != null)) {
         return entityTypeBatchInlineBuilder_.getMessageOrBuilder();
       } else {
@@ -1154,6 +1258,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The collection of entity type to update or create.
      * </pre>
@@ -1161,26 +1267,34 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.dialogflow.v2.EntityTypeBatch entity_type_batch_inline = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dialogflow.v2.EntityTypeBatch, com.google.cloud.dialogflow.v2.EntityTypeBatch.Builder, com.google.cloud.dialogflow.v2.EntityTypeBatchOrBuilder> 
+            com.google.cloud.dialogflow.v2.EntityTypeBatch,
+            com.google.cloud.dialogflow.v2.EntityTypeBatch.Builder,
+            com.google.cloud.dialogflow.v2.EntityTypeBatchOrBuilder>
         getEntityTypeBatchInlineFieldBuilder() {
       if (entityTypeBatchInlineBuilder_ == null) {
         if (!(entityTypeBatchCase_ == 3)) {
           entityTypeBatch_ = com.google.cloud.dialogflow.v2.EntityTypeBatch.getDefaultInstance();
         }
-        entityTypeBatchInlineBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.dialogflow.v2.EntityTypeBatch, com.google.cloud.dialogflow.v2.EntityTypeBatch.Builder, com.google.cloud.dialogflow.v2.EntityTypeBatchOrBuilder>(
+        entityTypeBatchInlineBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.v2.EntityTypeBatch,
+                com.google.cloud.dialogflow.v2.EntityTypeBatch.Builder,
+                com.google.cloud.dialogflow.v2.EntityTypeBatchOrBuilder>(
                 (com.google.cloud.dialogflow.v2.EntityTypeBatch) entityTypeBatch_,
                 getParentForChildren(),
                 isClean());
         entityTypeBatch_ = null;
       }
       entityTypeBatchCase_ = 3;
-      onChanged();;
+      onChanged();
+      ;
       return entityTypeBatchInlineBuilder_;
     }
 
     private java.lang.Object languageCode_ = "";
     /**
+     *
+     *
      * <pre>
      * Optional. The language of entity synonyms defined in `entity_types`. If not
      * specified, the agent's default language is used.
@@ -1194,8 +1308,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getLanguageCode() {
       java.lang.Object ref = languageCode_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         languageCode_ = s;
         return s;
@@ -1204,6 +1317,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The language of entity synonyms defined in `entity_types`. If not
      * specified, the agent's default language is used.
@@ -1214,13 +1329,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string language_code = 4;</code>
      */
-    public com.google.protobuf.ByteString
-        getLanguageCodeBytes() {
+    public com.google.protobuf.ByteString getLanguageCodeBytes() {
       java.lang.Object ref = languageCode_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         languageCode_ = b;
         return b;
       } else {
@@ -1228,6 +1341,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The language of entity synonyms defined in `entity_types`. If not
      * specified, the agent's default language is used.
@@ -1238,17 +1353,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string language_code = 4;</code>
      */
-    public Builder setLanguageCode(
-        java.lang.String value) {
+    public Builder setLanguageCode(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       languageCode_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The language of entity synonyms defined in `entity_types`. If not
      * specified, the agent's default language is used.
@@ -1260,12 +1376,14 @@ private static final long serialVersionUID = 0L;
      * <code>string language_code = 4;</code>
      */
     public Builder clearLanguageCode() {
-      
+
       languageCode_ = getDefaultInstance().getLanguageCode();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The language of entity synonyms defined in `entity_types`. If not
      * specified, the agent's default language is used.
@@ -1276,13 +1394,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string language_code = 4;</code>
      */
-    public Builder setLanguageCodeBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setLanguageCodeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       languageCode_ = value;
       onChanged();
       return this;
@@ -1290,8 +1407,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.FieldMask updateMask_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.FieldMask, com.google.protobuf.FieldMask.Builder, com.google.protobuf.FieldMaskOrBuilder> updateMaskBuilder_;
+            com.google.protobuf.FieldMask,
+            com.google.protobuf.FieldMask.Builder,
+            com.google.protobuf.FieldMaskOrBuilder>
+        updateMaskBuilder_;
     /**
+     *
+     *
      * <pre>
      * Optional. The mask to control which fields get updated.
      * </pre>
@@ -1302,6 +1424,8 @@ private static final long serialVersionUID = 0L;
       return updateMaskBuilder_ != null || updateMask_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The mask to control which fields get updated.
      * </pre>
@@ -1310,12 +1434,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.FieldMask getUpdateMask() {
       if (updateMaskBuilder_ == null) {
-        return updateMask_ == null ? com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
+        return updateMask_ == null
+            ? com.google.protobuf.FieldMask.getDefaultInstance()
+            : updateMask_;
       } else {
         return updateMaskBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The mask to control which fields get updated.
      * </pre>
@@ -1336,14 +1464,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The mask to control which fields get updated.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask update_mask = 5;</code>
      */
-    public Builder setUpdateMask(
-        com.google.protobuf.FieldMask.Builder builderForValue) {
+    public Builder setUpdateMask(com.google.protobuf.FieldMask.Builder builderForValue) {
       if (updateMaskBuilder_ == null) {
         updateMask_ = builderForValue.build();
         onChanged();
@@ -1354,6 +1483,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The mask to control which fields get updated.
      * </pre>
@@ -1364,7 +1495,7 @@ private static final long serialVersionUID = 0L;
       if (updateMaskBuilder_ == null) {
         if (updateMask_ != null) {
           updateMask_ =
-            com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
+              com.google.protobuf.FieldMask.newBuilder(updateMask_).mergeFrom(value).buildPartial();
         } else {
           updateMask_ = value;
         }
@@ -1376,6 +1507,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The mask to control which fields get updated.
      * </pre>
@@ -1394,6 +1527,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The mask to control which fields get updated.
      * </pre>
@@ -1401,11 +1536,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.FieldMask update_mask = 5;</code>
      */
     public com.google.protobuf.FieldMask.Builder getUpdateMaskBuilder() {
-      
+
       onChanged();
       return getUpdateMaskFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The mask to control which fields get updated.
      * </pre>
@@ -1416,11 +1553,14 @@ private static final long serialVersionUID = 0L;
       if (updateMaskBuilder_ != null) {
         return updateMaskBuilder_.getMessageOrBuilder();
       } else {
-        return updateMask_ == null ?
-            com.google.protobuf.FieldMask.getDefaultInstance() : updateMask_;
+        return updateMask_ == null
+            ? com.google.protobuf.FieldMask.getDefaultInstance()
+            : updateMask_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The mask to control which fields get updated.
      * </pre>
@@ -1428,34 +1568,40 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.FieldMask update_mask = 5;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.FieldMask, com.google.protobuf.FieldMask.Builder, com.google.protobuf.FieldMaskOrBuilder> 
+            com.google.protobuf.FieldMask,
+            com.google.protobuf.FieldMask.Builder,
+            com.google.protobuf.FieldMaskOrBuilder>
         getUpdateMaskFieldBuilder() {
       if (updateMaskBuilder_ == null) {
-        updateMaskBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.FieldMask, com.google.protobuf.FieldMask.Builder, com.google.protobuf.FieldMaskOrBuilder>(
-                getUpdateMask(),
-                getParentForChildren(),
-                isClean());
+        updateMaskBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.FieldMask,
+                com.google.protobuf.FieldMask.Builder,
+                com.google.protobuf.FieldMaskOrBuilder>(
+                getUpdateMask(), getParentForChildren(), isClean());
         updateMask_ = null;
       }
       return updateMaskBuilder_;
     }
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+
+    @java.lang.Override
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
     }
 
-
     // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.v2.BatchUpdateEntityTypesRequest)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.v2.BatchUpdateEntityTypesRequest)
-  private static final com.google.cloud.dialogflow.v2.BatchUpdateEntityTypesRequest DEFAULT_INSTANCE;
+  private static final com.google.cloud.dialogflow.v2.BatchUpdateEntityTypesRequest
+      DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.dialogflow.v2.BatchUpdateEntityTypesRequest();
   }
@@ -1464,15 +1610,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<BatchUpdateEntityTypesRequest>
-      PARSER = new com.google.protobuf.AbstractParser<BatchUpdateEntityTypesRequest>() {
-    public BatchUpdateEntityTypesRequest parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-        return new BatchUpdateEntityTypesRequest(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<BatchUpdateEntityTypesRequest> PARSER =
+      new com.google.protobuf.AbstractParser<BatchUpdateEntityTypesRequest>() {
+        @java.lang.Override
+        public BatchUpdateEntityTypesRequest parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new BatchUpdateEntityTypesRequest(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<BatchUpdateEntityTypesRequest> parser() {
     return PARSER;
@@ -1483,9 +1630,8 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2.BatchUpdateEntityTypesRequest getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

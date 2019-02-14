@@ -14,13 +14,13 @@
 
 package com.google.cloud.oslogin.common;
 
-import com.google.common.base.Preconditions;
-import com.google.common.collect.ImmutableMap;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.resourcenames.ResourceName;
-import java.util.Map;
+import com.google.common.base.Preconditions;
+import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 @javax.annotation.Generated("by GAPIC protoc plugin")
@@ -56,18 +56,11 @@ public class ProjectName implements ResourceName {
   }
 
   public static ProjectName of(String user, String project) {
-    return newBuilder()
-      .setUser(user)
-      .setProject(project)
-      .build();
+    return newBuilder().setUser(user).setProject(project).build();
   }
 
   public static String format(String user, String project) {
-    return newBuilder()
-      .setUser(user)
-      .setProject(project)
-      .build()
-      .toString();
+    return newBuilder().setUser(user).setProject(project).build().toString();
   }
 
   public static ProjectName parse(String formattedString) {
@@ -75,7 +68,8 @@ public class ProjectName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(formattedString, "ProjectName.parse: formattedString not in valid format");
+        PATH_TEMPLATE.validatedMatch(
+            formattedString, "ProjectName.parse: formattedString not in valid format");
     return of(matchMap.get("user"), matchMap.get("project"));
   }
 
@@ -150,8 +144,7 @@ public class ProjectName implements ResourceName {
       return this;
     }
 
-    private Builder() {
-    }
+    private Builder() {}
 
     private Builder(ProjectName projectName) {
       user = projectName.user;
@@ -170,8 +163,7 @@ public class ProjectName implements ResourceName {
     }
     if (o instanceof ProjectName) {
       ProjectName that = (ProjectName) o;
-      return (this.user.equals(that.user))
-          && (this.project.equals(that.project));
+      return (this.user.equals(that.user)) && (this.project.equals(that.project));
     }
     return false;
   }
@@ -186,4 +178,3 @@ public class ProjectName implements ResourceName {
     return h;
   }
 }
-

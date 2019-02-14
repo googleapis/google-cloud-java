@@ -22,39 +22,37 @@
 
 package com.google.cloud.examples.spanner.snippets;
 
+import com.google.api.gax.longrunning.OperationFuture;
 import com.google.api.gax.paging.Page;
-import com.google.common.collect.Iterables;
+import com.google.cloud.spanner.Database;
 import com.google.cloud.spanner.DatabaseAdminClient;
 import com.google.cloud.spanner.Options;
-import com.google.cloud.spanner.Database;
-import com.google.cloud.spanner.Operation;
+import com.google.cloud.spanner.SpannerException;
+import com.google.cloud.spanner.SpannerExceptionFactory;
+import com.google.common.collect.Iterables;
 import com.google.spanner.admin.database.v1.CreateDatabaseMetadata;
-
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 
-/**
- * This class contains snippets for {@link DatabaseAdminClient} interface.
- */
+/** This class contains snippets for {@link DatabaseAdminClient} interface. */
 public class DatabaseAdminClientSnippets {
-  
+
   private final DatabaseAdminClient dbAdminClient;
 
   public DatabaseAdminClientSnippets(DatabaseAdminClient dbAdminClient) {
     this.dbAdminClient = dbAdminClient;
   }
-  
-  /**
-   * Example to create database.
-   */
+
+  /** Example to create database. */
   // [TARGET createDatabase(String, String, Iterable)]
   // [VARIABLE my_instance_id]
   // [VARIABLE my_database_id]
   public Database createDatabase(String instanceId, String databaseId) {
     // [START createDatabase]
-    Operation<Database, CreateDatabaseMetadata> op = dbAdminClient
-        .createDatabase(
+    OperationFuture<Database, CreateDatabaseMetadata> op =
+        dbAdminClient.createDatabase(
             instanceId,
             databaseId,
             Arrays.asList(
@@ -70,14 +68,19 @@ public class DatabaseAdminClientSnippets {
                     + "  AlbumTitle   STRING(MAX)\n"
                     + ") PRIMARY KEY (SingerId, AlbumId),\n"
                     + "  INTERLEAVE IN PARENT Singers ON DELETE CASCADE"));
-    Database db = op.waitFor().getResult();
+    Database db;
+    try {
+      db = op.get();
+    } catch (ExecutionException e) {
+      throw (SpannerException) e.getCause();
+    } catch (InterruptedException e) {
+      throw SpannerExceptionFactory.propagateInterrupt(e);
+    }
     // [END createDatabase]
     return db;
   }
 
-  /**
-   * Example to getDatabase.
-   */
+  /** Example to getDatabase. */
   // [TARGET getDatabase(String, String)]
   // [VARIABLE my_instance_id]
   // [VARIABLE my_database_id]
@@ -88,24 +91,29 @@ public class DatabaseAdminClientSnippets {
     return db;
   }
 
-  /**
-   * Example to update the database DDL.
-   */
+  /** Example to update the database DDL. */
   // [TARGET updateDatabaseDdl(String, String, Iterable, String)]
   // [VARIABLE my_instance_id]
   // [VARIABLE my_database_id]
   public void updateDatabaseDdl(String instanceId, String databaseId) {
     // [START updateDatabaseDdl]
-    dbAdminClient.updateDatabaseDdl(instanceId, 
-        databaseId, 
-        Arrays.asList("ALTER TABLE Albums ADD COLUMN MarketingBudget INT64"), 
-        null).waitFor();
+    try {
+      dbAdminClient
+          .updateDatabaseDdl(
+              instanceId,
+              databaseId,
+              Arrays.asList("ALTER TABLE Albums ADD COLUMN MarketingBudget INT64"),
+              null)
+          .get();
+    } catch (ExecutionException e) {
+      throw (SpannerException) e.getCause();
+    } catch (InterruptedException e) {
+      throw SpannerExceptionFactory.propagateInterrupt(e);
+    }
     // [END updateDatabaseDdl]
   }
 
-  /** 
-   * Example to drop a Cloud Spanner database. 
-   */
+  /** Example to drop a Cloud Spanner database. */
   // [TARGET dropDatabase(String, String)]
   // [VARIABLE my_instance_id]
   // [VARIABLE my_database_id]
@@ -115,9 +123,7 @@ public class DatabaseAdminClientSnippets {
     // [END dropDatabase]
   }
 
-  /**
-   * Example to get the schema of a Cloud Spanner database.
-   */
+  /** Example to get the schema of a Cloud Spanner database. */
   // [TARGET getDatabaseDdl(String, String)]
   // [VARIABLE my_instance_id]
   // [VARIABLE my_database_id]
@@ -128,9 +134,7 @@ public class DatabaseAdminClientSnippets {
     return statementsInDb;
   }
 
-  /** 
-   * Example to get the list of Cloud Spanner database in the given instance. 
-   */
+  /** Example to get the list of Cloud Spanner database in the given instance. */
   // [TARGET listDatabases(String, ListOption...)]
   // [VARIABLE my_instance_id]
   public List<Database> listDatabases(String instanceId) {

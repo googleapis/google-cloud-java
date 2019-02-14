@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -40,10 +40,10 @@ public final class LicenseResourceRequirements implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("minGuestCpuCount")) {
+    if ("minGuestCpuCount".equals(fieldName)) {
       return minGuestCpuCount;
     }
-    if (fieldName.equals("minMemoryMb")) {
+    if ("minMemoryMb".equals(fieldName)) {
       return minMemoryMb;
     }
     return null;
@@ -57,14 +57,27 @@ public final class LicenseResourceRequirements implements ApiMessage {
 
   @Nullable
   @Override
+  /**
+   * The fields that should be serialized (even if they have empty values). If the containing
+   * message object has a non-null fieldmask, then all the fields in the field mask (and only those
+   * fields in the field mask) will be serialized. If the containing object does not have a
+   * fieldmask, then only non-empty fields will be serialized.
+   */
   public List<String> getFieldMask() {
     return null;
   }
 
+  /**
+   * Minimum number of guest cpus required to use the Instance. Enforced at Instance creation and
+   * Instance start.
+   */
   public Integer getMinGuestCpuCount() {
     return minGuestCpuCount;
   }
 
+  /**
+   * Minimum memory required to use the Instance. Enforced at Instance creation and Instance start.
+   */
   public Integer getMinMemoryMb() {
     return minMemoryMb;
   }
@@ -113,19 +126,35 @@ public final class LicenseResourceRequirements implements ApiMessage {
       this.minMemoryMb = source.minMemoryMb;
     }
 
+    /**
+     * Minimum number of guest cpus required to use the Instance. Enforced at Instance creation and
+     * Instance start.
+     */
     public Integer getMinGuestCpuCount() {
       return minGuestCpuCount;
     }
 
+    /**
+     * Minimum number of guest cpus required to use the Instance. Enforced at Instance creation and
+     * Instance start.
+     */
     public Builder setMinGuestCpuCount(Integer minGuestCpuCount) {
       this.minGuestCpuCount = minGuestCpuCount;
       return this;
     }
 
+    /**
+     * Minimum memory required to use the Instance. Enforced at Instance creation and Instance
+     * start.
+     */
     public Integer getMinMemoryMb() {
       return minMemoryMb;
     }
 
+    /**
+     * Minimum memory required to use the Instance. Enforced at Instance creation and Instance
+     * start.
+     */
     public Builder setMinMemoryMb(Integer minMemoryMb) {
       this.minMemoryMb = minMemoryMb;
       return this;

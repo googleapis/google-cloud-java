@@ -4,21 +4,24 @@
 package com.google.cloud.websecurityscanner.v1alpha;
 
 /**
+ *
+ *
  * <pre>
  * A ScanConfig resource contains the configurations to launch a scan.
  * </pre>
  *
  * Protobuf type {@code google.cloud.websecurityscanner.v1alpha.ScanConfig}
  */
-public  final class ScanConfig extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class ScanConfig extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.websecurityscanner.v1alpha.ScanConfig)
     ScanConfigOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use ScanConfig.newBuilder() to construct.
   private ScanConfig(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private ScanConfig() {
     name_ = "";
     displayName_ = "";
@@ -30,15 +33,18 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private ScanConfig(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -50,110 +56,127 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            name_ = s;
-            break;
-          }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
+              name_ = s;
+              break;
+            }
+          case 18:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            displayName_ = s;
-            break;
-          }
-          case 24: {
+              displayName_ = s;
+              break;
+            }
+          case 24:
+            {
+              maxQps_ = input.readInt32();
+              break;
+            }
+          case 34:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+                startingUrls_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              startingUrls_.add(s);
+              break;
+            }
+          case 42:
+            {
+              com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.Builder
+                  subBuilder = null;
+              if (authentication_ != null) {
+                subBuilder = authentication_.toBuilder();
+              }
+              authentication_ =
+                  input.readMessage(
+                      com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication
+                          .parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(authentication_);
+                authentication_ = subBuilder.buildPartial();
+              }
 
-            maxQps_ = input.readInt32();
-            break;
-          }
-          case 34: {
-            java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-              startingUrls_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000008;
+              break;
             }
-            startingUrls_.add(s);
-            break;
-          }
-          case 42: {
-            com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.Builder subBuilder = null;
-            if (authentication_ != null) {
-              subBuilder = authentication_.toBuilder();
-            }
-            authentication_ = input.readMessage(com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(authentication_);
-              authentication_ = subBuilder.buildPartial();
-            }
+          case 48:
+            {
+              int rawValue = input.readEnum();
 
-            break;
-          }
-          case 48: {
-            int rawValue = input.readEnum();
+              userAgent_ = rawValue;
+              break;
+            }
+          case 58:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
+                blacklistPatterns_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000040;
+              }
+              blacklistPatterns_.add(s);
+              break;
+            }
+          case 66:
+            {
+              com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule.Builder subBuilder =
+                  null;
+              if (schedule_ != null) {
+                subBuilder = schedule_.toBuilder();
+              }
+              schedule_ =
+                  input.readMessage(
+                      com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(schedule_);
+                schedule_ = subBuilder.buildPartial();
+              }
 
-            userAgent_ = rawValue;
-            break;
-          }
-          case 58: {
-            java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000040) == 0x00000040)) {
-              blacklistPatterns_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000040;
+              break;
             }
-            blacklistPatterns_.add(s);
-            break;
-          }
-          case 66: {
-            com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule.Builder subBuilder = null;
-            if (schedule_ != null) {
-              subBuilder = schedule_.toBuilder();
-            }
-            schedule_ = input.readMessage(com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(schedule_);
-              schedule_ = subBuilder.buildPartial();
-            }
-
-            break;
-          }
-          case 72: {
-            int rawValue = input.readEnum();
-            if (!((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
-              targetPlatforms_ = new java.util.ArrayList<java.lang.Integer>();
-              mutable_bitField0_ |= 0x00000100;
-            }
-            targetPlatforms_.add(rawValue);
-            break;
-          }
-          case 74: {
-            int length = input.readRawVarint32();
-            int oldLimit = input.pushLimit(length);
-            while(input.getBytesUntilLimit() > 0) {
+          case 72:
+            {
               int rawValue = input.readEnum();
               if (!((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
                 targetPlatforms_ = new java.util.ArrayList<java.lang.Integer>();
                 mutable_bitField0_ |= 0x00000100;
               }
               targetPlatforms_.add(rawValue);
+              break;
             }
-            input.popLimit(oldLimit);
-            break;
-          }
+          case 74:
+            {
+              int length = input.readRawVarint32();
+              int oldLimit = input.pushLimit(length);
+              while (input.getBytesUntilLimit() > 0) {
+                int rawValue = input.readEnum();
+                if (!((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
+                  targetPlatforms_ = new java.util.ArrayList<java.lang.Integer>();
+                  mutable_bitField0_ |= 0x00000100;
+                }
+                targetPlatforms_.add(rawValue);
+              }
+              input.popLimit(oldLimit);
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
         startingUrls_ = startingUrls_.getUnmodifiableView();
@@ -168,28 +191,35 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.websecurityscanner.v1alpha.ScanConfigProto.internal_static_google_cloud_websecurityscanner_v1alpha_ScanConfig_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.websecurityscanner.v1alpha.ScanConfigProto
+        .internal_static_google_cloud_websecurityscanner_v1alpha_ScanConfig_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.websecurityscanner.v1alpha.ScanConfigProto.internal_static_google_cloud_websecurityscanner_v1alpha_ScanConfig_fieldAccessorTable
+    return com.google.cloud.websecurityscanner.v1alpha.ScanConfigProto
+        .internal_static_google_cloud_websecurityscanner_v1alpha_ScanConfig_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.websecurityscanner.v1alpha.ScanConfig.class, com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Builder.class);
+            com.google.cloud.websecurityscanner.v1alpha.ScanConfig.class,
+            com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Builder.class);
   }
 
   /**
+   *
+   *
    * <pre>
    * Type of user agents used for scanning.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.websecurityscanner.v1alpha.ScanConfig.UserAgent}
    */
-  public enum UserAgent
-      implements com.google.protobuf.ProtocolMessageEnum {
+  public enum UserAgent implements com.google.protobuf.ProtocolMessageEnum {
     /**
+     *
+     *
      * <pre>
      * The user agent is unknown. Service will default to CHROME_LINUX.
      * </pre>
@@ -198,6 +228,8 @@ private static final long serialVersionUID = 0L;
      */
     USER_AGENT_UNSPECIFIED(0),
     /**
+     *
+     *
      * <pre>
      * Chrome on Linux. This is the service default if unspecified.
      * </pre>
@@ -206,6 +238,8 @@ private static final long serialVersionUID = 0L;
      */
     CHROME_LINUX(1),
     /**
+     *
+     *
      * <pre>
      * Chrome on Android.
      * </pre>
@@ -214,6 +248,8 @@ private static final long serialVersionUID = 0L;
      */
     CHROME_ANDROID(2),
     /**
+     *
+     *
      * <pre>
      * Safari on IPhone.
      * </pre>
@@ -225,6 +261,8 @@ private static final long serialVersionUID = 0L;
     ;
 
     /**
+     *
+     *
      * <pre>
      * The user agent is unknown. Service will default to CHROME_LINUX.
      * </pre>
@@ -233,6 +271,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int USER_AGENT_UNSPECIFIED_VALUE = 0;
     /**
+     *
+     *
      * <pre>
      * Chrome on Linux. This is the service default if unspecified.
      * </pre>
@@ -241,6 +281,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int CHROME_LINUX_VALUE = 1;
     /**
+     *
+     *
      * <pre>
      * Chrome on Android.
      * </pre>
@@ -249,6 +291,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int CHROME_ANDROID_VALUE = 2;
     /**
+     *
+     *
      * <pre>
      * Safari on IPhone.
      * </pre>
@@ -256,7 +300,6 @@ private static final long serialVersionUID = 0L;
      * <code>SAFARI_IPHONE = 3;</code>
      */
     public static final int SAFARI_IPHONE_VALUE = 3;
-
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -266,9 +309,7 @@ private static final long serialVersionUID = 0L;
       return value;
     }
 
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static UserAgent valueOf(int value) {
       return forNumber(value);
@@ -276,46 +317,49 @@ private static final long serialVersionUID = 0L;
 
     public static UserAgent forNumber(int value) {
       switch (value) {
-        case 0: return USER_AGENT_UNSPECIFIED;
-        case 1: return CHROME_LINUX;
-        case 2: return CHROME_ANDROID;
-        case 3: return SAFARI_IPHONE;
-        default: return null;
+        case 0:
+          return USER_AGENT_UNSPECIFIED;
+        case 1:
+          return CHROME_LINUX;
+        case 2:
+          return CHROME_ANDROID;
+        case 3:
+          return SAFARI_IPHONE;
+        default:
+          return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<UserAgent>
-        internalGetValueMap() {
+    public static com.google.protobuf.Internal.EnumLiteMap<UserAgent> internalGetValueMap() {
       return internalValueMap;
     }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        UserAgent> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<UserAgent>() {
-            public UserAgent findValueByNumber(int number) {
-              return UserAgent.forNumber(number);
-            }
-          };
 
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
+    private static final com.google.protobuf.Internal.EnumLiteMap<UserAgent> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<UserAgent>() {
+          public UserAgent findValueByNumber(int number) {
+            return UserAgent.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
       return getDescriptor().getValues().get(ordinal());
     }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
       return getDescriptor();
     }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
-      return com.google.cloud.websecurityscanner.v1alpha.ScanConfig.getDescriptor().getEnumTypes().get(0);
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.websecurityscanner.v1alpha.ScanConfig.getDescriptor()
+          .getEnumTypes()
+          .get(0);
     }
 
     private static final UserAgent[] VALUES = values();
 
-    public static UserAgent valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+    public static UserAgent valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
         return UNRECOGNIZED;
@@ -333,15 +377,18 @@ private static final long serialVersionUID = 0L;
   }
 
   /**
+   *
+   *
    * <pre>
    * Cloud platforms supported by Cloud Web Security Scanner.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform}
    */
-  public enum TargetPlatform
-      implements com.google.protobuf.ProtocolMessageEnum {
+  public enum TargetPlatform implements com.google.protobuf.ProtocolMessageEnum {
     /**
+     *
+     *
      * <pre>
      * The target platform is unknown. Requests with this enum value will be
      * rejected with INVALID_ARGUMENT error.
@@ -351,6 +398,8 @@ private static final long serialVersionUID = 0L;
      */
     TARGET_PLATFORM_UNSPECIFIED(0),
     /**
+     *
+     *
      * <pre>
      * Google App Engine service.
      * </pre>
@@ -359,6 +408,8 @@ private static final long serialVersionUID = 0L;
      */
     APP_ENGINE(1),
     /**
+     *
+     *
      * <pre>
      * Google Compute Engine service.
      * </pre>
@@ -370,6 +421,8 @@ private static final long serialVersionUID = 0L;
     ;
 
     /**
+     *
+     *
      * <pre>
      * The target platform is unknown. Requests with this enum value will be
      * rejected with INVALID_ARGUMENT error.
@@ -379,6 +432,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int TARGET_PLATFORM_UNSPECIFIED_VALUE = 0;
     /**
+     *
+     *
      * <pre>
      * Google App Engine service.
      * </pre>
@@ -387,6 +442,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int APP_ENGINE_VALUE = 1;
     /**
+     *
+     *
      * <pre>
      * Google Compute Engine service.
      * </pre>
@@ -394,7 +451,6 @@ private static final long serialVersionUID = 0L;
      * <code>COMPUTE = 2;</code>
      */
     public static final int COMPUTE_VALUE = 2;
-
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -404,9 +460,7 @@ private static final long serialVersionUID = 0L;
       return value;
     }
 
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static TargetPlatform valueOf(int value) {
       return forNumber(value);
@@ -414,45 +468,47 @@ private static final long serialVersionUID = 0L;
 
     public static TargetPlatform forNumber(int value) {
       switch (value) {
-        case 0: return TARGET_PLATFORM_UNSPECIFIED;
-        case 1: return APP_ENGINE;
-        case 2: return COMPUTE;
-        default: return null;
+        case 0:
+          return TARGET_PLATFORM_UNSPECIFIED;
+        case 1:
+          return APP_ENGINE;
+        case 2:
+          return COMPUTE;
+        default:
+          return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<TargetPlatform>
-        internalGetValueMap() {
+    public static com.google.protobuf.Internal.EnumLiteMap<TargetPlatform> internalGetValueMap() {
       return internalValueMap;
     }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        TargetPlatform> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<TargetPlatform>() {
-            public TargetPlatform findValueByNumber(int number) {
-              return TargetPlatform.forNumber(number);
-            }
-          };
 
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
+    private static final com.google.protobuf.Internal.EnumLiteMap<TargetPlatform> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<TargetPlatform>() {
+          public TargetPlatform findValueByNumber(int number) {
+            return TargetPlatform.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
       return getDescriptor().getValues().get(ordinal());
     }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
       return getDescriptor();
     }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
-      return com.google.cloud.websecurityscanner.v1alpha.ScanConfig.getDescriptor().getEnumTypes().get(1);
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+      return com.google.cloud.websecurityscanner.v1alpha.ScanConfig.getDescriptor()
+          .getEnumTypes()
+          .get(1);
     }
 
     private static final TargetPlatform[] VALUES = values();
 
-    public static TargetPlatform valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+    public static TargetPlatform valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
         return UNRECOGNIZED;
@@ -469,91 +525,126 @@ private static final long serialVersionUID = 0L;
     // @@protoc_insertion_point(enum_scope:google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform)
   }
 
-  public interface AuthenticationOrBuilder extends
+  public interface AuthenticationOrBuilder
+      extends
       // @@protoc_insertion_point(interface_extends:google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication)
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     *
+     *
      * <pre>
      * Authentication using a Google account.
      * </pre>
      *
-     * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount google_account = 1;</code>
+     * <code>
+     * .google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount google_account = 1;
+     * </code>
      */
     boolean hasGoogleAccount();
     /**
+     *
+     *
      * <pre>
      * Authentication using a Google account.
      * </pre>
      *
-     * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount google_account = 1;</code>
+     * <code>
+     * .google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount google_account = 1;
+     * </code>
      */
-    com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount getGoogleAccount();
+    com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount
+        getGoogleAccount();
     /**
+     *
+     *
      * <pre>
      * Authentication using a Google account.
      * </pre>
      *
-     * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount google_account = 1;</code>
+     * <code>
+     * .google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount google_account = 1;
+     * </code>
      */
-    com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccountOrBuilder getGoogleAccountOrBuilder();
+    com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccountOrBuilder
+        getGoogleAccountOrBuilder();
 
     /**
+     *
+     *
      * <pre>
      * Authentication using a custom account.
      * </pre>
      *
-     * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount custom_account = 2;</code>
+     * <code>
+     * .google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount custom_account = 2;
+     * </code>
      */
     boolean hasCustomAccount();
     /**
+     *
+     *
      * <pre>
      * Authentication using a custom account.
      * </pre>
      *
-     * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount custom_account = 2;</code>
+     * <code>
+     * .google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount custom_account = 2;
+     * </code>
      */
-    com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount getCustomAccount();
+    com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount
+        getCustomAccount();
     /**
+     *
+     *
      * <pre>
      * Authentication using a custom account.
      * </pre>
      *
-     * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount custom_account = 2;</code>
+     * <code>
+     * .google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount custom_account = 2;
+     * </code>
      */
-    com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccountOrBuilder getCustomAccountOrBuilder();
+    com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccountOrBuilder
+        getCustomAccountOrBuilder();
 
-    public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.AuthenticationCase getAuthenticationCase();
+    public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.AuthenticationCase
+        getAuthenticationCase();
   }
   /**
+   *
+   *
    * <pre>
    * Scan authentication configuration.
    * </pre>
    *
    * Protobuf type {@code google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication}
    */
-  public  static final class Authentication extends
-      com.google.protobuf.GeneratedMessageV3 implements
+  public static final class Authentication extends com.google.protobuf.GeneratedMessageV3
+      implements
       // @@protoc_insertion_point(message_implements:google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication)
       AuthenticationOrBuilder {
-  private static final long serialVersionUID = 0L;
+    private static final long serialVersionUID = 0L;
     // Use Authentication.newBuilder() to construct.
     private Authentication(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
-    private Authentication() {
-    }
+
+    private Authentication() {}
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
+
     private Authentication(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -565,70 +656,102 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
+            case 10:
+              {
+                com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount
+                        .Builder
+                    subBuilder = null;
+                if (authenticationCase_ == 1) {
+                  subBuilder =
+                      ((com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication
+                                  .GoogleAccount)
+                              authentication_)
+                          .toBuilder();
+                }
+                authentication_ =
+                    input.readMessage(
+                        com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication
+                            .GoogleAccount.parser(),
+                        extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(
+                      (com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication
+                              .GoogleAccount)
+                          authentication_);
+                  authentication_ = subBuilder.buildPartial();
+                }
+                authenticationCase_ = 1;
+                break;
               }
-              break;
-            }
-            case 10: {
-              com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount.Builder subBuilder = null;
-              if (authenticationCase_ == 1) {
-                subBuilder = ((com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount) authentication_).toBuilder();
+            case 18:
+              {
+                com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount
+                        .Builder
+                    subBuilder = null;
+                if (authenticationCase_ == 2) {
+                  subBuilder =
+                      ((com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication
+                                  .CustomAccount)
+                              authentication_)
+                          .toBuilder();
+                }
+                authentication_ =
+                    input.readMessage(
+                        com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication
+                            .CustomAccount.parser(),
+                        extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(
+                      (com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication
+                              .CustomAccount)
+                          authentication_);
+                  authentication_ = subBuilder.buildPartial();
+                }
+                authenticationCase_ = 2;
+                break;
               }
-              authentication_ =
-                  input.readMessage(com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount) authentication_);
-                authentication_ = subBuilder.buildPartial();
+            default:
+              {
+                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
               }
-              authenticationCase_ = 1;
-              break;
-            }
-            case 18: {
-              com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount.Builder subBuilder = null;
-              if (authenticationCase_ == 2) {
-                subBuilder = ((com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount) authentication_).toBuilder();
-              }
-              authentication_ =
-                  input.readMessage(com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom((com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount) authentication_);
-                authentication_ = subBuilder.buildPartial();
-              }
-              authenticationCase_ = 2;
-              break;
-            }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.websecurityscanner.v1alpha.ScanConfigProto.internal_static_google_cloud_websecurityscanner_v1alpha_ScanConfig_Authentication_descriptor;
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.websecurityscanner.v1alpha.ScanConfigProto
+          .internal_static_google_cloud_websecurityscanner_v1alpha_ScanConfig_Authentication_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.websecurityscanner.v1alpha.ScanConfigProto.internal_static_google_cloud_websecurityscanner_v1alpha_ScanConfig_Authentication_fieldAccessorTable
+      return com.google.cloud.websecurityscanner.v1alpha.ScanConfigProto
+          .internal_static_google_cloud_websecurityscanner_v1alpha_ScanConfig_Authentication_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.class, com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.Builder.class);
+              com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.class,
+              com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.Builder.class);
     }
 
-    public interface GoogleAccountOrBuilder extends
+    public interface GoogleAccountOrBuilder
+        extends
         // @@protoc_insertion_point(interface_extends:google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount)
         com.google.protobuf.MessageOrBuilder {
 
       /**
+       *
+       *
        * <pre>
        * Required.
        * The user name of the Google account.
@@ -638,6 +761,8 @@ private static final long serialVersionUID = 0L;
        */
       java.lang.String getUsername();
       /**
+       *
+       *
        * <pre>
        * Required.
        * The user name of the Google account.
@@ -645,10 +770,11 @@ private static final long serialVersionUID = 0L;
        *
        * <code>string username = 1;</code>
        */
-      com.google.protobuf.ByteString
-          getUsernameBytes();
+      com.google.protobuf.ByteString getUsernameBytes();
 
       /**
+       *
+       *
        * <pre>
        * Input only.
        * Required.
@@ -660,6 +786,8 @@ private static final long serialVersionUID = 0L;
        */
       java.lang.String getPassword();
       /**
+       *
+       *
        * <pre>
        * Input only.
        * Required.
@@ -669,40 +797,46 @@ private static final long serialVersionUID = 0L;
        *
        * <code>string password = 2;</code>
        */
-      com.google.protobuf.ByteString
-          getPasswordBytes();
+      com.google.protobuf.ByteString getPasswordBytes();
     }
     /**
+     *
+     *
      * <pre>
      * Describes authentication configuration that uses a Google account.
      * </pre>
      *
-     * Protobuf type {@code google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount}
+     * Protobuf type {@code
+     * google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount}
      */
-    public  static final class GoogleAccount extends
-        com.google.protobuf.GeneratedMessageV3 implements
+    public static final class GoogleAccount extends com.google.protobuf.GeneratedMessageV3
+        implements
         // @@protoc_insertion_point(message_implements:google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount)
         GoogleAccountOrBuilder {
-    private static final long serialVersionUID = 0L;
+      private static final long serialVersionUID = 0L;
       // Use GoogleAccount.newBuilder() to construct.
       private GoogleAccount(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
       }
+
       private GoogleAccount() {
         username_ = "";
         password_ = "";
       }
 
       @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet
-      getUnknownFields() {
+      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
       }
+
       private GoogleAccount(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -714,52 +848,62 @@ private static final long serialVersionUID = 0L;
               case 0:
                 done = true;
                 break;
-              default: {
-                if (!parseUnknownFieldProto3(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
+              case 10:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+
+                  username_ = s;
+                  break;
                 }
-                break;
-              }
-              case 10: {
-                java.lang.String s = input.readStringRequireUtf8();
+              case 18:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
 
-                username_ = s;
-                break;
-              }
-              case 18: {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                password_ = s;
-                break;
-              }
+                  password_ = s;
+                  break;
+                }
+              default:
+                {
+                  if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                    done = true;
+                  }
+                  break;
+                }
             }
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(this);
         } finally {
           this.unknownFields = unknownFields.build();
           makeExtensionsImmutable();
         }
       }
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.google.cloud.websecurityscanner.v1alpha.ScanConfigProto.internal_static_google_cloud_websecurityscanner_v1alpha_ScanConfig_Authentication_GoogleAccount_descriptor;
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.websecurityscanner.v1alpha.ScanConfigProto
+            .internal_static_google_cloud_websecurityscanner_v1alpha_ScanConfig_Authentication_GoogleAccount_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.google.cloud.websecurityscanner.v1alpha.ScanConfigProto.internal_static_google_cloud_websecurityscanner_v1alpha_ScanConfig_Authentication_GoogleAccount_fieldAccessorTable
+        return com.google.cloud.websecurityscanner.v1alpha.ScanConfigProto
+            .internal_static_google_cloud_websecurityscanner_v1alpha_ScanConfig_Authentication_GoogleAccount_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount.class, com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount.Builder.class);
+                com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount
+                    .class,
+                com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount
+                    .Builder.class);
       }
 
       public static final int USERNAME_FIELD_NUMBER = 1;
       private volatile java.lang.Object username_;
       /**
+       *
+       *
        * <pre>
        * Required.
        * The user name of the Google account.
@@ -772,14 +916,15 @@ private static final long serialVersionUID = 0L;
         if (ref instanceof java.lang.String) {
           return (java.lang.String) ref;
         } else {
-          com.google.protobuf.ByteString bs = 
-              (com.google.protobuf.ByteString) ref;
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           username_ = s;
           return s;
         }
       }
       /**
+       *
+       *
        * <pre>
        * Required.
        * The user name of the Google account.
@@ -787,13 +932,11 @@ private static final long serialVersionUID = 0L;
        *
        * <code>string username = 1;</code>
        */
-      public com.google.protobuf.ByteString
-          getUsernameBytes() {
+      public com.google.protobuf.ByteString getUsernameBytes() {
         java.lang.Object ref = username_;
         if (ref instanceof java.lang.String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
           username_ = b;
           return b;
         } else {
@@ -804,6 +947,8 @@ private static final long serialVersionUID = 0L;
       public static final int PASSWORD_FIELD_NUMBER = 2;
       private volatile java.lang.Object password_;
       /**
+       *
+       *
        * <pre>
        * Input only.
        * Required.
@@ -818,14 +963,15 @@ private static final long serialVersionUID = 0L;
         if (ref instanceof java.lang.String) {
           return (java.lang.String) ref;
         } else {
-          com.google.protobuf.ByteString bs = 
-              (com.google.protobuf.ByteString) ref;
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           password_ = s;
           return s;
         }
       }
       /**
+       *
+       *
        * <pre>
        * Input only.
        * Required.
@@ -835,13 +981,11 @@ private static final long serialVersionUID = 0L;
        *
        * <code>string password = 2;</code>
        */
-      public com.google.protobuf.ByteString
-          getPasswordBytes() {
+      public com.google.protobuf.ByteString getPasswordBytes() {
         java.lang.Object ref = password_;
         if (ref instanceof java.lang.String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
           password_ = b;
           return b;
         } else {
@@ -850,6 +994,8 @@ private static final long serialVersionUID = 0L;
       }
 
       private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
       public final boolean isInitialized() {
         byte isInitialized = memoizedIsInitialized;
         if (isInitialized == 1) return true;
@@ -859,8 +1005,8 @@ private static final long serialVersionUID = 0L;
         return true;
       }
 
-      public void writeTo(com.google.protobuf.CodedOutputStream output)
-                          throws java.io.IOException {
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
         if (!getUsernameBytes().isEmpty()) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 1, username_);
         }
@@ -870,6 +1016,7 @@ private static final long serialVersionUID = 0L;
         unknownFields.writeTo(output);
       }
 
+      @java.lang.Override
       public int getSerializedSize() {
         int size = memoizedSize;
         if (size != -1) return size;
@@ -889,18 +1036,20 @@ private static final long serialVersionUID = 0L;
       @java.lang.Override
       public boolean equals(final java.lang.Object obj) {
         if (obj == this) {
-         return true;
+          return true;
         }
-        if (!(obj instanceof com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount)) {
+        if (!(obj
+            instanceof
+            com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount)) {
           return super.equals(obj);
         }
-        com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount other = (com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount) obj;
+        com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount other =
+            (com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount)
+                obj;
 
         boolean result = true;
-        result = result && getUsername()
-            .equals(other.getUsername());
-        result = result && getPassword()
-            .equals(other.getPassword());
+        result = result && getUsername().equals(other.getUsername());
+        result = result && getPassword().equals(other.getPassword());
         result = result && unknownFields.equals(other.unknownFields);
         return result;
       }
@@ -921,86 +1070,116 @@ private static final long serialVersionUID = 0L;
         return hash;
       }
 
-      public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount parseFrom(
-          java.nio.ByteBuffer data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
+      public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication
+              .GoogleAccount
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data);
-      }
-      public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount parseFrom(
-          java.nio.ByteBuffer data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-      }
-      public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount parseFrom(
-          com.google.protobuf.ByteString data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-      }
-      public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount parseFrom(
-          com.google.protobuf.ByteString data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-      }
-      public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount parseFrom(byte[] data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-      }
-      public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount parseFrom(
-          byte[] data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-      }
-      public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount parseFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
-      }
-      public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount parseFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
-      }
-      public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount parseDelimitedFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input);
-      }
-      public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount parseDelimitedFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-      }
-      public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount parseFrom(
-          com.google.protobuf.CodedInputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
-      }
-      public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount parseFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
       }
 
-      public Builder newBuilderForType() { return newBuilder(); }
+      public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication
+              .GoogleAccount
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication
+              .GoogleAccount
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication
+              .GoogleAccount
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication
+              .GoogleAccount
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication
+              .GoogleAccount
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication
+              .GoogleAccount
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication
+              .GoogleAccount
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication
+              .GoogleAccount
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication
+              .GoogleAccount
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication
+              .GoogleAccount
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication
+              .GoogleAccount
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
       public static Builder newBuilder() {
         return DEFAULT_INSTANCE.toBuilder();
       }
-      public static Builder newBuilder(com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount prototype) {
+
+      public static Builder newBuilder(
+          com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount
+              prototype) {
         return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
       }
+
+      @java.lang.Override
       public Builder toBuilder() {
-        return this == DEFAULT_INSTANCE
-            ? new Builder() : new Builder().mergeFrom(this);
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
       }
 
       @java.lang.Override
@@ -1010,43 +1189,54 @@ private static final long serialVersionUID = 0L;
         return builder;
       }
       /**
+       *
+       *
        * <pre>
        * Describes authentication configuration that uses a Google account.
        * </pre>
        *
-       * Protobuf type {@code google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount}
+       * Protobuf type {@code
+       * google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount}
        */
-      public static final class Builder extends
-          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
           // @@protoc_insertion_point(builder_implements:google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount)
-          com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccountOrBuilder {
-        public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-          return com.google.cloud.websecurityscanner.v1alpha.ScanConfigProto.internal_static_google_cloud_websecurityscanner_v1alpha_ScanConfig_Authentication_GoogleAccount_descriptor;
+          com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication
+              .GoogleAccountOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.websecurityscanner.v1alpha.ScanConfigProto
+              .internal_static_google_cloud_websecurityscanner_v1alpha_ScanConfig_Authentication_GoogleAccount_descriptor;
         }
 
+        @java.lang.Override
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
-          return com.google.cloud.websecurityscanner.v1alpha.ScanConfigProto.internal_static_google_cloud_websecurityscanner_v1alpha_ScanConfig_Authentication_GoogleAccount_fieldAccessorTable
+          return com.google.cloud.websecurityscanner.v1alpha.ScanConfigProto
+              .internal_static_google_cloud_websecurityscanner_v1alpha_ScanConfig_Authentication_GoogleAccount_fieldAccessorTable
               .ensureFieldAccessorsInitialized(
-                  com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount.class, com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount.Builder.class);
+                  com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication
+                      .GoogleAccount.class,
+                  com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication
+                      .GoogleAccount.Builder.class);
         }
 
-        // Construct using com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount.newBuilder()
+        // Construct using
+        // com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount.newBuilder()
         private Builder() {
           maybeForceBuilderInitialization();
         }
 
-        private Builder(
-            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
           maybeForceBuilderInitialization();
         }
+
         private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3
-                  .alwaysUseFieldBuilders) {
-          }
+          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
         }
+
+        @java.lang.Override
         public Builder clear() {
           super.clear();
           username_ = "";
@@ -1056,68 +1246,99 @@ private static final long serialVersionUID = 0L;
           return this;
         }
 
-        public com.google.protobuf.Descriptors.Descriptor
-            getDescriptorForType() {
-          return com.google.cloud.websecurityscanner.v1alpha.ScanConfigProto.internal_static_google_cloud_websecurityscanner_v1alpha_ScanConfig_Authentication_GoogleAccount_descriptor;
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.websecurityscanner.v1alpha.ScanConfigProto
+              .internal_static_google_cloud_websecurityscanner_v1alpha_ScanConfig_Authentication_GoogleAccount_descriptor;
         }
 
-        public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount getDefaultInstanceForType() {
-          return com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount.getDefaultInstance();
+        @java.lang.Override
+        public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount
+            getDefaultInstanceForType() {
+          return com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount
+              .getDefaultInstance();
         }
 
-        public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount build() {
-          com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount result = buildPartial();
+        @java.lang.Override
+        public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount
+            build() {
+          com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount
+              result = buildPartial();
           if (!result.isInitialized()) {
             throw newUninitializedMessageException(result);
           }
           return result;
         }
 
-        public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount buildPartial() {
-          com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount result = new com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount(this);
+        @java.lang.Override
+        public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount
+            buildPartial() {
+          com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount
+              result =
+                  new com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication
+                      .GoogleAccount(this);
           result.username_ = username_;
           result.password_ = password_;
           onBuilt();
           return result;
         }
 
+        @java.lang.Override
         public Builder clone() {
           return (Builder) super.clone();
         }
+
+        @java.lang.Override
         public Builder setField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            java.lang.Object value) {
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
           return (Builder) super.setField(field, value);
         }
-        public Builder clearField(
-            com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
           return (Builder) super.clearField(field);
         }
-        public Builder clearOneof(
-            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
           return (Builder) super.clearOneof(oneof);
         }
+
+        @java.lang.Override
         public Builder setRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
-            int index, java.lang.Object value) {
+            int index,
+            java.lang.Object value) {
           return (Builder) super.setRepeatedField(field, index, value);
         }
+
+        @java.lang.Override
         public Builder addRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            java.lang.Object value) {
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
           return (Builder) super.addRepeatedField(field, value);
         }
+
+        @java.lang.Override
         public Builder mergeFrom(com.google.protobuf.Message other) {
-          if (other instanceof com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount) {
-            return mergeFrom((com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount)other);
+          if (other
+              instanceof
+              com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount) {
+            return mergeFrom(
+                (com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication
+                        .GoogleAccount)
+                    other);
           } else {
             super.mergeFrom(other);
             return this;
           }
         }
 
-        public Builder mergeFrom(com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount other) {
-          if (other == com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount.getDefaultInstance()) return this;
+        public Builder mergeFrom(
+            com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount
+                other) {
+          if (other
+              == com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount
+                  .getDefaultInstance()) return this;
           if (!other.getUsername().isEmpty()) {
             username_ = other.username_;
             onChanged();
@@ -1131,19 +1352,25 @@ private static final long serialVersionUID = 0L;
           return this;
         }
 
+        @java.lang.Override
         public final boolean isInitialized() {
           return true;
         }
 
+        @java.lang.Override
         public Builder mergeFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount parsedMessage = null;
+          com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount
+              parsedMessage = null;
           try {
             parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount) e.getUnfinishedMessage();
+            parsedMessage =
+                (com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication
+                        .GoogleAccount)
+                    e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
             if (parsedMessage != null) {
@@ -1155,6 +1382,8 @@ private static final long serialVersionUID = 0L;
 
         private java.lang.Object username_ = "";
         /**
+         *
+         *
          * <pre>
          * Required.
          * The user name of the Google account.
@@ -1165,8 +1394,7 @@ private static final long serialVersionUID = 0L;
         public java.lang.String getUsername() {
           java.lang.Object ref = username_;
           if (!(ref instanceof java.lang.String)) {
-            com.google.protobuf.ByteString bs =
-                (com.google.protobuf.ByteString) ref;
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
             java.lang.String s = bs.toStringUtf8();
             username_ = s;
             return s;
@@ -1175,6 +1403,8 @@ private static final long serialVersionUID = 0L;
           }
         }
         /**
+         *
+         *
          * <pre>
          * Required.
          * The user name of the Google account.
@@ -1182,13 +1412,11 @@ private static final long serialVersionUID = 0L;
          *
          * <code>string username = 1;</code>
          */
-        public com.google.protobuf.ByteString
-            getUsernameBytes() {
+        public com.google.protobuf.ByteString getUsernameBytes() {
           java.lang.Object ref = username_;
           if (ref instanceof String) {
-            com.google.protobuf.ByteString b = 
-                com.google.protobuf.ByteString.copyFromUtf8(
-                    (java.lang.String) ref);
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
             username_ = b;
             return b;
           } else {
@@ -1196,6 +1424,8 @@ private static final long serialVersionUID = 0L;
           }
         }
         /**
+         *
+         *
          * <pre>
          * Required.
          * The user name of the Google account.
@@ -1203,17 +1433,18 @@ private static final long serialVersionUID = 0L;
          *
          * <code>string username = 1;</code>
          */
-        public Builder setUsername(
-            java.lang.String value) {
+        public Builder setUsername(java.lang.String value) {
           if (value == null) {
-    throw new NullPointerException();
-  }
-  
+            throw new NullPointerException();
+          }
+
           username_ = value;
           onChanged();
           return this;
         }
         /**
+         *
+         *
          * <pre>
          * Required.
          * The user name of the Google account.
@@ -1222,12 +1453,14 @@ private static final long serialVersionUID = 0L;
          * <code>string username = 1;</code>
          */
         public Builder clearUsername() {
-          
+
           username_ = getDefaultInstance().getUsername();
           onChanged();
           return this;
         }
         /**
+         *
+         *
          * <pre>
          * Required.
          * The user name of the Google account.
@@ -1235,13 +1468,12 @@ private static final long serialVersionUID = 0L;
          *
          * <code>string username = 1;</code>
          */
-        public Builder setUsernameBytes(
-            com.google.protobuf.ByteString value) {
+        public Builder setUsernameBytes(com.google.protobuf.ByteString value) {
           if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-          
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+
           username_ = value;
           onChanged();
           return this;
@@ -1249,6 +1481,8 @@ private static final long serialVersionUID = 0L;
 
         private java.lang.Object password_ = "";
         /**
+         *
+         *
          * <pre>
          * Input only.
          * Required.
@@ -1261,8 +1495,7 @@ private static final long serialVersionUID = 0L;
         public java.lang.String getPassword() {
           java.lang.Object ref = password_;
           if (!(ref instanceof java.lang.String)) {
-            com.google.protobuf.ByteString bs =
-                (com.google.protobuf.ByteString) ref;
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
             java.lang.String s = bs.toStringUtf8();
             password_ = s;
             return s;
@@ -1271,6 +1504,8 @@ private static final long serialVersionUID = 0L;
           }
         }
         /**
+         *
+         *
          * <pre>
          * Input only.
          * Required.
@@ -1280,13 +1515,11 @@ private static final long serialVersionUID = 0L;
          *
          * <code>string password = 2;</code>
          */
-        public com.google.protobuf.ByteString
-            getPasswordBytes() {
+        public com.google.protobuf.ByteString getPasswordBytes() {
           java.lang.Object ref = password_;
           if (ref instanceof String) {
-            com.google.protobuf.ByteString b = 
-                com.google.protobuf.ByteString.copyFromUtf8(
-                    (java.lang.String) ref);
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
             password_ = b;
             return b;
           } else {
@@ -1294,6 +1527,8 @@ private static final long serialVersionUID = 0L;
           }
         }
         /**
+         *
+         *
          * <pre>
          * Input only.
          * Required.
@@ -1303,17 +1538,18 @@ private static final long serialVersionUID = 0L;
          *
          * <code>string password = 2;</code>
          */
-        public Builder setPassword(
-            java.lang.String value) {
+        public Builder setPassword(java.lang.String value) {
           if (value == null) {
-    throw new NullPointerException();
-  }
-  
+            throw new NullPointerException();
+          }
+
           password_ = value;
           onChanged();
           return this;
         }
         /**
+         *
+         *
          * <pre>
          * Input only.
          * Required.
@@ -1324,12 +1560,14 @@ private static final long serialVersionUID = 0L;
          * <code>string password = 2;</code>
          */
         public Builder clearPassword() {
-          
+
           password_ = getDefaultInstance().getPassword();
           onChanged();
           return this;
         }
         /**
+         *
+         *
          * <pre>
          * Input only.
          * Required.
@@ -1339,50 +1577,59 @@ private static final long serialVersionUID = 0L;
          *
          * <code>string password = 2;</code>
          */
-        public Builder setPasswordBytes(
-            com.google.protobuf.ByteString value) {
+        public Builder setPasswordBytes(com.google.protobuf.ByteString value) {
           if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-          
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+
           password_ = value;
           onChanged();
           return this;
         }
+
+        @java.lang.Override
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
           return super.setUnknownFieldsProto3(unknownFields);
         }
 
+        @java.lang.Override
         public final Builder mergeUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
           return super.mergeUnknownFields(unknownFields);
         }
 
-
         // @@protoc_insertion_point(builder_scope:google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount)
       }
 
       // @@protoc_insertion_point(class_scope:google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount)
-      private static final com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount DEFAULT_INSTANCE;
+      private static final com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication
+              .GoogleAccount
+          DEFAULT_INSTANCE;
+
       static {
-        DEFAULT_INSTANCE = new com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount();
+        DEFAULT_INSTANCE =
+            new com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication
+                .GoogleAccount();
       }
 
-      public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount getDefaultInstance() {
+      public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication
+              .GoogleAccount
+          getDefaultInstance() {
         return DEFAULT_INSTANCE;
       }
 
-      private static final com.google.protobuf.Parser<GoogleAccount>
-          PARSER = new com.google.protobuf.AbstractParser<GoogleAccount>() {
-        public GoogleAccount parsePartialFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-            return new GoogleAccount(input, extensionRegistry);
-        }
-      };
+      private static final com.google.protobuf.Parser<GoogleAccount> PARSER =
+          new com.google.protobuf.AbstractParser<GoogleAccount>() {
+            @java.lang.Override
+            public GoogleAccount parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              return new GoogleAccount(input, extensionRegistry);
+            }
+          };
 
       public static com.google.protobuf.Parser<GoogleAccount> parser() {
         return PARSER;
@@ -1393,17 +1640,21 @@ private static final long serialVersionUID = 0L;
         return PARSER;
       }
 
-      public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount getDefaultInstanceForType() {
+      @java.lang.Override
+      public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount
+          getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
       }
-
     }
 
-    public interface CustomAccountOrBuilder extends
+    public interface CustomAccountOrBuilder
+        extends
         // @@protoc_insertion_point(interface_extends:google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount)
         com.google.protobuf.MessageOrBuilder {
 
       /**
+       *
+       *
        * <pre>
        * Required.
        * The user name of the custom account.
@@ -1413,6 +1664,8 @@ private static final long serialVersionUID = 0L;
        */
       java.lang.String getUsername();
       /**
+       *
+       *
        * <pre>
        * Required.
        * The user name of the custom account.
@@ -1420,10 +1673,11 @@ private static final long serialVersionUID = 0L;
        *
        * <code>string username = 1;</code>
        */
-      com.google.protobuf.ByteString
-          getUsernameBytes();
+      com.google.protobuf.ByteString getUsernameBytes();
 
       /**
+       *
+       *
        * <pre>
        * Input only.
        * Required.
@@ -1435,6 +1689,8 @@ private static final long serialVersionUID = 0L;
        */
       java.lang.String getPassword();
       /**
+       *
+       *
        * <pre>
        * Input only.
        * Required.
@@ -1444,10 +1700,11 @@ private static final long serialVersionUID = 0L;
        *
        * <code>string password = 2;</code>
        */
-      com.google.protobuf.ByteString
-          getPasswordBytes();
+      com.google.protobuf.ByteString getPasswordBytes();
 
       /**
+       *
+       *
        * <pre>
        * Required.
        * The login form URL of the website.
@@ -1457,6 +1714,8 @@ private static final long serialVersionUID = 0L;
        */
       java.lang.String getLoginUrl();
       /**
+       *
+       *
        * <pre>
        * Required.
        * The login form URL of the website.
@@ -1464,25 +1723,28 @@ private static final long serialVersionUID = 0L;
        *
        * <code>string login_url = 3;</code>
        */
-      com.google.protobuf.ByteString
-          getLoginUrlBytes();
+      com.google.protobuf.ByteString getLoginUrlBytes();
     }
     /**
+     *
+     *
      * <pre>
      * Describes authentication configuration that uses a custom account.
      * </pre>
      *
-     * Protobuf type {@code google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount}
+     * Protobuf type {@code
+     * google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount}
      */
-    public  static final class CustomAccount extends
-        com.google.protobuf.GeneratedMessageV3 implements
+    public static final class CustomAccount extends com.google.protobuf.GeneratedMessageV3
+        implements
         // @@protoc_insertion_point(message_implements:google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount)
         CustomAccountOrBuilder {
-    private static final long serialVersionUID = 0L;
+      private static final long serialVersionUID = 0L;
       // Use CustomAccount.newBuilder() to construct.
       private CustomAccount(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
         super(builder);
       }
+
       private CustomAccount() {
         username_ = "";
         password_ = "";
@@ -1490,15 +1752,18 @@ private static final long serialVersionUID = 0L;
       }
 
       @java.lang.Override
-      public final com.google.protobuf.UnknownFieldSet
-      getUnknownFields() {
+      public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
         return this.unknownFields;
       }
+
       private CustomAccount(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         this();
+        if (extensionRegistry == null) {
+          throw new java.lang.NullPointerException();
+        }
         int mutable_bitField0_ = 0;
         com.google.protobuf.UnknownFieldSet.Builder unknownFields =
             com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -1510,58 +1775,69 @@ private static final long serialVersionUID = 0L;
               case 0:
                 done = true;
                 break;
-              default: {
-                if (!parseUnknownFieldProto3(
-                    input, unknownFields, extensionRegistry, tag)) {
-                  done = true;
+              case 10:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
+
+                  username_ = s;
+                  break;
                 }
-                break;
-              }
-              case 10: {
-                java.lang.String s = input.readStringRequireUtf8();
+              case 18:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
 
-                username_ = s;
-                break;
-              }
-              case 18: {
-                java.lang.String s = input.readStringRequireUtf8();
+                  password_ = s;
+                  break;
+                }
+              case 26:
+                {
+                  java.lang.String s = input.readStringRequireUtf8();
 
-                password_ = s;
-                break;
-              }
-              case 26: {
-                java.lang.String s = input.readStringRequireUtf8();
-
-                loginUrl_ = s;
-                break;
-              }
+                  loginUrl_ = s;
+                  break;
+                }
+              default:
+                {
+                  if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                    done = true;
+                  }
+                  break;
+                }
             }
           }
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
           throw e.setUnfinishedMessage(this);
         } catch (java.io.IOException e) {
-          throw new com.google.protobuf.InvalidProtocolBufferException(
-              e).setUnfinishedMessage(this);
+          throw new com.google.protobuf.InvalidProtocolBufferException(e)
+              .setUnfinishedMessage(this);
         } finally {
           this.unknownFields = unknownFields.build();
           makeExtensionsImmutable();
         }
       }
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.google.cloud.websecurityscanner.v1alpha.ScanConfigProto.internal_static_google_cloud_websecurityscanner_v1alpha_ScanConfig_Authentication_CustomAccount_descriptor;
+
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.websecurityscanner.v1alpha.ScanConfigProto
+            .internal_static_google_cloud_websecurityscanner_v1alpha_ScanConfig_Authentication_CustomAccount_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.google.cloud.websecurityscanner.v1alpha.ScanConfigProto.internal_static_google_cloud_websecurityscanner_v1alpha_ScanConfig_Authentication_CustomAccount_fieldAccessorTable
+        return com.google.cloud.websecurityscanner.v1alpha.ScanConfigProto
+            .internal_static_google_cloud_websecurityscanner_v1alpha_ScanConfig_Authentication_CustomAccount_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount.class, com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount.Builder.class);
+                com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount
+                    .class,
+                com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount
+                    .Builder.class);
       }
 
       public static final int USERNAME_FIELD_NUMBER = 1;
       private volatile java.lang.Object username_;
       /**
+       *
+       *
        * <pre>
        * Required.
        * The user name of the custom account.
@@ -1574,14 +1850,15 @@ private static final long serialVersionUID = 0L;
         if (ref instanceof java.lang.String) {
           return (java.lang.String) ref;
         } else {
-          com.google.protobuf.ByteString bs = 
-              (com.google.protobuf.ByteString) ref;
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           username_ = s;
           return s;
         }
       }
       /**
+       *
+       *
        * <pre>
        * Required.
        * The user name of the custom account.
@@ -1589,13 +1866,11 @@ private static final long serialVersionUID = 0L;
        *
        * <code>string username = 1;</code>
        */
-      public com.google.protobuf.ByteString
-          getUsernameBytes() {
+      public com.google.protobuf.ByteString getUsernameBytes() {
         java.lang.Object ref = username_;
         if (ref instanceof java.lang.String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
           username_ = b;
           return b;
         } else {
@@ -1606,6 +1881,8 @@ private static final long serialVersionUID = 0L;
       public static final int PASSWORD_FIELD_NUMBER = 2;
       private volatile java.lang.Object password_;
       /**
+       *
+       *
        * <pre>
        * Input only.
        * Required.
@@ -1620,14 +1897,15 @@ private static final long serialVersionUID = 0L;
         if (ref instanceof java.lang.String) {
           return (java.lang.String) ref;
         } else {
-          com.google.protobuf.ByteString bs = 
-              (com.google.protobuf.ByteString) ref;
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           password_ = s;
           return s;
         }
       }
       /**
+       *
+       *
        * <pre>
        * Input only.
        * Required.
@@ -1637,13 +1915,11 @@ private static final long serialVersionUID = 0L;
        *
        * <code>string password = 2;</code>
        */
-      public com.google.protobuf.ByteString
-          getPasswordBytes() {
+      public com.google.protobuf.ByteString getPasswordBytes() {
         java.lang.Object ref = password_;
         if (ref instanceof java.lang.String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
           password_ = b;
           return b;
         } else {
@@ -1654,6 +1930,8 @@ private static final long serialVersionUID = 0L;
       public static final int LOGIN_URL_FIELD_NUMBER = 3;
       private volatile java.lang.Object loginUrl_;
       /**
+       *
+       *
        * <pre>
        * Required.
        * The login form URL of the website.
@@ -1666,14 +1944,15 @@ private static final long serialVersionUID = 0L;
         if (ref instanceof java.lang.String) {
           return (java.lang.String) ref;
         } else {
-          com.google.protobuf.ByteString bs = 
-              (com.google.protobuf.ByteString) ref;
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           loginUrl_ = s;
           return s;
         }
       }
       /**
+       *
+       *
        * <pre>
        * Required.
        * The login form URL of the website.
@@ -1681,13 +1960,11 @@ private static final long serialVersionUID = 0L;
        *
        * <code>string login_url = 3;</code>
        */
-      public com.google.protobuf.ByteString
-          getLoginUrlBytes() {
+      public com.google.protobuf.ByteString getLoginUrlBytes() {
         java.lang.Object ref = loginUrl_;
         if (ref instanceof java.lang.String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
           loginUrl_ = b;
           return b;
         } else {
@@ -1696,6 +1973,8 @@ private static final long serialVersionUID = 0L;
       }
 
       private byte memoizedIsInitialized = -1;
+
+      @java.lang.Override
       public final boolean isInitialized() {
         byte isInitialized = memoizedIsInitialized;
         if (isInitialized == 1) return true;
@@ -1705,8 +1984,8 @@ private static final long serialVersionUID = 0L;
         return true;
       }
 
-      public void writeTo(com.google.protobuf.CodedOutputStream output)
-                          throws java.io.IOException {
+      @java.lang.Override
+      public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
         if (!getUsernameBytes().isEmpty()) {
           com.google.protobuf.GeneratedMessageV3.writeString(output, 1, username_);
         }
@@ -1719,6 +1998,7 @@ private static final long serialVersionUID = 0L;
         unknownFields.writeTo(output);
       }
 
+      @java.lang.Override
       public int getSerializedSize() {
         int size = memoizedSize;
         if (size != -1) return size;
@@ -1741,20 +2021,21 @@ private static final long serialVersionUID = 0L;
       @java.lang.Override
       public boolean equals(final java.lang.Object obj) {
         if (obj == this) {
-         return true;
+          return true;
         }
-        if (!(obj instanceof com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount)) {
+        if (!(obj
+            instanceof
+            com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount)) {
           return super.equals(obj);
         }
-        com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount other = (com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount) obj;
+        com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount other =
+            (com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount)
+                obj;
 
         boolean result = true;
-        result = result && getUsername()
-            .equals(other.getUsername());
-        result = result && getPassword()
-            .equals(other.getPassword());
-        result = result && getLoginUrl()
-            .equals(other.getLoginUrl());
+        result = result && getUsername().equals(other.getUsername());
+        result = result && getPassword().equals(other.getPassword());
+        result = result && getLoginUrl().equals(other.getLoginUrl());
         result = result && unknownFields.equals(other.unknownFields);
         return result;
       }
@@ -1777,86 +2058,116 @@ private static final long serialVersionUID = 0L;
         return hash;
       }
 
-      public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount parseFrom(
-          java.nio.ByteBuffer data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
+      public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication
+              .CustomAccount
+          parseFrom(java.nio.ByteBuffer data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
         return PARSER.parseFrom(data);
-      }
-      public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount parseFrom(
-          java.nio.ByteBuffer data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-      }
-      public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount parseFrom(
-          com.google.protobuf.ByteString data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-      }
-      public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount parseFrom(
-          com.google.protobuf.ByteString data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-      }
-      public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount parseFrom(byte[] data)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data);
-      }
-      public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount parseFrom(
-          byte[] data,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-        return PARSER.parseFrom(data, extensionRegistry);
-      }
-      public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount parseFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
-      }
-      public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount parseFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
-      }
-      public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount parseDelimitedFrom(java.io.InputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input);
-      }
-      public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount parseDelimitedFrom(
-          java.io.InputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-      }
-      public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount parseFrom(
-          com.google.protobuf.CodedInputStream input)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input);
-      }
-      public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount parseFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws java.io.IOException {
-        return com.google.protobuf.GeneratedMessageV3
-            .parseWithIOException(PARSER, input, extensionRegistry);
       }
 
-      public Builder newBuilderForType() { return newBuilder(); }
+      public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication
+              .CustomAccount
+          parseFrom(
+              java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication
+              .CustomAccount
+          parseFrom(com.google.protobuf.ByteString data)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication
+              .CustomAccount
+          parseFrom(
+              com.google.protobuf.ByteString data,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication
+              .CustomAccount
+          parseFrom(byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data);
+      }
+
+      public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication
+              .CustomAccount
+          parseFrom(byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+        return PARSER.parseFrom(data, extensionRegistry);
+      }
+
+      public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication
+              .CustomAccount
+          parseFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication
+              .CustomAccount
+          parseFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication
+              .CustomAccount
+          parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication
+              .CustomAccount
+          parseDelimitedFrom(
+              java.io.InputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication
+              .CustomAccount
+          parseFrom(com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+      }
+
+      public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication
+              .CustomAccount
+          parseFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws java.io.IOException {
+        return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+            PARSER, input, extensionRegistry);
+      }
+
+      @java.lang.Override
+      public Builder newBuilderForType() {
+        return newBuilder();
+      }
+
       public static Builder newBuilder() {
         return DEFAULT_INSTANCE.toBuilder();
       }
-      public static Builder newBuilder(com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount prototype) {
+
+      public static Builder newBuilder(
+          com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount
+              prototype) {
         return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
       }
+
+      @java.lang.Override
       public Builder toBuilder() {
-        return this == DEFAULT_INSTANCE
-            ? new Builder() : new Builder().mergeFrom(this);
+        return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
       }
 
       @java.lang.Override
@@ -1866,43 +2177,54 @@ private static final long serialVersionUID = 0L;
         return builder;
       }
       /**
+       *
+       *
        * <pre>
        * Describes authentication configuration that uses a custom account.
        * </pre>
        *
-       * Protobuf type {@code google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount}
+       * Protobuf type {@code
+       * google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount}
        */
-      public static final class Builder extends
-          com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+      public static final class Builder
+          extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+          implements
           // @@protoc_insertion_point(builder_implements:google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount)
-          com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccountOrBuilder {
-        public static final com.google.protobuf.Descriptors.Descriptor
-            getDescriptor() {
-          return com.google.cloud.websecurityscanner.v1alpha.ScanConfigProto.internal_static_google_cloud_websecurityscanner_v1alpha_ScanConfig_Authentication_CustomAccount_descriptor;
+          com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication
+              .CustomAccountOrBuilder {
+        public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+          return com.google.cloud.websecurityscanner.v1alpha.ScanConfigProto
+              .internal_static_google_cloud_websecurityscanner_v1alpha_ScanConfig_Authentication_CustomAccount_descriptor;
         }
 
+        @java.lang.Override
         protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
             internalGetFieldAccessorTable() {
-          return com.google.cloud.websecurityscanner.v1alpha.ScanConfigProto.internal_static_google_cloud_websecurityscanner_v1alpha_ScanConfig_Authentication_CustomAccount_fieldAccessorTable
+          return com.google.cloud.websecurityscanner.v1alpha.ScanConfigProto
+              .internal_static_google_cloud_websecurityscanner_v1alpha_ScanConfig_Authentication_CustomAccount_fieldAccessorTable
               .ensureFieldAccessorsInitialized(
-                  com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount.class, com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount.Builder.class);
+                  com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication
+                      .CustomAccount.class,
+                  com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication
+                      .CustomAccount.Builder.class);
         }
 
-        // Construct using com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount.newBuilder()
+        // Construct using
+        // com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount.newBuilder()
         private Builder() {
           maybeForceBuilderInitialization();
         }
 
-        private Builder(
-            com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
           super(parent);
           maybeForceBuilderInitialization();
         }
+
         private void maybeForceBuilderInitialization() {
-          if (com.google.protobuf.GeneratedMessageV3
-                  .alwaysUseFieldBuilders) {
-          }
+          if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
         }
+
+        @java.lang.Override
         public Builder clear() {
           super.clear();
           username_ = "";
@@ -1914,25 +2236,37 @@ private static final long serialVersionUID = 0L;
           return this;
         }
 
-        public com.google.protobuf.Descriptors.Descriptor
-            getDescriptorForType() {
-          return com.google.cloud.websecurityscanner.v1alpha.ScanConfigProto.internal_static_google_cloud_websecurityscanner_v1alpha_ScanConfig_Authentication_CustomAccount_descriptor;
+        @java.lang.Override
+        public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+          return com.google.cloud.websecurityscanner.v1alpha.ScanConfigProto
+              .internal_static_google_cloud_websecurityscanner_v1alpha_ScanConfig_Authentication_CustomAccount_descriptor;
         }
 
-        public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount getDefaultInstanceForType() {
-          return com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount.getDefaultInstance();
+        @java.lang.Override
+        public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount
+            getDefaultInstanceForType() {
+          return com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount
+              .getDefaultInstance();
         }
 
-        public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount build() {
-          com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount result = buildPartial();
+        @java.lang.Override
+        public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount
+            build() {
+          com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount
+              result = buildPartial();
           if (!result.isInitialized()) {
             throw newUninitializedMessageException(result);
           }
           return result;
         }
 
-        public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount buildPartial() {
-          com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount result = new com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount(this);
+        @java.lang.Override
+        public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount
+            buildPartial() {
+          com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount
+              result =
+                  new com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication
+                      .CustomAccount(this);
           result.username_ = username_;
           result.password_ = password_;
           result.loginUrl_ = loginUrl_;
@@ -1940,43 +2274,62 @@ private static final long serialVersionUID = 0L;
           return result;
         }
 
+        @java.lang.Override
         public Builder clone() {
           return (Builder) super.clone();
         }
+
+        @java.lang.Override
         public Builder setField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            java.lang.Object value) {
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
           return (Builder) super.setField(field, value);
         }
-        public Builder clearField(
-            com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+        @java.lang.Override
+        public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
           return (Builder) super.clearField(field);
         }
-        public Builder clearOneof(
-            com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+        @java.lang.Override
+        public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
           return (Builder) super.clearOneof(oneof);
         }
+
+        @java.lang.Override
         public Builder setRepeatedField(
             com.google.protobuf.Descriptors.FieldDescriptor field,
-            int index, java.lang.Object value) {
+            int index,
+            java.lang.Object value) {
           return (Builder) super.setRepeatedField(field, index, value);
         }
+
+        @java.lang.Override
         public Builder addRepeatedField(
-            com.google.protobuf.Descriptors.FieldDescriptor field,
-            java.lang.Object value) {
+            com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
           return (Builder) super.addRepeatedField(field, value);
         }
+
+        @java.lang.Override
         public Builder mergeFrom(com.google.protobuf.Message other) {
-          if (other instanceof com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount) {
-            return mergeFrom((com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount)other);
+          if (other
+              instanceof
+              com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount) {
+            return mergeFrom(
+                (com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication
+                        .CustomAccount)
+                    other);
           } else {
             super.mergeFrom(other);
             return this;
           }
         }
 
-        public Builder mergeFrom(com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount other) {
-          if (other == com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount.getDefaultInstance()) return this;
+        public Builder mergeFrom(
+            com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount
+                other) {
+          if (other
+              == com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount
+                  .getDefaultInstance()) return this;
           if (!other.getUsername().isEmpty()) {
             username_ = other.username_;
             onChanged();
@@ -1994,19 +2347,25 @@ private static final long serialVersionUID = 0L;
           return this;
         }
 
+        @java.lang.Override
         public final boolean isInitialized() {
           return true;
         }
 
+        @java.lang.Override
         public Builder mergeFrom(
             com.google.protobuf.CodedInputStream input,
             com.google.protobuf.ExtensionRegistryLite extensionRegistry)
             throws java.io.IOException {
-          com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount parsedMessage = null;
+          com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount
+              parsedMessage = null;
           try {
             parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
           } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-            parsedMessage = (com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount) e.getUnfinishedMessage();
+            parsedMessage =
+                (com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication
+                        .CustomAccount)
+                    e.getUnfinishedMessage();
             throw e.unwrapIOException();
           } finally {
             if (parsedMessage != null) {
@@ -2018,6 +2377,8 @@ private static final long serialVersionUID = 0L;
 
         private java.lang.Object username_ = "";
         /**
+         *
+         *
          * <pre>
          * Required.
          * The user name of the custom account.
@@ -2028,8 +2389,7 @@ private static final long serialVersionUID = 0L;
         public java.lang.String getUsername() {
           java.lang.Object ref = username_;
           if (!(ref instanceof java.lang.String)) {
-            com.google.protobuf.ByteString bs =
-                (com.google.protobuf.ByteString) ref;
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
             java.lang.String s = bs.toStringUtf8();
             username_ = s;
             return s;
@@ -2038,6 +2398,8 @@ private static final long serialVersionUID = 0L;
           }
         }
         /**
+         *
+         *
          * <pre>
          * Required.
          * The user name of the custom account.
@@ -2045,13 +2407,11 @@ private static final long serialVersionUID = 0L;
          *
          * <code>string username = 1;</code>
          */
-        public com.google.protobuf.ByteString
-            getUsernameBytes() {
+        public com.google.protobuf.ByteString getUsernameBytes() {
           java.lang.Object ref = username_;
           if (ref instanceof String) {
-            com.google.protobuf.ByteString b = 
-                com.google.protobuf.ByteString.copyFromUtf8(
-                    (java.lang.String) ref);
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
             username_ = b;
             return b;
           } else {
@@ -2059,6 +2419,8 @@ private static final long serialVersionUID = 0L;
           }
         }
         /**
+         *
+         *
          * <pre>
          * Required.
          * The user name of the custom account.
@@ -2066,17 +2428,18 @@ private static final long serialVersionUID = 0L;
          *
          * <code>string username = 1;</code>
          */
-        public Builder setUsername(
-            java.lang.String value) {
+        public Builder setUsername(java.lang.String value) {
           if (value == null) {
-    throw new NullPointerException();
-  }
-  
+            throw new NullPointerException();
+          }
+
           username_ = value;
           onChanged();
           return this;
         }
         /**
+         *
+         *
          * <pre>
          * Required.
          * The user name of the custom account.
@@ -2085,12 +2448,14 @@ private static final long serialVersionUID = 0L;
          * <code>string username = 1;</code>
          */
         public Builder clearUsername() {
-          
+
           username_ = getDefaultInstance().getUsername();
           onChanged();
           return this;
         }
         /**
+         *
+         *
          * <pre>
          * Required.
          * The user name of the custom account.
@@ -2098,13 +2463,12 @@ private static final long serialVersionUID = 0L;
          *
          * <code>string username = 1;</code>
          */
-        public Builder setUsernameBytes(
-            com.google.protobuf.ByteString value) {
+        public Builder setUsernameBytes(com.google.protobuf.ByteString value) {
           if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-          
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+
           username_ = value;
           onChanged();
           return this;
@@ -2112,6 +2476,8 @@ private static final long serialVersionUID = 0L;
 
         private java.lang.Object password_ = "";
         /**
+         *
+         *
          * <pre>
          * Input only.
          * Required.
@@ -2124,8 +2490,7 @@ private static final long serialVersionUID = 0L;
         public java.lang.String getPassword() {
           java.lang.Object ref = password_;
           if (!(ref instanceof java.lang.String)) {
-            com.google.protobuf.ByteString bs =
-                (com.google.protobuf.ByteString) ref;
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
             java.lang.String s = bs.toStringUtf8();
             password_ = s;
             return s;
@@ -2134,6 +2499,8 @@ private static final long serialVersionUID = 0L;
           }
         }
         /**
+         *
+         *
          * <pre>
          * Input only.
          * Required.
@@ -2143,13 +2510,11 @@ private static final long serialVersionUID = 0L;
          *
          * <code>string password = 2;</code>
          */
-        public com.google.protobuf.ByteString
-            getPasswordBytes() {
+        public com.google.protobuf.ByteString getPasswordBytes() {
           java.lang.Object ref = password_;
           if (ref instanceof String) {
-            com.google.protobuf.ByteString b = 
-                com.google.protobuf.ByteString.copyFromUtf8(
-                    (java.lang.String) ref);
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
             password_ = b;
             return b;
           } else {
@@ -2157,6 +2522,8 @@ private static final long serialVersionUID = 0L;
           }
         }
         /**
+         *
+         *
          * <pre>
          * Input only.
          * Required.
@@ -2166,17 +2533,18 @@ private static final long serialVersionUID = 0L;
          *
          * <code>string password = 2;</code>
          */
-        public Builder setPassword(
-            java.lang.String value) {
+        public Builder setPassword(java.lang.String value) {
           if (value == null) {
-    throw new NullPointerException();
-  }
-  
+            throw new NullPointerException();
+          }
+
           password_ = value;
           onChanged();
           return this;
         }
         /**
+         *
+         *
          * <pre>
          * Input only.
          * Required.
@@ -2187,12 +2555,14 @@ private static final long serialVersionUID = 0L;
          * <code>string password = 2;</code>
          */
         public Builder clearPassword() {
-          
+
           password_ = getDefaultInstance().getPassword();
           onChanged();
           return this;
         }
         /**
+         *
+         *
          * <pre>
          * Input only.
          * Required.
@@ -2202,13 +2572,12 @@ private static final long serialVersionUID = 0L;
          *
          * <code>string password = 2;</code>
          */
-        public Builder setPasswordBytes(
-            com.google.protobuf.ByteString value) {
+        public Builder setPasswordBytes(com.google.protobuf.ByteString value) {
           if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-          
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+
           password_ = value;
           onChanged();
           return this;
@@ -2216,6 +2585,8 @@ private static final long serialVersionUID = 0L;
 
         private java.lang.Object loginUrl_ = "";
         /**
+         *
+         *
          * <pre>
          * Required.
          * The login form URL of the website.
@@ -2226,8 +2597,7 @@ private static final long serialVersionUID = 0L;
         public java.lang.String getLoginUrl() {
           java.lang.Object ref = loginUrl_;
           if (!(ref instanceof java.lang.String)) {
-            com.google.protobuf.ByteString bs =
-                (com.google.protobuf.ByteString) ref;
+            com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
             java.lang.String s = bs.toStringUtf8();
             loginUrl_ = s;
             return s;
@@ -2236,6 +2606,8 @@ private static final long serialVersionUID = 0L;
           }
         }
         /**
+         *
+         *
          * <pre>
          * Required.
          * The login form URL of the website.
@@ -2243,13 +2615,11 @@ private static final long serialVersionUID = 0L;
          *
          * <code>string login_url = 3;</code>
          */
-        public com.google.protobuf.ByteString
-            getLoginUrlBytes() {
+        public com.google.protobuf.ByteString getLoginUrlBytes() {
           java.lang.Object ref = loginUrl_;
           if (ref instanceof String) {
-            com.google.protobuf.ByteString b = 
-                com.google.protobuf.ByteString.copyFromUtf8(
-                    (java.lang.String) ref);
+            com.google.protobuf.ByteString b =
+                com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
             loginUrl_ = b;
             return b;
           } else {
@@ -2257,6 +2627,8 @@ private static final long serialVersionUID = 0L;
           }
         }
         /**
+         *
+         *
          * <pre>
          * Required.
          * The login form URL of the website.
@@ -2264,17 +2636,18 @@ private static final long serialVersionUID = 0L;
          *
          * <code>string login_url = 3;</code>
          */
-        public Builder setLoginUrl(
-            java.lang.String value) {
+        public Builder setLoginUrl(java.lang.String value) {
           if (value == null) {
-    throw new NullPointerException();
-  }
-  
+            throw new NullPointerException();
+          }
+
           loginUrl_ = value;
           onChanged();
           return this;
         }
         /**
+         *
+         *
          * <pre>
          * Required.
          * The login form URL of the website.
@@ -2283,12 +2656,14 @@ private static final long serialVersionUID = 0L;
          * <code>string login_url = 3;</code>
          */
         public Builder clearLoginUrl() {
-          
+
           loginUrl_ = getDefaultInstance().getLoginUrl();
           onChanged();
           return this;
         }
         /**
+         *
+         *
          * <pre>
          * Required.
          * The login form URL of the website.
@@ -2296,50 +2671,59 @@ private static final long serialVersionUID = 0L;
          *
          * <code>string login_url = 3;</code>
          */
-        public Builder setLoginUrlBytes(
-            com.google.protobuf.ByteString value) {
+        public Builder setLoginUrlBytes(com.google.protobuf.ByteString value) {
           if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-          
+            throw new NullPointerException();
+          }
+          checkByteStringIsUtf8(value);
+
           loginUrl_ = value;
           onChanged();
           return this;
         }
+
+        @java.lang.Override
         public final Builder setUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
           return super.setUnknownFieldsProto3(unknownFields);
         }
 
+        @java.lang.Override
         public final Builder mergeUnknownFields(
             final com.google.protobuf.UnknownFieldSet unknownFields) {
           return super.mergeUnknownFields(unknownFields);
         }
 
-
         // @@protoc_insertion_point(builder_scope:google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount)
       }
 
       // @@protoc_insertion_point(class_scope:google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount)
-      private static final com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount DEFAULT_INSTANCE;
+      private static final com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication
+              .CustomAccount
+          DEFAULT_INSTANCE;
+
       static {
-        DEFAULT_INSTANCE = new com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount();
+        DEFAULT_INSTANCE =
+            new com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication
+                .CustomAccount();
       }
 
-      public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount getDefaultInstance() {
+      public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication
+              .CustomAccount
+          getDefaultInstance() {
         return DEFAULT_INSTANCE;
       }
 
-      private static final com.google.protobuf.Parser<CustomAccount>
-          PARSER = new com.google.protobuf.AbstractParser<CustomAccount>() {
-        public CustomAccount parsePartialFrom(
-            com.google.protobuf.CodedInputStream input,
-            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-            throws com.google.protobuf.InvalidProtocolBufferException {
-            return new CustomAccount(input, extensionRegistry);
-        }
-      };
+      private static final com.google.protobuf.Parser<CustomAccount> PARSER =
+          new com.google.protobuf.AbstractParser<CustomAccount>() {
+            @java.lang.Override
+            public CustomAccount parsePartialFrom(
+                com.google.protobuf.CodedInputStream input,
+                com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+                throws com.google.protobuf.InvalidProtocolBufferException {
+              return new CustomAccount(input, extensionRegistry);
+            }
+          };
 
       public static com.google.protobuf.Parser<CustomAccount> parser() {
         return PARSER;
@@ -2350,26 +2734,26 @@ private static final long serialVersionUID = 0L;
         return PARSER;
       }
 
-      public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount getDefaultInstanceForType() {
+      @java.lang.Override
+      public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount
+          getDefaultInstanceForType() {
         return DEFAULT_INSTANCE;
       }
-
     }
 
     private int authenticationCase_ = 0;
     private java.lang.Object authentication_;
-    public enum AuthenticationCase
-        implements com.google.protobuf.Internal.EnumLite {
+
+    public enum AuthenticationCase implements com.google.protobuf.Internal.EnumLite {
       GOOGLE_ACCOUNT(1),
       CUSTOM_ACCOUNT(2),
       AUTHENTICATION_NOT_SET(0);
       private final int value;
+
       private AuthenticationCase(int value) {
         this.value = value;
       }
-      /**
-       * @deprecated Use {@link #forNumber(int)} instead.
-       */
+      /** @deprecated Use {@link #forNumber(int)} instead. */
       @java.lang.Deprecated
       public static AuthenticationCase valueOf(int value) {
         return forNumber(value);
@@ -2377,100 +2761,143 @@ private static final long serialVersionUID = 0L;
 
       public static AuthenticationCase forNumber(int value) {
         switch (value) {
-          case 1: return GOOGLE_ACCOUNT;
-          case 2: return CUSTOM_ACCOUNT;
-          case 0: return AUTHENTICATION_NOT_SET;
-          default: return null;
+          case 1:
+            return GOOGLE_ACCOUNT;
+          case 2:
+            return CUSTOM_ACCOUNT;
+          case 0:
+            return AUTHENTICATION_NOT_SET;
+          default:
+            return null;
         }
       }
+
       public int getNumber() {
         return this.value;
       }
     };
 
-    public AuthenticationCase
-    getAuthenticationCase() {
-      return AuthenticationCase.forNumber(
-          authenticationCase_);
+    public AuthenticationCase getAuthenticationCase() {
+      return AuthenticationCase.forNumber(authenticationCase_);
     }
 
     public static final int GOOGLE_ACCOUNT_FIELD_NUMBER = 1;
     /**
+     *
+     *
      * <pre>
      * Authentication using a Google account.
      * </pre>
      *
-     * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount google_account = 1;</code>
+     * <code>
+     * .google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount google_account = 1;
+     * </code>
      */
     public boolean hasGoogleAccount() {
       return authenticationCase_ == 1;
     }
     /**
+     *
+     *
      * <pre>
      * Authentication using a Google account.
      * </pre>
      *
-     * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount google_account = 1;</code>
+     * <code>
+     * .google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount google_account = 1;
+     * </code>
      */
-    public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount getGoogleAccount() {
+    public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount
+        getGoogleAccount() {
       if (authenticationCase_ == 1) {
-         return (com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount) authentication_;
+        return (com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount)
+            authentication_;
       }
-      return com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount.getDefaultInstance();
+      return com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount
+          .getDefaultInstance();
     }
     /**
+     *
+     *
      * <pre>
      * Authentication using a Google account.
      * </pre>
      *
-     * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount google_account = 1;</code>
+     * <code>
+     * .google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount google_account = 1;
+     * </code>
      */
-    public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccountOrBuilder getGoogleAccountOrBuilder() {
+    public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication
+            .GoogleAccountOrBuilder
+        getGoogleAccountOrBuilder() {
       if (authenticationCase_ == 1) {
-         return (com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount) authentication_;
+        return (com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount)
+            authentication_;
       }
-      return com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount.getDefaultInstance();
+      return com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount
+          .getDefaultInstance();
     }
 
     public static final int CUSTOM_ACCOUNT_FIELD_NUMBER = 2;
     /**
+     *
+     *
      * <pre>
      * Authentication using a custom account.
      * </pre>
      *
-     * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount custom_account = 2;</code>
+     * <code>
+     * .google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount custom_account = 2;
+     * </code>
      */
     public boolean hasCustomAccount() {
       return authenticationCase_ == 2;
     }
     /**
+     *
+     *
      * <pre>
      * Authentication using a custom account.
      * </pre>
      *
-     * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount custom_account = 2;</code>
+     * <code>
+     * .google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount custom_account = 2;
+     * </code>
      */
-    public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount getCustomAccount() {
+    public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount
+        getCustomAccount() {
       if (authenticationCase_ == 2) {
-         return (com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount) authentication_;
+        return (com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount)
+            authentication_;
       }
-      return com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount.getDefaultInstance();
+      return com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount
+          .getDefaultInstance();
     }
     /**
+     *
+     *
      * <pre>
      * Authentication using a custom account.
      * </pre>
      *
-     * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount custom_account = 2;</code>
+     * <code>
+     * .google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount custom_account = 2;
+     * </code>
      */
-    public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccountOrBuilder getCustomAccountOrBuilder() {
+    public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication
+            .CustomAccountOrBuilder
+        getCustomAccountOrBuilder() {
       if (authenticationCase_ == 2) {
-         return (com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount) authentication_;
+        return (com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount)
+            authentication_;
       }
-      return com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount.getDefaultInstance();
+      return com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount
+          .getDefaultInstance();
     }
 
     private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -2480,29 +2907,44 @@ private static final long serialVersionUID = 0L;
       return true;
     }
 
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
       if (authenticationCase_ == 1) {
-        output.writeMessage(1, (com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount) authentication_);
+        output.writeMessage(
+            1,
+            (com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount)
+                authentication_);
       }
       if (authenticationCase_ == 2) {
-        output.writeMessage(2, (com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount) authentication_);
+        output.writeMessage(
+            2,
+            (com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount)
+                authentication_);
       }
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
       if (authenticationCase_ == 1) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, (com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount) authentication_);
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                1,
+                (com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication
+                        .GoogleAccount)
+                    authentication_);
       }
       if (authenticationCase_ == 2) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, (com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount) authentication_);
+        size +=
+            com.google.protobuf.CodedOutputStream.computeMessageSize(
+                2,
+                (com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication
+                        .CustomAccount)
+                    authentication_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2512,25 +2954,23 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-       return true;
+        return true;
       }
       if (!(obj instanceof com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication)) {
         return super.equals(obj);
       }
-      com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication other = (com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication) obj;
+      com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication other =
+          (com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication) obj;
 
       boolean result = true;
-      result = result && getAuthenticationCase().equals(
-          other.getAuthenticationCase());
+      result = result && getAuthenticationCase().equals(other.getAuthenticationCase());
       if (!result) return false;
       switch (authenticationCase_) {
         case 1:
-          result = result && getGoogleAccount()
-              .equals(other.getGoogleAccount());
+          result = result && getGoogleAccount().equals(other.getGoogleAccount());
           break;
         case 2:
-          result = result && getCustomAccount()
-              .equals(other.getCustomAccount());
+          result = result && getCustomAccount().equals(other.getCustomAccount());
           break;
         case 0:
         default:
@@ -2564,85 +3004,95 @@ private static final long serialVersionUID = 0L;
     }
 
     public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+
+    public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
+
     public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
-    public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
+
     public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication parseFrom(
-        com.google.protobuf.CodedInputStream input)
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
+
+    public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
     public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
 
-    public Builder newBuilderForType() { return newBuilder(); }
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication prototype) {
+
+    public static Builder newBuilder(
+        com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+
+    @java.lang.Override
     public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
     @java.lang.Override
@@ -2652,43 +3102,51 @@ private static final long serialVersionUID = 0L;
       return builder;
     }
     /**
+     *
+     *
      * <pre>
      * Scan authentication configuration.
      * </pre>
      *
      * Protobuf type {@code google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
         // @@protoc_insertion_point(builder_implements:google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication)
         com.google.cloud.websecurityscanner.v1alpha.ScanConfig.AuthenticationOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.google.cloud.websecurityscanner.v1alpha.ScanConfigProto.internal_static_google_cloud_websecurityscanner_v1alpha_ScanConfig_Authentication_descriptor;
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.websecurityscanner.v1alpha.ScanConfigProto
+            .internal_static_google_cloud_websecurityscanner_v1alpha_ScanConfig_Authentication_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.google.cloud.websecurityscanner.v1alpha.ScanConfigProto.internal_static_google_cloud_websecurityscanner_v1alpha_ScanConfig_Authentication_fieldAccessorTable
+        return com.google.cloud.websecurityscanner.v1alpha.ScanConfigProto
+            .internal_static_google_cloud_websecurityscanner_v1alpha_ScanConfig_Authentication_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.class, com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.Builder.class);
+                com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.class,
+                com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.Builder
+                    .class);
       }
 
-      // Construct using com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.newBuilder()
+      // Construct using
+      // com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
 
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
+
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
+
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         authenticationCase_ = 0;
@@ -2696,25 +3154,33 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.google.cloud.websecurityscanner.v1alpha.ScanConfigProto.internal_static_google_cloud_websecurityscanner_v1alpha_ScanConfig_Authentication_descriptor;
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.websecurityscanner.v1alpha.ScanConfigProto
+            .internal_static_google_cloud_websecurityscanner_v1alpha_ScanConfig_Authentication_descriptor;
       }
 
-      public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication getDefaultInstanceForType() {
-        return com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.getDefaultInstance();
+      @java.lang.Override
+      public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication
+          getDefaultInstanceForType() {
+        return com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication
+            .getDefaultInstance();
       }
 
+      @java.lang.Override
       public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication build() {
-        com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication result = buildPartial();
+        com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication result =
+            buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
+      @java.lang.Override
       public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication buildPartial() {
-        com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication result = new com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication(this);
+        com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication result =
+            new com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication(this);
         if (authenticationCase_ == 1) {
           if (googleAccountBuilder_ == null) {
             result.authentication_ = authentication_;
@@ -2734,65 +3200,85 @@ private static final long serialVersionUID = 0L;
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+
+      @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index,
+          java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+
+      @java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication) {
-          return mergeFrom((com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication)other);
+        if (other
+            instanceof com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication) {
+          return mergeFrom(
+              (com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication) other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication other) {
-        if (other == com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.getDefaultInstance()) return this;
+      public Builder mergeFrom(
+          com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication other) {
+        if (other
+            == com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication
+                .getDefaultInstance()) return this;
         switch (other.getAuthenticationCase()) {
-          case GOOGLE_ACCOUNT: {
-            mergeGoogleAccount(other.getGoogleAccount());
-            break;
-          }
-          case CUSTOM_ACCOUNT: {
-            mergeCustomAccount(other.getCustomAccount());
-            break;
-          }
-          case AUTHENTICATION_NOT_SET: {
-            break;
-          }
+          case GOOGLE_ACCOUNT:
+            {
+              mergeGoogleAccount(other.getGoogleAccount());
+              break;
+            }
+          case CUSTOM_ACCOUNT:
+            {
+              mergeCustomAccount(other.getCustomAccount());
+              break;
+            }
+          case AUTHENTICATION_NOT_SET:
+            {
+              break;
+            }
         }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -2801,7 +3287,9 @@ private static final long serialVersionUID = 0L;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication) e.getUnfinishedMessage();
+          parsedMessage =
+              (com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication)
+                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -2810,12 +3298,12 @@ private static final long serialVersionUID = 0L;
         }
         return this;
       }
+
       private int authenticationCase_ = 0;
       private java.lang.Object authentication_;
-      public AuthenticationCase
-          getAuthenticationCase() {
-        return AuthenticationCase.forNumber(
-            authenticationCase_);
+
+      public AuthenticationCase getAuthenticationCase() {
+        return AuthenticationCase.forNumber(authenticationCase_);
       }
 
       public Builder clearAuthentication() {
@@ -2825,47 +3313,70 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
-
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount, com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount.Builder, com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccountOrBuilder> googleAccountBuilder_;
+              com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount,
+              com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount
+                  .Builder,
+              com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication
+                  .GoogleAccountOrBuilder>
+          googleAccountBuilder_;
       /**
+       *
+       *
        * <pre>
        * Authentication using a Google account.
        * </pre>
        *
-       * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount google_account = 1;</code>
+       * <code>
+       * .google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount google_account = 1;
+       * </code>
        */
       public boolean hasGoogleAccount() {
         return authenticationCase_ == 1;
       }
       /**
+       *
+       *
        * <pre>
        * Authentication using a Google account.
        * </pre>
        *
-       * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount google_account = 1;</code>
+       * <code>
+       * .google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount google_account = 1;
+       * </code>
        */
-      public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount getGoogleAccount() {
+      public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount
+          getGoogleAccount() {
         if (googleAccountBuilder_ == null) {
           if (authenticationCase_ == 1) {
-            return (com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount) authentication_;
+            return (com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication
+                    .GoogleAccount)
+                authentication_;
           }
-          return com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount.getDefaultInstance();
+          return com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount
+              .getDefaultInstance();
         } else {
           if (authenticationCase_ == 1) {
             return googleAccountBuilder_.getMessage();
           }
-          return com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount.getDefaultInstance();
+          return com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount
+              .getDefaultInstance();
         }
       }
       /**
+       *
+       *
        * <pre>
        * Authentication using a Google account.
        * </pre>
        *
-       * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount google_account = 1;</code>
+       * <code>
+       * .google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount google_account = 1;
+       * </code>
        */
-      public Builder setGoogleAccount(com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount value) {
+      public Builder setGoogleAccount(
+          com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount
+              value) {
         if (googleAccountBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -2879,14 +3390,20 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Authentication using a Google account.
        * </pre>
        *
-       * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount google_account = 1;</code>
+       * <code>
+       * .google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount google_account = 1;
+       * </code>
        */
       public Builder setGoogleAccount(
-          com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount.Builder builderForValue) {
+          com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount
+                  .Builder
+              builderForValue) {
         if (googleAccountBuilder_ == null) {
           authentication_ = builderForValue.build();
           onChanged();
@@ -2897,18 +3414,32 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Authentication using a Google account.
        * </pre>
        *
-       * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount google_account = 1;</code>
+       * <code>
+       * .google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount google_account = 1;
+       * </code>
        */
-      public Builder mergeGoogleAccount(com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount value) {
+      public Builder mergeGoogleAccount(
+          com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount
+              value) {
         if (googleAccountBuilder_ == null) {
-          if (authenticationCase_ == 1 &&
-              authentication_ != com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount.getDefaultInstance()) {
-            authentication_ = com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount.newBuilder((com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount) authentication_)
-                .mergeFrom(value).buildPartial();
+          if (authenticationCase_ == 1
+              && authentication_
+                  != com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication
+                      .GoogleAccount.getDefaultInstance()) {
+            authentication_ =
+                com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount
+                    .newBuilder(
+                        (com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication
+                                .GoogleAccount)
+                            authentication_)
+                    .mergeFrom(value)
+                    .buildPartial();
           } else {
             authentication_ = value;
           }
@@ -2923,11 +3454,15 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Authentication using a Google account.
        * </pre>
        *
-       * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount google_account = 1;</code>
+       * <code>
+       * .google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount google_account = 1;
+       * </code>
        */
       public Builder clearGoogleAccount() {
         if (googleAccountBuilder_ == null) {
@@ -2946,98 +3481,156 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Authentication using a Google account.
        * </pre>
        *
-       * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount google_account = 1;</code>
+       * <code>
+       * .google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount google_account = 1;
+       * </code>
        */
-      public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount.Builder getGoogleAccountBuilder() {
+      public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount
+              .Builder
+          getGoogleAccountBuilder() {
         return getGoogleAccountFieldBuilder().getBuilder();
       }
       /**
+       *
+       *
        * <pre>
        * Authentication using a Google account.
        * </pre>
        *
-       * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount google_account = 1;</code>
+       * <code>
+       * .google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount google_account = 1;
+       * </code>
        */
-      public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccountOrBuilder getGoogleAccountOrBuilder() {
+      public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication
+              .GoogleAccountOrBuilder
+          getGoogleAccountOrBuilder() {
         if ((authenticationCase_ == 1) && (googleAccountBuilder_ != null)) {
           return googleAccountBuilder_.getMessageOrBuilder();
         } else {
           if (authenticationCase_ == 1) {
-            return (com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount) authentication_;
+            return (com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication
+                    .GoogleAccount)
+                authentication_;
           }
-          return com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount.getDefaultInstance();
+          return com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount
+              .getDefaultInstance();
         }
       }
       /**
+       *
+       *
        * <pre>
        * Authentication using a Google account.
        * </pre>
        *
-       * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount google_account = 1;</code>
+       * <code>
+       * .google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount google_account = 1;
+       * </code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount, com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount.Builder, com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccountOrBuilder> 
+              com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount,
+              com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount
+                  .Builder,
+              com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication
+                  .GoogleAccountOrBuilder>
           getGoogleAccountFieldBuilder() {
         if (googleAccountBuilder_ == null) {
           if (!(authenticationCase_ == 1)) {
-            authentication_ = com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount.getDefaultInstance();
+            authentication_ =
+                com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount
+                    .getDefaultInstance();
           }
-          googleAccountBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount, com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount.Builder, com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccountOrBuilder>(
-                  (com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.GoogleAccount) authentication_,
+          googleAccountBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication
+                      .GoogleAccount,
+                  com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication
+                      .GoogleAccount.Builder,
+                  com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication
+                      .GoogleAccountOrBuilder>(
+                  (com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication
+                          .GoogleAccount)
+                      authentication_,
                   getParentForChildren(),
                   isClean());
           authentication_ = null;
         }
         authenticationCase_ = 1;
-        onChanged();;
+        onChanged();
+        ;
         return googleAccountBuilder_;
       }
 
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount, com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount.Builder, com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccountOrBuilder> customAccountBuilder_;
+              com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount,
+              com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount
+                  .Builder,
+              com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication
+                  .CustomAccountOrBuilder>
+          customAccountBuilder_;
       /**
+       *
+       *
        * <pre>
        * Authentication using a custom account.
        * </pre>
        *
-       * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount custom_account = 2;</code>
+       * <code>
+       * .google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount custom_account = 2;
+       * </code>
        */
       public boolean hasCustomAccount() {
         return authenticationCase_ == 2;
       }
       /**
+       *
+       *
        * <pre>
        * Authentication using a custom account.
        * </pre>
        *
-       * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount custom_account = 2;</code>
+       * <code>
+       * .google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount custom_account = 2;
+       * </code>
        */
-      public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount getCustomAccount() {
+      public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount
+          getCustomAccount() {
         if (customAccountBuilder_ == null) {
           if (authenticationCase_ == 2) {
-            return (com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount) authentication_;
+            return (com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication
+                    .CustomAccount)
+                authentication_;
           }
-          return com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount.getDefaultInstance();
+          return com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount
+              .getDefaultInstance();
         } else {
           if (authenticationCase_ == 2) {
             return customAccountBuilder_.getMessage();
           }
-          return com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount.getDefaultInstance();
+          return com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount
+              .getDefaultInstance();
         }
       }
       /**
+       *
+       *
        * <pre>
        * Authentication using a custom account.
        * </pre>
        *
-       * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount custom_account = 2;</code>
+       * <code>
+       * .google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount custom_account = 2;
+       * </code>
        */
-      public Builder setCustomAccount(com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount value) {
+      public Builder setCustomAccount(
+          com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount
+              value) {
         if (customAccountBuilder_ == null) {
           if (value == null) {
             throw new NullPointerException();
@@ -3051,14 +3644,20 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Authentication using a custom account.
        * </pre>
        *
-       * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount custom_account = 2;</code>
+       * <code>
+       * .google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount custom_account = 2;
+       * </code>
        */
       public Builder setCustomAccount(
-          com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount.Builder builderForValue) {
+          com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount
+                  .Builder
+              builderForValue) {
         if (customAccountBuilder_ == null) {
           authentication_ = builderForValue.build();
           onChanged();
@@ -3069,18 +3668,32 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Authentication using a custom account.
        * </pre>
        *
-       * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount custom_account = 2;</code>
+       * <code>
+       * .google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount custom_account = 2;
+       * </code>
        */
-      public Builder mergeCustomAccount(com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount value) {
+      public Builder mergeCustomAccount(
+          com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount
+              value) {
         if (customAccountBuilder_ == null) {
-          if (authenticationCase_ == 2 &&
-              authentication_ != com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount.getDefaultInstance()) {
-            authentication_ = com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount.newBuilder((com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount) authentication_)
-                .mergeFrom(value).buildPartial();
+          if (authenticationCase_ == 2
+              && authentication_
+                  != com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication
+                      .CustomAccount.getDefaultInstance()) {
+            authentication_ =
+                com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount
+                    .newBuilder(
+                        (com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication
+                                .CustomAccount)
+                            authentication_)
+                    .mergeFrom(value)
+                    .buildPartial();
           } else {
             authentication_ = value;
           }
@@ -3095,11 +3708,15 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Authentication using a custom account.
        * </pre>
        *
-       * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount custom_account = 2;</code>
+       * <code>
+       * .google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount custom_account = 2;
+       * </code>
        */
       public Builder clearCustomAccount() {
         if (customAccountBuilder_ == null) {
@@ -3118,90 +3735,131 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Authentication using a custom account.
        * </pre>
        *
-       * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount custom_account = 2;</code>
+       * <code>
+       * .google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount custom_account = 2;
+       * </code>
        */
-      public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount.Builder getCustomAccountBuilder() {
+      public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount
+              .Builder
+          getCustomAccountBuilder() {
         return getCustomAccountFieldBuilder().getBuilder();
       }
       /**
+       *
+       *
        * <pre>
        * Authentication using a custom account.
        * </pre>
        *
-       * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount custom_account = 2;</code>
+       * <code>
+       * .google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount custom_account = 2;
+       * </code>
        */
-      public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccountOrBuilder getCustomAccountOrBuilder() {
+      public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication
+              .CustomAccountOrBuilder
+          getCustomAccountOrBuilder() {
         if ((authenticationCase_ == 2) && (customAccountBuilder_ != null)) {
           return customAccountBuilder_.getMessageOrBuilder();
         } else {
           if (authenticationCase_ == 2) {
-            return (com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount) authentication_;
+            return (com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication
+                    .CustomAccount)
+                authentication_;
           }
-          return com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount.getDefaultInstance();
+          return com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount
+              .getDefaultInstance();
         }
       }
       /**
+       *
+       *
        * <pre>
        * Authentication using a custom account.
        * </pre>
        *
-       * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount custom_account = 2;</code>
+       * <code>
+       * .google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount custom_account = 2;
+       * </code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount, com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount.Builder, com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccountOrBuilder> 
+              com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount,
+              com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount
+                  .Builder,
+              com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication
+                  .CustomAccountOrBuilder>
           getCustomAccountFieldBuilder() {
         if (customAccountBuilder_ == null) {
           if (!(authenticationCase_ == 2)) {
-            authentication_ = com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount.getDefaultInstance();
+            authentication_ =
+                com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount
+                    .getDefaultInstance();
           }
-          customAccountBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount, com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount.Builder, com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccountOrBuilder>(
-                  (com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.CustomAccount) authentication_,
+          customAccountBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication
+                      .CustomAccount,
+                  com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication
+                      .CustomAccount.Builder,
+                  com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication
+                      .CustomAccountOrBuilder>(
+                  (com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication
+                          .CustomAccount)
+                      authentication_,
                   getParentForChildren(),
                   isClean());
           authentication_ = null;
         }
         authenticationCase_ = 2;
-        onChanged();;
+        onChanged();
+        ;
         return customAccountBuilder_;
       }
+
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
       }
 
-
       // @@protoc_insertion_point(builder_scope:google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication)
     }
 
     // @@protoc_insertion_point(class_scope:google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication)
-    private static final com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication DEFAULT_INSTANCE;
+    private static final com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication
+        DEFAULT_INSTANCE;
+
     static {
-      DEFAULT_INSTANCE = new com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication();
+      DEFAULT_INSTANCE =
+          new com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication();
     }
 
-    public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication getDefaultInstance() {
+    public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication
+        getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<Authentication>
-        PARSER = new com.google.protobuf.AbstractParser<Authentication>() {
-      public Authentication parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Authentication(input, extensionRegistry);
-      }
-    };
+    private static final com.google.protobuf.Parser<Authentication> PARSER =
+        new com.google.protobuf.AbstractParser<Authentication>() {
+          @java.lang.Override
+          public Authentication parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new Authentication(input, extensionRegistry);
+          }
+        };
 
     public static com.google.protobuf.Parser<Authentication> parser() {
       return PARSER;
@@ -3212,17 +3870,21 @@ private static final long serialVersionUID = 0L;
       return PARSER;
     }
 
-    public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication getDefaultInstanceForType() {
+    @java.lang.Override
+    public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication
+        getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
-
   }
 
-  public interface ScheduleOrBuilder extends
+  public interface ScheduleOrBuilder
+      extends
       // @@protoc_insertion_point(interface_extends:google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule)
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     *
+     *
      * <pre>
      * A timestamp indicates when the next run will be scheduled. The value is
      * refreshed by the server after each run. If unspecified, it will default
@@ -3234,6 +3896,8 @@ private static final long serialVersionUID = 0L;
      */
     boolean hasScheduleTime();
     /**
+     *
+     *
      * <pre>
      * A timestamp indicates when the next run will be scheduled. The value is
      * refreshed by the server after each run. If unspecified, it will default
@@ -3245,6 +3909,8 @@ private static final long serialVersionUID = 0L;
      */
     com.google.protobuf.Timestamp getScheduleTime();
     /**
+     *
+     *
      * <pre>
      * A timestamp indicates when the next run will be scheduled. The value is
      * refreshed by the server after each run. If unspecified, it will default
@@ -3257,6 +3923,8 @@ private static final long serialVersionUID = 0L;
     com.google.protobuf.TimestampOrBuilder getScheduleTimeOrBuilder();
 
     /**
+     *
+     *
      * <pre>
      * Required.
      * The duration of time between executions in days.
@@ -3267,35 +3935,41 @@ private static final long serialVersionUID = 0L;
     int getIntervalDurationDays();
   }
   /**
+   *
+   *
    * <pre>
    * Scan schedule configuration.
    * </pre>
    *
    * Protobuf type {@code google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule}
    */
-  public  static final class Schedule extends
-      com.google.protobuf.GeneratedMessageV3 implements
+  public static final class Schedule extends com.google.protobuf.GeneratedMessageV3
+      implements
       // @@protoc_insertion_point(message_implements:google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule)
       ScheduleOrBuilder {
-  private static final long serialVersionUID = 0L;
+    private static final long serialVersionUID = 0L;
     // Use Schedule.newBuilder() to construct.
     private Schedule(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
+
     private Schedule() {
       intervalDurationDays_ = 0;
     }
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
+
     private Schedule(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -3307,58 +3981,65 @@ private static final long serialVersionUID = 0L;
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
-              }
-              break;
-            }
-            case 10: {
-              com.google.protobuf.Timestamp.Builder subBuilder = null;
-              if (scheduleTime_ != null) {
-                subBuilder = scheduleTime_.toBuilder();
-              }
-              scheduleTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-              if (subBuilder != null) {
-                subBuilder.mergeFrom(scheduleTime_);
-                scheduleTime_ = subBuilder.buildPartial();
-              }
+            case 10:
+              {
+                com.google.protobuf.Timestamp.Builder subBuilder = null;
+                if (scheduleTime_ != null) {
+                  subBuilder = scheduleTime_.toBuilder();
+                }
+                scheduleTime_ =
+                    input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+                if (subBuilder != null) {
+                  subBuilder.mergeFrom(scheduleTime_);
+                  scheduleTime_ = subBuilder.buildPartial();
+                }
 
-              break;
-            }
-            case 16: {
-
-              intervalDurationDays_ = input.readInt32();
-              break;
-            }
+                break;
+              }
+            case 16:
+              {
+                intervalDurationDays_ = input.readInt32();
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.websecurityscanner.v1alpha.ScanConfigProto.internal_static_google_cloud_websecurityscanner_v1alpha_ScanConfig_Schedule_descriptor;
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.websecurityscanner.v1alpha.ScanConfigProto
+          .internal_static_google_cloud_websecurityscanner_v1alpha_ScanConfig_Schedule_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.websecurityscanner.v1alpha.ScanConfigProto.internal_static_google_cloud_websecurityscanner_v1alpha_ScanConfig_Schedule_fieldAccessorTable
+      return com.google.cloud.websecurityscanner.v1alpha.ScanConfigProto
+          .internal_static_google_cloud_websecurityscanner_v1alpha_ScanConfig_Schedule_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule.class, com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule.Builder.class);
+              com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule.class,
+              com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule.Builder.class);
     }
 
     public static final int SCHEDULE_TIME_FIELD_NUMBER = 1;
     private com.google.protobuf.Timestamp scheduleTime_;
     /**
+     *
+     *
      * <pre>
      * A timestamp indicates when the next run will be scheduled. The value is
      * refreshed by the server after each run. If unspecified, it will default
@@ -3372,6 +4053,8 @@ private static final long serialVersionUID = 0L;
       return scheduleTime_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * A timestamp indicates when the next run will be scheduled. The value is
      * refreshed by the server after each run. If unspecified, it will default
@@ -3382,9 +4065,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp schedule_time = 1;</code>
      */
     public com.google.protobuf.Timestamp getScheduleTime() {
-      return scheduleTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : scheduleTime_;
+      return scheduleTime_ == null
+          ? com.google.protobuf.Timestamp.getDefaultInstance()
+          : scheduleTime_;
     }
     /**
+     *
+     *
      * <pre>
      * A timestamp indicates when the next run will be scheduled. The value is
      * refreshed by the server after each run. If unspecified, it will default
@@ -3401,6 +4088,8 @@ private static final long serialVersionUID = 0L;
     public static final int INTERVAL_DURATION_DAYS_FIELD_NUMBER = 2;
     private int intervalDurationDays_;
     /**
+     *
+     *
      * <pre>
      * Required.
      * The duration of time between executions in days.
@@ -3413,6 +4102,8 @@ private static final long serialVersionUID = 0L;
     }
 
     private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -3422,8 +4113,8 @@ private static final long serialVersionUID = 0L;
       return true;
     }
 
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
       if (scheduleTime_ != null) {
         output.writeMessage(1, getScheduleTime());
       }
@@ -3433,18 +4124,17 @@ private static final long serialVersionUID = 0L;
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
       if (scheduleTime_ != null) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(1, getScheduleTime());
+        size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getScheduleTime());
       }
       if (intervalDurationDays_ != 0) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt32Size(2, intervalDurationDays_);
+        size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, intervalDurationDays_);
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -3454,21 +4144,20 @@ private static final long serialVersionUID = 0L;
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-       return true;
+        return true;
       }
       if (!(obj instanceof com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule)) {
         return super.equals(obj);
       }
-      com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule other = (com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule) obj;
+      com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule other =
+          (com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule) obj;
 
       boolean result = true;
       result = result && (hasScheduleTime() == other.hasScheduleTime());
       if (hasScheduleTime()) {
-        result = result && getScheduleTime()
-            .equals(other.getScheduleTime());
+        result = result && getScheduleTime().equals(other.getScheduleTime());
       }
-      result = result && (getIntervalDurationDays()
-          == other.getIntervalDurationDays());
+      result = result && (getIntervalDurationDays() == other.getIntervalDurationDays());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -3492,85 +4181,95 @@ private static final long serialVersionUID = 0L;
     }
 
     public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule parseFrom(byte[] data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+
+    public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule parseFrom(
+        byte[] data) throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
+
     public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
-    public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule parseDelimitedFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
-    }
-    public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
-    }
+
     public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule parseFrom(
-        com.google.protobuf.CodedInputStream input)
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
+
+    public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule
+        parseDelimitedFrom(java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule
+        parseDelimitedFrom(
+            java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
     public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
 
-    public Builder newBuilderForType() { return newBuilder(); }
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule prototype) {
+
+    public static Builder newBuilder(
+        com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+
+    @java.lang.Override
     public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
     @java.lang.Override
@@ -3580,43 +4279,50 @@ private static final long serialVersionUID = 0L;
       return builder;
     }
     /**
+     *
+     *
      * <pre>
      * Scan schedule configuration.
      * </pre>
      *
      * Protobuf type {@code google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
         // @@protoc_insertion_point(builder_implements:google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule)
         com.google.cloud.websecurityscanner.v1alpha.ScanConfig.ScheduleOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.google.cloud.websecurityscanner.v1alpha.ScanConfigProto.internal_static_google_cloud_websecurityscanner_v1alpha_ScanConfig_Schedule_descriptor;
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.websecurityscanner.v1alpha.ScanConfigProto
+            .internal_static_google_cloud_websecurityscanner_v1alpha_ScanConfig_Schedule_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.google.cloud.websecurityscanner.v1alpha.ScanConfigProto.internal_static_google_cloud_websecurityscanner_v1alpha_ScanConfig_Schedule_fieldAccessorTable
+        return com.google.cloud.websecurityscanner.v1alpha.ScanConfigProto
+            .internal_static_google_cloud_websecurityscanner_v1alpha_ScanConfig_Schedule_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule.class, com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule.Builder.class);
+                com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule.class,
+                com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule.Builder.class);
       }
 
-      // Construct using com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule.newBuilder()
+      // Construct using
+      // com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
 
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
+
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
+
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         if (scheduleTimeBuilder_ == null) {
@@ -3630,15 +4336,19 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.google.cloud.websecurityscanner.v1alpha.ScanConfigProto.internal_static_google_cloud_websecurityscanner_v1alpha_ScanConfig_Schedule_descriptor;
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.websecurityscanner.v1alpha.ScanConfigProto
+            .internal_static_google_cloud_websecurityscanner_v1alpha_ScanConfig_Schedule_descriptor;
       }
 
-      public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule getDefaultInstanceForType() {
+      @java.lang.Override
+      public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule
+          getDefaultInstanceForType() {
         return com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule.getDefaultInstance();
       }
 
+      @java.lang.Override
       public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule build() {
         com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule result = buildPartial();
         if (!result.isInitialized()) {
@@ -3647,8 +4357,10 @@ private static final long serialVersionUID = 0L;
         return result;
       }
 
+      @java.lang.Override
       public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule buildPartial() {
-        com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule result = new com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule(this);
+        com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule result =
+            new com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule(this);
         if (scheduleTimeBuilder_ == null) {
           result.scheduleTime_ = scheduleTime_;
         } else {
@@ -3659,43 +4371,56 @@ private static final long serialVersionUID = 0L;
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+
+      @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index,
+          java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+
+      @java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule) {
-          return mergeFrom((com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule)other);
+          return mergeFrom((com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule) other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule other) {
-        if (other == com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule.getDefaultInstance()) return this;
+      public Builder mergeFrom(
+          com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule other) {
+        if (other
+            == com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule.getDefaultInstance())
+          return this;
         if (other.hasScheduleTime()) {
           mergeScheduleTime(other.getScheduleTime());
         }
@@ -3707,10 +4432,12 @@ private static final long serialVersionUID = 0L;
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -3719,7 +4446,9 @@ private static final long serialVersionUID = 0L;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule) e.getUnfinishedMessage();
+          parsedMessage =
+              (com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule)
+                  e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -3731,8 +4460,13 @@ private static final long serialVersionUID = 0L;
 
       private com.google.protobuf.Timestamp scheduleTime_ = null;
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> scheduleTimeBuilder_;
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
+          scheduleTimeBuilder_;
       /**
+       *
+       *
        * <pre>
        * A timestamp indicates when the next run will be scheduled. The value is
        * refreshed by the server after each run. If unspecified, it will default
@@ -3746,6 +4480,8 @@ private static final long serialVersionUID = 0L;
         return scheduleTimeBuilder_ != null || scheduleTime_ != null;
       }
       /**
+       *
+       *
        * <pre>
        * A timestamp indicates when the next run will be scheduled. The value is
        * refreshed by the server after each run. If unspecified, it will default
@@ -3757,12 +4493,16 @@ private static final long serialVersionUID = 0L;
        */
       public com.google.protobuf.Timestamp getScheduleTime() {
         if (scheduleTimeBuilder_ == null) {
-          return scheduleTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : scheduleTime_;
+          return scheduleTime_ == null
+              ? com.google.protobuf.Timestamp.getDefaultInstance()
+              : scheduleTime_;
         } else {
           return scheduleTimeBuilder_.getMessage();
         }
       }
       /**
+       *
+       *
        * <pre>
        * A timestamp indicates when the next run will be scheduled. The value is
        * refreshed by the server after each run. If unspecified, it will default
@@ -3786,6 +4526,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * A timestamp indicates when the next run will be scheduled. The value is
        * refreshed by the server after each run. If unspecified, it will default
@@ -3795,8 +4537,7 @@ private static final long serialVersionUID = 0L;
        *
        * <code>.google.protobuf.Timestamp schedule_time = 1;</code>
        */
-      public Builder setScheduleTime(
-          com.google.protobuf.Timestamp.Builder builderForValue) {
+      public Builder setScheduleTime(com.google.protobuf.Timestamp.Builder builderForValue) {
         if (scheduleTimeBuilder_ == null) {
           scheduleTime_ = builderForValue.build();
           onChanged();
@@ -3807,6 +4548,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * A timestamp indicates when the next run will be scheduled. The value is
        * refreshed by the server after each run. If unspecified, it will default
@@ -3820,7 +4563,9 @@ private static final long serialVersionUID = 0L;
         if (scheduleTimeBuilder_ == null) {
           if (scheduleTime_ != null) {
             scheduleTime_ =
-              com.google.protobuf.Timestamp.newBuilder(scheduleTime_).mergeFrom(value).buildPartial();
+                com.google.protobuf.Timestamp.newBuilder(scheduleTime_)
+                    .mergeFrom(value)
+                    .buildPartial();
           } else {
             scheduleTime_ = value;
           }
@@ -3832,6 +4577,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * A timestamp indicates when the next run will be scheduled. The value is
        * refreshed by the server after each run. If unspecified, it will default
@@ -3853,6 +4600,8 @@ private static final long serialVersionUID = 0L;
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * A timestamp indicates when the next run will be scheduled. The value is
        * refreshed by the server after each run. If unspecified, it will default
@@ -3863,11 +4612,13 @@ private static final long serialVersionUID = 0L;
        * <code>.google.protobuf.Timestamp schedule_time = 1;</code>
        */
       public com.google.protobuf.Timestamp.Builder getScheduleTimeBuilder() {
-        
+
         onChanged();
         return getScheduleTimeFieldBuilder().getBuilder();
       }
       /**
+       *
+       *
        * <pre>
        * A timestamp indicates when the next run will be scheduled. The value is
        * refreshed by the server after each run. If unspecified, it will default
@@ -3881,11 +4632,14 @@ private static final long serialVersionUID = 0L;
         if (scheduleTimeBuilder_ != null) {
           return scheduleTimeBuilder_.getMessageOrBuilder();
         } else {
-          return scheduleTime_ == null ?
-              com.google.protobuf.Timestamp.getDefaultInstance() : scheduleTime_;
+          return scheduleTime_ == null
+              ? com.google.protobuf.Timestamp.getDefaultInstance()
+              : scheduleTime_;
         }
       }
       /**
+       *
+       *
        * <pre>
        * A timestamp indicates when the next run will be scheduled. The value is
        * refreshed by the server after each run. If unspecified, it will default
@@ -3896,21 +4650,26 @@ private static final long serialVersionUID = 0L;
        * <code>.google.protobuf.Timestamp schedule_time = 1;</code>
        */
       private com.google.protobuf.SingleFieldBuilderV3<
-          com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+              com.google.protobuf.Timestamp,
+              com.google.protobuf.Timestamp.Builder,
+              com.google.protobuf.TimestampOrBuilder>
           getScheduleTimeFieldBuilder() {
         if (scheduleTimeBuilder_ == null) {
-          scheduleTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-              com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                  getScheduleTime(),
-                  getParentForChildren(),
-                  isClean());
+          scheduleTimeBuilder_ =
+              new com.google.protobuf.SingleFieldBuilderV3<
+                  com.google.protobuf.Timestamp,
+                  com.google.protobuf.Timestamp.Builder,
+                  com.google.protobuf.TimestampOrBuilder>(
+                  getScheduleTime(), getParentForChildren(), isClean());
           scheduleTime_ = null;
         }
         return scheduleTimeBuilder_;
       }
 
-      private int intervalDurationDays_ ;
+      private int intervalDurationDays_;
       /**
+       *
+       *
        * <pre>
        * Required.
        * The duration of time between executions in days.
@@ -3922,6 +4681,8 @@ private static final long serialVersionUID = 0L;
         return intervalDurationDays_;
       }
       /**
+       *
+       *
        * <pre>
        * Required.
        * The duration of time between executions in days.
@@ -3930,12 +4691,14 @@ private static final long serialVersionUID = 0L;
        * <code>int32 interval_duration_days = 2;</code>
        */
       public Builder setIntervalDurationDays(int value) {
-        
+
         intervalDurationDays_ = value;
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Required.
        * The duration of time between executions in days.
@@ -3944,44 +4707,50 @@ private static final long serialVersionUID = 0L;
        * <code>int32 interval_duration_days = 2;</code>
        */
       public Builder clearIntervalDurationDays() {
-        
+
         intervalDurationDays_ = 0;
         onChanged();
         return this;
       }
+
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
       }
 
-
       // @@protoc_insertion_point(builder_scope:google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule)
     }
 
     // @@protoc_insertion_point(class_scope:google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule)
-    private static final com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule DEFAULT_INSTANCE;
+    private static final com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule
+        DEFAULT_INSTANCE;
+
     static {
       DEFAULT_INSTANCE = new com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule();
     }
 
-    public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule getDefaultInstance() {
+    public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule
+        getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<Schedule>
-        PARSER = new com.google.protobuf.AbstractParser<Schedule>() {
-      public Schedule parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new Schedule(input, extensionRegistry);
-      }
-    };
+    private static final com.google.protobuf.Parser<Schedule> PARSER =
+        new com.google.protobuf.AbstractParser<Schedule>() {
+          @java.lang.Override
+          public Schedule parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new Schedule(input, extensionRegistry);
+          }
+        };
 
     public static com.google.protobuf.Parser<Schedule> parser() {
       return PARSER;
@@ -3992,16 +4761,19 @@ private static final long serialVersionUID = 0L;
       return PARSER;
     }
 
-    public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule getDefaultInstanceForType() {
+    @java.lang.Override
+    public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule
+        getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
-
   }
 
   private int bitField0_;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
+   *
+   *
    * <pre>
    * The resource name of the ScanConfig. The name follows the format of
    * 'projects/{projectId}/scanConfigs/{scanConfigId}'. The ScanConfig IDs are
@@ -4015,14 +4787,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       name_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The resource name of the ScanConfig. The name follows the format of
    * 'projects/{projectId}/scanConfigs/{scanConfigId}'. The ScanConfig IDs are
@@ -4031,13 +4804,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string name = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getNameBytes() {
+  public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       name_ = b;
       return b;
     } else {
@@ -4048,6 +4819,8 @@ private static final long serialVersionUID = 0L;
   public static final int DISPLAY_NAME_FIELD_NUMBER = 2;
   private volatile java.lang.Object displayName_;
   /**
+   *
+   *
    * <pre>
    * Required.
    * The user provided display name of the ScanConfig.
@@ -4060,14 +4833,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       displayName_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Required.
    * The user provided display name of the ScanConfig.
@@ -4075,13 +4849,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string display_name = 2;</code>
    */
-  public com.google.protobuf.ByteString
-      getDisplayNameBytes() {
+  public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       displayName_ = b;
       return b;
     } else {
@@ -4092,6 +4864,8 @@ private static final long serialVersionUID = 0L;
   public static final int MAX_QPS_FIELD_NUMBER = 3;
   private int maxQps_;
   /**
+   *
+   *
    * <pre>
    * The maximum QPS during scanning. A valid value ranges from 5 to 20
    * inclusively. If the field is unspecified or its value is set 0, server will
@@ -4108,6 +4882,8 @@ private static final long serialVersionUID = 0L;
   public static final int STARTING_URLS_FIELD_NUMBER = 4;
   private com.google.protobuf.LazyStringList startingUrls_;
   /**
+   *
+   *
    * <pre>
    * Required.
    * The starting URLs from which the scanner finds site pages.
@@ -4115,11 +4891,12 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string starting_urls = 4;</code>
    */
-  public com.google.protobuf.ProtocolStringList
-      getStartingUrlsList() {
+  public com.google.protobuf.ProtocolStringList getStartingUrlsList() {
     return startingUrls_;
   }
   /**
+   *
+   *
    * <pre>
    * Required.
    * The starting URLs from which the scanner finds site pages.
@@ -4131,6 +4908,8 @@ private static final long serialVersionUID = 0L;
     return startingUrls_.size();
   }
   /**
+   *
+   *
    * <pre>
    * Required.
    * The starting URLs from which the scanner finds site pages.
@@ -4142,6 +4921,8 @@ private static final long serialVersionUID = 0L;
     return startingUrls_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * Required.
    * The starting URLs from which the scanner finds site pages.
@@ -4149,50 +4930,63 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string starting_urls = 4;</code>
    */
-  public com.google.protobuf.ByteString
-      getStartingUrlsBytes(int index) {
+  public com.google.protobuf.ByteString getStartingUrlsBytes(int index) {
     return startingUrls_.getByteString(index);
   }
 
   public static final int AUTHENTICATION_FIELD_NUMBER = 5;
   private com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication authentication_;
   /**
+   *
+   *
    * <pre>
    * The authentication configuration. If specified, service will use the
    * authentication configuration during scanning.
    * </pre>
    *
-   * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication authentication = 5;</code>
+   * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication authentication = 5;
+   * </code>
    */
   public boolean hasAuthentication() {
     return authentication_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * The authentication configuration. If specified, service will use the
    * authentication configuration during scanning.
    * </pre>
    *
-   * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication authentication = 5;</code>
+   * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication authentication = 5;
+   * </code>
    */
   public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication getAuthentication() {
-    return authentication_ == null ? com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.getDefaultInstance() : authentication_;
+    return authentication_ == null
+        ? com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.getDefaultInstance()
+        : authentication_;
   }
   /**
+   *
+   *
    * <pre>
    * The authentication configuration. If specified, service will use the
    * authentication configuration during scanning.
    * </pre>
    *
-   * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication authentication = 5;</code>
+   * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication authentication = 5;
+   * </code>
    */
-  public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.AuthenticationOrBuilder getAuthenticationOrBuilder() {
+  public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.AuthenticationOrBuilder
+      getAuthenticationOrBuilder() {
     return getAuthentication();
   }
 
   public static final int USER_AGENT_FIELD_NUMBER = 6;
   private int userAgent_;
   /**
+   *
+   *
    * <pre>
    * The user agent used during scanning.
    * </pre>
@@ -4203,6 +4997,8 @@ private static final long serialVersionUID = 0L;
     return userAgent_;
   }
   /**
+   *
+   *
    * <pre>
    * The user agent used during scanning.
    * </pre>
@@ -4210,13 +5006,19 @@ private static final long serialVersionUID = 0L;
    * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.UserAgent user_agent = 6;</code>
    */
   public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.UserAgent getUserAgent() {
-    com.google.cloud.websecurityscanner.v1alpha.ScanConfig.UserAgent result = com.google.cloud.websecurityscanner.v1alpha.ScanConfig.UserAgent.valueOf(userAgent_);
-    return result == null ? com.google.cloud.websecurityscanner.v1alpha.ScanConfig.UserAgent.UNRECOGNIZED : result;
+    @SuppressWarnings("deprecation")
+    com.google.cloud.websecurityscanner.v1alpha.ScanConfig.UserAgent result =
+        com.google.cloud.websecurityscanner.v1alpha.ScanConfig.UserAgent.valueOf(userAgent_);
+    return result == null
+        ? com.google.cloud.websecurityscanner.v1alpha.ScanConfig.UserAgent.UNRECOGNIZED
+        : result;
   }
 
   public static final int BLACKLIST_PATTERNS_FIELD_NUMBER = 7;
   private com.google.protobuf.LazyStringList blacklistPatterns_;
   /**
+   *
+   *
    * <pre>
    * The blacklist URL patterns as described in
    * https://cloud.google.com/security-scanner/docs/excluded-urls
@@ -4224,11 +5026,12 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string blacklist_patterns = 7;</code>
    */
-  public com.google.protobuf.ProtocolStringList
-      getBlacklistPatternsList() {
+  public com.google.protobuf.ProtocolStringList getBlacklistPatternsList() {
     return blacklistPatterns_;
   }
   /**
+   *
+   *
    * <pre>
    * The blacklist URL patterns as described in
    * https://cloud.google.com/security-scanner/docs/excluded-urls
@@ -4240,6 +5043,8 @@ private static final long serialVersionUID = 0L;
     return blacklistPatterns_.size();
   }
   /**
+   *
+   *
    * <pre>
    * The blacklist URL patterns as described in
    * https://cloud.google.com/security-scanner/docs/excluded-urls
@@ -4251,6 +5056,8 @@ private static final long serialVersionUID = 0L;
     return blacklistPatterns_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * The blacklist URL patterns as described in
    * https://cloud.google.com/security-scanner/docs/excluded-urls
@@ -4258,14 +5065,15 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string blacklist_patterns = 7;</code>
    */
-  public com.google.protobuf.ByteString
-      getBlacklistPatternsBytes(int index) {
+  public com.google.protobuf.ByteString getBlacklistPatternsBytes(int index) {
     return blacklistPatterns_.getByteString(index);
   }
 
   public static final int SCHEDULE_FIELD_NUMBER = 8;
   private com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule schedule_;
   /**
+   *
+   *
    * <pre>
    * The schedule of the ScanConfig.
    * </pre>
@@ -4276,6 +5084,8 @@ private static final long serialVersionUID = 0L;
     return schedule_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * The schedule of the ScanConfig.
    * </pre>
@@ -4283,90 +5093,129 @@ private static final long serialVersionUID = 0L;
    * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule schedule = 8;</code>
    */
   public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule getSchedule() {
-    return schedule_ == null ? com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule.getDefaultInstance() : schedule_;
+    return schedule_ == null
+        ? com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule.getDefaultInstance()
+        : schedule_;
   }
   /**
+   *
+   *
    * <pre>
    * The schedule of the ScanConfig.
    * </pre>
    *
    * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule schedule = 8;</code>
    */
-  public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.ScheduleOrBuilder getScheduleOrBuilder() {
+  public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.ScheduleOrBuilder
+      getScheduleOrBuilder() {
     return getSchedule();
   }
 
   public static final int TARGET_PLATFORMS_FIELD_NUMBER = 9;
   private java.util.List<java.lang.Integer> targetPlatforms_;
   private static final com.google.protobuf.Internal.ListAdapter.Converter<
-      java.lang.Integer, com.google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform> targetPlatforms_converter_ =
+          java.lang.Integer, com.google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform>
+      targetPlatforms_converter_ =
           new com.google.protobuf.Internal.ListAdapter.Converter<
-              java.lang.Integer, com.google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform>() {
-            public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform convert(java.lang.Integer from) {
-              com.google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform result = com.google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform.valueOf(from);
-              return result == null ? com.google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform.UNRECOGNIZED : result;
+              java.lang.Integer,
+              com.google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform>() {
+            public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform convert(
+                java.lang.Integer from) {
+              @SuppressWarnings("deprecation")
+              com.google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform result =
+                  com.google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform.valueOf(
+                      from);
+              return result == null
+                  ? com.google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform
+                      .UNRECOGNIZED
+                  : result;
             }
           };
   /**
+   *
+   *
    * <pre>
    * Set of Cloud Platforms targeted by the scan. If empty, APP_ENGINE will be
    * used as a default.
    * </pre>
    *
-   * <code>repeated .google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform target_platforms = 9;</code>
+   * <code>
+   * repeated .google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform target_platforms = 9;
+   * </code>
    */
-  public java.util.List<com.google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform> getTargetPlatformsList() {
+  public java.util.List<com.google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform>
+      getTargetPlatformsList() {
     return new com.google.protobuf.Internal.ListAdapter<
-        java.lang.Integer, com.google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform>(targetPlatforms_, targetPlatforms_converter_);
+        java.lang.Integer, com.google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform>(
+        targetPlatforms_, targetPlatforms_converter_);
   }
   /**
+   *
+   *
    * <pre>
    * Set of Cloud Platforms targeted by the scan. If empty, APP_ENGINE will be
    * used as a default.
    * </pre>
    *
-   * <code>repeated .google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform target_platforms = 9;</code>
+   * <code>
+   * repeated .google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform target_platforms = 9;
+   * </code>
    */
   public int getTargetPlatformsCount() {
     return targetPlatforms_.size();
   }
   /**
+   *
+   *
    * <pre>
    * Set of Cloud Platforms targeted by the scan. If empty, APP_ENGINE will be
    * used as a default.
    * </pre>
    *
-   * <code>repeated .google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform target_platforms = 9;</code>
+   * <code>
+   * repeated .google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform target_platforms = 9;
+   * </code>
    */
-  public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform getTargetPlatforms(int index) {
+  public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform getTargetPlatforms(
+      int index) {
     return targetPlatforms_converter_.convert(targetPlatforms_.get(index));
   }
   /**
+   *
+   *
    * <pre>
    * Set of Cloud Platforms targeted by the scan. If empty, APP_ENGINE will be
    * used as a default.
    * </pre>
    *
-   * <code>repeated .google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform target_platforms = 9;</code>
+   * <code>
+   * repeated .google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform target_platforms = 9;
+   * </code>
    */
-  public java.util.List<java.lang.Integer>
-  getTargetPlatformsValueList() {
+  public java.util.List<java.lang.Integer> getTargetPlatformsValueList() {
     return targetPlatforms_;
   }
   /**
+   *
+   *
    * <pre>
    * Set of Cloud Platforms targeted by the scan. If empty, APP_ENGINE will be
    * used as a default.
    * </pre>
    *
-   * <code>repeated .google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform target_platforms = 9;</code>
+   * <code>
+   * repeated .google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform target_platforms = 9;
+   * </code>
    */
   public int getTargetPlatformsValue(int index) {
     return targetPlatforms_.get(index);
   }
+
   private int targetPlatformsMemoizedSerializedSize;
 
   private byte memoizedIsInitialized = -1;
+
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -4376,8 +5225,8 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  @java.lang.Override
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     getSerializedSize();
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
@@ -4394,7 +5243,9 @@ private static final long serialVersionUID = 0L;
     if (authentication_ != null) {
       output.writeMessage(5, getAuthentication());
     }
-    if (userAgent_ != com.google.cloud.websecurityscanner.v1alpha.ScanConfig.UserAgent.USER_AGENT_UNSPECIFIED.getNumber()) {
+    if (userAgent_
+        != com.google.cloud.websecurityscanner.v1alpha.ScanConfig.UserAgent.USER_AGENT_UNSPECIFIED
+            .getNumber()) {
       output.writeEnum(6, userAgent_);
     }
     for (int i = 0; i < blacklistPatterns_.size(); i++) {
@@ -4413,6 +5264,7 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -4425,8 +5277,7 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, displayName_);
     }
     if (maxQps_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(3, maxQps_);
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(3, maxQps_);
     }
     {
       int dataSize = 0;
@@ -4437,12 +5288,12 @@ private static final long serialVersionUID = 0L;
       size += 1 * getStartingUrlsList().size();
     }
     if (authentication_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(5, getAuthentication());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getAuthentication());
     }
-    if (userAgent_ != com.google.cloud.websecurityscanner.v1alpha.ScanConfig.UserAgent.USER_AGENT_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(6, userAgent_);
+    if (userAgent_
+        != com.google.cloud.websecurityscanner.v1alpha.ScanConfig.UserAgent.USER_AGENT_UNSPECIFIED
+            .getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(6, userAgent_);
     }
     {
       int dataSize = 0;
@@ -4453,20 +5304,20 @@ private static final long serialVersionUID = 0L;
       size += 1 * getBlacklistPatternsList().size();
     }
     if (schedule_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(8, getSchedule());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getSchedule());
     }
     {
       int dataSize = 0;
       for (int i = 0; i < targetPlatforms_.size(); i++) {
-        dataSize += com.google.protobuf.CodedOutputStream
-          .computeEnumSizeNoTag(targetPlatforms_.get(i));
+        dataSize +=
+            com.google.protobuf.CodedOutputStream.computeEnumSizeNoTag(targetPlatforms_.get(i));
       }
       size += dataSize;
-      if (!getTargetPlatformsList().isEmpty()) {  size += 1;
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32SizeNoTag(dataSize);
-      }targetPlatformsMemoizedSerializedSize = dataSize;
+      if (!getTargetPlatformsList().isEmpty()) {
+        size += 1;
+        size += com.google.protobuf.CodedOutputStream.computeUInt32SizeNoTag(dataSize);
+      }
+      targetPlatformsMemoizedSerializedSize = dataSize;
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -4476,34 +5327,28 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.websecurityscanner.v1alpha.ScanConfig)) {
       return super.equals(obj);
     }
-    com.google.cloud.websecurityscanner.v1alpha.ScanConfig other = (com.google.cloud.websecurityscanner.v1alpha.ScanConfig) obj;
+    com.google.cloud.websecurityscanner.v1alpha.ScanConfig other =
+        (com.google.cloud.websecurityscanner.v1alpha.ScanConfig) obj;
 
     boolean result = true;
-    result = result && getName()
-        .equals(other.getName());
-    result = result && getDisplayName()
-        .equals(other.getDisplayName());
-    result = result && (getMaxQps()
-        == other.getMaxQps());
-    result = result && getStartingUrlsList()
-        .equals(other.getStartingUrlsList());
+    result = result && getName().equals(other.getName());
+    result = result && getDisplayName().equals(other.getDisplayName());
+    result = result && (getMaxQps() == other.getMaxQps());
+    result = result && getStartingUrlsList().equals(other.getStartingUrlsList());
     result = result && (hasAuthentication() == other.hasAuthentication());
     if (hasAuthentication()) {
-      result = result && getAuthentication()
-          .equals(other.getAuthentication());
+      result = result && getAuthentication().equals(other.getAuthentication());
     }
     result = result && userAgent_ == other.userAgent_;
-    result = result && getBlacklistPatternsList()
-        .equals(other.getBlacklistPatternsList());
+    result = result && getBlacklistPatternsList().equals(other.getBlacklistPatternsList());
     result = result && (hasSchedule() == other.hasSchedule());
     if (hasSchedule()) {
-      result = result && getSchedule()
-          .equals(other.getSchedule());
+      result = result && getSchedule().equals(other.getSchedule());
     }
     result = result && targetPlatforms_.equals(other.targetPlatforms_);
     result = result && unknownFields.equals(other.unknownFields);
@@ -4551,114 +5396,127 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.websecurityscanner.v1alpha.ScanConfig parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  public Builder newBuilderForType() { return newBuilder(); }
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-  public static Builder newBuilder(com.google.cloud.websecurityscanner.v1alpha.ScanConfig prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+
+  public static Builder newBuilder(
+      com.google.cloud.websecurityscanner.v1alpha.ScanConfig prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+
+  @java.lang.Override
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * A ScanConfig resource contains the configurations to launch a scan.
    * </pre>
    *
    * Protobuf type {@code google.cloud.websecurityscanner.v1alpha.ScanConfig}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.websecurityscanner.v1alpha.ScanConfig)
       com.google.cloud.websecurityscanner.v1alpha.ScanConfigOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.websecurityscanner.v1alpha.ScanConfigProto.internal_static_google_cloud_websecurityscanner_v1alpha_ScanConfig_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.websecurityscanner.v1alpha.ScanConfigProto
+          .internal_static_google_cloud_websecurityscanner_v1alpha_ScanConfig_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.websecurityscanner.v1alpha.ScanConfigProto.internal_static_google_cloud_websecurityscanner_v1alpha_ScanConfig_fieldAccessorTable
+      return com.google.cloud.websecurityscanner.v1alpha.ScanConfigProto
+          .internal_static_google_cloud_websecurityscanner_v1alpha_ScanConfig_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.websecurityscanner.v1alpha.ScanConfig.class, com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Builder.class);
+              com.google.cloud.websecurityscanner.v1alpha.ScanConfig.class,
+              com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Builder.class);
     }
 
     // Construct using com.google.cloud.websecurityscanner.v1alpha.ScanConfig.newBuilder()
@@ -4666,16 +5524,16 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       name_ = "";
@@ -4707,15 +5565,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.websecurityscanner.v1alpha.ScanConfigProto.internal_static_google_cloud_websecurityscanner_v1alpha_ScanConfig_descriptor;
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.websecurityscanner.v1alpha.ScanConfigProto
+          .internal_static_google_cloud_websecurityscanner_v1alpha_ScanConfig_descriptor;
     }
 
+    @java.lang.Override
     public com.google.cloud.websecurityscanner.v1alpha.ScanConfig getDefaultInstanceForType() {
       return com.google.cloud.websecurityscanner.v1alpha.ScanConfig.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.cloud.websecurityscanner.v1alpha.ScanConfig build() {
       com.google.cloud.websecurityscanner.v1alpha.ScanConfig result = buildPartial();
       if (!result.isInitialized()) {
@@ -4724,8 +5585,10 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.cloud.websecurityscanner.v1alpha.ScanConfig buildPartial() {
-      com.google.cloud.websecurityscanner.v1alpha.ScanConfig result = new com.google.cloud.websecurityscanner.v1alpha.ScanConfig(this);
+      com.google.cloud.websecurityscanner.v1alpha.ScanConfig result =
+          new com.google.cloud.websecurityscanner.v1alpha.ScanConfig(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       result.name_ = name_;
@@ -4762,35 +5625,43 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+
+    @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+    @java.lang.Override
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+    @java.lang.Override
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
+    @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
+    @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.websecurityscanner.v1alpha.ScanConfig) {
-        return mergeFrom((com.google.cloud.websecurityscanner.v1alpha.ScanConfig)other);
+        return mergeFrom((com.google.cloud.websecurityscanner.v1alpha.ScanConfig) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -4798,7 +5669,8 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.cloud.websecurityscanner.v1alpha.ScanConfig other) {
-      if (other == com.google.cloud.websecurityscanner.v1alpha.ScanConfig.getDefaultInstance()) return this;
+      if (other == com.google.cloud.websecurityscanner.v1alpha.ScanConfig.getDefaultInstance())
+        return this;
       if (!other.getName().isEmpty()) {
         name_ = other.name_;
         onChanged();
@@ -4854,10 +5726,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -4866,7 +5740,8 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.websecurityscanner.v1alpha.ScanConfig) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.cloud.websecurityscanner.v1alpha.ScanConfig) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -4875,10 +5750,13 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
+     *
+     *
      * <pre>
      * The resource name of the ScanConfig. The name follows the format of
      * 'projects/{projectId}/scanConfigs/{scanConfigId}'. The ScanConfig IDs are
@@ -4890,8 +5768,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         name_ = s;
         return s;
@@ -4900,6 +5777,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The resource name of the ScanConfig. The name follows the format of
      * 'projects/{projectId}/scanConfigs/{scanConfigId}'. The ScanConfig IDs are
@@ -4908,13 +5787,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getNameBytes() {
+    public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         name_ = b;
         return b;
       } else {
@@ -4922,6 +5799,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The resource name of the ScanConfig. The name follows the format of
      * 'projects/{projectId}/scanConfigs/{scanConfigId}'. The ScanConfig IDs are
@@ -4930,17 +5809,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public Builder setName(
-        java.lang.String value) {
+    public Builder setName(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       name_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The resource name of the ScanConfig. The name follows the format of
      * 'projects/{projectId}/scanConfigs/{scanConfigId}'. The ScanConfig IDs are
@@ -4950,12 +5830,14 @@ private static final long serialVersionUID = 0L;
      * <code>string name = 1;</code>
      */
     public Builder clearName() {
-      
+
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The resource name of the ScanConfig. The name follows the format of
      * 'projects/{projectId}/scanConfigs/{scanConfigId}'. The ScanConfig IDs are
@@ -4964,13 +5846,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public Builder setNameBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       name_ = value;
       onChanged();
       return this;
@@ -4978,6 +5859,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object displayName_ = "";
     /**
+     *
+     *
      * <pre>
      * Required.
      * The user provided display name of the ScanConfig.
@@ -4988,8 +5871,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getDisplayName() {
       java.lang.Object ref = displayName_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         displayName_ = s;
         return s;
@@ -4998,6 +5880,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required.
      * The user provided display name of the ScanConfig.
@@ -5005,13 +5889,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string display_name = 2;</code>
      */
-    public com.google.protobuf.ByteString
-        getDisplayNameBytes() {
+    public com.google.protobuf.ByteString getDisplayNameBytes() {
       java.lang.Object ref = displayName_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         displayName_ = b;
         return b;
       } else {
@@ -5019,6 +5901,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required.
      * The user provided display name of the ScanConfig.
@@ -5026,17 +5910,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string display_name = 2;</code>
      */
-    public Builder setDisplayName(
-        java.lang.String value) {
+    public Builder setDisplayName(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       displayName_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required.
      * The user provided display name of the ScanConfig.
@@ -5045,12 +5930,14 @@ private static final long serialVersionUID = 0L;
      * <code>string display_name = 2;</code>
      */
     public Builder clearDisplayName() {
-      
+
       displayName_ = getDefaultInstance().getDisplayName();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required.
      * The user provided display name of the ScanConfig.
@@ -5058,20 +5945,21 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string display_name = 2;</code>
      */
-    public Builder setDisplayNameBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       displayName_ = value;
       onChanged();
       return this;
     }
 
-    private int maxQps_ ;
+    private int maxQps_;
     /**
+     *
+     *
      * <pre>
      * The maximum QPS during scanning. A valid value ranges from 5 to 20
      * inclusively. If the field is unspecified or its value is set 0, server will
@@ -5085,6 +5973,8 @@ private static final long serialVersionUID = 0L;
       return maxQps_;
     }
     /**
+     *
+     *
      * <pre>
      * The maximum QPS during scanning. A valid value ranges from 5 to 20
      * inclusively. If the field is unspecified or its value is set 0, server will
@@ -5095,12 +5985,14 @@ private static final long serialVersionUID = 0L;
      * <code>int32 max_qps = 3;</code>
      */
     public Builder setMaxQps(int value) {
-      
+
       maxQps_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The maximum QPS during scanning. A valid value ranges from 5 to 20
      * inclusively. If the field is unspecified or its value is set 0, server will
@@ -5111,20 +6003,24 @@ private static final long serialVersionUID = 0L;
      * <code>int32 max_qps = 3;</code>
      */
     public Builder clearMaxQps() {
-      
+
       maxQps_ = 0;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList startingUrls_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringList startingUrls_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
     private void ensureStartingUrlsIsMutable() {
       if (!((bitField0_ & 0x00000008) == 0x00000008)) {
         startingUrls_ = new com.google.protobuf.LazyStringArrayList(startingUrls_);
         bitField0_ |= 0x00000008;
-       }
+      }
     }
     /**
+     *
+     *
      * <pre>
      * Required.
      * The starting URLs from which the scanner finds site pages.
@@ -5132,11 +6028,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string starting_urls = 4;</code>
      */
-    public com.google.protobuf.ProtocolStringList
-        getStartingUrlsList() {
+    public com.google.protobuf.ProtocolStringList getStartingUrlsList() {
       return startingUrls_.getUnmodifiableView();
     }
     /**
+     *
+     *
      * <pre>
      * Required.
      * The starting URLs from which the scanner finds site pages.
@@ -5148,6 +6045,8 @@ private static final long serialVersionUID = 0L;
       return startingUrls_.size();
     }
     /**
+     *
+     *
      * <pre>
      * Required.
      * The starting URLs from which the scanner finds site pages.
@@ -5159,6 +6058,8 @@ private static final long serialVersionUID = 0L;
       return startingUrls_.get(index);
     }
     /**
+     *
+     *
      * <pre>
      * Required.
      * The starting URLs from which the scanner finds site pages.
@@ -5166,11 +6067,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string starting_urls = 4;</code>
      */
-    public com.google.protobuf.ByteString
-        getStartingUrlsBytes(int index) {
+    public com.google.protobuf.ByteString getStartingUrlsBytes(int index) {
       return startingUrls_.getByteString(index);
     }
     /**
+     *
+     *
      * <pre>
      * Required.
      * The starting URLs from which the scanner finds site pages.
@@ -5178,17 +6080,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string starting_urls = 4;</code>
      */
-    public Builder setStartingUrls(
-        int index, java.lang.String value) {
+    public Builder setStartingUrls(int index, java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureStartingUrlsIsMutable();
+        throw new NullPointerException();
+      }
+      ensureStartingUrlsIsMutable();
       startingUrls_.set(index, value);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required.
      * The starting URLs from which the scanner finds site pages.
@@ -5196,17 +6099,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string starting_urls = 4;</code>
      */
-    public Builder addStartingUrls(
-        java.lang.String value) {
+    public Builder addStartingUrls(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureStartingUrlsIsMutable();
+        throw new NullPointerException();
+      }
+      ensureStartingUrlsIsMutable();
       startingUrls_.add(value);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required.
      * The starting URLs from which the scanner finds site pages.
@@ -5214,15 +6118,15 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string starting_urls = 4;</code>
      */
-    public Builder addAllStartingUrls(
-        java.lang.Iterable<java.lang.String> values) {
+    public Builder addAllStartingUrls(java.lang.Iterable<java.lang.String> values) {
       ensureStartingUrlsIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(
-          values, startingUrls_);
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, startingUrls_);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required.
      * The starting URLs from which the scanner finds site pages.
@@ -5237,6 +6141,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required.
      * The starting URLs from which the scanner finds site pages.
@@ -5244,56 +6150,73 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string starting_urls = 4;</code>
      */
-    public Builder addStartingUrlsBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder addStartingUrlsBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
       ensureStartingUrlsIsMutable();
       startingUrls_.add(value);
       onChanged();
       return this;
     }
 
-    private com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication authentication_ = null;
+    private com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication authentication_ =
+        null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication, com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.Builder, com.google.cloud.websecurityscanner.v1alpha.ScanConfig.AuthenticationOrBuilder> authenticationBuilder_;
+            com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication,
+            com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.Builder,
+            com.google.cloud.websecurityscanner.v1alpha.ScanConfig.AuthenticationOrBuilder>
+        authenticationBuilder_;
     /**
+     *
+     *
      * <pre>
      * The authentication configuration. If specified, service will use the
      * authentication configuration during scanning.
      * </pre>
      *
-     * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication authentication = 5;</code>
+     * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication authentication = 5;
+     * </code>
      */
     public boolean hasAuthentication() {
       return authenticationBuilder_ != null || authentication_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * The authentication configuration. If specified, service will use the
      * authentication configuration during scanning.
      * </pre>
      *
-     * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication authentication = 5;</code>
+     * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication authentication = 5;
+     * </code>
      */
-    public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication getAuthentication() {
+    public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication
+        getAuthentication() {
       if (authenticationBuilder_ == null) {
-        return authentication_ == null ? com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.getDefaultInstance() : authentication_;
+        return authentication_ == null
+            ? com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication
+                .getDefaultInstance()
+            : authentication_;
       } else {
         return authenticationBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * The authentication configuration. If specified, service will use the
      * authentication configuration during scanning.
      * </pre>
      *
-     * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication authentication = 5;</code>
+     * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication authentication = 5;
+     * </code>
      */
-    public Builder setAuthentication(com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication value) {
+    public Builder setAuthentication(
+        com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication value) {
       if (authenticationBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -5307,15 +6230,19 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The authentication configuration. If specified, service will use the
      * authentication configuration during scanning.
      * </pre>
      *
-     * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication authentication = 5;</code>
+     * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication authentication = 5;
+     * </code>
      */
     public Builder setAuthentication(
-        com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.Builder builderForValue) {
+        com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.Builder
+            builderForValue) {
       if (authenticationBuilder_ == null) {
         authentication_ = builderForValue.build();
         onChanged();
@@ -5326,18 +6253,25 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The authentication configuration. If specified, service will use the
      * authentication configuration during scanning.
      * </pre>
      *
-     * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication authentication = 5;</code>
+     * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication authentication = 5;
+     * </code>
      */
-    public Builder mergeAuthentication(com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication value) {
+    public Builder mergeAuthentication(
+        com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication value) {
       if (authenticationBuilder_ == null) {
         if (authentication_ != null) {
           authentication_ =
-            com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.newBuilder(authentication_).mergeFrom(value).buildPartial();
+              com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.newBuilder(
+                      authentication_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           authentication_ = value;
         }
@@ -5349,12 +6283,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The authentication configuration. If specified, service will use the
      * authentication configuration during scanning.
      * </pre>
      *
-     * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication authentication = 5;</code>
+     * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication authentication = 5;
+     * </code>
      */
     public Builder clearAuthentication() {
       if (authenticationBuilder_ == null) {
@@ -5368,51 +6305,67 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The authentication configuration. If specified, service will use the
      * authentication configuration during scanning.
      * </pre>
      *
-     * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication authentication = 5;</code>
+     * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication authentication = 5;
+     * </code>
      */
-    public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.Builder getAuthenticationBuilder() {
-      
+    public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.Builder
+        getAuthenticationBuilder() {
+
       onChanged();
       return getAuthenticationFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * The authentication configuration. If specified, service will use the
      * authentication configuration during scanning.
      * </pre>
      *
-     * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication authentication = 5;</code>
+     * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication authentication = 5;
+     * </code>
      */
-    public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.AuthenticationOrBuilder getAuthenticationOrBuilder() {
+    public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.AuthenticationOrBuilder
+        getAuthenticationOrBuilder() {
       if (authenticationBuilder_ != null) {
         return authenticationBuilder_.getMessageOrBuilder();
       } else {
-        return authentication_ == null ?
-            com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.getDefaultInstance() : authentication_;
+        return authentication_ == null
+            ? com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication
+                .getDefaultInstance()
+            : authentication_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The authentication configuration. If specified, service will use the
      * authentication configuration during scanning.
      * </pre>
      *
-     * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication authentication = 5;</code>
+     * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication authentication = 5;
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication, com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.Builder, com.google.cloud.websecurityscanner.v1alpha.ScanConfig.AuthenticationOrBuilder> 
+            com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication,
+            com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.Builder,
+            com.google.cloud.websecurityscanner.v1alpha.ScanConfig.AuthenticationOrBuilder>
         getAuthenticationFieldBuilder() {
       if (authenticationBuilder_ == null) {
-        authenticationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication, com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.Builder, com.google.cloud.websecurityscanner.v1alpha.ScanConfig.AuthenticationOrBuilder>(
-                getAuthentication(),
-                getParentForChildren(),
-                isClean());
+        authenticationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication,
+                com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Authentication.Builder,
+                com.google.cloud.websecurityscanner.v1alpha.ScanConfig.AuthenticationOrBuilder>(
+                getAuthentication(), getParentForChildren(), isClean());
         authentication_ = null;
       }
       return authenticationBuilder_;
@@ -5420,6 +6373,8 @@ private static final long serialVersionUID = 0L;
 
     private int userAgent_ = 0;
     /**
+     *
+     *
      * <pre>
      * The user agent used during scanning.
      * </pre>
@@ -5430,6 +6385,8 @@ private static final long serialVersionUID = 0L;
       return userAgent_;
     }
     /**
+     *
+     *
      * <pre>
      * The user agent used during scanning.
      * </pre>
@@ -5442,6 +6399,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The user agent used during scanning.
      * </pre>
@@ -5449,26 +6408,35 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.UserAgent user_agent = 6;</code>
      */
     public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.UserAgent getUserAgent() {
-      com.google.cloud.websecurityscanner.v1alpha.ScanConfig.UserAgent result = com.google.cloud.websecurityscanner.v1alpha.ScanConfig.UserAgent.valueOf(userAgent_);
-      return result == null ? com.google.cloud.websecurityscanner.v1alpha.ScanConfig.UserAgent.UNRECOGNIZED : result;
+      @SuppressWarnings("deprecation")
+      com.google.cloud.websecurityscanner.v1alpha.ScanConfig.UserAgent result =
+          com.google.cloud.websecurityscanner.v1alpha.ScanConfig.UserAgent.valueOf(userAgent_);
+      return result == null
+          ? com.google.cloud.websecurityscanner.v1alpha.ScanConfig.UserAgent.UNRECOGNIZED
+          : result;
     }
     /**
+     *
+     *
      * <pre>
      * The user agent used during scanning.
      * </pre>
      *
      * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.UserAgent user_agent = 6;</code>
      */
-    public Builder setUserAgent(com.google.cloud.websecurityscanner.v1alpha.ScanConfig.UserAgent value) {
+    public Builder setUserAgent(
+        com.google.cloud.websecurityscanner.v1alpha.ScanConfig.UserAgent value) {
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       userAgent_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The user agent used during scanning.
      * </pre>
@@ -5476,20 +6444,24 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.UserAgent user_agent = 6;</code>
      */
     public Builder clearUserAgent() {
-      
+
       userAgent_ = 0;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.LazyStringList blacklistPatterns_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringList blacklistPatterns_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
     private void ensureBlacklistPatternsIsMutable() {
       if (!((bitField0_ & 0x00000040) == 0x00000040)) {
         blacklistPatterns_ = new com.google.protobuf.LazyStringArrayList(blacklistPatterns_);
         bitField0_ |= 0x00000040;
-       }
+      }
     }
     /**
+     *
+     *
      * <pre>
      * The blacklist URL patterns as described in
      * https://cloud.google.com/security-scanner/docs/excluded-urls
@@ -5497,11 +6469,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string blacklist_patterns = 7;</code>
      */
-    public com.google.protobuf.ProtocolStringList
-        getBlacklistPatternsList() {
+    public com.google.protobuf.ProtocolStringList getBlacklistPatternsList() {
       return blacklistPatterns_.getUnmodifiableView();
     }
     /**
+     *
+     *
      * <pre>
      * The blacklist URL patterns as described in
      * https://cloud.google.com/security-scanner/docs/excluded-urls
@@ -5513,6 +6486,8 @@ private static final long serialVersionUID = 0L;
       return blacklistPatterns_.size();
     }
     /**
+     *
+     *
      * <pre>
      * The blacklist URL patterns as described in
      * https://cloud.google.com/security-scanner/docs/excluded-urls
@@ -5524,6 +6499,8 @@ private static final long serialVersionUID = 0L;
       return blacklistPatterns_.get(index);
     }
     /**
+     *
+     *
      * <pre>
      * The blacklist URL patterns as described in
      * https://cloud.google.com/security-scanner/docs/excluded-urls
@@ -5531,11 +6508,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string blacklist_patterns = 7;</code>
      */
-    public com.google.protobuf.ByteString
-        getBlacklistPatternsBytes(int index) {
+    public com.google.protobuf.ByteString getBlacklistPatternsBytes(int index) {
       return blacklistPatterns_.getByteString(index);
     }
     /**
+     *
+     *
      * <pre>
      * The blacklist URL patterns as described in
      * https://cloud.google.com/security-scanner/docs/excluded-urls
@@ -5543,17 +6521,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string blacklist_patterns = 7;</code>
      */
-    public Builder setBlacklistPatterns(
-        int index, java.lang.String value) {
+    public Builder setBlacklistPatterns(int index, java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureBlacklistPatternsIsMutable();
+        throw new NullPointerException();
+      }
+      ensureBlacklistPatternsIsMutable();
       blacklistPatterns_.set(index, value);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The blacklist URL patterns as described in
      * https://cloud.google.com/security-scanner/docs/excluded-urls
@@ -5561,17 +6540,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string blacklist_patterns = 7;</code>
      */
-    public Builder addBlacklistPatterns(
-        java.lang.String value) {
+    public Builder addBlacklistPatterns(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureBlacklistPatternsIsMutable();
+        throw new NullPointerException();
+      }
+      ensureBlacklistPatternsIsMutable();
       blacklistPatterns_.add(value);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The blacklist URL patterns as described in
      * https://cloud.google.com/security-scanner/docs/excluded-urls
@@ -5579,15 +6559,15 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string blacklist_patterns = 7;</code>
      */
-    public Builder addAllBlacklistPatterns(
-        java.lang.Iterable<java.lang.String> values) {
+    public Builder addAllBlacklistPatterns(java.lang.Iterable<java.lang.String> values) {
       ensureBlacklistPatternsIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(
-          values, blacklistPatterns_);
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, blacklistPatterns_);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The blacklist URL patterns as described in
      * https://cloud.google.com/security-scanner/docs/excluded-urls
@@ -5602,6 +6582,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The blacklist URL patterns as described in
      * https://cloud.google.com/security-scanner/docs/excluded-urls
@@ -5609,12 +6591,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string blacklist_patterns = 7;</code>
      */
-    public Builder addBlacklistPatternsBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder addBlacklistPatternsBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
       ensureBlacklistPatternsIsMutable();
       blacklistPatterns_.add(value);
       onChanged();
@@ -5623,8 +6604,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule schedule_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule, com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule.Builder, com.google.cloud.websecurityscanner.v1alpha.ScanConfig.ScheduleOrBuilder> scheduleBuilder_;
+            com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule,
+            com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule.Builder,
+            com.google.cloud.websecurityscanner.v1alpha.ScanConfig.ScheduleOrBuilder>
+        scheduleBuilder_;
     /**
+     *
+     *
      * <pre>
      * The schedule of the ScanConfig.
      * </pre>
@@ -5635,6 +6621,8 @@ private static final long serialVersionUID = 0L;
       return scheduleBuilder_ != null || schedule_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * The schedule of the ScanConfig.
      * </pre>
@@ -5643,19 +6631,24 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule getSchedule() {
       if (scheduleBuilder_ == null) {
-        return schedule_ == null ? com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule.getDefaultInstance() : schedule_;
+        return schedule_ == null
+            ? com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule.getDefaultInstance()
+            : schedule_;
       } else {
         return scheduleBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * The schedule of the ScanConfig.
      * </pre>
      *
      * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule schedule = 8;</code>
      */
-    public Builder setSchedule(com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule value) {
+    public Builder setSchedule(
+        com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule value) {
       if (scheduleBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -5669,6 +6662,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The schedule of the ScanConfig.
      * </pre>
@@ -5687,17 +6682,22 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The schedule of the ScanConfig.
      * </pre>
      *
      * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule schedule = 8;</code>
      */
-    public Builder mergeSchedule(com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule value) {
+    public Builder mergeSchedule(
+        com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule value) {
       if (scheduleBuilder_ == null) {
         if (schedule_ != null) {
           schedule_ =
-            com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule.newBuilder(schedule_).mergeFrom(value).buildPartial();
+              com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule.newBuilder(schedule_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           schedule_ = value;
         }
@@ -5709,6 +6709,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The schedule of the ScanConfig.
      * </pre>
@@ -5727,33 +6729,42 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The schedule of the ScanConfig.
      * </pre>
      *
      * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule schedule = 8;</code>
      */
-    public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule.Builder getScheduleBuilder() {
-      
+    public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule.Builder
+        getScheduleBuilder() {
+
       onChanged();
       return getScheduleFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * The schedule of the ScanConfig.
      * </pre>
      *
      * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule schedule = 8;</code>
      */
-    public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.ScheduleOrBuilder getScheduleOrBuilder() {
+    public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.ScheduleOrBuilder
+        getScheduleOrBuilder() {
       if (scheduleBuilder_ != null) {
         return scheduleBuilder_.getMessageOrBuilder();
       } else {
-        return schedule_ == null ?
-            com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule.getDefaultInstance() : schedule_;
+        return schedule_ == null
+            ? com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule.getDefaultInstance()
+            : schedule_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The schedule of the ScanConfig.
      * </pre>
@@ -5761,21 +6772,24 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule schedule = 8;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule, com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule.Builder, com.google.cloud.websecurityscanner.v1alpha.ScanConfig.ScheduleOrBuilder> 
+            com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule,
+            com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule.Builder,
+            com.google.cloud.websecurityscanner.v1alpha.ScanConfig.ScheduleOrBuilder>
         getScheduleFieldBuilder() {
       if (scheduleBuilder_ == null) {
-        scheduleBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule, com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule.Builder, com.google.cloud.websecurityscanner.v1alpha.ScanConfig.ScheduleOrBuilder>(
-                getSchedule(),
-                getParentForChildren(),
-                isClean());
+        scheduleBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule,
+                com.google.cloud.websecurityscanner.v1alpha.ScanConfig.Schedule.Builder,
+                com.google.cloud.websecurityscanner.v1alpha.ScanConfig.ScheduleOrBuilder>(
+                getSchedule(), getParentForChildren(), isClean());
         schedule_ = null;
       }
       return scheduleBuilder_;
     }
 
-    private java.util.List<java.lang.Integer> targetPlatforms_ =
-      java.util.Collections.emptyList();
+    private java.util.List<java.lang.Integer> targetPlatforms_ = java.util.Collections.emptyList();
+
     private void ensureTargetPlatformsIsMutable() {
       if (!((bitField0_ & 0x00000100) == 0x00000100)) {
         targetPlatforms_ = new java.util.ArrayList<java.lang.Integer>(targetPlatforms_);
@@ -5783,46 +6797,65 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Set of Cloud Platforms targeted by the scan. If empty, APP_ENGINE will be
      * used as a default.
      * </pre>
      *
-     * <code>repeated .google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform target_platforms = 9;</code>
+     * <code>
+     * repeated .google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform target_platforms = 9;
+     * </code>
      */
-    public java.util.List<com.google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform> getTargetPlatformsList() {
+    public java.util.List<com.google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform>
+        getTargetPlatformsList() {
       return new com.google.protobuf.Internal.ListAdapter<
-          java.lang.Integer, com.google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform>(targetPlatforms_, targetPlatforms_converter_);
+          java.lang.Integer, com.google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform>(
+          targetPlatforms_, targetPlatforms_converter_);
     }
     /**
+     *
+     *
      * <pre>
      * Set of Cloud Platforms targeted by the scan. If empty, APP_ENGINE will be
      * used as a default.
      * </pre>
      *
-     * <code>repeated .google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform target_platforms = 9;</code>
+     * <code>
+     * repeated .google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform target_platforms = 9;
+     * </code>
      */
     public int getTargetPlatformsCount() {
       return targetPlatforms_.size();
     }
     /**
+     *
+     *
      * <pre>
      * Set of Cloud Platforms targeted by the scan. If empty, APP_ENGINE will be
      * used as a default.
      * </pre>
      *
-     * <code>repeated .google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform target_platforms = 9;</code>
+     * <code>
+     * repeated .google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform target_platforms = 9;
+     * </code>
      */
-    public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform getTargetPlatforms(int index) {
+    public com.google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform getTargetPlatforms(
+        int index) {
       return targetPlatforms_converter_.convert(targetPlatforms_.get(index));
     }
     /**
+     *
+     *
      * <pre>
      * Set of Cloud Platforms targeted by the scan. If empty, APP_ENGINE will be
      * used as a default.
      * </pre>
      *
-     * <code>repeated .google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform target_platforms = 9;</code>
+     * <code>
+     * repeated .google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform target_platforms = 9;
+     * </code>
      */
     public Builder setTargetPlatforms(
         int index, com.google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform value) {
@@ -5835,14 +6868,19 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Set of Cloud Platforms targeted by the scan. If empty, APP_ENGINE will be
      * used as a default.
      * </pre>
      *
-     * <code>repeated .google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform target_platforms = 9;</code>
+     * <code>
+     * repeated .google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform target_platforms = 9;
+     * </code>
      */
-    public Builder addTargetPlatforms(com.google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform value) {
+    public Builder addTargetPlatforms(
+        com.google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -5852,15 +6890,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Set of Cloud Platforms targeted by the scan. If empty, APP_ENGINE will be
      * used as a default.
      * </pre>
      *
-     * <code>repeated .google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform target_platforms = 9;</code>
+     * <code>
+     * repeated .google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform target_platforms = 9;
+     * </code>
      */
     public Builder addAllTargetPlatforms(
-        java.lang.Iterable<? extends com.google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform> values) {
+        java.lang.Iterable<
+                ? extends com.google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform>
+            values) {
       ensureTargetPlatformsIsMutable();
       for (com.google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform value : values) {
         targetPlatforms_.add(value.getNumber());
@@ -5869,12 +6913,16 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Set of Cloud Platforms targeted by the scan. If empty, APP_ENGINE will be
      * used as a default.
      * </pre>
      *
-     * <code>repeated .google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform target_platforms = 9;</code>
+     * <code>
+     * repeated .google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform target_platforms = 9;
+     * </code>
      */
     public Builder clearTargetPlatforms() {
       targetPlatforms_ = java.util.Collections.emptyList();
@@ -5883,50 +6931,64 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Set of Cloud Platforms targeted by the scan. If empty, APP_ENGINE will be
      * used as a default.
      * </pre>
      *
-     * <code>repeated .google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform target_platforms = 9;</code>
+     * <code>
+     * repeated .google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform target_platforms = 9;
+     * </code>
      */
-    public java.util.List<java.lang.Integer>
-    getTargetPlatformsValueList() {
+    public java.util.List<java.lang.Integer> getTargetPlatformsValueList() {
       return java.util.Collections.unmodifiableList(targetPlatforms_);
     }
     /**
+     *
+     *
      * <pre>
      * Set of Cloud Platforms targeted by the scan. If empty, APP_ENGINE will be
      * used as a default.
      * </pre>
      *
-     * <code>repeated .google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform target_platforms = 9;</code>
+     * <code>
+     * repeated .google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform target_platforms = 9;
+     * </code>
      */
     public int getTargetPlatformsValue(int index) {
       return targetPlatforms_.get(index);
     }
     /**
+     *
+     *
      * <pre>
      * Set of Cloud Platforms targeted by the scan. If empty, APP_ENGINE will be
      * used as a default.
      * </pre>
      *
-     * <code>repeated .google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform target_platforms = 9;</code>
+     * <code>
+     * repeated .google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform target_platforms = 9;
+     * </code>
      */
-    public Builder setTargetPlatformsValue(
-        int index, int value) {
+    public Builder setTargetPlatformsValue(int index, int value) {
       ensureTargetPlatformsIsMutable();
       targetPlatforms_.set(index, value);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Set of Cloud Platforms targeted by the scan. If empty, APP_ENGINE will be
      * used as a default.
      * </pre>
      *
-     * <code>repeated .google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform target_platforms = 9;</code>
+     * <code>
+     * repeated .google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform target_platforms = 9;
+     * </code>
      */
     public Builder addTargetPlatformsValue(int value) {
       ensureTargetPlatformsIsMutable();
@@ -5935,15 +6997,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Set of Cloud Platforms targeted by the scan. If empty, APP_ENGINE will be
      * used as a default.
      * </pre>
      *
-     * <code>repeated .google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform target_platforms = 9;</code>
+     * <code>
+     * repeated .google.cloud.websecurityscanner.v1alpha.ScanConfig.TargetPlatform target_platforms = 9;
+     * </code>
      */
-    public Builder addAllTargetPlatformsValue(
-        java.lang.Iterable<java.lang.Integer> values) {
+    public Builder addAllTargetPlatformsValue(java.lang.Iterable<java.lang.Integer> values) {
       ensureTargetPlatformsIsMutable();
       for (int value : values) {
         targetPlatforms_.add(value);
@@ -5951,22 +7016,24 @@ private static final long serialVersionUID = 0L;
       onChanged();
       return this;
     }
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+
+    @java.lang.Override
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
     }
-
 
     // @@protoc_insertion_point(builder_scope:google.cloud.websecurityscanner.v1alpha.ScanConfig)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.websecurityscanner.v1alpha.ScanConfig)
   private static final com.google.cloud.websecurityscanner.v1alpha.ScanConfig DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.websecurityscanner.v1alpha.ScanConfig();
   }
@@ -5975,15 +7042,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ScanConfig>
-      PARSER = new com.google.protobuf.AbstractParser<ScanConfig>() {
-    public ScanConfig parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ScanConfig(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<ScanConfig> PARSER =
+      new com.google.protobuf.AbstractParser<ScanConfig>() {
+        @java.lang.Override
+        public ScanConfig parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new ScanConfig(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<ScanConfig> parser() {
     return PARSER;
@@ -5994,9 +7062,8 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.cloud.websecurityscanner.v1alpha.ScanConfig getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

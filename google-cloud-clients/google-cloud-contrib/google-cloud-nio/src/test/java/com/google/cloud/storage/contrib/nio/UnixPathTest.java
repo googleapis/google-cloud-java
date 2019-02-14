@@ -21,16 +21,13 @@ import static org.junit.Assume.assumeTrue;
 
 import com.google.common.testing.EqualsTester;
 import com.google.common.testing.NullPointerTester;
-
 import org.junit.Rule;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 import org.junit.runner.RunWith;
 import org.junit.runners.JUnit4;
 
-/**
- * Unit tests for {@link UnixPath}.
- */
+/** Unit tests for {@link UnixPath}. */
 @RunWith(JUnit4.class)
 public class UnixPathTest {
 

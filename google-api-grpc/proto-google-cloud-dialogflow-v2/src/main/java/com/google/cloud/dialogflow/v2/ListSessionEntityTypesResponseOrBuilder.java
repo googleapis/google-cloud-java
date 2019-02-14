@@ -3,11 +3,14 @@
 
 package com.google.cloud.dialogflow.v2;
 
-public interface ListSessionEntityTypesResponseOrBuilder extends
+public interface ListSessionEntityTypesResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2.ListSessionEntityTypesResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The list of session entity types. There will be a maximum number of items
    * returned based on the page_size field in the request.
@@ -15,9 +18,10 @@ public interface ListSessionEntityTypesResponseOrBuilder extends
    *
    * <code>repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 1;</code>
    */
-  java.util.List<com.google.cloud.dialogflow.v2.SessionEntityType> 
-      getSessionEntityTypesList();
+  java.util.List<com.google.cloud.dialogflow.v2.SessionEntityType> getSessionEntityTypesList();
   /**
+   *
+   *
    * <pre>
    * The list of session entity types. There will be a maximum number of items
    * returned based on the page_size field in the request.
@@ -27,6 +31,8 @@ public interface ListSessionEntityTypesResponseOrBuilder extends
    */
   com.google.cloud.dialogflow.v2.SessionEntityType getSessionEntityTypes(int index);
   /**
+   *
+   *
    * <pre>
    * The list of session entity types. There will be a maximum number of items
    * returned based on the page_size field in the request.
@@ -36,6 +42,8 @@ public interface ListSessionEntityTypesResponseOrBuilder extends
    */
   int getSessionEntityTypesCount();
   /**
+   *
+   *
    * <pre>
    * The list of session entity types. There will be a maximum number of items
    * returned based on the page_size field in the request.
@@ -43,9 +51,11 @@ public interface ListSessionEntityTypesResponseOrBuilder extends
    *
    * <code>repeated .google.cloud.dialogflow.v2.SessionEntityType session_entity_types = 1;</code>
    */
-  java.util.List<? extends com.google.cloud.dialogflow.v2.SessionEntityTypeOrBuilder> 
+  java.util.List<? extends com.google.cloud.dialogflow.v2.SessionEntityTypeOrBuilder>
       getSessionEntityTypesOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * The list of session entity types. There will be a maximum number of items
    * returned based on the page_size field in the request.
@@ -57,6 +67,8 @@ public interface ListSessionEntityTypesResponseOrBuilder extends
       int index);
 
   /**
+   *
+   *
    * <pre>
    * Token to retrieve the next page of results, or empty if there are no
    * more results in the list.
@@ -66,6 +78,8 @@ public interface ListSessionEntityTypesResponseOrBuilder extends
    */
   java.lang.String getNextPageToken();
   /**
+   *
+   *
    * <pre>
    * Token to retrieve the next page of results, or empty if there are no
    * more results in the list.
@@ -73,6 +87,5 @@ public interface ListSessionEntityTypesResponseOrBuilder extends
    *
    * <code>string next_page_token = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getNextPageTokenBytes();
+  com.google.protobuf.ByteString getNextPageTokenBytes();
 }

@@ -3,11 +3,14 @@
 
 package com.google.privacy.dlp.v2;
 
-public interface KmsWrappedCryptoKeyOrBuilder extends
+public interface KmsWrappedCryptoKeyOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.KmsWrappedCryptoKey)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The wrapped data crypto key. [required]
    * </pre>
@@ -17,6 +20,8 @@ public interface KmsWrappedCryptoKeyOrBuilder extends
   com.google.protobuf.ByteString getWrappedKey();
 
   /**
+   *
+   *
    * <pre>
    * The resource name of the KMS CryptoKey to use for unwrapping. [required]
    * </pre>
@@ -25,12 +30,13 @@ public interface KmsWrappedCryptoKeyOrBuilder extends
    */
   java.lang.String getCryptoKeyName();
   /**
+   *
+   *
    * <pre>
    * The resource name of the KMS CryptoKey to use for unwrapping. [required]
    * </pre>
    *
    * <code>string crypto_key_name = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getCryptoKeyNameBytes();
+  com.google.protobuf.ByteString getCryptoKeyNameBytes();
 }

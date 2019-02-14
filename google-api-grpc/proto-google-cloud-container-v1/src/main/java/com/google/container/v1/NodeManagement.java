@@ -4,6 +4,8 @@
 package com.google.container.v1;
 
 /**
+ *
+ *
  * <pre>
  * NodeManagement defines the set of node management services turned on for the
  * node pool.
@@ -11,30 +13,34 @@ package com.google.container.v1;
  *
  * Protobuf type {@code google.container.v1.NodeManagement}
  */
-public  final class NodeManagement extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class NodeManagement extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.container.v1.NodeManagement)
     NodeManagementOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use NodeManagement.newBuilder() to construct.
   private NodeManagement(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private NodeManagement() {
     autoUpgrade_ = false;
     autoRepair_ = false;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private NodeManagement(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -46,63 +52,71 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          case 8:
+            {
+              autoUpgrade_ = input.readBool();
+              break;
             }
-            break;
-          }
-          case 8: {
-
-            autoUpgrade_ = input.readBool();
-            break;
-          }
-          case 16: {
-
-            autoRepair_ = input.readBool();
-            break;
-          }
-          case 82: {
-            com.google.container.v1.AutoUpgradeOptions.Builder subBuilder = null;
-            if (upgradeOptions_ != null) {
-              subBuilder = upgradeOptions_.toBuilder();
+          case 16:
+            {
+              autoRepair_ = input.readBool();
+              break;
             }
-            upgradeOptions_ = input.readMessage(com.google.container.v1.AutoUpgradeOptions.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(upgradeOptions_);
-              upgradeOptions_ = subBuilder.buildPartial();
-            }
+          case 82:
+            {
+              com.google.container.v1.AutoUpgradeOptions.Builder subBuilder = null;
+              if (upgradeOptions_ != null) {
+                subBuilder = upgradeOptions_.toBuilder();
+              }
+              upgradeOptions_ =
+                  input.readMessage(
+                      com.google.container.v1.AutoUpgradeOptions.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(upgradeOptions_);
+                upgradeOptions_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_NodeManagement_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.container.v1.ClusterServiceProto
+        .internal_static_google_container_v1_NodeManagement_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_NodeManagement_fieldAccessorTable
+    return com.google.container.v1.ClusterServiceProto
+        .internal_static_google_container_v1_NodeManagement_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.container.v1.NodeManagement.class, com.google.container.v1.NodeManagement.Builder.class);
+            com.google.container.v1.NodeManagement.class,
+            com.google.container.v1.NodeManagement.Builder.class);
   }
 
   public static final int AUTO_UPGRADE_FIELD_NUMBER = 1;
   private boolean autoUpgrade_;
   /**
+   *
+   *
    * <pre>
    * A flag that specifies whether node auto-upgrade is enabled for the node
    * pool. If enabled, node auto-upgrade helps keep the nodes in your node pool
@@ -118,6 +132,8 @@ private static final long serialVersionUID = 0L;
   public static final int AUTO_REPAIR_FIELD_NUMBER = 2;
   private boolean autoRepair_;
   /**
+   *
+   *
    * <pre>
    * A flag that specifies whether the node auto-repair is enabled for the node
    * pool. If enabled, the nodes in this node pool will be monitored and, if
@@ -134,6 +150,8 @@ private static final long serialVersionUID = 0L;
   public static final int UPGRADE_OPTIONS_FIELD_NUMBER = 10;
   private com.google.container.v1.AutoUpgradeOptions upgradeOptions_;
   /**
+   *
+   *
    * <pre>
    * Specifies the Auto Upgrade knobs for the node pool.
    * </pre>
@@ -144,6 +162,8 @@ private static final long serialVersionUID = 0L;
     return upgradeOptions_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Specifies the Auto Upgrade knobs for the node pool.
    * </pre>
@@ -151,9 +171,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.container.v1.AutoUpgradeOptions upgrade_options = 10;</code>
    */
   public com.google.container.v1.AutoUpgradeOptions getUpgradeOptions() {
-    return upgradeOptions_ == null ? com.google.container.v1.AutoUpgradeOptions.getDefaultInstance() : upgradeOptions_;
+    return upgradeOptions_ == null
+        ? com.google.container.v1.AutoUpgradeOptions.getDefaultInstance()
+        : upgradeOptions_;
   }
   /**
+   *
+   *
    * <pre>
    * Specifies the Auto Upgrade knobs for the node pool.
    * </pre>
@@ -165,6 +189,8 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -174,8 +200,8 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  @java.lang.Override
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (autoUpgrade_ != false) {
       output.writeBool(1, autoUpgrade_);
     }
@@ -188,22 +214,20 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
 
     size = 0;
     if (autoUpgrade_ != false) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(1, autoUpgrade_);
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, autoUpgrade_);
     }
     if (autoRepair_ != false) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(2, autoRepair_);
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(2, autoRepair_);
     }
     if (upgradeOptions_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(10, getUpgradeOptions());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(10, getUpgradeOptions());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -213,7 +237,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.container.v1.NodeManagement)) {
       return super.equals(obj);
@@ -221,14 +245,11 @@ private static final long serialVersionUID = 0L;
     com.google.container.v1.NodeManagement other = (com.google.container.v1.NodeManagement) obj;
 
     boolean result = true;
-    result = result && (getAutoUpgrade()
-        == other.getAutoUpgrade());
-    result = result && (getAutoRepair()
-        == other.getAutoRepair());
+    result = result && (getAutoUpgrade() == other.getAutoUpgrade());
+    result = result && (getAutoRepair() == other.getAutoRepair());
     result = result && (hasUpgradeOptions() == other.hasUpgradeOptions());
     if (hasUpgradeOptions()) {
-      result = result && getUpgradeOptions()
-          .equals(other.getUpgradeOptions());
+      result = result && getUpgradeOptions().equals(other.getUpgradeOptions());
     }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
@@ -242,11 +263,9 @@ private static final long serialVersionUID = 0L;
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + AUTO_UPGRADE_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getAutoUpgrade());
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAutoUpgrade());
     hash = (37 * hash) + AUTO_REPAIR_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getAutoRepair());
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getAutoRepair());
     if (hasUpgradeOptions()) {
       hash = (37 * hash) + UPGRADE_OPTIONS_FIELD_NUMBER;
       hash = (53 * hash) + getUpgradeOptions().hashCode();
@@ -256,95 +275,104 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.container.v1.NodeManagement parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.container.v1.NodeManagement parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.container.v1.NodeManagement parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.container.v1.NodeManagement parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.container.v1.NodeManagement parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.container.v1.NodeManagement parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.container.v1.NodeManagement parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.container.v1.NodeManagement parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.container.v1.NodeManagement parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.container.v1.NodeManagement parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
   public static com.google.container.v1.NodeManagement parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.container.v1.NodeManagement parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.container.v1.NodeManagement parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  public Builder newBuilderForType() { return newBuilder(); }
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-  public static Builder newBuilder(com.google.container.v1.NodeManagement prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+
+  public static Builder newBuilder(com.google.container.v1.NodeManagement prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+
+  @java.lang.Override
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * NodeManagement defines the set of node management services turned on for the
    * node pool.
@@ -352,20 +380,23 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.container.v1.NodeManagement}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.container.v1.NodeManagement)
       com.google.container.v1.NodeManagementOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_NodeManagement_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.container.v1.ClusterServiceProto
+          .internal_static_google_container_v1_NodeManagement_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_NodeManagement_fieldAccessorTable
+      return com.google.container.v1.ClusterServiceProto
+          .internal_static_google_container_v1_NodeManagement_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.container.v1.NodeManagement.class, com.google.container.v1.NodeManagement.Builder.class);
+              com.google.container.v1.NodeManagement.class,
+              com.google.container.v1.NodeManagement.Builder.class);
     }
 
     // Construct using com.google.container.v1.NodeManagement.newBuilder()
@@ -373,16 +404,16 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       autoUpgrade_ = false;
@@ -398,15 +429,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.container.v1.ClusterServiceProto.internal_static_google_container_v1_NodeManagement_descriptor;
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.container.v1.ClusterServiceProto
+          .internal_static_google_container_v1_NodeManagement_descriptor;
     }
 
+    @java.lang.Override
     public com.google.container.v1.NodeManagement getDefaultInstanceForType() {
       return com.google.container.v1.NodeManagement.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.container.v1.NodeManagement build() {
       com.google.container.v1.NodeManagement result = buildPartial();
       if (!result.isInitialized()) {
@@ -415,8 +449,10 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.container.v1.NodeManagement buildPartial() {
-      com.google.container.v1.NodeManagement result = new com.google.container.v1.NodeManagement(this);
+      com.google.container.v1.NodeManagement result =
+          new com.google.container.v1.NodeManagement(this);
       result.autoUpgrade_ = autoUpgrade_;
       result.autoRepair_ = autoRepair_;
       if (upgradeOptionsBuilder_ == null) {
@@ -428,35 +464,43 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+
+    @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+    @java.lang.Override
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+    @java.lang.Override
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
+    @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
+    @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.container.v1.NodeManagement) {
-        return mergeFrom((com.google.container.v1.NodeManagement)other);
+        return mergeFrom((com.google.container.v1.NodeManagement) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -479,10 +523,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -501,8 +547,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    private boolean autoUpgrade_ ;
+    private boolean autoUpgrade_;
     /**
+     *
+     *
      * <pre>
      * A flag that specifies whether node auto-upgrade is enabled for the node
      * pool. If enabled, node auto-upgrade helps keep the nodes in your node pool
@@ -515,6 +563,8 @@ private static final long serialVersionUID = 0L;
       return autoUpgrade_;
     }
     /**
+     *
+     *
      * <pre>
      * A flag that specifies whether node auto-upgrade is enabled for the node
      * pool. If enabled, node auto-upgrade helps keep the nodes in your node pool
@@ -524,12 +574,14 @@ private static final long serialVersionUID = 0L;
      * <code>bool auto_upgrade = 1;</code>
      */
     public Builder setAutoUpgrade(boolean value) {
-      
+
       autoUpgrade_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A flag that specifies whether node auto-upgrade is enabled for the node
      * pool. If enabled, node auto-upgrade helps keep the nodes in your node pool
@@ -539,14 +591,16 @@ private static final long serialVersionUID = 0L;
      * <code>bool auto_upgrade = 1;</code>
      */
     public Builder clearAutoUpgrade() {
-      
+
       autoUpgrade_ = false;
       onChanged();
       return this;
     }
 
-    private boolean autoRepair_ ;
+    private boolean autoRepair_;
     /**
+     *
+     *
      * <pre>
      * A flag that specifies whether the node auto-repair is enabled for the node
      * pool. If enabled, the nodes in this node pool will be monitored and, if
@@ -560,6 +614,8 @@ private static final long serialVersionUID = 0L;
       return autoRepair_;
     }
     /**
+     *
+     *
      * <pre>
      * A flag that specifies whether the node auto-repair is enabled for the node
      * pool. If enabled, the nodes in this node pool will be monitored and, if
@@ -570,12 +626,14 @@ private static final long serialVersionUID = 0L;
      * <code>bool auto_repair = 2;</code>
      */
     public Builder setAutoRepair(boolean value) {
-      
+
       autoRepair_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A flag that specifies whether the node auto-repair is enabled for the node
      * pool. If enabled, the nodes in this node pool will be monitored and, if
@@ -586,7 +644,7 @@ private static final long serialVersionUID = 0L;
      * <code>bool auto_repair = 2;</code>
      */
     public Builder clearAutoRepair() {
-      
+
       autoRepair_ = false;
       onChanged();
       return this;
@@ -594,8 +652,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.container.v1.AutoUpgradeOptions upgradeOptions_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.container.v1.AutoUpgradeOptions, com.google.container.v1.AutoUpgradeOptions.Builder, com.google.container.v1.AutoUpgradeOptionsOrBuilder> upgradeOptionsBuilder_;
+            com.google.container.v1.AutoUpgradeOptions,
+            com.google.container.v1.AutoUpgradeOptions.Builder,
+            com.google.container.v1.AutoUpgradeOptionsOrBuilder>
+        upgradeOptionsBuilder_;
     /**
+     *
+     *
      * <pre>
      * Specifies the Auto Upgrade knobs for the node pool.
      * </pre>
@@ -606,6 +669,8 @@ private static final long serialVersionUID = 0L;
       return upgradeOptionsBuilder_ != null || upgradeOptions_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Specifies the Auto Upgrade knobs for the node pool.
      * </pre>
@@ -614,12 +679,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.container.v1.AutoUpgradeOptions getUpgradeOptions() {
       if (upgradeOptionsBuilder_ == null) {
-        return upgradeOptions_ == null ? com.google.container.v1.AutoUpgradeOptions.getDefaultInstance() : upgradeOptions_;
+        return upgradeOptions_ == null
+            ? com.google.container.v1.AutoUpgradeOptions.getDefaultInstance()
+            : upgradeOptions_;
       } else {
         return upgradeOptionsBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Specifies the Auto Upgrade knobs for the node pool.
      * </pre>
@@ -640,6 +709,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Specifies the Auto Upgrade knobs for the node pool.
      * </pre>
@@ -658,6 +729,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Specifies the Auto Upgrade knobs for the node pool.
      * </pre>
@@ -668,7 +741,9 @@ private static final long serialVersionUID = 0L;
       if (upgradeOptionsBuilder_ == null) {
         if (upgradeOptions_ != null) {
           upgradeOptions_ =
-            com.google.container.v1.AutoUpgradeOptions.newBuilder(upgradeOptions_).mergeFrom(value).buildPartial();
+              com.google.container.v1.AutoUpgradeOptions.newBuilder(upgradeOptions_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           upgradeOptions_ = value;
         }
@@ -680,6 +755,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Specifies the Auto Upgrade knobs for the node pool.
      * </pre>
@@ -698,6 +775,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Specifies the Auto Upgrade knobs for the node pool.
      * </pre>
@@ -705,11 +784,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.container.v1.AutoUpgradeOptions upgrade_options = 10;</code>
      */
     public com.google.container.v1.AutoUpgradeOptions.Builder getUpgradeOptionsBuilder() {
-      
+
       onChanged();
       return getUpgradeOptionsFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Specifies the Auto Upgrade knobs for the node pool.
      * </pre>
@@ -720,11 +801,14 @@ private static final long serialVersionUID = 0L;
       if (upgradeOptionsBuilder_ != null) {
         return upgradeOptionsBuilder_.getMessageOrBuilder();
       } else {
-        return upgradeOptions_ == null ?
-            com.google.container.v1.AutoUpgradeOptions.getDefaultInstance() : upgradeOptions_;
+        return upgradeOptions_ == null
+            ? com.google.container.v1.AutoUpgradeOptions.getDefaultInstance()
+            : upgradeOptions_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Specifies the Auto Upgrade knobs for the node pool.
      * </pre>
@@ -732,34 +816,39 @@ private static final long serialVersionUID = 0L;
      * <code>.google.container.v1.AutoUpgradeOptions upgrade_options = 10;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.container.v1.AutoUpgradeOptions, com.google.container.v1.AutoUpgradeOptions.Builder, com.google.container.v1.AutoUpgradeOptionsOrBuilder> 
+            com.google.container.v1.AutoUpgradeOptions,
+            com.google.container.v1.AutoUpgradeOptions.Builder,
+            com.google.container.v1.AutoUpgradeOptionsOrBuilder>
         getUpgradeOptionsFieldBuilder() {
       if (upgradeOptionsBuilder_ == null) {
-        upgradeOptionsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.container.v1.AutoUpgradeOptions, com.google.container.v1.AutoUpgradeOptions.Builder, com.google.container.v1.AutoUpgradeOptionsOrBuilder>(
-                getUpgradeOptions(),
-                getParentForChildren(),
-                isClean());
+        upgradeOptionsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.container.v1.AutoUpgradeOptions,
+                com.google.container.v1.AutoUpgradeOptions.Builder,
+                com.google.container.v1.AutoUpgradeOptionsOrBuilder>(
+                getUpgradeOptions(), getParentForChildren(), isClean());
         upgradeOptions_ = null;
       }
       return upgradeOptionsBuilder_;
     }
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+
+    @java.lang.Override
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
     }
-
 
     // @@protoc_insertion_point(builder_scope:google.container.v1.NodeManagement)
   }
 
   // @@protoc_insertion_point(class_scope:google.container.v1.NodeManagement)
   private static final com.google.container.v1.NodeManagement DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.container.v1.NodeManagement();
   }
@@ -768,15 +857,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<NodeManagement>
-      PARSER = new com.google.protobuf.AbstractParser<NodeManagement>() {
-    public NodeManagement parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-        return new NodeManagement(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<NodeManagement> PARSER =
+      new com.google.protobuf.AbstractParser<NodeManagement>() {
+        @java.lang.Override
+        public NodeManagement parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new NodeManagement(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<NodeManagement> parser() {
     return PARSER;
@@ -787,9 +877,8 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.container.v1.NodeManagement getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

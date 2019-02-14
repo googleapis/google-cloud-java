@@ -3,11 +3,14 @@
 
 package com.google.containeranalysis.v1beta1;
 
-public interface ScanConfigOrBuilder extends
+public interface ScanConfigOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.devtools.containeranalysis.v1beta1.ScanConfig)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Output only. The name of the scan configuration in the form of
    * `projects/[PROJECT_ID]/scanConfigs/[SCAN_CONFIG_ID]`.
@@ -17,6 +20,8 @@ public interface ScanConfigOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * Output only. The name of the scan configuration in the form of
    * `projects/[PROJECT_ID]/scanConfigs/[SCAN_CONFIG_ID]`.
@@ -24,10 +29,11 @@ public interface ScanConfigOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * Output only. A human-readable description of what the scan configuration
    * does.
@@ -37,6 +43,8 @@ public interface ScanConfigOrBuilder extends
    */
   java.lang.String getDescription();
   /**
+   *
+   *
    * <pre>
    * Output only. A human-readable description of what the scan configuration
    * does.
@@ -44,10 +52,11 @@ public interface ScanConfigOrBuilder extends
    *
    * <code>string description = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getDescriptionBytes();
+  com.google.protobuf.ByteString getDescriptionBytes();
 
   /**
+   *
+   *
    * <pre>
    * Whether the scan is enabled.
    * </pre>
@@ -57,6 +66,8 @@ public interface ScanConfigOrBuilder extends
   boolean getEnabled();
 
   /**
+   *
+   *
    * <pre>
    * Output only. The time this scan config was created.
    * </pre>
@@ -65,6 +76,8 @@ public interface ScanConfigOrBuilder extends
    */
   boolean hasCreateTime();
   /**
+   *
+   *
    * <pre>
    * Output only. The time this scan config was created.
    * </pre>
@@ -73,6 +86,8 @@ public interface ScanConfigOrBuilder extends
    */
   com.google.protobuf.Timestamp getCreateTime();
   /**
+   *
+   *
    * <pre>
    * Output only. The time this scan config was created.
    * </pre>
@@ -82,6 +97,8 @@ public interface ScanConfigOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Output only. The time this scan config was last updated.
    * </pre>
@@ -90,6 +107,8 @@ public interface ScanConfigOrBuilder extends
    */
   boolean hasUpdateTime();
   /**
+   *
+   *
    * <pre>
    * Output only. The time this scan config was last updated.
    * </pre>
@@ -98,6 +117,8 @@ public interface ScanConfigOrBuilder extends
    */
   com.google.protobuf.Timestamp getUpdateTime();
   /**
+   *
+   *
    * <pre>
    * Output only. The time this scan config was last updated.
    * </pre>

@@ -23,7 +23,6 @@ import com.google.cloud.logging.Sink;
 import com.google.cloud.logging.SinkInfo;
 import com.google.cloud.logging.SinkInfo.Destination.DatasetDestination;
 
-
 /**
  * A snippet for Stackdriver Logging showing how to create a sink to backs log entries to BigQuery.
  * The snippet also shows how to list all sinks.
@@ -35,12 +34,13 @@ public class CreateAndListSinks {
   public static void main(String... args) throws Exception {
     // Create a service object
     // Credentials are inferred from the environment
-    try(Logging logging = LoggingOptions.getDefaultInstance().getService()) {
+    try (Logging logging = LoggingOptions.getDefaultInstance().getService()) {
 
       // Create a sink to back log entries to a BigQuery dataset
-      SinkInfo sinkInfo = SinkInfo.newBuilder("test-sink", DatasetDestination.of("test-dataset"))
-          .setFilter("severity >= ERROR")
-          .build();
+      SinkInfo sinkInfo =
+          SinkInfo.newBuilder("test-sink", DatasetDestination.of("test-dataset"))
+              .setFilter("severity >= ERROR")
+              .build();
       logging.create(sinkInfo);
 
       // List sinks

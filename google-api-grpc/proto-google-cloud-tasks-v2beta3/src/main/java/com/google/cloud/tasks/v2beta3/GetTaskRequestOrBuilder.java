@@ -3,11 +3,14 @@
 
 package com.google.cloud.tasks.v2beta3;
 
-public interface GetTaskRequestOrBuilder extends
+public interface GetTaskRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.tasks.v2beta3.GetTaskRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required.
    * The task name. For example:
@@ -18,6 +21,8 @@ public interface GetTaskRequestOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * Required.
    * The task name. For example:
@@ -26,10 +31,11 @@ public interface GetTaskRequestOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * The response_view specifies which subset of the [Task][google.cloud.tasks.v2beta3.Task] will be
    * returned.
@@ -47,6 +53,8 @@ public interface GetTaskRequestOrBuilder extends
    */
   int getResponseViewValue();
   /**
+   *
+   *
    * <pre>
    * The response_view specifies which subset of the [Task][google.cloud.tasks.v2beta3.Task] will be
    * returned.

@@ -3,11 +3,14 @@
 
 package com.google.cloud.dialogflow.v2beta1;
 
-public interface CreateKnowledgeBaseRequestOrBuilder extends
+public interface CreateKnowledgeBaseRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2beta1.CreateKnowledgeBaseRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The agent to create a knowledge base for.
    * Format: `projects/&lt;Project ID&gt;/agent`.
@@ -17,6 +20,8 @@ public interface CreateKnowledgeBaseRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * Required. The agent to create a knowledge base for.
    * Format: `projects/&lt;Project ID&gt;/agent`.
@@ -24,10 +29,11 @@ public interface CreateKnowledgeBaseRequestOrBuilder extends
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * Required. The knowledge base to create.
    * </pre>
@@ -36,6 +42,8 @@ public interface CreateKnowledgeBaseRequestOrBuilder extends
    */
   boolean hasKnowledgeBase();
   /**
+   *
+   *
    * <pre>
    * Required. The knowledge base to create.
    * </pre>
@@ -44,6 +52,8 @@ public interface CreateKnowledgeBaseRequestOrBuilder extends
    */
   com.google.cloud.dialogflow.v2beta1.KnowledgeBase getKnowledgeBase();
   /**
+   *
+   *
    * <pre>
    * Required. The knowledge base to create.
    * </pre>

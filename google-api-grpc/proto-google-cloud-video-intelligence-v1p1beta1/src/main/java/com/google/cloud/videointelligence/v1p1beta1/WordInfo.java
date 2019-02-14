@@ -4,6 +4,8 @@
 package com.google.cloud.videointelligence.v1p1beta1;
 
 /**
+ *
+ *
  * <pre>
  * Word-specific information for recognized words. Word information is only
  * included in the response when certain request parameters are set, such
@@ -12,29 +14,33 @@ package com.google.cloud.videointelligence.v1p1beta1;
  *
  * Protobuf type {@code google.cloud.videointelligence.v1p1beta1.WordInfo}
  */
-public  final class WordInfo extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class WordInfo extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.videointelligence.v1p1beta1.WordInfo)
     WordInfoOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use WordInfo.newBuilder() to construct.
   private WordInfo(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private WordInfo() {
     word_ = "";
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private WordInfo(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -46,72 +52,82 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
-          case 10: {
-            com.google.protobuf.Duration.Builder subBuilder = null;
-            if (startTime_ != null) {
-              subBuilder = startTime_.toBuilder();
-            }
-            startTime_ = input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(startTime_);
-              startTime_ = subBuilder.buildPartial();
-            }
+          case 10:
+            {
+              com.google.protobuf.Duration.Builder subBuilder = null;
+              if (startTime_ != null) {
+                subBuilder = startTime_.toBuilder();
+              }
+              startTime_ =
+                  input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(startTime_);
+                startTime_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 18: {
-            com.google.protobuf.Duration.Builder subBuilder = null;
-            if (endTime_ != null) {
-              subBuilder = endTime_.toBuilder();
+              break;
             }
-            endTime_ = input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(endTime_);
-              endTime_ = subBuilder.buildPartial();
+          case 18:
+            {
+              com.google.protobuf.Duration.Builder subBuilder = null;
+              if (endTime_ != null) {
+                subBuilder = endTime_.toBuilder();
+              }
+              endTime_ =
+                  input.readMessage(com.google.protobuf.Duration.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(endTime_);
+                endTime_ = subBuilder.buildPartial();
+              }
+
+              break;
             }
+          case 26:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            break;
-          }
-          case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            word_ = s;
-            break;
-          }
+              word_ = s;
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.videointelligence.v1p1beta1.VideoIntelligenceServiceProto.internal_static_google_cloud_videointelligence_v1p1beta1_WordInfo_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.videointelligence.v1p1beta1.VideoIntelligenceServiceProto
+        .internal_static_google_cloud_videointelligence_v1p1beta1_WordInfo_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.videointelligence.v1p1beta1.VideoIntelligenceServiceProto.internal_static_google_cloud_videointelligence_v1p1beta1_WordInfo_fieldAccessorTable
+    return com.google.cloud.videointelligence.v1p1beta1.VideoIntelligenceServiceProto
+        .internal_static_google_cloud_videointelligence_v1p1beta1_WordInfo_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.videointelligence.v1p1beta1.WordInfo.class, com.google.cloud.videointelligence.v1p1beta1.WordInfo.Builder.class);
+            com.google.cloud.videointelligence.v1p1beta1.WordInfo.class,
+            com.google.cloud.videointelligence.v1p1beta1.WordInfo.Builder.class);
   }
 
   public static final int START_TIME_FIELD_NUMBER = 1;
   private com.google.protobuf.Duration startTime_;
   /**
+   *
+   *
    * <pre>
    * Output only. Time offset relative to the beginning of the audio, and
    * corresponding to the start of the spoken word. This field is only set if
@@ -125,6 +141,8 @@ private static final long serialVersionUID = 0L;
     return startTime_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Output only. Time offset relative to the beginning of the audio, and
    * corresponding to the start of the spoken word. This field is only set if
@@ -138,6 +156,8 @@ private static final long serialVersionUID = 0L;
     return startTime_ == null ? com.google.protobuf.Duration.getDefaultInstance() : startTime_;
   }
   /**
+   *
+   *
    * <pre>
    * Output only. Time offset relative to the beginning of the audio, and
    * corresponding to the start of the spoken word. This field is only set if
@@ -154,6 +174,8 @@ private static final long serialVersionUID = 0L;
   public static final int END_TIME_FIELD_NUMBER = 2;
   private com.google.protobuf.Duration endTime_;
   /**
+   *
+   *
    * <pre>
    * Output only. Time offset relative to the beginning of the audio, and
    * corresponding to the end of the spoken word. This field is only set if
@@ -167,6 +189,8 @@ private static final long serialVersionUID = 0L;
     return endTime_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Output only. Time offset relative to the beginning of the audio, and
    * corresponding to the end of the spoken word. This field is only set if
@@ -180,6 +204,8 @@ private static final long serialVersionUID = 0L;
     return endTime_ == null ? com.google.protobuf.Duration.getDefaultInstance() : endTime_;
   }
   /**
+   *
+   *
    * <pre>
    * Output only. Time offset relative to the beginning of the audio, and
    * corresponding to the end of the spoken word. This field is only set if
@@ -196,6 +222,8 @@ private static final long serialVersionUID = 0L;
   public static final int WORD_FIELD_NUMBER = 3;
   private volatile java.lang.Object word_;
   /**
+   *
+   *
    * <pre>
    * Output only. The word corresponding to this set of information.
    * </pre>
@@ -207,27 +235,26 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       word_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Output only. The word corresponding to this set of information.
    * </pre>
    *
    * <code>string word = 3;</code>
    */
-  public com.google.protobuf.ByteString
-      getWordBytes() {
+  public com.google.protobuf.ByteString getWordBytes() {
     java.lang.Object ref = word_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       word_ = b;
       return b;
     } else {
@@ -236,6 +263,8 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -245,8 +274,8 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  @java.lang.Override
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (startTime_ != null) {
       output.writeMessage(1, getStartTime());
     }
@@ -259,18 +288,17 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
 
     size = 0;
     if (startTime_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getStartTime());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getStartTime());
     }
     if (endTime_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getEndTime());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getEndTime());
     }
     if (!getWordBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, word_);
@@ -283,26 +311,24 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.videointelligence.v1p1beta1.WordInfo)) {
       return super.equals(obj);
     }
-    com.google.cloud.videointelligence.v1p1beta1.WordInfo other = (com.google.cloud.videointelligence.v1p1beta1.WordInfo) obj;
+    com.google.cloud.videointelligence.v1p1beta1.WordInfo other =
+        (com.google.cloud.videointelligence.v1p1beta1.WordInfo) obj;
 
     boolean result = true;
     result = result && (hasStartTime() == other.hasStartTime());
     if (hasStartTime()) {
-      result = result && getStartTime()
-          .equals(other.getStartTime());
+      result = result && getStartTime().equals(other.getStartTime());
     }
     result = result && (hasEndTime() == other.hasEndTime());
     if (hasEndTime()) {
-      result = result && getEndTime()
-          .equals(other.getEndTime());
+      result = result && getEndTime().equals(other.getEndTime());
     }
-    result = result && getWord()
-        .equals(other.getWord());
+    result = result && getWord().equals(other.getWord());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -330,94 +356,104 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.cloud.videointelligence.v1p1beta1.WordInfo parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.videointelligence.v1p1beta1.WordInfo parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.videointelligence.v1p1beta1.WordInfo parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.videointelligence.v1p1beta1.WordInfo parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.videointelligence.v1p1beta1.WordInfo parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.videointelligence.v1p1beta1.WordInfo parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.videointelligence.v1p1beta1.WordInfo parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.videointelligence.v1p1beta1.WordInfo parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.videointelligence.v1p1beta1.WordInfo parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.cloud.videointelligence.v1p1beta1.WordInfo parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.cloud.videointelligence.v1p1beta1.WordInfo parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.videointelligence.v1p1beta1.WordInfo parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.videointelligence.v1p1beta1.WordInfo parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.videointelligence.v1p1beta1.WordInfo parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  public Builder newBuilderForType() { return newBuilder(); }
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-  public static Builder newBuilder(com.google.cloud.videointelligence.v1p1beta1.WordInfo prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+
+  public static Builder newBuilder(
+      com.google.cloud.videointelligence.v1p1beta1.WordInfo prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+
+  @java.lang.Override
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Word-specific information for recognized words. Word information is only
    * included in the response when certain request parameters are set, such
@@ -426,20 +462,23 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.cloud.videointelligence.v1p1beta1.WordInfo}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.videointelligence.v1p1beta1.WordInfo)
       com.google.cloud.videointelligence.v1p1beta1.WordInfoOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.videointelligence.v1p1beta1.VideoIntelligenceServiceProto.internal_static_google_cloud_videointelligence_v1p1beta1_WordInfo_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.videointelligence.v1p1beta1.VideoIntelligenceServiceProto
+          .internal_static_google_cloud_videointelligence_v1p1beta1_WordInfo_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.videointelligence.v1p1beta1.VideoIntelligenceServiceProto.internal_static_google_cloud_videointelligence_v1p1beta1_WordInfo_fieldAccessorTable
+      return com.google.cloud.videointelligence.v1p1beta1.VideoIntelligenceServiceProto
+          .internal_static_google_cloud_videointelligence_v1p1beta1_WordInfo_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.videointelligence.v1p1beta1.WordInfo.class, com.google.cloud.videointelligence.v1p1beta1.WordInfo.Builder.class);
+              com.google.cloud.videointelligence.v1p1beta1.WordInfo.class,
+              com.google.cloud.videointelligence.v1p1beta1.WordInfo.Builder.class);
     }
 
     // Construct using com.google.cloud.videointelligence.v1p1beta1.WordInfo.newBuilder()
@@ -447,16 +486,16 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       if (startTimeBuilder_ == null) {
@@ -476,15 +515,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.videointelligence.v1p1beta1.VideoIntelligenceServiceProto.internal_static_google_cloud_videointelligence_v1p1beta1_WordInfo_descriptor;
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.videointelligence.v1p1beta1.VideoIntelligenceServiceProto
+          .internal_static_google_cloud_videointelligence_v1p1beta1_WordInfo_descriptor;
     }
 
+    @java.lang.Override
     public com.google.cloud.videointelligence.v1p1beta1.WordInfo getDefaultInstanceForType() {
       return com.google.cloud.videointelligence.v1p1beta1.WordInfo.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.cloud.videointelligence.v1p1beta1.WordInfo build() {
       com.google.cloud.videointelligence.v1p1beta1.WordInfo result = buildPartial();
       if (!result.isInitialized()) {
@@ -493,8 +535,10 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.cloud.videointelligence.v1p1beta1.WordInfo buildPartial() {
-      com.google.cloud.videointelligence.v1p1beta1.WordInfo result = new com.google.cloud.videointelligence.v1p1beta1.WordInfo(this);
+      com.google.cloud.videointelligence.v1p1beta1.WordInfo result =
+          new com.google.cloud.videointelligence.v1p1beta1.WordInfo(this);
       if (startTimeBuilder_ == null) {
         result.startTime_ = startTime_;
       } else {
@@ -510,35 +554,43 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+
+    @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+    @java.lang.Override
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+    @java.lang.Override
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
+    @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
+    @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.videointelligence.v1p1beta1.WordInfo) {
-        return mergeFrom((com.google.cloud.videointelligence.v1p1beta1.WordInfo)other);
+        return mergeFrom((com.google.cloud.videointelligence.v1p1beta1.WordInfo) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -546,7 +598,8 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.cloud.videointelligence.v1p1beta1.WordInfo other) {
-      if (other == com.google.cloud.videointelligence.v1p1beta1.WordInfo.getDefaultInstance()) return this;
+      if (other == com.google.cloud.videointelligence.v1p1beta1.WordInfo.getDefaultInstance())
+        return this;
       if (other.hasStartTime()) {
         mergeStartTime(other.getStartTime());
       }
@@ -562,10 +615,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -574,7 +629,8 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.videointelligence.v1p1beta1.WordInfo) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.cloud.videointelligence.v1p1beta1.WordInfo) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -586,8 +642,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Duration startTime_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> startTimeBuilder_;
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        startTimeBuilder_;
     /**
+     *
+     *
      * <pre>
      * Output only. Time offset relative to the beginning of the audio, and
      * corresponding to the start of the spoken word. This field is only set if
@@ -601,6 +662,8 @@ private static final long serialVersionUID = 0L;
       return startTimeBuilder_ != null || startTime_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Time offset relative to the beginning of the audio, and
      * corresponding to the start of the spoken word. This field is only set if
@@ -618,6 +681,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Time offset relative to the beginning of the audio, and
      * corresponding to the start of the spoken word. This field is only set if
@@ -641,6 +706,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Time offset relative to the beginning of the audio, and
      * corresponding to the start of the spoken word. This field is only set if
@@ -650,8 +717,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.Duration start_time = 1;</code>
      */
-    public Builder setStartTime(
-        com.google.protobuf.Duration.Builder builderForValue) {
+    public Builder setStartTime(com.google.protobuf.Duration.Builder builderForValue) {
       if (startTimeBuilder_ == null) {
         startTime_ = builderForValue.build();
         onChanged();
@@ -662,6 +728,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Time offset relative to the beginning of the audio, and
      * corresponding to the start of the spoken word. This field is only set if
@@ -675,7 +743,7 @@ private static final long serialVersionUID = 0L;
       if (startTimeBuilder_ == null) {
         if (startTime_ != null) {
           startTime_ =
-            com.google.protobuf.Duration.newBuilder(startTime_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Duration.newBuilder(startTime_).mergeFrom(value).buildPartial();
         } else {
           startTime_ = value;
         }
@@ -687,6 +755,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Time offset relative to the beginning of the audio, and
      * corresponding to the start of the spoken word. This field is only set if
@@ -708,6 +778,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Time offset relative to the beginning of the audio, and
      * corresponding to the start of the spoken word. This field is only set if
@@ -718,11 +790,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Duration start_time = 1;</code>
      */
     public com.google.protobuf.Duration.Builder getStartTimeBuilder() {
-      
+
       onChanged();
       return getStartTimeFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Time offset relative to the beginning of the audio, and
      * corresponding to the start of the spoken word. This field is only set if
@@ -736,11 +810,12 @@ private static final long serialVersionUID = 0L;
       if (startTimeBuilder_ != null) {
         return startTimeBuilder_.getMessageOrBuilder();
       } else {
-        return startTime_ == null ?
-            com.google.protobuf.Duration.getDefaultInstance() : startTime_;
+        return startTime_ == null ? com.google.protobuf.Duration.getDefaultInstance() : startTime_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Time offset relative to the beginning of the audio, and
      * corresponding to the start of the spoken word. This field is only set if
@@ -751,14 +826,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Duration start_time = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> 
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
         getStartTimeFieldBuilder() {
       if (startTimeBuilder_ == null) {
-        startTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder>(
-                getStartTime(),
-                getParentForChildren(),
-                isClean());
+        startTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Duration,
+                com.google.protobuf.Duration.Builder,
+                com.google.protobuf.DurationOrBuilder>(
+                getStartTime(), getParentForChildren(), isClean());
         startTime_ = null;
       }
       return startTimeBuilder_;
@@ -766,8 +844,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Duration endTime_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> endTimeBuilder_;
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
+        endTimeBuilder_;
     /**
+     *
+     *
      * <pre>
      * Output only. Time offset relative to the beginning of the audio, and
      * corresponding to the end of the spoken word. This field is only set if
@@ -781,6 +864,8 @@ private static final long serialVersionUID = 0L;
       return endTimeBuilder_ != null || endTime_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Time offset relative to the beginning of the audio, and
      * corresponding to the end of the spoken word. This field is only set if
@@ -798,6 +883,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Time offset relative to the beginning of the audio, and
      * corresponding to the end of the spoken word. This field is only set if
@@ -821,6 +908,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Time offset relative to the beginning of the audio, and
      * corresponding to the end of the spoken word. This field is only set if
@@ -830,8 +919,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.Duration end_time = 2;</code>
      */
-    public Builder setEndTime(
-        com.google.protobuf.Duration.Builder builderForValue) {
+    public Builder setEndTime(com.google.protobuf.Duration.Builder builderForValue) {
       if (endTimeBuilder_ == null) {
         endTime_ = builderForValue.build();
         onChanged();
@@ -842,6 +930,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Time offset relative to the beginning of the audio, and
      * corresponding to the end of the spoken word. This field is only set if
@@ -855,7 +945,7 @@ private static final long serialVersionUID = 0L;
       if (endTimeBuilder_ == null) {
         if (endTime_ != null) {
           endTime_ =
-            com.google.protobuf.Duration.newBuilder(endTime_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Duration.newBuilder(endTime_).mergeFrom(value).buildPartial();
         } else {
           endTime_ = value;
         }
@@ -867,6 +957,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Time offset relative to the beginning of the audio, and
      * corresponding to the end of the spoken word. This field is only set if
@@ -888,6 +980,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Time offset relative to the beginning of the audio, and
      * corresponding to the end of the spoken word. This field is only set if
@@ -898,11 +992,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Duration end_time = 2;</code>
      */
     public com.google.protobuf.Duration.Builder getEndTimeBuilder() {
-      
+
       onChanged();
       return getEndTimeFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Time offset relative to the beginning of the audio, and
      * corresponding to the end of the spoken word. This field is only set if
@@ -916,11 +1012,12 @@ private static final long serialVersionUID = 0L;
       if (endTimeBuilder_ != null) {
         return endTimeBuilder_.getMessageOrBuilder();
       } else {
-        return endTime_ == null ?
-            com.google.protobuf.Duration.getDefaultInstance() : endTime_;
+        return endTime_ == null ? com.google.protobuf.Duration.getDefaultInstance() : endTime_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Time offset relative to the beginning of the audio, and
      * corresponding to the end of the spoken word. This field is only set if
@@ -931,14 +1028,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Duration end_time = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder> 
+            com.google.protobuf.Duration,
+            com.google.protobuf.Duration.Builder,
+            com.google.protobuf.DurationOrBuilder>
         getEndTimeFieldBuilder() {
       if (endTimeBuilder_ == null) {
-        endTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Duration, com.google.protobuf.Duration.Builder, com.google.protobuf.DurationOrBuilder>(
-                getEndTime(),
-                getParentForChildren(),
-                isClean());
+        endTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Duration,
+                com.google.protobuf.Duration.Builder,
+                com.google.protobuf.DurationOrBuilder>(
+                getEndTime(), getParentForChildren(), isClean());
         endTime_ = null;
       }
       return endTimeBuilder_;
@@ -946,6 +1046,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object word_ = "";
     /**
+     *
+     *
      * <pre>
      * Output only. The word corresponding to this set of information.
      * </pre>
@@ -955,8 +1057,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getWord() {
       java.lang.Object ref = word_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         word_ = s;
         return s;
@@ -965,19 +1066,19 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The word corresponding to this set of information.
      * </pre>
      *
      * <code>string word = 3;</code>
      */
-    public com.google.protobuf.ByteString
-        getWordBytes() {
+    public com.google.protobuf.ByteString getWordBytes() {
       java.lang.Object ref = word_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         word_ = b;
         return b;
       } else {
@@ -985,23 +1086,26 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The word corresponding to this set of information.
      * </pre>
      *
      * <code>string word = 3;</code>
      */
-    public Builder setWord(
-        java.lang.String value) {
+    public Builder setWord(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       word_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The word corresponding to this set of information.
      * </pre>
@@ -1009,45 +1113,48 @@ private static final long serialVersionUID = 0L;
      * <code>string word = 3;</code>
      */
     public Builder clearWord() {
-      
+
       word_ = getDefaultInstance().getWord();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The word corresponding to this set of information.
      * </pre>
      *
      * <code>string word = 3;</code>
      */
-    public Builder setWordBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setWordBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       word_ = value;
       onChanged();
       return this;
     }
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+
+    @java.lang.Override
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
     }
-
 
     // @@protoc_insertion_point(builder_scope:google.cloud.videointelligence.v1p1beta1.WordInfo)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.videointelligence.v1p1beta1.WordInfo)
   private static final com.google.cloud.videointelligence.v1p1beta1.WordInfo DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.videointelligence.v1p1beta1.WordInfo();
   }
@@ -1056,15 +1163,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<WordInfo>
-      PARSER = new com.google.protobuf.AbstractParser<WordInfo>() {
-    public WordInfo parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-        return new WordInfo(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<WordInfo> PARSER =
+      new com.google.protobuf.AbstractParser<WordInfo>() {
+        @java.lang.Override
+        public WordInfo parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new WordInfo(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<WordInfo> parser() {
     return PARSER;
@@ -1075,9 +1183,8 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.cloud.videointelligence.v1p1beta1.WordInfo getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

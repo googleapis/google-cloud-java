@@ -4,36 +4,42 @@
 package com.google.cloud.automl.v1beta1;
 
 /**
+ *
+ *
  * <pre>
  * Metadata used across all long running operations returned by AutoML API.
  * </pre>
  *
  * Protobuf type {@code google.cloud.automl.v1beta1.OperationMetadata}
  */
-public  final class OperationMetadata extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class OperationMetadata extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.automl.v1beta1.OperationMetadata)
     OperationMetadataOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use OperationMetadata.newBuilder() to construct.
   private OperationMetadata(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private OperationMetadata() {
     progressPercent_ = 0;
     partialFailures_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private OperationMetadata(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -45,74 +51,85 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          case 18:
+            {
+              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+                partialFailures_ = new java.util.ArrayList<com.google.rpc.Status>();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              partialFailures_.add(
+                  input.readMessage(com.google.rpc.Status.parser(), extensionRegistry));
+              break;
             }
-            break;
-          }
-          case 18: {
-            if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-              partialFailures_ = new java.util.ArrayList<com.google.rpc.Status>();
-              mutable_bitField0_ |= 0x00000004;
-            }
-            partialFailures_.add(
-                input.readMessage(com.google.rpc.Status.parser(), extensionRegistry));
-            break;
-          }
-          case 26: {
-            com.google.protobuf.Timestamp.Builder subBuilder = null;
-            if (createTime_ != null) {
-              subBuilder = createTime_.toBuilder();
-            }
-            createTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(createTime_);
-              createTime_ = subBuilder.buildPartial();
-            }
+          case 26:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (createTime_ != null) {
+                subBuilder = createTime_.toBuilder();
+              }
+              createTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(createTime_);
+                createTime_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 34: {
-            com.google.protobuf.Timestamp.Builder subBuilder = null;
-            if (updateTime_ != null) {
-              subBuilder = updateTime_.toBuilder();
+              break;
             }
-            updateTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(updateTime_);
-              updateTime_ = subBuilder.buildPartial();
-            }
+          case 34:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (updateTime_ != null) {
+                subBuilder = updateTime_.toBuilder();
+              }
+              updateTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(updateTime_);
+                updateTime_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 82: {
-            com.google.cloud.automl.v1beta1.CreateModelOperationMetadata.Builder subBuilder = null;
-            if (detailsCase_ == 10) {
-              subBuilder = ((com.google.cloud.automl.v1beta1.CreateModelOperationMetadata) details_).toBuilder();
+              break;
             }
-            details_ =
-                input.readMessage(com.google.cloud.automl.v1beta1.CreateModelOperationMetadata.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.google.cloud.automl.v1beta1.CreateModelOperationMetadata) details_);
-              details_ = subBuilder.buildPartial();
+          case 82:
+            {
+              com.google.cloud.automl.v1beta1.CreateModelOperationMetadata.Builder subBuilder =
+                  null;
+              if (detailsCase_ == 10) {
+                subBuilder =
+                    ((com.google.cloud.automl.v1beta1.CreateModelOperationMetadata) details_)
+                        .toBuilder();
+              }
+              details_ =
+                  input.readMessage(
+                      com.google.cloud.automl.v1beta1.CreateModelOperationMetadata.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.cloud.automl.v1beta1.CreateModelOperationMetadata) details_);
+                details_ = subBuilder.buildPartial();
+              }
+              detailsCase_ = 10;
+              break;
             }
-            detailsCase_ = 10;
-            break;
-          }
-          case 104: {
-
-            progressPercent_ = input.readInt32();
-            break;
-          }
+          case 104:
+            {
+              progressPercent_ = input.readInt32();
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
         partialFailures_ = java.util.Collections.unmodifiableList(partialFailures_);
@@ -121,32 +138,35 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.automl.v1beta1.Operations.internal_static_google_cloud_automl_v1beta1_OperationMetadata_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.automl.v1beta1.Operations
+        .internal_static_google_cloud_automl_v1beta1_OperationMetadata_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.automl.v1beta1.Operations.internal_static_google_cloud_automl_v1beta1_OperationMetadata_fieldAccessorTable
+    return com.google.cloud.automl.v1beta1.Operations
+        .internal_static_google_cloud_automl_v1beta1_OperationMetadata_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.automl.v1beta1.OperationMetadata.class, com.google.cloud.automl.v1beta1.OperationMetadata.Builder.class);
+            com.google.cloud.automl.v1beta1.OperationMetadata.class,
+            com.google.cloud.automl.v1beta1.OperationMetadata.Builder.class);
   }
 
   private int bitField0_;
   private int detailsCase_ = 0;
   private java.lang.Object details_;
-  public enum DetailsCase
-      implements com.google.protobuf.Internal.EnumLite {
+
+  public enum DetailsCase implements com.google.protobuf.Internal.EnumLite {
     CREATE_MODEL_DETAILS(10),
     DETAILS_NOT_SET(0);
     private final int value;
+
     private DetailsCase(int value) {
       this.value = value;
     }
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static DetailsCase valueOf(int value) {
       return forNumber(value);
@@ -154,56 +174,68 @@ private static final long serialVersionUID = 0L;
 
     public static DetailsCase forNumber(int value) {
       switch (value) {
-        case 10: return CREATE_MODEL_DETAILS;
-        case 0: return DETAILS_NOT_SET;
-        default: return null;
+        case 10:
+          return CREATE_MODEL_DETAILS;
+        case 0:
+          return DETAILS_NOT_SET;
+        default:
+          return null;
       }
     }
+
     public int getNumber() {
       return this.value;
     }
   };
 
-  public DetailsCase
-  getDetailsCase() {
-    return DetailsCase.forNumber(
-        detailsCase_);
+  public DetailsCase getDetailsCase() {
+    return DetailsCase.forNumber(detailsCase_);
   }
 
   public static final int CREATE_MODEL_DETAILS_FIELD_NUMBER = 10;
   /**
+   *
+   *
    * <pre>
    * Details of CreateModel operation.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1beta1.CreateModelOperationMetadata create_model_details = 10;</code>
+   * <code>.google.cloud.automl.v1beta1.CreateModelOperationMetadata create_model_details = 10;
+   * </code>
    */
   public boolean hasCreateModelDetails() {
     return detailsCase_ == 10;
   }
   /**
+   *
+   *
    * <pre>
    * Details of CreateModel operation.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1beta1.CreateModelOperationMetadata create_model_details = 10;</code>
+   * <code>.google.cloud.automl.v1beta1.CreateModelOperationMetadata create_model_details = 10;
+   * </code>
    */
   public com.google.cloud.automl.v1beta1.CreateModelOperationMetadata getCreateModelDetails() {
     if (detailsCase_ == 10) {
-       return (com.google.cloud.automl.v1beta1.CreateModelOperationMetadata) details_;
+      return (com.google.cloud.automl.v1beta1.CreateModelOperationMetadata) details_;
     }
     return com.google.cloud.automl.v1beta1.CreateModelOperationMetadata.getDefaultInstance();
   }
   /**
+   *
+   *
    * <pre>
    * Details of CreateModel operation.
    * </pre>
    *
-   * <code>.google.cloud.automl.v1beta1.CreateModelOperationMetadata create_model_details = 10;</code>
+   * <code>.google.cloud.automl.v1beta1.CreateModelOperationMetadata create_model_details = 10;
+   * </code>
    */
-  public com.google.cloud.automl.v1beta1.CreateModelOperationMetadataOrBuilder getCreateModelDetailsOrBuilder() {
+  public com.google.cloud.automl.v1beta1.CreateModelOperationMetadataOrBuilder
+      getCreateModelDetailsOrBuilder() {
     if (detailsCase_ == 10) {
-       return (com.google.cloud.automl.v1beta1.CreateModelOperationMetadata) details_;
+      return (com.google.cloud.automl.v1beta1.CreateModelOperationMetadata) details_;
     }
     return com.google.cloud.automl.v1beta1.CreateModelOperationMetadata.getDefaultInstance();
   }
@@ -211,6 +243,8 @@ private static final long serialVersionUID = 0L;
   public static final int PROGRESS_PERCENT_FIELD_NUMBER = 13;
   private int progressPercent_;
   /**
+   *
+   *
    * <pre>
    * Output only. Progress of operation. Range: [0, 100].
    * </pre>
@@ -224,6 +258,8 @@ private static final long serialVersionUID = 0L;
   public static final int PARTIAL_FAILURES_FIELD_NUMBER = 2;
   private java.util.List<com.google.rpc.Status> partialFailures_;
   /**
+   *
+   *
    * <pre>
    * Output only. Partial failures encountered.
    * E.g. single files that couldn't be read.
@@ -237,6 +273,8 @@ private static final long serialVersionUID = 0L;
     return partialFailures_;
   }
   /**
+   *
+   *
    * <pre>
    * Output only. Partial failures encountered.
    * E.g. single files that couldn't be read.
@@ -246,11 +284,13 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.rpc.Status partial_failures = 2;</code>
    */
-  public java.util.List<? extends com.google.rpc.StatusOrBuilder> 
+  public java.util.List<? extends com.google.rpc.StatusOrBuilder>
       getPartialFailuresOrBuilderList() {
     return partialFailures_;
   }
   /**
+   *
+   *
    * <pre>
    * Output only. Partial failures encountered.
    * E.g. single files that couldn't be read.
@@ -264,6 +304,8 @@ private static final long serialVersionUID = 0L;
     return partialFailures_.size();
   }
   /**
+   *
+   *
    * <pre>
    * Output only. Partial failures encountered.
    * E.g. single files that couldn't be read.
@@ -277,6 +319,8 @@ private static final long serialVersionUID = 0L;
     return partialFailures_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * Output only. Partial failures encountered.
    * E.g. single files that couldn't be read.
@@ -286,14 +330,15 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.rpc.Status partial_failures = 2;</code>
    */
-  public com.google.rpc.StatusOrBuilder getPartialFailuresOrBuilder(
-      int index) {
+  public com.google.rpc.StatusOrBuilder getPartialFailuresOrBuilder(int index) {
     return partialFailures_.get(index);
   }
 
   public static final int CREATE_TIME_FIELD_NUMBER = 3;
   private com.google.protobuf.Timestamp createTime_;
   /**
+   *
+   *
    * <pre>
    * Output only. Time when the operation was created.
    * </pre>
@@ -304,6 +349,8 @@ private static final long serialVersionUID = 0L;
     return createTime_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Output only. Time when the operation was created.
    * </pre>
@@ -314,6 +361,8 @@ private static final long serialVersionUID = 0L;
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
   /**
+   *
+   *
    * <pre>
    * Output only. Time when the operation was created.
    * </pre>
@@ -327,6 +376,8 @@ private static final long serialVersionUID = 0L;
   public static final int UPDATE_TIME_FIELD_NUMBER = 4;
   private com.google.protobuf.Timestamp updateTime_;
   /**
+   *
+   *
    * <pre>
    * Output only. Time when the operation was updated for the last time.
    * </pre>
@@ -337,6 +388,8 @@ private static final long serialVersionUID = 0L;
     return updateTime_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Output only. Time when the operation was updated for the last time.
    * </pre>
@@ -347,6 +400,8 @@ private static final long serialVersionUID = 0L;
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
   /**
+   *
+   *
    * <pre>
    * Output only. Time when the operation was updated for the last time.
    * </pre>
@@ -358,6 +413,8 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -367,8 +424,8 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  @java.lang.Override
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     for (int i = 0; i < partialFailures_.size(); i++) {
       output.writeMessage(2, partialFailures_.get(i));
     }
@@ -379,7 +436,8 @@ private static final long serialVersionUID = 0L;
       output.writeMessage(4, getUpdateTime());
     }
     if (detailsCase_ == 10) {
-      output.writeMessage(10, (com.google.cloud.automl.v1beta1.CreateModelOperationMetadata) details_);
+      output.writeMessage(
+          10, (com.google.cloud.automl.v1beta1.CreateModelOperationMetadata) details_);
     }
     if (progressPercent_ != 0) {
       output.writeInt32(13, progressPercent_);
@@ -387,30 +445,28 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
 
     size = 0;
     for (int i = 0; i < partialFailures_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, partialFailures_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, partialFailures_.get(i));
     }
     if (createTime_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, getCreateTime());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getCreateTime());
     }
     if (updateTime_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, getUpdateTime());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getUpdateTime());
     }
     if (detailsCase_ == 10) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(10, (com.google.cloud.automl.v1beta1.CreateModelOperationMetadata) details_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              10, (com.google.cloud.automl.v1beta1.CreateModelOperationMetadata) details_);
     }
     if (progressPercent_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(13, progressPercent_);
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(13, progressPercent_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -420,35 +476,30 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.automl.v1beta1.OperationMetadata)) {
       return super.equals(obj);
     }
-    com.google.cloud.automl.v1beta1.OperationMetadata other = (com.google.cloud.automl.v1beta1.OperationMetadata) obj;
+    com.google.cloud.automl.v1beta1.OperationMetadata other =
+        (com.google.cloud.automl.v1beta1.OperationMetadata) obj;
 
     boolean result = true;
-    result = result && (getProgressPercent()
-        == other.getProgressPercent());
-    result = result && getPartialFailuresList()
-        .equals(other.getPartialFailuresList());
+    result = result && (getProgressPercent() == other.getProgressPercent());
+    result = result && getPartialFailuresList().equals(other.getPartialFailuresList());
     result = result && (hasCreateTime() == other.hasCreateTime());
     if (hasCreateTime()) {
-      result = result && getCreateTime()
-          .equals(other.getCreateTime());
+      result = result && getCreateTime().equals(other.getCreateTime());
     }
     result = result && (hasUpdateTime() == other.hasUpdateTime());
     if (hasUpdateTime()) {
-      result = result && getUpdateTime()
-          .equals(other.getUpdateTime());
+      result = result && getUpdateTime().equals(other.getUpdateTime());
     }
-    result = result && getDetailsCase().equals(
-        other.getDetailsCase());
+    result = result && getDetailsCase().equals(other.getDetailsCase());
     if (!result) return false;
     switch (detailsCase_) {
       case 10:
-        result = result && getCreateModelDetails()
-            .equals(other.getCreateModelDetails());
+        result = result && getCreateModelDetails().equals(other.getCreateModelDetails());
         break;
       case 0:
       default:
@@ -492,114 +543,126 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.cloud.automl.v1beta1.OperationMetadata parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.automl.v1beta1.OperationMetadata parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.automl.v1beta1.OperationMetadata parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.automl.v1beta1.OperationMetadata parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.automl.v1beta1.OperationMetadata parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.automl.v1beta1.OperationMetadata parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.automl.v1beta1.OperationMetadata parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.automl.v1beta1.OperationMetadata parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.automl.v1beta1.OperationMetadata parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.cloud.automl.v1beta1.OperationMetadata parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.cloud.automl.v1beta1.OperationMetadata parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.automl.v1beta1.OperationMetadata parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.automl.v1beta1.OperationMetadata parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.automl.v1beta1.OperationMetadata parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  public Builder newBuilderForType() { return newBuilder(); }
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-  public static Builder newBuilder(com.google.cloud.automl.v1beta1.OperationMetadata prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+
+  public static Builder newBuilder(com.google.cloud.automl.v1beta1.OperationMetadata prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+
+  @java.lang.Override
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Metadata used across all long running operations returned by AutoML API.
    * </pre>
    *
    * Protobuf type {@code google.cloud.automl.v1beta1.OperationMetadata}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.automl.v1beta1.OperationMetadata)
       com.google.cloud.automl.v1beta1.OperationMetadataOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.automl.v1beta1.Operations.internal_static_google_cloud_automl_v1beta1_OperationMetadata_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.automl.v1beta1.Operations
+          .internal_static_google_cloud_automl_v1beta1_OperationMetadata_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.automl.v1beta1.Operations.internal_static_google_cloud_automl_v1beta1_OperationMetadata_fieldAccessorTable
+      return com.google.cloud.automl.v1beta1.Operations
+          .internal_static_google_cloud_automl_v1beta1_OperationMetadata_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.automl.v1beta1.OperationMetadata.class, com.google.cloud.automl.v1beta1.OperationMetadata.Builder.class);
+              com.google.cloud.automl.v1beta1.OperationMetadata.class,
+              com.google.cloud.automl.v1beta1.OperationMetadata.Builder.class);
     }
 
     // Construct using com.google.cloud.automl.v1beta1.OperationMetadata.newBuilder()
@@ -607,17 +670,18 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getPartialFailuresFieldBuilder();
       }
     }
+
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       progressPercent_ = 0;
@@ -645,15 +709,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.automl.v1beta1.Operations.internal_static_google_cloud_automl_v1beta1_OperationMetadata_descriptor;
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.automl.v1beta1.Operations
+          .internal_static_google_cloud_automl_v1beta1_OperationMetadata_descriptor;
     }
 
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.OperationMetadata getDefaultInstanceForType() {
       return com.google.cloud.automl.v1beta1.OperationMetadata.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.OperationMetadata build() {
       com.google.cloud.automl.v1beta1.OperationMetadata result = buildPartial();
       if (!result.isInitialized()) {
@@ -662,8 +729,10 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.cloud.automl.v1beta1.OperationMetadata buildPartial() {
-      com.google.cloud.automl.v1beta1.OperationMetadata result = new com.google.cloud.automl.v1beta1.OperationMetadata(this);
+      com.google.cloud.automl.v1beta1.OperationMetadata result =
+          new com.google.cloud.automl.v1beta1.OperationMetadata(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (detailsCase_ == 10) {
@@ -699,35 +768,43 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+
+    @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+    @java.lang.Override
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+    @java.lang.Override
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
+    @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
+    @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.automl.v1beta1.OperationMetadata) {
-        return mergeFrom((com.google.cloud.automl.v1beta1.OperationMetadata)other);
+        return mergeFrom((com.google.cloud.automl.v1beta1.OperationMetadata) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -735,7 +812,8 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.cloud.automl.v1beta1.OperationMetadata other) {
-      if (other == com.google.cloud.automl.v1beta1.OperationMetadata.getDefaultInstance()) return this;
+      if (other == com.google.cloud.automl.v1beta1.OperationMetadata.getDefaultInstance())
+        return this;
       if (other.getProgressPercent() != 0) {
         setProgressPercent(other.getProgressPercent());
       }
@@ -757,9 +835,10 @@ private static final long serialVersionUID = 0L;
             partialFailuresBuilder_ = null;
             partialFailures_ = other.partialFailures_;
             bitField0_ = (bitField0_ & ~0x00000004);
-            partialFailuresBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getPartialFailuresFieldBuilder() : null;
+            partialFailuresBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getPartialFailuresFieldBuilder()
+                    : null;
           } else {
             partialFailuresBuilder_.addAllMessages(other.partialFailures_);
           }
@@ -772,23 +851,27 @@ private static final long serialVersionUID = 0L;
         mergeUpdateTime(other.getUpdateTime());
       }
       switch (other.getDetailsCase()) {
-        case CREATE_MODEL_DETAILS: {
-          mergeCreateModelDetails(other.getCreateModelDetails());
-          break;
-        }
-        case DETAILS_NOT_SET: {
-          break;
-        }
+        case CREATE_MODEL_DETAILS:
+          {
+            mergeCreateModelDetails(other.getCreateModelDetails());
+            break;
+          }
+        case DETAILS_NOT_SET:
+          {
+            break;
+          }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -797,7 +880,8 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.automl.v1beta1.OperationMetadata) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.cloud.automl.v1beta1.OperationMetadata) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -806,12 +890,12 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int detailsCase_ = 0;
     private java.lang.Object details_;
-    public DetailsCase
-        getDetailsCase() {
-      return DetailsCase.forNumber(
-          detailsCase_);
+
+    public DetailsCase getDetailsCase() {
+      return DetailsCase.forNumber(detailsCase_);
     }
 
     public Builder clearDetails() {
@@ -824,23 +908,32 @@ private static final long serialVersionUID = 0L;
     private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.automl.v1beta1.CreateModelOperationMetadata, com.google.cloud.automl.v1beta1.CreateModelOperationMetadata.Builder, com.google.cloud.automl.v1beta1.CreateModelOperationMetadataOrBuilder> createModelDetailsBuilder_;
+            com.google.cloud.automl.v1beta1.CreateModelOperationMetadata,
+            com.google.cloud.automl.v1beta1.CreateModelOperationMetadata.Builder,
+            com.google.cloud.automl.v1beta1.CreateModelOperationMetadataOrBuilder>
+        createModelDetailsBuilder_;
     /**
+     *
+     *
      * <pre>
      * Details of CreateModel operation.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.CreateModelOperationMetadata create_model_details = 10;</code>
+     * <code>.google.cloud.automl.v1beta1.CreateModelOperationMetadata create_model_details = 10;
+     * </code>
      */
     public boolean hasCreateModelDetails() {
       return detailsCase_ == 10;
     }
     /**
+     *
+     *
      * <pre>
      * Details of CreateModel operation.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.CreateModelOperationMetadata create_model_details = 10;</code>
+     * <code>.google.cloud.automl.v1beta1.CreateModelOperationMetadata create_model_details = 10;
+     * </code>
      */
     public com.google.cloud.automl.v1beta1.CreateModelOperationMetadata getCreateModelDetails() {
       if (createModelDetailsBuilder_ == null) {
@@ -856,13 +949,17 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Details of CreateModel operation.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.CreateModelOperationMetadata create_model_details = 10;</code>
+     * <code>.google.cloud.automl.v1beta1.CreateModelOperationMetadata create_model_details = 10;
+     * </code>
      */
-    public Builder setCreateModelDetails(com.google.cloud.automl.v1beta1.CreateModelOperationMetadata value) {
+    public Builder setCreateModelDetails(
+        com.google.cloud.automl.v1beta1.CreateModelOperationMetadata value) {
       if (createModelDetailsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -876,11 +973,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Details of CreateModel operation.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.CreateModelOperationMetadata create_model_details = 10;</code>
+     * <code>.google.cloud.automl.v1beta1.CreateModelOperationMetadata create_model_details = 10;
+     * </code>
      */
     public Builder setCreateModelDetails(
         com.google.cloud.automl.v1beta1.CreateModelOperationMetadata.Builder builderForValue) {
@@ -894,18 +994,27 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Details of CreateModel operation.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.CreateModelOperationMetadata create_model_details = 10;</code>
+     * <code>.google.cloud.automl.v1beta1.CreateModelOperationMetadata create_model_details = 10;
+     * </code>
      */
-    public Builder mergeCreateModelDetails(com.google.cloud.automl.v1beta1.CreateModelOperationMetadata value) {
+    public Builder mergeCreateModelDetails(
+        com.google.cloud.automl.v1beta1.CreateModelOperationMetadata value) {
       if (createModelDetailsBuilder_ == null) {
-        if (detailsCase_ == 10 &&
-            details_ != com.google.cloud.automl.v1beta1.CreateModelOperationMetadata.getDefaultInstance()) {
-          details_ = com.google.cloud.automl.v1beta1.CreateModelOperationMetadata.newBuilder((com.google.cloud.automl.v1beta1.CreateModelOperationMetadata) details_)
-              .mergeFrom(value).buildPartial();
+        if (detailsCase_ == 10
+            && details_
+                != com.google.cloud.automl.v1beta1.CreateModelOperationMetadata
+                    .getDefaultInstance()) {
+          details_ =
+              com.google.cloud.automl.v1beta1.CreateModelOperationMetadata.newBuilder(
+                      (com.google.cloud.automl.v1beta1.CreateModelOperationMetadata) details_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           details_ = value;
         }
@@ -920,11 +1029,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Details of CreateModel operation.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.CreateModelOperationMetadata create_model_details = 10;</code>
+     * <code>.google.cloud.automl.v1beta1.CreateModelOperationMetadata create_model_details = 10;
+     * </code>
      */
     public Builder clearCreateModelDetails() {
       if (createModelDetailsBuilder_ == null) {
@@ -943,23 +1055,31 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Details of CreateModel operation.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.CreateModelOperationMetadata create_model_details = 10;</code>
+     * <code>.google.cloud.automl.v1beta1.CreateModelOperationMetadata create_model_details = 10;
+     * </code>
      */
-    public com.google.cloud.automl.v1beta1.CreateModelOperationMetadata.Builder getCreateModelDetailsBuilder() {
+    public com.google.cloud.automl.v1beta1.CreateModelOperationMetadata.Builder
+        getCreateModelDetailsBuilder() {
       return getCreateModelDetailsFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Details of CreateModel operation.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.CreateModelOperationMetadata create_model_details = 10;</code>
+     * <code>.google.cloud.automl.v1beta1.CreateModelOperationMetadata create_model_details = 10;
+     * </code>
      */
-    public com.google.cloud.automl.v1beta1.CreateModelOperationMetadataOrBuilder getCreateModelDetailsOrBuilder() {
+    public com.google.cloud.automl.v1beta1.CreateModelOperationMetadataOrBuilder
+        getCreateModelDetailsOrBuilder() {
       if ((detailsCase_ == 10) && (createModelDetailsBuilder_ != null)) {
         return createModelDetailsBuilder_.getMessageOrBuilder();
       } else {
@@ -970,33 +1090,45 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Details of CreateModel operation.
      * </pre>
      *
-     * <code>.google.cloud.automl.v1beta1.CreateModelOperationMetadata create_model_details = 10;</code>
+     * <code>.google.cloud.automl.v1beta1.CreateModelOperationMetadata create_model_details = 10;
+     * </code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.automl.v1beta1.CreateModelOperationMetadata, com.google.cloud.automl.v1beta1.CreateModelOperationMetadata.Builder, com.google.cloud.automl.v1beta1.CreateModelOperationMetadataOrBuilder> 
+            com.google.cloud.automl.v1beta1.CreateModelOperationMetadata,
+            com.google.cloud.automl.v1beta1.CreateModelOperationMetadata.Builder,
+            com.google.cloud.automl.v1beta1.CreateModelOperationMetadataOrBuilder>
         getCreateModelDetailsFieldBuilder() {
       if (createModelDetailsBuilder_ == null) {
         if (!(detailsCase_ == 10)) {
-          details_ = com.google.cloud.automl.v1beta1.CreateModelOperationMetadata.getDefaultInstance();
+          details_ =
+              com.google.cloud.automl.v1beta1.CreateModelOperationMetadata.getDefaultInstance();
         }
-        createModelDetailsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.automl.v1beta1.CreateModelOperationMetadata, com.google.cloud.automl.v1beta1.CreateModelOperationMetadata.Builder, com.google.cloud.automl.v1beta1.CreateModelOperationMetadataOrBuilder>(
+        createModelDetailsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.automl.v1beta1.CreateModelOperationMetadata,
+                com.google.cloud.automl.v1beta1.CreateModelOperationMetadata.Builder,
+                com.google.cloud.automl.v1beta1.CreateModelOperationMetadataOrBuilder>(
                 (com.google.cloud.automl.v1beta1.CreateModelOperationMetadata) details_,
                 getParentForChildren(),
                 isClean());
         details_ = null;
       }
       detailsCase_ = 10;
-      onChanged();;
+      onChanged();
+      ;
       return createModelDetailsBuilder_;
     }
 
-    private int progressPercent_ ;
+    private int progressPercent_;
     /**
+     *
+     *
      * <pre>
      * Output only. Progress of operation. Range: [0, 100].
      * </pre>
@@ -1007,6 +1139,8 @@ private static final long serialVersionUID = 0L;
       return progressPercent_;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Progress of operation. Range: [0, 100].
      * </pre>
@@ -1014,12 +1148,14 @@ private static final long serialVersionUID = 0L;
      * <code>int32 progress_percent = 13;</code>
      */
     public Builder setProgressPercent(int value) {
-      
+
       progressPercent_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Progress of operation. Range: [0, 100].
      * </pre>
@@ -1027,25 +1163,29 @@ private static final long serialVersionUID = 0L;
      * <code>int32 progress_percent = 13;</code>
      */
     public Builder clearProgressPercent() {
-      
+
       progressPercent_ = 0;
       onChanged();
       return this;
     }
 
     private java.util.List<com.google.rpc.Status> partialFailures_ =
-      java.util.Collections.emptyList();
+        java.util.Collections.emptyList();
+
     private void ensurePartialFailuresIsMutable() {
       if (!((bitField0_ & 0x00000004) == 0x00000004)) {
         partialFailures_ = new java.util.ArrayList<com.google.rpc.Status>(partialFailures_);
         bitField0_ |= 0x00000004;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder> partialFailuresBuilder_;
+            com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
+        partialFailuresBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * Output only. Partial failures encountered.
      * E.g. single files that couldn't be read.
@@ -1063,6 +1203,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Partial failures encountered.
      * E.g. single files that couldn't be read.
@@ -1080,6 +1222,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Partial failures encountered.
      * E.g. single files that couldn't be read.
@@ -1097,6 +1241,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Partial failures encountered.
      * E.g. single files that couldn't be read.
@@ -1106,8 +1252,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.rpc.Status partial_failures = 2;</code>
      */
-    public Builder setPartialFailures(
-        int index, com.google.rpc.Status value) {
+    public Builder setPartialFailures(int index, com.google.rpc.Status value) {
       if (partialFailuresBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1121,6 +1266,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Partial failures encountered.
      * E.g. single files that couldn't be read.
@@ -1130,8 +1277,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.rpc.Status partial_failures = 2;</code>
      */
-    public Builder setPartialFailures(
-        int index, com.google.rpc.Status.Builder builderForValue) {
+    public Builder setPartialFailures(int index, com.google.rpc.Status.Builder builderForValue) {
       if (partialFailuresBuilder_ == null) {
         ensurePartialFailuresIsMutable();
         partialFailures_.set(index, builderForValue.build());
@@ -1142,6 +1288,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Partial failures encountered.
      * E.g. single files that couldn't be read.
@@ -1165,6 +1313,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Partial failures encountered.
      * E.g. single files that couldn't be read.
@@ -1174,8 +1324,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.rpc.Status partial_failures = 2;</code>
      */
-    public Builder addPartialFailures(
-        int index, com.google.rpc.Status value) {
+    public Builder addPartialFailures(int index, com.google.rpc.Status value) {
       if (partialFailuresBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1189,6 +1338,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Partial failures encountered.
      * E.g. single files that couldn't be read.
@@ -1198,8 +1349,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.rpc.Status partial_failures = 2;</code>
      */
-    public Builder addPartialFailures(
-        com.google.rpc.Status.Builder builderForValue) {
+    public Builder addPartialFailures(com.google.rpc.Status.Builder builderForValue) {
       if (partialFailuresBuilder_ == null) {
         ensurePartialFailuresIsMutable();
         partialFailures_.add(builderForValue.build());
@@ -1210,6 +1360,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Partial failures encountered.
      * E.g. single files that couldn't be read.
@@ -1219,8 +1371,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.rpc.Status partial_failures = 2;</code>
      */
-    public Builder addPartialFailures(
-        int index, com.google.rpc.Status.Builder builderForValue) {
+    public Builder addPartialFailures(int index, com.google.rpc.Status.Builder builderForValue) {
       if (partialFailuresBuilder_ == null) {
         ensurePartialFailuresIsMutable();
         partialFailures_.add(index, builderForValue.build());
@@ -1231,6 +1382,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Partial failures encountered.
      * E.g. single files that couldn't be read.
@@ -1244,8 +1397,7 @@ private static final long serialVersionUID = 0L;
         java.lang.Iterable<? extends com.google.rpc.Status> values) {
       if (partialFailuresBuilder_ == null) {
         ensurePartialFailuresIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, partialFailures_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, partialFailures_);
         onChanged();
       } else {
         partialFailuresBuilder_.addAllMessages(values);
@@ -1253,6 +1405,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Partial failures encountered.
      * E.g. single files that couldn't be read.
@@ -1273,6 +1427,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Partial failures encountered.
      * E.g. single files that couldn't be read.
@@ -1293,6 +1449,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Partial failures encountered.
      * E.g. single files that couldn't be read.
@@ -1302,11 +1460,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.rpc.Status partial_failures = 2;</code>
      */
-    public com.google.rpc.Status.Builder getPartialFailuresBuilder(
-        int index) {
+    public com.google.rpc.Status.Builder getPartialFailuresBuilder(int index) {
       return getPartialFailuresFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Partial failures encountered.
      * E.g. single files that couldn't be read.
@@ -1316,14 +1475,16 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.rpc.Status partial_failures = 2;</code>
      */
-    public com.google.rpc.StatusOrBuilder getPartialFailuresOrBuilder(
-        int index) {
+    public com.google.rpc.StatusOrBuilder getPartialFailuresOrBuilder(int index) {
       if (partialFailuresBuilder_ == null) {
-        return partialFailures_.get(index);  } else {
+        return partialFailures_.get(index);
+      } else {
         return partialFailuresBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Partial failures encountered.
      * E.g. single files that couldn't be read.
@@ -1333,8 +1494,8 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.rpc.Status partial_failures = 2;</code>
      */
-    public java.util.List<? extends com.google.rpc.StatusOrBuilder> 
-         getPartialFailuresOrBuilderList() {
+    public java.util.List<? extends com.google.rpc.StatusOrBuilder>
+        getPartialFailuresOrBuilderList() {
       if (partialFailuresBuilder_ != null) {
         return partialFailuresBuilder_.getMessageOrBuilderList();
       } else {
@@ -1342,6 +1503,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Partial failures encountered.
      * E.g. single files that couldn't be read.
@@ -1352,10 +1515,12 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.rpc.Status partial_failures = 2;</code>
      */
     public com.google.rpc.Status.Builder addPartialFailuresBuilder() {
-      return getPartialFailuresFieldBuilder().addBuilder(
-          com.google.rpc.Status.getDefaultInstance());
+      return getPartialFailuresFieldBuilder()
+          .addBuilder(com.google.rpc.Status.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Partial failures encountered.
      * E.g. single files that couldn't be read.
@@ -1365,12 +1530,13 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.rpc.Status partial_failures = 2;</code>
      */
-    public com.google.rpc.Status.Builder addPartialFailuresBuilder(
-        int index) {
-      return getPartialFailuresFieldBuilder().addBuilder(
-          index, com.google.rpc.Status.getDefaultInstance());
+    public com.google.rpc.Status.Builder addPartialFailuresBuilder(int index) {
+      return getPartialFailuresFieldBuilder()
+          .addBuilder(index, com.google.rpc.Status.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Partial failures encountered.
      * E.g. single files that couldn't be read.
@@ -1380,16 +1546,19 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.rpc.Status partial_failures = 2;</code>
      */
-    public java.util.List<com.google.rpc.Status.Builder> 
-         getPartialFailuresBuilderList() {
+    public java.util.List<com.google.rpc.Status.Builder> getPartialFailuresBuilderList() {
       return getPartialFailuresFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder> 
+            com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
         getPartialFailuresFieldBuilder() {
       if (partialFailuresBuilder_ == null) {
-        partialFailuresBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>(
+        partialFailuresBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.rpc.Status,
+                com.google.rpc.Status.Builder,
+                com.google.rpc.StatusOrBuilder>(
                 partialFailures_,
                 ((bitField0_ & 0x00000004) == 0x00000004),
                 getParentForChildren(),
@@ -1401,8 +1570,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Timestamp createTime_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> createTimeBuilder_;
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        createTimeBuilder_;
     /**
+     *
+     *
      * <pre>
      * Output only. Time when the operation was created.
      * </pre>
@@ -1413,6 +1587,8 @@ private static final long serialVersionUID = 0L;
       return createTimeBuilder_ != null || createTime_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Time when the operation was created.
      * </pre>
@@ -1421,12 +1597,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.Timestamp getCreateTime() {
       if (createTimeBuilder_ == null) {
-        return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
+        return createTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : createTime_;
       } else {
         return createTimeBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Time when the operation was created.
      * </pre>
@@ -1447,14 +1627,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Time when the operation was created.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 3;</code>
      */
-    public Builder setCreateTime(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
+    public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
         onChanged();
@@ -1465,6 +1646,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Time when the operation was created.
      * </pre>
@@ -1475,7 +1658,7 @@ private static final long serialVersionUID = 0L;
       if (createTimeBuilder_ == null) {
         if (createTime_ != null) {
           createTime_ =
-            com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
         } else {
           createTime_ = value;
         }
@@ -1487,6 +1670,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Time when the operation was created.
      * </pre>
@@ -1505,6 +1690,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Time when the operation was created.
      * </pre>
@@ -1512,11 +1699,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp create_time = 3;</code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-      
+
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Time when the operation was created.
      * </pre>
@@ -1527,11 +1716,14 @@ private static final long serialVersionUID = 0L;
       if (createTimeBuilder_ != null) {
         return createTimeBuilder_.getMessageOrBuilder();
       } else {
-        return createTime_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
+        return createTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : createTime_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Time when the operation was created.
      * </pre>
@@ -1539,14 +1731,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp create_time = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
         getCreateTimeFieldBuilder() {
       if (createTimeBuilder_ == null) {
-        createTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getCreateTime(),
-                getParentForChildren(),
-                isClean());
+        createTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getCreateTime(), getParentForChildren(), isClean());
         createTime_ = null;
       }
       return createTimeBuilder_;
@@ -1554,8 +1749,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Timestamp updateTime_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> updateTimeBuilder_;
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        updateTimeBuilder_;
     /**
+     *
+     *
      * <pre>
      * Output only. Time when the operation was updated for the last time.
      * </pre>
@@ -1566,6 +1766,8 @@ private static final long serialVersionUID = 0L;
       return updateTimeBuilder_ != null || updateTime_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Time when the operation was updated for the last time.
      * </pre>
@@ -1574,12 +1776,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.Timestamp getUpdateTime() {
       if (updateTimeBuilder_ == null) {
-        return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
+        return updateTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : updateTime_;
       } else {
         return updateTimeBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Time when the operation was updated for the last time.
      * </pre>
@@ -1600,14 +1806,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Time when the operation was updated for the last time.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 4;</code>
      */
-    public Builder setUpdateTime(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
+    public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
         updateTime_ = builderForValue.build();
         onChanged();
@@ -1618,6 +1825,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Time when the operation was updated for the last time.
      * </pre>
@@ -1628,7 +1837,7 @@ private static final long serialVersionUID = 0L;
       if (updateTimeBuilder_ == null) {
         if (updateTime_ != null) {
           updateTime_ =
-            com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
         } else {
           updateTime_ = value;
         }
@@ -1640,6 +1849,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Time when the operation was updated for the last time.
      * </pre>
@@ -1658,6 +1869,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Time when the operation was updated for the last time.
      * </pre>
@@ -1665,11 +1878,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp update_time = 4;</code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-      
+
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Time when the operation was updated for the last time.
      * </pre>
@@ -1680,11 +1895,14 @@ private static final long serialVersionUID = 0L;
       if (updateTimeBuilder_ != null) {
         return updateTimeBuilder_.getMessageOrBuilder();
       } else {
-        return updateTime_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
+        return updateTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : updateTime_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Time when the operation was updated for the last time.
      * </pre>
@@ -1692,34 +1910,39 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp update_time = 4;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
         getUpdateTimeFieldBuilder() {
       if (updateTimeBuilder_ == null) {
-        updateTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getUpdateTime(),
-                getParentForChildren(),
-                isClean());
+        updateTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getUpdateTime(), getParentForChildren(), isClean());
         updateTime_ = null;
       }
       return updateTimeBuilder_;
     }
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+
+    @java.lang.Override
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
     }
-
 
     // @@protoc_insertion_point(builder_scope:google.cloud.automl.v1beta1.OperationMetadata)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.automl.v1beta1.OperationMetadata)
   private static final com.google.cloud.automl.v1beta1.OperationMetadata DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.automl.v1beta1.OperationMetadata();
   }
@@ -1728,15 +1951,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<OperationMetadata>
-      PARSER = new com.google.protobuf.AbstractParser<OperationMetadata>() {
-    public OperationMetadata parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-        return new OperationMetadata(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<OperationMetadata> PARSER =
+      new com.google.protobuf.AbstractParser<OperationMetadata>() {
+        @java.lang.Override
+        public OperationMetadata parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new OperationMetadata(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<OperationMetadata> parser() {
     return PARSER;
@@ -1747,9 +1971,8 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.cloud.automl.v1beta1.OperationMetadata getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

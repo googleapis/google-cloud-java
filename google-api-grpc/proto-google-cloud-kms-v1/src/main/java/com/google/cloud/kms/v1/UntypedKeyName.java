@@ -14,8 +14,8 @@
 
 package com.google.cloud.kms.v1;
 
-import com.google.common.base.Preconditions;
 import com.google.api.resourcenames.ResourceName;
+import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
@@ -65,16 +65,12 @@ public class UntypedKeyName extends KeyName {
     return true;
   }
 
-  /**
-   * Return a map with a single value rawValue keyed on an empty String "".
-   */
+  /** Return a map with a single value rawValue keyed on an empty String "". */
   public Map<String, String> getFieldValuesMap() {
     return valueMap;
   }
 
-  /**
-   * Return the initial rawValue if @param fieldName is an empty String, else return null.
-   */
+  /** Return the initial rawValue if @param fieldName is an empty String, else return null. */
   public String getFieldValue(String fieldName) {
     return valueMap.get(fieldName);
   }

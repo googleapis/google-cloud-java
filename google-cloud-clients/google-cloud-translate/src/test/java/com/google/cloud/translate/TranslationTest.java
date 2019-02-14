@@ -19,16 +19,16 @@ package com.google.cloud.translate;
 import static org.junit.Assert.assertEquals;
 
 import com.google.api.services.translate.model.TranslationsResource;
-
 import org.junit.Test;
 
 public class TranslationTest {
 
   private static final String TRANSLATED_TEXT = "Hello world";
   private static final String SOURCE_LANGUAGE = "en";
-  private static final TranslationsResource TRANSLATION_PB = new TranslationsResource()
-      .setTranslatedText(TRANSLATED_TEXT)
-      .setDetectedSourceLanguage(SOURCE_LANGUAGE);
+  private static final TranslationsResource TRANSLATION_PB =
+      new TranslationsResource()
+          .setTranslatedText(TRANSLATED_TEXT)
+          .setDetectedSourceLanguage(SOURCE_LANGUAGE);
   private static final Translation TRANSLATION = Translation.fromPb(TRANSLATION_PB);
 
   @Test
@@ -37,7 +37,6 @@ public class TranslationTest {
     assertEquals(SOURCE_LANGUAGE, TRANSLATION.getSourceLanguage());
     compareTranslation(TRANSLATION, Translation.fromPb(TRANSLATION_PB));
   }
-
 
   private void compareTranslation(Translation expected, Translation value) {
     assertEquals(expected, value);

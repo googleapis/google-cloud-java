@@ -14,20 +14,21 @@
 
 package com.google.monitoring.v3;
 
-import com.google.common.base.Preconditions;
-import com.google.common.collect.ImmutableMap;
 import com.google.api.pathtemplate.PathTemplate;
 import com.google.api.resourcenames.ResourceName;
-import java.util.Map;
+import com.google.common.base.Preconditions;
+import com.google.common.collect.ImmutableMap;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 @javax.annotation.Generated("by GAPIC protoc plugin")
 public class MonitoredResourceDescriptorName implements ResourceName {
 
   private static final PathTemplate PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}/monitoredResourceDescriptors/{monitored_resource_descriptor}");
+      PathTemplate.createWithoutUrlEncoding(
+          "projects/{project}/monitoredResourceDescriptors/{monitored_resource_descriptor}");
 
   private volatile Map<String, String> fieldValuesMap;
 
@@ -52,22 +53,24 @@ public class MonitoredResourceDescriptorName implements ResourceName {
 
   private MonitoredResourceDescriptorName(Builder builder) {
     project = Preconditions.checkNotNull(builder.getProject());
-    monitoredResourceDescriptor = Preconditions.checkNotNull(builder.getMonitoredResourceDescriptor());
+    monitoredResourceDescriptor =
+        Preconditions.checkNotNull(builder.getMonitoredResourceDescriptor());
   }
 
-  public static MonitoredResourceDescriptorName of(String project, String monitoredResourceDescriptor) {
+  public static MonitoredResourceDescriptorName of(
+      String project, String monitoredResourceDescriptor) {
     return newBuilder()
-      .setProject(project)
-      .setMonitoredResourceDescriptor(monitoredResourceDescriptor)
-      .build();
+        .setProject(project)
+        .setMonitoredResourceDescriptor(monitoredResourceDescriptor)
+        .build();
   }
 
   public static String format(String project, String monitoredResourceDescriptor) {
     return newBuilder()
-      .setProject(project)
-      .setMonitoredResourceDescriptor(monitoredResourceDescriptor)
-      .build()
-      .toString();
+        .setProject(project)
+        .setMonitoredResourceDescriptor(monitoredResourceDescriptor)
+        .build()
+        .toString();
   }
 
   public static MonitoredResourceDescriptorName parse(String formattedString) {
@@ -75,7 +78,9 @@ public class MonitoredResourceDescriptorName implements ResourceName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(formattedString, "MonitoredResourceDescriptorName.parse: formattedString not in valid format");
+        PATH_TEMPLATE.validatedMatch(
+            formattedString,
+            "MonitoredResourceDescriptorName.parse: formattedString not in valid format");
     return of(matchMap.get("project"), matchMap.get("monitored_resource_descriptor"));
   }
 
@@ -123,7 +128,8 @@ public class MonitoredResourceDescriptorName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate("project", project, "monitored_resource_descriptor", monitoredResourceDescriptor);
+    return PATH_TEMPLATE.instantiate(
+        "project", project, "monitored_resource_descriptor", monitoredResourceDescriptor);
   }
 
   /** Builder for MonitoredResourceDescriptorName. */
@@ -150,8 +156,7 @@ public class MonitoredResourceDescriptorName implements ResourceName {
       return this;
     }
 
-    private Builder() {
-    }
+    private Builder() {}
 
     private Builder(MonitoredResourceDescriptorName monitoredResourceDescriptorName) {
       project = monitoredResourceDescriptorName.project;
@@ -186,4 +191,3 @@ public class MonitoredResourceDescriptorName implements ResourceName {
     return h;
   }
 }
-

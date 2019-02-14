@@ -3,11 +3,14 @@
 
 package com.google.firestore.v1beta1;
 
-public interface RunQueryResponseOrBuilder extends
+public interface RunQueryResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.firestore.v1beta1.RunQueryResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The transaction that was started as part of this request.
    * Can only be set in the first response, and only if
@@ -20,6 +23,8 @@ public interface RunQueryResponseOrBuilder extends
   com.google.protobuf.ByteString getTransaction();
 
   /**
+   *
+   *
    * <pre>
    * A query result.
    * Not set when reporting partial progress.
@@ -29,6 +34,8 @@ public interface RunQueryResponseOrBuilder extends
    */
   boolean hasDocument();
   /**
+   *
+   *
    * <pre>
    * A query result.
    * Not set when reporting partial progress.
@@ -38,6 +45,8 @@ public interface RunQueryResponseOrBuilder extends
    */
   com.google.firestore.v1beta1.Document getDocument();
   /**
+   *
+   *
    * <pre>
    * A query result.
    * Not set when reporting partial progress.
@@ -48,6 +57,8 @@ public interface RunQueryResponseOrBuilder extends
   com.google.firestore.v1beta1.DocumentOrBuilder getDocumentOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The time at which the document was read. This may be monotonically
    * increasing; in this case, the previous documents in the result stream are
@@ -61,6 +72,8 @@ public interface RunQueryResponseOrBuilder extends
    */
   boolean hasReadTime();
   /**
+   *
+   *
    * <pre>
    * The time at which the document was read. This may be monotonically
    * increasing; in this case, the previous documents in the result stream are
@@ -74,6 +87,8 @@ public interface RunQueryResponseOrBuilder extends
    */
   com.google.protobuf.Timestamp getReadTime();
   /**
+   *
+   *
    * <pre>
    * The time at which the document was read. This may be monotonically
    * increasing; in this case, the previous documents in the result stream are
@@ -88,6 +103,8 @@ public interface RunQueryResponseOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getReadTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The number of results that have been skipped due to an offset between
    * the last response and the current response.

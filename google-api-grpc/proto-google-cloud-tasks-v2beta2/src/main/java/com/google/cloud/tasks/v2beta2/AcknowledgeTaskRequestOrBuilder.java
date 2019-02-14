@@ -3,11 +3,14 @@
 
 package com.google.cloud.tasks.v2beta2;
 
-public interface AcknowledgeTaskRequestOrBuilder extends
+public interface AcknowledgeTaskRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.tasks.v2beta2.AcknowledgeTaskRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required.
    * The task name. For example:
@@ -18,6 +21,8 @@ public interface AcknowledgeTaskRequestOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * Required.
    * The task name. For example:
@@ -26,10 +31,11 @@ public interface AcknowledgeTaskRequestOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * Required.
    * The task's current schedule time, available in the
@@ -43,6 +49,8 @@ public interface AcknowledgeTaskRequestOrBuilder extends
    */
   boolean hasScheduleTime();
   /**
+   *
+   *
    * <pre>
    * Required.
    * The task's current schedule time, available in the
@@ -56,6 +64,8 @@ public interface AcknowledgeTaskRequestOrBuilder extends
    */
   com.google.protobuf.Timestamp getScheduleTime();
   /**
+   *
+   *
    * <pre>
    * Required.
    * The task's current schedule time, available in the

@@ -3,11 +3,14 @@
 
 package com.google.logging.v2;
 
-public interface UpdateExclusionRequestOrBuilder extends
+public interface UpdateExclusionRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.logging.v2.UpdateExclusionRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The resource name of the exclusion to update:
    *     "projects/[PROJECT_ID]/exclusions/[EXCLUSION_ID]"
@@ -21,6 +24,8 @@ public interface UpdateExclusionRequestOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * Required. The resource name of the exclusion to update:
    *     "projects/[PROJECT_ID]/exclusions/[EXCLUSION_ID]"
@@ -32,10 +37,11 @@ public interface UpdateExclusionRequestOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * Required. New values for the existing exclusion. Only the fields specified
    * in `update_mask` are relevant.
@@ -45,6 +51,8 @@ public interface UpdateExclusionRequestOrBuilder extends
    */
   boolean hasExclusion();
   /**
+   *
+   *
    * <pre>
    * Required. New values for the existing exclusion. Only the fields specified
    * in `update_mask` are relevant.
@@ -54,6 +62,8 @@ public interface UpdateExclusionRequestOrBuilder extends
    */
   com.google.logging.v2.LogExclusion getExclusion();
   /**
+   *
+   *
    * <pre>
    * Required. New values for the existing exclusion. Only the fields specified
    * in `update_mask` are relevant.
@@ -64,6 +74,8 @@ public interface UpdateExclusionRequestOrBuilder extends
   com.google.logging.v2.LogExclusionOrBuilder getExclusionOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Required. A nonempty list of fields to change in the existing exclusion.
    * New values for the fields are taken from the corresponding fields in the
@@ -77,6 +89,8 @@ public interface UpdateExclusionRequestOrBuilder extends
    */
   boolean hasUpdateMask();
   /**
+   *
+   *
    * <pre>
    * Required. A nonempty list of fields to change in the existing exclusion.
    * New values for the fields are taken from the corresponding fields in the
@@ -90,6 +104,8 @@ public interface UpdateExclusionRequestOrBuilder extends
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**
+   *
+   *
    * <pre>
    * Required. A nonempty list of fields to change in the existing exclusion.
    * New values for the fields are taken from the corresponding fields in the

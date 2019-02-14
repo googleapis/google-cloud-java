@@ -16,6 +16,10 @@
 
 package com.google.cloud.pubsub.it;
 
+import static com.google.common.truth.Truth.assertThat;
+import static org.junit.Assume.assumeTrue;
+
+import com.google.api.gax.rpc.PermissionDeniedException;
 import com.google.auto.value.AutoValue;
 import com.google.cloud.ServiceOptions;
 import com.google.cloud.pubsub.v1.AckReplyConsumer;
@@ -32,20 +36,18 @@ import com.google.pubsub.v1.ProjectSubscriptionName;
 import com.google.pubsub.v1.ProjectTopicName;
 import com.google.pubsub.v1.PubsubMessage;
 import com.google.pubsub.v1.PushConfig;
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.rules.Timeout;
-
 import java.util.Collections;
 import java.util.List;
 import java.util.UUID;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.TimeUnit;
-
-import static com.google.common.truth.Truth.assertThat;
+import junit.framework.Assert;
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+import org.junit.Rule;
+import org.junit.Test;
+import org.junit.rules.Timeout;
 
 public class ITPubSubTest {
 
@@ -53,6 +55,9 @@ public class ITPubSubTest {
   private static TopicAdminClient topicAdminClient;
   private static SubscriptionAdminClient subscriptionAdminClient;
   private static String projectId;
+  private static final boolean IS_VPC_TEST =
+      System.getenv("GOOGLE_CLOUD_TESTS_IN_VPCSC") != null
+          && System.getenv("GOOGLE_CLOUD_TESTS_IN_VPCSC").equalsIgnoreCase("true");
 
   @Rule public Timeout globalTimeout = Timeout.seconds(300);
 
@@ -86,7 +91,8 @@ public class ITPubSubTest {
 
   @Test
   public void testTopicPolicy() {
-    ProjectTopicName topicName = ProjectTopicName.of(projectId, formatForTest("testing-topic-policy"));
+    ProjectTopicName topicName =
+        ProjectTopicName.of(projectId, formatForTest("testing-topic-policy"));
     topicAdminClient.createTopic(topicName);
 
     Policy policy = topicAdminClient.getIamPolicy(topicName.toString());
@@ -108,11 +114,37 @@ public class ITPubSubTest {
   }
 
   @Test
+  public void testVPCPushSubscriber() throws Exception {
+    assumeTrue(IS_VPC_TEST);
+    ProjectTopicName topicName =
+        ProjectTopicName.of(projectId, formatForTest("testing-vpc-push-subscriber-topic"));
+    ProjectSubscriptionName subscriptionName =
+        ProjectSubscriptionName.of(
+            projectId, formatForTest("testing-vpc-push-subscriber-subscription"));
+    topicAdminClient.createTopic(topicName);
+
+    try {
+      subscriptionAdminClient.createSubscription(
+          subscriptionName,
+          topicName,
+          PushConfig.newBuilder().setPushEndpoint("random_point").build(),
+          10);
+      subscriptionAdminClient.deleteSubscription(subscriptionName);
+      Assert.fail("No exception raised");
+    } catch (PermissionDeniedException e) {
+      // expected
+    }
+
+    topicAdminClient.deleteTopic(topicName);
+  }
+
+  @Test
   public void testPublishSubscribe() throws Exception {
     ProjectTopicName topicName =
         ProjectTopicName.of(projectId, formatForTest("testing-publish-subscribe-topic"));
     ProjectSubscriptionName subscriptionName =
-        ProjectSubscriptionName.of(projectId, formatForTest("testing-publish-subscribe-subscription"));
+        ProjectSubscriptionName.of(
+            projectId, formatForTest("testing-publish-subscribe-subscription"));
 
     topicAdminClient.createTopic(topicName);
     subscriptionAdminClient.createSubscription(
@@ -147,6 +179,7 @@ public class ITPubSubTest {
         .publish(PubsubMessage.newBuilder().setData(ByteString.copyFromUtf8("msg2")).build())
         .get();
     publisher.shutdown();
+    publisher.awaitTermination(1, TimeUnit.MINUTES);
 
     // Ack the first message.
     MessageAndConsumer toAck = pollQueue(receiveQueue);

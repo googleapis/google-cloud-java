@@ -18,17 +18,16 @@ package com.google.cloud.compute.deprecated;
 
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
-
-import org.joda.time.format.DateTimeFormatter;
-import org.joda.time.format.ISODateTimeFormat;
-
 import java.io.Serializable;
 import java.math.BigInteger;
 import java.util.Objects;
+import org.threeten.bp.Instant;
+import org.threeten.bp.ZoneOffset;
+import org.threeten.bp.format.DateTimeFormatter;
 
 /**
- * A Google Compute Engine disk type. A disk type represents the type of disk to use, such as
- * {@code pd-ssd} or {@code pd-standard}.
+ * A Google Compute Engine disk type. A disk type represents the type of disk to use, such as {@code
+ * pd-ssd} or {@code pd-standard}.
  *
  * @see <a href="https://cloud.google.com/compute/docs/reference/latest/diskTypes">Disk Types</a>
  */
@@ -50,7 +49,8 @@ public class DiskType implements Serializable {
       };
 
   private static final long serialVersionUID = -944042261695072026L;
-  private static final DateTimeFormatter TIMESTAMP_FORMATTER = ISODateTimeFormat.dateTime();
+  private static final DateTimeFormatter TIMESTAMP_FORMATTER =
+      DateTimeFormatter.ISO_DATE_TIME.withZone(ZoneOffset.UTC);
 
   private final String generatedId;
   private final DiskTypeId diskTypeId;
@@ -122,44 +122,32 @@ public class DiskType implements Serializable {
     this.deprecationStatus = builder.deprecationStatus;
   }
 
-  /**
-   * Returns the creation timestamp in milliseconds since epoch.
-   */
+  /** Returns the creation timestamp in milliseconds since epoch. */
   public Long getCreationTimestamp() {
     return creationTimestamp;
   }
 
-  /**
-   * Returns the disk type's identity.
-   */
+  /** Returns the disk type's identity. */
   public DiskTypeId getDiskTypeId() {
     return diskTypeId;
   }
 
-  /**
-   * Returns the service-generated unique identifier for the disk type.
-   */
+  /** Returns the service-generated unique identifier for the disk type. */
   public String getGeneratedId() {
     return generatedId;
   }
 
-  /**
-   * Returns a textual description of the disk type.
-   */
+  /** Returns a textual description of the disk type. */
   public String getDescription() {
     return description;
   }
 
-  /**
-   * Returns an optional textual description of the valid disk size, such as "10GB-10TB".
-   */
+  /** Returns an optional textual description of the valid disk size, such as "10GB-10TB". */
   public String getValidDiskSize() {
     return validDiskSize;
   }
 
-  /**
-   * Returns the service-defined default disk size in GB.
-   */
+  /** Returns the service-defined default disk size in GB. */
   public Long getDefaultDiskSizeGb() {
     return defaultDiskSizeGb;
   }
@@ -194,8 +182,8 @@ public class DiskType implements Serializable {
   public final boolean equals(Object obj) {
     return obj == this
         || obj != null
-        && obj.getClass().equals(DiskType.class)
-        && Objects.equals(toPb(), ((DiskType) obj).toPb());
+            && obj.getClass().equals(DiskType.class)
+            && Objects.equals(toPb(), ((DiskType) obj).toPb());
   }
 
   com.google.api.services.compute.model.DiskType toPb() {
@@ -205,7 +193,8 @@ public class DiskType implements Serializable {
       diskTypePb.setId(new BigInteger(generatedId));
     }
     if (creationTimestamp != null) {
-      diskTypePb.setCreationTimestamp(TIMESTAMP_FORMATTER.print(creationTimestamp));
+      diskTypePb.setCreationTimestamp(
+          TIMESTAMP_FORMATTER.format(Instant.ofEpochMilli(creationTimestamp)));
     }
     diskTypePb.setDescription(description);
     diskTypePb.setValidDiskSize(validDiskSize);
@@ -229,7 +218,9 @@ public class DiskType implements Serializable {
     }
     if (diskTypePb.getCreationTimestamp() != null) {
       builder.setCreationTimestamp(
-          TIMESTAMP_FORMATTER.parseMillis(diskTypePb.getCreationTimestamp()));
+          TIMESTAMP_FORMATTER
+              .parse(diskTypePb.getCreationTimestamp(), Instant.FROM)
+              .toEpochMilli());
     }
     builder.setDiskTypeId(DiskTypeId.fromUrl(diskTypePb.getSelfLink()));
     builder.setDescription(diskTypePb.getDescription());

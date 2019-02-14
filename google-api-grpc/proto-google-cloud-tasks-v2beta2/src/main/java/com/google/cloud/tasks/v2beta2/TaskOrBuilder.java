@@ -3,11 +3,14 @@
 
 package com.google.cloud.tasks.v2beta2;
 
-public interface TaskOrBuilder extends
+public interface TaskOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.tasks.v2beta2.Task)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Optionally caller-specified in [CreateTask][google.cloud.tasks.v2beta2.CloudTasks.CreateTask].
    * The task name.
@@ -31,6 +34,8 @@ public interface TaskOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * Optionally caller-specified in [CreateTask][google.cloud.tasks.v2beta2.CloudTasks.CreateTask].
    * The task name.
@@ -52,10 +57,11 @@ public interface TaskOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * App Engine HTTP request that is sent to the task's target. Can
    * be set only if
@@ -68,6 +74,8 @@ public interface TaskOrBuilder extends
    */
   boolean hasAppEngineHttpRequest();
   /**
+   *
+   *
    * <pre>
    * App Engine HTTP request that is sent to the task's target. Can
    * be set only if
@@ -80,6 +88,8 @@ public interface TaskOrBuilder extends
    */
   com.google.cloud.tasks.v2beta2.AppEngineHttpRequest getAppEngineHttpRequest();
   /**
+   *
+   *
    * <pre>
    * App Engine HTTP request that is sent to the task's target. Can
    * be set only if
@@ -93,6 +103,8 @@ public interface TaskOrBuilder extends
   com.google.cloud.tasks.v2beta2.AppEngineHttpRequestOrBuilder getAppEngineHttpRequestOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] to process the task. Can be
    * set only if [pull_target][google.cloud.tasks.v2beta2.Queue.pull_target] is set on the queue.
@@ -103,6 +115,8 @@ public interface TaskOrBuilder extends
    */
   boolean hasPullMessage();
   /**
+   *
+   *
    * <pre>
    * [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] to process the task. Can be
    * set only if [pull_target][google.cloud.tasks.v2beta2.Queue.pull_target] is set on the queue.
@@ -113,6 +127,8 @@ public interface TaskOrBuilder extends
    */
   com.google.cloud.tasks.v2beta2.PullMessage getPullMessage();
   /**
+   *
+   *
    * <pre>
    * [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks] to process the task. Can be
    * set only if [pull_target][google.cloud.tasks.v2beta2.Queue.pull_target] is set on the queue.
@@ -124,6 +140,8 @@ public interface TaskOrBuilder extends
   com.google.cloud.tasks.v2beta2.PullMessageOrBuilder getPullMessageOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The time when the task is scheduled to be attempted.
    * For App Engine queues, this is when the task will be attempted or retried.
@@ -138,6 +156,8 @@ public interface TaskOrBuilder extends
    */
   boolean hasScheduleTime();
   /**
+   *
+   *
    * <pre>
    * The time when the task is scheduled to be attempted.
    * For App Engine queues, this is when the task will be attempted or retried.
@@ -152,6 +172,8 @@ public interface TaskOrBuilder extends
    */
   com.google.protobuf.Timestamp getScheduleTime();
   /**
+   *
+   *
    * <pre>
    * The time when the task is scheduled to be attempted.
    * For App Engine queues, this is when the task will be attempted or retried.
@@ -167,6 +189,8 @@ public interface TaskOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getScheduleTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Output only. The time that the task was created.
    * `create_time` will be truncated to the nearest second.
@@ -176,6 +200,8 @@ public interface TaskOrBuilder extends
    */
   boolean hasCreateTime();
   /**
+   *
+   *
    * <pre>
    * Output only. The time that the task was created.
    * `create_time` will be truncated to the nearest second.
@@ -185,6 +211,8 @@ public interface TaskOrBuilder extends
    */
   com.google.protobuf.Timestamp getCreateTime();
   /**
+   *
+   *
    * <pre>
    * Output only. The time that the task was created.
    * `create_time` will be truncated to the nearest second.
@@ -195,6 +223,8 @@ public interface TaskOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Output only. The task status.
    * </pre>
@@ -203,6 +233,8 @@ public interface TaskOrBuilder extends
    */
   boolean hasStatus();
   /**
+   *
+   *
    * <pre>
    * Output only. The task status.
    * </pre>
@@ -211,6 +243,8 @@ public interface TaskOrBuilder extends
    */
   com.google.cloud.tasks.v2beta2.TaskStatus getStatus();
   /**
+   *
+   *
    * <pre>
    * Output only. The task status.
    * </pre>
@@ -220,6 +254,8 @@ public interface TaskOrBuilder extends
   com.google.cloud.tasks.v2beta2.TaskStatusOrBuilder getStatusOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Output only. The view specifies which subset of the [Task][google.cloud.tasks.v2beta2.Task] has
    * been returned.
@@ -229,6 +265,8 @@ public interface TaskOrBuilder extends
    */
   int getViewValue();
   /**
+   *
+   *
    * <pre>
    * Output only. The view specifies which subset of the [Task][google.cloud.tasks.v2beta2.Task] has
    * been returned.

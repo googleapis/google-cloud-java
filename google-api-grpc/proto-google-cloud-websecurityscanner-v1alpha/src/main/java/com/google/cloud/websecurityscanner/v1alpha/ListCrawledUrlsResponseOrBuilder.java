@@ -3,20 +3,24 @@
 
 package com.google.cloud.websecurityscanner.v1alpha;
 
-public interface ListCrawledUrlsResponseOrBuilder extends
+public interface ListCrawledUrlsResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.websecurityscanner.v1alpha.ListCrawledUrlsResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The list of CrawledUrls returned.
    * </pre>
    *
    * <code>repeated .google.cloud.websecurityscanner.v1alpha.CrawledUrl crawled_urls = 1;</code>
    */
-  java.util.List<com.google.cloud.websecurityscanner.v1alpha.CrawledUrl> 
-      getCrawledUrlsList();
+  java.util.List<com.google.cloud.websecurityscanner.v1alpha.CrawledUrl> getCrawledUrlsList();
   /**
+   *
+   *
    * <pre>
    * The list of CrawledUrls returned.
    * </pre>
@@ -25,6 +29,8 @@ public interface ListCrawledUrlsResponseOrBuilder extends
    */
   com.google.cloud.websecurityscanner.v1alpha.CrawledUrl getCrawledUrls(int index);
   /**
+   *
+   *
    * <pre>
    * The list of CrawledUrls returned.
    * </pre>
@@ -33,15 +39,19 @@ public interface ListCrawledUrlsResponseOrBuilder extends
    */
   int getCrawledUrlsCount();
   /**
+   *
+   *
    * <pre>
    * The list of CrawledUrls returned.
    * </pre>
    *
    * <code>repeated .google.cloud.websecurityscanner.v1alpha.CrawledUrl crawled_urls = 1;</code>
    */
-  java.util.List<? extends com.google.cloud.websecurityscanner.v1alpha.CrawledUrlOrBuilder> 
+  java.util.List<? extends com.google.cloud.websecurityscanner.v1alpha.CrawledUrlOrBuilder>
       getCrawledUrlsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * The list of CrawledUrls returned.
    * </pre>
@@ -52,6 +62,8 @@ public interface ListCrawledUrlsResponseOrBuilder extends
       int index);
 
   /**
+   *
+   *
    * <pre>
    * Token to retrieve the next page of results, or empty if there are no
    * more results in the list.
@@ -61,6 +73,8 @@ public interface ListCrawledUrlsResponseOrBuilder extends
    */
   java.lang.String getNextPageToken();
   /**
+   *
+   *
    * <pre>
    * Token to retrieve the next page of results, or empty if there are no
    * more results in the list.
@@ -68,6 +82,5 @@ public interface ListCrawledUrlsResponseOrBuilder extends
    *
    * <code>string next_page_token = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getNextPageTokenBytes();
+  com.google.protobuf.ByteString getNextPageTokenBytes();
 }

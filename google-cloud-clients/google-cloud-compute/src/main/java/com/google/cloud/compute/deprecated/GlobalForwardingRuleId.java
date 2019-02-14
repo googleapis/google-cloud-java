@@ -17,13 +17,10 @@
 package com.google.cloud.compute.deprecated;
 
 import com.google.common.base.Function;
-
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
- * Identity for a Google Compute Engine global forwarding rule.
- */
+/** Identity for a Google Compute Engine global forwarding rule. */
 public final class GlobalForwardingRuleId extends ForwardingRuleId {
 
   static final Function<String, GlobalForwardingRuleId> FROM_URL_FUNCTION =
@@ -67,8 +64,7 @@ public final class GlobalForwardingRuleId extends ForwardingRuleId {
   @Override
   public boolean equals(Object obj) {
     return obj == this
-        || obj instanceof GlobalForwardingRuleId
-        && baseEquals((GlobalForwardingRuleId) obj);
+        || obj instanceof GlobalForwardingRuleId && baseEquals((GlobalForwardingRuleId) obj);
   }
 
   @Override

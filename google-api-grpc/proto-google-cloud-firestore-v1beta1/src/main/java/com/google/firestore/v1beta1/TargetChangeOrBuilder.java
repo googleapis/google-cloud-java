@@ -3,11 +3,14 @@
 
 package com.google.firestore.v1beta1;
 
-public interface TargetChangeOrBuilder extends
+public interface TargetChangeOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.firestore.v1beta1.TargetChange)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The type of change that occurred.
    * </pre>
@@ -16,6 +19,8 @@ public interface TargetChangeOrBuilder extends
    */
   int getTargetChangeTypeValue();
   /**
+   *
+   *
    * <pre>
    * The type of change that occurred.
    * </pre>
@@ -25,6 +30,8 @@ public interface TargetChangeOrBuilder extends
   com.google.firestore.v1beta1.TargetChange.TargetChangeType getTargetChangeType();
 
   /**
+   *
+   *
    * <pre>
    * The target IDs of targets that have changed.
    * If empty, the change applies to all targets.
@@ -38,6 +45,8 @@ public interface TargetChangeOrBuilder extends
    */
   java.util.List<java.lang.Integer> getTargetIdsList();
   /**
+   *
+   *
    * <pre>
    * The target IDs of targets that have changed.
    * If empty, the change applies to all targets.
@@ -51,6 +60,8 @@ public interface TargetChangeOrBuilder extends
    */
   int getTargetIdsCount();
   /**
+   *
+   *
    * <pre>
    * The target IDs of targets that have changed.
    * If empty, the change applies to all targets.
@@ -65,6 +76,8 @@ public interface TargetChangeOrBuilder extends
   int getTargetIds(int index);
 
   /**
+   *
+   *
    * <pre>
    * The error that resulted in this change, if applicable.
    * </pre>
@@ -73,6 +86,8 @@ public interface TargetChangeOrBuilder extends
    */
   boolean hasCause();
   /**
+   *
+   *
    * <pre>
    * The error that resulted in this change, if applicable.
    * </pre>
@@ -81,6 +96,8 @@ public interface TargetChangeOrBuilder extends
    */
   com.google.rpc.Status getCause();
   /**
+   *
+   *
    * <pre>
    * The error that resulted in this change, if applicable.
    * </pre>
@@ -90,6 +107,8 @@ public interface TargetChangeOrBuilder extends
   com.google.rpc.StatusOrBuilder getCauseOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * A token that can be used to resume the stream for the given `target_ids`,
    * or all targets if `target_ids` is empty.
@@ -101,6 +120,8 @@ public interface TargetChangeOrBuilder extends
   com.google.protobuf.ByteString getResumeToken();
 
   /**
+   *
+   *
    * <pre>
    * The consistent `read_time` for the given `target_ids` (omitted when the
    * target_ids are not at a consistent snapshot).
@@ -116,6 +137,8 @@ public interface TargetChangeOrBuilder extends
    */
   boolean hasReadTime();
   /**
+   *
+   *
    * <pre>
    * The consistent `read_time` for the given `target_ids` (omitted when the
    * target_ids are not at a consistent snapshot).
@@ -131,6 +154,8 @@ public interface TargetChangeOrBuilder extends
    */
   com.google.protobuf.Timestamp getReadTime();
   /**
+   *
+   *
    * <pre>
    * The consistent `read_time` for the given `target_ids` (omitted when the
    * target_ids are not at a consistent snapshot).

@@ -3,11 +3,14 @@
 
 package com.google.privacy.dlp.v2;
 
-public interface GetDeidentifyTemplateRequestOrBuilder extends
+public interface GetDeidentifyTemplateRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.GetDeidentifyTemplateRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Resource name of the organization and deidentify template to be read, for
    * example `organizations/433245324/deidentifyTemplates/432452342` or
@@ -18,6 +21,8 @@ public interface GetDeidentifyTemplateRequestOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * Resource name of the organization and deidentify template to be read, for
    * example `organizations/433245324/deidentifyTemplates/432452342` or
@@ -26,6 +31,5 @@ public interface GetDeidentifyTemplateRequestOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 }

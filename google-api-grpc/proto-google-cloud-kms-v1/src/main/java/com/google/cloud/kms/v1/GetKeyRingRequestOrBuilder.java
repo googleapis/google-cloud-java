@@ -3,11 +3,14 @@
 
 package com.google.cloud.kms.v1;
 
-public interface GetKeyRingRequestOrBuilder extends
+public interface GetKeyRingRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.kms.v1.GetKeyRingRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The [name][google.cloud.kms.v1.KeyRing.name] of the [KeyRing][google.cloud.kms.v1.KeyRing] to get.
    * </pre>
@@ -16,12 +19,13 @@ public interface GetKeyRingRequestOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The [name][google.cloud.kms.v1.KeyRing.name] of the [KeyRing][google.cloud.kms.v1.KeyRing] to get.
    * </pre>
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 }

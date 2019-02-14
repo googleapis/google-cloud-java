@@ -3,11 +3,14 @@
 
 package com.google.cloud.iot.v1;
 
-public interface ModifyCloudToDeviceConfigRequestOrBuilder extends
+public interface ModifyCloudToDeviceConfigRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.iot.v1.ModifyCloudToDeviceConfigRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The name of the device. For example,
    * `projects/p0/locations/us-central1/registries/registry0/devices/device0` or
@@ -18,6 +21,8 @@ public interface ModifyCloudToDeviceConfigRequestOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The name of the device. For example,
    * `projects/p0/locations/us-central1/registries/registry0/devices/device0` or
@@ -26,10 +31,11 @@ public interface ModifyCloudToDeviceConfigRequestOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * The version number to update. If this value is zero, it will not check the
    * version number of the server and will always update the current version;
@@ -43,6 +49,8 @@ public interface ModifyCloudToDeviceConfigRequestOrBuilder extends
   long getVersionToUpdate();
 
   /**
+   *
+   *
    * <pre>
    * The configuration data for the device.
    * </pre>

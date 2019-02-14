@@ -3,11 +3,14 @@
 
 package io.grafeas.v1beta1.discovery;
 
-public interface DiscoveredOrBuilder extends
+public interface DiscoveredOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:grafeas.v1beta1.discovery.Discovered)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Whether the resource is continuously analyzed.
    * </pre>
@@ -16,6 +19,8 @@ public interface DiscoveredOrBuilder extends
    */
   int getContinuousAnalysisValue();
   /**
+   *
+   *
    * <pre>
    * Whether the resource is continuously analyzed.
    * </pre>
@@ -25,6 +30,8 @@ public interface DiscoveredOrBuilder extends
   io.grafeas.v1beta1.discovery.Discovered.ContinuousAnalysis getContinuousAnalysis();
 
   /**
+   *
+   *
    * <pre>
    * The last time continuous analysis was done for this resource.
    * </pre>
@@ -33,6 +40,8 @@ public interface DiscoveredOrBuilder extends
    */
   boolean hasLastAnalysisTime();
   /**
+   *
+   *
    * <pre>
    * The last time continuous analysis was done for this resource.
    * </pre>
@@ -41,6 +50,8 @@ public interface DiscoveredOrBuilder extends
    */
   com.google.protobuf.Timestamp getLastAnalysisTime();
   /**
+   *
+   *
    * <pre>
    * The last time continuous analysis was done for this resource.
    * </pre>
@@ -50,6 +61,8 @@ public interface DiscoveredOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getLastAnalysisTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The status of discovery for the resource.
    * </pre>
@@ -58,6 +71,8 @@ public interface DiscoveredOrBuilder extends
    */
   int getAnalysisStatusValue();
   /**
+   *
+   *
    * <pre>
    * The status of discovery for the resource.
    * </pre>
@@ -67,6 +82,8 @@ public interface DiscoveredOrBuilder extends
   io.grafeas.v1beta1.discovery.Discovered.AnalysisStatus getAnalysisStatus();
 
   /**
+   *
+   *
    * <pre>
    * When an error is encountered this will contain a LocalizedMessage under
    * details to show to the user. The LocalizedMessage is output only and
@@ -77,6 +94,8 @@ public interface DiscoveredOrBuilder extends
    */
   boolean hasAnalysisStatusError();
   /**
+   *
+   *
    * <pre>
    * When an error is encountered this will contain a LocalizedMessage under
    * details to show to the user. The LocalizedMessage is output only and
@@ -87,6 +106,8 @@ public interface DiscoveredOrBuilder extends
    */
   com.google.rpc.Status getAnalysisStatusError();
   /**
+   *
+   *
    * <pre>
    * When an error is encountered this will contain a LocalizedMessage under
    * details to show to the user. The LocalizedMessage is output only and

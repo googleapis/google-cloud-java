@@ -4,35 +4,42 @@
 package com.google.cloud.vision.v1;
 
 /**
+ *
+ *
  * <pre>
  * Response to an async batch file annotation request.
  * </pre>
  *
  * Protobuf type {@code google.cloud.vision.v1.AsyncBatchAnnotateFilesResponse}
  */
-public  final class AsyncBatchAnnotateFilesResponse extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class AsyncBatchAnnotateFilesResponse extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.vision.v1.AsyncBatchAnnotateFilesResponse)
     AsyncBatchAnnotateFilesResponseOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use AsyncBatchAnnotateFilesResponse.newBuilder() to construct.
-  private AsyncBatchAnnotateFilesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+  private AsyncBatchAnnotateFilesResponse(
+      com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private AsyncBatchAnnotateFilesResponse() {
     responses_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private AsyncBatchAnnotateFilesResponse(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -44,29 +51,32 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          case 10:
+            {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                responses_ =
+                    new java.util.ArrayList<com.google.cloud.vision.v1.AsyncAnnotateFileResponse>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              responses_.add(
+                  input.readMessage(
+                      com.google.cloud.vision.v1.AsyncAnnotateFileResponse.parser(),
+                      extensionRegistry));
+              break;
             }
-            break;
-          }
-          case 10: {
-            if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-              responses_ = new java.util.ArrayList<com.google.cloud.vision.v1.AsyncAnnotateFileResponse>();
-              mutable_bitField0_ |= 0x00000001;
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
             }
-            responses_.add(
-                input.readMessage(com.google.cloud.vision.v1.AsyncAnnotateFileResponse.parser(), extensionRegistry));
-            break;
-          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
         responses_ = java.util.Collections.unmodifiableList(responses_);
@@ -75,21 +85,27 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.vision.v1.ImageAnnotatorProto.internal_static_google_cloud_vision_v1_AsyncBatchAnnotateFilesResponse_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.vision.v1.ImageAnnotatorProto
+        .internal_static_google_cloud_vision_v1_AsyncBatchAnnotateFilesResponse_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.vision.v1.ImageAnnotatorProto.internal_static_google_cloud_vision_v1_AsyncBatchAnnotateFilesResponse_fieldAccessorTable
+    return com.google.cloud.vision.v1.ImageAnnotatorProto
+        .internal_static_google_cloud_vision_v1_AsyncBatchAnnotateFilesResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.vision.v1.AsyncBatchAnnotateFilesResponse.class, com.google.cloud.vision.v1.AsyncBatchAnnotateFilesResponse.Builder.class);
+            com.google.cloud.vision.v1.AsyncBatchAnnotateFilesResponse.class,
+            com.google.cloud.vision.v1.AsyncBatchAnnotateFilesResponse.Builder.class);
   }
 
   public static final int RESPONSES_FIELD_NUMBER = 1;
   private java.util.List<com.google.cloud.vision.v1.AsyncAnnotateFileResponse> responses_;
   /**
+   *
+   *
    * <pre>
    * The list of file annotation responses, one for each request in
    * AsyncBatchAnnotateFilesRequest.
@@ -101,6 +117,8 @@ private static final long serialVersionUID = 0L;
     return responses_;
   }
   /**
+   *
+   *
    * <pre>
    * The list of file annotation responses, one for each request in
    * AsyncBatchAnnotateFilesRequest.
@@ -108,11 +126,13 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.cloud.vision.v1.AsyncAnnotateFileResponse responses = 1;</code>
    */
-  public java.util.List<? extends com.google.cloud.vision.v1.AsyncAnnotateFileResponseOrBuilder> 
+  public java.util.List<? extends com.google.cloud.vision.v1.AsyncAnnotateFileResponseOrBuilder>
       getResponsesOrBuilderList() {
     return responses_;
   }
   /**
+   *
+   *
    * <pre>
    * The list of file annotation responses, one for each request in
    * AsyncBatchAnnotateFilesRequest.
@@ -124,6 +144,8 @@ private static final long serialVersionUID = 0L;
     return responses_.size();
   }
   /**
+   *
+   *
    * <pre>
    * The list of file annotation responses, one for each request in
    * AsyncBatchAnnotateFilesRequest.
@@ -135,6 +157,8 @@ private static final long serialVersionUID = 0L;
     return responses_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * The list of file annotation responses, one for each request in
    * AsyncBatchAnnotateFilesRequest.
@@ -148,6 +172,8 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -157,22 +183,22 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  @java.lang.Override
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     for (int i = 0; i < responses_.size(); i++) {
       output.writeMessage(1, responses_.get(i));
     }
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
 
     size = 0;
     for (int i = 0; i < responses_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, responses_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, responses_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -182,16 +208,16 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.vision.v1.AsyncBatchAnnotateFilesResponse)) {
       return super.equals(obj);
     }
-    com.google.cloud.vision.v1.AsyncBatchAnnotateFilesResponse other = (com.google.cloud.vision.v1.AsyncBatchAnnotateFilesResponse) obj;
+    com.google.cloud.vision.v1.AsyncBatchAnnotateFilesResponse other =
+        (com.google.cloud.vision.v1.AsyncBatchAnnotateFilesResponse) obj;
 
     boolean result = true;
-    result = result && getResponsesList()
-        .equals(other.getResponsesList());
+    result = result && getResponsesList().equals(other.getResponsesList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -213,114 +239,127 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.cloud.vision.v1.AsyncBatchAnnotateFilesResponse parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.vision.v1.AsyncBatchAnnotateFilesResponse parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.vision.v1.AsyncBatchAnnotateFilesResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.vision.v1.AsyncBatchAnnotateFilesResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.vision.v1.AsyncBatchAnnotateFilesResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.vision.v1.AsyncBatchAnnotateFilesResponse parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.vision.v1.AsyncBatchAnnotateFilesResponse parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.vision.v1.AsyncBatchAnnotateFilesResponse parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.vision.v1.AsyncBatchAnnotateFilesResponse parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.cloud.vision.v1.AsyncBatchAnnotateFilesResponse parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.cloud.vision.v1.AsyncBatchAnnotateFilesResponse parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.vision.v1.AsyncBatchAnnotateFilesResponse parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.vision.v1.AsyncBatchAnnotateFilesResponse parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.vision.v1.AsyncBatchAnnotateFilesResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  public Builder newBuilderForType() { return newBuilder(); }
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-  public static Builder newBuilder(com.google.cloud.vision.v1.AsyncBatchAnnotateFilesResponse prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+
+  public static Builder newBuilder(
+      com.google.cloud.vision.v1.AsyncBatchAnnotateFilesResponse prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+
+  @java.lang.Override
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Response to an async batch file annotation request.
    * </pre>
    *
    * Protobuf type {@code google.cloud.vision.v1.AsyncBatchAnnotateFilesResponse}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.vision.v1.AsyncBatchAnnotateFilesResponse)
       com.google.cloud.vision.v1.AsyncBatchAnnotateFilesResponseOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.vision.v1.ImageAnnotatorProto.internal_static_google_cloud_vision_v1_AsyncBatchAnnotateFilesResponse_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.vision.v1.ImageAnnotatorProto
+          .internal_static_google_cloud_vision_v1_AsyncBatchAnnotateFilesResponse_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.vision.v1.ImageAnnotatorProto.internal_static_google_cloud_vision_v1_AsyncBatchAnnotateFilesResponse_fieldAccessorTable
+      return com.google.cloud.vision.v1.ImageAnnotatorProto
+          .internal_static_google_cloud_vision_v1_AsyncBatchAnnotateFilesResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.vision.v1.AsyncBatchAnnotateFilesResponse.class, com.google.cloud.vision.v1.AsyncBatchAnnotateFilesResponse.Builder.class);
+              com.google.cloud.vision.v1.AsyncBatchAnnotateFilesResponse.class,
+              com.google.cloud.vision.v1.AsyncBatchAnnotateFilesResponse.Builder.class);
     }
 
     // Construct using com.google.cloud.vision.v1.AsyncBatchAnnotateFilesResponse.newBuilder()
@@ -328,17 +367,18 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getResponsesFieldBuilder();
       }
     }
+
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       if (responsesBuilder_ == null) {
@@ -350,15 +390,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.vision.v1.ImageAnnotatorProto.internal_static_google_cloud_vision_v1_AsyncBatchAnnotateFilesResponse_descriptor;
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.vision.v1.ImageAnnotatorProto
+          .internal_static_google_cloud_vision_v1_AsyncBatchAnnotateFilesResponse_descriptor;
     }
 
+    @java.lang.Override
     public com.google.cloud.vision.v1.AsyncBatchAnnotateFilesResponse getDefaultInstanceForType() {
       return com.google.cloud.vision.v1.AsyncBatchAnnotateFilesResponse.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.cloud.vision.v1.AsyncBatchAnnotateFilesResponse build() {
       com.google.cloud.vision.v1.AsyncBatchAnnotateFilesResponse result = buildPartial();
       if (!result.isInitialized()) {
@@ -367,8 +410,10 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.cloud.vision.v1.AsyncBatchAnnotateFilesResponse buildPartial() {
-      com.google.cloud.vision.v1.AsyncBatchAnnotateFilesResponse result = new com.google.cloud.vision.v1.AsyncBatchAnnotateFilesResponse(this);
+      com.google.cloud.vision.v1.AsyncBatchAnnotateFilesResponse result =
+          new com.google.cloud.vision.v1.AsyncBatchAnnotateFilesResponse(this);
       int from_bitField0_ = bitField0_;
       if (responsesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -383,35 +428,43 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+
+    @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+    @java.lang.Override
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+    @java.lang.Override
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
+    @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
+    @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.vision.v1.AsyncBatchAnnotateFilesResponse) {
-        return mergeFrom((com.google.cloud.vision.v1.AsyncBatchAnnotateFilesResponse)other);
+        return mergeFrom((com.google.cloud.vision.v1.AsyncBatchAnnotateFilesResponse) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -419,7 +472,8 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.cloud.vision.v1.AsyncBatchAnnotateFilesResponse other) {
-      if (other == com.google.cloud.vision.v1.AsyncBatchAnnotateFilesResponse.getDefaultInstance()) return this;
+      if (other == com.google.cloud.vision.v1.AsyncBatchAnnotateFilesResponse.getDefaultInstance())
+        return this;
       if (responsesBuilder_ == null) {
         if (!other.responses_.isEmpty()) {
           if (responses_.isEmpty()) {
@@ -438,9 +492,10 @@ private static final long serialVersionUID = 0L;
             responsesBuilder_ = null;
             responses_ = other.responses_;
             bitField0_ = (bitField0_ & ~0x00000001);
-            responsesBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getResponsesFieldBuilder() : null;
+            responsesBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getResponsesFieldBuilder()
+                    : null;
           } else {
             responsesBuilder_.addAllMessages(other.responses_);
           }
@@ -451,10 +506,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -463,7 +520,8 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.vision.v1.AsyncBatchAnnotateFilesResponse) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.cloud.vision.v1.AsyncBatchAnnotateFilesResponse) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -472,21 +530,30 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private java.util.List<com.google.cloud.vision.v1.AsyncAnnotateFileResponse> responses_ =
-      java.util.Collections.emptyList();
+        java.util.Collections.emptyList();
+
     private void ensureResponsesIsMutable() {
       if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-        responses_ = new java.util.ArrayList<com.google.cloud.vision.v1.AsyncAnnotateFileResponse>(responses_);
+        responses_ =
+            new java.util.ArrayList<com.google.cloud.vision.v1.AsyncAnnotateFileResponse>(
+                responses_);
         bitField0_ |= 0x00000001;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.vision.v1.AsyncAnnotateFileResponse, com.google.cloud.vision.v1.AsyncAnnotateFileResponse.Builder, com.google.cloud.vision.v1.AsyncAnnotateFileResponseOrBuilder> responsesBuilder_;
+            com.google.cloud.vision.v1.AsyncAnnotateFileResponse,
+            com.google.cloud.vision.v1.AsyncAnnotateFileResponse.Builder,
+            com.google.cloud.vision.v1.AsyncAnnotateFileResponseOrBuilder>
+        responsesBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * The list of file annotation responses, one for each request in
      * AsyncBatchAnnotateFilesRequest.
@@ -502,6 +569,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The list of file annotation responses, one for each request in
      * AsyncBatchAnnotateFilesRequest.
@@ -517,6 +586,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The list of file annotation responses, one for each request in
      * AsyncBatchAnnotateFilesRequest.
@@ -532,6 +603,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The list of file annotation responses, one for each request in
      * AsyncBatchAnnotateFilesRequest.
@@ -554,6 +627,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The list of file annotation responses, one for each request in
      * AsyncBatchAnnotateFilesRequest.
@@ -573,6 +648,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The list of file annotation responses, one for each request in
      * AsyncBatchAnnotateFilesRequest.
@@ -594,6 +671,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The list of file annotation responses, one for each request in
      * AsyncBatchAnnotateFilesRequest.
@@ -616,6 +695,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The list of file annotation responses, one for each request in
      * AsyncBatchAnnotateFilesRequest.
@@ -635,6 +716,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The list of file annotation responses, one for each request in
      * AsyncBatchAnnotateFilesRequest.
@@ -654,6 +737,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The list of file annotation responses, one for each request in
      * AsyncBatchAnnotateFilesRequest.
@@ -665,8 +750,7 @@ private static final long serialVersionUID = 0L;
         java.lang.Iterable<? extends com.google.cloud.vision.v1.AsyncAnnotateFileResponse> values) {
       if (responsesBuilder_ == null) {
         ensureResponsesIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, responses_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, responses_);
         onChanged();
       } else {
         responsesBuilder_.addAllMessages(values);
@@ -674,6 +758,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The list of file annotation responses, one for each request in
      * AsyncBatchAnnotateFilesRequest.
@@ -692,6 +778,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The list of file annotation responses, one for each request in
      * AsyncBatchAnnotateFilesRequest.
@@ -710,6 +798,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The list of file annotation responses, one for each request in
      * AsyncBatchAnnotateFilesRequest.
@@ -722,6 +812,8 @@ private static final long serialVersionUID = 0L;
       return getResponsesFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * The list of file annotation responses, one for each request in
      * AsyncBatchAnnotateFilesRequest.
@@ -732,11 +824,14 @@ private static final long serialVersionUID = 0L;
     public com.google.cloud.vision.v1.AsyncAnnotateFileResponseOrBuilder getResponsesOrBuilder(
         int index) {
       if (responsesBuilder_ == null) {
-        return responses_.get(index);  } else {
+        return responses_.get(index);
+      } else {
         return responsesBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * The list of file annotation responses, one for each request in
      * AsyncBatchAnnotateFilesRequest.
@@ -744,8 +839,8 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.cloud.vision.v1.AsyncAnnotateFileResponse responses = 1;</code>
      */
-    public java.util.List<? extends com.google.cloud.vision.v1.AsyncAnnotateFileResponseOrBuilder> 
-         getResponsesOrBuilderList() {
+    public java.util.List<? extends com.google.cloud.vision.v1.AsyncAnnotateFileResponseOrBuilder>
+        getResponsesOrBuilderList() {
       if (responsesBuilder_ != null) {
         return responsesBuilder_.getMessageOrBuilderList();
       } else {
@@ -753,6 +848,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The list of file annotation responses, one for each request in
      * AsyncBatchAnnotateFilesRequest.
@@ -761,10 +858,12 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.cloud.vision.v1.AsyncAnnotateFileResponse responses = 1;</code>
      */
     public com.google.cloud.vision.v1.AsyncAnnotateFileResponse.Builder addResponsesBuilder() {
-      return getResponsesFieldBuilder().addBuilder(
-          com.google.cloud.vision.v1.AsyncAnnotateFileResponse.getDefaultInstance());
+      return getResponsesFieldBuilder()
+          .addBuilder(com.google.cloud.vision.v1.AsyncAnnotateFileResponse.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * The list of file annotation responses, one for each request in
      * AsyncBatchAnnotateFilesRequest.
@@ -774,10 +873,13 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.vision.v1.AsyncAnnotateFileResponse.Builder addResponsesBuilder(
         int index) {
-      return getResponsesFieldBuilder().addBuilder(
-          index, com.google.cloud.vision.v1.AsyncAnnotateFileResponse.getDefaultInstance());
+      return getResponsesFieldBuilder()
+          .addBuilder(
+              index, com.google.cloud.vision.v1.AsyncAnnotateFileResponse.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * The list of file annotation responses, one for each request in
      * AsyncBatchAnnotateFilesRequest.
@@ -785,16 +887,22 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.cloud.vision.v1.AsyncAnnotateFileResponse responses = 1;</code>
      */
-    public java.util.List<com.google.cloud.vision.v1.AsyncAnnotateFileResponse.Builder> 
-         getResponsesBuilderList() {
+    public java.util.List<com.google.cloud.vision.v1.AsyncAnnotateFileResponse.Builder>
+        getResponsesBuilderList() {
       return getResponsesFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.vision.v1.AsyncAnnotateFileResponse, com.google.cloud.vision.v1.AsyncAnnotateFileResponse.Builder, com.google.cloud.vision.v1.AsyncAnnotateFileResponseOrBuilder> 
+            com.google.cloud.vision.v1.AsyncAnnotateFileResponse,
+            com.google.cloud.vision.v1.AsyncAnnotateFileResponse.Builder,
+            com.google.cloud.vision.v1.AsyncAnnotateFileResponseOrBuilder>
         getResponsesFieldBuilder() {
       if (responsesBuilder_ == null) {
-        responsesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.cloud.vision.v1.AsyncAnnotateFileResponse, com.google.cloud.vision.v1.AsyncAnnotateFileResponse.Builder, com.google.cloud.vision.v1.AsyncAnnotateFileResponseOrBuilder>(
+        responsesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.vision.v1.AsyncAnnotateFileResponse,
+                com.google.cloud.vision.v1.AsyncAnnotateFileResponse.Builder,
+                com.google.cloud.vision.v1.AsyncAnnotateFileResponseOrBuilder>(
                 responses_,
                 ((bitField0_ & 0x00000001) == 0x00000001),
                 getParentForChildren(),
@@ -803,22 +911,24 @@ private static final long serialVersionUID = 0L;
       }
       return responsesBuilder_;
     }
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+
+    @java.lang.Override
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
     }
-
 
     // @@protoc_insertion_point(builder_scope:google.cloud.vision.v1.AsyncBatchAnnotateFilesResponse)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.vision.v1.AsyncBatchAnnotateFilesResponse)
   private static final com.google.cloud.vision.v1.AsyncBatchAnnotateFilesResponse DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.vision.v1.AsyncBatchAnnotateFilesResponse();
   }
@@ -827,15 +937,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<AsyncBatchAnnotateFilesResponse>
-      PARSER = new com.google.protobuf.AbstractParser<AsyncBatchAnnotateFilesResponse>() {
-    public AsyncBatchAnnotateFilesResponse parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-        return new AsyncBatchAnnotateFilesResponse(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<AsyncBatchAnnotateFilesResponse> PARSER =
+      new com.google.protobuf.AbstractParser<AsyncBatchAnnotateFilesResponse>() {
+        @java.lang.Override
+        public AsyncBatchAnnotateFilesResponse parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new AsyncBatchAnnotateFilesResponse(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<AsyncBatchAnnotateFilesResponse> parser() {
     return PARSER;
@@ -846,9 +957,8 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.cloud.vision.v1.AsyncBatchAnnotateFilesResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

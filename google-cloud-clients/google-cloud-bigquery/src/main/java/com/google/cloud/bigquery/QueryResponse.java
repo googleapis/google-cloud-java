@@ -54,5 +54,4 @@ public abstract class QueryResponse {
 
     abstract QueryResponse build();
   }
-
 }

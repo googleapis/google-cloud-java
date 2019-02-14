@@ -3,11 +3,14 @@
 
 package com.google.cloud.vision.v1p3beta1;
 
-public interface ImportProductSetsGcsSourceOrBuilder extends
+public interface ImportProductSetsGcsSourceOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.vision.v1p3beta1.ImportProductSetsGcsSource)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The Google Cloud Storage URI of the input csv file.
    * The URI must start with gs://
@@ -58,6 +61,8 @@ public interface ImportProductSetsGcsSourceOrBuilder extends
    */
   java.lang.String getCsvFileUri();
   /**
+   *
+   *
    * <pre>
    * The Google Cloud Storage URI of the input csv file.
    * The URI must start with gs://
@@ -106,6 +111,5 @@ public interface ImportProductSetsGcsSourceOrBuilder extends
    *
    * <code>string csv_file_uri = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getCsvFileUriBytes();
+  com.google.protobuf.ByteString getCsvFileUriBytes();
 }

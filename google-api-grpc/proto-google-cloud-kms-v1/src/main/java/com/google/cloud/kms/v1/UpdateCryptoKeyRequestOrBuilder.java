@@ -3,11 +3,14 @@
 
 package com.google.cloud.kms.v1;
 
-public interface UpdateCryptoKeyRequestOrBuilder extends
+public interface UpdateCryptoKeyRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.kms.v1.UpdateCryptoKeyRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * [CryptoKey][google.cloud.kms.v1.CryptoKey] with updated values.
    * </pre>
@@ -16,6 +19,8 @@ public interface UpdateCryptoKeyRequestOrBuilder extends
    */
   boolean hasCryptoKey();
   /**
+   *
+   *
    * <pre>
    * [CryptoKey][google.cloud.kms.v1.CryptoKey] with updated values.
    * </pre>
@@ -24,6 +29,8 @@ public interface UpdateCryptoKeyRequestOrBuilder extends
    */
   com.google.cloud.kms.v1.CryptoKey getCryptoKey();
   /**
+   *
+   *
    * <pre>
    * [CryptoKey][google.cloud.kms.v1.CryptoKey] with updated values.
    * </pre>
@@ -33,6 +40,8 @@ public interface UpdateCryptoKeyRequestOrBuilder extends
   com.google.cloud.kms.v1.CryptoKeyOrBuilder getCryptoKeyOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Required list of fields to be updated in this request.
    * </pre>
@@ -41,6 +50,8 @@ public interface UpdateCryptoKeyRequestOrBuilder extends
    */
   boolean hasUpdateMask();
   /**
+   *
+   *
    * <pre>
    * Required list of fields to be updated in this request.
    * </pre>
@@ -49,6 +60,8 @@ public interface UpdateCryptoKeyRequestOrBuilder extends
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**
+   *
+   *
    * <pre>
    * Required list of fields to be updated in this request.
    * </pre>

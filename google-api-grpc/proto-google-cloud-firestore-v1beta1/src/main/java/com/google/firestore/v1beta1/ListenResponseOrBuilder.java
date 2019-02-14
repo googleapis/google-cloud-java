@@ -3,11 +3,14 @@
 
 package com.google.firestore.v1beta1;
 
-public interface ListenResponseOrBuilder extends
+public interface ListenResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.firestore.v1beta1.ListenResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Targets have changed.
    * </pre>
@@ -16,6 +19,8 @@ public interface ListenResponseOrBuilder extends
    */
   boolean hasTargetChange();
   /**
+   *
+   *
    * <pre>
    * Targets have changed.
    * </pre>
@@ -24,6 +29,8 @@ public interface ListenResponseOrBuilder extends
    */
   com.google.firestore.v1beta1.TargetChange getTargetChange();
   /**
+   *
+   *
    * <pre>
    * Targets have changed.
    * </pre>
@@ -33,6 +40,8 @@ public interface ListenResponseOrBuilder extends
   com.google.firestore.v1beta1.TargetChangeOrBuilder getTargetChangeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * A [Document][google.firestore.v1beta1.Document] has changed.
    * </pre>
@@ -41,6 +50,8 @@ public interface ListenResponseOrBuilder extends
    */
   boolean hasDocumentChange();
   /**
+   *
+   *
    * <pre>
    * A [Document][google.firestore.v1beta1.Document] has changed.
    * </pre>
@@ -49,6 +60,8 @@ public interface ListenResponseOrBuilder extends
    */
   com.google.firestore.v1beta1.DocumentChange getDocumentChange();
   /**
+   *
+   *
    * <pre>
    * A [Document][google.firestore.v1beta1.Document] has changed.
    * </pre>
@@ -58,6 +71,8 @@ public interface ListenResponseOrBuilder extends
   com.google.firestore.v1beta1.DocumentChangeOrBuilder getDocumentChangeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * A [Document][google.firestore.v1beta1.Document] has been deleted.
    * </pre>
@@ -66,6 +81,8 @@ public interface ListenResponseOrBuilder extends
    */
   boolean hasDocumentDelete();
   /**
+   *
+   *
    * <pre>
    * A [Document][google.firestore.v1beta1.Document] has been deleted.
    * </pre>
@@ -74,6 +91,8 @@ public interface ListenResponseOrBuilder extends
    */
   com.google.firestore.v1beta1.DocumentDelete getDocumentDelete();
   /**
+   *
+   *
    * <pre>
    * A [Document][google.firestore.v1beta1.Document] has been deleted.
    * </pre>
@@ -83,6 +102,8 @@ public interface ListenResponseOrBuilder extends
   com.google.firestore.v1beta1.DocumentDeleteOrBuilder getDocumentDeleteOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * A [Document][google.firestore.v1beta1.Document] has been removed from a target (because it is no longer
    * relevant to that target).
@@ -92,6 +113,8 @@ public interface ListenResponseOrBuilder extends
    */
   boolean hasDocumentRemove();
   /**
+   *
+   *
    * <pre>
    * A [Document][google.firestore.v1beta1.Document] has been removed from a target (because it is no longer
    * relevant to that target).
@@ -101,6 +124,8 @@ public interface ListenResponseOrBuilder extends
    */
   com.google.firestore.v1beta1.DocumentRemove getDocumentRemove();
   /**
+   *
+   *
    * <pre>
    * A [Document][google.firestore.v1beta1.Document] has been removed from a target (because it is no longer
    * relevant to that target).
@@ -111,6 +136,8 @@ public interface ListenResponseOrBuilder extends
   com.google.firestore.v1beta1.DocumentRemoveOrBuilder getDocumentRemoveOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * A filter to apply to the set of documents previously returned for the
    * given target.
@@ -122,6 +149,8 @@ public interface ListenResponseOrBuilder extends
    */
   boolean hasFilter();
   /**
+   *
+   *
    * <pre>
    * A filter to apply to the set of documents previously returned for the
    * given target.
@@ -133,6 +162,8 @@ public interface ListenResponseOrBuilder extends
    */
   com.google.firestore.v1beta1.ExistenceFilter getFilter();
   /**
+   *
+   *
    * <pre>
    * A filter to apply to the set of documents previously returned for the
    * given target.

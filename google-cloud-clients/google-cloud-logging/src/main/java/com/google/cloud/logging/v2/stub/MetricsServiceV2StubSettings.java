@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -236,7 +236,9 @@ public class MetricsServiceV2StubSettings extends StubSettings<MetricsServiceV2S
 
             @Override
             public Iterable<LogMetric> extractResources(ListLogMetricsResponse payload) {
-              return payload.getMetricsList();
+              return payload.getMetricsList() != null
+                  ? payload.getMetricsList()
+                  : ImmutableList.<LogMetric>of();
             }
           };
 

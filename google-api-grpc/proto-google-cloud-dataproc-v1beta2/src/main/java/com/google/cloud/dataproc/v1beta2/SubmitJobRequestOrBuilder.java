@@ -3,11 +3,14 @@
 
 package com.google.cloud.dataproc.v1beta2;
 
-public interface SubmitJobRequestOrBuilder extends
+public interface SubmitJobRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dataproc.v1beta2.SubmitJobRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The ID of the Google Cloud Platform project that the job
    * belongs to.
@@ -17,6 +20,8 @@ public interface SubmitJobRequestOrBuilder extends
    */
   java.lang.String getProjectId();
   /**
+   *
+   *
    * <pre>
    * Required. The ID of the Google Cloud Platform project that the job
    * belongs to.
@@ -24,10 +29,11 @@ public interface SubmitJobRequestOrBuilder extends
    *
    * <code>string project_id = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getProjectIdBytes();
+  com.google.protobuf.ByteString getProjectIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * Required. The Cloud Dataproc region in which to handle the request.
    * </pre>
@@ -36,16 +42,19 @@ public interface SubmitJobRequestOrBuilder extends
    */
   java.lang.String getRegion();
   /**
+   *
+   *
    * <pre>
    * Required. The Cloud Dataproc region in which to handle the request.
    * </pre>
    *
    * <code>string region = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getRegionBytes();
+  com.google.protobuf.ByteString getRegionBytes();
 
   /**
+   *
+   *
    * <pre>
    * Required. The job resource.
    * </pre>
@@ -54,6 +63,8 @@ public interface SubmitJobRequestOrBuilder extends
    */
   boolean hasJob();
   /**
+   *
+   *
    * <pre>
    * Required. The job resource.
    * </pre>
@@ -62,6 +73,8 @@ public interface SubmitJobRequestOrBuilder extends
    */
   com.google.cloud.dataproc.v1beta2.Job getJob();
   /**
+   *
+   *
    * <pre>
    * Required. The job resource.
    * </pre>
@@ -71,6 +84,8 @@ public interface SubmitJobRequestOrBuilder extends
   com.google.cloud.dataproc.v1beta2.JobOrBuilder getJobOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Optional. A unique id used to identify the request. If the server
    * receives two [SubmitJobRequest][google.cloud.dataproc.v1beta2.SubmitJobRequest] requests  with the same
@@ -87,6 +102,8 @@ public interface SubmitJobRequestOrBuilder extends
    */
   java.lang.String getRequestId();
   /**
+   *
+   *
    * <pre>
    * Optional. A unique id used to identify the request. If the server
    * receives two [SubmitJobRequest][google.cloud.dataproc.v1beta2.SubmitJobRequest] requests  with the same
@@ -101,6 +118,5 @@ public interface SubmitJobRequestOrBuilder extends
    *
    * <code>string request_id = 4;</code>
    */
-  com.google.protobuf.ByteString
-      getRequestIdBytes();
+  com.google.protobuf.ByteString getRequestIdBytes();
 }

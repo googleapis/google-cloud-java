@@ -3,11 +3,14 @@
 
 package com.google.privacy.dlp.v2;
 
-public interface BoundingBoxOrBuilder extends
+public interface BoundingBoxOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.BoundingBox)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Top coordinate of the bounding box. (0,0) is upper left.
    * </pre>
@@ -17,6 +20,8 @@ public interface BoundingBoxOrBuilder extends
   int getTop();
 
   /**
+   *
+   *
    * <pre>
    * Left coordinate of the bounding box. (0,0) is upper left.
    * </pre>
@@ -26,6 +31,8 @@ public interface BoundingBoxOrBuilder extends
   int getLeft();
 
   /**
+   *
+   *
    * <pre>
    * Width of the bounding box in pixels.
    * </pre>
@@ -35,6 +42,8 @@ public interface BoundingBoxOrBuilder extends
   int getWidth();
 
   /**
+   *
+   *
    * <pre>
    * Height of the bounding box in pixels.
    * </pre>

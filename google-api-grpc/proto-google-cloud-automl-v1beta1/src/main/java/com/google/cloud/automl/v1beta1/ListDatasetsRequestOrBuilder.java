@@ -3,11 +3,14 @@
 
 package com.google.cloud.automl.v1beta1;
 
-public interface ListDatasetsRequestOrBuilder extends
+public interface ListDatasetsRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.automl.v1beta1.ListDatasetsRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The resource name of the project from which to list datasets.
    * </pre>
@@ -16,16 +19,19 @@ public interface ListDatasetsRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * The resource name of the project from which to list datasets.
    * </pre>
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * An expression for filtering the results of the request.
    *   * `dataset_metadata` - for existence of the case.
@@ -38,6 +44,8 @@ public interface ListDatasetsRequestOrBuilder extends
    */
   java.lang.String getFilter();
   /**
+   *
+   *
    * <pre>
    * An expression for filtering the results of the request.
    *   * `dataset_metadata` - for existence of the case.
@@ -48,10 +56,11 @@ public interface ListDatasetsRequestOrBuilder extends
    *
    * <code>string filter = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getFilterBytes();
+  com.google.protobuf.ByteString getFilterBytes();
 
   /**
+   *
+   *
    * <pre>
    * Requested page size. Server may return fewer results than requested.
    * If unspecified, server will pick a default size.
@@ -62,6 +71,8 @@ public interface ListDatasetsRequestOrBuilder extends
   int getPageSize();
 
   /**
+   *
+   *
    * <pre>
    * A token identifying a page of results for the server to return
    * Typically obtained via
@@ -73,6 +84,8 @@ public interface ListDatasetsRequestOrBuilder extends
    */
   java.lang.String getPageToken();
   /**
+   *
+   *
    * <pre>
    * A token identifying a page of results for the server to return
    * Typically obtained via
@@ -82,6 +95,5 @@ public interface ListDatasetsRequestOrBuilder extends
    *
    * <code>string page_token = 6;</code>
    */
-  com.google.protobuf.ByteString
-      getPageTokenBytes();
+  com.google.protobuf.ByteString getPageTokenBytes();
 }

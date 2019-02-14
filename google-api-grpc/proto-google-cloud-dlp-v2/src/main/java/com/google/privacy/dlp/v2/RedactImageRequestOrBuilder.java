@@ -3,11 +3,14 @@
 
 package com.google.privacy.dlp.v2;
 
-public interface RedactImageRequestOrBuilder extends
+public interface RedactImageRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.RedactImageRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The parent resource name, for example projects/my-project-id.
    * </pre>
@@ -16,16 +19,19 @@ public interface RedactImageRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * The parent resource name, for example projects/my-project-id.
    * </pre>
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * Configuration for the inspector.
    * </pre>
@@ -34,6 +40,8 @@ public interface RedactImageRequestOrBuilder extends
    */
   boolean hasInspectConfig();
   /**
+   *
+   *
    * <pre>
    * Configuration for the inspector.
    * </pre>
@@ -42,6 +50,8 @@ public interface RedactImageRequestOrBuilder extends
    */
   com.google.privacy.dlp.v2.InspectConfig getInspectConfig();
   /**
+   *
+   *
    * <pre>
    * Configuration for the inspector.
    * </pre>
@@ -51,50 +61,74 @@ public interface RedactImageRequestOrBuilder extends
   com.google.privacy.dlp.v2.InspectConfigOrBuilder getInspectConfigOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The configuration for specifying what content to redact from images.
    * </pre>
    *
-   * <code>repeated .google.privacy.dlp.v2.RedactImageRequest.ImageRedactionConfig image_redaction_configs = 5;</code>
+   * <code>
+   * repeated .google.privacy.dlp.v2.RedactImageRequest.ImageRedactionConfig image_redaction_configs = 5;
+   * </code>
    */
-  java.util.List<com.google.privacy.dlp.v2.RedactImageRequest.ImageRedactionConfig> 
+  java.util.List<com.google.privacy.dlp.v2.RedactImageRequest.ImageRedactionConfig>
       getImageRedactionConfigsList();
   /**
+   *
+   *
    * <pre>
    * The configuration for specifying what content to redact from images.
    * </pre>
    *
-   * <code>repeated .google.privacy.dlp.v2.RedactImageRequest.ImageRedactionConfig image_redaction_configs = 5;</code>
+   * <code>
+   * repeated .google.privacy.dlp.v2.RedactImageRequest.ImageRedactionConfig image_redaction_configs = 5;
+   * </code>
    */
-  com.google.privacy.dlp.v2.RedactImageRequest.ImageRedactionConfig getImageRedactionConfigs(int index);
+  com.google.privacy.dlp.v2.RedactImageRequest.ImageRedactionConfig getImageRedactionConfigs(
+      int index);
   /**
+   *
+   *
    * <pre>
    * The configuration for specifying what content to redact from images.
    * </pre>
    *
-   * <code>repeated .google.privacy.dlp.v2.RedactImageRequest.ImageRedactionConfig image_redaction_configs = 5;</code>
+   * <code>
+   * repeated .google.privacy.dlp.v2.RedactImageRequest.ImageRedactionConfig image_redaction_configs = 5;
+   * </code>
    */
   int getImageRedactionConfigsCount();
   /**
+   *
+   *
    * <pre>
    * The configuration for specifying what content to redact from images.
    * </pre>
    *
-   * <code>repeated .google.privacy.dlp.v2.RedactImageRequest.ImageRedactionConfig image_redaction_configs = 5;</code>
+   * <code>
+   * repeated .google.privacy.dlp.v2.RedactImageRequest.ImageRedactionConfig image_redaction_configs = 5;
+   * </code>
    */
-  java.util.List<? extends com.google.privacy.dlp.v2.RedactImageRequest.ImageRedactionConfigOrBuilder> 
+  java.util.List<
+          ? extends com.google.privacy.dlp.v2.RedactImageRequest.ImageRedactionConfigOrBuilder>
       getImageRedactionConfigsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * The configuration for specifying what content to redact from images.
    * </pre>
    *
-   * <code>repeated .google.privacy.dlp.v2.RedactImageRequest.ImageRedactionConfig image_redaction_configs = 5;</code>
+   * <code>
+   * repeated .google.privacy.dlp.v2.RedactImageRequest.ImageRedactionConfig image_redaction_configs = 5;
+   * </code>
    */
-  com.google.privacy.dlp.v2.RedactImageRequest.ImageRedactionConfigOrBuilder getImageRedactionConfigsOrBuilder(
-      int index);
+  com.google.privacy.dlp.v2.RedactImageRequest.ImageRedactionConfigOrBuilder
+      getImageRedactionConfigsOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * Whether the response should include findings along with the redacted
    * image.
@@ -105,6 +139,8 @@ public interface RedactImageRequestOrBuilder extends
   boolean getIncludeFindings();
 
   /**
+   *
+   *
    * <pre>
    * The content must be PNG, JPEG, SVG or BMP.
    * </pre>
@@ -113,6 +149,8 @@ public interface RedactImageRequestOrBuilder extends
    */
   boolean hasByteItem();
   /**
+   *
+   *
    * <pre>
    * The content must be PNG, JPEG, SVG or BMP.
    * </pre>
@@ -121,6 +159,8 @@ public interface RedactImageRequestOrBuilder extends
    */
   com.google.privacy.dlp.v2.ByteContentItem getByteItem();
   /**
+   *
+   *
    * <pre>
    * The content must be PNG, JPEG, SVG or BMP.
    * </pre>

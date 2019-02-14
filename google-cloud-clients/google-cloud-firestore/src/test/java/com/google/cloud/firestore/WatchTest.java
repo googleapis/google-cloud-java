@@ -36,17 +36,17 @@ import com.google.api.gax.rpc.ApiStreamObserver;
 import com.google.api.gax.rpc.BidiStreamingCallable;
 import com.google.cloud.firestore.Query.Direction;
 import com.google.cloud.firestore.WatchTest.SnapshotDocument.ChangeType;
-import com.google.cloud.firestore.spi.v1beta1.FirestoreRpc;
-import com.google.firestore.v1beta1.Document;
-import com.google.firestore.v1beta1.DocumentChange;
-import com.google.firestore.v1beta1.DocumentDelete;
-import com.google.firestore.v1beta1.DocumentRemove;
-import com.google.firestore.v1beta1.ExistenceFilter;
-import com.google.firestore.v1beta1.ListenRequest;
-import com.google.firestore.v1beta1.ListenResponse;
-import com.google.firestore.v1beta1.TargetChange;
-import com.google.firestore.v1beta1.TargetChange.TargetChangeType;
-import com.google.firestore.v1beta1.Value;
+import com.google.cloud.firestore.spi.v1.FirestoreRpc;
+import com.google.firestore.v1.Document;
+import com.google.firestore.v1.DocumentChange;
+import com.google.firestore.v1.DocumentDelete;
+import com.google.firestore.v1.DocumentRemove;
+import com.google.firestore.v1.ExistenceFilter;
+import com.google.firestore.v1.ListenRequest;
+import com.google.firestore.v1.ListenResponse;
+import com.google.firestore.v1.TargetChange;
+import com.google.firestore.v1.TargetChange.TargetChangeType;
+import com.google.firestore.v1.Value;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Timestamp;
 import com.google.rpc.Status;
@@ -97,11 +97,7 @@ public class WatchTest {
   @Spy
   private FirestoreImpl firestoreMock =
       new FirestoreImpl(
-          FirestoreOptions.newBuilder()
-              .setProjectId("test-project")
-              .setTimestampsInSnapshotsEnabled(true)
-              .build(),
-          firestoreRpc);
+          FirestoreOptions.newBuilder().setProjectId("test-project").build(), firestoreRpc);
 
   @Captor private ArgumentCaptor<ApiStreamObserver<ListenResponse>> streamObserverCapture;
 
@@ -301,6 +297,35 @@ public class WatchTest {
     send(doc("coll/doc", SINGLE_FIELD_PROTO));
     send(snapshot());
 
+    awaitQuerySnapshot(new SnapshotDocument(ChangeType.ADDED, "coll/doc", SINGLE_FIELD_MAP));
+  }
+
+  @Test
+  public void queryWatchDoesntSendRaiseSnapshotOnReset() throws InterruptedException {
+    // This test is meant to reproduce https://github.com/googleapis/google-cloud-dotnet/issues/2542
+    addQueryListener();
+
+    awaitAddTarget();
+
+    send(addTarget());
+    send(current());
+    send(snapshot());
+
+    awaitQuerySnapshot();
+
+    close();
+    awaitClose();
+    awaitAddTarget();
+
+    send(addTarget());
+    send(current());
+    // This should not raise a snapshot, since nothing has changed since the last snapshot.
+    send(snapshot());
+
+    send(doc("coll/doc", SINGLE_FIELD_PROTO));
+    send(snapshot());
+
+    // Verify that we only receveived one snapshot.
     awaitQuerySnapshot(new SnapshotDocument(ChangeType.ADDED, "coll/doc", SINGLE_FIELD_MAP));
   }
 

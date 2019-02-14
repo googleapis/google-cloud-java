@@ -3,11 +3,14 @@
 
 package com.google.cloud.dataproc.v1beta2;
 
-public interface PySparkJobOrBuilder extends
+public interface PySparkJobOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dataproc.v1beta2.PySparkJob)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The HCFS URI of the main Python file to use as the driver. Must
    * be a .py file.
@@ -17,6 +20,8 @@ public interface PySparkJobOrBuilder extends
    */
   java.lang.String getMainPythonFileUri();
   /**
+   *
+   *
    * <pre>
    * Required. The HCFS URI of the main Python file to use as the driver. Must
    * be a .py file.
@@ -24,10 +29,11 @@ public interface PySparkJobOrBuilder extends
    *
    * <code>string main_python_file_uri = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getMainPythonFileUriBytes();
+  com.google.protobuf.ByteString getMainPythonFileUriBytes();
 
   /**
+   *
+   *
    * <pre>
    * Optional. The arguments to pass to the driver.  Do not include arguments,
    * such as `--conf`, that can be set as job properties, since a collision may
@@ -36,9 +42,10 @@ public interface PySparkJobOrBuilder extends
    *
    * <code>repeated string args = 2;</code>
    */
-  java.util.List<java.lang.String>
-      getArgsList();
+  java.util.List<java.lang.String> getArgsList();
   /**
+   *
+   *
    * <pre>
    * Optional. The arguments to pass to the driver.  Do not include arguments,
    * such as `--conf`, that can be set as job properties, since a collision may
@@ -49,6 +56,8 @@ public interface PySparkJobOrBuilder extends
    */
   int getArgsCount();
   /**
+   *
+   *
    * <pre>
    * Optional. The arguments to pass to the driver.  Do not include arguments,
    * such as `--conf`, that can be set as job properties, since a collision may
@@ -59,6 +68,8 @@ public interface PySparkJobOrBuilder extends
    */
   java.lang.String getArgs(int index);
   /**
+   *
+   *
    * <pre>
    * Optional. The arguments to pass to the driver.  Do not include arguments,
    * such as `--conf`, that can be set as job properties, since a collision may
@@ -67,10 +78,11 @@ public interface PySparkJobOrBuilder extends
    *
    * <code>repeated string args = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getArgsBytes(int index);
+  com.google.protobuf.ByteString getArgsBytes(int index);
 
   /**
+   *
+   *
    * <pre>
    * Optional. HCFS file URIs of Python files to pass to the PySpark
    * framework. Supported file types: .py, .egg, and .zip.
@@ -78,9 +90,10 @@ public interface PySparkJobOrBuilder extends
    *
    * <code>repeated string python_file_uris = 3;</code>
    */
-  java.util.List<java.lang.String>
-      getPythonFileUrisList();
+  java.util.List<java.lang.String> getPythonFileUrisList();
   /**
+   *
+   *
    * <pre>
    * Optional. HCFS file URIs of Python files to pass to the PySpark
    * framework. Supported file types: .py, .egg, and .zip.
@@ -90,6 +103,8 @@ public interface PySparkJobOrBuilder extends
    */
   int getPythonFileUrisCount();
   /**
+   *
+   *
    * <pre>
    * Optional. HCFS file URIs of Python files to pass to the PySpark
    * framework. Supported file types: .py, .egg, and .zip.
@@ -99,6 +114,8 @@ public interface PySparkJobOrBuilder extends
    */
   java.lang.String getPythonFileUris(int index);
   /**
+   *
+   *
    * <pre>
    * Optional. HCFS file URIs of Python files to pass to the PySpark
    * framework. Supported file types: .py, .egg, and .zip.
@@ -106,10 +123,11 @@ public interface PySparkJobOrBuilder extends
    *
    * <code>repeated string python_file_uris = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getPythonFileUrisBytes(int index);
+  com.google.protobuf.ByteString getPythonFileUrisBytes(int index);
 
   /**
+   *
+   *
    * <pre>
    * Optional. HCFS URIs of jar files to add to the CLASSPATHs of the
    * Python driver and tasks.
@@ -117,9 +135,10 @@ public interface PySparkJobOrBuilder extends
    *
    * <code>repeated string jar_file_uris = 4;</code>
    */
-  java.util.List<java.lang.String>
-      getJarFileUrisList();
+  java.util.List<java.lang.String> getJarFileUrisList();
   /**
+   *
+   *
    * <pre>
    * Optional. HCFS URIs of jar files to add to the CLASSPATHs of the
    * Python driver and tasks.
@@ -129,6 +148,8 @@ public interface PySparkJobOrBuilder extends
    */
   int getJarFileUrisCount();
   /**
+   *
+   *
    * <pre>
    * Optional. HCFS URIs of jar files to add to the CLASSPATHs of the
    * Python driver and tasks.
@@ -138,6 +159,8 @@ public interface PySparkJobOrBuilder extends
    */
   java.lang.String getJarFileUris(int index);
   /**
+   *
+   *
    * <pre>
    * Optional. HCFS URIs of jar files to add to the CLASSPATHs of the
    * Python driver and tasks.
@@ -145,10 +168,11 @@ public interface PySparkJobOrBuilder extends
    *
    * <code>repeated string jar_file_uris = 4;</code>
    */
-  com.google.protobuf.ByteString
-      getJarFileUrisBytes(int index);
+  com.google.protobuf.ByteString getJarFileUrisBytes(int index);
 
   /**
+   *
+   *
    * <pre>
    * Optional. HCFS URIs of files to be copied to the working directory of
    * Python drivers and distributed tasks. Useful for naively parallel tasks.
@@ -156,9 +180,10 @@ public interface PySparkJobOrBuilder extends
    *
    * <code>repeated string file_uris = 5;</code>
    */
-  java.util.List<java.lang.String>
-      getFileUrisList();
+  java.util.List<java.lang.String> getFileUrisList();
   /**
+   *
+   *
    * <pre>
    * Optional. HCFS URIs of files to be copied to the working directory of
    * Python drivers and distributed tasks. Useful for naively parallel tasks.
@@ -168,6 +193,8 @@ public interface PySparkJobOrBuilder extends
    */
   int getFileUrisCount();
   /**
+   *
+   *
    * <pre>
    * Optional. HCFS URIs of files to be copied to the working directory of
    * Python drivers and distributed tasks. Useful for naively parallel tasks.
@@ -177,6 +204,8 @@ public interface PySparkJobOrBuilder extends
    */
   java.lang.String getFileUris(int index);
   /**
+   *
+   *
    * <pre>
    * Optional. HCFS URIs of files to be copied to the working directory of
    * Python drivers and distributed tasks. Useful for naively parallel tasks.
@@ -184,10 +213,11 @@ public interface PySparkJobOrBuilder extends
    *
    * <code>repeated string file_uris = 5;</code>
    */
-  com.google.protobuf.ByteString
-      getFileUrisBytes(int index);
+  com.google.protobuf.ByteString getFileUrisBytes(int index);
 
   /**
+   *
+   *
    * <pre>
    * Optional. HCFS URIs of archives to be extracted in the working directory of
    * .jar, .tar, .tar.gz, .tgz, and .zip.
@@ -195,9 +225,10 @@ public interface PySparkJobOrBuilder extends
    *
    * <code>repeated string archive_uris = 6;</code>
    */
-  java.util.List<java.lang.String>
-      getArchiveUrisList();
+  java.util.List<java.lang.String> getArchiveUrisList();
   /**
+   *
+   *
    * <pre>
    * Optional. HCFS URIs of archives to be extracted in the working directory of
    * .jar, .tar, .tar.gz, .tgz, and .zip.
@@ -207,6 +238,8 @@ public interface PySparkJobOrBuilder extends
    */
   int getArchiveUrisCount();
   /**
+   *
+   *
    * <pre>
    * Optional. HCFS URIs of archives to be extracted in the working directory of
    * .jar, .tar, .tar.gz, .tgz, and .zip.
@@ -216,6 +249,8 @@ public interface PySparkJobOrBuilder extends
    */
   java.lang.String getArchiveUris(int index);
   /**
+   *
+   *
    * <pre>
    * Optional. HCFS URIs of archives to be extracted in the working directory of
    * .jar, .tar, .tar.gz, .tgz, and .zip.
@@ -223,10 +258,11 @@ public interface PySparkJobOrBuilder extends
    *
    * <code>repeated string archive_uris = 6;</code>
    */
-  com.google.protobuf.ByteString
-      getArchiveUrisBytes(int index);
+  com.google.protobuf.ByteString getArchiveUrisBytes(int index);
 
   /**
+   *
+   *
    * <pre>
    * Optional. A mapping of property names to values, used to configure PySpark.
    * Properties that conflict with values set by the Cloud Dataproc API may be
@@ -238,6 +274,8 @@ public interface PySparkJobOrBuilder extends
    */
   int getPropertiesCount();
   /**
+   *
+   *
    * <pre>
    * Optional. A mapping of property names to values, used to configure PySpark.
    * Properties that conflict with values set by the Cloud Dataproc API may be
@@ -247,15 +285,13 @@ public interface PySparkJobOrBuilder extends
    *
    * <code>map&lt;string, string&gt; properties = 7;</code>
    */
-  boolean containsProperties(
-      java.lang.String key);
-  /**
-   * Use {@link #getPropertiesMap()} instead.
-   */
+  boolean containsProperties(java.lang.String key);
+  /** Use {@link #getPropertiesMap()} instead. */
   @java.lang.Deprecated
-  java.util.Map<java.lang.String, java.lang.String>
-  getProperties();
+  java.util.Map<java.lang.String, java.lang.String> getProperties();
   /**
+   *
+   *
    * <pre>
    * Optional. A mapping of property names to values, used to configure PySpark.
    * Properties that conflict with values set by the Cloud Dataproc API may be
@@ -265,9 +301,10 @@ public interface PySparkJobOrBuilder extends
    *
    * <code>map&lt;string, string&gt; properties = 7;</code>
    */
-  java.util.Map<java.lang.String, java.lang.String>
-  getPropertiesMap();
+  java.util.Map<java.lang.String, java.lang.String> getPropertiesMap();
   /**
+   *
+   *
    * <pre>
    * Optional. A mapping of property names to values, used to configure PySpark.
    * Properties that conflict with values set by the Cloud Dataproc API may be
@@ -277,11 +314,10 @@ public interface PySparkJobOrBuilder extends
    *
    * <code>map&lt;string, string&gt; properties = 7;</code>
    */
-
-  java.lang.String getPropertiesOrDefault(
-      java.lang.String key,
-      java.lang.String defaultValue);
+  java.lang.String getPropertiesOrDefault(java.lang.String key, java.lang.String defaultValue);
   /**
+   *
+   *
    * <pre>
    * Optional. A mapping of property names to values, used to configure PySpark.
    * Properties that conflict with values set by the Cloud Dataproc API may be
@@ -291,11 +327,11 @@ public interface PySparkJobOrBuilder extends
    *
    * <code>map&lt;string, string&gt; properties = 7;</code>
    */
-
-  java.lang.String getPropertiesOrThrow(
-      java.lang.String key);
+  java.lang.String getPropertiesOrThrow(java.lang.String key);
 
   /**
+   *
+   *
    * <pre>
    * Optional. The runtime log config for job execution.
    * </pre>
@@ -304,6 +340,8 @@ public interface PySparkJobOrBuilder extends
    */
   boolean hasLoggingConfig();
   /**
+   *
+   *
    * <pre>
    * Optional. The runtime log config for job execution.
    * </pre>
@@ -312,6 +350,8 @@ public interface PySparkJobOrBuilder extends
    */
   com.google.cloud.dataproc.v1beta2.LoggingConfig getLoggingConfig();
   /**
+   *
+   *
    * <pre>
    * Optional. The runtime log config for job execution.
    * </pre>

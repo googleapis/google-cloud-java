@@ -3,11 +3,14 @@
 
 package io.grafeas.v1beta1.source;
 
-public interface CloudRepoSourceContextOrBuilder extends
+public interface CloudRepoSourceContextOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:grafeas.v1beta1.source.CloudRepoSourceContext)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The ID of the repo.
    * </pre>
@@ -16,6 +19,8 @@ public interface CloudRepoSourceContextOrBuilder extends
    */
   boolean hasRepoId();
   /**
+   *
+   *
    * <pre>
    * The ID of the repo.
    * </pre>
@@ -24,6 +29,8 @@ public interface CloudRepoSourceContextOrBuilder extends
    */
   io.grafeas.v1beta1.source.RepoId getRepoId();
   /**
+   *
+   *
    * <pre>
    * The ID of the repo.
    * </pre>
@@ -33,6 +40,8 @@ public interface CloudRepoSourceContextOrBuilder extends
   io.grafeas.v1beta1.source.RepoIdOrBuilder getRepoIdOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * A revision ID.
    * </pre>
@@ -41,16 +50,19 @@ public interface CloudRepoSourceContextOrBuilder extends
    */
   java.lang.String getRevisionId();
   /**
+   *
+   *
    * <pre>
    * A revision ID.
    * </pre>
    *
    * <code>string revision_id = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getRevisionIdBytes();
+  com.google.protobuf.ByteString getRevisionIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * An alias, which may be a branch or tag.
    * </pre>
@@ -59,6 +71,8 @@ public interface CloudRepoSourceContextOrBuilder extends
    */
   boolean hasAliasContext();
   /**
+   *
+   *
    * <pre>
    * An alias, which may be a branch or tag.
    * </pre>
@@ -67,6 +81,8 @@ public interface CloudRepoSourceContextOrBuilder extends
    */
   io.grafeas.v1beta1.source.AliasContext getAliasContext();
   /**
+   *
+   *
    * <pre>
    * An alias, which may be a branch or tag.
    * </pre>

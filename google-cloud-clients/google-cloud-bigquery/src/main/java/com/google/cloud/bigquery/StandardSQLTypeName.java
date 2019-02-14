@@ -17,10 +17,11 @@
 package com.google.cloud.bigquery;
 
 /**
- * A type used in standard SQL contexts. For example, these types are used in queries
- * with query parameters, which requires usage of standard SQL.
+ * A type used in standard SQL contexts. For example, these types are used in queries with query
+ * parameters, which requires usage of standard SQL.
  *
- * @see <a href="https://cloud.google.com/bigquery/docs/reference/standard-sql/data-types">https://cloud.google.com/bigquery/docs/reference/standard-sql/data-types</a>
+ * @see <a
+ *     href="https://cloud.google.com/bigquery/docs/reference/standard-sql/data-types">https://cloud.google.com/bigquery/docs/reference/standard-sql/data-types</a>
  */
 public enum StandardSQLTypeName {
   /** A Boolean value (true or false). */

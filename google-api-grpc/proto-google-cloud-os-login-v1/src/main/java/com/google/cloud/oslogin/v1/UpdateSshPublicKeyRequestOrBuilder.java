@@ -3,11 +3,14 @@
 
 package com.google.cloud.oslogin.v1;
 
-public interface UpdateSshPublicKeyRequestOrBuilder extends
+public interface UpdateSshPublicKeyRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.oslogin.v1.UpdateSshPublicKeyRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The fingerprint of the public key to update. Public keys are identified by
    * their SHA-256 fingerprint. The fingerprint of the public key is in format
@@ -18,6 +21,8 @@ public interface UpdateSshPublicKeyRequestOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The fingerprint of the public key to update. Public keys are identified by
    * their SHA-256 fingerprint. The fingerprint of the public key is in format
@@ -26,10 +31,11 @@ public interface UpdateSshPublicKeyRequestOrBuilder extends
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * The SSH public key and expiration time.
    * </pre>
@@ -38,6 +44,8 @@ public interface UpdateSshPublicKeyRequestOrBuilder extends
    */
   boolean hasSshPublicKey();
   /**
+   *
+   *
    * <pre>
    * The SSH public key and expiration time.
    * </pre>
@@ -46,6 +54,8 @@ public interface UpdateSshPublicKeyRequestOrBuilder extends
    */
   com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey getSshPublicKey();
   /**
+   *
+   *
    * <pre>
    * The SSH public key and expiration time.
    * </pre>
@@ -55,6 +65,8 @@ public interface UpdateSshPublicKeyRequestOrBuilder extends
   com.google.cloud.oslogin.common.OsLoginProto.SshPublicKeyOrBuilder getSshPublicKeyOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Mask to control which fields get updated. Updates all if not present.
    * </pre>
@@ -63,6 +75,8 @@ public interface UpdateSshPublicKeyRequestOrBuilder extends
    */
   boolean hasUpdateMask();
   /**
+   *
+   *
    * <pre>
    * Mask to control which fields get updated. Updates all if not present.
    * </pre>
@@ -71,6 +85,8 @@ public interface UpdateSshPublicKeyRequestOrBuilder extends
    */
   com.google.protobuf.FieldMask getUpdateMask();
   /**
+   *
+   *
    * <pre>
    * Mask to control which fields get updated. Updates all if not present.
    * </pre>

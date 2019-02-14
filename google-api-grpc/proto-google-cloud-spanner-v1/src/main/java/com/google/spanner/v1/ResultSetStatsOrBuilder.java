@@ -3,11 +3,14 @@
 
 package com.google.spanner.v1;
 
-public interface ResultSetStatsOrBuilder extends
+public interface ResultSetStatsOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.spanner.v1.ResultSetStats)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * [QueryPlan][google.spanner.v1.QueryPlan] for the query associated with this result.
    * </pre>
@@ -16,6 +19,8 @@ public interface ResultSetStatsOrBuilder extends
    */
   boolean hasQueryPlan();
   /**
+   *
+   *
    * <pre>
    * [QueryPlan][google.spanner.v1.QueryPlan] for the query associated with this result.
    * </pre>
@@ -24,6 +29,8 @@ public interface ResultSetStatsOrBuilder extends
    */
   com.google.spanner.v1.QueryPlan getQueryPlan();
   /**
+   *
+   *
    * <pre>
    * [QueryPlan][google.spanner.v1.QueryPlan] for the query associated with this result.
    * </pre>
@@ -33,6 +40,8 @@ public interface ResultSetStatsOrBuilder extends
   com.google.spanner.v1.QueryPlanOrBuilder getQueryPlanOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Aggregated statistics from the execution of the query. Only present when
    * the query is profiled. For example, a query could return the statistics as
@@ -48,6 +57,8 @@ public interface ResultSetStatsOrBuilder extends
    */
   boolean hasQueryStats();
   /**
+   *
+   *
    * <pre>
    * Aggregated statistics from the execution of the query. Only present when
    * the query is profiled. For example, a query could return the statistics as
@@ -63,6 +74,8 @@ public interface ResultSetStatsOrBuilder extends
    */
   com.google.protobuf.Struct getQueryStats();
   /**
+   *
+   *
    * <pre>
    * Aggregated statistics from the execution of the query. Only present when
    * the query is profiled. For example, a query could return the statistics as
@@ -77,4 +90,29 @@ public interface ResultSetStatsOrBuilder extends
    * <code>.google.protobuf.Struct query_stats = 2;</code>
    */
   com.google.protobuf.StructOrBuilder getQueryStatsOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Standard DML returns an exact count of rows that were modified.
+   * </pre>
+   *
+   * <code>int64 row_count_exact = 3;</code>
+   */
+  long getRowCountExact();
+
+  /**
+   *
+   *
+   * <pre>
+   * Partitioned DML does not offer exactly-once semantics, so it
+   * returns a lower bound of the rows modified.
+   * </pre>
+   *
+   * <code>int64 row_count_lower_bound = 4;</code>
+   */
+  long getRowCountLowerBound();
+
+  public com.google.spanner.v1.ResultSetStats.RowCountCase getRowCountCase();
 }

@@ -28,11 +28,9 @@ import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
 import com.google.common.collect.ImmutableList;
-
+import java.util.List;
 import org.junit.After;
 import org.junit.Test;
-
-import java.util.List;
 
 public class AddressTest {
 
@@ -45,10 +43,12 @@ public class AddressTest {
       RegionAddressId.of("project", "region", "address");
   private static final AddressInfo.Status STATUS = AddressInfo.Status.RESERVED;
   private static final List<GlobalForwardingRuleId> GLOBAL_FORWARDING_RULES =
-      ImmutableList.of(GlobalForwardingRuleId.of("project", "forwardingRule1"),
+      ImmutableList.of(
+          GlobalForwardingRuleId.of("project", "forwardingRule1"),
           GlobalForwardingRuleId.of("project", "forwardingRule2"));
   private static final List<RegionForwardingRuleId> REGION_FORWARDING_RULES =
-      ImmutableList.of(RegionForwardingRuleId.of("project", "region", "forwardingRule1"),
+      ImmutableList.of(
+          RegionForwardingRuleId.of("project", "region", "forwardingRule1"),
           RegionForwardingRuleId.of("project", "region", "forwardingRule2"));
   private static final AddressInfo.InstanceUsage INSTANCE_USAGE =
       new AddressInfo.InstanceUsage(InstanceId.of("project", "zone", "instance1"));
@@ -68,42 +68,46 @@ public class AddressTest {
   private void initializeExpectedAddress(int optionsCalls) {
     expect(serviceMockReturnsOptions.getOptions()).andReturn(mockOptions).times(optionsCalls);
     replay(serviceMockReturnsOptions);
-    instanceAddress = new Address.Builder(serviceMockReturnsOptions, REGION_ADDRESS_ID)
-        .setAddress(ADDRESS)
-        .setCreationTimestamp(CREATION_TIMESTAMP)
-        .setDescription(DESCRIPTION)
-        .setGeneratedId(GENERATED_ID)
-        .setStatus(STATUS)
-        .setUsage(INSTANCE_USAGE)
-        .build();
-    globalForwardingAddress = new Address.Builder(serviceMockReturnsOptions, GLOBAL_ADDRESS_ID)
-        .setAddress(ADDRESS)
-        .setCreationTimestamp(CREATION_TIMESTAMP)
-        .setDescription(DESCRIPTION)
-        .setGeneratedId(GENERATED_ID)
-        .setStatus(STATUS)
-        .setUsage(GLOBAL_FORWARDING_USAGE)
-        .build();
-    regionForwardingAddress = new Address.Builder(serviceMockReturnsOptions, REGION_ADDRESS_ID)
-        .setAddress(ADDRESS)
-        .setCreationTimestamp(CREATION_TIMESTAMP)
-        .setDescription(DESCRIPTION)
-        .setGeneratedId(GENERATED_ID)
-        .setStatus(STATUS)
-        .setUsage(REGION_FORWARDING_USAGE)
-        .build();
+    instanceAddress =
+        new Address.Builder(serviceMockReturnsOptions, REGION_ADDRESS_ID)
+            .setAddress(ADDRESS)
+            .setCreationTimestamp(CREATION_TIMESTAMP)
+            .setDescription(DESCRIPTION)
+            .setGeneratedId(GENERATED_ID)
+            .setStatus(STATUS)
+            .setUsage(INSTANCE_USAGE)
+            .build();
+    globalForwardingAddress =
+        new Address.Builder(serviceMockReturnsOptions, GLOBAL_ADDRESS_ID)
+            .setAddress(ADDRESS)
+            .setCreationTimestamp(CREATION_TIMESTAMP)
+            .setDescription(DESCRIPTION)
+            .setGeneratedId(GENERATED_ID)
+            .setStatus(STATUS)
+            .setUsage(GLOBAL_FORWARDING_USAGE)
+            .build();
+    regionForwardingAddress =
+        new Address.Builder(serviceMockReturnsOptions, REGION_ADDRESS_ID)
+            .setAddress(ADDRESS)
+            .setCreationTimestamp(CREATION_TIMESTAMP)
+            .setDescription(DESCRIPTION)
+            .setGeneratedId(GENERATED_ID)
+            .setStatus(STATUS)
+            .setUsage(REGION_FORWARDING_USAGE)
+            .build();
     compute = createStrictMock(Compute.class);
   }
 
   private void initializeAddress() {
-    address = new Address.Builder(compute, REGION_ADDRESS_ID)
-        .setAddress(ADDRESS)
-        .setCreationTimestamp(CREATION_TIMESTAMP)
-        .setDescription(DESCRIPTION)
-        .setGeneratedId(GENERATED_ID)
-        .setStatus(STATUS)
-        .setUsage(REGION_FORWARDING_USAGE)
-        .build();
+    address =
+        new Address.Builder(compute, REGION_ADDRESS_ID)
+            .setAddress(ADDRESS)
+            .setCreationTimestamp(CREATION_TIMESTAMP)
+            .setDescription(DESCRIPTION)
+            .setGeneratedId(GENERATED_ID)
+            .setStatus(STATUS)
+            .setUsage(REGION_FORWARDING_USAGE)
+            .build();
   }
 
   @After
@@ -156,9 +160,10 @@ public class AddressTest {
     assertNull(address.getGeneratedId());
     assertNull(address.getStatus());
     assertNull(address.getUsage());
-    address = new Address.Builder(serviceMockReturnsOptions, REGION_ADDRESS_ID)
-        .setAddressId(GLOBAL_ADDRESS_ID)
-        .build();
+    address =
+        new Address.Builder(serviceMockReturnsOptions, REGION_ADDRESS_ID)
+            .setAddressId(GLOBAL_ADDRESS_ID)
+            .build();
     assertEquals(GLOBAL_ADDRESS_ID, address.getAddressId());
     assertSame(serviceMockReturnsOptions, address.getCompute());
     assertNull(address.getAddress());
@@ -184,12 +189,14 @@ public class AddressTest {
   @Test
   public void testToAndFromPb() {
     initializeExpectedAddress(20);
-    compareAddress(globalForwardingAddress,
+    compareAddress(
+        globalForwardingAddress,
         Address.fromPb(serviceMockReturnsOptions, globalForwardingAddress.toPb()));
-    compareAddress(regionForwardingAddress,
+    compareAddress(
+        regionForwardingAddress,
         Address.fromPb(serviceMockReturnsOptions, regionForwardingAddress.toPb()));
-    compareAddress(instanceAddress,
-        Address.fromPb(serviceMockReturnsOptions, instanceAddress.toPb()));
+    compareAddress(
+        instanceAddress, Address.fromPb(serviceMockReturnsOptions, instanceAddress.toPb()));
     Address address = new Address.Builder(serviceMockReturnsOptions, GLOBAL_ADDRESS_ID).build();
     compareAddress(address, Address.fromPb(serviceMockReturnsOptions, address.toPb()));
     address = new Address.Builder(serviceMockReturnsOptions, REGION_ADDRESS_ID).build();
@@ -200,9 +207,10 @@ public class AddressTest {
   public void testDeleteOperation() {
     initializeExpectedAddress(4);
     expect(compute.getOptions()).andReturn(mockOptions);
-    Operation operation = new Operation.Builder(serviceMockReturnsOptions)
-        .setOperationId(GlobalOperationId.of("project", "op"))
-        .build();
+    Operation operation =
+        new Operation.Builder(serviceMockReturnsOptions)
+            .setOperationId(GlobalOperationId.of("project", "op"))
+            .build();
     expect(compute.deleteAddress(REGION_ADDRESS_ID)).andReturn(operation);
     replay(compute);
     initializeAddress();
@@ -224,7 +232,8 @@ public class AddressTest {
     initializeExpectedAddress(3);
     Compute.AddressOption[] expectedOptions = {Compute.AddressOption.fields()};
     expect(compute.getOptions()).andReturn(mockOptions);
-    expect(compute.getAddress(REGION_ADDRESS_ID, expectedOptions)).andReturn(regionForwardingAddress);
+    expect(compute.getAddress(REGION_ADDRESS_ID, expectedOptions))
+        .andReturn(regionForwardingAddress);
     replay(compute);
     initializeAddress();
     assertTrue(address.exists());

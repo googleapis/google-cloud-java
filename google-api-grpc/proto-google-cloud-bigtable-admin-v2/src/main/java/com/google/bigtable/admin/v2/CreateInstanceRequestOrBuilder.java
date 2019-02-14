@@ -3,11 +3,14 @@
 
 package com.google.bigtable.admin.v2;
 
-public interface CreateInstanceRequestOrBuilder extends
+public interface CreateInstanceRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.bigtable.admin.v2.CreateInstanceRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The unique name of the project in which to create the new instance.
    * Values are of the form `projects/&lt;project&gt;`.
@@ -17,6 +20,8 @@ public interface CreateInstanceRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * The unique name of the project in which to create the new instance.
    * Values are of the form `projects/&lt;project&gt;`.
@@ -24,10 +29,11 @@ public interface CreateInstanceRequestOrBuilder extends
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * The ID to be used when referring to the new instance within its project,
    * e.g., just `myinstance` rather than
@@ -38,6 +44,8 @@ public interface CreateInstanceRequestOrBuilder extends
    */
   java.lang.String getInstanceId();
   /**
+   *
+   *
    * <pre>
    * The ID to be used when referring to the new instance within its project,
    * e.g., just `myinstance` rather than
@@ -46,10 +54,11 @@ public interface CreateInstanceRequestOrBuilder extends
    *
    * <code>string instance_id = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getInstanceIdBytes();
+  com.google.protobuf.ByteString getInstanceIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * The instance to create.
    * Fields marked `OutputOnly` must be left blank.
@@ -59,6 +68,8 @@ public interface CreateInstanceRequestOrBuilder extends
    */
   boolean hasInstance();
   /**
+   *
+   *
    * <pre>
    * The instance to create.
    * Fields marked `OutputOnly` must be left blank.
@@ -68,6 +79,8 @@ public interface CreateInstanceRequestOrBuilder extends
    */
   com.google.bigtable.admin.v2.Instance getInstance();
   /**
+   *
+   *
    * <pre>
    * The instance to create.
    * Fields marked `OutputOnly` must be left blank.
@@ -78,76 +91,77 @@ public interface CreateInstanceRequestOrBuilder extends
   com.google.bigtable.admin.v2.InstanceOrBuilder getInstanceOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The clusters to be created within the instance, mapped by desired
    * cluster ID, e.g., just `mycluster` rather than
    * `projects/myproject/instances/myinstance/clusters/mycluster`.
    * Fields marked `OutputOnly` must be left blank.
-   * Currently exactly one cluster must be specified.
+   * Currently, at most two clusters can be specified.
    * </pre>
    *
    * <code>map&lt;string, .google.bigtable.admin.v2.Cluster&gt; clusters = 4;</code>
    */
   int getClustersCount();
   /**
+   *
+   *
    * <pre>
    * The clusters to be created within the instance, mapped by desired
    * cluster ID, e.g., just `mycluster` rather than
    * `projects/myproject/instances/myinstance/clusters/mycluster`.
    * Fields marked `OutputOnly` must be left blank.
-   * Currently exactly one cluster must be specified.
+   * Currently, at most two clusters can be specified.
    * </pre>
    *
    * <code>map&lt;string, .google.bigtable.admin.v2.Cluster&gt; clusters = 4;</code>
    */
-  boolean containsClusters(
-      java.lang.String key);
-  /**
-   * Use {@link #getClustersMap()} instead.
-   */
+  boolean containsClusters(java.lang.String key);
+  /** Use {@link #getClustersMap()} instead. */
   @java.lang.Deprecated
-  java.util.Map<java.lang.String, com.google.bigtable.admin.v2.Cluster>
-  getClusters();
+  java.util.Map<java.lang.String, com.google.bigtable.admin.v2.Cluster> getClusters();
   /**
+   *
+   *
    * <pre>
    * The clusters to be created within the instance, mapped by desired
    * cluster ID, e.g., just `mycluster` rather than
    * `projects/myproject/instances/myinstance/clusters/mycluster`.
    * Fields marked `OutputOnly` must be left blank.
-   * Currently exactly one cluster must be specified.
+   * Currently, at most two clusters can be specified.
    * </pre>
    *
    * <code>map&lt;string, .google.bigtable.admin.v2.Cluster&gt; clusters = 4;</code>
    */
-  java.util.Map<java.lang.String, com.google.bigtable.admin.v2.Cluster>
-  getClustersMap();
+  java.util.Map<java.lang.String, com.google.bigtable.admin.v2.Cluster> getClustersMap();
   /**
+   *
+   *
    * <pre>
    * The clusters to be created within the instance, mapped by desired
    * cluster ID, e.g., just `mycluster` rather than
    * `projects/myproject/instances/myinstance/clusters/mycluster`.
    * Fields marked `OutputOnly` must be left blank.
-   * Currently exactly one cluster must be specified.
+   * Currently, at most two clusters can be specified.
    * </pre>
    *
    * <code>map&lt;string, .google.bigtable.admin.v2.Cluster&gt; clusters = 4;</code>
    */
-
   com.google.bigtable.admin.v2.Cluster getClustersOrDefault(
-      java.lang.String key,
-      com.google.bigtable.admin.v2.Cluster defaultValue);
+      java.lang.String key, com.google.bigtable.admin.v2.Cluster defaultValue);
   /**
+   *
+   *
    * <pre>
    * The clusters to be created within the instance, mapped by desired
    * cluster ID, e.g., just `mycluster` rather than
    * `projects/myproject/instances/myinstance/clusters/mycluster`.
    * Fields marked `OutputOnly` must be left blank.
-   * Currently exactly one cluster must be specified.
+   * Currently, at most two clusters can be specified.
    * </pre>
    *
    * <code>map&lt;string, .google.bigtable.admin.v2.Cluster&gt; clusters = 4;</code>
    */
-
-  com.google.bigtable.admin.v2.Cluster getClustersOrThrow(
-      java.lang.String key);
+  com.google.bigtable.admin.v2.Cluster getClustersOrThrow(java.lang.String key);
 }

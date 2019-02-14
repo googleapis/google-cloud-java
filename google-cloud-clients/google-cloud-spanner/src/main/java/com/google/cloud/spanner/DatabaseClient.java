@@ -34,7 +34,8 @@ public interface DatabaseClient {
    * database operation, but the mutations will have been applied at most once.
    *
    * <p>Example of blind write.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * long singerId = my_singer_id;
    * Mutation mutation = Mutation.newInsertBuilder("Singer")
    *         .set("SingerId")
@@ -64,7 +65,8 @@ public interface DatabaseClient {
    * appropriate for latency sensitive and/or high throughput blind writing.
    *
    * <p>Example of unprotected blind write.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * long singerId = my_singer_id;
    * Mutation mutation = Mutation.newInsertBuilder("Singers")
    *         .set("SingerId")
@@ -86,14 +88,14 @@ public interface DatabaseClient {
    * concurrency.
    *
    * <p>Example of single use.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * long singerId = my_singer_id;
    * String column = "FirstName";
    * Struct row =
    *     dbClient.singleUse().readRow("Singers", Key.of(singerId), Collections.singleton(column));
    * String firstName = row.getString(column);
    * }</pre>
-   *
    */
   ReadContext singleUse();
 
@@ -101,7 +103,8 @@ public interface DatabaseClient {
    * Returns a context in which a single read can be performed at the given timestamp bound.
    *
    * <p>Example of single use with timestamp bound.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * long singerId = my_singer_id;
    * String column = "FirstName";
    * Struct row =
@@ -122,7 +125,8 @@ public interface DatabaseClient {
    * successfully.
    *
    * <p>Example of single use read only transaction.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * long singerId = my_singer_id;
    * String column = "FirstName";
    * ReadOnlyTransaction txn = dbClient.singleUseReadOnlyTransaction();
@@ -130,17 +134,17 @@ public interface DatabaseClient {
    * row.getString(column);
    * Timestamp timestamp = txn.getReadTimestamp();
    * }</pre>
-   *
    */
   ReadOnlyTransaction singleUseReadOnlyTransaction();
 
   /**
-   * Returns a read-only transaction context in which a single read or query can be performed at the
+   * Returns a read-only transaction context in which a single read or query can be performed at
    * given timestamp bound. This method differs from {@link #singleUse(TimestampBound)} in that the
    * read timestamp used may be inspected after the read has returned data or finished successfully.
    *
    * <p>Example of single use read only transaction with timestamp bound.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * long singerId = my_singer_id;
    * String column = "FirstName";
    * ReadOnlyTransaction txn =
@@ -161,7 +165,8 @@ public interface DatabaseClient {
    * finished successfully.
    *
    * <p>Example of read only transaction.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * long singerId = my_singer_id;
    * long albumId = my_album_id;
    * String singerColumn = "FirstName";
@@ -177,7 +182,6 @@ public interface DatabaseClient {
    *   albumTitle = albumRow.getString(albumColumn);
    * }
    * }</pre>
-   *
    */
   ReadOnlyTransaction readOnlyTransaction();
 
@@ -191,7 +195,8 @@ public interface DatabaseClient {
    * transactions.
    *
    * <p>Example of read only transaction with timestamp bound.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * long singerId = my_singer_id;
    * long albumId = my_album_id;
    * String singerColumn = "FirstName";
@@ -218,12 +223,13 @@ public interface DatabaseClient {
    * returned runner can only be used once.
    *
    * <p>Example of a read write transaction.
+   *
    * <pre> <code>
    * long singerId = my_singer_id;
    * TransactionRunner runner = dbClient.readWriteTransaction();
    * runner.run(
    *     new TransactionCallable&lt;Void&gt;() {
-   * 
+   *
    *       {@literal @}Override
    *       public Void run(TransactionContext transaction) throws Exception {
    *         String column = "FirstName";
@@ -236,17 +242,17 @@ public interface DatabaseClient {
    *       }
    *     });
    * </code></pre>
-   *
    */
   TransactionRunner readWriteTransaction();
-  
+
   /**
-   * Returns a transaction manager which allows manual management of transaction lifecycle. This
-   * API is meant for advanced users. Most users should instead use the
-   * {@link #readWriteTransaction()} API instead.
+   * Returns a transaction manager which allows manual management of transaction lifecycle. This API
+   * is meant for advanced users. Most users should instead use the {@link #readWriteTransaction()}
+   * API instead.
    *
    * <p>Example of using {@link TransactionManager}.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * long singerId = my_singer_id;
    * try (TransactionManager manager = dbClient.transactionManager()) {
    *   TransactionContext txn = manager.begin();
@@ -266,7 +272,55 @@ public interface DatabaseClient {
    *   }
    * }
    * }</pre>
-   *
    */
   TransactionManager transactionManager();
+
+  /**
+   * Returns the lower bound of rows modified by this DML statement.
+   *
+   * <p>The method will block until the update is complete. Running a DML statement with this method
+   * does not offer exactly once semantics, and therfore the DML statement should be idempotent. The
+   * DML statement must be fully-partitionable. Specifically, the statement must be expressible as
+   * the union of many statements which each access only a single row of the table. This is a
+   * Partitioned DML transaction in which a single Partitioned DML statement is executed.
+   * Partitioned DML partitions the key space and runs the DML statement over each partition in
+   * parallel using separate, internal transactions that commit independently. Partitioned DML
+   * transactions do not need to be committed.
+   *
+   * <p>Partitioned DML updates are used to execute a single DML statement with a different
+   * execution strategy that provides different, and often better, scalability properties for large,
+   * table-wide operations than DML in a {@link #readWriteTransaction()} transaction. Smaller scoped
+   * statements, such as an OLTP workload, should prefer using {@link
+   * TransactionContext#executeUpdate(Statement)} with {@link #readWriteTransaction()}.
+   *
+   * <p>That said, Partitioned DML is not a drop-in replacement for standard DML used in {@link
+   * #readWriteTransaction()}.
+   *
+   * <ul>
+   *   <li>The DML statement must be fully-partitionable. Specifically, the statement must be
+   *       expressible as the union of many statements which each access only a single row of the
+   *       table.
+   *   <li>The statement is not applied atomically to all rows of the table. Rather, the statement
+   *       is applied atomically to partitions of the table, in independent internal transactions.
+   *       Secondary index rows are updated atomically with the base table rows.
+   *   <li>Partitioned DML does not guarantee exactly-once execution semantics against a partition.
+   *       The statement will be applied at least once to each partition. It is strongly recommended
+   *       that the DML statement should be idempotent to avoid unexpected results. For instance, it
+   *       is potentially dangerous to run a statement such as `UPDATE table SET column = column +
+   *       1` as it could be run multiple times against some rows.
+   *   <li>The partitions are committed automatically - there is no support for Commit or Rollback.
+   *       If the call returns an error, or if the client issuing the DML statement dies, it is
+   *       possible that some rows had the statement executed on them successfully. It is also
+   *       possible that statement was never executed against other rows.
+   *   <li>If any error is encountered during the execution of the partitioned DML operation (for
+   *       instance, a UNIQUE INDEX violation, division by zero, or a value that cannot be stored
+   *       due to schema constraints), then the operation is stopped at that point and an error is
+   *       returned. It is possible that at this point, some partitions have been committed (or even
+   *       committed multiple times), and other partitions have not been run at all.
+   * </ul>
+   *
+   * <p>Given the above, Partitioned DML is good fit for large, database-wide, operations that are
+   * idempotent, such as deleting old rows from a very large table.
+   */
+  long executePartitionedUpdate(Statement stmt);
 }

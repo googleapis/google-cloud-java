@@ -24,13 +24,10 @@ import com.google.cloud.RestorableState;
 import com.google.cloud.RetryHelper;
 import com.google.cloud.WriteChannel;
 import com.google.cloud.storage.spi.v1.StorageRpc;
-
 import java.util.Map;
 import java.util.concurrent.Callable;
 
-/**
- * Write channel implementation to upload Google Cloud Storage blobs.
- */
+/** Write channel implementation to upload Google Cloud Storage blobs. */
 class BlobWriteChannel extends BaseWriteChannel<StorageOptions, BlobInfo> {
 
   BlobWriteChannel(StorageOptions options, BlobInfo blob, Map<StorageRpc.Option, ?> optionsMap) {
@@ -44,13 +41,19 @@ class BlobWriteChannel extends BaseWriteChannel<StorageOptions, BlobInfo> {
   @Override
   protected void flushBuffer(final int length, final boolean last) {
     try {
-      runWithRetries(callable(new Runnable() {
-        @Override
-        public void run() {
-          getOptions().getStorageRpcV1()
-              .write(getUploadId(), getBuffer(), 0, getPosition(), length, last);
-        }
-      }), getOptions().getRetrySettings(), StorageImpl.EXCEPTION_HANDLER, getOptions().getClock());
+      runWithRetries(
+          callable(
+              new Runnable() {
+                @Override
+                public void run() {
+                  getOptions()
+                      .getStorageRpcV1()
+                      .write(getUploadId(), getBuffer(), 0, getPosition(), length, last);
+                }
+              }),
+          getOptions().getRetrySettings(),
+          StorageImpl.EXCEPTION_HANDLER,
+          getOptions().getClock());
     } catch (RetryHelper.RetryHelperException e) {
       throw StorageException.translateAndThrow(e);
     }
@@ -60,15 +63,21 @@ class BlobWriteChannel extends BaseWriteChannel<StorageOptions, BlobInfo> {
     return StateImpl.builder(getOptions(), getEntity(), getUploadId());
   }
 
-  private static String open(final StorageOptions options, final BlobInfo blob,
+  private static String open(
+      final StorageOptions options,
+      final BlobInfo blob,
       final Map<StorageRpc.Option, ?> optionsMap) {
     try {
-      return runWithRetries(new Callable<String>() {
-        @Override
-        public String call() {
-          return options.getStorageRpcV1().open(blob.toPb(), optionsMap);
-        }
-      }, options.getRetrySettings(), StorageImpl.EXCEPTION_HANDLER, options.getClock());
+      return runWithRetries(
+          new Callable<String>() {
+            @Override
+            public String call() {
+              return options.getStorageRpcV1().open(blob.toPb(), optionsMap);
+            }
+          },
+          options.getRetrySettings(),
+          StorageImpl.EXCEPTION_HANDLER,
+          options.getClock());
     } catch (RetryHelper.RetryHelperException e) {
       throw StorageException.translateAndThrow(e);
     }

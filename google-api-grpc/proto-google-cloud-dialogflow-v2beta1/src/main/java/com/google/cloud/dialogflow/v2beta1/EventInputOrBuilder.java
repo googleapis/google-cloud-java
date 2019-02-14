@@ -3,11 +3,14 @@
 
 package com.google.cloud.dialogflow.v2beta1;
 
-public interface EventInputOrBuilder extends
+public interface EventInputOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2beta1.EventInput)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The unique identifier of the event.
    * </pre>
@@ -16,16 +19,19 @@ public interface EventInputOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * Required. The unique identifier of the event.
    * </pre>
    *
    * <code>string name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * Optional. The collection of parameters associated with the event.
    * </pre>
@@ -34,6 +40,8 @@ public interface EventInputOrBuilder extends
    */
   boolean hasParameters();
   /**
+   *
+   *
    * <pre>
    * Optional. The collection of parameters associated with the event.
    * </pre>
@@ -42,6 +50,8 @@ public interface EventInputOrBuilder extends
    */
   com.google.protobuf.Struct getParameters();
   /**
+   *
+   *
    * <pre>
    * Optional. The collection of parameters associated with the event.
    * </pre>
@@ -51,6 +61,8 @@ public interface EventInputOrBuilder extends
   com.google.protobuf.StructOrBuilder getParametersOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Required. The language of this query. See [Language
    * Support](https://dialogflow.com/docs/languages) for a list of the
@@ -62,6 +74,8 @@ public interface EventInputOrBuilder extends
    */
   java.lang.String getLanguageCode();
   /**
+   *
+   *
    * <pre>
    * Required. The language of this query. See [Language
    * Support](https://dialogflow.com/docs/languages) for a list of the
@@ -71,6 +85,5 @@ public interface EventInputOrBuilder extends
    *
    * <code>string language_code = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getLanguageCodeBytes();
+  com.google.protobuf.ByteString getLanguageCodeBytes();
 }

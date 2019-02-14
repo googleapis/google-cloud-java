@@ -14,20 +14,20 @@
 
 package com.google.cloud.bigquery.datatransfer.v1;
 
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
-import com.google.api.pathtemplate.PathTemplate;
-import com.google.api.resourcenames.ResourceName;
-import java.util.Map;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 @javax.annotation.Generated("by GAPIC protoc plugin")
 public class LocationRunName extends RunName {
 
   private static final PathTemplate PATH_TEMPLATE =
-      PathTemplate.createWithoutUrlEncoding("projects/{project}/locations/{location}/transferConfigs/{transfer_config}/runs/{run}");
+      PathTemplate.createWithoutUrlEncoding(
+          "projects/{project}/locations/{location}/transferConfigs/{transfer_config}/runs/{run}");
 
   private volatile Map<String, String> fieldValuesMap;
 
@@ -67,23 +67,24 @@ public class LocationRunName extends RunName {
     run = Preconditions.checkNotNull(builder.getRun());
   }
 
-  public static LocationRunName of(String project, String location, String transferConfig, String run) {
+  public static LocationRunName of(
+      String project, String location, String transferConfig, String run) {
     return newBuilder()
-      .setProject(project)
-      .setLocation(location)
-      .setTransferConfig(transferConfig)
-      .setRun(run)
-      .build();
+        .setProject(project)
+        .setLocation(location)
+        .setTransferConfig(transferConfig)
+        .setRun(run)
+        .build();
   }
 
   public static String format(String project, String location, String transferConfig, String run) {
     return newBuilder()
-      .setProject(project)
-      .setLocation(location)
-      .setTransferConfig(transferConfig)
-      .setRun(run)
-      .build()
-      .toString();
+        .setProject(project)
+        .setLocation(location)
+        .setTransferConfig(transferConfig)
+        .setRun(run)
+        .build()
+        .toString();
   }
 
   public static LocationRunName parse(String formattedString) {
@@ -91,8 +92,13 @@ public class LocationRunName extends RunName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(formattedString, "LocationRunName.parse: formattedString not in valid format");
-    return of(matchMap.get("project"), matchMap.get("location"), matchMap.get("transfer_config"), matchMap.get("run"));
+        PATH_TEMPLATE.validatedMatch(
+            formattedString, "LocationRunName.parse: formattedString not in valid format");
+    return of(
+        matchMap.get("project"),
+        matchMap.get("location"),
+        matchMap.get("transfer_config"),
+        matchMap.get("run"));
   }
 
   public static List<LocationRunName> parseList(List<String> formattedStrings) {
@@ -141,7 +147,8 @@ public class LocationRunName extends RunName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate("project", project, "location", location, "transfer_config", transferConfig, "run", run);
+    return PATH_TEMPLATE.instantiate(
+        "project", project, "location", location, "transfer_config", transferConfig, "run", run);
   }
 
   /** Builder for LocationRunName. */
@@ -188,8 +195,7 @@ public class LocationRunName extends RunName {
       return this;
     }
 
-    private Builder() {
-    }
+    private Builder() {}
 
     private Builder(LocationRunName locationRunName) {
       project = locationRunName.project;
@@ -232,4 +238,3 @@ public class LocationRunName extends RunName {
     return h;
   }
 }
-

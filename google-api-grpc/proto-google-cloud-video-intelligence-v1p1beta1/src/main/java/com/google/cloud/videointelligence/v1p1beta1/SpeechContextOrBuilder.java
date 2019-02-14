@@ -3,11 +3,14 @@
 
 package com.google.cloud.videointelligence.v1p1beta1;
 
-public interface SpeechContextOrBuilder extends
+public interface SpeechContextOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.videointelligence.v1p1beta1.SpeechContext)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * *Optional* A list of strings containing words and phrases "hints" so that
    * the speech recognition is more likely to recognize them. This can be used
@@ -19,9 +22,10 @@ public interface SpeechContextOrBuilder extends
    *
    * <code>repeated string phrases = 1;</code>
    */
-  java.util.List<java.lang.String>
-      getPhrasesList();
+  java.util.List<java.lang.String> getPhrasesList();
   /**
+   *
+   *
    * <pre>
    * *Optional* A list of strings containing words and phrases "hints" so that
    * the speech recognition is more likely to recognize them. This can be used
@@ -35,6 +39,8 @@ public interface SpeechContextOrBuilder extends
    */
   int getPhrasesCount();
   /**
+   *
+   *
    * <pre>
    * *Optional* A list of strings containing words and phrases "hints" so that
    * the speech recognition is more likely to recognize them. This can be used
@@ -48,6 +54,8 @@ public interface SpeechContextOrBuilder extends
    */
   java.lang.String getPhrases(int index);
   /**
+   *
+   *
    * <pre>
    * *Optional* A list of strings containing words and phrases "hints" so that
    * the speech recognition is more likely to recognize them. This can be used
@@ -59,6 +67,5 @@ public interface SpeechContextOrBuilder extends
    *
    * <code>repeated string phrases = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getPhrasesBytes(int index);
+  com.google.protobuf.ByteString getPhrasesBytes(int index);
 }

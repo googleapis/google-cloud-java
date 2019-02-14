@@ -3,71 +3,95 @@
 
 package com.google.container.v1;
 
-public interface CreateNodePoolRequestOrBuilder extends
+public interface CreateNodePoolRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.container.v1.CreateNodePoolRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
-   * The Google Developers Console [project ID or project
+   * Deprecated. The Google Developers Console [project ID or project
    * number](https://developers.google.com/console/help/new/#projectnumber).
+   * This field has been deprecated and replaced by the parent field.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   java.lang.String getProjectId();
   /**
+   *
+   *
    * <pre>
-   * The Google Developers Console [project ID or project
+   * Deprecated. The Google Developers Console [project ID or project
    * number](https://developers.google.com/console/help/new/#projectnumber).
+   * This field has been deprecated and replaced by the parent field.
    * </pre>
    *
-   * <code>string project_id = 1;</code>
+   * <code>string project_id = 1 [deprecated = true];</code>
    */
-  com.google.protobuf.ByteString
-      getProjectIdBytes();
+  @java.lang.Deprecated
+  com.google.protobuf.ByteString getProjectIdBytes();
 
   /**
+   *
+   *
    * <pre>
-   * The name of the Google Compute Engine
+   * Deprecated. The name of the Google Compute Engine
    * [zone](/compute/docs/zones#available) in which the cluster
    * resides.
+   * This field has been deprecated and replaced by the parent field.
    * </pre>
    *
-   * <code>string zone = 2;</code>
+   * <code>string zone = 2 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   java.lang.String getZone();
   /**
+   *
+   *
    * <pre>
-   * The name of the Google Compute Engine
+   * Deprecated. The name of the Google Compute Engine
    * [zone](/compute/docs/zones#available) in which the cluster
    * resides.
+   * This field has been deprecated and replaced by the parent field.
    * </pre>
    *
-   * <code>string zone = 2;</code>
+   * <code>string zone = 2 [deprecated = true];</code>
    */
-  com.google.protobuf.ByteString
-      getZoneBytes();
+  @java.lang.Deprecated
+  com.google.protobuf.ByteString getZoneBytes();
 
   /**
+   *
+   *
    * <pre>
-   * The name of the cluster.
+   * Deprecated. The name of the cluster.
+   * This field has been deprecated and replaced by the parent field.
    * </pre>
    *
-   * <code>string cluster_id = 3;</code>
+   * <code>string cluster_id = 3 [deprecated = true];</code>
    */
+  @java.lang.Deprecated
   java.lang.String getClusterId();
   /**
+   *
+   *
    * <pre>
-   * The name of the cluster.
+   * Deprecated. The name of the cluster.
+   * This field has been deprecated and replaced by the parent field.
    * </pre>
    *
-   * <code>string cluster_id = 3;</code>
+   * <code>string cluster_id = 3 [deprecated = true];</code>
    */
-  com.google.protobuf.ByteString
-      getClusterIdBytes();
+  @java.lang.Deprecated
+  com.google.protobuf.ByteString getClusterIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * The node pool to create.
    * </pre>
@@ -76,6 +100,8 @@ public interface CreateNodePoolRequestOrBuilder extends
    */
   boolean hasNodePool();
   /**
+   *
+   *
    * <pre>
    * The node pool to create.
    * </pre>
@@ -84,6 +110,8 @@ public interface CreateNodePoolRequestOrBuilder extends
    */
   com.google.container.v1.NodePool getNodePool();
   /**
+   *
+   *
    * <pre>
    * The node pool to create.
    * </pre>
@@ -91,4 +119,29 @@ public interface CreateNodePoolRequestOrBuilder extends
    * <code>.google.container.v1.NodePool node_pool = 4;</code>
    */
   com.google.container.v1.NodePoolOrBuilder getNodePoolOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The parent (project, location, cluster id) where the node pool will be
+   * created. Specified in the format
+   * 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;'.
+   * </pre>
+   *
+   * <code>string parent = 6;</code>
+   */
+  java.lang.String getParent();
+  /**
+   *
+   *
+   * <pre>
+   * The parent (project, location, cluster id) where the node pool will be
+   * created. Specified in the format
+   * 'projects/&#42;&#47;locations/&#42;&#47;clusters/&#42;'.
+   * </pre>
+   *
+   * <code>string parent = 6;</code>
+   */
+  com.google.protobuf.ByteString getParentBytes();
 }

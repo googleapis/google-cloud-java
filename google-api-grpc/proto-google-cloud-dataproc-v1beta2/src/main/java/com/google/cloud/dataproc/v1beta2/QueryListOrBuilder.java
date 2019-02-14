@@ -3,11 +3,14 @@
 
 package com.google.cloud.dataproc.v1beta2;
 
-public interface QueryListOrBuilder extends
+public interface QueryListOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dataproc.v1beta2.QueryList)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The queries to execute. You do not need to terminate a query
    * with a semicolon. Multiple queries can be specified in one string
@@ -26,9 +29,10 @@ public interface QueryListOrBuilder extends
    *
    * <code>repeated string queries = 1;</code>
    */
-  java.util.List<java.lang.String>
-      getQueriesList();
+  java.util.List<java.lang.String> getQueriesList();
   /**
+   *
+   *
    * <pre>
    * Required. The queries to execute. You do not need to terminate a query
    * with a semicolon. Multiple queries can be specified in one string
@@ -49,6 +53,8 @@ public interface QueryListOrBuilder extends
    */
   int getQueriesCount();
   /**
+   *
+   *
    * <pre>
    * Required. The queries to execute. You do not need to terminate a query
    * with a semicolon. Multiple queries can be specified in one string
@@ -69,6 +75,8 @@ public interface QueryListOrBuilder extends
    */
   java.lang.String getQueries(int index);
   /**
+   *
+   *
    * <pre>
    * Required. The queries to execute. You do not need to terminate a query
    * with a semicolon. Multiple queries can be specified in one string
@@ -87,6 +95,5 @@ public interface QueryListOrBuilder extends
    *
    * <code>repeated string queries = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getQueriesBytes(int index);
+  com.google.protobuf.ByteString getQueriesBytes(int index);
 }

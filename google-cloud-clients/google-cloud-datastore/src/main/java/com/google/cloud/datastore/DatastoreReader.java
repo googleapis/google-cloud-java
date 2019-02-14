@@ -19,9 +19,7 @@ package com.google.cloud.datastore;
 import java.util.Iterator;
 import java.util.List;
 
-/**
- * An interface to represent Google Cloud Datastore read operations.
- */
+/** An interface to represent Google Cloud Datastore read operations. */
 public interface DatastoreReader {
 
   /**
@@ -33,9 +31,9 @@ public interface DatastoreReader {
 
   /**
    * Returns an {@link Entity} for each given {@link Key} that exists in the Datastore. The order of
-   * the result is unspecified. Results are loaded lazily, so it is possible to get a
-   * {@code DatastoreException} from the returned {@code Iterator}'s
-   * {@link Iterator#hasNext hasNext} or {@link Iterator#next next} methods.
+   * the result is unspecified. Results are loaded lazily, so it is possible to get a {@code
+   * DatastoreException} from the returned {@code Iterator}'s {@link Iterator#hasNext hasNext} or
+   * {@link Iterator#next next} methods.
    *
    * @throws DatastoreException upon failure
    * @see #get(Key)

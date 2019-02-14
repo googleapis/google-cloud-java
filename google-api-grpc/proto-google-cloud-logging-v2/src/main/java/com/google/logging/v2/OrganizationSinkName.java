@@ -14,13 +14,12 @@
 
 package com.google.logging.v2;
 
+import com.google.api.pathtemplate.PathTemplate;
 import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableMap;
-import com.google.api.pathtemplate.PathTemplate;
-import com.google.api.resourcenames.ResourceName;
-import java.util.Map;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 // AUTO-GENERATED DOCUMENTATION AND CLASS
 @javax.annotation.Generated("by GAPIC protoc plugin")
@@ -56,18 +55,11 @@ public class OrganizationSinkName extends SinkName {
   }
 
   public static OrganizationSinkName of(String organization, String sink) {
-    return newBuilder()
-      .setOrganization(organization)
-      .setSink(sink)
-      .build();
+    return newBuilder().setOrganization(organization).setSink(sink).build();
   }
 
   public static String format(String organization, String sink) {
-    return newBuilder()
-      .setOrganization(organization)
-      .setSink(sink)
-      .build()
-      .toString();
+    return newBuilder().setOrganization(organization).setSink(sink).build().toString();
   }
 
   public static OrganizationSinkName parse(String formattedString) {
@@ -75,7 +67,8 @@ public class OrganizationSinkName extends SinkName {
       return null;
     }
     Map<String, String> matchMap =
-        PATH_TEMPLATE.validatedMatch(formattedString, "OrganizationSinkName.parse: formattedString not in valid format");
+        PATH_TEMPLATE.validatedMatch(
+            formattedString, "OrganizationSinkName.parse: formattedString not in valid format");
     return of(matchMap.get("organization"), matchMap.get("sink"));
   }
 
@@ -150,8 +143,7 @@ public class OrganizationSinkName extends SinkName {
       return this;
     }
 
-    private Builder() {
-    }
+    private Builder() {}
 
     private Builder(OrganizationSinkName organizationSinkName) {
       organization = organizationSinkName.organization;
@@ -170,8 +162,7 @@ public class OrganizationSinkName extends SinkName {
     }
     if (o instanceof OrganizationSinkName) {
       OrganizationSinkName that = (OrganizationSinkName) o;
-      return (this.organization.equals(that.organization))
-          && (this.sink.equals(that.sink));
+      return (this.organization.equals(that.organization)) && (this.sink.equals(that.sink));
     }
     return false;
   }
@@ -186,4 +177,3 @@ public class OrganizationSinkName extends SinkName {
     return h;
   }
 }
-

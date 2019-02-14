@@ -3,11 +3,14 @@
 
 package com.google.container.v1;
 
-public interface NetworkPolicyConfigOrBuilder extends
+public interface NetworkPolicyConfigOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.container.v1.NetworkPolicyConfig)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Whether NetworkPolicy is enabled for this cluster.
    * </pre>

@@ -3,11 +3,14 @@
 
 package com.google.cloud.dialogflow.v2;
 
-public interface ExportAgentRequestOrBuilder extends
+public interface ExportAgentRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2.ExportAgentRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The project that the agent to export is associated with.
    * Format: `projects/&lt;Project ID&gt;`.
@@ -17,6 +20,8 @@ public interface ExportAgentRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * Required. The project that the agent to export is associated with.
    * Format: `projects/&lt;Project ID&gt;`.
@@ -24,10 +29,11 @@ public interface ExportAgentRequestOrBuilder extends
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * Optional. The Google Cloud Storage URI to export the agent to.
    * Note: The URI must start with
@@ -38,6 +44,8 @@ public interface ExportAgentRequestOrBuilder extends
    */
   java.lang.String getAgentUri();
   /**
+   *
+   *
    * <pre>
    * Optional. The Google Cloud Storage URI to export the agent to.
    * Note: The URI must start with
@@ -46,6 +54,5 @@ public interface ExportAgentRequestOrBuilder extends
    *
    * <code>string agent_uri = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getAgentUriBytes();
+  com.google.protobuf.ByteString getAgentUriBytes();
 }

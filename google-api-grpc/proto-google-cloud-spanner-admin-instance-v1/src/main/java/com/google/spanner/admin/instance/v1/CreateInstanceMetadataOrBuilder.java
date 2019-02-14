@@ -3,11 +3,14 @@
 
 package com.google.spanner.admin.instance.v1;
 
-public interface CreateInstanceMetadataOrBuilder extends
+public interface CreateInstanceMetadataOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.spanner.admin.instance.v1.CreateInstanceMetadata)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The instance being created.
    * </pre>
@@ -16,6 +19,8 @@ public interface CreateInstanceMetadataOrBuilder extends
    */
   boolean hasInstance();
   /**
+   *
+   *
    * <pre>
    * The instance being created.
    * </pre>
@@ -24,6 +29,8 @@ public interface CreateInstanceMetadataOrBuilder extends
    */
   com.google.spanner.admin.instance.v1.Instance getInstance();
   /**
+   *
+   *
    * <pre>
    * The instance being created.
    * </pre>
@@ -33,6 +40,8 @@ public interface CreateInstanceMetadataOrBuilder extends
   com.google.spanner.admin.instance.v1.InstanceOrBuilder getInstanceOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The time at which the
    * [CreateInstance][google.spanner.admin.instance.v1.InstanceAdmin.CreateInstance] request was
@@ -43,6 +52,8 @@ public interface CreateInstanceMetadataOrBuilder extends
    */
   boolean hasStartTime();
   /**
+   *
+   *
    * <pre>
    * The time at which the
    * [CreateInstance][google.spanner.admin.instance.v1.InstanceAdmin.CreateInstance] request was
@@ -53,6 +64,8 @@ public interface CreateInstanceMetadataOrBuilder extends
    */
   com.google.protobuf.Timestamp getStartTime();
   /**
+   *
+   *
    * <pre>
    * The time at which the
    * [CreateInstance][google.spanner.admin.instance.v1.InstanceAdmin.CreateInstance] request was
@@ -64,6 +77,8 @@ public interface CreateInstanceMetadataOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getStartTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The time at which this operation was cancelled. If set, this operation is
    * in the process of undoing itself (which is guaranteed to succeed) and
@@ -74,6 +89,8 @@ public interface CreateInstanceMetadataOrBuilder extends
    */
   boolean hasCancelTime();
   /**
+   *
+   *
    * <pre>
    * The time at which this operation was cancelled. If set, this operation is
    * in the process of undoing itself (which is guaranteed to succeed) and
@@ -84,6 +101,8 @@ public interface CreateInstanceMetadataOrBuilder extends
    */
   com.google.protobuf.Timestamp getCancelTime();
   /**
+   *
+   *
    * <pre>
    * The time at which this operation was cancelled. If set, this operation is
    * in the process of undoing itself (which is guaranteed to succeed) and
@@ -95,6 +114,8 @@ public interface CreateInstanceMetadataOrBuilder extends
   com.google.protobuf.TimestampOrBuilder getCancelTimeOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * The time at which this operation failed or was completed successfully.
    * </pre>
@@ -103,6 +124,8 @@ public interface CreateInstanceMetadataOrBuilder extends
    */
   boolean hasEndTime();
   /**
+   *
+   *
    * <pre>
    * The time at which this operation failed or was completed successfully.
    * </pre>
@@ -111,6 +134,8 @@ public interface CreateInstanceMetadataOrBuilder extends
    */
   com.google.protobuf.Timestamp getEndTime();
   /**
+   *
+   *
    * <pre>
    * The time at which this operation failed or was completed successfully.
    * </pre>

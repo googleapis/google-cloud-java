@@ -3,20 +3,24 @@
 
 package com.google.cloud.kms.v1;
 
-public interface ListKeyRingsResponseOrBuilder extends
+public interface ListKeyRingsResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.kms.v1.ListKeyRingsResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The list of [KeyRings][google.cloud.kms.v1.KeyRing].
    * </pre>
    *
    * <code>repeated .google.cloud.kms.v1.KeyRing key_rings = 1;</code>
    */
-  java.util.List<com.google.cloud.kms.v1.KeyRing> 
-      getKeyRingsList();
+  java.util.List<com.google.cloud.kms.v1.KeyRing> getKeyRingsList();
   /**
+   *
+   *
    * <pre>
    * The list of [KeyRings][google.cloud.kms.v1.KeyRing].
    * </pre>
@@ -25,6 +29,8 @@ public interface ListKeyRingsResponseOrBuilder extends
    */
   com.google.cloud.kms.v1.KeyRing getKeyRings(int index);
   /**
+   *
+   *
    * <pre>
    * The list of [KeyRings][google.cloud.kms.v1.KeyRing].
    * </pre>
@@ -33,25 +39,29 @@ public interface ListKeyRingsResponseOrBuilder extends
    */
   int getKeyRingsCount();
   /**
+   *
+   *
    * <pre>
    * The list of [KeyRings][google.cloud.kms.v1.KeyRing].
    * </pre>
    *
    * <code>repeated .google.cloud.kms.v1.KeyRing key_rings = 1;</code>
    */
-  java.util.List<? extends com.google.cloud.kms.v1.KeyRingOrBuilder> 
-      getKeyRingsOrBuilderList();
+  java.util.List<? extends com.google.cloud.kms.v1.KeyRingOrBuilder> getKeyRingsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * The list of [KeyRings][google.cloud.kms.v1.KeyRing].
    * </pre>
    *
    * <code>repeated .google.cloud.kms.v1.KeyRing key_rings = 1;</code>
    */
-  com.google.cloud.kms.v1.KeyRingOrBuilder getKeyRingsOrBuilder(
-      int index);
+  com.google.cloud.kms.v1.KeyRingOrBuilder getKeyRingsOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * A token to retrieve next page of results. Pass this value in
    * [ListKeyRingsRequest.page_token][google.cloud.kms.v1.ListKeyRingsRequest.page_token] to retrieve the next page of results.
@@ -61,6 +71,8 @@ public interface ListKeyRingsResponseOrBuilder extends
    */
   java.lang.String getNextPageToken();
   /**
+   *
+   *
    * <pre>
    * A token to retrieve next page of results. Pass this value in
    * [ListKeyRingsRequest.page_token][google.cloud.kms.v1.ListKeyRingsRequest.page_token] to retrieve the next page of results.
@@ -68,10 +80,11 @@ public interface ListKeyRingsResponseOrBuilder extends
    *
    * <code>string next_page_token = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getNextPageTokenBytes();
+  com.google.protobuf.ByteString getNextPageTokenBytes();
 
   /**
+   *
+   *
    * <pre>
    * The total number of [KeyRings][google.cloud.kms.v1.KeyRing] that matched the query.
    * </pre>

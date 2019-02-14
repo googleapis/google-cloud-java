@@ -3,20 +3,24 @@
 
 package com.google.cloud.websecurityscanner.v1alpha;
 
-public interface ListScanRunsResponseOrBuilder extends
+public interface ListScanRunsResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.websecurityscanner.v1alpha.ListScanRunsResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The list of ScanRuns returned.
    * </pre>
    *
    * <code>repeated .google.cloud.websecurityscanner.v1alpha.ScanRun scan_runs = 1;</code>
    */
-  java.util.List<com.google.cloud.websecurityscanner.v1alpha.ScanRun> 
-      getScanRunsList();
+  java.util.List<com.google.cloud.websecurityscanner.v1alpha.ScanRun> getScanRunsList();
   /**
+   *
+   *
    * <pre>
    * The list of ScanRuns returned.
    * </pre>
@@ -25,6 +29,8 @@ public interface ListScanRunsResponseOrBuilder extends
    */
   com.google.cloud.websecurityscanner.v1alpha.ScanRun getScanRuns(int index);
   /**
+   *
+   *
    * <pre>
    * The list of ScanRuns returned.
    * </pre>
@@ -33,25 +39,30 @@ public interface ListScanRunsResponseOrBuilder extends
    */
   int getScanRunsCount();
   /**
+   *
+   *
    * <pre>
    * The list of ScanRuns returned.
    * </pre>
    *
    * <code>repeated .google.cloud.websecurityscanner.v1alpha.ScanRun scan_runs = 1;</code>
    */
-  java.util.List<? extends com.google.cloud.websecurityscanner.v1alpha.ScanRunOrBuilder> 
+  java.util.List<? extends com.google.cloud.websecurityscanner.v1alpha.ScanRunOrBuilder>
       getScanRunsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * The list of ScanRuns returned.
    * </pre>
    *
    * <code>repeated .google.cloud.websecurityscanner.v1alpha.ScanRun scan_runs = 1;</code>
    */
-  com.google.cloud.websecurityscanner.v1alpha.ScanRunOrBuilder getScanRunsOrBuilder(
-      int index);
+  com.google.cloud.websecurityscanner.v1alpha.ScanRunOrBuilder getScanRunsOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * Token to retrieve the next page of results, or empty if there are no
    * more results in the list.
@@ -61,6 +72,8 @@ public interface ListScanRunsResponseOrBuilder extends
    */
   java.lang.String getNextPageToken();
   /**
+   *
+   *
    * <pre>
    * Token to retrieve the next page of results, or empty if there are no
    * more results in the list.
@@ -68,6 +81,5 @@ public interface ListScanRunsResponseOrBuilder extends
    *
    * <code>string next_page_token = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getNextPageTokenBytes();
+  com.google.protobuf.ByteString getNextPageTokenBytes();
 }

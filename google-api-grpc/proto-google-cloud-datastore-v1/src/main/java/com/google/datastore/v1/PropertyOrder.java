@@ -4,35 +4,41 @@
 package com.google.datastore.v1;
 
 /**
+ *
+ *
  * <pre>
  * The desired order for a specific property.
  * </pre>
  *
  * Protobuf type {@code google.datastore.v1.PropertyOrder}
  */
-public  final class PropertyOrder extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class PropertyOrder extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.datastore.v1.PropertyOrder)
     PropertyOrderOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use PropertyOrder.newBuilder() to construct.
   private PropertyOrder(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private PropertyOrder() {
     direction_ = 0;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private PropertyOrder(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -44,66 +50,76 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
-          case 10: {
-            com.google.datastore.v1.PropertyReference.Builder subBuilder = null;
-            if (property_ != null) {
-              subBuilder = property_.toBuilder();
-            }
-            property_ = input.readMessage(com.google.datastore.v1.PropertyReference.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(property_);
-              property_ = subBuilder.buildPartial();
-            }
+          case 10:
+            {
+              com.google.datastore.v1.PropertyReference.Builder subBuilder = null;
+              if (property_ != null) {
+                subBuilder = property_.toBuilder();
+              }
+              property_ =
+                  input.readMessage(
+                      com.google.datastore.v1.PropertyReference.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(property_);
+                property_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 16: {
-            int rawValue = input.readEnum();
+              break;
+            }
+          case 16:
+            {
+              int rawValue = input.readEnum();
 
-            direction_ = rawValue;
-            break;
-          }
+              direction_ = rawValue;
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.datastore.v1.QueryProto.internal_static_google_datastore_v1_PropertyOrder_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.datastore.v1.QueryProto
+        .internal_static_google_datastore_v1_PropertyOrder_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.datastore.v1.QueryProto.internal_static_google_datastore_v1_PropertyOrder_fieldAccessorTable
+    return com.google.datastore.v1.QueryProto
+        .internal_static_google_datastore_v1_PropertyOrder_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.datastore.v1.PropertyOrder.class, com.google.datastore.v1.PropertyOrder.Builder.class);
+            com.google.datastore.v1.PropertyOrder.class,
+            com.google.datastore.v1.PropertyOrder.Builder.class);
   }
 
   /**
+   *
+   *
    * <pre>
    * The sort direction.
    * </pre>
    *
    * Protobuf enum {@code google.datastore.v1.PropertyOrder.Direction}
    */
-  public enum Direction
-      implements com.google.protobuf.ProtocolMessageEnum {
+  public enum Direction implements com.google.protobuf.ProtocolMessageEnum {
     /**
+     *
+     *
      * <pre>
      * Unspecified. This value must not be used.
      * </pre>
@@ -112,6 +128,8 @@ private static final long serialVersionUID = 0L;
      */
     DIRECTION_UNSPECIFIED(0),
     /**
+     *
+     *
      * <pre>
      * Ascending.
      * </pre>
@@ -120,6 +138,8 @@ private static final long serialVersionUID = 0L;
      */
     ASCENDING(1),
     /**
+     *
+     *
      * <pre>
      * Descending.
      * </pre>
@@ -131,6 +151,8 @@ private static final long serialVersionUID = 0L;
     ;
 
     /**
+     *
+     *
      * <pre>
      * Unspecified. This value must not be used.
      * </pre>
@@ -139,6 +161,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int DIRECTION_UNSPECIFIED_VALUE = 0;
     /**
+     *
+     *
      * <pre>
      * Ascending.
      * </pre>
@@ -147,6 +171,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int ASCENDING_VALUE = 1;
     /**
+     *
+     *
      * <pre>
      * Descending.
      * </pre>
@@ -154,7 +180,6 @@ private static final long serialVersionUID = 0L;
      * <code>DESCENDING = 2;</code>
      */
     public static final int DESCENDING_VALUE = 2;
-
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -164,9 +189,7 @@ private static final long serialVersionUID = 0L;
       return value;
     }
 
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static Direction valueOf(int value) {
       return forNumber(value);
@@ -174,45 +197,45 @@ private static final long serialVersionUID = 0L;
 
     public static Direction forNumber(int value) {
       switch (value) {
-        case 0: return DIRECTION_UNSPECIFIED;
-        case 1: return ASCENDING;
-        case 2: return DESCENDING;
-        default: return null;
+        case 0:
+          return DIRECTION_UNSPECIFIED;
+        case 1:
+          return ASCENDING;
+        case 2:
+          return DESCENDING;
+        default:
+          return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<Direction>
-        internalGetValueMap() {
+    public static com.google.protobuf.Internal.EnumLiteMap<Direction> internalGetValueMap() {
       return internalValueMap;
     }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        Direction> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<Direction>() {
-            public Direction findValueByNumber(int number) {
-              return Direction.forNumber(number);
-            }
-          };
 
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
+    private static final com.google.protobuf.Internal.EnumLiteMap<Direction> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Direction>() {
+          public Direction findValueByNumber(int number) {
+            return Direction.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
       return getDescriptor().getValues().get(ordinal());
     }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
       return getDescriptor();
     }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
       return com.google.datastore.v1.PropertyOrder.getDescriptor().getEnumTypes().get(0);
     }
 
     private static final Direction[] VALUES = values();
 
-    public static Direction valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+    public static Direction valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
         return UNRECOGNIZED;
@@ -232,6 +255,8 @@ private static final long serialVersionUID = 0L;
   public static final int PROPERTY_FIELD_NUMBER = 1;
   private com.google.datastore.v1.PropertyReference property_;
   /**
+   *
+   *
    * <pre>
    * The property to order by.
    * </pre>
@@ -242,6 +267,8 @@ private static final long serialVersionUID = 0L;
     return property_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * The property to order by.
    * </pre>
@@ -249,9 +276,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.datastore.v1.PropertyReference property = 1;</code>
    */
   public com.google.datastore.v1.PropertyReference getProperty() {
-    return property_ == null ? com.google.datastore.v1.PropertyReference.getDefaultInstance() : property_;
+    return property_ == null
+        ? com.google.datastore.v1.PropertyReference.getDefaultInstance()
+        : property_;
   }
   /**
+   *
+   *
    * <pre>
    * The property to order by.
    * </pre>
@@ -265,6 +296,8 @@ private static final long serialVersionUID = 0L;
   public static final int DIRECTION_FIELD_NUMBER = 2;
   private int direction_;
   /**
+   *
+   *
    * <pre>
    * The direction to order by. Defaults to `ASCENDING`.
    * </pre>
@@ -275,6 +308,8 @@ private static final long serialVersionUID = 0L;
     return direction_;
   }
   /**
+   *
+   *
    * <pre>
    * The direction to order by. Defaults to `ASCENDING`.
    * </pre>
@@ -282,11 +317,15 @@ private static final long serialVersionUID = 0L;
    * <code>.google.datastore.v1.PropertyOrder.Direction direction = 2;</code>
    */
   public com.google.datastore.v1.PropertyOrder.Direction getDirection() {
-    com.google.datastore.v1.PropertyOrder.Direction result = com.google.datastore.v1.PropertyOrder.Direction.valueOf(direction_);
+    @SuppressWarnings("deprecation")
+    com.google.datastore.v1.PropertyOrder.Direction result =
+        com.google.datastore.v1.PropertyOrder.Direction.valueOf(direction_);
     return result == null ? com.google.datastore.v1.PropertyOrder.Direction.UNRECOGNIZED : result;
   }
 
   private byte memoizedIsInitialized = -1;
+
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -296,29 +335,30 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  @java.lang.Override
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (property_ != null) {
       output.writeMessage(1, getProperty());
     }
-    if (direction_ != com.google.datastore.v1.PropertyOrder.Direction.DIRECTION_UNSPECIFIED.getNumber()) {
+    if (direction_
+        != com.google.datastore.v1.PropertyOrder.Direction.DIRECTION_UNSPECIFIED.getNumber()) {
       output.writeEnum(2, direction_);
     }
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
 
     size = 0;
     if (property_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, getProperty());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, getProperty());
     }
-    if (direction_ != com.google.datastore.v1.PropertyOrder.Direction.DIRECTION_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(2, direction_);
+    if (direction_
+        != com.google.datastore.v1.PropertyOrder.Direction.DIRECTION_UNSPECIFIED.getNumber()) {
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, direction_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -328,7 +368,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.datastore.v1.PropertyOrder)) {
       return super.equals(obj);
@@ -338,8 +378,7 @@ private static final long serialVersionUID = 0L;
     boolean result = true;
     result = result && (hasProperty() == other.hasProperty());
     if (hasProperty()) {
-      result = result && getProperty()
-          .equals(other.getProperty());
+      result = result && getProperty().equals(other.getProperty());
     }
     result = result && direction_ == other.direction_;
     result = result && unknownFields.equals(other.unknownFields);
@@ -364,115 +403,126 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.datastore.v1.PropertyOrder parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.datastore.v1.PropertyOrder parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.datastore.v1.PropertyOrder parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.datastore.v1.PropertyOrder parseFrom(
-      com.google.protobuf.ByteString data)
+
+  public static com.google.datastore.v1.PropertyOrder parseFrom(com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.datastore.v1.PropertyOrder parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.datastore.v1.PropertyOrder parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.datastore.v1.PropertyOrder parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.datastore.v1.PropertyOrder parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.datastore.v1.PropertyOrder parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.datastore.v1.PropertyOrder parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
   public static com.google.datastore.v1.PropertyOrder parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.datastore.v1.PropertyOrder parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.datastore.v1.PropertyOrder parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  public Builder newBuilderForType() { return newBuilder(); }
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-  public static Builder newBuilder(com.google.datastore.v1.PropertyOrder prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+
+  public static Builder newBuilder(com.google.datastore.v1.PropertyOrder prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+
+  @java.lang.Override
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * The desired order for a specific property.
    * </pre>
    *
    * Protobuf type {@code google.datastore.v1.PropertyOrder}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.datastore.v1.PropertyOrder)
       com.google.datastore.v1.PropertyOrderOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.datastore.v1.QueryProto.internal_static_google_datastore_v1_PropertyOrder_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.datastore.v1.QueryProto
+          .internal_static_google_datastore_v1_PropertyOrder_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.datastore.v1.QueryProto.internal_static_google_datastore_v1_PropertyOrder_fieldAccessorTable
+      return com.google.datastore.v1.QueryProto
+          .internal_static_google_datastore_v1_PropertyOrder_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.datastore.v1.PropertyOrder.class, com.google.datastore.v1.PropertyOrder.Builder.class);
+              com.google.datastore.v1.PropertyOrder.class,
+              com.google.datastore.v1.PropertyOrder.Builder.class);
     }
 
     // Construct using com.google.datastore.v1.PropertyOrder.newBuilder()
@@ -480,16 +530,16 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       if (propertyBuilder_ == null) {
@@ -503,15 +553,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.datastore.v1.QueryProto.internal_static_google_datastore_v1_PropertyOrder_descriptor;
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.datastore.v1.QueryProto
+          .internal_static_google_datastore_v1_PropertyOrder_descriptor;
     }
 
+    @java.lang.Override
     public com.google.datastore.v1.PropertyOrder getDefaultInstanceForType() {
       return com.google.datastore.v1.PropertyOrder.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.datastore.v1.PropertyOrder build() {
       com.google.datastore.v1.PropertyOrder result = buildPartial();
       if (!result.isInitialized()) {
@@ -520,8 +573,10 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.datastore.v1.PropertyOrder buildPartial() {
-      com.google.datastore.v1.PropertyOrder result = new com.google.datastore.v1.PropertyOrder(this);
+      com.google.datastore.v1.PropertyOrder result =
+          new com.google.datastore.v1.PropertyOrder(this);
       if (propertyBuilder_ == null) {
         result.property_ = property_;
       } else {
@@ -532,35 +587,43 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+
+    @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+    @java.lang.Override
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+    @java.lang.Override
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
+    @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
+    @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.datastore.v1.PropertyOrder) {
-        return mergeFrom((com.google.datastore.v1.PropertyOrder)other);
+        return mergeFrom((com.google.datastore.v1.PropertyOrder) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -580,10 +643,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -604,8 +669,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.datastore.v1.PropertyReference property_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.datastore.v1.PropertyReference, com.google.datastore.v1.PropertyReference.Builder, com.google.datastore.v1.PropertyReferenceOrBuilder> propertyBuilder_;
+            com.google.datastore.v1.PropertyReference,
+            com.google.datastore.v1.PropertyReference.Builder,
+            com.google.datastore.v1.PropertyReferenceOrBuilder>
+        propertyBuilder_;
     /**
+     *
+     *
      * <pre>
      * The property to order by.
      * </pre>
@@ -616,6 +686,8 @@ private static final long serialVersionUID = 0L;
       return propertyBuilder_ != null || property_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * The property to order by.
      * </pre>
@@ -624,12 +696,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.datastore.v1.PropertyReference getProperty() {
       if (propertyBuilder_ == null) {
-        return property_ == null ? com.google.datastore.v1.PropertyReference.getDefaultInstance() : property_;
+        return property_ == null
+            ? com.google.datastore.v1.PropertyReference.getDefaultInstance()
+            : property_;
       } else {
         return propertyBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * The property to order by.
      * </pre>
@@ -650,14 +726,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The property to order by.
      * </pre>
      *
      * <code>.google.datastore.v1.PropertyReference property = 1;</code>
      */
-    public Builder setProperty(
-        com.google.datastore.v1.PropertyReference.Builder builderForValue) {
+    public Builder setProperty(com.google.datastore.v1.PropertyReference.Builder builderForValue) {
       if (propertyBuilder_ == null) {
         property_ = builderForValue.build();
         onChanged();
@@ -668,6 +745,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The property to order by.
      * </pre>
@@ -678,7 +757,9 @@ private static final long serialVersionUID = 0L;
       if (propertyBuilder_ == null) {
         if (property_ != null) {
           property_ =
-            com.google.datastore.v1.PropertyReference.newBuilder(property_).mergeFrom(value).buildPartial();
+              com.google.datastore.v1.PropertyReference.newBuilder(property_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           property_ = value;
         }
@@ -690,6 +771,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The property to order by.
      * </pre>
@@ -708,6 +791,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The property to order by.
      * </pre>
@@ -715,11 +800,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.datastore.v1.PropertyReference property = 1;</code>
      */
     public com.google.datastore.v1.PropertyReference.Builder getPropertyBuilder() {
-      
+
       onChanged();
       return getPropertyFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * The property to order by.
      * </pre>
@@ -730,11 +817,14 @@ private static final long serialVersionUID = 0L;
       if (propertyBuilder_ != null) {
         return propertyBuilder_.getMessageOrBuilder();
       } else {
-        return property_ == null ?
-            com.google.datastore.v1.PropertyReference.getDefaultInstance() : property_;
+        return property_ == null
+            ? com.google.datastore.v1.PropertyReference.getDefaultInstance()
+            : property_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The property to order by.
      * </pre>
@@ -742,14 +832,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.datastore.v1.PropertyReference property = 1;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.datastore.v1.PropertyReference, com.google.datastore.v1.PropertyReference.Builder, com.google.datastore.v1.PropertyReferenceOrBuilder> 
+            com.google.datastore.v1.PropertyReference,
+            com.google.datastore.v1.PropertyReference.Builder,
+            com.google.datastore.v1.PropertyReferenceOrBuilder>
         getPropertyFieldBuilder() {
       if (propertyBuilder_ == null) {
-        propertyBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.datastore.v1.PropertyReference, com.google.datastore.v1.PropertyReference.Builder, com.google.datastore.v1.PropertyReferenceOrBuilder>(
-                getProperty(),
-                getParentForChildren(),
-                isClean());
+        propertyBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.datastore.v1.PropertyReference,
+                com.google.datastore.v1.PropertyReference.Builder,
+                com.google.datastore.v1.PropertyReferenceOrBuilder>(
+                getProperty(), getParentForChildren(), isClean());
         property_ = null;
       }
       return propertyBuilder_;
@@ -757,6 +850,8 @@ private static final long serialVersionUID = 0L;
 
     private int direction_ = 0;
     /**
+     *
+     *
      * <pre>
      * The direction to order by. Defaults to `ASCENDING`.
      * </pre>
@@ -767,6 +862,8 @@ private static final long serialVersionUID = 0L;
       return direction_;
     }
     /**
+     *
+     *
      * <pre>
      * The direction to order by. Defaults to `ASCENDING`.
      * </pre>
@@ -779,6 +876,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The direction to order by. Defaults to `ASCENDING`.
      * </pre>
@@ -786,10 +885,14 @@ private static final long serialVersionUID = 0L;
      * <code>.google.datastore.v1.PropertyOrder.Direction direction = 2;</code>
      */
     public com.google.datastore.v1.PropertyOrder.Direction getDirection() {
-      com.google.datastore.v1.PropertyOrder.Direction result = com.google.datastore.v1.PropertyOrder.Direction.valueOf(direction_);
+      @SuppressWarnings("deprecation")
+      com.google.datastore.v1.PropertyOrder.Direction result =
+          com.google.datastore.v1.PropertyOrder.Direction.valueOf(direction_);
       return result == null ? com.google.datastore.v1.PropertyOrder.Direction.UNRECOGNIZED : result;
     }
     /**
+     *
+     *
      * <pre>
      * The direction to order by. Defaults to `ASCENDING`.
      * </pre>
@@ -800,12 +903,14 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       direction_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The direction to order by. Defaults to `ASCENDING`.
      * </pre>
@@ -813,27 +918,29 @@ private static final long serialVersionUID = 0L;
      * <code>.google.datastore.v1.PropertyOrder.Direction direction = 2;</code>
      */
     public Builder clearDirection() {
-      
+
       direction_ = 0;
       onChanged();
       return this;
     }
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+
+    @java.lang.Override
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
     }
-
 
     // @@protoc_insertion_point(builder_scope:google.datastore.v1.PropertyOrder)
   }
 
   // @@protoc_insertion_point(class_scope:google.datastore.v1.PropertyOrder)
   private static final com.google.datastore.v1.PropertyOrder DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.datastore.v1.PropertyOrder();
   }
@@ -842,15 +949,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<PropertyOrder>
-      PARSER = new com.google.protobuf.AbstractParser<PropertyOrder>() {
-    public PropertyOrder parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-        return new PropertyOrder(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<PropertyOrder> PARSER =
+      new com.google.protobuf.AbstractParser<PropertyOrder>() {
+        @java.lang.Override
+        public PropertyOrder parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new PropertyOrder(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<PropertyOrder> parser() {
     return PARSER;
@@ -861,9 +969,8 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.datastore.v1.PropertyOrder getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

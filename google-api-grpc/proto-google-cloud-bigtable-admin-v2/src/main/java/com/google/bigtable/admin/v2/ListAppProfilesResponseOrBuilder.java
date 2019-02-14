@@ -3,20 +3,24 @@
 
 package com.google.bigtable.admin.v2;
 
-public interface ListAppProfilesResponseOrBuilder extends
+public interface ListAppProfilesResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.bigtable.admin.v2.ListAppProfilesResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The list of requested app profiles.
    * </pre>
    *
    * <code>repeated .google.bigtable.admin.v2.AppProfile app_profiles = 1;</code>
    */
-  java.util.List<com.google.bigtable.admin.v2.AppProfile> 
-      getAppProfilesList();
+  java.util.List<com.google.bigtable.admin.v2.AppProfile> getAppProfilesList();
   /**
+   *
+   *
    * <pre>
    * The list of requested app profiles.
    * </pre>
@@ -25,6 +29,8 @@ public interface ListAppProfilesResponseOrBuilder extends
    */
   com.google.bigtable.admin.v2.AppProfile getAppProfiles(int index);
   /**
+   *
+   *
    * <pre>
    * The list of requested app profiles.
    * </pre>
@@ -33,25 +39,30 @@ public interface ListAppProfilesResponseOrBuilder extends
    */
   int getAppProfilesCount();
   /**
+   *
+   *
    * <pre>
    * The list of requested app profiles.
    * </pre>
    *
    * <code>repeated .google.bigtable.admin.v2.AppProfile app_profiles = 1;</code>
    */
-  java.util.List<? extends com.google.bigtable.admin.v2.AppProfileOrBuilder> 
+  java.util.List<? extends com.google.bigtable.admin.v2.AppProfileOrBuilder>
       getAppProfilesOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * The list of requested app profiles.
    * </pre>
    *
    * <code>repeated .google.bigtable.admin.v2.AppProfile app_profiles = 1;</code>
    */
-  com.google.bigtable.admin.v2.AppProfileOrBuilder getAppProfilesOrBuilder(
-      int index);
+  com.google.bigtable.admin.v2.AppProfileOrBuilder getAppProfilesOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * Set if not all app profiles could be returned in a single response.
    * Pass this value to `page_token` in another request to get the next
@@ -62,6 +73,8 @@ public interface ListAppProfilesResponseOrBuilder extends
    */
   java.lang.String getNextPageToken();
   /**
+   *
+   *
    * <pre>
    * Set if not all app profiles could be returned in a single response.
    * Pass this value to `page_token` in another request to get the next
@@ -70,6 +83,58 @@ public interface ListAppProfilesResponseOrBuilder extends
    *
    * <code>string next_page_token = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getNextPageTokenBytes();
+  com.google.protobuf.ByteString getNextPageTokenBytes();
+
+  /**
+   *
+   *
+   * <pre>
+   * Locations from which AppProfile information could not be retrieved,
+   * due to an outage or some other transient condition.
+   * AppProfiles from these locations may be missing from `app_profiles`.
+   * Values are of the form `projects/&lt;project&gt;/locations/&lt;zone_id&gt;`
+   * </pre>
+   *
+   * <code>repeated string failed_locations = 3;</code>
+   */
+  java.util.List<java.lang.String> getFailedLocationsList();
+  /**
+   *
+   *
+   * <pre>
+   * Locations from which AppProfile information could not be retrieved,
+   * due to an outage or some other transient condition.
+   * AppProfiles from these locations may be missing from `app_profiles`.
+   * Values are of the form `projects/&lt;project&gt;/locations/&lt;zone_id&gt;`
+   * </pre>
+   *
+   * <code>repeated string failed_locations = 3;</code>
+   */
+  int getFailedLocationsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Locations from which AppProfile information could not be retrieved,
+   * due to an outage or some other transient condition.
+   * AppProfiles from these locations may be missing from `app_profiles`.
+   * Values are of the form `projects/&lt;project&gt;/locations/&lt;zone_id&gt;`
+   * </pre>
+   *
+   * <code>repeated string failed_locations = 3;</code>
+   */
+  java.lang.String getFailedLocations(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Locations from which AppProfile information could not be retrieved,
+   * due to an outage or some other transient condition.
+   * AppProfiles from these locations may be missing from `app_profiles`.
+   * Values are of the form `projects/&lt;project&gt;/locations/&lt;zone_id&gt;`
+   * </pre>
+   *
+   * <code>repeated string failed_locations = 3;</code>
+   */
+  com.google.protobuf.ByteString getFailedLocationsBytes(int index);
 }

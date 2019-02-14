@@ -22,10 +22,8 @@ import static org.junit.Assert.assertNull;
 import com.google.cloud.compute.deprecated.AddressInfo.GlobalForwardingUsage;
 import com.google.cloud.compute.deprecated.AddressInfo.RegionForwardingUsage;
 import com.google.common.collect.ImmutableList;
-
-import org.junit.Test;
-
 import java.util.List;
+import org.junit.Test;
 
 public class AddressInfoTest {
 
@@ -38,10 +36,12 @@ public class AddressInfoTest {
       RegionAddressId.of("project", "region", "address");
   private static final AddressInfo.Status STATUS = AddressInfo.Status.RESERVED;
   private static final List<GlobalForwardingRuleId> GLOBAL_FORWARDING_RULES =
-      ImmutableList.of(GlobalForwardingRuleId.of("project", "forwardingRule1"),
+      ImmutableList.of(
+          GlobalForwardingRuleId.of("project", "forwardingRule1"),
           GlobalForwardingRuleId.of("project", "forwardingRule2"));
   private static final List<RegionForwardingRuleId> REGION_FORWARDING_RULES =
-      ImmutableList.of(RegionForwardingRuleId.of("project", "region", "forwardingRule1"),
+      ImmutableList.of(
+          RegionForwardingRuleId.of("project", "region", "forwardingRule1"),
           RegionForwardingRuleId.of("project", "region", "forwardingRule2"));
   private static final AddressInfo.InstanceUsage INSTANCE_USAGE =
       new AddressInfo.InstanceUsage(InstanceId.of("project", "zone", "instance1"));
@@ -49,14 +49,15 @@ public class AddressInfoTest {
       new GlobalForwardingUsage(GLOBAL_FORWARDING_RULES);
   private static final RegionForwardingUsage REGION_FORWARDING_USAGE =
       new RegionForwardingUsage(REGION_FORWARDING_RULES);
-  private static final AddressInfo INSTANCE_ADDRESS_INFO = AddressInfo.newBuilder(REGION_ADDRESS_ID)
-      .setAddress(ADDRESS)
-      .setCreationTimestamp(CREATION_TIMESTAMP)
-      .setDescription(DESCRIPTION)
-      .setGeneratedId(GENERATED_ID)
-      .setStatus(STATUS)
-      .setUsage(INSTANCE_USAGE)
-      .build();
+  private static final AddressInfo INSTANCE_ADDRESS_INFO =
+      AddressInfo.newBuilder(REGION_ADDRESS_ID)
+          .setAddress(ADDRESS)
+          .setCreationTimestamp(CREATION_TIMESTAMP)
+          .setDescription(DESCRIPTION)
+          .setGeneratedId(GENERATED_ID)
+          .setStatus(STATUS)
+          .setUsage(INSTANCE_USAGE)
+          .build();
   private static final AddressInfo GLOBAL_FORWARDING_ADDRESS_INFO =
       AddressInfo.newBuilder(GLOBAL_ADDRESS_ID)
           .setAddress(ADDRESS)
@@ -79,16 +80,16 @@ public class AddressInfoTest {
   @Test
   public void testToBuilder() {
     compareAddressInfo(INSTANCE_ADDRESS_INFO, INSTANCE_ADDRESS_INFO.toBuilder().build());
-    AddressInfo addressInfo = INSTANCE_ADDRESS_INFO.toBuilder()
-        .setAddress("192.168.1.2")
-        .setDescription("description2")
-        .build();
+    AddressInfo addressInfo =
+        INSTANCE_ADDRESS_INFO
+            .toBuilder()
+            .setAddress("192.168.1.2")
+            .setDescription("description2")
+            .build();
     assertEquals("description2", addressInfo.getDescription());
     assertEquals("192.168.1.2", addressInfo.getAddress());
-    addressInfo = addressInfo.toBuilder()
-        .setAddress("192.168.1.1")
-        .setDescription("description")
-        .build();
+    addressInfo =
+        addressInfo.toBuilder().setAddress("192.168.1.1").setDescription("description").build();
     compareAddressInfo(INSTANCE_ADDRESS_INFO, addressInfo);
   }
 
@@ -109,7 +110,8 @@ public class AddressInfoTest {
     assertEquals(REGION_ADDRESS_ID, INSTANCE_ADDRESS_INFO.getAddressId());
     assertEquals(STATUS, INSTANCE_ADDRESS_INFO.getStatus());
     assertEquals(INSTANCE_USAGE, INSTANCE_ADDRESS_INFO.getUsage());
-    assertEquals(INSTANCE_USAGE.getInstance(),
+    assertEquals(
+        INSTANCE_USAGE.getInstance(),
         INSTANCE_ADDRESS_INFO.<AddressInfo.InstanceUsage>getUsage().getInstance());
     assertEquals(ADDRESS, REGION_FORWARDING_ADDRESS_INFO.getAddress());
     assertEquals(CREATION_TIMESTAMP, REGION_FORWARDING_ADDRESS_INFO.getCreationTimestamp());
@@ -118,7 +120,8 @@ public class AddressInfoTest {
     assertEquals(REGION_ADDRESS_ID, REGION_FORWARDING_ADDRESS_INFO.getAddressId());
     assertEquals(STATUS, REGION_FORWARDING_ADDRESS_INFO.getStatus());
     assertEquals(REGION_FORWARDING_USAGE, REGION_FORWARDING_ADDRESS_INFO.getUsage());
-    assertEquals(REGION_FORWARDING_RULES,
+    assertEquals(
+        REGION_FORWARDING_RULES,
         REGION_FORWARDING_ADDRESS_INFO.<RegionForwardingUsage>getUsage().getForwardingRules());
     assertEquals(ADDRESS, GLOBAL_FORWARDING_ADDRESS_INFO.getAddress());
     assertEquals(CREATION_TIMESTAMP, GLOBAL_FORWARDING_ADDRESS_INFO.getCreationTimestamp());
@@ -127,7 +130,8 @@ public class AddressInfoTest {
     assertEquals(GLOBAL_ADDRESS_ID, GLOBAL_FORWARDING_ADDRESS_INFO.getAddressId());
     assertEquals(STATUS, GLOBAL_FORWARDING_ADDRESS_INFO.getStatus());
     assertEquals(GLOBAL_FORWARDING_USAGE, GLOBAL_FORWARDING_ADDRESS_INFO.getUsage());
-    assertEquals(GLOBAL_FORWARDING_RULES,
+    assertEquals(
+        GLOBAL_FORWARDING_RULES,
         GLOBAL_FORWARDING_ADDRESS_INFO.<GlobalForwardingUsage>getUsage().getForwardingRules());
   }
 
@@ -170,19 +174,21 @@ public class AddressInfoTest {
   @Test
   public void testToPbAndFromPb() {
     compareAddressInfo(INSTANCE_ADDRESS_INFO, AddressInfo.fromPb(INSTANCE_ADDRESS_INFO.toPb()));
-    compareAddressInfo(REGION_FORWARDING_ADDRESS_INFO,
-        AddressInfo.fromPb(REGION_FORWARDING_ADDRESS_INFO.toPb()));
-    compareAddressInfo(GLOBAL_FORWARDING_ADDRESS_INFO,
-        AddressInfo.fromPb(GLOBAL_FORWARDING_ADDRESS_INFO.toPb()));
+    compareAddressInfo(
+        REGION_FORWARDING_ADDRESS_INFO, AddressInfo.fromPb(REGION_FORWARDING_ADDRESS_INFO.toPb()));
+    compareAddressInfo(
+        GLOBAL_FORWARDING_ADDRESS_INFO, AddressInfo.fromPb(GLOBAL_FORWARDING_ADDRESS_INFO.toPb()));
     AddressInfo addressInfo = AddressInfo.newBuilder(GLOBAL_ADDRESS_ID).build();
     compareAddressInfo(addressInfo, AddressInfo.fromPb(addressInfo.toPb()));
   }
 
   @Test
   public void testSetProjectId() {
-    AddressInfo addressInfo = GLOBAL_FORWARDING_ADDRESS_INFO.toBuilder()
-        .setAddressId(GlobalAddressId.of(GLOBAL_ADDRESS_ID.getAddress()))
-        .build();
+    AddressInfo addressInfo =
+        GLOBAL_FORWARDING_ADDRESS_INFO
+            .toBuilder()
+            .setAddressId(GlobalAddressId.of(GLOBAL_ADDRESS_ID.getAddress()))
+            .build();
     compareAddressInfo(GLOBAL_FORWARDING_ADDRESS_INFO, addressInfo.setProjectId("project"));
   }
 

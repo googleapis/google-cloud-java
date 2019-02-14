@@ -19,28 +19,29 @@ package com.google.cloud.resourcemanager;
 import static com.google.common.base.MoreObjects.firstNonNull;
 import static com.google.common.base.Preconditions.checkNotNull;
 
-import com.google.api.core.ApiFunction;
 import com.google.api.client.util.Data;
+import com.google.api.core.ApiFunction;
 import com.google.cloud.StringEnumType;
 import com.google.cloud.StringEnumValue;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Maps;
-
-import org.joda.time.DateTime;
-import org.joda.time.format.ISODateTimeFormat;
-
 import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
+import org.threeten.bp.Instant;
+import org.threeten.bp.ZoneOffset;
+import org.threeten.bp.format.DateTimeFormatter;
 
 /**
- * A Google Cloud Resource Manager project metadata object.
- * A Project is a high-level Google Cloud Platform entity. It is a container for ACLs, APIs,
- * AppEngine Apps, VMs, and other Google Cloud Platform resources.
+ * A Google Cloud Resource Manager project metadata object. A Project is a high-level Google Cloud
+ * Platform entity. It is a container for ACLs, APIs, AppEngine Apps, VMs, and other Google Cloud
+ * Platform resources.
  */
 public class ProjectInfo implements Serializable {
 
+  public static final DateTimeFormatter DATE_TIME_FORMATTER =
+      DateTimeFormatter.ISO_DATE_TIME.withZone(ZoneOffset.UTC);
   private static final long serialVersionUID = 9148970963697734236L;
   private final String name;
   private final String projectId;
@@ -50,9 +51,7 @@ public class ProjectInfo implements Serializable {
   private final Long createTimeMillis;
   private final ResourceId parent;
 
-  /**
-   * The project lifecycle states.
-   */
+  /** The project lifecycle states. */
   public static final class State extends StringEnumValue {
     private static final long serialVersionUID = 869635563976629566L;
 
@@ -64,18 +63,13 @@ public class ProjectInfo implements Serializable {
           }
         };
 
-    private static final StringEnumType<State> type = new StringEnumType(
-        State.class,
-        CONSTRUCTOR);
+    private static final StringEnumType<State> type = new StringEnumType(State.class, CONSTRUCTOR);
 
-    /**
-     * Only used/useful for distinguishing unset values.
-     */
-    public static final State LIFECYCLE_STATE_UNSPECIFIED = type.createAndRegister("LIFECYCLE_STATE_UNSPECIFIED");
+    /** Only used/useful for distinguishing unset values. */
+    public static final State LIFECYCLE_STATE_UNSPECIFIED =
+        type.createAndRegister("LIFECYCLE_STATE_UNSPECIFIED");
 
-    /**
-     * The normal and active state.
-     */
+    /** The normal and active state. */
     public static final State ACTIVE = type.createAndRegister("ACTIVE");
 
     /**
@@ -94,23 +88,19 @@ public class ProjectInfo implements Serializable {
     }
 
     /**
-     * Get the State for the given String constant, and throw an exception if the constant is
-     * not recognized.
+     * Get the State for the given String constant, and throw an exception if the constant is not
+     * recognized.
      */
     public static State valueOfStrict(String constant) {
       return type.valueOfStrict(constant);
     }
 
-    /**
-     * Get the State for the given String constant, and allow unrecognized values.
-     */
+    /** Get the State for the given String constant, and allow unrecognized values. */
     public static State valueOf(String constant) {
       return type.valueOf(constant);
     }
 
-    /**
-     * Return the known values for State.
-     */
+    /** Return the known values for State. */
     public static State[] values() {
       return type.values();
     }
@@ -160,11 +150,8 @@ public class ProjectInfo implements Serializable {
     }
   }
 
-  /**
-   * Builder for {@code ProjectInfo}.
-   */
+  /** Builder for {@code ProjectInfo}. */
   public abstract static class Builder {
-
 
     /**
      * Set the user-assigned name of the project.
@@ -174,7 +161,6 @@ public class ProjectInfo implements Serializable {
      * This field can be changed after project creation.
      */
     public abstract Builder setName(String name);
-
 
     /**
      * Set the unique, user-assigned ID of the project.
@@ -192,16 +178,11 @@ public class ProjectInfo implements Serializable {
      */
     public abstract Builder addLabel(String key, String value);
 
-    /**
-     * Remove a label associated with this project.
-     */
+    /** Remove a label associated with this project. */
     public abstract Builder removeLabel(String key);
 
-    /**
-     * Clear the labels associated with this project.
-     */
+    /** Clear the labels associated with this project. */
     public abstract Builder clearLabels();
-
 
     /**
      * Set the labels associated with this project.
@@ -249,13 +230,11 @@ public class ProjectInfo implements Serializable {
       this.parent = info.parent;
     }
 
-
     @Override
     public Builder setName(String name) {
       this.name = firstNonNull(name, Data.<String>nullOf(String.class));
       return this;
     }
-
 
     @Override
     public Builder setProjectId(String projectId) {
@@ -280,7 +259,6 @@ public class ProjectInfo implements Serializable {
       this.labels.clear();
       return this;
     }
-
 
     @Override
     public Builder setLabels(Map<String, String> labels) {
@@ -328,7 +306,6 @@ public class ProjectInfo implements Serializable {
     this.parent = builder.parent;
   }
 
-
   /**
    * Get the unique, user-assigned ID of the project.
    *
@@ -337,7 +314,6 @@ public class ProjectInfo implements Serializable {
   public String getProjectId() {
     return projectId;
   }
-
 
   /**
    * Get the user-assigned name of the project.
@@ -348,7 +324,6 @@ public class ProjectInfo implements Serializable {
     return Data.isNull(name) ? null : name;
   }
 
-
   /**
    * Get number uniquely identifying the project.
    *
@@ -358,20 +333,16 @@ public class ProjectInfo implements Serializable {
     return projectNumber;
   }
 
-
-  /**
-   * Get the immutable map of labels associated with this project.
-   */
+  /** Get the immutable map of labels associated with this project. */
   public Map<String, String> getLabels() {
     return labels;
   }
 
-
   /**
    * Get the project's lifecycle state.
    *
-   * <p>This is a read-only field. To change the lifecycle state of your project, use the
-   * {@code delete} or {@code undelete} method.
+   * <p>This is a read-only field. To change the lifecycle state of your project, use the {@code
+   * delete} or {@code undelete} method.
    */
   public State getState() {
     return state;
@@ -380,7 +351,6 @@ public class ProjectInfo implements Serializable {
   ResourceId getParent() {
     return parent;
   }
-
 
   /**
    * Get the project's creation time (in milliseconds).
@@ -395,15 +365,14 @@ public class ProjectInfo implements Serializable {
   public boolean equals(Object obj) {
     return obj == this
         || obj != null
-        && obj.getClass().equals(ProjectInfo.class)
-        && Objects.equals(toPb(), ((ProjectInfo) obj).toPb());
+            && obj.getClass().equals(ProjectInfo.class)
+            && Objects.equals(toPb(), ((ProjectInfo) obj).toPb());
   }
 
   @Override
   public int hashCode() {
     return Objects.hash(name, projectId, labels, projectNumber, state, createTimeMillis, parent);
   }
-
 
   public static Builder newBuilder(String id) {
     return new BuilderImpl(id);
@@ -424,7 +393,10 @@ public class ProjectInfo implements Serializable {
       projectPb.setLifecycleState(state.toString());
     }
     if (createTimeMillis != null) {
-      projectPb.setCreateTime(ISODateTimeFormat.dateTime().withZoneUTC().print(createTimeMillis));
+      projectPb.setCreateTime(
+          DateTimeFormatter.ISO_DATE_TIME
+              .withZone(ZoneOffset.UTC)
+              .format(Instant.ofEpochMilli(createTimeMillis)));
     }
     if (parent != null) {
       projectPb.setParent(parent.toPb());
@@ -433,8 +405,8 @@ public class ProjectInfo implements Serializable {
   }
 
   static ProjectInfo fromPb(com.google.api.services.cloudresourcemanager.model.Project projectPb) {
-    Builder builder = newBuilder(projectPb.getProjectId())
-        .setProjectNumber(projectPb.getProjectNumber());
+    Builder builder =
+        newBuilder(projectPb.getProjectId()).setProjectNumber(projectPb.getProjectNumber());
     if (projectPb.getName() != null && !projectPb.getName().equals("Unnamed")) {
       builder.setName(projectPb.getName());
     }
@@ -445,7 +417,8 @@ public class ProjectInfo implements Serializable {
       builder.setState(State.valueOf(projectPb.getLifecycleState()));
     }
     if (projectPb.getCreateTime() != null) {
-      builder.setCreateTimeMillis(DateTime.parse(projectPb.getCreateTime()).getMillis());
+      builder.setCreateTimeMillis(
+          DATE_TIME_FORMATTER.parse(projectPb.getCreateTime(), Instant.FROM).toEpochMilli());
     }
     if (projectPb.getParent() != null) {
       builder.setParent(ResourceId.fromPb(projectPb.getParent()));

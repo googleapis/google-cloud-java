@@ -4,21 +4,24 @@
 package com.google.cloud.vision.v1p3beta1;
 
 /**
+ *
+ *
  * <pre>
  * Response to an image annotation request.
  * </pre>
  *
  * Protobuf type {@code google.cloud.vision.v1p3beta1.AnnotateImageResponse}
  */
-public  final class AnnotateImageResponse extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class AnnotateImageResponse extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.vision.v1p3beta1.AnnotateImageResponse)
     AnnotateImageResponseOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use AnnotateImageResponse.newBuilder() to construct.
   private AnnotateImageResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private AnnotateImageResponse() {
     faceAnnotations_ = java.util.Collections.emptyList();
     landmarkAnnotations_ = java.util.Collections.emptyList();
@@ -29,15 +32,18 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private AnnotateImageResponse(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -49,178 +55,229 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          case 10:
+            {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                faceAnnotations_ =
+                    new java.util.ArrayList<com.google.cloud.vision.v1p3beta1.FaceAnnotation>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              faceAnnotations_.add(
+                  input.readMessage(
+                      com.google.cloud.vision.v1p3beta1.FaceAnnotation.parser(),
+                      extensionRegistry));
+              break;
             }
-            break;
-          }
-          case 10: {
-            if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-              faceAnnotations_ = new java.util.ArrayList<com.google.cloud.vision.v1p3beta1.FaceAnnotation>();
-              mutable_bitField0_ |= 0x00000001;
+          case 18:
+            {
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                landmarkAnnotations_ =
+                    new java.util.ArrayList<com.google.cloud.vision.v1p3beta1.EntityAnnotation>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              landmarkAnnotations_.add(
+                  input.readMessage(
+                      com.google.cloud.vision.v1p3beta1.EntityAnnotation.parser(),
+                      extensionRegistry));
+              break;
             }
-            faceAnnotations_.add(
-                input.readMessage(com.google.cloud.vision.v1p3beta1.FaceAnnotation.parser(), extensionRegistry));
-            break;
-          }
-          case 18: {
-            if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-              landmarkAnnotations_ = new java.util.ArrayList<com.google.cloud.vision.v1p3beta1.EntityAnnotation>();
-              mutable_bitField0_ |= 0x00000002;
+          case 26:
+            {
+              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+                logoAnnotations_ =
+                    new java.util.ArrayList<com.google.cloud.vision.v1p3beta1.EntityAnnotation>();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              logoAnnotations_.add(
+                  input.readMessage(
+                      com.google.cloud.vision.v1p3beta1.EntityAnnotation.parser(),
+                      extensionRegistry));
+              break;
             }
-            landmarkAnnotations_.add(
-                input.readMessage(com.google.cloud.vision.v1p3beta1.EntityAnnotation.parser(), extensionRegistry));
-            break;
-          }
-          case 26: {
-            if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-              logoAnnotations_ = new java.util.ArrayList<com.google.cloud.vision.v1p3beta1.EntityAnnotation>();
-              mutable_bitField0_ |= 0x00000004;
+          case 34:
+            {
+              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+                labelAnnotations_ =
+                    new java.util.ArrayList<com.google.cloud.vision.v1p3beta1.EntityAnnotation>();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              labelAnnotations_.add(
+                  input.readMessage(
+                      com.google.cloud.vision.v1p3beta1.EntityAnnotation.parser(),
+                      extensionRegistry));
+              break;
             }
-            logoAnnotations_.add(
-                input.readMessage(com.google.cloud.vision.v1p3beta1.EntityAnnotation.parser(), extensionRegistry));
-            break;
-          }
-          case 34: {
-            if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-              labelAnnotations_ = new java.util.ArrayList<com.google.cloud.vision.v1p3beta1.EntityAnnotation>();
-              mutable_bitField0_ |= 0x00000008;
+          case 42:
+            {
+              if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+                textAnnotations_ =
+                    new java.util.ArrayList<com.google.cloud.vision.v1p3beta1.EntityAnnotation>();
+                mutable_bitField0_ |= 0x00000020;
+              }
+              textAnnotations_.add(
+                  input.readMessage(
+                      com.google.cloud.vision.v1p3beta1.EntityAnnotation.parser(),
+                      extensionRegistry));
+              break;
             }
-            labelAnnotations_.add(
-                input.readMessage(com.google.cloud.vision.v1p3beta1.EntityAnnotation.parser(), extensionRegistry));
-            break;
-          }
-          case 42: {
-            if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
-              textAnnotations_ = new java.util.ArrayList<com.google.cloud.vision.v1p3beta1.EntityAnnotation>();
-              mutable_bitField0_ |= 0x00000020;
-            }
-            textAnnotations_.add(
-                input.readMessage(com.google.cloud.vision.v1p3beta1.EntityAnnotation.parser(), extensionRegistry));
-            break;
-          }
-          case 50: {
-            com.google.cloud.vision.v1p3beta1.SafeSearchAnnotation.Builder subBuilder = null;
-            if (safeSearchAnnotation_ != null) {
-              subBuilder = safeSearchAnnotation_.toBuilder();
-            }
-            safeSearchAnnotation_ = input.readMessage(com.google.cloud.vision.v1p3beta1.SafeSearchAnnotation.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(safeSearchAnnotation_);
-              safeSearchAnnotation_ = subBuilder.buildPartial();
-            }
+          case 50:
+            {
+              com.google.cloud.vision.v1p3beta1.SafeSearchAnnotation.Builder subBuilder = null;
+              if (safeSearchAnnotation_ != null) {
+                subBuilder = safeSearchAnnotation_.toBuilder();
+              }
+              safeSearchAnnotation_ =
+                  input.readMessage(
+                      com.google.cloud.vision.v1p3beta1.SafeSearchAnnotation.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(safeSearchAnnotation_);
+                safeSearchAnnotation_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 66: {
-            com.google.cloud.vision.v1p3beta1.ImageProperties.Builder subBuilder = null;
-            if (imagePropertiesAnnotation_ != null) {
-              subBuilder = imagePropertiesAnnotation_.toBuilder();
+              break;
             }
-            imagePropertiesAnnotation_ = input.readMessage(com.google.cloud.vision.v1p3beta1.ImageProperties.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(imagePropertiesAnnotation_);
-              imagePropertiesAnnotation_ = subBuilder.buildPartial();
-            }
+          case 66:
+            {
+              com.google.cloud.vision.v1p3beta1.ImageProperties.Builder subBuilder = null;
+              if (imagePropertiesAnnotation_ != null) {
+                subBuilder = imagePropertiesAnnotation_.toBuilder();
+              }
+              imagePropertiesAnnotation_ =
+                  input.readMessage(
+                      com.google.cloud.vision.v1p3beta1.ImageProperties.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(imagePropertiesAnnotation_);
+                imagePropertiesAnnotation_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 74: {
-            com.google.rpc.Status.Builder subBuilder = null;
-            if (error_ != null) {
-              subBuilder = error_.toBuilder();
+              break;
             }
-            error_ = input.readMessage(com.google.rpc.Status.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(error_);
-              error_ = subBuilder.buildPartial();
-            }
+          case 74:
+            {
+              com.google.rpc.Status.Builder subBuilder = null;
+              if (error_ != null) {
+                subBuilder = error_.toBuilder();
+              }
+              error_ = input.readMessage(com.google.rpc.Status.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(error_);
+                error_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 90: {
-            com.google.cloud.vision.v1p3beta1.CropHintsAnnotation.Builder subBuilder = null;
-            if (cropHintsAnnotation_ != null) {
-              subBuilder = cropHintsAnnotation_.toBuilder();
+              break;
             }
-            cropHintsAnnotation_ = input.readMessage(com.google.cloud.vision.v1p3beta1.CropHintsAnnotation.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(cropHintsAnnotation_);
-              cropHintsAnnotation_ = subBuilder.buildPartial();
-            }
+          case 90:
+            {
+              com.google.cloud.vision.v1p3beta1.CropHintsAnnotation.Builder subBuilder = null;
+              if (cropHintsAnnotation_ != null) {
+                subBuilder = cropHintsAnnotation_.toBuilder();
+              }
+              cropHintsAnnotation_ =
+                  input.readMessage(
+                      com.google.cloud.vision.v1p3beta1.CropHintsAnnotation.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(cropHintsAnnotation_);
+                cropHintsAnnotation_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 98: {
-            com.google.cloud.vision.v1p3beta1.TextAnnotation.Builder subBuilder = null;
-            if (fullTextAnnotation_ != null) {
-              subBuilder = fullTextAnnotation_.toBuilder();
+              break;
             }
-            fullTextAnnotation_ = input.readMessage(com.google.cloud.vision.v1p3beta1.TextAnnotation.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(fullTextAnnotation_);
-              fullTextAnnotation_ = subBuilder.buildPartial();
-            }
+          case 98:
+            {
+              com.google.cloud.vision.v1p3beta1.TextAnnotation.Builder subBuilder = null;
+              if (fullTextAnnotation_ != null) {
+                subBuilder = fullTextAnnotation_.toBuilder();
+              }
+              fullTextAnnotation_ =
+                  input.readMessage(
+                      com.google.cloud.vision.v1p3beta1.TextAnnotation.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(fullTextAnnotation_);
+                fullTextAnnotation_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 106: {
-            com.google.cloud.vision.v1p3beta1.WebDetection.Builder subBuilder = null;
-            if (webDetection_ != null) {
-              subBuilder = webDetection_.toBuilder();
+              break;
             }
-            webDetection_ = input.readMessage(com.google.cloud.vision.v1p3beta1.WebDetection.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(webDetection_);
-              webDetection_ = subBuilder.buildPartial();
-            }
+          case 106:
+            {
+              com.google.cloud.vision.v1p3beta1.WebDetection.Builder subBuilder = null;
+              if (webDetection_ != null) {
+                subBuilder = webDetection_.toBuilder();
+              }
+              webDetection_ =
+                  input.readMessage(
+                      com.google.cloud.vision.v1p3beta1.WebDetection.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(webDetection_);
+                webDetection_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 114: {
-            com.google.cloud.vision.v1p3beta1.ProductSearchResults.Builder subBuilder = null;
-            if (productSearchResults_ != null) {
-              subBuilder = productSearchResults_.toBuilder();
+              break;
             }
-            productSearchResults_ = input.readMessage(com.google.cloud.vision.v1p3beta1.ProductSearchResults.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(productSearchResults_);
-              productSearchResults_ = subBuilder.buildPartial();
-            }
+          case 114:
+            {
+              com.google.cloud.vision.v1p3beta1.ProductSearchResults.Builder subBuilder = null;
+              if (productSearchResults_ != null) {
+                subBuilder = productSearchResults_.toBuilder();
+              }
+              productSearchResults_ =
+                  input.readMessage(
+                      com.google.cloud.vision.v1p3beta1.ProductSearchResults.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(productSearchResults_);
+                productSearchResults_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 170: {
-            com.google.cloud.vision.v1p3beta1.ImageAnnotationContext.Builder subBuilder = null;
-            if (context_ != null) {
-              subBuilder = context_.toBuilder();
+              break;
             }
-            context_ = input.readMessage(com.google.cloud.vision.v1p3beta1.ImageAnnotationContext.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(context_);
-              context_ = subBuilder.buildPartial();
-            }
+          case 170:
+            {
+              com.google.cloud.vision.v1p3beta1.ImageAnnotationContext.Builder subBuilder = null;
+              if (context_ != null) {
+                subBuilder = context_.toBuilder();
+              }
+              context_ =
+                  input.readMessage(
+                      com.google.cloud.vision.v1p3beta1.ImageAnnotationContext.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(context_);
+                context_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 178: {
-            if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
-              localizedObjectAnnotations_ = new java.util.ArrayList<com.google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation>();
-              mutable_bitField0_ |= 0x00000010;
+              break;
             }
-            localizedObjectAnnotations_.add(
-                input.readMessage(com.google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation.parser(), extensionRegistry));
-            break;
-          }
+          case 178:
+            {
+              if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+                localizedObjectAnnotations_ =
+                    new java.util.ArrayList<
+                        com.google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation>();
+                mutable_bitField0_ |= 0x00000010;
+              }
+              localizedObjectAnnotations_.add(
+                  input.readMessage(
+                      com.google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation.parser(),
+                      extensionRegistry));
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
         faceAnnotations_ = java.util.Collections.unmodifiableList(faceAnnotations_);
@@ -238,28 +295,35 @@ private static final long serialVersionUID = 0L;
         textAnnotations_ = java.util.Collections.unmodifiableList(textAnnotations_);
       }
       if (((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
-        localizedObjectAnnotations_ = java.util.Collections.unmodifiableList(localizedObjectAnnotations_);
+        localizedObjectAnnotations_ =
+            java.util.Collections.unmodifiableList(localizedObjectAnnotations_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.vision.v1p3beta1.ImageAnnotatorProto.internal_static_google_cloud_vision_v1p3beta1_AnnotateImageResponse_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.vision.v1p3beta1.ImageAnnotatorProto
+        .internal_static_google_cloud_vision_v1p3beta1_AnnotateImageResponse_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.vision.v1p3beta1.ImageAnnotatorProto.internal_static_google_cloud_vision_v1p3beta1_AnnotateImageResponse_fieldAccessorTable
+    return com.google.cloud.vision.v1p3beta1.ImageAnnotatorProto
+        .internal_static_google_cloud_vision_v1p3beta1_AnnotateImageResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.vision.v1p3beta1.AnnotateImageResponse.class, com.google.cloud.vision.v1p3beta1.AnnotateImageResponse.Builder.class);
+            com.google.cloud.vision.v1p3beta1.AnnotateImageResponse.class,
+            com.google.cloud.vision.v1p3beta1.AnnotateImageResponse.Builder.class);
   }
 
   private int bitField0_;
   public static final int FACE_ANNOTATIONS_FIELD_NUMBER = 1;
   private java.util.List<com.google.cloud.vision.v1p3beta1.FaceAnnotation> faceAnnotations_;
   /**
+   *
+   *
    * <pre>
    * If present, face detection has completed successfully.
    * </pre>
@@ -270,17 +334,21 @@ private static final long serialVersionUID = 0L;
     return faceAnnotations_;
   }
   /**
+   *
+   *
    * <pre>
    * If present, face detection has completed successfully.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1p3beta1.FaceAnnotation face_annotations = 1;</code>
    */
-  public java.util.List<? extends com.google.cloud.vision.v1p3beta1.FaceAnnotationOrBuilder> 
+  public java.util.List<? extends com.google.cloud.vision.v1p3beta1.FaceAnnotationOrBuilder>
       getFaceAnnotationsOrBuilderList() {
     return faceAnnotations_;
   }
   /**
+   *
+   *
    * <pre>
    * If present, face detection has completed successfully.
    * </pre>
@@ -291,6 +359,8 @@ private static final long serialVersionUID = 0L;
     return faceAnnotations_.size();
   }
   /**
+   *
+   *
    * <pre>
    * If present, face detection has completed successfully.
    * </pre>
@@ -301,6 +371,8 @@ private static final long serialVersionUID = 0L;
     return faceAnnotations_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * If present, face detection has completed successfully.
    * </pre>
@@ -315,27 +387,34 @@ private static final long serialVersionUID = 0L;
   public static final int LANDMARK_ANNOTATIONS_FIELD_NUMBER = 2;
   private java.util.List<com.google.cloud.vision.v1p3beta1.EntityAnnotation> landmarkAnnotations_;
   /**
+   *
+   *
    * <pre>
    * If present, landmark detection has completed successfully.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1p3beta1.EntityAnnotation landmark_annotations = 2;</code>
    */
-  public java.util.List<com.google.cloud.vision.v1p3beta1.EntityAnnotation> getLandmarkAnnotationsList() {
+  public java.util.List<com.google.cloud.vision.v1p3beta1.EntityAnnotation>
+      getLandmarkAnnotationsList() {
     return landmarkAnnotations_;
   }
   /**
+   *
+   *
    * <pre>
    * If present, landmark detection has completed successfully.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1p3beta1.EntityAnnotation landmark_annotations = 2;</code>
    */
-  public java.util.List<? extends com.google.cloud.vision.v1p3beta1.EntityAnnotationOrBuilder> 
+  public java.util.List<? extends com.google.cloud.vision.v1p3beta1.EntityAnnotationOrBuilder>
       getLandmarkAnnotationsOrBuilderList() {
     return landmarkAnnotations_;
   }
   /**
+   *
+   *
    * <pre>
    * If present, landmark detection has completed successfully.
    * </pre>
@@ -346,6 +425,8 @@ private static final long serialVersionUID = 0L;
     return landmarkAnnotations_.size();
   }
   /**
+   *
+   *
    * <pre>
    * If present, landmark detection has completed successfully.
    * </pre>
@@ -356,41 +437,50 @@ private static final long serialVersionUID = 0L;
     return landmarkAnnotations_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * If present, landmark detection has completed successfully.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1p3beta1.EntityAnnotation landmark_annotations = 2;</code>
    */
-  public com.google.cloud.vision.v1p3beta1.EntityAnnotationOrBuilder getLandmarkAnnotationsOrBuilder(
-      int index) {
+  public com.google.cloud.vision.v1p3beta1.EntityAnnotationOrBuilder
+      getLandmarkAnnotationsOrBuilder(int index) {
     return landmarkAnnotations_.get(index);
   }
 
   public static final int LOGO_ANNOTATIONS_FIELD_NUMBER = 3;
   private java.util.List<com.google.cloud.vision.v1p3beta1.EntityAnnotation> logoAnnotations_;
   /**
+   *
+   *
    * <pre>
    * If present, logo detection has completed successfully.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1p3beta1.EntityAnnotation logo_annotations = 3;</code>
    */
-  public java.util.List<com.google.cloud.vision.v1p3beta1.EntityAnnotation> getLogoAnnotationsList() {
+  public java.util.List<com.google.cloud.vision.v1p3beta1.EntityAnnotation>
+      getLogoAnnotationsList() {
     return logoAnnotations_;
   }
   /**
+   *
+   *
    * <pre>
    * If present, logo detection has completed successfully.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1p3beta1.EntityAnnotation logo_annotations = 3;</code>
    */
-  public java.util.List<? extends com.google.cloud.vision.v1p3beta1.EntityAnnotationOrBuilder> 
+  public java.util.List<? extends com.google.cloud.vision.v1p3beta1.EntityAnnotationOrBuilder>
       getLogoAnnotationsOrBuilderList() {
     return logoAnnotations_;
   }
   /**
+   *
+   *
    * <pre>
    * If present, logo detection has completed successfully.
    * </pre>
@@ -401,6 +491,8 @@ private static final long serialVersionUID = 0L;
     return logoAnnotations_.size();
   }
   /**
+   *
+   *
    * <pre>
    * If present, logo detection has completed successfully.
    * </pre>
@@ -411,6 +503,8 @@ private static final long serialVersionUID = 0L;
     return logoAnnotations_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * If present, logo detection has completed successfully.
    * </pre>
@@ -425,27 +519,34 @@ private static final long serialVersionUID = 0L;
   public static final int LABEL_ANNOTATIONS_FIELD_NUMBER = 4;
   private java.util.List<com.google.cloud.vision.v1p3beta1.EntityAnnotation> labelAnnotations_;
   /**
+   *
+   *
    * <pre>
    * If present, label detection has completed successfully.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1p3beta1.EntityAnnotation label_annotations = 4;</code>
    */
-  public java.util.List<com.google.cloud.vision.v1p3beta1.EntityAnnotation> getLabelAnnotationsList() {
+  public java.util.List<com.google.cloud.vision.v1p3beta1.EntityAnnotation>
+      getLabelAnnotationsList() {
     return labelAnnotations_;
   }
   /**
+   *
+   *
    * <pre>
    * If present, label detection has completed successfully.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1p3beta1.EntityAnnotation label_annotations = 4;</code>
    */
-  public java.util.List<? extends com.google.cloud.vision.v1p3beta1.EntityAnnotationOrBuilder> 
+  public java.util.List<? extends com.google.cloud.vision.v1p3beta1.EntityAnnotationOrBuilder>
       getLabelAnnotationsOrBuilderList() {
     return labelAnnotations_;
   }
   /**
+   *
+   *
    * <pre>
    * If present, label detection has completed successfully.
    * </pre>
@@ -456,6 +557,8 @@ private static final long serialVersionUID = 0L;
     return labelAnnotations_.size();
   }
   /**
+   *
+   *
    * <pre>
    * If present, label detection has completed successfully.
    * </pre>
@@ -466,6 +569,8 @@ private static final long serialVersionUID = 0L;
     return labelAnnotations_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * If present, label detection has completed successfully.
    * </pre>
@@ -478,89 +583,120 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int LOCALIZED_OBJECT_ANNOTATIONS_FIELD_NUMBER = 22;
-  private java.util.List<com.google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation> localizedObjectAnnotations_;
+  private java.util.List<com.google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation>
+      localizedObjectAnnotations_;
   /**
+   *
+   *
    * <pre>
    * If present, localized object detection has completed successfully.
    * This will be sorted descending by confidence score.
    * </pre>
    *
-   * <code>repeated .google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation localized_object_annotations = 22;</code>
+   * <code>
+   * repeated .google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation localized_object_annotations = 22;
+   * </code>
    */
-  public java.util.List<com.google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation> getLocalizedObjectAnnotationsList() {
+  public java.util.List<com.google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation>
+      getLocalizedObjectAnnotationsList() {
     return localizedObjectAnnotations_;
   }
   /**
+   *
+   *
    * <pre>
    * If present, localized object detection has completed successfully.
    * This will be sorted descending by confidence score.
    * </pre>
    *
-   * <code>repeated .google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation localized_object_annotations = 22;</code>
+   * <code>
+   * repeated .google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation localized_object_annotations = 22;
+   * </code>
    */
-  public java.util.List<? extends com.google.cloud.vision.v1p3beta1.LocalizedObjectAnnotationOrBuilder> 
+  public java.util.List<
+          ? extends com.google.cloud.vision.v1p3beta1.LocalizedObjectAnnotationOrBuilder>
       getLocalizedObjectAnnotationsOrBuilderList() {
     return localizedObjectAnnotations_;
   }
   /**
+   *
+   *
    * <pre>
    * If present, localized object detection has completed successfully.
    * This will be sorted descending by confidence score.
    * </pre>
    *
-   * <code>repeated .google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation localized_object_annotations = 22;</code>
+   * <code>
+   * repeated .google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation localized_object_annotations = 22;
+   * </code>
    */
   public int getLocalizedObjectAnnotationsCount() {
     return localizedObjectAnnotations_.size();
   }
   /**
+   *
+   *
    * <pre>
    * If present, localized object detection has completed successfully.
    * This will be sorted descending by confidence score.
    * </pre>
    *
-   * <code>repeated .google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation localized_object_annotations = 22;</code>
+   * <code>
+   * repeated .google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation localized_object_annotations = 22;
+   * </code>
    */
-  public com.google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation getLocalizedObjectAnnotations(int index) {
+  public com.google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation getLocalizedObjectAnnotations(
+      int index) {
     return localizedObjectAnnotations_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * If present, localized object detection has completed successfully.
    * This will be sorted descending by confidence score.
    * </pre>
    *
-   * <code>repeated .google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation localized_object_annotations = 22;</code>
+   * <code>
+   * repeated .google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation localized_object_annotations = 22;
+   * </code>
    */
-  public com.google.cloud.vision.v1p3beta1.LocalizedObjectAnnotationOrBuilder getLocalizedObjectAnnotationsOrBuilder(
-      int index) {
+  public com.google.cloud.vision.v1p3beta1.LocalizedObjectAnnotationOrBuilder
+      getLocalizedObjectAnnotationsOrBuilder(int index) {
     return localizedObjectAnnotations_.get(index);
   }
 
   public static final int TEXT_ANNOTATIONS_FIELD_NUMBER = 5;
   private java.util.List<com.google.cloud.vision.v1p3beta1.EntityAnnotation> textAnnotations_;
   /**
+   *
+   *
    * <pre>
    * If present, text (OCR) detection has completed successfully.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1p3beta1.EntityAnnotation text_annotations = 5;</code>
    */
-  public java.util.List<com.google.cloud.vision.v1p3beta1.EntityAnnotation> getTextAnnotationsList() {
+  public java.util.List<com.google.cloud.vision.v1p3beta1.EntityAnnotation>
+      getTextAnnotationsList() {
     return textAnnotations_;
   }
   /**
+   *
+   *
    * <pre>
    * If present, text (OCR) detection has completed successfully.
    * </pre>
    *
    * <code>repeated .google.cloud.vision.v1p3beta1.EntityAnnotation text_annotations = 5;</code>
    */
-  public java.util.List<? extends com.google.cloud.vision.v1p3beta1.EntityAnnotationOrBuilder> 
+  public java.util.List<? extends com.google.cloud.vision.v1p3beta1.EntityAnnotationOrBuilder>
       getTextAnnotationsOrBuilderList() {
     return textAnnotations_;
   }
   /**
+   *
+   *
    * <pre>
    * If present, text (OCR) detection has completed successfully.
    * </pre>
@@ -571,6 +707,8 @@ private static final long serialVersionUID = 0L;
     return textAnnotations_.size();
   }
   /**
+   *
+   *
    * <pre>
    * If present, text (OCR) detection has completed successfully.
    * </pre>
@@ -581,6 +719,8 @@ private static final long serialVersionUID = 0L;
     return textAnnotations_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * If present, text (OCR) detection has completed successfully.
    * </pre>
@@ -595,6 +735,8 @@ private static final long serialVersionUID = 0L;
   public static final int FULL_TEXT_ANNOTATION_FIELD_NUMBER = 12;
   private com.google.cloud.vision.v1p3beta1.TextAnnotation fullTextAnnotation_;
   /**
+   *
+   *
    * <pre>
    * If present, text (OCR) detection or document (OCR) text detection has
    * completed successfully.
@@ -608,6 +750,8 @@ private static final long serialVersionUID = 0L;
     return fullTextAnnotation_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * If present, text (OCR) detection or document (OCR) text detection has
    * completed successfully.
@@ -618,9 +762,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.cloud.vision.v1p3beta1.TextAnnotation full_text_annotation = 12;</code>
    */
   public com.google.cloud.vision.v1p3beta1.TextAnnotation getFullTextAnnotation() {
-    return fullTextAnnotation_ == null ? com.google.cloud.vision.v1p3beta1.TextAnnotation.getDefaultInstance() : fullTextAnnotation_;
+    return fullTextAnnotation_ == null
+        ? com.google.cloud.vision.v1p3beta1.TextAnnotation.getDefaultInstance()
+        : fullTextAnnotation_;
   }
   /**
+   *
+   *
    * <pre>
    * If present, text (OCR) detection or document (OCR) text detection has
    * completed successfully.
@@ -630,13 +778,16 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.cloud.vision.v1p3beta1.TextAnnotation full_text_annotation = 12;</code>
    */
-  public com.google.cloud.vision.v1p3beta1.TextAnnotationOrBuilder getFullTextAnnotationOrBuilder() {
+  public com.google.cloud.vision.v1p3beta1.TextAnnotationOrBuilder
+      getFullTextAnnotationOrBuilder() {
     return getFullTextAnnotation();
   }
 
   public static final int SAFE_SEARCH_ANNOTATION_FIELD_NUMBER = 6;
   private com.google.cloud.vision.v1p3beta1.SafeSearchAnnotation safeSearchAnnotation_;
   /**
+   *
+   *
    * <pre>
    * If present, safe-search annotation has completed successfully.
    * </pre>
@@ -647,6 +798,8 @@ private static final long serialVersionUID = 0L;
     return safeSearchAnnotation_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * If present, safe-search annotation has completed successfully.
    * </pre>
@@ -654,22 +807,29 @@ private static final long serialVersionUID = 0L;
    * <code>.google.cloud.vision.v1p3beta1.SafeSearchAnnotation safe_search_annotation = 6;</code>
    */
   public com.google.cloud.vision.v1p3beta1.SafeSearchAnnotation getSafeSearchAnnotation() {
-    return safeSearchAnnotation_ == null ? com.google.cloud.vision.v1p3beta1.SafeSearchAnnotation.getDefaultInstance() : safeSearchAnnotation_;
+    return safeSearchAnnotation_ == null
+        ? com.google.cloud.vision.v1p3beta1.SafeSearchAnnotation.getDefaultInstance()
+        : safeSearchAnnotation_;
   }
   /**
+   *
+   *
    * <pre>
    * If present, safe-search annotation has completed successfully.
    * </pre>
    *
    * <code>.google.cloud.vision.v1p3beta1.SafeSearchAnnotation safe_search_annotation = 6;</code>
    */
-  public com.google.cloud.vision.v1p3beta1.SafeSearchAnnotationOrBuilder getSafeSearchAnnotationOrBuilder() {
+  public com.google.cloud.vision.v1p3beta1.SafeSearchAnnotationOrBuilder
+      getSafeSearchAnnotationOrBuilder() {
     return getSafeSearchAnnotation();
   }
 
   public static final int IMAGE_PROPERTIES_ANNOTATION_FIELD_NUMBER = 8;
   private com.google.cloud.vision.v1p3beta1.ImageProperties imagePropertiesAnnotation_;
   /**
+   *
+   *
    * <pre>
    * If present, image properties were extracted successfully.
    * </pre>
@@ -680,6 +840,8 @@ private static final long serialVersionUID = 0L;
     return imagePropertiesAnnotation_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * If present, image properties were extracted successfully.
    * </pre>
@@ -687,22 +849,29 @@ private static final long serialVersionUID = 0L;
    * <code>.google.cloud.vision.v1p3beta1.ImageProperties image_properties_annotation = 8;</code>
    */
   public com.google.cloud.vision.v1p3beta1.ImageProperties getImagePropertiesAnnotation() {
-    return imagePropertiesAnnotation_ == null ? com.google.cloud.vision.v1p3beta1.ImageProperties.getDefaultInstance() : imagePropertiesAnnotation_;
+    return imagePropertiesAnnotation_ == null
+        ? com.google.cloud.vision.v1p3beta1.ImageProperties.getDefaultInstance()
+        : imagePropertiesAnnotation_;
   }
   /**
+   *
+   *
    * <pre>
    * If present, image properties were extracted successfully.
    * </pre>
    *
    * <code>.google.cloud.vision.v1p3beta1.ImageProperties image_properties_annotation = 8;</code>
    */
-  public com.google.cloud.vision.v1p3beta1.ImagePropertiesOrBuilder getImagePropertiesAnnotationOrBuilder() {
+  public com.google.cloud.vision.v1p3beta1.ImagePropertiesOrBuilder
+      getImagePropertiesAnnotationOrBuilder() {
     return getImagePropertiesAnnotation();
   }
 
   public static final int CROP_HINTS_ANNOTATION_FIELD_NUMBER = 11;
   private com.google.cloud.vision.v1p3beta1.CropHintsAnnotation cropHintsAnnotation_;
   /**
+   *
+   *
    * <pre>
    * If present, crop hints have completed successfully.
    * </pre>
@@ -713,6 +882,8 @@ private static final long serialVersionUID = 0L;
     return cropHintsAnnotation_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * If present, crop hints have completed successfully.
    * </pre>
@@ -720,22 +891,29 @@ private static final long serialVersionUID = 0L;
    * <code>.google.cloud.vision.v1p3beta1.CropHintsAnnotation crop_hints_annotation = 11;</code>
    */
   public com.google.cloud.vision.v1p3beta1.CropHintsAnnotation getCropHintsAnnotation() {
-    return cropHintsAnnotation_ == null ? com.google.cloud.vision.v1p3beta1.CropHintsAnnotation.getDefaultInstance() : cropHintsAnnotation_;
+    return cropHintsAnnotation_ == null
+        ? com.google.cloud.vision.v1p3beta1.CropHintsAnnotation.getDefaultInstance()
+        : cropHintsAnnotation_;
   }
   /**
+   *
+   *
    * <pre>
    * If present, crop hints have completed successfully.
    * </pre>
    *
    * <code>.google.cloud.vision.v1p3beta1.CropHintsAnnotation crop_hints_annotation = 11;</code>
    */
-  public com.google.cloud.vision.v1p3beta1.CropHintsAnnotationOrBuilder getCropHintsAnnotationOrBuilder() {
+  public com.google.cloud.vision.v1p3beta1.CropHintsAnnotationOrBuilder
+      getCropHintsAnnotationOrBuilder() {
     return getCropHintsAnnotation();
   }
 
   public static final int WEB_DETECTION_FIELD_NUMBER = 13;
   private com.google.cloud.vision.v1p3beta1.WebDetection webDetection_;
   /**
+   *
+   *
    * <pre>
    * If present, web detection has completed successfully.
    * </pre>
@@ -746,6 +924,8 @@ private static final long serialVersionUID = 0L;
     return webDetection_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * If present, web detection has completed successfully.
    * </pre>
@@ -753,9 +933,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.cloud.vision.v1p3beta1.WebDetection web_detection = 13;</code>
    */
   public com.google.cloud.vision.v1p3beta1.WebDetection getWebDetection() {
-    return webDetection_ == null ? com.google.cloud.vision.v1p3beta1.WebDetection.getDefaultInstance() : webDetection_;
+    return webDetection_ == null
+        ? com.google.cloud.vision.v1p3beta1.WebDetection.getDefaultInstance()
+        : webDetection_;
   }
   /**
+   *
+   *
    * <pre>
    * If present, web detection has completed successfully.
    * </pre>
@@ -769,6 +953,8 @@ private static final long serialVersionUID = 0L;
   public static final int PRODUCT_SEARCH_RESULTS_FIELD_NUMBER = 14;
   private com.google.cloud.vision.v1p3beta1.ProductSearchResults productSearchResults_;
   /**
+   *
+   *
    * <pre>
    * If present, product search has completed successfully.
    * </pre>
@@ -779,6 +965,8 @@ private static final long serialVersionUID = 0L;
     return productSearchResults_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * If present, product search has completed successfully.
    * </pre>
@@ -786,22 +974,29 @@ private static final long serialVersionUID = 0L;
    * <code>.google.cloud.vision.v1p3beta1.ProductSearchResults product_search_results = 14;</code>
    */
   public com.google.cloud.vision.v1p3beta1.ProductSearchResults getProductSearchResults() {
-    return productSearchResults_ == null ? com.google.cloud.vision.v1p3beta1.ProductSearchResults.getDefaultInstance() : productSearchResults_;
+    return productSearchResults_ == null
+        ? com.google.cloud.vision.v1p3beta1.ProductSearchResults.getDefaultInstance()
+        : productSearchResults_;
   }
   /**
+   *
+   *
    * <pre>
    * If present, product search has completed successfully.
    * </pre>
    *
    * <code>.google.cloud.vision.v1p3beta1.ProductSearchResults product_search_results = 14;</code>
    */
-  public com.google.cloud.vision.v1p3beta1.ProductSearchResultsOrBuilder getProductSearchResultsOrBuilder() {
+  public com.google.cloud.vision.v1p3beta1.ProductSearchResultsOrBuilder
+      getProductSearchResultsOrBuilder() {
     return getProductSearchResults();
   }
 
   public static final int ERROR_FIELD_NUMBER = 9;
   private com.google.rpc.Status error_;
   /**
+   *
+   *
    * <pre>
    * If set, represents the error message for the operation.
    * Note that filled-in image annotations are guaranteed to be
@@ -814,6 +1009,8 @@ private static final long serialVersionUID = 0L;
     return error_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * If set, represents the error message for the operation.
    * Note that filled-in image annotations are guaranteed to be
@@ -826,6 +1023,8 @@ private static final long serialVersionUID = 0L;
     return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
   }
   /**
+   *
+   *
    * <pre>
    * If set, represents the error message for the operation.
    * Note that filled-in image annotations are guaranteed to be
@@ -841,6 +1040,8 @@ private static final long serialVersionUID = 0L;
   public static final int CONTEXT_FIELD_NUMBER = 21;
   private com.google.cloud.vision.v1p3beta1.ImageAnnotationContext context_;
   /**
+   *
+   *
    * <pre>
    * If present, contextual information is needed to understand where this image
    * comes from.
@@ -852,6 +1053,8 @@ private static final long serialVersionUID = 0L;
     return context_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * If present, contextual information is needed to understand where this image
    * comes from.
@@ -860,9 +1063,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.cloud.vision.v1p3beta1.ImageAnnotationContext context = 21;</code>
    */
   public com.google.cloud.vision.v1p3beta1.ImageAnnotationContext getContext() {
-    return context_ == null ? com.google.cloud.vision.v1p3beta1.ImageAnnotationContext.getDefaultInstance() : context_;
+    return context_ == null
+        ? com.google.cloud.vision.v1p3beta1.ImageAnnotationContext.getDefaultInstance()
+        : context_;
   }
   /**
+   *
+   *
    * <pre>
    * If present, contextual information is needed to understand where this image
    * comes from.
@@ -875,6 +1082,8 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -884,8 +1093,8 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  @java.lang.Override
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     for (int i = 0; i < faceAnnotations_.size(); i++) {
       output.writeMessage(1, faceAnnotations_.get(i));
     }
@@ -931,66 +1140,61 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
 
     size = 0;
     for (int i = 0; i < faceAnnotations_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, faceAnnotations_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, faceAnnotations_.get(i));
     }
     for (int i = 0; i < landmarkAnnotations_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, landmarkAnnotations_.get(i));
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(2, landmarkAnnotations_.get(i));
     }
     for (int i = 0; i < logoAnnotations_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, logoAnnotations_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, logoAnnotations_.get(i));
     }
     for (int i = 0; i < labelAnnotations_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, labelAnnotations_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, labelAnnotations_.get(i));
     }
     for (int i = 0; i < textAnnotations_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(5, textAnnotations_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, textAnnotations_.get(i));
     }
     if (safeSearchAnnotation_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(6, getSafeSearchAnnotation());
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(6, getSafeSearchAnnotation());
     }
     if (imagePropertiesAnnotation_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(8, getImagePropertiesAnnotation());
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              8, getImagePropertiesAnnotation());
     }
     if (error_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(9, getError());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, getError());
     }
     if (cropHintsAnnotation_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(11, getCropHintsAnnotation());
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(11, getCropHintsAnnotation());
     }
     if (fullTextAnnotation_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(12, getFullTextAnnotation());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, getFullTextAnnotation());
     }
     if (webDetection_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(13, getWebDetection());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, getWebDetection());
     }
     if (productSearchResults_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(14, getProductSearchResults());
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(14, getProductSearchResults());
     }
     if (context_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(21, getContext());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(21, getContext());
     }
     for (int i = 0; i < localizedObjectAnnotations_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(22, localizedObjectAnnotations_.get(i));
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              22, localizedObjectAnnotations_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -1000,65 +1204,56 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.vision.v1p3beta1.AnnotateImageResponse)) {
       return super.equals(obj);
     }
-    com.google.cloud.vision.v1p3beta1.AnnotateImageResponse other = (com.google.cloud.vision.v1p3beta1.AnnotateImageResponse) obj;
+    com.google.cloud.vision.v1p3beta1.AnnotateImageResponse other =
+        (com.google.cloud.vision.v1p3beta1.AnnotateImageResponse) obj;
 
     boolean result = true;
-    result = result && getFaceAnnotationsList()
-        .equals(other.getFaceAnnotationsList());
-    result = result && getLandmarkAnnotationsList()
-        .equals(other.getLandmarkAnnotationsList());
-    result = result && getLogoAnnotationsList()
-        .equals(other.getLogoAnnotationsList());
-    result = result && getLabelAnnotationsList()
-        .equals(other.getLabelAnnotationsList());
-    result = result && getLocalizedObjectAnnotationsList()
-        .equals(other.getLocalizedObjectAnnotationsList());
-    result = result && getTextAnnotationsList()
-        .equals(other.getTextAnnotationsList());
+    result = result && getFaceAnnotationsList().equals(other.getFaceAnnotationsList());
+    result = result && getLandmarkAnnotationsList().equals(other.getLandmarkAnnotationsList());
+    result = result && getLogoAnnotationsList().equals(other.getLogoAnnotationsList());
+    result = result && getLabelAnnotationsList().equals(other.getLabelAnnotationsList());
+    result =
+        result
+            && getLocalizedObjectAnnotationsList()
+                .equals(other.getLocalizedObjectAnnotationsList());
+    result = result && getTextAnnotationsList().equals(other.getTextAnnotationsList());
     result = result && (hasFullTextAnnotation() == other.hasFullTextAnnotation());
     if (hasFullTextAnnotation()) {
-      result = result && getFullTextAnnotation()
-          .equals(other.getFullTextAnnotation());
+      result = result && getFullTextAnnotation().equals(other.getFullTextAnnotation());
     }
     result = result && (hasSafeSearchAnnotation() == other.hasSafeSearchAnnotation());
     if (hasSafeSearchAnnotation()) {
-      result = result && getSafeSearchAnnotation()
-          .equals(other.getSafeSearchAnnotation());
+      result = result && getSafeSearchAnnotation().equals(other.getSafeSearchAnnotation());
     }
     result = result && (hasImagePropertiesAnnotation() == other.hasImagePropertiesAnnotation());
     if (hasImagePropertiesAnnotation()) {
-      result = result && getImagePropertiesAnnotation()
-          .equals(other.getImagePropertiesAnnotation());
+      result =
+          result && getImagePropertiesAnnotation().equals(other.getImagePropertiesAnnotation());
     }
     result = result && (hasCropHintsAnnotation() == other.hasCropHintsAnnotation());
     if (hasCropHintsAnnotation()) {
-      result = result && getCropHintsAnnotation()
-          .equals(other.getCropHintsAnnotation());
+      result = result && getCropHintsAnnotation().equals(other.getCropHintsAnnotation());
     }
     result = result && (hasWebDetection() == other.hasWebDetection());
     if (hasWebDetection()) {
-      result = result && getWebDetection()
-          .equals(other.getWebDetection());
+      result = result && getWebDetection().equals(other.getWebDetection());
     }
     result = result && (hasProductSearchResults() == other.hasProductSearchResults());
     if (hasProductSearchResults()) {
-      result = result && getProductSearchResults()
-          .equals(other.getProductSearchResults());
+      result = result && getProductSearchResults().equals(other.getProductSearchResults());
     }
     result = result && (hasError() == other.hasError());
     if (hasError()) {
-      result = result && getError()
-          .equals(other.getError());
+      result = result && getError().equals(other.getError());
     }
     result = result && (hasContext() == other.hasContext());
     if (hasContext()) {
-      result = result && getContext()
-          .equals(other.getContext());
+      result = result && getContext().equals(other.getContext());
     }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
@@ -1133,114 +1328,127 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.cloud.vision.v1p3beta1.AnnotateImageResponse parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.vision.v1p3beta1.AnnotateImageResponse parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.vision.v1p3beta1.AnnotateImageResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.vision.v1p3beta1.AnnotateImageResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.vision.v1p3beta1.AnnotateImageResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.vision.v1p3beta1.AnnotateImageResponse parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.vision.v1p3beta1.AnnotateImageResponse parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.vision.v1p3beta1.AnnotateImageResponse parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.vision.v1p3beta1.AnnotateImageResponse parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.cloud.vision.v1p3beta1.AnnotateImageResponse parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.cloud.vision.v1p3beta1.AnnotateImageResponse parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.vision.v1p3beta1.AnnotateImageResponse parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.vision.v1p3beta1.AnnotateImageResponse parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.vision.v1p3beta1.AnnotateImageResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  public Builder newBuilderForType() { return newBuilder(); }
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-  public static Builder newBuilder(com.google.cloud.vision.v1p3beta1.AnnotateImageResponse prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+
+  public static Builder newBuilder(
+      com.google.cloud.vision.v1p3beta1.AnnotateImageResponse prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+
+  @java.lang.Override
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Response to an image annotation request.
    * </pre>
    *
    * Protobuf type {@code google.cloud.vision.v1p3beta1.AnnotateImageResponse}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.vision.v1p3beta1.AnnotateImageResponse)
       com.google.cloud.vision.v1p3beta1.AnnotateImageResponseOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.vision.v1p3beta1.ImageAnnotatorProto.internal_static_google_cloud_vision_v1p3beta1_AnnotateImageResponse_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.vision.v1p3beta1.ImageAnnotatorProto
+          .internal_static_google_cloud_vision_v1p3beta1_AnnotateImageResponse_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.vision.v1p3beta1.ImageAnnotatorProto.internal_static_google_cloud_vision_v1p3beta1_AnnotateImageResponse_fieldAccessorTable
+      return com.google.cloud.vision.v1p3beta1.ImageAnnotatorProto
+          .internal_static_google_cloud_vision_v1p3beta1_AnnotateImageResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.vision.v1p3beta1.AnnotateImageResponse.class, com.google.cloud.vision.v1p3beta1.AnnotateImageResponse.Builder.class);
+              com.google.cloud.vision.v1p3beta1.AnnotateImageResponse.class,
+              com.google.cloud.vision.v1p3beta1.AnnotateImageResponse.Builder.class);
     }
 
     // Construct using com.google.cloud.vision.v1p3beta1.AnnotateImageResponse.newBuilder()
@@ -1248,14 +1456,13 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getFaceAnnotationsFieldBuilder();
         getLandmarkAnnotationsFieldBuilder();
         getLogoAnnotationsFieldBuilder();
@@ -1264,6 +1471,8 @@ private static final long serialVersionUID = 0L;
         getTextAnnotationsFieldBuilder();
       }
     }
+
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       if (faceAnnotationsBuilder_ == null) {
@@ -1353,15 +1562,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.vision.v1p3beta1.ImageAnnotatorProto.internal_static_google_cloud_vision_v1p3beta1_AnnotateImageResponse_descriptor;
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.vision.v1p3beta1.ImageAnnotatorProto
+          .internal_static_google_cloud_vision_v1p3beta1_AnnotateImageResponse_descriptor;
     }
 
+    @java.lang.Override
     public com.google.cloud.vision.v1p3beta1.AnnotateImageResponse getDefaultInstanceForType() {
       return com.google.cloud.vision.v1p3beta1.AnnotateImageResponse.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.cloud.vision.v1p3beta1.AnnotateImageResponse build() {
       com.google.cloud.vision.v1p3beta1.AnnotateImageResponse result = buildPartial();
       if (!result.isInitialized()) {
@@ -1370,8 +1582,10 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.cloud.vision.v1p3beta1.AnnotateImageResponse buildPartial() {
-      com.google.cloud.vision.v1p3beta1.AnnotateImageResponse result = new com.google.cloud.vision.v1p3beta1.AnnotateImageResponse(this);
+      com.google.cloud.vision.v1p3beta1.AnnotateImageResponse result =
+          new com.google.cloud.vision.v1p3beta1.AnnotateImageResponse(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (faceAnnotationsBuilder_ == null) {
@@ -1412,7 +1626,8 @@ private static final long serialVersionUID = 0L;
       }
       if (localizedObjectAnnotationsBuilder_ == null) {
         if (((bitField0_ & 0x00000010) == 0x00000010)) {
-          localizedObjectAnnotations_ = java.util.Collections.unmodifiableList(localizedObjectAnnotations_);
+          localizedObjectAnnotations_ =
+              java.util.Collections.unmodifiableList(localizedObjectAnnotations_);
           bitField0_ = (bitField0_ & ~0x00000010);
         }
         result.localizedObjectAnnotations_ = localizedObjectAnnotations_;
@@ -1473,35 +1688,43 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+
+    @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+    @java.lang.Override
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+    @java.lang.Override
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
+    @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
+    @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.vision.v1p3beta1.AnnotateImageResponse) {
-        return mergeFrom((com.google.cloud.vision.v1p3beta1.AnnotateImageResponse)other);
+        return mergeFrom((com.google.cloud.vision.v1p3beta1.AnnotateImageResponse) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -1509,7 +1732,8 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.cloud.vision.v1p3beta1.AnnotateImageResponse other) {
-      if (other == com.google.cloud.vision.v1p3beta1.AnnotateImageResponse.getDefaultInstance()) return this;
+      if (other == com.google.cloud.vision.v1p3beta1.AnnotateImageResponse.getDefaultInstance())
+        return this;
       if (faceAnnotationsBuilder_ == null) {
         if (!other.faceAnnotations_.isEmpty()) {
           if (faceAnnotations_.isEmpty()) {
@@ -1528,9 +1752,10 @@ private static final long serialVersionUID = 0L;
             faceAnnotationsBuilder_ = null;
             faceAnnotations_ = other.faceAnnotations_;
             bitField0_ = (bitField0_ & ~0x00000001);
-            faceAnnotationsBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getFaceAnnotationsFieldBuilder() : null;
+            faceAnnotationsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getFaceAnnotationsFieldBuilder()
+                    : null;
           } else {
             faceAnnotationsBuilder_.addAllMessages(other.faceAnnotations_);
           }
@@ -1554,9 +1779,10 @@ private static final long serialVersionUID = 0L;
             landmarkAnnotationsBuilder_ = null;
             landmarkAnnotations_ = other.landmarkAnnotations_;
             bitField0_ = (bitField0_ & ~0x00000002);
-            landmarkAnnotationsBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getLandmarkAnnotationsFieldBuilder() : null;
+            landmarkAnnotationsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getLandmarkAnnotationsFieldBuilder()
+                    : null;
           } else {
             landmarkAnnotationsBuilder_.addAllMessages(other.landmarkAnnotations_);
           }
@@ -1580,9 +1806,10 @@ private static final long serialVersionUID = 0L;
             logoAnnotationsBuilder_ = null;
             logoAnnotations_ = other.logoAnnotations_;
             bitField0_ = (bitField0_ & ~0x00000004);
-            logoAnnotationsBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getLogoAnnotationsFieldBuilder() : null;
+            logoAnnotationsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getLogoAnnotationsFieldBuilder()
+                    : null;
           } else {
             logoAnnotationsBuilder_.addAllMessages(other.logoAnnotations_);
           }
@@ -1606,9 +1833,10 @@ private static final long serialVersionUID = 0L;
             labelAnnotationsBuilder_ = null;
             labelAnnotations_ = other.labelAnnotations_;
             bitField0_ = (bitField0_ & ~0x00000008);
-            labelAnnotationsBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getLabelAnnotationsFieldBuilder() : null;
+            labelAnnotationsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getLabelAnnotationsFieldBuilder()
+                    : null;
           } else {
             labelAnnotationsBuilder_.addAllMessages(other.labelAnnotations_);
           }
@@ -1632,9 +1860,10 @@ private static final long serialVersionUID = 0L;
             localizedObjectAnnotationsBuilder_ = null;
             localizedObjectAnnotations_ = other.localizedObjectAnnotations_;
             bitField0_ = (bitField0_ & ~0x00000010);
-            localizedObjectAnnotationsBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getLocalizedObjectAnnotationsFieldBuilder() : null;
+            localizedObjectAnnotationsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getLocalizedObjectAnnotationsFieldBuilder()
+                    : null;
           } else {
             localizedObjectAnnotationsBuilder_.addAllMessages(other.localizedObjectAnnotations_);
           }
@@ -1658,9 +1887,10 @@ private static final long serialVersionUID = 0L;
             textAnnotationsBuilder_ = null;
             textAnnotations_ = other.textAnnotations_;
             bitField0_ = (bitField0_ & ~0x00000020);
-            textAnnotationsBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getTextAnnotationsFieldBuilder() : null;
+            textAnnotationsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getTextAnnotationsFieldBuilder()
+                    : null;
           } else {
             textAnnotationsBuilder_.addAllMessages(other.textAnnotations_);
           }
@@ -1695,10 +1925,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1707,7 +1939,8 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.vision.v1p3beta1.AnnotateImageResponse) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.cloud.vision.v1p3beta1.AnnotateImageResponse) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -1716,28 +1949,38 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private java.util.List<com.google.cloud.vision.v1p3beta1.FaceAnnotation> faceAnnotations_ =
-      java.util.Collections.emptyList();
+        java.util.Collections.emptyList();
+
     private void ensureFaceAnnotationsIsMutable() {
       if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-        faceAnnotations_ = new java.util.ArrayList<com.google.cloud.vision.v1p3beta1.FaceAnnotation>(faceAnnotations_);
+        faceAnnotations_ =
+            new java.util.ArrayList<com.google.cloud.vision.v1p3beta1.FaceAnnotation>(
+                faceAnnotations_);
         bitField0_ |= 0x00000001;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.vision.v1p3beta1.FaceAnnotation, com.google.cloud.vision.v1p3beta1.FaceAnnotation.Builder, com.google.cloud.vision.v1p3beta1.FaceAnnotationOrBuilder> faceAnnotationsBuilder_;
+            com.google.cloud.vision.v1p3beta1.FaceAnnotation,
+            com.google.cloud.vision.v1p3beta1.FaceAnnotation.Builder,
+            com.google.cloud.vision.v1p3beta1.FaceAnnotationOrBuilder>
+        faceAnnotationsBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * If present, face detection has completed successfully.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1p3beta1.FaceAnnotation face_annotations = 1;</code>
      */
-    public java.util.List<com.google.cloud.vision.v1p3beta1.FaceAnnotation> getFaceAnnotationsList() {
+    public java.util.List<com.google.cloud.vision.v1p3beta1.FaceAnnotation>
+        getFaceAnnotationsList() {
       if (faceAnnotationsBuilder_ == null) {
         return java.util.Collections.unmodifiableList(faceAnnotations_);
       } else {
@@ -1745,6 +1988,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * If present, face detection has completed successfully.
      * </pre>
@@ -1759,6 +2004,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * If present, face detection has completed successfully.
      * </pre>
@@ -1773,6 +2020,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * If present, face detection has completed successfully.
      * </pre>
@@ -1794,6 +2043,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If present, face detection has completed successfully.
      * </pre>
@@ -1812,6 +2063,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If present, face detection has completed successfully.
      * </pre>
@@ -1832,6 +2085,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If present, face detection has completed successfully.
      * </pre>
@@ -1853,6 +2108,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If present, face detection has completed successfully.
      * </pre>
@@ -1871,6 +2128,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If present, face detection has completed successfully.
      * </pre>
@@ -1889,6 +2148,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If present, face detection has completed successfully.
      * </pre>
@@ -1899,8 +2160,7 @@ private static final long serialVersionUID = 0L;
         java.lang.Iterable<? extends com.google.cloud.vision.v1p3beta1.FaceAnnotation> values) {
       if (faceAnnotationsBuilder_ == null) {
         ensureFaceAnnotationsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, faceAnnotations_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, faceAnnotations_);
         onChanged();
       } else {
         faceAnnotationsBuilder_.addAllMessages(values);
@@ -1908,6 +2168,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If present, face detection has completed successfully.
      * </pre>
@@ -1925,6 +2187,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If present, face detection has completed successfully.
      * </pre>
@@ -1942,6 +2206,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If present, face detection has completed successfully.
      * </pre>
@@ -1953,6 +2219,8 @@ private static final long serialVersionUID = 0L;
       return getFaceAnnotationsFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * If present, face detection has completed successfully.
      * </pre>
@@ -1962,19 +2230,22 @@ private static final long serialVersionUID = 0L;
     public com.google.cloud.vision.v1p3beta1.FaceAnnotationOrBuilder getFaceAnnotationsOrBuilder(
         int index) {
       if (faceAnnotationsBuilder_ == null) {
-        return faceAnnotations_.get(index);  } else {
+        return faceAnnotations_.get(index);
+      } else {
         return faceAnnotationsBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * If present, face detection has completed successfully.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1p3beta1.FaceAnnotation face_annotations = 1;</code>
      */
-    public java.util.List<? extends com.google.cloud.vision.v1p3beta1.FaceAnnotationOrBuilder> 
-         getFaceAnnotationsOrBuilderList() {
+    public java.util.List<? extends com.google.cloud.vision.v1p3beta1.FaceAnnotationOrBuilder>
+        getFaceAnnotationsOrBuilderList() {
       if (faceAnnotationsBuilder_ != null) {
         return faceAnnotationsBuilder_.getMessageOrBuilderList();
       } else {
@@ -1982,6 +2253,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * If present, face detection has completed successfully.
      * </pre>
@@ -1989,10 +2262,12 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.cloud.vision.v1p3beta1.FaceAnnotation face_annotations = 1;</code>
      */
     public com.google.cloud.vision.v1p3beta1.FaceAnnotation.Builder addFaceAnnotationsBuilder() {
-      return getFaceAnnotationsFieldBuilder().addBuilder(
-          com.google.cloud.vision.v1p3beta1.FaceAnnotation.getDefaultInstance());
+      return getFaceAnnotationsFieldBuilder()
+          .addBuilder(com.google.cloud.vision.v1p3beta1.FaceAnnotation.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * If present, face detection has completed successfully.
      * </pre>
@@ -2001,26 +2276,34 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.vision.v1p3beta1.FaceAnnotation.Builder addFaceAnnotationsBuilder(
         int index) {
-      return getFaceAnnotationsFieldBuilder().addBuilder(
-          index, com.google.cloud.vision.v1p3beta1.FaceAnnotation.getDefaultInstance());
+      return getFaceAnnotationsFieldBuilder()
+          .addBuilder(index, com.google.cloud.vision.v1p3beta1.FaceAnnotation.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * If present, face detection has completed successfully.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1p3beta1.FaceAnnotation face_annotations = 1;</code>
      */
-    public java.util.List<com.google.cloud.vision.v1p3beta1.FaceAnnotation.Builder> 
-         getFaceAnnotationsBuilderList() {
+    public java.util.List<com.google.cloud.vision.v1p3beta1.FaceAnnotation.Builder>
+        getFaceAnnotationsBuilderList() {
       return getFaceAnnotationsFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.vision.v1p3beta1.FaceAnnotation, com.google.cloud.vision.v1p3beta1.FaceAnnotation.Builder, com.google.cloud.vision.v1p3beta1.FaceAnnotationOrBuilder> 
+            com.google.cloud.vision.v1p3beta1.FaceAnnotation,
+            com.google.cloud.vision.v1p3beta1.FaceAnnotation.Builder,
+            com.google.cloud.vision.v1p3beta1.FaceAnnotationOrBuilder>
         getFaceAnnotationsFieldBuilder() {
       if (faceAnnotationsBuilder_ == null) {
-        faceAnnotationsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.cloud.vision.v1p3beta1.FaceAnnotation, com.google.cloud.vision.v1p3beta1.FaceAnnotation.Builder, com.google.cloud.vision.v1p3beta1.FaceAnnotationOrBuilder>(
+        faceAnnotationsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.vision.v1p3beta1.FaceAnnotation,
+                com.google.cloud.vision.v1p3beta1.FaceAnnotation.Builder,
+                com.google.cloud.vision.v1p3beta1.FaceAnnotationOrBuilder>(
                 faceAnnotations_,
                 ((bitField0_ & 0x00000001) == 0x00000001),
                 getParentForChildren(),
@@ -2030,26 +2313,36 @@ private static final long serialVersionUID = 0L;
       return faceAnnotationsBuilder_;
     }
 
-    private java.util.List<com.google.cloud.vision.v1p3beta1.EntityAnnotation> landmarkAnnotations_ =
-      java.util.Collections.emptyList();
+    private java.util.List<com.google.cloud.vision.v1p3beta1.EntityAnnotation>
+        landmarkAnnotations_ = java.util.Collections.emptyList();
+
     private void ensureLandmarkAnnotationsIsMutable() {
       if (!((bitField0_ & 0x00000002) == 0x00000002)) {
-        landmarkAnnotations_ = new java.util.ArrayList<com.google.cloud.vision.v1p3beta1.EntityAnnotation>(landmarkAnnotations_);
+        landmarkAnnotations_ =
+            new java.util.ArrayList<com.google.cloud.vision.v1p3beta1.EntityAnnotation>(
+                landmarkAnnotations_);
         bitField0_ |= 0x00000002;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.vision.v1p3beta1.EntityAnnotation, com.google.cloud.vision.v1p3beta1.EntityAnnotation.Builder, com.google.cloud.vision.v1p3beta1.EntityAnnotationOrBuilder> landmarkAnnotationsBuilder_;
+            com.google.cloud.vision.v1p3beta1.EntityAnnotation,
+            com.google.cloud.vision.v1p3beta1.EntityAnnotation.Builder,
+            com.google.cloud.vision.v1p3beta1.EntityAnnotationOrBuilder>
+        landmarkAnnotationsBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * If present, landmark detection has completed successfully.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1p3beta1.EntityAnnotation landmark_annotations = 2;</code>
+     * <code>repeated .google.cloud.vision.v1p3beta1.EntityAnnotation landmark_annotations = 2;
+     * </code>
      */
-    public java.util.List<com.google.cloud.vision.v1p3beta1.EntityAnnotation> getLandmarkAnnotationsList() {
+    public java.util.List<com.google.cloud.vision.v1p3beta1.EntityAnnotation>
+        getLandmarkAnnotationsList() {
       if (landmarkAnnotationsBuilder_ == null) {
         return java.util.Collections.unmodifiableList(landmarkAnnotations_);
       } else {
@@ -2057,11 +2350,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * If present, landmark detection has completed successfully.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1p3beta1.EntityAnnotation landmark_annotations = 2;</code>
+     * <code>repeated .google.cloud.vision.v1p3beta1.EntityAnnotation landmark_annotations = 2;
+     * </code>
      */
     public int getLandmarkAnnotationsCount() {
       if (landmarkAnnotationsBuilder_ == null) {
@@ -2071,11 +2367,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * If present, landmark detection has completed successfully.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1p3beta1.EntityAnnotation landmark_annotations = 2;</code>
+     * <code>repeated .google.cloud.vision.v1p3beta1.EntityAnnotation landmark_annotations = 2;
+     * </code>
      */
     public com.google.cloud.vision.v1p3beta1.EntityAnnotation getLandmarkAnnotations(int index) {
       if (landmarkAnnotationsBuilder_ == null) {
@@ -2085,11 +2384,14 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * If present, landmark detection has completed successfully.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1p3beta1.EntityAnnotation landmark_annotations = 2;</code>
+     * <code>repeated .google.cloud.vision.v1p3beta1.EntityAnnotation landmark_annotations = 2;
+     * </code>
      */
     public Builder setLandmarkAnnotations(
         int index, com.google.cloud.vision.v1p3beta1.EntityAnnotation value) {
@@ -2106,11 +2408,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If present, landmark detection has completed successfully.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1p3beta1.EntityAnnotation landmark_annotations = 2;</code>
+     * <code>repeated .google.cloud.vision.v1p3beta1.EntityAnnotation landmark_annotations = 2;
+     * </code>
      */
     public Builder setLandmarkAnnotations(
         int index, com.google.cloud.vision.v1p3beta1.EntityAnnotation.Builder builderForValue) {
@@ -2124,13 +2429,17 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If present, landmark detection has completed successfully.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1p3beta1.EntityAnnotation landmark_annotations = 2;</code>
+     * <code>repeated .google.cloud.vision.v1p3beta1.EntityAnnotation landmark_annotations = 2;
+     * </code>
      */
-    public Builder addLandmarkAnnotations(com.google.cloud.vision.v1p3beta1.EntityAnnotation value) {
+    public Builder addLandmarkAnnotations(
+        com.google.cloud.vision.v1p3beta1.EntityAnnotation value) {
       if (landmarkAnnotationsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -2144,11 +2453,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If present, landmark detection has completed successfully.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1p3beta1.EntityAnnotation landmark_annotations = 2;</code>
+     * <code>repeated .google.cloud.vision.v1p3beta1.EntityAnnotation landmark_annotations = 2;
+     * </code>
      */
     public Builder addLandmarkAnnotations(
         int index, com.google.cloud.vision.v1p3beta1.EntityAnnotation value) {
@@ -2165,11 +2477,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If present, landmark detection has completed successfully.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1p3beta1.EntityAnnotation landmark_annotations = 2;</code>
+     * <code>repeated .google.cloud.vision.v1p3beta1.EntityAnnotation landmark_annotations = 2;
+     * </code>
      */
     public Builder addLandmarkAnnotations(
         com.google.cloud.vision.v1p3beta1.EntityAnnotation.Builder builderForValue) {
@@ -2183,11 +2498,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If present, landmark detection has completed successfully.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1p3beta1.EntityAnnotation landmark_annotations = 2;</code>
+     * <code>repeated .google.cloud.vision.v1p3beta1.EntityAnnotation landmark_annotations = 2;
+     * </code>
      */
     public Builder addLandmarkAnnotations(
         int index, com.google.cloud.vision.v1p3beta1.EntityAnnotation.Builder builderForValue) {
@@ -2201,18 +2519,20 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If present, landmark detection has completed successfully.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1p3beta1.EntityAnnotation landmark_annotations = 2;</code>
+     * <code>repeated .google.cloud.vision.v1p3beta1.EntityAnnotation landmark_annotations = 2;
+     * </code>
      */
     public Builder addAllLandmarkAnnotations(
         java.lang.Iterable<? extends com.google.cloud.vision.v1p3beta1.EntityAnnotation> values) {
       if (landmarkAnnotationsBuilder_ == null) {
         ensureLandmarkAnnotationsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, landmarkAnnotations_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, landmarkAnnotations_);
         onChanged();
       } else {
         landmarkAnnotationsBuilder_.addAllMessages(values);
@@ -2220,11 +2540,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If present, landmark detection has completed successfully.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1p3beta1.EntityAnnotation landmark_annotations = 2;</code>
+     * <code>repeated .google.cloud.vision.v1p3beta1.EntityAnnotation landmark_annotations = 2;
+     * </code>
      */
     public Builder clearLandmarkAnnotations() {
       if (landmarkAnnotationsBuilder_ == null) {
@@ -2237,11 +2560,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If present, landmark detection has completed successfully.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1p3beta1.EntityAnnotation landmark_annotations = 2;</code>
+     * <code>repeated .google.cloud.vision.v1p3beta1.EntityAnnotation landmark_annotations = 2;
+     * </code>
      */
     public Builder removeLandmarkAnnotations(int index) {
       if (landmarkAnnotationsBuilder_ == null) {
@@ -2254,39 +2580,49 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If present, landmark detection has completed successfully.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1p3beta1.EntityAnnotation landmark_annotations = 2;</code>
+     * <code>repeated .google.cloud.vision.v1p3beta1.EntityAnnotation landmark_annotations = 2;
+     * </code>
      */
     public com.google.cloud.vision.v1p3beta1.EntityAnnotation.Builder getLandmarkAnnotationsBuilder(
         int index) {
       return getLandmarkAnnotationsFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * If present, landmark detection has completed successfully.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1p3beta1.EntityAnnotation landmark_annotations = 2;</code>
+     * <code>repeated .google.cloud.vision.v1p3beta1.EntityAnnotation landmark_annotations = 2;
+     * </code>
      */
-    public com.google.cloud.vision.v1p3beta1.EntityAnnotationOrBuilder getLandmarkAnnotationsOrBuilder(
-        int index) {
+    public com.google.cloud.vision.v1p3beta1.EntityAnnotationOrBuilder
+        getLandmarkAnnotationsOrBuilder(int index) {
       if (landmarkAnnotationsBuilder_ == null) {
-        return landmarkAnnotations_.get(index);  } else {
+        return landmarkAnnotations_.get(index);
+      } else {
         return landmarkAnnotationsBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * If present, landmark detection has completed successfully.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1p3beta1.EntityAnnotation landmark_annotations = 2;</code>
+     * <code>repeated .google.cloud.vision.v1p3beta1.EntityAnnotation landmark_annotations = 2;
+     * </code>
      */
-    public java.util.List<? extends com.google.cloud.vision.v1p3beta1.EntityAnnotationOrBuilder> 
-         getLandmarkAnnotationsOrBuilderList() {
+    public java.util.List<? extends com.google.cloud.vision.v1p3beta1.EntityAnnotationOrBuilder>
+        getLandmarkAnnotationsOrBuilderList() {
       if (landmarkAnnotationsBuilder_ != null) {
         return landmarkAnnotationsBuilder_.getMessageOrBuilderList();
       } else {
@@ -2294,45 +2630,62 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * If present, landmark detection has completed successfully.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1p3beta1.EntityAnnotation landmark_annotations = 2;</code>
+     * <code>repeated .google.cloud.vision.v1p3beta1.EntityAnnotation landmark_annotations = 2;
+     * </code>
      */
-    public com.google.cloud.vision.v1p3beta1.EntityAnnotation.Builder addLandmarkAnnotationsBuilder() {
-      return getLandmarkAnnotationsFieldBuilder().addBuilder(
-          com.google.cloud.vision.v1p3beta1.EntityAnnotation.getDefaultInstance());
+    public com.google.cloud.vision.v1p3beta1.EntityAnnotation.Builder
+        addLandmarkAnnotationsBuilder() {
+      return getLandmarkAnnotationsFieldBuilder()
+          .addBuilder(com.google.cloud.vision.v1p3beta1.EntityAnnotation.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * If present, landmark detection has completed successfully.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1p3beta1.EntityAnnotation landmark_annotations = 2;</code>
+     * <code>repeated .google.cloud.vision.v1p3beta1.EntityAnnotation landmark_annotations = 2;
+     * </code>
      */
     public com.google.cloud.vision.v1p3beta1.EntityAnnotation.Builder addLandmarkAnnotationsBuilder(
         int index) {
-      return getLandmarkAnnotationsFieldBuilder().addBuilder(
-          index, com.google.cloud.vision.v1p3beta1.EntityAnnotation.getDefaultInstance());
+      return getLandmarkAnnotationsFieldBuilder()
+          .addBuilder(
+              index, com.google.cloud.vision.v1p3beta1.EntityAnnotation.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * If present, landmark detection has completed successfully.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1p3beta1.EntityAnnotation landmark_annotations = 2;</code>
+     * <code>repeated .google.cloud.vision.v1p3beta1.EntityAnnotation landmark_annotations = 2;
+     * </code>
      */
-    public java.util.List<com.google.cloud.vision.v1p3beta1.EntityAnnotation.Builder> 
-         getLandmarkAnnotationsBuilderList() {
+    public java.util.List<com.google.cloud.vision.v1p3beta1.EntityAnnotation.Builder>
+        getLandmarkAnnotationsBuilderList() {
       return getLandmarkAnnotationsFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.vision.v1p3beta1.EntityAnnotation, com.google.cloud.vision.v1p3beta1.EntityAnnotation.Builder, com.google.cloud.vision.v1p3beta1.EntityAnnotationOrBuilder> 
+            com.google.cloud.vision.v1p3beta1.EntityAnnotation,
+            com.google.cloud.vision.v1p3beta1.EntityAnnotation.Builder,
+            com.google.cloud.vision.v1p3beta1.EntityAnnotationOrBuilder>
         getLandmarkAnnotationsFieldBuilder() {
       if (landmarkAnnotationsBuilder_ == null) {
-        landmarkAnnotationsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.cloud.vision.v1p3beta1.EntityAnnotation, com.google.cloud.vision.v1p3beta1.EntityAnnotation.Builder, com.google.cloud.vision.v1p3beta1.EntityAnnotationOrBuilder>(
+        landmarkAnnotationsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.vision.v1p3beta1.EntityAnnotation,
+                com.google.cloud.vision.v1p3beta1.EntityAnnotation.Builder,
+                com.google.cloud.vision.v1p3beta1.EntityAnnotationOrBuilder>(
                 landmarkAnnotations_,
                 ((bitField0_ & 0x00000002) == 0x00000002),
                 getParentForChildren(),
@@ -2343,25 +2696,34 @@ private static final long serialVersionUID = 0L;
     }
 
     private java.util.List<com.google.cloud.vision.v1p3beta1.EntityAnnotation> logoAnnotations_ =
-      java.util.Collections.emptyList();
+        java.util.Collections.emptyList();
+
     private void ensureLogoAnnotationsIsMutable() {
       if (!((bitField0_ & 0x00000004) == 0x00000004)) {
-        logoAnnotations_ = new java.util.ArrayList<com.google.cloud.vision.v1p3beta1.EntityAnnotation>(logoAnnotations_);
+        logoAnnotations_ =
+            new java.util.ArrayList<com.google.cloud.vision.v1p3beta1.EntityAnnotation>(
+                logoAnnotations_);
         bitField0_ |= 0x00000004;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.vision.v1p3beta1.EntityAnnotation, com.google.cloud.vision.v1p3beta1.EntityAnnotation.Builder, com.google.cloud.vision.v1p3beta1.EntityAnnotationOrBuilder> logoAnnotationsBuilder_;
+            com.google.cloud.vision.v1p3beta1.EntityAnnotation,
+            com.google.cloud.vision.v1p3beta1.EntityAnnotation.Builder,
+            com.google.cloud.vision.v1p3beta1.EntityAnnotationOrBuilder>
+        logoAnnotationsBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * If present, logo detection has completed successfully.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1p3beta1.EntityAnnotation logo_annotations = 3;</code>
      */
-    public java.util.List<com.google.cloud.vision.v1p3beta1.EntityAnnotation> getLogoAnnotationsList() {
+    public java.util.List<com.google.cloud.vision.v1p3beta1.EntityAnnotation>
+        getLogoAnnotationsList() {
       if (logoAnnotationsBuilder_ == null) {
         return java.util.Collections.unmodifiableList(logoAnnotations_);
       } else {
@@ -2369,6 +2731,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * If present, logo detection has completed successfully.
      * </pre>
@@ -2383,6 +2747,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * If present, logo detection has completed successfully.
      * </pre>
@@ -2397,6 +2763,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * If present, logo detection has completed successfully.
      * </pre>
@@ -2418,6 +2786,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If present, logo detection has completed successfully.
      * </pre>
@@ -2436,6 +2806,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If present, logo detection has completed successfully.
      * </pre>
@@ -2456,6 +2828,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If present, logo detection has completed successfully.
      * </pre>
@@ -2477,6 +2851,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If present, logo detection has completed successfully.
      * </pre>
@@ -2495,6 +2871,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If present, logo detection has completed successfully.
      * </pre>
@@ -2513,6 +2891,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If present, logo detection has completed successfully.
      * </pre>
@@ -2523,8 +2903,7 @@ private static final long serialVersionUID = 0L;
         java.lang.Iterable<? extends com.google.cloud.vision.v1p3beta1.EntityAnnotation> values) {
       if (logoAnnotationsBuilder_ == null) {
         ensureLogoAnnotationsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, logoAnnotations_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, logoAnnotations_);
         onChanged();
       } else {
         logoAnnotationsBuilder_.addAllMessages(values);
@@ -2532,6 +2911,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If present, logo detection has completed successfully.
      * </pre>
@@ -2549,6 +2930,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If present, logo detection has completed successfully.
      * </pre>
@@ -2566,6 +2949,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If present, logo detection has completed successfully.
      * </pre>
@@ -2577,6 +2962,8 @@ private static final long serialVersionUID = 0L;
       return getLogoAnnotationsFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * If present, logo detection has completed successfully.
      * </pre>
@@ -2586,19 +2973,22 @@ private static final long serialVersionUID = 0L;
     public com.google.cloud.vision.v1p3beta1.EntityAnnotationOrBuilder getLogoAnnotationsOrBuilder(
         int index) {
       if (logoAnnotationsBuilder_ == null) {
-        return logoAnnotations_.get(index);  } else {
+        return logoAnnotations_.get(index);
+      } else {
         return logoAnnotationsBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * If present, logo detection has completed successfully.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1p3beta1.EntityAnnotation logo_annotations = 3;</code>
      */
-    public java.util.List<? extends com.google.cloud.vision.v1p3beta1.EntityAnnotationOrBuilder> 
-         getLogoAnnotationsOrBuilderList() {
+    public java.util.List<? extends com.google.cloud.vision.v1p3beta1.EntityAnnotationOrBuilder>
+        getLogoAnnotationsOrBuilderList() {
       if (logoAnnotationsBuilder_ != null) {
         return logoAnnotationsBuilder_.getMessageOrBuilderList();
       } else {
@@ -2606,6 +2996,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * If present, logo detection has completed successfully.
      * </pre>
@@ -2613,10 +3005,12 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.cloud.vision.v1p3beta1.EntityAnnotation logo_annotations = 3;</code>
      */
     public com.google.cloud.vision.v1p3beta1.EntityAnnotation.Builder addLogoAnnotationsBuilder() {
-      return getLogoAnnotationsFieldBuilder().addBuilder(
-          com.google.cloud.vision.v1p3beta1.EntityAnnotation.getDefaultInstance());
+      return getLogoAnnotationsFieldBuilder()
+          .addBuilder(com.google.cloud.vision.v1p3beta1.EntityAnnotation.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * If present, logo detection has completed successfully.
      * </pre>
@@ -2625,26 +3019,35 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.vision.v1p3beta1.EntityAnnotation.Builder addLogoAnnotationsBuilder(
         int index) {
-      return getLogoAnnotationsFieldBuilder().addBuilder(
-          index, com.google.cloud.vision.v1p3beta1.EntityAnnotation.getDefaultInstance());
+      return getLogoAnnotationsFieldBuilder()
+          .addBuilder(
+              index, com.google.cloud.vision.v1p3beta1.EntityAnnotation.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * If present, logo detection has completed successfully.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1p3beta1.EntityAnnotation logo_annotations = 3;</code>
      */
-    public java.util.List<com.google.cloud.vision.v1p3beta1.EntityAnnotation.Builder> 
-         getLogoAnnotationsBuilderList() {
+    public java.util.List<com.google.cloud.vision.v1p3beta1.EntityAnnotation.Builder>
+        getLogoAnnotationsBuilderList() {
       return getLogoAnnotationsFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.vision.v1p3beta1.EntityAnnotation, com.google.cloud.vision.v1p3beta1.EntityAnnotation.Builder, com.google.cloud.vision.v1p3beta1.EntityAnnotationOrBuilder> 
+            com.google.cloud.vision.v1p3beta1.EntityAnnotation,
+            com.google.cloud.vision.v1p3beta1.EntityAnnotation.Builder,
+            com.google.cloud.vision.v1p3beta1.EntityAnnotationOrBuilder>
         getLogoAnnotationsFieldBuilder() {
       if (logoAnnotationsBuilder_ == null) {
-        logoAnnotationsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.cloud.vision.v1p3beta1.EntityAnnotation, com.google.cloud.vision.v1p3beta1.EntityAnnotation.Builder, com.google.cloud.vision.v1p3beta1.EntityAnnotationOrBuilder>(
+        logoAnnotationsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.vision.v1p3beta1.EntityAnnotation,
+                com.google.cloud.vision.v1p3beta1.EntityAnnotation.Builder,
+                com.google.cloud.vision.v1p3beta1.EntityAnnotationOrBuilder>(
                 logoAnnotations_,
                 ((bitField0_ & 0x00000004) == 0x00000004),
                 getParentForChildren(),
@@ -2655,25 +3058,34 @@ private static final long serialVersionUID = 0L;
     }
 
     private java.util.List<com.google.cloud.vision.v1p3beta1.EntityAnnotation> labelAnnotations_ =
-      java.util.Collections.emptyList();
+        java.util.Collections.emptyList();
+
     private void ensureLabelAnnotationsIsMutable() {
       if (!((bitField0_ & 0x00000008) == 0x00000008)) {
-        labelAnnotations_ = new java.util.ArrayList<com.google.cloud.vision.v1p3beta1.EntityAnnotation>(labelAnnotations_);
+        labelAnnotations_ =
+            new java.util.ArrayList<com.google.cloud.vision.v1p3beta1.EntityAnnotation>(
+                labelAnnotations_);
         bitField0_ |= 0x00000008;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.vision.v1p3beta1.EntityAnnotation, com.google.cloud.vision.v1p3beta1.EntityAnnotation.Builder, com.google.cloud.vision.v1p3beta1.EntityAnnotationOrBuilder> labelAnnotationsBuilder_;
+            com.google.cloud.vision.v1p3beta1.EntityAnnotation,
+            com.google.cloud.vision.v1p3beta1.EntityAnnotation.Builder,
+            com.google.cloud.vision.v1p3beta1.EntityAnnotationOrBuilder>
+        labelAnnotationsBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * If present, label detection has completed successfully.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1p3beta1.EntityAnnotation label_annotations = 4;</code>
      */
-    public java.util.List<com.google.cloud.vision.v1p3beta1.EntityAnnotation> getLabelAnnotationsList() {
+    public java.util.List<com.google.cloud.vision.v1p3beta1.EntityAnnotation>
+        getLabelAnnotationsList() {
       if (labelAnnotationsBuilder_ == null) {
         return java.util.Collections.unmodifiableList(labelAnnotations_);
       } else {
@@ -2681,6 +3093,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * If present, label detection has completed successfully.
      * </pre>
@@ -2695,6 +3109,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * If present, label detection has completed successfully.
      * </pre>
@@ -2709,6 +3125,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * If present, label detection has completed successfully.
      * </pre>
@@ -2730,6 +3148,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If present, label detection has completed successfully.
      * </pre>
@@ -2748,6 +3168,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If present, label detection has completed successfully.
      * </pre>
@@ -2768,6 +3190,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If present, label detection has completed successfully.
      * </pre>
@@ -2789,6 +3213,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If present, label detection has completed successfully.
      * </pre>
@@ -2807,6 +3233,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If present, label detection has completed successfully.
      * </pre>
@@ -2825,6 +3253,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If present, label detection has completed successfully.
      * </pre>
@@ -2835,8 +3265,7 @@ private static final long serialVersionUID = 0L;
         java.lang.Iterable<? extends com.google.cloud.vision.v1p3beta1.EntityAnnotation> values) {
       if (labelAnnotationsBuilder_ == null) {
         ensureLabelAnnotationsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, labelAnnotations_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, labelAnnotations_);
         onChanged();
       } else {
         labelAnnotationsBuilder_.addAllMessages(values);
@@ -2844,6 +3273,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If present, label detection has completed successfully.
      * </pre>
@@ -2861,6 +3292,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If present, label detection has completed successfully.
      * </pre>
@@ -2878,6 +3311,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If present, label detection has completed successfully.
      * </pre>
@@ -2889,6 +3324,8 @@ private static final long serialVersionUID = 0L;
       return getLabelAnnotationsFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * If present, label detection has completed successfully.
      * </pre>
@@ -2898,19 +3335,22 @@ private static final long serialVersionUID = 0L;
     public com.google.cloud.vision.v1p3beta1.EntityAnnotationOrBuilder getLabelAnnotationsOrBuilder(
         int index) {
       if (labelAnnotationsBuilder_ == null) {
-        return labelAnnotations_.get(index);  } else {
+        return labelAnnotations_.get(index);
+      } else {
         return labelAnnotationsBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * If present, label detection has completed successfully.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1p3beta1.EntityAnnotation label_annotations = 4;</code>
      */
-    public java.util.List<? extends com.google.cloud.vision.v1p3beta1.EntityAnnotationOrBuilder> 
-         getLabelAnnotationsOrBuilderList() {
+    public java.util.List<? extends com.google.cloud.vision.v1p3beta1.EntityAnnotationOrBuilder>
+        getLabelAnnotationsOrBuilderList() {
       if (labelAnnotationsBuilder_ != null) {
         return labelAnnotationsBuilder_.getMessageOrBuilderList();
       } else {
@@ -2918,6 +3358,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * If present, label detection has completed successfully.
      * </pre>
@@ -2925,10 +3367,12 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.cloud.vision.v1p3beta1.EntityAnnotation label_annotations = 4;</code>
      */
     public com.google.cloud.vision.v1p3beta1.EntityAnnotation.Builder addLabelAnnotationsBuilder() {
-      return getLabelAnnotationsFieldBuilder().addBuilder(
-          com.google.cloud.vision.v1p3beta1.EntityAnnotation.getDefaultInstance());
+      return getLabelAnnotationsFieldBuilder()
+          .addBuilder(com.google.cloud.vision.v1p3beta1.EntityAnnotation.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * If present, label detection has completed successfully.
      * </pre>
@@ -2937,26 +3381,35 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.vision.v1p3beta1.EntityAnnotation.Builder addLabelAnnotationsBuilder(
         int index) {
-      return getLabelAnnotationsFieldBuilder().addBuilder(
-          index, com.google.cloud.vision.v1p3beta1.EntityAnnotation.getDefaultInstance());
+      return getLabelAnnotationsFieldBuilder()
+          .addBuilder(
+              index, com.google.cloud.vision.v1p3beta1.EntityAnnotation.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * If present, label detection has completed successfully.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1p3beta1.EntityAnnotation label_annotations = 4;</code>
      */
-    public java.util.List<com.google.cloud.vision.v1p3beta1.EntityAnnotation.Builder> 
-         getLabelAnnotationsBuilderList() {
+    public java.util.List<com.google.cloud.vision.v1p3beta1.EntityAnnotation.Builder>
+        getLabelAnnotationsBuilderList() {
       return getLabelAnnotationsFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.vision.v1p3beta1.EntityAnnotation, com.google.cloud.vision.v1p3beta1.EntityAnnotation.Builder, com.google.cloud.vision.v1p3beta1.EntityAnnotationOrBuilder> 
+            com.google.cloud.vision.v1p3beta1.EntityAnnotation,
+            com.google.cloud.vision.v1p3beta1.EntityAnnotation.Builder,
+            com.google.cloud.vision.v1p3beta1.EntityAnnotationOrBuilder>
         getLabelAnnotationsFieldBuilder() {
       if (labelAnnotationsBuilder_ == null) {
-        labelAnnotationsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.cloud.vision.v1p3beta1.EntityAnnotation, com.google.cloud.vision.v1p3beta1.EntityAnnotation.Builder, com.google.cloud.vision.v1p3beta1.EntityAnnotationOrBuilder>(
+        labelAnnotationsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.vision.v1p3beta1.EntityAnnotation,
+                com.google.cloud.vision.v1p3beta1.EntityAnnotation.Builder,
+                com.google.cloud.vision.v1p3beta1.EntityAnnotationOrBuilder>(
                 labelAnnotations_,
                 ((bitField0_ & 0x00000008) == 0x00000008),
                 getParentForChildren(),
@@ -2966,27 +3419,38 @@ private static final long serialVersionUID = 0L;
       return labelAnnotationsBuilder_;
     }
 
-    private java.util.List<com.google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation> localizedObjectAnnotations_ =
-      java.util.Collections.emptyList();
+    private java.util.List<com.google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation>
+        localizedObjectAnnotations_ = java.util.Collections.emptyList();
+
     private void ensureLocalizedObjectAnnotationsIsMutable() {
       if (!((bitField0_ & 0x00000010) == 0x00000010)) {
-        localizedObjectAnnotations_ = new java.util.ArrayList<com.google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation>(localizedObjectAnnotations_);
+        localizedObjectAnnotations_ =
+            new java.util.ArrayList<com.google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation>(
+                localizedObjectAnnotations_);
         bitField0_ |= 0x00000010;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation, com.google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation.Builder, com.google.cloud.vision.v1p3beta1.LocalizedObjectAnnotationOrBuilder> localizedObjectAnnotationsBuilder_;
+            com.google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation,
+            com.google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation.Builder,
+            com.google.cloud.vision.v1p3beta1.LocalizedObjectAnnotationOrBuilder>
+        localizedObjectAnnotationsBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * If present, localized object detection has completed successfully.
      * This will be sorted descending by confidence score.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation localized_object_annotations = 22;</code>
+     * <code>
+     * repeated .google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation localized_object_annotations = 22;
+     * </code>
      */
-    public java.util.List<com.google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation> getLocalizedObjectAnnotationsList() {
+    public java.util.List<com.google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation>
+        getLocalizedObjectAnnotationsList() {
       if (localizedObjectAnnotationsBuilder_ == null) {
         return java.util.Collections.unmodifiableList(localizedObjectAnnotations_);
       } else {
@@ -2994,12 +3458,16 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * If present, localized object detection has completed successfully.
      * This will be sorted descending by confidence score.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation localized_object_annotations = 22;</code>
+     * <code>
+     * repeated .google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation localized_object_annotations = 22;
+     * </code>
      */
     public int getLocalizedObjectAnnotationsCount() {
       if (localizedObjectAnnotationsBuilder_ == null) {
@@ -3009,14 +3477,19 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * If present, localized object detection has completed successfully.
      * This will be sorted descending by confidence score.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation localized_object_annotations = 22;</code>
+     * <code>
+     * repeated .google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation localized_object_annotations = 22;
+     * </code>
      */
-    public com.google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation getLocalizedObjectAnnotations(int index) {
+    public com.google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation
+        getLocalizedObjectAnnotations(int index) {
       if (localizedObjectAnnotationsBuilder_ == null) {
         return localizedObjectAnnotations_.get(index);
       } else {
@@ -3024,12 +3497,16 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * If present, localized object detection has completed successfully.
      * This will be sorted descending by confidence score.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation localized_object_annotations = 22;</code>
+     * <code>
+     * repeated .google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation localized_object_annotations = 22;
+     * </code>
      */
     public Builder setLocalizedObjectAnnotations(
         int index, com.google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation value) {
@@ -3046,15 +3523,20 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If present, localized object detection has completed successfully.
      * This will be sorted descending by confidence score.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation localized_object_annotations = 22;</code>
+     * <code>
+     * repeated .google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation localized_object_annotations = 22;
+     * </code>
      */
     public Builder setLocalizedObjectAnnotations(
-        int index, com.google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation.Builder builderForValue) {
+        int index,
+        com.google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation.Builder builderForValue) {
       if (localizedObjectAnnotationsBuilder_ == null) {
         ensureLocalizedObjectAnnotationsIsMutable();
         localizedObjectAnnotations_.set(index, builderForValue.build());
@@ -3065,14 +3547,19 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If present, localized object detection has completed successfully.
      * This will be sorted descending by confidence score.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation localized_object_annotations = 22;</code>
+     * <code>
+     * repeated .google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation localized_object_annotations = 22;
+     * </code>
      */
-    public Builder addLocalizedObjectAnnotations(com.google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation value) {
+    public Builder addLocalizedObjectAnnotations(
+        com.google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation value) {
       if (localizedObjectAnnotationsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -3086,12 +3573,16 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If present, localized object detection has completed successfully.
      * This will be sorted descending by confidence score.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation localized_object_annotations = 22;</code>
+     * <code>
+     * repeated .google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation localized_object_annotations = 22;
+     * </code>
      */
     public Builder addLocalizedObjectAnnotations(
         int index, com.google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation value) {
@@ -3108,12 +3599,16 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If present, localized object detection has completed successfully.
      * This will be sorted descending by confidence score.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation localized_object_annotations = 22;</code>
+     * <code>
+     * repeated .google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation localized_object_annotations = 22;
+     * </code>
      */
     public Builder addLocalizedObjectAnnotations(
         com.google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation.Builder builderForValue) {
@@ -3127,15 +3622,20 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If present, localized object detection has completed successfully.
      * This will be sorted descending by confidence score.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation localized_object_annotations = 22;</code>
+     * <code>
+     * repeated .google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation localized_object_annotations = 22;
+     * </code>
      */
     public Builder addLocalizedObjectAnnotations(
-        int index, com.google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation.Builder builderForValue) {
+        int index,
+        com.google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation.Builder builderForValue) {
       if (localizedObjectAnnotationsBuilder_ == null) {
         ensureLocalizedObjectAnnotationsIsMutable();
         localizedObjectAnnotations_.add(index, builderForValue.build());
@@ -3146,19 +3646,23 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If present, localized object detection has completed successfully.
      * This will be sorted descending by confidence score.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation localized_object_annotations = 22;</code>
+     * <code>
+     * repeated .google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation localized_object_annotations = 22;
+     * </code>
      */
     public Builder addAllLocalizedObjectAnnotations(
-        java.lang.Iterable<? extends com.google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation> values) {
+        java.lang.Iterable<? extends com.google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation>
+            values) {
       if (localizedObjectAnnotationsBuilder_ == null) {
         ensureLocalizedObjectAnnotationsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, localizedObjectAnnotations_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, localizedObjectAnnotations_);
         onChanged();
       } else {
         localizedObjectAnnotationsBuilder_.addAllMessages(values);
@@ -3166,12 +3670,16 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If present, localized object detection has completed successfully.
      * This will be sorted descending by confidence score.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation localized_object_annotations = 22;</code>
+     * <code>
+     * repeated .google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation localized_object_annotations = 22;
+     * </code>
      */
     public Builder clearLocalizedObjectAnnotations() {
       if (localizedObjectAnnotationsBuilder_ == null) {
@@ -3184,12 +3692,16 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If present, localized object detection has completed successfully.
      * This will be sorted descending by confidence score.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation localized_object_annotations = 22;</code>
+     * <code>
+     * repeated .google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation localized_object_annotations = 22;
+     * </code>
      */
     public Builder removeLocalizedObjectAnnotations(int index) {
       if (localizedObjectAnnotationsBuilder_ == null) {
@@ -3202,42 +3714,56 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If present, localized object detection has completed successfully.
      * This will be sorted descending by confidence score.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation localized_object_annotations = 22;</code>
+     * <code>
+     * repeated .google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation localized_object_annotations = 22;
+     * </code>
      */
-    public com.google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation.Builder getLocalizedObjectAnnotationsBuilder(
-        int index) {
+    public com.google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation.Builder
+        getLocalizedObjectAnnotationsBuilder(int index) {
       return getLocalizedObjectAnnotationsFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * If present, localized object detection has completed successfully.
      * This will be sorted descending by confidence score.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation localized_object_annotations = 22;</code>
+     * <code>
+     * repeated .google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation localized_object_annotations = 22;
+     * </code>
      */
-    public com.google.cloud.vision.v1p3beta1.LocalizedObjectAnnotationOrBuilder getLocalizedObjectAnnotationsOrBuilder(
-        int index) {
+    public com.google.cloud.vision.v1p3beta1.LocalizedObjectAnnotationOrBuilder
+        getLocalizedObjectAnnotationsOrBuilder(int index) {
       if (localizedObjectAnnotationsBuilder_ == null) {
-        return localizedObjectAnnotations_.get(index);  } else {
+        return localizedObjectAnnotations_.get(index);
+      } else {
         return localizedObjectAnnotationsBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * If present, localized object detection has completed successfully.
      * This will be sorted descending by confidence score.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation localized_object_annotations = 22;</code>
+     * <code>
+     * repeated .google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation localized_object_annotations = 22;
+     * </code>
      */
-    public java.util.List<? extends com.google.cloud.vision.v1p3beta1.LocalizedObjectAnnotationOrBuilder> 
-         getLocalizedObjectAnnotationsOrBuilderList() {
+    public java.util.List<
+            ? extends com.google.cloud.vision.v1p3beta1.LocalizedObjectAnnotationOrBuilder>
+        getLocalizedObjectAnnotationsOrBuilderList() {
       if (localizedObjectAnnotationsBuilder_ != null) {
         return localizedObjectAnnotationsBuilder_.getMessageOrBuilderList();
       } else {
@@ -3245,48 +3771,70 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * If present, localized object detection has completed successfully.
      * This will be sorted descending by confidence score.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation localized_object_annotations = 22;</code>
+     * <code>
+     * repeated .google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation localized_object_annotations = 22;
+     * </code>
      */
-    public com.google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation.Builder addLocalizedObjectAnnotationsBuilder() {
-      return getLocalizedObjectAnnotationsFieldBuilder().addBuilder(
-          com.google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation.getDefaultInstance());
+    public com.google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation.Builder
+        addLocalizedObjectAnnotationsBuilder() {
+      return getLocalizedObjectAnnotationsFieldBuilder()
+          .addBuilder(
+              com.google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * If present, localized object detection has completed successfully.
      * This will be sorted descending by confidence score.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation localized_object_annotations = 22;</code>
+     * <code>
+     * repeated .google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation localized_object_annotations = 22;
+     * </code>
      */
-    public com.google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation.Builder addLocalizedObjectAnnotationsBuilder(
-        int index) {
-      return getLocalizedObjectAnnotationsFieldBuilder().addBuilder(
-          index, com.google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation.getDefaultInstance());
+    public com.google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation.Builder
+        addLocalizedObjectAnnotationsBuilder(int index) {
+      return getLocalizedObjectAnnotationsFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * If present, localized object detection has completed successfully.
      * This will be sorted descending by confidence score.
      * </pre>
      *
-     * <code>repeated .google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation localized_object_annotations = 22;</code>
+     * <code>
+     * repeated .google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation localized_object_annotations = 22;
+     * </code>
      */
-    public java.util.List<com.google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation.Builder> 
-         getLocalizedObjectAnnotationsBuilderList() {
+    public java.util.List<com.google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation.Builder>
+        getLocalizedObjectAnnotationsBuilderList() {
       return getLocalizedObjectAnnotationsFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation, com.google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation.Builder, com.google.cloud.vision.v1p3beta1.LocalizedObjectAnnotationOrBuilder> 
+            com.google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation,
+            com.google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation.Builder,
+            com.google.cloud.vision.v1p3beta1.LocalizedObjectAnnotationOrBuilder>
         getLocalizedObjectAnnotationsFieldBuilder() {
       if (localizedObjectAnnotationsBuilder_ == null) {
-        localizedObjectAnnotationsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation, com.google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation.Builder, com.google.cloud.vision.v1p3beta1.LocalizedObjectAnnotationOrBuilder>(
+        localizedObjectAnnotationsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation,
+                com.google.cloud.vision.v1p3beta1.LocalizedObjectAnnotation.Builder,
+                com.google.cloud.vision.v1p3beta1.LocalizedObjectAnnotationOrBuilder>(
                 localizedObjectAnnotations_,
                 ((bitField0_ & 0x00000010) == 0x00000010),
                 getParentForChildren(),
@@ -3297,25 +3845,34 @@ private static final long serialVersionUID = 0L;
     }
 
     private java.util.List<com.google.cloud.vision.v1p3beta1.EntityAnnotation> textAnnotations_ =
-      java.util.Collections.emptyList();
+        java.util.Collections.emptyList();
+
     private void ensureTextAnnotationsIsMutable() {
       if (!((bitField0_ & 0x00000020) == 0x00000020)) {
-        textAnnotations_ = new java.util.ArrayList<com.google.cloud.vision.v1p3beta1.EntityAnnotation>(textAnnotations_);
+        textAnnotations_ =
+            new java.util.ArrayList<com.google.cloud.vision.v1p3beta1.EntityAnnotation>(
+                textAnnotations_);
         bitField0_ |= 0x00000020;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.vision.v1p3beta1.EntityAnnotation, com.google.cloud.vision.v1p3beta1.EntityAnnotation.Builder, com.google.cloud.vision.v1p3beta1.EntityAnnotationOrBuilder> textAnnotationsBuilder_;
+            com.google.cloud.vision.v1p3beta1.EntityAnnotation,
+            com.google.cloud.vision.v1p3beta1.EntityAnnotation.Builder,
+            com.google.cloud.vision.v1p3beta1.EntityAnnotationOrBuilder>
+        textAnnotationsBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * If present, text (OCR) detection has completed successfully.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1p3beta1.EntityAnnotation text_annotations = 5;</code>
      */
-    public java.util.List<com.google.cloud.vision.v1p3beta1.EntityAnnotation> getTextAnnotationsList() {
+    public java.util.List<com.google.cloud.vision.v1p3beta1.EntityAnnotation>
+        getTextAnnotationsList() {
       if (textAnnotationsBuilder_ == null) {
         return java.util.Collections.unmodifiableList(textAnnotations_);
       } else {
@@ -3323,6 +3880,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * If present, text (OCR) detection has completed successfully.
      * </pre>
@@ -3337,6 +3896,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * If present, text (OCR) detection has completed successfully.
      * </pre>
@@ -3351,6 +3912,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * If present, text (OCR) detection has completed successfully.
      * </pre>
@@ -3372,6 +3935,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If present, text (OCR) detection has completed successfully.
      * </pre>
@@ -3390,6 +3955,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If present, text (OCR) detection has completed successfully.
      * </pre>
@@ -3410,6 +3977,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If present, text (OCR) detection has completed successfully.
      * </pre>
@@ -3431,6 +4000,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If present, text (OCR) detection has completed successfully.
      * </pre>
@@ -3449,6 +4020,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If present, text (OCR) detection has completed successfully.
      * </pre>
@@ -3467,6 +4040,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If present, text (OCR) detection has completed successfully.
      * </pre>
@@ -3477,8 +4052,7 @@ private static final long serialVersionUID = 0L;
         java.lang.Iterable<? extends com.google.cloud.vision.v1p3beta1.EntityAnnotation> values) {
       if (textAnnotationsBuilder_ == null) {
         ensureTextAnnotationsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, textAnnotations_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, textAnnotations_);
         onChanged();
       } else {
         textAnnotationsBuilder_.addAllMessages(values);
@@ -3486,6 +4060,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If present, text (OCR) detection has completed successfully.
      * </pre>
@@ -3503,6 +4079,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If present, text (OCR) detection has completed successfully.
      * </pre>
@@ -3520,6 +4098,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If present, text (OCR) detection has completed successfully.
      * </pre>
@@ -3531,6 +4111,8 @@ private static final long serialVersionUID = 0L;
       return getTextAnnotationsFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * If present, text (OCR) detection has completed successfully.
      * </pre>
@@ -3540,19 +4122,22 @@ private static final long serialVersionUID = 0L;
     public com.google.cloud.vision.v1p3beta1.EntityAnnotationOrBuilder getTextAnnotationsOrBuilder(
         int index) {
       if (textAnnotationsBuilder_ == null) {
-        return textAnnotations_.get(index);  } else {
+        return textAnnotations_.get(index);
+      } else {
         return textAnnotationsBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * If present, text (OCR) detection has completed successfully.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1p3beta1.EntityAnnotation text_annotations = 5;</code>
      */
-    public java.util.List<? extends com.google.cloud.vision.v1p3beta1.EntityAnnotationOrBuilder> 
-         getTextAnnotationsOrBuilderList() {
+    public java.util.List<? extends com.google.cloud.vision.v1p3beta1.EntityAnnotationOrBuilder>
+        getTextAnnotationsOrBuilderList() {
       if (textAnnotationsBuilder_ != null) {
         return textAnnotationsBuilder_.getMessageOrBuilderList();
       } else {
@@ -3560,6 +4145,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * If present, text (OCR) detection has completed successfully.
      * </pre>
@@ -3567,10 +4154,12 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.cloud.vision.v1p3beta1.EntityAnnotation text_annotations = 5;</code>
      */
     public com.google.cloud.vision.v1p3beta1.EntityAnnotation.Builder addTextAnnotationsBuilder() {
-      return getTextAnnotationsFieldBuilder().addBuilder(
-          com.google.cloud.vision.v1p3beta1.EntityAnnotation.getDefaultInstance());
+      return getTextAnnotationsFieldBuilder()
+          .addBuilder(com.google.cloud.vision.v1p3beta1.EntityAnnotation.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * If present, text (OCR) detection has completed successfully.
      * </pre>
@@ -3579,26 +4168,35 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.vision.v1p3beta1.EntityAnnotation.Builder addTextAnnotationsBuilder(
         int index) {
-      return getTextAnnotationsFieldBuilder().addBuilder(
-          index, com.google.cloud.vision.v1p3beta1.EntityAnnotation.getDefaultInstance());
+      return getTextAnnotationsFieldBuilder()
+          .addBuilder(
+              index, com.google.cloud.vision.v1p3beta1.EntityAnnotation.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * If present, text (OCR) detection has completed successfully.
      * </pre>
      *
      * <code>repeated .google.cloud.vision.v1p3beta1.EntityAnnotation text_annotations = 5;</code>
      */
-    public java.util.List<com.google.cloud.vision.v1p3beta1.EntityAnnotation.Builder> 
-         getTextAnnotationsBuilderList() {
+    public java.util.List<com.google.cloud.vision.v1p3beta1.EntityAnnotation.Builder>
+        getTextAnnotationsBuilderList() {
       return getTextAnnotationsFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.vision.v1p3beta1.EntityAnnotation, com.google.cloud.vision.v1p3beta1.EntityAnnotation.Builder, com.google.cloud.vision.v1p3beta1.EntityAnnotationOrBuilder> 
+            com.google.cloud.vision.v1p3beta1.EntityAnnotation,
+            com.google.cloud.vision.v1p3beta1.EntityAnnotation.Builder,
+            com.google.cloud.vision.v1p3beta1.EntityAnnotationOrBuilder>
         getTextAnnotationsFieldBuilder() {
       if (textAnnotationsBuilder_ == null) {
-        textAnnotationsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.cloud.vision.v1p3beta1.EntityAnnotation, com.google.cloud.vision.v1p3beta1.EntityAnnotation.Builder, com.google.cloud.vision.v1p3beta1.EntityAnnotationOrBuilder>(
+        textAnnotationsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.vision.v1p3beta1.EntityAnnotation,
+                com.google.cloud.vision.v1p3beta1.EntityAnnotation.Builder,
+                com.google.cloud.vision.v1p3beta1.EntityAnnotationOrBuilder>(
                 textAnnotations_,
                 ((bitField0_ & 0x00000020) == 0x00000020),
                 getParentForChildren(),
@@ -3610,8 +4208,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.cloud.vision.v1p3beta1.TextAnnotation fullTextAnnotation_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.vision.v1p3beta1.TextAnnotation, com.google.cloud.vision.v1p3beta1.TextAnnotation.Builder, com.google.cloud.vision.v1p3beta1.TextAnnotationOrBuilder> fullTextAnnotationBuilder_;
+            com.google.cloud.vision.v1p3beta1.TextAnnotation,
+            com.google.cloud.vision.v1p3beta1.TextAnnotation.Builder,
+            com.google.cloud.vision.v1p3beta1.TextAnnotationOrBuilder>
+        fullTextAnnotationBuilder_;
     /**
+     *
+     *
      * <pre>
      * If present, text (OCR) detection or document (OCR) text detection has
      * completed successfully.
@@ -3625,6 +4228,8 @@ private static final long serialVersionUID = 0L;
       return fullTextAnnotationBuilder_ != null || fullTextAnnotation_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * If present, text (OCR) detection or document (OCR) text detection has
      * completed successfully.
@@ -3636,12 +4241,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.vision.v1p3beta1.TextAnnotation getFullTextAnnotation() {
       if (fullTextAnnotationBuilder_ == null) {
-        return fullTextAnnotation_ == null ? com.google.cloud.vision.v1p3beta1.TextAnnotation.getDefaultInstance() : fullTextAnnotation_;
+        return fullTextAnnotation_ == null
+            ? com.google.cloud.vision.v1p3beta1.TextAnnotation.getDefaultInstance()
+            : fullTextAnnotation_;
       } else {
         return fullTextAnnotationBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * If present, text (OCR) detection or document (OCR) text detection has
      * completed successfully.
@@ -3665,6 +4274,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If present, text (OCR) detection or document (OCR) text detection has
      * completed successfully.
@@ -3686,6 +4297,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If present, text (OCR) detection or document (OCR) text detection has
      * completed successfully.
@@ -3699,7 +4312,9 @@ private static final long serialVersionUID = 0L;
       if (fullTextAnnotationBuilder_ == null) {
         if (fullTextAnnotation_ != null) {
           fullTextAnnotation_ =
-            com.google.cloud.vision.v1p3beta1.TextAnnotation.newBuilder(fullTextAnnotation_).mergeFrom(value).buildPartial();
+              com.google.cloud.vision.v1p3beta1.TextAnnotation.newBuilder(fullTextAnnotation_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           fullTextAnnotation_ = value;
         }
@@ -3711,6 +4326,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If present, text (OCR) detection or document (OCR) text detection has
      * completed successfully.
@@ -3732,6 +4349,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If present, text (OCR) detection or document (OCR) text detection has
      * completed successfully.
@@ -3742,11 +4361,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.vision.v1p3beta1.TextAnnotation full_text_annotation = 12;</code>
      */
     public com.google.cloud.vision.v1p3beta1.TextAnnotation.Builder getFullTextAnnotationBuilder() {
-      
+
       onChanged();
       return getFullTextAnnotationFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * If present, text (OCR) detection or document (OCR) text detection has
      * completed successfully.
@@ -3756,15 +4377,19 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.cloud.vision.v1p3beta1.TextAnnotation full_text_annotation = 12;</code>
      */
-    public com.google.cloud.vision.v1p3beta1.TextAnnotationOrBuilder getFullTextAnnotationOrBuilder() {
+    public com.google.cloud.vision.v1p3beta1.TextAnnotationOrBuilder
+        getFullTextAnnotationOrBuilder() {
       if (fullTextAnnotationBuilder_ != null) {
         return fullTextAnnotationBuilder_.getMessageOrBuilder();
       } else {
-        return fullTextAnnotation_ == null ?
-            com.google.cloud.vision.v1p3beta1.TextAnnotation.getDefaultInstance() : fullTextAnnotation_;
+        return fullTextAnnotation_ == null
+            ? com.google.cloud.vision.v1p3beta1.TextAnnotation.getDefaultInstance()
+            : fullTextAnnotation_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * If present, text (OCR) detection or document (OCR) text detection has
      * completed successfully.
@@ -3775,14 +4400,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.vision.v1p3beta1.TextAnnotation full_text_annotation = 12;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.vision.v1p3beta1.TextAnnotation, com.google.cloud.vision.v1p3beta1.TextAnnotation.Builder, com.google.cloud.vision.v1p3beta1.TextAnnotationOrBuilder> 
+            com.google.cloud.vision.v1p3beta1.TextAnnotation,
+            com.google.cloud.vision.v1p3beta1.TextAnnotation.Builder,
+            com.google.cloud.vision.v1p3beta1.TextAnnotationOrBuilder>
         getFullTextAnnotationFieldBuilder() {
       if (fullTextAnnotationBuilder_ == null) {
-        fullTextAnnotationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.vision.v1p3beta1.TextAnnotation, com.google.cloud.vision.v1p3beta1.TextAnnotation.Builder, com.google.cloud.vision.v1p3beta1.TextAnnotationOrBuilder>(
-                getFullTextAnnotation(),
-                getParentForChildren(),
-                isClean());
+        fullTextAnnotationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.vision.v1p3beta1.TextAnnotation,
+                com.google.cloud.vision.v1p3beta1.TextAnnotation.Builder,
+                com.google.cloud.vision.v1p3beta1.TextAnnotationOrBuilder>(
+                getFullTextAnnotation(), getParentForChildren(), isClean());
         fullTextAnnotation_ = null;
       }
       return fullTextAnnotationBuilder_;
@@ -3790,8 +4418,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.cloud.vision.v1p3beta1.SafeSearchAnnotation safeSearchAnnotation_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.vision.v1p3beta1.SafeSearchAnnotation, com.google.cloud.vision.v1p3beta1.SafeSearchAnnotation.Builder, com.google.cloud.vision.v1p3beta1.SafeSearchAnnotationOrBuilder> safeSearchAnnotationBuilder_;
+            com.google.cloud.vision.v1p3beta1.SafeSearchAnnotation,
+            com.google.cloud.vision.v1p3beta1.SafeSearchAnnotation.Builder,
+            com.google.cloud.vision.v1p3beta1.SafeSearchAnnotationOrBuilder>
+        safeSearchAnnotationBuilder_;
     /**
+     *
+     *
      * <pre>
      * If present, safe-search annotation has completed successfully.
      * </pre>
@@ -3802,6 +4435,8 @@ private static final long serialVersionUID = 0L;
       return safeSearchAnnotationBuilder_ != null || safeSearchAnnotation_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * If present, safe-search annotation has completed successfully.
      * </pre>
@@ -3810,19 +4445,24 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.vision.v1p3beta1.SafeSearchAnnotation getSafeSearchAnnotation() {
       if (safeSearchAnnotationBuilder_ == null) {
-        return safeSearchAnnotation_ == null ? com.google.cloud.vision.v1p3beta1.SafeSearchAnnotation.getDefaultInstance() : safeSearchAnnotation_;
+        return safeSearchAnnotation_ == null
+            ? com.google.cloud.vision.v1p3beta1.SafeSearchAnnotation.getDefaultInstance()
+            : safeSearchAnnotation_;
       } else {
         return safeSearchAnnotationBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * If present, safe-search annotation has completed successfully.
      * </pre>
      *
      * <code>.google.cloud.vision.v1p3beta1.SafeSearchAnnotation safe_search_annotation = 6;</code>
      */
-    public Builder setSafeSearchAnnotation(com.google.cloud.vision.v1p3beta1.SafeSearchAnnotation value) {
+    public Builder setSafeSearchAnnotation(
+        com.google.cloud.vision.v1p3beta1.SafeSearchAnnotation value) {
       if (safeSearchAnnotationBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -3836,6 +4476,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If present, safe-search annotation has completed successfully.
      * </pre>
@@ -3854,17 +4496,23 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If present, safe-search annotation has completed successfully.
      * </pre>
      *
      * <code>.google.cloud.vision.v1p3beta1.SafeSearchAnnotation safe_search_annotation = 6;</code>
      */
-    public Builder mergeSafeSearchAnnotation(com.google.cloud.vision.v1p3beta1.SafeSearchAnnotation value) {
+    public Builder mergeSafeSearchAnnotation(
+        com.google.cloud.vision.v1p3beta1.SafeSearchAnnotation value) {
       if (safeSearchAnnotationBuilder_ == null) {
         if (safeSearchAnnotation_ != null) {
           safeSearchAnnotation_ =
-            com.google.cloud.vision.v1p3beta1.SafeSearchAnnotation.newBuilder(safeSearchAnnotation_).mergeFrom(value).buildPartial();
+              com.google.cloud.vision.v1p3beta1.SafeSearchAnnotation.newBuilder(
+                      safeSearchAnnotation_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           safeSearchAnnotation_ = value;
         }
@@ -3876,6 +4524,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If present, safe-search annotation has completed successfully.
      * </pre>
@@ -3894,33 +4544,42 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If present, safe-search annotation has completed successfully.
      * </pre>
      *
      * <code>.google.cloud.vision.v1p3beta1.SafeSearchAnnotation safe_search_annotation = 6;</code>
      */
-    public com.google.cloud.vision.v1p3beta1.SafeSearchAnnotation.Builder getSafeSearchAnnotationBuilder() {
-      
+    public com.google.cloud.vision.v1p3beta1.SafeSearchAnnotation.Builder
+        getSafeSearchAnnotationBuilder() {
+
       onChanged();
       return getSafeSearchAnnotationFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * If present, safe-search annotation has completed successfully.
      * </pre>
      *
      * <code>.google.cloud.vision.v1p3beta1.SafeSearchAnnotation safe_search_annotation = 6;</code>
      */
-    public com.google.cloud.vision.v1p3beta1.SafeSearchAnnotationOrBuilder getSafeSearchAnnotationOrBuilder() {
+    public com.google.cloud.vision.v1p3beta1.SafeSearchAnnotationOrBuilder
+        getSafeSearchAnnotationOrBuilder() {
       if (safeSearchAnnotationBuilder_ != null) {
         return safeSearchAnnotationBuilder_.getMessageOrBuilder();
       } else {
-        return safeSearchAnnotation_ == null ?
-            com.google.cloud.vision.v1p3beta1.SafeSearchAnnotation.getDefaultInstance() : safeSearchAnnotation_;
+        return safeSearchAnnotation_ == null
+            ? com.google.cloud.vision.v1p3beta1.SafeSearchAnnotation.getDefaultInstance()
+            : safeSearchAnnotation_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * If present, safe-search annotation has completed successfully.
      * </pre>
@@ -3928,14 +4587,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.vision.v1p3beta1.SafeSearchAnnotation safe_search_annotation = 6;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.vision.v1p3beta1.SafeSearchAnnotation, com.google.cloud.vision.v1p3beta1.SafeSearchAnnotation.Builder, com.google.cloud.vision.v1p3beta1.SafeSearchAnnotationOrBuilder> 
+            com.google.cloud.vision.v1p3beta1.SafeSearchAnnotation,
+            com.google.cloud.vision.v1p3beta1.SafeSearchAnnotation.Builder,
+            com.google.cloud.vision.v1p3beta1.SafeSearchAnnotationOrBuilder>
         getSafeSearchAnnotationFieldBuilder() {
       if (safeSearchAnnotationBuilder_ == null) {
-        safeSearchAnnotationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.vision.v1p3beta1.SafeSearchAnnotation, com.google.cloud.vision.v1p3beta1.SafeSearchAnnotation.Builder, com.google.cloud.vision.v1p3beta1.SafeSearchAnnotationOrBuilder>(
-                getSafeSearchAnnotation(),
-                getParentForChildren(),
-                isClean());
+        safeSearchAnnotationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.vision.v1p3beta1.SafeSearchAnnotation,
+                com.google.cloud.vision.v1p3beta1.SafeSearchAnnotation.Builder,
+                com.google.cloud.vision.v1p3beta1.SafeSearchAnnotationOrBuilder>(
+                getSafeSearchAnnotation(), getParentForChildren(), isClean());
         safeSearchAnnotation_ = null;
       }
       return safeSearchAnnotationBuilder_;
@@ -3943,8 +4605,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.cloud.vision.v1p3beta1.ImageProperties imagePropertiesAnnotation_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.vision.v1p3beta1.ImageProperties, com.google.cloud.vision.v1p3beta1.ImageProperties.Builder, com.google.cloud.vision.v1p3beta1.ImagePropertiesOrBuilder> imagePropertiesAnnotationBuilder_;
+            com.google.cloud.vision.v1p3beta1.ImageProperties,
+            com.google.cloud.vision.v1p3beta1.ImageProperties.Builder,
+            com.google.cloud.vision.v1p3beta1.ImagePropertiesOrBuilder>
+        imagePropertiesAnnotationBuilder_;
     /**
+     *
+     *
      * <pre>
      * If present, image properties were extracted successfully.
      * </pre>
@@ -3955,6 +4622,8 @@ private static final long serialVersionUID = 0L;
       return imagePropertiesAnnotationBuilder_ != null || imagePropertiesAnnotation_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * If present, image properties were extracted successfully.
      * </pre>
@@ -3963,19 +4632,24 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.vision.v1p3beta1.ImageProperties getImagePropertiesAnnotation() {
       if (imagePropertiesAnnotationBuilder_ == null) {
-        return imagePropertiesAnnotation_ == null ? com.google.cloud.vision.v1p3beta1.ImageProperties.getDefaultInstance() : imagePropertiesAnnotation_;
+        return imagePropertiesAnnotation_ == null
+            ? com.google.cloud.vision.v1p3beta1.ImageProperties.getDefaultInstance()
+            : imagePropertiesAnnotation_;
       } else {
         return imagePropertiesAnnotationBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * If present, image properties were extracted successfully.
      * </pre>
      *
      * <code>.google.cloud.vision.v1p3beta1.ImageProperties image_properties_annotation = 8;</code>
      */
-    public Builder setImagePropertiesAnnotation(com.google.cloud.vision.v1p3beta1.ImageProperties value) {
+    public Builder setImagePropertiesAnnotation(
+        com.google.cloud.vision.v1p3beta1.ImageProperties value) {
       if (imagePropertiesAnnotationBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -3989,6 +4663,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If present, image properties were extracted successfully.
      * </pre>
@@ -4007,17 +4683,23 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If present, image properties were extracted successfully.
      * </pre>
      *
      * <code>.google.cloud.vision.v1p3beta1.ImageProperties image_properties_annotation = 8;</code>
      */
-    public Builder mergeImagePropertiesAnnotation(com.google.cloud.vision.v1p3beta1.ImageProperties value) {
+    public Builder mergeImagePropertiesAnnotation(
+        com.google.cloud.vision.v1p3beta1.ImageProperties value) {
       if (imagePropertiesAnnotationBuilder_ == null) {
         if (imagePropertiesAnnotation_ != null) {
           imagePropertiesAnnotation_ =
-            com.google.cloud.vision.v1p3beta1.ImageProperties.newBuilder(imagePropertiesAnnotation_).mergeFrom(value).buildPartial();
+              com.google.cloud.vision.v1p3beta1.ImageProperties.newBuilder(
+                      imagePropertiesAnnotation_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           imagePropertiesAnnotation_ = value;
         }
@@ -4029,6 +4711,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If present, image properties were extracted successfully.
      * </pre>
@@ -4047,33 +4731,42 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If present, image properties were extracted successfully.
      * </pre>
      *
      * <code>.google.cloud.vision.v1p3beta1.ImageProperties image_properties_annotation = 8;</code>
      */
-    public com.google.cloud.vision.v1p3beta1.ImageProperties.Builder getImagePropertiesAnnotationBuilder() {
-      
+    public com.google.cloud.vision.v1p3beta1.ImageProperties.Builder
+        getImagePropertiesAnnotationBuilder() {
+
       onChanged();
       return getImagePropertiesAnnotationFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * If present, image properties were extracted successfully.
      * </pre>
      *
      * <code>.google.cloud.vision.v1p3beta1.ImageProperties image_properties_annotation = 8;</code>
      */
-    public com.google.cloud.vision.v1p3beta1.ImagePropertiesOrBuilder getImagePropertiesAnnotationOrBuilder() {
+    public com.google.cloud.vision.v1p3beta1.ImagePropertiesOrBuilder
+        getImagePropertiesAnnotationOrBuilder() {
       if (imagePropertiesAnnotationBuilder_ != null) {
         return imagePropertiesAnnotationBuilder_.getMessageOrBuilder();
       } else {
-        return imagePropertiesAnnotation_ == null ?
-            com.google.cloud.vision.v1p3beta1.ImageProperties.getDefaultInstance() : imagePropertiesAnnotation_;
+        return imagePropertiesAnnotation_ == null
+            ? com.google.cloud.vision.v1p3beta1.ImageProperties.getDefaultInstance()
+            : imagePropertiesAnnotation_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * If present, image properties were extracted successfully.
      * </pre>
@@ -4081,14 +4774,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.vision.v1p3beta1.ImageProperties image_properties_annotation = 8;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.vision.v1p3beta1.ImageProperties, com.google.cloud.vision.v1p3beta1.ImageProperties.Builder, com.google.cloud.vision.v1p3beta1.ImagePropertiesOrBuilder> 
+            com.google.cloud.vision.v1p3beta1.ImageProperties,
+            com.google.cloud.vision.v1p3beta1.ImageProperties.Builder,
+            com.google.cloud.vision.v1p3beta1.ImagePropertiesOrBuilder>
         getImagePropertiesAnnotationFieldBuilder() {
       if (imagePropertiesAnnotationBuilder_ == null) {
-        imagePropertiesAnnotationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.vision.v1p3beta1.ImageProperties, com.google.cloud.vision.v1p3beta1.ImageProperties.Builder, com.google.cloud.vision.v1p3beta1.ImagePropertiesOrBuilder>(
-                getImagePropertiesAnnotation(),
-                getParentForChildren(),
-                isClean());
+        imagePropertiesAnnotationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.vision.v1p3beta1.ImageProperties,
+                com.google.cloud.vision.v1p3beta1.ImageProperties.Builder,
+                com.google.cloud.vision.v1p3beta1.ImagePropertiesOrBuilder>(
+                getImagePropertiesAnnotation(), getParentForChildren(), isClean());
         imagePropertiesAnnotation_ = null;
       }
       return imagePropertiesAnnotationBuilder_;
@@ -4096,8 +4792,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.cloud.vision.v1p3beta1.CropHintsAnnotation cropHintsAnnotation_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.vision.v1p3beta1.CropHintsAnnotation, com.google.cloud.vision.v1p3beta1.CropHintsAnnotation.Builder, com.google.cloud.vision.v1p3beta1.CropHintsAnnotationOrBuilder> cropHintsAnnotationBuilder_;
+            com.google.cloud.vision.v1p3beta1.CropHintsAnnotation,
+            com.google.cloud.vision.v1p3beta1.CropHintsAnnotation.Builder,
+            com.google.cloud.vision.v1p3beta1.CropHintsAnnotationOrBuilder>
+        cropHintsAnnotationBuilder_;
     /**
+     *
+     *
      * <pre>
      * If present, crop hints have completed successfully.
      * </pre>
@@ -4108,6 +4809,8 @@ private static final long serialVersionUID = 0L;
       return cropHintsAnnotationBuilder_ != null || cropHintsAnnotation_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * If present, crop hints have completed successfully.
      * </pre>
@@ -4116,19 +4819,24 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.vision.v1p3beta1.CropHintsAnnotation getCropHintsAnnotation() {
       if (cropHintsAnnotationBuilder_ == null) {
-        return cropHintsAnnotation_ == null ? com.google.cloud.vision.v1p3beta1.CropHintsAnnotation.getDefaultInstance() : cropHintsAnnotation_;
+        return cropHintsAnnotation_ == null
+            ? com.google.cloud.vision.v1p3beta1.CropHintsAnnotation.getDefaultInstance()
+            : cropHintsAnnotation_;
       } else {
         return cropHintsAnnotationBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * If present, crop hints have completed successfully.
      * </pre>
      *
      * <code>.google.cloud.vision.v1p3beta1.CropHintsAnnotation crop_hints_annotation = 11;</code>
      */
-    public Builder setCropHintsAnnotation(com.google.cloud.vision.v1p3beta1.CropHintsAnnotation value) {
+    public Builder setCropHintsAnnotation(
+        com.google.cloud.vision.v1p3beta1.CropHintsAnnotation value) {
       if (cropHintsAnnotationBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -4142,6 +4850,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If present, crop hints have completed successfully.
      * </pre>
@@ -4160,17 +4870,22 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If present, crop hints have completed successfully.
      * </pre>
      *
      * <code>.google.cloud.vision.v1p3beta1.CropHintsAnnotation crop_hints_annotation = 11;</code>
      */
-    public Builder mergeCropHintsAnnotation(com.google.cloud.vision.v1p3beta1.CropHintsAnnotation value) {
+    public Builder mergeCropHintsAnnotation(
+        com.google.cloud.vision.v1p3beta1.CropHintsAnnotation value) {
       if (cropHintsAnnotationBuilder_ == null) {
         if (cropHintsAnnotation_ != null) {
           cropHintsAnnotation_ =
-            com.google.cloud.vision.v1p3beta1.CropHintsAnnotation.newBuilder(cropHintsAnnotation_).mergeFrom(value).buildPartial();
+              com.google.cloud.vision.v1p3beta1.CropHintsAnnotation.newBuilder(cropHintsAnnotation_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           cropHintsAnnotation_ = value;
         }
@@ -4182,6 +4897,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If present, crop hints have completed successfully.
      * </pre>
@@ -4200,33 +4917,42 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If present, crop hints have completed successfully.
      * </pre>
      *
      * <code>.google.cloud.vision.v1p3beta1.CropHintsAnnotation crop_hints_annotation = 11;</code>
      */
-    public com.google.cloud.vision.v1p3beta1.CropHintsAnnotation.Builder getCropHintsAnnotationBuilder() {
-      
+    public com.google.cloud.vision.v1p3beta1.CropHintsAnnotation.Builder
+        getCropHintsAnnotationBuilder() {
+
       onChanged();
       return getCropHintsAnnotationFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * If present, crop hints have completed successfully.
      * </pre>
      *
      * <code>.google.cloud.vision.v1p3beta1.CropHintsAnnotation crop_hints_annotation = 11;</code>
      */
-    public com.google.cloud.vision.v1p3beta1.CropHintsAnnotationOrBuilder getCropHintsAnnotationOrBuilder() {
+    public com.google.cloud.vision.v1p3beta1.CropHintsAnnotationOrBuilder
+        getCropHintsAnnotationOrBuilder() {
       if (cropHintsAnnotationBuilder_ != null) {
         return cropHintsAnnotationBuilder_.getMessageOrBuilder();
       } else {
-        return cropHintsAnnotation_ == null ?
-            com.google.cloud.vision.v1p3beta1.CropHintsAnnotation.getDefaultInstance() : cropHintsAnnotation_;
+        return cropHintsAnnotation_ == null
+            ? com.google.cloud.vision.v1p3beta1.CropHintsAnnotation.getDefaultInstance()
+            : cropHintsAnnotation_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * If present, crop hints have completed successfully.
      * </pre>
@@ -4234,14 +4960,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.vision.v1p3beta1.CropHintsAnnotation crop_hints_annotation = 11;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.vision.v1p3beta1.CropHintsAnnotation, com.google.cloud.vision.v1p3beta1.CropHintsAnnotation.Builder, com.google.cloud.vision.v1p3beta1.CropHintsAnnotationOrBuilder> 
+            com.google.cloud.vision.v1p3beta1.CropHintsAnnotation,
+            com.google.cloud.vision.v1p3beta1.CropHintsAnnotation.Builder,
+            com.google.cloud.vision.v1p3beta1.CropHintsAnnotationOrBuilder>
         getCropHintsAnnotationFieldBuilder() {
       if (cropHintsAnnotationBuilder_ == null) {
-        cropHintsAnnotationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.vision.v1p3beta1.CropHintsAnnotation, com.google.cloud.vision.v1p3beta1.CropHintsAnnotation.Builder, com.google.cloud.vision.v1p3beta1.CropHintsAnnotationOrBuilder>(
-                getCropHintsAnnotation(),
-                getParentForChildren(),
-                isClean());
+        cropHintsAnnotationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.vision.v1p3beta1.CropHintsAnnotation,
+                com.google.cloud.vision.v1p3beta1.CropHintsAnnotation.Builder,
+                com.google.cloud.vision.v1p3beta1.CropHintsAnnotationOrBuilder>(
+                getCropHintsAnnotation(), getParentForChildren(), isClean());
         cropHintsAnnotation_ = null;
       }
       return cropHintsAnnotationBuilder_;
@@ -4249,8 +4978,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.cloud.vision.v1p3beta1.WebDetection webDetection_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.vision.v1p3beta1.WebDetection, com.google.cloud.vision.v1p3beta1.WebDetection.Builder, com.google.cloud.vision.v1p3beta1.WebDetectionOrBuilder> webDetectionBuilder_;
+            com.google.cloud.vision.v1p3beta1.WebDetection,
+            com.google.cloud.vision.v1p3beta1.WebDetection.Builder,
+            com.google.cloud.vision.v1p3beta1.WebDetectionOrBuilder>
+        webDetectionBuilder_;
     /**
+     *
+     *
      * <pre>
      * If present, web detection has completed successfully.
      * </pre>
@@ -4261,6 +4995,8 @@ private static final long serialVersionUID = 0L;
       return webDetectionBuilder_ != null || webDetection_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * If present, web detection has completed successfully.
      * </pre>
@@ -4269,12 +5005,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.vision.v1p3beta1.WebDetection getWebDetection() {
       if (webDetectionBuilder_ == null) {
-        return webDetection_ == null ? com.google.cloud.vision.v1p3beta1.WebDetection.getDefaultInstance() : webDetection_;
+        return webDetection_ == null
+            ? com.google.cloud.vision.v1p3beta1.WebDetection.getDefaultInstance()
+            : webDetection_;
       } else {
         return webDetectionBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * If present, web detection has completed successfully.
      * </pre>
@@ -4295,6 +5035,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If present, web detection has completed successfully.
      * </pre>
@@ -4313,6 +5055,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If present, web detection has completed successfully.
      * </pre>
@@ -4323,7 +5067,9 @@ private static final long serialVersionUID = 0L;
       if (webDetectionBuilder_ == null) {
         if (webDetection_ != null) {
           webDetection_ =
-            com.google.cloud.vision.v1p3beta1.WebDetection.newBuilder(webDetection_).mergeFrom(value).buildPartial();
+              com.google.cloud.vision.v1p3beta1.WebDetection.newBuilder(webDetection_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           webDetection_ = value;
         }
@@ -4335,6 +5081,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If present, web detection has completed successfully.
      * </pre>
@@ -4353,6 +5101,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If present, web detection has completed successfully.
      * </pre>
@@ -4360,11 +5110,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.vision.v1p3beta1.WebDetection web_detection = 13;</code>
      */
     public com.google.cloud.vision.v1p3beta1.WebDetection.Builder getWebDetectionBuilder() {
-      
+
       onChanged();
       return getWebDetectionFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * If present, web detection has completed successfully.
      * </pre>
@@ -4375,11 +5127,14 @@ private static final long serialVersionUID = 0L;
       if (webDetectionBuilder_ != null) {
         return webDetectionBuilder_.getMessageOrBuilder();
       } else {
-        return webDetection_ == null ?
-            com.google.cloud.vision.v1p3beta1.WebDetection.getDefaultInstance() : webDetection_;
+        return webDetection_ == null
+            ? com.google.cloud.vision.v1p3beta1.WebDetection.getDefaultInstance()
+            : webDetection_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * If present, web detection has completed successfully.
      * </pre>
@@ -4387,14 +5142,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.vision.v1p3beta1.WebDetection web_detection = 13;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.vision.v1p3beta1.WebDetection, com.google.cloud.vision.v1p3beta1.WebDetection.Builder, com.google.cloud.vision.v1p3beta1.WebDetectionOrBuilder> 
+            com.google.cloud.vision.v1p3beta1.WebDetection,
+            com.google.cloud.vision.v1p3beta1.WebDetection.Builder,
+            com.google.cloud.vision.v1p3beta1.WebDetectionOrBuilder>
         getWebDetectionFieldBuilder() {
       if (webDetectionBuilder_ == null) {
-        webDetectionBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.vision.v1p3beta1.WebDetection, com.google.cloud.vision.v1p3beta1.WebDetection.Builder, com.google.cloud.vision.v1p3beta1.WebDetectionOrBuilder>(
-                getWebDetection(),
-                getParentForChildren(),
-                isClean());
+        webDetectionBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.vision.v1p3beta1.WebDetection,
+                com.google.cloud.vision.v1p3beta1.WebDetection.Builder,
+                com.google.cloud.vision.v1p3beta1.WebDetectionOrBuilder>(
+                getWebDetection(), getParentForChildren(), isClean());
         webDetection_ = null;
       }
       return webDetectionBuilder_;
@@ -4402,8 +5160,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.cloud.vision.v1p3beta1.ProductSearchResults productSearchResults_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.vision.v1p3beta1.ProductSearchResults, com.google.cloud.vision.v1p3beta1.ProductSearchResults.Builder, com.google.cloud.vision.v1p3beta1.ProductSearchResultsOrBuilder> productSearchResultsBuilder_;
+            com.google.cloud.vision.v1p3beta1.ProductSearchResults,
+            com.google.cloud.vision.v1p3beta1.ProductSearchResults.Builder,
+            com.google.cloud.vision.v1p3beta1.ProductSearchResultsOrBuilder>
+        productSearchResultsBuilder_;
     /**
+     *
+     *
      * <pre>
      * If present, product search has completed successfully.
      * </pre>
@@ -4414,6 +5177,8 @@ private static final long serialVersionUID = 0L;
       return productSearchResultsBuilder_ != null || productSearchResults_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * If present, product search has completed successfully.
      * </pre>
@@ -4422,19 +5187,24 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.vision.v1p3beta1.ProductSearchResults getProductSearchResults() {
       if (productSearchResultsBuilder_ == null) {
-        return productSearchResults_ == null ? com.google.cloud.vision.v1p3beta1.ProductSearchResults.getDefaultInstance() : productSearchResults_;
+        return productSearchResults_ == null
+            ? com.google.cloud.vision.v1p3beta1.ProductSearchResults.getDefaultInstance()
+            : productSearchResults_;
       } else {
         return productSearchResultsBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * If present, product search has completed successfully.
      * </pre>
      *
      * <code>.google.cloud.vision.v1p3beta1.ProductSearchResults product_search_results = 14;</code>
      */
-    public Builder setProductSearchResults(com.google.cloud.vision.v1p3beta1.ProductSearchResults value) {
+    public Builder setProductSearchResults(
+        com.google.cloud.vision.v1p3beta1.ProductSearchResults value) {
       if (productSearchResultsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -4448,6 +5218,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If present, product search has completed successfully.
      * </pre>
@@ -4466,17 +5238,23 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If present, product search has completed successfully.
      * </pre>
      *
      * <code>.google.cloud.vision.v1p3beta1.ProductSearchResults product_search_results = 14;</code>
      */
-    public Builder mergeProductSearchResults(com.google.cloud.vision.v1p3beta1.ProductSearchResults value) {
+    public Builder mergeProductSearchResults(
+        com.google.cloud.vision.v1p3beta1.ProductSearchResults value) {
       if (productSearchResultsBuilder_ == null) {
         if (productSearchResults_ != null) {
           productSearchResults_ =
-            com.google.cloud.vision.v1p3beta1.ProductSearchResults.newBuilder(productSearchResults_).mergeFrom(value).buildPartial();
+              com.google.cloud.vision.v1p3beta1.ProductSearchResults.newBuilder(
+                      productSearchResults_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           productSearchResults_ = value;
         }
@@ -4488,6 +5266,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If present, product search has completed successfully.
      * </pre>
@@ -4506,33 +5286,42 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If present, product search has completed successfully.
      * </pre>
      *
      * <code>.google.cloud.vision.v1p3beta1.ProductSearchResults product_search_results = 14;</code>
      */
-    public com.google.cloud.vision.v1p3beta1.ProductSearchResults.Builder getProductSearchResultsBuilder() {
-      
+    public com.google.cloud.vision.v1p3beta1.ProductSearchResults.Builder
+        getProductSearchResultsBuilder() {
+
       onChanged();
       return getProductSearchResultsFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * If present, product search has completed successfully.
      * </pre>
      *
      * <code>.google.cloud.vision.v1p3beta1.ProductSearchResults product_search_results = 14;</code>
      */
-    public com.google.cloud.vision.v1p3beta1.ProductSearchResultsOrBuilder getProductSearchResultsOrBuilder() {
+    public com.google.cloud.vision.v1p3beta1.ProductSearchResultsOrBuilder
+        getProductSearchResultsOrBuilder() {
       if (productSearchResultsBuilder_ != null) {
         return productSearchResultsBuilder_.getMessageOrBuilder();
       } else {
-        return productSearchResults_ == null ?
-            com.google.cloud.vision.v1p3beta1.ProductSearchResults.getDefaultInstance() : productSearchResults_;
+        return productSearchResults_ == null
+            ? com.google.cloud.vision.v1p3beta1.ProductSearchResults.getDefaultInstance()
+            : productSearchResults_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * If present, product search has completed successfully.
      * </pre>
@@ -4540,14 +5329,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.vision.v1p3beta1.ProductSearchResults product_search_results = 14;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.vision.v1p3beta1.ProductSearchResults, com.google.cloud.vision.v1p3beta1.ProductSearchResults.Builder, com.google.cloud.vision.v1p3beta1.ProductSearchResultsOrBuilder> 
+            com.google.cloud.vision.v1p3beta1.ProductSearchResults,
+            com.google.cloud.vision.v1p3beta1.ProductSearchResults.Builder,
+            com.google.cloud.vision.v1p3beta1.ProductSearchResultsOrBuilder>
         getProductSearchResultsFieldBuilder() {
       if (productSearchResultsBuilder_ == null) {
-        productSearchResultsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.vision.v1p3beta1.ProductSearchResults, com.google.cloud.vision.v1p3beta1.ProductSearchResults.Builder, com.google.cloud.vision.v1p3beta1.ProductSearchResultsOrBuilder>(
-                getProductSearchResults(),
-                getParentForChildren(),
-                isClean());
+        productSearchResultsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.vision.v1p3beta1.ProductSearchResults,
+                com.google.cloud.vision.v1p3beta1.ProductSearchResults.Builder,
+                com.google.cloud.vision.v1p3beta1.ProductSearchResultsOrBuilder>(
+                getProductSearchResults(), getParentForChildren(), isClean());
         productSearchResults_ = null;
       }
       return productSearchResultsBuilder_;
@@ -4555,8 +5347,11 @@ private static final long serialVersionUID = 0L;
 
     private com.google.rpc.Status error_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder> errorBuilder_;
+            com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
+        errorBuilder_;
     /**
+     *
+     *
      * <pre>
      * If set, represents the error message for the operation.
      * Note that filled-in image annotations are guaranteed to be
@@ -4569,6 +5364,8 @@ private static final long serialVersionUID = 0L;
       return errorBuilder_ != null || error_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * If set, represents the error message for the operation.
      * Note that filled-in image annotations are guaranteed to be
@@ -4585,6 +5382,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * If set, represents the error message for the operation.
      * Note that filled-in image annotations are guaranteed to be
@@ -4607,6 +5406,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If set, represents the error message for the operation.
      * Note that filled-in image annotations are guaranteed to be
@@ -4615,8 +5416,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.rpc.Status error = 9;</code>
      */
-    public Builder setError(
-        com.google.rpc.Status.Builder builderForValue) {
+    public Builder setError(com.google.rpc.Status.Builder builderForValue) {
       if (errorBuilder_ == null) {
         error_ = builderForValue.build();
         onChanged();
@@ -4627,6 +5427,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If set, represents the error message for the operation.
      * Note that filled-in image annotations are guaranteed to be
@@ -4638,8 +5440,7 @@ private static final long serialVersionUID = 0L;
     public Builder mergeError(com.google.rpc.Status value) {
       if (errorBuilder_ == null) {
         if (error_ != null) {
-          error_ =
-            com.google.rpc.Status.newBuilder(error_).mergeFrom(value).buildPartial();
+          error_ = com.google.rpc.Status.newBuilder(error_).mergeFrom(value).buildPartial();
         } else {
           error_ = value;
         }
@@ -4651,6 +5452,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If set, represents the error message for the operation.
      * Note that filled-in image annotations are guaranteed to be
@@ -4671,6 +5474,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If set, represents the error message for the operation.
      * Note that filled-in image annotations are guaranteed to be
@@ -4680,11 +5485,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.rpc.Status error = 9;</code>
      */
     public com.google.rpc.Status.Builder getErrorBuilder() {
-      
+
       onChanged();
       return getErrorFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * If set, represents the error message for the operation.
      * Note that filled-in image annotations are guaranteed to be
@@ -4697,11 +5504,12 @@ private static final long serialVersionUID = 0L;
       if (errorBuilder_ != null) {
         return errorBuilder_.getMessageOrBuilder();
       } else {
-        return error_ == null ?
-            com.google.rpc.Status.getDefaultInstance() : error_;
+        return error_ == null ? com.google.rpc.Status.getDefaultInstance() : error_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * If set, represents the error message for the operation.
      * Note that filled-in image annotations are guaranteed to be
@@ -4711,14 +5519,14 @@ private static final long serialVersionUID = 0L;
      * <code>.google.rpc.Status error = 9;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder> 
+            com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>
         getErrorFieldBuilder() {
       if (errorBuilder_ == null) {
-        errorBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.rpc.Status, com.google.rpc.Status.Builder, com.google.rpc.StatusOrBuilder>(
-                getError(),
-                getParentForChildren(),
-                isClean());
+        errorBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.rpc.Status,
+                com.google.rpc.Status.Builder,
+                com.google.rpc.StatusOrBuilder>(getError(), getParentForChildren(), isClean());
         error_ = null;
       }
       return errorBuilder_;
@@ -4726,8 +5534,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.cloud.vision.v1p3beta1.ImageAnnotationContext context_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.vision.v1p3beta1.ImageAnnotationContext, com.google.cloud.vision.v1p3beta1.ImageAnnotationContext.Builder, com.google.cloud.vision.v1p3beta1.ImageAnnotationContextOrBuilder> contextBuilder_;
+            com.google.cloud.vision.v1p3beta1.ImageAnnotationContext,
+            com.google.cloud.vision.v1p3beta1.ImageAnnotationContext.Builder,
+            com.google.cloud.vision.v1p3beta1.ImageAnnotationContextOrBuilder>
+        contextBuilder_;
     /**
+     *
+     *
      * <pre>
      * If present, contextual information is needed to understand where this image
      * comes from.
@@ -4739,6 +5552,8 @@ private static final long serialVersionUID = 0L;
       return contextBuilder_ != null || context_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * If present, contextual information is needed to understand where this image
      * comes from.
@@ -4748,12 +5563,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.vision.v1p3beta1.ImageAnnotationContext getContext() {
       if (contextBuilder_ == null) {
-        return context_ == null ? com.google.cloud.vision.v1p3beta1.ImageAnnotationContext.getDefaultInstance() : context_;
+        return context_ == null
+            ? com.google.cloud.vision.v1p3beta1.ImageAnnotationContext.getDefaultInstance()
+            : context_;
       } else {
         return contextBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * If present, contextual information is needed to understand where this image
      * comes from.
@@ -4775,6 +5594,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If present, contextual information is needed to understand where this image
      * comes from.
@@ -4794,6 +5615,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If present, contextual information is needed to understand where this image
      * comes from.
@@ -4805,7 +5628,9 @@ private static final long serialVersionUID = 0L;
       if (contextBuilder_ == null) {
         if (context_ != null) {
           context_ =
-            com.google.cloud.vision.v1p3beta1.ImageAnnotationContext.newBuilder(context_).mergeFrom(value).buildPartial();
+              com.google.cloud.vision.v1p3beta1.ImageAnnotationContext.newBuilder(context_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           context_ = value;
         }
@@ -4817,6 +5642,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If present, contextual information is needed to understand where this image
      * comes from.
@@ -4836,6 +5663,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If present, contextual information is needed to understand where this image
      * comes from.
@@ -4844,11 +5673,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.vision.v1p3beta1.ImageAnnotationContext context = 21;</code>
      */
     public com.google.cloud.vision.v1p3beta1.ImageAnnotationContext.Builder getContextBuilder() {
-      
+
       onChanged();
       return getContextFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * If present, contextual information is needed to understand where this image
      * comes from.
@@ -4860,11 +5691,14 @@ private static final long serialVersionUID = 0L;
       if (contextBuilder_ != null) {
         return contextBuilder_.getMessageOrBuilder();
       } else {
-        return context_ == null ?
-            com.google.cloud.vision.v1p3beta1.ImageAnnotationContext.getDefaultInstance() : context_;
+        return context_ == null
+            ? com.google.cloud.vision.v1p3beta1.ImageAnnotationContext.getDefaultInstance()
+            : context_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * If present, contextual information is needed to understand where this image
      * comes from.
@@ -4873,34 +5707,39 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.vision.v1p3beta1.ImageAnnotationContext context = 21;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.vision.v1p3beta1.ImageAnnotationContext, com.google.cloud.vision.v1p3beta1.ImageAnnotationContext.Builder, com.google.cloud.vision.v1p3beta1.ImageAnnotationContextOrBuilder> 
+            com.google.cloud.vision.v1p3beta1.ImageAnnotationContext,
+            com.google.cloud.vision.v1p3beta1.ImageAnnotationContext.Builder,
+            com.google.cloud.vision.v1p3beta1.ImageAnnotationContextOrBuilder>
         getContextFieldBuilder() {
       if (contextBuilder_ == null) {
-        contextBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.vision.v1p3beta1.ImageAnnotationContext, com.google.cloud.vision.v1p3beta1.ImageAnnotationContext.Builder, com.google.cloud.vision.v1p3beta1.ImageAnnotationContextOrBuilder>(
-                getContext(),
-                getParentForChildren(),
-                isClean());
+        contextBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.vision.v1p3beta1.ImageAnnotationContext,
+                com.google.cloud.vision.v1p3beta1.ImageAnnotationContext.Builder,
+                com.google.cloud.vision.v1p3beta1.ImageAnnotationContextOrBuilder>(
+                getContext(), getParentForChildren(), isClean());
         context_ = null;
       }
       return contextBuilder_;
     }
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+
+    @java.lang.Override
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
     }
-
 
     // @@protoc_insertion_point(builder_scope:google.cloud.vision.v1p3beta1.AnnotateImageResponse)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.vision.v1p3beta1.AnnotateImageResponse)
   private static final com.google.cloud.vision.v1p3beta1.AnnotateImageResponse DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.vision.v1p3beta1.AnnotateImageResponse();
   }
@@ -4909,15 +5748,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<AnnotateImageResponse>
-      PARSER = new com.google.protobuf.AbstractParser<AnnotateImageResponse>() {
-    public AnnotateImageResponse parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-        return new AnnotateImageResponse(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<AnnotateImageResponse> PARSER =
+      new com.google.protobuf.AbstractParser<AnnotateImageResponse>() {
+        @java.lang.Override
+        public AnnotateImageResponse parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new AnnotateImageResponse(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<AnnotateImageResponse> parser() {
     return PARSER;
@@ -4928,9 +5768,8 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.cloud.vision.v1p3beta1.AnnotateImageResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

@@ -26,16 +26,15 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Provide functionality that should be added to the appropriate interfaces
- * via Java 8 default methods.
+ * Provide functionality that should be added to the appropriate interfaces via Java 8 default
+ * methods.
  */
 class DatastoreHelper {
 
-  private DatastoreHelper() {
-  }
+  private DatastoreHelper() {}
 
   static Key allocateId(Datastore service, IncompleteKey key) {
-    return service.allocateId(new IncompleteKey[]{key}).get(0);
+    return service.allocateId(new IncompleteKey[] {key}).get(0);
   }
 
   static Entity get(Transaction reader, Key key) {

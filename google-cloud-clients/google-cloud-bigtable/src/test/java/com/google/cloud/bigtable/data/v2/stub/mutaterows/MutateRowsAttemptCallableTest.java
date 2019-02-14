@@ -93,6 +93,28 @@ public class MutateRowsAttemptCallableTest {
   }
 
   @Test
+  public void testNoRpcTimeout() {
+    parentFuture.timedAttemptSettings =
+        parentFuture.timedAttemptSettings.toBuilder().setRpcTimeout(Duration.ZERO).build();
+
+    MutateRowsRequest request =
+        MutateRowsRequest.newBuilder().addEntries(Entry.getDefaultInstance()).build();
+
+    innerCallable.response.add(
+        MutateRowsResponse.newBuilder()
+            .addEntries(
+                MutateRowsResponse.Entry.newBuilder().setIndex(0).setStatus(OK_STATUS_PROTO))
+            .build());
+
+    MutateRowsAttemptCallable attemptCallable =
+        new MutateRowsAttemptCallable(innerCallable, request, callContext, retryCodes);
+    attemptCallable.setExternalFuture(parentFuture);
+    attemptCallable.call();
+
+    assertThat(innerCallable.lastContext.getTimeout()).isNull();
+  }
+
+  @Test
   public void mixedTest() {
     // Setup the request & response
     MutateRowsRequest request =
@@ -340,7 +362,7 @@ public class MutateRowsAttemptCallableTest {
   static class MockRetryingFuture extends AbstractApiFuture<Void> implements RetryingFuture<Void> {
     ApiFuture<Void> attemptFuture;
 
-    final TimedAttemptSettings timedAttemptSettings;
+    TimedAttemptSettings timedAttemptSettings;
 
     MockRetryingFuture() {
       this(Duration.ofSeconds(5));

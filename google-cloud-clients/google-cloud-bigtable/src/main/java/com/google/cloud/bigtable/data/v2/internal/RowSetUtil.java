@@ -50,9 +50,9 @@ public final class RowSetUtil {
   private RowSetUtil() {}
 
   /**
-   * Splits the provided {@link RowSet} along the provided splitPoint into 2 segments.
-   * The right segment will contain all keys that are strictly greater than the splitPoint and all
-   * {@link RowRange}s truncated to start right after the splitPoint.
+   * Splits the provided {@link RowSet} along the provided splitPoint into 2 segments. The right
+   * segment will contain all keys that are strictly greater than the splitPoint and all {@link
+   * RowRange}s truncated to start right after the splitPoint.
    */
   @Nonnull
   public static Split split(@Nonnull RowSet rowSet, @Nonnull ByteString splitPoint) {
@@ -285,9 +285,10 @@ public final class RowSetUtil {
    */
   @InternalApi
   @AutoValue
-  public static abstract class Split {
+  public abstract static class Split {
     @Nullable
     public abstract RowSet getLeft();
+
     @Nullable
     public abstract RowSet getRight();
 

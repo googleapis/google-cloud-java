@@ -17,7 +17,6 @@
 package com.google.cloud.spanner;
 
 import com.google.common.collect.ImmutableList;
-
 import java.io.Serializable;
 import java.util.Objects;
 

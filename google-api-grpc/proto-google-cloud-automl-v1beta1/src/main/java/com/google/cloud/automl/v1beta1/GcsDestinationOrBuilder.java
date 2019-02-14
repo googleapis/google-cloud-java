@@ -3,11 +3,14 @@
 
 package com.google.cloud.automl.v1beta1;
 
-public interface GcsDestinationOrBuilder extends
+public interface GcsDestinationOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.automl.v1beta1.GcsDestination)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. Google Cloud Storage URI to output directory, up to 2000
    * characters long.
@@ -21,6 +24,8 @@ public interface GcsDestinationOrBuilder extends
    */
   java.lang.String getOutputUriPrefix();
   /**
+   *
+   *
    * <pre>
    * Required. Google Cloud Storage URI to output directory, up to 2000
    * characters long.
@@ -32,6 +37,5 @@ public interface GcsDestinationOrBuilder extends
    *
    * <code>string output_uri_prefix = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getOutputUriPrefixBytes();
+  com.google.protobuf.ByteString getOutputUriPrefixBytes();
 }

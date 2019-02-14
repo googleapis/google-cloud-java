@@ -21,7 +21,6 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
 import com.google.cloud.compute.deprecated.DiskConfiguration.Type;
-
 import org.junit.Test;
 
 public class ImageDiskConfigurationTest {
@@ -41,19 +40,23 @@ public class ImageDiskConfigurationTest {
   public void testToBuilder() {
     compareImageDiskConfiguration(DISK_CONFIGURATION, DISK_CONFIGURATION.toBuilder().build());
     ImageId newImageId = ImageId.of("newProject", "newImage");
-    ImageDiskConfiguration diskConfiguration = DISK_CONFIGURATION.toBuilder()
-        .setSizeGb(24L)
-        .setSourceImage(newImageId)
-        .setSourceImageId("newImageId")
-        .build();
+    ImageDiskConfiguration diskConfiguration =
+        DISK_CONFIGURATION
+            .toBuilder()
+            .setSizeGb(24L)
+            .setSourceImage(newImageId)
+            .setSourceImageId("newImageId")
+            .build();
     assertEquals(24L, diskConfiguration.getSizeGb().longValue());
     assertEquals(newImageId, diskConfiguration.getSourceImage());
     assertEquals("newImageId", diskConfiguration.getSourceImageId());
-    diskConfiguration = diskConfiguration.toBuilder()
-        .setSizeGb(SIZE)
-        .setSourceImage(IMAGE)
-        .setSourceImageId(IMAGE_ID)
-        .build();
+    diskConfiguration =
+        diskConfiguration
+            .toBuilder()
+            .setSizeGb(SIZE)
+            .setSourceImage(IMAGE)
+            .setSourceImageId(IMAGE_ID)
+            .build();
     compareImageDiskConfiguration(DISK_CONFIGURATION, diskConfiguration);
   }
 
@@ -74,9 +77,10 @@ public class ImageDiskConfigurationTest {
 
   @Test
   public void testToAndFromPb() {
-    assertTrue(DiskConfiguration.fromPb(DISK_CONFIGURATION.toPb())
-        instanceof ImageDiskConfiguration);
-    compareImageDiskConfiguration(DISK_CONFIGURATION,
+    assertTrue(
+        DiskConfiguration.fromPb(DISK_CONFIGURATION.toPb()) instanceof ImageDiskConfiguration);
+    compareImageDiskConfiguration(
+        DISK_CONFIGURATION,
         DiskConfiguration.<ImageDiskConfiguration>fromPb(DISK_CONFIGURATION.toPb()));
   }
 
@@ -92,15 +96,17 @@ public class ImageDiskConfigurationTest {
 
   @Test
   public void testSetProjectId() {
-    ImageDiskConfiguration diskConfiguration = DISK_CONFIGURATION.toBuilder()
-        .setDiskType(DiskTypeId.of(DISK_TYPE.getZone(), DISK_TYPE.getType()))
-        .setSourceImage(ImageId.of(IMAGE.getImage()))
-        .build();
+    ImageDiskConfiguration diskConfiguration =
+        DISK_CONFIGURATION
+            .toBuilder()
+            .setDiskType(DiskTypeId.of(DISK_TYPE.getZone(), DISK_TYPE.getType()))
+            .setSourceImage(ImageId.of(IMAGE.getImage()))
+            .build();
     compareImageDiskConfiguration(DISK_CONFIGURATION, diskConfiguration.setProjectId("project"));
   }
 
-  private void compareImageDiskConfiguration(ImageDiskConfiguration expected,
-      ImageDiskConfiguration value) {
+  private void compareImageDiskConfiguration(
+      ImageDiskConfiguration expected, ImageDiskConfiguration value) {
     assertEquals(expected, value);
     assertEquals(expected.getDiskType(), value.getDiskType());
     assertEquals(expected.getSizeGb(), value.getSizeGb());

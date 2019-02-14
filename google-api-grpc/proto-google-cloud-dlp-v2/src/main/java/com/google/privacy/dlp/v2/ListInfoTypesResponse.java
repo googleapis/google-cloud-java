@@ -4,35 +4,41 @@
 package com.google.privacy.dlp.v2;
 
 /**
+ *
+ *
  * <pre>
  * Response to the ListInfoTypes request.
  * </pre>
  *
  * Protobuf type {@code google.privacy.dlp.v2.ListInfoTypesResponse}
  */
-public  final class ListInfoTypesResponse extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class ListInfoTypesResponse extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.privacy.dlp.v2.ListInfoTypesResponse)
     ListInfoTypesResponseOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use ListInfoTypesResponse.newBuilder() to construct.
   private ListInfoTypesResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private ListInfoTypesResponse() {
     infoTypes_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private ListInfoTypesResponse(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -44,29 +50,31 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          case 10:
+            {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                infoTypes_ =
+                    new java.util.ArrayList<com.google.privacy.dlp.v2.InfoTypeDescription>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              infoTypes_.add(
+                  input.readMessage(
+                      com.google.privacy.dlp.v2.InfoTypeDescription.parser(), extensionRegistry));
+              break;
             }
-            break;
-          }
-          case 10: {
-            if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-              infoTypes_ = new java.util.ArrayList<com.google.privacy.dlp.v2.InfoTypeDescription>();
-              mutable_bitField0_ |= 0x00000001;
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
             }
-            infoTypes_.add(
-                input.readMessage(com.google.privacy.dlp.v2.InfoTypeDescription.parser(), extensionRegistry));
-            break;
-          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
         infoTypes_ = java.util.Collections.unmodifiableList(infoTypes_);
@@ -75,21 +83,27 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_ListInfoTypesResponse_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.privacy.dlp.v2.DlpProto
+        .internal_static_google_privacy_dlp_v2_ListInfoTypesResponse_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_ListInfoTypesResponse_fieldAccessorTable
+    return com.google.privacy.dlp.v2.DlpProto
+        .internal_static_google_privacy_dlp_v2_ListInfoTypesResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.privacy.dlp.v2.ListInfoTypesResponse.class, com.google.privacy.dlp.v2.ListInfoTypesResponse.Builder.class);
+            com.google.privacy.dlp.v2.ListInfoTypesResponse.class,
+            com.google.privacy.dlp.v2.ListInfoTypesResponse.Builder.class);
   }
 
   public static final int INFO_TYPES_FIELD_NUMBER = 1;
   private java.util.List<com.google.privacy.dlp.v2.InfoTypeDescription> infoTypes_;
   /**
+   *
+   *
    * <pre>
    * Set of sensitive infoTypes.
    * </pre>
@@ -100,17 +114,21 @@ private static final long serialVersionUID = 0L;
     return infoTypes_;
   }
   /**
+   *
+   *
    * <pre>
    * Set of sensitive infoTypes.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.InfoTypeDescription info_types = 1;</code>
    */
-  public java.util.List<? extends com.google.privacy.dlp.v2.InfoTypeDescriptionOrBuilder> 
+  public java.util.List<? extends com.google.privacy.dlp.v2.InfoTypeDescriptionOrBuilder>
       getInfoTypesOrBuilderList() {
     return infoTypes_;
   }
   /**
+   *
+   *
    * <pre>
    * Set of sensitive infoTypes.
    * </pre>
@@ -121,6 +139,8 @@ private static final long serialVersionUID = 0L;
     return infoTypes_.size();
   }
   /**
+   *
+   *
    * <pre>
    * Set of sensitive infoTypes.
    * </pre>
@@ -131,18 +151,21 @@ private static final long serialVersionUID = 0L;
     return infoTypes_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * Set of sensitive infoTypes.
    * </pre>
    *
    * <code>repeated .google.privacy.dlp.v2.InfoTypeDescription info_types = 1;</code>
    */
-  public com.google.privacy.dlp.v2.InfoTypeDescriptionOrBuilder getInfoTypesOrBuilder(
-      int index) {
+  public com.google.privacy.dlp.v2.InfoTypeDescriptionOrBuilder getInfoTypesOrBuilder(int index) {
     return infoTypes_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
+
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -152,22 +175,22 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  @java.lang.Override
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     for (int i = 0; i < infoTypes_.size(); i++) {
       output.writeMessage(1, infoTypes_.get(i));
     }
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
 
     size = 0;
     for (int i = 0; i < infoTypes_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, infoTypes_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, infoTypes_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -177,16 +200,16 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.privacy.dlp.v2.ListInfoTypesResponse)) {
       return super.equals(obj);
     }
-    com.google.privacy.dlp.v2.ListInfoTypesResponse other = (com.google.privacy.dlp.v2.ListInfoTypesResponse) obj;
+    com.google.privacy.dlp.v2.ListInfoTypesResponse other =
+        (com.google.privacy.dlp.v2.ListInfoTypesResponse) obj;
 
     boolean result = true;
-    result = result && getInfoTypesList()
-        .equals(other.getInfoTypesList());
+    result = result && getInfoTypesList().equals(other.getInfoTypesList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -207,115 +230,127 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.privacy.dlp.v2.ListInfoTypesResponse parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.privacy.dlp.v2.ListInfoTypesResponse parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.privacy.dlp.v2.ListInfoTypesResponse parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.privacy.dlp.v2.ListInfoTypesResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.privacy.dlp.v2.ListInfoTypesResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.privacy.dlp.v2.ListInfoTypesResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.privacy.dlp.v2.ListInfoTypesResponse parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.privacy.dlp.v2.ListInfoTypesResponse parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.privacy.dlp.v2.ListInfoTypesResponse parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.privacy.dlp.v2.ListInfoTypesResponse parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
+
   public static com.google.privacy.dlp.v2.ListInfoTypesResponse parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.privacy.dlp.v2.ListInfoTypesResponse parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.privacy.dlp.v2.ListInfoTypesResponse parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.privacy.dlp.v2.ListInfoTypesResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  public Builder newBuilderForType() { return newBuilder(); }
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-  public static Builder newBuilder(com.google.privacy.dlp.v2.ListInfoTypesResponse prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+
+  public static Builder newBuilder(com.google.privacy.dlp.v2.ListInfoTypesResponse prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+
+  @java.lang.Override
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Response to the ListInfoTypes request.
    * </pre>
    *
    * Protobuf type {@code google.privacy.dlp.v2.ListInfoTypesResponse}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.privacy.dlp.v2.ListInfoTypesResponse)
       com.google.privacy.dlp.v2.ListInfoTypesResponseOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_ListInfoTypesResponse_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_ListInfoTypesResponse_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_ListInfoTypesResponse_fieldAccessorTable
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_ListInfoTypesResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.privacy.dlp.v2.ListInfoTypesResponse.class, com.google.privacy.dlp.v2.ListInfoTypesResponse.Builder.class);
+              com.google.privacy.dlp.v2.ListInfoTypesResponse.class,
+              com.google.privacy.dlp.v2.ListInfoTypesResponse.Builder.class);
     }
 
     // Construct using com.google.privacy.dlp.v2.ListInfoTypesResponse.newBuilder()
@@ -323,17 +358,18 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getInfoTypesFieldBuilder();
       }
     }
+
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       if (infoTypesBuilder_ == null) {
@@ -345,15 +381,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.privacy.dlp.v2.DlpProto.internal_static_google_privacy_dlp_v2_ListInfoTypesResponse_descriptor;
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.privacy.dlp.v2.DlpProto
+          .internal_static_google_privacy_dlp_v2_ListInfoTypesResponse_descriptor;
     }
 
+    @java.lang.Override
     public com.google.privacy.dlp.v2.ListInfoTypesResponse getDefaultInstanceForType() {
       return com.google.privacy.dlp.v2.ListInfoTypesResponse.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.privacy.dlp.v2.ListInfoTypesResponse build() {
       com.google.privacy.dlp.v2.ListInfoTypesResponse result = buildPartial();
       if (!result.isInitialized()) {
@@ -362,8 +401,10 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.privacy.dlp.v2.ListInfoTypesResponse buildPartial() {
-      com.google.privacy.dlp.v2.ListInfoTypesResponse result = new com.google.privacy.dlp.v2.ListInfoTypesResponse(this);
+      com.google.privacy.dlp.v2.ListInfoTypesResponse result =
+          new com.google.privacy.dlp.v2.ListInfoTypesResponse(this);
       int from_bitField0_ = bitField0_;
       if (infoTypesBuilder_ == null) {
         if (((bitField0_ & 0x00000001) == 0x00000001)) {
@@ -378,35 +419,43 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+
+    @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+    @java.lang.Override
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+    @java.lang.Override
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
+    @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
+    @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.privacy.dlp.v2.ListInfoTypesResponse) {
-        return mergeFrom((com.google.privacy.dlp.v2.ListInfoTypesResponse)other);
+        return mergeFrom((com.google.privacy.dlp.v2.ListInfoTypesResponse) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -414,7 +463,8 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.privacy.dlp.v2.ListInfoTypesResponse other) {
-      if (other == com.google.privacy.dlp.v2.ListInfoTypesResponse.getDefaultInstance()) return this;
+      if (other == com.google.privacy.dlp.v2.ListInfoTypesResponse.getDefaultInstance())
+        return this;
       if (infoTypesBuilder_ == null) {
         if (!other.infoTypes_.isEmpty()) {
           if (infoTypes_.isEmpty()) {
@@ -433,9 +483,10 @@ private static final long serialVersionUID = 0L;
             infoTypesBuilder_ = null;
             infoTypes_ = other.infoTypes_;
             bitField0_ = (bitField0_ & ~0x00000001);
-            infoTypesBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getInfoTypesFieldBuilder() : null;
+            infoTypesBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getInfoTypesFieldBuilder()
+                    : null;
           } else {
             infoTypesBuilder_.addAllMessages(other.infoTypes_);
           }
@@ -446,10 +497,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -467,21 +520,29 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private java.util.List<com.google.privacy.dlp.v2.InfoTypeDescription> infoTypes_ =
-      java.util.Collections.emptyList();
+        java.util.Collections.emptyList();
+
     private void ensureInfoTypesIsMutable() {
       if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-        infoTypes_ = new java.util.ArrayList<com.google.privacy.dlp.v2.InfoTypeDescription>(infoTypes_);
+        infoTypes_ =
+            new java.util.ArrayList<com.google.privacy.dlp.v2.InfoTypeDescription>(infoTypes_);
         bitField0_ |= 0x00000001;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.privacy.dlp.v2.InfoTypeDescription, com.google.privacy.dlp.v2.InfoTypeDescription.Builder, com.google.privacy.dlp.v2.InfoTypeDescriptionOrBuilder> infoTypesBuilder_;
+            com.google.privacy.dlp.v2.InfoTypeDescription,
+            com.google.privacy.dlp.v2.InfoTypeDescription.Builder,
+            com.google.privacy.dlp.v2.InfoTypeDescriptionOrBuilder>
+        infoTypesBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * Set of sensitive infoTypes.
      * </pre>
@@ -496,6 +557,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Set of sensitive infoTypes.
      * </pre>
@@ -510,6 +573,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Set of sensitive infoTypes.
      * </pre>
@@ -524,14 +589,15 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Set of sensitive infoTypes.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.InfoTypeDescription info_types = 1;</code>
      */
-    public Builder setInfoTypes(
-        int index, com.google.privacy.dlp.v2.InfoTypeDescription value) {
+    public Builder setInfoTypes(int index, com.google.privacy.dlp.v2.InfoTypeDescription value) {
       if (infoTypesBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -545,6 +611,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Set of sensitive infoTypes.
      * </pre>
@@ -563,6 +631,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Set of sensitive infoTypes.
      * </pre>
@@ -583,14 +653,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Set of sensitive infoTypes.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.InfoTypeDescription info_types = 1;</code>
      */
-    public Builder addInfoTypes(
-        int index, com.google.privacy.dlp.v2.InfoTypeDescription value) {
+    public Builder addInfoTypes(int index, com.google.privacy.dlp.v2.InfoTypeDescription value) {
       if (infoTypesBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -604,6 +675,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Set of sensitive infoTypes.
      * </pre>
@@ -622,6 +695,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Set of sensitive infoTypes.
      * </pre>
@@ -640,6 +715,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Set of sensitive infoTypes.
      * </pre>
@@ -650,8 +727,7 @@ private static final long serialVersionUID = 0L;
         java.lang.Iterable<? extends com.google.privacy.dlp.v2.InfoTypeDescription> values) {
       if (infoTypesBuilder_ == null) {
         ensureInfoTypesIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, infoTypes_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, infoTypes_);
         onChanged();
       } else {
         infoTypesBuilder_.addAllMessages(values);
@@ -659,6 +735,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Set of sensitive infoTypes.
      * </pre>
@@ -676,6 +754,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Set of sensitive infoTypes.
      * </pre>
@@ -693,39 +773,44 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Set of sensitive infoTypes.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.InfoTypeDescription info_types = 1;</code>
      */
-    public com.google.privacy.dlp.v2.InfoTypeDescription.Builder getInfoTypesBuilder(
-        int index) {
+    public com.google.privacy.dlp.v2.InfoTypeDescription.Builder getInfoTypesBuilder(int index) {
       return getInfoTypesFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * Set of sensitive infoTypes.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.InfoTypeDescription info_types = 1;</code>
      */
-    public com.google.privacy.dlp.v2.InfoTypeDescriptionOrBuilder getInfoTypesOrBuilder(
-        int index) {
+    public com.google.privacy.dlp.v2.InfoTypeDescriptionOrBuilder getInfoTypesOrBuilder(int index) {
       if (infoTypesBuilder_ == null) {
-        return infoTypes_.get(index);  } else {
+        return infoTypes_.get(index);
+      } else {
         return infoTypesBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * Set of sensitive infoTypes.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.InfoTypeDescription info_types = 1;</code>
      */
-    public java.util.List<? extends com.google.privacy.dlp.v2.InfoTypeDescriptionOrBuilder> 
-         getInfoTypesOrBuilderList() {
+    public java.util.List<? extends com.google.privacy.dlp.v2.InfoTypeDescriptionOrBuilder>
+        getInfoTypesOrBuilderList() {
       if (infoTypesBuilder_ != null) {
         return infoTypesBuilder_.getMessageOrBuilderList();
       } else {
@@ -733,6 +818,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Set of sensitive infoTypes.
      * </pre>
@@ -740,38 +827,47 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.privacy.dlp.v2.InfoTypeDescription info_types = 1;</code>
      */
     public com.google.privacy.dlp.v2.InfoTypeDescription.Builder addInfoTypesBuilder() {
-      return getInfoTypesFieldBuilder().addBuilder(
-          com.google.privacy.dlp.v2.InfoTypeDescription.getDefaultInstance());
+      return getInfoTypesFieldBuilder()
+          .addBuilder(com.google.privacy.dlp.v2.InfoTypeDescription.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Set of sensitive infoTypes.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.InfoTypeDescription info_types = 1;</code>
      */
-    public com.google.privacy.dlp.v2.InfoTypeDescription.Builder addInfoTypesBuilder(
-        int index) {
-      return getInfoTypesFieldBuilder().addBuilder(
-          index, com.google.privacy.dlp.v2.InfoTypeDescription.getDefaultInstance());
+    public com.google.privacy.dlp.v2.InfoTypeDescription.Builder addInfoTypesBuilder(int index) {
+      return getInfoTypesFieldBuilder()
+          .addBuilder(index, com.google.privacy.dlp.v2.InfoTypeDescription.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Set of sensitive infoTypes.
      * </pre>
      *
      * <code>repeated .google.privacy.dlp.v2.InfoTypeDescription info_types = 1;</code>
      */
-    public java.util.List<com.google.privacy.dlp.v2.InfoTypeDescription.Builder> 
-         getInfoTypesBuilderList() {
+    public java.util.List<com.google.privacy.dlp.v2.InfoTypeDescription.Builder>
+        getInfoTypesBuilderList() {
       return getInfoTypesFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.privacy.dlp.v2.InfoTypeDescription, com.google.privacy.dlp.v2.InfoTypeDescription.Builder, com.google.privacy.dlp.v2.InfoTypeDescriptionOrBuilder> 
+            com.google.privacy.dlp.v2.InfoTypeDescription,
+            com.google.privacy.dlp.v2.InfoTypeDescription.Builder,
+            com.google.privacy.dlp.v2.InfoTypeDescriptionOrBuilder>
         getInfoTypesFieldBuilder() {
       if (infoTypesBuilder_ == null) {
-        infoTypesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.privacy.dlp.v2.InfoTypeDescription, com.google.privacy.dlp.v2.InfoTypeDescription.Builder, com.google.privacy.dlp.v2.InfoTypeDescriptionOrBuilder>(
+        infoTypesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.privacy.dlp.v2.InfoTypeDescription,
+                com.google.privacy.dlp.v2.InfoTypeDescription.Builder,
+                com.google.privacy.dlp.v2.InfoTypeDescriptionOrBuilder>(
                 infoTypes_,
                 ((bitField0_ & 0x00000001) == 0x00000001),
                 getParentForChildren(),
@@ -780,22 +876,24 @@ private static final long serialVersionUID = 0L;
       }
       return infoTypesBuilder_;
     }
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+
+    @java.lang.Override
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
     }
-
 
     // @@protoc_insertion_point(builder_scope:google.privacy.dlp.v2.ListInfoTypesResponse)
   }
 
   // @@protoc_insertion_point(class_scope:google.privacy.dlp.v2.ListInfoTypesResponse)
   private static final com.google.privacy.dlp.v2.ListInfoTypesResponse DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.privacy.dlp.v2.ListInfoTypesResponse();
   }
@@ -804,15 +902,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ListInfoTypesResponse>
-      PARSER = new com.google.protobuf.AbstractParser<ListInfoTypesResponse>() {
-    public ListInfoTypesResponse parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ListInfoTypesResponse(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<ListInfoTypesResponse> PARSER =
+      new com.google.protobuf.AbstractParser<ListInfoTypesResponse>() {
+        @java.lang.Override
+        public ListInfoTypesResponse parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new ListInfoTypesResponse(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<ListInfoTypesResponse> parser() {
     return PARSER;
@@ -823,9 +922,8 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.privacy.dlp.v2.ListInfoTypesResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

@@ -3,11 +3,14 @@
 
 package com.google.privacy.dlp.v2;
 
-public interface StoredInfoTypeConfigOrBuilder extends
+public interface StoredInfoTypeConfigOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.StoredInfoTypeConfig)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Display name of the StoredInfoType (max 256 characters).
    * </pre>
@@ -16,16 +19,19 @@ public interface StoredInfoTypeConfigOrBuilder extends
    */
   java.lang.String getDisplayName();
   /**
+   *
+   *
    * <pre>
    * Display name of the StoredInfoType (max 256 characters).
    * </pre>
    *
    * <code>string display_name = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getDisplayNameBytes();
+  com.google.protobuf.ByteString getDisplayNameBytes();
 
   /**
+   *
+   *
    * <pre>
    * Description of the StoredInfoType (max 256 characters).
    * </pre>
@@ -34,16 +40,19 @@ public interface StoredInfoTypeConfigOrBuilder extends
    */
   java.lang.String getDescription();
   /**
+   *
+   *
    * <pre>
    * Description of the StoredInfoType (max 256 characters).
    * </pre>
    *
    * <code>string description = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getDescriptionBytes();
+  com.google.protobuf.ByteString getDescriptionBytes();
 
   /**
+   *
+   *
    * <pre>
    * StoredInfoType where findings are defined by a dictionary of phrases.
    * </pre>
@@ -52,6 +61,8 @@ public interface StoredInfoTypeConfigOrBuilder extends
    */
   boolean hasLargeCustomDictionary();
   /**
+   *
+   *
    * <pre>
    * StoredInfoType where findings are defined by a dictionary of phrases.
    * </pre>
@@ -60,13 +71,16 @@ public interface StoredInfoTypeConfigOrBuilder extends
    */
   com.google.privacy.dlp.v2.LargeCustomDictionaryConfig getLargeCustomDictionary();
   /**
+   *
+   *
    * <pre>
    * StoredInfoType where findings are defined by a dictionary of phrases.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.LargeCustomDictionaryConfig large_custom_dictionary = 3;</code>
    */
-  com.google.privacy.dlp.v2.LargeCustomDictionaryConfigOrBuilder getLargeCustomDictionaryOrBuilder();
+  com.google.privacy.dlp.v2.LargeCustomDictionaryConfigOrBuilder
+      getLargeCustomDictionaryOrBuilder();
 
   public com.google.privacy.dlp.v2.StoredInfoTypeConfig.TypeCase getTypeCase();
 }

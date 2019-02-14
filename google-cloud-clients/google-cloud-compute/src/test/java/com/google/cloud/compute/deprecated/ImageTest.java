@@ -28,10 +28,8 @@ import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 
 import com.google.common.collect.ImmutableList;
-
-import org.junit.Test;
-
 import java.util.List;
+import org.junit.Test;
 
 public class ImageTest {
 
@@ -40,13 +38,13 @@ public class ImageTest {
   private static final Long CREATION_TIMESTAMP = 1453293540000L;
   private static final String DESCRIPTION = "description";
   private static final ImageInfo.Status STATUS = ImageInfo.Status.READY;
-  private static final List<LicenseId> LICENSES = ImmutableList.of(
-      LicenseId.of("project", "license1"), LicenseId.of("project", "license2"));
+  private static final List<LicenseId> LICENSES =
+      ImmutableList.of(LicenseId.of("project", "license1"), LicenseId.of("project", "license2"));
   private static final Long DISK_SIZE_GB = 42L;
   private static final String STORAGE_SOURCE = "source";
   private static final Long ARCHIVE_SIZE_BYTES = 24L;
   private static final String SHA1_CHECKSUM = "checksum";
-  private static final DiskId SOURCE_DISK =  DiskId.of("project", "zone", "disk");
+  private static final DiskId SOURCE_DISK = DiskId.of("project", "zone", "disk");
   private static final String SOURCE_DISK_ID = "diskId";
   private static final ImageConfiguration.SourceType SOURCE_TYPE =
       ImageConfiguration.SourceType.RAW;
@@ -76,37 +74,40 @@ public class ImageTest {
   private void initializeExpectedImage(int optionsCalls) {
     expect(serviceMockReturnsOptions.getOptions()).andReturn(mockOptions).times(optionsCalls);
     replay(serviceMockReturnsOptions);
-    diskImage = new Image.Builder(serviceMockReturnsOptions, IMAGE_ID, DISK_CONFIGURATION)
-        .setGeneratedId(GENERATED_ID)
-        .getCreationTimestamp(CREATION_TIMESTAMP)
-        .setDescription(DESCRIPTION)
-        .setStatus(STATUS)
-        .setDiskSizeGb(DISK_SIZE_GB)
-        .setLicenses(LICENSES)
-        .setDeprecationStatus(DEPRECATION_STATUS)
-        .build();
-    storageImage = new Image.Builder(serviceMockReturnsOptions, IMAGE_ID, STORAGE_CONFIGURATION)
-        .setGeneratedId(GENERATED_ID)
-        .getCreationTimestamp(CREATION_TIMESTAMP)
-        .setDescription(DESCRIPTION)
-        .setStatus(STATUS)
-        .setDiskSizeGb(DISK_SIZE_GB)
-        .setLicenses(LICENSES)
-        .setDeprecationStatus(DEPRECATION_STATUS)
-        .build();
+    diskImage =
+        new Image.Builder(serviceMockReturnsOptions, IMAGE_ID, DISK_CONFIGURATION)
+            .setGeneratedId(GENERATED_ID)
+            .getCreationTimestamp(CREATION_TIMESTAMP)
+            .setDescription(DESCRIPTION)
+            .setStatus(STATUS)
+            .setDiskSizeGb(DISK_SIZE_GB)
+            .setLicenses(LICENSES)
+            .setDeprecationStatus(DEPRECATION_STATUS)
+            .build();
+    storageImage =
+        new Image.Builder(serviceMockReturnsOptions, IMAGE_ID, STORAGE_CONFIGURATION)
+            .setGeneratedId(GENERATED_ID)
+            .getCreationTimestamp(CREATION_TIMESTAMP)
+            .setDescription(DESCRIPTION)
+            .setStatus(STATUS)
+            .setDiskSizeGb(DISK_SIZE_GB)
+            .setLicenses(LICENSES)
+            .setDeprecationStatus(DEPRECATION_STATUS)
+            .build();
     compute = createStrictMock(Compute.class);
   }
 
   private void initializeImage() {
-    image = new Image.Builder(compute, IMAGE_ID, DISK_CONFIGURATION)
-        .setGeneratedId(GENERATED_ID)
-        .getCreationTimestamp(CREATION_TIMESTAMP)
-        .setDescription(DESCRIPTION)
-        .setStatus(STATUS)
-        .setDiskSizeGb(DISK_SIZE_GB)
-        .setLicenses(LICENSES)
-        .setDeprecationStatus(DEPRECATION_STATUS)
-        .build();
+    image =
+        new Image.Builder(compute, IMAGE_ID, DISK_CONFIGURATION)
+            .setGeneratedId(GENERATED_ID)
+            .getCreationTimestamp(CREATION_TIMESTAMP)
+            .setDescription(DESCRIPTION)
+            .setStatus(STATUS)
+            .setDiskSizeGb(DISK_SIZE_GB)
+            .setLicenses(LICENSES)
+            .setDeprecationStatus(DEPRECATION_STATUS)
+            .build();
   }
 
   @Test
@@ -124,8 +125,7 @@ public class ImageTest {
   public void testToBuilderIncomplete() {
     initializeExpectedImage(6);
     ImageInfo imageInfo = ImageInfo.of(IMAGE_ID, DISK_CONFIGURATION);
-    Image image =
-        new Image(serviceMockReturnsOptions, new ImageInfo.BuilderImpl(imageInfo));
+    Image image = new Image(serviceMockReturnsOptions, new ImageInfo.BuilderImpl(imageInfo));
     compareImage(image, image.toBuilder().build());
   }
 
@@ -153,10 +153,11 @@ public class ImageTest {
     assertEquals(DEPRECATION_STATUS, storageImage.getDeprecationStatus());
     assertSame(serviceMockReturnsOptions, storageImage.getCompute());
     ImageId imageId = ImageId.of("otherImage");
-    Image image = new Image.Builder(serviceMockReturnsOptions, IMAGE_ID, STORAGE_CONFIGURATION)
-        .setImageId(imageId)
-        .setConfiguration(DISK_CONFIGURATION)
-        .build();
+    Image image =
+        new Image.Builder(serviceMockReturnsOptions, IMAGE_ID, STORAGE_CONFIGURATION)
+            .setImageId(imageId)
+            .setConfiguration(DISK_CONFIGURATION)
+            .build();
     assertNull(image.getGeneratedId());
     assertEquals(imageId, image.getImageId());
     assertNull(image.getCreationTimestamp());
@@ -172,10 +173,8 @@ public class ImageTest {
   @Test
   public void testToAndFromPb() {
     initializeExpectedImage(12);
-    compareImage(diskImage,
-        Image.fromPb(serviceMockReturnsOptions, diskImage.toPb()));
-    compareImage(storageImage,
-        Image.fromPb(serviceMockReturnsOptions, storageImage.toPb()));
+    compareImage(diskImage, Image.fromPb(serviceMockReturnsOptions, diskImage.toPb()));
+    compareImage(storageImage, Image.fromPb(serviceMockReturnsOptions, storageImage.toPb()));
     Image image =
         new Image.Builder(serviceMockReturnsOptions, IMAGE_ID, DISK_CONFIGURATION).build();
     compareImage(image, Image.fromPb(serviceMockReturnsOptions, image.toPb()));
@@ -185,9 +184,10 @@ public class ImageTest {
   public void testDeleteOperation() {
     initializeExpectedImage(3);
     expect(compute.getOptions()).andReturn(mockOptions);
-    Operation operation = new Operation.Builder(serviceMockReturnsOptions)
-        .setOperationId(GlobalOperationId.of("project", "op"))
-        .build();
+    Operation operation =
+        new Operation.Builder(serviceMockReturnsOptions)
+            .setOperationId(GlobalOperationId.of("project", "op"))
+            .build();
     expect(compute.deleteImage(IMAGE_ID)).andReturn(operation);
     replay(compute);
     initializeImage();
@@ -267,9 +267,10 @@ public class ImageTest {
   public void testDeprecateImage() {
     initializeExpectedImage(3);
     expect(compute.getOptions()).andReturn(mockOptions);
-    Operation operation = new Operation.Builder(serviceMockReturnsOptions)
-        .setOperationId(GlobalOperationId.of("project", "op"))
-        .build();
+    Operation operation =
+        new Operation.Builder(serviceMockReturnsOptions)
+            .setOperationId(GlobalOperationId.of("project", "op"))
+            .build();
     DeprecationStatus<ImageId> status =
         DeprecationStatus.of(DeprecationStatus.Status.DEPRECATED, IMAGE_ID);
     expect(compute.deprecate(IMAGE_ID, status)).andReturn(operation);

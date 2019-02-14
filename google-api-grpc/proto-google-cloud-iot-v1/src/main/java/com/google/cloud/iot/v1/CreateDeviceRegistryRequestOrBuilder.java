@@ -3,11 +3,14 @@
 
 package com.google.cloud.iot.v1;
 
-public interface CreateDeviceRegistryRequestOrBuilder extends
+public interface CreateDeviceRegistryRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.iot.v1.CreateDeviceRegistryRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The project and cloud region where this device registry must be created.
    * For example, `projects/example-project/locations/us-central1`.
@@ -17,6 +20,8 @@ public interface CreateDeviceRegistryRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * The project and cloud region where this device registry must be created.
    * For example, `projects/example-project/locations/us-central1`.
@@ -24,10 +29,11 @@ public interface CreateDeviceRegistryRequestOrBuilder extends
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * The device registry. The field `name` must be empty. The server will
    * generate that field from the device registry `id` provided and the
@@ -38,6 +44,8 @@ public interface CreateDeviceRegistryRequestOrBuilder extends
    */
   boolean hasDeviceRegistry();
   /**
+   *
+   *
    * <pre>
    * The device registry. The field `name` must be empty. The server will
    * generate that field from the device registry `id` provided and the
@@ -48,6 +56,8 @@ public interface CreateDeviceRegistryRequestOrBuilder extends
    */
   com.google.cloud.iot.v1.DeviceRegistry getDeviceRegistry();
   /**
+   *
+   *
    * <pre>
    * The device registry. The field `name` must be empty. The server will
    * generate that field from the device registry `id` provided and the

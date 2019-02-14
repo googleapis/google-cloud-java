@@ -3,11 +3,14 @@
 
 package com.google.container.v1;
 
-public interface DailyMaintenanceWindowOrBuilder extends
+public interface DailyMaintenanceWindowOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.container.v1.DailyMaintenanceWindow)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Time within the maintenance window to start the maintenance operations.
    * Time format should be in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt)
@@ -18,6 +21,8 @@ public interface DailyMaintenanceWindowOrBuilder extends
    */
   java.lang.String getStartTime();
   /**
+   *
+   *
    * <pre>
    * Time within the maintenance window to start the maintenance operations.
    * Time format should be in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt)
@@ -26,10 +31,11 @@ public interface DailyMaintenanceWindowOrBuilder extends
    *
    * <code>string start_time = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getStartTimeBytes();
+  com.google.protobuf.ByteString getStartTimeBytes();
 
   /**
+   *
+   *
    * <pre>
    * [Output only] Duration of the time window, automatically chosen to be
    * smallest possible in the given scenario.
@@ -41,6 +47,8 @@ public interface DailyMaintenanceWindowOrBuilder extends
    */
   java.lang.String getDuration();
   /**
+   *
+   *
    * <pre>
    * [Output only] Duration of the time window, automatically chosen to be
    * smallest possible in the given scenario.
@@ -50,6 +58,5 @@ public interface DailyMaintenanceWindowOrBuilder extends
    *
    * <code>string duration = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getDurationBytes();
+  com.google.protobuf.ByteString getDurationBytes();
 }

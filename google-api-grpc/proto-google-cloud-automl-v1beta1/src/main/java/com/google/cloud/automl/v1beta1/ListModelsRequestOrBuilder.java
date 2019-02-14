@@ -3,11 +3,14 @@
 
 package com.google.cloud.automl.v1beta1;
 
-public interface ListModelsRequestOrBuilder extends
+public interface ListModelsRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.automl.v1beta1.ListModelsRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Resource name of the project, from which to list the models.
    * </pre>
@@ -16,16 +19,19 @@ public interface ListModelsRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * Resource name of the project, from which to list the models.
    * </pre>
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * An expression for filtering the results of the request.
    *   * `model_metadata` - for existence of the case.
@@ -41,6 +47,8 @@ public interface ListModelsRequestOrBuilder extends
    */
   java.lang.String getFilter();
   /**
+   *
+   *
    * <pre>
    * An expression for filtering the results of the request.
    *   * `model_metadata` - for existence of the case.
@@ -54,10 +62,11 @@ public interface ListModelsRequestOrBuilder extends
    *
    * <code>string filter = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getFilterBytes();
+  com.google.protobuf.ByteString getFilterBytes();
 
   /**
+   *
+   *
    * <pre>
    * Requested page size.
    * </pre>
@@ -67,6 +76,8 @@ public interface ListModelsRequestOrBuilder extends
   int getPageSize();
 
   /**
+   *
+   *
    * <pre>
    * A token identifying a page of results for the server to return
    * Typically obtained via
@@ -78,6 +89,8 @@ public interface ListModelsRequestOrBuilder extends
    */
   java.lang.String getPageToken();
   /**
+   *
+   *
    * <pre>
    * A token identifying a page of results for the server to return
    * Typically obtained via
@@ -87,6 +100,5 @@ public interface ListModelsRequestOrBuilder extends
    *
    * <code>string page_token = 6;</code>
    */
-  com.google.protobuf.ByteString
-      getPageTokenBytes();
+  com.google.protobuf.ByteString getPageTokenBytes();
 }

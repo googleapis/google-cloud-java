@@ -50,8 +50,8 @@ def get_git_repo_version(path):
 
     if changes:
         suffix = " ({})".format(changes.splitlines()[-1])
-
-    return ''.join([commit, suffix])
+    print([commit,suffix])
+    return ''.join([commit.decode('UTF-8'), suffix])
 
 
 def dump_versions(googleapis=None, discovery_repo=None):

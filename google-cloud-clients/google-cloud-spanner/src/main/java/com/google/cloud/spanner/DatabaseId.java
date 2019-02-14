@@ -88,17 +88,12 @@ public final class DatabaseId {
     return of(parts.get("project"), parts.get("instance"), parts.get("database"));
   }
 
-  /**
-   * Creates a {@code DatabaseId} given project, instance and database IDs.
-   */
+  /** Creates a {@code DatabaseId} given project, instance and database IDs. */
   public static DatabaseId of(String project, String instance, String database) {
-    return new DatabaseId(
-        new InstanceId(project, instance), database);
+    return new DatabaseId(new InstanceId(project, instance), database);
   }
 
-  /**
-   * Creates a {@code DatabaseId} given the instance identity and database id.
-   */
+  /** Creates a {@code DatabaseId} given the instance identity and database id. */
   public static DatabaseId of(InstanceId instanceId, String database) {
     return new DatabaseId(instanceId, database);
   }

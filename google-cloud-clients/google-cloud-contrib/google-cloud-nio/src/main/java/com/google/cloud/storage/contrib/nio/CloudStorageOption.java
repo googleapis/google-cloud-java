@@ -19,19 +19,13 @@ package com.google.cloud.storage.contrib.nio;
 import java.nio.file.CopyOption;
 import java.nio.file.OpenOption;
 
-/**
- * Master interface for file operation option classes related to Google Cloud Storage.
- */
+/** Master interface for file operation option classes related to Google Cloud Storage. */
 public interface CloudStorageOption {
 
-  /**
-   * Interface for Google Cloud Storage options that can be specified when opening files.
-   */
+  /** Interface for Google Cloud Storage options that can be specified when opening files. */
   interface Open extends CloudStorageOption, OpenOption {}
 
-  /**
-   * Interface for Google Cloud Storage options that can be specified when copying files.
-   */
+  /** Interface for Google Cloud Storage options that can be specified when copying files. */
   interface Copy extends CloudStorageOption, CopyOption {}
 
   /**

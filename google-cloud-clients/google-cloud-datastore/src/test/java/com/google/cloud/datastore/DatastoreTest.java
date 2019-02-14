@@ -84,8 +84,8 @@ public class DatastoreTest {
   private static final String KIND3 = "kind3";
   private static final NullValue NULL_VALUE = NullValue.of();
   private static final StringValue STR_VALUE = StringValue.of("str");
-  private static final BooleanValue BOOL_VALUE = BooleanValue.newBuilder(false)
-      .setExcludeFromIndexes(true).build();
+  private static final BooleanValue BOOL_VALUE =
+      BooleanValue.newBuilder(false).setExcludeFromIndexes(true).build();
   private static final IncompleteKey INCOMPLETE_KEY1 =
       IncompleteKey.newBuilder(PROJECT_ID, KIND1).build();
   private static final IncompleteKey INCOMPLETE_KEY2 =
@@ -96,45 +96,61 @@ public class DatastoreTest {
   private static final Key KEY4 = Key.newBuilder(KEY2).setName("newName1").build();
   private static final Key KEY5 = Key.newBuilder(KEY2).setName("newName2").build();
   private static final KeyValue KEY_VALUE = KeyValue.of(KEY1);
-  private static final ListValue LIST_VALUE1 = ListValue.newBuilder()
-      .addValue(NULL_VALUE)
-      .addValue(STR_VALUE, BOOL_VALUE)
-      .build();
+  private static final ListValue LIST_VALUE1 =
+      ListValue.newBuilder().addValue(NULL_VALUE).addValue(STR_VALUE, BOOL_VALUE).build();
   private static final ListValue LIST_VALUE2 = ListValue.of(Collections.singletonList(KEY_VALUE));
   private static final ListValue EMPTY_LIST_VALUE = ListValue.of(Collections.<Value<?>>emptyList());
   private static final TimestampValue TIMESTAMP_VALUE = new TimestampValue(Timestamp.now());
   private static final LatLngValue LAT_LNG_VALUE =
       new LatLngValue(new LatLng(37.422035, -122.084124));
   private static final FullEntity<IncompleteKey> PARTIAL_ENTITY1 =
-      FullEntity.newBuilder(INCOMPLETE_KEY2).set("str", STR_VALUE).set("bool", BOOL_VALUE)
-          .set("list", LIST_VALUE1).build();
+      FullEntity.newBuilder(INCOMPLETE_KEY2)
+          .set("str", STR_VALUE)
+          .set("bool", BOOL_VALUE)
+          .set("list", LIST_VALUE1)
+          .build();
   private static final FullEntity<IncompleteKey> PARTIAL_ENTITY2 =
-      FullEntity.newBuilder(PARTIAL_ENTITY1).remove("str").set("bool", true)
-          .set("list", LIST_VALUE1.get()).build();
+      FullEntity.newBuilder(PARTIAL_ENTITY1)
+          .remove("str")
+          .set("bool", true)
+          .set("list", LIST_VALUE1.get())
+          .build();
   private static final FullEntity<IncompleteKey> PARTIAL_ENTITY3 =
       FullEntity.newBuilder(PARTIAL_ENTITY1)
           .setKey(IncompleteKey.newBuilder(PROJECT_ID, KIND3).build())
           .build();
-  private static final Entity ENTITY1 = Entity.newBuilder(KEY1)
-      .set("str", STR_VALUE)
-      .set("date", TIMESTAMP_VALUE)
-      .set("latLng", LAT_LNG_VALUE)
-      .set("bool", BOOL_VALUE)
-      .set("partial1", EntityValue.of(PARTIAL_ENTITY1))
-      .set("list", LIST_VALUE2)
-      .set("emptyList", EMPTY_LIST_VALUE)
-      .build();
-  private static final Entity ENTITY2 = Entity.newBuilder(ENTITY1).setKey(KEY2).remove("str")
-      .set("name", "Dan").setNull("null").set("age", 20).build();
-  private static final Entity ENTITY3 = Entity.newBuilder(ENTITY1).setKey(KEY3).remove("str")
-      .set("null", NULL_VALUE).set("partial1", PARTIAL_ENTITY2).set("partial2", ENTITY2).build();
+  private static final Entity ENTITY1 =
+      Entity.newBuilder(KEY1)
+          .set("str", STR_VALUE)
+          .set("date", TIMESTAMP_VALUE)
+          .set("latLng", LAT_LNG_VALUE)
+          .set("bool", BOOL_VALUE)
+          .set("partial1", EntityValue.of(PARTIAL_ENTITY1))
+          .set("list", LIST_VALUE2)
+          .set("emptyList", EMPTY_LIST_VALUE)
+          .build();
+  private static final Entity ENTITY2 =
+      Entity.newBuilder(ENTITY1)
+          .setKey(KEY2)
+          .remove("str")
+          .set("name", "Dan")
+          .setNull("null")
+          .set("age", 20)
+          .build();
+  private static final Entity ENTITY3 =
+      Entity.newBuilder(ENTITY1)
+          .setKey(KEY3)
+          .remove("str")
+          .set("null", NULL_VALUE)
+          .set("partial1", PARTIAL_ENTITY2)
+          .set("partial2", ENTITY2)
+          .build();
 
   private DatastoreOptions rpcMockOptions;
   private DatastoreRpcFactory rpcFactoryMock;
   private DatastoreRpc rpcMock;
 
-  @Rule
-  public ExpectedException thrown = ExpectedException.none();
+  @Rule public ExpectedException thrown = ExpectedException.none();
 
   @BeforeClass
   public static void beforeClass() throws IOException, InterruptedException {
@@ -145,11 +161,12 @@ public class DatastoreTest {
   public void setUp() {
     rpcFactoryMock = EasyMock.createStrictMock(DatastoreRpcFactory.class);
     rpcMock = EasyMock.createStrictMock(DatastoreRpc.class);
-    rpcMockOptions = options
-        .toBuilder()
-        .setRetrySettings(ServiceOptions.getDefaultRetrySettings())
-        .setServiceRpcFactory(rpcFactoryMock)
-        .build();
+    rpcMockOptions =
+        options
+            .toBuilder()
+            .setRetrySettings(ServiceOptions.getDefaultRetrySettings())
+            .setServiceRpcFactory(rpcFactoryMock)
+            .build();
     EasyMock.expect(rpcFactoryMock.create(rpcMockOptions)).andReturn(rpcMock);
     StructuredQuery<Key> query = Query.newKeyQueryBuilder().build();
     QueryResults<Key> result = datastore.run(query);
@@ -171,10 +188,7 @@ public class DatastoreTest {
   public void testNewTransactionCommit() {
     Transaction transaction = datastore.newTransaction();
     transaction.add(ENTITY3);
-    Entity entity2 = Entity.newBuilder(ENTITY2)
-        .clear()
-        .setNull("bla")
-        .build();
+    Entity entity2 = Entity.newBuilder(ENTITY2).clear().setNull("bla").build();
     transaction.update(entity2);
     transaction.delete(KEY1);
     transaction.commit();
@@ -225,10 +239,11 @@ public class DatastoreTest {
 
   @Test
   public void testTransactionWithQuery() {
-    Query<Entity> query = Query.newEntityQueryBuilder()
-        .setKind(KIND2)
-        .setFilter(PropertyFilter.hasAncestor(KEY2))
-        .build();
+    Query<Entity> query =
+        Query.newEntityQueryBuilder()
+            .setKind(KIND2)
+            .setFilter(PropertyFilter.hasAncestor(KEY2))
+            .build();
     Transaction transaction = datastore.newTransaction();
     QueryResults<Entity> results = transaction.run(query);
     assertEquals(ENTITY2, results.next());
@@ -255,8 +270,12 @@ public class DatastoreTest {
   public void testNewTransactionRollback() {
     Transaction transaction = datastore.newTransaction();
     transaction.add(ENTITY3);
-    Entity entity2 = Entity.newBuilder(ENTITY2).clear().setNull("bla")
-        .set("list3", StringValue.of("bla"), StringValue.newBuilder("bla").build()).build();
+    Entity entity2 =
+        Entity.newBuilder(ENTITY2)
+            .clear()
+            .setNull("bla")
+            .set("list3", StringValue.of("bla"), StringValue.newBuilder("bla").build())
+            .build();
     transaction.update(entity2);
     transaction.delete(KEY1);
     transaction.rollback();
@@ -310,7 +329,10 @@ public class DatastoreTest {
           }
         };
 
-    TransactionOptions options = TransactionOptions.newBuilder().setReadWrite(TransactionOptions.ReadWrite.getDefaultInstance()).build();
+    TransactionOptions options =
+        TransactionOptions.newBuilder()
+            .setReadWrite(TransactionOptions.ReadWrite.getDefaultInstance())
+            .build();
     Integer result = mockDatastore.runInTransaction(callable, options);
     EasyMock.verify(rpcFactoryMock, rpcMock);
     assertEquals(2, result.intValue());
@@ -381,7 +403,8 @@ public class DatastoreTest {
     assertEquals(6, entities.size());
     List<Key> generatedKeys = response.getGeneratedKeys();
     assertEquals(1, generatedKeys.size());
-    assertEquals(PARTIAL_ENTITY3.getProperties(), datastore.get(generatedKeys.get(0)).getProperties());
+    assertEquals(
+        PARTIAL_ENTITY3.getProperties(), datastore.get(generatedKeys.get(0)).getProperties());
     assertEquals(PARTIAL_ENTITY3.getKey(), IncompleteKey.newBuilder(generatedKeys.get(0)).build());
 
     try {
@@ -415,8 +438,9 @@ public class DatastoreTest {
     assertFalse(results1.hasNext());
 
     datastore.put(ENTITY3);
-    Query<? extends Entity> query2 =  Query.newGqlQueryBuilder(
-        ResultType.ENTITY, "select * from " + KIND2 + " order by __key__").build();
+    Query<? extends Entity> query2 =
+        Query.newGqlQueryBuilder(ResultType.ENTITY, "select * from " + KIND2 + " order by __key__")
+            .build();
     QueryResults<? extends Entity> results2 = datastore.run(query2);
     assertTrue(results2.hasNext());
     assertEquals(ENTITY2, results2.next());
@@ -435,8 +459,9 @@ public class DatastoreTest {
     assertEquals(KEY1, keyOnlyResults.next());
     assertFalse(keyOnlyResults.hasNext());
 
-    GqlQuery<ProjectionEntity> keyProjectionQuery = Query.newGqlQueryBuilder(
-        ResultType.PROJECTION_ENTITY, "select __key__ from " + KIND1).build();
+    GqlQuery<ProjectionEntity> keyProjectionQuery =
+        Query.newGqlQueryBuilder(ResultType.PROJECTION_ENTITY, "select __key__ from " + KIND1)
+            .build();
     QueryResults<ProjectionEntity> keyProjectionResult = datastore.run(keyProjectionQuery);
     assertTrue(keyProjectionResult.hasNext());
     ProjectionEntity projectionEntity = keyProjectionResult.next();
@@ -444,8 +469,9 @@ public class DatastoreTest {
     assertTrue(projectionEntity.getProperties().isEmpty());
     assertFalse(keyProjectionResult.hasNext());
 
-    GqlQuery<ProjectionEntity> projectionQuery = Query.newGqlQueryBuilder(
-        ResultType.PROJECTION_ENTITY, "select str, date from " + KIND1).build();
+    GqlQuery<ProjectionEntity> projectionQuery =
+        Query.newGqlQueryBuilder(ResultType.PROJECTION_ENTITY, "select str, date from " + KIND1)
+            .build();
 
     QueryResults<ProjectionEntity> projectionResult = datastore.run(projectionQuery);
     assertTrue(projectionResult.hasNext());
@@ -486,7 +512,8 @@ public class DatastoreTest {
     EasyMock.replay(rpcFactoryMock, rpcMock);
     Datastore mockDatastore = rpcMockOptions.getService();
     QueryResults<Key> results =
-        mockDatastore.run(Query.newGqlQueryBuilder(ResultType.KEY, "select __key__ from *").build());
+        mockDatastore.run(
+            Query.newGqlQueryBuilder(ResultType.KEY, "select __key__ from *").build());
     int count = 0;
     while (results.hasNext()) {
       count += 1;
@@ -505,15 +532,14 @@ public class DatastoreTest {
     assertEquals(ENTITY1, results1.next());
     assertFalse(results1.hasNext());
 
-    Query<Key> keyOnlyQuery =  Query.newKeyQueryBuilder().setKind(KIND1).build();
+    Query<Key> keyOnlyQuery = Query.newKeyQueryBuilder().setKind(KIND1).build();
     QueryResults<Key> results2 = datastore.run(keyOnlyQuery);
     assertTrue(results2.hasNext());
     assertEquals(ENTITY1.getKey(), results2.next());
     assertFalse(results2.hasNext());
 
     StructuredQuery<ProjectionEntity> keyOnlyProjectionQuery =
-        Query.newProjectionEntityQueryBuilder()
-        .setKind(KIND1).setProjection("__key__").build();
+        Query.newProjectionEntityQueryBuilder().setKind(KIND1).setProjection("__key__").build();
     QueryResults<ProjectionEntity> results3 = datastore.run(keyOnlyProjectionQuery);
     assertTrue(results3.hasNext());
     ProjectionEntity projectionEntity = results3.next();
@@ -521,14 +547,15 @@ public class DatastoreTest {
     assertTrue(projectionEntity.getNames().isEmpty());
     assertFalse(results2.hasNext());
 
-    StructuredQuery<ProjectionEntity> projectionQuery = Query.newProjectionEntityQueryBuilder()
-        .setKind(KIND2)
-        .setProjection("age")
-        .setFilter(PropertyFilter.gt("age", 18))
-        .setDistinctOn("age")
-        .setOrderBy(OrderBy.asc("age"))
-        .setLimit(10)
-        .build();
+    StructuredQuery<ProjectionEntity> projectionQuery =
+        Query.newProjectionEntityQueryBuilder()
+            .setKind(KIND2)
+            .setProjection("age")
+            .setFilter(PropertyFilter.gt("age", 18))
+            .setDistinctOn("age")
+            .setOrderBy(OrderBy.asc("age"))
+            .setLimit(10)
+            .build();
 
     QueryResults<ProjectionEntity> results4 = datastore.run(projectionQuery);
     assertTrue(results4.hasNext());
@@ -566,32 +593,36 @@ public class DatastoreTest {
     Query<Key> query = Query.newKeyQueryBuilder().build();
     RunQueryRequest.Builder requestPb = RunQueryRequest.newBuilder();
     query.populatePb(requestPb);
-    QueryResultBatch queryResultBatchPb = RunQueryResponse.newBuilder()
-        .mergeFrom(((DatastoreImpl) datastore).runQuery(requestPb.build()))
-        .getBatch();
-    QueryResultBatch queryResultBatchPb1 = QueryResultBatch.newBuilder()
-        .mergeFrom(queryResultBatchPb)
-        .setMoreResults(QueryResultBatch.MoreResultsType.NOT_FINISHED)
-        .clearEntityResults()
-        .addAllEntityResults(queryResultBatchPb.getEntityResultsList().subList(0, 1))
-        .setEndCursor(queryResultBatchPb.getEntityResultsList().get(0).getCursor())
-        .build();
+    QueryResultBatch queryResultBatchPb =
+        RunQueryResponse.newBuilder()
+            .mergeFrom(((DatastoreImpl) datastore).runQuery(requestPb.build()))
+            .getBatch();
+    QueryResultBatch queryResultBatchPb1 =
+        QueryResultBatch.newBuilder()
+            .mergeFrom(queryResultBatchPb)
+            .setMoreResults(QueryResultBatch.MoreResultsType.NOT_FINISHED)
+            .clearEntityResults()
+            .addAllEntityResults(queryResultBatchPb.getEntityResultsList().subList(0, 1))
+            .setEndCursor(queryResultBatchPb.getEntityResultsList().get(0).getCursor())
+            .build();
     responses.add(RunQueryResponse.newBuilder().setBatch(queryResultBatchPb1).build());
-    QueryResultBatch queryResultBatchPb2 = QueryResultBatch.newBuilder()
-        .mergeFrom(queryResultBatchPb)
-        .setMoreResults(QueryResultBatch.MoreResultsType.NOT_FINISHED)
-        .clearEntityResults()
-        .addAllEntityResults(queryResultBatchPb.getEntityResultsList().subList(1, 3))
-        .setEndCursor(queryResultBatchPb.getEntityResultsList().get(2).getCursor())
-        .build();
+    QueryResultBatch queryResultBatchPb2 =
+        QueryResultBatch.newBuilder()
+            .mergeFrom(queryResultBatchPb)
+            .setMoreResults(QueryResultBatch.MoreResultsType.NOT_FINISHED)
+            .clearEntityResults()
+            .addAllEntityResults(queryResultBatchPb.getEntityResultsList().subList(1, 3))
+            .setEndCursor(queryResultBatchPb.getEntityResultsList().get(2).getCursor())
+            .build();
     responses.add(RunQueryResponse.newBuilder().setBatch(queryResultBatchPb2).build());
-    QueryResultBatch queryResultBatchPb3 = QueryResultBatch.newBuilder()
-        .mergeFrom(queryResultBatchPb)
-        .setMoreResults(QueryResultBatch.MoreResultsType.NO_MORE_RESULTS)
-        .clearEntityResults()
-        .addAllEntityResults(queryResultBatchPb.getEntityResultsList().subList(3, 5))
-        .setEndCursor(queryResultBatchPb.getEntityResultsList().get(4).getCursor())
-        .build();
+    QueryResultBatch queryResultBatchPb3 =
+        QueryResultBatch.newBuilder()
+            .mergeFrom(queryResultBatchPb)
+            .setMoreResults(QueryResultBatch.MoreResultsType.NO_MORE_RESULTS)
+            .clearEntityResults()
+            .addAllEntityResults(queryResultBatchPb.getEntityResultsList().subList(3, 5))
+            .setEndCursor(queryResultBatchPb.getEntityResultsList().get(4).getCursor())
+            .build();
     responses.add(RunQueryResponse.newBuilder().setBatch(queryResultBatchPb3).build());
     return responses;
   }
@@ -633,6 +664,13 @@ public class DatastoreTest {
     EasyMock.verify(rpcFactoryMock, rpcMock);
   }
 
+  @Test
+  public void testRunKeyQueryWithOffset() {
+    Query<Key> query = Query.newKeyQueryBuilder().setOffset(Integer.MAX_VALUE).build();
+    int numberOfEntities = datastore.run(query).getSkippedResults();
+    assertEquals(2, numberOfEntities);
+  }
+
   private List<RunQueryResponse> buildResponsesForQueryPaginationWithLimit() {
     Entity entity4 = Entity.newBuilder(KEY4).set("value", StringValue.of("value")).build();
     Entity entity5 = Entity.newBuilder(KEY5).set("value", "value").build();
@@ -642,41 +680,46 @@ public class DatastoreTest {
     Query<Entity> query = Query.newEntityQueryBuilder().build();
     RunQueryRequest.Builder requestPb = RunQueryRequest.newBuilder();
     query.populatePb(requestPb);
-    QueryResultBatch queryResultBatchPb = RunQueryResponse.newBuilder()
-        .mergeFrom(datastoreRpc.runQuery(requestPb.build()))
-        .getBatch();
-    QueryResultBatch queryResultBatchPb1 = QueryResultBatch.newBuilder()
-        .mergeFrom(queryResultBatchPb)
-        .setMoreResults(QueryResultBatch.MoreResultsType.NOT_FINISHED)
-        .clearEntityResults()
-        .addAllEntityResults(queryResultBatchPb.getEntityResultsList().subList(0, 1))
-        .setEndCursor(ByteString.copyFromUtf8("a"))
-        .build();
+    QueryResultBatch queryResultBatchPb =
+        RunQueryResponse.newBuilder()
+            .mergeFrom(datastoreRpc.runQuery(requestPb.build()))
+            .getBatch();
+    QueryResultBatch queryResultBatchPb1 =
+        QueryResultBatch.newBuilder()
+            .mergeFrom(queryResultBatchPb)
+            .setMoreResults(QueryResultBatch.MoreResultsType.NOT_FINISHED)
+            .clearEntityResults()
+            .addAllEntityResults(queryResultBatchPb.getEntityResultsList().subList(0, 1))
+            .setEndCursor(ByteString.copyFromUtf8("a"))
+            .build();
     responses.add(RunQueryResponse.newBuilder().setBatch(queryResultBatchPb1).build());
-    QueryResultBatch queryResultBatchPb2 = QueryResultBatch.newBuilder()
-        .mergeFrom(queryResultBatchPb)
-        .setMoreResults(QueryResultBatch.MoreResultsType.MORE_RESULTS_AFTER_LIMIT)
-        .clearEntityResults()
-        .addAllEntityResults(queryResultBatchPb.getEntityResultsList().subList(1, 2))
-        .setEndCursor(
-            ByteString.copyFrom(new byte[] {(byte) 0x80})) // test invalid UTF-8 string
-        .build();
+    QueryResultBatch queryResultBatchPb2 =
+        QueryResultBatch.newBuilder()
+            .mergeFrom(queryResultBatchPb)
+            .setMoreResults(QueryResultBatch.MoreResultsType.MORE_RESULTS_AFTER_LIMIT)
+            .clearEntityResults()
+            .addAllEntityResults(queryResultBatchPb.getEntityResultsList().subList(1, 2))
+            .setEndCursor(
+                ByteString.copyFrom(new byte[] {(byte) 0x80})) // test invalid UTF-8 string
+            .build();
     responses.add(RunQueryResponse.newBuilder().setBatch(queryResultBatchPb2).build());
-    QueryResultBatch queryResultBatchPb3 = QueryResultBatch.newBuilder()
-        .mergeFrom(queryResultBatchPb)
-        .setMoreResults(QueryResultBatch.MoreResultsType.MORE_RESULTS_AFTER_LIMIT)
-        .clearEntityResults()
-        .addAllEntityResults(queryResultBatchPb.getEntityResultsList().subList(2, 4))
-        .setEndCursor(ByteString.copyFromUtf8("b"))
-        .build();
+    QueryResultBatch queryResultBatchPb3 =
+        QueryResultBatch.newBuilder()
+            .mergeFrom(queryResultBatchPb)
+            .setMoreResults(QueryResultBatch.MoreResultsType.MORE_RESULTS_AFTER_LIMIT)
+            .clearEntityResults()
+            .addAllEntityResults(queryResultBatchPb.getEntityResultsList().subList(2, 4))
+            .setEndCursor(ByteString.copyFromUtf8("b"))
+            .build();
     responses.add(RunQueryResponse.newBuilder().setBatch(queryResultBatchPb3).build());
-    QueryResultBatch queryResultBatchPb4 = QueryResultBatch.newBuilder()
-        .mergeFrom(queryResultBatchPb)
-        .setMoreResults(QueryResultBatch.MoreResultsType.NO_MORE_RESULTS)
-        .clearEntityResults()
-        .addAllEntityResults(queryResultBatchPb.getEntityResultsList().subList(4, 5))
-        .setEndCursor(ByteString.copyFromUtf8("c"))
-        .build();
+    QueryResultBatch queryResultBatchPb4 =
+        QueryResultBatch.newBuilder()
+            .mergeFrom(queryResultBatchPb)
+            .setMoreResults(QueryResultBatch.MoreResultsType.NO_MORE_RESULTS)
+            .clearEntityResults()
+            .addAllEntityResults(queryResultBatchPb.getEntityResultsList().subList(4, 5))
+            .setEndCursor(ByteString.copyFromUtf8("c"))
+            .build();
     responses.add(RunQueryResponse.newBuilder().setBatch(queryResultBatchPb4).build());
     return responses;
   }
@@ -685,14 +728,13 @@ public class DatastoreTest {
   public void testEventualConsistencyQuery() {
     ReadOptions readOption =
         ReadOptions.newBuilder().setReadConsistencyValue(ReadConsistency.EVENTUAL_VALUE).build();
-    com.google.datastore.v1.GqlQuery query = com.google.datastore.v1.GqlQuery.newBuilder()
-        .setQueryString("FROM * SELECT *")
-        .build();
-    RunQueryRequest.Builder expectedRequest = RunQueryRequest.newBuilder()
-        .setReadOptions(readOption)
-        .setGqlQuery(query)
-        .setPartitionId(PartitionId.newBuilder().setProjectId(PROJECT_ID)
-        .build());
+    com.google.datastore.v1.GqlQuery query =
+        com.google.datastore.v1.GqlQuery.newBuilder().setQueryString("FROM * SELECT *").build();
+    RunQueryRequest.Builder expectedRequest =
+        RunQueryRequest.newBuilder()
+            .setReadOptions(readOption)
+            .setGqlQuery(query)
+            .setPartitionId(PartitionId.newBuilder().setProjectId(PROJECT_ID).build());
     EasyMock.expect(rpcMock.runQuery(expectedRequest.build()))
         .andReturn(RunQueryResponse.newBuilder().build());
     EasyMock.replay(rpcFactoryMock, rpcMock);
@@ -745,8 +787,7 @@ public class DatastoreTest {
     IncompleteKey incompleteKey2 =
         keyFactory.setKind(KIND2).addAncestor(PathElement.of(KIND1, 10)).newKey();
     Key key3 = keyFactory.newKey("name");
-    List<Key> result1 =
-            datastore.allocateId(incompleteKey1, incompleteKey2, incompleteKey1);
+    List<Key> result1 = datastore.allocateId(incompleteKey1, incompleteKey2, incompleteKey1);
     assertEquals(3, result1.size());
     assertEquals(Key.newBuilder(incompleteKey1, result1.get(0).getId()).build(), result1.get(0));
     assertEquals(Key.newBuilder(incompleteKey1, result1.get(2).getId()).build(), result1.get(2));
@@ -755,9 +796,8 @@ public class DatastoreTest {
     try {
       datastore.allocateId(incompleteKey1, incompleteKey2, key3);
       fail("expecting a failure");
-    } catch(IllegalArgumentException expected) {
-        assertEquals(expected.getMessage(), "keys must be IncompleteKey instances");
-
+    } catch (IllegalArgumentException expected) {
+      assertEquals(expected.getMessage(), "keys must be IncompleteKey instances");
     }
   }
 
@@ -790,11 +830,15 @@ public class DatastoreTest {
   public void testLookupEventualConsistency() {
     ReadOptions readOption =
         ReadOptions.newBuilder().setReadConsistencyValue(ReadConsistency.EVENTUAL_VALUE).build();
-    com.google.datastore.v1.Key key = com.google.datastore.v1.Key.newBuilder()
-        .setPartitionId(PartitionId.newBuilder().setProjectId(PROJECT_ID).build())
-        .addPath(com.google.datastore.v1.Key.PathElement.newBuilder()
-            .setKind("kind1").setName("name").build())
-        .build();
+    com.google.datastore.v1.Key key =
+        com.google.datastore.v1.Key.newBuilder()
+            .setPartitionId(PartitionId.newBuilder().setProjectId(PROJECT_ID).build())
+            .addPath(
+                com.google.datastore.v1.Key.PathElement.newBuilder()
+                    .setKind("kind1")
+                    .setName("name")
+                    .build())
+            .build();
     LookupRequest lookupRequest =
         LookupRequest.newBuilder().setReadOptions(readOption).addKeys(key).build();
     EasyMock.expect(rpcMock.lookup(lookupRequest))
@@ -998,7 +1042,8 @@ public class DatastoreTest {
   public void testKeyFactory() {
     KeyFactory keyFactory = datastore.newKeyFactory().setKind(KIND1);
     assertEquals(INCOMPLETE_KEY1, keyFactory.newKey());
-    assertEquals(IncompleteKey.newBuilder(INCOMPLETE_KEY1).setKind(KIND2).build(),
+    assertEquals(
+        IncompleteKey.newBuilder(INCOMPLETE_KEY1).setKind(KIND2).build(),
         datastore.newKeyFactory().setKind(KIND2).newKey());
     assertEquals(KEY1, keyFactory.newKey("name"));
     assertEquals(Key.newBuilder(KEY1).setId(2).build(), keyFactory.newKey(2));
@@ -1007,9 +1052,10 @@ public class DatastoreTest {
   @Test
   public void testRetryableException() throws Exception {
     LookupRequest requestPb = LookupRequest.newBuilder().addKeys(KEY1.toPb()).build();
-    LookupResponse responsePb = LookupResponse.newBuilder()
-        .addFound(EntityResult.newBuilder().setEntity(ENTITY1.toPb()))
-        .build();
+    LookupResponse responsePb =
+        LookupResponse.newBuilder()
+            .addFound(EntityResult.newBuilder().setEntity(ENTITY1.toPb()))
+            .build();
     EasyMock.expect(rpcMock.lookup(requestPb))
         .andThrow(new DatastoreException(14, "UNAVAILABLE", "UNAVAILABLE", null))
         .andReturn(responsePb);

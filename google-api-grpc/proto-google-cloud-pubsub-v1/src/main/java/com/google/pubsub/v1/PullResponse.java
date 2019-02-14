@@ -4,35 +4,41 @@
 package com.google.pubsub.v1;
 
 /**
+ *
+ *
  * <pre>
  * Response for the `Pull` method.
  * </pre>
  *
  * Protobuf type {@code google.pubsub.v1.PullResponse}
  */
-public  final class PullResponse extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class PullResponse extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.pubsub.v1.PullResponse)
     PullResponseOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use PullResponse.newBuilder() to construct.
   private PullResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private PullResponse() {
     receivedMessages_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private PullResponse(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -44,29 +50,30 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          case 10:
+            {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                receivedMessages_ = new java.util.ArrayList<com.google.pubsub.v1.ReceivedMessage>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              receivedMessages_.add(
+                  input.readMessage(
+                      com.google.pubsub.v1.ReceivedMessage.parser(), extensionRegistry));
+              break;
             }
-            break;
-          }
-          case 10: {
-            if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-              receivedMessages_ = new java.util.ArrayList<com.google.pubsub.v1.ReceivedMessage>();
-              mutable_bitField0_ |= 0x00000001;
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
             }
-            receivedMessages_.add(
-                input.readMessage(com.google.pubsub.v1.ReceivedMessage.parser(), extensionRegistry));
-            break;
-          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
         receivedMessages_ = java.util.Collections.unmodifiableList(receivedMessages_);
@@ -75,26 +82,32 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.pubsub.v1.PubsubProto.internal_static_google_pubsub_v1_PullResponse_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.pubsub.v1.PubsubProto
+        .internal_static_google_pubsub_v1_PullResponse_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.pubsub.v1.PubsubProto.internal_static_google_pubsub_v1_PullResponse_fieldAccessorTable
+    return com.google.pubsub.v1.PubsubProto
+        .internal_static_google_pubsub_v1_PullResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.pubsub.v1.PullResponse.class, com.google.pubsub.v1.PullResponse.Builder.class);
+            com.google.pubsub.v1.PullResponse.class,
+            com.google.pubsub.v1.PullResponse.Builder.class);
   }
 
   public static final int RECEIVED_MESSAGES_FIELD_NUMBER = 1;
   private java.util.List<com.google.pubsub.v1.ReceivedMessage> receivedMessages_;
   /**
+   *
+   *
    * <pre>
-   * Received Pub/Sub messages. The Pub/Sub system will return zero messages if
-   * there are no more available in the backlog. The Pub/Sub system may return
-   * fewer than the `maxMessages` requested even if there are more messages
-   * available in the backlog.
+   * Received Pub/Sub messages. The list will be empty if there are no more
+   * messages available in the backlog. For JSON, the response can be entirely
+   * empty. The Pub/Sub system may return fewer than the `maxMessages` requested
+   * even if there are more messages available in the backlog.
    * </pre>
    *
    * <code>repeated .google.pubsub.v1.ReceivedMessage received_messages = 1;</code>
@@ -103,25 +116,29 @@ private static final long serialVersionUID = 0L;
     return receivedMessages_;
   }
   /**
+   *
+   *
    * <pre>
-   * Received Pub/Sub messages. The Pub/Sub system will return zero messages if
-   * there are no more available in the backlog. The Pub/Sub system may return
-   * fewer than the `maxMessages` requested even if there are more messages
-   * available in the backlog.
+   * Received Pub/Sub messages. The list will be empty if there are no more
+   * messages available in the backlog. For JSON, the response can be entirely
+   * empty. The Pub/Sub system may return fewer than the `maxMessages` requested
+   * even if there are more messages available in the backlog.
    * </pre>
    *
    * <code>repeated .google.pubsub.v1.ReceivedMessage received_messages = 1;</code>
    */
-  public java.util.List<? extends com.google.pubsub.v1.ReceivedMessageOrBuilder> 
+  public java.util.List<? extends com.google.pubsub.v1.ReceivedMessageOrBuilder>
       getReceivedMessagesOrBuilderList() {
     return receivedMessages_;
   }
   /**
+   *
+   *
    * <pre>
-   * Received Pub/Sub messages. The Pub/Sub system will return zero messages if
-   * there are no more available in the backlog. The Pub/Sub system may return
-   * fewer than the `maxMessages` requested even if there are more messages
-   * available in the backlog.
+   * Received Pub/Sub messages. The list will be empty if there are no more
+   * messages available in the backlog. For JSON, the response can be entirely
+   * empty. The Pub/Sub system may return fewer than the `maxMessages` requested
+   * even if there are more messages available in the backlog.
    * </pre>
    *
    * <code>repeated .google.pubsub.v1.ReceivedMessage received_messages = 1;</code>
@@ -130,11 +147,13 @@ private static final long serialVersionUID = 0L;
     return receivedMessages_.size();
   }
   /**
+   *
+   *
    * <pre>
-   * Received Pub/Sub messages. The Pub/Sub system will return zero messages if
-   * there are no more available in the backlog. The Pub/Sub system may return
-   * fewer than the `maxMessages` requested even if there are more messages
-   * available in the backlog.
+   * Received Pub/Sub messages. The list will be empty if there are no more
+   * messages available in the backlog. For JSON, the response can be entirely
+   * empty. The Pub/Sub system may return fewer than the `maxMessages` requested
+   * even if there are more messages available in the backlog.
    * </pre>
    *
    * <code>repeated .google.pubsub.v1.ReceivedMessage received_messages = 1;</code>
@@ -143,21 +162,24 @@ private static final long serialVersionUID = 0L;
     return receivedMessages_.get(index);
   }
   /**
+   *
+   *
    * <pre>
-   * Received Pub/Sub messages. The Pub/Sub system will return zero messages if
-   * there are no more available in the backlog. The Pub/Sub system may return
-   * fewer than the `maxMessages` requested even if there are more messages
-   * available in the backlog.
+   * Received Pub/Sub messages. The list will be empty if there are no more
+   * messages available in the backlog. For JSON, the response can be entirely
+   * empty. The Pub/Sub system may return fewer than the `maxMessages` requested
+   * even if there are more messages available in the backlog.
    * </pre>
    *
    * <code>repeated .google.pubsub.v1.ReceivedMessage received_messages = 1;</code>
    */
-  public com.google.pubsub.v1.ReceivedMessageOrBuilder getReceivedMessagesOrBuilder(
-      int index) {
+  public com.google.pubsub.v1.ReceivedMessageOrBuilder getReceivedMessagesOrBuilder(int index) {
     return receivedMessages_.get(index);
   }
 
   private byte memoizedIsInitialized = -1;
+
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -167,22 +189,22 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  @java.lang.Override
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     for (int i = 0; i < receivedMessages_.size(); i++) {
       output.writeMessage(1, receivedMessages_.get(i));
     }
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
 
     size = 0;
     for (int i = 0; i < receivedMessages_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, receivedMessages_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, receivedMessages_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -192,7 +214,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.pubsub.v1.PullResponse)) {
       return super.equals(obj);
@@ -200,8 +222,7 @@ private static final long serialVersionUID = 0L;
     com.google.pubsub.v1.PullResponse other = (com.google.pubsub.v1.PullResponse) obj;
 
     boolean result = true;
-    result = result && getReceivedMessagesList()
-        .equals(other.getReceivedMessagesList());
+    result = result && getReceivedMessagesList().equals(other.getReceivedMessagesList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -222,115 +243,126 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.pubsub.v1.PullResponse parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.pubsub.v1.PullResponse parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.pubsub.v1.PullResponse parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.pubsub.v1.PullResponse parseFrom(
-      com.google.protobuf.ByteString data)
+
+  public static com.google.pubsub.v1.PullResponse parseFrom(com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.pubsub.v1.PullResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.pubsub.v1.PullResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.pubsub.v1.PullResponse parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.pubsub.v1.PullResponse parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.pubsub.v1.PullResponse parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.pubsub.v1.PullResponse parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
   public static com.google.pubsub.v1.PullResponse parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.pubsub.v1.PullResponse parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.pubsub.v1.PullResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  public Builder newBuilderForType() { return newBuilder(); }
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-  public static Builder newBuilder(com.google.pubsub.v1.PullResponse prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+
+  public static Builder newBuilder(com.google.pubsub.v1.PullResponse prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+
+  @java.lang.Override
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Response for the `Pull` method.
    * </pre>
    *
    * Protobuf type {@code google.pubsub.v1.PullResponse}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.pubsub.v1.PullResponse)
       com.google.pubsub.v1.PullResponseOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.pubsub.v1.PubsubProto.internal_static_google_pubsub_v1_PullResponse_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.pubsub.v1.PubsubProto
+          .internal_static_google_pubsub_v1_PullResponse_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.pubsub.v1.PubsubProto.internal_static_google_pubsub_v1_PullResponse_fieldAccessorTable
+      return com.google.pubsub.v1.PubsubProto
+          .internal_static_google_pubsub_v1_PullResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.pubsub.v1.PullResponse.class, com.google.pubsub.v1.PullResponse.Builder.class);
+              com.google.pubsub.v1.PullResponse.class,
+              com.google.pubsub.v1.PullResponse.Builder.class);
     }
 
     // Construct using com.google.pubsub.v1.PullResponse.newBuilder()
@@ -338,17 +370,18 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getReceivedMessagesFieldBuilder();
       }
     }
+
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       if (receivedMessagesBuilder_ == null) {
@@ -360,15 +393,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.pubsub.v1.PubsubProto.internal_static_google_pubsub_v1_PullResponse_descriptor;
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.pubsub.v1.PubsubProto
+          .internal_static_google_pubsub_v1_PullResponse_descriptor;
     }
 
+    @java.lang.Override
     public com.google.pubsub.v1.PullResponse getDefaultInstanceForType() {
       return com.google.pubsub.v1.PullResponse.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.pubsub.v1.PullResponse build() {
       com.google.pubsub.v1.PullResponse result = buildPartial();
       if (!result.isInitialized()) {
@@ -377,6 +413,7 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.pubsub.v1.PullResponse buildPartial() {
       com.google.pubsub.v1.PullResponse result = new com.google.pubsub.v1.PullResponse(this);
       int from_bitField0_ = bitField0_;
@@ -393,35 +430,43 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+
+    @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+    @java.lang.Override
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+    @java.lang.Override
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
+    @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
+    @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.pubsub.v1.PullResponse) {
-        return mergeFrom((com.google.pubsub.v1.PullResponse)other);
+        return mergeFrom((com.google.pubsub.v1.PullResponse) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -448,9 +493,10 @@ private static final long serialVersionUID = 0L;
             receivedMessagesBuilder_ = null;
             receivedMessages_ = other.receivedMessages_;
             bitField0_ = (bitField0_ & ~0x00000001);
-            receivedMessagesBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getReceivedMessagesFieldBuilder() : null;
+            receivedMessagesBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getReceivedMessagesFieldBuilder()
+                    : null;
           } else {
             receivedMessagesBuilder_.addAllMessages(other.receivedMessages_);
           }
@@ -461,10 +507,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -482,26 +530,34 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private java.util.List<com.google.pubsub.v1.ReceivedMessage> receivedMessages_ =
-      java.util.Collections.emptyList();
+        java.util.Collections.emptyList();
+
     private void ensureReceivedMessagesIsMutable() {
       if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-        receivedMessages_ = new java.util.ArrayList<com.google.pubsub.v1.ReceivedMessage>(receivedMessages_);
+        receivedMessages_ =
+            new java.util.ArrayList<com.google.pubsub.v1.ReceivedMessage>(receivedMessages_);
         bitField0_ |= 0x00000001;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.pubsub.v1.ReceivedMessage, com.google.pubsub.v1.ReceivedMessage.Builder, com.google.pubsub.v1.ReceivedMessageOrBuilder> receivedMessagesBuilder_;
+            com.google.pubsub.v1.ReceivedMessage,
+            com.google.pubsub.v1.ReceivedMessage.Builder,
+            com.google.pubsub.v1.ReceivedMessageOrBuilder>
+        receivedMessagesBuilder_;
 
     /**
+     *
+     *
      * <pre>
-     * Received Pub/Sub messages. The Pub/Sub system will return zero messages if
-     * there are no more available in the backlog. The Pub/Sub system may return
-     * fewer than the `maxMessages` requested even if there are more messages
-     * available in the backlog.
+     * Received Pub/Sub messages. The list will be empty if there are no more
+     * messages available in the backlog. For JSON, the response can be entirely
+     * empty. The Pub/Sub system may return fewer than the `maxMessages` requested
+     * even if there are more messages available in the backlog.
      * </pre>
      *
      * <code>repeated .google.pubsub.v1.ReceivedMessage received_messages = 1;</code>
@@ -514,11 +570,13 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
-     * Received Pub/Sub messages. The Pub/Sub system will return zero messages if
-     * there are no more available in the backlog. The Pub/Sub system may return
-     * fewer than the `maxMessages` requested even if there are more messages
-     * available in the backlog.
+     * Received Pub/Sub messages. The list will be empty if there are no more
+     * messages available in the backlog. For JSON, the response can be entirely
+     * empty. The Pub/Sub system may return fewer than the `maxMessages` requested
+     * even if there are more messages available in the backlog.
      * </pre>
      *
      * <code>repeated .google.pubsub.v1.ReceivedMessage received_messages = 1;</code>
@@ -531,11 +589,13 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
-     * Received Pub/Sub messages. The Pub/Sub system will return zero messages if
-     * there are no more available in the backlog. The Pub/Sub system may return
-     * fewer than the `maxMessages` requested even if there are more messages
-     * available in the backlog.
+     * Received Pub/Sub messages. The list will be empty if there are no more
+     * messages available in the backlog. For JSON, the response can be entirely
+     * empty. The Pub/Sub system may return fewer than the `maxMessages` requested
+     * even if there are more messages available in the backlog.
      * </pre>
      *
      * <code>repeated .google.pubsub.v1.ReceivedMessage received_messages = 1;</code>
@@ -548,17 +608,18 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
-     * Received Pub/Sub messages. The Pub/Sub system will return zero messages if
-     * there are no more available in the backlog. The Pub/Sub system may return
-     * fewer than the `maxMessages` requested even if there are more messages
-     * available in the backlog.
+     * Received Pub/Sub messages. The list will be empty if there are no more
+     * messages available in the backlog. For JSON, the response can be entirely
+     * empty. The Pub/Sub system may return fewer than the `maxMessages` requested
+     * even if there are more messages available in the backlog.
      * </pre>
      *
      * <code>repeated .google.pubsub.v1.ReceivedMessage received_messages = 1;</code>
      */
-    public Builder setReceivedMessages(
-        int index, com.google.pubsub.v1.ReceivedMessage value) {
+    public Builder setReceivedMessages(int index, com.google.pubsub.v1.ReceivedMessage value) {
       if (receivedMessagesBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -572,11 +633,13 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * Received Pub/Sub messages. The Pub/Sub system will return zero messages if
-     * there are no more available in the backlog. The Pub/Sub system may return
-     * fewer than the `maxMessages` requested even if there are more messages
-     * available in the backlog.
+     * Received Pub/Sub messages. The list will be empty if there are no more
+     * messages available in the backlog. For JSON, the response can be entirely
+     * empty. The Pub/Sub system may return fewer than the `maxMessages` requested
+     * even if there are more messages available in the backlog.
      * </pre>
      *
      * <code>repeated .google.pubsub.v1.ReceivedMessage received_messages = 1;</code>
@@ -593,11 +656,13 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * Received Pub/Sub messages. The Pub/Sub system will return zero messages if
-     * there are no more available in the backlog. The Pub/Sub system may return
-     * fewer than the `maxMessages` requested even if there are more messages
-     * available in the backlog.
+     * Received Pub/Sub messages. The list will be empty if there are no more
+     * messages available in the backlog. For JSON, the response can be entirely
+     * empty. The Pub/Sub system may return fewer than the `maxMessages` requested
+     * even if there are more messages available in the backlog.
      * </pre>
      *
      * <code>repeated .google.pubsub.v1.ReceivedMessage received_messages = 1;</code>
@@ -616,17 +681,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * Received Pub/Sub messages. The Pub/Sub system will return zero messages if
-     * there are no more available in the backlog. The Pub/Sub system may return
-     * fewer than the `maxMessages` requested even if there are more messages
-     * available in the backlog.
+     * Received Pub/Sub messages. The list will be empty if there are no more
+     * messages available in the backlog. For JSON, the response can be entirely
+     * empty. The Pub/Sub system may return fewer than the `maxMessages` requested
+     * even if there are more messages available in the backlog.
      * </pre>
      *
      * <code>repeated .google.pubsub.v1.ReceivedMessage received_messages = 1;</code>
      */
-    public Builder addReceivedMessages(
-        int index, com.google.pubsub.v1.ReceivedMessage value) {
+    public Builder addReceivedMessages(int index, com.google.pubsub.v1.ReceivedMessage value) {
       if (receivedMessagesBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -640,11 +706,13 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * Received Pub/Sub messages. The Pub/Sub system will return zero messages if
-     * there are no more available in the backlog. The Pub/Sub system may return
-     * fewer than the `maxMessages` requested even if there are more messages
-     * available in the backlog.
+     * Received Pub/Sub messages. The list will be empty if there are no more
+     * messages available in the backlog. For JSON, the response can be entirely
+     * empty. The Pub/Sub system may return fewer than the `maxMessages` requested
+     * even if there are more messages available in the backlog.
      * </pre>
      *
      * <code>repeated .google.pubsub.v1.ReceivedMessage received_messages = 1;</code>
@@ -661,11 +729,13 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * Received Pub/Sub messages. The Pub/Sub system will return zero messages if
-     * there are no more available in the backlog. The Pub/Sub system may return
-     * fewer than the `maxMessages` requested even if there are more messages
-     * available in the backlog.
+     * Received Pub/Sub messages. The list will be empty if there are no more
+     * messages available in the backlog. For JSON, the response can be entirely
+     * empty. The Pub/Sub system may return fewer than the `maxMessages` requested
+     * even if there are more messages available in the backlog.
      * </pre>
      *
      * <code>repeated .google.pubsub.v1.ReceivedMessage received_messages = 1;</code>
@@ -682,11 +752,13 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * Received Pub/Sub messages. The Pub/Sub system will return zero messages if
-     * there are no more available in the backlog. The Pub/Sub system may return
-     * fewer than the `maxMessages` requested even if there are more messages
-     * available in the backlog.
+     * Received Pub/Sub messages. The list will be empty if there are no more
+     * messages available in the backlog. For JSON, the response can be entirely
+     * empty. The Pub/Sub system may return fewer than the `maxMessages` requested
+     * even if there are more messages available in the backlog.
      * </pre>
      *
      * <code>repeated .google.pubsub.v1.ReceivedMessage received_messages = 1;</code>
@@ -695,8 +767,7 @@ private static final long serialVersionUID = 0L;
         java.lang.Iterable<? extends com.google.pubsub.v1.ReceivedMessage> values) {
       if (receivedMessagesBuilder_ == null) {
         ensureReceivedMessagesIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, receivedMessages_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, receivedMessages_);
         onChanged();
       } else {
         receivedMessagesBuilder_.addAllMessages(values);
@@ -704,11 +775,13 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * Received Pub/Sub messages. The Pub/Sub system will return zero messages if
-     * there are no more available in the backlog. The Pub/Sub system may return
-     * fewer than the `maxMessages` requested even if there are more messages
-     * available in the backlog.
+     * Received Pub/Sub messages. The list will be empty if there are no more
+     * messages available in the backlog. For JSON, the response can be entirely
+     * empty. The Pub/Sub system may return fewer than the `maxMessages` requested
+     * even if there are more messages available in the backlog.
      * </pre>
      *
      * <code>repeated .google.pubsub.v1.ReceivedMessage received_messages = 1;</code>
@@ -724,11 +797,13 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * Received Pub/Sub messages. The Pub/Sub system will return zero messages if
-     * there are no more available in the backlog. The Pub/Sub system may return
-     * fewer than the `maxMessages` requested even if there are more messages
-     * available in the backlog.
+     * Received Pub/Sub messages. The list will be empty if there are no more
+     * messages available in the backlog. For JSON, the response can be entirely
+     * empty. The Pub/Sub system may return fewer than the `maxMessages` requested
+     * even if there are more messages available in the backlog.
      * </pre>
      *
      * <code>repeated .google.pubsub.v1.ReceivedMessage received_messages = 1;</code>
@@ -744,48 +819,53 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
-     * Received Pub/Sub messages. The Pub/Sub system will return zero messages if
-     * there are no more available in the backlog. The Pub/Sub system may return
-     * fewer than the `maxMessages` requested even if there are more messages
-     * available in the backlog.
+     * Received Pub/Sub messages. The list will be empty if there are no more
+     * messages available in the backlog. For JSON, the response can be entirely
+     * empty. The Pub/Sub system may return fewer than the `maxMessages` requested
+     * even if there are more messages available in the backlog.
      * </pre>
      *
      * <code>repeated .google.pubsub.v1.ReceivedMessage received_messages = 1;</code>
      */
-    public com.google.pubsub.v1.ReceivedMessage.Builder getReceivedMessagesBuilder(
-        int index) {
+    public com.google.pubsub.v1.ReceivedMessage.Builder getReceivedMessagesBuilder(int index) {
       return getReceivedMessagesFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
-     * Received Pub/Sub messages. The Pub/Sub system will return zero messages if
-     * there are no more available in the backlog. The Pub/Sub system may return
-     * fewer than the `maxMessages` requested even if there are more messages
-     * available in the backlog.
+     * Received Pub/Sub messages. The list will be empty if there are no more
+     * messages available in the backlog. For JSON, the response can be entirely
+     * empty. The Pub/Sub system may return fewer than the `maxMessages` requested
+     * even if there are more messages available in the backlog.
      * </pre>
      *
      * <code>repeated .google.pubsub.v1.ReceivedMessage received_messages = 1;</code>
      */
-    public com.google.pubsub.v1.ReceivedMessageOrBuilder getReceivedMessagesOrBuilder(
-        int index) {
+    public com.google.pubsub.v1.ReceivedMessageOrBuilder getReceivedMessagesOrBuilder(int index) {
       if (receivedMessagesBuilder_ == null) {
-        return receivedMessages_.get(index);  } else {
+        return receivedMessages_.get(index);
+      } else {
         return receivedMessagesBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
-     * Received Pub/Sub messages. The Pub/Sub system will return zero messages if
-     * there are no more available in the backlog. The Pub/Sub system may return
-     * fewer than the `maxMessages` requested even if there are more messages
-     * available in the backlog.
+     * Received Pub/Sub messages. The list will be empty if there are no more
+     * messages available in the backlog. For JSON, the response can be entirely
+     * empty. The Pub/Sub system may return fewer than the `maxMessages` requested
+     * even if there are more messages available in the backlog.
      * </pre>
      *
      * <code>repeated .google.pubsub.v1.ReceivedMessage received_messages = 1;</code>
      */
-    public java.util.List<? extends com.google.pubsub.v1.ReceivedMessageOrBuilder> 
-         getReceivedMessagesOrBuilderList() {
+    public java.util.List<? extends com.google.pubsub.v1.ReceivedMessageOrBuilder>
+        getReceivedMessagesOrBuilderList() {
       if (receivedMessagesBuilder_ != null) {
         return receivedMessagesBuilder_.getMessageOrBuilderList();
       } else {
@@ -793,54 +873,65 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
-     * Received Pub/Sub messages. The Pub/Sub system will return zero messages if
-     * there are no more available in the backlog. The Pub/Sub system may return
-     * fewer than the `maxMessages` requested even if there are more messages
-     * available in the backlog.
+     * Received Pub/Sub messages. The list will be empty if there are no more
+     * messages available in the backlog. For JSON, the response can be entirely
+     * empty. The Pub/Sub system may return fewer than the `maxMessages` requested
+     * even if there are more messages available in the backlog.
      * </pre>
      *
      * <code>repeated .google.pubsub.v1.ReceivedMessage received_messages = 1;</code>
      */
     public com.google.pubsub.v1.ReceivedMessage.Builder addReceivedMessagesBuilder() {
-      return getReceivedMessagesFieldBuilder().addBuilder(
-          com.google.pubsub.v1.ReceivedMessage.getDefaultInstance());
+      return getReceivedMessagesFieldBuilder()
+          .addBuilder(com.google.pubsub.v1.ReceivedMessage.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
-     * Received Pub/Sub messages. The Pub/Sub system will return zero messages if
-     * there are no more available in the backlog. The Pub/Sub system may return
-     * fewer than the `maxMessages` requested even if there are more messages
-     * available in the backlog.
+     * Received Pub/Sub messages. The list will be empty if there are no more
+     * messages available in the backlog. For JSON, the response can be entirely
+     * empty. The Pub/Sub system may return fewer than the `maxMessages` requested
+     * even if there are more messages available in the backlog.
      * </pre>
      *
      * <code>repeated .google.pubsub.v1.ReceivedMessage received_messages = 1;</code>
      */
-    public com.google.pubsub.v1.ReceivedMessage.Builder addReceivedMessagesBuilder(
-        int index) {
-      return getReceivedMessagesFieldBuilder().addBuilder(
-          index, com.google.pubsub.v1.ReceivedMessage.getDefaultInstance());
+    public com.google.pubsub.v1.ReceivedMessage.Builder addReceivedMessagesBuilder(int index) {
+      return getReceivedMessagesFieldBuilder()
+          .addBuilder(index, com.google.pubsub.v1.ReceivedMessage.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
-     * Received Pub/Sub messages. The Pub/Sub system will return zero messages if
-     * there are no more available in the backlog. The Pub/Sub system may return
-     * fewer than the `maxMessages` requested even if there are more messages
-     * available in the backlog.
+     * Received Pub/Sub messages. The list will be empty if there are no more
+     * messages available in the backlog. For JSON, the response can be entirely
+     * empty. The Pub/Sub system may return fewer than the `maxMessages` requested
+     * even if there are more messages available in the backlog.
      * </pre>
      *
      * <code>repeated .google.pubsub.v1.ReceivedMessage received_messages = 1;</code>
      */
-    public java.util.List<com.google.pubsub.v1.ReceivedMessage.Builder> 
-         getReceivedMessagesBuilderList() {
+    public java.util.List<com.google.pubsub.v1.ReceivedMessage.Builder>
+        getReceivedMessagesBuilderList() {
       return getReceivedMessagesFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.pubsub.v1.ReceivedMessage, com.google.pubsub.v1.ReceivedMessage.Builder, com.google.pubsub.v1.ReceivedMessageOrBuilder> 
+            com.google.pubsub.v1.ReceivedMessage,
+            com.google.pubsub.v1.ReceivedMessage.Builder,
+            com.google.pubsub.v1.ReceivedMessageOrBuilder>
         getReceivedMessagesFieldBuilder() {
       if (receivedMessagesBuilder_ == null) {
-        receivedMessagesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.pubsub.v1.ReceivedMessage, com.google.pubsub.v1.ReceivedMessage.Builder, com.google.pubsub.v1.ReceivedMessageOrBuilder>(
+        receivedMessagesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.pubsub.v1.ReceivedMessage,
+                com.google.pubsub.v1.ReceivedMessage.Builder,
+                com.google.pubsub.v1.ReceivedMessageOrBuilder>(
                 receivedMessages_,
                 ((bitField0_ & 0x00000001) == 0x00000001),
                 getParentForChildren(),
@@ -849,22 +940,24 @@ private static final long serialVersionUID = 0L;
       }
       return receivedMessagesBuilder_;
     }
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+
+    @java.lang.Override
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
     }
-
 
     // @@protoc_insertion_point(builder_scope:google.pubsub.v1.PullResponse)
   }
 
   // @@protoc_insertion_point(class_scope:google.pubsub.v1.PullResponse)
   private static final com.google.pubsub.v1.PullResponse DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.pubsub.v1.PullResponse();
   }
@@ -873,15 +966,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<PullResponse>
-      PARSER = new com.google.protobuf.AbstractParser<PullResponse>() {
-    public PullResponse parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-        return new PullResponse(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<PullResponse> PARSER =
+      new com.google.protobuf.AbstractParser<PullResponse>() {
+        @java.lang.Override
+        public PullResponse parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new PullResponse(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<PullResponse> parser() {
     return PARSER;
@@ -892,9 +986,8 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.pubsub.v1.PullResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

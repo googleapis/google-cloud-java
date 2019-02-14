@@ -33,8 +33,8 @@ import java.util.Objects;
  * @param <EntityT> the entity this channel writes data to. Possibly with additional configuration
  */
 public abstract class BaseWriteChannel<
-    ServiceOptionsT extends ServiceOptions<?, ServiceOptionsT>,
-    EntityT extends Serializable> implements WriteChannel {
+        ServiceOptionsT extends ServiceOptions<?, ServiceOptionsT>, EntityT extends Serializable>
+    implements WriteChannel {
 
   private static final int MIN_CHUNK_SIZE = 256 * 1024;
   private static final int DEFAULT_CHUNK_SIZE = 8 * MIN_CHUNK_SIZE;
@@ -48,11 +48,9 @@ public abstract class BaseWriteChannel<
   private boolean isOpen = true;
   private int chunkSize = getDefaultChunkSize();
 
-
   protected int getMinChunkSize() {
     return MIN_CHUNK_SIZE;
   }
-
 
   protected int getDefaultChunkSize() {
     return DEFAULT_CHUNK_SIZE;
@@ -66,41 +64,33 @@ public abstract class BaseWriteChannel<
    */
   protected abstract void flushBuffer(int length, boolean last);
 
-
   protected ServiceOptionsT getOptions() {
     return options;
   }
-
 
   protected EntityT getEntity() {
     return entity;
   }
 
-
   protected String getUploadId() {
     return uploadId;
   }
-
 
   protected long getPosition() {
     return position;
   }
 
-
   protected byte[] getBuffer() {
     return buffer;
   }
-
 
   protected int getLimit() {
     return limit;
   }
 
-
   protected int getChunkSize() {
     return chunkSize;
   }
-
 
   @Override
   public final void setChunkSize(int chunkSize) {
@@ -165,9 +155,7 @@ public abstract class BaseWriteChannel<
     }
   }
 
-  /**
-   * Creates a {@link BaseState.Builder} for the current write channel.
-   */
+  /** Creates a {@link BaseState.Builder} for the current write channel. */
   protected abstract BaseState.Builder<ServiceOptionsT, EntityT> stateBuilder();
 
   @Override
@@ -184,9 +172,7 @@ public abstract class BaseWriteChannel<
         .build();
   }
 
-  /**
-   * Restores the state of the current write channel given a {@link BaseState} object.
-   */
+  /** Restores the state of the current write channel given a {@link BaseState} object. */
   protected void restore(BaseState state) {
     if (state.buffer != null) {
       this.buffer = state.buffer.clone();
@@ -198,7 +184,7 @@ public abstract class BaseWriteChannel<
   }
 
   protected abstract static class BaseState<
-      ServiceOptionsT extends ServiceOptions<?, ServiceOptionsT>, EntityT extends Serializable>
+          ServiceOptionsT extends ServiceOptions<?, ServiceOptionsT>, EntityT extends Serializable>
       implements RestorableState<WriteChannel>, Serializable {
 
     private static final long serialVersionUID = 8541062465055125619L;
@@ -231,8 +217,7 @@ public abstract class BaseWriteChannel<
      *     configuration
      */
     public abstract static class Builder<
-        ServiceOptionsT extends ServiceOptions<?, ServiceOptionsT>,
-        EntityT extends Serializable> {
+        ServiceOptionsT extends ServiceOptions<?, ServiceOptionsT>, EntityT extends Serializable> {
       private final ServiceOptionsT serviceOptions;
       private final EntityT entity;
       private final String uploadId;
@@ -248,24 +233,20 @@ public abstract class BaseWriteChannel<
         this.uploadId = uploadId;
       }
 
-
       public Builder<ServiceOptionsT, EntityT> setPosition(long position) {
         this.position = position;
         return this;
       }
-
 
       public Builder<ServiceOptionsT, EntityT> setBuffer(byte[] buffer) {
         this.buffer = buffer;
         return this;
       }
 
-
       public Builder<ServiceOptionsT, EntityT> setIsOpen(boolean isOpen) {
         this.isOpen = isOpen;
         return this;
       }
-
 
       public Builder<ServiceOptionsT, EntityT> setChunkSize(int chunkSize) {
         this.chunkSize = chunkSize;
@@ -277,8 +258,8 @@ public abstract class BaseWriteChannel<
 
     @Override
     public int hashCode() {
-      return Objects.hash(serviceOptions, entity, uploadId, position, isOpen, chunkSize,
-          Arrays.hashCode(buffer));
+      return Objects.hash(
+          serviceOptions, entity, uploadId, position, isOpen, chunkSize, Arrays.hashCode(buffer));
     }
 
     @Override
@@ -316,7 +297,7 @@ public abstract class BaseWriteChannel<
       public String toString() {
         String result = name + "=";
         if (value != null && value.getClass().isArray()) {
-          Object[] objectArray = new Object[]{value};
+          Object[] objectArray = new Object[] {value};
           String arrayString = Arrays.deepToString(objectArray);
           result += arrayString.substring(1, arrayString.length() - 1);
         } else {
@@ -338,8 +319,7 @@ public abstract class BaseWriteChannel<
     @Override
     public String toString() {
       StringBuilder builder = new StringBuilder();
-      builder.append(getClass().getSimpleName())
-          .append('{');
+      builder.append(getClass().getSimpleName()).append('{');
       String nextSeparator = "";
       for (ValueHolder valueHolder : toStringHelper()) {
         builder.append(nextSeparator).append(valueHolder);

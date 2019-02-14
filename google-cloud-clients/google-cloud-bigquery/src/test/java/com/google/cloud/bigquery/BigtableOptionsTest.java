@@ -22,32 +22,36 @@ import org.junit.Test;
 
 public class BigtableOptionsTest {
 
-  private static final BigtableColumn COL1 = BigtableColumn.newBuilder()
-      .setQualifierEncoded("aaa")
-      .setFieldName("field1")
-      .setOnlyReadLatest(true)
-      .setEncoding("BINARY")
-      .setType("BYTES")
-      .build();
-  private static final BigtableColumn COL2 = BigtableColumn.newBuilder()
-      .setQualifierEncoded("bbb")
-      .setFieldName("field2")
-      .setOnlyReadLatest(true)
-      .setEncoding("TEXT")
-      .setType("STRING")
-      .build();
-  private static final BigtableColumnFamily TESTFAMILY = BigtableColumnFamily.newBuilder()
-      .setFamilyID("fooFamily")
-      .setEncoding("TEXT")
-      .setOnlyReadLatest(true)
-      .setType("INTEGER")
-      .setColumns(ImmutableList.of(COL1, COL2))
-      .build();
-  private static final BigtableOptions OPTIONS = BigtableOptions.newBuilder()
-      .setIgnoreUnspecifiedColumnFamilies(true)
-      .setReadRowkeyAsString(true)
-      .setColumnFamilies(ImmutableList.of(TESTFAMILY))
-      .build();
+  private static final BigtableColumn COL1 =
+      BigtableColumn.newBuilder()
+          .setQualifierEncoded("aaa")
+          .setFieldName("field1")
+          .setOnlyReadLatest(true)
+          .setEncoding("BINARY")
+          .setType("BYTES")
+          .build();
+  private static final BigtableColumn COL2 =
+      BigtableColumn.newBuilder()
+          .setQualifierEncoded("bbb")
+          .setFieldName("field2")
+          .setOnlyReadLatest(true)
+          .setEncoding("TEXT")
+          .setType("STRING")
+          .build();
+  private static final BigtableColumnFamily TESTFAMILY =
+      BigtableColumnFamily.newBuilder()
+          .setFamilyID("fooFamily")
+          .setEncoding("TEXT")
+          .setOnlyReadLatest(true)
+          .setType("INTEGER")
+          .setColumns(ImmutableList.of(COL1, COL2))
+          .build();
+  private static final BigtableOptions OPTIONS =
+      BigtableOptions.newBuilder()
+          .setIgnoreUnspecifiedColumnFamilies(true)
+          .setReadRowkeyAsString(true)
+          .setColumnFamilies(ImmutableList.of(TESTFAMILY))
+          .build();
 
   @Test
   public void testConstructors() {
@@ -94,15 +98,14 @@ public class BigtableOptionsTest {
     assertThat(expected.getType()).isEqualTo(value.getType());
   }
 
-  private void compareBigtableColumnFamily(BigtableColumnFamily expected,
-      BigtableColumnFamily value) {
+  private void compareBigtableColumnFamily(
+      BigtableColumnFamily expected, BigtableColumnFamily value) {
     assertThat(expected).isEqualTo(value);
     assertThat(expected.getFamilyID()).isEqualTo(value.getFamilyID());
     assertThat(expected.getOnlyReadLatest()).isEqualTo(value.getOnlyReadLatest());
     assertThat(expected.getColumns()).isEqualTo(value.getColumns());
     assertThat(expected.getEncoding()).isEqualTo(value.getEncoding());
     assertThat(expected.getType()).isEqualTo(value.getType());
-
   }
 
   private void compareBigtableOptions(BigtableOptions expected, BigtableOptions value) {

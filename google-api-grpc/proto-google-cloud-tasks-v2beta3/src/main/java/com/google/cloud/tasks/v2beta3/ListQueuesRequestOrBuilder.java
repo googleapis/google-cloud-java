@@ -3,11 +3,14 @@
 
 package com.google.cloud.tasks.v2beta3;
 
-public interface ListQueuesRequestOrBuilder extends
+public interface ListQueuesRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.tasks.v2beta3.ListQueuesRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required.
    * The location name.
@@ -18,6 +21,8 @@ public interface ListQueuesRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * Required.
    * The location name.
@@ -26,10 +31,11 @@ public interface ListQueuesRequestOrBuilder extends
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * `filter` can be used to specify a subset of queues. Any [Queue][google.cloud.tasks.v2beta3.Queue]
    * field can be used as a filter and several operators as supported.
@@ -45,6 +51,8 @@ public interface ListQueuesRequestOrBuilder extends
    */
   java.lang.String getFilter();
   /**
+   *
+   *
    * <pre>
    * `filter` can be used to specify a subset of queues. Any [Queue][google.cloud.tasks.v2beta3.Queue]
    * field can be used as a filter and several operators as supported.
@@ -58,10 +66,11 @@ public interface ListQueuesRequestOrBuilder extends
    *
    * <code>string filter = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getFilterBytes();
+  com.google.protobuf.ByteString getFilterBytes();
 
   /**
+   *
+   *
    * <pre>
    * Requested page size.
    * The maximum page size is 9800. If unspecified, the page size will
@@ -76,6 +85,8 @@ public interface ListQueuesRequestOrBuilder extends
   int getPageSize();
 
   /**
+   *
+   *
    * <pre>
    * A token identifying the page of results to return.
    * To request the first page results, page_token must be empty. To
@@ -90,6 +101,8 @@ public interface ListQueuesRequestOrBuilder extends
    */
   java.lang.String getPageToken();
   /**
+   *
+   *
    * <pre>
    * A token identifying the page of results to return.
    * To request the first page results, page_token must be empty. To
@@ -102,6 +115,5 @@ public interface ListQueuesRequestOrBuilder extends
    *
    * <code>string page_token = 4;</code>
    */
-  com.google.protobuf.ByteString
-      getPageTokenBytes();
+  com.google.protobuf.ByteString getPageTokenBytes();
 }

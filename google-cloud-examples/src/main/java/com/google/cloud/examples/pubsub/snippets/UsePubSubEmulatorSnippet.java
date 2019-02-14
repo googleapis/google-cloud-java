@@ -27,7 +27,6 @@ import com.google.cloud.pubsub.v1.TopicAdminSettings;
 import com.google.pubsub.v1.ProjectTopicName;
 import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
-
 import java.io.IOException;
 
 /**
@@ -40,7 +39,7 @@ public class UsePubSubEmulatorSnippet {
   public static void main(String... args) throws IOException {
     // [START use_pubsub_emulator]
     String hostport = System.getenv("PUBSUB_EMULATOR_HOST");
-    ManagedChannel channel = ManagedChannelBuilder.forTarget(hostport).usePlaintext(true).build();
+    ManagedChannel channel = ManagedChannelBuilder.forTarget(hostport).usePlaintext().build();
     try {
       TransportChannelProvider channelProvider =
           FixedTransportChannelProvider.create(GrpcTransportChannel.create(channel));

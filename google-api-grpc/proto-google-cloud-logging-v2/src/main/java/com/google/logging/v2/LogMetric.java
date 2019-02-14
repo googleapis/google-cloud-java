@@ -4,6 +4,8 @@
 package com.google.logging.v2;
 
 /**
+ *
+ *
  * <pre>
  * Describes a logs-based metric.  The value of the metric is the
  * number of log entries that match a logs filter in a given time interval.
@@ -15,15 +17,16 @@ package com.google.logging.v2;
  *
  * Protobuf type {@code google.logging.v2.LogMetric}
  */
-public  final class LogMetric extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class LogMetric extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.logging.v2.LogMetric)
     LogMetricOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use LogMetric.newBuilder() to construct.
   private LogMetric(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private LogMetric() {
     name_ = "";
     description_ = "";
@@ -33,15 +36,18 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private LogMetric(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -53,137 +59,158 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              name_ = s;
+              break;
             }
-            break;
-          }
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 18:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            name_ = s;
-            break;
-          }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            description_ = s;
-            break;
-          }
-          case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            filter_ = s;
-            break;
-          }
-          case 32: {
-            int rawValue = input.readEnum();
-
-            version_ = rawValue;
-            break;
-          }
-          case 42: {
-            com.google.api.MetricDescriptor.Builder subBuilder = null;
-            if (metricDescriptor_ != null) {
-              subBuilder = metricDescriptor_.toBuilder();
+              description_ = s;
+              break;
             }
-            metricDescriptor_ = input.readMessage(com.google.api.MetricDescriptor.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(metricDescriptor_);
-              metricDescriptor_ = subBuilder.buildPartial();
-            }
+          case 26:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            break;
-          }
-          case 50: {
-            java.lang.String s = input.readStringRequireUtf8();
+              filter_ = s;
+              break;
+            }
+          case 32:
+            {
+              int rawValue = input.readEnum();
 
-            valueExtractor_ = s;
-            break;
-          }
-          case 58: {
-            if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
-              labelExtractors_ = com.google.protobuf.MapField.newMapField(
-                  LabelExtractorsDefaultEntryHolder.defaultEntry);
-              mutable_bitField0_ |= 0x00000020;
+              version_ = rawValue;
+              break;
             }
-            com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-            labelExtractors__ = input.readMessage(
-                LabelExtractorsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-            labelExtractors_.getMutableMap().put(
-                labelExtractors__.getKey(), labelExtractors__.getValue());
-            break;
-          }
-          case 66: {
-            com.google.api.Distribution.BucketOptions.Builder subBuilder = null;
-            if (bucketOptions_ != null) {
-              subBuilder = bucketOptions_.toBuilder();
-            }
-            bucketOptions_ = input.readMessage(com.google.api.Distribution.BucketOptions.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(bucketOptions_);
-              bucketOptions_ = subBuilder.buildPartial();
-            }
+          case 42:
+            {
+              com.google.api.MetricDescriptor.Builder subBuilder = null;
+              if (metricDescriptor_ != null) {
+                subBuilder = metricDescriptor_.toBuilder();
+              }
+              metricDescriptor_ =
+                  input.readMessage(com.google.api.MetricDescriptor.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(metricDescriptor_);
+                metricDescriptor_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
+              break;
+            }
+          case 50:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              valueExtractor_ = s;
+              break;
+            }
+          case 58:
+            {
+              if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+                labelExtractors_ =
+                    com.google.protobuf.MapField.newMapField(
+                        LabelExtractorsDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000020;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labelExtractors__ =
+                  input.readMessage(
+                      LabelExtractorsDefaultEntryHolder.defaultEntry.getParserForType(),
+                      extensionRegistry);
+              labelExtractors_
+                  .getMutableMap()
+                  .put(labelExtractors__.getKey(), labelExtractors__.getValue());
+              break;
+            }
+          case 66:
+            {
+              com.google.api.Distribution.BucketOptions.Builder subBuilder = null;
+              if (bucketOptions_ != null) {
+                subBuilder = bucketOptions_.toBuilder();
+              }
+              bucketOptions_ =
+                  input.readMessage(
+                      com.google.api.Distribution.BucketOptions.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(bucketOptions_);
+                bucketOptions_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.logging.v2.LoggingMetricsProto.internal_static_google_logging_v2_LogMetric_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.logging.v2.LoggingMetricsProto
+        .internal_static_google_logging_v2_LogMetric_descriptor;
   }
 
   @SuppressWarnings({"rawtypes"})
-  protected com.google.protobuf.MapField internalGetMapField(
-      int number) {
+  @java.lang.Override
+  protected com.google.protobuf.MapField internalGetMapField(int number) {
     switch (number) {
       case 7:
         return internalGetLabelExtractors();
       default:
-        throw new RuntimeException(
-            "Invalid map field number: " + number);
+        throw new RuntimeException("Invalid map field number: " + number);
     }
   }
+
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.logging.v2.LoggingMetricsProto.internal_static_google_logging_v2_LogMetric_fieldAccessorTable
+    return com.google.logging.v2.LoggingMetricsProto
+        .internal_static_google_logging_v2_LogMetric_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
             com.google.logging.v2.LogMetric.class, com.google.logging.v2.LogMetric.Builder.class);
   }
 
   /**
+   *
+   *
    * <pre>
-   * Stackdriver Logging API version.
+   * Logging API version.
    * </pre>
    *
    * Protobuf enum {@code google.logging.v2.LogMetric.ApiVersion}
    */
-  public enum ApiVersion
-      implements com.google.protobuf.ProtocolMessageEnum {
+  public enum ApiVersion implements com.google.protobuf.ProtocolMessageEnum {
     /**
+     *
+     *
      * <pre>
-     * Stackdriver Logging API v2.
+     * Logging API v2.
      * </pre>
      *
      * <code>V2 = 0;</code>
      */
     V2(0),
     /**
+     *
+     *
      * <pre>
-     * Stackdriver Logging API v1.
+     * Logging API v1.
      * </pre>
      *
      * <code>V1 = 1;</code>
@@ -193,22 +220,25 @@ private static final long serialVersionUID = 0L;
     ;
 
     /**
+     *
+     *
      * <pre>
-     * Stackdriver Logging API v2.
+     * Logging API v2.
      * </pre>
      *
      * <code>V2 = 0;</code>
      */
     public static final int V2_VALUE = 0;
     /**
+     *
+     *
      * <pre>
-     * Stackdriver Logging API v1.
+     * Logging API v1.
      * </pre>
      *
      * <code>V1 = 1;</code>
      */
     public static final int V1_VALUE = 1;
-
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -218,9 +248,7 @@ private static final long serialVersionUID = 0L;
       return value;
     }
 
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static ApiVersion valueOf(int value) {
       return forNumber(value);
@@ -228,44 +256,43 @@ private static final long serialVersionUID = 0L;
 
     public static ApiVersion forNumber(int value) {
       switch (value) {
-        case 0: return V2;
-        case 1: return V1;
-        default: return null;
+        case 0:
+          return V2;
+        case 1:
+          return V1;
+        default:
+          return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<ApiVersion>
-        internalGetValueMap() {
+    public static com.google.protobuf.Internal.EnumLiteMap<ApiVersion> internalGetValueMap() {
       return internalValueMap;
     }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        ApiVersion> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<ApiVersion>() {
-            public ApiVersion findValueByNumber(int number) {
-              return ApiVersion.forNumber(number);
-            }
-          };
 
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
+    private static final com.google.protobuf.Internal.EnumLiteMap<ApiVersion> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<ApiVersion>() {
+          public ApiVersion findValueByNumber(int number) {
+            return ApiVersion.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
       return getDescriptor().getValues().get(ordinal());
     }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
       return getDescriptor();
     }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
       return com.google.logging.v2.LogMetric.getDescriptor().getEnumTypes().get(0);
     }
 
     private static final ApiVersion[] VALUES = values();
 
-    public static ApiVersion valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+    public static ApiVersion valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
         return UNRECOGNIZED;
@@ -286,6 +313,8 @@ private static final long serialVersionUID = 0L;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
+   *
+   *
    * <pre>
    * Required. The client-assigned metric identifier.
    * Examples: `"error_count"`, `"nginx/requests"`.
@@ -309,14 +338,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       name_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Required. The client-assigned metric identifier.
    * Examples: `"error_count"`, `"nginx/requests"`.
@@ -335,13 +365,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string name = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getNameBytes() {
+  public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       name_ = b;
       return b;
     } else {
@@ -352,6 +380,8 @@ private static final long serialVersionUID = 0L;
   public static final int DESCRIPTION_FIELD_NUMBER = 2;
   private volatile java.lang.Object description_;
   /**
+   *
+   *
    * <pre>
    * Optional. A description of this metric, which is used in documentation.
    * </pre>
@@ -363,27 +393,26 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       description_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Optional. A description of this metric, which is used in documentation.
    * </pre>
    *
    * <code>string description = 2;</code>
    */
-  public com.google.protobuf.ByteString
-      getDescriptionBytes() {
+  public com.google.protobuf.ByteString getDescriptionBytes() {
     java.lang.Object ref = description_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       description_ = b;
       return b;
     } else {
@@ -394,6 +423,8 @@ private static final long serialVersionUID = 0L;
   public static final int FILTER_FIELD_NUMBER = 3;
   private volatile java.lang.Object filter_;
   /**
+   *
+   *
    * <pre>
    * Required. An [advanced logs filter](/logging/docs/view/advanced_filters)
    * which is used to match log entries.
@@ -409,14 +440,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       filter_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Required. An [advanced logs filter](/logging/docs/view/advanced_filters)
    * which is used to match log entries.
@@ -427,13 +459,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string filter = 3;</code>
    */
-  public com.google.protobuf.ByteString
-      getFilterBytes() {
+  public com.google.protobuf.ByteString getFilterBytes() {
     java.lang.Object ref = filter_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       filter_ = b;
       return b;
     } else {
@@ -444,6 +474,8 @@ private static final long serialVersionUID = 0L;
   public static final int METRIC_DESCRIPTOR_FIELD_NUMBER = 5;
   private com.google.api.MetricDescriptor metricDescriptor_;
   /**
+   *
+   *
    * <pre>
    * Optional. The metric descriptor associated with the logs-based metric.
    * If unspecified, it uses a default metric descriptor with a DELTA metric
@@ -470,6 +502,8 @@ private static final long serialVersionUID = 0L;
     return metricDescriptor_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Optional. The metric descriptor associated with the logs-based metric.
    * If unspecified, it uses a default metric descriptor with a DELTA metric
@@ -493,9 +527,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.api.MetricDescriptor metric_descriptor = 5;</code>
    */
   public com.google.api.MetricDescriptor getMetricDescriptor() {
-    return metricDescriptor_ == null ? com.google.api.MetricDescriptor.getDefaultInstance() : metricDescriptor_;
+    return metricDescriptor_ == null
+        ? com.google.api.MetricDescriptor.getDefaultInstance()
+        : metricDescriptor_;
   }
   /**
+   *
+   *
    * <pre>
    * Optional. The metric descriptor associated with the logs-based metric.
    * If unspecified, it uses a default metric descriptor with a DELTA metric
@@ -525,6 +563,8 @@ private static final long serialVersionUID = 0L;
   public static final int VALUE_EXTRACTOR_FIELD_NUMBER = 6;
   private volatile java.lang.Object valueExtractor_;
   /**
+   *
+   *
    * <pre>
    * Optional. A `value_extractor` is required when using a distribution
    * logs-based metric to extract the values to record from a log entry.
@@ -552,14 +592,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       valueExtractor_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Optional. A `value_extractor` is required when using a distribution
    * logs-based metric to extract the values to record from a log entry.
@@ -582,13 +623,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string value_extractor = 6;</code>
    */
-  public com.google.protobuf.ByteString
-      getValueExtractorBytes() {
+  public com.google.protobuf.ByteString getValueExtractorBytes() {
     java.lang.Object ref = valueExtractor_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       valueExtractor_ = b;
       return b;
     } else {
@@ -597,21 +636,22 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int LABEL_EXTRACTORS_FIELD_NUMBER = 7;
+
   private static final class LabelExtractorsDefaultEntryHolder {
-    static final com.google.protobuf.MapEntry<
-        java.lang.String, java.lang.String> defaultEntry =
-            com.google.protobuf.MapEntry
-            .<java.lang.String, java.lang.String>newDefaultInstance(
-                com.google.logging.v2.LoggingMetricsProto.internal_static_google_logging_v2_LogMetric_LabelExtractorsEntry_descriptor, 
-                com.google.protobuf.WireFormat.FieldType.STRING,
-                "",
-                com.google.protobuf.WireFormat.FieldType.STRING,
-                "");
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.logging.v2.LoggingMetricsProto
+                .internal_static_google_logging_v2_LogMetric_LabelExtractorsEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
   }
-  private com.google.protobuf.MapField<
-      java.lang.String, java.lang.String> labelExtractors_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> labelExtractors_;
+
   private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-  internalGetLabelExtractors() {
+      internalGetLabelExtractors() {
     if (labelExtractors_ == null) {
       return com.google.protobuf.MapField.emptyMapField(
           LabelExtractorsDefaultEntryHolder.defaultEntry);
@@ -623,6 +663,8 @@ private static final long serialVersionUID = 0L;
     return internalGetLabelExtractors().getMap().size();
   }
   /**
+   *
+   *
    * <pre>
    * Optional. A map from a label key string to an extractor expression which is
    * used to extract data from a log entry field and assign as the label value.
@@ -640,20 +682,20 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; label_extractors = 7;</code>
    */
-
-  public boolean containsLabelExtractors(
-      java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+  public boolean containsLabelExtractors(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
     return internalGetLabelExtractors().getMap().containsKey(key);
   }
-  /**
-   * Use {@link #getLabelExtractorsMap()} instead.
-   */
+  /** Use {@link #getLabelExtractorsMap()} instead. */
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabelExtractors() {
     return getLabelExtractorsMap();
   }
   /**
+   *
+   *
    * <pre>
    * Optional. A map from a label key string to an extractor expression which is
    * used to extract data from a log entry field and assign as the label value.
@@ -671,11 +713,12 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; label_extractors = 7;</code>
    */
-
   public java.util.Map<java.lang.String, java.lang.String> getLabelExtractorsMap() {
     return internalGetLabelExtractors().getMap();
   }
   /**
+   *
+   *
    * <pre>
    * Optional. A map from a label key string to an extractor expression which is
    * used to extract data from a log entry field and assign as the label value.
@@ -693,16 +736,17 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; label_extractors = 7;</code>
    */
-
   public java.lang.String getLabelExtractorsOrDefault(
-      java.lang.String key,
-      java.lang.String defaultValue) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
-    java.util.Map<java.lang.String, java.lang.String> map =
-        internalGetLabelExtractors().getMap();
+      java.lang.String key, java.lang.String defaultValue) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetLabelExtractors().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
   /**
+   *
+   *
    * <pre>
    * Optional. A map from a label key string to an extractor expression which is
    * used to extract data from a log entry field and assign as the label value.
@@ -720,12 +764,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; label_extractors = 7;</code>
    */
-
-  public java.lang.String getLabelExtractorsOrThrow(
-      java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
-    java.util.Map<java.lang.String, java.lang.String> map =
-        internalGetLabelExtractors().getMap();
+  public java.lang.String getLabelExtractorsOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetLabelExtractors().getMap();
     if (!map.containsKey(key)) {
       throw new java.lang.IllegalArgumentException();
     }
@@ -735,6 +778,8 @@ private static final long serialVersionUID = 0L;
   public static final int BUCKET_OPTIONS_FIELD_NUMBER = 8;
   private com.google.api.Distribution.BucketOptions bucketOptions_;
   /**
+   *
+   *
    * <pre>
    * Optional. The `bucket_options` are required when the logs-based metric is
    * using a DISTRIBUTION value type and it describes the bucket boundaries
@@ -747,6 +792,8 @@ private static final long serialVersionUID = 0L;
     return bucketOptions_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Optional. The `bucket_options` are required when the logs-based metric is
    * using a DISTRIBUTION value type and it describes the bucket boundaries
@@ -756,9 +803,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.api.Distribution.BucketOptions bucket_options = 8;</code>
    */
   public com.google.api.Distribution.BucketOptions getBucketOptions() {
-    return bucketOptions_ == null ? com.google.api.Distribution.BucketOptions.getDefaultInstance() : bucketOptions_;
+    return bucketOptions_ == null
+        ? com.google.api.Distribution.BucketOptions.getDefaultInstance()
+        : bucketOptions_;
   }
   /**
+   *
+   *
    * <pre>
    * Optional. The `bucket_options` are required when the logs-based metric is
    * using a DISTRIBUTION value type and it describes the bucket boundaries
@@ -774,6 +825,8 @@ private static final long serialVersionUID = 0L;
   public static final int VERSION_FIELD_NUMBER = 4;
   private int version_;
   /**
+   *
+   *
    * <pre>
    * Deprecated. The API version that created or updated this metric.
    * The v2 format is used by default and cannot be changed.
@@ -781,10 +834,13 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.logging.v2.LogMetric.ApiVersion version = 4 [deprecated = true];</code>
    */
-  @java.lang.Deprecated public int getVersionValue() {
+  @java.lang.Deprecated
+  public int getVersionValue() {
     return version_;
   }
   /**
+   *
+   *
    * <pre>
    * Deprecated. The API version that created or updated this metric.
    * The v2 format is used by default and cannot be changed.
@@ -792,12 +848,17 @@ private static final long serialVersionUID = 0L;
    *
    * <code>.google.logging.v2.LogMetric.ApiVersion version = 4 [deprecated = true];</code>
    */
-  @java.lang.Deprecated public com.google.logging.v2.LogMetric.ApiVersion getVersion() {
-    com.google.logging.v2.LogMetric.ApiVersion result = com.google.logging.v2.LogMetric.ApiVersion.valueOf(version_);
+  @java.lang.Deprecated
+  public com.google.logging.v2.LogMetric.ApiVersion getVersion() {
+    @SuppressWarnings("deprecation")
+    com.google.logging.v2.LogMetric.ApiVersion result =
+        com.google.logging.v2.LogMetric.ApiVersion.valueOf(version_);
     return result == null ? com.google.logging.v2.LogMetric.ApiVersion.UNRECOGNIZED : result;
   }
 
   private byte memoizedIsInitialized = -1;
+
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -807,8 +868,8 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  @java.lang.Override
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
@@ -827,18 +888,15 @@ private static final long serialVersionUID = 0L;
     if (!getValueExtractorBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, valueExtractor_);
     }
-    com.google.protobuf.GeneratedMessageV3
-      .serializeStringMapTo(
-        output,
-        internalGetLabelExtractors(),
-        LabelExtractorsDefaultEntryHolder.defaultEntry,
-        7);
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetLabelExtractors(), LabelExtractorsDefaultEntryHolder.defaultEntry, 7);
     if (bucketOptions_ != null) {
       output.writeMessage(8, getBucketOptions());
     }
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -854,29 +912,26 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, filter_);
     }
     if (version_ != com.google.logging.v2.LogMetric.ApiVersion.V2.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(4, version_);
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, version_);
     }
     if (metricDescriptor_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(5, getMetricDescriptor());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, getMetricDescriptor());
     }
     if (!getValueExtractorBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(6, valueExtractor_);
     }
-    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
-         : internalGetLabelExtractors().getMap().entrySet()) {
-      com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-      labelExtractors__ = LabelExtractorsDefaultEntryHolder.defaultEntry.newBuilderForType()
-          .setKey(entry.getKey())
-          .setValue(entry.getValue())
-          .build();
-      size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(7, labelExtractors__);
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetLabelExtractors().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labelExtractors__ =
+          LabelExtractorsDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, labelExtractors__);
     }
     if (bucketOptions_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(8, getBucketOptions());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getBucketOptions());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -886,7 +941,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.logging.v2.LogMetric)) {
       return super.equals(obj);
@@ -894,25 +949,18 @@ private static final long serialVersionUID = 0L;
     com.google.logging.v2.LogMetric other = (com.google.logging.v2.LogMetric) obj;
 
     boolean result = true;
-    result = result && getName()
-        .equals(other.getName());
-    result = result && getDescription()
-        .equals(other.getDescription());
-    result = result && getFilter()
-        .equals(other.getFilter());
+    result = result && getName().equals(other.getName());
+    result = result && getDescription().equals(other.getDescription());
+    result = result && getFilter().equals(other.getFilter());
     result = result && (hasMetricDescriptor() == other.hasMetricDescriptor());
     if (hasMetricDescriptor()) {
-      result = result && getMetricDescriptor()
-          .equals(other.getMetricDescriptor());
+      result = result && getMetricDescriptor().equals(other.getMetricDescriptor());
     }
-    result = result && getValueExtractor()
-        .equals(other.getValueExtractor());
-    result = result && internalGetLabelExtractors().equals(
-        other.internalGetLabelExtractors());
+    result = result && getValueExtractor().equals(other.getValueExtractor());
+    result = result && internalGetLabelExtractors().equals(other.internalGetLabelExtractors());
     result = result && (hasBucketOptions() == other.hasBucketOptions());
     if (hasBucketOptions()) {
-      result = result && getBucketOptions()
-          .equals(other.getBucketOptions());
+      result = result && getBucketOptions().equals(other.getBucketOptions());
     }
     result = result && version_ == other.version_;
     result = result && unknownFields.equals(other.unknownFields);
@@ -953,95 +1001,103 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.logging.v2.LogMetric parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.logging.v2.LogMetric parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.logging.v2.LogMetric parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.logging.v2.LogMetric parseFrom(
-      com.google.protobuf.ByteString data)
+
+  public static com.google.logging.v2.LogMetric parseFrom(com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.logging.v2.LogMetric parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.logging.v2.LogMetric parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.logging.v2.LogMetric parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.logging.v2.LogMetric parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.logging.v2.LogMetric parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.logging.v2.LogMetric parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
   public static com.google.logging.v2.LogMetric parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.logging.v2.LogMetric parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.logging.v2.LogMetric parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  public Builder newBuilderForType() { return newBuilder(); }
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-  public static Builder newBuilder(com.google.logging.v2.LogMetric prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+
+  public static Builder newBuilder(com.google.logging.v2.LogMetric prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+
+  @java.lang.Override
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Describes a logs-based metric.  The value of the metric is the
    * number of log entries that match a logs filter in a given time interval.
@@ -1053,40 +1109,40 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.logging.v2.LogMetric}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.logging.v2.LogMetric)
       com.google.logging.v2.LogMetricOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.logging.v2.LoggingMetricsProto.internal_static_google_logging_v2_LogMetric_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.logging.v2.LoggingMetricsProto
+          .internal_static_google_logging_v2_LogMetric_descriptor;
     }
 
     @SuppressWarnings({"rawtypes"})
-    protected com.google.protobuf.MapField internalGetMapField(
-        int number) {
+    protected com.google.protobuf.MapField internalGetMapField(int number) {
       switch (number) {
         case 7:
           return internalGetLabelExtractors();
         default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
+          throw new RuntimeException("Invalid map field number: " + number);
       }
     }
+
     @SuppressWarnings({"rawtypes"})
-    protected com.google.protobuf.MapField internalGetMutableMapField(
-        int number) {
+    protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
       switch (number) {
         case 7:
           return internalGetMutableLabelExtractors();
         default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
+          throw new RuntimeException("Invalid map field number: " + number);
       }
     }
+
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.logging.v2.LoggingMetricsProto.internal_static_google_logging_v2_LogMetric_fieldAccessorTable
+      return com.google.logging.v2.LoggingMetricsProto
+          .internal_static_google_logging_v2_LogMetric_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               com.google.logging.v2.LogMetric.class, com.google.logging.v2.LogMetric.Builder.class);
     }
@@ -1096,16 +1152,16 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       name_ = "";
@@ -1134,15 +1190,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.logging.v2.LoggingMetricsProto.internal_static_google_logging_v2_LogMetric_descriptor;
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.logging.v2.LoggingMetricsProto
+          .internal_static_google_logging_v2_LogMetric_descriptor;
     }
 
+    @java.lang.Override
     public com.google.logging.v2.LogMetric getDefaultInstanceForType() {
       return com.google.logging.v2.LogMetric.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.logging.v2.LogMetric build() {
       com.google.logging.v2.LogMetric result = buildPartial();
       if (!result.isInitialized()) {
@@ -1151,6 +1210,7 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.logging.v2.LogMetric buildPartial() {
       com.google.logging.v2.LogMetric result = new com.google.logging.v2.LogMetric(this);
       int from_bitField0_ = bitField0_;
@@ -1177,35 +1237,43 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+
+    @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+    @java.lang.Override
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+    @java.lang.Override
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
+    @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
+    @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.logging.v2.LogMetric) {
-        return mergeFrom((com.google.logging.v2.LogMetric)other);
+        return mergeFrom((com.google.logging.v2.LogMetric) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -1233,8 +1301,7 @@ private static final long serialVersionUID = 0L;
         valueExtractor_ = other.valueExtractor_;
         onChanged();
       }
-      internalGetMutableLabelExtractors().mergeFrom(
-          other.internalGetLabelExtractors());
+      internalGetMutableLabelExtractors().mergeFrom(other.internalGetLabelExtractors());
       if (other.hasBucketOptions()) {
         mergeBucketOptions(other.getBucketOptions());
       }
@@ -1246,10 +1313,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1267,10 +1336,13 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
+     *
+     *
      * <pre>
      * Required. The client-assigned metric identifier.
      * Examples: `"error_count"`, `"nginx/requests"`.
@@ -1292,8 +1364,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         name_ = s;
         return s;
@@ -1302,6 +1373,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The client-assigned metric identifier.
      * Examples: `"error_count"`, `"nginx/requests"`.
@@ -1320,13 +1393,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getNameBytes() {
+    public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         name_ = b;
         return b;
       } else {
@@ -1334,6 +1405,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The client-assigned metric identifier.
      * Examples: `"error_count"`, `"nginx/requests"`.
@@ -1352,17 +1425,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public Builder setName(
-        java.lang.String value) {
+    public Builder setName(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       name_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The client-assigned metric identifier.
      * Examples: `"error_count"`, `"nginx/requests"`.
@@ -1382,12 +1456,14 @@ private static final long serialVersionUID = 0L;
      * <code>string name = 1;</code>
      */
     public Builder clearName() {
-      
+
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The client-assigned metric identifier.
      * Examples: `"error_count"`, `"nginx/requests"`.
@@ -1406,13 +1482,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public Builder setNameBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       name_ = value;
       onChanged();
       return this;
@@ -1420,6 +1495,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object description_ = "";
     /**
+     *
+     *
      * <pre>
      * Optional. A description of this metric, which is used in documentation.
      * </pre>
@@ -1429,8 +1506,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getDescription() {
       java.lang.Object ref = description_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         description_ = s;
         return s;
@@ -1439,19 +1515,19 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. A description of this metric, which is used in documentation.
      * </pre>
      *
      * <code>string description = 2;</code>
      */
-    public com.google.protobuf.ByteString
-        getDescriptionBytes() {
+    public com.google.protobuf.ByteString getDescriptionBytes() {
       java.lang.Object ref = description_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         description_ = b;
         return b;
       } else {
@@ -1459,23 +1535,26 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. A description of this metric, which is used in documentation.
      * </pre>
      *
      * <code>string description = 2;</code>
      */
-    public Builder setDescription(
-        java.lang.String value) {
+    public Builder setDescription(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       description_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. A description of this metric, which is used in documentation.
      * </pre>
@@ -1483,25 +1562,26 @@ private static final long serialVersionUID = 0L;
      * <code>string description = 2;</code>
      */
     public Builder clearDescription() {
-      
+
       description_ = getDefaultInstance().getDescription();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. A description of this metric, which is used in documentation.
      * </pre>
      *
      * <code>string description = 2;</code>
      */
-    public Builder setDescriptionBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       description_ = value;
       onChanged();
       return this;
@@ -1509,6 +1589,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object filter_ = "";
     /**
+     *
+     *
      * <pre>
      * Required. An [advanced logs filter](/logging/docs/view/advanced_filters)
      * which is used to match log entries.
@@ -1522,8 +1604,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getFilter() {
       java.lang.Object ref = filter_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         filter_ = s;
         return s;
@@ -1532,6 +1613,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. An [advanced logs filter](/logging/docs/view/advanced_filters)
      * which is used to match log entries.
@@ -1542,13 +1625,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string filter = 3;</code>
      */
-    public com.google.protobuf.ByteString
-        getFilterBytes() {
+    public com.google.protobuf.ByteString getFilterBytes() {
       java.lang.Object ref = filter_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         filter_ = b;
         return b;
       } else {
@@ -1556,6 +1637,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. An [advanced logs filter](/logging/docs/view/advanced_filters)
      * which is used to match log entries.
@@ -1566,17 +1649,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string filter = 3;</code>
      */
-    public Builder setFilter(
-        java.lang.String value) {
+    public Builder setFilter(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       filter_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. An [advanced logs filter](/logging/docs/view/advanced_filters)
      * which is used to match log entries.
@@ -1588,12 +1672,14 @@ private static final long serialVersionUID = 0L;
      * <code>string filter = 3;</code>
      */
     public Builder clearFilter() {
-      
+
       filter_ = getDefaultInstance().getFilter();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. An [advanced logs filter](/logging/docs/view/advanced_filters)
      * which is used to match log entries.
@@ -1604,13 +1690,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string filter = 3;</code>
      */
-    public Builder setFilterBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setFilterBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       filter_ = value;
       onChanged();
       return this;
@@ -1618,8 +1703,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.api.MetricDescriptor metricDescriptor_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.api.MetricDescriptor, com.google.api.MetricDescriptor.Builder, com.google.api.MetricDescriptorOrBuilder> metricDescriptorBuilder_;
+            com.google.api.MetricDescriptor,
+            com.google.api.MetricDescriptor.Builder,
+            com.google.api.MetricDescriptorOrBuilder>
+        metricDescriptorBuilder_;
     /**
+     *
+     *
      * <pre>
      * Optional. The metric descriptor associated with the logs-based metric.
      * If unspecified, it uses a default metric descriptor with a DELTA metric
@@ -1646,6 +1736,8 @@ private static final long serialVersionUID = 0L;
       return metricDescriptorBuilder_ != null || metricDescriptor_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The metric descriptor associated with the logs-based metric.
      * If unspecified, it uses a default metric descriptor with a DELTA metric
@@ -1670,12 +1762,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.api.MetricDescriptor getMetricDescriptor() {
       if (metricDescriptorBuilder_ == null) {
-        return metricDescriptor_ == null ? com.google.api.MetricDescriptor.getDefaultInstance() : metricDescriptor_;
+        return metricDescriptor_ == null
+            ? com.google.api.MetricDescriptor.getDefaultInstance()
+            : metricDescriptor_;
       } else {
         return metricDescriptorBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The metric descriptor associated with the logs-based metric.
      * If unspecified, it uses a default metric descriptor with a DELTA metric
@@ -1712,6 +1808,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The metric descriptor associated with the logs-based metric.
      * If unspecified, it uses a default metric descriptor with a DELTA metric
@@ -1734,8 +1832,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.api.MetricDescriptor metric_descriptor = 5;</code>
      */
-    public Builder setMetricDescriptor(
-        com.google.api.MetricDescriptor.Builder builderForValue) {
+    public Builder setMetricDescriptor(com.google.api.MetricDescriptor.Builder builderForValue) {
       if (metricDescriptorBuilder_ == null) {
         metricDescriptor_ = builderForValue.build();
         onChanged();
@@ -1746,6 +1843,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The metric descriptor associated with the logs-based metric.
      * If unspecified, it uses a default metric descriptor with a DELTA metric
@@ -1772,7 +1871,9 @@ private static final long serialVersionUID = 0L;
       if (metricDescriptorBuilder_ == null) {
         if (metricDescriptor_ != null) {
           metricDescriptor_ =
-            com.google.api.MetricDescriptor.newBuilder(metricDescriptor_).mergeFrom(value).buildPartial();
+              com.google.api.MetricDescriptor.newBuilder(metricDescriptor_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           metricDescriptor_ = value;
         }
@@ -1784,6 +1885,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The metric descriptor associated with the logs-based metric.
      * If unspecified, it uses a default metric descriptor with a DELTA metric
@@ -1818,6 +1921,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The metric descriptor associated with the logs-based metric.
      * If unspecified, it uses a default metric descriptor with a DELTA metric
@@ -1841,11 +1946,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.api.MetricDescriptor metric_descriptor = 5;</code>
      */
     public com.google.api.MetricDescriptor.Builder getMetricDescriptorBuilder() {
-      
+
       onChanged();
       return getMetricDescriptorFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The metric descriptor associated with the logs-based metric.
      * If unspecified, it uses a default metric descriptor with a DELTA metric
@@ -1872,11 +1979,14 @@ private static final long serialVersionUID = 0L;
       if (metricDescriptorBuilder_ != null) {
         return metricDescriptorBuilder_.getMessageOrBuilder();
       } else {
-        return metricDescriptor_ == null ?
-            com.google.api.MetricDescriptor.getDefaultInstance() : metricDescriptor_;
+        return metricDescriptor_ == null
+            ? com.google.api.MetricDescriptor.getDefaultInstance()
+            : metricDescriptor_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The metric descriptor associated with the logs-based metric.
      * If unspecified, it uses a default metric descriptor with a DELTA metric
@@ -1900,14 +2010,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.api.MetricDescriptor metric_descriptor = 5;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.api.MetricDescriptor, com.google.api.MetricDescriptor.Builder, com.google.api.MetricDescriptorOrBuilder> 
+            com.google.api.MetricDescriptor,
+            com.google.api.MetricDescriptor.Builder,
+            com.google.api.MetricDescriptorOrBuilder>
         getMetricDescriptorFieldBuilder() {
       if (metricDescriptorBuilder_ == null) {
-        metricDescriptorBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.api.MetricDescriptor, com.google.api.MetricDescriptor.Builder, com.google.api.MetricDescriptorOrBuilder>(
-                getMetricDescriptor(),
-                getParentForChildren(),
-                isClean());
+        metricDescriptorBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.api.MetricDescriptor,
+                com.google.api.MetricDescriptor.Builder,
+                com.google.api.MetricDescriptorOrBuilder>(
+                getMetricDescriptor(), getParentForChildren(), isClean());
         metricDescriptor_ = null;
       }
       return metricDescriptorBuilder_;
@@ -1915,6 +2028,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object valueExtractor_ = "";
     /**
+     *
+     *
      * <pre>
      * Optional. A `value_extractor` is required when using a distribution
      * logs-based metric to extract the values to record from a log entry.
@@ -1940,8 +2055,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getValueExtractor() {
       java.lang.Object ref = valueExtractor_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         valueExtractor_ = s;
         return s;
@@ -1950,6 +2064,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. A `value_extractor` is required when using a distribution
      * logs-based metric to extract the values to record from a log entry.
@@ -1972,13 +2088,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string value_extractor = 6;</code>
      */
-    public com.google.protobuf.ByteString
-        getValueExtractorBytes() {
+    public com.google.protobuf.ByteString getValueExtractorBytes() {
       java.lang.Object ref = valueExtractor_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         valueExtractor_ = b;
         return b;
       } else {
@@ -1986,6 +2100,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. A `value_extractor` is required when using a distribution
      * logs-based metric to extract the values to record from a log entry.
@@ -2008,17 +2124,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string value_extractor = 6;</code>
      */
-    public Builder setValueExtractor(
-        java.lang.String value) {
+    public Builder setValueExtractor(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       valueExtractor_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. A `value_extractor` is required when using a distribution
      * logs-based metric to extract the values to record from a log entry.
@@ -2042,12 +2159,14 @@ private static final long serialVersionUID = 0L;
      * <code>string value_extractor = 6;</code>
      */
     public Builder clearValueExtractor() {
-      
+
       valueExtractor_ = getDefaultInstance().getValueExtractor();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. A `value_extractor` is required when using a distribution
      * logs-based metric to extract the values to record from a log entry.
@@ -2070,34 +2189,36 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string value_extractor = 6;</code>
      */
-    public Builder setValueExtractorBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setValueExtractorBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       valueExtractor_ = value;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.MapField<
-        java.lang.String, java.lang.String> labelExtractors_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> labelExtractors_;
+
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetLabelExtractors() {
+        internalGetLabelExtractors() {
       if (labelExtractors_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
             LabelExtractorsDefaultEntryHolder.defaultEntry);
       }
       return labelExtractors_;
     }
+
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetMutableLabelExtractors() {
-      onChanged();;
+        internalGetMutableLabelExtractors() {
+      onChanged();
+      ;
       if (labelExtractors_ == null) {
-        labelExtractors_ = com.google.protobuf.MapField.newMapField(
-            LabelExtractorsDefaultEntryHolder.defaultEntry);
+        labelExtractors_ =
+            com.google.protobuf.MapField.newMapField(
+                LabelExtractorsDefaultEntryHolder.defaultEntry);
       }
       if (!labelExtractors_.isMutable()) {
         labelExtractors_ = labelExtractors_.copy();
@@ -2109,6 +2230,8 @@ private static final long serialVersionUID = 0L;
       return internalGetLabelExtractors().getMap().size();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. A map from a label key string to an extractor expression which is
      * used to extract data from a log entry field and assign as the label value.
@@ -2126,20 +2249,20 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; label_extractors = 7;</code>
      */
-
-    public boolean containsLabelExtractors(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+    public boolean containsLabelExtractors(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
       return internalGetLabelExtractors().getMap().containsKey(key);
     }
-    /**
-     * Use {@link #getLabelExtractorsMap()} instead.
-     */
+    /** Use {@link #getLabelExtractorsMap()} instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabelExtractors() {
       return getLabelExtractorsMap();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. A map from a label key string to an extractor expression which is
      * used to extract data from a log entry field and assign as the label value.
@@ -2157,11 +2280,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; label_extractors = 7;</code>
      */
-
     public java.util.Map<java.lang.String, java.lang.String> getLabelExtractorsMap() {
       return internalGetLabelExtractors().getMap();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. A map from a label key string to an extractor expression which is
      * used to extract data from a log entry field and assign as the label value.
@@ -2179,16 +2303,17 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; label_extractors = 7;</code>
      */
-
     public java.lang.String getLabelExtractorsOrDefault(
-        java.lang.String key,
-        java.lang.String defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetLabelExtractors().getMap();
+        java.lang.String key, java.lang.String defaultValue) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetLabelExtractors().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. A map from a label key string to an extractor expression which is
      * used to extract data from a log entry field and assign as the label value.
@@ -2206,12 +2331,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; label_extractors = 7;</code>
      */
-
-    public java.lang.String getLabelExtractorsOrThrow(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetLabelExtractors().getMap();
+    public java.lang.String getLabelExtractorsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetLabelExtractors().getMap();
       if (!map.containsKey(key)) {
         throw new java.lang.IllegalArgumentException();
       }
@@ -2219,11 +2343,12 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder clearLabelExtractors() {
-      internalGetMutableLabelExtractors().getMutableMap()
-          .clear();
+      internalGetMutableLabelExtractors().getMutableMap().clear();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. A map from a label key string to an extractor expression which is
      * used to extract data from a log entry field and assign as the label value.
@@ -2241,23 +2366,21 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; label_extractors = 7;</code>
      */
-
-    public Builder removeLabelExtractors(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      internalGetMutableLabelExtractors().getMutableMap()
-          .remove(key);
+    public Builder removeLabelExtractors(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableLabelExtractors().getMutableMap().remove(key);
       return this;
     }
-    /**
-     * Use alternate mutation accessors instead.
-     */
+    /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
-    public java.util.Map<java.lang.String, java.lang.String>
-    getMutableLabelExtractors() {
+    public java.util.Map<java.lang.String, java.lang.String> getMutableLabelExtractors() {
       return internalGetMutableLabelExtractors().getMutableMap();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. A map from a label key string to an extractor expression which is
      * used to extract data from a log entry field and assign as the label value.
@@ -2275,16 +2398,19 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; label_extractors = 7;</code>
      */
-    public Builder putLabelExtractors(
-        java.lang.String key,
-        java.lang.String value) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      if (value == null) { throw new java.lang.NullPointerException(); }
-      internalGetMutableLabelExtractors().getMutableMap()
-          .put(key, value);
+    public Builder putLabelExtractors(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      if (value == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableLabelExtractors().getMutableMap().put(key, value);
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. A map from a label key string to an extractor expression which is
      * used to extract data from a log entry field and assign as the label value.
@@ -2302,18 +2428,20 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; label_extractors = 7;</code>
      */
-
-    public Builder putAllLabelExtractors(
-        java.util.Map<java.lang.String, java.lang.String> values) {
-      internalGetMutableLabelExtractors().getMutableMap()
-          .putAll(values);
+    public Builder putAllLabelExtractors(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableLabelExtractors().getMutableMap().putAll(values);
       return this;
     }
 
     private com.google.api.Distribution.BucketOptions bucketOptions_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.api.Distribution.BucketOptions, com.google.api.Distribution.BucketOptions.Builder, com.google.api.Distribution.BucketOptionsOrBuilder> bucketOptionsBuilder_;
+            com.google.api.Distribution.BucketOptions,
+            com.google.api.Distribution.BucketOptions.Builder,
+            com.google.api.Distribution.BucketOptionsOrBuilder>
+        bucketOptionsBuilder_;
     /**
+     *
+     *
      * <pre>
      * Optional. The `bucket_options` are required when the logs-based metric is
      * using a DISTRIBUTION value type and it describes the bucket boundaries
@@ -2326,6 +2454,8 @@ private static final long serialVersionUID = 0L;
       return bucketOptionsBuilder_ != null || bucketOptions_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The `bucket_options` are required when the logs-based metric is
      * using a DISTRIBUTION value type and it describes the bucket boundaries
@@ -2336,12 +2466,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.api.Distribution.BucketOptions getBucketOptions() {
       if (bucketOptionsBuilder_ == null) {
-        return bucketOptions_ == null ? com.google.api.Distribution.BucketOptions.getDefaultInstance() : bucketOptions_;
+        return bucketOptions_ == null
+            ? com.google.api.Distribution.BucketOptions.getDefaultInstance()
+            : bucketOptions_;
       } else {
         return bucketOptionsBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The `bucket_options` are required when the logs-based metric is
      * using a DISTRIBUTION value type and it describes the bucket boundaries
@@ -2364,6 +2498,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The `bucket_options` are required when the logs-based metric is
      * using a DISTRIBUTION value type and it describes the bucket boundaries
@@ -2384,6 +2520,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The `bucket_options` are required when the logs-based metric is
      * using a DISTRIBUTION value type and it describes the bucket boundaries
@@ -2396,7 +2534,9 @@ private static final long serialVersionUID = 0L;
       if (bucketOptionsBuilder_ == null) {
         if (bucketOptions_ != null) {
           bucketOptions_ =
-            com.google.api.Distribution.BucketOptions.newBuilder(bucketOptions_).mergeFrom(value).buildPartial();
+              com.google.api.Distribution.BucketOptions.newBuilder(bucketOptions_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           bucketOptions_ = value;
         }
@@ -2408,6 +2548,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The `bucket_options` are required when the logs-based metric is
      * using a DISTRIBUTION value type and it describes the bucket boundaries
@@ -2428,6 +2570,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The `bucket_options` are required when the logs-based metric is
      * using a DISTRIBUTION value type and it describes the bucket boundaries
@@ -2437,11 +2581,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.api.Distribution.BucketOptions bucket_options = 8;</code>
      */
     public com.google.api.Distribution.BucketOptions.Builder getBucketOptionsBuilder() {
-      
+
       onChanged();
       return getBucketOptionsFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The `bucket_options` are required when the logs-based metric is
      * using a DISTRIBUTION value type and it describes the bucket boundaries
@@ -2454,11 +2600,14 @@ private static final long serialVersionUID = 0L;
       if (bucketOptionsBuilder_ != null) {
         return bucketOptionsBuilder_.getMessageOrBuilder();
       } else {
-        return bucketOptions_ == null ?
-            com.google.api.Distribution.BucketOptions.getDefaultInstance() : bucketOptions_;
+        return bucketOptions_ == null
+            ? com.google.api.Distribution.BucketOptions.getDefaultInstance()
+            : bucketOptions_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The `bucket_options` are required when the logs-based metric is
      * using a DISTRIBUTION value type and it describes the bucket boundaries
@@ -2468,14 +2617,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.api.Distribution.BucketOptions bucket_options = 8;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.api.Distribution.BucketOptions, com.google.api.Distribution.BucketOptions.Builder, com.google.api.Distribution.BucketOptionsOrBuilder> 
+            com.google.api.Distribution.BucketOptions,
+            com.google.api.Distribution.BucketOptions.Builder,
+            com.google.api.Distribution.BucketOptionsOrBuilder>
         getBucketOptionsFieldBuilder() {
       if (bucketOptionsBuilder_ == null) {
-        bucketOptionsBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.api.Distribution.BucketOptions, com.google.api.Distribution.BucketOptions.Builder, com.google.api.Distribution.BucketOptionsOrBuilder>(
-                getBucketOptions(),
-                getParentForChildren(),
-                isClean());
+        bucketOptionsBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.api.Distribution.BucketOptions,
+                com.google.api.Distribution.BucketOptions.Builder,
+                com.google.api.Distribution.BucketOptionsOrBuilder>(
+                getBucketOptions(), getParentForChildren(), isClean());
         bucketOptions_ = null;
       }
       return bucketOptionsBuilder_;
@@ -2483,6 +2635,8 @@ private static final long serialVersionUID = 0L;
 
     private int version_ = 0;
     /**
+     *
+     *
      * <pre>
      * Deprecated. The API version that created or updated this metric.
      * The v2 format is used by default and cannot be changed.
@@ -2490,10 +2644,13 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.logging.v2.LogMetric.ApiVersion version = 4 [deprecated = true];</code>
      */
-    @java.lang.Deprecated public int getVersionValue() {
+    @java.lang.Deprecated
+    public int getVersionValue() {
       return version_;
     }
     /**
+     *
+     *
      * <pre>
      * Deprecated. The API version that created or updated this metric.
      * The v2 format is used by default and cannot be changed.
@@ -2501,12 +2658,15 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.logging.v2.LogMetric.ApiVersion version = 4 [deprecated = true];</code>
      */
-    @java.lang.Deprecated public Builder setVersionValue(int value) {
+    @java.lang.Deprecated
+    public Builder setVersionValue(int value) {
       version_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Deprecated. The API version that created or updated this metric.
      * The v2 format is used by default and cannot be changed.
@@ -2514,11 +2674,16 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.logging.v2.LogMetric.ApiVersion version = 4 [deprecated = true];</code>
      */
-    @java.lang.Deprecated public com.google.logging.v2.LogMetric.ApiVersion getVersion() {
-      com.google.logging.v2.LogMetric.ApiVersion result = com.google.logging.v2.LogMetric.ApiVersion.valueOf(version_);
+    @java.lang.Deprecated
+    public com.google.logging.v2.LogMetric.ApiVersion getVersion() {
+      @SuppressWarnings("deprecation")
+      com.google.logging.v2.LogMetric.ApiVersion result =
+          com.google.logging.v2.LogMetric.ApiVersion.valueOf(version_);
       return result == null ? com.google.logging.v2.LogMetric.ApiVersion.UNRECOGNIZED : result;
     }
     /**
+     *
+     *
      * <pre>
      * Deprecated. The API version that created or updated this metric.
      * The v2 format is used by default and cannot be changed.
@@ -2526,16 +2691,19 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.logging.v2.LogMetric.ApiVersion version = 4 [deprecated = true];</code>
      */
-    @java.lang.Deprecated public Builder setVersion(com.google.logging.v2.LogMetric.ApiVersion value) {
+    @java.lang.Deprecated
+    public Builder setVersion(com.google.logging.v2.LogMetric.ApiVersion value) {
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       version_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Deprecated. The API version that created or updated this metric.
      * The v2 format is used by default and cannot be changed.
@@ -2543,28 +2711,31 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.logging.v2.LogMetric.ApiVersion version = 4 [deprecated = true];</code>
      */
-    @java.lang.Deprecated public Builder clearVersion() {
-      
+    @java.lang.Deprecated
+    public Builder clearVersion() {
+
       version_ = 0;
       onChanged();
       return this;
     }
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+
+    @java.lang.Override
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
     }
-
 
     // @@protoc_insertion_point(builder_scope:google.logging.v2.LogMetric)
   }
 
   // @@protoc_insertion_point(class_scope:google.logging.v2.LogMetric)
   private static final com.google.logging.v2.LogMetric DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.logging.v2.LogMetric();
   }
@@ -2573,15 +2744,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<LogMetric>
-      PARSER = new com.google.protobuf.AbstractParser<LogMetric>() {
-    public LogMetric parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-        return new LogMetric(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<LogMetric> PARSER =
+      new com.google.protobuf.AbstractParser<LogMetric>() {
+        @java.lang.Override
+        public LogMetric parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new LogMetric(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<LogMetric> parser() {
     return PARSER;
@@ -2592,9 +2764,8 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.logging.v2.LogMetric getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

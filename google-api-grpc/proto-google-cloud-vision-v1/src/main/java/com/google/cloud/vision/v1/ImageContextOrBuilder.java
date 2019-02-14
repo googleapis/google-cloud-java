@@ -3,11 +3,14 @@
 
 package com.google.cloud.vision.v1;
 
-public interface ImageContextOrBuilder extends
+public interface ImageContextOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.vision.v1.ImageContext)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Not used.
    * </pre>
@@ -16,6 +19,8 @@ public interface ImageContextOrBuilder extends
    */
   boolean hasLatLongRect();
   /**
+   *
+   *
    * <pre>
    * Not used.
    * </pre>
@@ -24,6 +29,8 @@ public interface ImageContextOrBuilder extends
    */
   com.google.cloud.vision.v1.LatLongRect getLatLongRect();
   /**
+   *
+   *
    * <pre>
    * Not used.
    * </pre>
@@ -33,6 +40,8 @@ public interface ImageContextOrBuilder extends
   com.google.cloud.vision.v1.LatLongRectOrBuilder getLatLongRectOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * List of languages to use for TEXT_DETECTION. In most cases, an empty value
    * yields the best results since it enables automatic language detection. For
@@ -46,9 +55,10 @@ public interface ImageContextOrBuilder extends
    *
    * <code>repeated string language_hints = 2;</code>
    */
-  java.util.List<java.lang.String>
-      getLanguageHintsList();
+  java.util.List<java.lang.String> getLanguageHintsList();
   /**
+   *
+   *
    * <pre>
    * List of languages to use for TEXT_DETECTION. In most cases, an empty value
    * yields the best results since it enables automatic language detection. For
@@ -64,6 +74,8 @@ public interface ImageContextOrBuilder extends
    */
   int getLanguageHintsCount();
   /**
+   *
+   *
    * <pre>
    * List of languages to use for TEXT_DETECTION. In most cases, an empty value
    * yields the best results since it enables automatic language detection. For
@@ -79,6 +91,8 @@ public interface ImageContextOrBuilder extends
    */
   java.lang.String getLanguageHints(int index);
   /**
+   *
+   *
    * <pre>
    * List of languages to use for TEXT_DETECTION. In most cases, an empty value
    * yields the best results since it enables automatic language detection. For
@@ -92,10 +106,11 @@ public interface ImageContextOrBuilder extends
    *
    * <code>repeated string language_hints = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getLanguageHintsBytes(int index);
+  com.google.protobuf.ByteString getLanguageHintsBytes(int index);
 
   /**
+   *
+   *
    * <pre>
    * Parameters for crop hints annotation request.
    * </pre>
@@ -104,6 +119,8 @@ public interface ImageContextOrBuilder extends
    */
   boolean hasCropHintsParams();
   /**
+   *
+   *
    * <pre>
    * Parameters for crop hints annotation request.
    * </pre>
@@ -112,6 +129,8 @@ public interface ImageContextOrBuilder extends
    */
   com.google.cloud.vision.v1.CropHintsParams getCropHintsParams();
   /**
+   *
+   *
    * <pre>
    * Parameters for crop hints annotation request.
    * </pre>
@@ -121,6 +140,39 @@ public interface ImageContextOrBuilder extends
   com.google.cloud.vision.v1.CropHintsParamsOrBuilder getCropHintsParamsOrBuilder();
 
   /**
+   *
+   *
+   * <pre>
+   * Parameters for product search.
+   * </pre>
+   *
+   * <code>.google.cloud.vision.v1.ProductSearchParams product_search_params = 5;</code>
+   */
+  boolean hasProductSearchParams();
+  /**
+   *
+   *
+   * <pre>
+   * Parameters for product search.
+   * </pre>
+   *
+   * <code>.google.cloud.vision.v1.ProductSearchParams product_search_params = 5;</code>
+   */
+  com.google.cloud.vision.v1.ProductSearchParams getProductSearchParams();
+  /**
+   *
+   *
+   * <pre>
+   * Parameters for product search.
+   * </pre>
+   *
+   * <code>.google.cloud.vision.v1.ProductSearchParams product_search_params = 5;</code>
+   */
+  com.google.cloud.vision.v1.ProductSearchParamsOrBuilder getProductSearchParamsOrBuilder();
+
+  /**
+   *
+   *
    * <pre>
    * Parameters for web detection.
    * </pre>
@@ -129,6 +181,8 @@ public interface ImageContextOrBuilder extends
    */
   boolean hasWebDetectionParams();
   /**
+   *
+   *
    * <pre>
    * Parameters for web detection.
    * </pre>
@@ -137,6 +191,8 @@ public interface ImageContextOrBuilder extends
    */
   com.google.cloud.vision.v1.WebDetectionParams getWebDetectionParams();
   /**
+   *
+   *
    * <pre>
    * Parameters for web detection.
    * </pre>

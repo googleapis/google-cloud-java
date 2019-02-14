@@ -4,21 +4,24 @@
 package com.google.cloud.dialogflow.v2beta1;
 
 /**
+ *
+ *
  * <pre>
  * A document resource.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2beta1.Document}
  */
-public  final class Document extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class Document extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.Document)
     DocumentOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use Document.newBuilder() to construct.
   private Document(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private Document() {
     name_ = "";
     displayName_ = "";
@@ -27,15 +30,18 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private Document(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -47,73 +53,79 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              name_ = s;
+              break;
             }
-            break;
-          }
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 18:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            name_ = s;
-            break;
-          }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            displayName_ = s;
-            break;
-          }
-          case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            mimeType_ = s;
-            break;
-          }
-          case 32: {
-            int rawValue = input.readEnum();
-            if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-              knowledgeTypes_ = new java.util.ArrayList<java.lang.Integer>();
-              mutable_bitField0_ |= 0x00000008;
+              displayName_ = s;
+              break;
             }
-            knowledgeTypes_.add(rawValue);
-            break;
-          }
-          case 34: {
-            int length = input.readRawVarint32();
-            int oldLimit = input.pushLimit(length);
-            while(input.getBytesUntilLimit() > 0) {
+          case 26:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              mimeType_ = s;
+              break;
+            }
+          case 32:
+            {
               int rawValue = input.readEnum();
               if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
                 knowledgeTypes_ = new java.util.ArrayList<java.lang.Integer>();
                 mutable_bitField0_ |= 0x00000008;
               }
               knowledgeTypes_.add(rawValue);
+              break;
             }
-            input.popLimit(oldLimit);
-            break;
-          }
-          case 42: {
-            java.lang.String s = input.readStringRequireUtf8();
-            sourceCase_ = 5;
-            source_ = s;
-            break;
-          }
-          case 50: {
-            java.lang.String s = input.readStringRequireUtf8();
-            sourceCase_ = 6;
-            source_ = s;
-            break;
-          }
+          case 34:
+            {
+              int length = input.readRawVarint32();
+              int oldLimit = input.pushLimit(length);
+              while (input.getBytesUntilLimit() > 0) {
+                int rawValue = input.readEnum();
+                if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+                  knowledgeTypes_ = new java.util.ArrayList<java.lang.Integer>();
+                  mutable_bitField0_ |= 0x00000008;
+                }
+                knowledgeTypes_.add(rawValue);
+              }
+              input.popLimit(oldLimit);
+              break;
+            }
+          case 42:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              sourceCase_ = 5;
+              source_ = s;
+              break;
+            }
+          case 50:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              sourceCase_ = 6;
+              source_ = s;
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
         knowledgeTypes_ = java.util.Collections.unmodifiableList(knowledgeTypes_);
@@ -122,28 +134,35 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.dialogflow.v2beta1.DocumentProto.internal_static_google_cloud_dialogflow_v2beta1_Document_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.dialogflow.v2beta1.DocumentProto
+        .internal_static_google_cloud_dialogflow_v2beta1_Document_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.dialogflow.v2beta1.DocumentProto.internal_static_google_cloud_dialogflow_v2beta1_Document_fieldAccessorTable
+    return com.google.cloud.dialogflow.v2beta1.DocumentProto
+        .internal_static_google_cloud_dialogflow_v2beta1_Document_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.dialogflow.v2beta1.Document.class, com.google.cloud.dialogflow.v2beta1.Document.Builder.class);
+            com.google.cloud.dialogflow.v2beta1.Document.class,
+            com.google.cloud.dialogflow.v2beta1.Document.Builder.class);
   }
 
   /**
+   *
+   *
    * <pre>
    * The knowledge type of document content.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.dialogflow.v2beta1.Document.KnowledgeType}
    */
-  public enum KnowledgeType
-      implements com.google.protobuf.ProtocolMessageEnum {
+  public enum KnowledgeType implements com.google.protobuf.ProtocolMessageEnum {
     /**
+     *
+     *
      * <pre>
      * The type is unspecified or arbitrary.
      * </pre>
@@ -152,6 +171,8 @@ private static final long serialVersionUID = 0L;
      */
     KNOWLEDGE_TYPE_UNSPECIFIED(0),
     /**
+     *
+     *
      * <pre>
      * The document content contains question and answer pairs as either HTML or
      * CSV. Typical FAQ HTML formats are parsed accurately, but unusual formats
@@ -165,6 +186,8 @@ private static final long serialVersionUID = 0L;
      */
     FAQ(1),
     /**
+     *
+     *
      * <pre>
      * Documents for which unstructured text is extracted and used for
      * question answering.
@@ -177,6 +200,8 @@ private static final long serialVersionUID = 0L;
     ;
 
     /**
+     *
+     *
      * <pre>
      * The type is unspecified or arbitrary.
      * </pre>
@@ -185,6 +210,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int KNOWLEDGE_TYPE_UNSPECIFIED_VALUE = 0;
     /**
+     *
+     *
      * <pre>
      * The document content contains question and answer pairs as either HTML or
      * CSV. Typical FAQ HTML formats are parsed accurately, but unusual formats
@@ -198,6 +225,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int FAQ_VALUE = 1;
     /**
+     *
+     *
      * <pre>
      * Documents for which unstructured text is extracted and used for
      * question answering.
@@ -207,7 +236,6 @@ private static final long serialVersionUID = 0L;
      */
     public static final int EXTRACTIVE_QA_VALUE = 2;
 
-
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
         throw new java.lang.IllegalArgumentException(
@@ -216,9 +244,7 @@ private static final long serialVersionUID = 0L;
       return value;
     }
 
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static KnowledgeType valueOf(int value) {
       return forNumber(value);
@@ -226,45 +252,45 @@ private static final long serialVersionUID = 0L;
 
     public static KnowledgeType forNumber(int value) {
       switch (value) {
-        case 0: return KNOWLEDGE_TYPE_UNSPECIFIED;
-        case 1: return FAQ;
-        case 2: return EXTRACTIVE_QA;
-        default: return null;
+        case 0:
+          return KNOWLEDGE_TYPE_UNSPECIFIED;
+        case 1:
+          return FAQ;
+        case 2:
+          return EXTRACTIVE_QA;
+        default:
+          return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<KnowledgeType>
-        internalGetValueMap() {
+    public static com.google.protobuf.Internal.EnumLiteMap<KnowledgeType> internalGetValueMap() {
       return internalValueMap;
     }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        KnowledgeType> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<KnowledgeType>() {
-            public KnowledgeType findValueByNumber(int number) {
-              return KnowledgeType.forNumber(number);
-            }
-          };
 
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
+    private static final com.google.protobuf.Internal.EnumLiteMap<KnowledgeType> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<KnowledgeType>() {
+          public KnowledgeType findValueByNumber(int number) {
+            return KnowledgeType.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
       return getDescriptor().getValues().get(ordinal());
     }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
       return getDescriptor();
     }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
       return com.google.cloud.dialogflow.v2beta1.Document.getDescriptor().getEnumTypes().get(0);
     }
 
     private static final KnowledgeType[] VALUES = values();
 
-    public static KnowledgeType valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+    public static KnowledgeType valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
         return UNRECOGNIZED;
@@ -284,18 +310,17 @@ private static final long serialVersionUID = 0L;
   private int bitField0_;
   private int sourceCase_ = 0;
   private java.lang.Object source_;
-  public enum SourceCase
-      implements com.google.protobuf.Internal.EnumLite {
+
+  public enum SourceCase implements com.google.protobuf.Internal.EnumLite {
     CONTENT_URI(5),
     CONTENT(6),
     SOURCE_NOT_SET(0);
     private final int value;
+
     private SourceCase(int value) {
       this.value = value;
     }
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static SourceCase valueOf(int value) {
       return forNumber(value);
@@ -303,26 +328,31 @@ private static final long serialVersionUID = 0L;
 
     public static SourceCase forNumber(int value) {
       switch (value) {
-        case 5: return CONTENT_URI;
-        case 6: return CONTENT;
-        case 0: return SOURCE_NOT_SET;
-        default: return null;
+        case 5:
+          return CONTENT_URI;
+        case 6:
+          return CONTENT;
+        case 0:
+          return SOURCE_NOT_SET;
+        default:
+          return null;
       }
     }
+
     public int getNumber() {
       return this.value;
     }
   };
 
-  public SourceCase
-  getSourceCase() {
-    return SourceCase.forNumber(
-        sourceCase_);
+  public SourceCase getSourceCase() {
+    return SourceCase.forNumber(sourceCase_);
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
+   *
+   *
    * <pre>
    * The document resource name.
    * The name must be empty when creating a document.
@@ -337,14 +367,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       name_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The document resource name.
    * The name must be empty when creating a document.
@@ -354,13 +385,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string name = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getNameBytes() {
+  public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       name_ = b;
       return b;
     } else {
@@ -371,6 +400,8 @@ private static final long serialVersionUID = 0L;
   public static final int DISPLAY_NAME_FIELD_NUMBER = 2;
   private volatile java.lang.Object displayName_;
   /**
+   *
+   *
    * <pre>
    * Required. The display name of the document. The name must be 1024 bytes or
    * less; otherwise, the creation request fails.
@@ -383,14 +414,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       displayName_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Required. The display name of the document. The name must be 1024 bytes or
    * less; otherwise, the creation request fails.
@@ -398,13 +430,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string display_name = 2;</code>
    */
-  public com.google.protobuf.ByteString
-      getDisplayNameBytes() {
+  public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       displayName_ = b;
       return b;
     } else {
@@ -415,6 +445,8 @@ private static final long serialVersionUID = 0L;
   public static final int MIME_TYPE_FIELD_NUMBER = 3;
   private volatile java.lang.Object mimeType_;
   /**
+   *
+   *
    * <pre>
    * Required. The MIME type of this document.
    * </pre>
@@ -426,27 +458,26 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       mimeType_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Required. The MIME type of this document.
    * </pre>
    *
    * <code>string mime_type = 3;</code>
    */
-  public com.google.protobuf.ByteString
-      getMimeTypeBytes() {
+  public com.google.protobuf.ByteString getMimeTypeBytes() {
     java.lang.Object ref = mimeType_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       mimeType_ = b;
       return b;
     } else {
@@ -457,70 +488,95 @@ private static final long serialVersionUID = 0L;
   public static final int KNOWLEDGE_TYPES_FIELD_NUMBER = 4;
   private java.util.List<java.lang.Integer> knowledgeTypes_;
   private static final com.google.protobuf.Internal.ListAdapter.Converter<
-      java.lang.Integer, com.google.cloud.dialogflow.v2beta1.Document.KnowledgeType> knowledgeTypes_converter_ =
+          java.lang.Integer, com.google.cloud.dialogflow.v2beta1.Document.KnowledgeType>
+      knowledgeTypes_converter_ =
           new com.google.protobuf.Internal.ListAdapter.Converter<
               java.lang.Integer, com.google.cloud.dialogflow.v2beta1.Document.KnowledgeType>() {
-            public com.google.cloud.dialogflow.v2beta1.Document.KnowledgeType convert(java.lang.Integer from) {
-              com.google.cloud.dialogflow.v2beta1.Document.KnowledgeType result = com.google.cloud.dialogflow.v2beta1.Document.KnowledgeType.valueOf(from);
-              return result == null ? com.google.cloud.dialogflow.v2beta1.Document.KnowledgeType.UNRECOGNIZED : result;
+            public com.google.cloud.dialogflow.v2beta1.Document.KnowledgeType convert(
+                java.lang.Integer from) {
+              @SuppressWarnings("deprecation")
+              com.google.cloud.dialogflow.v2beta1.Document.KnowledgeType result =
+                  com.google.cloud.dialogflow.v2beta1.Document.KnowledgeType.valueOf(from);
+              return result == null
+                  ? com.google.cloud.dialogflow.v2beta1.Document.KnowledgeType.UNRECOGNIZED
+                  : result;
             }
           };
   /**
+   *
+   *
    * <pre>
    * Required. The knowledge type of document content.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4;</code>
+   * <code>repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4;
+   * </code>
    */
-  public java.util.List<com.google.cloud.dialogflow.v2beta1.Document.KnowledgeType> getKnowledgeTypesList() {
+  public java.util.List<com.google.cloud.dialogflow.v2beta1.Document.KnowledgeType>
+      getKnowledgeTypesList() {
     return new com.google.protobuf.Internal.ListAdapter<
-        java.lang.Integer, com.google.cloud.dialogflow.v2beta1.Document.KnowledgeType>(knowledgeTypes_, knowledgeTypes_converter_);
+        java.lang.Integer, com.google.cloud.dialogflow.v2beta1.Document.KnowledgeType>(
+        knowledgeTypes_, knowledgeTypes_converter_);
   }
   /**
+   *
+   *
    * <pre>
    * Required. The knowledge type of document content.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4;</code>
+   * <code>repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4;
+   * </code>
    */
   public int getKnowledgeTypesCount() {
     return knowledgeTypes_.size();
   }
   /**
+   *
+   *
    * <pre>
    * Required. The knowledge type of document content.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4;</code>
+   * <code>repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4;
+   * </code>
    */
   public com.google.cloud.dialogflow.v2beta1.Document.KnowledgeType getKnowledgeTypes(int index) {
     return knowledgeTypes_converter_.convert(knowledgeTypes_.get(index));
   }
   /**
+   *
+   *
    * <pre>
    * Required. The knowledge type of document content.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4;</code>
+   * <code>repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4;
+   * </code>
    */
-  public java.util.List<java.lang.Integer>
-  getKnowledgeTypesValueList() {
+  public java.util.List<java.lang.Integer> getKnowledgeTypesValueList() {
     return knowledgeTypes_;
   }
   /**
+   *
+   *
    * <pre>
    * Required. The knowledge type of document content.
    * </pre>
    *
-   * <code>repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4;</code>
+   * <code>repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4;
+   * </code>
    */
   public int getKnowledgeTypesValue(int index) {
     return knowledgeTypes_.get(index);
   }
+
   private int knowledgeTypesMemoizedSerializedSize;
 
   public static final int CONTENT_URI_FIELD_NUMBER = 5;
   /**
+   *
+   *
    * <pre>
    * The URI where the file content is located.
    * For documents stored in Google Cloud Storage, these URIs must have
@@ -541,8 +597,7 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       if (sourceCase_ == 5) {
         source_ = s;
@@ -551,6 +606,8 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The URI where the file content is located.
    * For documents stored in Google Cloud Storage, these URIs must have
@@ -563,16 +620,14 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string content_uri = 5;</code>
    */
-  public com.google.protobuf.ByteString
-      getContentUriBytes() {
+  public com.google.protobuf.ByteString getContentUriBytes() {
     java.lang.Object ref = "";
     if (sourceCase_ == 5) {
       ref = source_;
     }
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       if (sourceCase_ == 5) {
         source_ = b;
       }
@@ -584,6 +639,8 @@ private static final long serialVersionUID = 0L;
 
   public static final int CONTENT_FIELD_NUMBER = 6;
   /**
+   *
+   *
    * <pre>
    * The raw content of the document. This field is only permitted for
    * EXTRACTIVE_QA and FAQ knowledge types.
@@ -599,8 +656,7 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       if (sourceCase_ == 6) {
         source_ = s;
@@ -609,6 +665,8 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The raw content of the document. This field is only permitted for
    * EXTRACTIVE_QA and FAQ knowledge types.
@@ -616,16 +674,14 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string content = 6;</code>
    */
-  public com.google.protobuf.ByteString
-      getContentBytes() {
+  public com.google.protobuf.ByteString getContentBytes() {
     java.lang.Object ref = "";
     if (sourceCase_ == 6) {
       ref = source_;
     }
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       if (sourceCase_ == 6) {
         source_ = b;
       }
@@ -636,6 +692,8 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -645,8 +703,8 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  @java.lang.Override
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     getSerializedSize();
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
@@ -673,6 +731,7 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -690,14 +749,15 @@ private static final long serialVersionUID = 0L;
     {
       int dataSize = 0;
       for (int i = 0; i < knowledgeTypes_.size(); i++) {
-        dataSize += com.google.protobuf.CodedOutputStream
-          .computeEnumSizeNoTag(knowledgeTypes_.get(i));
+        dataSize +=
+            com.google.protobuf.CodedOutputStream.computeEnumSizeNoTag(knowledgeTypes_.get(i));
       }
       size += dataSize;
-      if (!getKnowledgeTypesList().isEmpty()) {  size += 1;
-        size += com.google.protobuf.CodedOutputStream
-          .computeUInt32SizeNoTag(dataSize);
-      }knowledgeTypesMemoizedSerializedSize = dataSize;
+      if (!getKnowledgeTypesList().isEmpty()) {
+        size += 1;
+        size += com.google.protobuf.CodedOutputStream.computeUInt32SizeNoTag(dataSize);
+      }
+      knowledgeTypesMemoizedSerializedSize = dataSize;
     }
     if (sourceCase_ == 5) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, source_);
@@ -713,32 +773,27 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.dialogflow.v2beta1.Document)) {
       return super.equals(obj);
     }
-    com.google.cloud.dialogflow.v2beta1.Document other = (com.google.cloud.dialogflow.v2beta1.Document) obj;
+    com.google.cloud.dialogflow.v2beta1.Document other =
+        (com.google.cloud.dialogflow.v2beta1.Document) obj;
 
     boolean result = true;
-    result = result && getName()
-        .equals(other.getName());
-    result = result && getDisplayName()
-        .equals(other.getDisplayName());
-    result = result && getMimeType()
-        .equals(other.getMimeType());
+    result = result && getName().equals(other.getName());
+    result = result && getDisplayName().equals(other.getDisplayName());
+    result = result && getMimeType().equals(other.getMimeType());
     result = result && knowledgeTypes_.equals(other.knowledgeTypes_);
-    result = result && getSourceCase().equals(
-        other.getSourceCase());
+    result = result && getSourceCase().equals(other.getSourceCase());
     if (!result) return false;
     switch (sourceCase_) {
       case 5:
-        result = result && getContentUri()
-            .equals(other.getContentUri());
+        result = result && getContentUri().equals(other.getContentUri());
         break;
       case 6:
-        result = result && getContent()
-            .equals(other.getContent());
+        result = result && getContent().equals(other.getContent());
         break;
       case 0:
       default:
@@ -781,115 +836,127 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.cloud.dialogflow.v2beta1.Document parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.cloud.dialogflow.v2beta1.Document parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dialogflow.v2beta1.Document parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.dialogflow.v2beta1.Document parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dialogflow.v2beta1.Document parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.dialogflow.v2beta1.Document parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dialogflow.v2beta1.Document parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.dialogflow.v2beta1.Document parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.dialogflow.v2beta1.Document parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.cloud.dialogflow.v2beta1.Document parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.dialogflow.v2beta1.Document parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.dialogflow.v2beta1.Document parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.dialogflow.v2beta1.Document parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.dialogflow.v2beta1.Document parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  public Builder newBuilderForType() { return newBuilder(); }
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-  public static Builder newBuilder(com.google.cloud.dialogflow.v2beta1.Document prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+
+  public static Builder newBuilder(com.google.cloud.dialogflow.v2beta1.Document prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+
+  @java.lang.Override
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * A document resource.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2beta1.Document}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.v2beta1.Document)
       com.google.cloud.dialogflow.v2beta1.DocumentOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.dialogflow.v2beta1.DocumentProto.internal_static_google_cloud_dialogflow_v2beta1_Document_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dialogflow.v2beta1.DocumentProto
+          .internal_static_google_cloud_dialogflow_v2beta1_Document_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.dialogflow.v2beta1.DocumentProto.internal_static_google_cloud_dialogflow_v2beta1_Document_fieldAccessorTable
+      return com.google.cloud.dialogflow.v2beta1.DocumentProto
+          .internal_static_google_cloud_dialogflow_v2beta1_Document_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.dialogflow.v2beta1.Document.class, com.google.cloud.dialogflow.v2beta1.Document.Builder.class);
+              com.google.cloud.dialogflow.v2beta1.Document.class,
+              com.google.cloud.dialogflow.v2beta1.Document.Builder.class);
     }
 
     // Construct using com.google.cloud.dialogflow.v2beta1.Document.newBuilder()
@@ -897,16 +964,16 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       name_ = "";
@@ -922,15 +989,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.dialogflow.v2beta1.DocumentProto.internal_static_google_cloud_dialogflow_v2beta1_Document_descriptor;
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.dialogflow.v2beta1.DocumentProto
+          .internal_static_google_cloud_dialogflow_v2beta1_Document_descriptor;
     }
 
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2beta1.Document getDefaultInstanceForType() {
       return com.google.cloud.dialogflow.v2beta1.Document.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2beta1.Document build() {
       com.google.cloud.dialogflow.v2beta1.Document result = buildPartial();
       if (!result.isInitialized()) {
@@ -939,8 +1009,10 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2beta1.Document buildPartial() {
-      com.google.cloud.dialogflow.v2beta1.Document result = new com.google.cloud.dialogflow.v2beta1.Document(this);
+      com.google.cloud.dialogflow.v2beta1.Document result =
+          new com.google.cloud.dialogflow.v2beta1.Document(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       result.name_ = name_;
@@ -963,35 +1035,43 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+
+    @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+    @java.lang.Override
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+    @java.lang.Override
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
+    @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
+    @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.dialogflow.v2beta1.Document) {
-        return mergeFrom((com.google.cloud.dialogflow.v2beta1.Document)other);
+        return mergeFrom((com.google.cloud.dialogflow.v2beta1.Document) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -1023,31 +1103,36 @@ private static final long serialVersionUID = 0L;
         onChanged();
       }
       switch (other.getSourceCase()) {
-        case CONTENT_URI: {
-          sourceCase_ = 5;
-          source_ = other.source_;
-          onChanged();
-          break;
-        }
-        case CONTENT: {
-          sourceCase_ = 6;
-          source_ = other.source_;
-          onChanged();
-          break;
-        }
-        case SOURCE_NOT_SET: {
-          break;
-        }
+        case CONTENT_URI:
+          {
+            sourceCase_ = 5;
+            source_ = other.source_;
+            onChanged();
+            break;
+          }
+        case CONTENT:
+          {
+            sourceCase_ = 6;
+            source_ = other.source_;
+            onChanged();
+            break;
+          }
+        case SOURCE_NOT_SET:
+          {
+            break;
+          }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1065,12 +1150,12 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int sourceCase_ = 0;
     private java.lang.Object source_;
-    public SourceCase
-        getSourceCase() {
-      return SourceCase.forNumber(
-          sourceCase_);
+
+    public SourceCase getSourceCase() {
+      return SourceCase.forNumber(sourceCase_);
     }
 
     public Builder clearSource() {
@@ -1084,6 +1169,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object name_ = "";
     /**
+     *
+     *
      * <pre>
      * The document resource name.
      * The name must be empty when creating a document.
@@ -1096,8 +1183,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         name_ = s;
         return s;
@@ -1106,6 +1192,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The document resource name.
      * The name must be empty when creating a document.
@@ -1115,13 +1203,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getNameBytes() {
+    public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         name_ = b;
         return b;
       } else {
@@ -1129,6 +1215,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The document resource name.
      * The name must be empty when creating a document.
@@ -1138,17 +1226,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public Builder setName(
-        java.lang.String value) {
+    public Builder setName(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       name_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The document resource name.
      * The name must be empty when creating a document.
@@ -1159,12 +1248,14 @@ private static final long serialVersionUID = 0L;
      * <code>string name = 1;</code>
      */
     public Builder clearName() {
-      
+
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The document resource name.
      * The name must be empty when creating a document.
@@ -1174,13 +1265,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public Builder setNameBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       name_ = value;
       onChanged();
       return this;
@@ -1188,6 +1278,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object displayName_ = "";
     /**
+     *
+     *
      * <pre>
      * Required. The display name of the document. The name must be 1024 bytes or
      * less; otherwise, the creation request fails.
@@ -1198,8 +1290,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getDisplayName() {
       java.lang.Object ref = displayName_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         displayName_ = s;
         return s;
@@ -1208,6 +1299,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The display name of the document. The name must be 1024 bytes or
      * less; otherwise, the creation request fails.
@@ -1215,13 +1308,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string display_name = 2;</code>
      */
-    public com.google.protobuf.ByteString
-        getDisplayNameBytes() {
+    public com.google.protobuf.ByteString getDisplayNameBytes() {
       java.lang.Object ref = displayName_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         displayName_ = b;
         return b;
       } else {
@@ -1229,6 +1320,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The display name of the document. The name must be 1024 bytes or
      * less; otherwise, the creation request fails.
@@ -1236,17 +1329,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string display_name = 2;</code>
      */
-    public Builder setDisplayName(
-        java.lang.String value) {
+    public Builder setDisplayName(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       displayName_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The display name of the document. The name must be 1024 bytes or
      * less; otherwise, the creation request fails.
@@ -1255,12 +1349,14 @@ private static final long serialVersionUID = 0L;
      * <code>string display_name = 2;</code>
      */
     public Builder clearDisplayName() {
-      
+
       displayName_ = getDefaultInstance().getDisplayName();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The display name of the document. The name must be 1024 bytes or
      * less; otherwise, the creation request fails.
@@ -1268,13 +1364,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string display_name = 2;</code>
      */
-    public Builder setDisplayNameBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       displayName_ = value;
       onChanged();
       return this;
@@ -1282,6 +1377,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object mimeType_ = "";
     /**
+     *
+     *
      * <pre>
      * Required. The MIME type of this document.
      * </pre>
@@ -1291,8 +1388,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getMimeType() {
       java.lang.Object ref = mimeType_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         mimeType_ = s;
         return s;
@@ -1301,19 +1397,19 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The MIME type of this document.
      * </pre>
      *
      * <code>string mime_type = 3;</code>
      */
-    public com.google.protobuf.ByteString
-        getMimeTypeBytes() {
+    public com.google.protobuf.ByteString getMimeTypeBytes() {
       java.lang.Object ref = mimeType_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         mimeType_ = b;
         return b;
       } else {
@@ -1321,23 +1417,26 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The MIME type of this document.
      * </pre>
      *
      * <code>string mime_type = 3;</code>
      */
-    public Builder setMimeType(
-        java.lang.String value) {
+    public Builder setMimeType(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       mimeType_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The MIME type of this document.
      * </pre>
@@ -1345,32 +1444,33 @@ private static final long serialVersionUID = 0L;
      * <code>string mime_type = 3;</code>
      */
     public Builder clearMimeType() {
-      
+
       mimeType_ = getDefaultInstance().getMimeType();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The MIME type of this document.
      * </pre>
      *
      * <code>string mime_type = 3;</code>
      */
-    public Builder setMimeTypeBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setMimeTypeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       mimeType_ = value;
       onChanged();
       return this;
     }
 
-    private java.util.List<java.lang.Integer> knowledgeTypes_ =
-      java.util.Collections.emptyList();
+    private java.util.List<java.lang.Integer> knowledgeTypes_ = java.util.Collections.emptyList();
+
     private void ensureKnowledgeTypesIsMutable() {
       if (!((bitField0_ & 0x00000008) == 0x00000008)) {
         knowledgeTypes_ = new java.util.ArrayList<java.lang.Integer>(knowledgeTypes_);
@@ -1378,42 +1478,56 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. The knowledge type of document content.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4;</code>
+     * <code>repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4;
+     * </code>
      */
-    public java.util.List<com.google.cloud.dialogflow.v2beta1.Document.KnowledgeType> getKnowledgeTypesList() {
+    public java.util.List<com.google.cloud.dialogflow.v2beta1.Document.KnowledgeType>
+        getKnowledgeTypesList() {
       return new com.google.protobuf.Internal.ListAdapter<
-          java.lang.Integer, com.google.cloud.dialogflow.v2beta1.Document.KnowledgeType>(knowledgeTypes_, knowledgeTypes_converter_);
+          java.lang.Integer, com.google.cloud.dialogflow.v2beta1.Document.KnowledgeType>(
+          knowledgeTypes_, knowledgeTypes_converter_);
     }
     /**
+     *
+     *
      * <pre>
      * Required. The knowledge type of document content.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4;</code>
+     * <code>repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4;
+     * </code>
      */
     public int getKnowledgeTypesCount() {
       return knowledgeTypes_.size();
     }
     /**
+     *
+     *
      * <pre>
      * Required. The knowledge type of document content.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4;</code>
+     * <code>repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4;
+     * </code>
      */
     public com.google.cloud.dialogflow.v2beta1.Document.KnowledgeType getKnowledgeTypes(int index) {
       return knowledgeTypes_converter_.convert(knowledgeTypes_.get(index));
     }
     /**
+     *
+     *
      * <pre>
      * Required. The knowledge type of document content.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4;</code>
+     * <code>repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4;
+     * </code>
      */
     public Builder setKnowledgeTypes(
         int index, com.google.cloud.dialogflow.v2beta1.Document.KnowledgeType value) {
@@ -1426,13 +1540,17 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The knowledge type of document content.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4;</code>
+     * <code>repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4;
+     * </code>
      */
-    public Builder addKnowledgeTypes(com.google.cloud.dialogflow.v2beta1.Document.KnowledgeType value) {
+    public Builder addKnowledgeTypes(
+        com.google.cloud.dialogflow.v2beta1.Document.KnowledgeType value) {
       if (value == null) {
         throw new NullPointerException();
       }
@@ -1442,14 +1560,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The knowledge type of document content.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4;</code>
+     * <code>repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4;
+     * </code>
      */
     public Builder addAllKnowledgeTypes(
-        java.lang.Iterable<? extends com.google.cloud.dialogflow.v2beta1.Document.KnowledgeType> values) {
+        java.lang.Iterable<? extends com.google.cloud.dialogflow.v2beta1.Document.KnowledgeType>
+            values) {
       ensureKnowledgeTypesIsMutable();
       for (com.google.cloud.dialogflow.v2beta1.Document.KnowledgeType value : values) {
         knowledgeTypes_.add(value.getNumber());
@@ -1458,11 +1580,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The knowledge type of document content.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4;</code>
+     * <code>repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4;
+     * </code>
      */
     public Builder clearKnowledgeTypes() {
       knowledgeTypes_ = java.util.Collections.emptyList();
@@ -1471,46 +1596,56 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The knowledge type of document content.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4;</code>
+     * <code>repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4;
+     * </code>
      */
-    public java.util.List<java.lang.Integer>
-    getKnowledgeTypesValueList() {
+    public java.util.List<java.lang.Integer> getKnowledgeTypesValueList() {
       return java.util.Collections.unmodifiableList(knowledgeTypes_);
     }
     /**
+     *
+     *
      * <pre>
      * Required. The knowledge type of document content.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4;</code>
+     * <code>repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4;
+     * </code>
      */
     public int getKnowledgeTypesValue(int index) {
       return knowledgeTypes_.get(index);
     }
     /**
+     *
+     *
      * <pre>
      * Required. The knowledge type of document content.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4;</code>
+     * <code>repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4;
+     * </code>
      */
-    public Builder setKnowledgeTypesValue(
-        int index, int value) {
+    public Builder setKnowledgeTypesValue(int index, int value) {
       ensureKnowledgeTypesIsMutable();
       knowledgeTypes_.set(index, value);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The knowledge type of document content.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4;</code>
+     * <code>repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4;
+     * </code>
      */
     public Builder addKnowledgeTypesValue(int value) {
       ensureKnowledgeTypesIsMutable();
@@ -1519,14 +1654,16 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The knowledge type of document content.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4;</code>
+     * <code>repeated .google.cloud.dialogflow.v2beta1.Document.KnowledgeType knowledge_types = 4;
+     * </code>
      */
-    public Builder addAllKnowledgeTypesValue(
-        java.lang.Iterable<java.lang.Integer> values) {
+    public Builder addAllKnowledgeTypesValue(java.lang.Iterable<java.lang.Integer> values) {
       ensureKnowledgeTypesIsMutable();
       for (int value : values) {
         knowledgeTypes_.add(value);
@@ -1536,6 +1673,8 @@ private static final long serialVersionUID = 0L;
     }
 
     /**
+     *
+     *
      * <pre>
      * The URI where the file content is located.
      * For documents stored in Google Cloud Storage, these URIs must have
@@ -1554,8 +1693,7 @@ private static final long serialVersionUID = 0L;
         ref = source_;
       }
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (sourceCase_ == 5) {
           source_ = s;
@@ -1566,6 +1704,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The URI where the file content is located.
      * For documents stored in Google Cloud Storage, these URIs must have
@@ -1578,16 +1718,14 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string content_uri = 5;</code>
      */
-    public com.google.protobuf.ByteString
-        getContentUriBytes() {
+    public com.google.protobuf.ByteString getContentUriBytes() {
       java.lang.Object ref = "";
       if (sourceCase_ == 5) {
         ref = source_;
       }
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         if (sourceCase_ == 5) {
           source_ = b;
         }
@@ -1597,6 +1735,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The URI where the file content is located.
      * For documents stored in Google Cloud Storage, these URIs must have
@@ -1609,17 +1749,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string content_uri = 5;</code>
      */
-    public Builder setContentUri(
-        java.lang.String value) {
+    public Builder setContentUri(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  sourceCase_ = 5;
+        throw new NullPointerException();
+      }
+      sourceCase_ = 5;
       source_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The URI where the file content is located.
      * For documents stored in Google Cloud Storage, these URIs must have
@@ -1641,6 +1782,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The URI where the file content is located.
      * For documents stored in Google Cloud Storage, these URIs must have
@@ -1653,12 +1796,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string content_uri = 5;</code>
      */
-    public Builder setContentUriBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setContentUriBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
       sourceCase_ = 5;
       source_ = value;
       onChanged();
@@ -1666,6 +1808,8 @@ private static final long serialVersionUID = 0L;
     }
 
     /**
+     *
+     *
      * <pre>
      * The raw content of the document. This field is only permitted for
      * EXTRACTIVE_QA and FAQ knowledge types.
@@ -1679,8 +1823,7 @@ private static final long serialVersionUID = 0L;
         ref = source_;
       }
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (sourceCase_ == 6) {
           source_ = s;
@@ -1691,6 +1834,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The raw content of the document. This field is only permitted for
      * EXTRACTIVE_QA and FAQ knowledge types.
@@ -1698,16 +1843,14 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string content = 6;</code>
      */
-    public com.google.protobuf.ByteString
-        getContentBytes() {
+    public com.google.protobuf.ByteString getContentBytes() {
       java.lang.Object ref = "";
       if (sourceCase_ == 6) {
         ref = source_;
       }
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         if (sourceCase_ == 6) {
           source_ = b;
         }
@@ -1717,6 +1860,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The raw content of the document. This field is only permitted for
      * EXTRACTIVE_QA and FAQ knowledge types.
@@ -1724,17 +1869,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string content = 6;</code>
      */
-    public Builder setContent(
-        java.lang.String value) {
+    public Builder setContent(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  sourceCase_ = 6;
+        throw new NullPointerException();
+      }
+      sourceCase_ = 6;
       source_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The raw content of the document. This field is only permitted for
      * EXTRACTIVE_QA and FAQ knowledge types.
@@ -1751,6 +1897,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The raw content of the document. This field is only permitted for
      * EXTRACTIVE_QA and FAQ knowledge types.
@@ -1758,33 +1906,34 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string content = 6;</code>
      */
-    public Builder setContentBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setContentBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
       sourceCase_ = 6;
       source_ = value;
       onChanged();
       return this;
     }
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+
+    @java.lang.Override
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
     }
-
 
     // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.v2beta1.Document)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.v2beta1.Document)
   private static final com.google.cloud.dialogflow.v2beta1.Document DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.dialogflow.v2beta1.Document();
   }
@@ -1793,15 +1942,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<Document>
-      PARSER = new com.google.protobuf.AbstractParser<Document>() {
-    public Document parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Document(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<Document> PARSER =
+      new com.google.protobuf.AbstractParser<Document>() {
+        @java.lang.Override
+        public Document parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new Document(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<Document> parser() {
     return PARSER;
@@ -1812,9 +1962,8 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.Document getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

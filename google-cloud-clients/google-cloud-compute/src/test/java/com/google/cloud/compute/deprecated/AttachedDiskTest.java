@@ -27,10 +27,8 @@ import com.google.cloud.compute.deprecated.AttachedDisk.CreateDiskConfiguration;
 import com.google.cloud.compute.deprecated.AttachedDisk.PersistentDiskConfiguration;
 import com.google.cloud.compute.deprecated.AttachedDisk.ScratchDiskConfiguration;
 import com.google.common.collect.ImmutableList;
-
-import org.junit.Test;
-
 import java.util.List;
+import org.junit.Test;
 
 public class AttachedDiskTest {
 
@@ -38,14 +36,14 @@ public class AttachedDiskTest {
   private static final Boolean BOOT = true;
   private static final Integer INDEX = 0;
   private static final String DEVICE_NAME = "deviceName";
-      private static final String DISK_NAME = "diskName";
+  private static final String DISK_NAME = "diskName";
   private static final DiskTypeId DISK_TYPE_ID = DiskTypeId.of("project", "zone", "diskType");
-      private static final Long DISK_SIZE_GB = 42L;
+  private static final Long DISK_SIZE_GB = 42L;
   private static final DiskId DISK_ID = DiskId.of("project", "zone", "disk");
   private static final ImageId IMAGE_ID = ImageId.of("project", "image");
   private static final InterfaceType INTERFACE_TYPE = InterfaceType.NVME;
   private static final PersistentDiskConfiguration.Mode MODE =
-          PersistentDiskConfiguration.Mode.READ_ONLY;
+      PersistentDiskConfiguration.Mode.READ_ONLY;
   private static final PersistentDiskConfiguration PERSISTENT_DISK_CONFIGURATION =
       PersistentDiskConfiguration.newBuilder(DISK_ID)
           .setBoot(BOOT)
@@ -62,35 +60,35 @@ public class AttachedDiskTest {
           .setDiskSizeGb(DISK_SIZE_GB)
           .setSourceImage(IMAGE_ID)
           .build();
-  private static final List<LicenseId> LICENSES = ImmutableList.of(
-      LicenseId.of("project", "license1"), LicenseId.of("project", "license2"));
+  private static final List<LicenseId> LICENSES =
+      ImmutableList.of(LicenseId.of("project", "license1"), LicenseId.of("project", "license2"));
   private static final AttachedDisk PERSISTENT_DISK =
       AttachedDisk.newBuilder(PERSISTENT_DISK_CONFIGURATION)
           .setDeviceName(DEVICE_NAME)
           .setIndex(INDEX)
           .setLicenses(LICENSES)
           .build();
-  private static final AttachedDisk SCRATCH_DISK  =
+  private static final AttachedDisk SCRATCH_DISK =
       AttachedDisk.newBuilder(SCRATCH_DISK_CONFIGURATION)
           .setDeviceName(DEVICE_NAME)
           .setIndex(INDEX)
           .setLicenses(LICENSES)
           .build();
-  private static final AttachedDisk CREATED_DISK  =
+  private static final AttachedDisk CREATED_DISK =
       AttachedDisk.newBuilder(CREATE_DISK_CONFIGURATION)
           .setDeviceName(DEVICE_NAME)
           .setIndex(INDEX)
           .setLicenses(LICENSES)
           .build();
-  
+
   @Test
   public void testConfigurationToBuilder() {
-    comparePersistentDiskConfiguration(PERSISTENT_DISK_CONFIGURATION,
-        PERSISTENT_DISK_CONFIGURATION.toBuilder().build());
-    compareScratchDiskConfiguration(SCRATCH_DISK_CONFIGURATION,
-        SCRATCH_DISK_CONFIGURATION.toBuilder().build());
-    compareCreateDiskConfiguration(CREATE_DISK_CONFIGURATION,
-        CREATE_DISK_CONFIGURATION.toBuilder().build());
+    comparePersistentDiskConfiguration(
+        PERSISTENT_DISK_CONFIGURATION, PERSISTENT_DISK_CONFIGURATION.toBuilder().build());
+    compareScratchDiskConfiguration(
+        SCRATCH_DISK_CONFIGURATION, SCRATCH_DISK_CONFIGURATION.toBuilder().build());
+    compareCreateDiskConfiguration(
+        CREATE_DISK_CONFIGURATION, CREATE_DISK_CONFIGURATION.toBuilder().build());
     PersistentDiskConfiguration persistentDiskConfiguration =
         PERSISTENT_DISK_CONFIGURATION.toBuilder().setAutoDelete(false).build();
     assertFalse(persistentDiskConfiguration.autoDelete());
@@ -114,15 +112,18 @@ public class AttachedDiskTest {
   @Test
   public void testConfigurationToBuilderIncomplete() {
     PersistentDiskConfiguration persistentConfiguration = PersistentDiskConfiguration.of(DISK_ID);
-    comparePersistentDiskConfiguration(persistentConfiguration,
+    comparePersistentDiskConfiguration(
+        persistentConfiguration,
         AttachedDisk.AttachedDiskConfiguration.<PersistentDiskConfiguration>fromPb(
             persistentConfiguration.toPb()));
     ScratchDiskConfiguration scratchDiskConfiguration = ScratchDiskConfiguration.of(DISK_TYPE_ID);
-    compareScratchDiskConfiguration(scratchDiskConfiguration,
+    compareScratchDiskConfiguration(
+        scratchDiskConfiguration,
         AttachedDisk.AttachedDiskConfiguration.<ScratchDiskConfiguration>fromPb(
             scratchDiskConfiguration.toPb()));
     CreateDiskConfiguration createDiskConfiguration = CreateDiskConfiguration.of(IMAGE_ID);
-    compareCreateDiskConfiguration(createDiskConfiguration,
+    compareCreateDiskConfiguration(
+        createDiskConfiguration,
         AttachedDisk.AttachedDiskConfiguration.<CreateDiskConfiguration>fromPb(
             createDiskConfiguration.toPb()));
   }
@@ -253,28 +254,31 @@ public class AttachedDiskTest {
 
   @Test
   public void testConfigurationToAndFromPb() {
-    PersistentDiskConfiguration persistentConfiguration =
-        PersistentDiskConfiguration.of(DISK_ID);
-    comparePersistentDiskConfiguration(persistentConfiguration,
+    PersistentDiskConfiguration persistentConfiguration = PersistentDiskConfiguration.of(DISK_ID);
+    comparePersistentDiskConfiguration(
+        persistentConfiguration,
         AttachedDisk.AttachedDiskConfiguration.<PersistentDiskConfiguration>fromPb(
             persistentConfiguration.toPb()));
-    comparePersistentDiskConfiguration(PERSISTENT_DISK_CONFIGURATION,
+    comparePersistentDiskConfiguration(
+        PERSISTENT_DISK_CONFIGURATION,
         AttachedDisk.AttachedDiskConfiguration.<PersistentDiskConfiguration>fromPb(
             PERSISTENT_DISK_CONFIGURATION.toPb()));
-    ScratchDiskConfiguration scratchDiskConfiguration =
-        ScratchDiskConfiguration.of(DISK_TYPE_ID);
-    compareScratchDiskConfiguration(scratchDiskConfiguration,
+    ScratchDiskConfiguration scratchDiskConfiguration = ScratchDiskConfiguration.of(DISK_TYPE_ID);
+    compareScratchDiskConfiguration(
+        scratchDiskConfiguration,
         AttachedDisk.AttachedDiskConfiguration.<ScratchDiskConfiguration>fromPb(
             scratchDiskConfiguration.toPb()));
-    compareScratchDiskConfiguration(SCRATCH_DISK_CONFIGURATION,
+    compareScratchDiskConfiguration(
+        SCRATCH_DISK_CONFIGURATION,
         AttachedDisk.AttachedDiskConfiguration.<ScratchDiskConfiguration>fromPb(
             SCRATCH_DISK_CONFIGURATION.toPb()));
-    CreateDiskConfiguration createDiskConfiguration =
-        CreateDiskConfiguration.of(IMAGE_ID);
-    compareCreateDiskConfiguration(createDiskConfiguration,
+    CreateDiskConfiguration createDiskConfiguration = CreateDiskConfiguration.of(IMAGE_ID);
+    compareCreateDiskConfiguration(
+        createDiskConfiguration,
         AttachedDisk.AttachedDiskConfiguration.<CreateDiskConfiguration>fromPb(
             createDiskConfiguration.toPb()));
-    compareCreateDiskConfiguration(CREATE_DISK_CONFIGURATION,
+    compareCreateDiskConfiguration(
+        CREATE_DISK_CONFIGURATION,
         AttachedDisk.AttachedDiskConfiguration.<CreateDiskConfiguration>fromPb(
             CREATE_DISK_CONFIGURATION.toPb()));
   }
@@ -307,18 +311,20 @@ public class AttachedDiskTest {
         PersistentDiskConfiguration.of(DiskId.of("zone", "disk"));
     comparePersistentDiskConfiguration(
         PersistentDiskConfiguration.of(DiskId.of("project", "zone", "disk")),
-            persistentConfiguration.setProjectId("project"));
+        persistentConfiguration.setProjectId("project"));
     ScratchDiskConfiguration scratchDiskConfiguration =
         ScratchDiskConfiguration.of(DiskTypeId.of("zone", "diskType"));
     compareScratchDiskConfiguration(
         ScratchDiskConfiguration.of(DiskTypeId.of("project", "zone", "diskType")),
-            scratchDiskConfiguration.setProjectId("project"));
-    CreateDiskConfiguration createDiskConfiguration = CREATE_DISK_CONFIGURATION.toBuilder()
-        .setDiskType(DiskTypeId.of("zone", "diskType"))
-        .setSourceImage(ImageId.of("image"))
-        .build();
-    compareCreateDiskConfiguration(CREATE_DISK_CONFIGURATION,
-        createDiskConfiguration.setProjectId("project"));
+        scratchDiskConfiguration.setProjectId("project"));
+    CreateDiskConfiguration createDiskConfiguration =
+        CREATE_DISK_CONFIGURATION
+            .toBuilder()
+            .setDiskType(DiskTypeId.of("zone", "diskType"))
+            .setSourceImage(ImageId.of("image"))
+            .build();
+    compareCreateDiskConfiguration(
+        CREATE_DISK_CONFIGURATION, createDiskConfiguration.setProjectId("project"));
   }
 
   @Test
@@ -328,29 +334,35 @@ public class AttachedDiskTest {
     PersistentDiskConfiguration persistentConfigurationWithProject =
         PersistentDiskConfiguration.of(DiskId.of("project", "zone", "disk"));
     AttachedDisk attachedDisk = AttachedDisk.of(persistentConfiguration);
-    compareAttachedDisk(AttachedDisk.of(persistentConfigurationWithProject),
-        attachedDisk.setProjectId("project"));
+    compareAttachedDisk(
+        AttachedDisk.of(persistentConfigurationWithProject), attachedDisk.setProjectId("project"));
     ScratchDiskConfiguration scratchDiskConfiguration =
         ScratchDiskConfiguration.of(DiskTypeId.of("zone", "diskType"));
     ScratchDiskConfiguration scratchDiskConfigurationWithProject =
         ScratchDiskConfiguration.of(DiskTypeId.of("project", "zone", "diskType"));
-    compareAttachedDisk(AttachedDisk.of(scratchDiskConfigurationWithProject),
+    compareAttachedDisk(
+        AttachedDisk.of(scratchDiskConfigurationWithProject),
         AttachedDisk.of(scratchDiskConfiguration).setProjectId("project"));
     CreateDiskConfiguration createDiskConfiguration =
         CreateDiskConfiguration.of(ImageId.of("image"));
     CreateDiskConfiguration createDiskConfigurationWithProject =
         CreateDiskConfiguration.of(ImageId.of("project", "image"));
-    compareAttachedDisk(AttachedDisk.of(createDiskConfigurationWithProject),
+    compareAttachedDisk(
+        AttachedDisk.of(createDiskConfigurationWithProject),
         AttachedDisk.of(createDiskConfiguration).setProjectId("project"));
-    createDiskConfiguration = CREATE_DISK_CONFIGURATION.toBuilder()
-        .setDiskType(DiskTypeId.of("zone", "diskType"))
-        .setSourceImage(ImageId.of("image"))
-        .build();
-    compareAttachedDisk(AttachedDisk.of(CREATE_DISK_CONFIGURATION),
+    createDiskConfiguration =
+        CREATE_DISK_CONFIGURATION
+            .toBuilder()
+            .setDiskType(DiskTypeId.of("zone", "diskType"))
+            .setSourceImage(ImageId.of("image"))
+            .build();
+    compareAttachedDisk(
+        AttachedDisk.of(CREATE_DISK_CONFIGURATION),
         AttachedDisk.of(createDiskConfiguration).setProjectId("project"));
   }
 
-  public void compareAttachedDiskConfiguration(AttachedDisk.AttachedDiskConfiguration expected,
+  public void compareAttachedDiskConfiguration(
+      AttachedDisk.AttachedDiskConfiguration expected,
       AttachedDisk.AttachedDiskConfiguration value) {
     assertEquals(expected, value);
     assertEquals(expected.getType(), value.getType());
@@ -360,15 +372,15 @@ public class AttachedDiskTest {
     assertEquals(expected.hashCode(), value.hashCode());
   }
 
-  public void comparePersistentDiskConfiguration(PersistentDiskConfiguration expected,
-      PersistentDiskConfiguration value) {
+  public void comparePersistentDiskConfiguration(
+      PersistentDiskConfiguration expected, PersistentDiskConfiguration value) {
     compareAttachedDiskConfiguration(expected, value);
     assertEquals(expected.getMode(), value.getMode());
     assertEquals(expected.getSourceDisk(), value.getSourceDisk());
   }
 
-  public void compareCreateDiskConfiguration(CreateDiskConfiguration expected,
-      CreateDiskConfiguration value) {
+  public void compareCreateDiskConfiguration(
+      CreateDiskConfiguration expected, CreateDiskConfiguration value) {
     compareAttachedDiskConfiguration(expected, value);
     assertEquals(expected.getDiskName(), value.getDiskName());
     assertEquals(expected.getDiskType(), value.getDiskType());
@@ -376,8 +388,8 @@ public class AttachedDiskTest {
     assertEquals(expected.getSourceImage(), value.getSourceImage());
   }
 
-  public void compareScratchDiskConfiguration(ScratchDiskConfiguration expected,
-      ScratchDiskConfiguration value) {
+  public void compareScratchDiskConfiguration(
+      ScratchDiskConfiguration expected, ScratchDiskConfiguration value) {
     compareAttachedDiskConfiguration(expected, value);
     assertEquals(expected.getDiskType(), value.getDiskType());
   }

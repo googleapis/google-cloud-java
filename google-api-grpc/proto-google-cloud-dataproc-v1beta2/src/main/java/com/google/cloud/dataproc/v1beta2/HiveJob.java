@@ -4,6 +4,8 @@
 package com.google.cloud.dataproc.v1beta2;
 
 /**
+ *
+ *
  * <pre>
  * A Cloud Dataproc job for running [Apache Hive](https://hive.apache.org/)
  * queries on YARN.
@@ -11,30 +13,34 @@ package com.google.cloud.dataproc.v1beta2;
  *
  * Protobuf type {@code google.cloud.dataproc.v1beta2.HiveJob}
  */
-public  final class HiveJob extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class HiveJob extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.dataproc.v1beta2.HiveJob)
     HiveJobOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use HiveJob.newBuilder() to construct.
   private HiveJob(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private HiveJob() {
     continueOnFailure_ = false;
     jarFileUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private HiveJob(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -46,80 +52,89 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              queriesCase_ = 1;
+              queries_ = s;
+              break;
             }
-            break;
-          }
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
-            queriesCase_ = 1;
-            queries_ = s;
-            break;
-          }
-          case 18: {
-            com.google.cloud.dataproc.v1beta2.QueryList.Builder subBuilder = null;
-            if (queriesCase_ == 2) {
-              subBuilder = ((com.google.cloud.dataproc.v1beta2.QueryList) queries_).toBuilder();
+          case 18:
+            {
+              com.google.cloud.dataproc.v1beta2.QueryList.Builder subBuilder = null;
+              if (queriesCase_ == 2) {
+                subBuilder = ((com.google.cloud.dataproc.v1beta2.QueryList) queries_).toBuilder();
+              }
+              queries_ =
+                  input.readMessage(
+                      com.google.cloud.dataproc.v1beta2.QueryList.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.cloud.dataproc.v1beta2.QueryList) queries_);
+                queries_ = subBuilder.buildPartial();
+              }
+              queriesCase_ = 2;
+              break;
             }
-            queries_ =
-                input.readMessage(com.google.cloud.dataproc.v1beta2.QueryList.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.google.cloud.dataproc.v1beta2.QueryList) queries_);
-              queries_ = subBuilder.buildPartial();
+          case 24:
+            {
+              continueOnFailure_ = input.readBool();
+              break;
             }
-            queriesCase_ = 2;
-            break;
-          }
-          case 24: {
-
-            continueOnFailure_ = input.readBool();
-            break;
-          }
-          case 34: {
-            if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-              scriptVariables_ = com.google.protobuf.MapField.newMapField(
-                  ScriptVariablesDefaultEntryHolder.defaultEntry);
-              mutable_bitField0_ |= 0x00000008;
+          case 34:
+            {
+              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+                scriptVariables_ =
+                    com.google.protobuf.MapField.newMapField(
+                        ScriptVariablesDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000008;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> scriptVariables__ =
+                  input.readMessage(
+                      ScriptVariablesDefaultEntryHolder.defaultEntry.getParserForType(),
+                      extensionRegistry);
+              scriptVariables_
+                  .getMutableMap()
+                  .put(scriptVariables__.getKey(), scriptVariables__.getValue());
+              break;
             }
-            com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-            scriptVariables__ = input.readMessage(
-                ScriptVariablesDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-            scriptVariables_.getMutableMap().put(
-                scriptVariables__.getKey(), scriptVariables__.getValue());
-            break;
-          }
-          case 42: {
-            if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
-              properties_ = com.google.protobuf.MapField.newMapField(
-                  PropertiesDefaultEntryHolder.defaultEntry);
-              mutable_bitField0_ |= 0x00000010;
+          case 42:
+            {
+              if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+                properties_ =
+                    com.google.protobuf.MapField.newMapField(
+                        PropertiesDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000010;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> properties__ =
+                  input.readMessage(
+                      PropertiesDefaultEntryHolder.defaultEntry.getParserForType(),
+                      extensionRegistry);
+              properties_.getMutableMap().put(properties__.getKey(), properties__.getValue());
+              break;
             }
-            com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-            properties__ = input.readMessage(
-                PropertiesDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-            properties_.getMutableMap().put(
-                properties__.getKey(), properties__.getValue());
-            break;
-          }
-          case 50: {
-            java.lang.String s = input.readStringRequireUtf8();
-            if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
-              jarFileUris_ = new com.google.protobuf.LazyStringArrayList();
-              mutable_bitField0_ |= 0x00000020;
+          case 50:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+                jarFileUris_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000020;
+              }
+              jarFileUris_.add(s);
+              break;
             }
-            jarFileUris_.add(s);
-            break;
-          }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
         jarFileUris_ = jarFileUris_.getUnmodifiableView();
@@ -128,46 +143,49 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.dataproc.v1beta2.JobsProto.internal_static_google_cloud_dataproc_v1beta2_HiveJob_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.dataproc.v1beta2.JobsProto
+        .internal_static_google_cloud_dataproc_v1beta2_HiveJob_descriptor;
   }
 
   @SuppressWarnings({"rawtypes"})
-  protected com.google.protobuf.MapField internalGetMapField(
-      int number) {
+  @java.lang.Override
+  protected com.google.protobuf.MapField internalGetMapField(int number) {
     switch (number) {
       case 4:
         return internalGetScriptVariables();
       case 5:
         return internalGetProperties();
       default:
-        throw new RuntimeException(
-            "Invalid map field number: " + number);
+        throw new RuntimeException("Invalid map field number: " + number);
     }
   }
+
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.dataproc.v1beta2.JobsProto.internal_static_google_cloud_dataproc_v1beta2_HiveJob_fieldAccessorTable
+    return com.google.cloud.dataproc.v1beta2.JobsProto
+        .internal_static_google_cloud_dataproc_v1beta2_HiveJob_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.dataproc.v1beta2.HiveJob.class, com.google.cloud.dataproc.v1beta2.HiveJob.Builder.class);
+            com.google.cloud.dataproc.v1beta2.HiveJob.class,
+            com.google.cloud.dataproc.v1beta2.HiveJob.Builder.class);
   }
 
   private int bitField0_;
   private int queriesCase_ = 0;
   private java.lang.Object queries_;
-  public enum QueriesCase
-      implements com.google.protobuf.Internal.EnumLite {
+
+  public enum QueriesCase implements com.google.protobuf.Internal.EnumLite {
     QUERY_FILE_URI(1),
     QUERY_LIST(2),
     QUERIES_NOT_SET(0);
     private final int value;
+
     private QueriesCase(int value) {
       this.value = value;
     }
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static QueriesCase valueOf(int value) {
       return forNumber(value);
@@ -175,25 +193,30 @@ private static final long serialVersionUID = 0L;
 
     public static QueriesCase forNumber(int value) {
       switch (value) {
-        case 1: return QUERY_FILE_URI;
-        case 2: return QUERY_LIST;
-        case 0: return QUERIES_NOT_SET;
-        default: return null;
+        case 1:
+          return QUERY_FILE_URI;
+        case 2:
+          return QUERY_LIST;
+        case 0:
+          return QUERIES_NOT_SET;
+        default:
+          return null;
       }
     }
+
     public int getNumber() {
       return this.value;
     }
   };
 
-  public QueriesCase
-  getQueriesCase() {
-    return QueriesCase.forNumber(
-        queriesCase_);
+  public QueriesCase getQueriesCase() {
+    return QueriesCase.forNumber(queriesCase_);
   }
 
   public static final int QUERY_FILE_URI_FIELD_NUMBER = 1;
   /**
+   *
+   *
    * <pre>
    * The HCFS URI of the script that contains Hive queries.
    * </pre>
@@ -208,8 +231,7 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       if (queriesCase_ == 1) {
         queries_ = s;
@@ -218,22 +240,22 @@ private static final long serialVersionUID = 0L;
     }
   }
   /**
+   *
+   *
    * <pre>
    * The HCFS URI of the script that contains Hive queries.
    * </pre>
    *
    * <code>string query_file_uri = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getQueryFileUriBytes() {
+  public com.google.protobuf.ByteString getQueryFileUriBytes() {
     java.lang.Object ref = "";
     if (queriesCase_ == 1) {
       ref = queries_;
     }
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       if (queriesCase_ == 1) {
         queries_ = b;
       }
@@ -245,6 +267,8 @@ private static final long serialVersionUID = 0L;
 
   public static final int QUERY_LIST_FIELD_NUMBER = 2;
   /**
+   *
+   *
    * <pre>
    * A list of queries.
    * </pre>
@@ -255,6 +279,8 @@ private static final long serialVersionUID = 0L;
     return queriesCase_ == 2;
   }
   /**
+   *
+   *
    * <pre>
    * A list of queries.
    * </pre>
@@ -263,11 +289,13 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.cloud.dataproc.v1beta2.QueryList getQueryList() {
     if (queriesCase_ == 2) {
-       return (com.google.cloud.dataproc.v1beta2.QueryList) queries_;
+      return (com.google.cloud.dataproc.v1beta2.QueryList) queries_;
     }
     return com.google.cloud.dataproc.v1beta2.QueryList.getDefaultInstance();
   }
   /**
+   *
+   *
    * <pre>
    * A list of queries.
    * </pre>
@@ -276,7 +304,7 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.cloud.dataproc.v1beta2.QueryListOrBuilder getQueryListOrBuilder() {
     if (queriesCase_ == 2) {
-       return (com.google.cloud.dataproc.v1beta2.QueryList) queries_;
+      return (com.google.cloud.dataproc.v1beta2.QueryList) queries_;
     }
     return com.google.cloud.dataproc.v1beta2.QueryList.getDefaultInstance();
   }
@@ -284,6 +312,8 @@ private static final long serialVersionUID = 0L;
   public static final int CONTINUE_ON_FAILURE_FIELD_NUMBER = 3;
   private boolean continueOnFailure_;
   /**
+   *
+   *
    * <pre>
    * Optional. Whether to continue executing queries if a query fails.
    * The default value is `false`. Setting to `true` can be useful when executing
@@ -297,21 +327,22 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int SCRIPT_VARIABLES_FIELD_NUMBER = 4;
+
   private static final class ScriptVariablesDefaultEntryHolder {
-    static final com.google.protobuf.MapEntry<
-        java.lang.String, java.lang.String> defaultEntry =
-            com.google.protobuf.MapEntry
-            .<java.lang.String, java.lang.String>newDefaultInstance(
-                com.google.cloud.dataproc.v1beta2.JobsProto.internal_static_google_cloud_dataproc_v1beta2_HiveJob_ScriptVariablesEntry_descriptor, 
-                com.google.protobuf.WireFormat.FieldType.STRING,
-                "",
-                com.google.protobuf.WireFormat.FieldType.STRING,
-                "");
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.cloud.dataproc.v1beta2.JobsProto
+                .internal_static_google_cloud_dataproc_v1beta2_HiveJob_ScriptVariablesEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
   }
-  private com.google.protobuf.MapField<
-      java.lang.String, java.lang.String> scriptVariables_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> scriptVariables_;
+
   private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-  internalGetScriptVariables() {
+      internalGetScriptVariables() {
     if (scriptVariables_ == null) {
       return com.google.protobuf.MapField.emptyMapField(
           ScriptVariablesDefaultEntryHolder.defaultEntry);
@@ -323,6 +354,8 @@ private static final long serialVersionUID = 0L;
     return internalGetScriptVariables().getMap().size();
   }
   /**
+   *
+   *
    * <pre>
    * Optional. Mapping of query variable names to values (equivalent to the
    * Hive command: `SET name="value";`).
@@ -330,20 +363,20 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; script_variables = 4;</code>
    */
-
-  public boolean containsScriptVariables(
-      java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+  public boolean containsScriptVariables(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
     return internalGetScriptVariables().getMap().containsKey(key);
   }
-  /**
-   * Use {@link #getScriptVariablesMap()} instead.
-   */
+  /** Use {@link #getScriptVariablesMap()} instead. */
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getScriptVariables() {
     return getScriptVariablesMap();
   }
   /**
+   *
+   *
    * <pre>
    * Optional. Mapping of query variable names to values (equivalent to the
    * Hive command: `SET name="value";`).
@@ -351,11 +384,12 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; script_variables = 4;</code>
    */
-
   public java.util.Map<java.lang.String, java.lang.String> getScriptVariablesMap() {
     return internalGetScriptVariables().getMap();
   }
   /**
+   *
+   *
    * <pre>
    * Optional. Mapping of query variable names to values (equivalent to the
    * Hive command: `SET name="value";`).
@@ -363,16 +397,17 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; script_variables = 4;</code>
    */
-
   public java.lang.String getScriptVariablesOrDefault(
-      java.lang.String key,
-      java.lang.String defaultValue) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
-    java.util.Map<java.lang.String, java.lang.String> map =
-        internalGetScriptVariables().getMap();
+      java.lang.String key, java.lang.String defaultValue) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetScriptVariables().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
   /**
+   *
+   *
    * <pre>
    * Optional. Mapping of query variable names to values (equivalent to the
    * Hive command: `SET name="value";`).
@@ -380,12 +415,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; script_variables = 4;</code>
    */
-
-  public java.lang.String getScriptVariablesOrThrow(
-      java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
-    java.util.Map<java.lang.String, java.lang.String> map =
-        internalGetScriptVariables().getMap();
+  public java.lang.String getScriptVariablesOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetScriptVariables().getMap();
     if (!map.containsKey(key)) {
       throw new java.lang.IllegalArgumentException();
     }
@@ -393,24 +427,23 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int PROPERTIES_FIELD_NUMBER = 5;
+
   private static final class PropertiesDefaultEntryHolder {
-    static final com.google.protobuf.MapEntry<
-        java.lang.String, java.lang.String> defaultEntry =
-            com.google.protobuf.MapEntry
-            .<java.lang.String, java.lang.String>newDefaultInstance(
-                com.google.cloud.dataproc.v1beta2.JobsProto.internal_static_google_cloud_dataproc_v1beta2_HiveJob_PropertiesEntry_descriptor, 
-                com.google.protobuf.WireFormat.FieldType.STRING,
-                "",
-                com.google.protobuf.WireFormat.FieldType.STRING,
-                "");
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.cloud.dataproc.v1beta2.JobsProto
+                .internal_static_google_cloud_dataproc_v1beta2_HiveJob_PropertiesEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
   }
-  private com.google.protobuf.MapField<
-      java.lang.String, java.lang.String> properties_;
-  private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-  internalGetProperties() {
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> properties_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetProperties() {
     if (properties_ == null) {
-      return com.google.protobuf.MapField.emptyMapField(
-          PropertiesDefaultEntryHolder.defaultEntry);
+      return com.google.protobuf.MapField.emptyMapField(PropertiesDefaultEntryHolder.defaultEntry);
     }
     return properties_;
   }
@@ -419,6 +452,8 @@ private static final long serialVersionUID = 0L;
     return internalGetProperties().getMap().size();
   }
   /**
+   *
+   *
    * <pre>
    * Optional. A mapping of property names and values, used to configure Hive.
    * Properties that conflict with values set by the Cloud Dataproc API may be
@@ -428,20 +463,20 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; properties = 5;</code>
    */
-
-  public boolean containsProperties(
-      java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+  public boolean containsProperties(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
     return internalGetProperties().getMap().containsKey(key);
   }
-  /**
-   * Use {@link #getPropertiesMap()} instead.
-   */
+  /** Use {@link #getPropertiesMap()} instead. */
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getProperties() {
     return getPropertiesMap();
   }
   /**
+   *
+   *
    * <pre>
    * Optional. A mapping of property names and values, used to configure Hive.
    * Properties that conflict with values set by the Cloud Dataproc API may be
@@ -451,11 +486,12 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; properties = 5;</code>
    */
-
   public java.util.Map<java.lang.String, java.lang.String> getPropertiesMap() {
     return internalGetProperties().getMap();
   }
   /**
+   *
+   *
    * <pre>
    * Optional. A mapping of property names and values, used to configure Hive.
    * Properties that conflict with values set by the Cloud Dataproc API may be
@@ -465,16 +501,17 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; properties = 5;</code>
    */
-
   public java.lang.String getPropertiesOrDefault(
-      java.lang.String key,
-      java.lang.String defaultValue) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
-    java.util.Map<java.lang.String, java.lang.String> map =
-        internalGetProperties().getMap();
+      java.lang.String key, java.lang.String defaultValue) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetProperties().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
   /**
+   *
+   *
    * <pre>
    * Optional. A mapping of property names and values, used to configure Hive.
    * Properties that conflict with values set by the Cloud Dataproc API may be
@@ -484,12 +521,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; properties = 5;</code>
    */
-
-  public java.lang.String getPropertiesOrThrow(
-      java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
-    java.util.Map<java.lang.String, java.lang.String> map =
-        internalGetProperties().getMap();
+  public java.lang.String getPropertiesOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetProperties().getMap();
     if (!map.containsKey(key)) {
       throw new java.lang.IllegalArgumentException();
     }
@@ -499,6 +535,8 @@ private static final long serialVersionUID = 0L;
   public static final int JAR_FILE_URIS_FIELD_NUMBER = 6;
   private com.google.protobuf.LazyStringList jarFileUris_;
   /**
+   *
+   *
    * <pre>
    * Optional. HCFS URIs of jar files to add to the CLASSPATH of the
    * Hive server and Hadoop MapReduce (MR) tasks. Can contain Hive SerDes
@@ -507,11 +545,12 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string jar_file_uris = 6;</code>
    */
-  public com.google.protobuf.ProtocolStringList
-      getJarFileUrisList() {
+  public com.google.protobuf.ProtocolStringList getJarFileUrisList() {
     return jarFileUris_;
   }
   /**
+   *
+   *
    * <pre>
    * Optional. HCFS URIs of jar files to add to the CLASSPATH of the
    * Hive server and Hadoop MapReduce (MR) tasks. Can contain Hive SerDes
@@ -524,6 +563,8 @@ private static final long serialVersionUID = 0L;
     return jarFileUris_.size();
   }
   /**
+   *
+   *
    * <pre>
    * Optional. HCFS URIs of jar files to add to the CLASSPATH of the
    * Hive server and Hadoop MapReduce (MR) tasks. Can contain Hive SerDes
@@ -536,6 +577,8 @@ private static final long serialVersionUID = 0L;
     return jarFileUris_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * Optional. HCFS URIs of jar files to add to the CLASSPATH of the
    * Hive server and Hadoop MapReduce (MR) tasks. Can contain Hive SerDes
@@ -544,12 +587,13 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated string jar_file_uris = 6;</code>
    */
-  public com.google.protobuf.ByteString
-      getJarFileUrisBytes(int index) {
+  public com.google.protobuf.ByteString getJarFileUrisBytes(int index) {
     return jarFileUris_.getByteString(index);
   }
 
   private byte memoizedIsInitialized = -1;
+
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -559,8 +603,8 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  @java.lang.Override
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (queriesCase_ == 1) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, queries_);
     }
@@ -570,24 +614,17 @@ private static final long serialVersionUID = 0L;
     if (continueOnFailure_ != false) {
       output.writeBool(3, continueOnFailure_);
     }
-    com.google.protobuf.GeneratedMessageV3
-      .serializeStringMapTo(
-        output,
-        internalGetScriptVariables(),
-        ScriptVariablesDefaultEntryHolder.defaultEntry,
-        4);
-    com.google.protobuf.GeneratedMessageV3
-      .serializeStringMapTo(
-        output,
-        internalGetProperties(),
-        PropertiesDefaultEntryHolder.defaultEntry,
-        5);
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetScriptVariables(), ScriptVariablesDefaultEntryHolder.defaultEntry, 4);
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetProperties(), PropertiesDefaultEntryHolder.defaultEntry, 5);
     for (int i = 0; i < jarFileUris_.size(); i++) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 6, jarFileUris_.getRaw(i));
     }
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -597,32 +634,32 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, queries_);
     }
     if (queriesCase_ == 2) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, (com.google.cloud.dataproc.v1beta2.QueryList) queries_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              2, (com.google.cloud.dataproc.v1beta2.QueryList) queries_);
     }
     if (continueOnFailure_ != false) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(3, continueOnFailure_);
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(3, continueOnFailure_);
     }
-    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
-         : internalGetScriptVariables().getMap().entrySet()) {
-      com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-      scriptVariables__ = ScriptVariablesDefaultEntryHolder.defaultEntry.newBuilderForType()
-          .setKey(entry.getKey())
-          .setValue(entry.getValue())
-          .build();
-      size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(4, scriptVariables__);
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetScriptVariables().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> scriptVariables__ =
+          ScriptVariablesDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, scriptVariables__);
     }
-    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
-         : internalGetProperties().getMap().entrySet()) {
-      com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-      properties__ = PropertiesDefaultEntryHolder.defaultEntry.newBuilderForType()
-          .setKey(entry.getKey())
-          .setValue(entry.getValue())
-          .build();
-      size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(5, properties__);
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetProperties().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> properties__ =
+          PropertiesDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, properties__);
     }
     {
       int dataSize = 0;
@@ -640,33 +677,27 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.dataproc.v1beta2.HiveJob)) {
       return super.equals(obj);
     }
-    com.google.cloud.dataproc.v1beta2.HiveJob other = (com.google.cloud.dataproc.v1beta2.HiveJob) obj;
+    com.google.cloud.dataproc.v1beta2.HiveJob other =
+        (com.google.cloud.dataproc.v1beta2.HiveJob) obj;
 
     boolean result = true;
-    result = result && (getContinueOnFailure()
-        == other.getContinueOnFailure());
-    result = result && internalGetScriptVariables().equals(
-        other.internalGetScriptVariables());
-    result = result && internalGetProperties().equals(
-        other.internalGetProperties());
-    result = result && getJarFileUrisList()
-        .equals(other.getJarFileUrisList());
-    result = result && getQueriesCase().equals(
-        other.getQueriesCase());
+    result = result && (getContinueOnFailure() == other.getContinueOnFailure());
+    result = result && internalGetScriptVariables().equals(other.internalGetScriptVariables());
+    result = result && internalGetProperties().equals(other.internalGetProperties());
+    result = result && getJarFileUrisList().equals(other.getJarFileUrisList());
+    result = result && getQueriesCase().equals(other.getQueriesCase());
     if (!result) return false;
     switch (queriesCase_) {
       case 1:
-        result = result && getQueryFileUri()
-            .equals(other.getQueryFileUri());
+        result = result && getQueryFileUri().equals(other.getQueryFileUri());
         break;
       case 2:
-        result = result && getQueryList()
-            .equals(other.getQueryList());
+        result = result && getQueryList().equals(other.getQueryList());
         break;
       case 0:
       default:
@@ -683,8 +714,7 @@ private static final long serialVersionUID = 0L;
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
     hash = (37 * hash) + CONTINUE_ON_FAILURE_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getContinueOnFailure());
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getContinueOnFailure());
     if (!internalGetScriptVariables().getMap().isEmpty()) {
       hash = (37 * hash) + SCRIPT_VARIABLES_FIELD_NUMBER;
       hash = (53 * hash) + internalGetScriptVariables().hashCode();
@@ -714,95 +744,104 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.cloud.dataproc.v1beta2.HiveJob parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.cloud.dataproc.v1beta2.HiveJob parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dataproc.v1beta2.HiveJob parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.dataproc.v1beta2.HiveJob parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dataproc.v1beta2.HiveJob parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.dataproc.v1beta2.HiveJob parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dataproc.v1beta2.HiveJob parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.dataproc.v1beta2.HiveJob parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.dataproc.v1beta2.HiveJob parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.cloud.dataproc.v1beta2.HiveJob parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.dataproc.v1beta2.HiveJob parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.dataproc.v1beta2.HiveJob parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.dataproc.v1beta2.HiveJob parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.dataproc.v1beta2.HiveJob parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  public Builder newBuilderForType() { return newBuilder(); }
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-  public static Builder newBuilder(com.google.cloud.dataproc.v1beta2.HiveJob prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+
+  public static Builder newBuilder(com.google.cloud.dataproc.v1beta2.HiveJob prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+
+  @java.lang.Override
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * A Cloud Dataproc job for running [Apache Hive](https://hive.apache.org/)
    * queries on YARN.
@@ -810,46 +849,47 @@ private static final long serialVersionUID = 0L;
    *
    * Protobuf type {@code google.cloud.dataproc.v1beta2.HiveJob}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.dataproc.v1beta2.HiveJob)
       com.google.cloud.dataproc.v1beta2.HiveJobOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.dataproc.v1beta2.JobsProto.internal_static_google_cloud_dataproc_v1beta2_HiveJob_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dataproc.v1beta2.JobsProto
+          .internal_static_google_cloud_dataproc_v1beta2_HiveJob_descriptor;
     }
 
     @SuppressWarnings({"rawtypes"})
-    protected com.google.protobuf.MapField internalGetMapField(
-        int number) {
+    protected com.google.protobuf.MapField internalGetMapField(int number) {
       switch (number) {
         case 4:
           return internalGetScriptVariables();
         case 5:
           return internalGetProperties();
         default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
+          throw new RuntimeException("Invalid map field number: " + number);
       }
     }
+
     @SuppressWarnings({"rawtypes"})
-    protected com.google.protobuf.MapField internalGetMutableMapField(
-        int number) {
+    protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
       switch (number) {
         case 4:
           return internalGetMutableScriptVariables();
         case 5:
           return internalGetMutableProperties();
         default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
+          throw new RuntimeException("Invalid map field number: " + number);
       }
     }
+
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.dataproc.v1beta2.JobsProto.internal_static_google_cloud_dataproc_v1beta2_HiveJob_fieldAccessorTable
+      return com.google.cloud.dataproc.v1beta2.JobsProto
+          .internal_static_google_cloud_dataproc_v1beta2_HiveJob_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.dataproc.v1beta2.HiveJob.class, com.google.cloud.dataproc.v1beta2.HiveJob.Builder.class);
+              com.google.cloud.dataproc.v1beta2.HiveJob.class,
+              com.google.cloud.dataproc.v1beta2.HiveJob.Builder.class);
     }
 
     // Construct using com.google.cloud.dataproc.v1beta2.HiveJob.newBuilder()
@@ -857,16 +897,16 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       continueOnFailure_ = false;
@@ -880,15 +920,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.dataproc.v1beta2.JobsProto.internal_static_google_cloud_dataproc_v1beta2_HiveJob_descriptor;
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.dataproc.v1beta2.JobsProto
+          .internal_static_google_cloud_dataproc_v1beta2_HiveJob_descriptor;
     }
 
+    @java.lang.Override
     public com.google.cloud.dataproc.v1beta2.HiveJob getDefaultInstanceForType() {
       return com.google.cloud.dataproc.v1beta2.HiveJob.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.cloud.dataproc.v1beta2.HiveJob build() {
       com.google.cloud.dataproc.v1beta2.HiveJob result = buildPartial();
       if (!result.isInitialized()) {
@@ -897,8 +940,10 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.cloud.dataproc.v1beta2.HiveJob buildPartial() {
-      com.google.cloud.dataproc.v1beta2.HiveJob result = new com.google.cloud.dataproc.v1beta2.HiveJob(this);
+      com.google.cloud.dataproc.v1beta2.HiveJob result =
+          new com.google.cloud.dataproc.v1beta2.HiveJob(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (queriesCase_ == 1) {
@@ -927,35 +972,43 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+
+    @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+    @java.lang.Override
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+    @java.lang.Override
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
+    @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
+    @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.dataproc.v1beta2.HiveJob) {
-        return mergeFrom((com.google.cloud.dataproc.v1beta2.HiveJob)other);
+        return mergeFrom((com.google.cloud.dataproc.v1beta2.HiveJob) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -967,10 +1020,8 @@ private static final long serialVersionUID = 0L;
       if (other.getContinueOnFailure() != false) {
         setContinueOnFailure(other.getContinueOnFailure());
       }
-      internalGetMutableScriptVariables().mergeFrom(
-          other.internalGetScriptVariables());
-      internalGetMutableProperties().mergeFrom(
-          other.internalGetProperties());
+      internalGetMutableScriptVariables().mergeFrom(other.internalGetScriptVariables());
+      internalGetMutableProperties().mergeFrom(other.internalGetProperties());
       if (!other.jarFileUris_.isEmpty()) {
         if (jarFileUris_.isEmpty()) {
           jarFileUris_ = other.jarFileUris_;
@@ -982,29 +1033,34 @@ private static final long serialVersionUID = 0L;
         onChanged();
       }
       switch (other.getQueriesCase()) {
-        case QUERY_FILE_URI: {
-          queriesCase_ = 1;
-          queries_ = other.queries_;
-          onChanged();
-          break;
-        }
-        case QUERY_LIST: {
-          mergeQueryList(other.getQueryList());
-          break;
-        }
-        case QUERIES_NOT_SET: {
-          break;
-        }
+        case QUERY_FILE_URI:
+          {
+            queriesCase_ = 1;
+            queries_ = other.queries_;
+            onChanged();
+            break;
+          }
+        case QUERY_LIST:
+          {
+            mergeQueryList(other.getQueryList());
+            break;
+          }
+        case QUERIES_NOT_SET:
+          {
+            break;
+          }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1022,12 +1078,12 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int queriesCase_ = 0;
     private java.lang.Object queries_;
-    public QueriesCase
-        getQueriesCase() {
-      return QueriesCase.forNumber(
-          queriesCase_);
+
+    public QueriesCase getQueriesCase() {
+      return QueriesCase.forNumber(queriesCase_);
     }
 
     public Builder clearQueries() {
@@ -1040,6 +1096,8 @@ private static final long serialVersionUID = 0L;
     private int bitField0_;
 
     /**
+     *
+     *
      * <pre>
      * The HCFS URI of the script that contains Hive queries.
      * </pre>
@@ -1052,8 +1110,7 @@ private static final long serialVersionUID = 0L;
         ref = queries_;
       }
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         if (queriesCase_ == 1) {
           queries_ = s;
@@ -1064,22 +1121,22 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The HCFS URI of the script that contains Hive queries.
      * </pre>
      *
      * <code>string query_file_uri = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getQueryFileUriBytes() {
+    public com.google.protobuf.ByteString getQueryFileUriBytes() {
       java.lang.Object ref = "";
       if (queriesCase_ == 1) {
         ref = queries_;
       }
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         if (queriesCase_ == 1) {
           queries_ = b;
         }
@@ -1089,23 +1146,26 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The HCFS URI of the script that contains Hive queries.
      * </pre>
      *
      * <code>string query_file_uri = 1;</code>
      */
-    public Builder setQueryFileUri(
-        java.lang.String value) {
+    public Builder setQueryFileUri(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  queriesCase_ = 1;
+        throw new NullPointerException();
+      }
+      queriesCase_ = 1;
       queries_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The HCFS URI of the script that contains Hive queries.
      * </pre>
@@ -1121,18 +1181,19 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * The HCFS URI of the script that contains Hive queries.
      * </pre>
      *
      * <code>string query_file_uri = 1;</code>
      */
-    public Builder setQueryFileUriBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setQueryFileUriBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
       queriesCase_ = 1;
       queries_ = value;
       onChanged();
@@ -1140,8 +1201,13 @@ private static final long serialVersionUID = 0L;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dataproc.v1beta2.QueryList, com.google.cloud.dataproc.v1beta2.QueryList.Builder, com.google.cloud.dataproc.v1beta2.QueryListOrBuilder> queryListBuilder_;
+            com.google.cloud.dataproc.v1beta2.QueryList,
+            com.google.cloud.dataproc.v1beta2.QueryList.Builder,
+            com.google.cloud.dataproc.v1beta2.QueryListOrBuilder>
+        queryListBuilder_;
     /**
+     *
+     *
      * <pre>
      * A list of queries.
      * </pre>
@@ -1152,6 +1218,8 @@ private static final long serialVersionUID = 0L;
       return queriesCase_ == 2;
     }
     /**
+     *
+     *
      * <pre>
      * A list of queries.
      * </pre>
@@ -1172,6 +1240,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A list of queries.
      * </pre>
@@ -1192,6 +1262,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of queries.
      * </pre>
@@ -1210,6 +1282,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of queries.
      * </pre>
@@ -1218,10 +1292,13 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeQueryList(com.google.cloud.dataproc.v1beta2.QueryList value) {
       if (queryListBuilder_ == null) {
-        if (queriesCase_ == 2 &&
-            queries_ != com.google.cloud.dataproc.v1beta2.QueryList.getDefaultInstance()) {
-          queries_ = com.google.cloud.dataproc.v1beta2.QueryList.newBuilder((com.google.cloud.dataproc.v1beta2.QueryList) queries_)
-              .mergeFrom(value).buildPartial();
+        if (queriesCase_ == 2
+            && queries_ != com.google.cloud.dataproc.v1beta2.QueryList.getDefaultInstance()) {
+          queries_ =
+              com.google.cloud.dataproc.v1beta2.QueryList.newBuilder(
+                      (com.google.cloud.dataproc.v1beta2.QueryList) queries_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           queries_ = value;
         }
@@ -1236,6 +1313,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of queries.
      * </pre>
@@ -1259,6 +1338,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A list of queries.
      * </pre>
@@ -1269,6 +1350,8 @@ private static final long serialVersionUID = 0L;
       return getQueryListFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * A list of queries.
      * </pre>
@@ -1286,6 +1369,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A list of queries.
      * </pre>
@@ -1293,26 +1378,34 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.dataproc.v1beta2.QueryList query_list = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dataproc.v1beta2.QueryList, com.google.cloud.dataproc.v1beta2.QueryList.Builder, com.google.cloud.dataproc.v1beta2.QueryListOrBuilder> 
+            com.google.cloud.dataproc.v1beta2.QueryList,
+            com.google.cloud.dataproc.v1beta2.QueryList.Builder,
+            com.google.cloud.dataproc.v1beta2.QueryListOrBuilder>
         getQueryListFieldBuilder() {
       if (queryListBuilder_ == null) {
         if (!(queriesCase_ == 2)) {
           queries_ = com.google.cloud.dataproc.v1beta2.QueryList.getDefaultInstance();
         }
-        queryListBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.dataproc.v1beta2.QueryList, com.google.cloud.dataproc.v1beta2.QueryList.Builder, com.google.cloud.dataproc.v1beta2.QueryListOrBuilder>(
+        queryListBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dataproc.v1beta2.QueryList,
+                com.google.cloud.dataproc.v1beta2.QueryList.Builder,
+                com.google.cloud.dataproc.v1beta2.QueryListOrBuilder>(
                 (com.google.cloud.dataproc.v1beta2.QueryList) queries_,
                 getParentForChildren(),
                 isClean());
         queries_ = null;
       }
       queriesCase_ = 2;
-      onChanged();;
+      onChanged();
+      ;
       return queryListBuilder_;
     }
 
-    private boolean continueOnFailure_ ;
+    private boolean continueOnFailure_;
     /**
+     *
+     *
      * <pre>
      * Optional. Whether to continue executing queries if a query fails.
      * The default value is `false`. Setting to `true` can be useful when executing
@@ -1325,6 +1418,8 @@ private static final long serialVersionUID = 0L;
       return continueOnFailure_;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Whether to continue executing queries if a query fails.
      * The default value is `false`. Setting to `true` can be useful when executing
@@ -1334,12 +1429,14 @@ private static final long serialVersionUID = 0L;
      * <code>bool continue_on_failure = 3;</code>
      */
     public Builder setContinueOnFailure(boolean value) {
-      
+
       continueOnFailure_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Whether to continue executing queries if a query fails.
      * The default value is `false`. Setting to `true` can be useful when executing
@@ -1349,28 +1446,31 @@ private static final long serialVersionUID = 0L;
      * <code>bool continue_on_failure = 3;</code>
      */
     public Builder clearContinueOnFailure() {
-      
+
       continueOnFailure_ = false;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.MapField<
-        java.lang.String, java.lang.String> scriptVariables_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> scriptVariables_;
+
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetScriptVariables() {
+        internalGetScriptVariables() {
       if (scriptVariables_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
             ScriptVariablesDefaultEntryHolder.defaultEntry);
       }
       return scriptVariables_;
     }
+
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetMutableScriptVariables() {
-      onChanged();;
+        internalGetMutableScriptVariables() {
+      onChanged();
+      ;
       if (scriptVariables_ == null) {
-        scriptVariables_ = com.google.protobuf.MapField.newMapField(
-            ScriptVariablesDefaultEntryHolder.defaultEntry);
+        scriptVariables_ =
+            com.google.protobuf.MapField.newMapField(
+                ScriptVariablesDefaultEntryHolder.defaultEntry);
       }
       if (!scriptVariables_.isMutable()) {
         scriptVariables_ = scriptVariables_.copy();
@@ -1382,6 +1482,8 @@ private static final long serialVersionUID = 0L;
       return internalGetScriptVariables().getMap().size();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Mapping of query variable names to values (equivalent to the
      * Hive command: `SET name="value";`).
@@ -1389,20 +1491,20 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; script_variables = 4;</code>
      */
-
-    public boolean containsScriptVariables(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+    public boolean containsScriptVariables(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
       return internalGetScriptVariables().getMap().containsKey(key);
     }
-    /**
-     * Use {@link #getScriptVariablesMap()} instead.
-     */
+    /** Use {@link #getScriptVariablesMap()} instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getScriptVariables() {
       return getScriptVariablesMap();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Mapping of query variable names to values (equivalent to the
      * Hive command: `SET name="value";`).
@@ -1410,11 +1512,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; script_variables = 4;</code>
      */
-
     public java.util.Map<java.lang.String, java.lang.String> getScriptVariablesMap() {
       return internalGetScriptVariables().getMap();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Mapping of query variable names to values (equivalent to the
      * Hive command: `SET name="value";`).
@@ -1422,16 +1525,17 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; script_variables = 4;</code>
      */
-
     public java.lang.String getScriptVariablesOrDefault(
-        java.lang.String key,
-        java.lang.String defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetScriptVariables().getMap();
+        java.lang.String key, java.lang.String defaultValue) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetScriptVariables().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Mapping of query variable names to values (equivalent to the
      * Hive command: `SET name="value";`).
@@ -1439,12 +1543,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; script_variables = 4;</code>
      */
-
-    public java.lang.String getScriptVariablesOrThrow(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetScriptVariables().getMap();
+    public java.lang.String getScriptVariablesOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetScriptVariables().getMap();
       if (!map.containsKey(key)) {
         throw new java.lang.IllegalArgumentException();
       }
@@ -1452,11 +1555,12 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder clearScriptVariables() {
-      internalGetMutableScriptVariables().getMutableMap()
-          .clear();
+      internalGetMutableScriptVariables().getMutableMap().clear();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Mapping of query variable names to values (equivalent to the
      * Hive command: `SET name="value";`).
@@ -1464,23 +1568,21 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; script_variables = 4;</code>
      */
-
-    public Builder removeScriptVariables(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      internalGetMutableScriptVariables().getMutableMap()
-          .remove(key);
+    public Builder removeScriptVariables(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableScriptVariables().getMutableMap().remove(key);
       return this;
     }
-    /**
-     * Use alternate mutation accessors instead.
-     */
+    /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
-    public java.util.Map<java.lang.String, java.lang.String>
-    getMutableScriptVariables() {
+    public java.util.Map<java.lang.String, java.lang.String> getMutableScriptVariables() {
       return internalGetMutableScriptVariables().getMutableMap();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Mapping of query variable names to values (equivalent to the
      * Hive command: `SET name="value";`).
@@ -1488,16 +1590,19 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; script_variables = 4;</code>
      */
-    public Builder putScriptVariables(
-        java.lang.String key,
-        java.lang.String value) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      if (value == null) { throw new java.lang.NullPointerException(); }
-      internalGetMutableScriptVariables().getMutableMap()
-          .put(key, value);
+    public Builder putScriptVariables(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      if (value == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableScriptVariables().getMutableMap().put(key, value);
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Mapping of query variable names to values (equivalent to the
      * Hive command: `SET name="value";`).
@@ -1505,30 +1610,29 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; script_variables = 4;</code>
      */
-
-    public Builder putAllScriptVariables(
-        java.util.Map<java.lang.String, java.lang.String> values) {
-      internalGetMutableScriptVariables().getMutableMap()
-          .putAll(values);
+    public Builder putAllScriptVariables(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableScriptVariables().getMutableMap().putAll(values);
       return this;
     }
 
-    private com.google.protobuf.MapField<
-        java.lang.String, java.lang.String> properties_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> properties_;
+
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetProperties() {
+        internalGetProperties() {
       if (properties_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
             PropertiesDefaultEntryHolder.defaultEntry);
       }
       return properties_;
     }
+
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetMutableProperties() {
-      onChanged();;
+        internalGetMutableProperties() {
+      onChanged();
+      ;
       if (properties_ == null) {
-        properties_ = com.google.protobuf.MapField.newMapField(
-            PropertiesDefaultEntryHolder.defaultEntry);
+        properties_ =
+            com.google.protobuf.MapField.newMapField(PropertiesDefaultEntryHolder.defaultEntry);
       }
       if (!properties_.isMutable()) {
         properties_ = properties_.copy();
@@ -1540,6 +1644,8 @@ private static final long serialVersionUID = 0L;
       return internalGetProperties().getMap().size();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. A mapping of property names and values, used to configure Hive.
      * Properties that conflict with values set by the Cloud Dataproc API may be
@@ -1549,20 +1655,20 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; properties = 5;</code>
      */
-
-    public boolean containsProperties(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+    public boolean containsProperties(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
       return internalGetProperties().getMap().containsKey(key);
     }
-    /**
-     * Use {@link #getPropertiesMap()} instead.
-     */
+    /** Use {@link #getPropertiesMap()} instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getProperties() {
       return getPropertiesMap();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. A mapping of property names and values, used to configure Hive.
      * Properties that conflict with values set by the Cloud Dataproc API may be
@@ -1572,11 +1678,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; properties = 5;</code>
      */
-
     public java.util.Map<java.lang.String, java.lang.String> getPropertiesMap() {
       return internalGetProperties().getMap();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. A mapping of property names and values, used to configure Hive.
      * Properties that conflict with values set by the Cloud Dataproc API may be
@@ -1586,16 +1693,17 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; properties = 5;</code>
      */
-
     public java.lang.String getPropertiesOrDefault(
-        java.lang.String key,
-        java.lang.String defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetProperties().getMap();
+        java.lang.String key, java.lang.String defaultValue) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetProperties().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. A mapping of property names and values, used to configure Hive.
      * Properties that conflict with values set by the Cloud Dataproc API may be
@@ -1605,12 +1713,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; properties = 5;</code>
      */
-
-    public java.lang.String getPropertiesOrThrow(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetProperties().getMap();
+    public java.lang.String getPropertiesOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetProperties().getMap();
       if (!map.containsKey(key)) {
         throw new java.lang.IllegalArgumentException();
       }
@@ -1618,11 +1725,12 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder clearProperties() {
-      internalGetMutableProperties().getMutableMap()
-          .clear();
+      internalGetMutableProperties().getMutableMap().clear();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. A mapping of property names and values, used to configure Hive.
      * Properties that conflict with values set by the Cloud Dataproc API may be
@@ -1632,23 +1740,21 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; properties = 5;</code>
      */
-
-    public Builder removeProperties(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      internalGetMutableProperties().getMutableMap()
-          .remove(key);
+    public Builder removeProperties(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableProperties().getMutableMap().remove(key);
       return this;
     }
-    /**
-     * Use alternate mutation accessors instead.
-     */
+    /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
-    public java.util.Map<java.lang.String, java.lang.String>
-    getMutableProperties() {
+    public java.util.Map<java.lang.String, java.lang.String> getMutableProperties() {
       return internalGetMutableProperties().getMutableMap();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. A mapping of property names and values, used to configure Hive.
      * Properties that conflict with values set by the Cloud Dataproc API may be
@@ -1658,16 +1764,19 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; properties = 5;</code>
      */
-    public Builder putProperties(
-        java.lang.String key,
-        java.lang.String value) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      if (value == null) { throw new java.lang.NullPointerException(); }
-      internalGetMutableProperties().getMutableMap()
-          .put(key, value);
+    public Builder putProperties(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      if (value == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableProperties().getMutableMap().put(key, value);
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. A mapping of property names and values, used to configure Hive.
      * Properties that conflict with values set by the Cloud Dataproc API may be
@@ -1677,22 +1786,23 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; properties = 5;</code>
      */
-
-    public Builder putAllProperties(
-        java.util.Map<java.lang.String, java.lang.String> values) {
-      internalGetMutableProperties().getMutableMap()
-          .putAll(values);
+    public Builder putAllProperties(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableProperties().getMutableMap().putAll(values);
       return this;
     }
 
-    private com.google.protobuf.LazyStringList jarFileUris_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    private com.google.protobuf.LazyStringList jarFileUris_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
     private void ensureJarFileUrisIsMutable() {
       if (!((bitField0_ & 0x00000020) == 0x00000020)) {
         jarFileUris_ = new com.google.protobuf.LazyStringArrayList(jarFileUris_);
         bitField0_ |= 0x00000020;
-       }
+      }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. HCFS URIs of jar files to add to the CLASSPATH of the
      * Hive server and Hadoop MapReduce (MR) tasks. Can contain Hive SerDes
@@ -1701,11 +1811,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string jar_file_uris = 6;</code>
      */
-    public com.google.protobuf.ProtocolStringList
-        getJarFileUrisList() {
+    public com.google.protobuf.ProtocolStringList getJarFileUrisList() {
       return jarFileUris_.getUnmodifiableView();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. HCFS URIs of jar files to add to the CLASSPATH of the
      * Hive server and Hadoop MapReduce (MR) tasks. Can contain Hive SerDes
@@ -1718,6 +1829,8 @@ private static final long serialVersionUID = 0L;
       return jarFileUris_.size();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. HCFS URIs of jar files to add to the CLASSPATH of the
      * Hive server and Hadoop MapReduce (MR) tasks. Can contain Hive SerDes
@@ -1730,6 +1843,8 @@ private static final long serialVersionUID = 0L;
       return jarFileUris_.get(index);
     }
     /**
+     *
+     *
      * <pre>
      * Optional. HCFS URIs of jar files to add to the CLASSPATH of the
      * Hive server and Hadoop MapReduce (MR) tasks. Can contain Hive SerDes
@@ -1738,11 +1853,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string jar_file_uris = 6;</code>
      */
-    public com.google.protobuf.ByteString
-        getJarFileUrisBytes(int index) {
+    public com.google.protobuf.ByteString getJarFileUrisBytes(int index) {
       return jarFileUris_.getByteString(index);
     }
     /**
+     *
+     *
      * <pre>
      * Optional. HCFS URIs of jar files to add to the CLASSPATH of the
      * Hive server and Hadoop MapReduce (MR) tasks. Can contain Hive SerDes
@@ -1751,17 +1867,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string jar_file_uris = 6;</code>
      */
-    public Builder setJarFileUris(
-        int index, java.lang.String value) {
+    public Builder setJarFileUris(int index, java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureJarFileUrisIsMutable();
+        throw new NullPointerException();
+      }
+      ensureJarFileUrisIsMutable();
       jarFileUris_.set(index, value);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. HCFS URIs of jar files to add to the CLASSPATH of the
      * Hive server and Hadoop MapReduce (MR) tasks. Can contain Hive SerDes
@@ -1770,17 +1887,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string jar_file_uris = 6;</code>
      */
-    public Builder addJarFileUris(
-        java.lang.String value) {
+    public Builder addJarFileUris(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  ensureJarFileUrisIsMutable();
+        throw new NullPointerException();
+      }
+      ensureJarFileUrisIsMutable();
       jarFileUris_.add(value);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. HCFS URIs of jar files to add to the CLASSPATH of the
      * Hive server and Hadoop MapReduce (MR) tasks. Can contain Hive SerDes
@@ -1789,15 +1907,15 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string jar_file_uris = 6;</code>
      */
-    public Builder addAllJarFileUris(
-        java.lang.Iterable<java.lang.String> values) {
+    public Builder addAllJarFileUris(java.lang.Iterable<java.lang.String> values) {
       ensureJarFileUrisIsMutable();
-      com.google.protobuf.AbstractMessageLite.Builder.addAll(
-          values, jarFileUris_);
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, jarFileUris_);
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. HCFS URIs of jar files to add to the CLASSPATH of the
      * Hive server and Hadoop MapReduce (MR) tasks. Can contain Hive SerDes
@@ -1813,6 +1931,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. HCFS URIs of jar files to add to the CLASSPATH of the
      * Hive server and Hadoop MapReduce (MR) tasks. Can contain Hive SerDes
@@ -1821,33 +1941,34 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated string jar_file_uris = 6;</code>
      */
-    public Builder addJarFileUrisBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder addJarFileUrisBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
       ensureJarFileUrisIsMutable();
       jarFileUris_.add(value);
       onChanged();
       return this;
     }
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+
+    @java.lang.Override
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
     }
-
 
     // @@protoc_insertion_point(builder_scope:google.cloud.dataproc.v1beta2.HiveJob)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.dataproc.v1beta2.HiveJob)
   private static final com.google.cloud.dataproc.v1beta2.HiveJob DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.dataproc.v1beta2.HiveJob();
   }
@@ -1856,15 +1977,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<HiveJob>
-      PARSER = new com.google.protobuf.AbstractParser<HiveJob>() {
-    public HiveJob parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-        return new HiveJob(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<HiveJob> PARSER =
+      new com.google.protobuf.AbstractParser<HiveJob>() {
+        @java.lang.Override
+        public HiveJob parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new HiveJob(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<HiveJob> parser() {
     return PARSER;
@@ -1875,9 +1997,8 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.cloud.dataproc.v1beta2.HiveJob getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

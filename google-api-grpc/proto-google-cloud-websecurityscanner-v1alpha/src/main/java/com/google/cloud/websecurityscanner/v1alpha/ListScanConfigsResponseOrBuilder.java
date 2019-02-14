@@ -3,20 +3,24 @@
 
 package com.google.cloud.websecurityscanner.v1alpha;
 
-public interface ListScanConfigsResponseOrBuilder extends
+public interface ListScanConfigsResponseOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.websecurityscanner.v1alpha.ListScanConfigsResponse)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The list of ScanConfigs returned.
    * </pre>
    *
    * <code>repeated .google.cloud.websecurityscanner.v1alpha.ScanConfig scan_configs = 1;</code>
    */
-  java.util.List<com.google.cloud.websecurityscanner.v1alpha.ScanConfig> 
-      getScanConfigsList();
+  java.util.List<com.google.cloud.websecurityscanner.v1alpha.ScanConfig> getScanConfigsList();
   /**
+   *
+   *
    * <pre>
    * The list of ScanConfigs returned.
    * </pre>
@@ -25,6 +29,8 @@ public interface ListScanConfigsResponseOrBuilder extends
    */
   com.google.cloud.websecurityscanner.v1alpha.ScanConfig getScanConfigs(int index);
   /**
+   *
+   *
    * <pre>
    * The list of ScanConfigs returned.
    * </pre>
@@ -33,15 +39,19 @@ public interface ListScanConfigsResponseOrBuilder extends
    */
   int getScanConfigsCount();
   /**
+   *
+   *
    * <pre>
    * The list of ScanConfigs returned.
    * </pre>
    *
    * <code>repeated .google.cloud.websecurityscanner.v1alpha.ScanConfig scan_configs = 1;</code>
    */
-  java.util.List<? extends com.google.cloud.websecurityscanner.v1alpha.ScanConfigOrBuilder> 
+  java.util.List<? extends com.google.cloud.websecurityscanner.v1alpha.ScanConfigOrBuilder>
       getScanConfigsOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * The list of ScanConfigs returned.
    * </pre>
@@ -52,6 +62,8 @@ public interface ListScanConfigsResponseOrBuilder extends
       int index);
 
   /**
+   *
+   *
    * <pre>
    * Token to retrieve the next page of results, or empty if there are no
    * more results in the list.
@@ -61,6 +73,8 @@ public interface ListScanConfigsResponseOrBuilder extends
    */
   java.lang.String getNextPageToken();
   /**
+   *
+   *
    * <pre>
    * Token to retrieve the next page of results, or empty if there are no
    * more results in the list.
@@ -68,6 +82,5 @@ public interface ListScanConfigsResponseOrBuilder extends
    *
    * <code>string next_page_token = 2;</code>
    */
-  com.google.protobuf.ByteString
-      getNextPageTokenBytes();
+  com.google.protobuf.ByteString getNextPageTokenBytes();
 }

@@ -3,11 +3,14 @@
 
 package com.google.spanner.v1;
 
-public interface QueryPlanOrBuilder extends
+public interface QueryPlanOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.spanner.v1.QueryPlan)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The nodes in the query plan. Plan nodes are returned in pre-order starting
    * with the plan root. Each [PlanNode][google.spanner.v1.PlanNode]'s `id` corresponds to its index in
@@ -16,9 +19,10 @@ public interface QueryPlanOrBuilder extends
    *
    * <code>repeated .google.spanner.v1.PlanNode plan_nodes = 1;</code>
    */
-  java.util.List<com.google.spanner.v1.PlanNode> 
-      getPlanNodesList();
+  java.util.List<com.google.spanner.v1.PlanNode> getPlanNodesList();
   /**
+   *
+   *
    * <pre>
    * The nodes in the query plan. Plan nodes are returned in pre-order starting
    * with the plan root. Each [PlanNode][google.spanner.v1.PlanNode]'s `id` corresponds to its index in
@@ -29,6 +33,8 @@ public interface QueryPlanOrBuilder extends
    */
   com.google.spanner.v1.PlanNode getPlanNodes(int index);
   /**
+   *
+   *
    * <pre>
    * The nodes in the query plan. Plan nodes are returned in pre-order starting
    * with the plan root. Each [PlanNode][google.spanner.v1.PlanNode]'s `id` corresponds to its index in
@@ -39,6 +45,8 @@ public interface QueryPlanOrBuilder extends
    */
   int getPlanNodesCount();
   /**
+   *
+   *
    * <pre>
    * The nodes in the query plan. Plan nodes are returned in pre-order starting
    * with the plan root. Each [PlanNode][google.spanner.v1.PlanNode]'s `id` corresponds to its index in
@@ -47,9 +55,10 @@ public interface QueryPlanOrBuilder extends
    *
    * <code>repeated .google.spanner.v1.PlanNode plan_nodes = 1;</code>
    */
-  java.util.List<? extends com.google.spanner.v1.PlanNodeOrBuilder> 
-      getPlanNodesOrBuilderList();
+  java.util.List<? extends com.google.spanner.v1.PlanNodeOrBuilder> getPlanNodesOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * The nodes in the query plan. Plan nodes are returned in pre-order starting
    * with the plan root. Each [PlanNode][google.spanner.v1.PlanNode]'s `id` corresponds to its index in
@@ -58,6 +67,5 @@ public interface QueryPlanOrBuilder extends
    *
    * <code>repeated .google.spanner.v1.PlanNode plan_nodes = 1;</code>
    */
-  com.google.spanner.v1.PlanNodeOrBuilder getPlanNodesOrBuilder(
-      int index);
+  com.google.spanner.v1.PlanNodeOrBuilder getPlanNodesOrBuilder(int index);
 }

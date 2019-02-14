@@ -4,21 +4,24 @@
 package io.grafeas.v1beta1;
 
 /**
+ *
+ *
  * <pre>
  * An instance of an analysis type that has been found on a resource.
  * </pre>
  *
  * Protobuf type {@code grafeas.v1beta1.Occurrence}
  */
-public  final class Occurrence extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class Occurrence extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:grafeas.v1beta1.Occurrence)
     OccurrenceOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use Occurrence.newBuilder() to construct.
   private Occurrence(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private Occurrence() {
     name_ = "";
     noteName_ = "";
@@ -27,15 +30,18 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private Occurrence(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -47,191 +53,212 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            name_ = s;
-            break;
-          }
-          case 18: {
-            io.grafeas.v1beta1.Resource.Builder subBuilder = null;
-            if (resource_ != null) {
-              subBuilder = resource_.toBuilder();
+              name_ = s;
+              break;
             }
-            resource_ = input.readMessage(io.grafeas.v1beta1.Resource.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(resource_);
-              resource_ = subBuilder.buildPartial();
-            }
+          case 18:
+            {
+              io.grafeas.v1beta1.Resource.Builder subBuilder = null;
+              if (resource_ != null) {
+                subBuilder = resource_.toBuilder();
+              }
+              resource_ =
+                  input.readMessage(io.grafeas.v1beta1.Resource.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(resource_);
+                resource_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
+              break;
+            }
+          case 26:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            noteName_ = s;
-            break;
-          }
-          case 32: {
-            int rawValue = input.readEnum();
+              noteName_ = s;
+              break;
+            }
+          case 32:
+            {
+              int rawValue = input.readEnum();
 
-            kind_ = rawValue;
-            break;
-          }
-          case 42: {
-            java.lang.String s = input.readStringRequireUtf8();
+              kind_ = rawValue;
+              break;
+            }
+          case 42:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            remediation_ = s;
-            break;
-          }
-          case 50: {
-            com.google.protobuf.Timestamp.Builder subBuilder = null;
-            if (createTime_ != null) {
-              subBuilder = createTime_.toBuilder();
+              remediation_ = s;
+              break;
             }
-            createTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(createTime_);
-              createTime_ = subBuilder.buildPartial();
-            }
+          case 50:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (createTime_ != null) {
+                subBuilder = createTime_.toBuilder();
+              }
+              createTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(createTime_);
+                createTime_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 58: {
-            com.google.protobuf.Timestamp.Builder subBuilder = null;
-            if (updateTime_ != null) {
-              subBuilder = updateTime_.toBuilder();
+              break;
             }
-            updateTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(updateTime_);
-              updateTime_ = subBuilder.buildPartial();
-            }
+          case 58:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (updateTime_ != null) {
+                subBuilder = updateTime_.toBuilder();
+              }
+              updateTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(updateTime_);
+                updateTime_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 66: {
-            io.grafeas.v1beta1.vulnerability.Details.Builder subBuilder = null;
-            if (detailsCase_ == 8) {
-              subBuilder = ((io.grafeas.v1beta1.vulnerability.Details) details_).toBuilder();
+              break;
             }
-            details_ =
-                input.readMessage(io.grafeas.v1beta1.vulnerability.Details.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((io.grafeas.v1beta1.vulnerability.Details) details_);
-              details_ = subBuilder.buildPartial();
+          case 66:
+            {
+              io.grafeas.v1beta1.vulnerability.Details.Builder subBuilder = null;
+              if (detailsCase_ == 8) {
+                subBuilder = ((io.grafeas.v1beta1.vulnerability.Details) details_).toBuilder();
+              }
+              details_ =
+                  input.readMessage(
+                      io.grafeas.v1beta1.vulnerability.Details.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((io.grafeas.v1beta1.vulnerability.Details) details_);
+                details_ = subBuilder.buildPartial();
+              }
+              detailsCase_ = 8;
+              break;
             }
-            detailsCase_ = 8;
-            break;
-          }
-          case 74: {
-            io.grafeas.v1beta1.build.Details.Builder subBuilder = null;
-            if (detailsCase_ == 9) {
-              subBuilder = ((io.grafeas.v1beta1.build.Details) details_).toBuilder();
+          case 74:
+            {
+              io.grafeas.v1beta1.build.Details.Builder subBuilder = null;
+              if (detailsCase_ == 9) {
+                subBuilder = ((io.grafeas.v1beta1.build.Details) details_).toBuilder();
+              }
+              details_ =
+                  input.readMessage(io.grafeas.v1beta1.build.Details.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((io.grafeas.v1beta1.build.Details) details_);
+                details_ = subBuilder.buildPartial();
+              }
+              detailsCase_ = 9;
+              break;
             }
-            details_ =
-                input.readMessage(io.grafeas.v1beta1.build.Details.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((io.grafeas.v1beta1.build.Details) details_);
-              details_ = subBuilder.buildPartial();
+          case 82:
+            {
+              io.grafeas.v1beta1.image.Details.Builder subBuilder = null;
+              if (detailsCase_ == 10) {
+                subBuilder = ((io.grafeas.v1beta1.image.Details) details_).toBuilder();
+              }
+              details_ =
+                  input.readMessage(io.grafeas.v1beta1.image.Details.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((io.grafeas.v1beta1.image.Details) details_);
+                details_ = subBuilder.buildPartial();
+              }
+              detailsCase_ = 10;
+              break;
             }
-            detailsCase_ = 9;
-            break;
-          }
-          case 82: {
-            io.grafeas.v1beta1.image.Details.Builder subBuilder = null;
-            if (detailsCase_ == 10) {
-              subBuilder = ((io.grafeas.v1beta1.image.Details) details_).toBuilder();
+          case 90:
+            {
+              io.grafeas.v1beta1.pkg.Details.Builder subBuilder = null;
+              if (detailsCase_ == 11) {
+                subBuilder = ((io.grafeas.v1beta1.pkg.Details) details_).toBuilder();
+              }
+              details_ =
+                  input.readMessage(io.grafeas.v1beta1.pkg.Details.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((io.grafeas.v1beta1.pkg.Details) details_);
+                details_ = subBuilder.buildPartial();
+              }
+              detailsCase_ = 11;
+              break;
             }
-            details_ =
-                input.readMessage(io.grafeas.v1beta1.image.Details.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((io.grafeas.v1beta1.image.Details) details_);
-              details_ = subBuilder.buildPartial();
+          case 98:
+            {
+              io.grafeas.v1beta1.deployment.Details.Builder subBuilder = null;
+              if (detailsCase_ == 12) {
+                subBuilder = ((io.grafeas.v1beta1.deployment.Details) details_).toBuilder();
+              }
+              details_ =
+                  input.readMessage(
+                      io.grafeas.v1beta1.deployment.Details.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((io.grafeas.v1beta1.deployment.Details) details_);
+                details_ = subBuilder.buildPartial();
+              }
+              detailsCase_ = 12;
+              break;
             }
-            detailsCase_ = 10;
-            break;
-          }
-          case 90: {
-            io.grafeas.v1beta1.pkg.Details.Builder subBuilder = null;
-            if (detailsCase_ == 11) {
-              subBuilder = ((io.grafeas.v1beta1.pkg.Details) details_).toBuilder();
+          case 106:
+            {
+              io.grafeas.v1beta1.discovery.Details.Builder subBuilder = null;
+              if (detailsCase_ == 13) {
+                subBuilder = ((io.grafeas.v1beta1.discovery.Details) details_).toBuilder();
+              }
+              details_ =
+                  input.readMessage(
+                      io.grafeas.v1beta1.discovery.Details.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((io.grafeas.v1beta1.discovery.Details) details_);
+                details_ = subBuilder.buildPartial();
+              }
+              detailsCase_ = 13;
+              break;
             }
-            details_ =
-                input.readMessage(io.grafeas.v1beta1.pkg.Details.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((io.grafeas.v1beta1.pkg.Details) details_);
-              details_ = subBuilder.buildPartial();
+          case 114:
+            {
+              io.grafeas.v1beta1.attestation.Details.Builder subBuilder = null;
+              if (detailsCase_ == 14) {
+                subBuilder = ((io.grafeas.v1beta1.attestation.Details) details_).toBuilder();
+              }
+              details_ =
+                  input.readMessage(
+                      io.grafeas.v1beta1.attestation.Details.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((io.grafeas.v1beta1.attestation.Details) details_);
+                details_ = subBuilder.buildPartial();
+              }
+              detailsCase_ = 14;
+              break;
             }
-            detailsCase_ = 11;
-            break;
-          }
-          case 98: {
-            io.grafeas.v1beta1.deployment.Details.Builder subBuilder = null;
-            if (detailsCase_ == 12) {
-              subBuilder = ((io.grafeas.v1beta1.deployment.Details) details_).toBuilder();
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
             }
-            details_ =
-                input.readMessage(io.grafeas.v1beta1.deployment.Details.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((io.grafeas.v1beta1.deployment.Details) details_);
-              details_ = subBuilder.buildPartial();
-            }
-            detailsCase_ = 12;
-            break;
-          }
-          case 106: {
-            io.grafeas.v1beta1.discovery.Details.Builder subBuilder = null;
-            if (detailsCase_ == 13) {
-              subBuilder = ((io.grafeas.v1beta1.discovery.Details) details_).toBuilder();
-            }
-            details_ =
-                input.readMessage(io.grafeas.v1beta1.discovery.Details.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((io.grafeas.v1beta1.discovery.Details) details_);
-              details_ = subBuilder.buildPartial();
-            }
-            detailsCase_ = 13;
-            break;
-          }
-          case 114: {
-            io.grafeas.v1beta1.attestation.Details.Builder subBuilder = null;
-            if (detailsCase_ == 14) {
-              subBuilder = ((io.grafeas.v1beta1.attestation.Details) details_).toBuilder();
-            }
-            details_ =
-                input.readMessage(io.grafeas.v1beta1.attestation.Details.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((io.grafeas.v1beta1.attestation.Details) details_);
-              details_ = subBuilder.buildPartial();
-            }
-            detailsCase_ = 14;
-            break;
-          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
     return io.grafeas.v1beta1.Grafeas.internal_static_grafeas_v1beta1_Occurrence_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return io.grafeas.v1beta1.Grafeas.internal_static_grafeas_v1beta1_Occurrence_fieldAccessorTable
@@ -241,8 +268,8 @@ private static final long serialVersionUID = 0L;
 
   private int detailsCase_ = 0;
   private java.lang.Object details_;
-  public enum DetailsCase
-      implements com.google.protobuf.Internal.EnumLite {
+
+  public enum DetailsCase implements com.google.protobuf.Internal.EnumLite {
     VULNERABILITY(8),
     BUILD(9),
     DERIVED_IMAGE(10),
@@ -252,12 +279,11 @@ private static final long serialVersionUID = 0L;
     ATTESTATION(14),
     DETAILS_NOT_SET(0);
     private final int value;
+
     private DetailsCase(int value) {
       this.value = value;
     }
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static DetailsCase valueOf(int value) {
       return forNumber(value);
@@ -265,31 +291,41 @@ private static final long serialVersionUID = 0L;
 
     public static DetailsCase forNumber(int value) {
       switch (value) {
-        case 8: return VULNERABILITY;
-        case 9: return BUILD;
-        case 10: return DERIVED_IMAGE;
-        case 11: return INSTALLATION;
-        case 12: return DEPLOYMENT;
-        case 13: return DISCOVERED;
-        case 14: return ATTESTATION;
-        case 0: return DETAILS_NOT_SET;
-        default: return null;
+        case 8:
+          return VULNERABILITY;
+        case 9:
+          return BUILD;
+        case 10:
+          return DERIVED_IMAGE;
+        case 11:
+          return INSTALLATION;
+        case 12:
+          return DEPLOYMENT;
+        case 13:
+          return DISCOVERED;
+        case 14:
+          return ATTESTATION;
+        case 0:
+          return DETAILS_NOT_SET;
+        default:
+          return null;
       }
     }
+
     public int getNumber() {
       return this.value;
     }
   };
 
-  public DetailsCase
-  getDetailsCase() {
-    return DetailsCase.forNumber(
-        detailsCase_);
+  public DetailsCase getDetailsCase() {
+    return DetailsCase.forNumber(detailsCase_);
   }
 
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
+   *
+   *
    * <pre>
    * Output only. The name of the occurrence in the form of
    * `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]`.
@@ -302,14 +338,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       name_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Output only. The name of the occurrence in the form of
    * `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]`.
@@ -317,13 +354,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string name = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getNameBytes() {
+  public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       name_ = b;
       return b;
     } else {
@@ -334,6 +369,8 @@ private static final long serialVersionUID = 0L;
   public static final int RESOURCE_FIELD_NUMBER = 2;
   private io.grafeas.v1beta1.Resource resource_;
   /**
+   *
+   *
    * <pre>
    * Required. Immutable. The resource for which the occurrence applies.
    * </pre>
@@ -344,6 +381,8 @@ private static final long serialVersionUID = 0L;
     return resource_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Required. Immutable. The resource for which the occurrence applies.
    * </pre>
@@ -354,6 +393,8 @@ private static final long serialVersionUID = 0L;
     return resource_ == null ? io.grafeas.v1beta1.Resource.getDefaultInstance() : resource_;
   }
   /**
+   *
+   *
    * <pre>
    * Required. Immutable. The resource for which the occurrence applies.
    * </pre>
@@ -367,6 +408,8 @@ private static final long serialVersionUID = 0L;
   public static final int NOTE_NAME_FIELD_NUMBER = 3;
   private volatile java.lang.Object noteName_;
   /**
+   *
+   *
    * <pre>
    * Required. Immutable. The analysis note associated with this occurrence, in
    * the form of `projects[PROVIDER_ID]/notes/[NOTE_ID]`. This field can be used
@@ -380,14 +423,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       noteName_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Required. Immutable. The analysis note associated with this occurrence, in
    * the form of `projects[PROVIDER_ID]/notes/[NOTE_ID]`. This field can be used
@@ -396,13 +440,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string note_name = 3;</code>
    */
-  public com.google.protobuf.ByteString
-      getNoteNameBytes() {
+  public com.google.protobuf.ByteString getNoteNameBytes() {
     java.lang.Object ref = noteName_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       noteName_ = b;
       return b;
     } else {
@@ -413,6 +455,8 @@ private static final long serialVersionUID = 0L;
   public static final int KIND_FIELD_NUMBER = 4;
   private int kind_;
   /**
+   *
+   *
    * <pre>
    * Output only. This explicitly denotes which of the occurrence details are
    * specified. This field can be used as a filter in list requests.
@@ -424,6 +468,8 @@ private static final long serialVersionUID = 0L;
     return kind_;
   }
   /**
+   *
+   *
    * <pre>
    * Output only. This explicitly denotes which of the occurrence details are
    * specified. This field can be used as a filter in list requests.
@@ -432,6 +478,7 @@ private static final long serialVersionUID = 0L;
    * <code>.grafeas.v1beta1.NoteKind kind = 4;</code>
    */
   public io.grafeas.v1beta1.common.NoteKind getKind() {
+    @SuppressWarnings("deprecation")
     io.grafeas.v1beta1.common.NoteKind result = io.grafeas.v1beta1.common.NoteKind.valueOf(kind_);
     return result == null ? io.grafeas.v1beta1.common.NoteKind.UNRECOGNIZED : result;
   }
@@ -439,6 +486,8 @@ private static final long serialVersionUID = 0L;
   public static final int REMEDIATION_FIELD_NUMBER = 5;
   private volatile java.lang.Object remediation_;
   /**
+   *
+   *
    * <pre>
    * A description of actions that can be taken to remedy the note.
    * </pre>
@@ -450,27 +499,26 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       remediation_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * A description of actions that can be taken to remedy the note.
    * </pre>
    *
    * <code>string remediation = 5;</code>
    */
-  public com.google.protobuf.ByteString
-      getRemediationBytes() {
+  public com.google.protobuf.ByteString getRemediationBytes() {
     java.lang.Object ref = remediation_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       remediation_ = b;
       return b;
     } else {
@@ -481,6 +529,8 @@ private static final long serialVersionUID = 0L;
   public static final int CREATE_TIME_FIELD_NUMBER = 6;
   private com.google.protobuf.Timestamp createTime_;
   /**
+   *
+   *
    * <pre>
    * Output only. The time this occurrence was created.
    * </pre>
@@ -491,6 +541,8 @@ private static final long serialVersionUID = 0L;
     return createTime_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Output only. The time this occurrence was created.
    * </pre>
@@ -501,6 +553,8 @@ private static final long serialVersionUID = 0L;
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
   /**
+   *
+   *
    * <pre>
    * Output only. The time this occurrence was created.
    * </pre>
@@ -514,6 +568,8 @@ private static final long serialVersionUID = 0L;
   public static final int UPDATE_TIME_FIELD_NUMBER = 7;
   private com.google.protobuf.Timestamp updateTime_;
   /**
+   *
+   *
    * <pre>
    * Output only. The time this occurrence was last updated.
    * </pre>
@@ -524,6 +580,8 @@ private static final long serialVersionUID = 0L;
     return updateTime_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Output only. The time this occurrence was last updated.
    * </pre>
@@ -534,6 +592,8 @@ private static final long serialVersionUID = 0L;
     return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
   }
   /**
+   *
+   *
    * <pre>
    * Output only. The time this occurrence was last updated.
    * </pre>
@@ -546,6 +606,8 @@ private static final long serialVersionUID = 0L;
 
   public static final int VULNERABILITY_FIELD_NUMBER = 8;
   /**
+   *
+   *
    * <pre>
    * Describes a security vulnerability.
    * </pre>
@@ -556,6 +618,8 @@ private static final long serialVersionUID = 0L;
     return detailsCase_ == 8;
   }
   /**
+   *
+   *
    * <pre>
    * Describes a security vulnerability.
    * </pre>
@@ -564,11 +628,13 @@ private static final long serialVersionUID = 0L;
    */
   public io.grafeas.v1beta1.vulnerability.Details getVulnerability() {
     if (detailsCase_ == 8) {
-       return (io.grafeas.v1beta1.vulnerability.Details) details_;
+      return (io.grafeas.v1beta1.vulnerability.Details) details_;
     }
     return io.grafeas.v1beta1.vulnerability.Details.getDefaultInstance();
   }
   /**
+   *
+   *
    * <pre>
    * Describes a security vulnerability.
    * </pre>
@@ -577,13 +643,15 @@ private static final long serialVersionUID = 0L;
    */
   public io.grafeas.v1beta1.vulnerability.DetailsOrBuilder getVulnerabilityOrBuilder() {
     if (detailsCase_ == 8) {
-       return (io.grafeas.v1beta1.vulnerability.Details) details_;
+      return (io.grafeas.v1beta1.vulnerability.Details) details_;
     }
     return io.grafeas.v1beta1.vulnerability.Details.getDefaultInstance();
   }
 
   public static final int BUILD_FIELD_NUMBER = 9;
   /**
+   *
+   *
    * <pre>
    * Describes a verifiable build.
    * </pre>
@@ -594,6 +662,8 @@ private static final long serialVersionUID = 0L;
     return detailsCase_ == 9;
   }
   /**
+   *
+   *
    * <pre>
    * Describes a verifiable build.
    * </pre>
@@ -602,11 +672,13 @@ private static final long serialVersionUID = 0L;
    */
   public io.grafeas.v1beta1.build.Details getBuild() {
     if (detailsCase_ == 9) {
-       return (io.grafeas.v1beta1.build.Details) details_;
+      return (io.grafeas.v1beta1.build.Details) details_;
     }
     return io.grafeas.v1beta1.build.Details.getDefaultInstance();
   }
   /**
+   *
+   *
    * <pre>
    * Describes a verifiable build.
    * </pre>
@@ -615,13 +687,15 @@ private static final long serialVersionUID = 0L;
    */
   public io.grafeas.v1beta1.build.DetailsOrBuilder getBuildOrBuilder() {
     if (detailsCase_ == 9) {
-       return (io.grafeas.v1beta1.build.Details) details_;
+      return (io.grafeas.v1beta1.build.Details) details_;
     }
     return io.grafeas.v1beta1.build.Details.getDefaultInstance();
   }
 
   public static final int DERIVED_IMAGE_FIELD_NUMBER = 10;
   /**
+   *
+   *
    * <pre>
    * Describes how this resource derives from the basis in the associated
    * note.
@@ -633,6 +707,8 @@ private static final long serialVersionUID = 0L;
     return detailsCase_ == 10;
   }
   /**
+   *
+   *
    * <pre>
    * Describes how this resource derives from the basis in the associated
    * note.
@@ -642,11 +718,13 @@ private static final long serialVersionUID = 0L;
    */
   public io.grafeas.v1beta1.image.Details getDerivedImage() {
     if (detailsCase_ == 10) {
-       return (io.grafeas.v1beta1.image.Details) details_;
+      return (io.grafeas.v1beta1.image.Details) details_;
     }
     return io.grafeas.v1beta1.image.Details.getDefaultInstance();
   }
   /**
+   *
+   *
    * <pre>
    * Describes how this resource derives from the basis in the associated
    * note.
@@ -656,13 +734,15 @@ private static final long serialVersionUID = 0L;
    */
   public io.grafeas.v1beta1.image.DetailsOrBuilder getDerivedImageOrBuilder() {
     if (detailsCase_ == 10) {
-       return (io.grafeas.v1beta1.image.Details) details_;
+      return (io.grafeas.v1beta1.image.Details) details_;
     }
     return io.grafeas.v1beta1.image.Details.getDefaultInstance();
   }
 
   public static final int INSTALLATION_FIELD_NUMBER = 11;
   /**
+   *
+   *
    * <pre>
    * Describes the installation of a package on the linked resource.
    * </pre>
@@ -673,6 +753,8 @@ private static final long serialVersionUID = 0L;
     return detailsCase_ == 11;
   }
   /**
+   *
+   *
    * <pre>
    * Describes the installation of a package on the linked resource.
    * </pre>
@@ -681,11 +763,13 @@ private static final long serialVersionUID = 0L;
    */
   public io.grafeas.v1beta1.pkg.Details getInstallation() {
     if (detailsCase_ == 11) {
-       return (io.grafeas.v1beta1.pkg.Details) details_;
+      return (io.grafeas.v1beta1.pkg.Details) details_;
     }
     return io.grafeas.v1beta1.pkg.Details.getDefaultInstance();
   }
   /**
+   *
+   *
    * <pre>
    * Describes the installation of a package on the linked resource.
    * </pre>
@@ -694,13 +778,15 @@ private static final long serialVersionUID = 0L;
    */
   public io.grafeas.v1beta1.pkg.DetailsOrBuilder getInstallationOrBuilder() {
     if (detailsCase_ == 11) {
-       return (io.grafeas.v1beta1.pkg.Details) details_;
+      return (io.grafeas.v1beta1.pkg.Details) details_;
     }
     return io.grafeas.v1beta1.pkg.Details.getDefaultInstance();
   }
 
   public static final int DEPLOYMENT_FIELD_NUMBER = 12;
   /**
+   *
+   *
    * <pre>
    * Describes the deployment of an artifact on a runtime.
    * </pre>
@@ -711,6 +797,8 @@ private static final long serialVersionUID = 0L;
     return detailsCase_ == 12;
   }
   /**
+   *
+   *
    * <pre>
    * Describes the deployment of an artifact on a runtime.
    * </pre>
@@ -719,11 +807,13 @@ private static final long serialVersionUID = 0L;
    */
   public io.grafeas.v1beta1.deployment.Details getDeployment() {
     if (detailsCase_ == 12) {
-       return (io.grafeas.v1beta1.deployment.Details) details_;
+      return (io.grafeas.v1beta1.deployment.Details) details_;
     }
     return io.grafeas.v1beta1.deployment.Details.getDefaultInstance();
   }
   /**
+   *
+   *
    * <pre>
    * Describes the deployment of an artifact on a runtime.
    * </pre>
@@ -732,13 +822,15 @@ private static final long serialVersionUID = 0L;
    */
   public io.grafeas.v1beta1.deployment.DetailsOrBuilder getDeploymentOrBuilder() {
     if (detailsCase_ == 12) {
-       return (io.grafeas.v1beta1.deployment.Details) details_;
+      return (io.grafeas.v1beta1.deployment.Details) details_;
     }
     return io.grafeas.v1beta1.deployment.Details.getDefaultInstance();
   }
 
   public static final int DISCOVERED_FIELD_NUMBER = 13;
   /**
+   *
+   *
    * <pre>
    * Describes when a resource was discovered.
    * </pre>
@@ -749,6 +841,8 @@ private static final long serialVersionUID = 0L;
     return detailsCase_ == 13;
   }
   /**
+   *
+   *
    * <pre>
    * Describes when a resource was discovered.
    * </pre>
@@ -757,11 +851,13 @@ private static final long serialVersionUID = 0L;
    */
   public io.grafeas.v1beta1.discovery.Details getDiscovered() {
     if (detailsCase_ == 13) {
-       return (io.grafeas.v1beta1.discovery.Details) details_;
+      return (io.grafeas.v1beta1.discovery.Details) details_;
     }
     return io.grafeas.v1beta1.discovery.Details.getDefaultInstance();
   }
   /**
+   *
+   *
    * <pre>
    * Describes when a resource was discovered.
    * </pre>
@@ -770,13 +866,15 @@ private static final long serialVersionUID = 0L;
    */
   public io.grafeas.v1beta1.discovery.DetailsOrBuilder getDiscoveredOrBuilder() {
     if (detailsCase_ == 13) {
-       return (io.grafeas.v1beta1.discovery.Details) details_;
+      return (io.grafeas.v1beta1.discovery.Details) details_;
     }
     return io.grafeas.v1beta1.discovery.Details.getDefaultInstance();
   }
 
   public static final int ATTESTATION_FIELD_NUMBER = 14;
   /**
+   *
+   *
    * <pre>
    * Describes an attestation of an artifact.
    * </pre>
@@ -787,6 +885,8 @@ private static final long serialVersionUID = 0L;
     return detailsCase_ == 14;
   }
   /**
+   *
+   *
    * <pre>
    * Describes an attestation of an artifact.
    * </pre>
@@ -795,11 +895,13 @@ private static final long serialVersionUID = 0L;
    */
   public io.grafeas.v1beta1.attestation.Details getAttestation() {
     if (detailsCase_ == 14) {
-       return (io.grafeas.v1beta1.attestation.Details) details_;
+      return (io.grafeas.v1beta1.attestation.Details) details_;
     }
     return io.grafeas.v1beta1.attestation.Details.getDefaultInstance();
   }
   /**
+   *
+   *
    * <pre>
    * Describes an attestation of an artifact.
    * </pre>
@@ -808,12 +910,14 @@ private static final long serialVersionUID = 0L;
    */
   public io.grafeas.v1beta1.attestation.DetailsOrBuilder getAttestationOrBuilder() {
     if (detailsCase_ == 14) {
-       return (io.grafeas.v1beta1.attestation.Details) details_;
+      return (io.grafeas.v1beta1.attestation.Details) details_;
     }
     return io.grafeas.v1beta1.attestation.Details.getDefaultInstance();
   }
 
   private byte memoizedIsInitialized = -1;
+
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -823,8 +927,8 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  @java.lang.Override
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
@@ -870,6 +974,7 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -879,54 +984,57 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, name_);
     }
     if (resource_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, getResource());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, getResource());
     }
     if (!getNoteNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, noteName_);
     }
     if (kind_ != io.grafeas.v1beta1.common.NoteKind.NOTE_KIND_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(4, kind_);
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, kind_);
     }
     if (!getRemediationBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, remediation_);
     }
     if (createTime_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(6, getCreateTime());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getCreateTime());
     }
     if (updateTime_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(7, getUpdateTime());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(7, getUpdateTime());
     }
     if (detailsCase_ == 8) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(8, (io.grafeas.v1beta1.vulnerability.Details) details_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              8, (io.grafeas.v1beta1.vulnerability.Details) details_);
     }
     if (detailsCase_ == 9) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(9, (io.grafeas.v1beta1.build.Details) details_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              9, (io.grafeas.v1beta1.build.Details) details_);
     }
     if (detailsCase_ == 10) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(10, (io.grafeas.v1beta1.image.Details) details_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              10, (io.grafeas.v1beta1.image.Details) details_);
     }
     if (detailsCase_ == 11) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(11, (io.grafeas.v1beta1.pkg.Details) details_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              11, (io.grafeas.v1beta1.pkg.Details) details_);
     }
     if (detailsCase_ == 12) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(12, (io.grafeas.v1beta1.deployment.Details) details_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              12, (io.grafeas.v1beta1.deployment.Details) details_);
     }
     if (detailsCase_ == 13) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(13, (io.grafeas.v1beta1.discovery.Details) details_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              13, (io.grafeas.v1beta1.discovery.Details) details_);
     }
     if (detailsCase_ == 14) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(14, (io.grafeas.v1beta1.attestation.Details) details_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              14, (io.grafeas.v1beta1.attestation.Details) details_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -936,7 +1044,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof io.grafeas.v1beta1.Occurrence)) {
       return super.equals(obj);
@@ -944,59 +1052,45 @@ private static final long serialVersionUID = 0L;
     io.grafeas.v1beta1.Occurrence other = (io.grafeas.v1beta1.Occurrence) obj;
 
     boolean result = true;
-    result = result && getName()
-        .equals(other.getName());
+    result = result && getName().equals(other.getName());
     result = result && (hasResource() == other.hasResource());
     if (hasResource()) {
-      result = result && getResource()
-          .equals(other.getResource());
+      result = result && getResource().equals(other.getResource());
     }
-    result = result && getNoteName()
-        .equals(other.getNoteName());
+    result = result && getNoteName().equals(other.getNoteName());
     result = result && kind_ == other.kind_;
-    result = result && getRemediation()
-        .equals(other.getRemediation());
+    result = result && getRemediation().equals(other.getRemediation());
     result = result && (hasCreateTime() == other.hasCreateTime());
     if (hasCreateTime()) {
-      result = result && getCreateTime()
-          .equals(other.getCreateTime());
+      result = result && getCreateTime().equals(other.getCreateTime());
     }
     result = result && (hasUpdateTime() == other.hasUpdateTime());
     if (hasUpdateTime()) {
-      result = result && getUpdateTime()
-          .equals(other.getUpdateTime());
+      result = result && getUpdateTime().equals(other.getUpdateTime());
     }
-    result = result && getDetailsCase().equals(
-        other.getDetailsCase());
+    result = result && getDetailsCase().equals(other.getDetailsCase());
     if (!result) return false;
     switch (detailsCase_) {
       case 8:
-        result = result && getVulnerability()
-            .equals(other.getVulnerability());
+        result = result && getVulnerability().equals(other.getVulnerability());
         break;
       case 9:
-        result = result && getBuild()
-            .equals(other.getBuild());
+        result = result && getBuild().equals(other.getBuild());
         break;
       case 10:
-        result = result && getDerivedImage()
-            .equals(other.getDerivedImage());
+        result = result && getDerivedImage().equals(other.getDerivedImage());
         break;
       case 11:
-        result = result && getInstallation()
-            .equals(other.getInstallation());
+        result = result && getInstallation().equals(other.getInstallation());
         break;
       case 12:
-        result = result && getDeployment()
-            .equals(other.getDeployment());
+        result = result && getDeployment().equals(other.getDeployment());
         break;
       case 13:
-        result = result && getDiscovered()
-            .equals(other.getDiscovered());
+        result = result && getDiscovered().equals(other.getDiscovered());
         break;
       case 14:
-        result = result && getAttestation()
-            .equals(other.getAttestation());
+        result = result && getAttestation().equals(other.getAttestation());
         break;
       case 0:
       default:
@@ -1069,113 +1163,122 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static io.grafeas.v1beta1.Occurrence parseFrom(
-      java.nio.ByteBuffer data)
+  public static io.grafeas.v1beta1.Occurrence parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static io.grafeas.v1beta1.Occurrence parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.grafeas.v1beta1.Occurrence parseFrom(
-      com.google.protobuf.ByteString data)
+
+  public static io.grafeas.v1beta1.Occurrence parseFrom(com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static io.grafeas.v1beta1.Occurrence parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static io.grafeas.v1beta1.Occurrence parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static io.grafeas.v1beta1.Occurrence parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static io.grafeas.v1beta1.Occurrence parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static io.grafeas.v1beta1.Occurrence parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static io.grafeas.v1beta1.Occurrence parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
   public static io.grafeas.v1beta1.Occurrence parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static io.grafeas.v1beta1.Occurrence parseFrom(
-      com.google.protobuf.CodedInputStream input)
+
+  public static io.grafeas.v1beta1.Occurrence parseFrom(com.google.protobuf.CodedInputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static io.grafeas.v1beta1.Occurrence parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  public Builder newBuilderForType() { return newBuilder(); }
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-  public static Builder newBuilder(io.grafeas.v1beta1.Occurrence prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+
+  public static Builder newBuilder(io.grafeas.v1beta1.Occurrence prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+
+  @java.lang.Override
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * An instance of an analysis type that has been found on a resource.
    * </pre>
    *
    * Protobuf type {@code grafeas.v1beta1.Occurrence}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:grafeas.v1beta1.Occurrence)
       io.grafeas.v1beta1.OccurrenceOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
       return io.grafeas.v1beta1.Grafeas.internal_static_grafeas_v1beta1_Occurrence_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.grafeas.v1beta1.Grafeas.internal_static_grafeas_v1beta1_Occurrence_fieldAccessorTable
+      return io.grafeas.v1beta1.Grafeas
+          .internal_static_grafeas_v1beta1_Occurrence_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
               io.grafeas.v1beta1.Occurrence.class, io.grafeas.v1beta1.Occurrence.Builder.class);
     }
@@ -1185,16 +1288,16 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       name_ = "";
@@ -1228,15 +1331,17 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
       return io.grafeas.v1beta1.Grafeas.internal_static_grafeas_v1beta1_Occurrence_descriptor;
     }
 
+    @java.lang.Override
     public io.grafeas.v1beta1.Occurrence getDefaultInstanceForType() {
       return io.grafeas.v1beta1.Occurrence.getDefaultInstance();
     }
 
+    @java.lang.Override
     public io.grafeas.v1beta1.Occurrence build() {
       io.grafeas.v1beta1.Occurrence result = buildPartial();
       if (!result.isInitialized()) {
@@ -1245,6 +1350,7 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public io.grafeas.v1beta1.Occurrence buildPartial() {
       io.grafeas.v1beta1.Occurrence result = new io.grafeas.v1beta1.Occurrence(this);
       result.name_ = name_;
@@ -1320,35 +1426,43 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+
+    @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+    @java.lang.Override
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+    @java.lang.Override
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
+    @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
+    @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof io.grafeas.v1beta1.Occurrence) {
-        return mergeFrom((io.grafeas.v1beta1.Occurrence)other);
+        return mergeFrom((io.grafeas.v1beta1.Occurrence) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -1382,47 +1496,57 @@ private static final long serialVersionUID = 0L;
         mergeUpdateTime(other.getUpdateTime());
       }
       switch (other.getDetailsCase()) {
-        case VULNERABILITY: {
-          mergeVulnerability(other.getVulnerability());
-          break;
-        }
-        case BUILD: {
-          mergeBuild(other.getBuild());
-          break;
-        }
-        case DERIVED_IMAGE: {
-          mergeDerivedImage(other.getDerivedImage());
-          break;
-        }
-        case INSTALLATION: {
-          mergeInstallation(other.getInstallation());
-          break;
-        }
-        case DEPLOYMENT: {
-          mergeDeployment(other.getDeployment());
-          break;
-        }
-        case DISCOVERED: {
-          mergeDiscovered(other.getDiscovered());
-          break;
-        }
-        case ATTESTATION: {
-          mergeAttestation(other.getAttestation());
-          break;
-        }
-        case DETAILS_NOT_SET: {
-          break;
-        }
+        case VULNERABILITY:
+          {
+            mergeVulnerability(other.getVulnerability());
+            break;
+          }
+        case BUILD:
+          {
+            mergeBuild(other.getBuild());
+            break;
+          }
+        case DERIVED_IMAGE:
+          {
+            mergeDerivedImage(other.getDerivedImage());
+            break;
+          }
+        case INSTALLATION:
+          {
+            mergeInstallation(other.getInstallation());
+            break;
+          }
+        case DEPLOYMENT:
+          {
+            mergeDeployment(other.getDeployment());
+            break;
+          }
+        case DISCOVERED:
+          {
+            mergeDiscovered(other.getDiscovered());
+            break;
+          }
+        case ATTESTATION:
+          {
+            mergeAttestation(other.getAttestation());
+            break;
+          }
+        case DETAILS_NOT_SET:
+          {
+            break;
+          }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1440,12 +1564,12 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int detailsCase_ = 0;
     private java.lang.Object details_;
-    public DetailsCase
-        getDetailsCase() {
-      return DetailsCase.forNumber(
-          detailsCase_);
+
+    public DetailsCase getDetailsCase() {
+      return DetailsCase.forNumber(detailsCase_);
     }
 
     public Builder clearDetails() {
@@ -1455,9 +1579,10 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-
     private java.lang.Object name_ = "";
     /**
+     *
+     *
      * <pre>
      * Output only. The name of the occurrence in the form of
      * `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]`.
@@ -1468,8 +1593,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         name_ = s;
         return s;
@@ -1478,6 +1602,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The name of the occurrence in the form of
      * `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]`.
@@ -1485,13 +1611,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getNameBytes() {
+    public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         name_ = b;
         return b;
       } else {
@@ -1499,6 +1623,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The name of the occurrence in the form of
      * `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]`.
@@ -1506,17 +1632,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public Builder setName(
-        java.lang.String value) {
+    public Builder setName(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       name_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The name of the occurrence in the form of
      * `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]`.
@@ -1525,12 +1652,14 @@ private static final long serialVersionUID = 0L;
      * <code>string name = 1;</code>
      */
     public Builder clearName() {
-      
+
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The name of the occurrence in the form of
      * `projects/[PROJECT_ID]/occurrences/[OCCURRENCE_ID]`.
@@ -1538,13 +1667,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public Builder setNameBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       name_ = value;
       onChanged();
       return this;
@@ -1552,8 +1680,13 @@ private static final long serialVersionUID = 0L;
 
     private io.grafeas.v1beta1.Resource resource_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        io.grafeas.v1beta1.Resource, io.grafeas.v1beta1.Resource.Builder, io.grafeas.v1beta1.ResourceOrBuilder> resourceBuilder_;
+            io.grafeas.v1beta1.Resource,
+            io.grafeas.v1beta1.Resource.Builder,
+            io.grafeas.v1beta1.ResourceOrBuilder>
+        resourceBuilder_;
     /**
+     *
+     *
      * <pre>
      * Required. Immutable. The resource for which the occurrence applies.
      * </pre>
@@ -1564,6 +1697,8 @@ private static final long serialVersionUID = 0L;
       return resourceBuilder_ != null || resource_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Required. Immutable. The resource for which the occurrence applies.
      * </pre>
@@ -1578,6 +1713,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. Immutable. The resource for which the occurrence applies.
      * </pre>
@@ -1598,14 +1735,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. Immutable. The resource for which the occurrence applies.
      * </pre>
      *
      * <code>.grafeas.v1beta1.Resource resource = 2;</code>
      */
-    public Builder setResource(
-        io.grafeas.v1beta1.Resource.Builder builderForValue) {
+    public Builder setResource(io.grafeas.v1beta1.Resource.Builder builderForValue) {
       if (resourceBuilder_ == null) {
         resource_ = builderForValue.build();
         onChanged();
@@ -1616,6 +1754,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. Immutable. The resource for which the occurrence applies.
      * </pre>
@@ -1626,7 +1766,7 @@ private static final long serialVersionUID = 0L;
       if (resourceBuilder_ == null) {
         if (resource_ != null) {
           resource_ =
-            io.grafeas.v1beta1.Resource.newBuilder(resource_).mergeFrom(value).buildPartial();
+              io.grafeas.v1beta1.Resource.newBuilder(resource_).mergeFrom(value).buildPartial();
         } else {
           resource_ = value;
         }
@@ -1638,6 +1778,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. Immutable. The resource for which the occurrence applies.
      * </pre>
@@ -1656,6 +1798,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. Immutable. The resource for which the occurrence applies.
      * </pre>
@@ -1663,11 +1807,13 @@ private static final long serialVersionUID = 0L;
      * <code>.grafeas.v1beta1.Resource resource = 2;</code>
      */
     public io.grafeas.v1beta1.Resource.Builder getResourceBuilder() {
-      
+
       onChanged();
       return getResourceFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Required. Immutable. The resource for which the occurrence applies.
      * </pre>
@@ -1678,11 +1824,12 @@ private static final long serialVersionUID = 0L;
       if (resourceBuilder_ != null) {
         return resourceBuilder_.getMessageOrBuilder();
       } else {
-        return resource_ == null ?
-            io.grafeas.v1beta1.Resource.getDefaultInstance() : resource_;
+        return resource_ == null ? io.grafeas.v1beta1.Resource.getDefaultInstance() : resource_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. Immutable. The resource for which the occurrence applies.
      * </pre>
@@ -1690,14 +1837,17 @@ private static final long serialVersionUID = 0L;
      * <code>.grafeas.v1beta1.Resource resource = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        io.grafeas.v1beta1.Resource, io.grafeas.v1beta1.Resource.Builder, io.grafeas.v1beta1.ResourceOrBuilder> 
+            io.grafeas.v1beta1.Resource,
+            io.grafeas.v1beta1.Resource.Builder,
+            io.grafeas.v1beta1.ResourceOrBuilder>
         getResourceFieldBuilder() {
       if (resourceBuilder_ == null) {
-        resourceBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            io.grafeas.v1beta1.Resource, io.grafeas.v1beta1.Resource.Builder, io.grafeas.v1beta1.ResourceOrBuilder>(
-                getResource(),
-                getParentForChildren(),
-                isClean());
+        resourceBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                io.grafeas.v1beta1.Resource,
+                io.grafeas.v1beta1.Resource.Builder,
+                io.grafeas.v1beta1.ResourceOrBuilder>(
+                getResource(), getParentForChildren(), isClean());
         resource_ = null;
       }
       return resourceBuilder_;
@@ -1705,6 +1855,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object noteName_ = "";
     /**
+     *
+     *
      * <pre>
      * Required. Immutable. The analysis note associated with this occurrence, in
      * the form of `projects[PROVIDER_ID]/notes/[NOTE_ID]`. This field can be used
@@ -1716,8 +1868,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getNoteName() {
       java.lang.Object ref = noteName_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         noteName_ = s;
         return s;
@@ -1726,6 +1877,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. Immutable. The analysis note associated with this occurrence, in
      * the form of `projects[PROVIDER_ID]/notes/[NOTE_ID]`. This field can be used
@@ -1734,13 +1887,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string note_name = 3;</code>
      */
-    public com.google.protobuf.ByteString
-        getNoteNameBytes() {
+    public com.google.protobuf.ByteString getNoteNameBytes() {
       java.lang.Object ref = noteName_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         noteName_ = b;
         return b;
       } else {
@@ -1748,6 +1899,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. Immutable. The analysis note associated with this occurrence, in
      * the form of `projects[PROVIDER_ID]/notes/[NOTE_ID]`. This field can be used
@@ -1756,17 +1909,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string note_name = 3;</code>
      */
-    public Builder setNoteName(
-        java.lang.String value) {
+    public Builder setNoteName(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       noteName_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. Immutable. The analysis note associated with this occurrence, in
      * the form of `projects[PROVIDER_ID]/notes/[NOTE_ID]`. This field can be used
@@ -1776,12 +1930,14 @@ private static final long serialVersionUID = 0L;
      * <code>string note_name = 3;</code>
      */
     public Builder clearNoteName() {
-      
+
       noteName_ = getDefaultInstance().getNoteName();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. Immutable. The analysis note associated with this occurrence, in
      * the form of `projects[PROVIDER_ID]/notes/[NOTE_ID]`. This field can be used
@@ -1790,13 +1946,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string note_name = 3;</code>
      */
-    public Builder setNoteNameBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setNoteNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       noteName_ = value;
       onChanged();
       return this;
@@ -1804,6 +1959,8 @@ private static final long serialVersionUID = 0L;
 
     private int kind_ = 0;
     /**
+     *
+     *
      * <pre>
      * Output only. This explicitly denotes which of the occurrence details are
      * specified. This field can be used as a filter in list requests.
@@ -1815,6 +1972,8 @@ private static final long serialVersionUID = 0L;
       return kind_;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. This explicitly denotes which of the occurrence details are
      * specified. This field can be used as a filter in list requests.
@@ -1828,6 +1987,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. This explicitly denotes which of the occurrence details are
      * specified. This field can be used as a filter in list requests.
@@ -1836,10 +1997,13 @@ private static final long serialVersionUID = 0L;
      * <code>.grafeas.v1beta1.NoteKind kind = 4;</code>
      */
     public io.grafeas.v1beta1.common.NoteKind getKind() {
+      @SuppressWarnings("deprecation")
       io.grafeas.v1beta1.common.NoteKind result = io.grafeas.v1beta1.common.NoteKind.valueOf(kind_);
       return result == null ? io.grafeas.v1beta1.common.NoteKind.UNRECOGNIZED : result;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. This explicitly denotes which of the occurrence details are
      * specified. This field can be used as a filter in list requests.
@@ -1851,12 +2015,14 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       kind_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. This explicitly denotes which of the occurrence details are
      * specified. This field can be used as a filter in list requests.
@@ -1865,7 +2031,7 @@ private static final long serialVersionUID = 0L;
      * <code>.grafeas.v1beta1.NoteKind kind = 4;</code>
      */
     public Builder clearKind() {
-      
+
       kind_ = 0;
       onChanged();
       return this;
@@ -1873,6 +2039,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object remediation_ = "";
     /**
+     *
+     *
      * <pre>
      * A description of actions that can be taken to remedy the note.
      * </pre>
@@ -1882,8 +2050,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getRemediation() {
       java.lang.Object ref = remediation_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         remediation_ = s;
         return s;
@@ -1892,19 +2059,19 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A description of actions that can be taken to remedy the note.
      * </pre>
      *
      * <code>string remediation = 5;</code>
      */
-    public com.google.protobuf.ByteString
-        getRemediationBytes() {
+    public com.google.protobuf.ByteString getRemediationBytes() {
       java.lang.Object ref = remediation_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         remediation_ = b;
         return b;
       } else {
@@ -1912,23 +2079,26 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A description of actions that can be taken to remedy the note.
      * </pre>
      *
      * <code>string remediation = 5;</code>
      */
-    public Builder setRemediation(
-        java.lang.String value) {
+    public Builder setRemediation(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       remediation_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A description of actions that can be taken to remedy the note.
      * </pre>
@@ -1936,25 +2106,26 @@ private static final long serialVersionUID = 0L;
      * <code>string remediation = 5;</code>
      */
     public Builder clearRemediation() {
-      
+
       remediation_ = getDefaultInstance().getRemediation();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A description of actions that can be taken to remedy the note.
      * </pre>
      *
      * <code>string remediation = 5;</code>
      */
-    public Builder setRemediationBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setRemediationBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       remediation_ = value;
       onChanged();
       return this;
@@ -1962,8 +2133,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Timestamp createTime_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> createTimeBuilder_;
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        createTimeBuilder_;
     /**
+     *
+     *
      * <pre>
      * Output only. The time this occurrence was created.
      * </pre>
@@ -1974,6 +2150,8 @@ private static final long serialVersionUID = 0L;
       return createTimeBuilder_ != null || createTime_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The time this occurrence was created.
      * </pre>
@@ -1982,12 +2160,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.Timestamp getCreateTime() {
       if (createTimeBuilder_ == null) {
-        return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
+        return createTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : createTime_;
       } else {
         return createTimeBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The time this occurrence was created.
      * </pre>
@@ -2008,14 +2190,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The time this occurrence was created.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 6;</code>
      */
-    public Builder setCreateTime(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
+    public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
         onChanged();
@@ -2026,6 +2209,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The time this occurrence was created.
      * </pre>
@@ -2036,7 +2221,7 @@ private static final long serialVersionUID = 0L;
       if (createTimeBuilder_ == null) {
         if (createTime_ != null) {
           createTime_ =
-            com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
         } else {
           createTime_ = value;
         }
@@ -2048,6 +2233,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The time this occurrence was created.
      * </pre>
@@ -2066,6 +2253,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The time this occurrence was created.
      * </pre>
@@ -2073,11 +2262,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp create_time = 6;</code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-      
+
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The time this occurrence was created.
      * </pre>
@@ -2088,11 +2279,14 @@ private static final long serialVersionUID = 0L;
       if (createTimeBuilder_ != null) {
         return createTimeBuilder_.getMessageOrBuilder();
       } else {
-        return createTime_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
+        return createTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : createTime_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The time this occurrence was created.
      * </pre>
@@ -2100,14 +2294,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp create_time = 6;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
         getCreateTimeFieldBuilder() {
       if (createTimeBuilder_ == null) {
-        createTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getCreateTime(),
-                getParentForChildren(),
-                isClean());
+        createTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getCreateTime(), getParentForChildren(), isClean());
         createTime_ = null;
       }
       return createTimeBuilder_;
@@ -2115,8 +2312,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Timestamp updateTime_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> updateTimeBuilder_;
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        updateTimeBuilder_;
     /**
+     *
+     *
      * <pre>
      * Output only. The time this occurrence was last updated.
      * </pre>
@@ -2127,6 +2329,8 @@ private static final long serialVersionUID = 0L;
       return updateTimeBuilder_ != null || updateTime_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The time this occurrence was last updated.
      * </pre>
@@ -2135,12 +2339,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.Timestamp getUpdateTime() {
       if (updateTimeBuilder_ == null) {
-        return updateTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
+        return updateTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : updateTime_;
       } else {
         return updateTimeBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The time this occurrence was last updated.
      * </pre>
@@ -2161,14 +2369,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The time this occurrence was last updated.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp update_time = 7;</code>
      */
-    public Builder setUpdateTime(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
+    public Builder setUpdateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (updateTimeBuilder_ == null) {
         updateTime_ = builderForValue.build();
         onChanged();
@@ -2179,6 +2388,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The time this occurrence was last updated.
      * </pre>
@@ -2189,7 +2400,7 @@ private static final long serialVersionUID = 0L;
       if (updateTimeBuilder_ == null) {
         if (updateTime_ != null) {
           updateTime_ =
-            com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Timestamp.newBuilder(updateTime_).mergeFrom(value).buildPartial();
         } else {
           updateTime_ = value;
         }
@@ -2201,6 +2412,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The time this occurrence was last updated.
      * </pre>
@@ -2219,6 +2432,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The time this occurrence was last updated.
      * </pre>
@@ -2226,11 +2441,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp update_time = 7;</code>
      */
     public com.google.protobuf.Timestamp.Builder getUpdateTimeBuilder() {
-      
+
       onChanged();
       return getUpdateTimeFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The time this occurrence was last updated.
      * </pre>
@@ -2241,11 +2458,14 @@ private static final long serialVersionUID = 0L;
       if (updateTimeBuilder_ != null) {
         return updateTimeBuilder_.getMessageOrBuilder();
       } else {
-        return updateTime_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : updateTime_;
+        return updateTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : updateTime_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The time this occurrence was last updated.
      * </pre>
@@ -2253,22 +2473,30 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp update_time = 7;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
         getUpdateTimeFieldBuilder() {
       if (updateTimeBuilder_ == null) {
-        updateTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getUpdateTime(),
-                getParentForChildren(),
-                isClean());
+        updateTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getUpdateTime(), getParentForChildren(), isClean());
         updateTime_ = null;
       }
       return updateTimeBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        io.grafeas.v1beta1.vulnerability.Details, io.grafeas.v1beta1.vulnerability.Details.Builder, io.grafeas.v1beta1.vulnerability.DetailsOrBuilder> vulnerabilityBuilder_;
+            io.grafeas.v1beta1.vulnerability.Details,
+            io.grafeas.v1beta1.vulnerability.Details.Builder,
+            io.grafeas.v1beta1.vulnerability.DetailsOrBuilder>
+        vulnerabilityBuilder_;
     /**
+     *
+     *
      * <pre>
      * Describes a security vulnerability.
      * </pre>
@@ -2279,6 +2507,8 @@ private static final long serialVersionUID = 0L;
       return detailsCase_ == 8;
     }
     /**
+     *
+     *
      * <pre>
      * Describes a security vulnerability.
      * </pre>
@@ -2299,6 +2529,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Describes a security vulnerability.
      * </pre>
@@ -2319,6 +2551,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Describes a security vulnerability.
      * </pre>
@@ -2337,6 +2571,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Describes a security vulnerability.
      * </pre>
@@ -2345,10 +2581,13 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeVulnerability(io.grafeas.v1beta1.vulnerability.Details value) {
       if (vulnerabilityBuilder_ == null) {
-        if (detailsCase_ == 8 &&
-            details_ != io.grafeas.v1beta1.vulnerability.Details.getDefaultInstance()) {
-          details_ = io.grafeas.v1beta1.vulnerability.Details.newBuilder((io.grafeas.v1beta1.vulnerability.Details) details_)
-              .mergeFrom(value).buildPartial();
+        if (detailsCase_ == 8
+            && details_ != io.grafeas.v1beta1.vulnerability.Details.getDefaultInstance()) {
+          details_ =
+              io.grafeas.v1beta1.vulnerability.Details.newBuilder(
+                      (io.grafeas.v1beta1.vulnerability.Details) details_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           details_ = value;
         }
@@ -2363,6 +2602,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Describes a security vulnerability.
      * </pre>
@@ -2386,6 +2627,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Describes a security vulnerability.
      * </pre>
@@ -2396,6 +2639,8 @@ private static final long serialVersionUID = 0L;
       return getVulnerabilityFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Describes a security vulnerability.
      * </pre>
@@ -2413,6 +2658,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Describes a security vulnerability.
      * </pre>
@@ -2420,27 +2667,38 @@ private static final long serialVersionUID = 0L;
      * <code>.grafeas.v1beta1.vulnerability.Details vulnerability = 8;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        io.grafeas.v1beta1.vulnerability.Details, io.grafeas.v1beta1.vulnerability.Details.Builder, io.grafeas.v1beta1.vulnerability.DetailsOrBuilder> 
+            io.grafeas.v1beta1.vulnerability.Details,
+            io.grafeas.v1beta1.vulnerability.Details.Builder,
+            io.grafeas.v1beta1.vulnerability.DetailsOrBuilder>
         getVulnerabilityFieldBuilder() {
       if (vulnerabilityBuilder_ == null) {
         if (!(detailsCase_ == 8)) {
           details_ = io.grafeas.v1beta1.vulnerability.Details.getDefaultInstance();
         }
-        vulnerabilityBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            io.grafeas.v1beta1.vulnerability.Details, io.grafeas.v1beta1.vulnerability.Details.Builder, io.grafeas.v1beta1.vulnerability.DetailsOrBuilder>(
+        vulnerabilityBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                io.grafeas.v1beta1.vulnerability.Details,
+                io.grafeas.v1beta1.vulnerability.Details.Builder,
+                io.grafeas.v1beta1.vulnerability.DetailsOrBuilder>(
                 (io.grafeas.v1beta1.vulnerability.Details) details_,
                 getParentForChildren(),
                 isClean());
         details_ = null;
       }
       detailsCase_ = 8;
-      onChanged();;
+      onChanged();
+      ;
       return vulnerabilityBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        io.grafeas.v1beta1.build.Details, io.grafeas.v1beta1.build.Details.Builder, io.grafeas.v1beta1.build.DetailsOrBuilder> buildBuilder_;
+            io.grafeas.v1beta1.build.Details,
+            io.grafeas.v1beta1.build.Details.Builder,
+            io.grafeas.v1beta1.build.DetailsOrBuilder>
+        buildBuilder_;
     /**
+     *
+     *
      * <pre>
      * Describes a verifiable build.
      * </pre>
@@ -2451,6 +2709,8 @@ private static final long serialVersionUID = 0L;
       return detailsCase_ == 9;
     }
     /**
+     *
+     *
      * <pre>
      * Describes a verifiable build.
      * </pre>
@@ -2471,6 +2731,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Describes a verifiable build.
      * </pre>
@@ -2491,14 +2753,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Describes a verifiable build.
      * </pre>
      *
      * <code>.grafeas.v1beta1.build.Details build = 9;</code>
      */
-    public Builder setBuild(
-        io.grafeas.v1beta1.build.Details.Builder builderForValue) {
+    public Builder setBuild(io.grafeas.v1beta1.build.Details.Builder builderForValue) {
       if (buildBuilder_ == null) {
         details_ = builderForValue.build();
         onChanged();
@@ -2509,6 +2772,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Describes a verifiable build.
      * </pre>
@@ -2517,10 +2782,13 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeBuild(io.grafeas.v1beta1.build.Details value) {
       if (buildBuilder_ == null) {
-        if (detailsCase_ == 9 &&
-            details_ != io.grafeas.v1beta1.build.Details.getDefaultInstance()) {
-          details_ = io.grafeas.v1beta1.build.Details.newBuilder((io.grafeas.v1beta1.build.Details) details_)
-              .mergeFrom(value).buildPartial();
+        if (detailsCase_ == 9
+            && details_ != io.grafeas.v1beta1.build.Details.getDefaultInstance()) {
+          details_ =
+              io.grafeas.v1beta1.build.Details.newBuilder(
+                      (io.grafeas.v1beta1.build.Details) details_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           details_ = value;
         }
@@ -2535,6 +2803,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Describes a verifiable build.
      * </pre>
@@ -2558,6 +2828,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Describes a verifiable build.
      * </pre>
@@ -2568,6 +2840,8 @@ private static final long serialVersionUID = 0L;
       return getBuildFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Describes a verifiable build.
      * </pre>
@@ -2585,6 +2859,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Describes a verifiable build.
      * </pre>
@@ -2592,27 +2868,36 @@ private static final long serialVersionUID = 0L;
      * <code>.grafeas.v1beta1.build.Details build = 9;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        io.grafeas.v1beta1.build.Details, io.grafeas.v1beta1.build.Details.Builder, io.grafeas.v1beta1.build.DetailsOrBuilder> 
+            io.grafeas.v1beta1.build.Details,
+            io.grafeas.v1beta1.build.Details.Builder,
+            io.grafeas.v1beta1.build.DetailsOrBuilder>
         getBuildFieldBuilder() {
       if (buildBuilder_ == null) {
         if (!(detailsCase_ == 9)) {
           details_ = io.grafeas.v1beta1.build.Details.getDefaultInstance();
         }
-        buildBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            io.grafeas.v1beta1.build.Details, io.grafeas.v1beta1.build.Details.Builder, io.grafeas.v1beta1.build.DetailsOrBuilder>(
-                (io.grafeas.v1beta1.build.Details) details_,
-                getParentForChildren(),
-                isClean());
+        buildBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                io.grafeas.v1beta1.build.Details,
+                io.grafeas.v1beta1.build.Details.Builder,
+                io.grafeas.v1beta1.build.DetailsOrBuilder>(
+                (io.grafeas.v1beta1.build.Details) details_, getParentForChildren(), isClean());
         details_ = null;
       }
       detailsCase_ = 9;
-      onChanged();;
+      onChanged();
+      ;
       return buildBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        io.grafeas.v1beta1.image.Details, io.grafeas.v1beta1.image.Details.Builder, io.grafeas.v1beta1.image.DetailsOrBuilder> derivedImageBuilder_;
+            io.grafeas.v1beta1.image.Details,
+            io.grafeas.v1beta1.image.Details.Builder,
+            io.grafeas.v1beta1.image.DetailsOrBuilder>
+        derivedImageBuilder_;
     /**
+     *
+     *
      * <pre>
      * Describes how this resource derives from the basis in the associated
      * note.
@@ -2624,6 +2909,8 @@ private static final long serialVersionUID = 0L;
       return detailsCase_ == 10;
     }
     /**
+     *
+     *
      * <pre>
      * Describes how this resource derives from the basis in the associated
      * note.
@@ -2645,6 +2932,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Describes how this resource derives from the basis in the associated
      * note.
@@ -2666,6 +2955,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Describes how this resource derives from the basis in the associated
      * note.
@@ -2673,8 +2964,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.grafeas.v1beta1.image.Details derived_image = 10;</code>
      */
-    public Builder setDerivedImage(
-        io.grafeas.v1beta1.image.Details.Builder builderForValue) {
+    public Builder setDerivedImage(io.grafeas.v1beta1.image.Details.Builder builderForValue) {
       if (derivedImageBuilder_ == null) {
         details_ = builderForValue.build();
         onChanged();
@@ -2685,6 +2975,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Describes how this resource derives from the basis in the associated
      * note.
@@ -2694,10 +2986,13 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeDerivedImage(io.grafeas.v1beta1.image.Details value) {
       if (derivedImageBuilder_ == null) {
-        if (detailsCase_ == 10 &&
-            details_ != io.grafeas.v1beta1.image.Details.getDefaultInstance()) {
-          details_ = io.grafeas.v1beta1.image.Details.newBuilder((io.grafeas.v1beta1.image.Details) details_)
-              .mergeFrom(value).buildPartial();
+        if (detailsCase_ == 10
+            && details_ != io.grafeas.v1beta1.image.Details.getDefaultInstance()) {
+          details_ =
+              io.grafeas.v1beta1.image.Details.newBuilder(
+                      (io.grafeas.v1beta1.image.Details) details_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           details_ = value;
         }
@@ -2712,6 +3007,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Describes how this resource derives from the basis in the associated
      * note.
@@ -2736,6 +3033,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Describes how this resource derives from the basis in the associated
      * note.
@@ -2747,6 +3046,8 @@ private static final long serialVersionUID = 0L;
       return getDerivedImageFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Describes how this resource derives from the basis in the associated
      * note.
@@ -2765,6 +3066,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Describes how this resource derives from the basis in the associated
      * note.
@@ -2773,27 +3076,36 @@ private static final long serialVersionUID = 0L;
      * <code>.grafeas.v1beta1.image.Details derived_image = 10;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        io.grafeas.v1beta1.image.Details, io.grafeas.v1beta1.image.Details.Builder, io.grafeas.v1beta1.image.DetailsOrBuilder> 
+            io.grafeas.v1beta1.image.Details,
+            io.grafeas.v1beta1.image.Details.Builder,
+            io.grafeas.v1beta1.image.DetailsOrBuilder>
         getDerivedImageFieldBuilder() {
       if (derivedImageBuilder_ == null) {
         if (!(detailsCase_ == 10)) {
           details_ = io.grafeas.v1beta1.image.Details.getDefaultInstance();
         }
-        derivedImageBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            io.grafeas.v1beta1.image.Details, io.grafeas.v1beta1.image.Details.Builder, io.grafeas.v1beta1.image.DetailsOrBuilder>(
-                (io.grafeas.v1beta1.image.Details) details_,
-                getParentForChildren(),
-                isClean());
+        derivedImageBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                io.grafeas.v1beta1.image.Details,
+                io.grafeas.v1beta1.image.Details.Builder,
+                io.grafeas.v1beta1.image.DetailsOrBuilder>(
+                (io.grafeas.v1beta1.image.Details) details_, getParentForChildren(), isClean());
         details_ = null;
       }
       detailsCase_ = 10;
-      onChanged();;
+      onChanged();
+      ;
       return derivedImageBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        io.grafeas.v1beta1.pkg.Details, io.grafeas.v1beta1.pkg.Details.Builder, io.grafeas.v1beta1.pkg.DetailsOrBuilder> installationBuilder_;
+            io.grafeas.v1beta1.pkg.Details,
+            io.grafeas.v1beta1.pkg.Details.Builder,
+            io.grafeas.v1beta1.pkg.DetailsOrBuilder>
+        installationBuilder_;
     /**
+     *
+     *
      * <pre>
      * Describes the installation of a package on the linked resource.
      * </pre>
@@ -2804,6 +3116,8 @@ private static final long serialVersionUID = 0L;
       return detailsCase_ == 11;
     }
     /**
+     *
+     *
      * <pre>
      * Describes the installation of a package on the linked resource.
      * </pre>
@@ -2824,6 +3138,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Describes the installation of a package on the linked resource.
      * </pre>
@@ -2844,14 +3160,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Describes the installation of a package on the linked resource.
      * </pre>
      *
      * <code>.grafeas.v1beta1.package.Details installation = 11;</code>
      */
-    public Builder setInstallation(
-        io.grafeas.v1beta1.pkg.Details.Builder builderForValue) {
+    public Builder setInstallation(io.grafeas.v1beta1.pkg.Details.Builder builderForValue) {
       if (installationBuilder_ == null) {
         details_ = builderForValue.build();
         onChanged();
@@ -2862,6 +3179,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Describes the installation of a package on the linked resource.
      * </pre>
@@ -2870,10 +3189,11 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeInstallation(io.grafeas.v1beta1.pkg.Details value) {
       if (installationBuilder_ == null) {
-        if (detailsCase_ == 11 &&
-            details_ != io.grafeas.v1beta1.pkg.Details.getDefaultInstance()) {
-          details_ = io.grafeas.v1beta1.pkg.Details.newBuilder((io.grafeas.v1beta1.pkg.Details) details_)
-              .mergeFrom(value).buildPartial();
+        if (detailsCase_ == 11 && details_ != io.grafeas.v1beta1.pkg.Details.getDefaultInstance()) {
+          details_ =
+              io.grafeas.v1beta1.pkg.Details.newBuilder((io.grafeas.v1beta1.pkg.Details) details_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           details_ = value;
         }
@@ -2888,6 +3208,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Describes the installation of a package on the linked resource.
      * </pre>
@@ -2911,6 +3233,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Describes the installation of a package on the linked resource.
      * </pre>
@@ -2921,6 +3245,8 @@ private static final long serialVersionUID = 0L;
       return getInstallationFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Describes the installation of a package on the linked resource.
      * </pre>
@@ -2938,6 +3264,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Describes the installation of a package on the linked resource.
      * </pre>
@@ -2945,27 +3273,36 @@ private static final long serialVersionUID = 0L;
      * <code>.grafeas.v1beta1.package.Details installation = 11;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        io.grafeas.v1beta1.pkg.Details, io.grafeas.v1beta1.pkg.Details.Builder, io.grafeas.v1beta1.pkg.DetailsOrBuilder> 
+            io.grafeas.v1beta1.pkg.Details,
+            io.grafeas.v1beta1.pkg.Details.Builder,
+            io.grafeas.v1beta1.pkg.DetailsOrBuilder>
         getInstallationFieldBuilder() {
       if (installationBuilder_ == null) {
         if (!(detailsCase_ == 11)) {
           details_ = io.grafeas.v1beta1.pkg.Details.getDefaultInstance();
         }
-        installationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            io.grafeas.v1beta1.pkg.Details, io.grafeas.v1beta1.pkg.Details.Builder, io.grafeas.v1beta1.pkg.DetailsOrBuilder>(
-                (io.grafeas.v1beta1.pkg.Details) details_,
-                getParentForChildren(),
-                isClean());
+        installationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                io.grafeas.v1beta1.pkg.Details,
+                io.grafeas.v1beta1.pkg.Details.Builder,
+                io.grafeas.v1beta1.pkg.DetailsOrBuilder>(
+                (io.grafeas.v1beta1.pkg.Details) details_, getParentForChildren(), isClean());
         details_ = null;
       }
       detailsCase_ = 11;
-      onChanged();;
+      onChanged();
+      ;
       return installationBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        io.grafeas.v1beta1.deployment.Details, io.grafeas.v1beta1.deployment.Details.Builder, io.grafeas.v1beta1.deployment.DetailsOrBuilder> deploymentBuilder_;
+            io.grafeas.v1beta1.deployment.Details,
+            io.grafeas.v1beta1.deployment.Details.Builder,
+            io.grafeas.v1beta1.deployment.DetailsOrBuilder>
+        deploymentBuilder_;
     /**
+     *
+     *
      * <pre>
      * Describes the deployment of an artifact on a runtime.
      * </pre>
@@ -2976,6 +3313,8 @@ private static final long serialVersionUID = 0L;
       return detailsCase_ == 12;
     }
     /**
+     *
+     *
      * <pre>
      * Describes the deployment of an artifact on a runtime.
      * </pre>
@@ -2996,6 +3335,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Describes the deployment of an artifact on a runtime.
      * </pre>
@@ -3016,14 +3357,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Describes the deployment of an artifact on a runtime.
      * </pre>
      *
      * <code>.grafeas.v1beta1.deployment.Details deployment = 12;</code>
      */
-    public Builder setDeployment(
-        io.grafeas.v1beta1.deployment.Details.Builder builderForValue) {
+    public Builder setDeployment(io.grafeas.v1beta1.deployment.Details.Builder builderForValue) {
       if (deploymentBuilder_ == null) {
         details_ = builderForValue.build();
         onChanged();
@@ -3034,6 +3376,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Describes the deployment of an artifact on a runtime.
      * </pre>
@@ -3042,10 +3386,13 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeDeployment(io.grafeas.v1beta1.deployment.Details value) {
       if (deploymentBuilder_ == null) {
-        if (detailsCase_ == 12 &&
-            details_ != io.grafeas.v1beta1.deployment.Details.getDefaultInstance()) {
-          details_ = io.grafeas.v1beta1.deployment.Details.newBuilder((io.grafeas.v1beta1.deployment.Details) details_)
-              .mergeFrom(value).buildPartial();
+        if (detailsCase_ == 12
+            && details_ != io.grafeas.v1beta1.deployment.Details.getDefaultInstance()) {
+          details_ =
+              io.grafeas.v1beta1.deployment.Details.newBuilder(
+                      (io.grafeas.v1beta1.deployment.Details) details_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           details_ = value;
         }
@@ -3060,6 +3407,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Describes the deployment of an artifact on a runtime.
      * </pre>
@@ -3083,6 +3432,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Describes the deployment of an artifact on a runtime.
      * </pre>
@@ -3093,6 +3444,8 @@ private static final long serialVersionUID = 0L;
       return getDeploymentFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Describes the deployment of an artifact on a runtime.
      * </pre>
@@ -3110,6 +3463,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Describes the deployment of an artifact on a runtime.
      * </pre>
@@ -3117,27 +3472,38 @@ private static final long serialVersionUID = 0L;
      * <code>.grafeas.v1beta1.deployment.Details deployment = 12;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        io.grafeas.v1beta1.deployment.Details, io.grafeas.v1beta1.deployment.Details.Builder, io.grafeas.v1beta1.deployment.DetailsOrBuilder> 
+            io.grafeas.v1beta1.deployment.Details,
+            io.grafeas.v1beta1.deployment.Details.Builder,
+            io.grafeas.v1beta1.deployment.DetailsOrBuilder>
         getDeploymentFieldBuilder() {
       if (deploymentBuilder_ == null) {
         if (!(detailsCase_ == 12)) {
           details_ = io.grafeas.v1beta1.deployment.Details.getDefaultInstance();
         }
-        deploymentBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            io.grafeas.v1beta1.deployment.Details, io.grafeas.v1beta1.deployment.Details.Builder, io.grafeas.v1beta1.deployment.DetailsOrBuilder>(
+        deploymentBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                io.grafeas.v1beta1.deployment.Details,
+                io.grafeas.v1beta1.deployment.Details.Builder,
+                io.grafeas.v1beta1.deployment.DetailsOrBuilder>(
                 (io.grafeas.v1beta1.deployment.Details) details_,
                 getParentForChildren(),
                 isClean());
         details_ = null;
       }
       detailsCase_ = 12;
-      onChanged();;
+      onChanged();
+      ;
       return deploymentBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        io.grafeas.v1beta1.discovery.Details, io.grafeas.v1beta1.discovery.Details.Builder, io.grafeas.v1beta1.discovery.DetailsOrBuilder> discoveredBuilder_;
+            io.grafeas.v1beta1.discovery.Details,
+            io.grafeas.v1beta1.discovery.Details.Builder,
+            io.grafeas.v1beta1.discovery.DetailsOrBuilder>
+        discoveredBuilder_;
     /**
+     *
+     *
      * <pre>
      * Describes when a resource was discovered.
      * </pre>
@@ -3148,6 +3514,8 @@ private static final long serialVersionUID = 0L;
       return detailsCase_ == 13;
     }
     /**
+     *
+     *
      * <pre>
      * Describes when a resource was discovered.
      * </pre>
@@ -3168,6 +3536,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Describes when a resource was discovered.
      * </pre>
@@ -3188,14 +3558,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Describes when a resource was discovered.
      * </pre>
      *
      * <code>.grafeas.v1beta1.discovery.Details discovered = 13;</code>
      */
-    public Builder setDiscovered(
-        io.grafeas.v1beta1.discovery.Details.Builder builderForValue) {
+    public Builder setDiscovered(io.grafeas.v1beta1.discovery.Details.Builder builderForValue) {
       if (discoveredBuilder_ == null) {
         details_ = builderForValue.build();
         onChanged();
@@ -3206,6 +3577,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Describes when a resource was discovered.
      * </pre>
@@ -3214,10 +3587,13 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeDiscovered(io.grafeas.v1beta1.discovery.Details value) {
       if (discoveredBuilder_ == null) {
-        if (detailsCase_ == 13 &&
-            details_ != io.grafeas.v1beta1.discovery.Details.getDefaultInstance()) {
-          details_ = io.grafeas.v1beta1.discovery.Details.newBuilder((io.grafeas.v1beta1.discovery.Details) details_)
-              .mergeFrom(value).buildPartial();
+        if (detailsCase_ == 13
+            && details_ != io.grafeas.v1beta1.discovery.Details.getDefaultInstance()) {
+          details_ =
+              io.grafeas.v1beta1.discovery.Details.newBuilder(
+                      (io.grafeas.v1beta1.discovery.Details) details_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           details_ = value;
         }
@@ -3232,6 +3608,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Describes when a resource was discovered.
      * </pre>
@@ -3255,6 +3633,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Describes when a resource was discovered.
      * </pre>
@@ -3265,6 +3645,8 @@ private static final long serialVersionUID = 0L;
       return getDiscoveredFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Describes when a resource was discovered.
      * </pre>
@@ -3282,6 +3664,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Describes when a resource was discovered.
      * </pre>
@@ -3289,27 +3673,36 @@ private static final long serialVersionUID = 0L;
      * <code>.grafeas.v1beta1.discovery.Details discovered = 13;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        io.grafeas.v1beta1.discovery.Details, io.grafeas.v1beta1.discovery.Details.Builder, io.grafeas.v1beta1.discovery.DetailsOrBuilder> 
+            io.grafeas.v1beta1.discovery.Details,
+            io.grafeas.v1beta1.discovery.Details.Builder,
+            io.grafeas.v1beta1.discovery.DetailsOrBuilder>
         getDiscoveredFieldBuilder() {
       if (discoveredBuilder_ == null) {
         if (!(detailsCase_ == 13)) {
           details_ = io.grafeas.v1beta1.discovery.Details.getDefaultInstance();
         }
-        discoveredBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            io.grafeas.v1beta1.discovery.Details, io.grafeas.v1beta1.discovery.Details.Builder, io.grafeas.v1beta1.discovery.DetailsOrBuilder>(
-                (io.grafeas.v1beta1.discovery.Details) details_,
-                getParentForChildren(),
-                isClean());
+        discoveredBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                io.grafeas.v1beta1.discovery.Details,
+                io.grafeas.v1beta1.discovery.Details.Builder,
+                io.grafeas.v1beta1.discovery.DetailsOrBuilder>(
+                (io.grafeas.v1beta1.discovery.Details) details_, getParentForChildren(), isClean());
         details_ = null;
       }
       detailsCase_ = 13;
-      onChanged();;
+      onChanged();
+      ;
       return discoveredBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        io.grafeas.v1beta1.attestation.Details, io.grafeas.v1beta1.attestation.Details.Builder, io.grafeas.v1beta1.attestation.DetailsOrBuilder> attestationBuilder_;
+            io.grafeas.v1beta1.attestation.Details,
+            io.grafeas.v1beta1.attestation.Details.Builder,
+            io.grafeas.v1beta1.attestation.DetailsOrBuilder>
+        attestationBuilder_;
     /**
+     *
+     *
      * <pre>
      * Describes an attestation of an artifact.
      * </pre>
@@ -3320,6 +3713,8 @@ private static final long serialVersionUID = 0L;
       return detailsCase_ == 14;
     }
     /**
+     *
+     *
      * <pre>
      * Describes an attestation of an artifact.
      * </pre>
@@ -3340,6 +3735,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Describes an attestation of an artifact.
      * </pre>
@@ -3360,14 +3757,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Describes an attestation of an artifact.
      * </pre>
      *
      * <code>.grafeas.v1beta1.attestation.Details attestation = 14;</code>
      */
-    public Builder setAttestation(
-        io.grafeas.v1beta1.attestation.Details.Builder builderForValue) {
+    public Builder setAttestation(io.grafeas.v1beta1.attestation.Details.Builder builderForValue) {
       if (attestationBuilder_ == null) {
         details_ = builderForValue.build();
         onChanged();
@@ -3378,6 +3776,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Describes an attestation of an artifact.
      * </pre>
@@ -3386,10 +3786,13 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeAttestation(io.grafeas.v1beta1.attestation.Details value) {
       if (attestationBuilder_ == null) {
-        if (detailsCase_ == 14 &&
-            details_ != io.grafeas.v1beta1.attestation.Details.getDefaultInstance()) {
-          details_ = io.grafeas.v1beta1.attestation.Details.newBuilder((io.grafeas.v1beta1.attestation.Details) details_)
-              .mergeFrom(value).buildPartial();
+        if (detailsCase_ == 14
+            && details_ != io.grafeas.v1beta1.attestation.Details.getDefaultInstance()) {
+          details_ =
+              io.grafeas.v1beta1.attestation.Details.newBuilder(
+                      (io.grafeas.v1beta1.attestation.Details) details_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           details_ = value;
         }
@@ -3404,6 +3807,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Describes an attestation of an artifact.
      * </pre>
@@ -3427,6 +3832,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Describes an attestation of an artifact.
      * </pre>
@@ -3437,6 +3844,8 @@ private static final long serialVersionUID = 0L;
       return getAttestationFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Describes an attestation of an artifact.
      * </pre>
@@ -3454,6 +3863,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Describes an attestation of an artifact.
      * </pre>
@@ -3461,39 +3872,47 @@ private static final long serialVersionUID = 0L;
      * <code>.grafeas.v1beta1.attestation.Details attestation = 14;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        io.grafeas.v1beta1.attestation.Details, io.grafeas.v1beta1.attestation.Details.Builder, io.grafeas.v1beta1.attestation.DetailsOrBuilder> 
+            io.grafeas.v1beta1.attestation.Details,
+            io.grafeas.v1beta1.attestation.Details.Builder,
+            io.grafeas.v1beta1.attestation.DetailsOrBuilder>
         getAttestationFieldBuilder() {
       if (attestationBuilder_ == null) {
         if (!(detailsCase_ == 14)) {
           details_ = io.grafeas.v1beta1.attestation.Details.getDefaultInstance();
         }
-        attestationBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            io.grafeas.v1beta1.attestation.Details, io.grafeas.v1beta1.attestation.Details.Builder, io.grafeas.v1beta1.attestation.DetailsOrBuilder>(
+        attestationBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                io.grafeas.v1beta1.attestation.Details,
+                io.grafeas.v1beta1.attestation.Details.Builder,
+                io.grafeas.v1beta1.attestation.DetailsOrBuilder>(
                 (io.grafeas.v1beta1.attestation.Details) details_,
                 getParentForChildren(),
                 isClean());
         details_ = null;
       }
       detailsCase_ = 14;
-      onChanged();;
+      onChanged();
+      ;
       return attestationBuilder_;
     }
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+
+    @java.lang.Override
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
     }
-
 
     // @@protoc_insertion_point(builder_scope:grafeas.v1beta1.Occurrence)
   }
 
   // @@protoc_insertion_point(class_scope:grafeas.v1beta1.Occurrence)
   private static final io.grafeas.v1beta1.Occurrence DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new io.grafeas.v1beta1.Occurrence();
   }
@@ -3502,15 +3921,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<Occurrence>
-      PARSER = new com.google.protobuf.AbstractParser<Occurrence>() {
-    public Occurrence parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Occurrence(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<Occurrence> PARSER =
+      new com.google.protobuf.AbstractParser<Occurrence>() {
+        @java.lang.Override
+        public Occurrence parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new Occurrence(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<Occurrence> parser() {
     return PARSER;
@@ -3521,9 +3941,8 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public io.grafeas.v1beta1.Occurrence getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

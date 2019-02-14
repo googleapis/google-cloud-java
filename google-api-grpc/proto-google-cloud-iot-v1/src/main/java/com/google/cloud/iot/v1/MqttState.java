@@ -4,6 +4,8 @@
 package com.google.cloud.iot.v1;
 
 /**
+ *
+ *
  * <pre>
  * Indicates whether an MQTT connection is enabled or disabled. See the field
  * description for details.
@@ -11,9 +13,10 @@ package com.google.cloud.iot.v1;
  *
  * Protobuf enum {@code google.cloud.iot.v1.MqttState}
  */
-public enum MqttState
-    implements com.google.protobuf.ProtocolMessageEnum {
+public enum MqttState implements com.google.protobuf.ProtocolMessageEnum {
   /**
+   *
+   *
    * <pre>
    * No MQTT state specified. If not specified, MQTT will be enabled by default.
    * </pre>
@@ -22,6 +25,8 @@ public enum MqttState
    */
   MQTT_STATE_UNSPECIFIED(0),
   /**
+   *
+   *
    * <pre>
    * Enables a MQTT connection.
    * </pre>
@@ -30,6 +35,8 @@ public enum MqttState
    */
   MQTT_ENABLED(1),
   /**
+   *
+   *
    * <pre>
    * Disables a MQTT connection.
    * </pre>
@@ -41,6 +48,8 @@ public enum MqttState
   ;
 
   /**
+   *
+   *
    * <pre>
    * No MQTT state specified. If not specified, MQTT will be enabled by default.
    * </pre>
@@ -49,6 +58,8 @@ public enum MqttState
    */
   public static final int MQTT_STATE_UNSPECIFIED_VALUE = 0;
   /**
+   *
+   *
    * <pre>
    * Enables a MQTT connection.
    * </pre>
@@ -57,6 +68,8 @@ public enum MqttState
    */
   public static final int MQTT_ENABLED_VALUE = 1;
   /**
+   *
+   *
    * <pre>
    * Disables a MQTT connection.
    * </pre>
@@ -64,7 +77,6 @@ public enum MqttState
    * <code>MQTT_DISABLED = 2;</code>
    */
   public static final int MQTT_DISABLED_VALUE = 2;
-
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -74,9 +86,7 @@ public enum MqttState
     return value;
   }
 
-  /**
-   * @deprecated Use {@link #forNumber(int)} instead.
-   */
+  /** @deprecated Use {@link #forNumber(int)} instead. */
   @java.lang.Deprecated
   public static MqttState valueOf(int value) {
     return forNumber(value);
@@ -84,45 +94,45 @@ public enum MqttState
 
   public static MqttState forNumber(int value) {
     switch (value) {
-      case 0: return MQTT_STATE_UNSPECIFIED;
-      case 1: return MQTT_ENABLED;
-      case 2: return MQTT_DISABLED;
-      default: return null;
+      case 0:
+        return MQTT_STATE_UNSPECIFIED;
+      case 1:
+        return MQTT_ENABLED;
+      case 2:
+        return MQTT_DISABLED;
+      default:
+        return null;
     }
   }
 
-  public static com.google.protobuf.Internal.EnumLiteMap<MqttState>
-      internalGetValueMap() {
+  public static com.google.protobuf.Internal.EnumLiteMap<MqttState> internalGetValueMap() {
     return internalValueMap;
   }
-  private static final com.google.protobuf.Internal.EnumLiteMap<
-      MqttState> internalValueMap =
-        new com.google.protobuf.Internal.EnumLiteMap<MqttState>() {
-          public MqttState findValueByNumber(int number) {
-            return MqttState.forNumber(number);
-          }
-        };
 
-  public final com.google.protobuf.Descriptors.EnumValueDescriptor
-      getValueDescriptor() {
+  private static final com.google.protobuf.Internal.EnumLiteMap<MqttState> internalValueMap =
+      new com.google.protobuf.Internal.EnumLiteMap<MqttState>() {
+        public MqttState findValueByNumber(int number) {
+          return MqttState.forNumber(number);
+        }
+      };
+
+  public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
     return getDescriptor().getValues().get(ordinal());
   }
-  public final com.google.protobuf.Descriptors.EnumDescriptor
-      getDescriptorForType() {
+
+  public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
     return getDescriptor();
   }
-  public static final com.google.protobuf.Descriptors.EnumDescriptor
-      getDescriptor() {
+
+  public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
     return com.google.cloud.iot.v1.ResourcesProto.getDescriptor().getEnumTypes().get(0);
   }
 
   private static final MqttState[] VALUES = values();
 
-  public static MqttState valueOf(
-      com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+  public static MqttState valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
     if (desc.getType() != getDescriptor()) {
-      throw new java.lang.IllegalArgumentException(
-        "EnumValueDescriptor is not for this type.");
+      throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
     }
     if (desc.getIndex() == -1) {
       return UNRECOGNIZED;
@@ -138,4 +148,3 @@ public enum MqttState
 
   // @@protoc_insertion_point(enum_scope:google.cloud.iot.v1.MqttState)
 }
-

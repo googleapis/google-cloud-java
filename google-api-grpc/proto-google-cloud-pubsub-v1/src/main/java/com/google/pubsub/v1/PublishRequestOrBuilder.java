@@ -3,11 +3,14 @@
 
 package com.google.pubsub.v1;
 
-public interface PublishRequestOrBuilder extends
+public interface PublishRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.pubsub.v1.PublishRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The messages in the request will be published on this topic.
    * Format is `projects/{project}/topics/{topic}`.
@@ -17,6 +20,8 @@ public interface PublishRequestOrBuilder extends
    */
   java.lang.String getTopic();
   /**
+   *
+   *
    * <pre>
    * The messages in the request will be published on this topic.
    * Format is `projects/{project}/topics/{topic}`.
@@ -24,19 +29,21 @@ public interface PublishRequestOrBuilder extends
    *
    * <code>string topic = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getTopicBytes();
+  com.google.protobuf.ByteString getTopicBytes();
 
   /**
+   *
+   *
    * <pre>
    * The messages to publish.
    * </pre>
    *
    * <code>repeated .google.pubsub.v1.PubsubMessage messages = 2;</code>
    */
-  java.util.List<com.google.pubsub.v1.PubsubMessage> 
-      getMessagesList();
+  java.util.List<com.google.pubsub.v1.PubsubMessage> getMessagesList();
   /**
+   *
+   *
    * <pre>
    * The messages to publish.
    * </pre>
@@ -45,6 +52,8 @@ public interface PublishRequestOrBuilder extends
    */
   com.google.pubsub.v1.PubsubMessage getMessages(int index);
   /**
+   *
+   *
    * <pre>
    * The messages to publish.
    * </pre>
@@ -53,21 +62,23 @@ public interface PublishRequestOrBuilder extends
    */
   int getMessagesCount();
   /**
+   *
+   *
    * <pre>
    * The messages to publish.
    * </pre>
    *
    * <code>repeated .google.pubsub.v1.PubsubMessage messages = 2;</code>
    */
-  java.util.List<? extends com.google.pubsub.v1.PubsubMessageOrBuilder> 
-      getMessagesOrBuilderList();
+  java.util.List<? extends com.google.pubsub.v1.PubsubMessageOrBuilder> getMessagesOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * The messages to publish.
    * </pre>
    *
    * <code>repeated .google.pubsub.v1.PubsubMessage messages = 2;</code>
    */
-  com.google.pubsub.v1.PubsubMessageOrBuilder getMessagesOrBuilder(
-      int index);
+  com.google.pubsub.v1.PubsubMessageOrBuilder getMessagesOrBuilder(int index);
 }

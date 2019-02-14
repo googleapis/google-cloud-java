@@ -21,11 +21,13 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 import static org.mockito.MockitoAnnotations.initMocks;
 
+import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.spanner.spi.v1.SpannerRpc;
 import com.google.cloud.spanner.spi.v1.SpannerRpc.Paginated;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
 import com.google.protobuf.Any;
+import com.google.protobuf.Empty;
 import com.google.protobuf.Message;
 import com.google.spanner.admin.database.v1.CreateDatabaseMetadata;
 import com.google.spanner.admin.database.v1.Database;
@@ -82,45 +84,54 @@ public class DatabaseAdminClientImplTest {
   }
 
   @Test
-  public void createDatabase() {
+  public void createDatabase() throws Exception {
+    OperationFuture<Database, CreateDatabaseMetadata> rawOperationFuture =
+        OperationFutureUtil.immediateOperationFuture(
+            "createDatabase", getDatabaseProto(), CreateDatabaseMetadata.getDefaultInstance());
     when(rpc.createDatabase(
             INSTANCE_NAME, "CREATE DATABASE `" + DB_ID + "`", Collections.<String>emptyList()))
-        .thenReturn(
-            com.google.longrunning.Operation.newBuilder()
-                .setDone(true)
-                .setName("my-op")
-                .setResponse(toAny(getDatabaseProto()))
-                .build());
-    Operation<com.google.cloud.spanner.Database, CreateDatabaseMetadata> op =
+        .thenReturn(rawOperationFuture);
+    OperationFuture<com.google.cloud.spanner.Database, CreateDatabaseMetadata> op =
         client.createDatabase(INSTANCE_ID, DB_ID, Collections.<String>emptyList());
     assertThat(op.isDone()).isTrue();
-    assertThat(op.getResult().getId().getName()).isEqualTo(DB_NAME);
+    assertThat(op.get().getId().getName()).isEqualTo(DB_NAME);
   }
 
   @Test
-  public void updateDatabaseDdl() {
+  public void updateDatabaseDdl() throws Exception {
     String opName = DB_NAME + "/operations/myop";
     String opId = "myop";
     List<String> ddl = ImmutableList.of();
-    when(rpc.updateDatabaseDdl(DB_NAME, ddl, opId))
-        .thenReturn(
-            com.google.longrunning.Operation.newBuilder().setDone(true).setName(opName).build());
-    Operation<Void, UpdateDatabaseDdlMetadata> op =
+    OperationFuture<Empty, UpdateDatabaseDdlMetadata> rawOperationFuture =
+        OperationFutureUtil.immediateOperationFuture(
+            opName, Empty.getDefaultInstance(), UpdateDatabaseDdlMetadata.getDefaultInstance());
+    when(rpc.updateDatabaseDdl(DB_NAME, ddl, opId)).thenReturn(rawOperationFuture);
+    OperationFuture<Void, UpdateDatabaseDdlMetadata> op =
         client.updateDatabaseDdl(INSTANCE_ID, DB_ID, ddl, opId);
     assertThat(op.isDone()).isTrue();
     assertThat(op.getName()).isEqualTo(opName);
   }
 
   @Test
-  public void updateDatabaseDdlOpAlreadyExists() {
-    String opName = DB_NAME + "/operations/myop";
-    String opId = "myop";
+  public void updateDatabaseDdlOpAlreadyExists() throws Exception {
+    String originalOpName = DB_NAME + "/operations/originalop";
     List<String> ddl = ImmutableList.of();
-    when(rpc.updateDatabaseDdl(DB_NAME, ddl, opId))
-        .thenThrow(SpannerExceptionFactory.newSpannerException(ErrorCode.ALREADY_EXISTS, ""));
-    Operation<Void, UpdateDatabaseDdlMetadata> op =
-        client.updateDatabaseDdl(INSTANCE_ID, DB_ID, ddl, opId);
-    assertThat(op.getName()).isEqualTo(opName);
+    OperationFuture<Empty, UpdateDatabaseDdlMetadata> originalOp =
+        OperationFutureUtil.immediateOperationFuture(
+            originalOpName,
+            Empty.getDefaultInstance(),
+            UpdateDatabaseDdlMetadata.getDefaultInstance());
+
+    String newOpName = DB_NAME + "/operations/newop";
+    String newOpId = "newop";
+    OperationFuture<Empty, UpdateDatabaseDdlMetadata> newop =
+        OperationFutureUtil.immediateOperationFuture(
+            newOpName, Empty.getDefaultInstance(), UpdateDatabaseDdlMetadata.getDefaultInstance());
+
+    when(rpc.updateDatabaseDdl(DB_NAME, ddl, newOpId)).thenReturn(originalOp);
+    OperationFuture<Void, UpdateDatabaseDdlMetadata> op =
+        client.updateDatabaseDdl(INSTANCE_ID, DB_ID, ddl, newOpId);
+    assertThat(op.getName()).isEqualTo(originalOpName);
   }
 
   @Test

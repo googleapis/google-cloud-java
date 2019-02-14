@@ -23,14 +23,13 @@ import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.Lists;
-
-import org.joda.time.format.DateTimeFormatter;
-import org.joda.time.format.ISODateTimeFormat;
-
 import java.io.Serializable;
 import java.math.BigInteger;
 import java.util.List;
 import java.util.Objects;
+import org.threeten.bp.Instant;
+import org.threeten.bp.ZoneOffset;
+import org.threeten.bp.format.DateTimeFormatter;
 
 /**
  * A Google Compute Engine snapshot. Compute Engine allows you to take snapshots of your persistent
@@ -59,7 +58,8 @@ public class SnapshotInfo implements Serializable {
       };
 
   private static final long serialVersionUID = 1065513502131159769L;
-  private static final DateTimeFormatter TIMESTAMP_FORMATTER = ISODateTimeFormat.dateTime();
+  private static final DateTimeFormatter TIMESTAMP_FORMATTER =
+      DateTimeFormatter.ISO_DATE_TIME.withZone(ZoneOffset.UTC);
 
   private final String generatedId;
   private final SnapshotId snapshotId;
@@ -78,29 +78,19 @@ public class SnapshotInfo implements Serializable {
    * after the snapshot has been successfully created and the status is set to {@code READY}.
    */
   public enum Status {
-    /**
-     * The snapshot is being created.
-     */
+    /** The snapshot is being created. */
     CREATING,
 
-    /**
-     * The snapshot is being deleted.
-     */
+    /** The snapshot is being deleted. */
     DELETING,
 
-    /**
-     * Snapshot's creation failed.
-     */
+    /** Snapshot's creation failed. */
     FAILED,
 
-    /**
-     * Snapshot has been successfully created.
-     */
+    /** Snapshot has been successfully created. */
     READY,
 
-    /**
-     * Snapshot is being uploaded.
-     */
+    /** Snapshot is being uploaded. */
     UPLOADING
   }
 
@@ -109,34 +99,24 @@ public class SnapshotInfo implements Serializable {
    * being adjusted as a result of shared storage reallocation.
    */
   public enum StorageBytesStatus {
-    /**
-     * Indicates that the size of the snapshot is being updated.
-     */
+    /** Indicates that the size of the snapshot is being updated. */
     UPDATING,
 
-    /**
-     * Indicates that the size of the snapshot is up-to-date.
-     */
+    /** Indicates that the size of the snapshot is up-to-date. */
     UP_TO_DATE
   }
 
-  /**
-   * A builder for {@code SnapshotInfo} objects.
-   */
+  /** A builder for {@code SnapshotInfo} objects. */
   public abstract static class Builder {
 
     abstract Builder setGeneratedId(String generatedId);
 
     abstract Builder setCreationTimestamp(Long creationTimestamp);
 
-    /**
-     * Sets the snapshot identity.
-     */
+    /** Sets the snapshot identity. */
     public abstract Builder setSnapshotId(SnapshotId snapshotId);
 
-    /**
-     * Sets an optional textual description of the snapshot.
-     */
+    /** Sets an optional textual description of the snapshot. */
     public abstract Builder setDescription(String description);
 
     abstract Builder setStatus(Status status);
@@ -145,9 +125,7 @@ public class SnapshotInfo implements Serializable {
 
     abstract Builder setLicenses(List<LicenseId> licenses);
 
-    /**
-     * Sets the identity of the source disk used to create the snapshot.
-     */
+    /** Sets the identity of the source disk used to create the snapshot. */
     public abstract Builder setSourceDisk(DiskId sourceDisk);
 
     abstract Builder setSourceDiskId(String sourceDiskId);
@@ -156,9 +134,7 @@ public class SnapshotInfo implements Serializable {
 
     abstract Builder setStorageBytesStatus(StorageBytesStatus storageBytesStatus);
 
-    /**
-     * Creates a {@code SnapshotInfo} object.
-     */
+    /** Creates a {@code SnapshotInfo} object. */
     public abstract SnapshotInfo build();
   }
 
@@ -197,7 +173,10 @@ public class SnapshotInfo implements Serializable {
         this.generatedId = snapshotPb.getId().toString();
       }
       if (snapshotPb.getCreationTimestamp() != null) {
-        this.creationTimestamp = TIMESTAMP_FORMATTER.parseMillis(snapshotPb.getCreationTimestamp());
+        this.creationTimestamp =
+            TIMESTAMP_FORMATTER
+                .parse(snapshotPb.getCreationTimestamp(), Instant.FROM)
+                .toEpochMilli();
       }
       this.snapshotId = SnapshotId.fromUrl(snapshotPb.getSelfLink());
       this.description = snapshotPb.getDescription();
@@ -304,60 +283,46 @@ public class SnapshotInfo implements Serializable {
     this.storageBytesStatus = builder.storageBytesStatus;
   }
 
-  /**
-   * Returns the service-generated unique identifier for the snapshot.
-   */
+  /** Returns the service-generated unique identifier for the snapshot. */
   public String getGeneratedId() {
     return generatedId;
   }
 
-  /**
-   * Returns the creation timestamp in milliseconds since epoch.
-   */
+  /** Returns the creation timestamp in milliseconds since epoch. */
   public Long getCreationTimestamp() {
     return creationTimestamp;
   }
 
-  /**
-   * Returns the snapshot identity.
-   */
+  /** Returns the snapshot identity. */
   public SnapshotId getSnapshotId() {
     return snapshotId;
   }
 
-  /**
-   * Returns a textual description of the snapshot.
-   */
+  /** Returns a textual description of the snapshot. */
   public String getDescription() {
     return description;
   }
 
-  /**
-   * Returns all applicable publicly visible licenses.
-   */
+  /** Returns all applicable publicly visible licenses. */
   public List<LicenseId> getLicenses() {
     return licenses;
   }
 
   /**
    * Returns the status of the snapshot. A snapshot can be used to create other resources, such as
-   * disks, only after the snapshot has been successfully created and the status is set to
-   * {@code READY}.
+   * disks, only after the snapshot has been successfully created and the status is set to {@code
+   * READY}.
    */
   public Status getStatus() {
     return status;
   }
 
-  /**
-   * Returns the size of the snapshot (in GB).
-   */
+  /** Returns the size of the snapshot (in GB). */
   public Long getDiskSizeGb() {
     return diskSizeGb;
   }
 
-  /**
-   * Returns the identity of the source disk used to create this snapshot.
-   */
+  /** Returns the identity of the source disk used to create this snapshot. */
   public DiskId getSourceDisk() {
     return sourceDisk;
   }
@@ -389,9 +354,7 @@ public class SnapshotInfo implements Serializable {
     return storageBytesStatus;
   }
 
-  /**
-   * Returns a builder for the current snapshot.
-   */
+  /** Returns a builder for the current snapshot. */
   public Builder toBuilder() {
     return new BuilderImpl(this);
   }
@@ -415,16 +378,26 @@ public class SnapshotInfo implements Serializable {
 
   @Override
   public int hashCode() {
-    return Objects.hash(generatedId, creationTimestamp, snapshotId, description, status, diskSizeGb,
-        licenses, sourceDisk, sourceDiskId, storageBytes, storageBytesStatus);
+    return Objects.hash(
+        generatedId,
+        creationTimestamp,
+        snapshotId,
+        description,
+        status,
+        diskSizeGb,
+        licenses,
+        sourceDisk,
+        sourceDiskId,
+        storageBytes,
+        storageBytesStatus);
   }
 
   @Override
   public boolean equals(Object obj) {
     return obj == this
         || obj != null
-        && obj.getClass().equals(SnapshotInfo.class)
-        && Objects.equals(toPb(), ((SnapshotInfo) obj).toPb());
+            && obj.getClass().equals(SnapshotInfo.class)
+            && Objects.equals(toPb(), ((SnapshotInfo) obj).toPb());
   }
 
   SnapshotInfo setProjectId(String projectId) {
@@ -440,7 +413,8 @@ public class SnapshotInfo implements Serializable {
       snapshotPb.setId(new BigInteger(generatedId));
     }
     if (creationTimestamp != null) {
-      snapshotPb.setCreationTimestamp(TIMESTAMP_FORMATTER.print(creationTimestamp));
+      snapshotPb.setCreationTimestamp(
+          TIMESTAMP_FORMATTER.format(Instant.ofEpochMilli(creationTimestamp)));
     }
     snapshotPb.setName(snapshotId.getSnapshot());
     snapshotPb.setDescription(description);

@@ -4,34 +4,39 @@
 package com.google.firestore.v1beta1;
 
 /**
+ *
+ *
  * <pre>
  * The response for [Firestore.Listen][google.firestore.v1beta1.Firestore.Listen].
  * </pre>
  *
  * Protobuf type {@code google.firestore.v1beta1.ListenResponse}
  */
-public  final class ListenResponse extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class ListenResponse extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.firestore.v1beta1.ListenResponse)
     ListenResponseOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use ListenResponse.newBuilder() to construct.
   private ListenResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
-  private ListenResponse() {
-  }
+
+  private ListenResponse() {}
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private ListenResponse(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -43,111 +48,129 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          case 18:
+            {
+              com.google.firestore.v1beta1.TargetChange.Builder subBuilder = null;
+              if (responseTypeCase_ == 2) {
+                subBuilder =
+                    ((com.google.firestore.v1beta1.TargetChange) responseType_).toBuilder();
+              }
+              responseType_ =
+                  input.readMessage(
+                      com.google.firestore.v1beta1.TargetChange.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.firestore.v1beta1.TargetChange) responseType_);
+                responseType_ = subBuilder.buildPartial();
+              }
+              responseTypeCase_ = 2;
+              break;
             }
-            break;
-          }
-          case 18: {
-            com.google.firestore.v1beta1.TargetChange.Builder subBuilder = null;
-            if (responseTypeCase_ == 2) {
-              subBuilder = ((com.google.firestore.v1beta1.TargetChange) responseType_).toBuilder();
+          case 26:
+            {
+              com.google.firestore.v1beta1.DocumentChange.Builder subBuilder = null;
+              if (responseTypeCase_ == 3) {
+                subBuilder =
+                    ((com.google.firestore.v1beta1.DocumentChange) responseType_).toBuilder();
+              }
+              responseType_ =
+                  input.readMessage(
+                      com.google.firestore.v1beta1.DocumentChange.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.firestore.v1beta1.DocumentChange) responseType_);
+                responseType_ = subBuilder.buildPartial();
+              }
+              responseTypeCase_ = 3;
+              break;
             }
-            responseType_ =
-                input.readMessage(com.google.firestore.v1beta1.TargetChange.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.google.firestore.v1beta1.TargetChange) responseType_);
-              responseType_ = subBuilder.buildPartial();
+          case 34:
+            {
+              com.google.firestore.v1beta1.DocumentDelete.Builder subBuilder = null;
+              if (responseTypeCase_ == 4) {
+                subBuilder =
+                    ((com.google.firestore.v1beta1.DocumentDelete) responseType_).toBuilder();
+              }
+              responseType_ =
+                  input.readMessage(
+                      com.google.firestore.v1beta1.DocumentDelete.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.firestore.v1beta1.DocumentDelete) responseType_);
+                responseType_ = subBuilder.buildPartial();
+              }
+              responseTypeCase_ = 4;
+              break;
             }
-            responseTypeCase_ = 2;
-            break;
-          }
-          case 26: {
-            com.google.firestore.v1beta1.DocumentChange.Builder subBuilder = null;
-            if (responseTypeCase_ == 3) {
-              subBuilder = ((com.google.firestore.v1beta1.DocumentChange) responseType_).toBuilder();
+          case 42:
+            {
+              com.google.firestore.v1beta1.ExistenceFilter.Builder subBuilder = null;
+              if (responseTypeCase_ == 5) {
+                subBuilder =
+                    ((com.google.firestore.v1beta1.ExistenceFilter) responseType_).toBuilder();
+              }
+              responseType_ =
+                  input.readMessage(
+                      com.google.firestore.v1beta1.ExistenceFilter.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.firestore.v1beta1.ExistenceFilter) responseType_);
+                responseType_ = subBuilder.buildPartial();
+              }
+              responseTypeCase_ = 5;
+              break;
             }
-            responseType_ =
-                input.readMessage(com.google.firestore.v1beta1.DocumentChange.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.google.firestore.v1beta1.DocumentChange) responseType_);
-              responseType_ = subBuilder.buildPartial();
+          case 50:
+            {
+              com.google.firestore.v1beta1.DocumentRemove.Builder subBuilder = null;
+              if (responseTypeCase_ == 6) {
+                subBuilder =
+                    ((com.google.firestore.v1beta1.DocumentRemove) responseType_).toBuilder();
+              }
+              responseType_ =
+                  input.readMessage(
+                      com.google.firestore.v1beta1.DocumentRemove.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom((com.google.firestore.v1beta1.DocumentRemove) responseType_);
+                responseType_ = subBuilder.buildPartial();
+              }
+              responseTypeCase_ = 6;
+              break;
             }
-            responseTypeCase_ = 3;
-            break;
-          }
-          case 34: {
-            com.google.firestore.v1beta1.DocumentDelete.Builder subBuilder = null;
-            if (responseTypeCase_ == 4) {
-              subBuilder = ((com.google.firestore.v1beta1.DocumentDelete) responseType_).toBuilder();
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
             }
-            responseType_ =
-                input.readMessage(com.google.firestore.v1beta1.DocumentDelete.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.google.firestore.v1beta1.DocumentDelete) responseType_);
-              responseType_ = subBuilder.buildPartial();
-            }
-            responseTypeCase_ = 4;
-            break;
-          }
-          case 42: {
-            com.google.firestore.v1beta1.ExistenceFilter.Builder subBuilder = null;
-            if (responseTypeCase_ == 5) {
-              subBuilder = ((com.google.firestore.v1beta1.ExistenceFilter) responseType_).toBuilder();
-            }
-            responseType_ =
-                input.readMessage(com.google.firestore.v1beta1.ExistenceFilter.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.google.firestore.v1beta1.ExistenceFilter) responseType_);
-              responseType_ = subBuilder.buildPartial();
-            }
-            responseTypeCase_ = 5;
-            break;
-          }
-          case 50: {
-            com.google.firestore.v1beta1.DocumentRemove.Builder subBuilder = null;
-            if (responseTypeCase_ == 6) {
-              subBuilder = ((com.google.firestore.v1beta1.DocumentRemove) responseType_).toBuilder();
-            }
-            responseType_ =
-                input.readMessage(com.google.firestore.v1beta1.DocumentRemove.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom((com.google.firestore.v1beta1.DocumentRemove) responseType_);
-              responseType_ = subBuilder.buildPartial();
-            }
-            responseTypeCase_ = 6;
-            break;
-          }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.firestore.v1beta1.FirestoreProto.internal_static_google_firestore_v1beta1_ListenResponse_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.firestore.v1beta1.FirestoreProto
+        .internal_static_google_firestore_v1beta1_ListenResponse_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.firestore.v1beta1.FirestoreProto.internal_static_google_firestore_v1beta1_ListenResponse_fieldAccessorTable
+    return com.google.firestore.v1beta1.FirestoreProto
+        .internal_static_google_firestore_v1beta1_ListenResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.firestore.v1beta1.ListenResponse.class, com.google.firestore.v1beta1.ListenResponse.Builder.class);
+            com.google.firestore.v1beta1.ListenResponse.class,
+            com.google.firestore.v1beta1.ListenResponse.Builder.class);
   }
 
   private int responseTypeCase_ = 0;
   private java.lang.Object responseType_;
-  public enum ResponseTypeCase
-      implements com.google.protobuf.Internal.EnumLite {
+
+  public enum ResponseTypeCase implements com.google.protobuf.Internal.EnumLite {
     TARGET_CHANGE(2),
     DOCUMENT_CHANGE(3),
     DOCUMENT_DELETE(4),
@@ -155,12 +178,11 @@ private static final long serialVersionUID = 0L;
     FILTER(5),
     RESPONSETYPE_NOT_SET(0);
     private final int value;
+
     private ResponseTypeCase(int value) {
       this.value = value;
     }
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static ResponseTypeCase valueOf(int value) {
       return forNumber(value);
@@ -168,28 +190,36 @@ private static final long serialVersionUID = 0L;
 
     public static ResponseTypeCase forNumber(int value) {
       switch (value) {
-        case 2: return TARGET_CHANGE;
-        case 3: return DOCUMENT_CHANGE;
-        case 4: return DOCUMENT_DELETE;
-        case 6: return DOCUMENT_REMOVE;
-        case 5: return FILTER;
-        case 0: return RESPONSETYPE_NOT_SET;
-        default: return null;
+        case 2:
+          return TARGET_CHANGE;
+        case 3:
+          return DOCUMENT_CHANGE;
+        case 4:
+          return DOCUMENT_DELETE;
+        case 6:
+          return DOCUMENT_REMOVE;
+        case 5:
+          return FILTER;
+        case 0:
+          return RESPONSETYPE_NOT_SET;
+        default:
+          return null;
       }
     }
+
     public int getNumber() {
       return this.value;
     }
   };
 
-  public ResponseTypeCase
-  getResponseTypeCase() {
-    return ResponseTypeCase.forNumber(
-        responseTypeCase_);
+  public ResponseTypeCase getResponseTypeCase() {
+    return ResponseTypeCase.forNumber(responseTypeCase_);
   }
 
   public static final int TARGET_CHANGE_FIELD_NUMBER = 2;
   /**
+   *
+   *
    * <pre>
    * Targets have changed.
    * </pre>
@@ -200,6 +230,8 @@ private static final long serialVersionUID = 0L;
     return responseTypeCase_ == 2;
   }
   /**
+   *
+   *
    * <pre>
    * Targets have changed.
    * </pre>
@@ -208,11 +240,13 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.firestore.v1beta1.TargetChange getTargetChange() {
     if (responseTypeCase_ == 2) {
-       return (com.google.firestore.v1beta1.TargetChange) responseType_;
+      return (com.google.firestore.v1beta1.TargetChange) responseType_;
     }
     return com.google.firestore.v1beta1.TargetChange.getDefaultInstance();
   }
   /**
+   *
+   *
    * <pre>
    * Targets have changed.
    * </pre>
@@ -221,13 +255,15 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.firestore.v1beta1.TargetChangeOrBuilder getTargetChangeOrBuilder() {
     if (responseTypeCase_ == 2) {
-       return (com.google.firestore.v1beta1.TargetChange) responseType_;
+      return (com.google.firestore.v1beta1.TargetChange) responseType_;
     }
     return com.google.firestore.v1beta1.TargetChange.getDefaultInstance();
   }
 
   public static final int DOCUMENT_CHANGE_FIELD_NUMBER = 3;
   /**
+   *
+   *
    * <pre>
    * A [Document][google.firestore.v1beta1.Document] has changed.
    * </pre>
@@ -238,6 +274,8 @@ private static final long serialVersionUID = 0L;
     return responseTypeCase_ == 3;
   }
   /**
+   *
+   *
    * <pre>
    * A [Document][google.firestore.v1beta1.Document] has changed.
    * </pre>
@@ -246,11 +284,13 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.firestore.v1beta1.DocumentChange getDocumentChange() {
     if (responseTypeCase_ == 3) {
-       return (com.google.firestore.v1beta1.DocumentChange) responseType_;
+      return (com.google.firestore.v1beta1.DocumentChange) responseType_;
     }
     return com.google.firestore.v1beta1.DocumentChange.getDefaultInstance();
   }
   /**
+   *
+   *
    * <pre>
    * A [Document][google.firestore.v1beta1.Document] has changed.
    * </pre>
@@ -259,13 +299,15 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.firestore.v1beta1.DocumentChangeOrBuilder getDocumentChangeOrBuilder() {
     if (responseTypeCase_ == 3) {
-       return (com.google.firestore.v1beta1.DocumentChange) responseType_;
+      return (com.google.firestore.v1beta1.DocumentChange) responseType_;
     }
     return com.google.firestore.v1beta1.DocumentChange.getDefaultInstance();
   }
 
   public static final int DOCUMENT_DELETE_FIELD_NUMBER = 4;
   /**
+   *
+   *
    * <pre>
    * A [Document][google.firestore.v1beta1.Document] has been deleted.
    * </pre>
@@ -276,6 +318,8 @@ private static final long serialVersionUID = 0L;
     return responseTypeCase_ == 4;
   }
   /**
+   *
+   *
    * <pre>
    * A [Document][google.firestore.v1beta1.Document] has been deleted.
    * </pre>
@@ -284,11 +328,13 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.firestore.v1beta1.DocumentDelete getDocumentDelete() {
     if (responseTypeCase_ == 4) {
-       return (com.google.firestore.v1beta1.DocumentDelete) responseType_;
+      return (com.google.firestore.v1beta1.DocumentDelete) responseType_;
     }
     return com.google.firestore.v1beta1.DocumentDelete.getDefaultInstance();
   }
   /**
+   *
+   *
    * <pre>
    * A [Document][google.firestore.v1beta1.Document] has been deleted.
    * </pre>
@@ -297,13 +343,15 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.firestore.v1beta1.DocumentDeleteOrBuilder getDocumentDeleteOrBuilder() {
     if (responseTypeCase_ == 4) {
-       return (com.google.firestore.v1beta1.DocumentDelete) responseType_;
+      return (com.google.firestore.v1beta1.DocumentDelete) responseType_;
     }
     return com.google.firestore.v1beta1.DocumentDelete.getDefaultInstance();
   }
 
   public static final int DOCUMENT_REMOVE_FIELD_NUMBER = 6;
   /**
+   *
+   *
    * <pre>
    * A [Document][google.firestore.v1beta1.Document] has been removed from a target (because it is no longer
    * relevant to that target).
@@ -315,6 +363,8 @@ private static final long serialVersionUID = 0L;
     return responseTypeCase_ == 6;
   }
   /**
+   *
+   *
    * <pre>
    * A [Document][google.firestore.v1beta1.Document] has been removed from a target (because it is no longer
    * relevant to that target).
@@ -324,11 +374,13 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.firestore.v1beta1.DocumentRemove getDocumentRemove() {
     if (responseTypeCase_ == 6) {
-       return (com.google.firestore.v1beta1.DocumentRemove) responseType_;
+      return (com.google.firestore.v1beta1.DocumentRemove) responseType_;
     }
     return com.google.firestore.v1beta1.DocumentRemove.getDefaultInstance();
   }
   /**
+   *
+   *
    * <pre>
    * A [Document][google.firestore.v1beta1.Document] has been removed from a target (because it is no longer
    * relevant to that target).
@@ -338,13 +390,15 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.firestore.v1beta1.DocumentRemoveOrBuilder getDocumentRemoveOrBuilder() {
     if (responseTypeCase_ == 6) {
-       return (com.google.firestore.v1beta1.DocumentRemove) responseType_;
+      return (com.google.firestore.v1beta1.DocumentRemove) responseType_;
     }
     return com.google.firestore.v1beta1.DocumentRemove.getDefaultInstance();
   }
 
   public static final int FILTER_FIELD_NUMBER = 5;
   /**
+   *
+   *
    * <pre>
    * A filter to apply to the set of documents previously returned for the
    * given target.
@@ -358,6 +412,8 @@ private static final long serialVersionUID = 0L;
     return responseTypeCase_ == 5;
   }
   /**
+   *
+   *
    * <pre>
    * A filter to apply to the set of documents previously returned for the
    * given target.
@@ -369,11 +425,13 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.firestore.v1beta1.ExistenceFilter getFilter() {
     if (responseTypeCase_ == 5) {
-       return (com.google.firestore.v1beta1.ExistenceFilter) responseType_;
+      return (com.google.firestore.v1beta1.ExistenceFilter) responseType_;
     }
     return com.google.firestore.v1beta1.ExistenceFilter.getDefaultInstance();
   }
   /**
+   *
+   *
    * <pre>
    * A filter to apply to the set of documents previously returned for the
    * given target.
@@ -385,12 +443,14 @@ private static final long serialVersionUID = 0L;
    */
   public com.google.firestore.v1beta1.ExistenceFilterOrBuilder getFilterOrBuilder() {
     if (responseTypeCase_ == 5) {
-       return (com.google.firestore.v1beta1.ExistenceFilter) responseType_;
+      return (com.google.firestore.v1beta1.ExistenceFilter) responseType_;
     }
     return com.google.firestore.v1beta1.ExistenceFilter.getDefaultInstance();
   }
 
   private byte memoizedIsInitialized = -1;
+
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -400,8 +460,8 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  @java.lang.Override
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (responseTypeCase_ == 2) {
       output.writeMessage(2, (com.google.firestore.v1beta1.TargetChange) responseType_);
     }
@@ -420,30 +480,36 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
 
     size = 0;
     if (responseTypeCase_ == 2) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, (com.google.firestore.v1beta1.TargetChange) responseType_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              2, (com.google.firestore.v1beta1.TargetChange) responseType_);
     }
     if (responseTypeCase_ == 3) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, (com.google.firestore.v1beta1.DocumentChange) responseType_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              3, (com.google.firestore.v1beta1.DocumentChange) responseType_);
     }
     if (responseTypeCase_ == 4) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, (com.google.firestore.v1beta1.DocumentDelete) responseType_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              4, (com.google.firestore.v1beta1.DocumentDelete) responseType_);
     }
     if (responseTypeCase_ == 5) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(5, (com.google.firestore.v1beta1.ExistenceFilter) responseType_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              5, (com.google.firestore.v1beta1.ExistenceFilter) responseType_);
     }
     if (responseTypeCase_ == 6) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(6, (com.google.firestore.v1beta1.DocumentRemove) responseType_);
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              6, (com.google.firestore.v1beta1.DocumentRemove) responseType_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -453,37 +519,32 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.firestore.v1beta1.ListenResponse)) {
       return super.equals(obj);
     }
-    com.google.firestore.v1beta1.ListenResponse other = (com.google.firestore.v1beta1.ListenResponse) obj;
+    com.google.firestore.v1beta1.ListenResponse other =
+        (com.google.firestore.v1beta1.ListenResponse) obj;
 
     boolean result = true;
-    result = result && getResponseTypeCase().equals(
-        other.getResponseTypeCase());
+    result = result && getResponseTypeCase().equals(other.getResponseTypeCase());
     if (!result) return false;
     switch (responseTypeCase_) {
       case 2:
-        result = result && getTargetChange()
-            .equals(other.getTargetChange());
+        result = result && getTargetChange().equals(other.getTargetChange());
         break;
       case 3:
-        result = result && getDocumentChange()
-            .equals(other.getDocumentChange());
+        result = result && getDocumentChange().equals(other.getDocumentChange());
         break;
       case 4:
-        result = result && getDocumentDelete()
-            .equals(other.getDocumentDelete());
+        result = result && getDocumentDelete().equals(other.getDocumentDelete());
         break;
       case 6:
-        result = result && getDocumentRemove()
-            .equals(other.getDocumentRemove());
+        result = result && getDocumentRemove().equals(other.getDocumentRemove());
         break;
       case 5:
-        result = result && getFilter()
-            .equals(other.getFilter());
+        result = result && getFilter().equals(other.getFilter());
         break;
       case 0:
       default:
@@ -528,115 +589,127 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.firestore.v1beta1.ListenResponse parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.firestore.v1beta1.ListenResponse parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.firestore.v1beta1.ListenResponse parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.firestore.v1beta1.ListenResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.firestore.v1beta1.ListenResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.firestore.v1beta1.ListenResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.firestore.v1beta1.ListenResponse parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.firestore.v1beta1.ListenResponse parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.firestore.v1beta1.ListenResponse parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.firestore.v1beta1.ListenResponse parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
+
   public static com.google.firestore.v1beta1.ListenResponse parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.firestore.v1beta1.ListenResponse parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.firestore.v1beta1.ListenResponse parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.firestore.v1beta1.ListenResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  public Builder newBuilderForType() { return newBuilder(); }
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-  public static Builder newBuilder(com.google.firestore.v1beta1.ListenResponse prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+
+  public static Builder newBuilder(com.google.firestore.v1beta1.ListenResponse prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+
+  @java.lang.Override
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * The response for [Firestore.Listen][google.firestore.v1beta1.Firestore.Listen].
    * </pre>
    *
    * Protobuf type {@code google.firestore.v1beta1.ListenResponse}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.firestore.v1beta1.ListenResponse)
       com.google.firestore.v1beta1.ListenResponseOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.firestore.v1beta1.FirestoreProto.internal_static_google_firestore_v1beta1_ListenResponse_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.firestore.v1beta1.FirestoreProto
+          .internal_static_google_firestore_v1beta1_ListenResponse_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.firestore.v1beta1.FirestoreProto.internal_static_google_firestore_v1beta1_ListenResponse_fieldAccessorTable
+      return com.google.firestore.v1beta1.FirestoreProto
+          .internal_static_google_firestore_v1beta1_ListenResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.firestore.v1beta1.ListenResponse.class, com.google.firestore.v1beta1.ListenResponse.Builder.class);
+              com.google.firestore.v1beta1.ListenResponse.class,
+              com.google.firestore.v1beta1.ListenResponse.Builder.class);
     }
 
     // Construct using com.google.firestore.v1beta1.ListenResponse.newBuilder()
@@ -644,16 +717,16 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       responseTypeCase_ = 0;
@@ -661,15 +734,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.firestore.v1beta1.FirestoreProto.internal_static_google_firestore_v1beta1_ListenResponse_descriptor;
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.firestore.v1beta1.FirestoreProto
+          .internal_static_google_firestore_v1beta1_ListenResponse_descriptor;
     }
 
+    @java.lang.Override
     public com.google.firestore.v1beta1.ListenResponse getDefaultInstanceForType() {
       return com.google.firestore.v1beta1.ListenResponse.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.firestore.v1beta1.ListenResponse build() {
       com.google.firestore.v1beta1.ListenResponse result = buildPartial();
       if (!result.isInitialized()) {
@@ -678,8 +754,10 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.firestore.v1beta1.ListenResponse buildPartial() {
-      com.google.firestore.v1beta1.ListenResponse result = new com.google.firestore.v1beta1.ListenResponse(this);
+      com.google.firestore.v1beta1.ListenResponse result =
+          new com.google.firestore.v1beta1.ListenResponse(this);
       if (responseTypeCase_ == 2) {
         if (targetChangeBuilder_ == null) {
           result.responseType_ = responseType_;
@@ -720,35 +798,43 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+
+    @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+    @java.lang.Override
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+    @java.lang.Override
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
+    @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
+    @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.firestore.v1beta1.ListenResponse) {
-        return mergeFrom((com.google.firestore.v1beta1.ListenResponse)other);
+        return mergeFrom((com.google.firestore.v1beta1.ListenResponse) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -758,39 +844,47 @@ private static final long serialVersionUID = 0L;
     public Builder mergeFrom(com.google.firestore.v1beta1.ListenResponse other) {
       if (other == com.google.firestore.v1beta1.ListenResponse.getDefaultInstance()) return this;
       switch (other.getResponseTypeCase()) {
-        case TARGET_CHANGE: {
-          mergeTargetChange(other.getTargetChange());
-          break;
-        }
-        case DOCUMENT_CHANGE: {
-          mergeDocumentChange(other.getDocumentChange());
-          break;
-        }
-        case DOCUMENT_DELETE: {
-          mergeDocumentDelete(other.getDocumentDelete());
-          break;
-        }
-        case DOCUMENT_REMOVE: {
-          mergeDocumentRemove(other.getDocumentRemove());
-          break;
-        }
-        case FILTER: {
-          mergeFilter(other.getFilter());
-          break;
-        }
-        case RESPONSETYPE_NOT_SET: {
-          break;
-        }
+        case TARGET_CHANGE:
+          {
+            mergeTargetChange(other.getTargetChange());
+            break;
+          }
+        case DOCUMENT_CHANGE:
+          {
+            mergeDocumentChange(other.getDocumentChange());
+            break;
+          }
+        case DOCUMENT_DELETE:
+          {
+            mergeDocumentDelete(other.getDocumentDelete());
+            break;
+          }
+        case DOCUMENT_REMOVE:
+          {
+            mergeDocumentRemove(other.getDocumentRemove());
+            break;
+          }
+        case FILTER:
+          {
+            mergeFilter(other.getFilter());
+            break;
+          }
+        case RESPONSETYPE_NOT_SET:
+          {
+            break;
+          }
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -808,12 +902,12 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int responseTypeCase_ = 0;
     private java.lang.Object responseType_;
-    public ResponseTypeCase
-        getResponseTypeCase() {
-      return ResponseTypeCase.forNumber(
-          responseTypeCase_);
+
+    public ResponseTypeCase getResponseTypeCase() {
+      return ResponseTypeCase.forNumber(responseTypeCase_);
     }
 
     public Builder clearResponseType() {
@@ -823,10 +917,14 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.firestore.v1beta1.TargetChange, com.google.firestore.v1beta1.TargetChange.Builder, com.google.firestore.v1beta1.TargetChangeOrBuilder> targetChangeBuilder_;
+            com.google.firestore.v1beta1.TargetChange,
+            com.google.firestore.v1beta1.TargetChange.Builder,
+            com.google.firestore.v1beta1.TargetChangeOrBuilder>
+        targetChangeBuilder_;
     /**
+     *
+     *
      * <pre>
      * Targets have changed.
      * </pre>
@@ -837,6 +935,8 @@ private static final long serialVersionUID = 0L;
       return responseTypeCase_ == 2;
     }
     /**
+     *
+     *
      * <pre>
      * Targets have changed.
      * </pre>
@@ -857,6 +957,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Targets have changed.
      * </pre>
@@ -877,6 +979,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Targets have changed.
      * </pre>
@@ -895,6 +999,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Targets have changed.
      * </pre>
@@ -903,10 +1009,13 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeTargetChange(com.google.firestore.v1beta1.TargetChange value) {
       if (targetChangeBuilder_ == null) {
-        if (responseTypeCase_ == 2 &&
-            responseType_ != com.google.firestore.v1beta1.TargetChange.getDefaultInstance()) {
-          responseType_ = com.google.firestore.v1beta1.TargetChange.newBuilder((com.google.firestore.v1beta1.TargetChange) responseType_)
-              .mergeFrom(value).buildPartial();
+        if (responseTypeCase_ == 2
+            && responseType_ != com.google.firestore.v1beta1.TargetChange.getDefaultInstance()) {
+          responseType_ =
+              com.google.firestore.v1beta1.TargetChange.newBuilder(
+                      (com.google.firestore.v1beta1.TargetChange) responseType_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           responseType_ = value;
         }
@@ -921,6 +1030,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Targets have changed.
      * </pre>
@@ -944,6 +1055,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Targets have changed.
      * </pre>
@@ -954,6 +1067,8 @@ private static final long serialVersionUID = 0L;
       return getTargetChangeFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Targets have changed.
      * </pre>
@@ -971,6 +1086,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Targets have changed.
      * </pre>
@@ -978,27 +1095,38 @@ private static final long serialVersionUID = 0L;
      * <code>.google.firestore.v1beta1.TargetChange target_change = 2;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.firestore.v1beta1.TargetChange, com.google.firestore.v1beta1.TargetChange.Builder, com.google.firestore.v1beta1.TargetChangeOrBuilder> 
+            com.google.firestore.v1beta1.TargetChange,
+            com.google.firestore.v1beta1.TargetChange.Builder,
+            com.google.firestore.v1beta1.TargetChangeOrBuilder>
         getTargetChangeFieldBuilder() {
       if (targetChangeBuilder_ == null) {
         if (!(responseTypeCase_ == 2)) {
           responseType_ = com.google.firestore.v1beta1.TargetChange.getDefaultInstance();
         }
-        targetChangeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.firestore.v1beta1.TargetChange, com.google.firestore.v1beta1.TargetChange.Builder, com.google.firestore.v1beta1.TargetChangeOrBuilder>(
+        targetChangeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.firestore.v1beta1.TargetChange,
+                com.google.firestore.v1beta1.TargetChange.Builder,
+                com.google.firestore.v1beta1.TargetChangeOrBuilder>(
                 (com.google.firestore.v1beta1.TargetChange) responseType_,
                 getParentForChildren(),
                 isClean());
         responseType_ = null;
       }
       responseTypeCase_ = 2;
-      onChanged();;
+      onChanged();
+      ;
       return targetChangeBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.firestore.v1beta1.DocumentChange, com.google.firestore.v1beta1.DocumentChange.Builder, com.google.firestore.v1beta1.DocumentChangeOrBuilder> documentChangeBuilder_;
+            com.google.firestore.v1beta1.DocumentChange,
+            com.google.firestore.v1beta1.DocumentChange.Builder,
+            com.google.firestore.v1beta1.DocumentChangeOrBuilder>
+        documentChangeBuilder_;
     /**
+     *
+     *
      * <pre>
      * A [Document][google.firestore.v1beta1.Document] has changed.
      * </pre>
@@ -1009,6 +1137,8 @@ private static final long serialVersionUID = 0L;
       return responseTypeCase_ == 3;
     }
     /**
+     *
+     *
      * <pre>
      * A [Document][google.firestore.v1beta1.Document] has changed.
      * </pre>
@@ -1029,6 +1159,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A [Document][google.firestore.v1beta1.Document] has changed.
      * </pre>
@@ -1049,6 +1181,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A [Document][google.firestore.v1beta1.Document] has changed.
      * </pre>
@@ -1067,6 +1201,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A [Document][google.firestore.v1beta1.Document] has changed.
      * </pre>
@@ -1075,10 +1211,13 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeDocumentChange(com.google.firestore.v1beta1.DocumentChange value) {
       if (documentChangeBuilder_ == null) {
-        if (responseTypeCase_ == 3 &&
-            responseType_ != com.google.firestore.v1beta1.DocumentChange.getDefaultInstance()) {
-          responseType_ = com.google.firestore.v1beta1.DocumentChange.newBuilder((com.google.firestore.v1beta1.DocumentChange) responseType_)
-              .mergeFrom(value).buildPartial();
+        if (responseTypeCase_ == 3
+            && responseType_ != com.google.firestore.v1beta1.DocumentChange.getDefaultInstance()) {
+          responseType_ =
+              com.google.firestore.v1beta1.DocumentChange.newBuilder(
+                      (com.google.firestore.v1beta1.DocumentChange) responseType_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           responseType_ = value;
         }
@@ -1093,6 +1232,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A [Document][google.firestore.v1beta1.Document] has changed.
      * </pre>
@@ -1116,6 +1257,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A [Document][google.firestore.v1beta1.Document] has changed.
      * </pre>
@@ -1126,6 +1269,8 @@ private static final long serialVersionUID = 0L;
       return getDocumentChangeFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * A [Document][google.firestore.v1beta1.Document] has changed.
      * </pre>
@@ -1143,6 +1288,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A [Document][google.firestore.v1beta1.Document] has changed.
      * </pre>
@@ -1150,27 +1297,38 @@ private static final long serialVersionUID = 0L;
      * <code>.google.firestore.v1beta1.DocumentChange document_change = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.firestore.v1beta1.DocumentChange, com.google.firestore.v1beta1.DocumentChange.Builder, com.google.firestore.v1beta1.DocumentChangeOrBuilder> 
+            com.google.firestore.v1beta1.DocumentChange,
+            com.google.firestore.v1beta1.DocumentChange.Builder,
+            com.google.firestore.v1beta1.DocumentChangeOrBuilder>
         getDocumentChangeFieldBuilder() {
       if (documentChangeBuilder_ == null) {
         if (!(responseTypeCase_ == 3)) {
           responseType_ = com.google.firestore.v1beta1.DocumentChange.getDefaultInstance();
         }
-        documentChangeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.firestore.v1beta1.DocumentChange, com.google.firestore.v1beta1.DocumentChange.Builder, com.google.firestore.v1beta1.DocumentChangeOrBuilder>(
+        documentChangeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.firestore.v1beta1.DocumentChange,
+                com.google.firestore.v1beta1.DocumentChange.Builder,
+                com.google.firestore.v1beta1.DocumentChangeOrBuilder>(
                 (com.google.firestore.v1beta1.DocumentChange) responseType_,
                 getParentForChildren(),
                 isClean());
         responseType_ = null;
       }
       responseTypeCase_ = 3;
-      onChanged();;
+      onChanged();
+      ;
       return documentChangeBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.firestore.v1beta1.DocumentDelete, com.google.firestore.v1beta1.DocumentDelete.Builder, com.google.firestore.v1beta1.DocumentDeleteOrBuilder> documentDeleteBuilder_;
+            com.google.firestore.v1beta1.DocumentDelete,
+            com.google.firestore.v1beta1.DocumentDelete.Builder,
+            com.google.firestore.v1beta1.DocumentDeleteOrBuilder>
+        documentDeleteBuilder_;
     /**
+     *
+     *
      * <pre>
      * A [Document][google.firestore.v1beta1.Document] has been deleted.
      * </pre>
@@ -1181,6 +1339,8 @@ private static final long serialVersionUID = 0L;
       return responseTypeCase_ == 4;
     }
     /**
+     *
+     *
      * <pre>
      * A [Document][google.firestore.v1beta1.Document] has been deleted.
      * </pre>
@@ -1201,6 +1361,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A [Document][google.firestore.v1beta1.Document] has been deleted.
      * </pre>
@@ -1221,6 +1383,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A [Document][google.firestore.v1beta1.Document] has been deleted.
      * </pre>
@@ -1239,6 +1403,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A [Document][google.firestore.v1beta1.Document] has been deleted.
      * </pre>
@@ -1247,10 +1413,13 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeDocumentDelete(com.google.firestore.v1beta1.DocumentDelete value) {
       if (documentDeleteBuilder_ == null) {
-        if (responseTypeCase_ == 4 &&
-            responseType_ != com.google.firestore.v1beta1.DocumentDelete.getDefaultInstance()) {
-          responseType_ = com.google.firestore.v1beta1.DocumentDelete.newBuilder((com.google.firestore.v1beta1.DocumentDelete) responseType_)
-              .mergeFrom(value).buildPartial();
+        if (responseTypeCase_ == 4
+            && responseType_ != com.google.firestore.v1beta1.DocumentDelete.getDefaultInstance()) {
+          responseType_ =
+              com.google.firestore.v1beta1.DocumentDelete.newBuilder(
+                      (com.google.firestore.v1beta1.DocumentDelete) responseType_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           responseType_ = value;
         }
@@ -1265,6 +1434,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A [Document][google.firestore.v1beta1.Document] has been deleted.
      * </pre>
@@ -1288,6 +1459,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A [Document][google.firestore.v1beta1.Document] has been deleted.
      * </pre>
@@ -1298,6 +1471,8 @@ private static final long serialVersionUID = 0L;
       return getDocumentDeleteFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * A [Document][google.firestore.v1beta1.Document] has been deleted.
      * </pre>
@@ -1315,6 +1490,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A [Document][google.firestore.v1beta1.Document] has been deleted.
      * </pre>
@@ -1322,27 +1499,38 @@ private static final long serialVersionUID = 0L;
      * <code>.google.firestore.v1beta1.DocumentDelete document_delete = 4;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.firestore.v1beta1.DocumentDelete, com.google.firestore.v1beta1.DocumentDelete.Builder, com.google.firestore.v1beta1.DocumentDeleteOrBuilder> 
+            com.google.firestore.v1beta1.DocumentDelete,
+            com.google.firestore.v1beta1.DocumentDelete.Builder,
+            com.google.firestore.v1beta1.DocumentDeleteOrBuilder>
         getDocumentDeleteFieldBuilder() {
       if (documentDeleteBuilder_ == null) {
         if (!(responseTypeCase_ == 4)) {
           responseType_ = com.google.firestore.v1beta1.DocumentDelete.getDefaultInstance();
         }
-        documentDeleteBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.firestore.v1beta1.DocumentDelete, com.google.firestore.v1beta1.DocumentDelete.Builder, com.google.firestore.v1beta1.DocumentDeleteOrBuilder>(
+        documentDeleteBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.firestore.v1beta1.DocumentDelete,
+                com.google.firestore.v1beta1.DocumentDelete.Builder,
+                com.google.firestore.v1beta1.DocumentDeleteOrBuilder>(
                 (com.google.firestore.v1beta1.DocumentDelete) responseType_,
                 getParentForChildren(),
                 isClean());
         responseType_ = null;
       }
       responseTypeCase_ = 4;
-      onChanged();;
+      onChanged();
+      ;
       return documentDeleteBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.firestore.v1beta1.DocumentRemove, com.google.firestore.v1beta1.DocumentRemove.Builder, com.google.firestore.v1beta1.DocumentRemoveOrBuilder> documentRemoveBuilder_;
+            com.google.firestore.v1beta1.DocumentRemove,
+            com.google.firestore.v1beta1.DocumentRemove.Builder,
+            com.google.firestore.v1beta1.DocumentRemoveOrBuilder>
+        documentRemoveBuilder_;
     /**
+     *
+     *
      * <pre>
      * A [Document][google.firestore.v1beta1.Document] has been removed from a target (because it is no longer
      * relevant to that target).
@@ -1354,6 +1542,8 @@ private static final long serialVersionUID = 0L;
       return responseTypeCase_ == 6;
     }
     /**
+     *
+     *
      * <pre>
      * A [Document][google.firestore.v1beta1.Document] has been removed from a target (because it is no longer
      * relevant to that target).
@@ -1375,6 +1565,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A [Document][google.firestore.v1beta1.Document] has been removed from a target (because it is no longer
      * relevant to that target).
@@ -1396,6 +1588,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A [Document][google.firestore.v1beta1.Document] has been removed from a target (because it is no longer
      * relevant to that target).
@@ -1415,6 +1609,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A [Document][google.firestore.v1beta1.Document] has been removed from a target (because it is no longer
      * relevant to that target).
@@ -1424,10 +1620,13 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeDocumentRemove(com.google.firestore.v1beta1.DocumentRemove value) {
       if (documentRemoveBuilder_ == null) {
-        if (responseTypeCase_ == 6 &&
-            responseType_ != com.google.firestore.v1beta1.DocumentRemove.getDefaultInstance()) {
-          responseType_ = com.google.firestore.v1beta1.DocumentRemove.newBuilder((com.google.firestore.v1beta1.DocumentRemove) responseType_)
-              .mergeFrom(value).buildPartial();
+        if (responseTypeCase_ == 6
+            && responseType_ != com.google.firestore.v1beta1.DocumentRemove.getDefaultInstance()) {
+          responseType_ =
+              com.google.firestore.v1beta1.DocumentRemove.newBuilder(
+                      (com.google.firestore.v1beta1.DocumentRemove) responseType_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           responseType_ = value;
         }
@@ -1442,6 +1641,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A [Document][google.firestore.v1beta1.Document] has been removed from a target (because it is no longer
      * relevant to that target).
@@ -1466,6 +1667,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A [Document][google.firestore.v1beta1.Document] has been removed from a target (because it is no longer
      * relevant to that target).
@@ -1477,6 +1680,8 @@ private static final long serialVersionUID = 0L;
       return getDocumentRemoveFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * A [Document][google.firestore.v1beta1.Document] has been removed from a target (because it is no longer
      * relevant to that target).
@@ -1495,6 +1700,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A [Document][google.firestore.v1beta1.Document] has been removed from a target (because it is no longer
      * relevant to that target).
@@ -1503,27 +1710,38 @@ private static final long serialVersionUID = 0L;
      * <code>.google.firestore.v1beta1.DocumentRemove document_remove = 6;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.firestore.v1beta1.DocumentRemove, com.google.firestore.v1beta1.DocumentRemove.Builder, com.google.firestore.v1beta1.DocumentRemoveOrBuilder> 
+            com.google.firestore.v1beta1.DocumentRemove,
+            com.google.firestore.v1beta1.DocumentRemove.Builder,
+            com.google.firestore.v1beta1.DocumentRemoveOrBuilder>
         getDocumentRemoveFieldBuilder() {
       if (documentRemoveBuilder_ == null) {
         if (!(responseTypeCase_ == 6)) {
           responseType_ = com.google.firestore.v1beta1.DocumentRemove.getDefaultInstance();
         }
-        documentRemoveBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.firestore.v1beta1.DocumentRemove, com.google.firestore.v1beta1.DocumentRemove.Builder, com.google.firestore.v1beta1.DocumentRemoveOrBuilder>(
+        documentRemoveBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.firestore.v1beta1.DocumentRemove,
+                com.google.firestore.v1beta1.DocumentRemove.Builder,
+                com.google.firestore.v1beta1.DocumentRemoveOrBuilder>(
                 (com.google.firestore.v1beta1.DocumentRemove) responseType_,
                 getParentForChildren(),
                 isClean());
         responseType_ = null;
       }
       responseTypeCase_ = 6;
-      onChanged();;
+      onChanged();
+      ;
       return documentRemoveBuilder_;
     }
 
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.firestore.v1beta1.ExistenceFilter, com.google.firestore.v1beta1.ExistenceFilter.Builder, com.google.firestore.v1beta1.ExistenceFilterOrBuilder> filterBuilder_;
+            com.google.firestore.v1beta1.ExistenceFilter,
+            com.google.firestore.v1beta1.ExistenceFilter.Builder,
+            com.google.firestore.v1beta1.ExistenceFilterOrBuilder>
+        filterBuilder_;
     /**
+     *
+     *
      * <pre>
      * A filter to apply to the set of documents previously returned for the
      * given target.
@@ -1537,6 +1755,8 @@ private static final long serialVersionUID = 0L;
       return responseTypeCase_ == 5;
     }
     /**
+     *
+     *
      * <pre>
      * A filter to apply to the set of documents previously returned for the
      * given target.
@@ -1560,6 +1780,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A filter to apply to the set of documents previously returned for the
      * given target.
@@ -1583,6 +1805,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A filter to apply to the set of documents previously returned for the
      * given target.
@@ -1592,8 +1816,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.firestore.v1beta1.ExistenceFilter filter = 5;</code>
      */
-    public Builder setFilter(
-        com.google.firestore.v1beta1.ExistenceFilter.Builder builderForValue) {
+    public Builder setFilter(com.google.firestore.v1beta1.ExistenceFilter.Builder builderForValue) {
       if (filterBuilder_ == null) {
         responseType_ = builderForValue.build();
         onChanged();
@@ -1604,6 +1827,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A filter to apply to the set of documents previously returned for the
      * given target.
@@ -1615,10 +1840,13 @@ private static final long serialVersionUID = 0L;
      */
     public Builder mergeFilter(com.google.firestore.v1beta1.ExistenceFilter value) {
       if (filterBuilder_ == null) {
-        if (responseTypeCase_ == 5 &&
-            responseType_ != com.google.firestore.v1beta1.ExistenceFilter.getDefaultInstance()) {
-          responseType_ = com.google.firestore.v1beta1.ExistenceFilter.newBuilder((com.google.firestore.v1beta1.ExistenceFilter) responseType_)
-              .mergeFrom(value).buildPartial();
+        if (responseTypeCase_ == 5
+            && responseType_ != com.google.firestore.v1beta1.ExistenceFilter.getDefaultInstance()) {
+          responseType_ =
+              com.google.firestore.v1beta1.ExistenceFilter.newBuilder(
+                      (com.google.firestore.v1beta1.ExistenceFilter) responseType_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           responseType_ = value;
         }
@@ -1633,6 +1861,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A filter to apply to the set of documents previously returned for the
      * given target.
@@ -1659,6 +1889,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * A filter to apply to the set of documents previously returned for the
      * given target.
@@ -1672,6 +1904,8 @@ private static final long serialVersionUID = 0L;
       return getFilterFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * A filter to apply to the set of documents previously returned for the
      * given target.
@@ -1692,6 +1926,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * A filter to apply to the set of documents previously returned for the
      * given target.
@@ -1702,39 +1938,47 @@ private static final long serialVersionUID = 0L;
      * <code>.google.firestore.v1beta1.ExistenceFilter filter = 5;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.firestore.v1beta1.ExistenceFilter, com.google.firestore.v1beta1.ExistenceFilter.Builder, com.google.firestore.v1beta1.ExistenceFilterOrBuilder> 
+            com.google.firestore.v1beta1.ExistenceFilter,
+            com.google.firestore.v1beta1.ExistenceFilter.Builder,
+            com.google.firestore.v1beta1.ExistenceFilterOrBuilder>
         getFilterFieldBuilder() {
       if (filterBuilder_ == null) {
         if (!(responseTypeCase_ == 5)) {
           responseType_ = com.google.firestore.v1beta1.ExistenceFilter.getDefaultInstance();
         }
-        filterBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.firestore.v1beta1.ExistenceFilter, com.google.firestore.v1beta1.ExistenceFilter.Builder, com.google.firestore.v1beta1.ExistenceFilterOrBuilder>(
+        filterBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.firestore.v1beta1.ExistenceFilter,
+                com.google.firestore.v1beta1.ExistenceFilter.Builder,
+                com.google.firestore.v1beta1.ExistenceFilterOrBuilder>(
                 (com.google.firestore.v1beta1.ExistenceFilter) responseType_,
                 getParentForChildren(),
                 isClean());
         responseType_ = null;
       }
       responseTypeCase_ = 5;
-      onChanged();;
+      onChanged();
+      ;
       return filterBuilder_;
     }
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+
+    @java.lang.Override
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
     }
-
 
     // @@protoc_insertion_point(builder_scope:google.firestore.v1beta1.ListenResponse)
   }
 
   // @@protoc_insertion_point(class_scope:google.firestore.v1beta1.ListenResponse)
   private static final com.google.firestore.v1beta1.ListenResponse DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.firestore.v1beta1.ListenResponse();
   }
@@ -1743,15 +1987,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<ListenResponse>
-      PARSER = new com.google.protobuf.AbstractParser<ListenResponse>() {
-    public ListenResponse parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-        return new ListenResponse(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<ListenResponse> PARSER =
+      new com.google.protobuf.AbstractParser<ListenResponse>() {
+        @java.lang.Override
+        public ListenResponse parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new ListenResponse(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<ListenResponse> parser() {
     return PARSER;
@@ -1762,9 +2007,8 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.firestore.v1beta1.ListenResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

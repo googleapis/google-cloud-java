@@ -3,11 +3,14 @@
 
 package com.google.monitoring.v3;
 
-public interface DeleteGroupRequestOrBuilder extends
+public interface DeleteGroupRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.monitoring.v3.DeleteGroupRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The group to delete. The format is
    * `"projects/{project_id_or_number}/groups/{group_id}"`.
@@ -17,6 +20,8 @@ public interface DeleteGroupRequestOrBuilder extends
    */
   java.lang.String getName();
   /**
+   *
+   *
    * <pre>
    * The group to delete. The format is
    * `"projects/{project_id_or_number}/groups/{group_id}"`.
@@ -24,6 +29,5 @@ public interface DeleteGroupRequestOrBuilder extends
    *
    * <code>string name = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getNameBytes();
+  com.google.protobuf.ByteString getNameBytes();
 }

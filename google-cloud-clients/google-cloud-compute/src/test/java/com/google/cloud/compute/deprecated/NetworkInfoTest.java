@@ -20,10 +20,8 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 
 import com.google.common.collect.ImmutableList;
-
-import org.junit.Test;
-
 import java.util.List;
+import org.junit.Test;
 
 public class NetworkInfoTest {
 
@@ -108,9 +106,8 @@ public class NetworkInfoTest {
 
   @Test
   public void testSetProjectId() {
-    NetworkInfo networkInfo = NETWORK_INFO.toBuilder()
-        .setNetworkId(NetworkId.of("network"))
-        .build();
+    NetworkInfo networkInfo =
+        NETWORK_INFO.toBuilder().setNetworkId(NetworkId.of("network")).build();
     compareNetworkInfo(NETWORK_INFO, networkInfo.setProjectId("project"));
   }
 

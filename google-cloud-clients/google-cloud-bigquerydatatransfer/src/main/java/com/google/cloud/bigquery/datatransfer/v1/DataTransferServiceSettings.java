@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -279,7 +279,8 @@ public class DataTransferServiceSettings extends ClientSettings<DataTransferServ
 
     /** Returns the builder for the settings used for calls to listTransferConfigs. */
     public PagedCallSettings.Builder<
-            ListTransferConfigsRequest, ListTransferConfigsResponse,
+            ListTransferConfigsRequest,
+            ListTransferConfigsResponse,
             ListTransferConfigsPagedResponse>
         listTransferConfigsSettings() {
       return getStubSettingsBuilder().listTransferConfigsSettings();

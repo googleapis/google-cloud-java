@@ -37,17 +37,17 @@ public class DatastoreOptionsTest {
   private DatastoreRpc datastoreRpc;
   private DatastoreOptions.Builder options;
 
-  @Rule
-  public ExpectedException thrown = ExpectedException.none();
+  @Rule public ExpectedException thrown = ExpectedException.none();
 
   @Before
   public void setUp() {
     datastoreRpcFactory = EasyMock.createMock(DatastoreRpcFactory.class);
     datastoreRpc = EasyMock.createMock(DatastoreRpc.class);
-    options = DatastoreOptions.newBuilder()
-        .setServiceRpcFactory(datastoreRpcFactory)
-        .setProjectId(PROJECT_ID)
-        .setHost("http://localhost:" + PORT);
+    options =
+        DatastoreOptions.newBuilder()
+            .setServiceRpcFactory(datastoreRpcFactory)
+            .setProjectId(PROJECT_ID)
+            .setHost("http://localhost:" + PORT);
     EasyMock.expect(datastoreRpcFactory.create(EasyMock.anyObject(DatastoreOptions.class)))
         .andReturn(datastoreRpc)
         .anyTimes();

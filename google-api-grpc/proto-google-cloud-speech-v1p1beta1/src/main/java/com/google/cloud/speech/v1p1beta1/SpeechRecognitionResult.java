@@ -4,21 +4,24 @@
 package com.google.cloud.speech.v1p1beta1;
 
 /**
+ *
+ *
  * <pre>
  * A speech recognition result corresponding to a portion of the audio.
  * </pre>
  *
  * Protobuf type {@code google.cloud.speech.v1p1beta1.SpeechRecognitionResult}
  */
-public  final class SpeechRecognitionResult extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class SpeechRecognitionResult extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.speech.v1p1beta1.SpeechRecognitionResult)
     SpeechRecognitionResultOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use SpeechRecognitionResult.newBuilder() to construct.
   private SpeechRecognitionResult(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private SpeechRecognitionResult() {
     alternatives_ = java.util.Collections.emptyList();
     channelTag_ = 0;
@@ -26,15 +29,18 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private SpeechRecognitionResult(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -46,40 +52,45 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          case 10:
+            {
+              if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
+                alternatives_ =
+                    new java.util.ArrayList<
+                        com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative>();
+                mutable_bitField0_ |= 0x00000001;
+              }
+              alternatives_.add(
+                  input.readMessage(
+                      com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative.parser(),
+                      extensionRegistry));
+              break;
             }
-            break;
-          }
-          case 10: {
-            if (!((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
-              alternatives_ = new java.util.ArrayList<com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative>();
-              mutable_bitField0_ |= 0x00000001;
+          case 16:
+            {
+              channelTag_ = input.readInt32();
+              break;
             }
-            alternatives_.add(
-                input.readMessage(com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative.parser(), extensionRegistry));
-            break;
-          }
-          case 16: {
+          case 42:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            channelTag_ = input.readInt32();
-            break;
-          }
-          case 42: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            languageCode_ = s;
-            break;
-          }
+              languageCode_ = s;
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000001) == 0x00000001)) {
         alternatives_ = java.util.Collections.unmodifiableList(alternatives_);
@@ -88,22 +99,29 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.speech.v1p1beta1.SpeechProto.internal_static_google_cloud_speech_v1p1beta1_SpeechRecognitionResult_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.speech.v1p1beta1.SpeechProto
+        .internal_static_google_cloud_speech_v1p1beta1_SpeechRecognitionResult_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.speech.v1p1beta1.SpeechProto.internal_static_google_cloud_speech_v1p1beta1_SpeechRecognitionResult_fieldAccessorTable
+    return com.google.cloud.speech.v1p1beta1.SpeechProto
+        .internal_static_google_cloud_speech_v1p1beta1_SpeechRecognitionResult_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.speech.v1p1beta1.SpeechRecognitionResult.class, com.google.cloud.speech.v1p1beta1.SpeechRecognitionResult.Builder.class);
+            com.google.cloud.speech.v1p1beta1.SpeechRecognitionResult.class,
+            com.google.cloud.speech.v1p1beta1.SpeechRecognitionResult.Builder.class);
   }
 
   private int bitField0_;
   public static final int ALTERNATIVES_FIELD_NUMBER = 1;
-  private java.util.List<com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative> alternatives_;
+  private java.util.List<com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative>
+      alternatives_;
   /**
+   *
+   *
    * <pre>
    * Output only. May contain one or more recognition hypotheses (up to the
    * maximum specified in `max_alternatives`).
@@ -111,12 +129,16 @@ private static final long serialVersionUID = 0L;
    * alternative being the most probable, as ranked by the recognizer.
    * </pre>
    *
-   * <code>repeated .google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative alternatives = 1;</code>
+   * <code>repeated .google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative alternatives = 1;
+   * </code>
    */
-  public java.util.List<com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative> getAlternativesList() {
+  public java.util.List<com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative>
+      getAlternativesList() {
     return alternatives_;
   }
   /**
+   *
+   *
    * <pre>
    * Output only. May contain one or more recognition hypotheses (up to the
    * maximum specified in `max_alternatives`).
@@ -124,13 +146,17 @@ private static final long serialVersionUID = 0L;
    * alternative being the most probable, as ranked by the recognizer.
    * </pre>
    *
-   * <code>repeated .google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative alternatives = 1;</code>
+   * <code>repeated .google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative alternatives = 1;
+   * </code>
    */
-  public java.util.List<? extends com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternativeOrBuilder> 
+  public java.util.List<
+          ? extends com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternativeOrBuilder>
       getAlternativesOrBuilderList() {
     return alternatives_;
   }
   /**
+   *
+   *
    * <pre>
    * Output only. May contain one or more recognition hypotheses (up to the
    * maximum specified in `max_alternatives`).
@@ -138,12 +164,15 @@ private static final long serialVersionUID = 0L;
    * alternative being the most probable, as ranked by the recognizer.
    * </pre>
    *
-   * <code>repeated .google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative alternatives = 1;</code>
+   * <code>repeated .google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative alternatives = 1;
+   * </code>
    */
   public int getAlternativesCount() {
     return alternatives_.size();
   }
   /**
+   *
+   *
    * <pre>
    * Output only. May contain one or more recognition hypotheses (up to the
    * maximum specified in `max_alternatives`).
@@ -151,12 +180,15 @@ private static final long serialVersionUID = 0L;
    * alternative being the most probable, as ranked by the recognizer.
    * </pre>
    *
-   * <code>repeated .google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative alternatives = 1;</code>
+   * <code>repeated .google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative alternatives = 1;
+   * </code>
    */
   public com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative getAlternatives(int index) {
     return alternatives_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * Output only. May contain one or more recognition hypotheses (up to the
    * maximum specified in `max_alternatives`).
@@ -164,16 +196,19 @@ private static final long serialVersionUID = 0L;
    * alternative being the most probable, as ranked by the recognizer.
    * </pre>
    *
-   * <code>repeated .google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative alternatives = 1;</code>
+   * <code>repeated .google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative alternatives = 1;
+   * </code>
    */
-  public com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternativeOrBuilder getAlternativesOrBuilder(
-      int index) {
+  public com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternativeOrBuilder
+      getAlternativesOrBuilder(int index) {
     return alternatives_.get(index);
   }
 
   public static final int CHANNEL_TAG_FIELD_NUMBER = 2;
   private int channelTag_;
   /**
+   *
+   *
    * <pre>
    * For multi-channel audio, this is the channel number corresponding to the
    * recognized result for the audio from that channel.
@@ -189,6 +224,8 @@ private static final long serialVersionUID = 0L;
   public static final int LANGUAGE_CODE_FIELD_NUMBER = 5;
   private volatile java.lang.Object languageCode_;
   /**
+   *
+   *
    * <pre>
    * Output only. The
    * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag of the
@@ -203,14 +240,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       languageCode_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Output only. The
    * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag of the
@@ -220,13 +258,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string language_code = 5;</code>
    */
-  public com.google.protobuf.ByteString
-      getLanguageCodeBytes() {
+  public com.google.protobuf.ByteString getLanguageCodeBytes() {
     java.lang.Object ref = languageCode_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       languageCode_ = b;
       return b;
     } else {
@@ -235,6 +271,8 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -244,8 +282,8 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  @java.lang.Override
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     for (int i = 0; i < alternatives_.size(); i++) {
       output.writeMessage(1, alternatives_.get(i));
     }
@@ -258,18 +296,17 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
 
     size = 0;
     for (int i = 0; i < alternatives_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(1, alternatives_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(1, alternatives_.get(i));
     }
     if (channelTag_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(2, channelTag_);
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(2, channelTag_);
     }
     if (!getLanguageCodeBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, languageCode_);
@@ -282,20 +319,18 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.speech.v1p1beta1.SpeechRecognitionResult)) {
       return super.equals(obj);
     }
-    com.google.cloud.speech.v1p1beta1.SpeechRecognitionResult other = (com.google.cloud.speech.v1p1beta1.SpeechRecognitionResult) obj;
+    com.google.cloud.speech.v1p1beta1.SpeechRecognitionResult other =
+        (com.google.cloud.speech.v1p1beta1.SpeechRecognitionResult) obj;
 
     boolean result = true;
-    result = result && getAlternativesList()
-        .equals(other.getAlternativesList());
-    result = result && (getChannelTag()
-        == other.getChannelTag());
-    result = result && getLanguageCode()
-        .equals(other.getLanguageCode());
+    result = result && getAlternativesList().equals(other.getAlternativesList());
+    result = result && (getChannelTag() == other.getChannelTag());
+    result = result && getLanguageCode().equals(other.getLanguageCode());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -321,114 +356,127 @@ private static final long serialVersionUID = 0L;
   }
 
   public static com.google.cloud.speech.v1p1beta1.SpeechRecognitionResult parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.speech.v1p1beta1.SpeechRecognitionResult parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.speech.v1p1beta1.SpeechRecognitionResult parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.speech.v1p1beta1.SpeechRecognitionResult parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.speech.v1p1beta1.SpeechRecognitionResult parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.speech.v1p1beta1.SpeechRecognitionResult parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.speech.v1p1beta1.SpeechRecognitionResult parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.speech.v1p1beta1.SpeechRecognitionResult parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.speech.v1p1beta1.SpeechRecognitionResult parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.cloud.speech.v1p1beta1.SpeechRecognitionResult parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.cloud.speech.v1p1beta1.SpeechRecognitionResult parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.speech.v1p1beta1.SpeechRecognitionResult parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.speech.v1p1beta1.SpeechRecognitionResult parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.speech.v1p1beta1.SpeechRecognitionResult parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  public Builder newBuilderForType() { return newBuilder(); }
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-  public static Builder newBuilder(com.google.cloud.speech.v1p1beta1.SpeechRecognitionResult prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+
+  public static Builder newBuilder(
+      com.google.cloud.speech.v1p1beta1.SpeechRecognitionResult prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+
+  @java.lang.Override
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * A speech recognition result corresponding to a portion of the audio.
    * </pre>
    *
    * Protobuf type {@code google.cloud.speech.v1p1beta1.SpeechRecognitionResult}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.speech.v1p1beta1.SpeechRecognitionResult)
       com.google.cloud.speech.v1p1beta1.SpeechRecognitionResultOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.speech.v1p1beta1.SpeechProto.internal_static_google_cloud_speech_v1p1beta1_SpeechRecognitionResult_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.speech.v1p1beta1.SpeechProto
+          .internal_static_google_cloud_speech_v1p1beta1_SpeechRecognitionResult_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.speech.v1p1beta1.SpeechProto.internal_static_google_cloud_speech_v1p1beta1_SpeechRecognitionResult_fieldAccessorTable
+      return com.google.cloud.speech.v1p1beta1.SpeechProto
+          .internal_static_google_cloud_speech_v1p1beta1_SpeechRecognitionResult_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.speech.v1p1beta1.SpeechRecognitionResult.class, com.google.cloud.speech.v1p1beta1.SpeechRecognitionResult.Builder.class);
+              com.google.cloud.speech.v1p1beta1.SpeechRecognitionResult.class,
+              com.google.cloud.speech.v1p1beta1.SpeechRecognitionResult.Builder.class);
     }
 
     // Construct using com.google.cloud.speech.v1p1beta1.SpeechRecognitionResult.newBuilder()
@@ -436,17 +484,18 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getAlternativesFieldBuilder();
       }
     }
+
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       if (alternativesBuilder_ == null) {
@@ -462,15 +511,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.speech.v1p1beta1.SpeechProto.internal_static_google_cloud_speech_v1p1beta1_SpeechRecognitionResult_descriptor;
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.speech.v1p1beta1.SpeechProto
+          .internal_static_google_cloud_speech_v1p1beta1_SpeechRecognitionResult_descriptor;
     }
 
+    @java.lang.Override
     public com.google.cloud.speech.v1p1beta1.SpeechRecognitionResult getDefaultInstanceForType() {
       return com.google.cloud.speech.v1p1beta1.SpeechRecognitionResult.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.cloud.speech.v1p1beta1.SpeechRecognitionResult build() {
       com.google.cloud.speech.v1p1beta1.SpeechRecognitionResult result = buildPartial();
       if (!result.isInitialized()) {
@@ -479,8 +531,10 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.cloud.speech.v1p1beta1.SpeechRecognitionResult buildPartial() {
-      com.google.cloud.speech.v1p1beta1.SpeechRecognitionResult result = new com.google.cloud.speech.v1p1beta1.SpeechRecognitionResult(this);
+      com.google.cloud.speech.v1p1beta1.SpeechRecognitionResult result =
+          new com.google.cloud.speech.v1p1beta1.SpeechRecognitionResult(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       if (alternativesBuilder_ == null) {
@@ -499,35 +553,43 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+
+    @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+    @java.lang.Override
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+    @java.lang.Override
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
+    @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
+    @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.speech.v1p1beta1.SpeechRecognitionResult) {
-        return mergeFrom((com.google.cloud.speech.v1p1beta1.SpeechRecognitionResult)other);
+        return mergeFrom((com.google.cloud.speech.v1p1beta1.SpeechRecognitionResult) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -535,7 +597,8 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.cloud.speech.v1p1beta1.SpeechRecognitionResult other) {
-      if (other == com.google.cloud.speech.v1p1beta1.SpeechRecognitionResult.getDefaultInstance()) return this;
+      if (other == com.google.cloud.speech.v1p1beta1.SpeechRecognitionResult.getDefaultInstance())
+        return this;
       if (alternativesBuilder_ == null) {
         if (!other.alternatives_.isEmpty()) {
           if (alternatives_.isEmpty()) {
@@ -554,9 +617,10 @@ private static final long serialVersionUID = 0L;
             alternativesBuilder_ = null;
             alternatives_ = other.alternatives_;
             bitField0_ = (bitField0_ & ~0x00000001);
-            alternativesBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getAlternativesFieldBuilder() : null;
+            alternativesBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getAlternativesFieldBuilder()
+                    : null;
           } else {
             alternativesBuilder_.addAllMessages(other.alternatives_);
           }
@@ -574,10 +638,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -586,7 +652,8 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.speech.v1p1beta1.SpeechRecognitionResult) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.cloud.speech.v1p1beta1.SpeechRecognitionResult) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -595,21 +662,30 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
-    private java.util.List<com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative> alternatives_ =
-      java.util.Collections.emptyList();
+    private java.util.List<com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative>
+        alternatives_ = java.util.Collections.emptyList();
+
     private void ensureAlternativesIsMutable() {
       if (!((bitField0_ & 0x00000001) == 0x00000001)) {
-        alternatives_ = new java.util.ArrayList<com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative>(alternatives_);
+        alternatives_ =
+            new java.util.ArrayList<com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative>(
+                alternatives_);
         bitField0_ |= 0x00000001;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative, com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative.Builder, com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternativeOrBuilder> alternativesBuilder_;
+            com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative,
+            com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative.Builder,
+            com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternativeOrBuilder>
+        alternativesBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * Output only. May contain one or more recognition hypotheses (up to the
      * maximum specified in `max_alternatives`).
@@ -617,9 +693,11 @@ private static final long serialVersionUID = 0L;
      * alternative being the most probable, as ranked by the recognizer.
      * </pre>
      *
-     * <code>repeated .google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative alternatives = 1;</code>
+     * <code>repeated .google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative alternatives = 1;
+     * </code>
      */
-    public java.util.List<com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative> getAlternativesList() {
+    public java.util.List<com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative>
+        getAlternativesList() {
       if (alternativesBuilder_ == null) {
         return java.util.Collections.unmodifiableList(alternatives_);
       } else {
@@ -627,6 +705,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. May contain one or more recognition hypotheses (up to the
      * maximum specified in `max_alternatives`).
@@ -634,7 +714,8 @@ private static final long serialVersionUID = 0L;
      * alternative being the most probable, as ranked by the recognizer.
      * </pre>
      *
-     * <code>repeated .google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative alternatives = 1;</code>
+     * <code>repeated .google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative alternatives = 1;
+     * </code>
      */
     public int getAlternativesCount() {
       if (alternativesBuilder_ == null) {
@@ -644,6 +725,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. May contain one or more recognition hypotheses (up to the
      * maximum specified in `max_alternatives`).
@@ -651,9 +734,11 @@ private static final long serialVersionUID = 0L;
      * alternative being the most probable, as ranked by the recognizer.
      * </pre>
      *
-     * <code>repeated .google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative alternatives = 1;</code>
+     * <code>repeated .google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative alternatives = 1;
+     * </code>
      */
-    public com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative getAlternatives(int index) {
+    public com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative getAlternatives(
+        int index) {
       if (alternativesBuilder_ == null) {
         return alternatives_.get(index);
       } else {
@@ -661,6 +746,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. May contain one or more recognition hypotheses (up to the
      * maximum specified in `max_alternatives`).
@@ -668,7 +755,8 @@ private static final long serialVersionUID = 0L;
      * alternative being the most probable, as ranked by the recognizer.
      * </pre>
      *
-     * <code>repeated .google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative alternatives = 1;</code>
+     * <code>repeated .google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative alternatives = 1;
+     * </code>
      */
     public Builder setAlternatives(
         int index, com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative value) {
@@ -685,6 +773,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. May contain one or more recognition hypotheses (up to the
      * maximum specified in `max_alternatives`).
@@ -692,10 +782,12 @@ private static final long serialVersionUID = 0L;
      * alternative being the most probable, as ranked by the recognizer.
      * </pre>
      *
-     * <code>repeated .google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative alternatives = 1;</code>
+     * <code>repeated .google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative alternatives = 1;
+     * </code>
      */
     public Builder setAlternatives(
-        int index, com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative.Builder builderForValue) {
+        int index,
+        com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative.Builder builderForValue) {
       if (alternativesBuilder_ == null) {
         ensureAlternativesIsMutable();
         alternatives_.set(index, builderForValue.build());
@@ -706,6 +798,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. May contain one or more recognition hypotheses (up to the
      * maximum specified in `max_alternatives`).
@@ -713,9 +807,11 @@ private static final long serialVersionUID = 0L;
      * alternative being the most probable, as ranked by the recognizer.
      * </pre>
      *
-     * <code>repeated .google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative alternatives = 1;</code>
+     * <code>repeated .google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative alternatives = 1;
+     * </code>
      */
-    public Builder addAlternatives(com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative value) {
+    public Builder addAlternatives(
+        com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative value) {
       if (alternativesBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -729,6 +825,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. May contain one or more recognition hypotheses (up to the
      * maximum specified in `max_alternatives`).
@@ -736,7 +834,8 @@ private static final long serialVersionUID = 0L;
      * alternative being the most probable, as ranked by the recognizer.
      * </pre>
      *
-     * <code>repeated .google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative alternatives = 1;</code>
+     * <code>repeated .google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative alternatives = 1;
+     * </code>
      */
     public Builder addAlternatives(
         int index, com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative value) {
@@ -753,6 +852,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. May contain one or more recognition hypotheses (up to the
      * maximum specified in `max_alternatives`).
@@ -760,7 +861,8 @@ private static final long serialVersionUID = 0L;
      * alternative being the most probable, as ranked by the recognizer.
      * </pre>
      *
-     * <code>repeated .google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative alternatives = 1;</code>
+     * <code>repeated .google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative alternatives = 1;
+     * </code>
      */
     public Builder addAlternatives(
         com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative.Builder builderForValue) {
@@ -774,6 +876,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. May contain one or more recognition hypotheses (up to the
      * maximum specified in `max_alternatives`).
@@ -781,10 +885,12 @@ private static final long serialVersionUID = 0L;
      * alternative being the most probable, as ranked by the recognizer.
      * </pre>
      *
-     * <code>repeated .google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative alternatives = 1;</code>
+     * <code>repeated .google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative alternatives = 1;
+     * </code>
      */
     public Builder addAlternatives(
-        int index, com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative.Builder builderForValue) {
+        int index,
+        com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative.Builder builderForValue) {
       if (alternativesBuilder_ == null) {
         ensureAlternativesIsMutable();
         alternatives_.add(index, builderForValue.build());
@@ -795,6 +901,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. May contain one or more recognition hypotheses (up to the
      * maximum specified in `max_alternatives`).
@@ -802,14 +910,15 @@ private static final long serialVersionUID = 0L;
      * alternative being the most probable, as ranked by the recognizer.
      * </pre>
      *
-     * <code>repeated .google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative alternatives = 1;</code>
+     * <code>repeated .google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative alternatives = 1;
+     * </code>
      */
     public Builder addAllAlternatives(
-        java.lang.Iterable<? extends com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative> values) {
+        java.lang.Iterable<? extends com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative>
+            values) {
       if (alternativesBuilder_ == null) {
         ensureAlternativesIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, alternatives_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, alternatives_);
         onChanged();
       } else {
         alternativesBuilder_.addAllMessages(values);
@@ -817,6 +926,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. May contain one or more recognition hypotheses (up to the
      * maximum specified in `max_alternatives`).
@@ -824,7 +935,8 @@ private static final long serialVersionUID = 0L;
      * alternative being the most probable, as ranked by the recognizer.
      * </pre>
      *
-     * <code>repeated .google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative alternatives = 1;</code>
+     * <code>repeated .google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative alternatives = 1;
+     * </code>
      */
     public Builder clearAlternatives() {
       if (alternativesBuilder_ == null) {
@@ -837,6 +949,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. May contain one or more recognition hypotheses (up to the
      * maximum specified in `max_alternatives`).
@@ -844,7 +958,8 @@ private static final long serialVersionUID = 0L;
      * alternative being the most probable, as ranked by the recognizer.
      * </pre>
      *
-     * <code>repeated .google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative alternatives = 1;</code>
+     * <code>repeated .google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative alternatives = 1;
+     * </code>
      */
     public Builder removeAlternatives(int index) {
       if (alternativesBuilder_ == null) {
@@ -857,6 +972,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. May contain one or more recognition hypotheses (up to the
      * maximum specified in `max_alternatives`).
@@ -864,13 +981,16 @@ private static final long serialVersionUID = 0L;
      * alternative being the most probable, as ranked by the recognizer.
      * </pre>
      *
-     * <code>repeated .google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative alternatives = 1;</code>
+     * <code>repeated .google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative alternatives = 1;
+     * </code>
      */
-    public com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative.Builder getAlternativesBuilder(
-        int index) {
+    public com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative.Builder
+        getAlternativesBuilder(int index) {
       return getAlternativesFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * Output only. May contain one or more recognition hypotheses (up to the
      * maximum specified in `max_alternatives`).
@@ -878,16 +998,20 @@ private static final long serialVersionUID = 0L;
      * alternative being the most probable, as ranked by the recognizer.
      * </pre>
      *
-     * <code>repeated .google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative alternatives = 1;</code>
+     * <code>repeated .google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative alternatives = 1;
+     * </code>
      */
-    public com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternativeOrBuilder getAlternativesOrBuilder(
-        int index) {
+    public com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternativeOrBuilder
+        getAlternativesOrBuilder(int index) {
       if (alternativesBuilder_ == null) {
-        return alternatives_.get(index);  } else {
+        return alternatives_.get(index);
+      } else {
         return alternativesBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. May contain one or more recognition hypotheses (up to the
      * maximum specified in `max_alternatives`).
@@ -895,10 +1019,12 @@ private static final long serialVersionUID = 0L;
      * alternative being the most probable, as ranked by the recognizer.
      * </pre>
      *
-     * <code>repeated .google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative alternatives = 1;</code>
+     * <code>repeated .google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative alternatives = 1;
+     * </code>
      */
-    public java.util.List<? extends com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternativeOrBuilder> 
-         getAlternativesOrBuilderList() {
+    public java.util.List<
+            ? extends com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternativeOrBuilder>
+        getAlternativesOrBuilderList() {
       if (alternativesBuilder_ != null) {
         return alternativesBuilder_.getMessageOrBuilderList();
       } else {
@@ -906,6 +1032,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. May contain one or more recognition hypotheses (up to the
      * maximum specified in `max_alternatives`).
@@ -913,13 +1041,18 @@ private static final long serialVersionUID = 0L;
      * alternative being the most probable, as ranked by the recognizer.
      * </pre>
      *
-     * <code>repeated .google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative alternatives = 1;</code>
+     * <code>repeated .google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative alternatives = 1;
+     * </code>
      */
-    public com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative.Builder addAlternativesBuilder() {
-      return getAlternativesFieldBuilder().addBuilder(
-          com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative.getDefaultInstance());
+    public com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative.Builder
+        addAlternativesBuilder() {
+      return getAlternativesFieldBuilder()
+          .addBuilder(
+              com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Output only. May contain one or more recognition hypotheses (up to the
      * maximum specified in `max_alternatives`).
@@ -927,14 +1060,19 @@ private static final long serialVersionUID = 0L;
      * alternative being the most probable, as ranked by the recognizer.
      * </pre>
      *
-     * <code>repeated .google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative alternatives = 1;</code>
+     * <code>repeated .google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative alternatives = 1;
+     * </code>
      */
-    public com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative.Builder addAlternativesBuilder(
-        int index) {
-      return getAlternativesFieldBuilder().addBuilder(
-          index, com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative.getDefaultInstance());
+    public com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative.Builder
+        addAlternativesBuilder(int index) {
+      return getAlternativesFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Output only. May contain one or more recognition hypotheses (up to the
      * maximum specified in `max_alternatives`).
@@ -942,18 +1080,25 @@ private static final long serialVersionUID = 0L;
      * alternative being the most probable, as ranked by the recognizer.
      * </pre>
      *
-     * <code>repeated .google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative alternatives = 1;</code>
+     * <code>repeated .google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative alternatives = 1;
+     * </code>
      */
-    public java.util.List<com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative.Builder> 
-         getAlternativesBuilderList() {
+    public java.util.List<com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative.Builder>
+        getAlternativesBuilderList() {
       return getAlternativesFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative, com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative.Builder, com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternativeOrBuilder> 
+            com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative,
+            com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative.Builder,
+            com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternativeOrBuilder>
         getAlternativesFieldBuilder() {
       if (alternativesBuilder_ == null) {
-        alternativesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative, com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative.Builder, com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternativeOrBuilder>(
+        alternativesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative,
+                com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternative.Builder,
+                com.google.cloud.speech.v1p1beta1.SpeechRecognitionAlternativeOrBuilder>(
                 alternatives_,
                 ((bitField0_ & 0x00000001) == 0x00000001),
                 getParentForChildren(),
@@ -963,8 +1108,10 @@ private static final long serialVersionUID = 0L;
       return alternativesBuilder_;
     }
 
-    private int channelTag_ ;
+    private int channelTag_;
     /**
+     *
+     *
      * <pre>
      * For multi-channel audio, this is the channel number corresponding to the
      * recognized result for the audio from that channel.
@@ -977,6 +1124,8 @@ private static final long serialVersionUID = 0L;
       return channelTag_;
     }
     /**
+     *
+     *
      * <pre>
      * For multi-channel audio, this is the channel number corresponding to the
      * recognized result for the audio from that channel.
@@ -986,12 +1135,14 @@ private static final long serialVersionUID = 0L;
      * <code>int32 channel_tag = 2;</code>
      */
     public Builder setChannelTag(int value) {
-      
+
       channelTag_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * For multi-channel audio, this is the channel number corresponding to the
      * recognized result for the audio from that channel.
@@ -1001,7 +1152,7 @@ private static final long serialVersionUID = 0L;
      * <code>int32 channel_tag = 2;</code>
      */
     public Builder clearChannelTag() {
-      
+
       channelTag_ = 0;
       onChanged();
       return this;
@@ -1009,6 +1160,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object languageCode_ = "";
     /**
+     *
+     *
      * <pre>
      * Output only. The
      * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag of the
@@ -1021,8 +1174,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getLanguageCode() {
       java.lang.Object ref = languageCode_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         languageCode_ = s;
         return s;
@@ -1031,6 +1183,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The
      * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag of the
@@ -1040,13 +1194,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string language_code = 5;</code>
      */
-    public com.google.protobuf.ByteString
-        getLanguageCodeBytes() {
+    public com.google.protobuf.ByteString getLanguageCodeBytes() {
       java.lang.Object ref = languageCode_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         languageCode_ = b;
         return b;
       } else {
@@ -1054,6 +1206,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The
      * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag of the
@@ -1063,17 +1217,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string language_code = 5;</code>
      */
-    public Builder setLanguageCode(
-        java.lang.String value) {
+    public Builder setLanguageCode(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       languageCode_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The
      * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag of the
@@ -1084,12 +1239,14 @@ private static final long serialVersionUID = 0L;
      * <code>string language_code = 5;</code>
      */
     public Builder clearLanguageCode() {
-      
+
       languageCode_ = getDefaultInstance().getLanguageCode();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The
      * [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag of the
@@ -1099,33 +1256,34 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string language_code = 5;</code>
      */
-    public Builder setLanguageCodeBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setLanguageCodeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       languageCode_ = value;
       onChanged();
       return this;
     }
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+
+    @java.lang.Override
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
     }
-
 
     // @@protoc_insertion_point(builder_scope:google.cloud.speech.v1p1beta1.SpeechRecognitionResult)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.speech.v1p1beta1.SpeechRecognitionResult)
   private static final com.google.cloud.speech.v1p1beta1.SpeechRecognitionResult DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.speech.v1p1beta1.SpeechRecognitionResult();
   }
@@ -1134,15 +1292,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<SpeechRecognitionResult>
-      PARSER = new com.google.protobuf.AbstractParser<SpeechRecognitionResult>() {
-    public SpeechRecognitionResult parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-        return new SpeechRecognitionResult(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<SpeechRecognitionResult> PARSER =
+      new com.google.protobuf.AbstractParser<SpeechRecognitionResult>() {
+        @java.lang.Override
+        public SpeechRecognitionResult parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new SpeechRecognitionResult(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<SpeechRecognitionResult> parser() {
     return PARSER;
@@ -1153,9 +1312,8 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.cloud.speech.v1p1beta1.SpeechRecognitionResult getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

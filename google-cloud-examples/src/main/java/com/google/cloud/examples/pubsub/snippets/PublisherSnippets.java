@@ -35,9 +35,10 @@ import com.google.cloud.pubsub.v1.Publisher;
 import com.google.protobuf.ByteString;
 import com.google.pubsub.v1.ProjectTopicName;
 import com.google.pubsub.v1.PubsubMessage;
-import org.threeten.bp.Duration;
-
 import java.io.FileInputStream;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeUnit;
+import org.threeten.bp.Duration;
 
 /** This class contains snippets for the {@link Publisher} interface. */
 public class PublisherSnippets {
@@ -54,15 +55,18 @@ public class PublisherSnippets {
     ByteString data = ByteString.copyFromUtf8(message);
     PubsubMessage pubsubMessage = PubsubMessage.newBuilder().setData(data).build();
     ApiFuture<String> messageIdFuture = publisher.publish(pubsubMessage);
-    ApiFutures.addCallback(messageIdFuture, new ApiFutureCallback<String>() {
-      public void onSuccess(String messageId) {
-        System.out.println("published with message id: " + messageId);
-      }
+    ApiFutures.addCallback(
+        messageIdFuture,
+        new ApiFutureCallback<String>() {
+          public void onSuccess(String messageId) {
+            System.out.println("published with message id: " + messageId);
+          }
 
-      public void onFailure(Throwable t) {
-        System.out.println("failed to publish: " + t);
-      }
-    });
+          public void onFailure(Throwable t) {
+            System.out.println("failed to publish: " + t);
+          }
+        },
+        Executors.newSingleThreadExecutor());
     return messageIdFuture;
   }
 
@@ -78,51 +82,55 @@ public class PublisherSnippets {
     } finally {
       // When finished with the publisher, make sure to shutdown to free up resources.
       publisher.shutdown();
+      publisher.awaitTermination(1, TimeUnit.MINUTES);
     }
   }
 
-  public Publisher getPublisherWithCustomBatchSettings(ProjectTopicName topicName) throws Exception {
+  public Publisher getPublisherWithCustomBatchSettings(ProjectTopicName topicName)
+      throws Exception {
     // [START pubsub_publisher_batch_settings]
     // Batch settings control how the publisher batches messages
-    long requestBytesThreshold = 5000L; // default : 1kb
-    long messageCountBatchSize = 10L; // default : 100
+    long requestBytesThreshold = 5000L; // default : 1 byte
+    long messageCountBatchSize = 10L; // default : 1 message
 
     Duration publishDelayThreshold = Duration.ofMillis(100); // default : 1 ms
 
     // Publish request get triggered based on request size, messages count & time since last publish
-    BatchingSettings batchingSettings = BatchingSettings.newBuilder()
-        .setElementCountThreshold(messageCountBatchSize)
-        .setRequestByteThreshold(requestBytesThreshold)
-        .setDelayThreshold(publishDelayThreshold)
-        .build();
+    BatchingSettings batchingSettings =
+        BatchingSettings.newBuilder()
+            .setElementCountThreshold(messageCountBatchSize)
+            .setRequestByteThreshold(requestBytesThreshold)
+            .setDelayThreshold(publishDelayThreshold)
+            .build();
 
-    Publisher publisher = Publisher.newBuilder(topicName)
-        .setBatchingSettings(batchingSettings).build();
+    Publisher publisher =
+        Publisher.newBuilder(topicName).setBatchingSettings(batchingSettings).build();
     // [END pubsub_publisher_batch_settings]
     return publisher;
   }
 
-  public Publisher getPublisherWithCustomRetrySettings(ProjectTopicName topicName) throws Exception {
+  public Publisher getPublisherWithCustomRetrySettings(ProjectTopicName topicName)
+      throws Exception {
     // [START pubsub_publisher_retry_settings]
     // Retry settings control how the publisher handles retryable failures
-    Duration retryDelay = Duration.ofMillis(100); // default : 1 ms
-    double retryDelayMultiplier = 2.0; // back off for repeated failures
-    Duration maxRetryDelay = Duration.ofSeconds(5); // default : 10 seconds
-    Duration totalTimeout = Duration.ofSeconds(1); // default: 0 
-    Duration initialRpcTimeout = Duration.ofSeconds(1); // default: 0 
-    Duration maxRpcTimeout = Duration.ofSeconds(10); // default: 0
+    Duration retryDelay = Duration.ofMillis(5); // default: 5 ms
+    double retryDelayMultiplier = 2.0; // back off for repeated failures, default: 2.0
+    Duration maxRetryDelay = Duration.ofSeconds(600); // default : Long.MAX_VALUE
+    Duration totalTimeout = Duration.ofSeconds(10); // default: 10 seconds
+    Duration initialRpcTimeout = Duration.ofSeconds(10); // default: 10 seconds
+    Duration maxRpcTimeout = Duration.ofSeconds(10); // default: 10 seconds
 
-    RetrySettings retrySettings = RetrySettings.newBuilder()
-        .setInitialRetryDelay(retryDelay)
-        .setRetryDelayMultiplier(retryDelayMultiplier)
-        .setMaxRetryDelay(maxRetryDelay)
-        .setTotalTimeout(totalTimeout)
-        .setInitialRpcTimeout(initialRpcTimeout)
-        .setMaxRpcTimeout(maxRpcTimeout)
-        .build();
+    RetrySettings retrySettings =
+        RetrySettings.newBuilder()
+            .setInitialRetryDelay(retryDelay)
+            .setRetryDelayMultiplier(retryDelayMultiplier)
+            .setMaxRetryDelay(maxRetryDelay)
+            .setTotalTimeout(totalTimeout)
+            .setInitialRpcTimeout(initialRpcTimeout)
+            .setMaxRpcTimeout(maxRpcTimeout)
+            .build();
 
-    Publisher publisher = Publisher.newBuilder(topicName)
-        .setRetrySettings(retrySettings).build();
+    Publisher publisher = Publisher.newBuilder(topicName).setRetrySettings(retrySettings).build();
     // [END pubsub_publisher_retry_settings]
     return publisher;
   }
@@ -130,24 +138,24 @@ public class PublisherSnippets {
   public Publisher getSingleThreadedPublisher(ProjectTopicName topicName) throws Exception {
     // [START pubsub_publisher_concurrency_control]
     // create a publisher with a single threaded executor
-    ExecutorProvider executorProvider = InstantiatingExecutorProvider.newBuilder()
-        .setExecutorThreadCount(1).build();
-    Publisher publisher = Publisher.newBuilder(topicName)
-        .setExecutorProvider(executorProvider).build();
+    ExecutorProvider executorProvider =
+        InstantiatingExecutorProvider.newBuilder().setExecutorThreadCount(1).build();
+    Publisher publisher =
+        Publisher.newBuilder(topicName).setExecutorProvider(executorProvider).build();
     // [END pubsub_publisher_concurrency_control]
     return publisher;
   }
 
-  private Publisher createPublisherWithCustomCredentials(ProjectTopicName topicName) throws Exception {
+  private Publisher createPublisherWithCustomCredentials(ProjectTopicName topicName)
+      throws Exception {
     // [START pubsub_publisher_custom_credentials]
     // read service account credentials from file
     CredentialsProvider credentialsProvider =
         FixedCredentialsProvider.create(
             ServiceAccountCredentials.fromStream(new FileInputStream("credentials.json")));
 
-    Publisher publisher = Publisher.newBuilder(topicName)
-        .setCredentialsProvider(credentialsProvider)
-        .build();
+    Publisher publisher =
+        Publisher.newBuilder(topicName).setCredentialsProvider(credentialsProvider).build();
     // [END pubsub_publisher_custom_credentials]
     return publisher;
   }

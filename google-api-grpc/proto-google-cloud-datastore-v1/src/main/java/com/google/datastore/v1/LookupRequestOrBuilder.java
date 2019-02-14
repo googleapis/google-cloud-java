@@ -3,11 +3,14 @@
 
 package com.google.datastore.v1;
 
-public interface LookupRequestOrBuilder extends
+public interface LookupRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.datastore.v1.LookupRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The ID of the project against which to make the request.
    * </pre>
@@ -16,16 +19,19 @@ public interface LookupRequestOrBuilder extends
    */
   java.lang.String getProjectId();
   /**
+   *
+   *
    * <pre>
    * The ID of the project against which to make the request.
    * </pre>
    *
    * <code>string project_id = 8;</code>
    */
-  com.google.protobuf.ByteString
-      getProjectIdBytes();
+  com.google.protobuf.ByteString getProjectIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * The options for this lookup request.
    * </pre>
@@ -34,6 +40,8 @@ public interface LookupRequestOrBuilder extends
    */
   boolean hasReadOptions();
   /**
+   *
+   *
    * <pre>
    * The options for this lookup request.
    * </pre>
@@ -42,6 +50,8 @@ public interface LookupRequestOrBuilder extends
    */
   com.google.datastore.v1.ReadOptions getReadOptions();
   /**
+   *
+   *
    * <pre>
    * The options for this lookup request.
    * </pre>
@@ -51,15 +61,18 @@ public interface LookupRequestOrBuilder extends
   com.google.datastore.v1.ReadOptionsOrBuilder getReadOptionsOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Keys of entities to look up.
    * </pre>
    *
    * <code>repeated .google.datastore.v1.Key keys = 3;</code>
    */
-  java.util.List<com.google.datastore.v1.Key> 
-      getKeysList();
+  java.util.List<com.google.datastore.v1.Key> getKeysList();
   /**
+   *
+   *
    * <pre>
    * Keys of entities to look up.
    * </pre>
@@ -68,6 +81,8 @@ public interface LookupRequestOrBuilder extends
    */
   com.google.datastore.v1.Key getKeys(int index);
   /**
+   *
+   *
    * <pre>
    * Keys of entities to look up.
    * </pre>
@@ -76,21 +91,23 @@ public interface LookupRequestOrBuilder extends
    */
   int getKeysCount();
   /**
+   *
+   *
    * <pre>
    * Keys of entities to look up.
    * </pre>
    *
    * <code>repeated .google.datastore.v1.Key keys = 3;</code>
    */
-  java.util.List<? extends com.google.datastore.v1.KeyOrBuilder> 
-      getKeysOrBuilderList();
+  java.util.List<? extends com.google.datastore.v1.KeyOrBuilder> getKeysOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * Keys of entities to look up.
    * </pre>
    *
    * <code>repeated .google.datastore.v1.Key keys = 3;</code>
    */
-  com.google.datastore.v1.KeyOrBuilder getKeysOrBuilder(
-      int index);
+  com.google.datastore.v1.KeyOrBuilder getKeysOrBuilder(int index);
 }

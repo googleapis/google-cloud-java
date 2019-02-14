@@ -3,11 +3,14 @@
 
 package com.google.privacy.dlp.v2;
 
-public interface DateShiftConfigOrBuilder extends
+public interface DateShiftConfigOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.DateShiftConfig)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Range of shift in days. Actual shift will be selected at random within this
    * range (inclusive ends). Negative means shift to earlier in time. Must not
@@ -21,6 +24,8 @@ public interface DateShiftConfigOrBuilder extends
   int getUpperBoundDays();
 
   /**
+   *
+   *
    * <pre>
    * For example, -5 means shift date to at most 5 days back in the past.
    * [Required]
@@ -31,6 +36,8 @@ public interface DateShiftConfigOrBuilder extends
   int getLowerBoundDays();
 
   /**
+   *
+   *
    * <pre>
    * Points to the field that contains the context, for example, an entity id.
    * If set, must also set method. If set, shift will be consistent for the
@@ -41,6 +48,8 @@ public interface DateShiftConfigOrBuilder extends
    */
   boolean hasContext();
   /**
+   *
+   *
    * <pre>
    * Points to the field that contains the context, for example, an entity id.
    * If set, must also set method. If set, shift will be consistent for the
@@ -51,6 +60,8 @@ public interface DateShiftConfigOrBuilder extends
    */
   com.google.privacy.dlp.v2.FieldId getContext();
   /**
+   *
+   *
    * <pre>
    * Points to the field that contains the context, for example, an entity id.
    * If set, must also set method. If set, shift will be consistent for the
@@ -62,6 +73,8 @@ public interface DateShiftConfigOrBuilder extends
   com.google.privacy.dlp.v2.FieldIdOrBuilder getContextOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Causes the shift to be computed based on this key and the context. This
    * results in the same shift for the same context and crypto_key.
@@ -71,6 +84,8 @@ public interface DateShiftConfigOrBuilder extends
    */
   boolean hasCryptoKey();
   /**
+   *
+   *
    * <pre>
    * Causes the shift to be computed based on this key and the context. This
    * results in the same shift for the same context and crypto_key.
@@ -80,6 +95,8 @@ public interface DateShiftConfigOrBuilder extends
    */
   com.google.privacy.dlp.v2.CryptoKey getCryptoKey();
   /**
+   *
+   *
    * <pre>
    * Causes the shift to be computed based on this key and the context. This
    * results in the same shift for the same context and crypto_key.

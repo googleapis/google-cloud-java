@@ -19,10 +19,9 @@ package com.google.cloud.datastore;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
+import java.util.Iterator;
 import org.junit.Before;
 import org.junit.Test;
-
-import java.util.Iterator;
 
 public class KeyFactoryTest {
 
@@ -38,11 +37,12 @@ public class KeyFactoryTest {
 
   @Test
   public void testReset() {
-    IncompleteKey key = keyFactory
-        .setProjectId("ds1")
-        .setNamespace("ns1")
-        .addAncestor(PathElement.of("p", 1))
-        .build();
+    IncompleteKey key =
+        keyFactory
+            .setProjectId("ds1")
+            .setNamespace("ns1")
+            .addAncestor(PathElement.of("p", 1))
+            .build();
     assertEquals("k", key.getKind());
     assertEquals("ds1", key.getProjectId());
     assertEquals("ns1", key.getNamespace());
@@ -87,7 +87,6 @@ public class KeyFactoryTest {
     verifyKey(key, "k3", "ns", p1, p2);
   }
 
-
   @Test
   public void testNewIncompleteKey() throws Exception {
     IncompleteKey key = keyFactory.newKey();
@@ -97,7 +96,6 @@ public class KeyFactoryTest {
     key = keyFactory.setNamespace("ns").addAncestors(p1, p2).newKey();
     verifyIncompleteKey(key, "ns", p1, p2);
   }
-
 
   @Test(expected = NullPointerException.class)
   public void testNewIncompleteWithNoKind() {

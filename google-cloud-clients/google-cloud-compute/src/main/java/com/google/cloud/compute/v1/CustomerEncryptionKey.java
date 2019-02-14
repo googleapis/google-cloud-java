@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,26 +24,33 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/** Represents a customer-supplied encryption key */
 public final class CustomerEncryptionKey implements ApiMessage {
+  private final String kmsKeyName;
   private final String rawKey;
   private final String sha256;
 
   private CustomerEncryptionKey() {
+    this.kmsKeyName = null;
     this.rawKey = null;
     this.sha256 = null;
   }
 
-  private CustomerEncryptionKey(String rawKey, String sha256) {
+  private CustomerEncryptionKey(String kmsKeyName, String rawKey, String sha256) {
+    this.kmsKeyName = kmsKeyName;
     this.rawKey = rawKey;
     this.sha256 = sha256;
   }
 
   @Override
   public Object getFieldValue(String fieldName) {
-    if (fieldName.equals("rawKey")) {
+    if ("kmsKeyName".equals(fieldName)) {
+      return kmsKeyName;
+    }
+    if ("rawKey".equals(fieldName)) {
       return rawKey;
     }
-    if (fieldName.equals("sha256")) {
+    if ("sha256".equals(fieldName)) {
       return sha256;
     }
     return null;
@@ -57,14 +64,33 @@ public final class CustomerEncryptionKey implements ApiMessage {
 
   @Nullable
   @Override
+  /**
+   * The fields that should be serialized (even if they have empty values). If the containing
+   * message object has a non-null fieldmask, then all the fields in the field mask (and only those
+   * fields in the field mask) will be serialized. If the containing object does not have a
+   * fieldmask, then only non-empty fields will be serialized.
+   */
   public List<String> getFieldMask() {
     return null;
   }
 
+  /** The name of the encryption key that is stored in Google Cloud KMS. */
+  public String getKmsKeyName() {
+    return kmsKeyName;
+  }
+
+  /**
+   * Specifies a 256-bit customer-supplied encryption key, encoded in RFC 4648 base64 to either
+   * encrypt or decrypt this resource.
+   */
   public String getRawKey() {
     return rawKey;
   }
 
+  /**
+   * [Output only] The RFC 4648 base64 encoded SHA-256 hash of the customer-supplied encryption key
+   * that protects this resource.
+   */
   public String getSha256() {
     return sha256;
   }
@@ -92,6 +118,7 @@ public final class CustomerEncryptionKey implements ApiMessage {
   }
 
   public static class Builder {
+    private String kmsKeyName;
     private String rawKey;
     private String sha256;
 
@@ -99,6 +126,9 @@ public final class CustomerEncryptionKey implements ApiMessage {
 
     public Builder mergeFrom(CustomerEncryptionKey other) {
       if (other == CustomerEncryptionKey.getDefaultInstance()) return this;
+      if (other.getKmsKeyName() != null) {
+        this.kmsKeyName = other.kmsKeyName;
+      }
       if (other.getRawKey() != null) {
         this.rawKey = other.rawKey;
       }
@@ -109,23 +139,51 @@ public final class CustomerEncryptionKey implements ApiMessage {
     }
 
     Builder(CustomerEncryptionKey source) {
+      this.kmsKeyName = source.kmsKeyName;
       this.rawKey = source.rawKey;
       this.sha256 = source.sha256;
     }
 
+    /** The name of the encryption key that is stored in Google Cloud KMS. */
+    public String getKmsKeyName() {
+      return kmsKeyName;
+    }
+
+    /** The name of the encryption key that is stored in Google Cloud KMS. */
+    public Builder setKmsKeyName(String kmsKeyName) {
+      this.kmsKeyName = kmsKeyName;
+      return this;
+    }
+
+    /**
+     * Specifies a 256-bit customer-supplied encryption key, encoded in RFC 4648 base64 to either
+     * encrypt or decrypt this resource.
+     */
     public String getRawKey() {
       return rawKey;
     }
 
+    /**
+     * Specifies a 256-bit customer-supplied encryption key, encoded in RFC 4648 base64 to either
+     * encrypt or decrypt this resource.
+     */
     public Builder setRawKey(String rawKey) {
       this.rawKey = rawKey;
       return this;
     }
 
+    /**
+     * [Output only] The RFC 4648 base64 encoded SHA-256 hash of the customer-supplied encryption
+     * key that protects this resource.
+     */
     public String getSha256() {
       return sha256;
     }
 
+    /**
+     * [Output only] The RFC 4648 base64 encoded SHA-256 hash of the customer-supplied encryption
+     * key that protects this resource.
+     */
     public Builder setSha256(String sha256) {
       this.sha256 = sha256;
       return this;
@@ -133,11 +191,12 @@ public final class CustomerEncryptionKey implements ApiMessage {
 
     public CustomerEncryptionKey build() {
 
-      return new CustomerEncryptionKey(rawKey, sha256);
+      return new CustomerEncryptionKey(kmsKeyName, rawKey, sha256);
     }
 
     public Builder clone() {
       Builder newBuilder = new Builder();
+      newBuilder.setKmsKeyName(this.kmsKeyName);
       newBuilder.setRawKey(this.rawKey);
       newBuilder.setSha256(this.sha256);
       return newBuilder;
@@ -146,7 +205,16 @@ public final class CustomerEncryptionKey implements ApiMessage {
 
   @Override
   public String toString() {
-    return "CustomerEncryptionKey{" + "rawKey=" + rawKey + ", " + "sha256=" + sha256 + "}";
+    return "CustomerEncryptionKey{"
+        + "kmsKeyName="
+        + kmsKeyName
+        + ", "
+        + "rawKey="
+        + rawKey
+        + ", "
+        + "sha256="
+        + sha256
+        + "}";
   }
 
   @Override
@@ -156,7 +224,8 @@ public final class CustomerEncryptionKey implements ApiMessage {
     }
     if (o instanceof CustomerEncryptionKey) {
       CustomerEncryptionKey that = (CustomerEncryptionKey) o;
-      return Objects.equals(this.rawKey, that.getRawKey())
+      return Objects.equals(this.kmsKeyName, that.getKmsKeyName())
+          && Objects.equals(this.rawKey, that.getRawKey())
           && Objects.equals(this.sha256, that.getSha256());
     }
     return false;
@@ -164,6 +233,6 @@ public final class CustomerEncryptionKey implements ApiMessage {
 
   @Override
   public int hashCode() {
-    return Objects.hash(rawKey, sha256);
+    return Objects.hash(kmsKeyName, rawKey, sha256);
   }
 }

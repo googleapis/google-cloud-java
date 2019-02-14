@@ -4,15 +4,18 @@
 package com.google.devtools.clouderrorreporting.v1beta1;
 
 /**
+ *
+ *
  * <pre>
  * A sorting order of error groups.
  * </pre>
  *
  * Protobuf enum {@code google.devtools.clouderrorreporting.v1beta1.ErrorGroupOrder}
  */
-public enum ErrorGroupOrder
-    implements com.google.protobuf.ProtocolMessageEnum {
+public enum ErrorGroupOrder implements com.google.protobuf.ProtocolMessageEnum {
   /**
+   *
+   *
    * <pre>
    * No group order specified.
    * </pre>
@@ -21,6 +24,8 @@ public enum ErrorGroupOrder
    */
   GROUP_ORDER_UNSPECIFIED(0),
   /**
+   *
+   *
    * <pre>
    * Total count of errors in the given time window in descending order.
    * </pre>
@@ -29,6 +34,8 @@ public enum ErrorGroupOrder
    */
   COUNT_DESC(1),
   /**
+   *
+   *
    * <pre>
    * Timestamp when the group was last seen in the given time window
    * in descending order.
@@ -38,6 +45,8 @@ public enum ErrorGroupOrder
    */
   LAST_SEEN_DESC(2),
   /**
+   *
+   *
    * <pre>
    * Timestamp when the group was created in descending order.
    * </pre>
@@ -46,6 +55,8 @@ public enum ErrorGroupOrder
    */
   CREATED_DESC(3),
   /**
+   *
+   *
    * <pre>
    * Number of affected users in the given time window in descending order.
    * </pre>
@@ -57,6 +68,8 @@ public enum ErrorGroupOrder
   ;
 
   /**
+   *
+   *
    * <pre>
    * No group order specified.
    * </pre>
@@ -65,6 +78,8 @@ public enum ErrorGroupOrder
    */
   public static final int GROUP_ORDER_UNSPECIFIED_VALUE = 0;
   /**
+   *
+   *
    * <pre>
    * Total count of errors in the given time window in descending order.
    * </pre>
@@ -73,6 +88,8 @@ public enum ErrorGroupOrder
    */
   public static final int COUNT_DESC_VALUE = 1;
   /**
+   *
+   *
    * <pre>
    * Timestamp when the group was last seen in the given time window
    * in descending order.
@@ -82,6 +99,8 @@ public enum ErrorGroupOrder
    */
   public static final int LAST_SEEN_DESC_VALUE = 2;
   /**
+   *
+   *
    * <pre>
    * Timestamp when the group was created in descending order.
    * </pre>
@@ -90,6 +109,8 @@ public enum ErrorGroupOrder
    */
   public static final int CREATED_DESC_VALUE = 3;
   /**
+   *
+   *
    * <pre>
    * Number of affected users in the given time window in descending order.
    * </pre>
@@ -97,7 +118,6 @@ public enum ErrorGroupOrder
    * <code>AFFECTED_USERS_DESC = 4;</code>
    */
   public static final int AFFECTED_USERS_DESC_VALUE = 4;
-
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -107,9 +127,7 @@ public enum ErrorGroupOrder
     return value;
   }
 
-  /**
-   * @deprecated Use {@link #forNumber(int)} instead.
-   */
+  /** @deprecated Use {@link #forNumber(int)} instead. */
   @java.lang.Deprecated
   public static ErrorGroupOrder valueOf(int value) {
     return forNumber(value);
@@ -117,47 +135,51 @@ public enum ErrorGroupOrder
 
   public static ErrorGroupOrder forNumber(int value) {
     switch (value) {
-      case 0: return GROUP_ORDER_UNSPECIFIED;
-      case 1: return COUNT_DESC;
-      case 2: return LAST_SEEN_DESC;
-      case 3: return CREATED_DESC;
-      case 4: return AFFECTED_USERS_DESC;
-      default: return null;
+      case 0:
+        return GROUP_ORDER_UNSPECIFIED;
+      case 1:
+        return COUNT_DESC;
+      case 2:
+        return LAST_SEEN_DESC;
+      case 3:
+        return CREATED_DESC;
+      case 4:
+        return AFFECTED_USERS_DESC;
+      default:
+        return null;
     }
   }
 
-  public static com.google.protobuf.Internal.EnumLiteMap<ErrorGroupOrder>
-      internalGetValueMap() {
+  public static com.google.protobuf.Internal.EnumLiteMap<ErrorGroupOrder> internalGetValueMap() {
     return internalValueMap;
   }
-  private static final com.google.protobuf.Internal.EnumLiteMap<
-      ErrorGroupOrder> internalValueMap =
-        new com.google.protobuf.Internal.EnumLiteMap<ErrorGroupOrder>() {
-          public ErrorGroupOrder findValueByNumber(int number) {
-            return ErrorGroupOrder.forNumber(number);
-          }
-        };
 
-  public final com.google.protobuf.Descriptors.EnumValueDescriptor
-      getValueDescriptor() {
+  private static final com.google.protobuf.Internal.EnumLiteMap<ErrorGroupOrder> internalValueMap =
+      new com.google.protobuf.Internal.EnumLiteMap<ErrorGroupOrder>() {
+        public ErrorGroupOrder findValueByNumber(int number) {
+          return ErrorGroupOrder.forNumber(number);
+        }
+      };
+
+  public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
     return getDescriptor().getValues().get(ordinal());
   }
-  public final com.google.protobuf.Descriptors.EnumDescriptor
-      getDescriptorForType() {
+
+  public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
     return getDescriptor();
   }
-  public static final com.google.protobuf.Descriptors.EnumDescriptor
-      getDescriptor() {
-    return com.google.devtools.clouderrorreporting.v1beta1.ErrorStatsServiceProto.getDescriptor().getEnumTypes().get(1);
+
+  public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
+    return com.google.devtools.clouderrorreporting.v1beta1.ErrorStatsServiceProto.getDescriptor()
+        .getEnumTypes()
+        .get(1);
   }
 
   private static final ErrorGroupOrder[] VALUES = values();
 
-  public static ErrorGroupOrder valueOf(
-      com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+  public static ErrorGroupOrder valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
     if (desc.getType() != getDescriptor()) {
-      throw new java.lang.IllegalArgumentException(
-        "EnumValueDescriptor is not for this type.");
+      throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
     }
     if (desc.getIndex() == -1) {
       return UNRECOGNIZED;
@@ -173,4 +195,3 @@ public enum ErrorGroupOrder
 
   // @@protoc_insertion_point(enum_scope:google.devtools.clouderrorreporting.v1beta1.ErrorGroupOrder)
 }
-

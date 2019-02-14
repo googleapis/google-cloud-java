@@ -4,21 +4,24 @@
 package com.google.cloud.dialogflow.v2beta1;
 
 /**
+ *
+ *
  * <pre>
  * The response message for a webhook call.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2beta1.WebhookResponse}
  */
-public  final class WebhookResponse extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class WebhookResponse extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.dialogflow.v2beta1.WebhookResponse)
     WebhookResponseOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use WebhookResponse.newBuilder() to construct.
   private WebhookResponse(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private WebhookResponse() {
     fulfillmentText_ = "";
     fulfillmentMessages_ = java.util.Collections.emptyList();
@@ -28,15 +31,18 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private WebhookResponse(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -48,81 +54,93 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            fulfillmentText_ = s;
-            break;
-          }
-          case 18: {
-            if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-              fulfillmentMessages_ = new java.util.ArrayList<com.google.cloud.dialogflow.v2beta1.Intent.Message>();
-              mutable_bitField0_ |= 0x00000002;
+              fulfillmentText_ = s;
+              break;
             }
-            fulfillmentMessages_.add(
-                input.readMessage(com.google.cloud.dialogflow.v2beta1.Intent.Message.parser(), extensionRegistry));
-            break;
-          }
-          case 26: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 18:
+            {
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                fulfillmentMessages_ =
+                    new java.util.ArrayList<com.google.cloud.dialogflow.v2beta1.Intent.Message>();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              fulfillmentMessages_.add(
+                  input.readMessage(
+                      com.google.cloud.dialogflow.v2beta1.Intent.Message.parser(),
+                      extensionRegistry));
+              break;
+            }
+          case 26:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            source_ = s;
-            break;
-          }
-          case 34: {
-            com.google.protobuf.Struct.Builder subBuilder = null;
-            if (payload_ != null) {
-              subBuilder = payload_.toBuilder();
+              source_ = s;
+              break;
             }
-            payload_ = input.readMessage(com.google.protobuf.Struct.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(payload_);
-              payload_ = subBuilder.buildPartial();
-            }
+          case 34:
+            {
+              com.google.protobuf.Struct.Builder subBuilder = null;
+              if (payload_ != null) {
+                subBuilder = payload_.toBuilder();
+              }
+              payload_ = input.readMessage(com.google.protobuf.Struct.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(payload_);
+                payload_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 42: {
-            if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
-              outputContexts_ = new java.util.ArrayList<com.google.cloud.dialogflow.v2beta1.Context>();
-              mutable_bitField0_ |= 0x00000010;
+              break;
             }
-            outputContexts_.add(
-                input.readMessage(com.google.cloud.dialogflow.v2beta1.Context.parser(), extensionRegistry));
-            break;
-          }
-          case 50: {
-            com.google.cloud.dialogflow.v2beta1.EventInput.Builder subBuilder = null;
-            if (followupEventInput_ != null) {
-              subBuilder = followupEventInput_.toBuilder();
+          case 42:
+            {
+              if (!((mutable_bitField0_ & 0x00000010) == 0x00000010)) {
+                outputContexts_ =
+                    new java.util.ArrayList<com.google.cloud.dialogflow.v2beta1.Context>();
+                mutable_bitField0_ |= 0x00000010;
+              }
+              outputContexts_.add(
+                  input.readMessage(
+                      com.google.cloud.dialogflow.v2beta1.Context.parser(), extensionRegistry));
+              break;
             }
-            followupEventInput_ = input.readMessage(com.google.cloud.dialogflow.v2beta1.EventInput.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(followupEventInput_);
-              followupEventInput_ = subBuilder.buildPartial();
-            }
+          case 50:
+            {
+              com.google.cloud.dialogflow.v2beta1.EventInput.Builder subBuilder = null;
+              if (followupEventInput_ != null) {
+                subBuilder = followupEventInput_.toBuilder();
+              }
+              followupEventInput_ =
+                  input.readMessage(
+                      com.google.cloud.dialogflow.v2beta1.EventInput.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(followupEventInput_);
+                followupEventInput_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 64: {
-
-            endInteraction_ = input.readBool();
-            break;
-          }
+              break;
+            }
+          case 64:
+            {
+              endInteraction_ = input.readBool();
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
         fulfillmentMessages_ = java.util.Collections.unmodifiableList(fulfillmentMessages_);
@@ -134,22 +152,28 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.dialogflow.v2beta1.WebhookProto.internal_static_google_cloud_dialogflow_v2beta1_WebhookResponse_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.dialogflow.v2beta1.WebhookProto
+        .internal_static_google_cloud_dialogflow_v2beta1_WebhookResponse_descriptor;
   }
 
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.dialogflow.v2beta1.WebhookProto.internal_static_google_cloud_dialogflow_v2beta1_WebhookResponse_fieldAccessorTable
+    return com.google.cloud.dialogflow.v2beta1.WebhookProto
+        .internal_static_google_cloud_dialogflow_v2beta1_WebhookResponse_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.dialogflow.v2beta1.WebhookResponse.class, com.google.cloud.dialogflow.v2beta1.WebhookResponse.Builder.class);
+            com.google.cloud.dialogflow.v2beta1.WebhookResponse.class,
+            com.google.cloud.dialogflow.v2beta1.WebhookResponse.Builder.class);
   }
 
   private int bitField0_;
   public static final int FULFILLMENT_TEXT_FIELD_NUMBER = 1;
   private volatile java.lang.Object fulfillmentText_;
   /**
+   *
+   *
    * <pre>
    * Optional. The text to be shown on the screen. This value is passed directly
    * to `QueryResult.fulfillment_text`.
@@ -162,14 +186,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       fulfillmentText_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Optional. The text to be shown on the screen. This value is passed directly
    * to `QueryResult.fulfillment_text`.
@@ -177,13 +202,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string fulfillment_text = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getFulfillmentTextBytes() {
+  public com.google.protobuf.ByteString getFulfillmentTextBytes() {
     java.lang.Object ref = fulfillmentText_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       fulfillmentText_ = b;
       return b;
     } else {
@@ -194,6 +217,8 @@ private static final long serialVersionUID = 0L;
   public static final int FULFILLMENT_MESSAGES_FIELD_NUMBER = 2;
   private java.util.List<com.google.cloud.dialogflow.v2beta1.Intent.Message> fulfillmentMessages_;
   /**
+   *
+   *
    * <pre>
    * Optional. The collection of rich messages to present to the user. This
    * value is passed directly to `QueryResult.fulfillment_messages`.
@@ -201,10 +226,13 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.Message fulfillment_messages = 2;</code>
    */
-  public java.util.List<com.google.cloud.dialogflow.v2beta1.Intent.Message> getFulfillmentMessagesList() {
+  public java.util.List<com.google.cloud.dialogflow.v2beta1.Intent.Message>
+      getFulfillmentMessagesList() {
     return fulfillmentMessages_;
   }
   /**
+   *
+   *
    * <pre>
    * Optional. The collection of rich messages to present to the user. This
    * value is passed directly to `QueryResult.fulfillment_messages`.
@@ -212,11 +240,13 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.Message fulfillment_messages = 2;</code>
    */
-  public java.util.List<? extends com.google.cloud.dialogflow.v2beta1.Intent.MessageOrBuilder> 
+  public java.util.List<? extends com.google.cloud.dialogflow.v2beta1.Intent.MessageOrBuilder>
       getFulfillmentMessagesOrBuilderList() {
     return fulfillmentMessages_;
   }
   /**
+   *
+   *
    * <pre>
    * Optional. The collection of rich messages to present to the user. This
    * value is passed directly to `QueryResult.fulfillment_messages`.
@@ -228,6 +258,8 @@ private static final long serialVersionUID = 0L;
     return fulfillmentMessages_.size();
   }
   /**
+   *
+   *
    * <pre>
    * Optional. The collection of rich messages to present to the user. This
    * value is passed directly to `QueryResult.fulfillment_messages`.
@@ -239,6 +271,8 @@ private static final long serialVersionUID = 0L;
     return fulfillmentMessages_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * Optional. The collection of rich messages to present to the user. This
    * value is passed directly to `QueryResult.fulfillment_messages`.
@@ -246,14 +280,16 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.Message fulfillment_messages = 2;</code>
    */
-  public com.google.cloud.dialogflow.v2beta1.Intent.MessageOrBuilder getFulfillmentMessagesOrBuilder(
-      int index) {
+  public com.google.cloud.dialogflow.v2beta1.Intent.MessageOrBuilder
+      getFulfillmentMessagesOrBuilder(int index) {
     return fulfillmentMessages_.get(index);
   }
 
   public static final int SOURCE_FIELD_NUMBER = 3;
   private volatile java.lang.Object source_;
   /**
+   *
+   *
    * <pre>
    * Optional. This value is passed directly to `QueryResult.webhook_source`.
    * </pre>
@@ -265,27 +301,26 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       source_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Optional. This value is passed directly to `QueryResult.webhook_source`.
    * </pre>
    *
    * <code>string source = 3;</code>
    */
-  public com.google.protobuf.ByteString
-      getSourceBytes() {
+  public com.google.protobuf.ByteString getSourceBytes() {
     java.lang.Object ref = source_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       source_ = b;
       return b;
     } else {
@@ -296,6 +331,8 @@ private static final long serialVersionUID = 0L;
   public static final int PAYLOAD_FIELD_NUMBER = 4;
   private com.google.protobuf.Struct payload_;
   /**
+   *
+   *
    * <pre>
    * Optional. This value is passed directly to `QueryResult.webhook_payload`.
    * See the related `fulfillment_messages[i].payload field`, which may be used
@@ -327,6 +364,8 @@ private static final long serialVersionUID = 0L;
     return payload_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Optional. This value is passed directly to `QueryResult.webhook_payload`.
    * See the related `fulfillment_messages[i].payload field`, which may be used
@@ -358,6 +397,8 @@ private static final long serialVersionUID = 0L;
     return payload_ == null ? com.google.protobuf.Struct.getDefaultInstance() : payload_;
   }
   /**
+   *
+   *
    * <pre>
    * Optional. This value is passed directly to `QueryResult.webhook_payload`.
    * See the related `fulfillment_messages[i].payload field`, which may be used
@@ -392,6 +433,8 @@ private static final long serialVersionUID = 0L;
   public static final int OUTPUT_CONTEXTS_FIELD_NUMBER = 5;
   private java.util.List<com.google.cloud.dialogflow.v2beta1.Context> outputContexts_;
   /**
+   *
+   *
    * <pre>
    * Optional. The collection of output contexts. This value is passed directly
    * to `QueryResult.output_contexts`.
@@ -403,6 +446,8 @@ private static final long serialVersionUID = 0L;
     return outputContexts_;
   }
   /**
+   *
+   *
    * <pre>
    * Optional. The collection of output contexts. This value is passed directly
    * to `QueryResult.output_contexts`.
@@ -410,11 +455,13 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .google.cloud.dialogflow.v2beta1.Context output_contexts = 5;</code>
    */
-  public java.util.List<? extends com.google.cloud.dialogflow.v2beta1.ContextOrBuilder> 
+  public java.util.List<? extends com.google.cloud.dialogflow.v2beta1.ContextOrBuilder>
       getOutputContextsOrBuilderList() {
     return outputContexts_;
   }
   /**
+   *
+   *
    * <pre>
    * Optional. The collection of output contexts. This value is passed directly
    * to `QueryResult.output_contexts`.
@@ -426,6 +473,8 @@ private static final long serialVersionUID = 0L;
     return outputContexts_.size();
   }
   /**
+   *
+   *
    * <pre>
    * Optional. The collection of output contexts. This value is passed directly
    * to `QueryResult.output_contexts`.
@@ -437,6 +486,8 @@ private static final long serialVersionUID = 0L;
     return outputContexts_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * Optional. The collection of output contexts. This value is passed directly
    * to `QueryResult.output_contexts`.
@@ -452,6 +503,8 @@ private static final long serialVersionUID = 0L;
   public static final int FOLLOWUP_EVENT_INPUT_FIELD_NUMBER = 6;
   private com.google.cloud.dialogflow.v2beta1.EventInput followupEventInput_;
   /**
+   *
+   *
    * <pre>
    * Optional. Makes the platform immediately invoke another `DetectIntent` call
    * internally with the specified event as input.
@@ -463,6 +516,8 @@ private static final long serialVersionUID = 0L;
     return followupEventInput_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Optional. Makes the platform immediately invoke another `DetectIntent` call
    * internally with the specified event as input.
@@ -471,9 +526,13 @@ private static final long serialVersionUID = 0L;
    * <code>.google.cloud.dialogflow.v2beta1.EventInput followup_event_input = 6;</code>
    */
   public com.google.cloud.dialogflow.v2beta1.EventInput getFollowupEventInput() {
-    return followupEventInput_ == null ? com.google.cloud.dialogflow.v2beta1.EventInput.getDefaultInstance() : followupEventInput_;
+    return followupEventInput_ == null
+        ? com.google.cloud.dialogflow.v2beta1.EventInput.getDefaultInstance()
+        : followupEventInput_;
   }
   /**
+   *
+   *
    * <pre>
    * Optional. Makes the platform immediately invoke another `DetectIntent` call
    * internally with the specified event as input.
@@ -488,6 +547,8 @@ private static final long serialVersionUID = 0L;
   public static final int END_INTERACTION_FIELD_NUMBER = 8;
   private boolean endInteraction_;
   /**
+   *
+   *
    * <pre>
    * Optional. Indicates that this intent ends an interaction. Some integrations
    * (e.g., Actions on Google or Dialogflow phone gateway) use this information
@@ -501,6 +562,8 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -510,8 +573,8 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  @java.lang.Override
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getFulfillmentTextBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, fulfillmentText_);
     }
@@ -536,6 +599,7 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -545,27 +609,23 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, fulfillmentText_);
     }
     for (int i = 0; i < fulfillmentMessages_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(2, fulfillmentMessages_.get(i));
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(2, fulfillmentMessages_.get(i));
     }
     if (!getSourceBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, source_);
     }
     if (payload_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, getPayload());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(4, getPayload());
     }
     for (int i = 0; i < outputContexts_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(5, outputContexts_.get(i));
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(5, outputContexts_.get(i));
     }
     if (followupEventInput_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(6, getFollowupEventInput());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(6, getFollowupEventInput());
     }
     if (endInteraction_ != false) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeBoolSize(8, endInteraction_);
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(8, endInteraction_);
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -575,34 +635,28 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.dialogflow.v2beta1.WebhookResponse)) {
       return super.equals(obj);
     }
-    com.google.cloud.dialogflow.v2beta1.WebhookResponse other = (com.google.cloud.dialogflow.v2beta1.WebhookResponse) obj;
+    com.google.cloud.dialogflow.v2beta1.WebhookResponse other =
+        (com.google.cloud.dialogflow.v2beta1.WebhookResponse) obj;
 
     boolean result = true;
-    result = result && getFulfillmentText()
-        .equals(other.getFulfillmentText());
-    result = result && getFulfillmentMessagesList()
-        .equals(other.getFulfillmentMessagesList());
-    result = result && getSource()
-        .equals(other.getSource());
+    result = result && getFulfillmentText().equals(other.getFulfillmentText());
+    result = result && getFulfillmentMessagesList().equals(other.getFulfillmentMessagesList());
+    result = result && getSource().equals(other.getSource());
     result = result && (hasPayload() == other.hasPayload());
     if (hasPayload()) {
-      result = result && getPayload()
-          .equals(other.getPayload());
+      result = result && getPayload().equals(other.getPayload());
     }
-    result = result && getOutputContextsList()
-        .equals(other.getOutputContextsList());
+    result = result && getOutputContextsList().equals(other.getOutputContextsList());
     result = result && (hasFollowupEventInput() == other.hasFollowupEventInput());
     if (hasFollowupEventInput()) {
-      result = result && getFollowupEventInput()
-          .equals(other.getFollowupEventInput());
+      result = result && getFollowupEventInput().equals(other.getFollowupEventInput());
     }
-    result = result && (getEndInteraction()
-        == other.getEndInteraction());
+    result = result && (getEndInteraction() == other.getEndInteraction());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -635,122 +689,133 @@ private static final long serialVersionUID = 0L;
       hash = (53 * hash) + getFollowupEventInput().hashCode();
     }
     hash = (37 * hash) + END_INTERACTION_FIELD_NUMBER;
-    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-        getEndInteraction());
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEndInteraction());
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
   }
 
   public static com.google.cloud.dialogflow.v2beta1.WebhookResponse parseFrom(
-      java.nio.ByteBuffer data)
-      throws com.google.protobuf.InvalidProtocolBufferException {
+      java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dialogflow.v2beta1.WebhookResponse parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.dialogflow.v2beta1.WebhookResponse parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dialogflow.v2beta1.WebhookResponse parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.dialogflow.v2beta1.WebhookResponse parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.dialogflow.v2beta1.WebhookResponse parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static com.google.cloud.dialogflow.v2beta1.WebhookResponse parseFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.dialogflow.v2beta1.WebhookResponse parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
-  public static com.google.cloud.dialogflow.v2beta1.WebhookResponse parseDelimitedFrom(java.io.InputStream input)
+
+  public static com.google.cloud.dialogflow.v2beta1.WebhookResponse parseFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static com.google.cloud.dialogflow.v2beta1.WebhookResponse parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.dialogflow.v2beta1.WebhookResponse parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.dialogflow.v2beta1.WebhookResponse parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.dialogflow.v2beta1.WebhookResponse parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  public Builder newBuilderForType() { return newBuilder(); }
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-  public static Builder newBuilder(com.google.cloud.dialogflow.v2beta1.WebhookResponse prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+
+  public static Builder newBuilder(com.google.cloud.dialogflow.v2beta1.WebhookResponse prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+
+  @java.lang.Override
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * The response message for a webhook call.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2beta1.WebhookResponse}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.dialogflow.v2beta1.WebhookResponse)
       com.google.cloud.dialogflow.v2beta1.WebhookResponseOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.dialogflow.v2beta1.WebhookProto.internal_static_google_cloud_dialogflow_v2beta1_WebhookResponse_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.dialogflow.v2beta1.WebhookProto
+          .internal_static_google_cloud_dialogflow_v2beta1_WebhookResponse_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.dialogflow.v2beta1.WebhookProto.internal_static_google_cloud_dialogflow_v2beta1_WebhookResponse_fieldAccessorTable
+      return com.google.cloud.dialogflow.v2beta1.WebhookProto
+          .internal_static_google_cloud_dialogflow_v2beta1_WebhookResponse_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.dialogflow.v2beta1.WebhookResponse.class, com.google.cloud.dialogflow.v2beta1.WebhookResponse.Builder.class);
+              com.google.cloud.dialogflow.v2beta1.WebhookResponse.class,
+              com.google.cloud.dialogflow.v2beta1.WebhookResponse.Builder.class);
     }
 
     // Construct using com.google.cloud.dialogflow.v2beta1.WebhookResponse.newBuilder()
@@ -758,18 +823,19 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getFulfillmentMessagesFieldBuilder();
         getOutputContextsFieldBuilder();
       }
     }
+
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       fulfillmentText_ = "";
@@ -805,15 +871,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.dialogflow.v2beta1.WebhookProto.internal_static_google_cloud_dialogflow_v2beta1_WebhookResponse_descriptor;
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.dialogflow.v2beta1.WebhookProto
+          .internal_static_google_cloud_dialogflow_v2beta1_WebhookResponse_descriptor;
     }
 
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2beta1.WebhookResponse getDefaultInstanceForType() {
       return com.google.cloud.dialogflow.v2beta1.WebhookResponse.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2beta1.WebhookResponse build() {
       com.google.cloud.dialogflow.v2beta1.WebhookResponse result = buildPartial();
       if (!result.isInitialized()) {
@@ -822,8 +891,10 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.cloud.dialogflow.v2beta1.WebhookResponse buildPartial() {
-      com.google.cloud.dialogflow.v2beta1.WebhookResponse result = new com.google.cloud.dialogflow.v2beta1.WebhookResponse(this);
+      com.google.cloud.dialogflow.v2beta1.WebhookResponse result =
+          new com.google.cloud.dialogflow.v2beta1.WebhookResponse(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       result.fulfillmentText_ = fulfillmentText_;
@@ -862,35 +933,43 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+
+    @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+    @java.lang.Override
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+    @java.lang.Override
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
+    @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
+    @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.dialogflow.v2beta1.WebhookResponse) {
-        return mergeFrom((com.google.cloud.dialogflow.v2beta1.WebhookResponse)other);
+        return mergeFrom((com.google.cloud.dialogflow.v2beta1.WebhookResponse) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -898,7 +977,8 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder mergeFrom(com.google.cloud.dialogflow.v2beta1.WebhookResponse other) {
-      if (other == com.google.cloud.dialogflow.v2beta1.WebhookResponse.getDefaultInstance()) return this;
+      if (other == com.google.cloud.dialogflow.v2beta1.WebhookResponse.getDefaultInstance())
+        return this;
       if (!other.getFulfillmentText().isEmpty()) {
         fulfillmentText_ = other.fulfillmentText_;
         onChanged();
@@ -921,9 +1001,10 @@ private static final long serialVersionUID = 0L;
             fulfillmentMessagesBuilder_ = null;
             fulfillmentMessages_ = other.fulfillmentMessages_;
             bitField0_ = (bitField0_ & ~0x00000002);
-            fulfillmentMessagesBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getFulfillmentMessagesFieldBuilder() : null;
+            fulfillmentMessagesBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getFulfillmentMessagesFieldBuilder()
+                    : null;
           } else {
             fulfillmentMessagesBuilder_.addAllMessages(other.fulfillmentMessages_);
           }
@@ -954,9 +1035,10 @@ private static final long serialVersionUID = 0L;
             outputContextsBuilder_ = null;
             outputContexts_ = other.outputContexts_;
             bitField0_ = (bitField0_ & ~0x00000010);
-            outputContextsBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getOutputContextsFieldBuilder() : null;
+            outputContextsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getOutputContextsFieldBuilder()
+                    : null;
           } else {
             outputContextsBuilder_.addAllMessages(other.outputContexts_);
           }
@@ -973,10 +1055,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -985,7 +1069,8 @@ private static final long serialVersionUID = 0L;
       try {
         parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-        parsedMessage = (com.google.cloud.dialogflow.v2beta1.WebhookResponse) e.getUnfinishedMessage();
+        parsedMessage =
+            (com.google.cloud.dialogflow.v2beta1.WebhookResponse) e.getUnfinishedMessage();
         throw e.unwrapIOException();
       } finally {
         if (parsedMessage != null) {
@@ -994,10 +1079,13 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private java.lang.Object fulfillmentText_ = "";
     /**
+     *
+     *
      * <pre>
      * Optional. The text to be shown on the screen. This value is passed directly
      * to `QueryResult.fulfillment_text`.
@@ -1008,8 +1096,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getFulfillmentText() {
       java.lang.Object ref = fulfillmentText_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         fulfillmentText_ = s;
         return s;
@@ -1018,6 +1105,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The text to be shown on the screen. This value is passed directly
      * to `QueryResult.fulfillment_text`.
@@ -1025,13 +1114,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string fulfillment_text = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getFulfillmentTextBytes() {
+    public com.google.protobuf.ByteString getFulfillmentTextBytes() {
       java.lang.Object ref = fulfillmentText_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         fulfillmentText_ = b;
         return b;
       } else {
@@ -1039,6 +1126,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The text to be shown on the screen. This value is passed directly
      * to `QueryResult.fulfillment_text`.
@@ -1046,17 +1135,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string fulfillment_text = 1;</code>
      */
-    public Builder setFulfillmentText(
-        java.lang.String value) {
+    public Builder setFulfillmentText(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       fulfillmentText_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The text to be shown on the screen. This value is passed directly
      * to `QueryResult.fulfillment_text`.
@@ -1065,12 +1155,14 @@ private static final long serialVersionUID = 0L;
      * <code>string fulfillment_text = 1;</code>
      */
     public Builder clearFulfillmentText() {
-      
+
       fulfillmentText_ = getDefaultInstance().getFulfillmentText();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The text to be shown on the screen. This value is passed directly
      * to `QueryResult.fulfillment_text`.
@@ -1078,39 +1170,48 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string fulfillment_text = 1;</code>
      */
-    public Builder setFulfillmentTextBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setFulfillmentTextBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       fulfillmentText_ = value;
       onChanged();
       return this;
     }
 
-    private java.util.List<com.google.cloud.dialogflow.v2beta1.Intent.Message> fulfillmentMessages_ =
-      java.util.Collections.emptyList();
+    private java.util.List<com.google.cloud.dialogflow.v2beta1.Intent.Message>
+        fulfillmentMessages_ = java.util.Collections.emptyList();
+
     private void ensureFulfillmentMessagesIsMutable() {
       if (!((bitField0_ & 0x00000002) == 0x00000002)) {
-        fulfillmentMessages_ = new java.util.ArrayList<com.google.cloud.dialogflow.v2beta1.Intent.Message>(fulfillmentMessages_);
+        fulfillmentMessages_ =
+            new java.util.ArrayList<com.google.cloud.dialogflow.v2beta1.Intent.Message>(
+                fulfillmentMessages_);
         bitField0_ |= 0x00000002;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.dialogflow.v2beta1.Intent.Message, com.google.cloud.dialogflow.v2beta1.Intent.Message.Builder, com.google.cloud.dialogflow.v2beta1.Intent.MessageOrBuilder> fulfillmentMessagesBuilder_;
+            com.google.cloud.dialogflow.v2beta1.Intent.Message,
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.Builder,
+            com.google.cloud.dialogflow.v2beta1.Intent.MessageOrBuilder>
+        fulfillmentMessagesBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * Optional. The collection of rich messages to present to the user. This
      * value is passed directly to `QueryResult.fulfillment_messages`.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.Message fulfillment_messages = 2;</code>
+     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.Message fulfillment_messages = 2;
+     * </code>
      */
-    public java.util.List<com.google.cloud.dialogflow.v2beta1.Intent.Message> getFulfillmentMessagesList() {
+    public java.util.List<com.google.cloud.dialogflow.v2beta1.Intent.Message>
+        getFulfillmentMessagesList() {
       if (fulfillmentMessagesBuilder_ == null) {
         return java.util.Collections.unmodifiableList(fulfillmentMessages_);
       } else {
@@ -1118,12 +1219,15 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The collection of rich messages to present to the user. This
      * value is passed directly to `QueryResult.fulfillment_messages`.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.Message fulfillment_messages = 2;</code>
+     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.Message fulfillment_messages = 2;
+     * </code>
      */
     public int getFulfillmentMessagesCount() {
       if (fulfillmentMessagesBuilder_ == null) {
@@ -1133,12 +1237,15 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The collection of rich messages to present to the user. This
      * value is passed directly to `QueryResult.fulfillment_messages`.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.Message fulfillment_messages = 2;</code>
+     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.Message fulfillment_messages = 2;
+     * </code>
      */
     public com.google.cloud.dialogflow.v2beta1.Intent.Message getFulfillmentMessages(int index) {
       if (fulfillmentMessagesBuilder_ == null) {
@@ -1148,12 +1255,15 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The collection of rich messages to present to the user. This
      * value is passed directly to `QueryResult.fulfillment_messages`.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.Message fulfillment_messages = 2;</code>
+     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.Message fulfillment_messages = 2;
+     * </code>
      */
     public Builder setFulfillmentMessages(
         int index, com.google.cloud.dialogflow.v2beta1.Intent.Message value) {
@@ -1170,12 +1280,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The collection of rich messages to present to the user. This
      * value is passed directly to `QueryResult.fulfillment_messages`.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.Message fulfillment_messages = 2;</code>
+     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.Message fulfillment_messages = 2;
+     * </code>
      */
     public Builder setFulfillmentMessages(
         int index, com.google.cloud.dialogflow.v2beta1.Intent.Message.Builder builderForValue) {
@@ -1189,14 +1302,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The collection of rich messages to present to the user. This
      * value is passed directly to `QueryResult.fulfillment_messages`.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.Message fulfillment_messages = 2;</code>
+     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.Message fulfillment_messages = 2;
+     * </code>
      */
-    public Builder addFulfillmentMessages(com.google.cloud.dialogflow.v2beta1.Intent.Message value) {
+    public Builder addFulfillmentMessages(
+        com.google.cloud.dialogflow.v2beta1.Intent.Message value) {
       if (fulfillmentMessagesBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1210,12 +1327,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The collection of rich messages to present to the user. This
      * value is passed directly to `QueryResult.fulfillment_messages`.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.Message fulfillment_messages = 2;</code>
+     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.Message fulfillment_messages = 2;
+     * </code>
      */
     public Builder addFulfillmentMessages(
         int index, com.google.cloud.dialogflow.v2beta1.Intent.Message value) {
@@ -1232,12 +1352,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The collection of rich messages to present to the user. This
      * value is passed directly to `QueryResult.fulfillment_messages`.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.Message fulfillment_messages = 2;</code>
+     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.Message fulfillment_messages = 2;
+     * </code>
      */
     public Builder addFulfillmentMessages(
         com.google.cloud.dialogflow.v2beta1.Intent.Message.Builder builderForValue) {
@@ -1251,12 +1374,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The collection of rich messages to present to the user. This
      * value is passed directly to `QueryResult.fulfillment_messages`.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.Message fulfillment_messages = 2;</code>
+     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.Message fulfillment_messages = 2;
+     * </code>
      */
     public Builder addFulfillmentMessages(
         int index, com.google.cloud.dialogflow.v2beta1.Intent.Message.Builder builderForValue) {
@@ -1270,19 +1396,21 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The collection of rich messages to present to the user. This
      * value is passed directly to `QueryResult.fulfillment_messages`.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.Message fulfillment_messages = 2;</code>
+     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.Message fulfillment_messages = 2;
+     * </code>
      */
     public Builder addAllFulfillmentMessages(
         java.lang.Iterable<? extends com.google.cloud.dialogflow.v2beta1.Intent.Message> values) {
       if (fulfillmentMessagesBuilder_ == null) {
         ensureFulfillmentMessagesIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, fulfillmentMessages_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, fulfillmentMessages_);
         onChanged();
       } else {
         fulfillmentMessagesBuilder_.addAllMessages(values);
@@ -1290,12 +1418,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The collection of rich messages to present to the user. This
      * value is passed directly to `QueryResult.fulfillment_messages`.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.Message fulfillment_messages = 2;</code>
+     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.Message fulfillment_messages = 2;
+     * </code>
      */
     public Builder clearFulfillmentMessages() {
       if (fulfillmentMessagesBuilder_ == null) {
@@ -1308,12 +1439,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The collection of rich messages to present to the user. This
      * value is passed directly to `QueryResult.fulfillment_messages`.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.Message fulfillment_messages = 2;</code>
+     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.Message fulfillment_messages = 2;
+     * </code>
      */
     public Builder removeFulfillmentMessages(int index) {
       if (fulfillmentMessagesBuilder_ == null) {
@@ -1326,42 +1460,52 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The collection of rich messages to present to the user. This
      * value is passed directly to `QueryResult.fulfillment_messages`.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.Message fulfillment_messages = 2;</code>
+     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.Message fulfillment_messages = 2;
+     * </code>
      */
     public com.google.cloud.dialogflow.v2beta1.Intent.Message.Builder getFulfillmentMessagesBuilder(
         int index) {
       return getFulfillmentMessagesFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The collection of rich messages to present to the user. This
      * value is passed directly to `QueryResult.fulfillment_messages`.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.Message fulfillment_messages = 2;</code>
+     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.Message fulfillment_messages = 2;
+     * </code>
      */
-    public com.google.cloud.dialogflow.v2beta1.Intent.MessageOrBuilder getFulfillmentMessagesOrBuilder(
-        int index) {
+    public com.google.cloud.dialogflow.v2beta1.Intent.MessageOrBuilder
+        getFulfillmentMessagesOrBuilder(int index) {
       if (fulfillmentMessagesBuilder_ == null) {
-        return fulfillmentMessages_.get(index);  } else {
+        return fulfillmentMessages_.get(index);
+      } else {
         return fulfillmentMessagesBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The collection of rich messages to present to the user. This
      * value is passed directly to `QueryResult.fulfillment_messages`.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.Message fulfillment_messages = 2;</code>
+     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.Message fulfillment_messages = 2;
+     * </code>
      */
-    public java.util.List<? extends com.google.cloud.dialogflow.v2beta1.Intent.MessageOrBuilder> 
-         getFulfillmentMessagesOrBuilderList() {
+    public java.util.List<? extends com.google.cloud.dialogflow.v2beta1.Intent.MessageOrBuilder>
+        getFulfillmentMessagesOrBuilderList() {
       if (fulfillmentMessagesBuilder_ != null) {
         return fulfillmentMessagesBuilder_.getMessageOrBuilderList();
       } else {
@@ -1369,48 +1513,65 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The collection of rich messages to present to the user. This
      * value is passed directly to `QueryResult.fulfillment_messages`.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.Message fulfillment_messages = 2;</code>
+     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.Message fulfillment_messages = 2;
+     * </code>
      */
-    public com.google.cloud.dialogflow.v2beta1.Intent.Message.Builder addFulfillmentMessagesBuilder() {
-      return getFulfillmentMessagesFieldBuilder().addBuilder(
-          com.google.cloud.dialogflow.v2beta1.Intent.Message.getDefaultInstance());
+    public com.google.cloud.dialogflow.v2beta1.Intent.Message.Builder
+        addFulfillmentMessagesBuilder() {
+      return getFulfillmentMessagesFieldBuilder()
+          .addBuilder(com.google.cloud.dialogflow.v2beta1.Intent.Message.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The collection of rich messages to present to the user. This
      * value is passed directly to `QueryResult.fulfillment_messages`.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.Message fulfillment_messages = 2;</code>
+     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.Message fulfillment_messages = 2;
+     * </code>
      */
     public com.google.cloud.dialogflow.v2beta1.Intent.Message.Builder addFulfillmentMessagesBuilder(
         int index) {
-      return getFulfillmentMessagesFieldBuilder().addBuilder(
-          index, com.google.cloud.dialogflow.v2beta1.Intent.Message.getDefaultInstance());
+      return getFulfillmentMessagesFieldBuilder()
+          .addBuilder(
+              index, com.google.cloud.dialogflow.v2beta1.Intent.Message.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The collection of rich messages to present to the user. This
      * value is passed directly to `QueryResult.fulfillment_messages`.
      * </pre>
      *
-     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.Message fulfillment_messages = 2;</code>
+     * <code>repeated .google.cloud.dialogflow.v2beta1.Intent.Message fulfillment_messages = 2;
+     * </code>
      */
-    public java.util.List<com.google.cloud.dialogflow.v2beta1.Intent.Message.Builder> 
-         getFulfillmentMessagesBuilderList() {
+    public java.util.List<com.google.cloud.dialogflow.v2beta1.Intent.Message.Builder>
+        getFulfillmentMessagesBuilderList() {
       return getFulfillmentMessagesFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.dialogflow.v2beta1.Intent.Message, com.google.cloud.dialogflow.v2beta1.Intent.Message.Builder, com.google.cloud.dialogflow.v2beta1.Intent.MessageOrBuilder> 
+            com.google.cloud.dialogflow.v2beta1.Intent.Message,
+            com.google.cloud.dialogflow.v2beta1.Intent.Message.Builder,
+            com.google.cloud.dialogflow.v2beta1.Intent.MessageOrBuilder>
         getFulfillmentMessagesFieldBuilder() {
       if (fulfillmentMessagesBuilder_ == null) {
-        fulfillmentMessagesBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.cloud.dialogflow.v2beta1.Intent.Message, com.google.cloud.dialogflow.v2beta1.Intent.Message.Builder, com.google.cloud.dialogflow.v2beta1.Intent.MessageOrBuilder>(
+        fulfillmentMessagesBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.dialogflow.v2beta1.Intent.Message,
+                com.google.cloud.dialogflow.v2beta1.Intent.Message.Builder,
+                com.google.cloud.dialogflow.v2beta1.Intent.MessageOrBuilder>(
                 fulfillmentMessages_,
                 ((bitField0_ & 0x00000002) == 0x00000002),
                 getParentForChildren(),
@@ -1422,6 +1583,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object source_ = "";
     /**
+     *
+     *
      * <pre>
      * Optional. This value is passed directly to `QueryResult.webhook_source`.
      * </pre>
@@ -1431,8 +1594,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getSource() {
       java.lang.Object ref = source_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         source_ = s;
         return s;
@@ -1441,19 +1603,19 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. This value is passed directly to `QueryResult.webhook_source`.
      * </pre>
      *
      * <code>string source = 3;</code>
      */
-    public com.google.protobuf.ByteString
-        getSourceBytes() {
+    public com.google.protobuf.ByteString getSourceBytes() {
       java.lang.Object ref = source_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         source_ = b;
         return b;
       } else {
@@ -1461,23 +1623,26 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. This value is passed directly to `QueryResult.webhook_source`.
      * </pre>
      *
      * <code>string source = 3;</code>
      */
-    public Builder setSource(
-        java.lang.String value) {
+    public Builder setSource(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       source_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. This value is passed directly to `QueryResult.webhook_source`.
      * </pre>
@@ -1485,25 +1650,26 @@ private static final long serialVersionUID = 0L;
      * <code>string source = 3;</code>
      */
     public Builder clearSource() {
-      
+
       source_ = getDefaultInstance().getSource();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. This value is passed directly to `QueryResult.webhook_source`.
      * </pre>
      *
      * <code>string source = 3;</code>
      */
-    public Builder setSourceBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setSourceBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       source_ = value;
       onChanged();
       return this;
@@ -1511,8 +1677,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Struct payload_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> payloadBuilder_;
+            com.google.protobuf.Struct,
+            com.google.protobuf.Struct.Builder,
+            com.google.protobuf.StructOrBuilder>
+        payloadBuilder_;
     /**
+     *
+     *
      * <pre>
      * Optional. This value is passed directly to `QueryResult.webhook_payload`.
      * See the related `fulfillment_messages[i].payload field`, which may be used
@@ -1544,6 +1715,8 @@ private static final long serialVersionUID = 0L;
       return payloadBuilder_ != null || payload_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. This value is passed directly to `QueryResult.webhook_payload`.
      * See the related `fulfillment_messages[i].payload field`, which may be used
@@ -1579,6 +1752,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. This value is passed directly to `QueryResult.webhook_payload`.
      * See the related `fulfillment_messages[i].payload field`, which may be used
@@ -1620,6 +1795,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. This value is passed directly to `QueryResult.webhook_payload`.
      * See the related `fulfillment_messages[i].payload field`, which may be used
@@ -1647,8 +1824,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.protobuf.Struct payload = 4;</code>
      */
-    public Builder setPayload(
-        com.google.protobuf.Struct.Builder builderForValue) {
+    public Builder setPayload(com.google.protobuf.Struct.Builder builderForValue) {
       if (payloadBuilder_ == null) {
         payload_ = builderForValue.build();
         onChanged();
@@ -1659,6 +1835,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. This value is passed directly to `QueryResult.webhook_payload`.
      * See the related `fulfillment_messages[i].payload field`, which may be used
@@ -1690,7 +1868,7 @@ private static final long serialVersionUID = 0L;
       if (payloadBuilder_ == null) {
         if (payload_ != null) {
           payload_ =
-            com.google.protobuf.Struct.newBuilder(payload_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Struct.newBuilder(payload_).mergeFrom(value).buildPartial();
         } else {
           payload_ = value;
         }
@@ -1702,6 +1880,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. This value is passed directly to `QueryResult.webhook_payload`.
      * See the related `fulfillment_messages[i].payload field`, which may be used
@@ -1741,6 +1921,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. This value is passed directly to `QueryResult.webhook_payload`.
      * See the related `fulfillment_messages[i].payload field`, which may be used
@@ -1769,11 +1951,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Struct payload = 4;</code>
      */
     public com.google.protobuf.Struct.Builder getPayloadBuilder() {
-      
+
       onChanged();
       return getPayloadFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. This value is passed directly to `QueryResult.webhook_payload`.
      * See the related `fulfillment_messages[i].payload field`, which may be used
@@ -1805,11 +1989,12 @@ private static final long serialVersionUID = 0L;
       if (payloadBuilder_ != null) {
         return payloadBuilder_.getMessageOrBuilder();
       } else {
-        return payload_ == null ?
-            com.google.protobuf.Struct.getDefaultInstance() : payload_;
+        return payload_ == null ? com.google.protobuf.Struct.getDefaultInstance() : payload_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. This value is passed directly to `QueryResult.webhook_payload`.
      * See the related `fulfillment_messages[i].payload field`, which may be used
@@ -1838,32 +2023,42 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Struct payload = 4;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder> 
+            com.google.protobuf.Struct,
+            com.google.protobuf.Struct.Builder,
+            com.google.protobuf.StructOrBuilder>
         getPayloadFieldBuilder() {
       if (payloadBuilder_ == null) {
-        payloadBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Struct, com.google.protobuf.Struct.Builder, com.google.protobuf.StructOrBuilder>(
-                getPayload(),
-                getParentForChildren(),
-                isClean());
+        payloadBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Struct,
+                com.google.protobuf.Struct.Builder,
+                com.google.protobuf.StructOrBuilder>(
+                getPayload(), getParentForChildren(), isClean());
         payload_ = null;
       }
       return payloadBuilder_;
     }
 
     private java.util.List<com.google.cloud.dialogflow.v2beta1.Context> outputContexts_ =
-      java.util.Collections.emptyList();
+        java.util.Collections.emptyList();
+
     private void ensureOutputContextsIsMutable() {
       if (!((bitField0_ & 0x00000010) == 0x00000010)) {
-        outputContexts_ = new java.util.ArrayList<com.google.cloud.dialogflow.v2beta1.Context>(outputContexts_);
+        outputContexts_ =
+            new java.util.ArrayList<com.google.cloud.dialogflow.v2beta1.Context>(outputContexts_);
         bitField0_ |= 0x00000010;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.dialogflow.v2beta1.Context, com.google.cloud.dialogflow.v2beta1.Context.Builder, com.google.cloud.dialogflow.v2beta1.ContextOrBuilder> outputContextsBuilder_;
+            com.google.cloud.dialogflow.v2beta1.Context,
+            com.google.cloud.dialogflow.v2beta1.Context.Builder,
+            com.google.cloud.dialogflow.v2beta1.ContextOrBuilder>
+        outputContextsBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * Optional. The collection of output contexts. This value is passed directly
      * to `QueryResult.output_contexts`.
@@ -1879,6 +2074,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The collection of output contexts. This value is passed directly
      * to `QueryResult.output_contexts`.
@@ -1894,6 +2091,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The collection of output contexts. This value is passed directly
      * to `QueryResult.output_contexts`.
@@ -1909,6 +2108,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The collection of output contexts. This value is passed directly
      * to `QueryResult.output_contexts`.
@@ -1916,8 +2117,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.cloud.dialogflow.v2beta1.Context output_contexts = 5;</code>
      */
-    public Builder setOutputContexts(
-        int index, com.google.cloud.dialogflow.v2beta1.Context value) {
+    public Builder setOutputContexts(int index, com.google.cloud.dialogflow.v2beta1.Context value) {
       if (outputContextsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1931,6 +2131,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The collection of output contexts. This value is passed directly
      * to `QueryResult.output_contexts`.
@@ -1950,6 +2152,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The collection of output contexts. This value is passed directly
      * to `QueryResult.output_contexts`.
@@ -1971,6 +2175,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The collection of output contexts. This value is passed directly
      * to `QueryResult.output_contexts`.
@@ -1978,8 +2184,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.cloud.dialogflow.v2beta1.Context output_contexts = 5;</code>
      */
-    public Builder addOutputContexts(
-        int index, com.google.cloud.dialogflow.v2beta1.Context value) {
+    public Builder addOutputContexts(int index, com.google.cloud.dialogflow.v2beta1.Context value) {
       if (outputContextsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1993,6 +2198,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The collection of output contexts. This value is passed directly
      * to `QueryResult.output_contexts`.
@@ -2012,6 +2219,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The collection of output contexts. This value is passed directly
      * to `QueryResult.output_contexts`.
@@ -2031,6 +2240,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The collection of output contexts. This value is passed directly
      * to `QueryResult.output_contexts`.
@@ -2042,8 +2253,7 @@ private static final long serialVersionUID = 0L;
         java.lang.Iterable<? extends com.google.cloud.dialogflow.v2beta1.Context> values) {
       if (outputContextsBuilder_ == null) {
         ensureOutputContextsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, outputContexts_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, outputContexts_);
         onChanged();
       } else {
         outputContextsBuilder_.addAllMessages(values);
@@ -2051,6 +2261,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The collection of output contexts. This value is passed directly
      * to `QueryResult.output_contexts`.
@@ -2069,6 +2281,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The collection of output contexts. This value is passed directly
      * to `QueryResult.output_contexts`.
@@ -2087,6 +2301,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The collection of output contexts. This value is passed directly
      * to `QueryResult.output_contexts`.
@@ -2094,11 +2310,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.cloud.dialogflow.v2beta1.Context output_contexts = 5;</code>
      */
-    public com.google.cloud.dialogflow.v2beta1.Context.Builder getOutputContextsBuilder(
-        int index) {
+    public com.google.cloud.dialogflow.v2beta1.Context.Builder getOutputContextsBuilder(int index) {
       return getOutputContextsFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The collection of output contexts. This value is passed directly
      * to `QueryResult.output_contexts`.
@@ -2109,11 +2326,14 @@ private static final long serialVersionUID = 0L;
     public com.google.cloud.dialogflow.v2beta1.ContextOrBuilder getOutputContextsOrBuilder(
         int index) {
       if (outputContextsBuilder_ == null) {
-        return outputContexts_.get(index);  } else {
+        return outputContexts_.get(index);
+      } else {
         return outputContextsBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The collection of output contexts. This value is passed directly
      * to `QueryResult.output_contexts`.
@@ -2121,8 +2341,8 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.cloud.dialogflow.v2beta1.Context output_contexts = 5;</code>
      */
-    public java.util.List<? extends com.google.cloud.dialogflow.v2beta1.ContextOrBuilder> 
-         getOutputContextsOrBuilderList() {
+    public java.util.List<? extends com.google.cloud.dialogflow.v2beta1.ContextOrBuilder>
+        getOutputContextsOrBuilderList() {
       if (outputContextsBuilder_ != null) {
         return outputContextsBuilder_.getMessageOrBuilderList();
       } else {
@@ -2130,6 +2350,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The collection of output contexts. This value is passed directly
      * to `QueryResult.output_contexts`.
@@ -2138,10 +2360,12 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .google.cloud.dialogflow.v2beta1.Context output_contexts = 5;</code>
      */
     public com.google.cloud.dialogflow.v2beta1.Context.Builder addOutputContextsBuilder() {
-      return getOutputContextsFieldBuilder().addBuilder(
-          com.google.cloud.dialogflow.v2beta1.Context.getDefaultInstance());
+      return getOutputContextsFieldBuilder()
+          .addBuilder(com.google.cloud.dialogflow.v2beta1.Context.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The collection of output contexts. This value is passed directly
      * to `QueryResult.output_contexts`.
@@ -2149,12 +2373,13 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.cloud.dialogflow.v2beta1.Context output_contexts = 5;</code>
      */
-    public com.google.cloud.dialogflow.v2beta1.Context.Builder addOutputContextsBuilder(
-        int index) {
-      return getOutputContextsFieldBuilder().addBuilder(
-          index, com.google.cloud.dialogflow.v2beta1.Context.getDefaultInstance());
+    public com.google.cloud.dialogflow.v2beta1.Context.Builder addOutputContextsBuilder(int index) {
+      return getOutputContextsFieldBuilder()
+          .addBuilder(index, com.google.cloud.dialogflow.v2beta1.Context.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The collection of output contexts. This value is passed directly
      * to `QueryResult.output_contexts`.
@@ -2162,16 +2387,22 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .google.cloud.dialogflow.v2beta1.Context output_contexts = 5;</code>
      */
-    public java.util.List<com.google.cloud.dialogflow.v2beta1.Context.Builder> 
-         getOutputContextsBuilderList() {
+    public java.util.List<com.google.cloud.dialogflow.v2beta1.Context.Builder>
+        getOutputContextsBuilderList() {
       return getOutputContextsFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        com.google.cloud.dialogflow.v2beta1.Context, com.google.cloud.dialogflow.v2beta1.Context.Builder, com.google.cloud.dialogflow.v2beta1.ContextOrBuilder> 
+            com.google.cloud.dialogflow.v2beta1.Context,
+            com.google.cloud.dialogflow.v2beta1.Context.Builder,
+            com.google.cloud.dialogflow.v2beta1.ContextOrBuilder>
         getOutputContextsFieldBuilder() {
       if (outputContextsBuilder_ == null) {
-        outputContextsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            com.google.cloud.dialogflow.v2beta1.Context, com.google.cloud.dialogflow.v2beta1.Context.Builder, com.google.cloud.dialogflow.v2beta1.ContextOrBuilder>(
+        outputContextsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.dialogflow.v2beta1.Context,
+                com.google.cloud.dialogflow.v2beta1.Context.Builder,
+                com.google.cloud.dialogflow.v2beta1.ContextOrBuilder>(
                 outputContexts_,
                 ((bitField0_ & 0x00000010) == 0x00000010),
                 getParentForChildren(),
@@ -2183,8 +2414,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.cloud.dialogflow.v2beta1.EventInput followupEventInput_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dialogflow.v2beta1.EventInput, com.google.cloud.dialogflow.v2beta1.EventInput.Builder, com.google.cloud.dialogflow.v2beta1.EventInputOrBuilder> followupEventInputBuilder_;
+            com.google.cloud.dialogflow.v2beta1.EventInput,
+            com.google.cloud.dialogflow.v2beta1.EventInput.Builder,
+            com.google.cloud.dialogflow.v2beta1.EventInputOrBuilder>
+        followupEventInputBuilder_;
     /**
+     *
+     *
      * <pre>
      * Optional. Makes the platform immediately invoke another `DetectIntent` call
      * internally with the specified event as input.
@@ -2196,6 +2432,8 @@ private static final long serialVersionUID = 0L;
       return followupEventInputBuilder_ != null || followupEventInput_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Makes the platform immediately invoke another `DetectIntent` call
      * internally with the specified event as input.
@@ -2205,12 +2443,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.cloud.dialogflow.v2beta1.EventInput getFollowupEventInput() {
       if (followupEventInputBuilder_ == null) {
-        return followupEventInput_ == null ? com.google.cloud.dialogflow.v2beta1.EventInput.getDefaultInstance() : followupEventInput_;
+        return followupEventInput_ == null
+            ? com.google.cloud.dialogflow.v2beta1.EventInput.getDefaultInstance()
+            : followupEventInput_;
       } else {
         return followupEventInputBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Makes the platform immediately invoke another `DetectIntent` call
      * internally with the specified event as input.
@@ -2232,6 +2474,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Makes the platform immediately invoke another `DetectIntent` call
      * internally with the specified event as input.
@@ -2251,6 +2495,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Makes the platform immediately invoke another `DetectIntent` call
      * internally with the specified event as input.
@@ -2262,7 +2508,9 @@ private static final long serialVersionUID = 0L;
       if (followupEventInputBuilder_ == null) {
         if (followupEventInput_ != null) {
           followupEventInput_ =
-            com.google.cloud.dialogflow.v2beta1.EventInput.newBuilder(followupEventInput_).mergeFrom(value).buildPartial();
+              com.google.cloud.dialogflow.v2beta1.EventInput.newBuilder(followupEventInput_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           followupEventInput_ = value;
         }
@@ -2274,6 +2522,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Makes the platform immediately invoke another `DetectIntent` call
      * internally with the specified event as input.
@@ -2293,6 +2543,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Makes the platform immediately invoke another `DetectIntent` call
      * internally with the specified event as input.
@@ -2301,11 +2553,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.dialogflow.v2beta1.EventInput followup_event_input = 6;</code>
      */
     public com.google.cloud.dialogflow.v2beta1.EventInput.Builder getFollowupEventInputBuilder() {
-      
+
       onChanged();
       return getFollowupEventInputFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Makes the platform immediately invoke another `DetectIntent` call
      * internally with the specified event as input.
@@ -2313,15 +2567,19 @@ private static final long serialVersionUID = 0L;
      *
      * <code>.google.cloud.dialogflow.v2beta1.EventInput followup_event_input = 6;</code>
      */
-    public com.google.cloud.dialogflow.v2beta1.EventInputOrBuilder getFollowupEventInputOrBuilder() {
+    public com.google.cloud.dialogflow.v2beta1.EventInputOrBuilder
+        getFollowupEventInputOrBuilder() {
       if (followupEventInputBuilder_ != null) {
         return followupEventInputBuilder_.getMessageOrBuilder();
       } else {
-        return followupEventInput_ == null ?
-            com.google.cloud.dialogflow.v2beta1.EventInput.getDefaultInstance() : followupEventInput_;
+        return followupEventInput_ == null
+            ? com.google.cloud.dialogflow.v2beta1.EventInput.getDefaultInstance()
+            : followupEventInput_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Makes the platform immediately invoke another `DetectIntent` call
      * internally with the specified event as input.
@@ -2330,21 +2588,26 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.dialogflow.v2beta1.EventInput followup_event_input = 6;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.cloud.dialogflow.v2beta1.EventInput, com.google.cloud.dialogflow.v2beta1.EventInput.Builder, com.google.cloud.dialogflow.v2beta1.EventInputOrBuilder> 
+            com.google.cloud.dialogflow.v2beta1.EventInput,
+            com.google.cloud.dialogflow.v2beta1.EventInput.Builder,
+            com.google.cloud.dialogflow.v2beta1.EventInputOrBuilder>
         getFollowupEventInputFieldBuilder() {
       if (followupEventInputBuilder_ == null) {
-        followupEventInputBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.cloud.dialogflow.v2beta1.EventInput, com.google.cloud.dialogflow.v2beta1.EventInput.Builder, com.google.cloud.dialogflow.v2beta1.EventInputOrBuilder>(
-                getFollowupEventInput(),
-                getParentForChildren(),
-                isClean());
+        followupEventInputBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.dialogflow.v2beta1.EventInput,
+                com.google.cloud.dialogflow.v2beta1.EventInput.Builder,
+                com.google.cloud.dialogflow.v2beta1.EventInputOrBuilder>(
+                getFollowupEventInput(), getParentForChildren(), isClean());
         followupEventInput_ = null;
       }
       return followupEventInputBuilder_;
     }
 
-    private boolean endInteraction_ ;
+    private boolean endInteraction_;
     /**
+     *
+     *
      * <pre>
      * Optional. Indicates that this intent ends an interaction. Some integrations
      * (e.g., Actions on Google or Dialogflow phone gateway) use this information
@@ -2357,6 +2620,8 @@ private static final long serialVersionUID = 0L;
       return endInteraction_;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Indicates that this intent ends an interaction. Some integrations
      * (e.g., Actions on Google or Dialogflow phone gateway) use this information
@@ -2366,12 +2631,14 @@ private static final long serialVersionUID = 0L;
      * <code>bool end_interaction = 8;</code>
      */
     public Builder setEndInteraction(boolean value) {
-      
+
       endInteraction_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Indicates that this intent ends an interaction. Some integrations
      * (e.g., Actions on Google or Dialogflow phone gateway) use this information
@@ -2381,27 +2648,29 @@ private static final long serialVersionUID = 0L;
      * <code>bool end_interaction = 8;</code>
      */
     public Builder clearEndInteraction() {
-      
+
       endInteraction_ = false;
       onChanged();
       return this;
     }
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+
+    @java.lang.Override
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
     }
-
 
     // @@protoc_insertion_point(builder_scope:google.cloud.dialogflow.v2beta1.WebhookResponse)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.dialogflow.v2beta1.WebhookResponse)
   private static final com.google.cloud.dialogflow.v2beta1.WebhookResponse DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.dialogflow.v2beta1.WebhookResponse();
   }
@@ -2410,15 +2679,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<WebhookResponse>
-      PARSER = new com.google.protobuf.AbstractParser<WebhookResponse>() {
-    public WebhookResponse parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-        return new WebhookResponse(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<WebhookResponse> PARSER =
+      new com.google.protobuf.AbstractParser<WebhookResponse>() {
+        @java.lang.Override
+        public WebhookResponse parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new WebhookResponse(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<WebhookResponse> parser() {
     return PARSER;
@@ -2429,9 +2699,8 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.cloud.dialogflow.v2beta1.WebhookResponse getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

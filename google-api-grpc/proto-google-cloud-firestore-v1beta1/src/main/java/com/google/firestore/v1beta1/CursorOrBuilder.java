@@ -3,11 +3,14 @@
 
 package com.google.firestore.v1beta1;
 
-public interface CursorOrBuilder extends
+public interface CursorOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.firestore.v1beta1.Cursor)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The values that represent a position, in the order they appear in
    * the order by clause of a query.
@@ -16,9 +19,10 @@ public interface CursorOrBuilder extends
    *
    * <code>repeated .google.firestore.v1beta1.Value values = 1;</code>
    */
-  java.util.List<com.google.firestore.v1beta1.Value> 
-      getValuesList();
+  java.util.List<com.google.firestore.v1beta1.Value> getValuesList();
   /**
+   *
+   *
    * <pre>
    * The values that represent a position, in the order they appear in
    * the order by clause of a query.
@@ -29,6 +33,8 @@ public interface CursorOrBuilder extends
    */
   com.google.firestore.v1beta1.Value getValues(int index);
   /**
+   *
+   *
    * <pre>
    * The values that represent a position, in the order they appear in
    * the order by clause of a query.
@@ -39,6 +45,8 @@ public interface CursorOrBuilder extends
    */
   int getValuesCount();
   /**
+   *
+   *
    * <pre>
    * The values that represent a position, in the order they appear in
    * the order by clause of a query.
@@ -47,9 +55,10 @@ public interface CursorOrBuilder extends
    *
    * <code>repeated .google.firestore.v1beta1.Value values = 1;</code>
    */
-  java.util.List<? extends com.google.firestore.v1beta1.ValueOrBuilder> 
-      getValuesOrBuilderList();
+  java.util.List<? extends com.google.firestore.v1beta1.ValueOrBuilder> getValuesOrBuilderList();
   /**
+   *
+   *
    * <pre>
    * The values that represent a position, in the order they appear in
    * the order by clause of a query.
@@ -58,10 +67,11 @@ public interface CursorOrBuilder extends
    *
    * <code>repeated .google.firestore.v1beta1.Value values = 1;</code>
    */
-  com.google.firestore.v1beta1.ValueOrBuilder getValuesOrBuilder(
-      int index);
+  com.google.firestore.v1beta1.ValueOrBuilder getValuesOrBuilder(int index);
 
   /**
+   *
+   *
    * <pre>
    * If the position is just before or just after the given values, relative
    * to the sort order defined by the query.

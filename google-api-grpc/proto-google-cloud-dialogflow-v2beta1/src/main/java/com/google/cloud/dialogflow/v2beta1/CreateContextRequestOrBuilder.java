@@ -3,11 +3,14 @@
 
 package com.google.cloud.dialogflow.v2beta1;
 
-public interface CreateContextRequestOrBuilder extends
+public interface CreateContextRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2beta1.CreateContextRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Required. The session to create a context for.
    * Format: `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;` or
@@ -21,6 +24,8 @@ public interface CreateContextRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * Required. The session to create a context for.
    * Format: `projects/&lt;Project ID&gt;/agent/sessions/&lt;Session ID&gt;` or
@@ -32,10 +37,11 @@ public interface CreateContextRequestOrBuilder extends
    *
    * <code>string parent = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * Required. The context to create.
    * </pre>
@@ -44,6 +50,8 @@ public interface CreateContextRequestOrBuilder extends
    */
   boolean hasContext();
   /**
+   *
+   *
    * <pre>
    * Required. The context to create.
    * </pre>
@@ -52,6 +60,8 @@ public interface CreateContextRequestOrBuilder extends
    */
   com.google.cloud.dialogflow.v2beta1.Context getContext();
   /**
+   *
+   *
    * <pre>
    * Required. The context to create.
    * </pre>

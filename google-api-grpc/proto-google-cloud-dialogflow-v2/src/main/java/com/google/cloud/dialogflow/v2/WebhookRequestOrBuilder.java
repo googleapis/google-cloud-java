@@ -3,11 +3,14 @@
 
 package com.google.cloud.dialogflow.v2;
 
-public interface WebhookRequestOrBuilder extends
+public interface WebhookRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dialogflow.v2.WebhookRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The unique identifier of detectIntent request session.
    * Can be used to identify end-user inside webhook implementation.
@@ -18,6 +21,8 @@ public interface WebhookRequestOrBuilder extends
    */
   java.lang.String getSession();
   /**
+   *
+   *
    * <pre>
    * The unique identifier of detectIntent request session.
    * Can be used to identify end-user inside webhook implementation.
@@ -26,10 +31,11 @@ public interface WebhookRequestOrBuilder extends
    *
    * <code>string session = 4;</code>
    */
-  com.google.protobuf.ByteString
-      getSessionBytes();
+  com.google.protobuf.ByteString getSessionBytes();
 
   /**
+   *
+   *
    * <pre>
    * The unique identifier of the response. Contains the same value as
    * `[Streaming]DetectIntentResponse.response_id`.
@@ -39,6 +45,8 @@ public interface WebhookRequestOrBuilder extends
    */
   java.lang.String getResponseId();
   /**
+   *
+   *
    * <pre>
    * The unique identifier of the response. Contains the same value as
    * `[Streaming]DetectIntentResponse.response_id`.
@@ -46,10 +54,11 @@ public interface WebhookRequestOrBuilder extends
    *
    * <code>string response_id = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getResponseIdBytes();
+  com.google.protobuf.ByteString getResponseIdBytes();
 
   /**
+   *
+   *
    * <pre>
    * The result of the conversational query or event processing. Contains the
    * same value as `[Streaming]DetectIntentResponse.query_result`.
@@ -59,6 +68,8 @@ public interface WebhookRequestOrBuilder extends
    */
   boolean hasQueryResult();
   /**
+   *
+   *
    * <pre>
    * The result of the conversational query or event processing. Contains the
    * same value as `[Streaming]DetectIntentResponse.query_result`.
@@ -68,6 +79,8 @@ public interface WebhookRequestOrBuilder extends
    */
   com.google.cloud.dialogflow.v2.QueryResult getQueryResult();
   /**
+   *
+   *
    * <pre>
    * The result of the conversational query or event processing. Contains the
    * same value as `[Streaming]DetectIntentResponse.query_result`.
@@ -78,30 +91,43 @@ public interface WebhookRequestOrBuilder extends
   com.google.cloud.dialogflow.v2.QueryResultOrBuilder getQueryResultOrBuilder();
 
   /**
+   *
+   *
    * <pre>
    * Optional. The contents of the original request that was passed to
    * `[Streaming]DetectIntent` call.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.OriginalDetectIntentRequest original_detect_intent_request = 3;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2.OriginalDetectIntentRequest original_detect_intent_request = 3;
+   * </code>
    */
   boolean hasOriginalDetectIntentRequest();
   /**
+   *
+   *
    * <pre>
    * Optional. The contents of the original request that was passed to
    * `[Streaming]DetectIntent` call.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.OriginalDetectIntentRequest original_detect_intent_request = 3;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2.OriginalDetectIntentRequest original_detect_intent_request = 3;
+   * </code>
    */
   com.google.cloud.dialogflow.v2.OriginalDetectIntentRequest getOriginalDetectIntentRequest();
   /**
+   *
+   *
    * <pre>
    * Optional. The contents of the original request that was passed to
    * `[Streaming]DetectIntent` call.
    * </pre>
    *
-   * <code>.google.cloud.dialogflow.v2.OriginalDetectIntentRequest original_detect_intent_request = 3;</code>
+   * <code>
+   * .google.cloud.dialogflow.v2.OriginalDetectIntentRequest original_detect_intent_request = 3;
+   * </code>
    */
-  com.google.cloud.dialogflow.v2.OriginalDetectIntentRequestOrBuilder getOriginalDetectIntentRequestOrBuilder();
+  com.google.cloud.dialogflow.v2.OriginalDetectIntentRequestOrBuilder
+      getOriginalDetectIntentRequestOrBuilder();
 }

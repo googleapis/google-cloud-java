@@ -21,17 +21,16 @@ import static com.google.common.base.Preconditions.checkNotNull;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.MoreObjects.ToStringHelper;
 import com.google.common.collect.Maps;
-
 import java.io.Serializable;
 import java.util.Map;
 
 /**
- * A Google Cloud Datastore query.
- * For usage examples see {@link GqlQuery} and {@link StructuredQuery}.
+ * A Google Cloud Datastore query. For usage examples see {@link GqlQuery} and {@link
+ * StructuredQuery}.
  *
- * <p>Note that queries require proper indexing. See
- * <a href="https://cloud.google.com/datastore/docs/tools/indexconfig">
- * Cloud Datastore Index Configuration</a> for help configuring indexes.
+ * <p>Note that queries require proper indexing. See <a
+ * href="https://cloud.google.com/datastore/docs/tools/indexconfig">Cloud Datastore Index
+ * Configuration</a> for help configuring indexes.
  *
  * @param <V> the type of the values returned by this query.
  * @see <a href="https://cloud.google.com/datastore/docs/concepts/queries">Datastore Queries</a>
@@ -44,33 +43,32 @@ public abstract class Query<V> implements Serializable {
   private final String namespace;
 
   /**
-   * This class represents the expected type of the result.
-   *   ENTITY: A full entity represented by {@link Entity}.
-   *   PROJECTION_ENTITY: A projection entity, represented by {@link ProjectionEntity}.
-   *   KEY: An entity's {@link Key}.
+   * This class represents the expected type of the result. ENTITY: A full entity represented by
+   * {@link Entity}. PROJECTION_ENTITY: A projection entity, represented by {@link
+   * ProjectionEntity}. KEY: An entity's {@link Key}.
    */
   public abstract static class ResultType<V> implements Serializable {
 
     private static final long serialVersionUID = 2104157695425806623L;
     private static final Map<com.google.datastore.v1.EntityResult.ResultType, ResultType<?>>
-        PB_TO_INSTANCE = Maps.newEnumMap(
-            com.google.datastore.v1.EntityResult.ResultType.class);
+        PB_TO_INSTANCE = Maps.newEnumMap(com.google.datastore.v1.EntityResult.ResultType.class);
 
-    static final ResultType<?> UNKNOWN = new ResultType<Object>(null, Object.class) {
+    static final ResultType<?> UNKNOWN =
+        new ResultType<Object>(null, Object.class) {
 
-      private static final long serialVersionUID = 1602329532153860907L;
+          private static final long serialVersionUID = 1602329532153860907L;
 
-      @Override
-      Object convert(com.google.datastore.v1.Entity entityPb) {
-        if (entityPb.getPropertiesMap().isEmpty()) {
-          if (!entityPb.hasKey()) {
-            return null;
+          @Override
+          Object convert(com.google.datastore.v1.Entity entityPb) {
+            if (entityPb.getPropertiesMap().isEmpty()) {
+              if (!entityPb.hasKey()) {
+                return null;
+              }
+              return Key.fromPb(entityPb.getKey());
+            }
+            return ProjectionEntity.fromPb(entityPb);
           }
-          return Key.fromPb(entityPb.getKey());
-        }
-        return ProjectionEntity.fromPb(entityPb);
-      }
-    };
+        };
 
     public static final ResultType<Entity> ENTITY =
         new ResultType<Entity>(com.google.datastore.v1.EntityResult.ResultType.FULL, Entity.class) {
@@ -95,8 +93,8 @@ public abstract class Query<V> implements Serializable {
         };
 
     public static final ResultType<ProjectionEntity> PROJECTION_ENTITY =
-        new ResultType<ProjectionEntity>(com.google.datastore.v1.EntityResult.ResultType.PROJECTION,
-            ProjectionEntity.class) {
+        new ResultType<ProjectionEntity>(
+            com.google.datastore.v1.EntityResult.ResultType.PROJECTION, ProjectionEntity.class) {
 
           private static final long serialVersionUID = -7591409419690650246L;
 
@@ -109,8 +107,8 @@ public abstract class Query<V> implements Serializable {
     private final Class<V> resultClass;
     private final com.google.datastore.v1.EntityResult.ResultType queryType;
 
-    private ResultType(com.google.datastore.v1.EntityResult.ResultType queryType,
-        Class<V> resultClass) {
+    private ResultType(
+        com.google.datastore.v1.EntityResult.ResultType queryType, Class<V> resultClass) {
       this.queryType = queryType;
       this.resultClass = resultClass;
       if (queryType != null) {
@@ -167,7 +165,6 @@ public abstract class Query<V> implements Serializable {
     return resultType;
   }
 
-
   public String getNamespace() {
     return namespace;
   }
@@ -180,12 +177,12 @@ public abstract class Query<V> implements Serializable {
 
   abstract Query<V> nextQuery(com.google.datastore.v1.RunQueryResponse responsePb);
 
-
   /**
    * Returns a new {@link GqlQuery} builder.
    *
    * <p>Example of creating and running a GQL query.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String kind = "my_kind";
    * String gqlQuery = "select * from " + kind;
    * Query<?> query = Query.newGqlQueryBuilder(gqlQuery).build();
@@ -199,12 +196,12 @@ public abstract class Query<V> implements Serializable {
     return newGqlQueryBuilder(ResultType.UNKNOWN, gql);
   }
 
-
   /**
    * Returns a new {@link GqlQuery} builder.
    *
    * <p>Example of creating and running a typed GQL query.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String kind = "my_kind";
    * String gqlQuery = "select * from " + kind;
    * Query<Entity> query = Query.newGqlQueryBuilder(Query.ResultType.ENTITY, gqlQuery).build();
@@ -218,46 +215,44 @@ public abstract class Query<V> implements Serializable {
     return new GqlQuery.Builder<>(resultType, gql);
   }
 
-
   /**
    * Returns a new {@link StructuredQuery} builder for full (complete entities) queries.
    *
    * <p>Example of creating and running an entity query.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String kind = "my_kind";
    * Query<Entity> query = Query.newEntityQueryBuilder().setKind(kind).build();
    * QueryResults<Entity> results = datastore.run(query);
    * // Use results
    * }</pre>
-   *
    */
   public static EntityQuery.Builder newEntityQueryBuilder() {
     return new EntityQuery.Builder();
   }
 
-
   /**
    * Returns a new {@link StructuredQuery} builder for key only queries.
    *
    * <p>Example of creating and running a key query.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String kind = "my_kind";
    * Query<Key> query = Query.newKeyQueryBuilder().setKind(kind).build();
    * QueryResults<Key> results = datastore.run(query);
    * // Use results
    * }</pre>
-   *
    */
   public static KeyQuery.Builder newKeyQueryBuilder() {
     return new KeyQuery.Builder();
   }
 
-
   /**
    * Returns a new {@link StructuredQuery} builder for projection queries.
    *
    * <p>Example of creating and running a projection entity query.
-   * <pre> {@code
+   *
+   * <pre>{@code
    * String kind = "my_kind";
    * String property = "my_property";
    * Query<ProjectionEntity> query = Query.newProjectionEntityQueryBuilder()
@@ -267,7 +262,6 @@ public abstract class Query<V> implements Serializable {
    * QueryResults<ProjectionEntity> results = datastore.run(query);
    * // Use results
    * }</pre>
-   *
    */
   public static ProjectionEntityQuery.Builder newProjectionEntityQueryBuilder() {
     return new ProjectionEntityQuery.Builder();

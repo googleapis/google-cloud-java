@@ -4,21 +4,24 @@
 package com.google.cloud.redis.v1beta1;
 
 /**
+ *
+ *
  * <pre>
  * A Google Cloud Redis instance.
  * </pre>
  *
  * Protobuf type {@code google.cloud.redis.v1beta1.Instance}
  */
-public  final class Instance extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class Instance extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:google.cloud.redis.v1beta1.Instance)
     InstanceOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use Instance.newBuilder() to construct.
   private Instance(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private Instance() {
     name_ = "";
     displayName_ = "";
@@ -37,15 +40,18 @@ private static final long serialVersionUID = 0L;
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private Instance(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -57,181 +63,203 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              name_ = s;
+              break;
             }
-            break;
-          }
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 18:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            name_ = s;
-            break;
-          }
-          case 18: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            displayName_ = s;
-            break;
-          }
-          case 26: {
-            if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
-              labels_ = com.google.protobuf.MapField.newMapField(
-                  LabelsDefaultEntryHolder.defaultEntry);
-              mutable_bitField0_ |= 0x00000004;
+              displayName_ = s;
+              break;
             }
-            com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-            labels__ = input.readMessage(
-                LabelsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-            labels_.getMutableMap().put(
-                labels__.getKey(), labels__.getValue());
-            break;
-          }
-          case 34: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            locationId_ = s;
-            break;
-          }
-          case 42: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            alternativeLocationId_ = s;
-            break;
-          }
-          case 58: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            redisVersion_ = s;
-            break;
-          }
-          case 74: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            reservedIpRange_ = s;
-            break;
-          }
-          case 82: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            host_ = s;
-            break;
-          }
-          case 88: {
-
-            port_ = input.readInt32();
-            break;
-          }
-          case 98: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            currentLocationId_ = s;
-            break;
-          }
-          case 106: {
-            com.google.protobuf.Timestamp.Builder subBuilder = null;
-            if (createTime_ != null) {
-              subBuilder = createTime_.toBuilder();
+          case 26:
+            {
+              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+                labels_ =
+                    com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000004;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+                  input.readMessage(
+                      LabelsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              labels_.getMutableMap().put(labels__.getKey(), labels__.getValue());
+              break;
             }
-            createTime_ = input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(createTime_);
-              createTime_ = subBuilder.buildPartial();
+          case 34:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              locationId_ = s;
+              break;
             }
+          case 42:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            break;
-          }
-          case 112: {
-            int rawValue = input.readEnum();
-
-            state_ = rawValue;
-            break;
-          }
-          case 122: {
-            java.lang.String s = input.readStringRequireUtf8();
-
-            statusMessage_ = s;
-            break;
-          }
-          case 130: {
-            if (!((mutable_bitField0_ & 0x00002000) == 0x00002000)) {
-              redisConfigs_ = com.google.protobuf.MapField.newMapField(
-                  RedisConfigsDefaultEntryHolder.defaultEntry);
-              mutable_bitField0_ |= 0x00002000;
+              alternativeLocationId_ = s;
+              break;
             }
-            com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-            redisConfigs__ = input.readMessage(
-                RedisConfigsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-            redisConfigs_.getMutableMap().put(
-                redisConfigs__.getKey(), redisConfigs__.getValue());
-            break;
-          }
-          case 136: {
-            int rawValue = input.readEnum();
+          case 58:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            tier_ = rawValue;
-            break;
-          }
-          case 144: {
+              redisVersion_ = s;
+              break;
+            }
+          case 74:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            memorySizeGb_ = input.readInt32();
-            break;
-          }
-          case 162: {
-            java.lang.String s = input.readStringRequireUtf8();
+              reservedIpRange_ = s;
+              break;
+            }
+          case 82:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            authorizedNetwork_ = s;
-            break;
-          }
+              host_ = s;
+              break;
+            }
+          case 88:
+            {
+              port_ = input.readInt32();
+              break;
+            }
+          case 98:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              currentLocationId_ = s;
+              break;
+            }
+          case 106:
+            {
+              com.google.protobuf.Timestamp.Builder subBuilder = null;
+              if (createTime_ != null) {
+                subBuilder = createTime_.toBuilder();
+              }
+              createTime_ =
+                  input.readMessage(com.google.protobuf.Timestamp.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(createTime_);
+                createTime_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
+          case 112:
+            {
+              int rawValue = input.readEnum();
+
+              state_ = rawValue;
+              break;
+            }
+          case 122:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              statusMessage_ = s;
+              break;
+            }
+          case 130:
+            {
+              if (!((mutable_bitField0_ & 0x00002000) == 0x00002000)) {
+                redisConfigs_ =
+                    com.google.protobuf.MapField.newMapField(
+                        RedisConfigsDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00002000;
+              }
+              com.google.protobuf.MapEntry<java.lang.String, java.lang.String> redisConfigs__ =
+                  input.readMessage(
+                      RedisConfigsDefaultEntryHolder.defaultEntry.getParserForType(),
+                      extensionRegistry);
+              redisConfigs_.getMutableMap().put(redisConfigs__.getKey(), redisConfigs__.getValue());
+              break;
+            }
+          case 136:
+            {
+              int rawValue = input.readEnum();
+
+              tier_ = rawValue;
+              break;
+            }
+          case 144:
+            {
+              memorySizeGb_ = input.readInt32();
+              break;
+            }
+          case 162:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              authorizedNetwork_ = s;
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return com.google.cloud.redis.v1beta1.CloudRedisServiceBetaProto.internal_static_google_cloud_redis_v1beta1_Instance_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return com.google.cloud.redis.v1beta1.CloudRedisServiceBetaProto
+        .internal_static_google_cloud_redis_v1beta1_Instance_descriptor;
   }
 
   @SuppressWarnings({"rawtypes"})
-  protected com.google.protobuf.MapField internalGetMapField(
-      int number) {
+  @java.lang.Override
+  protected com.google.protobuf.MapField internalGetMapField(int number) {
     switch (number) {
       case 3:
         return internalGetLabels();
       case 16:
         return internalGetRedisConfigs();
       default:
-        throw new RuntimeException(
-            "Invalid map field number: " + number);
+        throw new RuntimeException("Invalid map field number: " + number);
     }
   }
+
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return com.google.cloud.redis.v1beta1.CloudRedisServiceBetaProto.internal_static_google_cloud_redis_v1beta1_Instance_fieldAccessorTable
+    return com.google.cloud.redis.v1beta1.CloudRedisServiceBetaProto
+        .internal_static_google_cloud_redis_v1beta1_Instance_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            com.google.cloud.redis.v1beta1.Instance.class, com.google.cloud.redis.v1beta1.Instance.Builder.class);
+            com.google.cloud.redis.v1beta1.Instance.class,
+            com.google.cloud.redis.v1beta1.Instance.Builder.class);
   }
 
   /**
+   *
+   *
    * <pre>
    * Represents the different states of a Redis instance.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.redis.v1beta1.Instance.State}
    */
-  public enum State
-      implements com.google.protobuf.ProtocolMessageEnum {
+  public enum State implements com.google.protobuf.ProtocolMessageEnum {
     /**
+     *
+     *
      * <pre>
      * Not set.
      * </pre>
@@ -240,6 +268,8 @@ private static final long serialVersionUID = 0L;
      */
     STATE_UNSPECIFIED(0),
     /**
+     *
+     *
      * <pre>
      * Redis instance is being created.
      * </pre>
@@ -248,6 +278,8 @@ private static final long serialVersionUID = 0L;
      */
     CREATING(1),
     /**
+     *
+     *
      * <pre>
      * Redis instance has been created and is fully usable.
      * </pre>
@@ -256,6 +288,8 @@ private static final long serialVersionUID = 0L;
      */
     READY(2),
     /**
+     *
+     *
      * <pre>
      * Redis instance configuration is being updated. Certain kinds of updates
      * may cause the instance to become unusable while the update is in
@@ -266,6 +300,8 @@ private static final long serialVersionUID = 0L;
      */
     UPDATING(3),
     /**
+     *
+     *
      * <pre>
      * Redis instance is being deleted.
      * </pre>
@@ -274,6 +310,8 @@ private static final long serialVersionUID = 0L;
      */
     DELETING(4),
     /**
+     *
+     *
      * <pre>
      * Redis instance is being repaired and may be unusable. Details can be
      * found in the `status_message` field.
@@ -283,6 +321,8 @@ private static final long serialVersionUID = 0L;
      */
     REPAIRING(5),
     /**
+     *
+     *
      * <pre>
      * Maintenance is being performed on this Redis instance.
      * </pre>
@@ -294,6 +334,8 @@ private static final long serialVersionUID = 0L;
     ;
 
     /**
+     *
+     *
      * <pre>
      * Not set.
      * </pre>
@@ -302,6 +344,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int STATE_UNSPECIFIED_VALUE = 0;
     /**
+     *
+     *
      * <pre>
      * Redis instance is being created.
      * </pre>
@@ -310,6 +354,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int CREATING_VALUE = 1;
     /**
+     *
+     *
      * <pre>
      * Redis instance has been created and is fully usable.
      * </pre>
@@ -318,6 +364,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int READY_VALUE = 2;
     /**
+     *
+     *
      * <pre>
      * Redis instance configuration is being updated. Certain kinds of updates
      * may cause the instance to become unusable while the update is in
@@ -328,6 +376,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int UPDATING_VALUE = 3;
     /**
+     *
+     *
      * <pre>
      * Redis instance is being deleted.
      * </pre>
@@ -336,6 +386,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int DELETING_VALUE = 4;
     /**
+     *
+     *
      * <pre>
      * Redis instance is being repaired and may be unusable. Details can be
      * found in the `status_message` field.
@@ -345,6 +397,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int REPAIRING_VALUE = 5;
     /**
+     *
+     *
      * <pre>
      * Maintenance is being performed on this Redis instance.
      * </pre>
@@ -352,7 +406,6 @@ private static final long serialVersionUID = 0L;
      * <code>MAINTENANCE = 6;</code>
      */
     public static final int MAINTENANCE_VALUE = 6;
-
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -362,9 +415,7 @@ private static final long serialVersionUID = 0L;
       return value;
     }
 
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static State valueOf(int value) {
       return forNumber(value);
@@ -372,49 +423,53 @@ private static final long serialVersionUID = 0L;
 
     public static State forNumber(int value) {
       switch (value) {
-        case 0: return STATE_UNSPECIFIED;
-        case 1: return CREATING;
-        case 2: return READY;
-        case 3: return UPDATING;
-        case 4: return DELETING;
-        case 5: return REPAIRING;
-        case 6: return MAINTENANCE;
-        default: return null;
+        case 0:
+          return STATE_UNSPECIFIED;
+        case 1:
+          return CREATING;
+        case 2:
+          return READY;
+        case 3:
+          return UPDATING;
+        case 4:
+          return DELETING;
+        case 5:
+          return REPAIRING;
+        case 6:
+          return MAINTENANCE;
+        default:
+          return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<State>
-        internalGetValueMap() {
+    public static com.google.protobuf.Internal.EnumLiteMap<State> internalGetValueMap() {
       return internalValueMap;
     }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        State> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<State>() {
-            public State findValueByNumber(int number) {
-              return State.forNumber(number);
-            }
-          };
 
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
+    private static final com.google.protobuf.Internal.EnumLiteMap<State> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<State>() {
+          public State findValueByNumber(int number) {
+            return State.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
       return getDescriptor().getValues().get(ordinal());
     }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
       return getDescriptor();
     }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
       return com.google.cloud.redis.v1beta1.Instance.getDescriptor().getEnumTypes().get(0);
     }
 
     private static final State[] VALUES = values();
 
-    public static State valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+    public static State valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
         return UNRECOGNIZED;
@@ -432,15 +487,18 @@ private static final long serialVersionUID = 0L;
   }
 
   /**
+   *
+   *
    * <pre>
    * Available service tiers to choose from
    * </pre>
    *
    * Protobuf enum {@code google.cloud.redis.v1beta1.Instance.Tier}
    */
-  public enum Tier
-      implements com.google.protobuf.ProtocolMessageEnum {
+  public enum Tier implements com.google.protobuf.ProtocolMessageEnum {
     /**
+     *
+     *
      * <pre>
      * Not set.
      * </pre>
@@ -449,6 +507,8 @@ private static final long serialVersionUID = 0L;
      */
     TIER_UNSPECIFIED(0),
     /**
+     *
+     *
      * <pre>
      * BASIC tier: standalone instance
      * </pre>
@@ -457,6 +517,8 @@ private static final long serialVersionUID = 0L;
      */
     BASIC(1),
     /**
+     *
+     *
      * <pre>
      * STANDARD_HA tier: highly available primary/replica instances
      * </pre>
@@ -468,6 +530,8 @@ private static final long serialVersionUID = 0L;
     ;
 
     /**
+     *
+     *
      * <pre>
      * Not set.
      * </pre>
@@ -476,6 +540,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int TIER_UNSPECIFIED_VALUE = 0;
     /**
+     *
+     *
      * <pre>
      * BASIC tier: standalone instance
      * </pre>
@@ -484,6 +550,8 @@ private static final long serialVersionUID = 0L;
      */
     public static final int BASIC_VALUE = 1;
     /**
+     *
+     *
      * <pre>
      * STANDARD_HA tier: highly available primary/replica instances
      * </pre>
@@ -491,7 +559,6 @@ private static final long serialVersionUID = 0L;
      * <code>STANDARD_HA = 3;</code>
      */
     public static final int STANDARD_HA_VALUE = 3;
-
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -501,9 +568,7 @@ private static final long serialVersionUID = 0L;
       return value;
     }
 
-    /**
-     * @deprecated Use {@link #forNumber(int)} instead.
-     */
+    /** @deprecated Use {@link #forNumber(int)} instead. */
     @java.lang.Deprecated
     public static Tier valueOf(int value) {
       return forNumber(value);
@@ -511,45 +576,45 @@ private static final long serialVersionUID = 0L;
 
     public static Tier forNumber(int value) {
       switch (value) {
-        case 0: return TIER_UNSPECIFIED;
-        case 1: return BASIC;
-        case 3: return STANDARD_HA;
-        default: return null;
+        case 0:
+          return TIER_UNSPECIFIED;
+        case 1:
+          return BASIC;
+        case 3:
+          return STANDARD_HA;
+        default:
+          return null;
       }
     }
 
-    public static com.google.protobuf.Internal.EnumLiteMap<Tier>
-        internalGetValueMap() {
+    public static com.google.protobuf.Internal.EnumLiteMap<Tier> internalGetValueMap() {
       return internalValueMap;
     }
-    private static final com.google.protobuf.Internal.EnumLiteMap<
-        Tier> internalValueMap =
-          new com.google.protobuf.Internal.EnumLiteMap<Tier>() {
-            public Tier findValueByNumber(int number) {
-              return Tier.forNumber(number);
-            }
-          };
 
-    public final com.google.protobuf.Descriptors.EnumValueDescriptor
-        getValueDescriptor() {
+    private static final com.google.protobuf.Internal.EnumLiteMap<Tier> internalValueMap =
+        new com.google.protobuf.Internal.EnumLiteMap<Tier>() {
+          public Tier findValueByNumber(int number) {
+            return Tier.forNumber(number);
+          }
+        };
+
+    public final com.google.protobuf.Descriptors.EnumValueDescriptor getValueDescriptor() {
       return getDescriptor().getValues().get(ordinal());
     }
-    public final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptorForType() {
+
+    public final com.google.protobuf.Descriptors.EnumDescriptor getDescriptorForType() {
       return getDescriptor();
     }
-    public static final com.google.protobuf.Descriptors.EnumDescriptor
-        getDescriptor() {
+
+    public static final com.google.protobuf.Descriptors.EnumDescriptor getDescriptor() {
       return com.google.cloud.redis.v1beta1.Instance.getDescriptor().getEnumTypes().get(1);
     }
 
     private static final Tier[] VALUES = values();
 
-    public static Tier valueOf(
-        com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
+    public static Tier valueOf(com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new java.lang.IllegalArgumentException(
-          "EnumValueDescriptor is not for this type.");
+        throw new java.lang.IllegalArgumentException("EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
         return UNRECOGNIZED;
@@ -570,6 +635,8 @@ private static final long serialVersionUID = 0L;
   public static final int NAME_FIELD_NUMBER = 1;
   private volatile java.lang.Object name_;
   /**
+   *
+   *
    * <pre>
    * Required. Unique name of the resource in this scope including project and
    * location using the form:
@@ -588,14 +655,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       name_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Required. Unique name of the resource in this scope including project and
    * location using the form:
@@ -609,13 +677,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string name = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getNameBytes() {
+  public com.google.protobuf.ByteString getNameBytes() {
     java.lang.Object ref = name_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       name_ = b;
       return b;
     } else {
@@ -626,6 +692,8 @@ private static final long serialVersionUID = 0L;
   public static final int DISPLAY_NAME_FIELD_NUMBER = 2;
   private volatile java.lang.Object displayName_;
   /**
+   *
+   *
    * <pre>
    * An arbitrary and optional user-provided name for the instance.
    * </pre>
@@ -637,27 +705,26 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       displayName_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * An arbitrary and optional user-provided name for the instance.
    * </pre>
    *
    * <code>string display_name = 2;</code>
    */
-  public com.google.protobuf.ByteString
-      getDisplayNameBytes() {
+  public com.google.protobuf.ByteString getDisplayNameBytes() {
     java.lang.Object ref = displayName_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       displayName_ = b;
       return b;
     } else {
@@ -666,24 +733,23 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int LABELS_FIELD_NUMBER = 3;
+
   private static final class LabelsDefaultEntryHolder {
-    static final com.google.protobuf.MapEntry<
-        java.lang.String, java.lang.String> defaultEntry =
-            com.google.protobuf.MapEntry
-            .<java.lang.String, java.lang.String>newDefaultInstance(
-                com.google.cloud.redis.v1beta1.CloudRedisServiceBetaProto.internal_static_google_cloud_redis_v1beta1_Instance_LabelsEntry_descriptor, 
-                com.google.protobuf.WireFormat.FieldType.STRING,
-                "",
-                com.google.protobuf.WireFormat.FieldType.STRING,
-                "");
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.cloud.redis.v1beta1.CloudRedisServiceBetaProto
+                .internal_static_google_cloud_redis_v1beta1_Instance_LabelsEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
   }
-  private com.google.protobuf.MapField<
-      java.lang.String, java.lang.String> labels_;
-  private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-  internalGetLabels() {
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
     if (labels_ == null) {
-      return com.google.protobuf.MapField.emptyMapField(
-          LabelsDefaultEntryHolder.defaultEntry);
+      return com.google.protobuf.MapField.emptyMapField(LabelsDefaultEntryHolder.defaultEntry);
     }
     return labels_;
   }
@@ -692,65 +758,67 @@ private static final long serialVersionUID = 0L;
     return internalGetLabels().getMap().size();
   }
   /**
+   *
+   *
    * <pre>
    * Resource labels to represent user provided metadata
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 3;</code>
    */
-
-  public boolean containsLabels(
-      java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+  public boolean containsLabels(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
     return internalGetLabels().getMap().containsKey(key);
   }
-  /**
-   * Use {@link #getLabelsMap()} instead.
-   */
+  /** Use {@link #getLabelsMap()} instead. */
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getLabels() {
     return getLabelsMap();
   }
   /**
+   *
+   *
    * <pre>
    * Resource labels to represent user provided metadata
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 3;</code>
    */
-
   public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
     return internalGetLabels().getMap();
   }
   /**
+   *
+   *
    * <pre>
    * Resource labels to represent user provided metadata
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 3;</code>
    */
-
-  public java.lang.String getLabelsOrDefault(
-      java.lang.String key,
-      java.lang.String defaultValue) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
-    java.util.Map<java.lang.String, java.lang.String> map =
-        internalGetLabels().getMap();
+  public java.lang.String getLabelsOrDefault(java.lang.String key, java.lang.String defaultValue) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
   /**
+   *
+   *
    * <pre>
    * Resource labels to represent user provided metadata
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 3;</code>
    */
-
-  public java.lang.String getLabelsOrThrow(
-      java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
-    java.util.Map<java.lang.String, java.lang.String> map =
-        internalGetLabels().getMap();
+  public java.lang.String getLabelsOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
     if (!map.containsKey(key)) {
       throw new java.lang.IllegalArgumentException();
     }
@@ -760,6 +828,8 @@ private static final long serialVersionUID = 0L;
   public static final int LOCATION_ID_FIELD_NUMBER = 4;
   private volatile java.lang.Object locationId_;
   /**
+   *
+   *
    * <pre>
    * Optional. The zone where the instance will be provisioned. If not provided,
    * the service will choose a zone for the instance. For STANDARD_HA tier,
@@ -775,14 +845,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       locationId_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Optional. The zone where the instance will be provisioned. If not provided,
    * the service will choose a zone for the instance. For STANDARD_HA tier,
@@ -793,13 +864,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string location_id = 4;</code>
    */
-  public com.google.protobuf.ByteString
-      getLocationIdBytes() {
+  public com.google.protobuf.ByteString getLocationIdBytes() {
     java.lang.Object ref = locationId_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       locationId_ = b;
       return b;
     } else {
@@ -810,6 +879,8 @@ private static final long serialVersionUID = 0L;
   public static final int ALTERNATIVE_LOCATION_ID_FIELD_NUMBER = 5;
   private volatile java.lang.Object alternativeLocationId_;
   /**
+   *
+   *
    * <pre>
    * Optional. Only applicable to STANDARD_HA tier which protects the instance
    * against zonal failures by provisioning it across two zones. If provided, it
@@ -823,14 +894,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       alternativeLocationId_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Optional. Only applicable to STANDARD_HA tier which protects the instance
    * against zonal failures by provisioning it across two zones. If provided, it
@@ -839,13 +911,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string alternative_location_id = 5;</code>
    */
-  public com.google.protobuf.ByteString
-      getAlternativeLocationIdBytes() {
+  public com.google.protobuf.ByteString getAlternativeLocationIdBytes() {
     java.lang.Object ref = alternativeLocationId_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       alternativeLocationId_ = b;
       return b;
     } else {
@@ -856,6 +926,8 @@ private static final long serialVersionUID = 0L;
   public static final int REDIS_VERSION_FIELD_NUMBER = 7;
   private volatile java.lang.Object redisVersion_;
   /**
+   *
+   *
    * <pre>
    * Optional. The version of Redis software.
    * If not provided, latest supported version will be used.
@@ -868,14 +940,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       redisVersion_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Optional. The version of Redis software.
    * If not provided, latest supported version will be used.
@@ -883,13 +956,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string redis_version = 7;</code>
    */
-  public com.google.protobuf.ByteString
-      getRedisVersionBytes() {
+  public com.google.protobuf.ByteString getRedisVersionBytes() {
     java.lang.Object ref = redisVersion_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       redisVersion_ = b;
       return b;
     } else {
@@ -900,6 +971,8 @@ private static final long serialVersionUID = 0L;
   public static final int RESERVED_IP_RANGE_FIELD_NUMBER = 9;
   private volatile java.lang.Object reservedIpRange_;
   /**
+   *
+   *
    * <pre>
    * Optional. The CIDR range of internal addresses that are reserved for this
    * instance. If not provided, the service will choose an unused /29 block,
@@ -914,14 +987,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       reservedIpRange_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Optional. The CIDR range of internal addresses that are reserved for this
    * instance. If not provided, the service will choose an unused /29 block,
@@ -931,13 +1005,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string reserved_ip_range = 9;</code>
    */
-  public com.google.protobuf.ByteString
-      getReservedIpRangeBytes() {
+  public com.google.protobuf.ByteString getReservedIpRangeBytes() {
     java.lang.Object ref = reservedIpRange_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       reservedIpRange_ = b;
       return b;
     } else {
@@ -948,6 +1020,8 @@ private static final long serialVersionUID = 0L;
   public static final int HOST_FIELD_NUMBER = 10;
   private volatile java.lang.Object host_;
   /**
+   *
+   *
    * <pre>
    * Output only. Hostname or IP address of the exposed redis endpoint used by
    * clients to connect to the service.
@@ -960,14 +1034,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       host_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Output only. Hostname or IP address of the exposed redis endpoint used by
    * clients to connect to the service.
@@ -975,13 +1050,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string host = 10;</code>
    */
-  public com.google.protobuf.ByteString
-      getHostBytes() {
+  public com.google.protobuf.ByteString getHostBytes() {
     java.lang.Object ref = host_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       host_ = b;
       return b;
     } else {
@@ -992,6 +1065,8 @@ private static final long serialVersionUID = 0L;
   public static final int PORT_FIELD_NUMBER = 11;
   private int port_;
   /**
+   *
+   *
    * <pre>
    * Output only. The port number of the exposed redis endpoint.
    * </pre>
@@ -1005,6 +1080,8 @@ private static final long serialVersionUID = 0L;
   public static final int CURRENT_LOCATION_ID_FIELD_NUMBER = 12;
   private volatile java.lang.Object currentLocationId_;
   /**
+   *
+   *
    * <pre>
    * Output only. The current zone where the Redis endpoint is placed. In
    * single zone deployments, this will always be the same as [location_id]
@@ -1020,14 +1097,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       currentLocationId_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Output only. The current zone where the Redis endpoint is placed. In
    * single zone deployments, this will always be the same as [location_id]
@@ -1038,13 +1116,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string current_location_id = 12;</code>
    */
-  public com.google.protobuf.ByteString
-      getCurrentLocationIdBytes() {
+  public com.google.protobuf.ByteString getCurrentLocationIdBytes() {
     java.lang.Object ref = currentLocationId_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       currentLocationId_ = b;
       return b;
     } else {
@@ -1055,6 +1131,8 @@ private static final long serialVersionUID = 0L;
   public static final int CREATE_TIME_FIELD_NUMBER = 13;
   private com.google.protobuf.Timestamp createTime_;
   /**
+   *
+   *
    * <pre>
    * Output only. The time the instance was created.
    * </pre>
@@ -1065,6 +1143,8 @@ private static final long serialVersionUID = 0L;
     return createTime_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * Output only. The time the instance was created.
    * </pre>
@@ -1075,6 +1155,8 @@ private static final long serialVersionUID = 0L;
     return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
   }
   /**
+   *
+   *
    * <pre>
    * Output only. The time the instance was created.
    * </pre>
@@ -1088,6 +1170,8 @@ private static final long serialVersionUID = 0L;
   public static final int STATE_FIELD_NUMBER = 14;
   private int state_;
   /**
+   *
+   *
    * <pre>
    * Output only. The current state of this instance.
    * </pre>
@@ -1098,6 +1182,8 @@ private static final long serialVersionUID = 0L;
     return state_;
   }
   /**
+   *
+   *
    * <pre>
    * Output only. The current state of this instance.
    * </pre>
@@ -1105,13 +1191,17 @@ private static final long serialVersionUID = 0L;
    * <code>.google.cloud.redis.v1beta1.Instance.State state = 14;</code>
    */
   public com.google.cloud.redis.v1beta1.Instance.State getState() {
-    com.google.cloud.redis.v1beta1.Instance.State result = com.google.cloud.redis.v1beta1.Instance.State.valueOf(state_);
+    @SuppressWarnings("deprecation")
+    com.google.cloud.redis.v1beta1.Instance.State result =
+        com.google.cloud.redis.v1beta1.Instance.State.valueOf(state_);
     return result == null ? com.google.cloud.redis.v1beta1.Instance.State.UNRECOGNIZED : result;
   }
 
   public static final int STATUS_MESSAGE_FIELD_NUMBER = 15;
   private volatile java.lang.Object statusMessage_;
   /**
+   *
+   *
    * <pre>
    * Output only. Additional information about the current status of this
    * instance, if available.
@@ -1124,14 +1214,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       statusMessage_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Output only. Additional information about the current status of this
    * instance, if available.
@@ -1139,13 +1230,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string status_message = 15;</code>
    */
-  public com.google.protobuf.ByteString
-      getStatusMessageBytes() {
+  public com.google.protobuf.ByteString getStatusMessageBytes() {
     java.lang.Object ref = statusMessage_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       statusMessage_ = b;
       return b;
     } else {
@@ -1154,21 +1243,22 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int REDIS_CONFIGS_FIELD_NUMBER = 16;
+
   private static final class RedisConfigsDefaultEntryHolder {
-    static final com.google.protobuf.MapEntry<
-        java.lang.String, java.lang.String> defaultEntry =
-            com.google.protobuf.MapEntry
-            .<java.lang.String, java.lang.String>newDefaultInstance(
-                com.google.cloud.redis.v1beta1.CloudRedisServiceBetaProto.internal_static_google_cloud_redis_v1beta1_Instance_RedisConfigsEntry_descriptor, 
-                com.google.protobuf.WireFormat.FieldType.STRING,
-                "",
-                com.google.protobuf.WireFormat.FieldType.STRING,
-                "");
+    static final com.google.protobuf.MapEntry<java.lang.String, java.lang.String> defaultEntry =
+        com.google.protobuf.MapEntry.<java.lang.String, java.lang.String>newDefaultInstance(
+            com.google.cloud.redis.v1beta1.CloudRedisServiceBetaProto
+                .internal_static_google_cloud_redis_v1beta1_Instance_RedisConfigsEntry_descriptor,
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "",
+            com.google.protobuf.WireFormat.FieldType.STRING,
+            "");
   }
-  private com.google.protobuf.MapField<
-      java.lang.String, java.lang.String> redisConfigs_;
+
+  private com.google.protobuf.MapField<java.lang.String, java.lang.String> redisConfigs_;
+
   private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-  internalGetRedisConfigs() {
+      internalGetRedisConfigs() {
     if (redisConfigs_ == null) {
       return com.google.protobuf.MapField.emptyMapField(
           RedisConfigsDefaultEntryHolder.defaultEntry);
@@ -1180,6 +1270,8 @@ private static final long serialVersionUID = 0L;
     return internalGetRedisConfigs().getMap().size();
   }
   /**
+   *
+   *
    * <pre>
    * Optional. Redis configuration parameters, according to
    * http://redis.io/topics/config. Currently, the only supported parameters
@@ -1190,20 +1282,20 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; redis_configs = 16;</code>
    */
-
-  public boolean containsRedisConfigs(
-      java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+  public boolean containsRedisConfigs(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
     return internalGetRedisConfigs().getMap().containsKey(key);
   }
-  /**
-   * Use {@link #getRedisConfigsMap()} instead.
-   */
+  /** Use {@link #getRedisConfigsMap()} instead. */
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, java.lang.String> getRedisConfigs() {
     return getRedisConfigsMap();
   }
   /**
+   *
+   *
    * <pre>
    * Optional. Redis configuration parameters, according to
    * http://redis.io/topics/config. Currently, the only supported parameters
@@ -1214,11 +1306,12 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; redis_configs = 16;</code>
    */
-
   public java.util.Map<java.lang.String, java.lang.String> getRedisConfigsMap() {
     return internalGetRedisConfigs().getMap();
   }
   /**
+   *
+   *
    * <pre>
    * Optional. Redis configuration parameters, according to
    * http://redis.io/topics/config. Currently, the only supported parameters
@@ -1229,16 +1322,17 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; redis_configs = 16;</code>
    */
-
   public java.lang.String getRedisConfigsOrDefault(
-      java.lang.String key,
-      java.lang.String defaultValue) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
-    java.util.Map<java.lang.String, java.lang.String> map =
-        internalGetRedisConfigs().getMap();
+      java.lang.String key, java.lang.String defaultValue) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetRedisConfigs().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
   /**
+   *
+   *
    * <pre>
    * Optional. Redis configuration parameters, according to
    * http://redis.io/topics/config. Currently, the only supported parameters
@@ -1249,12 +1343,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, string&gt; redis_configs = 16;</code>
    */
-
-  public java.lang.String getRedisConfigsOrThrow(
-      java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
-    java.util.Map<java.lang.String, java.lang.String> map =
-        internalGetRedisConfigs().getMap();
+  public java.lang.String getRedisConfigsOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
+    java.util.Map<java.lang.String, java.lang.String> map = internalGetRedisConfigs().getMap();
     if (!map.containsKey(key)) {
       throw new java.lang.IllegalArgumentException();
     }
@@ -1264,6 +1357,8 @@ private static final long serialVersionUID = 0L;
   public static final int TIER_FIELD_NUMBER = 17;
   private int tier_;
   /**
+   *
+   *
    * <pre>
    * Required. The service tier of the instance.
    * </pre>
@@ -1274,6 +1369,8 @@ private static final long serialVersionUID = 0L;
     return tier_;
   }
   /**
+   *
+   *
    * <pre>
    * Required. The service tier of the instance.
    * </pre>
@@ -1281,13 +1378,17 @@ private static final long serialVersionUID = 0L;
    * <code>.google.cloud.redis.v1beta1.Instance.Tier tier = 17;</code>
    */
   public com.google.cloud.redis.v1beta1.Instance.Tier getTier() {
-    com.google.cloud.redis.v1beta1.Instance.Tier result = com.google.cloud.redis.v1beta1.Instance.Tier.valueOf(tier_);
+    @SuppressWarnings("deprecation")
+    com.google.cloud.redis.v1beta1.Instance.Tier result =
+        com.google.cloud.redis.v1beta1.Instance.Tier.valueOf(tier_);
     return result == null ? com.google.cloud.redis.v1beta1.Instance.Tier.UNRECOGNIZED : result;
   }
 
   public static final int MEMORY_SIZE_GB_FIELD_NUMBER = 18;
   private int memorySizeGb_;
   /**
+   *
+   *
    * <pre>
    * Required. Redis memory size in GB.
    * </pre>
@@ -1301,6 +1402,8 @@ private static final long serialVersionUID = 0L;
   public static final int AUTHORIZED_NETWORK_FIELD_NUMBER = 20;
   private volatile java.lang.Object authorizedNetwork_;
   /**
+   *
+   *
    * <pre>
    * Optional. The full name of the Google Compute Engine
    * [network](/compute/docs/networks-and-firewalls#networks) to which the
@@ -1315,14 +1418,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       authorizedNetwork_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * Optional. The full name of the Google Compute Engine
    * [network](/compute/docs/networks-and-firewalls#networks) to which the
@@ -1332,13 +1436,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string authorized_network = 20;</code>
    */
-  public com.google.protobuf.ByteString
-      getAuthorizedNetworkBytes() {
+  public com.google.protobuf.ByteString getAuthorizedNetworkBytes() {
     java.lang.Object ref = authorizedNetwork_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       authorizedNetwork_ = b;
       return b;
     } else {
@@ -1347,6 +1449,8 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -1356,20 +1460,16 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  @java.lang.Override
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, name_);
     }
     if (!getDisplayNameBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 2, displayName_);
     }
-    com.google.protobuf.GeneratedMessageV3
-      .serializeStringMapTo(
-        output,
-        internalGetLabels(),
-        LabelsDefaultEntryHolder.defaultEntry,
-        3);
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 3);
     if (!getLocationIdBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 4, locationId_);
     }
@@ -1400,12 +1500,8 @@ private static final long serialVersionUID = 0L;
     if (!getStatusMessageBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 15, statusMessage_);
     }
-    com.google.protobuf.GeneratedMessageV3
-      .serializeStringMapTo(
-        output,
-        internalGetRedisConfigs(),
-        RedisConfigsDefaultEntryHolder.defaultEntry,
-        16);
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetRedisConfigs(), RedisConfigsDefaultEntryHolder.defaultEntry, 16);
     if (tier_ != com.google.cloud.redis.v1beta1.Instance.Tier.TIER_UNSPECIFIED.getNumber()) {
       output.writeEnum(17, tier_);
     }
@@ -1418,6 +1514,7 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
@@ -1429,15 +1526,15 @@ private static final long serialVersionUID = 0L;
     if (!getDisplayNameBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, displayName_);
     }
-    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
-         : internalGetLabels().getMap().entrySet()) {
-      com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-      labels__ = LabelsDefaultEntryHolder.defaultEntry.newBuilderForType()
-          .setKey(entry.getKey())
-          .setValue(entry.getValue())
-          .build();
-      size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(3, labels__);
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetLabels().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> labels__ =
+          LabelsDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, labels__);
     }
     if (!getLocationIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, locationId_);
@@ -1455,40 +1552,35 @@ private static final long serialVersionUID = 0L;
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(10, host_);
     }
     if (port_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(11, port_);
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(11, port_);
     }
     if (!getCurrentLocationIdBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(12, currentLocationId_);
     }
     if (createTime_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(13, getCreateTime());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(13, getCreateTime());
     }
     if (state_ != com.google.cloud.redis.v1beta1.Instance.State.STATE_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(14, state_);
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(14, state_);
     }
     if (!getStatusMessageBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(15, statusMessage_);
     }
-    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry
-         : internalGetRedisConfigs().getMap().entrySet()) {
-      com.google.protobuf.MapEntry<java.lang.String, java.lang.String>
-      redisConfigs__ = RedisConfigsDefaultEntryHolder.defaultEntry.newBuilderForType()
-          .setKey(entry.getKey())
-          .setValue(entry.getValue())
-          .build();
-      size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(16, redisConfigs__);
+    for (java.util.Map.Entry<java.lang.String, java.lang.String> entry :
+        internalGetRedisConfigs().getMap().entrySet()) {
+      com.google.protobuf.MapEntry<java.lang.String, java.lang.String> redisConfigs__ =
+          RedisConfigsDefaultEntryHolder.defaultEntry
+              .newBuilderForType()
+              .setKey(entry.getKey())
+              .setValue(entry.getValue())
+              .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(16, redisConfigs__);
     }
     if (tier_ != com.google.cloud.redis.v1beta1.Instance.Tier.TIER_UNSPECIFIED.getNumber()) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeEnumSize(17, tier_);
+      size += com.google.protobuf.CodedOutputStream.computeEnumSize(17, tier_);
     }
     if (memorySizeGb_ != 0) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeInt32Size(18, memorySizeGb_);
+      size += com.google.protobuf.CodedOutputStream.computeInt32Size(18, memorySizeGb_);
     }
     if (!getAuthorizedNetworkBytes().isEmpty()) {
       size += com.google.protobuf.GeneratedMessageV3.computeStringSize(20, authorizedNetwork_);
@@ -1501,7 +1593,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof com.google.cloud.redis.v1beta1.Instance)) {
       return super.equals(obj);
@@ -1509,41 +1601,26 @@ private static final long serialVersionUID = 0L;
     com.google.cloud.redis.v1beta1.Instance other = (com.google.cloud.redis.v1beta1.Instance) obj;
 
     boolean result = true;
-    result = result && getName()
-        .equals(other.getName());
-    result = result && getDisplayName()
-        .equals(other.getDisplayName());
-    result = result && internalGetLabels().equals(
-        other.internalGetLabels());
-    result = result && getLocationId()
-        .equals(other.getLocationId());
-    result = result && getAlternativeLocationId()
-        .equals(other.getAlternativeLocationId());
-    result = result && getRedisVersion()
-        .equals(other.getRedisVersion());
-    result = result && getReservedIpRange()
-        .equals(other.getReservedIpRange());
-    result = result && getHost()
-        .equals(other.getHost());
-    result = result && (getPort()
-        == other.getPort());
-    result = result && getCurrentLocationId()
-        .equals(other.getCurrentLocationId());
+    result = result && getName().equals(other.getName());
+    result = result && getDisplayName().equals(other.getDisplayName());
+    result = result && internalGetLabels().equals(other.internalGetLabels());
+    result = result && getLocationId().equals(other.getLocationId());
+    result = result && getAlternativeLocationId().equals(other.getAlternativeLocationId());
+    result = result && getRedisVersion().equals(other.getRedisVersion());
+    result = result && getReservedIpRange().equals(other.getReservedIpRange());
+    result = result && getHost().equals(other.getHost());
+    result = result && (getPort() == other.getPort());
+    result = result && getCurrentLocationId().equals(other.getCurrentLocationId());
     result = result && (hasCreateTime() == other.hasCreateTime());
     if (hasCreateTime()) {
-      result = result && getCreateTime()
-          .equals(other.getCreateTime());
+      result = result && getCreateTime().equals(other.getCreateTime());
     }
     result = result && state_ == other.state_;
-    result = result && getStatusMessage()
-        .equals(other.getStatusMessage());
-    result = result && internalGetRedisConfigs().equals(
-        other.internalGetRedisConfigs());
+    result = result && getStatusMessage().equals(other.getStatusMessage());
+    result = result && internalGetRedisConfigs().equals(other.internalGetRedisConfigs());
     result = result && tier_ == other.tier_;
-    result = result && (getMemorySizeGb()
-        == other.getMemorySizeGb());
-    result = result && getAuthorizedNetwork()
-        .equals(other.getAuthorizedNetwork());
+    result = result && (getMemorySizeGb() == other.getMemorySizeGb());
+    result = result && getAuthorizedNetwork().equals(other.getAuthorizedNetwork());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -1600,141 +1677,151 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static com.google.cloud.redis.v1beta1.Instance parseFrom(
-      java.nio.ByteBuffer data)
+  public static com.google.cloud.redis.v1beta1.Instance parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.redis.v1beta1.Instance parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.redis.v1beta1.Instance parseFrom(
       com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.redis.v1beta1.Instance parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.redis.v1beta1.Instance parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static com.google.cloud.redis.v1beta1.Instance parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static com.google.cloud.redis.v1beta1.Instance parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.redis.v1beta1.Instance parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
-  public static com.google.cloud.redis.v1beta1.Instance parseDelimitedFrom(java.io.InputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
-  }
+
   public static com.google.cloud.redis.v1beta1.Instance parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+      java.io.InputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
+  public static com.google.cloud.redis.v1beta1.Instance parseDelimitedFrom(
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
+  }
+
   public static com.google.cloud.redis.v1beta1.Instance parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static com.google.cloud.redis.v1beta1.Instance parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  public Builder newBuilderForType() { return newBuilder(); }
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-  public static Builder newBuilder(com.google.cloud.redis.v1beta1.Instance prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+
+  public static Builder newBuilder(com.google.cloud.redis.v1beta1.Instance prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+
+  @java.lang.Override
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * A Google Cloud Redis instance.
    * </pre>
    *
    * Protobuf type {@code google.cloud.redis.v1beta1.Instance}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:google.cloud.redis.v1beta1.Instance)
       com.google.cloud.redis.v1beta1.InstanceOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.redis.v1beta1.CloudRedisServiceBetaProto.internal_static_google_cloud_redis_v1beta1_Instance_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.redis.v1beta1.CloudRedisServiceBetaProto
+          .internal_static_google_cloud_redis_v1beta1_Instance_descriptor;
     }
 
     @SuppressWarnings({"rawtypes"})
-    protected com.google.protobuf.MapField internalGetMapField(
-        int number) {
+    protected com.google.protobuf.MapField internalGetMapField(int number) {
       switch (number) {
         case 3:
           return internalGetLabels();
         case 16:
           return internalGetRedisConfigs();
         default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
+          throw new RuntimeException("Invalid map field number: " + number);
       }
     }
+
     @SuppressWarnings({"rawtypes"})
-    protected com.google.protobuf.MapField internalGetMutableMapField(
-        int number) {
+    protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
       switch (number) {
         case 3:
           return internalGetMutableLabels();
         case 16:
           return internalGetMutableRedisConfigs();
         default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
+          throw new RuntimeException("Invalid map field number: " + number);
       }
     }
+
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.redis.v1beta1.CloudRedisServiceBetaProto.internal_static_google_cloud_redis_v1beta1_Instance_fieldAccessorTable
+      return com.google.cloud.redis.v1beta1.CloudRedisServiceBetaProto
+          .internal_static_google_cloud_redis_v1beta1_Instance_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.redis.v1beta1.Instance.class, com.google.cloud.redis.v1beta1.Instance.Builder.class);
+              com.google.cloud.redis.v1beta1.Instance.class,
+              com.google.cloud.redis.v1beta1.Instance.Builder.class);
     }
 
     // Construct using com.google.cloud.redis.v1beta1.Instance.newBuilder()
@@ -1742,16 +1829,16 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
-      }
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
     }
+
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       name_ = "";
@@ -1793,15 +1880,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return com.google.cloud.redis.v1beta1.CloudRedisServiceBetaProto.internal_static_google_cloud_redis_v1beta1_Instance_descriptor;
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return com.google.cloud.redis.v1beta1.CloudRedisServiceBetaProto
+          .internal_static_google_cloud_redis_v1beta1_Instance_descriptor;
     }
 
+    @java.lang.Override
     public com.google.cloud.redis.v1beta1.Instance getDefaultInstanceForType() {
       return com.google.cloud.redis.v1beta1.Instance.getDefaultInstance();
     }
 
+    @java.lang.Override
     public com.google.cloud.redis.v1beta1.Instance build() {
       com.google.cloud.redis.v1beta1.Instance result = buildPartial();
       if (!result.isInitialized()) {
@@ -1810,8 +1900,10 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public com.google.cloud.redis.v1beta1.Instance buildPartial() {
-      com.google.cloud.redis.v1beta1.Instance result = new com.google.cloud.redis.v1beta1.Instance(this);
+      com.google.cloud.redis.v1beta1.Instance result =
+          new com.google.cloud.redis.v1beta1.Instance(this);
       int from_bitField0_ = bitField0_;
       int to_bitField0_ = 0;
       result.name_ = name_;
@@ -1842,35 +1934,43 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+
+    @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+    @java.lang.Override
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+    @java.lang.Override
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
+    @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
+    @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof com.google.cloud.redis.v1beta1.Instance) {
-        return mergeFrom((com.google.cloud.redis.v1beta1.Instance)other);
+        return mergeFrom((com.google.cloud.redis.v1beta1.Instance) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -1887,8 +1987,7 @@ private static final long serialVersionUID = 0L;
         displayName_ = other.displayName_;
         onChanged();
       }
-      internalGetMutableLabels().mergeFrom(
-          other.internalGetLabels());
+      internalGetMutableLabels().mergeFrom(other.internalGetLabels());
       if (!other.getLocationId().isEmpty()) {
         locationId_ = other.locationId_;
         onChanged();
@@ -1926,8 +2025,7 @@ private static final long serialVersionUID = 0L;
         statusMessage_ = other.statusMessage_;
         onChanged();
       }
-      internalGetMutableRedisConfigs().mergeFrom(
-          other.internalGetRedisConfigs());
+      internalGetMutableRedisConfigs().mergeFrom(other.internalGetRedisConfigs());
       if (other.tier_ != 0) {
         setTierValue(other.getTierValue());
       }
@@ -1943,10 +2041,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -1964,10 +2064,13 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private java.lang.Object name_ = "";
     /**
+     *
+     *
      * <pre>
      * Required. Unique name of the resource in this scope including project and
      * location using the form:
@@ -1984,8 +2087,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getName() {
       java.lang.Object ref = name_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         name_ = s;
         return s;
@@ -1994,6 +2096,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. Unique name of the resource in this scope including project and
      * location using the form:
@@ -2007,13 +2111,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getNameBytes() {
+    public com.google.protobuf.ByteString getNameBytes() {
       java.lang.Object ref = name_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         name_ = b;
         return b;
       } else {
@@ -2021,6 +2123,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Required. Unique name of the resource in this scope including project and
      * location using the form:
@@ -2034,17 +2138,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public Builder setName(
-        java.lang.String value) {
+    public Builder setName(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       name_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. Unique name of the resource in this scope including project and
      * location using the form:
@@ -2059,12 +2164,14 @@ private static final long serialVersionUID = 0L;
      * <code>string name = 1;</code>
      */
     public Builder clearName() {
-      
+
       name_ = getDefaultInstance().getName();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. Unique name of the resource in this scope including project and
      * location using the form:
@@ -2078,13 +2185,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string name = 1;</code>
      */
-    public Builder setNameBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       name_ = value;
       onChanged();
       return this;
@@ -2092,6 +2198,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object displayName_ = "";
     /**
+     *
+     *
      * <pre>
      * An arbitrary and optional user-provided name for the instance.
      * </pre>
@@ -2101,8 +2209,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getDisplayName() {
       java.lang.Object ref = displayName_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         displayName_ = s;
         return s;
@@ -2111,19 +2218,19 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * An arbitrary and optional user-provided name for the instance.
      * </pre>
      *
      * <code>string display_name = 2;</code>
      */
-    public com.google.protobuf.ByteString
-        getDisplayNameBytes() {
+    public com.google.protobuf.ByteString getDisplayNameBytes() {
       java.lang.Object ref = displayName_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         displayName_ = b;
         return b;
       } else {
@@ -2131,23 +2238,26 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * An arbitrary and optional user-provided name for the instance.
      * </pre>
      *
      * <code>string display_name = 2;</code>
      */
-    public Builder setDisplayName(
-        java.lang.String value) {
+    public Builder setDisplayName(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       displayName_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * An arbitrary and optional user-provided name for the instance.
      * </pre>
@@ -2155,46 +2265,46 @@ private static final long serialVersionUID = 0L;
      * <code>string display_name = 2;</code>
      */
     public Builder clearDisplayName() {
-      
+
       displayName_ = getDefaultInstance().getDisplayName();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * An arbitrary and optional user-provided name for the instance.
      * </pre>
      *
      * <code>string display_name = 2;</code>
      */
-    public Builder setDisplayNameBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setDisplayNameBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       displayName_ = value;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.MapField<
-        java.lang.String, java.lang.String> labels_;
-    private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetLabels() {
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> labels_;
+
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> internalGetLabels() {
       if (labels_ == null) {
-        return com.google.protobuf.MapField.emptyMapField(
-            LabelsDefaultEntryHolder.defaultEntry);
+        return com.google.protobuf.MapField.emptyMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       return labels_;
     }
+
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetMutableLabels() {
-      onChanged();;
+        internalGetMutableLabels() {
+      onChanged();
+      ;
       if (labels_ == null) {
-        labels_ = com.google.protobuf.MapField.newMapField(
-            LabelsDefaultEntryHolder.defaultEntry);
+        labels_ = com.google.protobuf.MapField.newMapField(LabelsDefaultEntryHolder.defaultEntry);
       }
       if (!labels_.isMutable()) {
         labels_ = labels_.copy();
@@ -2206,65 +2316,68 @@ private static final long serialVersionUID = 0L;
       return internalGetLabels().getMap().size();
     }
     /**
+     *
+     *
      * <pre>
      * Resource labels to represent user provided metadata
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 3;</code>
      */
-
-    public boolean containsLabels(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+    public boolean containsLabels(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
       return internalGetLabels().getMap().containsKey(key);
     }
-    /**
-     * Use {@link #getLabelsMap()} instead.
-     */
+    /** Use {@link #getLabelsMap()} instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getLabels() {
       return getLabelsMap();
     }
     /**
+     *
+     *
      * <pre>
      * Resource labels to represent user provided metadata
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 3;</code>
      */
-
     public java.util.Map<java.lang.String, java.lang.String> getLabelsMap() {
       return internalGetLabels().getMap();
     }
     /**
+     *
+     *
      * <pre>
      * Resource labels to represent user provided metadata
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 3;</code>
      */
-
     public java.lang.String getLabelsOrDefault(
-        java.lang.String key,
-        java.lang.String defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetLabels().getMap();
+        java.lang.String key, java.lang.String defaultValue) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
+     *
+     *
      * <pre>
      * Resource labels to represent user provided metadata
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 3;</code>
      */
-
-    public java.lang.String getLabelsOrThrow(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetLabels().getMap();
+    public java.lang.String getLabelsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetLabels().getMap();
       if (!map.containsKey(key)) {
         throw new java.lang.IllegalArgumentException();
       }
@@ -2272,66 +2385,67 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder clearLabels() {
-      internalGetMutableLabels().getMutableMap()
-          .clear();
+      internalGetMutableLabels().getMutableMap().clear();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Resource labels to represent user provided metadata
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 3;</code>
      */
-
-    public Builder removeLabels(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      internalGetMutableLabels().getMutableMap()
-          .remove(key);
+    public Builder removeLabels(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableLabels().getMutableMap().remove(key);
       return this;
     }
-    /**
-     * Use alternate mutation accessors instead.
-     */
+    /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
-    public java.util.Map<java.lang.String, java.lang.String>
-    getMutableLabels() {
+    public java.util.Map<java.lang.String, java.lang.String> getMutableLabels() {
       return internalGetMutableLabels().getMutableMap();
     }
     /**
+     *
+     *
      * <pre>
      * Resource labels to represent user provided metadata
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 3;</code>
      */
-    public Builder putLabels(
-        java.lang.String key,
-        java.lang.String value) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      if (value == null) { throw new java.lang.NullPointerException(); }
-      internalGetMutableLabels().getMutableMap()
-          .put(key, value);
+    public Builder putLabels(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      if (value == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableLabels().getMutableMap().put(key, value);
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Resource labels to represent user provided metadata
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 3;</code>
      */
-
-    public Builder putAllLabels(
-        java.util.Map<java.lang.String, java.lang.String> values) {
-      internalGetMutableLabels().getMutableMap()
-          .putAll(values);
+    public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableLabels().getMutableMap().putAll(values);
       return this;
     }
 
     private java.lang.Object locationId_ = "";
     /**
+     *
+     *
      * <pre>
      * Optional. The zone where the instance will be provisioned. If not provided,
      * the service will choose a zone for the instance. For STANDARD_HA tier,
@@ -2345,8 +2459,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getLocationId() {
       java.lang.Object ref = locationId_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         locationId_ = s;
         return s;
@@ -2355,6 +2468,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The zone where the instance will be provisioned. If not provided,
      * the service will choose a zone for the instance. For STANDARD_HA tier,
@@ -2365,13 +2480,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string location_id = 4;</code>
      */
-    public com.google.protobuf.ByteString
-        getLocationIdBytes() {
+    public com.google.protobuf.ByteString getLocationIdBytes() {
       java.lang.Object ref = locationId_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         locationId_ = b;
         return b;
       } else {
@@ -2379,6 +2492,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The zone where the instance will be provisioned. If not provided,
      * the service will choose a zone for the instance. For STANDARD_HA tier,
@@ -2389,17 +2504,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string location_id = 4;</code>
      */
-    public Builder setLocationId(
-        java.lang.String value) {
+    public Builder setLocationId(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       locationId_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The zone where the instance will be provisioned. If not provided,
      * the service will choose a zone for the instance. For STANDARD_HA tier,
@@ -2411,12 +2527,14 @@ private static final long serialVersionUID = 0L;
      * <code>string location_id = 4;</code>
      */
     public Builder clearLocationId() {
-      
+
       locationId_ = getDefaultInstance().getLocationId();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The zone where the instance will be provisioned. If not provided,
      * the service will choose a zone for the instance. For STANDARD_HA tier,
@@ -2427,13 +2545,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string location_id = 4;</code>
      */
-    public Builder setLocationIdBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setLocationIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       locationId_ = value;
       onChanged();
       return this;
@@ -2441,6 +2558,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object alternativeLocationId_ = "";
     /**
+     *
+     *
      * <pre>
      * Optional. Only applicable to STANDARD_HA tier which protects the instance
      * against zonal failures by provisioning it across two zones. If provided, it
@@ -2452,8 +2571,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getAlternativeLocationId() {
       java.lang.Object ref = alternativeLocationId_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         alternativeLocationId_ = s;
         return s;
@@ -2462,6 +2580,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Only applicable to STANDARD_HA tier which protects the instance
      * against zonal failures by provisioning it across two zones. If provided, it
@@ -2470,13 +2590,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string alternative_location_id = 5;</code>
      */
-    public com.google.protobuf.ByteString
-        getAlternativeLocationIdBytes() {
+    public com.google.protobuf.ByteString getAlternativeLocationIdBytes() {
       java.lang.Object ref = alternativeLocationId_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         alternativeLocationId_ = b;
         return b;
       } else {
@@ -2484,6 +2602,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Only applicable to STANDARD_HA tier which protects the instance
      * against zonal failures by provisioning it across two zones. If provided, it
@@ -2492,17 +2612,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string alternative_location_id = 5;</code>
      */
-    public Builder setAlternativeLocationId(
-        java.lang.String value) {
+    public Builder setAlternativeLocationId(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       alternativeLocationId_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Only applicable to STANDARD_HA tier which protects the instance
      * against zonal failures by provisioning it across two zones. If provided, it
@@ -2512,12 +2633,14 @@ private static final long serialVersionUID = 0L;
      * <code>string alternative_location_id = 5;</code>
      */
     public Builder clearAlternativeLocationId() {
-      
+
       alternativeLocationId_ = getDefaultInstance().getAlternativeLocationId();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Only applicable to STANDARD_HA tier which protects the instance
      * against zonal failures by provisioning it across two zones. If provided, it
@@ -2526,13 +2649,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string alternative_location_id = 5;</code>
      */
-    public Builder setAlternativeLocationIdBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setAlternativeLocationIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       alternativeLocationId_ = value;
       onChanged();
       return this;
@@ -2540,6 +2662,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object redisVersion_ = "";
     /**
+     *
+     *
      * <pre>
      * Optional. The version of Redis software.
      * If not provided, latest supported version will be used.
@@ -2550,8 +2674,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getRedisVersion() {
       java.lang.Object ref = redisVersion_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         redisVersion_ = s;
         return s;
@@ -2560,6 +2683,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The version of Redis software.
      * If not provided, latest supported version will be used.
@@ -2567,13 +2692,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string redis_version = 7;</code>
      */
-    public com.google.protobuf.ByteString
-        getRedisVersionBytes() {
+    public com.google.protobuf.ByteString getRedisVersionBytes() {
       java.lang.Object ref = redisVersion_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         redisVersion_ = b;
         return b;
       } else {
@@ -2581,6 +2704,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The version of Redis software.
      * If not provided, latest supported version will be used.
@@ -2588,17 +2713,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string redis_version = 7;</code>
      */
-    public Builder setRedisVersion(
-        java.lang.String value) {
+    public Builder setRedisVersion(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       redisVersion_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The version of Redis software.
      * If not provided, latest supported version will be used.
@@ -2607,12 +2733,14 @@ private static final long serialVersionUID = 0L;
      * <code>string redis_version = 7;</code>
      */
     public Builder clearRedisVersion() {
-      
+
       redisVersion_ = getDefaultInstance().getRedisVersion();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The version of Redis software.
      * If not provided, latest supported version will be used.
@@ -2620,13 +2748,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string redis_version = 7;</code>
      */
-    public Builder setRedisVersionBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setRedisVersionBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       redisVersion_ = value;
       onChanged();
       return this;
@@ -2634,6 +2761,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object reservedIpRange_ = "";
     /**
+     *
+     *
      * <pre>
      * Optional. The CIDR range of internal addresses that are reserved for this
      * instance. If not provided, the service will choose an unused /29 block,
@@ -2646,8 +2775,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getReservedIpRange() {
       java.lang.Object ref = reservedIpRange_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         reservedIpRange_ = s;
         return s;
@@ -2656,6 +2784,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The CIDR range of internal addresses that are reserved for this
      * instance. If not provided, the service will choose an unused /29 block,
@@ -2665,13 +2795,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string reserved_ip_range = 9;</code>
      */
-    public com.google.protobuf.ByteString
-        getReservedIpRangeBytes() {
+    public com.google.protobuf.ByteString getReservedIpRangeBytes() {
       java.lang.Object ref = reservedIpRange_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         reservedIpRange_ = b;
         return b;
       } else {
@@ -2679,6 +2807,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The CIDR range of internal addresses that are reserved for this
      * instance. If not provided, the service will choose an unused /29 block,
@@ -2688,17 +2818,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string reserved_ip_range = 9;</code>
      */
-    public Builder setReservedIpRange(
-        java.lang.String value) {
+    public Builder setReservedIpRange(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       reservedIpRange_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The CIDR range of internal addresses that are reserved for this
      * instance. If not provided, the service will choose an unused /29 block,
@@ -2709,12 +2840,14 @@ private static final long serialVersionUID = 0L;
      * <code>string reserved_ip_range = 9;</code>
      */
     public Builder clearReservedIpRange() {
-      
+
       reservedIpRange_ = getDefaultInstance().getReservedIpRange();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The CIDR range of internal addresses that are reserved for this
      * instance. If not provided, the service will choose an unused /29 block,
@@ -2724,13 +2857,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string reserved_ip_range = 9;</code>
      */
-    public Builder setReservedIpRangeBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setReservedIpRangeBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       reservedIpRange_ = value;
       onChanged();
       return this;
@@ -2738,6 +2870,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object host_ = "";
     /**
+     *
+     *
      * <pre>
      * Output only. Hostname or IP address of the exposed redis endpoint used by
      * clients to connect to the service.
@@ -2748,8 +2882,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getHost() {
       java.lang.Object ref = host_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         host_ = s;
         return s;
@@ -2758,6 +2891,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Hostname or IP address of the exposed redis endpoint used by
      * clients to connect to the service.
@@ -2765,13 +2900,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string host = 10;</code>
      */
-    public com.google.protobuf.ByteString
-        getHostBytes() {
+    public com.google.protobuf.ByteString getHostBytes() {
       java.lang.Object ref = host_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         host_ = b;
         return b;
       } else {
@@ -2779,6 +2912,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Hostname or IP address of the exposed redis endpoint used by
      * clients to connect to the service.
@@ -2786,17 +2921,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string host = 10;</code>
      */
-    public Builder setHost(
-        java.lang.String value) {
+    public Builder setHost(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       host_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Hostname or IP address of the exposed redis endpoint used by
      * clients to connect to the service.
@@ -2805,12 +2941,14 @@ private static final long serialVersionUID = 0L;
      * <code>string host = 10;</code>
      */
     public Builder clearHost() {
-      
+
       host_ = getDefaultInstance().getHost();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Hostname or IP address of the exposed redis endpoint used by
      * clients to connect to the service.
@@ -2818,20 +2956,21 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string host = 10;</code>
      */
-    public Builder setHostBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setHostBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       host_ = value;
       onChanged();
       return this;
     }
 
-    private int port_ ;
+    private int port_;
     /**
+     *
+     *
      * <pre>
      * Output only. The port number of the exposed redis endpoint.
      * </pre>
@@ -2842,6 +2981,8 @@ private static final long serialVersionUID = 0L;
       return port_;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The port number of the exposed redis endpoint.
      * </pre>
@@ -2849,12 +2990,14 @@ private static final long serialVersionUID = 0L;
      * <code>int32 port = 11;</code>
      */
     public Builder setPort(int value) {
-      
+
       port_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The port number of the exposed redis endpoint.
      * </pre>
@@ -2862,7 +3005,7 @@ private static final long serialVersionUID = 0L;
      * <code>int32 port = 11;</code>
      */
     public Builder clearPort() {
-      
+
       port_ = 0;
       onChanged();
       return this;
@@ -2870,6 +3013,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object currentLocationId_ = "";
     /**
+     *
+     *
      * <pre>
      * Output only. The current zone where the Redis endpoint is placed. In
      * single zone deployments, this will always be the same as [location_id]
@@ -2883,8 +3028,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getCurrentLocationId() {
       java.lang.Object ref = currentLocationId_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         currentLocationId_ = s;
         return s;
@@ -2893,6 +3037,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The current zone where the Redis endpoint is placed. In
      * single zone deployments, this will always be the same as [location_id]
@@ -2903,13 +3049,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string current_location_id = 12;</code>
      */
-    public com.google.protobuf.ByteString
-        getCurrentLocationIdBytes() {
+    public com.google.protobuf.ByteString getCurrentLocationIdBytes() {
       java.lang.Object ref = currentLocationId_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         currentLocationId_ = b;
         return b;
       } else {
@@ -2917,6 +3061,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The current zone where the Redis endpoint is placed. In
      * single zone deployments, this will always be the same as [location_id]
@@ -2927,17 +3073,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string current_location_id = 12;</code>
      */
-    public Builder setCurrentLocationId(
-        java.lang.String value) {
+    public Builder setCurrentLocationId(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       currentLocationId_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The current zone where the Redis endpoint is placed. In
      * single zone deployments, this will always be the same as [location_id]
@@ -2949,12 +3096,14 @@ private static final long serialVersionUID = 0L;
      * <code>string current_location_id = 12;</code>
      */
     public Builder clearCurrentLocationId() {
-      
+
       currentLocationId_ = getDefaultInstance().getCurrentLocationId();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The current zone where the Redis endpoint is placed. In
      * single zone deployments, this will always be the same as [location_id]
@@ -2965,13 +3114,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string current_location_id = 12;</code>
      */
-    public Builder setCurrentLocationIdBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setCurrentLocationIdBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       currentLocationId_ = value;
       onChanged();
       return this;
@@ -2979,8 +3127,13 @@ private static final long serialVersionUID = 0L;
 
     private com.google.protobuf.Timestamp createTime_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> createTimeBuilder_;
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
+        createTimeBuilder_;
     /**
+     *
+     *
      * <pre>
      * Output only. The time the instance was created.
      * </pre>
@@ -2991,6 +3144,8 @@ private static final long serialVersionUID = 0L;
       return createTimeBuilder_ != null || createTime_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The time the instance was created.
      * </pre>
@@ -2999,12 +3154,16 @@ private static final long serialVersionUID = 0L;
      */
     public com.google.protobuf.Timestamp getCreateTime() {
       if (createTimeBuilder_ == null) {
-        return createTime_ == null ? com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
+        return createTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : createTime_;
       } else {
         return createTimeBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The time the instance was created.
      * </pre>
@@ -3025,14 +3184,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The time the instance was created.
      * </pre>
      *
      * <code>.google.protobuf.Timestamp create_time = 13;</code>
      */
-    public Builder setCreateTime(
-        com.google.protobuf.Timestamp.Builder builderForValue) {
+    public Builder setCreateTime(com.google.protobuf.Timestamp.Builder builderForValue) {
       if (createTimeBuilder_ == null) {
         createTime_ = builderForValue.build();
         onChanged();
@@ -3043,6 +3203,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The time the instance was created.
      * </pre>
@@ -3053,7 +3215,7 @@ private static final long serialVersionUID = 0L;
       if (createTimeBuilder_ == null) {
         if (createTime_ != null) {
           createTime_ =
-            com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
+              com.google.protobuf.Timestamp.newBuilder(createTime_).mergeFrom(value).buildPartial();
         } else {
           createTime_ = value;
         }
@@ -3065,6 +3227,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The time the instance was created.
      * </pre>
@@ -3083,6 +3247,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The time the instance was created.
      * </pre>
@@ -3090,11 +3256,13 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp create_time = 13;</code>
      */
     public com.google.protobuf.Timestamp.Builder getCreateTimeBuilder() {
-      
+
       onChanged();
       return getCreateTimeFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The time the instance was created.
      * </pre>
@@ -3105,11 +3273,14 @@ private static final long serialVersionUID = 0L;
       if (createTimeBuilder_ != null) {
         return createTimeBuilder_.getMessageOrBuilder();
       } else {
-        return createTime_ == null ?
-            com.google.protobuf.Timestamp.getDefaultInstance() : createTime_;
+        return createTime_ == null
+            ? com.google.protobuf.Timestamp.getDefaultInstance()
+            : createTime_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The time the instance was created.
      * </pre>
@@ -3117,14 +3288,17 @@ private static final long serialVersionUID = 0L;
      * <code>.google.protobuf.Timestamp create_time = 13;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder> 
+            com.google.protobuf.Timestamp,
+            com.google.protobuf.Timestamp.Builder,
+            com.google.protobuf.TimestampOrBuilder>
         getCreateTimeFieldBuilder() {
       if (createTimeBuilder_ == null) {
-        createTimeBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            com.google.protobuf.Timestamp, com.google.protobuf.Timestamp.Builder, com.google.protobuf.TimestampOrBuilder>(
-                getCreateTime(),
-                getParentForChildren(),
-                isClean());
+        createTimeBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.protobuf.Timestamp,
+                com.google.protobuf.Timestamp.Builder,
+                com.google.protobuf.TimestampOrBuilder>(
+                getCreateTime(), getParentForChildren(), isClean());
         createTime_ = null;
       }
       return createTimeBuilder_;
@@ -3132,6 +3306,8 @@ private static final long serialVersionUID = 0L;
 
     private int state_ = 0;
     /**
+     *
+     *
      * <pre>
      * Output only. The current state of this instance.
      * </pre>
@@ -3142,6 +3318,8 @@ private static final long serialVersionUID = 0L;
       return state_;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The current state of this instance.
      * </pre>
@@ -3154,6 +3332,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The current state of this instance.
      * </pre>
@@ -3161,10 +3341,14 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.redis.v1beta1.Instance.State state = 14;</code>
      */
     public com.google.cloud.redis.v1beta1.Instance.State getState() {
-      com.google.cloud.redis.v1beta1.Instance.State result = com.google.cloud.redis.v1beta1.Instance.State.valueOf(state_);
+      @SuppressWarnings("deprecation")
+      com.google.cloud.redis.v1beta1.Instance.State result =
+          com.google.cloud.redis.v1beta1.Instance.State.valueOf(state_);
       return result == null ? com.google.cloud.redis.v1beta1.Instance.State.UNRECOGNIZED : result;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The current state of this instance.
      * </pre>
@@ -3175,12 +3359,14 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       state_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The current state of this instance.
      * </pre>
@@ -3188,7 +3374,7 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.redis.v1beta1.Instance.State state = 14;</code>
      */
     public Builder clearState() {
-      
+
       state_ = 0;
       onChanged();
       return this;
@@ -3196,6 +3382,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object statusMessage_ = "";
     /**
+     *
+     *
      * <pre>
      * Output only. Additional information about the current status of this
      * instance, if available.
@@ -3206,8 +3394,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getStatusMessage() {
       java.lang.Object ref = statusMessage_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         statusMessage_ = s;
         return s;
@@ -3216,6 +3403,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Additional information about the current status of this
      * instance, if available.
@@ -3223,13 +3412,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string status_message = 15;</code>
      */
-    public com.google.protobuf.ByteString
-        getStatusMessageBytes() {
+    public com.google.protobuf.ByteString getStatusMessageBytes() {
       java.lang.Object ref = statusMessage_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         statusMessage_ = b;
         return b;
       } else {
@@ -3237,6 +3424,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Additional information about the current status of this
      * instance, if available.
@@ -3244,17 +3433,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string status_message = 15;</code>
      */
-    public Builder setStatusMessage(
-        java.lang.String value) {
+    public Builder setStatusMessage(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       statusMessage_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Additional information about the current status of this
      * instance, if available.
@@ -3263,12 +3453,14 @@ private static final long serialVersionUID = 0L;
      * <code>string status_message = 15;</code>
      */
     public Builder clearStatusMessage() {
-      
+
       statusMessage_ = getDefaultInstance().getStatusMessage();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Output only. Additional information about the current status of this
      * instance, if available.
@@ -3276,34 +3468,35 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string status_message = 15;</code>
      */
-    public Builder setStatusMessageBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setStatusMessageBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       statusMessage_ = value;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.MapField<
-        java.lang.String, java.lang.String> redisConfigs_;
+    private com.google.protobuf.MapField<java.lang.String, java.lang.String> redisConfigs_;
+
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetRedisConfigs() {
+        internalGetRedisConfigs() {
       if (redisConfigs_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
             RedisConfigsDefaultEntryHolder.defaultEntry);
       }
       return redisConfigs_;
     }
+
     private com.google.protobuf.MapField<java.lang.String, java.lang.String>
-    internalGetMutableRedisConfigs() {
-      onChanged();;
+        internalGetMutableRedisConfigs() {
+      onChanged();
+      ;
       if (redisConfigs_ == null) {
-        redisConfigs_ = com.google.protobuf.MapField.newMapField(
-            RedisConfigsDefaultEntryHolder.defaultEntry);
+        redisConfigs_ =
+            com.google.protobuf.MapField.newMapField(RedisConfigsDefaultEntryHolder.defaultEntry);
       }
       if (!redisConfigs_.isMutable()) {
         redisConfigs_ = redisConfigs_.copy();
@@ -3315,6 +3508,8 @@ private static final long serialVersionUID = 0L;
       return internalGetRedisConfigs().getMap().size();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Redis configuration parameters, according to
      * http://redis.io/topics/config. Currently, the only supported parameters
@@ -3325,20 +3520,20 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; redis_configs = 16;</code>
      */
-
-    public boolean containsRedisConfigs(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+    public boolean containsRedisConfigs(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
       return internalGetRedisConfigs().getMap().containsKey(key);
     }
-    /**
-     * Use {@link #getRedisConfigsMap()} instead.
-     */
+    /** Use {@link #getRedisConfigsMap()} instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, java.lang.String> getRedisConfigs() {
       return getRedisConfigsMap();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Redis configuration parameters, according to
      * http://redis.io/topics/config. Currently, the only supported parameters
@@ -3349,11 +3544,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; redis_configs = 16;</code>
      */
-
     public java.util.Map<java.lang.String, java.lang.String> getRedisConfigsMap() {
       return internalGetRedisConfigs().getMap();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Redis configuration parameters, according to
      * http://redis.io/topics/config. Currently, the only supported parameters
@@ -3364,16 +3560,17 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; redis_configs = 16;</code>
      */
-
     public java.lang.String getRedisConfigsOrDefault(
-        java.lang.String key,
-        java.lang.String defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetRedisConfigs().getMap();
+        java.lang.String key, java.lang.String defaultValue) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetRedisConfigs().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Redis configuration parameters, according to
      * http://redis.io/topics/config. Currently, the only supported parameters
@@ -3384,12 +3581,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; redis_configs = 16;</code>
      */
-
-    public java.lang.String getRedisConfigsOrThrow(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      java.util.Map<java.lang.String, java.lang.String> map =
-          internalGetRedisConfigs().getMap();
+    public java.lang.String getRedisConfigsOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      java.util.Map<java.lang.String, java.lang.String> map = internalGetRedisConfigs().getMap();
       if (!map.containsKey(key)) {
         throw new java.lang.IllegalArgumentException();
       }
@@ -3397,11 +3593,12 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder clearRedisConfigs() {
-      internalGetMutableRedisConfigs().getMutableMap()
-          .clear();
+      internalGetMutableRedisConfigs().getMutableMap().clear();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Redis configuration parameters, according to
      * http://redis.io/topics/config. Currently, the only supported parameters
@@ -3412,23 +3609,21 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; redis_configs = 16;</code>
      */
-
-    public Builder removeRedisConfigs(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      internalGetMutableRedisConfigs().getMutableMap()
-          .remove(key);
+    public Builder removeRedisConfigs(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableRedisConfigs().getMutableMap().remove(key);
       return this;
     }
-    /**
-     * Use alternate mutation accessors instead.
-     */
+    /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
-    public java.util.Map<java.lang.String, java.lang.String>
-    getMutableRedisConfigs() {
+    public java.util.Map<java.lang.String, java.lang.String> getMutableRedisConfigs() {
       return internalGetMutableRedisConfigs().getMutableMap();
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Redis configuration parameters, according to
      * http://redis.io/topics/config. Currently, the only supported parameters
@@ -3439,16 +3634,19 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; redis_configs = 16;</code>
      */
-    public Builder putRedisConfigs(
-        java.lang.String key,
-        java.lang.String value) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      if (value == null) { throw new java.lang.NullPointerException(); }
-      internalGetMutableRedisConfigs().getMutableMap()
-          .put(key, value);
+    public Builder putRedisConfigs(java.lang.String key, java.lang.String value) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      if (value == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableRedisConfigs().getMutableMap().put(key, value);
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. Redis configuration parameters, according to
      * http://redis.io/topics/config. Currently, the only supported parameters
@@ -3459,16 +3657,15 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, string&gt; redis_configs = 16;</code>
      */
-
-    public Builder putAllRedisConfigs(
-        java.util.Map<java.lang.String, java.lang.String> values) {
-      internalGetMutableRedisConfigs().getMutableMap()
-          .putAll(values);
+    public Builder putAllRedisConfigs(java.util.Map<java.lang.String, java.lang.String> values) {
+      internalGetMutableRedisConfigs().getMutableMap().putAll(values);
       return this;
     }
 
     private int tier_ = 0;
     /**
+     *
+     *
      * <pre>
      * Required. The service tier of the instance.
      * </pre>
@@ -3479,6 +3676,8 @@ private static final long serialVersionUID = 0L;
       return tier_;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The service tier of the instance.
      * </pre>
@@ -3491,6 +3690,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The service tier of the instance.
      * </pre>
@@ -3498,10 +3699,14 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.redis.v1beta1.Instance.Tier tier = 17;</code>
      */
     public com.google.cloud.redis.v1beta1.Instance.Tier getTier() {
-      com.google.cloud.redis.v1beta1.Instance.Tier result = com.google.cloud.redis.v1beta1.Instance.Tier.valueOf(tier_);
+      @SuppressWarnings("deprecation")
+      com.google.cloud.redis.v1beta1.Instance.Tier result =
+          com.google.cloud.redis.v1beta1.Instance.Tier.valueOf(tier_);
       return result == null ? com.google.cloud.redis.v1beta1.Instance.Tier.UNRECOGNIZED : result;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The service tier of the instance.
      * </pre>
@@ -3512,12 +3717,14 @@ private static final long serialVersionUID = 0L;
       if (value == null) {
         throw new NullPointerException();
       }
-      
+
       tier_ = value.getNumber();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. The service tier of the instance.
      * </pre>
@@ -3525,14 +3732,16 @@ private static final long serialVersionUID = 0L;
      * <code>.google.cloud.redis.v1beta1.Instance.Tier tier = 17;</code>
      */
     public Builder clearTier() {
-      
+
       tier_ = 0;
       onChanged();
       return this;
     }
 
-    private int memorySizeGb_ ;
+    private int memorySizeGb_;
     /**
+     *
+     *
      * <pre>
      * Required. Redis memory size in GB.
      * </pre>
@@ -3543,6 +3752,8 @@ private static final long serialVersionUID = 0L;
       return memorySizeGb_;
     }
     /**
+     *
+     *
      * <pre>
      * Required. Redis memory size in GB.
      * </pre>
@@ -3550,12 +3761,14 @@ private static final long serialVersionUID = 0L;
      * <code>int32 memory_size_gb = 18;</code>
      */
     public Builder setMemorySizeGb(int value) {
-      
+
       memorySizeGb_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Required. Redis memory size in GB.
      * </pre>
@@ -3563,7 +3776,7 @@ private static final long serialVersionUID = 0L;
      * <code>int32 memory_size_gb = 18;</code>
      */
     public Builder clearMemorySizeGb() {
-      
+
       memorySizeGb_ = 0;
       onChanged();
       return this;
@@ -3571,6 +3784,8 @@ private static final long serialVersionUID = 0L;
 
     private java.lang.Object authorizedNetwork_ = "";
     /**
+     *
+     *
      * <pre>
      * Optional. The full name of the Google Compute Engine
      * [network](/compute/docs/networks-and-firewalls#networks) to which the
@@ -3583,8 +3798,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getAuthorizedNetwork() {
       java.lang.Object ref = authorizedNetwork_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         authorizedNetwork_ = s;
         return s;
@@ -3593,6 +3807,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The full name of the Google Compute Engine
      * [network](/compute/docs/networks-and-firewalls#networks) to which the
@@ -3602,13 +3818,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string authorized_network = 20;</code>
      */
-    public com.google.protobuf.ByteString
-        getAuthorizedNetworkBytes() {
+    public com.google.protobuf.ByteString getAuthorizedNetworkBytes() {
       java.lang.Object ref = authorizedNetwork_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         authorizedNetwork_ = b;
         return b;
       } else {
@@ -3616,6 +3830,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The full name of the Google Compute Engine
      * [network](/compute/docs/networks-and-firewalls#networks) to which the
@@ -3625,17 +3841,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string authorized_network = 20;</code>
      */
-    public Builder setAuthorizedNetwork(
-        java.lang.String value) {
+    public Builder setAuthorizedNetwork(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       authorizedNetwork_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The full name of the Google Compute Engine
      * [network](/compute/docs/networks-and-firewalls#networks) to which the
@@ -3646,12 +3863,14 @@ private static final long serialVersionUID = 0L;
      * <code>string authorized_network = 20;</code>
      */
     public Builder clearAuthorizedNetwork() {
-      
+
       authorizedNetwork_ = getDefaultInstance().getAuthorizedNetwork();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Optional. The full name of the Google Compute Engine
      * [network](/compute/docs/networks-and-firewalls#networks) to which the
@@ -3661,33 +3880,34 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string authorized_network = 20;</code>
      */
-    public Builder setAuthorizedNetworkBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setAuthorizedNetworkBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       authorizedNetwork_ = value;
       onChanged();
       return this;
     }
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+
+    @java.lang.Override
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
     }
-
 
     // @@protoc_insertion_point(builder_scope:google.cloud.redis.v1beta1.Instance)
   }
 
   // @@protoc_insertion_point(class_scope:google.cloud.redis.v1beta1.Instance)
   private static final com.google.cloud.redis.v1beta1.Instance DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new com.google.cloud.redis.v1beta1.Instance();
   }
@@ -3696,15 +3916,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<Instance>
-      PARSER = new com.google.protobuf.AbstractParser<Instance>() {
-    public Instance parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Instance(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<Instance> PARSER =
+      new com.google.protobuf.AbstractParser<Instance>() {
+        @java.lang.Override
+        public Instance parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new Instance(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<Instance> parser() {
     return PARSER;
@@ -3715,9 +3936,8 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public com.google.cloud.redis.v1beta1.Instance getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

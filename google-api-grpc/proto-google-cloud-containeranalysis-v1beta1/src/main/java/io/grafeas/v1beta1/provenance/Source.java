@@ -4,36 +4,42 @@
 package io.grafeas.v1beta1.provenance;
 
 /**
+ *
+ *
  * <pre>
  * Source describes the location of the source used for the build.
  * </pre>
  *
  * Protobuf type {@code grafeas.v1beta1.provenance.Source}
  */
-public  final class Source extends
-    com.google.protobuf.GeneratedMessageV3 implements
+public final class Source extends com.google.protobuf.GeneratedMessageV3
+    implements
     // @@protoc_insertion_point(message_implements:grafeas.v1beta1.provenance.Source)
     SourceOrBuilder {
-private static final long serialVersionUID = 0L;
+  private static final long serialVersionUID = 0L;
   // Use Source.newBuilder() to construct.
   private Source(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
     super(builder);
   }
+
   private Source() {
     artifactStorageSourceUri_ = "";
     additionalContexts_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
-  public final com.google.protobuf.UnknownFieldSet
-  getUnknownFields() {
+  public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
     return this.unknownFields;
   }
+
   private Source(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     this();
+    if (extensionRegistry == null) {
+      throw new java.lang.NullPointerException();
+    }
     int mutable_bitField0_ = 0;
     com.google.protobuf.UnknownFieldSet.Builder unknownFields =
         com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -45,61 +51,71 @@ private static final long serialVersionUID = 0L;
           case 0:
             done = true;
             break;
-          default: {
-            if (!parseUnknownFieldProto3(
-                input, unknownFields, extensionRegistry, tag)) {
-              done = true;
-            }
-            break;
-          }
-          case 10: {
-            java.lang.String s = input.readStringRequireUtf8();
+          case 10:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
 
-            artifactStorageSourceUri_ = s;
-            break;
-          }
-          case 18: {
-            if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
-              fileHashes_ = com.google.protobuf.MapField.newMapField(
-                  FileHashesDefaultEntryHolder.defaultEntry);
-              mutable_bitField0_ |= 0x00000002;
+              artifactStorageSourceUri_ = s;
+              break;
             }
-            com.google.protobuf.MapEntry<java.lang.String, io.grafeas.v1beta1.provenance.FileHashes>
-            fileHashes__ = input.readMessage(
-                FileHashesDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
-            fileHashes_.getMutableMap().put(
-                fileHashes__.getKey(), fileHashes__.getValue());
-            break;
-          }
-          case 26: {
-            io.grafeas.v1beta1.source.SourceContext.Builder subBuilder = null;
-            if (context_ != null) {
-              subBuilder = context_.toBuilder();
+          case 18:
+            {
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                fileHashes_ =
+                    com.google.protobuf.MapField.newMapField(
+                        FileHashesDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000002;
+              }
+              com.google.protobuf.MapEntry<
+                      java.lang.String, io.grafeas.v1beta1.provenance.FileHashes>
+                  fileHashes__ =
+                      input.readMessage(
+                          FileHashesDefaultEntryHolder.defaultEntry.getParserForType(),
+                          extensionRegistry);
+              fileHashes_.getMutableMap().put(fileHashes__.getKey(), fileHashes__.getValue());
+              break;
             }
-            context_ = input.readMessage(io.grafeas.v1beta1.source.SourceContext.parser(), extensionRegistry);
-            if (subBuilder != null) {
-              subBuilder.mergeFrom(context_);
-              context_ = subBuilder.buildPartial();
-            }
+          case 26:
+            {
+              io.grafeas.v1beta1.source.SourceContext.Builder subBuilder = null;
+              if (context_ != null) {
+                subBuilder = context_.toBuilder();
+              }
+              context_ =
+                  input.readMessage(
+                      io.grafeas.v1beta1.source.SourceContext.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(context_);
+                context_ = subBuilder.buildPartial();
+              }
 
-            break;
-          }
-          case 34: {
-            if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
-              additionalContexts_ = new java.util.ArrayList<io.grafeas.v1beta1.source.SourceContext>();
-              mutable_bitField0_ |= 0x00000008;
+              break;
             }
-            additionalContexts_.add(
-                input.readMessage(io.grafeas.v1beta1.source.SourceContext.parser(), extensionRegistry));
-            break;
-          }
+          case 34:
+            {
+              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+                additionalContexts_ =
+                    new java.util.ArrayList<io.grafeas.v1beta1.source.SourceContext>();
+                mutable_bitField0_ |= 0x00000008;
+              }
+              additionalContexts_.add(
+                  input.readMessage(
+                      io.grafeas.v1beta1.source.SourceContext.parser(), extensionRegistry));
+              break;
+            }
+          default:
+            {
+              if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                done = true;
+              }
+              break;
+            }
         }
       }
     } catch (com.google.protobuf.InvalidProtocolBufferException e) {
       throw e.setUnfinishedMessage(this);
     } catch (java.io.IOException e) {
-      throw new com.google.protobuf.InvalidProtocolBufferException(
-          e).setUnfinishedMessage(this);
+      throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
       if (((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
         additionalContexts_ = java.util.Collections.unmodifiableList(additionalContexts_);
@@ -108,33 +124,39 @@ private static final long serialVersionUID = 0L;
       makeExtensionsImmutable();
     }
   }
-  public static final com.google.protobuf.Descriptors.Descriptor
-      getDescriptor() {
-    return io.grafeas.v1beta1.provenance.Provenance.internal_static_grafeas_v1beta1_provenance_Source_descriptor;
+
+  public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+    return io.grafeas.v1beta1.provenance.Provenance
+        .internal_static_grafeas_v1beta1_provenance_Source_descriptor;
   }
 
   @SuppressWarnings({"rawtypes"})
-  protected com.google.protobuf.MapField internalGetMapField(
-      int number) {
+  @java.lang.Override
+  protected com.google.protobuf.MapField internalGetMapField(int number) {
     switch (number) {
       case 2:
         return internalGetFileHashes();
       default:
-        throw new RuntimeException(
-            "Invalid map field number: " + number);
+        throw new RuntimeException("Invalid map field number: " + number);
     }
   }
+
+  @java.lang.Override
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
-    return io.grafeas.v1beta1.provenance.Provenance.internal_static_grafeas_v1beta1_provenance_Source_fieldAccessorTable
+    return io.grafeas.v1beta1.provenance.Provenance
+        .internal_static_grafeas_v1beta1_provenance_Source_fieldAccessorTable
         .ensureFieldAccessorsInitialized(
-            io.grafeas.v1beta1.provenance.Source.class, io.grafeas.v1beta1.provenance.Source.Builder.class);
+            io.grafeas.v1beta1.provenance.Source.class,
+            io.grafeas.v1beta1.provenance.Source.Builder.class);
   }
 
   private int bitField0_;
   public static final int ARTIFACT_STORAGE_SOURCE_URI_FIELD_NUMBER = 1;
   private volatile java.lang.Object artifactStorageSourceUri_;
   /**
+   *
+   *
    * <pre>
    * If provided, the input binary artifacts for the build came from this
    * location.
@@ -147,14 +169,15 @@ private static final long serialVersionUID = 0L;
     if (ref instanceof java.lang.String) {
       return (java.lang.String) ref;
     } else {
-      com.google.protobuf.ByteString bs = 
-          (com.google.protobuf.ByteString) ref;
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
       java.lang.String s = bs.toStringUtf8();
       artifactStorageSourceUri_ = s;
       return s;
     }
   }
   /**
+   *
+   *
    * <pre>
    * If provided, the input binary artifacts for the build came from this
    * location.
@@ -162,13 +185,11 @@ private static final long serialVersionUID = 0L;
    *
    * <code>string artifact_storage_source_uri = 1;</code>
    */
-  public com.google.protobuf.ByteString
-      getArtifactStorageSourceUriBytes() {
+  public com.google.protobuf.ByteString getArtifactStorageSourceUriBytes() {
     java.lang.Object ref = artifactStorageSourceUri_;
     if (ref instanceof java.lang.String) {
-      com.google.protobuf.ByteString b = 
-          com.google.protobuf.ByteString.copyFromUtf8(
-              (java.lang.String) ref);
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
       artifactStorageSourceUri_ = b;
       return b;
     } else {
@@ -177,24 +198,28 @@ private static final long serialVersionUID = 0L;
   }
 
   public static final int FILE_HASHES_FIELD_NUMBER = 2;
+
   private static final class FileHashesDefaultEntryHolder {
     static final com.google.protobuf.MapEntry<
-        java.lang.String, io.grafeas.v1beta1.provenance.FileHashes> defaultEntry =
+            java.lang.String, io.grafeas.v1beta1.provenance.FileHashes>
+        defaultEntry =
             com.google.protobuf.MapEntry
-            .<java.lang.String, io.grafeas.v1beta1.provenance.FileHashes>newDefaultInstance(
-                io.grafeas.v1beta1.provenance.Provenance.internal_static_grafeas_v1beta1_provenance_Source_FileHashesEntry_descriptor, 
-                com.google.protobuf.WireFormat.FieldType.STRING,
-                "",
-                com.google.protobuf.WireFormat.FieldType.MESSAGE,
-                io.grafeas.v1beta1.provenance.FileHashes.getDefaultInstance());
+                .<java.lang.String, io.grafeas.v1beta1.provenance.FileHashes>newDefaultInstance(
+                    io.grafeas.v1beta1.provenance.Provenance
+                        .internal_static_grafeas_v1beta1_provenance_Source_FileHashesEntry_descriptor,
+                    com.google.protobuf.WireFormat.FieldType.STRING,
+                    "",
+                    com.google.protobuf.WireFormat.FieldType.MESSAGE,
+                    io.grafeas.v1beta1.provenance.FileHashes.getDefaultInstance());
   }
-  private com.google.protobuf.MapField<
-      java.lang.String, io.grafeas.v1beta1.provenance.FileHashes> fileHashes_;
+
   private com.google.protobuf.MapField<java.lang.String, io.grafeas.v1beta1.provenance.FileHashes>
-  internalGetFileHashes() {
+      fileHashes_;
+
+  private com.google.protobuf.MapField<java.lang.String, io.grafeas.v1beta1.provenance.FileHashes>
+      internalGetFileHashes() {
     if (fileHashes_ == null) {
-      return com.google.protobuf.MapField.emptyMapField(
-          FileHashesDefaultEntryHolder.defaultEntry);
+      return com.google.protobuf.MapField.emptyMapField(FileHashesDefaultEntryHolder.defaultEntry);
     }
     return fileHashes_;
   }
@@ -203,6 +228,8 @@ private static final long serialVersionUID = 0L;
     return internalGetFileHashes().getMap().size();
   }
   /**
+   *
+   *
    * <pre>
    * Hash(es) of the build source, which can be used to verify that the original
    * source integrity was maintained in the build.
@@ -214,20 +241,20 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, .grafeas.v1beta1.provenance.FileHashes&gt; file_hashes = 2;</code>
    */
-
-  public boolean containsFileHashes(
-      java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+  public boolean containsFileHashes(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
     return internalGetFileHashes().getMap().containsKey(key);
   }
-  /**
-   * Use {@link #getFileHashesMap()} instead.
-   */
+  /** Use {@link #getFileHashesMap()} instead. */
   @java.lang.Deprecated
   public java.util.Map<java.lang.String, io.grafeas.v1beta1.provenance.FileHashes> getFileHashes() {
     return getFileHashesMap();
   }
   /**
+   *
+   *
    * <pre>
    * Hash(es) of the build source, which can be used to verify that the original
    * source integrity was maintained in the build.
@@ -239,11 +266,13 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, .grafeas.v1beta1.provenance.FileHashes&gt; file_hashes = 2;</code>
    */
-
-  public java.util.Map<java.lang.String, io.grafeas.v1beta1.provenance.FileHashes> getFileHashesMap() {
+  public java.util.Map<java.lang.String, io.grafeas.v1beta1.provenance.FileHashes>
+      getFileHashesMap() {
     return internalGetFileHashes().getMap();
   }
   /**
+   *
+   *
    * <pre>
    * Hash(es) of the build source, which can be used to verify that the original
    * source integrity was maintained in the build.
@@ -255,16 +284,18 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, .grafeas.v1beta1.provenance.FileHashes&gt; file_hashes = 2;</code>
    */
-
   public io.grafeas.v1beta1.provenance.FileHashes getFileHashesOrDefault(
-      java.lang.String key,
-      io.grafeas.v1beta1.provenance.FileHashes defaultValue) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+      java.lang.String key, io.grafeas.v1beta1.provenance.FileHashes defaultValue) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
     java.util.Map<java.lang.String, io.grafeas.v1beta1.provenance.FileHashes> map =
         internalGetFileHashes().getMap();
     return map.containsKey(key) ? map.get(key) : defaultValue;
   }
   /**
+   *
+   *
    * <pre>
    * Hash(es) of the build source, which can be used to verify that the original
    * source integrity was maintained in the build.
@@ -276,10 +307,10 @@ private static final long serialVersionUID = 0L;
    *
    * <code>map&lt;string, .grafeas.v1beta1.provenance.FileHashes&gt; file_hashes = 2;</code>
    */
-
-  public io.grafeas.v1beta1.provenance.FileHashes getFileHashesOrThrow(
-      java.lang.String key) {
-    if (key == null) { throw new java.lang.NullPointerException(); }
+  public io.grafeas.v1beta1.provenance.FileHashes getFileHashesOrThrow(java.lang.String key) {
+    if (key == null) {
+      throw new java.lang.NullPointerException();
+    }
     java.util.Map<java.lang.String, io.grafeas.v1beta1.provenance.FileHashes> map =
         internalGetFileHashes().getMap();
     if (!map.containsKey(key)) {
@@ -291,6 +322,8 @@ private static final long serialVersionUID = 0L;
   public static final int CONTEXT_FIELD_NUMBER = 3;
   private io.grafeas.v1beta1.source.SourceContext context_;
   /**
+   *
+   *
    * <pre>
    * If provided, the source code used for the build came from this location.
    * </pre>
@@ -301,6 +334,8 @@ private static final long serialVersionUID = 0L;
     return context_ != null;
   }
   /**
+   *
+   *
    * <pre>
    * If provided, the source code used for the build came from this location.
    * </pre>
@@ -308,9 +343,13 @@ private static final long serialVersionUID = 0L;
    * <code>.grafeas.v1beta1.source.SourceContext context = 3;</code>
    */
   public io.grafeas.v1beta1.source.SourceContext getContext() {
-    return context_ == null ? io.grafeas.v1beta1.source.SourceContext.getDefaultInstance() : context_;
+    return context_ == null
+        ? io.grafeas.v1beta1.source.SourceContext.getDefaultInstance()
+        : context_;
   }
   /**
+   *
+   *
    * <pre>
    * If provided, the source code used for the build came from this location.
    * </pre>
@@ -324,6 +363,8 @@ private static final long serialVersionUID = 0L;
   public static final int ADDITIONAL_CONTEXTS_FIELD_NUMBER = 4;
   private java.util.List<io.grafeas.v1beta1.source.SourceContext> additionalContexts_;
   /**
+   *
+   *
    * <pre>
    * If provided, some of the source code used for the build may be found in
    * these locations, in the case where the source repository had multiple
@@ -337,6 +378,8 @@ private static final long serialVersionUID = 0L;
     return additionalContexts_;
   }
   /**
+   *
+   *
    * <pre>
    * If provided, some of the source code used for the build may be found in
    * these locations, in the case where the source repository had multiple
@@ -346,11 +389,13 @@ private static final long serialVersionUID = 0L;
    *
    * <code>repeated .grafeas.v1beta1.source.SourceContext additional_contexts = 4;</code>
    */
-  public java.util.List<? extends io.grafeas.v1beta1.source.SourceContextOrBuilder> 
+  public java.util.List<? extends io.grafeas.v1beta1.source.SourceContextOrBuilder>
       getAdditionalContextsOrBuilderList() {
     return additionalContexts_;
   }
   /**
+   *
+   *
    * <pre>
    * If provided, some of the source code used for the build may be found in
    * these locations, in the case where the source repository had multiple
@@ -364,6 +409,8 @@ private static final long serialVersionUID = 0L;
     return additionalContexts_.size();
   }
   /**
+   *
+   *
    * <pre>
    * If provided, some of the source code used for the build may be found in
    * these locations, in the case where the source repository had multiple
@@ -377,6 +424,8 @@ private static final long serialVersionUID = 0L;
     return additionalContexts_.get(index);
   }
   /**
+   *
+   *
    * <pre>
    * If provided, some of the source code used for the build may be found in
    * these locations, in the case where the source repository had multiple
@@ -392,6 +441,8 @@ private static final long serialVersionUID = 0L;
   }
 
   private byte memoizedIsInitialized = -1;
+
+  @java.lang.Override
   public final boolean isInitialized() {
     byte isInitialized = memoizedIsInitialized;
     if (isInitialized == 1) return true;
@@ -401,17 +452,13 @@ private static final long serialVersionUID = 0L;
     return true;
   }
 
-  public void writeTo(com.google.protobuf.CodedOutputStream output)
-                      throws java.io.IOException {
+  @java.lang.Override
+  public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (!getArtifactStorageSourceUriBytes().isEmpty()) {
       com.google.protobuf.GeneratedMessageV3.writeString(output, 1, artifactStorageSourceUri_);
     }
-    com.google.protobuf.GeneratedMessageV3
-      .serializeStringMapTo(
-        output,
-        internalGetFileHashes(),
-        FileHashesDefaultEntryHolder.defaultEntry,
-        2);
+    com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
+        output, internalGetFileHashes(), FileHashesDefaultEntryHolder.defaultEntry, 2);
     if (context_ != null) {
       output.writeMessage(3, getContext());
     }
@@ -421,31 +468,33 @@ private static final long serialVersionUID = 0L;
     unknownFields.writeTo(output);
   }
 
+  @java.lang.Override
   public int getSerializedSize() {
     int size = memoizedSize;
     if (size != -1) return size;
 
     size = 0;
     if (!getArtifactStorageSourceUriBytes().isEmpty()) {
-      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, artifactStorageSourceUri_);
+      size +=
+          com.google.protobuf.GeneratedMessageV3.computeStringSize(1, artifactStorageSourceUri_);
     }
-    for (java.util.Map.Entry<java.lang.String, io.grafeas.v1beta1.provenance.FileHashes> entry
-         : internalGetFileHashes().getMap().entrySet()) {
+    for (java.util.Map.Entry<java.lang.String, io.grafeas.v1beta1.provenance.FileHashes> entry :
+        internalGetFileHashes().getMap().entrySet()) {
       com.google.protobuf.MapEntry<java.lang.String, io.grafeas.v1beta1.provenance.FileHashes>
-      fileHashes__ = FileHashesDefaultEntryHolder.defaultEntry.newBuilderForType()
-          .setKey(entry.getKey())
-          .setValue(entry.getValue())
-          .build();
-      size += com.google.protobuf.CodedOutputStream
-          .computeMessageSize(2, fileHashes__);
+          fileHashes__ =
+              FileHashesDefaultEntryHolder.defaultEntry
+                  .newBuilderForType()
+                  .setKey(entry.getKey())
+                  .setValue(entry.getValue())
+                  .build();
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, fileHashes__);
     }
     if (context_ != null) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(3, getContext());
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(3, getContext());
     }
     for (int i = 0; i < additionalContexts_.size(); i++) {
-      size += com.google.protobuf.CodedOutputStream
-        .computeMessageSize(4, additionalContexts_.get(i));
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(4, additionalContexts_.get(i));
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -455,7 +504,7 @@ private static final long serialVersionUID = 0L;
   @java.lang.Override
   public boolean equals(final java.lang.Object obj) {
     if (obj == this) {
-     return true;
+      return true;
     }
     if (!(obj instanceof io.grafeas.v1beta1.provenance.Source)) {
       return super.equals(obj);
@@ -463,17 +512,13 @@ private static final long serialVersionUID = 0L;
     io.grafeas.v1beta1.provenance.Source other = (io.grafeas.v1beta1.provenance.Source) obj;
 
     boolean result = true;
-    result = result && getArtifactStorageSourceUri()
-        .equals(other.getArtifactStorageSourceUri());
-    result = result && internalGetFileHashes().equals(
-        other.internalGetFileHashes());
+    result = result && getArtifactStorageSourceUri().equals(other.getArtifactStorageSourceUri());
+    result = result && internalGetFileHashes().equals(other.internalGetFileHashes());
     result = result && (hasContext() == other.hasContext());
     if (hasContext()) {
-      result = result && getContext()
-          .equals(other.getContext());
+      result = result && getContext().equals(other.getContext());
     }
-    result = result && getAdditionalContextsList()
-        .equals(other.getAdditionalContextsList());
+    result = result && getAdditionalContextsList().equals(other.getAdditionalContextsList());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -504,137 +549,146 @@ private static final long serialVersionUID = 0L;
     return hash;
   }
 
-  public static io.grafeas.v1beta1.provenance.Source parseFrom(
-      java.nio.ByteBuffer data)
+  public static io.grafeas.v1beta1.provenance.Source parseFrom(java.nio.ByteBuffer data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static io.grafeas.v1beta1.provenance.Source parseFrom(
-      java.nio.ByteBuffer data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
-  public static io.grafeas.v1beta1.provenance.Source parseFrom(
-      com.google.protobuf.ByteString data)
+
+  public static io.grafeas.v1beta1.provenance.Source parseFrom(com.google.protobuf.ByteString data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static io.grafeas.v1beta1.provenance.Source parseFrom(
       com.google.protobuf.ByteString data,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static io.grafeas.v1beta1.provenance.Source parseFrom(byte[] data)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data);
   }
+
   public static io.grafeas.v1beta1.provenance.Source parseFrom(
-      byte[] data,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws com.google.protobuf.InvalidProtocolBufferException {
     return PARSER.parseFrom(data, extensionRegistry);
   }
+
   public static io.grafeas.v1beta1.provenance.Source parseFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static io.grafeas.v1beta1.provenance.Source parseFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static io.grafeas.v1beta1.provenance.Source parseDelimitedFrom(java.io.InputStream input)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
   }
+
   public static io.grafeas.v1beta1.provenance.Source parseDelimitedFrom(
-      java.io.InputStream input,
-      com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+      java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+        PARSER, input, extensionRegistry);
   }
+
   public static io.grafeas.v1beta1.provenance.Source parseFrom(
-      com.google.protobuf.CodedInputStream input)
-      throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input);
+      com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
   }
+
   public static io.grafeas.v1beta1.provenance.Source parseFrom(
       com.google.protobuf.CodedInputStream input,
       com.google.protobuf.ExtensionRegistryLite extensionRegistry)
       throws java.io.IOException {
-    return com.google.protobuf.GeneratedMessageV3
-        .parseWithIOException(PARSER, input, extensionRegistry);
-  }
-
-  public Builder newBuilderForType() { return newBuilder(); }
-  public static Builder newBuilder() {
-    return DEFAULT_INSTANCE.toBuilder();
-  }
-  public static Builder newBuilder(io.grafeas.v1beta1.provenance.Source prototype) {
-    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
-  }
-  public Builder toBuilder() {
-    return this == DEFAULT_INSTANCE
-        ? new Builder() : new Builder().mergeFrom(this);
+    return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+        PARSER, input, extensionRegistry);
   }
 
   @java.lang.Override
-  protected Builder newBuilderForType(
-      com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+  public Builder newBuilderForType() {
+    return newBuilder();
+  }
+
+  public static Builder newBuilder() {
+    return DEFAULT_INSTANCE.toBuilder();
+  }
+
+  public static Builder newBuilder(io.grafeas.v1beta1.provenance.Source prototype) {
+    return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+  }
+
+  @java.lang.Override
+  public Builder toBuilder() {
+    return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+  }
+
+  @java.lang.Override
+  protected Builder newBuilderForType(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
     Builder builder = new Builder(parent);
     return builder;
   }
   /**
+   *
+   *
    * <pre>
    * Source describes the location of the source used for the build.
    * </pre>
    *
    * Protobuf type {@code grafeas.v1beta1.provenance.Source}
    */
-  public static final class Builder extends
-      com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+  public static final class Builder extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+      implements
       // @@protoc_insertion_point(builder_implements:grafeas.v1beta1.provenance.Source)
       io.grafeas.v1beta1.provenance.SourceOrBuilder {
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return io.grafeas.v1beta1.provenance.Provenance.internal_static_grafeas_v1beta1_provenance_Source_descriptor;
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return io.grafeas.v1beta1.provenance.Provenance
+          .internal_static_grafeas_v1beta1_provenance_Source_descriptor;
     }
 
     @SuppressWarnings({"rawtypes"})
-    protected com.google.protobuf.MapField internalGetMapField(
-        int number) {
+    protected com.google.protobuf.MapField internalGetMapField(int number) {
       switch (number) {
         case 2:
           return internalGetFileHashes();
         default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
+          throw new RuntimeException("Invalid map field number: " + number);
       }
     }
+
     @SuppressWarnings({"rawtypes"})
-    protected com.google.protobuf.MapField internalGetMutableMapField(
-        int number) {
+    protected com.google.protobuf.MapField internalGetMutableMapField(int number) {
       switch (number) {
         case 2:
           return internalGetMutableFileHashes();
         default:
-          throw new RuntimeException(
-              "Invalid map field number: " + number);
+          throw new RuntimeException("Invalid map field number: " + number);
       }
     }
+
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return io.grafeas.v1beta1.provenance.Provenance.internal_static_grafeas_v1beta1_provenance_Source_fieldAccessorTable
+      return io.grafeas.v1beta1.provenance.Provenance
+          .internal_static_grafeas_v1beta1_provenance_Source_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              io.grafeas.v1beta1.provenance.Source.class, io.grafeas.v1beta1.provenance.Source.Builder.class);
+              io.grafeas.v1beta1.provenance.Source.class,
+              io.grafeas.v1beta1.provenance.Source.Builder.class);
     }
 
     // Construct using io.grafeas.v1beta1.provenance.Source.newBuilder()
@@ -642,17 +696,18 @@ private static final long serialVersionUID = 0L;
       maybeForceBuilderInitialization();
     }
 
-    private Builder(
-        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+    private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
       super(parent);
       maybeForceBuilderInitialization();
     }
+
     private void maybeForceBuilderInitialization() {
-      if (com.google.protobuf.GeneratedMessageV3
-              .alwaysUseFieldBuilders) {
+      if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {
         getAdditionalContextsFieldBuilder();
       }
     }
+
+    @java.lang.Override
     public Builder clear() {
       super.clear();
       artifactStorageSourceUri_ = "";
@@ -673,15 +728,18 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
-    public com.google.protobuf.Descriptors.Descriptor
-        getDescriptorForType() {
-      return io.grafeas.v1beta1.provenance.Provenance.internal_static_grafeas_v1beta1_provenance_Source_descriptor;
+    @java.lang.Override
+    public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+      return io.grafeas.v1beta1.provenance.Provenance
+          .internal_static_grafeas_v1beta1_provenance_Source_descriptor;
     }
 
+    @java.lang.Override
     public io.grafeas.v1beta1.provenance.Source getDefaultInstanceForType() {
       return io.grafeas.v1beta1.provenance.Source.getDefaultInstance();
     }
 
+    @java.lang.Override
     public io.grafeas.v1beta1.provenance.Source build() {
       io.grafeas.v1beta1.provenance.Source result = buildPartial();
       if (!result.isInitialized()) {
@@ -690,6 +748,7 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public io.grafeas.v1beta1.provenance.Source buildPartial() {
       io.grafeas.v1beta1.provenance.Source result = new io.grafeas.v1beta1.provenance.Source(this);
       int from_bitField0_ = bitField0_;
@@ -716,35 +775,43 @@ private static final long serialVersionUID = 0L;
       return result;
     }
 
+    @java.lang.Override
     public Builder clone() {
       return (Builder) super.clone();
     }
+
+    @java.lang.Override
     public Builder setField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.setField(field, value);
     }
-    public Builder clearField(
-        com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+    @java.lang.Override
+    public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
       return (Builder) super.clearField(field);
     }
-    public Builder clearOneof(
-        com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+    @java.lang.Override
+    public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
       return (Builder) super.clearOneof(oneof);
     }
+
+    @java.lang.Override
     public Builder setRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        int index, java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, int index, java.lang.Object value) {
       return (Builder) super.setRepeatedField(field, index, value);
     }
+
+    @java.lang.Override
     public Builder addRepeatedField(
-        com.google.protobuf.Descriptors.FieldDescriptor field,
-        java.lang.Object value) {
+        com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
       return (Builder) super.addRepeatedField(field, value);
     }
+
+    @java.lang.Override
     public Builder mergeFrom(com.google.protobuf.Message other) {
       if (other instanceof io.grafeas.v1beta1.provenance.Source) {
-        return mergeFrom((io.grafeas.v1beta1.provenance.Source)other);
+        return mergeFrom((io.grafeas.v1beta1.provenance.Source) other);
       } else {
         super.mergeFrom(other);
         return this;
@@ -757,8 +824,7 @@ private static final long serialVersionUID = 0L;
         artifactStorageSourceUri_ = other.artifactStorageSourceUri_;
         onChanged();
       }
-      internalGetMutableFileHashes().mergeFrom(
-          other.internalGetFileHashes());
+      internalGetMutableFileHashes().mergeFrom(other.internalGetFileHashes());
       if (other.hasContext()) {
         mergeContext(other.getContext());
       }
@@ -780,9 +846,10 @@ private static final long serialVersionUID = 0L;
             additionalContextsBuilder_ = null;
             additionalContexts_ = other.additionalContexts_;
             bitField0_ = (bitField0_ & ~0x00000008);
-            additionalContextsBuilder_ = 
-              com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders ?
-                 getAdditionalContextsFieldBuilder() : null;
+            additionalContextsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getAdditionalContextsFieldBuilder()
+                    : null;
           } else {
             additionalContextsBuilder_.addAllMessages(other.additionalContexts_);
           }
@@ -793,10 +860,12 @@ private static final long serialVersionUID = 0L;
       return this;
     }
 
+    @java.lang.Override
     public final boolean isInitialized() {
       return true;
     }
 
+    @java.lang.Override
     public Builder mergeFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -814,10 +883,13 @@ private static final long serialVersionUID = 0L;
       }
       return this;
     }
+
     private int bitField0_;
 
     private java.lang.Object artifactStorageSourceUri_ = "";
     /**
+     *
+     *
      * <pre>
      * If provided, the input binary artifacts for the build came from this
      * location.
@@ -828,8 +900,7 @@ private static final long serialVersionUID = 0L;
     public java.lang.String getArtifactStorageSourceUri() {
       java.lang.Object ref = artifactStorageSourceUri_;
       if (!(ref instanceof java.lang.String)) {
-        com.google.protobuf.ByteString bs =
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         artifactStorageSourceUri_ = s;
         return s;
@@ -838,6 +909,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * If provided, the input binary artifacts for the build came from this
      * location.
@@ -845,13 +918,11 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string artifact_storage_source_uri = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getArtifactStorageSourceUriBytes() {
+    public com.google.protobuf.ByteString getArtifactStorageSourceUriBytes() {
       java.lang.Object ref = artifactStorageSourceUri_;
       if (ref instanceof String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         artifactStorageSourceUri_ = b;
         return b;
       } else {
@@ -859,6 +930,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * If provided, the input binary artifacts for the build came from this
      * location.
@@ -866,17 +939,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string artifact_storage_source_uri = 1;</code>
      */
-    public Builder setArtifactStorageSourceUri(
-        java.lang.String value) {
+    public Builder setArtifactStorageSourceUri(java.lang.String value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  
+        throw new NullPointerException();
+      }
+
       artifactStorageSourceUri_ = value;
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If provided, the input binary artifacts for the build came from this
      * location.
@@ -885,12 +959,14 @@ private static final long serialVersionUID = 0L;
      * <code>string artifact_storage_source_uri = 1;</code>
      */
     public Builder clearArtifactStorageSourceUri() {
-      
+
       artifactStorageSourceUri_ = getDefaultInstance().getArtifactStorageSourceUri();
       onChanged();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If provided, the input binary artifacts for the build came from this
      * location.
@@ -898,34 +974,36 @@ private static final long serialVersionUID = 0L;
      *
      * <code>string artifact_storage_source_uri = 1;</code>
      */
-    public Builder setArtifactStorageSourceUriBytes(
-        com.google.protobuf.ByteString value) {
+    public Builder setArtifactStorageSourceUriBytes(com.google.protobuf.ByteString value) {
       if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-      
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
       artifactStorageSourceUri_ = value;
       onChanged();
       return this;
     }
 
-    private com.google.protobuf.MapField<
-        java.lang.String, io.grafeas.v1beta1.provenance.FileHashes> fileHashes_;
     private com.google.protobuf.MapField<java.lang.String, io.grafeas.v1beta1.provenance.FileHashes>
-    internalGetFileHashes() {
+        fileHashes_;
+
+    private com.google.protobuf.MapField<java.lang.String, io.grafeas.v1beta1.provenance.FileHashes>
+        internalGetFileHashes() {
       if (fileHashes_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
             FileHashesDefaultEntryHolder.defaultEntry);
       }
       return fileHashes_;
     }
+
     private com.google.protobuf.MapField<java.lang.String, io.grafeas.v1beta1.provenance.FileHashes>
-    internalGetMutableFileHashes() {
-      onChanged();;
+        internalGetMutableFileHashes() {
+      onChanged();
+      ;
       if (fileHashes_ == null) {
-        fileHashes_ = com.google.protobuf.MapField.newMapField(
-            FileHashesDefaultEntryHolder.defaultEntry);
+        fileHashes_ =
+            com.google.protobuf.MapField.newMapField(FileHashesDefaultEntryHolder.defaultEntry);
       }
       if (!fileHashes_.isMutable()) {
         fileHashes_ = fileHashes_.copy();
@@ -937,6 +1015,8 @@ private static final long serialVersionUID = 0L;
       return internalGetFileHashes().getMap().size();
     }
     /**
+     *
+     *
      * <pre>
      * Hash(es) of the build source, which can be used to verify that the original
      * source integrity was maintained in the build.
@@ -948,20 +1028,21 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, .grafeas.v1beta1.provenance.FileHashes&gt; file_hashes = 2;</code>
      */
-
-    public boolean containsFileHashes(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+    public boolean containsFileHashes(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
       return internalGetFileHashes().getMap().containsKey(key);
     }
-    /**
-     * Use {@link #getFileHashesMap()} instead.
-     */
+    /** Use {@link #getFileHashesMap()} instead. */
     @java.lang.Deprecated
-    public java.util.Map<java.lang.String, io.grafeas.v1beta1.provenance.FileHashes> getFileHashes() {
+    public java.util.Map<java.lang.String, io.grafeas.v1beta1.provenance.FileHashes>
+        getFileHashes() {
       return getFileHashesMap();
     }
     /**
+     *
+     *
      * <pre>
      * Hash(es) of the build source, which can be used to verify that the original
      * source integrity was maintained in the build.
@@ -973,11 +1054,13 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, .grafeas.v1beta1.provenance.FileHashes&gt; file_hashes = 2;</code>
      */
-
-    public java.util.Map<java.lang.String, io.grafeas.v1beta1.provenance.FileHashes> getFileHashesMap() {
+    public java.util.Map<java.lang.String, io.grafeas.v1beta1.provenance.FileHashes>
+        getFileHashesMap() {
       return internalGetFileHashes().getMap();
     }
     /**
+     *
+     *
      * <pre>
      * Hash(es) of the build source, which can be used to verify that the original
      * source integrity was maintained in the build.
@@ -989,16 +1072,18 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, .grafeas.v1beta1.provenance.FileHashes&gt; file_hashes = 2;</code>
      */
-
     public io.grafeas.v1beta1.provenance.FileHashes getFileHashesOrDefault(
-        java.lang.String key,
-        io.grafeas.v1beta1.provenance.FileHashes defaultValue) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+        java.lang.String key, io.grafeas.v1beta1.provenance.FileHashes defaultValue) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
       java.util.Map<java.lang.String, io.grafeas.v1beta1.provenance.FileHashes> map =
           internalGetFileHashes().getMap();
       return map.containsKey(key) ? map.get(key) : defaultValue;
     }
     /**
+     *
+     *
      * <pre>
      * Hash(es) of the build source, which can be used to verify that the original
      * source integrity was maintained in the build.
@@ -1010,10 +1095,10 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, .grafeas.v1beta1.provenance.FileHashes&gt; file_hashes = 2;</code>
      */
-
-    public io.grafeas.v1beta1.provenance.FileHashes getFileHashesOrThrow(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
+    public io.grafeas.v1beta1.provenance.FileHashes getFileHashesOrThrow(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
       java.util.Map<java.lang.String, io.grafeas.v1beta1.provenance.FileHashes> map =
           internalGetFileHashes().getMap();
       if (!map.containsKey(key)) {
@@ -1023,11 +1108,12 @@ private static final long serialVersionUID = 0L;
     }
 
     public Builder clearFileHashes() {
-      internalGetMutableFileHashes().getMutableMap()
-          .clear();
+      internalGetMutableFileHashes().getMutableMap().clear();
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Hash(es) of the build source, which can be used to verify that the original
      * source integrity was maintained in the build.
@@ -1039,23 +1125,22 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, .grafeas.v1beta1.provenance.FileHashes&gt; file_hashes = 2;</code>
      */
-
-    public Builder removeFileHashes(
-        java.lang.String key) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      internalGetMutableFileHashes().getMutableMap()
-          .remove(key);
+    public Builder removeFileHashes(java.lang.String key) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableFileHashes().getMutableMap().remove(key);
       return this;
     }
-    /**
-     * Use alternate mutation accessors instead.
-     */
+    /** Use alternate mutation accessors instead. */
     @java.lang.Deprecated
     public java.util.Map<java.lang.String, io.grafeas.v1beta1.provenance.FileHashes>
-    getMutableFileHashes() {
+        getMutableFileHashes() {
       return internalGetMutableFileHashes().getMutableMap();
     }
     /**
+     *
+     *
      * <pre>
      * Hash(es) of the build source, which can be used to verify that the original
      * source integrity was maintained in the build.
@@ -1068,15 +1153,19 @@ private static final long serialVersionUID = 0L;
      * <code>map&lt;string, .grafeas.v1beta1.provenance.FileHashes&gt; file_hashes = 2;</code>
      */
     public Builder putFileHashes(
-        java.lang.String key,
-        io.grafeas.v1beta1.provenance.FileHashes value) {
-      if (key == null) { throw new java.lang.NullPointerException(); }
-      if (value == null) { throw new java.lang.NullPointerException(); }
-      internalGetMutableFileHashes().getMutableMap()
-          .put(key, value);
+        java.lang.String key, io.grafeas.v1beta1.provenance.FileHashes value) {
+      if (key == null) {
+        throw new java.lang.NullPointerException();
+      }
+      if (value == null) {
+        throw new java.lang.NullPointerException();
+      }
+      internalGetMutableFileHashes().getMutableMap().put(key, value);
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * Hash(es) of the build source, which can be used to verify that the original
      * source integrity was maintained in the build.
@@ -1088,18 +1177,21 @@ private static final long serialVersionUID = 0L;
      *
      * <code>map&lt;string, .grafeas.v1beta1.provenance.FileHashes&gt; file_hashes = 2;</code>
      */
-
     public Builder putAllFileHashes(
         java.util.Map<java.lang.String, io.grafeas.v1beta1.provenance.FileHashes> values) {
-      internalGetMutableFileHashes().getMutableMap()
-          .putAll(values);
+      internalGetMutableFileHashes().getMutableMap().putAll(values);
       return this;
     }
 
     private io.grafeas.v1beta1.source.SourceContext context_ = null;
     private com.google.protobuf.SingleFieldBuilderV3<
-        io.grafeas.v1beta1.source.SourceContext, io.grafeas.v1beta1.source.SourceContext.Builder, io.grafeas.v1beta1.source.SourceContextOrBuilder> contextBuilder_;
+            io.grafeas.v1beta1.source.SourceContext,
+            io.grafeas.v1beta1.source.SourceContext.Builder,
+            io.grafeas.v1beta1.source.SourceContextOrBuilder>
+        contextBuilder_;
     /**
+     *
+     *
      * <pre>
      * If provided, the source code used for the build came from this location.
      * </pre>
@@ -1110,6 +1202,8 @@ private static final long serialVersionUID = 0L;
       return contextBuilder_ != null || context_ != null;
     }
     /**
+     *
+     *
      * <pre>
      * If provided, the source code used for the build came from this location.
      * </pre>
@@ -1118,12 +1212,16 @@ private static final long serialVersionUID = 0L;
      */
     public io.grafeas.v1beta1.source.SourceContext getContext() {
       if (contextBuilder_ == null) {
-        return context_ == null ? io.grafeas.v1beta1.source.SourceContext.getDefaultInstance() : context_;
+        return context_ == null
+            ? io.grafeas.v1beta1.source.SourceContext.getDefaultInstance()
+            : context_;
       } else {
         return contextBuilder_.getMessage();
       }
     }
     /**
+     *
+     *
      * <pre>
      * If provided, the source code used for the build came from this location.
      * </pre>
@@ -1144,14 +1242,15 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If provided, the source code used for the build came from this location.
      * </pre>
      *
      * <code>.grafeas.v1beta1.source.SourceContext context = 3;</code>
      */
-    public Builder setContext(
-        io.grafeas.v1beta1.source.SourceContext.Builder builderForValue) {
+    public Builder setContext(io.grafeas.v1beta1.source.SourceContext.Builder builderForValue) {
       if (contextBuilder_ == null) {
         context_ = builderForValue.build();
         onChanged();
@@ -1162,6 +1261,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If provided, the source code used for the build came from this location.
      * </pre>
@@ -1172,7 +1273,9 @@ private static final long serialVersionUID = 0L;
       if (contextBuilder_ == null) {
         if (context_ != null) {
           context_ =
-            io.grafeas.v1beta1.source.SourceContext.newBuilder(context_).mergeFrom(value).buildPartial();
+              io.grafeas.v1beta1.source.SourceContext.newBuilder(context_)
+                  .mergeFrom(value)
+                  .buildPartial();
         } else {
           context_ = value;
         }
@@ -1184,6 +1287,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If provided, the source code used for the build came from this location.
      * </pre>
@@ -1202,6 +1307,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If provided, the source code used for the build came from this location.
      * </pre>
@@ -1209,11 +1316,13 @@ private static final long serialVersionUID = 0L;
      * <code>.grafeas.v1beta1.source.SourceContext context = 3;</code>
      */
     public io.grafeas.v1beta1.source.SourceContext.Builder getContextBuilder() {
-      
+
       onChanged();
       return getContextFieldBuilder().getBuilder();
     }
     /**
+     *
+     *
      * <pre>
      * If provided, the source code used for the build came from this location.
      * </pre>
@@ -1224,11 +1333,14 @@ private static final long serialVersionUID = 0L;
       if (contextBuilder_ != null) {
         return contextBuilder_.getMessageOrBuilder();
       } else {
-        return context_ == null ?
-            io.grafeas.v1beta1.source.SourceContext.getDefaultInstance() : context_;
+        return context_ == null
+            ? io.grafeas.v1beta1.source.SourceContext.getDefaultInstance()
+            : context_;
       }
     }
     /**
+     *
+     *
      * <pre>
      * If provided, the source code used for the build came from this location.
      * </pre>
@@ -1236,32 +1348,42 @@ private static final long serialVersionUID = 0L;
      * <code>.grafeas.v1beta1.source.SourceContext context = 3;</code>
      */
     private com.google.protobuf.SingleFieldBuilderV3<
-        io.grafeas.v1beta1.source.SourceContext, io.grafeas.v1beta1.source.SourceContext.Builder, io.grafeas.v1beta1.source.SourceContextOrBuilder> 
+            io.grafeas.v1beta1.source.SourceContext,
+            io.grafeas.v1beta1.source.SourceContext.Builder,
+            io.grafeas.v1beta1.source.SourceContextOrBuilder>
         getContextFieldBuilder() {
       if (contextBuilder_ == null) {
-        contextBuilder_ = new com.google.protobuf.SingleFieldBuilderV3<
-            io.grafeas.v1beta1.source.SourceContext, io.grafeas.v1beta1.source.SourceContext.Builder, io.grafeas.v1beta1.source.SourceContextOrBuilder>(
-                getContext(),
-                getParentForChildren(),
-                isClean());
+        contextBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                io.grafeas.v1beta1.source.SourceContext,
+                io.grafeas.v1beta1.source.SourceContext.Builder,
+                io.grafeas.v1beta1.source.SourceContextOrBuilder>(
+                getContext(), getParentForChildren(), isClean());
         context_ = null;
       }
       return contextBuilder_;
     }
 
     private java.util.List<io.grafeas.v1beta1.source.SourceContext> additionalContexts_ =
-      java.util.Collections.emptyList();
+        java.util.Collections.emptyList();
+
     private void ensureAdditionalContextsIsMutable() {
       if (!((bitField0_ & 0x00000008) == 0x00000008)) {
-        additionalContexts_ = new java.util.ArrayList<io.grafeas.v1beta1.source.SourceContext>(additionalContexts_);
+        additionalContexts_ =
+            new java.util.ArrayList<io.grafeas.v1beta1.source.SourceContext>(additionalContexts_);
         bitField0_ |= 0x00000008;
-       }
+      }
     }
 
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        io.grafeas.v1beta1.source.SourceContext, io.grafeas.v1beta1.source.SourceContext.Builder, io.grafeas.v1beta1.source.SourceContextOrBuilder> additionalContextsBuilder_;
+            io.grafeas.v1beta1.source.SourceContext,
+            io.grafeas.v1beta1.source.SourceContext.Builder,
+            io.grafeas.v1beta1.source.SourceContextOrBuilder>
+        additionalContextsBuilder_;
 
     /**
+     *
+     *
      * <pre>
      * If provided, some of the source code used for the build may be found in
      * these locations, in the case where the source repository had multiple
@@ -1279,6 +1401,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * If provided, some of the source code used for the build may be found in
      * these locations, in the case where the source repository had multiple
@@ -1296,6 +1420,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * If provided, some of the source code used for the build may be found in
      * these locations, in the case where the source repository had multiple
@@ -1313,6 +1439,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * If provided, some of the source code used for the build may be found in
      * these locations, in the case where the source repository had multiple
@@ -1322,8 +1450,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .grafeas.v1beta1.source.SourceContext additional_contexts = 4;</code>
      */
-    public Builder setAdditionalContexts(
-        int index, io.grafeas.v1beta1.source.SourceContext value) {
+    public Builder setAdditionalContexts(int index, io.grafeas.v1beta1.source.SourceContext value) {
       if (additionalContextsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1337,6 +1464,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If provided, some of the source code used for the build may be found in
      * these locations, in the case where the source repository had multiple
@@ -1358,6 +1487,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If provided, some of the source code used for the build may be found in
      * these locations, in the case where the source repository had multiple
@@ -1381,6 +1512,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If provided, some of the source code used for the build may be found in
      * these locations, in the case where the source repository had multiple
@@ -1390,8 +1523,7 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .grafeas.v1beta1.source.SourceContext additional_contexts = 4;</code>
      */
-    public Builder addAdditionalContexts(
-        int index, io.grafeas.v1beta1.source.SourceContext value) {
+    public Builder addAdditionalContexts(int index, io.grafeas.v1beta1.source.SourceContext value) {
       if (additionalContextsBuilder_ == null) {
         if (value == null) {
           throw new NullPointerException();
@@ -1405,6 +1537,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If provided, some of the source code used for the build may be found in
      * these locations, in the case where the source repository had multiple
@@ -1426,6 +1560,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If provided, some of the source code used for the build may be found in
      * these locations, in the case where the source repository had multiple
@@ -1447,6 +1583,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If provided, some of the source code used for the build may be found in
      * these locations, in the case where the source repository had multiple
@@ -1460,8 +1598,7 @@ private static final long serialVersionUID = 0L;
         java.lang.Iterable<? extends io.grafeas.v1beta1.source.SourceContext> values) {
       if (additionalContextsBuilder_ == null) {
         ensureAdditionalContextsIsMutable();
-        com.google.protobuf.AbstractMessageLite.Builder.addAll(
-            values, additionalContexts_);
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, additionalContexts_);
         onChanged();
       } else {
         additionalContextsBuilder_.addAllMessages(values);
@@ -1469,6 +1606,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If provided, some of the source code used for the build may be found in
      * these locations, in the case where the source repository had multiple
@@ -1489,6 +1628,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If provided, some of the source code used for the build may be found in
      * these locations, in the case where the source repository had multiple
@@ -1509,6 +1650,8 @@ private static final long serialVersionUID = 0L;
       return this;
     }
     /**
+     *
+     *
      * <pre>
      * If provided, some of the source code used for the build may be found in
      * these locations, in the case where the source repository had multiple
@@ -1518,11 +1661,12 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .grafeas.v1beta1.source.SourceContext additional_contexts = 4;</code>
      */
-    public io.grafeas.v1beta1.source.SourceContext.Builder getAdditionalContextsBuilder(
-        int index) {
+    public io.grafeas.v1beta1.source.SourceContext.Builder getAdditionalContextsBuilder(int index) {
       return getAdditionalContextsFieldBuilder().getBuilder(index);
     }
     /**
+     *
+     *
      * <pre>
      * If provided, some of the source code used for the build may be found in
      * these locations, in the case where the source repository had multiple
@@ -1535,11 +1679,14 @@ private static final long serialVersionUID = 0L;
     public io.grafeas.v1beta1.source.SourceContextOrBuilder getAdditionalContextsOrBuilder(
         int index) {
       if (additionalContextsBuilder_ == null) {
-        return additionalContexts_.get(index);  } else {
+        return additionalContexts_.get(index);
+      } else {
         return additionalContextsBuilder_.getMessageOrBuilder(index);
       }
     }
     /**
+     *
+     *
      * <pre>
      * If provided, some of the source code used for the build may be found in
      * these locations, in the case where the source repository had multiple
@@ -1549,8 +1696,8 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .grafeas.v1beta1.source.SourceContext additional_contexts = 4;</code>
      */
-    public java.util.List<? extends io.grafeas.v1beta1.source.SourceContextOrBuilder> 
-         getAdditionalContextsOrBuilderList() {
+    public java.util.List<? extends io.grafeas.v1beta1.source.SourceContextOrBuilder>
+        getAdditionalContextsOrBuilderList() {
       if (additionalContextsBuilder_ != null) {
         return additionalContextsBuilder_.getMessageOrBuilderList();
       } else {
@@ -1558,6 +1705,8 @@ private static final long serialVersionUID = 0L;
       }
     }
     /**
+     *
+     *
      * <pre>
      * If provided, some of the source code used for the build may be found in
      * these locations, in the case where the source repository had multiple
@@ -1568,10 +1717,12 @@ private static final long serialVersionUID = 0L;
      * <code>repeated .grafeas.v1beta1.source.SourceContext additional_contexts = 4;</code>
      */
     public io.grafeas.v1beta1.source.SourceContext.Builder addAdditionalContextsBuilder() {
-      return getAdditionalContextsFieldBuilder().addBuilder(
-          io.grafeas.v1beta1.source.SourceContext.getDefaultInstance());
+      return getAdditionalContextsFieldBuilder()
+          .addBuilder(io.grafeas.v1beta1.source.SourceContext.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * If provided, some of the source code used for the build may be found in
      * these locations, in the case where the source repository had multiple
@@ -1581,12 +1732,13 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .grafeas.v1beta1.source.SourceContext additional_contexts = 4;</code>
      */
-    public io.grafeas.v1beta1.source.SourceContext.Builder addAdditionalContextsBuilder(
-        int index) {
-      return getAdditionalContextsFieldBuilder().addBuilder(
-          index, io.grafeas.v1beta1.source.SourceContext.getDefaultInstance());
+    public io.grafeas.v1beta1.source.SourceContext.Builder addAdditionalContextsBuilder(int index) {
+      return getAdditionalContextsFieldBuilder()
+          .addBuilder(index, io.grafeas.v1beta1.source.SourceContext.getDefaultInstance());
     }
     /**
+     *
+     *
      * <pre>
      * If provided, some of the source code used for the build may be found in
      * these locations, in the case where the source repository had multiple
@@ -1596,16 +1748,22 @@ private static final long serialVersionUID = 0L;
      *
      * <code>repeated .grafeas.v1beta1.source.SourceContext additional_contexts = 4;</code>
      */
-    public java.util.List<io.grafeas.v1beta1.source.SourceContext.Builder> 
-         getAdditionalContextsBuilderList() {
+    public java.util.List<io.grafeas.v1beta1.source.SourceContext.Builder>
+        getAdditionalContextsBuilderList() {
       return getAdditionalContextsFieldBuilder().getBuilderList();
     }
+
     private com.google.protobuf.RepeatedFieldBuilderV3<
-        io.grafeas.v1beta1.source.SourceContext, io.grafeas.v1beta1.source.SourceContext.Builder, io.grafeas.v1beta1.source.SourceContextOrBuilder> 
+            io.grafeas.v1beta1.source.SourceContext,
+            io.grafeas.v1beta1.source.SourceContext.Builder,
+            io.grafeas.v1beta1.source.SourceContextOrBuilder>
         getAdditionalContextsFieldBuilder() {
       if (additionalContextsBuilder_ == null) {
-        additionalContextsBuilder_ = new com.google.protobuf.RepeatedFieldBuilderV3<
-            io.grafeas.v1beta1.source.SourceContext, io.grafeas.v1beta1.source.SourceContext.Builder, io.grafeas.v1beta1.source.SourceContextOrBuilder>(
+        additionalContextsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                io.grafeas.v1beta1.source.SourceContext,
+                io.grafeas.v1beta1.source.SourceContext.Builder,
+                io.grafeas.v1beta1.source.SourceContextOrBuilder>(
                 additionalContexts_,
                 ((bitField0_ & 0x00000008) == 0x00000008),
                 getParentForChildren(),
@@ -1614,22 +1772,24 @@ private static final long serialVersionUID = 0L;
       }
       return additionalContextsBuilder_;
     }
-    public final Builder setUnknownFields(
-        final com.google.protobuf.UnknownFieldSet unknownFields) {
+
+    @java.lang.Override
+    public final Builder setUnknownFields(final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.setUnknownFieldsProto3(unknownFields);
     }
 
+    @java.lang.Override
     public final Builder mergeUnknownFields(
         final com.google.protobuf.UnknownFieldSet unknownFields) {
       return super.mergeUnknownFields(unknownFields);
     }
-
 
     // @@protoc_insertion_point(builder_scope:grafeas.v1beta1.provenance.Source)
   }
 
   // @@protoc_insertion_point(class_scope:grafeas.v1beta1.provenance.Source)
   private static final io.grafeas.v1beta1.provenance.Source DEFAULT_INSTANCE;
+
   static {
     DEFAULT_INSTANCE = new io.grafeas.v1beta1.provenance.Source();
   }
@@ -1638,15 +1798,16 @@ private static final long serialVersionUID = 0L;
     return DEFAULT_INSTANCE;
   }
 
-  private static final com.google.protobuf.Parser<Source>
-      PARSER = new com.google.protobuf.AbstractParser<Source>() {
-    public Source parsePartialFrom(
-        com.google.protobuf.CodedInputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws com.google.protobuf.InvalidProtocolBufferException {
-        return new Source(input, extensionRegistry);
-    }
-  };
+  private static final com.google.protobuf.Parser<Source> PARSER =
+      new com.google.protobuf.AbstractParser<Source>() {
+        @java.lang.Override
+        public Source parsePartialFrom(
+            com.google.protobuf.CodedInputStream input,
+            com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+            throws com.google.protobuf.InvalidProtocolBufferException {
+          return new Source(input, extensionRegistry);
+        }
+      };
 
   public static com.google.protobuf.Parser<Source> parser() {
     return PARSER;
@@ -1657,9 +1818,8 @@ private static final long serialVersionUID = 0L;
     return PARSER;
   }
 
+  @java.lang.Override
   public io.grafeas.v1beta1.provenance.Source getDefaultInstanceForType() {
     return DEFAULT_INSTANCE;
   }
-
 }
-

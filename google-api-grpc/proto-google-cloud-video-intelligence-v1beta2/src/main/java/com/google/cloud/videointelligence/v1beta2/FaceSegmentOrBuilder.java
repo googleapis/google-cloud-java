@@ -3,11 +3,14 @@
 
 package com.google.cloud.videointelligence.v1beta2;
 
-public interface FaceSegmentOrBuilder extends
+public interface FaceSegmentOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.videointelligence.v1beta2.FaceSegment)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Video segment where a face was detected.
    * </pre>
@@ -16,6 +19,8 @@ public interface FaceSegmentOrBuilder extends
    */
   boolean hasSegment();
   /**
+   *
+   *
    * <pre>
    * Video segment where a face was detected.
    * </pre>
@@ -24,6 +29,8 @@ public interface FaceSegmentOrBuilder extends
    */
   com.google.cloud.videointelligence.v1beta2.VideoSegment getSegment();
   /**
+   *
+   *
    * <pre>
    * Video segment where a face was detected.
    * </pre>

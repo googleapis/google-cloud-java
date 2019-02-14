@@ -5,20 +5,21 @@ package com.google.cloud.oslogin.common;
 
 public final class OsLoginProto {
   private OsLoginProto() {}
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistryLite registry) {
+
+  public static void registerAllExtensions(com.google.protobuf.ExtensionRegistryLite registry) {}
+
+  public static void registerAllExtensions(com.google.protobuf.ExtensionRegistry registry) {
+    registerAllExtensions((com.google.protobuf.ExtensionRegistryLite) registry);
   }
 
-  public static void registerAllExtensions(
-      com.google.protobuf.ExtensionRegistry registry) {
-    registerAllExtensions(
-        (com.google.protobuf.ExtensionRegistryLite) registry);
-  }
-  public interface PosixAccountOrBuilder extends
+  public interface PosixAccountOrBuilder
+      extends
       // @@protoc_insertion_point(interface_extends:google.cloud.oslogin.common.PosixAccount)
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     *
+     *
      * <pre>
      * Only one POSIX account can be marked as primary.
      * </pre>
@@ -28,6 +29,8 @@ public final class OsLoginProto {
     boolean getPrimary();
 
     /**
+     *
+     *
      * <pre>
      * The username of the POSIX account.
      * </pre>
@@ -36,16 +39,19 @@ public final class OsLoginProto {
      */
     java.lang.String getUsername();
     /**
+     *
+     *
      * <pre>
      * The username of the POSIX account.
      * </pre>
      *
      * <code>string username = 2;</code>
      */
-    com.google.protobuf.ByteString
-        getUsernameBytes();
+    com.google.protobuf.ByteString getUsernameBytes();
 
     /**
+     *
+     *
      * <pre>
      * The user ID.
      * </pre>
@@ -55,6 +61,8 @@ public final class OsLoginProto {
     long getUid();
 
     /**
+     *
+     *
      * <pre>
      * The default group ID.
      * </pre>
@@ -64,6 +72,8 @@ public final class OsLoginProto {
     long getGid();
 
     /**
+     *
+     *
      * <pre>
      * The path to the home directory for this account.
      * </pre>
@@ -72,16 +82,19 @@ public final class OsLoginProto {
      */
     java.lang.String getHomeDirectory();
     /**
+     *
+     *
      * <pre>
      * The path to the home directory for this account.
      * </pre>
      *
      * <code>string home_directory = 5;</code>
      */
-    com.google.protobuf.ByteString
-        getHomeDirectoryBytes();
+    com.google.protobuf.ByteString getHomeDirectoryBytes();
 
     /**
+     *
+     *
      * <pre>
      * The path to the logic shell for this account.
      * </pre>
@@ -90,16 +103,19 @@ public final class OsLoginProto {
      */
     java.lang.String getShell();
     /**
+     *
+     *
      * <pre>
      * The path to the logic shell for this account.
      * </pre>
      *
      * <code>string shell = 6;</code>
      */
-    com.google.protobuf.ByteString
-        getShellBytes();
+    com.google.protobuf.ByteString getShellBytes();
 
     /**
+     *
+     *
      * <pre>
      * The GECOS (user information) entry for this account.
      * </pre>
@@ -108,16 +124,19 @@ public final class OsLoginProto {
      */
     java.lang.String getGecos();
     /**
+     *
+     *
      * <pre>
      * The GECOS (user information) entry for this account.
      * </pre>
      *
      * <code>string gecos = 7;</code>
      */
-    com.google.protobuf.ByteString
-        getGecosBytes();
+    com.google.protobuf.ByteString getGecosBytes();
 
     /**
+     *
+     *
      * <pre>
      * System identifier for which account the username or uid applies to.
      * By default, the empty value is used.
@@ -127,6 +146,8 @@ public final class OsLoginProto {
      */
     java.lang.String getSystemId();
     /**
+     *
+     *
      * <pre>
      * System identifier for which account the username or uid applies to.
      * By default, the empty value is used.
@@ -134,10 +155,11 @@ public final class OsLoginProto {
      *
      * <code>string system_id = 8;</code>
      */
-    com.google.protobuf.ByteString
-        getSystemIdBytes();
+    com.google.protobuf.ByteString getSystemIdBytes();
 
     /**
+     *
+     *
      * <pre>
      * Output only. A POSIX account identifier.
      * </pre>
@@ -146,31 +168,35 @@ public final class OsLoginProto {
      */
     java.lang.String getAccountId();
     /**
+     *
+     *
      * <pre>
      * Output only. A POSIX account identifier.
      * </pre>
      *
      * <code>string account_id = 9;</code>
      */
-    com.google.protobuf.ByteString
-        getAccountIdBytes();
+    com.google.protobuf.ByteString getAccountIdBytes();
   }
   /**
+   *
+   *
    * <pre>
    * The POSIX account information associated with a Google account.
    * </pre>
    *
    * Protobuf type {@code google.cloud.oslogin.common.PosixAccount}
    */
-  public  static final class PosixAccount extends
-      com.google.protobuf.GeneratedMessageV3 implements
+  public static final class PosixAccount extends com.google.protobuf.GeneratedMessageV3
+      implements
       // @@protoc_insertion_point(message_implements:google.cloud.oslogin.common.PosixAccount)
       PosixAccountOrBuilder {
-  private static final long serialVersionUID = 0L;
+    private static final long serialVersionUID = 0L;
     // Use PosixAccount.newBuilder() to construct.
     private PosixAccount(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
+
     private PosixAccount() {
       primary_ = false;
       username_ = "";
@@ -184,15 +210,18 @@ public final class OsLoginProto {
     }
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
+
     private PosixAccount(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -204,91 +233,102 @@ public final class OsLoginProto {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
+            case 8:
+              {
+                primary_ = input.readBool();
+                break;
               }
-              break;
-            }
-            case 8: {
+            case 18:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
 
-              primary_ = input.readBool();
-              break;
-            }
-            case 18: {
-              java.lang.String s = input.readStringRequireUtf8();
+                username_ = s;
+                break;
+              }
+            case 24:
+              {
+                uid_ = input.readInt64();
+                break;
+              }
+            case 32:
+              {
+                gid_ = input.readInt64();
+                break;
+              }
+            case 42:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
 
-              username_ = s;
-              break;
-            }
-            case 24: {
+                homeDirectory_ = s;
+                break;
+              }
+            case 50:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
 
-              uid_ = input.readInt64();
-              break;
-            }
-            case 32: {
+                shell_ = s;
+                break;
+              }
+            case 58:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
 
-              gid_ = input.readInt64();
-              break;
-            }
-            case 42: {
-              java.lang.String s = input.readStringRequireUtf8();
+                gecos_ = s;
+                break;
+              }
+            case 66:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
 
-              homeDirectory_ = s;
-              break;
-            }
-            case 50: {
-              java.lang.String s = input.readStringRequireUtf8();
+                systemId_ = s;
+                break;
+              }
+            case 74:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
 
-              shell_ = s;
-              break;
-            }
-            case 58: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              gecos_ = s;
-              break;
-            }
-            case 66: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              systemId_ = s;
-              break;
-            }
-            case 74: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              accountId_ = s;
-              break;
-            }
+                accountId_ = s;
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.oslogin.common.OsLoginProto.internal_static_google_cloud_oslogin_common_PosixAccount_descriptor;
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.oslogin.common.OsLoginProto
+          .internal_static_google_cloud_oslogin_common_PosixAccount_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.oslogin.common.OsLoginProto.internal_static_google_cloud_oslogin_common_PosixAccount_fieldAccessorTable
+      return com.google.cloud.oslogin.common.OsLoginProto
+          .internal_static_google_cloud_oslogin_common_PosixAccount_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.oslogin.common.OsLoginProto.PosixAccount.class, com.google.cloud.oslogin.common.OsLoginProto.PosixAccount.Builder.class);
+              com.google.cloud.oslogin.common.OsLoginProto.PosixAccount.class,
+              com.google.cloud.oslogin.common.OsLoginProto.PosixAccount.Builder.class);
     }
 
     public static final int PRIMARY_FIELD_NUMBER = 1;
     private boolean primary_;
     /**
+     *
+     *
      * <pre>
      * Only one POSIX account can be marked as primary.
      * </pre>
@@ -302,6 +342,8 @@ public final class OsLoginProto {
     public static final int USERNAME_FIELD_NUMBER = 2;
     private volatile java.lang.Object username_;
     /**
+     *
+     *
      * <pre>
      * The username of the POSIX account.
      * </pre>
@@ -313,27 +355,26 @@ public final class OsLoginProto {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         username_ = s;
         return s;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The username of the POSIX account.
      * </pre>
      *
      * <code>string username = 2;</code>
      */
-    public com.google.protobuf.ByteString
-        getUsernameBytes() {
+    public com.google.protobuf.ByteString getUsernameBytes() {
       java.lang.Object ref = username_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         username_ = b;
         return b;
       } else {
@@ -344,6 +385,8 @@ public final class OsLoginProto {
     public static final int UID_FIELD_NUMBER = 3;
     private long uid_;
     /**
+     *
+     *
      * <pre>
      * The user ID.
      * </pre>
@@ -357,6 +400,8 @@ public final class OsLoginProto {
     public static final int GID_FIELD_NUMBER = 4;
     private long gid_;
     /**
+     *
+     *
      * <pre>
      * The default group ID.
      * </pre>
@@ -370,6 +415,8 @@ public final class OsLoginProto {
     public static final int HOME_DIRECTORY_FIELD_NUMBER = 5;
     private volatile java.lang.Object homeDirectory_;
     /**
+     *
+     *
      * <pre>
      * The path to the home directory for this account.
      * </pre>
@@ -381,27 +428,26 @@ public final class OsLoginProto {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         homeDirectory_ = s;
         return s;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The path to the home directory for this account.
      * </pre>
      *
      * <code>string home_directory = 5;</code>
      */
-    public com.google.protobuf.ByteString
-        getHomeDirectoryBytes() {
+    public com.google.protobuf.ByteString getHomeDirectoryBytes() {
       java.lang.Object ref = homeDirectory_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         homeDirectory_ = b;
         return b;
       } else {
@@ -412,6 +458,8 @@ public final class OsLoginProto {
     public static final int SHELL_FIELD_NUMBER = 6;
     private volatile java.lang.Object shell_;
     /**
+     *
+     *
      * <pre>
      * The path to the logic shell for this account.
      * </pre>
@@ -423,27 +471,26 @@ public final class OsLoginProto {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         shell_ = s;
         return s;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The path to the logic shell for this account.
      * </pre>
      *
      * <code>string shell = 6;</code>
      */
-    public com.google.protobuf.ByteString
-        getShellBytes() {
+    public com.google.protobuf.ByteString getShellBytes() {
       java.lang.Object ref = shell_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         shell_ = b;
         return b;
       } else {
@@ -454,6 +501,8 @@ public final class OsLoginProto {
     public static final int GECOS_FIELD_NUMBER = 7;
     private volatile java.lang.Object gecos_;
     /**
+     *
+     *
      * <pre>
      * The GECOS (user information) entry for this account.
      * </pre>
@@ -465,27 +514,26 @@ public final class OsLoginProto {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         gecos_ = s;
         return s;
       }
     }
     /**
+     *
+     *
      * <pre>
      * The GECOS (user information) entry for this account.
      * </pre>
      *
      * <code>string gecos = 7;</code>
      */
-    public com.google.protobuf.ByteString
-        getGecosBytes() {
+    public com.google.protobuf.ByteString getGecosBytes() {
       java.lang.Object ref = gecos_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         gecos_ = b;
         return b;
       } else {
@@ -496,6 +544,8 @@ public final class OsLoginProto {
     public static final int SYSTEM_ID_FIELD_NUMBER = 8;
     private volatile java.lang.Object systemId_;
     /**
+     *
+     *
      * <pre>
      * System identifier for which account the username or uid applies to.
      * By default, the empty value is used.
@@ -508,14 +558,15 @@ public final class OsLoginProto {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         systemId_ = s;
         return s;
       }
     }
     /**
+     *
+     *
      * <pre>
      * System identifier for which account the username or uid applies to.
      * By default, the empty value is used.
@@ -523,13 +574,11 @@ public final class OsLoginProto {
      *
      * <code>string system_id = 8;</code>
      */
-    public com.google.protobuf.ByteString
-        getSystemIdBytes() {
+    public com.google.protobuf.ByteString getSystemIdBytes() {
       java.lang.Object ref = systemId_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         systemId_ = b;
         return b;
       } else {
@@ -540,6 +589,8 @@ public final class OsLoginProto {
     public static final int ACCOUNT_ID_FIELD_NUMBER = 9;
     private volatile java.lang.Object accountId_;
     /**
+     *
+     *
      * <pre>
      * Output only. A POSIX account identifier.
      * </pre>
@@ -551,27 +602,26 @@ public final class OsLoginProto {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         accountId_ = s;
         return s;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. A POSIX account identifier.
      * </pre>
      *
      * <code>string account_id = 9;</code>
      */
-    public com.google.protobuf.ByteString
-        getAccountIdBytes() {
+    public com.google.protobuf.ByteString getAccountIdBytes() {
       java.lang.Object ref = accountId_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         accountId_ = b;
         return b;
       } else {
@@ -580,6 +630,8 @@ public final class OsLoginProto {
     }
 
     private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -589,8 +641,8 @@ public final class OsLoginProto {
       return true;
     }
 
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
       if (primary_ != false) {
         output.writeBool(1, primary_);
       }
@@ -621,25 +673,23 @@ public final class OsLoginProto {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
 
       size = 0;
       if (primary_ != false) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeBoolSize(1, primary_);
+        size += com.google.protobuf.CodedOutputStream.computeBoolSize(1, primary_);
       }
       if (!getUsernameBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, username_);
       }
       if (uid_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(3, uid_);
+        size += com.google.protobuf.CodedOutputStream.computeInt64Size(3, uid_);
       }
       if (gid_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(4, gid_);
+        size += com.google.protobuf.CodedOutputStream.computeInt64Size(4, gid_);
       }
       if (!getHomeDirectoryBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(5, homeDirectory_);
@@ -664,32 +714,24 @@ public final class OsLoginProto {
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-       return true;
+        return true;
       }
       if (!(obj instanceof com.google.cloud.oslogin.common.OsLoginProto.PosixAccount)) {
         return super.equals(obj);
       }
-      com.google.cloud.oslogin.common.OsLoginProto.PosixAccount other = (com.google.cloud.oslogin.common.OsLoginProto.PosixAccount) obj;
+      com.google.cloud.oslogin.common.OsLoginProto.PosixAccount other =
+          (com.google.cloud.oslogin.common.OsLoginProto.PosixAccount) obj;
 
       boolean result = true;
-      result = result && (getPrimary()
-          == other.getPrimary());
-      result = result && getUsername()
-          .equals(other.getUsername());
-      result = result && (getUid()
-          == other.getUid());
-      result = result && (getGid()
-          == other.getGid());
-      result = result && getHomeDirectory()
-          .equals(other.getHomeDirectory());
-      result = result && getShell()
-          .equals(other.getShell());
-      result = result && getGecos()
-          .equals(other.getGecos());
-      result = result && getSystemId()
-          .equals(other.getSystemId());
-      result = result && getAccountId()
-          .equals(other.getAccountId());
+      result = result && (getPrimary() == other.getPrimary());
+      result = result && getUsername().equals(other.getUsername());
+      result = result && (getUid() == other.getUid());
+      result = result && (getGid() == other.getGid());
+      result = result && getHomeDirectory().equals(other.getHomeDirectory());
+      result = result && getShell().equals(other.getShell());
+      result = result && getGecos().equals(other.getGecos());
+      result = result && getSystemId().equals(other.getSystemId());
+      result = result && getAccountId().equals(other.getAccountId());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -702,16 +744,13 @@ public final class OsLoginProto {
       int hash = 41;
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + PRIMARY_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(
-          getPrimary());
+      hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getPrimary());
       hash = (37 * hash) + USERNAME_FIELD_NUMBER;
       hash = (53 * hash) + getUsername().hashCode();
       hash = (37 * hash) + UID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getUid());
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getUid());
       hash = (37 * hash) + GID_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getGid());
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getGid());
       hash = (37 * hash) + HOME_DIRECTORY_FIELD_NUMBER;
       hash = (53 * hash) + getHomeDirectory().hashCode();
       hash = (37 * hash) + SHELL_FIELD_NUMBER;
@@ -728,85 +767,94 @@ public final class OsLoginProto {
     }
 
     public static com.google.cloud.oslogin.common.OsLoginProto.PosixAccount parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.cloud.oslogin.common.OsLoginProto.PosixAccount parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static com.google.cloud.oslogin.common.OsLoginProto.PosixAccount parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.cloud.oslogin.common.OsLoginProto.PosixAccount parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static com.google.cloud.oslogin.common.OsLoginProto.PosixAccount parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.cloud.oslogin.common.OsLoginProto.PosixAccount parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.google.cloud.oslogin.common.OsLoginProto.PosixAccount parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
+
     public static com.google.cloud.oslogin.common.OsLoginProto.PosixAccount parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
-    public static com.google.cloud.oslogin.common.OsLoginProto.PosixAccount parseDelimitedFrom(java.io.InputStream input)
+
+    public static com.google.cloud.oslogin.common.OsLoginProto.PosixAccount parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
+
     public static com.google.cloud.oslogin.common.OsLoginProto.PosixAccount parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
     }
+
+    public static com.google.cloud.oslogin.common.OsLoginProto.PosixAccount parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
     public static com.google.cloud.oslogin.common.OsLoginProto.PosixAccount parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
+
     public static com.google.cloud.oslogin.common.OsLoginProto.PosixAccount parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
 
-    public Builder newBuilderForType() { return newBuilder(); }
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.google.cloud.oslogin.common.OsLoginProto.PosixAccount prototype) {
+
+    public static Builder newBuilder(
+        com.google.cloud.oslogin.common.OsLoginProto.PosixAccount prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+
+    @java.lang.Override
     public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
     @java.lang.Override
@@ -816,26 +864,32 @@ public final class OsLoginProto {
       return builder;
     }
     /**
+     *
+     *
      * <pre>
      * The POSIX account information associated with a Google account.
      * </pre>
      *
      * Protobuf type {@code google.cloud.oslogin.common.PosixAccount}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
         // @@protoc_insertion_point(builder_implements:google.cloud.oslogin.common.PosixAccount)
         com.google.cloud.oslogin.common.OsLoginProto.PosixAccountOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.google.cloud.oslogin.common.OsLoginProto.internal_static_google_cloud_oslogin_common_PosixAccount_descriptor;
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.oslogin.common.OsLoginProto
+            .internal_static_google_cloud_oslogin_common_PosixAccount_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.google.cloud.oslogin.common.OsLoginProto.internal_static_google_cloud_oslogin_common_PosixAccount_fieldAccessorTable
+        return com.google.cloud.oslogin.common.OsLoginProto
+            .internal_static_google_cloud_oslogin_common_PosixAccount_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.google.cloud.oslogin.common.OsLoginProto.PosixAccount.class, com.google.cloud.oslogin.common.OsLoginProto.PosixAccount.Builder.class);
+                com.google.cloud.oslogin.common.OsLoginProto.PosixAccount.class,
+                com.google.cloud.oslogin.common.OsLoginProto.PosixAccount.Builder.class);
       }
 
       // Construct using com.google.cloud.oslogin.common.OsLoginProto.PosixAccount.newBuilder()
@@ -843,16 +897,16 @@ public final class OsLoginProto {
         maybeForceBuilderInitialization();
       }
 
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
+
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
+
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         primary_ = false;
@@ -876,15 +930,18 @@ public final class OsLoginProto {
         return this;
       }
 
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.google.cloud.oslogin.common.OsLoginProto.internal_static_google_cloud_oslogin_common_PosixAccount_descriptor;
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.oslogin.common.OsLoginProto
+            .internal_static_google_cloud_oslogin_common_PosixAccount_descriptor;
       }
 
+      @java.lang.Override
       public com.google.cloud.oslogin.common.OsLoginProto.PosixAccount getDefaultInstanceForType() {
         return com.google.cloud.oslogin.common.OsLoginProto.PosixAccount.getDefaultInstance();
       }
 
+      @java.lang.Override
       public com.google.cloud.oslogin.common.OsLoginProto.PosixAccount build() {
         com.google.cloud.oslogin.common.OsLoginProto.PosixAccount result = buildPartial();
         if (!result.isInitialized()) {
@@ -893,8 +950,10 @@ public final class OsLoginProto {
         return result;
       }
 
+      @java.lang.Override
       public com.google.cloud.oslogin.common.OsLoginProto.PosixAccount buildPartial() {
-        com.google.cloud.oslogin.common.OsLoginProto.PosixAccount result = new com.google.cloud.oslogin.common.OsLoginProto.PosixAccount(this);
+        com.google.cloud.oslogin.common.OsLoginProto.PosixAccount result =
+            new com.google.cloud.oslogin.common.OsLoginProto.PosixAccount(this);
         result.primary_ = primary_;
         result.username_ = username_;
         result.uid_ = uid_;
@@ -908,35 +967,45 @@ public final class OsLoginProto {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+
+      @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index,
+          java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+
+      @java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.google.cloud.oslogin.common.OsLoginProto.PosixAccount) {
-          return mergeFrom((com.google.cloud.oslogin.common.OsLoginProto.PosixAccount)other);
+          return mergeFrom((com.google.cloud.oslogin.common.OsLoginProto.PosixAccount) other);
         } else {
           super.mergeFrom(other);
           return this;
@@ -944,7 +1013,8 @@ public final class OsLoginProto {
       }
 
       public Builder mergeFrom(com.google.cloud.oslogin.common.OsLoginProto.PosixAccount other) {
-        if (other == com.google.cloud.oslogin.common.OsLoginProto.PosixAccount.getDefaultInstance()) return this;
+        if (other == com.google.cloud.oslogin.common.OsLoginProto.PosixAccount.getDefaultInstance())
+          return this;
         if (other.getPrimary() != false) {
           setPrimary(other.getPrimary());
         }
@@ -983,10 +1053,12 @@ public final class OsLoginProto {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -995,7 +1067,8 @@ public final class OsLoginProto {
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.google.cloud.oslogin.common.OsLoginProto.PosixAccount) e.getUnfinishedMessage();
+          parsedMessage =
+              (com.google.cloud.oslogin.common.OsLoginProto.PosixAccount) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -1005,8 +1078,10 @@ public final class OsLoginProto {
         return this;
       }
 
-      private boolean primary_ ;
+      private boolean primary_;
       /**
+       *
+       *
        * <pre>
        * Only one POSIX account can be marked as primary.
        * </pre>
@@ -1017,6 +1092,8 @@ public final class OsLoginProto {
         return primary_;
       }
       /**
+       *
+       *
        * <pre>
        * Only one POSIX account can be marked as primary.
        * </pre>
@@ -1024,12 +1101,14 @@ public final class OsLoginProto {
        * <code>bool primary = 1;</code>
        */
       public Builder setPrimary(boolean value) {
-        
+
         primary_ = value;
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Only one POSIX account can be marked as primary.
        * </pre>
@@ -1037,7 +1116,7 @@ public final class OsLoginProto {
        * <code>bool primary = 1;</code>
        */
       public Builder clearPrimary() {
-        
+
         primary_ = false;
         onChanged();
         return this;
@@ -1045,6 +1124,8 @@ public final class OsLoginProto {
 
       private java.lang.Object username_ = "";
       /**
+       *
+       *
        * <pre>
        * The username of the POSIX account.
        * </pre>
@@ -1054,8 +1135,7 @@ public final class OsLoginProto {
       public java.lang.String getUsername() {
         java.lang.Object ref = username_;
         if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           username_ = s;
           return s;
@@ -1064,19 +1144,19 @@ public final class OsLoginProto {
         }
       }
       /**
+       *
+       *
        * <pre>
        * The username of the POSIX account.
        * </pre>
        *
        * <code>string username = 2;</code>
        */
-      public com.google.protobuf.ByteString
-          getUsernameBytes() {
+      public com.google.protobuf.ByteString getUsernameBytes() {
         java.lang.Object ref = username_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
           username_ = b;
           return b;
         } else {
@@ -1084,23 +1164,26 @@ public final class OsLoginProto {
         }
       }
       /**
+       *
+       *
        * <pre>
        * The username of the POSIX account.
        * </pre>
        *
        * <code>string username = 2;</code>
        */
-      public Builder setUsername(
-          java.lang.String value) {
+      public Builder setUsername(java.lang.String value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  
+          throw new NullPointerException();
+        }
+
         username_ = value;
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The username of the POSIX account.
        * </pre>
@@ -1108,32 +1191,35 @@ public final class OsLoginProto {
        * <code>string username = 2;</code>
        */
       public Builder clearUsername() {
-        
+
         username_ = getDefaultInstance().getUsername();
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The username of the POSIX account.
        * </pre>
        *
        * <code>string username = 2;</code>
        */
-      public Builder setUsernameBytes(
-          com.google.protobuf.ByteString value) {
+      public Builder setUsernameBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
         username_ = value;
         onChanged();
         return this;
       }
 
-      private long uid_ ;
+      private long uid_;
       /**
+       *
+       *
        * <pre>
        * The user ID.
        * </pre>
@@ -1144,6 +1230,8 @@ public final class OsLoginProto {
         return uid_;
       }
       /**
+       *
+       *
        * <pre>
        * The user ID.
        * </pre>
@@ -1151,12 +1239,14 @@ public final class OsLoginProto {
        * <code>int64 uid = 3;</code>
        */
       public Builder setUid(long value) {
-        
+
         uid_ = value;
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The user ID.
        * </pre>
@@ -1164,14 +1254,16 @@ public final class OsLoginProto {
        * <code>int64 uid = 3;</code>
        */
       public Builder clearUid() {
-        
+
         uid_ = 0L;
         onChanged();
         return this;
       }
 
-      private long gid_ ;
+      private long gid_;
       /**
+       *
+       *
        * <pre>
        * The default group ID.
        * </pre>
@@ -1182,6 +1274,8 @@ public final class OsLoginProto {
         return gid_;
       }
       /**
+       *
+       *
        * <pre>
        * The default group ID.
        * </pre>
@@ -1189,12 +1283,14 @@ public final class OsLoginProto {
        * <code>int64 gid = 4;</code>
        */
       public Builder setGid(long value) {
-        
+
         gid_ = value;
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The default group ID.
        * </pre>
@@ -1202,7 +1298,7 @@ public final class OsLoginProto {
        * <code>int64 gid = 4;</code>
        */
       public Builder clearGid() {
-        
+
         gid_ = 0L;
         onChanged();
         return this;
@@ -1210,6 +1306,8 @@ public final class OsLoginProto {
 
       private java.lang.Object homeDirectory_ = "";
       /**
+       *
+       *
        * <pre>
        * The path to the home directory for this account.
        * </pre>
@@ -1219,8 +1317,7 @@ public final class OsLoginProto {
       public java.lang.String getHomeDirectory() {
         java.lang.Object ref = homeDirectory_;
         if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           homeDirectory_ = s;
           return s;
@@ -1229,19 +1326,19 @@ public final class OsLoginProto {
         }
       }
       /**
+       *
+       *
        * <pre>
        * The path to the home directory for this account.
        * </pre>
        *
        * <code>string home_directory = 5;</code>
        */
-      public com.google.protobuf.ByteString
-          getHomeDirectoryBytes() {
+      public com.google.protobuf.ByteString getHomeDirectoryBytes() {
         java.lang.Object ref = homeDirectory_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
           homeDirectory_ = b;
           return b;
         } else {
@@ -1249,23 +1346,26 @@ public final class OsLoginProto {
         }
       }
       /**
+       *
+       *
        * <pre>
        * The path to the home directory for this account.
        * </pre>
        *
        * <code>string home_directory = 5;</code>
        */
-      public Builder setHomeDirectory(
-          java.lang.String value) {
+      public Builder setHomeDirectory(java.lang.String value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  
+          throw new NullPointerException();
+        }
+
         homeDirectory_ = value;
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The path to the home directory for this account.
        * </pre>
@@ -1273,25 +1373,26 @@ public final class OsLoginProto {
        * <code>string home_directory = 5;</code>
        */
       public Builder clearHomeDirectory() {
-        
+
         homeDirectory_ = getDefaultInstance().getHomeDirectory();
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The path to the home directory for this account.
        * </pre>
        *
        * <code>string home_directory = 5;</code>
        */
-      public Builder setHomeDirectoryBytes(
-          com.google.protobuf.ByteString value) {
+      public Builder setHomeDirectoryBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
         homeDirectory_ = value;
         onChanged();
         return this;
@@ -1299,6 +1400,8 @@ public final class OsLoginProto {
 
       private java.lang.Object shell_ = "";
       /**
+       *
+       *
        * <pre>
        * The path to the logic shell for this account.
        * </pre>
@@ -1308,8 +1411,7 @@ public final class OsLoginProto {
       public java.lang.String getShell() {
         java.lang.Object ref = shell_;
         if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           shell_ = s;
           return s;
@@ -1318,19 +1420,19 @@ public final class OsLoginProto {
         }
       }
       /**
+       *
+       *
        * <pre>
        * The path to the logic shell for this account.
        * </pre>
        *
        * <code>string shell = 6;</code>
        */
-      public com.google.protobuf.ByteString
-          getShellBytes() {
+      public com.google.protobuf.ByteString getShellBytes() {
         java.lang.Object ref = shell_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
           shell_ = b;
           return b;
         } else {
@@ -1338,23 +1440,26 @@ public final class OsLoginProto {
         }
       }
       /**
+       *
+       *
        * <pre>
        * The path to the logic shell for this account.
        * </pre>
        *
        * <code>string shell = 6;</code>
        */
-      public Builder setShell(
-          java.lang.String value) {
+      public Builder setShell(java.lang.String value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  
+          throw new NullPointerException();
+        }
+
         shell_ = value;
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The path to the logic shell for this account.
        * </pre>
@@ -1362,25 +1467,26 @@ public final class OsLoginProto {
        * <code>string shell = 6;</code>
        */
       public Builder clearShell() {
-        
+
         shell_ = getDefaultInstance().getShell();
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The path to the logic shell for this account.
        * </pre>
        *
        * <code>string shell = 6;</code>
        */
-      public Builder setShellBytes(
-          com.google.protobuf.ByteString value) {
+      public Builder setShellBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
         shell_ = value;
         onChanged();
         return this;
@@ -1388,6 +1494,8 @@ public final class OsLoginProto {
 
       private java.lang.Object gecos_ = "";
       /**
+       *
+       *
        * <pre>
        * The GECOS (user information) entry for this account.
        * </pre>
@@ -1397,8 +1505,7 @@ public final class OsLoginProto {
       public java.lang.String getGecos() {
         java.lang.Object ref = gecos_;
         if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           gecos_ = s;
           return s;
@@ -1407,19 +1514,19 @@ public final class OsLoginProto {
         }
       }
       /**
+       *
+       *
        * <pre>
        * The GECOS (user information) entry for this account.
        * </pre>
        *
        * <code>string gecos = 7;</code>
        */
-      public com.google.protobuf.ByteString
-          getGecosBytes() {
+      public com.google.protobuf.ByteString getGecosBytes() {
         java.lang.Object ref = gecos_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
           gecos_ = b;
           return b;
         } else {
@@ -1427,23 +1534,26 @@ public final class OsLoginProto {
         }
       }
       /**
+       *
+       *
        * <pre>
        * The GECOS (user information) entry for this account.
        * </pre>
        *
        * <code>string gecos = 7;</code>
        */
-      public Builder setGecos(
-          java.lang.String value) {
+      public Builder setGecos(java.lang.String value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  
+          throw new NullPointerException();
+        }
+
         gecos_ = value;
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The GECOS (user information) entry for this account.
        * </pre>
@@ -1451,25 +1561,26 @@ public final class OsLoginProto {
        * <code>string gecos = 7;</code>
        */
       public Builder clearGecos() {
-        
+
         gecos_ = getDefaultInstance().getGecos();
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * The GECOS (user information) entry for this account.
        * </pre>
        *
        * <code>string gecos = 7;</code>
        */
-      public Builder setGecosBytes(
-          com.google.protobuf.ByteString value) {
+      public Builder setGecosBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
         gecos_ = value;
         onChanged();
         return this;
@@ -1477,6 +1588,8 @@ public final class OsLoginProto {
 
       private java.lang.Object systemId_ = "";
       /**
+       *
+       *
        * <pre>
        * System identifier for which account the username or uid applies to.
        * By default, the empty value is used.
@@ -1487,8 +1600,7 @@ public final class OsLoginProto {
       public java.lang.String getSystemId() {
         java.lang.Object ref = systemId_;
         if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           systemId_ = s;
           return s;
@@ -1497,6 +1609,8 @@ public final class OsLoginProto {
         }
       }
       /**
+       *
+       *
        * <pre>
        * System identifier for which account the username or uid applies to.
        * By default, the empty value is used.
@@ -1504,13 +1618,11 @@ public final class OsLoginProto {
        *
        * <code>string system_id = 8;</code>
        */
-      public com.google.protobuf.ByteString
-          getSystemIdBytes() {
+      public com.google.protobuf.ByteString getSystemIdBytes() {
         java.lang.Object ref = systemId_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
           systemId_ = b;
           return b;
         } else {
@@ -1518,6 +1630,8 @@ public final class OsLoginProto {
         }
       }
       /**
+       *
+       *
        * <pre>
        * System identifier for which account the username or uid applies to.
        * By default, the empty value is used.
@@ -1525,17 +1639,18 @@ public final class OsLoginProto {
        *
        * <code>string system_id = 8;</code>
        */
-      public Builder setSystemId(
-          java.lang.String value) {
+      public Builder setSystemId(java.lang.String value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  
+          throw new NullPointerException();
+        }
+
         systemId_ = value;
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * System identifier for which account the username or uid applies to.
        * By default, the empty value is used.
@@ -1544,12 +1659,14 @@ public final class OsLoginProto {
        * <code>string system_id = 8;</code>
        */
       public Builder clearSystemId() {
-        
+
         systemId_ = getDefaultInstance().getSystemId();
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * System identifier for which account the username or uid applies to.
        * By default, the empty value is used.
@@ -1557,13 +1674,12 @@ public final class OsLoginProto {
        *
        * <code>string system_id = 8;</code>
        */
-      public Builder setSystemIdBytes(
-          com.google.protobuf.ByteString value) {
+      public Builder setSystemIdBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
         systemId_ = value;
         onChanged();
         return this;
@@ -1571,6 +1687,8 @@ public final class OsLoginProto {
 
       private java.lang.Object accountId_ = "";
       /**
+       *
+       *
        * <pre>
        * Output only. A POSIX account identifier.
        * </pre>
@@ -1580,8 +1698,7 @@ public final class OsLoginProto {
       public java.lang.String getAccountId() {
         java.lang.Object ref = accountId_;
         if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           accountId_ = s;
           return s;
@@ -1590,19 +1707,19 @@ public final class OsLoginProto {
         }
       }
       /**
+       *
+       *
        * <pre>
        * Output only. A POSIX account identifier.
        * </pre>
        *
        * <code>string account_id = 9;</code>
        */
-      public com.google.protobuf.ByteString
-          getAccountIdBytes() {
+      public com.google.protobuf.ByteString getAccountIdBytes() {
         java.lang.Object ref = accountId_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
           accountId_ = b;
           return b;
         } else {
@@ -1610,23 +1727,26 @@ public final class OsLoginProto {
         }
       }
       /**
+       *
+       *
        * <pre>
        * Output only. A POSIX account identifier.
        * </pre>
        *
        * <code>string account_id = 9;</code>
        */
-      public Builder setAccountId(
-          java.lang.String value) {
+      public Builder setAccountId(java.lang.String value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  
+          throw new NullPointerException();
+        }
+
         accountId_ = value;
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Output only. A POSIX account identifier.
        * </pre>
@@ -1634,45 +1754,49 @@ public final class OsLoginProto {
        * <code>string account_id = 9;</code>
        */
       public Builder clearAccountId() {
-        
+
         accountId_ = getDefaultInstance().getAccountId();
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Output only. A POSIX account identifier.
        * </pre>
        *
        * <code>string account_id = 9;</code>
        */
-      public Builder setAccountIdBytes(
-          com.google.protobuf.ByteString value) {
+      public Builder setAccountIdBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
         accountId_ = value;
         onChanged();
         return this;
       }
+
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
       }
-
 
       // @@protoc_insertion_point(builder_scope:google.cloud.oslogin.common.PosixAccount)
     }
 
     // @@protoc_insertion_point(class_scope:google.cloud.oslogin.common.PosixAccount)
     private static final com.google.cloud.oslogin.common.OsLoginProto.PosixAccount DEFAULT_INSTANCE;
+
     static {
       DEFAULT_INSTANCE = new com.google.cloud.oslogin.common.OsLoginProto.PosixAccount();
     }
@@ -1681,15 +1805,16 @@ public final class OsLoginProto {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<PosixAccount>
-        PARSER = new com.google.protobuf.AbstractParser<PosixAccount>() {
-      public PosixAccount parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new PosixAccount(input, extensionRegistry);
-      }
-    };
+    private static final com.google.protobuf.Parser<PosixAccount> PARSER =
+        new com.google.protobuf.AbstractParser<PosixAccount>() {
+          @java.lang.Override
+          public PosixAccount parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new PosixAccount(input, extensionRegistry);
+          }
+        };
 
     public static com.google.protobuf.Parser<PosixAccount> parser() {
       return PARSER;
@@ -1700,17 +1825,20 @@ public final class OsLoginProto {
       return PARSER;
     }
 
+    @java.lang.Override
     public com.google.cloud.oslogin.common.OsLoginProto.PosixAccount getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
-
   }
 
-  public interface SshPublicKeyOrBuilder extends
+  public interface SshPublicKeyOrBuilder
+      extends
       // @@protoc_insertion_point(interface_extends:google.cloud.oslogin.common.SshPublicKey)
       com.google.protobuf.MessageOrBuilder {
 
     /**
+     *
+     *
      * <pre>
      * Public key text in SSH format, defined by
      * &lt;a href="https://www.ietf.org/rfc/rfc4253.txt" target="_blank"&gt;RFC4253&lt;/a&gt;
@@ -1721,6 +1849,8 @@ public final class OsLoginProto {
      */
     java.lang.String getKey();
     /**
+     *
+     *
      * <pre>
      * Public key text in SSH format, defined by
      * &lt;a href="https://www.ietf.org/rfc/rfc4253.txt" target="_blank"&gt;RFC4253&lt;/a&gt;
@@ -1729,10 +1859,11 @@ public final class OsLoginProto {
      *
      * <code>string key = 1;</code>
      */
-    com.google.protobuf.ByteString
-        getKeyBytes();
+    com.google.protobuf.ByteString getKeyBytes();
 
     /**
+     *
+     *
      * <pre>
      * An expiration time in microseconds since epoch.
      * </pre>
@@ -1742,6 +1873,8 @@ public final class OsLoginProto {
     long getExpirationTimeUsec();
 
     /**
+     *
+     *
      * <pre>
      * Output only. The SHA-256 fingerprint of the SSH public key.
      * </pre>
@@ -1750,31 +1883,35 @@ public final class OsLoginProto {
      */
     java.lang.String getFingerprint();
     /**
+     *
+     *
      * <pre>
      * Output only. The SHA-256 fingerprint of the SSH public key.
      * </pre>
      *
      * <code>string fingerprint = 3;</code>
      */
-    com.google.protobuf.ByteString
-        getFingerprintBytes();
+    com.google.protobuf.ByteString getFingerprintBytes();
   }
   /**
+   *
+   *
    * <pre>
    * The SSH public key information associated with a Google account.
    * </pre>
    *
    * Protobuf type {@code google.cloud.oslogin.common.SshPublicKey}
    */
-  public  static final class SshPublicKey extends
-      com.google.protobuf.GeneratedMessageV3 implements
+  public static final class SshPublicKey extends com.google.protobuf.GeneratedMessageV3
+      implements
       // @@protoc_insertion_point(message_implements:google.cloud.oslogin.common.SshPublicKey)
       SshPublicKeyOrBuilder {
-  private static final long serialVersionUID = 0L;
+    private static final long serialVersionUID = 0L;
     // Use SshPublicKey.newBuilder() to construct.
     private SshPublicKey(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
       super(builder);
     }
+
     private SshPublicKey() {
       key_ = "";
       expirationTimeUsec_ = 0L;
@@ -1782,15 +1919,18 @@ public final class OsLoginProto {
     }
 
     @java.lang.Override
-    public final com.google.protobuf.UnknownFieldSet
-    getUnknownFields() {
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
       return this.unknownFields;
     }
+
     private SshPublicKey(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
       int mutable_bitField0_ = 0;
       com.google.protobuf.UnknownFieldSet.Builder unknownFields =
           com.google.protobuf.UnknownFieldSet.newBuilder();
@@ -1802,57 +1942,64 @@ public final class OsLoginProto {
             case 0:
               done = true;
               break;
-            default: {
-              if (!parseUnknownFieldProto3(
-                  input, unknownFields, extensionRegistry, tag)) {
-                done = true;
+            case 10:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                key_ = s;
+                break;
               }
-              break;
-            }
-            case 10: {
-              java.lang.String s = input.readStringRequireUtf8();
+            case 16:
+              {
+                expirationTimeUsec_ = input.readInt64();
+                break;
+              }
+            case 26:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
 
-              key_ = s;
-              break;
-            }
-            case 16: {
-
-              expirationTimeUsec_ = input.readInt64();
-              break;
-            }
-            case 26: {
-              java.lang.String s = input.readStringRequireUtf8();
-
-              fingerprint_ = s;
-              break;
-            }
+                fingerprint_ = s;
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
           }
         }
       } catch (com.google.protobuf.InvalidProtocolBufferException e) {
         throw e.setUnfinishedMessage(this);
       } catch (java.io.IOException e) {
-        throw new com.google.protobuf.InvalidProtocolBufferException(
-            e).setUnfinishedMessage(this);
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
     }
-    public static final com.google.protobuf.Descriptors.Descriptor
-        getDescriptor() {
-      return com.google.cloud.oslogin.common.OsLoginProto.internal_static_google_cloud_oslogin_common_SshPublicKey_descriptor;
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.cloud.oslogin.common.OsLoginProto
+          .internal_static_google_cloud_oslogin_common_SshPublicKey_descriptor;
     }
 
+    @java.lang.Override
     protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.google.cloud.oslogin.common.OsLoginProto.internal_static_google_cloud_oslogin_common_SshPublicKey_fieldAccessorTable
+      return com.google.cloud.oslogin.common.OsLoginProto
+          .internal_static_google_cloud_oslogin_common_SshPublicKey_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey.class, com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey.Builder.class);
+              com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey.class,
+              com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey.Builder.class);
     }
 
     public static final int KEY_FIELD_NUMBER = 1;
     private volatile java.lang.Object key_;
     /**
+     *
+     *
      * <pre>
      * Public key text in SSH format, defined by
      * &lt;a href="https://www.ietf.org/rfc/rfc4253.txt" target="_blank"&gt;RFC4253&lt;/a&gt;
@@ -1866,14 +2013,15 @@ public final class OsLoginProto {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         key_ = s;
         return s;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Public key text in SSH format, defined by
      * &lt;a href="https://www.ietf.org/rfc/rfc4253.txt" target="_blank"&gt;RFC4253&lt;/a&gt;
@@ -1882,13 +2030,11 @@ public final class OsLoginProto {
      *
      * <code>string key = 1;</code>
      */
-    public com.google.protobuf.ByteString
-        getKeyBytes() {
+    public com.google.protobuf.ByteString getKeyBytes() {
       java.lang.Object ref = key_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         key_ = b;
         return b;
       } else {
@@ -1899,6 +2045,8 @@ public final class OsLoginProto {
     public static final int EXPIRATION_TIME_USEC_FIELD_NUMBER = 2;
     private long expirationTimeUsec_;
     /**
+     *
+     *
      * <pre>
      * An expiration time in microseconds since epoch.
      * </pre>
@@ -1912,6 +2060,8 @@ public final class OsLoginProto {
     public static final int FINGERPRINT_FIELD_NUMBER = 3;
     private volatile java.lang.Object fingerprint_;
     /**
+     *
+     *
      * <pre>
      * Output only. The SHA-256 fingerprint of the SSH public key.
      * </pre>
@@ -1923,27 +2073,26 @@ public final class OsLoginProto {
       if (ref instanceof java.lang.String) {
         return (java.lang.String) ref;
       } else {
-        com.google.protobuf.ByteString bs = 
-            (com.google.protobuf.ByteString) ref;
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
         java.lang.String s = bs.toStringUtf8();
         fingerprint_ = s;
         return s;
       }
     }
     /**
+     *
+     *
      * <pre>
      * Output only. The SHA-256 fingerprint of the SSH public key.
      * </pre>
      *
      * <code>string fingerprint = 3;</code>
      */
-    public com.google.protobuf.ByteString
-        getFingerprintBytes() {
+    public com.google.protobuf.ByteString getFingerprintBytes() {
       java.lang.Object ref = fingerprint_;
       if (ref instanceof java.lang.String) {
-        com.google.protobuf.ByteString b = 
-            com.google.protobuf.ByteString.copyFromUtf8(
-                (java.lang.String) ref);
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
         fingerprint_ = b;
         return b;
       } else {
@@ -1952,6 +2101,8 @@ public final class OsLoginProto {
     }
 
     private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
       if (isInitialized == 1) return true;
@@ -1961,8 +2112,8 @@ public final class OsLoginProto {
       return true;
     }
 
-    public void writeTo(com.google.protobuf.CodedOutputStream output)
-                        throws java.io.IOException {
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
       if (!getKeyBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, key_);
       }
@@ -1975,6 +2126,7 @@ public final class OsLoginProto {
       unknownFields.writeTo(output);
     }
 
+    @java.lang.Override
     public int getSerializedSize() {
       int size = memoizedSize;
       if (size != -1) return size;
@@ -1984,8 +2136,7 @@ public final class OsLoginProto {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, key_);
       }
       if (expirationTimeUsec_ != 0L) {
-        size += com.google.protobuf.CodedOutputStream
-          .computeInt64Size(2, expirationTimeUsec_);
+        size += com.google.protobuf.CodedOutputStream.computeInt64Size(2, expirationTimeUsec_);
       }
       if (!getFingerprintBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(3, fingerprint_);
@@ -1998,20 +2149,18 @@ public final class OsLoginProto {
     @java.lang.Override
     public boolean equals(final java.lang.Object obj) {
       if (obj == this) {
-       return true;
+        return true;
       }
       if (!(obj instanceof com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey)) {
         return super.equals(obj);
       }
-      com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey other = (com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey) obj;
+      com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey other =
+          (com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey) obj;
 
       boolean result = true;
-      result = result && getKey()
-          .equals(other.getKey());
-      result = result && (getExpirationTimeUsec()
-          == other.getExpirationTimeUsec());
-      result = result && getFingerprint()
-          .equals(other.getFingerprint());
+      result = result && getKey().equals(other.getKey());
+      result = result && (getExpirationTimeUsec() == other.getExpirationTimeUsec());
+      result = result && getFingerprint().equals(other.getFingerprint());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -2026,8 +2175,7 @@ public final class OsLoginProto {
       hash = (37 * hash) + KEY_FIELD_NUMBER;
       hash = (53 * hash) + getKey().hashCode();
       hash = (37 * hash) + EXPIRATION_TIME_USEC_FIELD_NUMBER;
-      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(
-          getExpirationTimeUsec());
+      hash = (53 * hash) + com.google.protobuf.Internal.hashLong(getExpirationTimeUsec());
       hash = (37 * hash) + FINGERPRINT_FIELD_NUMBER;
       hash = (53 * hash) + getFingerprint().hashCode();
       hash = (29 * hash) + unknownFields.hashCode();
@@ -2036,85 +2184,94 @@ public final class OsLoginProto {
     }
 
     public static com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey parseFrom(
-        java.nio.ByteBuffer data)
-        throws com.google.protobuf.InvalidProtocolBufferException {
+        java.nio.ByteBuffer data) throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey parseFrom(
-        java.nio.ByteBuffer data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
+
     public static com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
+
     public static com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey parseFrom(
-        byte[] data,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey parseFrom(java.io.InputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
-    }
+
     public static com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey parseFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
-    public static com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey parseDelimitedFrom(java.io.InputStream input)
+
+    public static com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
+
     public static com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey parseDelimitedFrom(
-        java.io.InputStream input,
-        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
     }
+
+    public static com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
     public static com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey parseFrom(
-        com.google.protobuf.CodedInputStream input)
-        throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input);
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
     }
+
     public static com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
-      return com.google.protobuf.GeneratedMessageV3
-          .parseWithIOException(PARSER, input, extensionRegistry);
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
     }
 
-    public Builder newBuilderForType() { return newBuilder(); }
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey prototype) {
+
+    public static Builder newBuilder(
+        com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
+
+    @java.lang.Override
     public Builder toBuilder() {
-      return this == DEFAULT_INSTANCE
-          ? new Builder() : new Builder().mergeFrom(this);
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
     }
 
     @java.lang.Override
@@ -2124,26 +2281,32 @@ public final class OsLoginProto {
       return builder;
     }
     /**
+     *
+     *
      * <pre>
      * The SSH public key information associated with a Google account.
      * </pre>
      *
      * Protobuf type {@code google.cloud.oslogin.common.SshPublicKey}
      */
-    public static final class Builder extends
-        com.google.protobuf.GeneratedMessageV3.Builder<Builder> implements
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
         // @@protoc_insertion_point(builder_implements:google.cloud.oslogin.common.SshPublicKey)
         com.google.cloud.oslogin.common.OsLoginProto.SshPublicKeyOrBuilder {
-      public static final com.google.protobuf.Descriptors.Descriptor
-          getDescriptor() {
-        return com.google.cloud.oslogin.common.OsLoginProto.internal_static_google_cloud_oslogin_common_SshPublicKey_descriptor;
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.cloud.oslogin.common.OsLoginProto
+            .internal_static_google_cloud_oslogin_common_SshPublicKey_descriptor;
       }
 
+      @java.lang.Override
       protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.google.cloud.oslogin.common.OsLoginProto.internal_static_google_cloud_oslogin_common_SshPublicKey_fieldAccessorTable
+        return com.google.cloud.oslogin.common.OsLoginProto
+            .internal_static_google_cloud_oslogin_common_SshPublicKey_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey.class, com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey.Builder.class);
+                com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey.class,
+                com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey.Builder.class);
       }
 
       // Construct using com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey.newBuilder()
@@ -2151,16 +2314,16 @@ public final class OsLoginProto {
         maybeForceBuilderInitialization();
       }
 
-      private Builder(
-          com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
+
       private void maybeForceBuilderInitialization() {
-        if (com.google.protobuf.GeneratedMessageV3
-                .alwaysUseFieldBuilders) {
-        }
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
       }
+
+      @java.lang.Override
       public Builder clear() {
         super.clear();
         key_ = "";
@@ -2172,15 +2335,18 @@ public final class OsLoginProto {
         return this;
       }
 
-      public com.google.protobuf.Descriptors.Descriptor
-          getDescriptorForType() {
-        return com.google.cloud.oslogin.common.OsLoginProto.internal_static_google_cloud_oslogin_common_SshPublicKey_descriptor;
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.cloud.oslogin.common.OsLoginProto
+            .internal_static_google_cloud_oslogin_common_SshPublicKey_descriptor;
       }
 
+      @java.lang.Override
       public com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey getDefaultInstanceForType() {
         return com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey.getDefaultInstance();
       }
 
+      @java.lang.Override
       public com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey build() {
         com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey result = buildPartial();
         if (!result.isInitialized()) {
@@ -2189,8 +2355,10 @@ public final class OsLoginProto {
         return result;
       }
 
+      @java.lang.Override
       public com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey buildPartial() {
-        com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey result = new com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey(this);
+        com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey result =
+            new com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey(this);
         result.key_ = key_;
         result.expirationTimeUsec_ = expirationTimeUsec_;
         result.fingerprint_ = fingerprint_;
@@ -2198,35 +2366,45 @@ public final class OsLoginProto {
         return result;
       }
 
+      @java.lang.Override
       public Builder clone() {
         return (Builder) super.clone();
       }
+
+      @java.lang.Override
       public Builder setField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.setField(field, value);
       }
-      public Builder clearField(
-          com.google.protobuf.Descriptors.FieldDescriptor field) {
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
         return (Builder) super.clearField(field);
       }
-      public Builder clearOneof(
-          com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
         return (Builder) super.clearOneof(oneof);
       }
+
+      @java.lang.Override
       public Builder setRepeatedField(
           com.google.protobuf.Descriptors.FieldDescriptor field,
-          int index, java.lang.Object value) {
+          int index,
+          java.lang.Object value) {
         return (Builder) super.setRepeatedField(field, index, value);
       }
+
+      @java.lang.Override
       public Builder addRepeatedField(
-          com.google.protobuf.Descriptors.FieldDescriptor field,
-          java.lang.Object value) {
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
         return (Builder) super.addRepeatedField(field, value);
       }
+
+      @java.lang.Override
       public Builder mergeFrom(com.google.protobuf.Message other) {
         if (other instanceof com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey) {
-          return mergeFrom((com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey)other);
+          return mergeFrom((com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey) other);
         } else {
           super.mergeFrom(other);
           return this;
@@ -2234,7 +2412,8 @@ public final class OsLoginProto {
       }
 
       public Builder mergeFrom(com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey other) {
-        if (other == com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey.getDefaultInstance()) return this;
+        if (other == com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey.getDefaultInstance())
+          return this;
         if (!other.getKey().isEmpty()) {
           key_ = other.key_;
           onChanged();
@@ -2251,10 +2430,12 @@ public final class OsLoginProto {
         return this;
       }
 
+      @java.lang.Override
       public final boolean isInitialized() {
         return true;
       }
 
+      @java.lang.Override
       public Builder mergeFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
@@ -2263,7 +2444,8 @@ public final class OsLoginProto {
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey) e.getUnfinishedMessage();
+          parsedMessage =
+              (com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -2275,6 +2457,8 @@ public final class OsLoginProto {
 
       private java.lang.Object key_ = "";
       /**
+       *
+       *
        * <pre>
        * Public key text in SSH format, defined by
        * &lt;a href="https://www.ietf.org/rfc/rfc4253.txt" target="_blank"&gt;RFC4253&lt;/a&gt;
@@ -2286,8 +2470,7 @@ public final class OsLoginProto {
       public java.lang.String getKey() {
         java.lang.Object ref = key_;
         if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           key_ = s;
           return s;
@@ -2296,6 +2479,8 @@ public final class OsLoginProto {
         }
       }
       /**
+       *
+       *
        * <pre>
        * Public key text in SSH format, defined by
        * &lt;a href="https://www.ietf.org/rfc/rfc4253.txt" target="_blank"&gt;RFC4253&lt;/a&gt;
@@ -2304,13 +2489,11 @@ public final class OsLoginProto {
        *
        * <code>string key = 1;</code>
        */
-      public com.google.protobuf.ByteString
-          getKeyBytes() {
+      public com.google.protobuf.ByteString getKeyBytes() {
         java.lang.Object ref = key_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
           key_ = b;
           return b;
         } else {
@@ -2318,6 +2501,8 @@ public final class OsLoginProto {
         }
       }
       /**
+       *
+       *
        * <pre>
        * Public key text in SSH format, defined by
        * &lt;a href="https://www.ietf.org/rfc/rfc4253.txt" target="_blank"&gt;RFC4253&lt;/a&gt;
@@ -2326,17 +2511,18 @@ public final class OsLoginProto {
        *
        * <code>string key = 1;</code>
        */
-      public Builder setKey(
-          java.lang.String value) {
+      public Builder setKey(java.lang.String value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  
+          throw new NullPointerException();
+        }
+
         key_ = value;
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Public key text in SSH format, defined by
        * &lt;a href="https://www.ietf.org/rfc/rfc4253.txt" target="_blank"&gt;RFC4253&lt;/a&gt;
@@ -2346,12 +2532,14 @@ public final class OsLoginProto {
        * <code>string key = 1;</code>
        */
       public Builder clearKey() {
-        
+
         key_ = getDefaultInstance().getKey();
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Public key text in SSH format, defined by
        * &lt;a href="https://www.ietf.org/rfc/rfc4253.txt" target="_blank"&gt;RFC4253&lt;/a&gt;
@@ -2360,20 +2548,21 @@ public final class OsLoginProto {
        *
        * <code>string key = 1;</code>
        */
-      public Builder setKeyBytes(
-          com.google.protobuf.ByteString value) {
+      public Builder setKeyBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
         key_ = value;
         onChanged();
         return this;
       }
 
-      private long expirationTimeUsec_ ;
+      private long expirationTimeUsec_;
       /**
+       *
+       *
        * <pre>
        * An expiration time in microseconds since epoch.
        * </pre>
@@ -2384,6 +2573,8 @@ public final class OsLoginProto {
         return expirationTimeUsec_;
       }
       /**
+       *
+       *
        * <pre>
        * An expiration time in microseconds since epoch.
        * </pre>
@@ -2391,12 +2582,14 @@ public final class OsLoginProto {
        * <code>int64 expiration_time_usec = 2;</code>
        */
       public Builder setExpirationTimeUsec(long value) {
-        
+
         expirationTimeUsec_ = value;
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * An expiration time in microseconds since epoch.
        * </pre>
@@ -2404,7 +2597,7 @@ public final class OsLoginProto {
        * <code>int64 expiration_time_usec = 2;</code>
        */
       public Builder clearExpirationTimeUsec() {
-        
+
         expirationTimeUsec_ = 0L;
         onChanged();
         return this;
@@ -2412,6 +2605,8 @@ public final class OsLoginProto {
 
       private java.lang.Object fingerprint_ = "";
       /**
+       *
+       *
        * <pre>
        * Output only. The SHA-256 fingerprint of the SSH public key.
        * </pre>
@@ -2421,8 +2616,7 @@ public final class OsLoginProto {
       public java.lang.String getFingerprint() {
         java.lang.Object ref = fingerprint_;
         if (!(ref instanceof java.lang.String)) {
-          com.google.protobuf.ByteString bs =
-              (com.google.protobuf.ByteString) ref;
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
           java.lang.String s = bs.toStringUtf8();
           fingerprint_ = s;
           return s;
@@ -2431,19 +2625,19 @@ public final class OsLoginProto {
         }
       }
       /**
+       *
+       *
        * <pre>
        * Output only. The SHA-256 fingerprint of the SSH public key.
        * </pre>
        *
        * <code>string fingerprint = 3;</code>
        */
-      public com.google.protobuf.ByteString
-          getFingerprintBytes() {
+      public com.google.protobuf.ByteString getFingerprintBytes() {
         java.lang.Object ref = fingerprint_;
         if (ref instanceof String) {
-          com.google.protobuf.ByteString b = 
-              com.google.protobuf.ByteString.copyFromUtf8(
-                  (java.lang.String) ref);
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
           fingerprint_ = b;
           return b;
         } else {
@@ -2451,23 +2645,26 @@ public final class OsLoginProto {
         }
       }
       /**
+       *
+       *
        * <pre>
        * Output only. The SHA-256 fingerprint of the SSH public key.
        * </pre>
        *
        * <code>string fingerprint = 3;</code>
        */
-      public Builder setFingerprint(
-          java.lang.String value) {
+      public Builder setFingerprint(java.lang.String value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  
+          throw new NullPointerException();
+        }
+
         fingerprint_ = value;
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Output only. The SHA-256 fingerprint of the SSH public key.
        * </pre>
@@ -2475,45 +2672,49 @@ public final class OsLoginProto {
        * <code>string fingerprint = 3;</code>
        */
       public Builder clearFingerprint() {
-        
+
         fingerprint_ = getDefaultInstance().getFingerprint();
         onChanged();
         return this;
       }
       /**
+       *
+       *
        * <pre>
        * Output only. The SHA-256 fingerprint of the SSH public key.
        * </pre>
        *
        * <code>string fingerprint = 3;</code>
        */
-      public Builder setFingerprintBytes(
-          com.google.protobuf.ByteString value) {
+      public Builder setFingerprintBytes(com.google.protobuf.ByteString value) {
         if (value == null) {
-    throw new NullPointerException();
-  }
-  checkByteStringIsUtf8(value);
-        
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
         fingerprint_ = value;
         onChanged();
         return this;
       }
+
+      @java.lang.Override
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.setUnknownFieldsProto3(unknownFields);
       }
 
+      @java.lang.Override
       public final Builder mergeUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return super.mergeUnknownFields(unknownFields);
       }
-
 
       // @@protoc_insertion_point(builder_scope:google.cloud.oslogin.common.SshPublicKey)
     }
 
     // @@protoc_insertion_point(class_scope:google.cloud.oslogin.common.SshPublicKey)
     private static final com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey DEFAULT_INSTANCE;
+
     static {
       DEFAULT_INSTANCE = new com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey();
     }
@@ -2522,15 +2723,16 @@ public final class OsLoginProto {
       return DEFAULT_INSTANCE;
     }
 
-    private static final com.google.protobuf.Parser<SshPublicKey>
-        PARSER = new com.google.protobuf.AbstractParser<SshPublicKey>() {
-      public SshPublicKey parsePartialFrom(
-          com.google.protobuf.CodedInputStream input,
-          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
-          throws com.google.protobuf.InvalidProtocolBufferException {
-          return new SshPublicKey(input, extensionRegistry);
-      }
-    };
+    private static final com.google.protobuf.Parser<SshPublicKey> PARSER =
+        new com.google.protobuf.AbstractParser<SshPublicKey>() {
+          @java.lang.Override
+          public SshPublicKey parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new SshPublicKey(input, extensionRegistry);
+          }
+        };
 
     public static com.google.protobuf.Parser<SshPublicKey> parser() {
       return PARSER;
@@ -2541,71 +2743,82 @@ public final class OsLoginProto {
       return PARSER;
     }
 
+    @java.lang.Override
     public com.google.cloud.oslogin.common.OsLoginProto.SshPublicKey getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
-
   }
 
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_google_cloud_oslogin_common_PosixAccount_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_oslogin_common_PosixAccount_descriptor;
+  private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_oslogin_common_PosixAccount_fieldAccessorTable;
   private static final com.google.protobuf.Descriptors.Descriptor
-    internal_static_google_cloud_oslogin_common_SshPublicKey_descriptor;
-  private static final 
-    com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+      internal_static_google_cloud_oslogin_common_SshPublicKey_descriptor;
+  private static final com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internal_static_google_cloud_oslogin_common_SshPublicKey_fieldAccessorTable;
 
-  public static com.google.protobuf.Descriptors.FileDescriptor
-      getDescriptor() {
+  public static com.google.protobuf.Descriptors.FileDescriptor getDescriptor() {
     return descriptor;
   }
-  private static  com.google.protobuf.Descriptors.FileDescriptor
-      descriptor;
+
+  private static com.google.protobuf.Descriptors.FileDescriptor descriptor;
+
   static {
     java.lang.String[] descriptorData = {
-      "\n(google/cloud/oslogin/common/common.pro" +
-      "to\022\033google.cloud.oslogin.common\032\034google/" +
-      "api/annotations.proto\"\250\001\n\014PosixAccount\022\017" +
-      "\n\007primary\030\001 \001(\010\022\020\n\010username\030\002 \001(\t\022\013\n\003uid" +
-      "\030\003 \001(\003\022\013\n\003gid\030\004 \001(\003\022\026\n\016home_directory\030\005 " +
-      "\001(\t\022\r\n\005shell\030\006 \001(\t\022\r\n\005gecos\030\007 \001(\t\022\021\n\tsys" +
-      "tem_id\030\010 \001(\t\022\022\n\naccount_id\030\t \001(\t\"N\n\014SshP" +
-      "ublicKey\022\013\n\003key\030\001 \001(\t\022\034\n\024expiration_time" +
-      "_usec\030\002 \001(\003\022\023\n\013fingerprint\030\003 \001(\tB\256\001\n\037com" +
-      ".google.cloud.oslogin.commonB\014OsLoginPro",
-      "toZAgoogle.golang.org/genproto/googleapi" +
-      "s/cloud/oslogin/common;common\252\002\033Google.C" +
-      "loud.OsLogin.Common\312\002\033Google\\Cloud\\OsLog" +
-      "in\\Commonb\006proto3"
+      "\n(google/cloud/oslogin/common/common.pro"
+          + "to\022\033google.cloud.oslogin.common\032\034google/"
+          + "api/annotations.proto\"\250\001\n\014PosixAccount\022\017"
+          + "\n\007primary\030\001 \001(\010\022\020\n\010username\030\002 \001(\t\022\013\n\003uid"
+          + "\030\003 \001(\003\022\013\n\003gid\030\004 \001(\003\022\026\n\016home_directory\030\005 "
+          + "\001(\t\022\r\n\005shell\030\006 \001(\t\022\r\n\005gecos\030\007 \001(\t\022\021\n\tsys"
+          + "tem_id\030\010 \001(\t\022\022\n\naccount_id\030\t \001(\t\"N\n\014SshP"
+          + "ublicKey\022\013\n\003key\030\001 \001(\t\022\034\n\024expiration_time"
+          + "_usec\030\002 \001(\003\022\023\n\013fingerprint\030\003 \001(\tB\256\001\n\037com"
+          + ".google.cloud.oslogin.commonB\014OsLoginPro"
+          + "toZAgoogle.golang.org/genproto/googleapi"
+          + "s/cloud/oslogin/common;common\252\002\033Google.C"
+          + "loud.OsLogin.Common\312\002\033Google\\Cloud\\OsLog"
+          + "in\\Commonb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
-        new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
+        new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
           public com.google.protobuf.ExtensionRegistry assignDescriptors(
               com.google.protobuf.Descriptors.FileDescriptor root) {
             descriptor = root;
             return null;
           }
         };
-    com.google.protobuf.Descriptors.FileDescriptor
-      .internalBuildGeneratedFileFrom(descriptorData,
+    com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
+        descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
           com.google.api.AnnotationsProto.getDescriptor(),
-        }, assigner);
+        },
+        assigner);
     internal_static_google_cloud_oslogin_common_PosixAccount_descriptor =
-      getDescriptor().getMessageTypes().get(0);
-    internal_static_google_cloud_oslogin_common_PosixAccount_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_google_cloud_oslogin_common_PosixAccount_descriptor,
-        new java.lang.String[] { "Primary", "Username", "Uid", "Gid", "HomeDirectory", "Shell", "Gecos", "SystemId", "AccountId", });
+        getDescriptor().getMessageTypes().get(0);
+    internal_static_google_cloud_oslogin_common_PosixAccount_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_oslogin_common_PosixAccount_descriptor,
+            new java.lang.String[] {
+              "Primary",
+              "Username",
+              "Uid",
+              "Gid",
+              "HomeDirectory",
+              "Shell",
+              "Gecos",
+              "SystemId",
+              "AccountId",
+            });
     internal_static_google_cloud_oslogin_common_SshPublicKey_descriptor =
-      getDescriptor().getMessageTypes().get(1);
-    internal_static_google_cloud_oslogin_common_SshPublicKey_fieldAccessorTable = new
-      com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
-        internal_static_google_cloud_oslogin_common_SshPublicKey_descriptor,
-        new java.lang.String[] { "Key", "ExpirationTimeUsec", "Fingerprint", });
+        getDescriptor().getMessageTypes().get(1);
+    internal_static_google_cloud_oslogin_common_SshPublicKey_fieldAccessorTable =
+        new com.google.protobuf.GeneratedMessageV3.FieldAccessorTable(
+            internal_static_google_cloud_oslogin_common_SshPublicKey_descriptor,
+            new java.lang.String[] {
+              "Key", "ExpirationTimeUsec", "Fingerprint",
+            });
     com.google.api.AnnotationsProto.getDescriptor();
   }
 

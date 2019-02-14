@@ -3,11 +3,14 @@
 
 package com.google.privacy.dlp.v2;
 
-public interface ListDlpJobsRequestOrBuilder extends
+public interface ListDlpJobsRequestOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.privacy.dlp.v2.ListDlpJobsRequest)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * The parent resource name, for example projects/my-project-id.
    * </pre>
@@ -16,16 +19,19 @@ public interface ListDlpJobsRequestOrBuilder extends
    */
   java.lang.String getParent();
   /**
+   *
+   *
    * <pre>
    * The parent resource name, for example projects/my-project-id.
    * </pre>
    *
    * <code>string parent = 4;</code>
    */
-  com.google.protobuf.ByteString
-      getParentBytes();
+  com.google.protobuf.ByteString getParentBytes();
 
   /**
+   *
+   *
    * <pre>
    * Optional. Allows filtering.
    * Supported syntax:
@@ -51,6 +57,8 @@ public interface ListDlpJobsRequestOrBuilder extends
    */
   java.lang.String getFilter();
   /**
+   *
+   *
    * <pre>
    * Optional. Allows filtering.
    * Supported syntax:
@@ -74,10 +82,11 @@ public interface ListDlpJobsRequestOrBuilder extends
    *
    * <code>string filter = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getFilterBytes();
+  com.google.protobuf.ByteString getFilterBytes();
 
   /**
+   *
+   *
    * <pre>
    * The standard list page size.
    * </pre>
@@ -87,6 +96,8 @@ public interface ListDlpJobsRequestOrBuilder extends
   int getPageSize();
 
   /**
+   *
+   *
    * <pre>
    * The standard list page token.
    * </pre>
@@ -95,16 +106,19 @@ public interface ListDlpJobsRequestOrBuilder extends
    */
   java.lang.String getPageToken();
   /**
+   *
+   *
    * <pre>
    * The standard list page token.
    * </pre>
    *
    * <code>string page_token = 3;</code>
    */
-  com.google.protobuf.ByteString
-      getPageTokenBytes();
+  com.google.protobuf.ByteString getPageTokenBytes();
 
   /**
+   *
+   *
    * <pre>
    * The type of job. Defaults to `DlpJobType.INSPECT`
    * </pre>
@@ -113,6 +127,8 @@ public interface ListDlpJobsRequestOrBuilder extends
    */
   int getTypeValue();
   /**
+   *
+   *
    * <pre>
    * The type of job. Defaults to `DlpJobType.INSPECT`
    * </pre>
@@ -120,4 +136,43 @@ public interface ListDlpJobsRequestOrBuilder extends
    * <code>.google.privacy.dlp.v2.DlpJobType type = 5;</code>
    */
   com.google.privacy.dlp.v2.DlpJobType getType();
+
+  /**
+   *
+   *
+   * <pre>
+   * Optional comma separated list of fields to order by,
+   * followed by `asc` or `desc` postfix. This list is case-insensitive,
+   * default sorting order is ascending, redundant space characters are
+   * insignificant.
+   * Example: `name asc, end_time asc, create_time desc`
+   * Supported fields are:
+   * - `create_time`: corresponds to time the job was created.
+   * - `end_time`: corresponds to time the job ended.
+   * - `name`: corresponds to job's name.
+   * - `state`: corresponds to `state`
+   * </pre>
+   *
+   * <code>string order_by = 6;</code>
+   */
+  java.lang.String getOrderBy();
+  /**
+   *
+   *
+   * <pre>
+   * Optional comma separated list of fields to order by,
+   * followed by `asc` or `desc` postfix. This list is case-insensitive,
+   * default sorting order is ascending, redundant space characters are
+   * insignificant.
+   * Example: `name asc, end_time asc, create_time desc`
+   * Supported fields are:
+   * - `create_time`: corresponds to time the job was created.
+   * - `end_time`: corresponds to time the job ended.
+   * - `name`: corresponds to job's name.
+   * - `state`: corresponds to `state`
+   * </pre>
+   *
+   * <code>string order_by = 6;</code>
+   */
+  com.google.protobuf.ByteString getOrderByBytes();
 }

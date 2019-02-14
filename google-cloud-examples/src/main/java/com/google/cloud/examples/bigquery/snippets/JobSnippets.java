@@ -38,9 +38,7 @@ public class JobSnippets {
     this.job = job;
   }
 
-  /**
-   * Example of checking that a job exists.
-   */
+  /** Example of checking that a job exists. */
   // [TARGET exists()]
   public boolean exists() throws InterruptedException {
     // [START ]
@@ -51,9 +49,7 @@ public class JobSnippets {
     return job.exists();
   }
 
-  /**
-   * Example of waiting for a job until it reports that it is done.
-   */
+  /** Example of waiting for a job until it reports that it is done. */
   // [TARGET isDone()]
   public void isDone() throws InterruptedException {
     // [START ]
@@ -63,9 +59,7 @@ public class JobSnippets {
     // [END ]
   }
 
-  /**
-   * Example usage of {@code waitFor()}.
-   */
+  /** Example usage of {@code waitFor()}. */
   // [TARGET waitFor(RetryOption...)]
   public boolean waitFor() throws InterruptedException {
     try {
@@ -89,9 +83,7 @@ public class JobSnippets {
     return true;
   }
 
-  /**
-   * Example usage of {@code waitFor()} with checking period and timeout.
-   */
+  /** Example usage of {@code waitFor()} with checking period and timeout. */
   // [TARGET waitFor(RetryOption...)]
   public boolean waitForWithOptions() throws InterruptedException {
     try {
@@ -117,13 +109,11 @@ public class JobSnippets {
     return true;
   }
 
-  /**
-   * Example of reloading all fields until job status is DONE.
-   */
+  /** Example of reloading all fields until job status is DONE. */
   // [TARGET reload(JobOption...)]
   public JobStatus.State reload() throws InterruptedException {
     // [START ]
-    while (job.getStatus().getState() != JobStatus.State.DONE) {
+    while (!JobStatus.State.DONE.equals(job.getStatus().getState())) {
       Thread.sleep(1000L);
       job = job.reload();
     }
@@ -131,13 +121,11 @@ public class JobSnippets {
     return job.getStatus().getState();
   }
 
-  /**
-   * Example of reloading status field until job status is DONE.
-   */
+  /** Example of reloading status field until job status is DONE. */
   // [TARGET reload(JobOption...)]
   public JobStatus.State reloadStatus() throws InterruptedException {
     // [START ]
-    while (job.getStatus().getState() != JobStatus.State.DONE) {
+    while (!JobStatus.State.DONE.equals(job.getStatus().getState())) {
       Thread.sleep(1000L);
       job = job.reload(BigQuery.JobOption.fields(BigQuery.JobField.STATUS));
     }
@@ -145,9 +133,7 @@ public class JobSnippets {
     return job.getStatus().getState();
   }
 
-  /**
-   * Example of cancelling a job.
-   */
+  /** Example of cancelling a job. */
   // [TARGET cancel()]
   public boolean cancel() {
     // [START ]

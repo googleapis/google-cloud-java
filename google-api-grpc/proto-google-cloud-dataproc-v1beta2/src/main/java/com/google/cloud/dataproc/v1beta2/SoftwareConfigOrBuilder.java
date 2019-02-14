@@ -3,11 +3,14 @@
 
 package com.google.cloud.dataproc.v1beta2;
 
-public interface SoftwareConfigOrBuilder extends
+public interface SoftwareConfigOrBuilder
+    extends
     // @@protoc_insertion_point(interface_extends:google.cloud.dataproc.v1beta2.SoftwareConfig)
     com.google.protobuf.MessageOrBuilder {
 
   /**
+   *
+   *
    * <pre>
    * Optional. The version of software inside the cluster. It must be one of the supported
    * [Cloud Dataproc Versions](/dataproc/docs/concepts/versioning/dataproc-versions#supported_cloud_dataproc_versions),
@@ -20,6 +23,8 @@ public interface SoftwareConfigOrBuilder extends
    */
   java.lang.String getImageVersion();
   /**
+   *
+   *
    * <pre>
    * Optional. The version of software inside the cluster. It must be one of the supported
    * [Cloud Dataproc Versions](/dataproc/docs/concepts/versioning/dataproc-versions#supported_cloud_dataproc_versions),
@@ -30,10 +35,11 @@ public interface SoftwareConfigOrBuilder extends
    *
    * <code>string image_version = 1;</code>
    */
-  com.google.protobuf.ByteString
-      getImageVersionBytes();
+  com.google.protobuf.ByteString getImageVersionBytes();
 
   /**
+   *
+   *
    * <pre>
    * Optional. The properties to set on daemon config files.
    * Property keys are specified in `prefix:property` format, such as
@@ -56,6 +62,8 @@ public interface SoftwareConfigOrBuilder extends
    */
   int getPropertiesCount();
   /**
+   *
+   *
    * <pre>
    * Optional. The properties to set on daemon config files.
    * Property keys are specified in `prefix:property` format, such as
@@ -76,15 +84,13 @@ public interface SoftwareConfigOrBuilder extends
    *
    * <code>map&lt;string, string&gt; properties = 2;</code>
    */
-  boolean containsProperties(
-      java.lang.String key);
-  /**
-   * Use {@link #getPropertiesMap()} instead.
-   */
+  boolean containsProperties(java.lang.String key);
+  /** Use {@link #getPropertiesMap()} instead. */
   @java.lang.Deprecated
-  java.util.Map<java.lang.String, java.lang.String>
-  getProperties();
+  java.util.Map<java.lang.String, java.lang.String> getProperties();
   /**
+   *
+   *
    * <pre>
    * Optional. The properties to set on daemon config files.
    * Property keys are specified in `prefix:property` format, such as
@@ -105,9 +111,10 @@ public interface SoftwareConfigOrBuilder extends
    *
    * <code>map&lt;string, string&gt; properties = 2;</code>
    */
-  java.util.Map<java.lang.String, java.lang.String>
-  getPropertiesMap();
+  java.util.Map<java.lang.String, java.lang.String> getPropertiesMap();
   /**
+   *
+   *
    * <pre>
    * Optional. The properties to set on daemon config files.
    * Property keys are specified in `prefix:property` format, such as
@@ -128,11 +135,10 @@ public interface SoftwareConfigOrBuilder extends
    *
    * <code>map&lt;string, string&gt; properties = 2;</code>
    */
-
-  java.lang.String getPropertiesOrDefault(
-      java.lang.String key,
-      java.lang.String defaultValue);
+  java.lang.String getPropertiesOrDefault(java.lang.String key, java.lang.String defaultValue);
   /**
+   *
+   *
    * <pre>
    * Optional. The properties to set on daemon config files.
    * Property keys are specified in `prefix:property` format, such as
@@ -153,7 +159,5 @@ public interface SoftwareConfigOrBuilder extends
    *
    * <code>map&lt;string, string&gt; properties = 2;</code>
    */
-
-  java.lang.String getPropertiesOrThrow(
-      java.lang.String key);
+  java.lang.String getPropertiesOrThrow(java.lang.String key);
 }
