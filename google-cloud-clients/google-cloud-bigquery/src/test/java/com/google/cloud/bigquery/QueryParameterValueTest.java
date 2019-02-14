@@ -21,14 +21,11 @@ import static com.google.common.truth.Truth.assertThat;
 import com.google.api.services.bigquery.model.QueryParameterType;
 import java.math.BigDecimal;
 import java.text.ParseException;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import org.junit.Test;
 
 public class QueryParameterValueTest {
-
-  private static final SimpleDateFormat SIMPLE_DATE_FORMAT = new SimpleDateFormat("yyyy-MM-dd");
 
   @Test
   public void testBool() {
@@ -211,7 +208,8 @@ public class QueryParameterValueTest {
 
   @Test
   public void testStandardDate() throws ParseException {
-    Date date = SIMPLE_DATE_FORMAT.parse("2016-09-18");
+    com.google.cloud.Date gcDate = com.google.cloud.Date.parseDate("2016-09-18");
+    Date date = com.google.cloud.Date.toJavaUtilDate(gcDate);
     QueryParameterValue value = QueryParameterValue.of(date, Date.class);
     assertThat(value.getValue()).isEqualTo("2016-09-18");
     assertThat(value.getType()).isEqualTo(StandardSQLTypeName.DATE);
