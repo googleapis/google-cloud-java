@@ -335,55 +335,63 @@ public final class BigtableDataSettings {
 
     /** @deprecated Please use {@link #stubSettings()} */
     @Deprecated
-    public EnhancedBigtableStubSettings.Builder setExecutorProvider(
+    public Builder setExecutorProvider(
         ExecutorProvider executorProvider) {
-      return stubSettings.setExecutorProvider(executorProvider);
+      stubSettings.setExecutorProvider(executorProvider);
+      return this;
     }
 
     /** @deprecated Please use {@link #stubSettings()} */
     @Deprecated
-    public EnhancedBigtableStubSettings.Builder setHeaderProvider(HeaderProvider headerProvider) {
-      return stubSettings.setHeaderProvider(headerProvider);
+    public Builder setHeaderProvider(HeaderProvider headerProvider) {
+      stubSettings.setHeaderProvider(headerProvider);
+      return this;
     }
 
     /** @deprecated Please use {@link #stubSettings()} */
     @Deprecated
-    public EnhancedBigtableStubSettings.Builder setTransportChannelProvider(
+    public Builder setTransportChannelProvider(
         TransportChannelProvider transportChannelProvider) {
-      return stubSettings.setTransportChannelProvider(transportChannelProvider);
+      stubSettings.setTransportChannelProvider(transportChannelProvider);
+      return this;
     }
 
     /** @deprecated Please use {@link #stubSettings()} */
     @Deprecated
-    public EnhancedBigtableStubSettings.Builder setStreamWatchdogProvider(
+    public Builder setStreamWatchdogProvider(
         @Nullable WatchdogProvider streamWatchdogProvider) {
-      return stubSettings.setStreamWatchdogProvider(streamWatchdogProvider);
+      stubSettings.setStreamWatchdogProvider(streamWatchdogProvider);
+      return this;
     }
 
     /** @deprecated Please use {@link #stubSettings()} */
     @Deprecated
-    public EnhancedBigtableStubSettings.Builder setClock(ApiClock clock) {
-      return stubSettings.setClock(clock);
+    public Builder setClock(ApiClock clock) {
+      stubSettings.setClock(clock);
+      return this;
     }
 
     /** @deprecated Please use {@link #stubSettings()} */
     @Deprecated
-    public EnhancedBigtableStubSettings.Builder setEndpoint(String endpoint) {
-      return stubSettings.setEndpoint(endpoint);
+    public Builder setEndpoint(String endpoint) {
+      stubSettings.setEndpoint(endpoint);
+      return this;
     }
 
     /** @deprecated Please use {@link #stubSettings()} */
     @Deprecated
-    public EnhancedBigtableStubSettings.Builder setStreamWatchdogCheckInterval(
+    public Builder setStreamWatchdogCheckInterval(
         @Nonnull Duration checkInterval) {
-      return stubSettings.setStreamWatchdogCheckInterval(checkInterval);
+      stubSettings.setStreamWatchdogCheckInterval(checkInterval);
+      return this;
     }
 
     /** @deprecated Please use {@link #stubSettings()} */
     @Deprecated
-    public EnhancedBigtableStubSettings.Builder setTracerFactory(
+    public Builder setTracerFactory(
         @Nonnull ApiTracerFactory tracerFactory) {
-      return stubSettings.setTracerFactory(tracerFactory);
+      stubSettings.setTracerFactory(tracerFactory);
+      return this;
     }
 
     /** @deprecated Please use {@link #stubSettings()} */
