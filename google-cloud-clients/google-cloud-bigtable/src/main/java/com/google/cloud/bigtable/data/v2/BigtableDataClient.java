@@ -135,6 +135,17 @@ public class BigtableDataClient implements AutoCloseable {
     return new BigtableDataClient(stub);
   }
 
+  // <editor-fold desc="Deprecated">
+  /** @deprecated Please use {@link #create(String, String)}. */
+  @Deprecated
+  public static BigtableDataClient create(
+      com.google.cloud.bigtable.data.v2.models.InstanceName instanceName) throws IOException {
+    BigtableDataSettings settings =
+        BigtableDataSettings.newBuilder().setInstanceName(instanceName).build();
+    return create(settings);
+  }
+  // </editor-fold>
+
   @InternalApi("Visible for testing")
   BigtableDataClient(EnhancedBigtableStub stub) {
     this.stub = stub;
