@@ -52,7 +52,7 @@ See [Logback filters](https://logback.qos.ch/manual/filters.html#thresholdFilter
     <log>application.log</log> <!-- Optional : default java.log -->
     <enhancer>com.example.enhancers.TestLoggingEnhancer</enhancer> <!-- Optional -->
     <enhancer>com.example.enhancers.AnotherEnhancer</enhancer> <!-- Optional -->
-    <flushLevel>WARN</flushLevel> <!-- Optional : default ERROR -->
+    <flushLevel>WARNING</flushLevel> <!-- Optional : default ERROR -->
   </appender>
 
   <root level="info">
