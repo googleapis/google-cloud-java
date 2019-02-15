@@ -26,6 +26,10 @@ import io.opencensus.tags.propagation.TagContextSerializationException;
 import io.opencensus.tags.TagContext;
 import io.opencensus.tags.Tagger;
 import io.opencensus.tags.Tags;
+import io.opencensus.trace.propagation.SpanContextParseException;
+import io.opencensus.trace.propagation.TextFormat;
+import io.opencensus.trace.propagation.TextFormat.Getter;
+import io.opencensus.trace.propagation.TextFormat.Setter;
 import io.opencensus.trace.Link;
 import io.opencensus.trace.Span;
 import io.opencensus.trace.SpanId;
@@ -49,6 +53,7 @@ final class OpenCensusUtil {
 
   public static final String TAG_CONTEXT_KEY = "googclient_OpenCensusTagContextKey";
   public static final String TRACE_CONTEXT_KEY = "googclient_OpenCensusTraceContextKey";
+  private static final String TRACEPARENT_KEY = "traceparent";
 
   private static final Tagger tagger = Tags.getTagger();
   private static final TagContextBinarySerializer serializer =
@@ -56,6 +61,8 @@ final class OpenCensusUtil {
 
   private static final TraceOptions SAMPLED = TraceOptions.builder().setIsSampled(true).build();
   private static final Tracer tracer = Tracing.getTracer();
+  private static final TextFormat traceContextTextFormat =
+      Tracing.getPropagationComponent().getTraceContextFormat();
 
   // Used in Publisher.
   // TODO: consider adding configuration support to control adding these attributes.
@@ -80,16 +87,26 @@ final class OpenCensusUtil {
     return new OpenCensusMessageReceiver(receiver);
   }
 
+  private static final Setter<StringBuilder> setter = new Setter<StringBuilder>() {
+      @Override
+      public void put(StringBuilder carrier, String key, String value) {
+        if (key.equals(TRACEPARENT_KEY)) {
+          carrier.append(value);
+        }
+      }
+    };
+
+  private static final Getter<String> getter = new Getter<String>() {
+      @Override
+      public String get(String carrier, String key) {
+        return key.equals(TRACEPARENT_KEY) ? carrier : null;
+      }
+    };
+
   private static String encodeSpanContext(SpanContext ctxt) {
-    TraceId traceId = ctxt.getTraceId();
-    SpanId spanId = ctxt.getSpanId();
-    TraceOptions traceOpts = ctxt.getTraceOptions();
-    if (traceOpts.isSampled()) {
-      return "";
-    }
-    return "traceid=" + traceId.toLowerBase16()
-        + "&spanid=" + spanId.toLowerBase16()
-        + "&traceopt=" + (traceOpts.isSampled() ? "t&" : "f&");
+    StringBuilder builder = new StringBuilder();
+    traceContextTextFormat.inject(ctxt, builder, setter);
+    return builder.toString();
   }
 
   // TODO: update this code once the text encoding of tags has been resolved
@@ -109,48 +126,20 @@ final class OpenCensusUtil {
     return tracer
         .spanBuilderWithExplicitParent(name, tracer.getCurrentSpan())
         .setRecordEvents(true)
+        // Note: we preserve the sampling decision from the publisher.
+        .setSampler(Samplers.alwaysSample())
         .startScopedSpan();
   }
 
   private static void addParentLink(String encodedParentSpanContext) {
-    tracer.getCurrentSpan().addLink(Link.fromSpanContext(
-        createSpanContext(encodedParentSpanContext), Link.Type.PARENT_LINKED_SPAN));
-  }
-
-  private static SpanContext createSpanContext(String encodedSpanContext) {
-    String traceId = getTraceId(encodedSpanContext);
-    String spanId = getSpanId(encodedSpanContext);
-    String traceOpt = getTraceOpt(encodedSpanContext);
-    return SpanContext.create(
-        TraceId.fromLowerBase16(traceId),
-        SpanId.fromLowerBase16(spanId),
-        traceOpt.equals("t") ? SAMPLED : TraceOptions.DEFAULT);
-  }
-
-  private static String getTraceId(String encodedSpan) {
-    return lookupKey("traceid=", encodedSpan);
-  }
-
-  private static String getSpanId(String encodedSpan) {
-    return lookupKey("spanid=", encodedSpan);
-  }
-
-  private static String getTraceOpt(String encodedSpan) {
-    return lookupKey("traceopt=", encodedSpan);
-  }
-
-  // encodedSpan = (key=value&)*
-  private static String lookupKey(String key, String encodedSpan) {
-    int start = encodedSpan.indexOf(key, 0);
-    if (start == -1) {
-      return "";
+    try {
+      SpanContext ctxt = traceContextTextFormat.extract(encodedParentSpanContext, getter);
+      tracer.getCurrentSpan().addLink(Link.fromSpanContext(
+          ctxt,
+          Link.Type.PARENT_LINKED_SPAN));
+    } catch (SpanContextParseException exn) {
+      logger.log(Level.INFO, "OpenCensus: Trace Context Deserialization Exception: " + exn);
     }
-    start += key.length();
-    int end = encodedSpan.indexOf("&", start);
-    if (end == -1) {
-      return "";
-    }
-    return encodedSpan.substring(start, end);
   }
 
   // class
