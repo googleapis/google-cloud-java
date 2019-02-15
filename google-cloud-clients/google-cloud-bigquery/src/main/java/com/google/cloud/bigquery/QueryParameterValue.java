@@ -30,7 +30,9 @@ import javax.annotation.Nullable;
 import org.threeten.bp.Instant;
 import org.threeten.bp.ZoneOffset;
 import org.threeten.bp.format.DateTimeFormatter;
+import org.threeten.bp.format.DateTimeFormatterBuilder;
 import org.threeten.bp.format.DateTimeParseException;
+import org.threeten.bp.temporal.ChronoField;
 
 /**
  * A value for a QueryParameter along with its type.
@@ -60,6 +62,21 @@ import org.threeten.bp.format.DateTimeParseException;
 @AutoValue
 public abstract class QueryParameterValue implements Serializable {
 
+  private static final DateTimeFormatter timestampValidator =
+      new DateTimeFormatterBuilder()
+          .parseLenient()
+          .append(DateTimeFormatter.ISO_LOCAL_DATE)
+          .appendLiteral(' ')
+          .append(DateTimeFormatter.ISO_LOCAL_TIME)
+          .appendFraction(ChronoField.NANO_OF_SECOND, 0, 9, true)
+          .optionalStart()
+          .appendOffsetId()
+          .optionalEnd()
+          .optionalStart()
+          .appendOffset("+HHMM", "Z")
+          .optionalEnd()
+          .toFormatter()
+          .withZone(ZoneOffset.UTC);
   private static final DateTimeFormatter timestampFormatter =
       DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSSSSSxxx").withZone(ZoneOffset.UTC);
   private static final DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
@@ -301,7 +318,7 @@ public abstract class QueryParameterValue implements Serializable {
           return timestampFormatter.format(Instant.ofEpochMilli(((Long) value) / 1000));
         } else if (value instanceof String) {
           // verify that the String is in the right format
-          checkFormat(value, timestampFormatter);
+          checkFormat(value, timestampValidator);
           return (String) value;
         }
         break;
@@ -335,6 +352,7 @@ public abstract class QueryParameterValue implements Serializable {
 
   private static void checkFormat(Object value, DateTimeFormatter formatter) {
     try {
+
       formatter.parse((String) value);
     } catch (DateTimeParseException e) {
       throw new IllegalArgumentException(e.getMessage(), e);
