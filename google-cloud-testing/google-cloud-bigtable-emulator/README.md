@@ -111,7 +111,8 @@ public class ExampleTest {
   public void setUp() throws IOException {
     // Initialize the clients to connect to the emulator
     BigtableTableAdminSettings.Builder tableAdminSettings = BigtableTableAdminSettings.newBuilder()
-        .setInstanceName(com.google.bigtable.admin.v2.InstanceName.of("fake-project", "fake-instance"));
+        .setProjectId("fake-project")
+        .setInstanceId("fake-instance");
     tableAdminSettings.stubSettings()
         .setCredentialsProvider(NoCredentialsProvider.create())
         .setTransportChannelProvider(
@@ -122,7 +123,8 @@ public class ExampleTest {
     tableAdminClient = BigtableTableAdminClient.create(tableAdminSettings.build());
 
     BigtableDataSettings.Builder dataSettings = BigtableDataSettings.newBuilder()
-        .setInstanceName(com.google.cloud.bigtable.data.v2.models.InstanceName.of("fake-project", "fake-instance"))
+        .setProjectId("fake-project")
+        .setInstanceId("fake-instance")
         .setCredentialsProvider(NoCredentialsProvider.create())
         .setTransportChannelProvider(
             FixedTransportChannelProvider.create(

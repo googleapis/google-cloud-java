@@ -38,30 +38,11 @@ public abstract class RequestContext implements Serializable {
     return new AutoValue_RequestContext(projectId, instanceId, appProfileId);
   }
 
-  /** @deprecated Please use {@link #create(String, String, String)}. */
-  @Deprecated
-  public static RequestContext create(
-      com.google.cloud.bigtable.data.v2.models.InstanceName instanceName, String appProfileId) {
-    return new AutoValue_RequestContext(
-        instanceName.getProject(), instanceName.getInstance(), appProfileId);
-  }
-
   /** The project id that the client is configured to target. */
   public abstract String getProjectId();
 
   /** The instance id that the client is configured to target. */
   public abstract String getInstanceId();
-
-  /**
-   * The instance that the client is configured to target.
-   *
-   * @deprecated Please use {@link #getProjectId()} and {@link #getInstanceId()}.
-   */
-  @Deprecated
-  public com.google.cloud.bigtable.data.v2.models.InstanceName getInstanceName() {
-    return com.google.cloud.bigtable.data.v2.models.InstanceName.of(
-        getProjectId(), getInstanceId());
-  }
 
   /** The App Profile to use when processing the current request */
   public abstract String getAppProfileId();
