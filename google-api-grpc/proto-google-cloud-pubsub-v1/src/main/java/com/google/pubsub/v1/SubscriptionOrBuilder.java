@@ -268,6 +268,22 @@ public interface SubscriptionOrBuilder
    *
    *
    * <pre>
+   * WARNING: `enable_message_ordering` is an experimental field not yet
+   * supported by the service.
+   * If true, messages published with the same `ordering_key` in `PubsubMessage`
+   * will be delivered to the subscribers in the order in which they
+   * are received by the Pub/Sub system. Otherwise, they may be delivered in
+   * any order.
+   * </pre>
+   *
+   * <code>bool enable_message_ordering = 10;</code>
+   */
+  boolean getEnableMessageOrdering();
+
+  /**
+   *
+   *
+   * <pre>
    * A policy that specifies the conditions for this subscription's expiration.
    * A subscription is considered active as long as any connected subscriber is
    * successfully consuming messages from the subscription or is issuing

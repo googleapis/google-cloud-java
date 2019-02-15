@@ -27,6 +27,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
     topic_ = "";
     ackDeadlineSeconds_ = 0;
     retainAckedMessages_ = false;
+    enableMessageOrdering_ = false;
   }
 
   @java.lang.Override
@@ -118,6 +119,11 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
                   input.readMessage(
                       LabelsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
               labels_.getMutableMap().put(labels__.getKey(), labels__.getValue());
+              break;
+            }
+          case 80:
+            {
+              enableMessageOrdering_ = input.readBool();
               break;
             }
           case 90:
@@ -546,6 +552,26 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
     return map.get(key);
   }
 
+  public static final int ENABLE_MESSAGE_ORDERING_FIELD_NUMBER = 10;
+  private boolean enableMessageOrdering_;
+  /**
+   *
+   *
+   * <pre>
+   * WARNING: `enable_message_ordering` is an experimental field not yet
+   * supported by the service.
+   * If true, messages published with the same `ordering_key` in `PubsubMessage`
+   * will be delivered to the subscribers in the order in which they
+   * are received by the Pub/Sub system. Otherwise, they may be delivered in
+   * any order.
+   * </pre>
+   *
+   * <code>bool enable_message_ordering = 10;</code>
+   */
+  public boolean getEnableMessageOrdering() {
+    return enableMessageOrdering_;
+  }
+
   public static final int EXPIRATION_POLICY_FIELD_NUMBER = 11;
   private com.google.pubsub.v1.ExpirationPolicy expirationPolicy_;
   /**
@@ -645,6 +671,9 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetLabels(), LabelsDefaultEntryHolder.defaultEntry, 9);
+    if (enableMessageOrdering_ != false) {
+      output.writeBool(10, enableMessageOrdering_);
+    }
     if (expirationPolicy_ != null) {
       output.writeMessage(11, getExpirationPolicy());
     }
@@ -687,6 +716,9 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(9, labels__);
     }
+    if (enableMessageOrdering_ != false) {
+      size += com.google.protobuf.CodedOutputStream.computeBoolSize(10, enableMessageOrdering_);
+    }
     if (expirationPolicy_ != null) {
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(11, getExpirationPolicy());
     }
@@ -719,6 +751,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
       result = result && getMessageRetentionDuration().equals(other.getMessageRetentionDuration());
     }
     result = result && internalGetLabels().equals(other.internalGetLabels());
+    result = result && (getEnableMessageOrdering() == other.getEnableMessageOrdering());
     result = result && (hasExpirationPolicy() == other.hasExpirationPolicy());
     if (hasExpirationPolicy()) {
       result = result && getExpirationPolicy().equals(other.getExpirationPolicy());
@@ -754,6 +787,8 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
       hash = (37 * hash) + LABELS_FIELD_NUMBER;
       hash = (53 * hash) + internalGetLabels().hashCode();
     }
+    hash = (37 * hash) + ENABLE_MESSAGE_ORDERING_FIELD_NUMBER;
+    hash = (53 * hash) + com.google.protobuf.Internal.hashBoolean(getEnableMessageOrdering());
     if (hasExpirationPolicy()) {
       hash = (37 * hash) + EXPIRATION_POLICY_FIELD_NUMBER;
       hash = (53 * hash) + getExpirationPolicy().hashCode();
@@ -943,6 +978,8 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
         messageRetentionDurationBuilder_ = null;
       }
       internalGetMutableLabels().clear();
+      enableMessageOrdering_ = false;
+
       if (expirationPolicyBuilder_ == null) {
         expirationPolicy_ = null;
       } else {
@@ -993,6 +1030,7 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
       }
       result.labels_ = internalGetLabels();
       result.labels_.makeImmutable();
+      result.enableMessageOrdering_ = enableMessageOrdering_;
       if (expirationPolicyBuilder_ == null) {
         result.expirationPolicy_ = expirationPolicy_;
       } else {
@@ -1069,6 +1107,9 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
         mergeMessageRetentionDuration(other.getMessageRetentionDuration());
       }
       internalGetMutableLabels().mergeFrom(other.internalGetLabels());
+      if (other.getEnableMessageOrdering() != false) {
+        setEnableMessageOrdering(other.getEnableMessageOrdering());
+      }
       if (other.hasExpirationPolicy()) {
         mergeExpirationPolicy(other.getExpirationPolicy());
       }
@@ -2103,6 +2144,65 @@ public final class Subscription extends com.google.protobuf.GeneratedMessageV3
      */
     public Builder putAllLabels(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableLabels().getMutableMap().putAll(values);
+      return this;
+    }
+
+    private boolean enableMessageOrdering_;
+    /**
+     *
+     *
+     * <pre>
+     * WARNING: `enable_message_ordering` is an experimental field not yet
+     * supported by the service.
+     * If true, messages published with the same `ordering_key` in `PubsubMessage`
+     * will be delivered to the subscribers in the order in which they
+     * are received by the Pub/Sub system. Otherwise, they may be delivered in
+     * any order.
+     * </pre>
+     *
+     * <code>bool enable_message_ordering = 10;</code>
+     */
+    public boolean getEnableMessageOrdering() {
+      return enableMessageOrdering_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * WARNING: `enable_message_ordering` is an experimental field not yet
+     * supported by the service.
+     * If true, messages published with the same `ordering_key` in `PubsubMessage`
+     * will be delivered to the subscribers in the order in which they
+     * are received by the Pub/Sub system. Otherwise, they may be delivered in
+     * any order.
+     * </pre>
+     *
+     * <code>bool enable_message_ordering = 10;</code>
+     */
+    public Builder setEnableMessageOrdering(boolean value) {
+
+      enableMessageOrdering_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * WARNING: `enable_message_ordering` is an experimental field not yet
+     * supported by the service.
+     * If true, messages published with the same `ordering_key` in `PubsubMessage`
+     * will be delivered to the subscribers in the order in which they
+     * are received by the Pub/Sub system. Otherwise, they may be delivered in
+     * any order.
+     * </pre>
+     *
+     * <code>bool enable_message_ordering = 10;</code>
+     */
+    public Builder clearEnableMessageOrdering() {
+
+      enableMessageOrdering_ = false;
+      onChanged();
       return this;
     }
 
