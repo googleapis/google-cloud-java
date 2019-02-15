@@ -69,7 +69,8 @@ public class ResourceHeaderTest {
             .setInstanceId(INSTANCE_ID)
             .setCredentialsProvider(NoCredentialsProvider.create());
 
-    settings.stubSettings()
+    settings
+        .stubSettings()
         .setTransportChannelProvider(channelProvider)
         .setHeaderProvider(FixedHeaderProvider.create(TEST_HEADER_NAME, TEST_HEADER_VALUE));
 
