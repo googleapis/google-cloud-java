@@ -116,7 +116,7 @@ public class IntegrationTestEnv extends ExternalResource {
         instanceAdminClient.createInstance(instance);
     Instance createdInstance;
     try {
-      createdInstance = op.get(500L, TimeUnit.MILLISECONDS);
+      createdInstance = op.get();
     } catch (Exception e) {
       throw SpannerExceptionFactory.newSpannerException(e);
     }
