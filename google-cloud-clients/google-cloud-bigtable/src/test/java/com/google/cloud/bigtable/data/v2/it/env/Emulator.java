@@ -17,7 +17,6 @@ package com.google.cloud.bigtable.data.v2.it.env;
 
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.GrpcTransportChannel;
-import com.google.api.gax.rpc.ClientSettings;
 import com.google.api.gax.rpc.FixedTransportChannelProvider;
 import com.google.bigtable.admin.v2.BigtableTableAdminGrpc;
 import com.google.bigtable.admin.v2.BigtableTableAdminGrpc.BigtableTableAdminBlockingStub;
@@ -178,8 +177,9 @@ class Emulator {
         .build();
   }
 
-  private <T extends ClientSettings.Builder<?, ?>> T configureClient(T settings) {
+  private BigtableDataSettings.Builder configureClient(BigtableDataSettings.Builder settings) {
     settings
+        .stubSettings()
         .setCredentialsProvider(new NoCredentialsProvider())
         .setTransportChannelProvider(
             FixedTransportChannelProvider.create(GrpcTransportChannel.create(channel)));
