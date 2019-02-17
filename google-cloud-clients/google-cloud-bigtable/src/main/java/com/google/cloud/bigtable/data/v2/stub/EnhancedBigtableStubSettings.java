@@ -26,6 +26,7 @@ import com.google.api.gax.rpc.BatchingCallSettings;
 import com.google.api.gax.rpc.ServerStreamingCallSettings;
 import com.google.api.gax.rpc.StatusCode.Code;
 import com.google.api.gax.rpc.StubSettings;
+import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.bigtable.data.v2.internal.DummyBatchingDescriptor;
 import com.google.cloud.bigtable.data.v2.models.ConditionalRowMutation;
@@ -176,6 +177,19 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
     return appProfileId;
   }
 
+  /** Returns a builder for the default ChannelProvider for this service. */
+  public static InstantiatingGrpcChannelProvider.Builder defaultGrpcTransportProviderBuilder() {
+    return BigtableStubSettings.defaultGrpcTransportProviderBuilder()
+        // TODO: tune channels
+        .setChannelsPerCpu(2)
+        .setMaxInboundMessageSize(MAX_MESSAGE_SIZE);
+  }
+
+  @SuppressWarnings("WeakerAccess")
+  public static TransportChannelProvider defaultTransportChannelProvider() {
+    return defaultGrpcTransportProviderBuilder().build();
+  }
+
   /** Returns a builder for the default credentials for this service. */
   public static GoogleCredentialsProvider.Builder defaultCredentialsProviderBuilder() {
     return BigtableStubSettings.defaultCredentialsProviderBuilder()
@@ -260,12 +274,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
       BigtableStubSettings.Builder baseDefaults = BigtableStubSettings.newBuilder();
 
       setEndpoint(baseDefaults.getEndpoint());
-      setTransportChannelProvider(
-          InstantiatingGrpcChannelProvider.newBuilder()
-              // TODO: tune channels
-              .setChannelsPerCpu(2)
-              .setMaxInboundMessageSize(MAX_MESSAGE_SIZE)
-              .build());
+      setTransportChannelProvider(defaultTransportChannelProvider());
       setStreamWatchdogCheckInterval(baseDefaults.getStreamWatchdogCheckInterval());
       setStreamWatchdogProvider(baseDefaults.getStreamWatchdogProvider());
 
