@@ -96,17 +96,7 @@ public class BigtableDataSettings extends ClientSettings<BigtableDataSettings> {
 
     return builder;
   }
-
-  /**
-   * Returns the target instance.
-   *
-   * @deprecated Please use {@link #getProjectId()} and {@link #getInstanceId()}.
-   */
-  @Deprecated()
-  public com.google.cloud.bigtable.data.v2.models.InstanceName getInstanceName() {
-    return getTypedStubSettings().getInstanceName();
-  }
-
+  
   /** Returns the target project id. */
   public String getProjectId() {
     return getTypedStubSettings().getProjectId();
