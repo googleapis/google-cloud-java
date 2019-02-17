@@ -152,16 +152,6 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
     return new Builder();
   }
 
-  /**
-   * Returns the target instance.
-   *
-   * @deprecated Please use {@link #getProjectId()} and {@link #getInstanceId()}
-   */
-  @Deprecated
-  public com.google.cloud.bigtable.data.v2.models.InstanceName getInstanceName() {
-    return com.google.cloud.bigtable.data.v2.models.InstanceName.of(projectId, instanceId);
-  }
-
   /** Returns the project id of the target instance. */
   public String getProjectId() {
     return projectId;
@@ -359,35 +349,6 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
     // </editor-fold>
 
     // <editor-fold desc="Public API">
-    /**
-     * Sets the target instance. This setting is required. All RPCs will be made in the context of
-     * this setting.
-     *
-     * @deprecated Please use {@link #setProjectId(String)} and {@link #setInstanceId(String)}.
-     */
-    @Deprecated
-    public Builder setInstanceName(
-        @Nonnull com.google.cloud.bigtable.data.v2.models.InstanceName instanceName) {
-      Preconditions.checkNotNull(instanceName);
-      this.projectId = instanceName.getProject();
-      this.instanceId = instanceName.getInstance();
-      return this;
-    }
-
-    /**
-     * Gets the {@link com.google.cloud.bigtable.data.v2.models.InstanceName} that was previously
-     * set on this Builder.
-     *
-     * @deprecated Please use {@link #getProjectId()} and {@link #getInstanceId()}.
-     */
-    @Deprecated
-    public com.google.cloud.bigtable.data.v2.models.InstanceName getInstanceName() {
-      if (projectId != null && instanceId != null) {
-        return com.google.cloud.bigtable.data.v2.models.InstanceName.of(projectId, instanceId);
-      }
-      return null;
-    }
-
     /**
      * Sets the project id of that target instance. This setting is required. All RPCs will be made
      * in the context of this setting.

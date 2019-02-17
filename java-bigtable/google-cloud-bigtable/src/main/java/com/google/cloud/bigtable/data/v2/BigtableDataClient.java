@@ -127,22 +127,6 @@ public class BigtableDataClient implements AutoCloseable {
   }
 
   /**
-   * Constructs an instance of BigtableDataClient with default settings.
-   *
-   * @param instanceName The instance to connect to.
-   * @return A new client.
-   * @throws IOException If any.
-   * @deprecated Please use {@link #create(String, String)}.
-   */
-  @Deprecated
-  public static BigtableDataClient create(
-      com.google.cloud.bigtable.data.v2.models.InstanceName instanceName) throws IOException {
-    BigtableDataSettings settings =
-        BigtableDataSettings.newBuilder().setInstanceName(instanceName).build();
-    return create(settings);
-  }
-
-  /**
    * Constructs an instance of BigtableDataClient, using the given settings. The channels are
    * created based on the settings passed in, or defaults for any settings that are not set.
    */
@@ -260,8 +244,7 @@ public class BigtableDataClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre>{@code
-   * InstanceName instanceName = InstanceName.of("[PROJECT]", "[INSTANCE]");
-   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create(instanceName)) {
+   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create("[PROJECT]", "[INSTANCE]")) {
    *   String tableId = "[TABLE]";
    *
    *  // Build the filter expression
@@ -400,8 +383,7 @@ public class BigtableDataClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre>{@code
-   * InstanceName instanceName = InstanceName.of("[PROJECT]", "[INSTANCE]");
-   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create(instanceName)) {
+   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create("[PROJECT]", "[INSTANCE]")) {
    *   String tableId = "[TABLE]";
    *
    *  // Build the filter expression
@@ -442,8 +424,7 @@ public class BigtableDataClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre>{@code
-   * InstanceName instanceName = InstanceName.of("[PROJECT]", "[INSTANCE]");
-   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create(instanceName)) {
+   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create("[PROJECT]", "[INSTANCE]")) {
    *   String tableId = "[TABLE]";
    *
    *   Query query = Query.create(tableId)
@@ -495,8 +476,7 @@ public class BigtableDataClient implements AutoCloseable {
    * <p>Sample code:
    *
    * <pre>{@code
-   * InstanceName instanceName = InstanceName.of("[PROJECT]", "[INSTANCE]");
-   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create(instanceName)) {
+   * try (BigtableDataClient bigtableDataClient = BigtableDataClient.create("[PROJECT]", "[INSTANCE]")) {
    *   String tableId = "[TABLE]";
    *
    *   Query query = Query.create(tableId)

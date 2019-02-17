@@ -19,7 +19,6 @@ import com.google.cloud.bigtable.admin.v2.stub.BigtableTableAdminStubSettings;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Verify;
 import java.io.IOException;
-import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 /**
@@ -63,17 +62,6 @@ public final class BigtableTableAdminSettings {
   /** Gets the instance id whose tables the client will manage. */
   public String getInstanceId() {
     return instanceId;
-  }
-
-  /**
-   * Gets the name of instance whose tables the client will manage.
-   *
-   * @deprecated Please use {@link #getProjectId()} and {@link #getInstanceId()}.
-   */
-  @Deprecated
-  @Nonnull
-  public com.google.bigtable.admin.v2.InstanceName getInstanceName() {
-    return com.google.bigtable.admin.v2.InstanceName.of(projectId, instanceId);
   }
 
   /** Gets the underlying RPC settings. */
@@ -131,34 +119,6 @@ public final class BigtableTableAdminSettings {
     @Nullable
     public String getInstanceId() {
       return instanceId;
-    }
-
-    /**
-     * Sets the name of instance whose tables the client will manage.
-     *
-     * @deprecated Please use {@link #setProjectId(String)} and {@link #setInstanceId(String)}.
-     */
-    @Deprecated
-    public Builder setInstanceName(
-        @Nonnull com.google.bigtable.admin.v2.InstanceName instanceName) {
-      Preconditions.checkNotNull(instanceName);
-      this.projectId = instanceName.getProject();
-      this.instanceId = instanceName.getInstance();
-      return this;
-    }
-
-    /**
-     * Gets the name of instance whose tables the client will manage.
-     *
-     * @deprecated Please use {@link #getProjectId()} and {@link #getInstanceId()}.
-     */
-    @Deprecated
-    @Nullable
-    public com.google.bigtable.admin.v2.InstanceName getInstanceName() {
-      if (projectId != null && instanceId != null) {
-        return com.google.bigtable.admin.v2.InstanceName.of(projectId, instanceId);
-      }
-      return null;
     }
 
     /**
