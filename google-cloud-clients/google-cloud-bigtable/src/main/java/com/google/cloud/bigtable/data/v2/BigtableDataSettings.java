@@ -67,16 +67,6 @@ public class BigtableDataSettings extends ClientSettings<BigtableDataSettings> {
     return new Builder();
   }
 
-  /**
-   * Returns the target instance.
-   *
-   * @deprecated Please use {@link #getProjectId()} and {@link #getInstanceId()}.
-   */
-  @Deprecated()
-  public com.google.cloud.bigtable.data.v2.models.InstanceName getInstanceName() {
-    return getTypedStubSettings().getInstanceName();
-  }
-
   /** Returns the target project id. */
   public String getProjectId() {
     return getTypedStubSettings().getProjectId();
@@ -159,30 +149,6 @@ public class BigtableDataSettings extends ClientSettings<BigtableDataSettings> {
     }
 
     // <editor-fold desc="Public API">
-    /**
-     * Sets the target instance. This setting is required. All RPCs will be made in the context of
-     * this setting.
-     *
-     * @deprecated Please use {@link #setProjectId(String)} and {@link #setInstanceId(String)}.
-     */
-    @Deprecated
-    public Builder setInstanceName(
-        @Nonnull com.google.cloud.bigtable.data.v2.models.InstanceName instanceName) {
-      getTypedStubSettings().setInstanceName(instanceName);
-      return this;
-    }
-
-    /**
-     * Gets the {@link com.google.cloud.bigtable.data.v2.models.InstanceName} that was previously
-     * set on this Builder.
-     *
-     * @deprecated Please use {@link #getProjectId()} and {@link #getInstanceId()}.
-     */
-    @Deprecated
-    public com.google.cloud.bigtable.data.v2.models.InstanceName getInstanceName() {
-      return getTypedStubSettings().getInstanceName();
-    }
-
     /**
      * Sets the target project. This setting is required. All RPCs will be made in the context of
      * this setting.
