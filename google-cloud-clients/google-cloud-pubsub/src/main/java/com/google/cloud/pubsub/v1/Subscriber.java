@@ -116,8 +116,6 @@ public class Subscriber extends AbstractApiService {
 
   private final MessageReceiver receiver;
   private final List<StreamingSubscriberConnection> streamingSubscriberConnections;
-  private final Deque<MessageDispatcher.OutstandingMessageBatch> outstandingMessageBatches =
-      new LinkedList<>();
   private final ApiClock clock;
   private final List<AutoCloseable> closeables = new ArrayList<>();
   private ScheduledFuture<?> ackDeadlineUpdater;
@@ -344,7 +342,6 @@ public class Subscriber extends AbstractApiService {
                 subStub,
                 i,
                 flowController,
-                outstandingMessageBatches,
                 executor,
                 alarmsExecutor,
                 clock));

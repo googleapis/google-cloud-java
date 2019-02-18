@@ -86,7 +86,6 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
       SubscriberStub stub,
       int channelAffinity,
       FlowController flowController,
-      Deque<MessageDispatcher.OutstandingMessageBatch> outstandingMessageBatches,
       ScheduledExecutorService executor,
       ScheduledExecutorService systemExecutor,
       ApiClock clock) {
@@ -102,7 +101,6 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
             maxAckExtensionPeriod,
             ackLatencyDistribution,
             flowController,
-            outstandingMessageBatches,
             executor,
             systemExecutor,
             clock);
