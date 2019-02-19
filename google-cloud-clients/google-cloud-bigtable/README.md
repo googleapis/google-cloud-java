@@ -162,6 +162,7 @@ codebase.
 Apache 2.0 - See [LICENSE] for more information.
 
 [CONTRIBUTING]:https://github.com/googleapis/google-cloud-java/blob/master/CONTRIBUTING.md
+[DEVELOPING]:DEVELOPING.md
 [LICENSE]: https://github.com/googleapis/google-cloud-java/blob/master/LICENSE
 [cloud-platform]: https://cloud.google.com/
 [cloud-bigtable]: https://cloud.google.com/bigtable/
