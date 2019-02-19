@@ -37,7 +37,10 @@ public class RecognizeIT {
 
   // The path to the audio file to transcribe
   private String audioFileName = "./resources/audio.raw";
+  private String multiChannelAudioFileName = "./resources/commercial_stereo.wav";
   private String gcsAudioPath = "gs://" + BUCKET + "/speech/brooklyn.flac";
+  private String gcsMultiChannelAudioPath = "gs://" + BUCKET + "/speech/commercial_stereo.wav";
+
   private String recognitionAudioFile = "./resources/commercial_mono.wav";
 
   // The path to the video file to transcribe
@@ -149,5 +152,19 @@ public class RecognizeIT {
     String got = bout.toString();
     assertThat(got).contains("OK Google");
     assertThat(got).contains("the weather outside is sunny");
+  }
+
+  @Test
+  public void testTranscribeMultiChannel() throws Exception {
+    Recognize.transcribeMultiChannel(multiChannelAudioFileName);
+    String got = bout.toString();
+    assertThat(got).contains("Channel Tag : 1");
+  }
+
+  @Test
+  public void testTranscribeMultiChannelGcs() throws Exception {
+    Recognize.transcribeMultiChannelGcs(gcsMultiChannelAudioPath);
+    String got = bout.toString();
+    assertThat(got).contains("Channel Tag : 1");
   }
 }

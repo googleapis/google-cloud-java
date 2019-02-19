@@ -64,7 +64,7 @@ public class Recognize {
               + "Commands:\n"
               + "\tsyncrecognize | asyncrecognize | streamrecognize | micstreamrecognize \n"
               + "\t| wordoffsets | auto-punctuation | stream-punctuation \n"
-              + "\t| enhanced-model | model-selection\n"
+              + "\t| enhanced-model | model-selection | multi-channel\n"
               + "Path:\n\tA file path (ex: ./resources/audio.raw) or a URI "
               + "for a Cloud Storage resource (gs://...)\n",
           Recognize.class.getCanonicalName());
@@ -111,6 +111,12 @@ public class Recognize {
         transcribeModelSelectionGcs(path);
       } else {
         transcribeModelSelection(path);
+      }
+    } else if (command.equals("multi-channel")) {
+      if (path.startsWith("gs://")) {
+        transcribeMultiChannelGcs(path);
+      } else {
+        transcribeMultiChannel(path);
       }
     }
   }
@@ -830,4 +836,90 @@ public class Recognize {
     }
   }
   // [END speech_transcribe_model_selection_gcs]
+
+  // [START speech_transcribe_multichannel]
+  /**
+   * Transcribe a local audio file with multi-channel recognition
+   *
+   * @param fileName the path to local audio file
+   */
+  public static void transcribeMultiChannel(String fileName) throws Exception {
+    Path path = Paths.get(fileName);
+    byte[] content = Files.readAllBytes(path);
+
+    try (SpeechClient speechClient = SpeechClient.create()) {
+      // Get the contents of the local audio file
+      RecognitionAudio recognitionAudio =
+          RecognitionAudio.newBuilder().setContent(ByteString.copyFrom(content)).build();
+
+      // Configure request to enable multiple channels
+      RecognitionConfig config =
+          RecognitionConfig.newBuilder()
+              .setEncoding(AudioEncoding.LINEAR16)
+              .setLanguageCode("en-US")
+              .setSampleRateHertz(44100)
+              .setAudioChannelCount(2)
+              .setEnableSeparateRecognitionPerChannel(true)
+              .build();
+
+      // Perform the transcription request
+      RecognizeResponse recognizeResponse = speechClient.recognize(config, recognitionAudio);
+
+      // Print out the results
+      for (SpeechRecognitionResult result : recognizeResponse.getResultsList()) {
+        // There can be several alternative transcripts for a given chunk of speech. Just use the
+        // first (most likely) one here.
+        SpeechRecognitionAlternative alternative = result.getAlternatives(0);
+        System.out.format("Transcript : %s\n", alternative.getTranscript());
+        System.out.printf("Channel Tag : %s\n", result.getChannelTag());
+      }
+    }
+  }
+  // [END speech_transcribe_multichannel]
+
+  // [START speech_transcribe_multichannel_gcs]
+  /**
+   * Transcribe a remote audio file with multi-channel recognition
+   *
+   * @param gcsUri the path to the audio file
+   */
+  public static void transcribeMultiChannelGcs(String gcsUri) throws Exception {
+
+    try (SpeechClient speechClient = SpeechClient.create()) {
+
+      // Configure request to enable multiple channels
+      RecognitionConfig config =
+          RecognitionConfig.newBuilder()
+              .setEncoding(AudioEncoding.LINEAR16)
+              .setLanguageCode("en-US")
+              .setSampleRateHertz(44100)
+              .setAudioChannelCount(2)
+              .setEnableSeparateRecognitionPerChannel(true)
+              .build();
+
+      // Set the remote path for the audio file
+      RecognitionAudio audio = RecognitionAudio.newBuilder().setUri(gcsUri).build();
+
+      // Use non-blocking call for getting file transcription
+      OperationFuture<LongRunningRecognizeResponse, LongRunningRecognizeMetadata> response =
+          speechClient.longRunningRecognizeAsync(config, audio);
+
+      while (!response.isDone()) {
+        System.out.println("Waiting for response...");
+        Thread.sleep(10000);
+      }
+      // Just print the first result here.
+      for (SpeechRecognitionResult result : response.get().getResultsList()) {
+
+        // There can be several alternative transcripts for a given chunk of speech. Just use the
+        // first (most likely) one here.
+        SpeechRecognitionAlternative alternative = result.getAlternativesList().get(0);
+
+        // Print out the result
+        System.out.printf("Transcript : %s\n", alternative.getTranscript());
+        System.out.printf("Channel Tag : %s\n", result.getChannelTag());
+      }
+    }
+  }
+  // [END speech_transcribe_multichannel_gcs]
 }
