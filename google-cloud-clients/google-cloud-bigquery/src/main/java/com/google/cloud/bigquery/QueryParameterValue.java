@@ -25,6 +25,7 @@ import com.google.common.io.BaseEncoding;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import javax.annotation.Nullable;
 import org.threeten.bp.Instant;
@@ -256,6 +257,8 @@ public abstract class QueryParameterValue implements Serializable {
       return StandardSQLTypeName.FLOAT64;
     } else if (BigDecimal.class.isAssignableFrom(type)) {
       return StandardSQLTypeName.NUMERIC;
+    } else if (Date.class.isAssignableFrom(type)) {
+      return StandardSQLTypeName.DATE;
     }
     throw new IllegalArgumentException("Unsupported object type for QueryParameter: " + type);
   }
@@ -310,6 +313,9 @@ public abstract class QueryParameterValue implements Serializable {
           // verify that the String is in the right format
           checkFormat(value, dateFormatter);
           return (String) value;
+        } else if (value instanceof Date) {
+          com.google.cloud.Date date = com.google.cloud.Date.fromJavaUtilDate((Date) value);
+          return date.toString();
         }
         break;
       case TIME:
