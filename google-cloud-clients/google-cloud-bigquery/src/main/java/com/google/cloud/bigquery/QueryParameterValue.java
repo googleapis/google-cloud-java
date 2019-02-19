@@ -16,6 +16,11 @@
 
 package com.google.cloud.bigquery;
 
+import static org.threeten.bp.temporal.ChronoField.HOUR_OF_DAY;
+import static org.threeten.bp.temporal.ChronoField.MINUTE_OF_HOUR;
+import static org.threeten.bp.temporal.ChronoField.NANO_OF_SECOND;
+import static org.threeten.bp.temporal.ChronoField.SECOND_OF_MINUTE;
+
 import com.google.api.services.bigquery.model.QueryParameterType;
 import com.google.auto.value.AutoValue;
 import com.google.common.base.Function;
@@ -32,7 +37,6 @@ import org.threeten.bp.ZoneOffset;
 import org.threeten.bp.format.DateTimeFormatter;
 import org.threeten.bp.format.DateTimeFormatterBuilder;
 import org.threeten.bp.format.DateTimeParseException;
-import org.threeten.bp.temporal.ChronoField;
 
 /**
  * A value for a QueryParameter along with its type.
@@ -62,23 +66,33 @@ import org.threeten.bp.temporal.ChronoField;
 @AutoValue
 public abstract class QueryParameterValue implements Serializable {
 
-  private static final DateTimeFormatter timestampValidator =
+  private static final DateTimeFormatter timestampFormatter =
       new DateTimeFormatterBuilder()
           .parseLenient()
           .append(DateTimeFormatter.ISO_LOCAL_DATE)
           .appendLiteral(' ')
-          .append(DateTimeFormatter.ISO_LOCAL_TIME)
-          .appendFraction(ChronoField.NANO_OF_SECOND, 0, 9, true)
+          .appendValue(HOUR_OF_DAY, 2)
+          .appendLiteral(':')
+          .appendValue(MINUTE_OF_HOUR, 2)
           .optionalStart()
-          .appendOffsetId()
-          .optionalEnd()
+          .appendLiteral(':')
+          .appendValue(SECOND_OF_MINUTE, 2)
           .optionalStart()
-          .appendOffset("+HHMM", "Z")
+          .appendFraction(NANO_OF_SECOND, 6, 9, true)
+          .optionalStart()
+          .appendOffset("+HHMM", "+00:00")
           .optionalEnd()
           .toFormatter()
           .withZone(ZoneOffset.UTC);
-  private static final DateTimeFormatter timestampFormatter =
-      DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSSSSSxxx").withZone(ZoneOffset.UTC);
+  private static final DateTimeFormatter timestampValidator =
+      new DateTimeFormatterBuilder()
+          .parseLenient()
+          .append(timestampFormatter)
+          .optionalStart()
+          .appendOffsetId()
+          .optionalEnd()
+          .toFormatter()
+          .withZone(ZoneOffset.UTC);
   private static final DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
   private static final DateTimeFormatter timeFormatter =
       DateTimeFormatter.ofPattern("HH:mm:ss.SSSSSS");
