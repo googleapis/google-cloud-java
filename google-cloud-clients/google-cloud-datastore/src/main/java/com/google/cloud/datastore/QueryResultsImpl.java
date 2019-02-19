@@ -75,8 +75,8 @@ class QueryResultsImpl<T> extends AbstractIterator<T> implements QueryResults<T>
     if (mostRecentQueryPb == null) {
       mostRecentQueryPb = requestPb.getQuery();
     }
-    lastBatch = runQueryResponsePb.getBatch().getMoreResults() != MoreResultsType.NOT_FINISHED;
     moreResults = runQueryResponsePb.getBatch().getMoreResults();
+    lastBatch = moreResults != MoreResultsType.NOT_FINISHED;
     entityResultPbIter = runQueryResponsePb.getBatch().getEntityResultsList().iterator();
     actualResultType = ResultType.fromPb(runQueryResponsePb.getBatch().getEntityResultType());
     if (Objects.equals(queryResultType, ResultType.PROJECTION_ENTITY)) {
