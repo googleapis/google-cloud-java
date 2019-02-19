@@ -20,6 +20,8 @@ import static com.google.common.truth.Truth.assertThat;
 
 import com.google.api.services.bigquery.model.QueryParameterType;
 import java.math.BigDecimal;
+import java.text.ParseException;
+import java.util.Date;
 import java.util.List;
 import org.junit.Test;
 
@@ -199,6 +201,17 @@ public class QueryParameterValueTest {
   public void testDate() {
     QueryParameterValue value = QueryParameterValue.date("2014-08-19");
     assertThat(value.getValue()).isEqualTo("2014-08-19");
+    assertThat(value.getType()).isEqualTo(StandardSQLTypeName.DATE);
+    assertThat(value.getArrayType()).isNull();
+    assertThat(value.getArrayValues()).isNull();
+  }
+
+  @Test
+  public void testStandardDate() throws ParseException {
+    com.google.cloud.Date gcDate = com.google.cloud.Date.parseDate("2016-09-18");
+    Date date = com.google.cloud.Date.toJavaUtilDate(gcDate);
+    QueryParameterValue value = QueryParameterValue.of(date, Date.class);
+    assertThat(value.getValue()).isEqualTo("2016-09-18");
     assertThat(value.getType()).isEqualTo(StandardSQLTypeName.DATE);
     assertThat(value.getArrayType()).isNull();
     assertThat(value.getArrayValues()).isNull();
