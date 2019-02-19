@@ -119,4 +119,9 @@ class QueryResultsImpl<T> extends AbstractIterator<T> implements QueryResults<T>
   public int getSkippedResults() {
     return runQueryResponsePb.getBatch().getSkippedResults();
   }
+
+  /** returns MoreResults state of the query after the current batch. */
+  public MoreResultsType getMoreResults() {
+    return moreResults;
+  }
 }
