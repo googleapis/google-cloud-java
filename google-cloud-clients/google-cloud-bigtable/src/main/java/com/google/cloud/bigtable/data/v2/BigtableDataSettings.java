@@ -96,7 +96,7 @@ public class BigtableDataSettings extends ClientSettings<BigtableDataSettings> {
 
     return builder;
   }
-  
+
   /** Returns the target project id. */
   public String getProjectId() {
     return getTypedStubSettings().getProjectId();
