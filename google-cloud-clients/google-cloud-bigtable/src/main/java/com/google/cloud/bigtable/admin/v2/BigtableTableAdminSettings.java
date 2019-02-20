@@ -16,9 +16,9 @@
 package com.google.cloud.bigtable.admin.v2;
 
 import com.google.api.core.ApiFunction;
+import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
-import com.google.api.gax.core.CredentialsProvider;
 import com.google.cloud.bigtable.admin.v2.stub.BigtableTableAdminStubSettings;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Verify;
