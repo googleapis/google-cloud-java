@@ -55,6 +55,9 @@ You will need a [Google Developers Console](https://console.developers.google.co
 #### Installation and setup
 You'll need to obtain the `google-cloud-kms` library.  See the [Quickstart](#quickstart) section to add `google-cloud-kms` as a dependency in your code.
 
+#### Examples
+More information including Java getting started examples can be found in the [KMS documentation](https://cloud.google.com/kms/docs/reference/libraries).
+
 Troubleshooting
 ---------------
 
