@@ -16,6 +16,7 @@
 package com.google.cloud.bigtable.admin.v2;
 
 import com.google.api.core.ApiFunction;
+import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.cloud.bigtable.admin.v2.stub.BigtableTableAdminStubSettings;
@@ -66,6 +67,11 @@ public final class BigtableTableAdminSettings {
   /** Gets the instance id whose tables the client will manage. */
   public String getInstanceId() {
     return instanceId;
+  }
+
+  /** Gets the CredentialsProvider to use for getting the credentials to make calls with. */
+  public CredentialsProvider getCredentialsProvider() {
+    return stubSettings.getCredentialsProvider();
   }
 
   /** Gets the underlying RPC settings. */
@@ -146,6 +152,17 @@ public final class BigtableTableAdminSettings {
     @Nullable
     public String getInstanceId() {
       return instanceId;
+    }
+
+    /** Sets the CredentialsProvider to use for getting the credentials to make calls with. */
+    public Builder setCredentialsProvider(CredentialsProvider credentialsProvider) {
+      stubSettings.setCredentialsProvider(credentialsProvider);
+      return this;
+    }
+
+    /** Gets the CredentialsProvider to use for getting the credentials to make calls with. */
+    public CredentialsProvider getCredentialsProvider() {
+      return stubSettings.getCredentialsProvider();
     }
 
     /**
