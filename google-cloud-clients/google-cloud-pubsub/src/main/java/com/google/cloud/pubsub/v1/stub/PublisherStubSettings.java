@@ -479,10 +479,13 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
           "idempotent",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
-                  StatusCode.Code.DEADLINE_EXCEEDED, StatusCode.Code.UNAVAILABLE)));
-      definitions.put("non_idempotent", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+                  StatusCode.Code.ABORTED, StatusCode.Code.UNAVAILABLE, StatusCode.Code.UNKNOWN)));
       definitions.put(
-          "one_plus_delivery",
+          "non_idempotent",
+          ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList(StatusCode.Code.UNAVAILABLE)));
+      definitions.put("none", ImmutableSet.copyOf(Lists.<StatusCode.Code>newArrayList()));
+      definitions.put(
+          "publish",
           ImmutableSet.copyOf(
               Lists.<StatusCode.Code>newArrayList(
                   StatusCode.Code.ABORTED,
@@ -584,12 +587,12 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
 
       builder
           .createTopicSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
           .updateTopicSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder
@@ -606,7 +609,7 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
                   .build());
       builder
           .publishSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("one_plus_delivery"))
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("publish"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("messaging"));
 
       builder
@@ -626,7 +629,7 @@ public class PublisherStubSettings extends StubSettings<PublisherStubSettings> {
 
       builder
           .deleteTopicSettings()
-          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("non_idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
 
       builder

@@ -31,11 +31,11 @@ import com.google.cloud.bigquery.StandardTableDefinition;
 import com.google.cloud.bigquery.TableId;
 import java.util.Arrays;
 import java.util.concurrent.TimeoutException;
-import org.joda.time.DateTime;
-import org.joda.time.DateTimeZone;
-import org.joda.time.Instant;
-import org.joda.time.format.DateTimeFormatter;
-import org.joda.time.format.ISODateTimeFormat;
+import org.threeten.bp.Instant;
+import org.threeten.bp.LocalDateTime;
+import org.threeten.bp.ZoneOffset;
+import org.threeten.bp.ZonedDateTime;
+import org.threeten.bp.format.DateTimeFormatter;
 
 /** This class contains snippets for cloud.google.com documentation. */
 public class CloudSnippets {
@@ -235,7 +235,7 @@ public class CloudSnippets {
   public void runQueryWithTimestampParameters() throws InterruptedException {
     // [START bigquery_query_params_timestamps]
     // BigQuery bigquery = BigQueryOptions.getDefaultInstance().getService();
-    DateTime timestamp = new DateTime(2016, 12, 7, 8, 0, 0, DateTimeZone.UTC);
+    ZonedDateTime timestamp = LocalDateTime.of(2016, 12, 7, 8, 0, 0).atZone(ZoneOffset.UTC);
     String query = "SELECT TIMESTAMP_ADD(@ts_value, INTERVAL 1 HOUR);";
     // Note: Standard SQL is required to use query parameters.
     QueryJobConfiguration queryConfig =
@@ -244,19 +244,21 @@ public class CloudSnippets {
                 "ts_value",
                 QueryParameterValue.timestamp(
                     // Timestamp takes microseconds since 1970-01-01T00:00:00 UTC
-                    timestamp.getMillis() * 1000))
+                    timestamp.toInstant().toEpochMilli() * 1000))
             .build();
 
     // Print the results.
-    DateTimeFormatter formatter = ISODateTimeFormat.dateTimeNoMillis().withZoneUTC();
+    DateTimeFormatter formatter = DateTimeFormatter.ISO_INSTANT.withZone(ZoneOffset.UTC);
     for (FieldValueList row : bigquery.query(queryConfig).iterateAll()) {
       System.out.printf(
           "%s\n",
-          formatter.print(
-              new DateTime(
-                  // Timestamp values are returned in microseconds since 1970-01-01T00:00:00 UTC,
-                  // but org.joda.time.DateTime constructor accepts times in milliseconds.
-                  row.get(0).getTimestampValue() / 1000, DateTimeZone.UTC)));
+          formatter.format(
+              Instant.ofEpochMilli(
+                      // Timestamp values are returned in microseconds since 1970-01-01T00:00:00
+                      // UTC,
+                      // but org.joda.time.DateTime constructor accepts times in milliseconds.
+                      row.get(0).getTimestampValue() / 1000)
+                  .atOffset(ZoneOffset.UTC)));
       System.out.printf("\n");
     }
     // [END bigquery_query_params_timestamps]
@@ -330,7 +332,7 @@ public class CloudSnippets {
 
     // Record the current time.  We'll use this as the snapshot time
     // for recovering the table.
-    long snapTime = Instant.now().getMillis();
+    long snapTime = Instant.now().toEpochMilli();
 
     // "Accidentally" delete the table.
     bigquery.delete(TableId.of(datasetId, tableId));

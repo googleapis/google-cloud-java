@@ -100,4 +100,27 @@ public interface InfoTypeDescriptionOrBuilder
    * <code>repeated .google.privacy.dlp.v2.InfoTypeSupportedBy supported_by = 3;</code>
    */
   int getSupportedByValue(int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Description of the infotype. Translated when language is provided in the
+   * request.
+   * </pre>
+   *
+   * <code>string description = 4;</code>
+   */
+  java.lang.String getDescription();
+  /**
+   *
+   *
+   * <pre>
+   * Description of the infotype. Translated when language is provided in the
+   * request.
+   * </pre>
+   *
+   * <code>string description = 4;</code>
+   */
+  com.google.protobuf.ByteString getDescriptionBytes();
 }

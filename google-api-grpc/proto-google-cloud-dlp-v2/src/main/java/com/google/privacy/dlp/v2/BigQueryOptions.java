@@ -152,8 +152,8 @@ public final class BigQueryOptions extends com.google.protobuf.GeneratedMessageV
    *
    * <pre>
    * How to sample rows if not all rows are scanned. Meaningful only when used
-   * in conjunction with rows_limit. If not specified, scanning would start
-   * from the top.
+   * in conjunction with either rows_limit or rows_limit_percent. If not
+   * specified, scanning would start from the top.
    * </pre>
    *
    * Protobuf enum {@code google.privacy.dlp.v2.BigQueryOptions.SampleMethod}

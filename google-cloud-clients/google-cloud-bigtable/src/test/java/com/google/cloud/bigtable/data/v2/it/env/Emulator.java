@@ -15,17 +15,11 @@
  */
 package com.google.cloud.bigtable.data.v2.it.env;
 
-import com.google.api.gax.core.NoCredentialsProvider;
-import com.google.api.gax.grpc.GrpcTransportChannel;
-import com.google.api.gax.rpc.ClientSettings;
-import com.google.api.gax.rpc.FixedTransportChannelProvider;
-import com.google.bigtable.admin.v2.BigtableTableAdminGrpc;
-import com.google.bigtable.admin.v2.BigtableTableAdminGrpc.BigtableTableAdminBlockingStub;
+import com.google.cloud.bigtable.admin.v2.BigtableTableAdminClient;
+import com.google.cloud.bigtable.admin.v2.BigtableTableAdminSettings;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
 import com.google.common.io.CharStreams;
-import io.grpc.ManagedChannel;
-import io.grpc.ManagedChannelBuilder;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -52,8 +46,7 @@ class Emulator {
   private final Path executable;
   private Process process;
   private boolean isStopped = true;
-  private ManagedChannel channel;
-  private BigtableTableAdminBlockingStub tableAdminClient;
+  private BigtableTableAdminClient tableAdminClient;
   private BigtableDataClient dataClient;
 
   private static final String PROJECT_ID = "fake-project";
@@ -94,16 +87,18 @@ class Emulator {
 
     waitForPort(availablePort);
 
-    channel = createChannel(availablePort);
-
-    tableAdminClient = BigtableTableAdminGrpc.newBlockingStub(channel);
+    tableAdminClient =
+        BigtableTableAdminClient.create(
+            BigtableTableAdminSettings.newBuilderForEmulator(availablePort)
+                .setProjectId(PROJECT_ID)
+                .setInstanceId(INSTANCE_ID)
+                .build());
 
     dataClient =
         BigtableDataClient.create(
-            configureClient(
-                    BigtableDataSettings.newBuilder()
-                        .setProjectId(PROJECT_ID)
-                        .setInstanceId(INSTANCE_ID))
+            BigtableDataSettings.newBuilderForEmulator(availablePort)
+                .setProjectId(PROJECT_ID)
+                .setInstanceId(INSTANCE_ID)
                 .build());
 
     Runtime.getRuntime()
@@ -122,8 +117,7 @@ class Emulator {
   void stop() throws Exception {
     try {
       dataClient.close();
-      channel.shutdownNow();
-      channel.awaitTermination(1, TimeUnit.MINUTES);
+      tableAdminClient.close();
     } finally {
       isStopped = true;
       process.destroy();
@@ -134,7 +128,7 @@ class Emulator {
     return dataClient;
   }
 
-  BigtableTableAdminBlockingStub getTableAdminClient() {
+  BigtableTableAdminClient getTableAdminClient() {
     return tableAdminClient;
   }
 
@@ -169,22 +163,6 @@ class Emulator {
     }
 
     throw new TimeoutException("Timed out waiting for server to start");
-  }
-
-  private ManagedChannel createChannel(int port) {
-    return ManagedChannelBuilder.forAddress("localhost", port)
-        .usePlaintext()
-        .maxInboundMessageSize(256 * 1024 * 1024)
-        .build();
-  }
-
-  private <T extends ClientSettings.Builder<?, ?>> T configureClient(T settings) {
-    settings
-        .setCredentialsProvider(new NoCredentialsProvider())
-        .setTransportChannelProvider(
-            FixedTransportChannelProvider.create(GrpcTransportChannel.create(channel)));
-
-    return settings;
   }
 
   private static void pipeStreamToLog(final InputStream stream, final Level level) {

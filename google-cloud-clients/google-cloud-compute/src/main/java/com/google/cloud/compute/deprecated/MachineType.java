@@ -24,8 +24,9 @@ import java.io.Serializable;
 import java.math.BigInteger;
 import java.util.List;
 import java.util.Objects;
-import org.joda.time.format.DateTimeFormatter;
-import org.joda.time.format.ISODateTimeFormat;
+import org.threeten.bp.Instant;
+import org.threeten.bp.ZoneOffset;
+import org.threeten.bp.format.DateTimeFormatter;
 
 /**
  * A Google Compute Engine machine type. A machine type determine the virtualized hardware
@@ -52,7 +53,8 @@ public class MachineType implements Serializable {
               return type.toPb();
             }
           };
-  private static final DateTimeFormatter TIMESTAMP_FORMATTER = ISODateTimeFormat.dateTime();
+  private static final DateTimeFormatter TIMESTAMP_FORMATTER =
+      DateTimeFormatter.ISO_DATE_TIME.withZone(ZoneOffset.UTC);
 
   private static final long serialVersionUID = -4210962597502860450L;
 
@@ -241,7 +243,8 @@ public class MachineType implements Serializable {
       machineTypePb.setId(new BigInteger(generatedId));
     }
     if (creationTimestamp != null) {
-      machineTypePb.setCreationTimestamp(TIMESTAMP_FORMATTER.print(creationTimestamp));
+      machineTypePb.setCreationTimestamp(
+          TIMESTAMP_FORMATTER.format(Instant.ofEpochMilli(creationTimestamp)));
     }
     machineTypePb.setName(machineTypeId.getType());
     machineTypePb.setDescription(description);
@@ -280,7 +283,9 @@ public class MachineType implements Serializable {
     }
     if (machineTypePb.getCreationTimestamp() != null) {
       builder.setCreationTimestamp(
-          TIMESTAMP_FORMATTER.parseMillis(machineTypePb.getCreationTimestamp()));
+          TIMESTAMP_FORMATTER
+              .parse(machineTypePb.getCreationTimestamp(), Instant.FROM)
+              .toEpochMilli());
     }
     builder.setDescription(machineTypePb.getDescription());
     builder.setCpus(machineTypePb.getGuestCpus());
