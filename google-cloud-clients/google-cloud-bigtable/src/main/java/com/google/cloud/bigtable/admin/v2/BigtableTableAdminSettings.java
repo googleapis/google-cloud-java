@@ -15,9 +15,13 @@
  */
 package com.google.cloud.bigtable.admin.v2;
 
+import com.google.api.core.ApiFunction;
+import com.google.api.gax.core.NoCredentialsProvider;
+import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.cloud.bigtable.admin.v2.stub.BigtableTableAdminStubSettings;
 import com.google.common.base.Preconditions;
 import com.google.common.base.Verify;
+import io.grpc.ManagedChannelBuilder;
 import java.io.IOException;
 import javax.annotation.Nullable;
 
@@ -77,6 +81,29 @@ public final class BigtableTableAdminSettings {
   /** Returns a new builder for this class. */
   public static Builder newBuilder() {
     return new Builder();
+  }
+
+  /** Create a new builder preconfigured to connect to the Bigtable emulator. */
+  public static Builder newBuilderForEmulator(int port) {
+    Builder builder = newBuilder().setProjectId("fake-project").setInstanceId("fake-instance");
+
+    builder
+        .stubSettings()
+        .setCredentialsProvider(NoCredentialsProvider.create())
+        .setEndpoint("localhost:" + port)
+        .setTransportChannelProvider(
+            InstantiatingGrpcChannelProvider.newBuilder()
+                .setPoolSize(1)
+                .setChannelConfigurator(
+                    new ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder>() {
+                      @Override
+                      public ManagedChannelBuilder apply(ManagedChannelBuilder input) {
+                        return input.usePlaintext();
+                      }
+                    })
+                .build());
+
+    return builder;
   }
 
   /** Builder for BigtableTableAdminSettings. */
