@@ -85,7 +85,7 @@ public final class BigtableDataSettings {
     Builder builder = newBuilder();
 
     builder
-        .getTypedStubSettings()
+        .stubSettings()
         .setProjectId("fake-project")
         .setInstanceId("fake-instance")
         .setCredentialsProvider(NoCredentialsProvider.create())
