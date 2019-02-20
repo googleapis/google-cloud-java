@@ -15,6 +15,9 @@
  */
 package com.google.cloud.bigtable.data.v2;
 
+import com.google.api.core.ApiFunction;
+import com.google.api.gax.core.NoCredentialsProvider;
+import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.core.ApiClock;
 import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.core.ExecutorProvider;
@@ -31,6 +34,8 @@ import com.google.cloud.bigtable.data.v2.models.ReadModifyWriteRow;
 import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStubSettings;
+import io.grpc.ManagedChannelBuilder;
+import java.io.IOException;
 import java.util.List;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
@@ -74,6 +79,32 @@ public final class BigtableDataSettings {
   /** Create a new builder. */
   public static Builder newBuilder() {
     return new Builder();
+  }
+
+  /** Create a new builder preconfigured to connect to the Bigtable emulator. */
+  public static Builder newBuilderForEmulator(int port) {
+    Builder builder = newBuilder();
+
+    builder
+        .getTypedStubSettings()
+        .setProjectId("fake-project")
+        .setInstanceId("fake-instance")
+        .setCredentialsProvider(NoCredentialsProvider.create())
+        .setEndpoint("localhost:" + port)
+        .setTransportChannelProvider(
+            InstantiatingGrpcChannelProvider.newBuilder()
+                .setMaxInboundMessageSize(256 * 1024 * 1024)
+                .setPoolSize(1)
+                .setChannelConfigurator(
+                    new ApiFunction<ManagedChannelBuilder, ManagedChannelBuilder>() {
+                      @Override
+                      public ManagedChannelBuilder apply(ManagedChannelBuilder input) {
+                        return input.usePlaintext();
+                      }
+                    })
+                .build());
+
+    return builder;
   }
 
   /** Returns the target project id. */

@@ -110,27 +110,10 @@ public class ExampleTest {
   @Before
   public void setUp() throws IOException {
     // Initialize the clients to connect to the emulator
-    BigtableTableAdminSettings.Builder tableAdminSettings = BigtableTableAdminSettings.newBuilder()
-        .setProjectId("fake-project")
-        .setInstanceId("fake-instance");
-    tableAdminSettings.stubSettings()
-        .setCredentialsProvider(NoCredentialsProvider.create())
-        .setTransportChannelProvider(
-            FixedTransportChannelProvider.create(
-                GrpcTransportChannel.create(bigtableEmulator.getAdminChannel())
-            )
-        );
+    BigtableTableAdminSettings.Builder tableAdminSettings = BigtableTableAdminSettings.newBuilderForEmulator(bigtableEmulator.getPort());
     tableAdminClient = BigtableTableAdminClient.create(tableAdminSettings.build());
 
-    BigtableDataSettings.Builder dataSettings = BigtableDataSettings.newBuilder()
-        .setProjectId("fake-project")
-        .setInstanceId("fake-instance")
-        .setCredentialsProvider(NoCredentialsProvider.create())
-        .setTransportChannelProvider(
-            FixedTransportChannelProvider.create(
-                GrpcTransportChannel.create(bigtableEmulator.getDataChannel())
-            )
-        );
+    BigtableDataSettings.Builder dataSettings = BigtableDataSettings.newBuilderForEmulator(bigtableEmulator.getPort());
     dataClient = BigtableDataClient.create(dataSettings.build());
 
     // Create a test table that can be used in tests
