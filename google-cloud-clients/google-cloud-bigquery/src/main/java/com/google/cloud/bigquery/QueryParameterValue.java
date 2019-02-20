@@ -16,6 +16,11 @@
 
 package com.google.cloud.bigquery;
 
+import static org.threeten.bp.temporal.ChronoField.HOUR_OF_DAY;
+import static org.threeten.bp.temporal.ChronoField.MINUTE_OF_HOUR;
+import static org.threeten.bp.temporal.ChronoField.NANO_OF_SECOND;
+import static org.threeten.bp.temporal.ChronoField.SECOND_OF_MINUTE;
+
 import com.google.api.services.bigquery.model.QueryParameterType;
 import com.google.auto.value.AutoValue;
 import com.google.common.base.Function;
@@ -31,6 +36,7 @@ import javax.annotation.Nullable;
 import org.threeten.bp.Instant;
 import org.threeten.bp.ZoneOffset;
 import org.threeten.bp.format.DateTimeFormatter;
+import org.threeten.bp.format.DateTimeFormatterBuilder;
 import org.threeten.bp.format.DateTimeParseException;
 
 /**
@@ -62,7 +68,32 @@ import org.threeten.bp.format.DateTimeParseException;
 public abstract class QueryParameterValue implements Serializable {
 
   private static final DateTimeFormatter timestampFormatter =
-      DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.SSSSSSxxx").withZone(ZoneOffset.UTC);
+      new DateTimeFormatterBuilder()
+          .parseLenient()
+          .append(DateTimeFormatter.ISO_LOCAL_DATE)
+          .appendLiteral(' ')
+          .appendValue(HOUR_OF_DAY, 2)
+          .appendLiteral(':')
+          .appendValue(MINUTE_OF_HOUR, 2)
+          .optionalStart()
+          .appendLiteral(':')
+          .appendValue(SECOND_OF_MINUTE, 2)
+          .optionalStart()
+          .appendFraction(NANO_OF_SECOND, 6, 9, true)
+          .optionalStart()
+          .appendOffset("+HHMM", "+00:00")
+          .optionalEnd()
+          .toFormatter()
+          .withZone(ZoneOffset.UTC);
+  private static final DateTimeFormatter timestampValidator =
+      new DateTimeFormatterBuilder()
+          .parseLenient()
+          .append(timestampFormatter)
+          .optionalStart()
+          .appendOffsetId()
+          .optionalEnd()
+          .toFormatter()
+          .withZone(ZoneOffset.UTC);
   private static final DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
   private static final DateTimeFormatter timeFormatter =
       DateTimeFormatter.ofPattern("HH:mm:ss.SSSSSS");
@@ -304,7 +335,7 @@ public abstract class QueryParameterValue implements Serializable {
           return timestampFormatter.format(Instant.ofEpochMilli(((Long) value) / 1000));
         } else if (value instanceof String) {
           // verify that the String is in the right format
-          checkFormat(value, timestampFormatter);
+          checkFormat(value, timestampValidator);
           return (String) value;
         }
         break;
@@ -341,6 +372,7 @@ public abstract class QueryParameterValue implements Serializable {
 
   private static void checkFormat(Object value, DateTimeFormatter formatter) {
     try {
+
       formatter.parse((String) value);
     } catch (DateTimeParseException e) {
       throw new IllegalArgumentException(e.getMessage(), e);
