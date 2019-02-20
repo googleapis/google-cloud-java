@@ -51,10 +51,20 @@ public final class ProjectsListXpnHostsRequest implements ApiMessage {
 
   @Nullable
   @Override
+  /**
+   * The fields that should be serialized (even if they have empty values). If the containing
+   * message object has a non-null fieldmask, then all the fields in the field mask (and only those
+   * fields in the field mask) will be serialized. If the containing object does not have a
+   * fieldmask, then only non-empty fields will be serialized.
+   */
   public List<String> getFieldMask() {
     return null;
   }
 
+  /**
+   * Optional organization ID managed by Cloud Resource Manager, for which to list shared VPC host
+   * projects. If not specified, the organization will be inferred from the project.
+   */
   public String getOrganization() {
     return organization;
   }
@@ -98,10 +108,18 @@ public final class ProjectsListXpnHostsRequest implements ApiMessage {
       this.organization = source.organization;
     }
 
+    /**
+     * Optional organization ID managed by Cloud Resource Manager, for which to list shared VPC host
+     * projects. If not specified, the organization will be inferred from the project.
+     */
     public String getOrganization() {
       return organization;
     }
 
+    /**
+     * Optional organization ID managed by Cloud Resource Manager, for which to list shared VPC host
+     * projects. If not specified, the organization will be inferred from the project.
+     */
     public Builder setOrganization(String organization) {
       this.organization = organization;
       return this;

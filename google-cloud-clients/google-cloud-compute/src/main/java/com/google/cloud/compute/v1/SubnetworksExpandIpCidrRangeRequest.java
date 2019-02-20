@@ -51,10 +51,21 @@ public final class SubnetworksExpandIpCidrRangeRequest implements ApiMessage {
 
   @Nullable
   @Override
+  /**
+   * The fields that should be serialized (even if they have empty values). If the containing
+   * message object has a non-null fieldmask, then all the fields in the field mask (and only those
+   * fields in the field mask) will be serialized. If the containing object does not have a
+   * fieldmask, then only non-empty fields will be serialized.
+   */
   public List<String> getFieldMask() {
     return null;
   }
 
+  /**
+   * The IP (in CIDR format or netmask) of internal addresses that are legal on this Subnetwork.
+   * This range should be disjoint from other subnetworks within this network. This range can only
+   * be larger than (i.e. a superset of) the range previously defined before the update.
+   */
   public String getIpCidrRange() {
     return ipCidrRange;
   }
@@ -98,10 +109,20 @@ public final class SubnetworksExpandIpCidrRangeRequest implements ApiMessage {
       this.ipCidrRange = source.ipCidrRange;
     }
 
+    /**
+     * The IP (in CIDR format or netmask) of internal addresses that are legal on this Subnetwork.
+     * This range should be disjoint from other subnetworks within this network. This range can only
+     * be larger than (i.e. a superset of) the range previously defined before the update.
+     */
     public String getIpCidrRange() {
       return ipCidrRange;
     }
 
+    /**
+     * The IP (in CIDR format or netmask) of internal addresses that are legal on this Subnetwork.
+     * This range should be disjoint from other subnetworks within this network. This range can only
+     * be larger than (i.e. a superset of) the range previously defined before the update.
+     */
     public Builder setIpCidrRange(String ipCidrRange) {
       this.ipCidrRange = ipCidrRange;
       return this;

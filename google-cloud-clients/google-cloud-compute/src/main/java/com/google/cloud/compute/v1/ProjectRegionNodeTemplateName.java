@@ -169,10 +169,11 @@ public final class ProjectRegionNodeTemplateName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate(
-        "nodeTemplate", nodeTemplate,
-        "project", project,
-        "region", region);
+    return SERVICE_ADDRESS
+        + PATH_TEMPLATE.instantiate(
+            "nodeTemplate", nodeTemplate,
+            "project", project,
+            "region", region);
   }
 
   @Override

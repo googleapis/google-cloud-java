@@ -88,30 +88,52 @@ public final class UsableSubnetworksAggregatedList implements ApiMessage {
 
   @Nullable
   @Override
+  /**
+   * The fields that should be serialized (even if they have empty values). If the containing
+   * message object has a non-null fieldmask, then all the fields in the field mask (and only those
+   * fields in the field mask) will be serialized. If the containing object does not have a
+   * fieldmask, then only non-empty fields will be serialized.
+   */
   public List<String> getFieldMask() {
     return null;
   }
 
+  /**
+   * [Output Only] The unique identifier for the resource. This identifier is defined by the server.
+   */
   public String getId() {
     return id;
   }
 
+  /** [Output] A list of usable subnetwork URLs. */
   public List<UsableSubnetwork> getItemsList() {
     return items;
   }
 
+  /**
+   * [Output Only] Type of resource. Always compute#usableSubnetworksAggregatedList for aggregated
+   * lists of usable subnetworks.
+   */
   public String getKind() {
     return kind;
   }
 
+  /**
+   * [Output Only] This token allows you to get the next page of results for list requests. If the
+   * number of results is larger than maxResults, use the nextPageToken as a value for the query
+   * parameter pageToken in the next list request. Subsequent list requests will have their own
+   * nextPageToken to continue paging through the results.
+   */
   public String getNextPageToken() {
     return nextPageToken;
   }
 
+  /** [Output Only] Server-defined URL for this resource. */
   public String getSelfLink() {
     return selfLink;
   }
 
+  /** [Output Only] Informational warning message. */
   public Warning getWarning() {
     return warning;
   }
@@ -180,19 +202,29 @@ public final class UsableSubnetworksAggregatedList implements ApiMessage {
       this.warning = source.warning;
     }
 
+    /**
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the
+     * server.
+     */
     public String getId() {
       return id;
     }
 
+    /**
+     * [Output Only] The unique identifier for the resource. This identifier is defined by the
+     * server.
+     */
     public Builder setId(String id) {
       this.id = id;
       return this;
     }
 
+    /** [Output] A list of usable subnetwork URLs. */
     public List<UsableSubnetwork> getItemsList() {
       return items;
     }
 
+    /** [Output] A list of usable subnetwork URLs. */
     public Builder addAllItems(List<UsableSubnetwork> items) {
       if (this.items == null) {
         this.items = new LinkedList<>();
@@ -201,6 +233,7 @@ public final class UsableSubnetworksAggregatedList implements ApiMessage {
       return this;
     }
 
+    /** [Output] A list of usable subnetwork URLs. */
     public Builder addItems(UsableSubnetwork items) {
       if (this.items == null) {
         this.items = new LinkedList<>();
@@ -209,37 +242,61 @@ public final class UsableSubnetworksAggregatedList implements ApiMessage {
       return this;
     }
 
+    /**
+     * [Output Only] Type of resource. Always compute#usableSubnetworksAggregatedList for aggregated
+     * lists of usable subnetworks.
+     */
     public String getKind() {
       return kind;
     }
 
+    /**
+     * [Output Only] Type of resource. Always compute#usableSubnetworksAggregatedList for aggregated
+     * lists of usable subnetworks.
+     */
     public Builder setKind(String kind) {
       this.kind = kind;
       return this;
     }
 
+    /**
+     * [Output Only] This token allows you to get the next page of results for list requests. If the
+     * number of results is larger than maxResults, use the nextPageToken as a value for the query
+     * parameter pageToken in the next list request. Subsequent list requests will have their own
+     * nextPageToken to continue paging through the results.
+     */
     public String getNextPageToken() {
       return nextPageToken;
     }
 
+    /**
+     * [Output Only] This token allows you to get the next page of results for list requests. If the
+     * number of results is larger than maxResults, use the nextPageToken as a value for the query
+     * parameter pageToken in the next list request. Subsequent list requests will have their own
+     * nextPageToken to continue paging through the results.
+     */
     public Builder setNextPageToken(String nextPageToken) {
       this.nextPageToken = nextPageToken;
       return this;
     }
 
+    /** [Output Only] Server-defined URL for this resource. */
     public String getSelfLink() {
       return selfLink;
     }
 
+    /** [Output Only] Server-defined URL for this resource. */
     public Builder setSelfLink(String selfLink) {
       this.selfLink = selfLink;
       return this;
     }
 
+    /** [Output Only] Informational warning message. */
     public Warning getWarning() {
       return warning;
     }
 
+    /** [Output Only] Informational warning message. */
     public Builder setWarning(Warning warning) {
       this.warning = warning;
       return this;

@@ -24,6 +24,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/** Authorization-related information used by Cloud Audit Logging. */
 public final class AuthorizationLoggingOptions implements ApiMessage {
   private final String permissionType;
 
@@ -51,10 +52,17 @@ public final class AuthorizationLoggingOptions implements ApiMessage {
 
   @Nullable
   @Override
+  /**
+   * The fields that should be serialized (even if they have empty values). If the containing
+   * message object has a non-null fieldmask, then all the fields in the field mask (and only those
+   * fields in the field mask) will be serialized. If the containing object does not have a
+   * fieldmask, then only non-empty fields will be serialized.
+   */
   public List<String> getFieldMask() {
     return null;
   }
 
+  /** The type of the permission that was checked. */
   public String getPermissionType() {
     return permissionType;
   }
@@ -98,10 +106,12 @@ public final class AuthorizationLoggingOptions implements ApiMessage {
       this.permissionType = source.permissionType;
     }
 
+    /** The type of the permission that was checked. */
     public String getPermissionType() {
       return permissionType;
     }
 
+    /** The type of the permission that was checked. */
     public Builder setPermissionType(String permissionType) {
       this.permissionType = permissionType;
       return this;

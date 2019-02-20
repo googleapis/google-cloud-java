@@ -614,7 +614,8 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
     }
     if (category_
         != com.google.cloud.vision.v1p3beta1.ProductSearchCategory
-            .PRODUCT_SEARCH_CATEGORY_UNSPECIFIED.getNumber()) {
+            .PRODUCT_SEARCH_CATEGORY_UNSPECIFIED
+            .getNumber()) {
       output.writeEnum(2, category_);
     }
     if (normalizedBoundingPoly_ != null) {
@@ -652,7 +653,8 @@ public final class ProductSearchParams extends com.google.protobuf.GeneratedMess
     }
     if (category_
         != com.google.cloud.vision.v1p3beta1.ProductSearchCategory
-            .PRODUCT_SEARCH_CATEGORY_UNSPECIFIED.getNumber()) {
+            .PRODUCT_SEARCH_CATEGORY_UNSPECIFIED
+            .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, category_);
     }
     if (normalizedBoundingPoly_ != null) {

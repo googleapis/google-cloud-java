@@ -58,14 +58,22 @@ public final class NodeGroupsScopedList implements ApiMessage {
 
   @Nullable
   @Override
+  /**
+   * The fields that should be serialized (even if they have empty values). If the containing
+   * message object has a non-null fieldmask, then all the fields in the field mask (and only those
+   * fields in the field mask) will be serialized. If the containing object does not have a
+   * fieldmask, then only non-empty fields will be serialized.
+   */
   public List<String> getFieldMask() {
     return null;
   }
 
+  /** [Output Only] A list of node groups contained in this scope. */
   public List<NodeGroup> getNodeGroupsList() {
     return nodeGroups;
   }
 
+  /** [Output Only] An informational warning that appears when the nodeGroup list is empty. */
   public Warning getWarning() {
     return warning;
   }
@@ -114,10 +122,12 @@ public final class NodeGroupsScopedList implements ApiMessage {
       this.warning = source.warning;
     }
 
+    /** [Output Only] A list of node groups contained in this scope. */
     public List<NodeGroup> getNodeGroupsList() {
       return nodeGroups;
     }
 
+    /** [Output Only] A list of node groups contained in this scope. */
     public Builder addAllNodeGroups(List<NodeGroup> nodeGroups) {
       if (this.nodeGroups == null) {
         this.nodeGroups = new LinkedList<>();
@@ -126,6 +136,7 @@ public final class NodeGroupsScopedList implements ApiMessage {
       return this;
     }
 
+    /** [Output Only] A list of node groups contained in this scope. */
     public Builder addNodeGroups(NodeGroup nodeGroups) {
       if (this.nodeGroups == null) {
         this.nodeGroups = new LinkedList<>();
@@ -134,10 +145,12 @@ public final class NodeGroupsScopedList implements ApiMessage {
       return this;
     }
 
+    /** [Output Only] An informational warning that appears when the nodeGroup list is empty. */
     public Warning getWarning() {
       return warning;
     }
 
+    /** [Output Only] An informational warning that appears when the nodeGroup list is empty. */
     public Builder setWarning(Warning warning) {
       this.warning = warning;
       return this;

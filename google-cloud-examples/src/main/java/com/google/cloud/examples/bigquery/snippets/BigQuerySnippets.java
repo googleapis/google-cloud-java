@@ -70,7 +70,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.concurrent.TimeoutException;
-import org.joda.time.DateTime;
+import org.threeten.bp.Instant;
+import org.threeten.bp.temporal.ChronoUnit;
 
 /** This class contains a number of snippets for the {@link BigQuery} interface. */
 public class BigQuerySnippets {
@@ -134,7 +135,7 @@ public class BigQuerySnippets {
     Table beforeTable = bigquery.getTable(datasetName, tableName);
 
     // Set table to expire 5 days from now.
-    long expirationMillis = DateTime.now().plusDays(5).getMillis();
+    long expirationMillis = Instant.now().plus(5, ChronoUnit.DAYS).toEpochMilli();
     TableInfo tableInfo = beforeTable.toBuilder().setExpirationTime(expirationMillis).build();
     Table afterTable = bigquery.update(tableInfo);
     // [END bigquery_update_table_expiration]

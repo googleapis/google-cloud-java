@@ -114,7 +114,7 @@ public interface AttemptOrBuilder
    *
    *
    * <pre>
-   * Output only. The response from the target for this attempt.
+   * Output only. The response from the worker for this attempt.
    * If `response_time` is unset, then the task has not been attempted or is
    * currently running and the `response_status` field is meaningless.
    * </pre>
@@ -126,7 +126,7 @@ public interface AttemptOrBuilder
    *
    *
    * <pre>
-   * Output only. The response from the target for this attempt.
+   * Output only. The response from the worker for this attempt.
    * If `response_time` is unset, then the task has not been attempted or is
    * currently running and the `response_status` field is meaningless.
    * </pre>
@@ -138,7 +138,7 @@ public interface AttemptOrBuilder
    *
    *
    * <pre>
-   * Output only. The response from the target for this attempt.
+   * Output only. The response from the worker for this attempt.
    * If `response_time` is unset, then the task has not been attempted or is
    * currently running and the `response_status` field is meaningless.
    * </pre>

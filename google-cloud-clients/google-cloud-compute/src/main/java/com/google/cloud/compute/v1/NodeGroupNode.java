@@ -70,18 +70,27 @@ public final class NodeGroupNode implements ApiMessage {
 
   @Nullable
   @Override
+  /**
+   * The fields that should be serialized (even if they have empty values). If the containing
+   * message object has a non-null fieldmask, then all the fields in the field mask (and only those
+   * fields in the field mask) will be serialized. If the containing object does not have a
+   * fieldmask, then only non-empty fields will be serialized.
+   */
   public List<String> getFieldMask() {
     return null;
   }
 
+  /** Instances scheduled on this node. */
   public List<String> getInstancesList() {
     return instances;
   }
 
+  /** The name of the node. */
   public String getName() {
     return name;
   }
 
+  /** The type of this node. */
   public String getNodeType() {
     return nodeType;
   }
@@ -144,10 +153,12 @@ public final class NodeGroupNode implements ApiMessage {
       this.status = source.status;
     }
 
+    /** Instances scheduled on this node. */
     public List<String> getInstancesList() {
       return instances;
     }
 
+    /** Instances scheduled on this node. */
     public Builder addAllInstances(List<String> instances) {
       if (this.instances == null) {
         this.instances = new LinkedList<>();
@@ -156,6 +167,7 @@ public final class NodeGroupNode implements ApiMessage {
       return this;
     }
 
+    /** Instances scheduled on this node. */
     public Builder addInstances(String instances) {
       if (this.instances == null) {
         this.instances = new LinkedList<>();
@@ -164,19 +176,23 @@ public final class NodeGroupNode implements ApiMessage {
       return this;
     }
 
+    /** The name of the node. */
     public String getName() {
       return name;
     }
 
+    /** The name of the node. */
     public Builder setName(String name) {
       this.name = name;
       return this;
     }
 
+    /** The type of this node. */
     public String getNodeType() {
       return nodeType;
     }
 
+    /** The type of this node. */
     public Builder setNodeType(String nodeType) {
       this.nodeType = nodeType;
       return this;

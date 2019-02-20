@@ -34,6 +34,7 @@ import java.net.URL;
 public class MetadataConfig {
 
   private static final String METADATA_URL = "http://metadata.google.internal/computeMetadata/v1/";
+  private static final int TIMEOUT_MS = 5000;
 
   private MetadataConfig() {}
 
@@ -69,6 +70,8 @@ public class MetadataConfig {
     try {
       URL url = new URL(METADATA_URL + attributeName);
       HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+      connection.setConnectTimeout(TIMEOUT_MS);
+      connection.setReadTimeout(TIMEOUT_MS);
       connection.setRequestProperty("Metadata-Flavor", "Google");
       InputStream input = connection.getInputStream();
       if (connection.getResponseCode() == 200) {

@@ -58,14 +58,22 @@ public final class VpnTunnelsScopedList implements ApiMessage {
 
   @Nullable
   @Override
+  /**
+   * The fields that should be serialized (even if they have empty values). If the containing
+   * message object has a non-null fieldmask, then all the fields in the field mask (and only those
+   * fields in the field mask) will be serialized. If the containing object does not have a
+   * fieldmask, then only non-empty fields will be serialized.
+   */
   public List<String> getFieldMask() {
     return null;
   }
 
+  /** A list of vpn tunnels contained in this scope. */
   public List<VpnTunnel> getVpnTunnelsList() {
     return vpnTunnels;
   }
 
+  /** Informational warning which replaces the list of addresses when the list is empty. */
   public Warning getWarning() {
     return warning;
   }
@@ -114,10 +122,12 @@ public final class VpnTunnelsScopedList implements ApiMessage {
       this.warning = source.warning;
     }
 
+    /** A list of vpn tunnels contained in this scope. */
     public List<VpnTunnel> getVpnTunnelsList() {
       return vpnTunnels;
     }
 
+    /** A list of vpn tunnels contained in this scope. */
     public Builder addAllVpnTunnels(List<VpnTunnel> vpnTunnels) {
       if (this.vpnTunnels == null) {
         this.vpnTunnels = new LinkedList<>();
@@ -126,6 +136,7 @@ public final class VpnTunnelsScopedList implements ApiMessage {
       return this;
     }
 
+    /** A list of vpn tunnels contained in this scope. */
     public Builder addVpnTunnels(VpnTunnel vpnTunnels) {
       if (this.vpnTunnels == null) {
         this.vpnTunnels = new LinkedList<>();
@@ -134,10 +145,12 @@ public final class VpnTunnelsScopedList implements ApiMessage {
       return this;
     }
 
+    /** Informational warning which replaces the list of addresses when the list is empty. */
     public Warning getWarning() {
       return warning;
     }
 
+    /** Informational warning which replaces the list of addresses when the list is empty. */
     public Builder setWarning(Warning warning) {
       this.warning = warning;
       return this;

@@ -26,6 +26,7 @@ import com.google.api.gax.rpc.BatchingCallSettings;
 import com.google.api.gax.rpc.ServerStreamingCallSettings;
 import com.google.api.gax.rpc.StatusCode.Code;
 import com.google.api.gax.rpc.StubSettings;
+import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.cloud.bigtable.data.v2.internal.DummyBatchingDescriptor;
 import com.google.cloud.bigtable.data.v2.models.ConditionalRowMutation;
@@ -151,16 +152,6 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
     return new Builder();
   }
 
-  /**
-   * Returns the target instance.
-   *
-   * @deprecated Please use {@link #getProjectId()} and {@link #getInstanceId()}
-   */
-  @Deprecated
-  public com.google.cloud.bigtable.data.v2.models.InstanceName getInstanceName() {
-    return com.google.cloud.bigtable.data.v2.models.InstanceName.of(projectId, instanceId);
-  }
-
   /** Returns the project id of the target instance. */
   public String getProjectId() {
     return projectId;
@@ -174,6 +165,19 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
   /** Returns the configured AppProfile to use */
   public String getAppProfileId() {
     return appProfileId;
+  }
+
+  /** Returns a builder for the default ChannelProvider for this service. */
+  public static InstantiatingGrpcChannelProvider.Builder defaultGrpcTransportProviderBuilder() {
+    return BigtableStubSettings.defaultGrpcTransportProviderBuilder()
+        // TODO: tune channels
+        .setChannelsPerCpu(2)
+        .setMaxInboundMessageSize(MAX_MESSAGE_SIZE);
+  }
+
+  @SuppressWarnings("WeakerAccess")
+  public static TransportChannelProvider defaultTransportChannelProvider() {
+    return defaultGrpcTransportProviderBuilder().build();
   }
 
   /** Returns a builder for the default credentials for this service. */
@@ -260,12 +264,7 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
       BigtableStubSettings.Builder baseDefaults = BigtableStubSettings.newBuilder();
 
       setEndpoint(baseDefaults.getEndpoint());
-      setTransportChannelProvider(
-          InstantiatingGrpcChannelProvider.newBuilder()
-              // TODO: tune channels
-              .setChannelsPerCpu(2)
-              .setMaxInboundMessageSize(MAX_MESSAGE_SIZE)
-              .build());
+      setTransportChannelProvider(defaultTransportChannelProvider());
       setStreamWatchdogCheckInterval(baseDefaults.getStreamWatchdogCheckInterval());
       setStreamWatchdogProvider(baseDefaults.getStreamWatchdogProvider());
 
@@ -350,35 +349,6 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
     // </editor-fold>
 
     // <editor-fold desc="Public API">
-    /**
-     * Sets the target instance. This setting is required. All RPCs will be made in the context of
-     * this setting.
-     *
-     * @deprecated Please use {@link #setProjectId(String)} and {@link #setInstanceId(String)}.
-     */
-    @Deprecated
-    public Builder setInstanceName(
-        @Nonnull com.google.cloud.bigtable.data.v2.models.InstanceName instanceName) {
-      Preconditions.checkNotNull(instanceName);
-      this.projectId = instanceName.getProject();
-      this.instanceId = instanceName.getInstance();
-      return this;
-    }
-
-    /**
-     * Gets the {@link com.google.cloud.bigtable.data.v2.models.InstanceName} that was previously
-     * set on this Builder.
-     *
-     * @deprecated Please use {@link #getProjectId()} and {@link #getInstanceId()}.
-     */
-    @Deprecated
-    public com.google.cloud.bigtable.data.v2.models.InstanceName getInstanceName() {
-      if (projectId != null && instanceId != null) {
-        return com.google.cloud.bigtable.data.v2.models.InstanceName.of(projectId, instanceId);
-      }
-      return null;
-    }
-
     /**
      * Sets the project id of that target instance. This setting is required. All RPCs will be made
      * in the context of this setting.

@@ -149,9 +149,10 @@ public final class ProjectGlobalBackendBucketName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate(
-        "backendBucket", backendBucket,
-        "project", project);
+    return SERVICE_ADDRESS
+        + PATH_TEMPLATE.instantiate(
+            "backendBucket", backendBucket,
+            "project", project);
   }
 
   @Override

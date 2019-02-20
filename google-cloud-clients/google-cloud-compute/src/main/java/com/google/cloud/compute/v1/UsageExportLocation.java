@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * The location in Cloud Storage and naming method of the daily usage report. Contains bucket_name
+ * and report_name prefix.
+ */
 public final class UsageExportLocation implements ApiMessage {
   private final String bucketName;
   private final String reportNamePrefix;
@@ -57,14 +61,32 @@ public final class UsageExportLocation implements ApiMessage {
 
   @Nullable
   @Override
+  /**
+   * The fields that should be serialized (even if they have empty values). If the containing
+   * message object has a non-null fieldmask, then all the fields in the field mask (and only those
+   * fields in the field mask) will be serialized. If the containing object does not have a
+   * fieldmask, then only non-empty fields will be serialized.
+   */
   public List<String> getFieldMask() {
     return null;
   }
 
+  /**
+   * The name of an existing bucket in Cloud Storage where the usage report object is stored. The
+   * Google Service Account is granted write access to this bucket. This can either be the bucket
+   * name by itself, such as example-bucket, or the bucket name with gs:// or
+   * https://storage.googleapis.com/ in front of it, such as gs://example-bucket.
+   */
   public String getBucketName() {
     return bucketName;
   }
 
+  /**
+   * An optional prefix for the name of the usage report object stored in bucketName. If not
+   * supplied, defaults to usage. The report is stored as a CSV file named
+   * report_name_prefix_gce_YYYYMMDD.csv where YYYYMMDD is the day of the usage according to Pacific
+   * Time. If you supply a prefix, it should conform to Cloud Storage object naming conventions.
+   */
   public String getReportNamePrefix() {
     return reportNamePrefix;
   }
@@ -113,19 +135,45 @@ public final class UsageExportLocation implements ApiMessage {
       this.reportNamePrefix = source.reportNamePrefix;
     }
 
+    /**
+     * The name of an existing bucket in Cloud Storage where the usage report object is stored. The
+     * Google Service Account is granted write access to this bucket. This can either be the bucket
+     * name by itself, such as example-bucket, or the bucket name with gs:// or
+     * https://storage.googleapis.com/ in front of it, such as gs://example-bucket.
+     */
     public String getBucketName() {
       return bucketName;
     }
 
+    /**
+     * The name of an existing bucket in Cloud Storage where the usage report object is stored. The
+     * Google Service Account is granted write access to this bucket. This can either be the bucket
+     * name by itself, such as example-bucket, or the bucket name with gs:// or
+     * https://storage.googleapis.com/ in front of it, such as gs://example-bucket.
+     */
     public Builder setBucketName(String bucketName) {
       this.bucketName = bucketName;
       return this;
     }
 
+    /**
+     * An optional prefix for the name of the usage report object stored in bucketName. If not
+     * supplied, defaults to usage. The report is stored as a CSV file named
+     * report_name_prefix_gce_YYYYMMDD.csv where YYYYMMDD is the day of the usage according to
+     * Pacific Time. If you supply a prefix, it should conform to Cloud Storage object naming
+     * conventions.
+     */
     public String getReportNamePrefix() {
       return reportNamePrefix;
     }
 
+    /**
+     * An optional prefix for the name of the usage report object stored in bucketName. If not
+     * supplied, defaults to usage. The report is stored as a CSV file named
+     * report_name_prefix_gce_YYYYMMDD.csv where YYYYMMDD is the day of the usage according to
+     * Pacific Time. If you supply a prefix, it should conform to Cloud Storage object naming
+     * conventions.
+     */
     public Builder setReportNamePrefix(String reportNamePrefix) {
       this.reportNamePrefix = reportNamePrefix;
       return this;

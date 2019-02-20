@@ -51,10 +51,17 @@ public final class RegionInstanceGroupManagersSetTemplateRequest implements ApiM
 
   @Nullable
   @Override
+  /**
+   * The fields that should be serialized (even if they have empty values). If the containing
+   * message object has a non-null fieldmask, then all the fields in the field mask (and only those
+   * fields in the field mask) will be serialized. If the containing object does not have a
+   * fieldmask, then only non-empty fields will be serialized.
+   */
   public List<String> getFieldMask() {
     return null;
   }
 
+  /** URL of the InstanceTemplate resource from which all new instances will be created. */
   public String getInstanceTemplate() {
     return instanceTemplate;
   }
@@ -98,10 +105,12 @@ public final class RegionInstanceGroupManagersSetTemplateRequest implements ApiM
       this.instanceTemplate = source.instanceTemplate;
     }
 
+    /** URL of the InstanceTemplate resource from which all new instances will be created. */
     public String getInstanceTemplate() {
       return instanceTemplate;
     }
 
+    /** URL of the InstanceTemplate resource from which all new instances will be created. */
     public Builder setInstanceTemplate(String instanceTemplate) {
       this.instanceTemplate = instanceTemplate;
       return this;

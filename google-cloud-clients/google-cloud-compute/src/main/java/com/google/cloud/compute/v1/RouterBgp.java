@@ -74,22 +74,46 @@ public final class RouterBgp implements ApiMessage {
 
   @Nullable
   @Override
+  /**
+   * The fields that should be serialized (even if they have empty values). If the containing
+   * message object has a non-null fieldmask, then all the fields in the field mask (and only those
+   * fields in the field mask) will be serialized. If the containing object does not have a
+   * fieldmask, then only non-empty fields will be serialized.
+   */
   public List<String> getFieldMask() {
     return null;
   }
 
+  /** User-specified flag to indicate which mode to use for advertisement. */
   public String getAdvertiseMode() {
     return advertiseMode;
   }
 
+  /**
+   * User-specified list of prefix groups to advertise in custom mode. This field can only be
+   * populated if advertise_mode is CUSTOM and is advertised to all peers of the router. These
+   * groups will be advertised in addition to any specified prefixes. Leave this field blank to
+   * advertise no custom groups.
+   */
   public List<String> getAdvertisedGroupsList() {
     return advertisedGroups;
   }
 
+  /**
+   * User-specified list of individual IP ranges to advertise in custom mode. This field can only be
+   * populated if advertise_mode is CUSTOM and is advertised to all peers of the router. These IP
+   * ranges will be advertised in addition to any specified groups. Leave this field blank to
+   * advertise no custom IP ranges.
+   */
   public List<RouterAdvertisedIpRange> getAdvertisedIpRangesList() {
     return advertisedIpRanges;
   }
 
+  /**
+   * Local BGP Autonomous System Number (ASN). Must be an RFC6996 private ASN, either 16-bit or
+   * 32-bit. The value will be fixed for this router resource. All VPN tunnels that link to this
+   * router will have the same local ASN.
+   */
   public Integer getAsn() {
     return asn;
   }
@@ -148,19 +172,33 @@ public final class RouterBgp implements ApiMessage {
       this.asn = source.asn;
     }
 
+    /** User-specified flag to indicate which mode to use for advertisement. */
     public String getAdvertiseMode() {
       return advertiseMode;
     }
 
+    /** User-specified flag to indicate which mode to use for advertisement. */
     public Builder setAdvertiseMode(String advertiseMode) {
       this.advertiseMode = advertiseMode;
       return this;
     }
 
+    /**
+     * User-specified list of prefix groups to advertise in custom mode. This field can only be
+     * populated if advertise_mode is CUSTOM and is advertised to all peers of the router. These
+     * groups will be advertised in addition to any specified prefixes. Leave this field blank to
+     * advertise no custom groups.
+     */
     public List<String> getAdvertisedGroupsList() {
       return advertisedGroups;
     }
 
+    /**
+     * User-specified list of prefix groups to advertise in custom mode. This field can only be
+     * populated if advertise_mode is CUSTOM and is advertised to all peers of the router. These
+     * groups will be advertised in addition to any specified prefixes. Leave this field blank to
+     * advertise no custom groups.
+     */
     public Builder addAllAdvertisedGroups(List<String> advertisedGroups) {
       if (this.advertisedGroups == null) {
         this.advertisedGroups = new LinkedList<>();
@@ -169,6 +207,12 @@ public final class RouterBgp implements ApiMessage {
       return this;
     }
 
+    /**
+     * User-specified list of prefix groups to advertise in custom mode. This field can only be
+     * populated if advertise_mode is CUSTOM and is advertised to all peers of the router. These
+     * groups will be advertised in addition to any specified prefixes. Leave this field blank to
+     * advertise no custom groups.
+     */
     public Builder addAdvertisedGroups(String advertisedGroups) {
       if (this.advertisedGroups == null) {
         this.advertisedGroups = new LinkedList<>();
@@ -177,10 +221,22 @@ public final class RouterBgp implements ApiMessage {
       return this;
     }
 
+    /**
+     * User-specified list of individual IP ranges to advertise in custom mode. This field can only
+     * be populated if advertise_mode is CUSTOM and is advertised to all peers of the router. These
+     * IP ranges will be advertised in addition to any specified groups. Leave this field blank to
+     * advertise no custom IP ranges.
+     */
     public List<RouterAdvertisedIpRange> getAdvertisedIpRangesList() {
       return advertisedIpRanges;
     }
 
+    /**
+     * User-specified list of individual IP ranges to advertise in custom mode. This field can only
+     * be populated if advertise_mode is CUSTOM and is advertised to all peers of the router. These
+     * IP ranges will be advertised in addition to any specified groups. Leave this field blank to
+     * advertise no custom IP ranges.
+     */
     public Builder addAllAdvertisedIpRanges(List<RouterAdvertisedIpRange> advertisedIpRanges) {
       if (this.advertisedIpRanges == null) {
         this.advertisedIpRanges = new LinkedList<>();
@@ -189,6 +245,12 @@ public final class RouterBgp implements ApiMessage {
       return this;
     }
 
+    /**
+     * User-specified list of individual IP ranges to advertise in custom mode. This field can only
+     * be populated if advertise_mode is CUSTOM and is advertised to all peers of the router. These
+     * IP ranges will be advertised in addition to any specified groups. Leave this field blank to
+     * advertise no custom IP ranges.
+     */
     public Builder addAdvertisedIpRanges(RouterAdvertisedIpRange advertisedIpRanges) {
       if (this.advertisedIpRanges == null) {
         this.advertisedIpRanges = new LinkedList<>();
@@ -197,10 +259,20 @@ public final class RouterBgp implements ApiMessage {
       return this;
     }
 
+    /**
+     * Local BGP Autonomous System Number (ASN). Must be an RFC6996 private ASN, either 16-bit or
+     * 32-bit. The value will be fixed for this router resource. All VPN tunnels that link to this
+     * router will have the same local ASN.
+     */
     public Integer getAsn() {
       return asn;
     }
 
+    /**
+     * Local BGP Autonomous System Number (ASN). Must be an RFC6996 private ASN, either 16-bit or
+     * 32-bit. The value will be fixed for this router resource. All VPN tunnels that link to this
+     * router will have the same local ASN.
+     */
     public Builder setAsn(Integer asn) {
       this.asn = asn;
       return this;

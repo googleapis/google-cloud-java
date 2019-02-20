@@ -423,7 +423,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (messageType_
         != com.google.cloud.dialogflow.v2.StreamingRecognitionResult.MessageType
-            .MESSAGE_TYPE_UNSPECIFIED.getNumber()) {
+            .MESSAGE_TYPE_UNSPECIFIED
+            .getNumber()) {
       output.writeEnum(1, messageType_);
     }
     if (!getTranscriptBytes().isEmpty()) {
@@ -446,7 +447,8 @@ public final class StreamingRecognitionResult extends com.google.protobuf.Genera
     size = 0;
     if (messageType_
         != com.google.cloud.dialogflow.v2.StreamingRecognitionResult.MessageType
-            .MESSAGE_TYPE_UNSPECIFIED.getNumber()) {
+            .MESSAGE_TYPE_UNSPECIFIED
+            .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, messageType_);
     }
     if (!getTranscriptBytes().isEmpty()) {

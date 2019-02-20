@@ -175,10 +175,11 @@ public final class ProjectRegionInterconnectAttachmentName implements ResourceNa
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate(
-        "interconnectAttachment", interconnectAttachment,
-        "project", project,
-        "region", region);
+    return SERVICE_ADDRESS
+        + PATH_TEMPLATE.instantiate(
+            "interconnectAttachment", interconnectAttachment,
+            "project", project,
+            "region", region);
   }
 
   @Override

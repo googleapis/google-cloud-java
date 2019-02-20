@@ -150,6 +150,22 @@ final class StorageImpl extends BaseService<StorageOptions> implements Storage {
   }
 
   @Override
+  public Blob create(
+      BlobInfo blobInfo, byte[] content, int offset, int length, BlobTargetOption... options) {
+    content = firstNonNull(content, EMPTY_BYTE_ARRAY);
+    byte[] subContent = Arrays.copyOfRange(content, offset, offset + length);
+    BlobInfo updatedInfo =
+        blobInfo
+            .toBuilder()
+            .setMd5(BaseEncoding.base64().encode(Hashing.md5().hashBytes(subContent).asBytes()))
+            .setCrc32c(
+                BaseEncoding.base64()
+                    .encode(Ints.toByteArray(Hashing.crc32c().hashBytes(subContent).asInt())))
+            .build();
+    return internalCreate(updatedInfo, subContent, options);
+  }
+
+  @Override
   @Deprecated
   public Blob create(BlobInfo blobInfo, InputStream content, BlobWriteOption... options) {
     Tuple<BlobInfo, BlobTargetOption[]> targetOptions = BlobTargetOption.convert(blobInfo, options);

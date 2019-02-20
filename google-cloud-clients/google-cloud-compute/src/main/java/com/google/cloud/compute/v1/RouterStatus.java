@@ -81,14 +81,22 @@ public final class RouterStatus implements ApiMessage {
 
   @Nullable
   @Override
+  /**
+   * The fields that should be serialized (even if they have empty values). If the containing
+   * message object has a non-null fieldmask, then all the fields in the field mask (and only those
+   * fields in the field mask) will be serialized. If the containing object does not have a
+   * fieldmask, then only non-empty fields will be serialized.
+   */
   public List<String> getFieldMask() {
     return null;
   }
 
+  /** Best routes for this router's network. */
   public List<Route> getBestRoutesList() {
     return bestRoutes;
   }
 
+  /** Best routes learned by this router. */
   public List<Route> getBestRoutesForRouterList() {
     return bestRoutesForRouter;
   }
@@ -101,6 +109,7 @@ public final class RouterStatus implements ApiMessage {
     return natStatus;
   }
 
+  /** URI of the network to which this router belongs. */
   public String getNetwork() {
     return network;
   }
@@ -164,10 +173,12 @@ public final class RouterStatus implements ApiMessage {
       this.network = source.network;
     }
 
+    /** Best routes for this router's network. */
     public List<Route> getBestRoutesList() {
       return bestRoutes;
     }
 
+    /** Best routes for this router's network. */
     public Builder addAllBestRoutes(List<Route> bestRoutes) {
       if (this.bestRoutes == null) {
         this.bestRoutes = new LinkedList<>();
@@ -176,6 +187,7 @@ public final class RouterStatus implements ApiMessage {
       return this;
     }
 
+    /** Best routes for this router's network. */
     public Builder addBestRoutes(Route bestRoutes) {
       if (this.bestRoutes == null) {
         this.bestRoutes = new LinkedList<>();
@@ -184,10 +196,12 @@ public final class RouterStatus implements ApiMessage {
       return this;
     }
 
+    /** Best routes learned by this router. */
     public List<Route> getBestRoutesForRouterList() {
       return bestRoutesForRouter;
     }
 
+    /** Best routes learned by this router. */
     public Builder addAllBestRoutesForRouter(List<Route> bestRoutesForRouter) {
       if (this.bestRoutesForRouter == null) {
         this.bestRoutesForRouter = new LinkedList<>();
@@ -196,6 +210,7 @@ public final class RouterStatus implements ApiMessage {
       return this;
     }
 
+    /** Best routes learned by this router. */
     public Builder addBestRoutesForRouter(Route bestRoutesForRouter) {
       if (this.bestRoutesForRouter == null) {
         this.bestRoutesForRouter = new LinkedList<>();
@@ -244,10 +259,12 @@ public final class RouterStatus implements ApiMessage {
       return this;
     }
 
+    /** URI of the network to which this router belongs. */
     public String getNetwork() {
       return network;
     }
 
+    /** URI of the network to which this router belongs. */
     public Builder setNetwork(String network) {
       this.network = network;
       return this;

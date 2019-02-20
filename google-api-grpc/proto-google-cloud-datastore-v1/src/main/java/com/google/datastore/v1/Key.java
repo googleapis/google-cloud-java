@@ -110,8 +110,9 @@ public final class Key extends com.google.protobuf.GeneratedMessageV3
   protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
       internalGetFieldAccessorTable() {
     return com.google.datastore.v1.EntityProto
-        .internal_static_google_datastore_v1_Key_fieldAccessorTable.ensureFieldAccessorsInitialized(
-        com.google.datastore.v1.Key.class, com.google.datastore.v1.Key.Builder.class);
+        .internal_static_google_datastore_v1_Key_fieldAccessorTable
+        .ensureFieldAccessorsInitialized(
+            com.google.datastore.v1.Key.class, com.google.datastore.v1.Key.Builder.class);
   }
 
   public interface PathElementOrBuilder

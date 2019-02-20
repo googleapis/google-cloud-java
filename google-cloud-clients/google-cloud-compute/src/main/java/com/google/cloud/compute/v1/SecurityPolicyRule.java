@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Represents a rule that describes one or more match conditions along with the action to be taken
+ * when traffic matches this condition (allow or deny).
+ */
 public final class SecurityPolicyRule implements ApiMessage {
   private final String action;
   private final String description;
@@ -87,30 +91,56 @@ public final class SecurityPolicyRule implements ApiMessage {
 
   @Nullable
   @Override
+  /**
+   * The fields that should be serialized (even if they have empty values). If the containing
+   * message object has a non-null fieldmask, then all the fields in the field mask (and only those
+   * fields in the field mask) will be serialized. If the containing object does not have a
+   * fieldmask, then only non-empty fields will be serialized.
+   */
   public List<String> getFieldMask() {
     return null;
   }
 
+  /**
+   * The Action to preform when the client connection triggers the rule. Can currently be either
+   * "allow" or "deny()" where valid values for status are 403, 404, and 502.
+   */
   public String getAction() {
     return action;
   }
 
+  /**
+   * An optional description of this resource. Provide this property when you create the resource.
+   */
   public String getDescription() {
     return description;
   }
 
+  /**
+   * [Output only] Type of the resource. Always compute#securityPolicyRule for security policy rules
+   */
   public String getKind() {
     return kind;
   }
 
+  /**
+   * A match condition that incoming traffic is evaluated against. If it evaluates to true, the
+   * corresponding ?action? is enforced.
+   */
   public SecurityPolicyRuleMatcher getMatch() {
     return match;
   }
 
+  /** If set to true, the specified action is not enforced. */
   public Boolean getPreview() {
     return preview;
   }
 
+  /**
+   * An integer indicating the priority of a rule in the list. The priority must be a positive value
+   * between 0 and 2147483647. Rules are evaluated from highest to lowest priority where 0 is the
+   * highest priority and 2147483647 is the lowest prority.
+   */
   public Integer getPriority() {
     return priority;
   }
@@ -179,55 +209,97 @@ public final class SecurityPolicyRule implements ApiMessage {
       this.priority = source.priority;
     }
 
+    /**
+     * The Action to preform when the client connection triggers the rule. Can currently be either
+     * "allow" or "deny()" where valid values for status are 403, 404, and 502.
+     */
     public String getAction() {
       return action;
     }
 
+    /**
+     * The Action to preform when the client connection triggers the rule. Can currently be either
+     * "allow" or "deny()" where valid values for status are 403, 404, and 502.
+     */
     public Builder setAction(String action) {
       this.action = action;
       return this;
     }
 
+    /**
+     * An optional description of this resource. Provide this property when you create the resource.
+     */
     public String getDescription() {
       return description;
     }
 
+    /**
+     * An optional description of this resource. Provide this property when you create the resource.
+     */
     public Builder setDescription(String description) {
       this.description = description;
       return this;
     }
 
+    /**
+     * [Output only] Type of the resource. Always compute#securityPolicyRule for security policy
+     * rules
+     */
     public String getKind() {
       return kind;
     }
 
+    /**
+     * [Output only] Type of the resource. Always compute#securityPolicyRule for security policy
+     * rules
+     */
     public Builder setKind(String kind) {
       this.kind = kind;
       return this;
     }
 
+    /**
+     * A match condition that incoming traffic is evaluated against. If it evaluates to true, the
+     * corresponding ?action? is enforced.
+     */
     public SecurityPolicyRuleMatcher getMatch() {
       return match;
     }
 
+    /**
+     * A match condition that incoming traffic is evaluated against. If it evaluates to true, the
+     * corresponding ?action? is enforced.
+     */
     public Builder setMatch(SecurityPolicyRuleMatcher match) {
       this.match = match;
       return this;
     }
 
+    /** If set to true, the specified action is not enforced. */
     public Boolean getPreview() {
       return preview;
     }
 
+    /** If set to true, the specified action is not enforced. */
     public Builder setPreview(Boolean preview) {
       this.preview = preview;
       return this;
     }
 
+    /**
+     * An integer indicating the priority of a rule in the list. The priority must be a positive
+     * value between 0 and 2147483647. Rules are evaluated from highest to lowest priority where 0
+     * is the highest priority and 2147483647 is the lowest prority.
+     */
     public Integer getPriority() {
       return priority;
     }
 
+    /**
+     * An integer indicating the priority of a rule in the list. The priority must be a positive
+     * value between 0 and 2147483647. Rules are evaluated from highest to lowest priority where 0
+     * is the highest priority and 2147483647 is the lowest prority.
+     */
     public Builder setPriority(Integer priority) {
       this.priority = priority;
       return this;

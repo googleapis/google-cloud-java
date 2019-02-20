@@ -151,9 +151,10 @@ public final class ProjectGlobalInterconnectLocationName implements ResourceName
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate(
-        "interconnectLocation", interconnectLocation,
-        "project", project);
+    return SERVICE_ADDRESS
+        + PATH_TEMPLATE.instantiate(
+            "interconnectLocation", interconnectLocation,
+            "project", project);
   }
 
   @Override

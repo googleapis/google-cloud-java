@@ -25,16 +25,17 @@ import com.google.api.core.BetaApi;
 import com.google.api.services.storage.model.ObjectAccessControl;
 import com.google.api.services.storage.model.StorageObject;
 import com.google.api.services.storage.model.StorageObject.Owner;
-import com.google.cloud.storage.Blob.Builder;
 import com.google.common.base.Function;
 import com.google.common.base.MoreObjects;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Lists;
 import com.google.common.collect.Maps;
+import com.google.common.io.BaseEncoding;
 import java.io.Serializable;
 import java.math.BigInteger;
 import java.util.AbstractMap;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -227,6 +228,14 @@ public class BlobInfo implements Serializable {
     public abstract Builder setMd5(String md5);
 
     /**
+     * Sets the MD5 hash of blob's data from hex string.
+     *
+     * @see <a href="https://cloud.google.com/storage/docs/hashes-etags#_JSONAPI">Hashes and ETags:
+     *     Best Practices</a>
+     */
+    public abstract Builder setMd5FromHexString(String md5HexString);
+
+    /**
      * Sets the CRC32C checksum of blob's data as described in <a
      * href="http://tools.ietf.org/html/rfc4960#appendix-B">RFC 4960, Appendix B;</a> encoded in
      * base64 in big-endian order.
@@ -235,6 +244,16 @@ public class BlobInfo implements Serializable {
      *     Best Practices</a>
      */
     public abstract Builder setCrc32c(String crc32c);
+
+    /**
+     * Sets the CRC32C checksum of blob's data as described in <a
+     * href="http://tools.ietf.org/html/rfc4960#appendix-B">RFC 4960, Appendix B;</a> from hex
+     * string.
+     *
+     * @see <a href="https://cloud.google.com/storage/docs/hashes-etags#_JSONAPI">Hashes and ETags:
+     *     Best Practices</a>
+     */
+    public abstract Builder setCrc32cFromHexString(String crc32cHexString);
 
     abstract Builder setMediaLink(String mediaLink);
 
@@ -423,9 +442,36 @@ public class BlobInfo implements Serializable {
       return this;
     }
 
+    public Builder setMd5FromHexString(String md5HexString) {
+      if (md5HexString == null) {
+        return this;
+      }
+      byte[] bytes = new BigInteger(md5HexString, 16).toByteArray();
+      int leadingEmptyBytes = bytes.length - md5HexString.length() / 2;
+      if (leadingEmptyBytes > 0) {
+        bytes = Arrays.copyOfRange(bytes, leadingEmptyBytes, bytes.length);
+      }
+      this.md5 = BaseEncoding.base64().encode(bytes);
+      return this;
+    }
+
     @Override
     public Builder setCrc32c(String crc32c) {
       this.crc32c = firstNonNull(crc32c, Data.<String>nullOf(String.class));
+      return this;
+    }
+
+    @Override
+    public Builder setCrc32cFromHexString(String crc32cHexString) {
+      if (crc32cHexString == null) {
+        return this;
+      }
+      byte[] bytes = new BigInteger(crc32cHexString, 16).toByteArray();
+      int leadingEmptyBytes = bytes.length - crc32cHexString.length() / 2;
+      if (leadingEmptyBytes > 0) {
+        bytes = Arrays.copyOfRange(bytes, leadingEmptyBytes, bytes.length);
+      }
+      this.crc32c = BaseEncoding.base64().encode(bytes);
       return this;
     }
 
@@ -675,6 +721,24 @@ public class BlobInfo implements Serializable {
   }
 
   /**
+   * Returns the MD5 hash of blob's data decoded to string.
+   *
+   * @see <a href="https://cloud.google.com/storage/docs/hashes-etags#_JSONAPI">Hashes and ETags:
+   *     Best Practices</a>
+   */
+  public String getMd5ToHexString() {
+    if (md5 == null) {
+      return null;
+    }
+    byte[] decodedMd5 = BaseEncoding.base64().decode(md5);
+    StringBuilder stringBuilder = new StringBuilder();
+    for (byte b : decodedMd5) {
+      stringBuilder.append(String.format("%02x", b & 0xff));
+    }
+    return stringBuilder.toString();
+  }
+
+  /**
    * Returns the CRC32C checksum of blob's data as described in <a
    * href="http://tools.ietf.org/html/rfc4960#appendix-B">RFC 4960, Appendix B;</a> encoded in
    * base64 in big-endian order.
@@ -684,6 +748,26 @@ public class BlobInfo implements Serializable {
    */
   public String getCrc32c() {
     return Data.isNull(crc32c) ? null : crc32c;
+  }
+
+  /**
+   * Returns the CRC32C checksum of blob's data as described in <a
+   * href="http://tools.ietf.org/html/rfc4960#appendix-B">RFC 4960, Appendix B;</a> decoded to
+   * string.
+   *
+   * @see <a href="https://cloud.google.com/storage/docs/hashes-etags#_JSONAPI">Hashes and ETags:
+   *     Best Practices</a>
+   */
+  public String getCrc32cToHexString() {
+    if (crc32c == null) {
+      return null;
+    }
+    byte[] decodeCrc32c = BaseEncoding.base64().decode(crc32c);
+    StringBuilder stringBuilder = new StringBuilder();
+    for (byte b : decodeCrc32c) {
+      stringBuilder.append(String.format("%02x", b & 0xff));
+    }
+    return stringBuilder.toString();
   }
 
   /** Returns the blob's media download link. */

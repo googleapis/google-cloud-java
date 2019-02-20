@@ -16,8 +16,8 @@
 
 package com.google.cloud.firestore;
 
-import com.google.firestore.v1beta1.Value;
-import com.google.firestore.v1beta1.Value.ValueTypeCase;
+import com.google.firestore.v1.Value;
+import com.google.firestore.v1.Value.ValueTypeCase;
 import com.google.protobuf.ByteString;
 import java.util.Comparator;
 import java.util.Iterator;

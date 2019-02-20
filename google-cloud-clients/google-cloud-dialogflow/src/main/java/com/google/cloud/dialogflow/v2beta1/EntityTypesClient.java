@@ -959,7 +959,7 @@ public class EntityTypesClient implements BackgroundResource {
    *   BatchUpdateEntityTypesRequest request = BatchUpdateEntityTypesRequest.newBuilder()
    *     .setParent(parent.toString())
    *     .build();
-   *   OperationFuture&lt;Operation&gt; future = entityTypesClient.batchUpdateEntityTypesOperationCallable().futureCall(request);
+   *   OperationFuture&lt;BatchUpdateEntityTypesResponse, Struct&gt; future = entityTypesClient.batchUpdateEntityTypesOperationCallable().futureCall(request);
    *   // Do something
    *   BatchUpdateEntityTypesResponse response = future.get();
    * }
@@ -1012,7 +1012,7 @@ public class EntityTypesClient implements BackgroundResource {
    * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
    *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
    *   List&lt;String&gt; entityTypeNames = new ArrayList&lt;&gt;();
-   *   Empty response = entityTypesClient.batchDeleteEntityTypesAsync(parent, entityTypeNames).get();
+   *   entityTypesClient.batchDeleteEntityTypesAsync(parent, entityTypeNames).get();
    * }
    * </code></pre>
    *
@@ -1048,7 +1048,7 @@ public class EntityTypesClient implements BackgroundResource {
    * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
    *   ProjectAgentName parent = ProjectAgentName.of("[PROJECT]");
    *   List&lt;String&gt; entityTypeNames = new ArrayList&lt;&gt;();
-   *   Empty response = entityTypesClient.batchDeleteEntityTypesAsync(parent.toString(), entityTypeNames).get();
+   *   entityTypesClient.batchDeleteEntityTypesAsync(parent.toString(), entityTypeNames).get();
    * }
    * </code></pre>
    *
@@ -1088,7 +1088,7 @@ public class EntityTypesClient implements BackgroundResource {
    *     .setParent(parent.toString())
    *     .addAllEntityTypeNames(entityTypeNames)
    *     .build();
-   *   Empty response = entityTypesClient.batchDeleteEntityTypesAsync(request).get();
+   *   entityTypesClient.batchDeleteEntityTypesAsync(request).get();
    * }
    * </code></pre>
    *
@@ -1119,9 +1119,9 @@ public class EntityTypesClient implements BackgroundResource {
    *     .setParent(parent.toString())
    *     .addAllEntityTypeNames(entityTypeNames)
    *     .build();
-   *   OperationFuture&lt;Operation&gt; future = entityTypesClient.batchDeleteEntityTypesOperationCallable().futureCall(request);
+   *   OperationFuture&lt;Empty, Struct&gt; future = entityTypesClient.batchDeleteEntityTypesOperationCallable().futureCall(request);
    *   // Do something
-   *   Empty response = future.get();
+   *   future.get();
    * }
    * </code></pre>
    */
@@ -1172,7 +1172,7 @@ public class EntityTypesClient implements BackgroundResource {
    * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
    *   EntityTypeName parent = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
    *   List&lt;EntityType.Entity&gt; entities = new ArrayList&lt;&gt;();
-   *   Empty response = entityTypesClient.batchCreateEntitiesAsync(parent, entities).get();
+   *   entityTypesClient.batchCreateEntitiesAsync(parent, entities).get();
    * }
    * </code></pre>
    *
@@ -1207,7 +1207,7 @@ public class EntityTypesClient implements BackgroundResource {
    * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
    *   EntityTypeName parent = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
    *   List&lt;EntityType.Entity&gt; entities = new ArrayList&lt;&gt;();
-   *   Empty response = entityTypesClient.batchCreateEntitiesAsync(parent.toString(), entities).get();
+   *   entityTypesClient.batchCreateEntitiesAsync(parent.toString(), entities).get();
    * }
    * </code></pre>
    *
@@ -1240,7 +1240,7 @@ public class EntityTypesClient implements BackgroundResource {
    *   EntityTypeName parent = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
    *   List&lt;EntityType.Entity&gt; entities = new ArrayList&lt;&gt;();
    *   String languageCode = "";
-   *   Empty response = entityTypesClient.batchCreateEntitiesAsync(parent, entities, languageCode).get();
+   *   entityTypesClient.batchCreateEntitiesAsync(parent, entities, languageCode).get();
    * }
    * </code></pre>
    *
@@ -1281,7 +1281,7 @@ public class EntityTypesClient implements BackgroundResource {
    *   EntityTypeName parent = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
    *   List&lt;EntityType.Entity&gt; entities = new ArrayList&lt;&gt;();
    *   String languageCode = "";
-   *   Empty response = entityTypesClient.batchCreateEntitiesAsync(parent.toString(), entities, languageCode).get();
+   *   entityTypesClient.batchCreateEntitiesAsync(parent.toString(), entities, languageCode).get();
    * }
    * </code></pre>
    *
@@ -1325,7 +1325,7 @@ public class EntityTypesClient implements BackgroundResource {
    *     .setParent(parent.toString())
    *     .addAllEntities(entities)
    *     .build();
-   *   Empty response = entityTypesClient.batchCreateEntitiesAsync(request).get();
+   *   entityTypesClient.batchCreateEntitiesAsync(request).get();
    * }
    * </code></pre>
    *
@@ -1356,9 +1356,9 @@ public class EntityTypesClient implements BackgroundResource {
    *     .setParent(parent.toString())
    *     .addAllEntities(entities)
    *     .build();
-   *   OperationFuture&lt;Operation&gt; future = entityTypesClient.batchCreateEntitiesOperationCallable().futureCall(request);
+   *   OperationFuture&lt;Empty, Struct&gt; future = entityTypesClient.batchCreateEntitiesOperationCallable().futureCall(request);
    *   // Do something
-   *   Empty response = future.get();
+   *   future.get();
    * }
    * </code></pre>
    */
@@ -1408,7 +1408,7 @@ public class EntityTypesClient implements BackgroundResource {
    * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
    *   EntityTypeName parent = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
    *   List&lt;EntityType.Entity&gt; entities = new ArrayList&lt;&gt;();
-   *   Empty response = entityTypesClient.batchUpdateEntitiesAsync(parent, entities).get();
+   *   entityTypesClient.batchUpdateEntitiesAsync(parent, entities).get();
    * }
    * </code></pre>
    *
@@ -1443,7 +1443,7 @@ public class EntityTypesClient implements BackgroundResource {
    * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
    *   EntityTypeName parent = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
    *   List&lt;EntityType.Entity&gt; entities = new ArrayList&lt;&gt;();
-   *   Empty response = entityTypesClient.batchUpdateEntitiesAsync(parent.toString(), entities).get();
+   *   entityTypesClient.batchUpdateEntitiesAsync(parent.toString(), entities).get();
    * }
    * </code></pre>
    *
@@ -1476,7 +1476,7 @@ public class EntityTypesClient implements BackgroundResource {
    *   EntityTypeName parent = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
    *   List&lt;EntityType.Entity&gt; entities = new ArrayList&lt;&gt;();
    *   String languageCode = "";
-   *   Empty response = entityTypesClient.batchUpdateEntitiesAsync(parent, entities, languageCode).get();
+   *   entityTypesClient.batchUpdateEntitiesAsync(parent, entities, languageCode).get();
    * }
    * </code></pre>
    *
@@ -1517,7 +1517,7 @@ public class EntityTypesClient implements BackgroundResource {
    *   EntityTypeName parent = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
    *   List&lt;EntityType.Entity&gt; entities = new ArrayList&lt;&gt;();
    *   String languageCode = "";
-   *   Empty response = entityTypesClient.batchUpdateEntitiesAsync(parent.toString(), entities, languageCode).get();
+   *   entityTypesClient.batchUpdateEntitiesAsync(parent.toString(), entities, languageCode).get();
    * }
    * </code></pre>
    *
@@ -1561,7 +1561,7 @@ public class EntityTypesClient implements BackgroundResource {
    *     .setParent(parent.toString())
    *     .addAllEntities(entities)
    *     .build();
-   *   Empty response = entityTypesClient.batchUpdateEntitiesAsync(request).get();
+   *   entityTypesClient.batchUpdateEntitiesAsync(request).get();
    * }
    * </code></pre>
    *
@@ -1592,9 +1592,9 @@ public class EntityTypesClient implements BackgroundResource {
    *     .setParent(parent.toString())
    *     .addAllEntities(entities)
    *     .build();
-   *   OperationFuture&lt;Operation&gt; future = entityTypesClient.batchUpdateEntitiesOperationCallable().futureCall(request);
+   *   OperationFuture&lt;Empty, Struct&gt; future = entityTypesClient.batchUpdateEntitiesOperationCallable().futureCall(request);
    *   // Do something
-   *   Empty response = future.get();
+   *   future.get();
    * }
    * </code></pre>
    */
@@ -1644,7 +1644,7 @@ public class EntityTypesClient implements BackgroundResource {
    * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
    *   EntityTypeName parent = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
    *   List&lt;String&gt; entityValues = new ArrayList&lt;&gt;();
-   *   Empty response = entityTypesClient.batchDeleteEntitiesAsync(parent, entityValues).get();
+   *   entityTypesClient.batchDeleteEntitiesAsync(parent, entityValues).get();
    * }
    * </code></pre>
    *
@@ -1680,7 +1680,7 @@ public class EntityTypesClient implements BackgroundResource {
    * try (EntityTypesClient entityTypesClient = EntityTypesClient.create()) {
    *   EntityTypeName parent = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
    *   List&lt;String&gt; entityValues = new ArrayList&lt;&gt;();
-   *   Empty response = entityTypesClient.batchDeleteEntitiesAsync(parent.toString(), entityValues).get();
+   *   entityTypesClient.batchDeleteEntitiesAsync(parent.toString(), entityValues).get();
    * }
    * </code></pre>
    *
@@ -1717,7 +1717,7 @@ public class EntityTypesClient implements BackgroundResource {
    *   EntityTypeName parent = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
    *   List&lt;String&gt; entityValues = new ArrayList&lt;&gt;();
    *   String languageCode = "";
-   *   Empty response = entityTypesClient.batchDeleteEntitiesAsync(parent, entityValues, languageCode).get();
+   *   entityTypesClient.batchDeleteEntitiesAsync(parent, entityValues, languageCode).get();
    * }
    * </code></pre>
    *
@@ -1759,7 +1759,7 @@ public class EntityTypesClient implements BackgroundResource {
    *   EntityTypeName parent = EntityTypeName.of("[PROJECT]", "[ENTITY_TYPE]");
    *   List&lt;String&gt; entityValues = new ArrayList&lt;&gt;();
    *   String languageCode = "";
-   *   Empty response = entityTypesClient.batchDeleteEntitiesAsync(parent.toString(), entityValues, languageCode).get();
+   *   entityTypesClient.batchDeleteEntitiesAsync(parent.toString(), entityValues, languageCode).get();
    * }
    * </code></pre>
    *
@@ -1804,7 +1804,7 @@ public class EntityTypesClient implements BackgroundResource {
    *     .setParent(parent.toString())
    *     .addAllEntityValues(entityValues)
    *     .build();
-   *   Empty response = entityTypesClient.batchDeleteEntitiesAsync(request).get();
+   *   entityTypesClient.batchDeleteEntitiesAsync(request).get();
    * }
    * </code></pre>
    *
@@ -1835,9 +1835,9 @@ public class EntityTypesClient implements BackgroundResource {
    *     .setParent(parent.toString())
    *     .addAllEntityValues(entityValues)
    *     .build();
-   *   OperationFuture&lt;Operation&gt; future = entityTypesClient.batchDeleteEntitiesOperationCallable().futureCall(request);
+   *   OperationFuture&lt;Empty, Struct&gt; future = entityTypesClient.batchDeleteEntitiesOperationCallable().futureCall(request);
    *   // Do something
-   *   Empty response = future.get();
+   *   future.get();
    * }
    * </code></pre>
    */

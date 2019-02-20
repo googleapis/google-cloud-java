@@ -116,46 +116,65 @@ public final class RouterStatusBgpPeerStatus implements ApiMessage {
 
   @Nullable
   @Override
+  /**
+   * The fields that should be serialized (even if they have empty values). If the containing
+   * message object has a non-null fieldmask, then all the fields in the field mask (and only those
+   * fields in the field mask) will be serialized. If the containing object does not have a
+   * fieldmask, then only non-empty fields will be serialized.
+   */
   public List<String> getFieldMask() {
     return null;
   }
 
+  /** Routes that were advertised to the remote BGP peer */
   public List<Route> getAdvertisedRoutesList() {
     return advertisedRoutes;
   }
 
+  /** IP address of the local BGP interface. */
   public String getIpAddress() {
     return ipAddress;
   }
 
+  /** URL of the VPN tunnel that this BGP peer controls. */
   public String getLinkedVpnTunnel() {
     return linkedVpnTunnel;
   }
 
+  /** Name of this BGP peer. Unique within the Routers resource. */
   public String getName() {
     return name;
   }
 
+  /** Number of routes learned from the remote BGP Peer. */
   public Integer getNumLearnedRoutes() {
     return numLearnedRoutes;
   }
 
+  /** IP address of the remote BGP interface. */
   public String getPeerIpAddress() {
     return peerIpAddress;
   }
 
+  /** BGP state as specified in RFC1771. */
   public String getState() {
     return state;
   }
 
+  /** Status of the BGP peer: {UP, DOWN} */
   public String getStatus() {
     return status;
   }
 
+  /**
+   * Time this session has been up. Format: 14 years, 51 weeks, 6 days, 23 hours, 59 minutes, 59
+   * seconds
+   */
   public String getUptime() {
     return uptime;
   }
 
+  /** Time this session has been up, in seconds. Format: 145 */
   public String getUptimeSeconds() {
     return uptimeSeconds;
   }
@@ -244,10 +263,12 @@ public final class RouterStatusBgpPeerStatus implements ApiMessage {
       this.uptimeSeconds = source.uptimeSeconds;
     }
 
+    /** Routes that were advertised to the remote BGP peer */
     public List<Route> getAdvertisedRoutesList() {
       return advertisedRoutes;
     }
 
+    /** Routes that were advertised to the remote BGP peer */
     public Builder addAllAdvertisedRoutes(List<Route> advertisedRoutes) {
       if (this.advertisedRoutes == null) {
         this.advertisedRoutes = new LinkedList<>();
@@ -256,6 +277,7 @@ public final class RouterStatusBgpPeerStatus implements ApiMessage {
       return this;
     }
 
+    /** Routes that were advertised to the remote BGP peer */
     public Builder addAdvertisedRoutes(Route advertisedRoutes) {
       if (this.advertisedRoutes == null) {
         this.advertisedRoutes = new LinkedList<>();
@@ -264,82 +286,106 @@ public final class RouterStatusBgpPeerStatus implements ApiMessage {
       return this;
     }
 
+    /** IP address of the local BGP interface. */
     public String getIpAddress() {
       return ipAddress;
     }
 
+    /** IP address of the local BGP interface. */
     public Builder setIpAddress(String ipAddress) {
       this.ipAddress = ipAddress;
       return this;
     }
 
+    /** URL of the VPN tunnel that this BGP peer controls. */
     public String getLinkedVpnTunnel() {
       return linkedVpnTunnel;
     }
 
+    /** URL of the VPN tunnel that this BGP peer controls. */
     public Builder setLinkedVpnTunnel(String linkedVpnTunnel) {
       this.linkedVpnTunnel = linkedVpnTunnel;
       return this;
     }
 
+    /** Name of this BGP peer. Unique within the Routers resource. */
     public String getName() {
       return name;
     }
 
+    /** Name of this BGP peer. Unique within the Routers resource. */
     public Builder setName(String name) {
       this.name = name;
       return this;
     }
 
+    /** Number of routes learned from the remote BGP Peer. */
     public Integer getNumLearnedRoutes() {
       return numLearnedRoutes;
     }
 
+    /** Number of routes learned from the remote BGP Peer. */
     public Builder setNumLearnedRoutes(Integer numLearnedRoutes) {
       this.numLearnedRoutes = numLearnedRoutes;
       return this;
     }
 
+    /** IP address of the remote BGP interface. */
     public String getPeerIpAddress() {
       return peerIpAddress;
     }
 
+    /** IP address of the remote BGP interface. */
     public Builder setPeerIpAddress(String peerIpAddress) {
       this.peerIpAddress = peerIpAddress;
       return this;
     }
 
+    /** BGP state as specified in RFC1771. */
     public String getState() {
       return state;
     }
 
+    /** BGP state as specified in RFC1771. */
     public Builder setState(String state) {
       this.state = state;
       return this;
     }
 
+    /** Status of the BGP peer: {UP, DOWN} */
     public String getStatus() {
       return status;
     }
 
+    /** Status of the BGP peer: {UP, DOWN} */
     public Builder setStatus(String status) {
       this.status = status;
       return this;
     }
 
+    /**
+     * Time this session has been up. Format: 14 years, 51 weeks, 6 days, 23 hours, 59 minutes, 59
+     * seconds
+     */
     public String getUptime() {
       return uptime;
     }
 
+    /**
+     * Time this session has been up. Format: 14 years, 51 weeks, 6 days, 23 hours, 59 minutes, 59
+     * seconds
+     */
     public Builder setUptime(String uptime) {
       this.uptime = uptime;
       return this;
     }
 
+    /** Time this session has been up, in seconds. Format: 145 */
     public String getUptimeSeconds() {
       return uptimeSeconds;
     }
 
+    /** Time this session has been up, in seconds. Format: 145 */
     public Builder setUptimeSeconds(String uptimeSeconds) {
       this.uptimeSeconds = uptimeSeconds;
       return this;

@@ -1261,7 +1261,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * <pre><code>
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
-   *   Empty response = securityCenterClient.runAssetDiscoveryAsync(parent).get();
+   *   securityCenterClient.runAssetDiscoveryAsync(parent).get();
    * }
    * </code></pre>
    *
@@ -1292,7 +1292,7 @@ public class SecurityCenterClient implements BackgroundResource {
    * <pre><code>
    * try (SecurityCenterClient securityCenterClient = SecurityCenterClient.create()) {
    *   OrganizationName parent = OrganizationName.of("[ORGANIZATION]");
-   *   Empty response = securityCenterClient.runAssetDiscoveryAsync(parent.toString()).get();
+   *   securityCenterClient.runAssetDiscoveryAsync(parent.toString()).get();
    * }
    * </code></pre>
    *
@@ -1324,7 +1324,7 @@ public class SecurityCenterClient implements BackgroundResource {
    *   RunAssetDiscoveryRequest request = RunAssetDiscoveryRequest.newBuilder()
    *     .setParent(parent.toString())
    *     .build();
-   *   Empty response = securityCenterClient.runAssetDiscoveryAsync(request).get();
+   *   securityCenterClient.runAssetDiscoveryAsync(request).get();
    * }
    * </code></pre>
    *
@@ -1353,9 +1353,9 @@ public class SecurityCenterClient implements BackgroundResource {
    *   RunAssetDiscoveryRequest request = RunAssetDiscoveryRequest.newBuilder()
    *     .setParent(parent.toString())
    *     .build();
-   *   OperationFuture&lt;Operation&gt; future = securityCenterClient.runAssetDiscoveryOperationCallable().futureCall(request);
+   *   OperationFuture&lt;Empty, Empty&gt; future = securityCenterClient.runAssetDiscoveryOperationCallable().futureCall(request);
    *   // Do something
-   *   Empty response = future.get();
+   *   future.get();
    * }
    * </code></pre>
    */

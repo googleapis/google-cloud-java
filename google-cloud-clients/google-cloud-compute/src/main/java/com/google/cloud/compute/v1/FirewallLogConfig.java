@@ -24,6 +24,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/** The available logging options for a firewall rule. */
 public final class FirewallLogConfig implements ApiMessage {
   private final Boolean enable;
 
@@ -51,10 +52,17 @@ public final class FirewallLogConfig implements ApiMessage {
 
   @Nullable
   @Override
+  /**
+   * The fields that should be serialized (even if they have empty values). If the containing
+   * message object has a non-null fieldmask, then all the fields in the field mask (and only those
+   * fields in the field mask) will be serialized. If the containing object does not have a
+   * fieldmask, then only non-empty fields will be serialized.
+   */
   public List<String> getFieldMask() {
     return null;
   }
 
+  /** This field denotes whether to enable logging for a particular firewall rule. */
   public Boolean getEnable() {
     return enable;
   }
@@ -98,10 +106,12 @@ public final class FirewallLogConfig implements ApiMessage {
       this.enable = source.enable;
     }
 
+    /** This field denotes whether to enable logging for a particular firewall rule. */
     public Boolean getEnable() {
       return enable;
     }
 
+    /** This field denotes whether to enable logging for a particular firewall rule. */
     public Builder setEnable(Boolean enable) {
       this.enable = enable;
       return this;

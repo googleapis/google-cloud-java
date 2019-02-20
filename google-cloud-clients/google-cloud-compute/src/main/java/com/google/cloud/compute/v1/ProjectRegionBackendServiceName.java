@@ -173,10 +173,11 @@ public final class ProjectRegionBackendServiceName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate(
-        "backendService", backendService,
-        "project", project,
-        "region", region);
+    return SERVICE_ADDRESS
+        + PATH_TEMPLATE.instantiate(
+            "backendService", backendService,
+            "project", project,
+            "region", region);
   }
 
   @Override

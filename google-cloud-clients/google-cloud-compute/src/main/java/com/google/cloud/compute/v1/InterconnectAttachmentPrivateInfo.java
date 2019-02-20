@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Information for an interconnect attachment when this belongs to an interconnect of type
+ * DEDICATED.
+ */
 public final class InterconnectAttachmentPrivateInfo implements ApiMessage {
   private final Integer tag8021q;
 
@@ -51,10 +55,20 @@ public final class InterconnectAttachmentPrivateInfo implements ApiMessage {
 
   @Nullable
   @Override
+  /**
+   * The fields that should be serialized (even if they have empty values). If the containing
+   * message object has a non-null fieldmask, then all the fields in the field mask (and only those
+   * fields in the field mask) will be serialized. If the containing object does not have a
+   * fieldmask, then only non-empty fields will be serialized.
+   */
   public List<String> getFieldMask() {
     return null;
   }
 
+  /**
+   * [Output Only] 802.1q encapsulation tag to be used for traffic between Google and the customer,
+   * going to and from this network and region.
+   */
   public Integer getTag8021q() {
     return tag8021q;
   }
@@ -98,10 +112,18 @@ public final class InterconnectAttachmentPrivateInfo implements ApiMessage {
       this.tag8021q = source.tag8021q;
     }
 
+    /**
+     * [Output Only] 802.1q encapsulation tag to be used for traffic between Google and the
+     * customer, going to and from this network and region.
+     */
     public Integer getTag8021q() {
       return tag8021q;
     }
 
+    /**
+     * [Output Only] 802.1q encapsulation tag to be used for traffic between Google and the
+     * customer, going to and from this network and region.
+     */
     public Builder setTag8021q(Integer tag8021q) {
       this.tag8021q = tag8021q;
       return this;

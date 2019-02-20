@@ -18,6 +18,7 @@ package com.google.cloud.bigquery;
 
 import com.google.api.core.InternalApi;
 import com.google.cloud.PageImpl;
+import javax.annotation.Nullable;
 
 public class EmptyTableResult extends TableResult {
 
@@ -25,7 +26,7 @@ public class EmptyTableResult extends TableResult {
 
   /** An empty {@code TableResult} to avoid making API requests to unlistable tables. */
   @InternalApi("Exposed for testing")
-  public EmptyTableResult() {
-    super(null, 0, new PageImpl<FieldValueList>(null, "", null));
+  public EmptyTableResult(@Nullable Schema schema) {
+    super(schema, 0, new PageImpl<FieldValueList>(null, "", null));
   }
 }

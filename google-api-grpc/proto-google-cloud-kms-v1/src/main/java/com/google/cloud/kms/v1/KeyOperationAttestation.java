@@ -120,6 +120,17 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
      * <code>CAVIUM_V1_COMPRESSED = 3;</code>
      */
     CAVIUM_V1_COMPRESSED(3),
+    /**
+     *
+     *
+     * <pre>
+     * Cavium HSM attestation V2 compressed with gzip. This is a new format
+     * Introduced in Cavium's version 3.2-08
+     * </pre>
+     *
+     * <code>CAVIUM_V2_COMPRESSED = 4;</code>
+     */
+    CAVIUM_V2_COMPRESSED(4),
     UNRECOGNIZED(-1),
     ;
 
@@ -136,6 +147,17 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
      * <code>CAVIUM_V1_COMPRESSED = 3;</code>
      */
     public static final int CAVIUM_V1_COMPRESSED_VALUE = 3;
+    /**
+     *
+     *
+     * <pre>
+     * Cavium HSM attestation V2 compressed with gzip. This is a new format
+     * Introduced in Cavium's version 3.2-08
+     * </pre>
+     *
+     * <code>CAVIUM_V2_COMPRESSED = 4;</code>
+     */
+    public static final int CAVIUM_V2_COMPRESSED_VALUE = 4;
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
@@ -157,6 +179,8 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
           return ATTESTATION_FORMAT_UNSPECIFIED;
         case 3:
           return CAVIUM_V1_COMPRESSED;
+        case 4:
+          return CAVIUM_V2_COMPRESSED;
         default:
           return null;
       }
@@ -273,7 +297,8 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (format_
         != com.google.cloud.kms.v1.KeyOperationAttestation.AttestationFormat
-            .ATTESTATION_FORMAT_UNSPECIFIED.getNumber()) {
+            .ATTESTATION_FORMAT_UNSPECIFIED
+            .getNumber()) {
       output.writeEnum(4, format_);
     }
     if (!content_.isEmpty()) {
@@ -290,7 +315,8 @@ public final class KeyOperationAttestation extends com.google.protobuf.Generated
     size = 0;
     if (format_
         != com.google.cloud.kms.v1.KeyOperationAttestation.AttestationFormat
-            .ATTESTATION_FORMAT_UNSPECIFIED.getNumber()) {
+            .ATTESTATION_FORMAT_UNSPECIFIED
+            .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, format_);
     }
     if (!content_.isEmpty()) {

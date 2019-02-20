@@ -21,16 +21,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-bigtable</artifactId>
-  <version>0.79.0-alpha</version>
+  <version>0.80.0-alpha</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-bigtable:0.79.0-alpha'
+compile 'com.google.cloud:google-cloud-bigtable:0.80.0-alpha'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-bigtable" % "0.79.0-alpha"
+libraryDependencies += "com.google.cloud" % "google-cloud-bigtable" % "0.80.0-alpha"
 ```
 [//]: # ({x-version-update-end})
 
@@ -72,7 +72,6 @@ at the top of your file:
 
 ```java
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
-import com.google.cloud.bigtable.data.v2.models.InstanceName;
 import com.google.cloud.bigtable.data.v2.models.Query;
 import com.google.cloud.bigtable.data.v2.models.Row;
 
@@ -163,6 +162,7 @@ codebase.
 Apache 2.0 - See [LICENSE] for more information.
 
 [CONTRIBUTING]:https://github.com/googleapis/google-cloud-java/blob/master/CONTRIBUTING.md
+[DEVELOPING]:DEVELOPING.md
 [LICENSE]: https://github.com/googleapis/google-cloud-java/blob/master/LICENSE
 [cloud-platform]: https://cloud.google.com/
 [cloud-bigtable]: https://cloud.google.com/bigtable/

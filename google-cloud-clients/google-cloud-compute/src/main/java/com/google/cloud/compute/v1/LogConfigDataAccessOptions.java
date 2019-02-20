@@ -24,6 +24,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/** Write a Data Access (Gin) log */
 public final class LogConfigDataAccessOptions implements ApiMessage {
   private final String logMode;
 
@@ -51,10 +52,25 @@ public final class LogConfigDataAccessOptions implements ApiMessage {
 
   @Nullable
   @Override
+  /**
+   * The fields that should be serialized (even if they have empty values). If the containing
+   * message object has a non-null fieldmask, then all the fields in the field mask (and only those
+   * fields in the field mask) will be serialized. If the containing object does not have a
+   * fieldmask, then only non-empty fields will be serialized.
+   */
   public List<String> getFieldMask() {
     return null;
   }
 
+  /**
+   * Whether Gin logging should happen in a fail-closed manner at the caller. This is relevant only
+   * in the LocalIAM implementation, for now.
+   *
+   * <p>NOTE: Logging to Gin in a fail-closed manner is currently unsupported while work is being
+   * done to satisfy the requirements of go/345. Currently, setting LOG_FAIL_CLOSED mode will have
+   * no effect, but still exists because there is active work being done to support it
+   * (b/115874152).
+   */
   public String getLogMode() {
     return logMode;
   }
@@ -98,10 +114,28 @@ public final class LogConfigDataAccessOptions implements ApiMessage {
       this.logMode = source.logMode;
     }
 
+    /**
+     * Whether Gin logging should happen in a fail-closed manner at the caller. This is relevant
+     * only in the LocalIAM implementation, for now.
+     *
+     * <p>NOTE: Logging to Gin in a fail-closed manner is currently unsupported while work is being
+     * done to satisfy the requirements of go/345. Currently, setting LOG_FAIL_CLOSED mode will have
+     * no effect, but still exists because there is active work being done to support it
+     * (b/115874152).
+     */
     public String getLogMode() {
       return logMode;
     }
 
+    /**
+     * Whether Gin logging should happen in a fail-closed manner at the caller. This is relevant
+     * only in the LocalIAM implementation, for now.
+     *
+     * <p>NOTE: Logging to Gin in a fail-closed manner is currently unsupported while work is being
+     * done to satisfy the requirements of go/345. Currently, setting LOG_FAIL_CLOSED mode will have
+     * no effect, but still exists because there is active work being done to support it
+     * (b/115874152).
+     */
     public Builder setLogMode(String logMode) {
       this.logMode = logMode;
       return this;

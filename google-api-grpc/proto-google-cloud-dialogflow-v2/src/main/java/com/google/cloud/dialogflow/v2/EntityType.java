@@ -1637,7 +1637,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
     }
     if (autoExpansionMode_
         != com.google.cloud.dialogflow.v2.EntityType.AutoExpansionMode
-            .AUTO_EXPANSION_MODE_UNSPECIFIED.getNumber()) {
+            .AUTO_EXPANSION_MODE_UNSPECIFIED
+            .getNumber()) {
       output.writeEnum(4, autoExpansionMode_);
     }
     for (int i = 0; i < entities_.size(); i++) {
@@ -1663,7 +1664,8 @@ public final class EntityType extends com.google.protobuf.GeneratedMessageV3
     }
     if (autoExpansionMode_
         != com.google.cloud.dialogflow.v2.EntityType.AutoExpansionMode
-            .AUTO_EXPANSION_MODE_UNSPECIFIED.getNumber()) {
+            .AUTO_EXPANSION_MODE_UNSPECIFIED
+            .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(4, autoExpansionMode_);
     }
     for (int i = 0; i < entities_.size(); i++) {

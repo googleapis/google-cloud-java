@@ -24,6 +24,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/** Specifies what kind of log the caller must write */
 public final class LogConfig implements ApiMessage {
   private final LogConfigCloudAuditOptions cloudAudit;
   private final LogConfigCounterOptions counter;
@@ -66,18 +67,27 @@ public final class LogConfig implements ApiMessage {
 
   @Nullable
   @Override
+  /**
+   * The fields that should be serialized (even if they have empty values). If the containing
+   * message object has a non-null fieldmask, then all the fields in the field mask (and only those
+   * fields in the field mask) will be serialized. If the containing object does not have a
+   * fieldmask, then only non-empty fields will be serialized.
+   */
   public List<String> getFieldMask() {
     return null;
   }
 
+  /** Cloud audit options. */
   public LogConfigCloudAuditOptions getCloudAudit() {
     return cloudAudit;
   }
 
+  /** Counter options. */
   public LogConfigCounterOptions getCounter() {
     return counter;
   }
 
+  /** Data access options. */
   public LogConfigDataAccessOptions getDataAccess() {
     return dataAccess;
   }
@@ -131,28 +141,34 @@ public final class LogConfig implements ApiMessage {
       this.dataAccess = source.dataAccess;
     }
 
+    /** Cloud audit options. */
     public LogConfigCloudAuditOptions getCloudAudit() {
       return cloudAudit;
     }
 
+    /** Cloud audit options. */
     public Builder setCloudAudit(LogConfigCloudAuditOptions cloudAudit) {
       this.cloudAudit = cloudAudit;
       return this;
     }
 
+    /** Counter options. */
     public LogConfigCounterOptions getCounter() {
       return counter;
     }
 
+    /** Counter options. */
     public Builder setCounter(LogConfigCounterOptions counter) {
       this.counter = counter;
       return this;
     }
 
+    /** Data access options. */
     public LogConfigDataAccessOptions getDataAccess() {
       return dataAccess;
     }
 
+    /** Data access options. */
     public Builder setDataAccess(LogConfigDataAccessOptions dataAccess) {
       this.dataAccess = dataAccess;
       return this;

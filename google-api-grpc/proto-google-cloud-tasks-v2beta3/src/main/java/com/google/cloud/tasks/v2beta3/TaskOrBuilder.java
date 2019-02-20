@@ -63,10 +63,7 @@ public interface TaskOrBuilder
    *
    *
    * <pre>
-   * App Engine HTTP request that is sent to the task's target. Can
-   * be set only if
-   * [app_engine_http_queue][google.cloud.tasks.v2beta3.Queue.app_engine_http_queue] is set
-   * on the queue.
+   * HTTP request that is sent to the App Engine app handler.
    * An App Engine task is a task that has [AppEngineHttpRequest][google.cloud.tasks.v2beta3.AppEngineHttpRequest] set.
    * </pre>
    *
@@ -77,10 +74,7 @@ public interface TaskOrBuilder
    *
    *
    * <pre>
-   * App Engine HTTP request that is sent to the task's target. Can
-   * be set only if
-   * [app_engine_http_queue][google.cloud.tasks.v2beta3.Queue.app_engine_http_queue] is set
-   * on the queue.
+   * HTTP request that is sent to the App Engine app handler.
    * An App Engine task is a task that has [AppEngineHttpRequest][google.cloud.tasks.v2beta3.AppEngineHttpRequest] set.
    * </pre>
    *
@@ -91,10 +85,7 @@ public interface TaskOrBuilder
    *
    *
    * <pre>
-   * App Engine HTTP request that is sent to the task's target. Can
-   * be set only if
-   * [app_engine_http_queue][google.cloud.tasks.v2beta3.Queue.app_engine_http_queue] is set
-   * on the queue.
+   * HTTP request that is sent to the App Engine app handler.
    * An App Engine task is a task that has [AppEngineHttpRequest][google.cloud.tasks.v2beta3.AppEngineHttpRequest] set.
    * </pre>
    *
@@ -172,6 +163,103 @@ public interface TaskOrBuilder
    * <code>.google.protobuf.Timestamp create_time = 5;</code>
    */
   com.google.protobuf.TimestampOrBuilder getCreateTimeOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * The deadline for requests sent to the worker. If the worker does not
+   * respond by this deadline then the request is cancelled and the attempt
+   * is marked as a `DEADLINE_EXCEEDED` failure. Cloud Tasks will retry the
+   * task according to the [RetryConfig][google.cloud.tasks.v2beta3.RetryConfig].
+   * Note that when the request is cancelled, Cloud Tasks will stop listing for
+   * the response, but whether the worker stops processing depends on the
+   * worker. For example, if the worker is stuck, it may not react to cancelled
+   * requests.
+   * The default and maximum values depend on the type of request:
+   * * For [App Engine tasks][google.cloud.tasks.v2beta3.AppEngineHttpRequest], 0 indicates that the
+   *   request has the default deadline. The default deadline depends on the
+   *   [scaling type](https://cloud.google.com/appengine/docs/standard/go/how-instances-are-managed#instance_scaling)
+   *   of the service: 10 minutes for standard apps with automatic scaling, 24
+   *   hours for standard apps with manual and basic scaling, and 60 minutes for
+   *   flex apps. If the request deadline is set, it must be in the interval [15
+   *   seconds, 24 hours 15 seconds]. Regardless of the task's
+   *   `dispatch_deadline`, the app handler will not run for longer than than
+   *   the service's timeout. We recommend setting the `dispatch_deadline` to
+   *   at most a few seconds more than the app handler's timeout. For more
+   *   information see
+   *   [Timeouts](https://cloud.google.com/tasks/docs/creating-appengine-handlers#timeouts).
+   * `dispatch_deadline` will be truncated to the nearest millisecond. The
+   * deadline is an approximate deadline.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration dispatch_deadline = 12;</code>
+   */
+  boolean hasDispatchDeadline();
+  /**
+   *
+   *
+   * <pre>
+   * The deadline for requests sent to the worker. If the worker does not
+   * respond by this deadline then the request is cancelled and the attempt
+   * is marked as a `DEADLINE_EXCEEDED` failure. Cloud Tasks will retry the
+   * task according to the [RetryConfig][google.cloud.tasks.v2beta3.RetryConfig].
+   * Note that when the request is cancelled, Cloud Tasks will stop listing for
+   * the response, but whether the worker stops processing depends on the
+   * worker. For example, if the worker is stuck, it may not react to cancelled
+   * requests.
+   * The default and maximum values depend on the type of request:
+   * * For [App Engine tasks][google.cloud.tasks.v2beta3.AppEngineHttpRequest], 0 indicates that the
+   *   request has the default deadline. The default deadline depends on the
+   *   [scaling type](https://cloud.google.com/appengine/docs/standard/go/how-instances-are-managed#instance_scaling)
+   *   of the service: 10 minutes for standard apps with automatic scaling, 24
+   *   hours for standard apps with manual and basic scaling, and 60 minutes for
+   *   flex apps. If the request deadline is set, it must be in the interval [15
+   *   seconds, 24 hours 15 seconds]. Regardless of the task's
+   *   `dispatch_deadline`, the app handler will not run for longer than than
+   *   the service's timeout. We recommend setting the `dispatch_deadline` to
+   *   at most a few seconds more than the app handler's timeout. For more
+   *   information see
+   *   [Timeouts](https://cloud.google.com/tasks/docs/creating-appengine-handlers#timeouts).
+   * `dispatch_deadline` will be truncated to the nearest millisecond. The
+   * deadline is an approximate deadline.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration dispatch_deadline = 12;</code>
+   */
+  com.google.protobuf.Duration getDispatchDeadline();
+  /**
+   *
+   *
+   * <pre>
+   * The deadline for requests sent to the worker. If the worker does not
+   * respond by this deadline then the request is cancelled and the attempt
+   * is marked as a `DEADLINE_EXCEEDED` failure. Cloud Tasks will retry the
+   * task according to the [RetryConfig][google.cloud.tasks.v2beta3.RetryConfig].
+   * Note that when the request is cancelled, Cloud Tasks will stop listing for
+   * the response, but whether the worker stops processing depends on the
+   * worker. For example, if the worker is stuck, it may not react to cancelled
+   * requests.
+   * The default and maximum values depend on the type of request:
+   * * For [App Engine tasks][google.cloud.tasks.v2beta3.AppEngineHttpRequest], 0 indicates that the
+   *   request has the default deadline. The default deadline depends on the
+   *   [scaling type](https://cloud.google.com/appengine/docs/standard/go/how-instances-are-managed#instance_scaling)
+   *   of the service: 10 minutes for standard apps with automatic scaling, 24
+   *   hours for standard apps with manual and basic scaling, and 60 minutes for
+   *   flex apps. If the request deadline is set, it must be in the interval [15
+   *   seconds, 24 hours 15 seconds]. Regardless of the task's
+   *   `dispatch_deadline`, the app handler will not run for longer than than
+   *   the service's timeout. We recommend setting the `dispatch_deadline` to
+   *   at most a few seconds more than the app handler's timeout. For more
+   *   information see
+   *   [Timeouts](https://cloud.google.com/tasks/docs/creating-appengine-handlers#timeouts).
+   * `dispatch_deadline` will be truncated to the nearest millisecond. The
+   * deadline is an approximate deadline.
+   * </pre>
+   *
+   * <code>.google.protobuf.Duration dispatch_deadline = 12;</code>
+   */
+  com.google.protobuf.DurationOrBuilder getDispatchDeadlineOrBuilder();
 
   /**
    *

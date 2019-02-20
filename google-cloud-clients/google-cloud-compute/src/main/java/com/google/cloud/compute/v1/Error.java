@@ -25,6 +25,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * [Output Only] If errors are generated during processing of the operation, this field will be
+ * populated.
+ */
 public final class Error implements ApiMessage {
   private final List<Errors> errors;
 
@@ -52,10 +56,17 @@ public final class Error implements ApiMessage {
 
   @Nullable
   @Override
+  /**
+   * The fields that should be serialized (even if they have empty values). If the containing
+   * message object has a non-null fieldmask, then all the fields in the field mask (and only those
+   * fields in the field mask) will be serialized. If the containing object does not have a
+   * fieldmask, then only non-empty fields will be serialized.
+   */
   public List<String> getFieldMask() {
     return null;
   }
 
+  /** [Output Only] The array of errors encountered while processing this operation. */
   public List<Errors> getErrorsList() {
     return errors;
   }
@@ -99,10 +110,12 @@ public final class Error implements ApiMessage {
       this.errors = source.errors;
     }
 
+    /** [Output Only] The array of errors encountered while processing this operation. */
     public List<Errors> getErrorsList() {
       return errors;
     }
 
+    /** [Output Only] The array of errors encountered while processing this operation. */
     public Builder addAllErrors(List<Errors> errors) {
       if (this.errors == null) {
         this.errors = new LinkedList<>();
@@ -111,6 +124,7 @@ public final class Error implements ApiMessage {
       return this;
     }
 
+    /** [Output Only] The array of errors encountered while processing this operation. */
     public Builder addErrors(Errors errors) {
       if (this.errors == null) {
         this.errors = new LinkedList<>();

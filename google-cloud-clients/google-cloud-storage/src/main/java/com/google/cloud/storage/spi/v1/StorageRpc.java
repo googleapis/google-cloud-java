@@ -50,6 +50,7 @@ public interface StorageRpc extends ServiceRpc {
     IF_SOURCE_GENERATION_NOT_MATCH("ifSourceGenerationNotMatch"),
     IF_DISABLE_GZIP_CONTENT("disableGzipContent"),
     PREFIX("prefix"),
+    PROJECTION("projection"),
     MAX_RESULTS("maxResults"),
     PAGE_TOKEN("pageToken"),
     DELIMITER("delimiter"),

@@ -148,9 +148,10 @@ public final class ProjectGlobalRouteName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate(
-        "project", project,
-        "route", route);
+    return SERVICE_ADDRESS
+        + PATH_TEMPLATE.instantiate(
+            "project", project,
+            "route", route);
   }
 
   @Override
