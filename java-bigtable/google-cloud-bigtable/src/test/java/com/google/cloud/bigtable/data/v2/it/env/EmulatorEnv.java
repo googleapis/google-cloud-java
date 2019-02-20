@@ -15,11 +15,8 @@
  */
 package com.google.cloud.bigtable.data.v2.it.env;
 
-import com.google.bigtable.admin.v2.ColumnFamily;
-import com.google.bigtable.admin.v2.CreateTableRequest;
-import com.google.bigtable.admin.v2.Table;
+import com.google.cloud.bigtable.admin.v2.models.CreateTableRequest;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
-import com.google.cloud.bigtable.data.v2.internal.NameUtil;
 
 public class EmulatorEnv implements TestEnv {
   private static final String PROJECT_ID = "fake-project";
@@ -36,14 +33,7 @@ public class EmulatorEnv implements TestEnv {
 
     emulator
         .getTableAdminClient()
-        .createTable(
-            CreateTableRequest.newBuilder()
-                .setParent(NameUtil.formatInstanceName(PROJECT_ID, INSTANCE_ID))
-                .setTableId(TABLE_ID)
-                .setTable(
-                    Table.newBuilder()
-                        .putColumnFamilies(FAMILY_ID, ColumnFamily.getDefaultInstance()))
-                .build());
+        .createTable(CreateTableRequest.of(TABLE_ID).addFamily(FAMILY_ID));
   }
 
   @Override
