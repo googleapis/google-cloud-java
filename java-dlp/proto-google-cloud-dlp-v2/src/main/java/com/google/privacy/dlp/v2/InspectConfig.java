@@ -208,7 +208,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Max number of findings that will be returned for each item scanned.
      * When set within `InspectDataSourceRequest`,
-     * the maximum returned is 1000 regardless if this is set higher.
+     * the maximum returned is 2000 regardless if this is set higher.
      * When set within `InspectContentRequest`, this field is ignored.
      * </pre>
      *
@@ -221,7 +221,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Max number of findings that will be returned per request/job.
-     * When set within `InspectContentRequest`, the maximum returned is 1000
+     * When set within `InspectContentRequest`, the maximum returned is 2000
      * regardless if this is set higher.
      * </pre>
      *
@@ -1304,7 +1304,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * Max number of findings that will be returned for each item scanned.
      * When set within `InspectDataSourceRequest`,
-     * the maximum returned is 1000 regardless if this is set higher.
+     * the maximum returned is 2000 regardless if this is set higher.
      * When set within `InspectContentRequest`, this field is ignored.
      * </pre>
      *
@@ -1321,7 +1321,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Max number of findings that will be returned per request/job.
-     * When set within `InspectContentRequest`, the maximum returned is 1000
+     * When set within `InspectContentRequest`, the maximum returned is 2000
      * regardless if this is set higher.
      * </pre>
      *
@@ -1811,7 +1811,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Max number of findings that will be returned for each item scanned.
        * When set within `InspectDataSourceRequest`,
-       * the maximum returned is 1000 regardless if this is set higher.
+       * the maximum returned is 2000 regardless if this is set higher.
        * When set within `InspectContentRequest`, this field is ignored.
        * </pre>
        *
@@ -1826,7 +1826,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Max number of findings that will be returned for each item scanned.
        * When set within `InspectDataSourceRequest`,
-       * the maximum returned is 1000 regardless if this is set higher.
+       * the maximum returned is 2000 regardless if this is set higher.
        * When set within `InspectContentRequest`, this field is ignored.
        * </pre>
        *
@@ -1844,7 +1844,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
        * <pre>
        * Max number of findings that will be returned for each item scanned.
        * When set within `InspectDataSourceRequest`,
-       * the maximum returned is 1000 regardless if this is set higher.
+       * the maximum returned is 2000 regardless if this is set higher.
        * When set within `InspectContentRequest`, this field is ignored.
        * </pre>
        *
@@ -1863,7 +1863,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Max number of findings that will be returned per request/job.
-       * When set within `InspectContentRequest`, the maximum returned is 1000
+       * When set within `InspectContentRequest`, the maximum returned is 2000
        * regardless if this is set higher.
        * </pre>
        *
@@ -1877,7 +1877,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Max number of findings that will be returned per request/job.
-       * When set within `InspectContentRequest`, the maximum returned is 1000
+       * When set within `InspectContentRequest`, the maximum returned is 2000
        * regardless if this is set higher.
        * </pre>
        *
@@ -1894,7 +1894,7 @@ public final class InspectConfig extends com.google.protobuf.GeneratedMessageV3
        *
        * <pre>
        * Max number of findings that will be returned per request/job.
-       * When set within `InspectContentRequest`, the maximum returned is 1000
+       * When set within `InspectContentRequest`, the maximum returned is 2000
        * regardless if this is set higher.
        * </pre>
        *

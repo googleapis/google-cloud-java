@@ -22,5 +22,50 @@ public interface RecordKeyOrBuilder
   /** <code>.google.privacy.dlp.v2.BigQueryKey big_query_key = 3;</code> */
   com.google.privacy.dlp.v2.BigQueryKeyOrBuilder getBigQueryKeyOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Values of identifying columns in the given row. Order of values matches
+   * the order of field identifiers specified in the scanning request.
+   * </pre>
+   *
+   * <code>repeated string id_values = 5;</code>
+   */
+  java.util.List<java.lang.String> getIdValuesList();
+  /**
+   *
+   *
+   * <pre>
+   * Values of identifying columns in the given row. Order of values matches
+   * the order of field identifiers specified in the scanning request.
+   * </pre>
+   *
+   * <code>repeated string id_values = 5;</code>
+   */
+  int getIdValuesCount();
+  /**
+   *
+   *
+   * <pre>
+   * Values of identifying columns in the given row. Order of values matches
+   * the order of field identifiers specified in the scanning request.
+   * </pre>
+   *
+   * <code>repeated string id_values = 5;</code>
+   */
+  java.lang.String getIdValues(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Values of identifying columns in the given row. Order of values matches
+   * the order of field identifiers specified in the scanning request.
+   * </pre>
+   *
+   * <code>repeated string id_values = 5;</code>
+   */
+  com.google.protobuf.ByteString getIdValuesBytes(int index);
+
   public com.google.privacy.dlp.v2.RecordKey.TypeCase getTypeCase();
 }
