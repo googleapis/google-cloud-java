@@ -18,8 +18,8 @@ package com.google.cloud.spanner.it;
 
 import static com.google.common.truth.Truth.assertThat;
 
+import com.google.api.gax.longrunning.OperationFuture;
 import com.google.cloud.spanner.ErrorCode;
-import com.google.cloud.spanner.Operation;
 import com.google.cloud.spanner.SpannerBatchUpdateException;
 import com.google.cloud.spanner.SpannerException;
 import com.google.spanner.admin.database.v1.UpdateDatabaseDdlMetadata;
@@ -68,22 +68,22 @@ public final class ITBatchDmlTest {
   }
 
   @Before
-  public void createTable() {
+  public void createTable() throws Exception {
     String ddl = "CREATE TABLE T ("
         + "  K    STRING(MAX) NOT NULL,"
         + "  V    INT64,"
         + ") PRIMARY KEY (K)";
-    Operation<Void, UpdateDatabaseDdlMetadata> op = db.updateDdl(
+    OperationFuture<Void, UpdateDatabaseDdlMetadata> op = db.updateDdl(
         Arrays.asList(ddl), null);
-    op.waitFor();
+    op.get();
   }
 
   @After
-  public void dropTable() {
+  public void dropTable() throws Exception {
     String ddl = "DROP TABLE T";
-    Operation<Void, UpdateDatabaseDdlMetadata> op = db.updateDdl(
+    OperationFuture<Void, UpdateDatabaseDdlMetadata> op = db.updateDdl(
         Arrays.asList(ddl), null);
-    op.waitFor();
+    op.get();
   }
 
   @Test
