@@ -17,9 +17,11 @@ package com.google.cloud.bigtable.admin.v2;
 
 import static com.google.common.truth.Truth.assertThat;
 
+import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.rpc.StatusCode.Code;
 import java.io.IOException;
 import org.junit.Test;
+import org.mockito.Mockito;
 
 public class BigtableTableAdminSettingsTest {
 
@@ -49,6 +51,23 @@ public class BigtableTableAdminSettingsTest {
     }
 
     assertThat(actualException).isInstanceOf(NullPointerException.class);
+  }
+
+  @Test
+  public void testCredentials() throws IOException {
+    CredentialsProvider credentialsProvider = Mockito.mock(CredentialsProvider.class);
+
+    BigtableTableAdminSettings settings =
+        BigtableTableAdminSettings.newBuilder()
+            .setProjectId("my-project")
+            .setInstanceId("my-instance")
+            .setCredentialsProvider(credentialsProvider)
+            .build();
+
+    assertThat(settings.getCredentialsProvider()).isSameAs(credentialsProvider);
+    assertThat(settings.getStubSettings().getCredentialsProvider()).isSameAs(credentialsProvider);
+    assertThat(settings.toBuilder().getCredentialsProvider()).isSameAs(credentialsProvider);
+    assertThat(settings.toBuilder().build().getCredentialsProvider()).isSameAs(credentialsProvider);
   }
 
   @Test
