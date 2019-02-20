@@ -15,13 +15,18 @@
  */
 package com.google.cloud.bigtable.data.v2;
 
+import com.google.api.core.ApiClock;
 import com.google.api.core.ApiFunction;
+import com.google.api.gax.core.CredentialsProvider;
+import com.google.api.gax.core.ExecutorProvider;
 import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.rpc.BatchingCallSettings;
-import com.google.api.gax.rpc.ClientSettings;
+import com.google.api.gax.rpc.HeaderProvider;
 import com.google.api.gax.rpc.ServerStreamingCallSettings;
+import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
+import com.google.api.gax.rpc.WatchdogProvider;
 import com.google.cloud.bigtable.data.v2.models.ConditionalRowMutation;
 import com.google.cloud.bigtable.data.v2.models.KeyOffset;
 import com.google.cloud.bigtable.data.v2.models.Query;
@@ -30,9 +35,10 @@ import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStubSettings;
 import io.grpc.ManagedChannelBuilder;
-import java.io.IOException;
 import java.util.List;
 import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
+import org.threeten.bp.Duration;
 
 /**
  * Settings class to configure an instance of {@link BigtableDataClient}.
@@ -56,14 +62,17 @@ import javax.annotation.Nonnull;
  *   .setInstanceId("my-instance-id")
  *   .setAppProfileId("default");
  *
- * settingsBuilder.readRowsSettings().setRetryableCodes(Code.DEADLINE_EXCEEDED, Code.UNAVAILABLE);
- *
  * BigtableDataSettings settings = builder.build();
  * }</pre>
+ *
+ * <p>For fine grained control of individual RPCs, please refer to {@link
+ * EnhancedBigtableStubSettings}, which is exposed as {@link Builder#stubSettings()}.
  */
-public class BigtableDataSettings extends ClientSettings<BigtableDataSettings> {
-  private BigtableDataSettings(Builder builder) throws IOException {
-    super(builder);
+public final class BigtableDataSettings {
+  private final EnhancedBigtableStubSettings stubSettings;
+
+  private BigtableDataSettings(Builder builder) {
+    stubSettings = builder.stubSettings().build();
   }
 
   /** Create a new builder. */
@@ -76,7 +85,7 @@ public class BigtableDataSettings extends ClientSettings<BigtableDataSettings> {
     Builder builder = newBuilder();
 
     builder
-        .getTypedStubSettings()
+        .stubSettings()
         .setProjectId("fake-project")
         .setInstanceId("fake-instance")
         .setCredentialsProvider(NoCredentialsProvider.create())
@@ -99,69 +108,123 @@ public class BigtableDataSettings extends ClientSettings<BigtableDataSettings> {
 
   /** Returns the target project id. */
   public String getProjectId() {
-    return getTypedStubSettings().getProjectId();
+    return stubSettings.getProjectId();
   }
 
   /** Returns the target instance id. */
   public String getInstanceId() {
-    return getTypedStubSettings().getInstanceId();
+    return stubSettings.getInstanceId();
   }
 
   /** Returns the configured AppProfile id to use. */
   public String getAppProfileId() {
-    return getTypedStubSettings().getAppProfileId();
+    return stubSettings.getAppProfileId();
   }
 
-  /** Returns the object with the settings used for calls to ReadRows. */
+  /** Returns the underlying RPC settings. */
+  public EnhancedBigtableStubSettings getStubSettings() {
+    return stubSettings;
+  }
+
+  /** @deprecated Please use {@link #getStubSettings()} */
+  @Deprecated
   public ServerStreamingCallSettings<Query, Row> readRowsSettings() {
-    return getTypedStubSettings().readRowsSettings();
+    return stubSettings.readRowsSettings();
   }
 
   /** Returns the object with the settings used for point reads via ReadRow. */
   public UnaryCallSettings<Query, Row> readRowSettings() {
-    return getTypedStubSettings().readRowSettings();
+    return stubSettings.readRowSettings();
   }
 
-  /** Returns the object with the settings used for calls to sampleRowKeys. */
+  /** @deprecated Please use {@link #getStubSettings()} */
+  @Deprecated
   public UnaryCallSettings<String, List<KeyOffset>> sampleRowKeysSettings() {
-    return getTypedStubSettings().sampleRowKeysSettings();
+    return stubSettings.sampleRowKeysSettings();
   }
 
-  /** Returns the object with the settings used for calls to MutateRow. */
+  /** @deprecated Please use {@link #getStubSettings()} */
+  @Deprecated
   public UnaryCallSettings<RowMutation, Void> mutateRowSettings() {
-    return getTypedStubSettings().mutateRowSettings();
+    return stubSettings.mutateRowSettings();
   }
 
-  /** Returns the object with the settings used for BulkMutations. */
+  /** @deprecated Please use {@link #getStubSettings()} */
+  @Deprecated
   public BatchingCallSettings<RowMutation, Void> bulkMutationsSettings() {
-    // NOTE: the user facing BigtableDataClient only exposes this api as newBulkMutationBatcher,
-    // so the outer name should match that, while the stub should stick to rpc names.
-    return getTypedStubSettings().bulkMutateRowsSettings();
+    return stubSettings.bulkMutateRowsSettings();
   }
 
-  /** Returns the object with the settings used for calls to checkAndMutateRow. */
+  /** @deprecated Please use {@link #getStubSettings()} */
+  @Deprecated
   public UnaryCallSettings<ConditionalRowMutation, Boolean> checkAndMutateRowSettings() {
-    return getTypedStubSettings().checkAndMutateRowSettings();
+    return stubSettings.checkAndMutateRowSettings();
   }
 
-  /** Returns the object with the settings used for calls to ReadModifyWriteRow. */
+  /** @deprecated Please use {@link #getStubSettings()} */
+  @Deprecated
   public UnaryCallSettings<ReadModifyWriteRow, Row> readModifyWriteRowSettings() {
-    return getTypedStubSettings().readModifyWriteRowSettings();
+    return stubSettings.readModifyWriteRowSettings();
   }
 
-  @SuppressWarnings("unchecked")
-  EnhancedBigtableStubSettings getTypedStubSettings() {
-    return (EnhancedBigtableStubSettings) getStubSettings();
+  /** @deprecated Please use {@link #getStubSettings()} */
+  @Deprecated
+  public ExecutorProvider getExecutorProvider() {
+    return stubSettings.getExecutorProvider();
+  }
+
+  /** @deprecated Please use {@link #getStubSettings()} */
+  @Deprecated
+  public TransportChannelProvider getTransportChannelProvider() {
+    return stubSettings.getTransportChannelProvider();
+  }
+
+  /** @deprecated Please use {@link #getStubSettings()} */
+  @Deprecated
+  public CredentialsProvider getCredentialsProvider() {
+    return stubSettings.getCredentialsProvider();
+  }
+
+  /** @deprecated Please use {@link #getStubSettings()} */
+  @Deprecated
+  public HeaderProvider getHeaderProvider() {
+    return stubSettings.getHeaderProvider();
+  }
+
+  /** @deprecated Please use {@link #getStubSettings()} */
+  @Deprecated
+  public ApiClock getClock() {
+    return stubSettings.getClock();
+  }
+
+  /** @deprecated Please use {@link #getStubSettings()} */
+  @Deprecated
+  public String getEndpoint() {
+    return stubSettings.getEndpoint();
+  }
+
+  /** @deprecated Please use {@link #getStubSettings()} */
+  @Deprecated
+  @Nullable
+  public WatchdogProvider getStreamWatchdogProvider() {
+    return stubSettings.getStreamWatchdogProvider();
+  }
+
+  /** @deprecated Please use {@link #getStubSettings()} */
+  @Deprecated
+  @Nonnull
+  public Duration getStreamWatchdogCheckInterval() {
+    return stubSettings.getStreamWatchdogCheckInterval();
   }
 
   /** Returns a builder containing all the values of this settings class. */
-  @SuppressWarnings("unchecked")
   public Builder toBuilder() {
     return new Builder(this);
   }
 
   /** Builder for BigtableDataSettings. */
-  public static class Builder extends ClientSettings.Builder<BigtableDataSettings, Builder> {
+  public static class Builder {
+    private final EnhancedBigtableStubSettings.Builder stubSettings;
     /**
      * Initializes a new Builder with sane defaults for all settings.
      *
@@ -171,11 +234,11 @@ public class BigtableDataSettings extends ClientSettings<BigtableDataSettings> {
      * in the underlying GAPIC client for batching).
      */
     private Builder() {
-      super(EnhancedBigtableStubSettings.newBuilder());
+      stubSettings = EnhancedBigtableStubSettings.newBuilder();
     }
 
     private Builder(BigtableDataSettings settings) {
-      super(settings);
+      stubSettings = settings.getStubSettings().toBuilder();
     }
 
     // <editor-fold desc="Public API">
@@ -184,13 +247,13 @@ public class BigtableDataSettings extends ClientSettings<BigtableDataSettings> {
      * this setting.
      */
     public Builder setProjectId(@Nonnull String projectId) {
-      getTypedStubSettings().setProjectId(projectId);
+      stubSettings.setProjectId(projectId);
       return this;
     }
 
     /** Gets the project id that was previously set on this Builder. */
     public String getProjectId() {
-      return getTypedStubSettings().getProjectId();
+      return stubSettings.getProjectId();
     }
 
     /**
@@ -198,13 +261,13 @@ public class BigtableDataSettings extends ClientSettings<BigtableDataSettings> {
      * this setting.
      */
     public Builder setInstanceId(@Nonnull String instanceId) {
-      getTypedStubSettings().setInstanceId(instanceId);
+      stubSettings.setInstanceId(instanceId);
       return this;
     }
 
     /** Gets the instance id that was previously set on this Builder. */
     public String getInstanceId() {
-      return getTypedStubSettings().getInstanceId();
+      return stubSettings.getInstanceId();
     }
 
     /**
@@ -214,60 +277,171 @@ public class BigtableDataSettings extends ClientSettings<BigtableDataSettings> {
      * handled according to that application profile.
      */
     public Builder setAppProfileId(@Nonnull String appProfileId) {
-      getTypedStubSettings().setAppProfileId(appProfileId);
+      stubSettings.setAppProfileId(appProfileId);
       return this;
     }
 
     /** Gets the app profile id that was previously set on this Builder. */
     public String getAppProfileId() {
-      return getTypedStubSettings().getAppProfileId();
+      return stubSettings.getAppProfileId();
     }
 
-    /** Returns the builder for the settings used for calls to readRows. */
+    /** @deprecated Please use {@link #stubSettings()} */
+    @Deprecated
     public ServerStreamingCallSettings.Builder<Query, Row> readRowsSettings() {
-      return getTypedStubSettings().readRowsSettings();
+      return stubSettings.readRowsSettings();
     }
 
-    /** Returns the builder for the settings used for point reads using readRow. */
+    /** @deprecated Please use {@link #stubSettings()} */
+    @Deprecated
     public UnaryCallSettings.Builder<Query, Row> readRowSettings() {
-      return getTypedStubSettings().readRowSettings();
+      return stubSettings.readRowSettings();
     }
 
-    /** Returns the builder for the settings used for calls to SampleRowKeysSettings. */
+    /** @deprecated Please use {@link #stubSettings()} */
+    @Deprecated
     public UnaryCallSettings.Builder<String, List<KeyOffset>> sampleRowKeysSettings() {
-      return getTypedStubSettings().sampleRowKeysSettings();
+      return stubSettings.sampleRowKeysSettings();
     }
 
-    /** Returns the builder for the settings used for calls to MutateRow. */
+    /** @deprecated Please use {@link #stubSettings()} */
+    @Deprecated
     public UnaryCallSettings.Builder<RowMutation, Void> mutateRowSettings() {
-      return getTypedStubSettings().mutateRowSettings();
+      return stubSettings.mutateRowSettings();
     }
 
-    /** Returns the builder for the settings used for BulkMutations. */
+    /** @deprecated Please use {@link #stubSettings()} */
+    @Deprecated
     public BatchingCallSettings.Builder<RowMutation, Void> bulkMutationsSettings() {
-      // NOTE: the user facing BigtableDataClient only exposes this api as newBulkMutationBatcher,
-      // so the outer name should match that, while the stub should stick to rpc names.
-      return getTypedStubSettings().bulkMutateRowsSettings();
+      return stubSettings.bulkMutateRowsSettings();
     }
 
-    /** Returns the object with the settings used for calls to checkAndMutateRow. */
+    /** @deprecated Please use {@link #stubSettings()} */
+    @Deprecated
     public UnaryCallSettings.Builder<ConditionalRowMutation, Boolean> checkAndMutateRowSettings() {
-      return getTypedStubSettings().checkAndMutateRowSettings();
+      return stubSettings.checkAndMutateRowSettings();
     }
 
-    /** Returns the builder with the settings used for calls to ReadModifyWriteRow. */
+    /** @deprecated Please use {@link #stubSettings()} */
+    @Deprecated
     public UnaryCallSettings.Builder<ReadModifyWriteRow, Row> readModifyWriteRowSettings() {
-      return getTypedStubSettings().readModifyWriteRowSettings();
+      return stubSettings.readModifyWriteRowSettings();
     }
 
-    @SuppressWarnings("unchecked")
-    private EnhancedBigtableStubSettings.Builder getTypedStubSettings() {
-      return (EnhancedBigtableStubSettings.Builder) getStubSettings();
+    /** Sets the CredentialsProvider to use for getting the credentials to make calls with. */
+    public Builder setCredentialsProvider(CredentialsProvider credentialsProvider) {
+      stubSettings.setCredentialsProvider(credentialsProvider);
+      return this;
     }
 
-    public BigtableDataSettings build() throws IOException {
+    /** Gets the CredentialsProvider to use for getting the credentials to make calls with. */
+    public CredentialsProvider getCredentialsProvider() {
+      return stubSettings.getCredentialsProvider();
+    }
+
+    /**
+     * Returns the underlying settings for making RPC calls. The settings should be changed with
+     * care.
+     */
+    public EnhancedBigtableStubSettings.Builder stubSettings() {
+      return stubSettings;
+    }
+
+    public BigtableDataSettings build() {
       return new BigtableDataSettings(this);
     }
-    // </editor-fold>
+
+    /** @deprecated Please use {@link #stubSettings()} */
+    @Deprecated
+    public Builder setExecutorProvider(ExecutorProvider executorProvider) {
+      stubSettings.setExecutorProvider(executorProvider);
+      return this;
+    }
+
+    /** @deprecated Please use {@link #stubSettings()} */
+    @Deprecated
+    public Builder setHeaderProvider(HeaderProvider headerProvider) {
+      stubSettings.setHeaderProvider(headerProvider);
+      return this;
+    }
+
+    /** @deprecated Please use {@link #stubSettings()} */
+    @Deprecated
+    public Builder setTransportChannelProvider(TransportChannelProvider transportChannelProvider) {
+      stubSettings.setTransportChannelProvider(transportChannelProvider);
+      return this;
+    }
+
+    /** @deprecated Please use {@link #stubSettings()} */
+    @Deprecated
+    public Builder setStreamWatchdogProvider(@Nullable WatchdogProvider streamWatchdogProvider) {
+      stubSettings.setStreamWatchdogProvider(streamWatchdogProvider);
+      return this;
+    }
+
+    /** @deprecated Please use {@link #stubSettings()} */
+    @Deprecated
+    public Builder setClock(ApiClock clock) {
+      stubSettings.setClock(clock);
+      return this;
+    }
+
+    /** @deprecated Please use {@link #stubSettings()} */
+    @Deprecated
+    public Builder setEndpoint(String endpoint) {
+      stubSettings.setEndpoint(endpoint);
+      return this;
+    }
+
+    /** @deprecated Please use {@link #stubSettings()} */
+    @Deprecated
+    public Builder setStreamWatchdogCheckInterval(@Nonnull Duration checkInterval) {
+      stubSettings.setStreamWatchdogCheckInterval(checkInterval);
+      return this;
+    }
+
+    /** @deprecated Please use {@link #stubSettings()} */
+    @Deprecated
+    public ExecutorProvider getExecutorProvider() {
+      return stubSettings.getExecutorProvider();
+    }
+
+    /** @deprecated Please use {@link #stubSettings()} */
+    @Deprecated
+    public TransportChannelProvider getTransportChannelProvider() {
+      return stubSettings.getTransportChannelProvider();
+    }
+
+    /** @deprecated Please use {@link #stubSettings()} */
+    @Deprecated
+    public HeaderProvider getHeaderProvider() {
+      return stubSettings.getHeaderProvider();
+    }
+
+    /** @deprecated Please use {@link #stubSettings()} */
+    @Deprecated
+    @Nullable
+    public WatchdogProvider getStreamWatchdogProvider() {
+      return stubSettings.getStreamWatchdogProvider();
+    }
+
+    /** @deprecated Please use {@link #stubSettings()} */
+    @Deprecated
+    public ApiClock getClock() {
+      return stubSettings.getClock();
+    }
+
+    /** @deprecated Please use {@link #stubSettings()} */
+    @Deprecated
+    public String getEndpoint() {
+      return stubSettings.getEndpoint();
+    }
+
+    /** @deprecated Please use {@link #stubSettings()} */
+    @Deprecated
+    @Nonnull
+    public Duration getStreamWatchdogCheckInterval() {
+      return stubSettings.getStreamWatchdogCheckInterval();
+    }
   }
 }

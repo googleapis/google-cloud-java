@@ -21,7 +21,6 @@ import com.google.api.gax.core.NoCredentialsProvider;
 import com.google.api.gax.grpc.testing.InProcessServer;
 import com.google.api.gax.grpc.testing.LocalChannelProvider;
 import com.google.api.gax.rpc.FixedHeaderProvider;
-import com.google.api.gax.rpc.HeaderProvider;
 import com.google.bigtable.v2.BigtableGrpc;
 import com.google.cloud.bigtable.data.v2.BigtableDataClient;
 import com.google.cloud.bigtable.data.v2.BigtableDataSettings;
@@ -64,21 +63,25 @@ public class ResourceHeaderTest {
     server.start();
     channelProvider = LocalChannelProvider.create(NAME);
 
-    HeaderProvider headerProvider = FixedHeaderProvider.create(TEST_HEADER_NAME, TEST_HEADER_VALUE);
     BigtableDataSettings.Builder settings =
         BigtableDataSettings.newBuilder()
             .setProjectId(PROJECT_ID)
             .setInstanceId(INSTANCE_ID)
-            .setTransportChannelProvider(channelProvider)
-            .setHeaderProvider(headerProvider)
             .setCredentialsProvider(NoCredentialsProvider.create());
+
+    settings
+        .stubSettings()
+        .setTransportChannelProvider(channelProvider)
+        .setHeaderProvider(FixedHeaderProvider.create(TEST_HEADER_NAME, TEST_HEADER_VALUE));
 
     // Force immediate flush
     settings
-        .bulkMutationsSettings()
+        .stubSettings()
+        .bulkMutateRowsSettings()
         .setBatchingSettings(
             settings
-                .bulkMutationsSettings()
+                .stubSettings()
+                .bulkMutateRowsSettings()
                 .getBatchingSettings()
                 .toBuilder()
                 .setElementCountThreshold(1L)

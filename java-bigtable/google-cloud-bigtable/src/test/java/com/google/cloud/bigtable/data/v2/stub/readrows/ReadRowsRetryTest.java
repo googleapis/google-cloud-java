@@ -66,17 +66,20 @@ public class ReadRowsRetryTest {
     service = new TestBigtableService();
     serverRule.getServiceRegistry().addService(service);
 
-    BigtableDataSettings settings =
+    BigtableDataSettings.Builder settings =
         BigtableDataSettings.newBuilder()
             .setProjectId(PROJECT_ID)
             .setInstanceId(INSTANCE_ID)
-            .setCredentialsProvider(NoCredentialsProvider.create())
-            .setTransportChannelProvider(
-                FixedTransportChannelProvider.create(
-                    GrpcTransportChannel.create(serverRule.getChannel())))
-            .build();
+            .setCredentialsProvider(NoCredentialsProvider.create());
 
-    client = BigtableDataClient.create(settings);
+    settings
+        .stubSettings()
+        .setTransportChannelProvider(
+            FixedTransportChannelProvider.create(
+                GrpcTransportChannel.create(serverRule.getChannel())))
+        .build();
+
+    client = BigtableDataClient.create(settings.build());
   }
 
   @After
