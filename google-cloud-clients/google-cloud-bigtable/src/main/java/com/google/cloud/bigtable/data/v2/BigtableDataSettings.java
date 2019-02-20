@@ -15,12 +15,12 @@
  */
 package com.google.cloud.bigtable.data.v2;
 
-import com.google.api.core.ApiFunction;
-import com.google.api.gax.core.NoCredentialsProvider;
-import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.core.ApiClock;
+import com.google.api.core.ApiFunction;
 import com.google.api.gax.core.CredentialsProvider;
 import com.google.api.gax.core.ExecutorProvider;
+import com.google.api.gax.core.NoCredentialsProvider;
+import com.google.api.gax.grpc.InstantiatingGrpcChannelProvider;
 import com.google.api.gax.rpc.BatchingCallSettings;
 import com.google.api.gax.rpc.HeaderProvider;
 import com.google.api.gax.rpc.ServerStreamingCallSettings;
@@ -35,7 +35,6 @@ import com.google.cloud.bigtable.data.v2.models.Row;
 import com.google.cloud.bigtable.data.v2.models.RowMutation;
 import com.google.cloud.bigtable.data.v2.stub.EnhancedBigtableStubSettings;
 import io.grpc.ManagedChannelBuilder;
-import java.io.IOException;
 import java.util.List;
 import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
