@@ -26,6 +26,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
     name_ = "";
     displayName_ = "";
     supportedBy_ = java.util.Collections.emptyList();
+    description_ = "";
   }
 
   @java.lang.Override
@@ -89,6 +90,13 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
                 supportedBy_.add(rawValue);
               }
               input.popLimit(oldLimit);
+              break;
+            }
+          case 34:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              description_ = s;
               break;
             }
           default:
@@ -296,6 +304,51 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
 
   private int supportedByMemoizedSerializedSize;
 
+  public static final int DESCRIPTION_FIELD_NUMBER = 4;
+  private volatile java.lang.Object description_;
+  /**
+   *
+   *
+   * <pre>
+   * Description of the infotype. Translated when language is provided in the
+   * request.
+   * </pre>
+   *
+   * <code>string description = 4;</code>
+   */
+  public java.lang.String getDescription() {
+    java.lang.Object ref = description_;
+    if (ref instanceof java.lang.String) {
+      return (java.lang.String) ref;
+    } else {
+      com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+      java.lang.String s = bs.toStringUtf8();
+      description_ = s;
+      return s;
+    }
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Description of the infotype. Translated when language is provided in the
+   * request.
+   * </pre>
+   *
+   * <code>string description = 4;</code>
+   */
+  public com.google.protobuf.ByteString getDescriptionBytes() {
+    java.lang.Object ref = description_;
+    if (ref instanceof java.lang.String) {
+      com.google.protobuf.ByteString b =
+          com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+      description_ = b;
+      return b;
+    } else {
+      return (com.google.protobuf.ByteString) ref;
+    }
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -324,6 +377,9 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
     for (int i = 0; i < supportedBy_.size(); i++) {
       output.writeEnumNoTag(supportedBy_.get(i));
     }
+    if (!getDescriptionBytes().isEmpty()) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 4, description_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -351,6 +407,9 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       }
       supportedByMemoizedSerializedSize = dataSize;
     }
+    if (!getDescriptionBytes().isEmpty()) {
+      size += com.google.protobuf.GeneratedMessageV3.computeStringSize(4, description_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -371,6 +430,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
     result = result && getName().equals(other.getName());
     result = result && getDisplayName().equals(other.getDisplayName());
     result = result && supportedBy_.equals(other.supportedBy_);
+    result = result && getDescription().equals(other.getDescription());
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -390,6 +450,8 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       hash = (37 * hash) + SUPPORTED_BY_FIELD_NUMBER;
       hash = (53 * hash) + supportedBy_.hashCode();
     }
+    hash = (37 * hash) + DESCRIPTION_FIELD_NUMBER;
+    hash = (53 * hash) + getDescription().hashCode();
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
     return hash;
@@ -541,6 +603,8 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
 
       supportedBy_ = java.util.Collections.emptyList();
       bitField0_ = (bitField0_ & ~0x00000004);
+      description_ = "";
+
       return this;
     }
 
@@ -577,6 +641,7 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
         bitField0_ = (bitField0_ & ~0x00000004);
       }
       result.supportedBy_ = supportedBy_;
+      result.description_ = description_;
       result.bitField0_ = to_bitField0_;
       onBuilt();
       return result;
@@ -643,6 +708,10 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
           ensureSupportedByIsMutable();
           supportedBy_.addAll(other.supportedBy_);
         }
+        onChanged();
+      }
+      if (!other.getDescription().isEmpty()) {
+        description_ = other.description_;
         onChanged();
       }
       this.mergeUnknownFields(other.unknownFields);
@@ -1047,6 +1116,105 @@ public final class InfoTypeDescription extends com.google.protobuf.GeneratedMess
       for (int value : values) {
         supportedBy_.add(value);
       }
+      onChanged();
+      return this;
+    }
+
+    private java.lang.Object description_ = "";
+    /**
+     *
+     *
+     * <pre>
+     * Description of the infotype. Translated when language is provided in the
+     * request.
+     * </pre>
+     *
+     * <code>string description = 4;</code>
+     */
+    public java.lang.String getDescription() {
+      java.lang.Object ref = description_;
+      if (!(ref instanceof java.lang.String)) {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        description_ = s;
+        return s;
+      } else {
+        return (java.lang.String) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Description of the infotype. Translated when language is provided in the
+     * request.
+     * </pre>
+     *
+     * <code>string description = 4;</code>
+     */
+    public com.google.protobuf.ByteString getDescriptionBytes() {
+      java.lang.Object ref = description_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        description_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Description of the infotype. Translated when language is provided in the
+     * request.
+     * </pre>
+     *
+     * <code>string description = 4;</code>
+     */
+    public Builder setDescription(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+
+      description_ = value;
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Description of the infotype. Translated when language is provided in the
+     * request.
+     * </pre>
+     *
+     * <code>string description = 4;</code>
+     */
+    public Builder clearDescription() {
+
+      description_ = getDefaultInstance().getDescription();
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Description of the infotype. Translated when language is provided in the
+     * request.
+     * </pre>
+     *
+     * <code>string description = 4;</code>
+     */
+    public Builder setDescriptionBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+
+      description_ = value;
       onChanged();
       return this;
     }

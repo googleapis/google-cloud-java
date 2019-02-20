@@ -2348,6 +2348,40 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
      * <code>string pattern = 1;</code>
      */
     com.google.protobuf.ByteString getPatternBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * The index of the submatch to extract as findings. When not
+     * specified, the entire match is returned. No more than 3 may be included.
+     * </pre>
+     *
+     * <code>repeated int32 group_indexes = 2;</code>
+     */
+    java.util.List<java.lang.Integer> getGroupIndexesList();
+    /**
+     *
+     *
+     * <pre>
+     * The index of the submatch to extract as findings. When not
+     * specified, the entire match is returned. No more than 3 may be included.
+     * </pre>
+     *
+     * <code>repeated int32 group_indexes = 2;</code>
+     */
+    int getGroupIndexesCount();
+    /**
+     *
+     *
+     * <pre>
+     * The index of the submatch to extract as findings. When not
+     * specified, the entire match is returned. No more than 3 may be included.
+     * </pre>
+     *
+     * <code>repeated int32 group_indexes = 2;</code>
+     */
+    int getGroupIndexes(int index);
   }
   /**
    *
@@ -2370,6 +2404,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
 
     private Regex() {
       pattern_ = "";
+      groupIndexes_ = java.util.Collections.emptyList();
     }
 
     @java.lang.Override
@@ -2403,6 +2438,30 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
                 pattern_ = s;
                 break;
               }
+            case 16:
+              {
+                if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                  groupIndexes_ = new java.util.ArrayList<java.lang.Integer>();
+                  mutable_bitField0_ |= 0x00000002;
+                }
+                groupIndexes_.add(input.readInt32());
+                break;
+              }
+            case 18:
+              {
+                int length = input.readRawVarint32();
+                int limit = input.pushLimit(length);
+                if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)
+                    && input.getBytesUntilLimit() > 0) {
+                  groupIndexes_ = new java.util.ArrayList<java.lang.Integer>();
+                  mutable_bitField0_ |= 0x00000002;
+                }
+                while (input.getBytesUntilLimit() > 0) {
+                  groupIndexes_.add(input.readInt32());
+                }
+                input.popLimit(limit);
+                break;
+              }
             default:
               {
                 if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
@@ -2417,6 +2476,9 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
       } catch (java.io.IOException e) {
         throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
       } finally {
+        if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+          groupIndexes_ = java.util.Collections.unmodifiableList(groupIndexes_);
+        }
         this.unknownFields = unknownFields.build();
         makeExtensionsImmutable();
       }
@@ -2437,6 +2499,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
               com.google.privacy.dlp.v2.CustomInfoType.Regex.Builder.class);
     }
 
+    private int bitField0_;
     public static final int PATTERN_FIELD_NUMBER = 1;
     private volatile java.lang.Object pattern_;
     /**
@@ -2484,6 +2547,50 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
       }
     }
 
+    public static final int GROUP_INDEXES_FIELD_NUMBER = 2;
+    private java.util.List<java.lang.Integer> groupIndexes_;
+    /**
+     *
+     *
+     * <pre>
+     * The index of the submatch to extract as findings. When not
+     * specified, the entire match is returned. No more than 3 may be included.
+     * </pre>
+     *
+     * <code>repeated int32 group_indexes = 2;</code>
+     */
+    public java.util.List<java.lang.Integer> getGroupIndexesList() {
+      return groupIndexes_;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The index of the submatch to extract as findings. When not
+     * specified, the entire match is returned. No more than 3 may be included.
+     * </pre>
+     *
+     * <code>repeated int32 group_indexes = 2;</code>
+     */
+    public int getGroupIndexesCount() {
+      return groupIndexes_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * The index of the submatch to extract as findings. When not
+     * specified, the entire match is returned. No more than 3 may be included.
+     * </pre>
+     *
+     * <code>repeated int32 group_indexes = 2;</code>
+     */
+    public int getGroupIndexes(int index) {
+      return groupIndexes_.get(index);
+    }
+
+    private int groupIndexesMemoizedSerializedSize = -1;
+
     private byte memoizedIsInitialized = -1;
 
     @java.lang.Override
@@ -2498,8 +2605,16 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
 
     @java.lang.Override
     public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      getSerializedSize();
       if (!getPatternBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessageV3.writeString(output, 1, pattern_);
+      }
+      if (getGroupIndexesList().size() > 0) {
+        output.writeUInt32NoTag(18);
+        output.writeUInt32NoTag(groupIndexesMemoizedSerializedSize);
+      }
+      for (int i = 0; i < groupIndexes_.size(); i++) {
+        output.writeInt32NoTag(groupIndexes_.get(i));
       }
       unknownFields.writeTo(output);
     }
@@ -2512,6 +2627,19 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
       size = 0;
       if (!getPatternBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, pattern_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < groupIndexes_.size(); i++) {
+          dataSize +=
+              com.google.protobuf.CodedOutputStream.computeInt32SizeNoTag(groupIndexes_.get(i));
+        }
+        size += dataSize;
+        if (!getGroupIndexesList().isEmpty()) {
+          size += 1;
+          size += com.google.protobuf.CodedOutputStream.computeInt32SizeNoTag(dataSize);
+        }
+        groupIndexesMemoizedSerializedSize = dataSize;
       }
       size += unknownFields.getSerializedSize();
       memoizedSize = size;
@@ -2531,6 +2659,7 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
 
       boolean result = true;
       result = result && getPattern().equals(other.getPattern());
+      result = result && getGroupIndexesList().equals(other.getGroupIndexesList());
       result = result && unknownFields.equals(other.unknownFields);
       return result;
     }
@@ -2544,6 +2673,10 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
       hash = (19 * hash) + getDescriptor().hashCode();
       hash = (37 * hash) + PATTERN_FIELD_NUMBER;
       hash = (53 * hash) + getPattern().hashCode();
+      if (getGroupIndexesCount() > 0) {
+        hash = (37 * hash) + GROUP_INDEXES_FIELD_NUMBER;
+        hash = (53 * hash) + getGroupIndexesList().hashCode();
+      }
       hash = (29 * hash) + unknownFields.hashCode();
       memoizedHashCode = hash;
       return hash;
@@ -2693,6 +2826,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
         super.clear();
         pattern_ = "";
 
+        groupIndexes_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
         return this;
       }
 
@@ -2720,7 +2855,15 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
       public com.google.privacy.dlp.v2.CustomInfoType.Regex buildPartial() {
         com.google.privacy.dlp.v2.CustomInfoType.Regex result =
             new com.google.privacy.dlp.v2.CustomInfoType.Regex(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
         result.pattern_ = pattern_;
+        if (((bitField0_ & 0x00000002) == 0x00000002)) {
+          groupIndexes_ = java.util.Collections.unmodifiableList(groupIndexes_);
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.groupIndexes_ = groupIndexes_;
+        result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
@@ -2777,6 +2920,16 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
           pattern_ = other.pattern_;
           onChanged();
         }
+        if (!other.groupIndexes_.isEmpty()) {
+          if (groupIndexes_.isEmpty()) {
+            groupIndexes_ = other.groupIndexes_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureGroupIndexesIsMutable();
+            groupIndexes_.addAll(other.groupIndexes_);
+          }
+          onChanged();
+        }
         this.mergeUnknownFields(other.unknownFields);
         onChanged();
         return this;
@@ -2805,6 +2958,8 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
         }
         return this;
       }
+
+      private int bitField0_;
 
       private java.lang.Object pattern_ = "";
       /**
@@ -2906,6 +3061,118 @@ public final class CustomInfoType extends com.google.protobuf.GeneratedMessageV3
         checkByteStringIsUtf8(value);
 
         pattern_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.util.List<java.lang.Integer> groupIndexes_ = java.util.Collections.emptyList();
+
+      private void ensureGroupIndexesIsMutable() {
+        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+          groupIndexes_ = new java.util.ArrayList<java.lang.Integer>(groupIndexes_);
+          bitField0_ |= 0x00000002;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The index of the submatch to extract as findings. When not
+       * specified, the entire match is returned. No more than 3 may be included.
+       * </pre>
+       *
+       * <code>repeated int32 group_indexes = 2;</code>
+       */
+      public java.util.List<java.lang.Integer> getGroupIndexesList() {
+        return java.util.Collections.unmodifiableList(groupIndexes_);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The index of the submatch to extract as findings. When not
+       * specified, the entire match is returned. No more than 3 may be included.
+       * </pre>
+       *
+       * <code>repeated int32 group_indexes = 2;</code>
+       */
+      public int getGroupIndexesCount() {
+        return groupIndexes_.size();
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The index of the submatch to extract as findings. When not
+       * specified, the entire match is returned. No more than 3 may be included.
+       * </pre>
+       *
+       * <code>repeated int32 group_indexes = 2;</code>
+       */
+      public int getGroupIndexes(int index) {
+        return groupIndexes_.get(index);
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The index of the submatch to extract as findings. When not
+       * specified, the entire match is returned. No more than 3 may be included.
+       * </pre>
+       *
+       * <code>repeated int32 group_indexes = 2;</code>
+       */
+      public Builder setGroupIndexes(int index, int value) {
+        ensureGroupIndexesIsMutable();
+        groupIndexes_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The index of the submatch to extract as findings. When not
+       * specified, the entire match is returned. No more than 3 may be included.
+       * </pre>
+       *
+       * <code>repeated int32 group_indexes = 2;</code>
+       */
+      public Builder addGroupIndexes(int value) {
+        ensureGroupIndexesIsMutable();
+        groupIndexes_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The index of the submatch to extract as findings. When not
+       * specified, the entire match is returned. No more than 3 may be included.
+       * </pre>
+       *
+       * <code>repeated int32 group_indexes = 2;</code>
+       */
+      public Builder addAllGroupIndexes(java.lang.Iterable<? extends java.lang.Integer> values) {
+        ensureGroupIndexesIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, groupIndexes_);
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * The index of the submatch to extract as findings. When not
+       * specified, the entire match is returned. No more than 3 may be included.
+       * </pre>
+       *
+       * <code>repeated int32 group_indexes = 2;</code>
+       */
+      public Builder clearGroupIndexes() {
+        groupIndexes_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000002);
         onChanged();
         return this;
       }

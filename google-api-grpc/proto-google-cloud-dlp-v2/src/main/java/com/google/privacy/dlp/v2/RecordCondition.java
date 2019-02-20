@@ -194,6 +194,8 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
    * <pre>
    * The field type of `value` and `field` do not need to match to be
    * considered equal, but not all comparisons are possible.
+   * EQUAL_TO and NOT_EQUAL_TO attempt to compare even with incompatible types,
+   * but all other comparisons are invalid with incompatible types.
    * A `value` of type:
    * - `string` can be compared against all other types
    * - `boolean` can only be compared against other booleans
@@ -629,6 +631,8 @@ public final class RecordCondition extends com.google.protobuf.GeneratedMessageV
      * <pre>
      * The field type of `value` and `field` do not need to match to be
      * considered equal, but not all comparisons are possible.
+     * EQUAL_TO and NOT_EQUAL_TO attempt to compare even with incompatible types,
+     * but all other comparisons are invalid with incompatible types.
      * A `value` of type:
      * - `string` can be compared against all other types
      * - `boolean` can only be compared against other booleans
