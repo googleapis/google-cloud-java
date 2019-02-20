@@ -299,8 +299,13 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The Cloud Storage url of the file(s) to scan, in the format
-     * `gs://&lt;bucket&gt;/&lt;path&gt;`. Trailing wildcard in the path is allowed. Exactly
-     * one of `url` or `regex_file_set` must be set.
+     * `gs://&lt;bucket&gt;/&lt;path&gt;`. Trailing wildcard in the path is allowed.
+     * If the url ends in a trailing slash, the bucket or directory represented
+     * by the url will be scanned non-recursively (content in sub-directories
+     * will not be scanned). This means that `gs://mybucket/` is equivalent to
+     * `gs://mybucket/&#42;`, and `gs://mybucket/directory/` is equivalent to
+     * `gs://mybucket/directory/&#42;`.
+     * Exactly one of `url` or `regex_file_set` must be set.
      * </pre>
      *
      * <code>string url = 1;</code>
@@ -311,8 +316,13 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The Cloud Storage url of the file(s) to scan, in the format
-     * `gs://&lt;bucket&gt;/&lt;path&gt;`. Trailing wildcard in the path is allowed. Exactly
-     * one of `url` or `regex_file_set` must be set.
+     * `gs://&lt;bucket&gt;/&lt;path&gt;`. Trailing wildcard in the path is allowed.
+     * If the url ends in a trailing slash, the bucket or directory represented
+     * by the url will be scanned non-recursively (content in sub-directories
+     * will not be scanned). This means that `gs://mybucket/` is equivalent to
+     * `gs://mybucket/&#42;`, and `gs://mybucket/directory/` is equivalent to
+     * `gs://mybucket/directory/&#42;`.
+     * Exactly one of `url` or `regex_file_set` must be set.
      * </pre>
      *
      * <code>string url = 1;</code>
@@ -465,8 +475,13 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The Cloud Storage url of the file(s) to scan, in the format
-     * `gs://&lt;bucket&gt;/&lt;path&gt;`. Trailing wildcard in the path is allowed. Exactly
-     * one of `url` or `regex_file_set` must be set.
+     * `gs://&lt;bucket&gt;/&lt;path&gt;`. Trailing wildcard in the path is allowed.
+     * If the url ends in a trailing slash, the bucket or directory represented
+     * by the url will be scanned non-recursively (content in sub-directories
+     * will not be scanned). This means that `gs://mybucket/` is equivalent to
+     * `gs://mybucket/&#42;`, and `gs://mybucket/directory/` is equivalent to
+     * `gs://mybucket/directory/&#42;`.
+     * Exactly one of `url` or `regex_file_set` must be set.
      * </pre>
      *
      * <code>string url = 1;</code>
@@ -487,8 +502,13 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
      *
      * <pre>
      * The Cloud Storage url of the file(s) to scan, in the format
-     * `gs://&lt;bucket&gt;/&lt;path&gt;`. Trailing wildcard in the path is allowed. Exactly
-     * one of `url` or `regex_file_set` must be set.
+     * `gs://&lt;bucket&gt;/&lt;path&gt;`. Trailing wildcard in the path is allowed.
+     * If the url ends in a trailing slash, the bucket or directory represented
+     * by the url will be scanned non-recursively (content in sub-directories
+     * will not be scanned). This means that `gs://mybucket/` is equivalent to
+     * `gs://mybucket/&#42;`, and `gs://mybucket/directory/` is equivalent to
+     * `gs://mybucket/directory/&#42;`.
+     * Exactly one of `url` or `regex_file_set` must be set.
      * </pre>
      *
      * <code>string url = 1;</code>
@@ -907,8 +927,13 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * The Cloud Storage url of the file(s) to scan, in the format
-       * `gs://&lt;bucket&gt;/&lt;path&gt;`. Trailing wildcard in the path is allowed. Exactly
-       * one of `url` or `regex_file_set` must be set.
+       * `gs://&lt;bucket&gt;/&lt;path&gt;`. Trailing wildcard in the path is allowed.
+       * If the url ends in a trailing slash, the bucket or directory represented
+       * by the url will be scanned non-recursively (content in sub-directories
+       * will not be scanned). This means that `gs://mybucket/` is equivalent to
+       * `gs://mybucket/&#42;`, and `gs://mybucket/directory/` is equivalent to
+       * `gs://mybucket/directory/&#42;`.
+       * Exactly one of `url` or `regex_file_set` must be set.
        * </pre>
        *
        * <code>string url = 1;</code>
@@ -929,8 +954,13 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * The Cloud Storage url of the file(s) to scan, in the format
-       * `gs://&lt;bucket&gt;/&lt;path&gt;`. Trailing wildcard in the path is allowed. Exactly
-       * one of `url` or `regex_file_set` must be set.
+       * `gs://&lt;bucket&gt;/&lt;path&gt;`. Trailing wildcard in the path is allowed.
+       * If the url ends in a trailing slash, the bucket or directory represented
+       * by the url will be scanned non-recursively (content in sub-directories
+       * will not be scanned). This means that `gs://mybucket/` is equivalent to
+       * `gs://mybucket/&#42;`, and `gs://mybucket/directory/` is equivalent to
+       * `gs://mybucket/directory/&#42;`.
+       * Exactly one of `url` or `regex_file_set` must be set.
        * </pre>
        *
        * <code>string url = 1;</code>
@@ -951,8 +981,13 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * The Cloud Storage url of the file(s) to scan, in the format
-       * `gs://&lt;bucket&gt;/&lt;path&gt;`. Trailing wildcard in the path is allowed. Exactly
-       * one of `url` or `regex_file_set` must be set.
+       * `gs://&lt;bucket&gt;/&lt;path&gt;`. Trailing wildcard in the path is allowed.
+       * If the url ends in a trailing slash, the bucket or directory represented
+       * by the url will be scanned non-recursively (content in sub-directories
+       * will not be scanned). This means that `gs://mybucket/` is equivalent to
+       * `gs://mybucket/&#42;`, and `gs://mybucket/directory/` is equivalent to
+       * `gs://mybucket/directory/&#42;`.
+       * Exactly one of `url` or `regex_file_set` must be set.
        * </pre>
        *
        * <code>string url = 1;</code>
@@ -971,8 +1006,13 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * The Cloud Storage url of the file(s) to scan, in the format
-       * `gs://&lt;bucket&gt;/&lt;path&gt;`. Trailing wildcard in the path is allowed. Exactly
-       * one of `url` or `regex_file_set` must be set.
+       * `gs://&lt;bucket&gt;/&lt;path&gt;`. Trailing wildcard in the path is allowed.
+       * If the url ends in a trailing slash, the bucket or directory represented
+       * by the url will be scanned non-recursively (content in sub-directories
+       * will not be scanned). This means that `gs://mybucket/` is equivalent to
+       * `gs://mybucket/&#42;`, and `gs://mybucket/directory/` is equivalent to
+       * `gs://mybucket/directory/&#42;`.
+       * Exactly one of `url` or `regex_file_set` must be set.
        * </pre>
        *
        * <code>string url = 1;</code>
@@ -988,8 +1028,13 @@ public final class CloudStorageOptions extends com.google.protobuf.GeneratedMess
        *
        * <pre>
        * The Cloud Storage url of the file(s) to scan, in the format
-       * `gs://&lt;bucket&gt;/&lt;path&gt;`. Trailing wildcard in the path is allowed. Exactly
-       * one of `url` or `regex_file_set` must be set.
+       * `gs://&lt;bucket&gt;/&lt;path&gt;`. Trailing wildcard in the path is allowed.
+       * If the url ends in a trailing slash, the bucket or directory represented
+       * by the url will be scanned non-recursively (content in sub-directories
+       * will not be scanned). This means that `gs://mybucket/` is equivalent to
+       * `gs://mybucket/&#42;`, and `gs://mybucket/directory/` is equivalent to
+       * `gs://mybucket/directory/&#42;`.
+       * Exactly one of `url` or `regex_file_set` must be set.
        * </pre>
        *
        * <code>string url = 1;</code>

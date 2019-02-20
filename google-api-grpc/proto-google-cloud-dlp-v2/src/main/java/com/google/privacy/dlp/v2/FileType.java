@@ -48,6 +48,18 @@ public enum FileType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>TEXT_FILE = 2;</code>
    */
   TEXT_FILE(2),
+  /**
+   *
+   *
+   * <pre>
+   * Included file extensions:
+   *   bmp, gif, jpg, jpeg, jpe, png.
+   * bytes_limit_per_file has no effect on image files.
+   * </pre>
+   *
+   * <code>IMAGE = 3;</code>
+   */
+  IMAGE(3),
   UNRECOGNIZED(-1),
   ;
 
@@ -86,6 +98,18 @@ public enum FileType implements com.google.protobuf.ProtocolMessageEnum {
    * <code>TEXT_FILE = 2;</code>
    */
   public static final int TEXT_FILE_VALUE = 2;
+  /**
+   *
+   *
+   * <pre>
+   * Included file extensions:
+   *   bmp, gif, jpg, jpeg, jpe, png.
+   * bytes_limit_per_file has no effect on image files.
+   * </pre>
+   *
+   * <code>IMAGE = 3;</code>
+   */
+  public static final int IMAGE_VALUE = 3;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -109,6 +133,8 @@ public enum FileType implements com.google.protobuf.ProtocolMessageEnum {
         return BINARY_FILE;
       case 2:
         return TEXT_FILE;
+      case 3:
+        return IMAGE;
       default:
         return null;
     }
