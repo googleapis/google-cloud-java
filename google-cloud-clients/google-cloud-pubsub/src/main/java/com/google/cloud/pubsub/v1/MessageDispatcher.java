@@ -65,6 +65,7 @@ class MessageDispatcher {
   @InternalApi static final Duration PENDING_ACKS_SEND_DELAY = Duration.ofMillis(100);
 
   private final Executor executor;
+  private final SequentialExecutorService sequentialExecutor;
   private final ScheduledExecutorService systemExecutor;
   private final ApiClock clock;
 
@@ -217,6 +218,7 @@ class MessageDispatcher {
     jobLock = new ReentrantLock();
     messagesWaiter = new MessageWaiter();
     this.clock = clock;
+    this.sequentialExecutor = new SequentialExecutorService(executor);
   }
 
   public void start() {
@@ -401,46 +403,51 @@ class MessageDispatcher {
           outstandingMessageBatches.poll();
           batchCallback = nextBatch.doneCallback;
         }
-      }
 
-      final PubsubMessage message = outstandingMessage.receivedMessage().getMessage();
-      final AckHandler ackHandler = outstandingMessage.ackHandler();
-      final SettableApiFuture<AckReply> response = SettableApiFuture.create();
-      final AckReplyConsumer consumer =
-          new AckReplyConsumer() {
-            @Override
-            public void ack() {
-              response.set(AckReply.ACK);
-            }
-
-            @Override
-            public void nack() {
-              response.set(AckReply.NACK);
-            }
-          };
-      ApiFutures.addCallback(response, ackHandler, MoreExecutors.directExecutor());
-      executor.execute(
-          new Runnable() {
-            @Override
-            public void run() {
-              try {
-                if (ackHandler
-                    .totalExpiration
-                    .plusSeconds(messageDeadlineSeconds.get())
-                    .isBefore(now())) {
-                  // Message expired while waiting. We don't extend these messages anymore,
-                  // so it was probably sent to someone else. Don't work on it.
-                  // Don't nack it either, because we'd be nacking someone else's message.
-                  ackHandler.forget();
-                  return;
-                }
-
-                receiver.receiveMessage(message, consumer);
-              } catch (Exception e) {
-                response.setException(e);
+        final PubsubMessage message = outstandingMessage.receivedMessage().getMessage();
+        final AckHandler ackHandler = outstandingMessage.ackHandler();
+        final SettableApiFuture<AckReply> response = SettableApiFuture.create();
+        final AckReplyConsumer consumer =
+            new AckReplyConsumer() {
+              @Override
+              public void ack() {
+                response.set(AckReply.ACK);
               }
-            }
-          });
+
+              @Override
+              public void nack() {
+                response.set(AckReply.NACK);
+              }
+            };
+        ApiFutures.addCallback(response, ackHandler, MoreExecutors.directExecutor());
+        Runnable deliverMessageTask =
+            new Runnable() {
+              @Override
+              public void run() {
+                try {
+                  if (ackHandler
+                      .totalExpiration
+                      .plusSeconds(messageDeadlineSeconds.get())
+                      .isBefore(now())) {
+                    // Message expired while waiting. We don't extend these messages anymore,
+                    // so it was probably sent to someone else. Don't work on it.
+                    // Don't nack it either, because we'd be nacking someone else's message.
+                    ackHandler.forget();
+                    return;
+                  }
+
+                  receiver.receiveMessage(message, consumer);
+                } catch (Exception e) {
+                  response.setException(e);
+                }
+              }
+            };
+        if (message.getOrderingKey().isEmpty()) {
+          executor.execute(deliverMessageTask);
+        } else {
+          sequentialExecutor.submit(message.getOrderingKey(), deliverMessageTask);
+        }
+      }
       if (batchDone) {
         batchCallback.run();
       }
