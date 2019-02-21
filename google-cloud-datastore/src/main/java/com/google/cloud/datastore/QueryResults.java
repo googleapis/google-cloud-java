@@ -16,6 +16,7 @@
 
 package com.google.cloud.datastore;
 
+import com.google.datastore.v1.QueryResultBatch;
 import java.util.Iterator;
 
 /**
@@ -66,4 +67,7 @@ public interface QueryResults<V> extends Iterator<V> {
    * }</pre>
    */
   int getSkippedResults();
+
+  /** Returns MoreResults state of the query after the current batch. */
+  QueryResultBatch.MoreResultsType getMoreResults();
 }
