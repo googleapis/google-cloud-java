@@ -251,4 +251,36 @@ public interface VideoContextOrBuilder
    */
   com.google.cloud.videointelligence.v1.SpeechTranscriptionConfigOrBuilder
       getSpeechTranscriptionConfigOrBuilder();
+
+  /**
+   *
+   *
+   * <pre>
+   * Config for TEXT_DETECTION.
+   * </pre>
+   *
+   * <code>.google.cloud.videointelligence.v1.TextDetectionConfig text_detection_config = 8;</code>
+   */
+  boolean hasTextDetectionConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Config for TEXT_DETECTION.
+   * </pre>
+   *
+   * <code>.google.cloud.videointelligence.v1.TextDetectionConfig text_detection_config = 8;</code>
+   */
+  com.google.cloud.videointelligence.v1.TextDetectionConfig getTextDetectionConfig();
+  /**
+   *
+   *
+   * <pre>
+   * Config for TEXT_DETECTION.
+   * </pre>
+   *
+   * <code>.google.cloud.videointelligence.v1.TextDetectionConfig text_detection_config = 8;</code>
+   */
+  com.google.cloud.videointelligence.v1.TextDetectionConfigOrBuilder
+      getTextDetectionConfigOrBuilder();
 }
