@@ -41,10 +41,7 @@ import com.google.common.base.Preconditions;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.ImmutableSet;
-import com.google.common.collect.Maps;
-import com.google.common.graph.ImmutableNetwork;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 import javax.annotation.Nonnull;
 import org.threeten.bp.Duration;
@@ -276,13 +273,12 @@ public class EnhancedBigtableStubSettings extends StubSettings<EnhancedBigtableS
       setStreamWatchdogCheckInterval(baseDefaults.getStreamWatchdogCheckInterval());
       setStreamWatchdogProvider(baseDefaults.getStreamWatchdogProvider());
 
-      setTracerFactory(new OpencensusTracerFactory(
-          ImmutableMap.of(
-              "gax", GaxGrpcProperties.getGaxGrpcVersion(),
-              "grpc", GaxGrpcProperties.getGrpcVersion(),
-              "gapic", GaxProperties.getLibraryVersion(EnhancedBigtableStubSettings.class)
-          )
-      ));
+      setTracerFactory(
+          new OpencensusTracerFactory(
+              ImmutableMap.of(
+                  "gax", GaxGrpcProperties.getGaxGrpcVersion(),
+                  "grpc", GaxGrpcProperties.getGrpcVersion(),
+                  "gapic", GaxProperties.getLibraryVersion(EnhancedBigtableStubSettings.class))));
 
       // Per-method settings using baseSettings for defaults.
       readRowsSettings = ServerStreamingCallSettings.newBuilder();

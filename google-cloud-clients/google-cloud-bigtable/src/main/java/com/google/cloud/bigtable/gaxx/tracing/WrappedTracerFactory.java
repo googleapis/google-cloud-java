@@ -18,9 +18,7 @@ package com.google.cloud.bigtable.gaxx.tracing;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.tracing.ApiTracer;
 import com.google.api.gax.tracing.ApiTracerFactory;
-import com.google.api.gax.tracing.OpencensusTracerFactory;
 import com.google.api.gax.tracing.SpanName;
-import org.threeten.bp.Duration;
 
 /**
  * Simple wrapper around {@link ApiTracerFactory} to augment the client name of the generated
