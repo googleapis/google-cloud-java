@@ -27,17 +27,21 @@ import javax.annotation.Nullable;
 public final class NetworksAddPeeringRequest implements ApiMessage {
   private final Boolean autoCreateRoutes;
   private final String name;
+  private final NetworkPeering networkPeering;
   private final String peerNetwork;
 
   private NetworksAddPeeringRequest() {
     this.autoCreateRoutes = null;
     this.name = null;
+    this.networkPeering = null;
     this.peerNetwork = null;
   }
 
-  private NetworksAddPeeringRequest(Boolean autoCreateRoutes, String name, String peerNetwork) {
+  private NetworksAddPeeringRequest(
+      Boolean autoCreateRoutes, String name, NetworkPeering networkPeering, String peerNetwork) {
     this.autoCreateRoutes = autoCreateRoutes;
     this.name = name;
+    this.networkPeering = networkPeering;
     this.peerNetwork = peerNetwork;
   }
 
@@ -48,6 +52,9 @@ public final class NetworksAddPeeringRequest implements ApiMessage {
     }
     if ("name".equals(fieldName)) {
       return name;
+    }
+    if ("networkPeering".equals(fieldName)) {
+      return networkPeering;
     }
     if ("peerNetwork".equals(fieldName)) {
       return peerNetwork;
@@ -73,7 +80,10 @@ public final class NetworksAddPeeringRequest implements ApiMessage {
     return null;
   }
 
-  /** Whether Google Compute Engine manages the routes automatically. */
+  /**
+   * This field will be deprecated soon. Prefer using exchange_subnet_routes in network_peering
+   * instead. Whether Google Compute Engine manages the routes automatically.
+   */
   public Boolean getAutoCreateRoutes() {
     return autoCreateRoutes;
   }
@@ -81,6 +91,16 @@ public final class NetworksAddPeeringRequest implements ApiMessage {
   /** Name of the peering, which should conform to RFC1035. */
   public String getName() {
     return name;
+  }
+
+  /**
+   * Network peering parameters. In order to specify route policies for peering using import/export
+   * custom routes, you will have to fill all peering related parameters (name, peer network,
+   * exchange_subnet_routes) in network_peeringfield. Corresponding fields in
+   * NetworksAddPeeringRequest will be deprecated soon.
+   */
+  public NetworkPeering getNetworkPeering() {
+    return networkPeering;
   }
 
   /**
@@ -117,6 +137,7 @@ public final class NetworksAddPeeringRequest implements ApiMessage {
   public static class Builder {
     private Boolean autoCreateRoutes;
     private String name;
+    private NetworkPeering networkPeering;
     private String peerNetwork;
 
     Builder() {}
@@ -129,6 +150,9 @@ public final class NetworksAddPeeringRequest implements ApiMessage {
       if (other.getName() != null) {
         this.name = other.name;
       }
+      if (other.getNetworkPeering() != null) {
+        this.networkPeering = other.networkPeering;
+      }
       if (other.getPeerNetwork() != null) {
         this.peerNetwork = other.peerNetwork;
       }
@@ -138,15 +162,22 @@ public final class NetworksAddPeeringRequest implements ApiMessage {
     Builder(NetworksAddPeeringRequest source) {
       this.autoCreateRoutes = source.autoCreateRoutes;
       this.name = source.name;
+      this.networkPeering = source.networkPeering;
       this.peerNetwork = source.peerNetwork;
     }
 
-    /** Whether Google Compute Engine manages the routes automatically. */
+    /**
+     * This field will be deprecated soon. Prefer using exchange_subnet_routes in network_peering
+     * instead. Whether Google Compute Engine manages the routes automatically.
+     */
     public Boolean getAutoCreateRoutes() {
       return autoCreateRoutes;
     }
 
-    /** Whether Google Compute Engine manages the routes automatically. */
+    /**
+     * This field will be deprecated soon. Prefer using exchange_subnet_routes in network_peering
+     * instead. Whether Google Compute Engine manages the routes automatically.
+     */
     public Builder setAutoCreateRoutes(Boolean autoCreateRoutes) {
       this.autoCreateRoutes = autoCreateRoutes;
       return this;
@@ -160,6 +191,27 @@ public final class NetworksAddPeeringRequest implements ApiMessage {
     /** Name of the peering, which should conform to RFC1035. */
     public Builder setName(String name) {
       this.name = name;
+      return this;
+    }
+
+    /**
+     * Network peering parameters. In order to specify route policies for peering using
+     * import/export custom routes, you will have to fill all peering related parameters (name, peer
+     * network, exchange_subnet_routes) in network_peeringfield. Corresponding fields in
+     * NetworksAddPeeringRequest will be deprecated soon.
+     */
+    public NetworkPeering getNetworkPeering() {
+      return networkPeering;
+    }
+
+    /**
+     * Network peering parameters. In order to specify route policies for peering using
+     * import/export custom routes, you will have to fill all peering related parameters (name, peer
+     * network, exchange_subnet_routes) in network_peeringfield. Corresponding fields in
+     * NetworksAddPeeringRequest will be deprecated soon.
+     */
+    public Builder setNetworkPeering(NetworkPeering networkPeering) {
+      this.networkPeering = networkPeering;
       return this;
     }
 
@@ -184,13 +236,14 @@ public final class NetworksAddPeeringRequest implements ApiMessage {
 
     public NetworksAddPeeringRequest build() {
 
-      return new NetworksAddPeeringRequest(autoCreateRoutes, name, peerNetwork);
+      return new NetworksAddPeeringRequest(autoCreateRoutes, name, networkPeering, peerNetwork);
     }
 
     public Builder clone() {
       Builder newBuilder = new Builder();
       newBuilder.setAutoCreateRoutes(this.autoCreateRoutes);
       newBuilder.setName(this.name);
+      newBuilder.setNetworkPeering(this.networkPeering);
       newBuilder.setPeerNetwork(this.peerNetwork);
       return newBuilder;
     }
@@ -204,6 +257,9 @@ public final class NetworksAddPeeringRequest implements ApiMessage {
         + ", "
         + "name="
         + name
+        + ", "
+        + "networkPeering="
+        + networkPeering
         + ", "
         + "peerNetwork="
         + peerNetwork
@@ -219,6 +275,7 @@ public final class NetworksAddPeeringRequest implements ApiMessage {
       NetworksAddPeeringRequest that = (NetworksAddPeeringRequest) o;
       return Objects.equals(this.autoCreateRoutes, that.getAutoCreateRoutes())
           && Objects.equals(this.name, that.getName())
+          && Objects.equals(this.networkPeering, that.getNetworkPeering())
           && Objects.equals(this.peerNetwork, that.getPeerNetwork());
     }
     return false;
@@ -226,6 +283,6 @@ public final class NetworksAddPeeringRequest implements ApiMessage {
 
   @Override
   public int hashCode() {
-    return Objects.hash(autoCreateRoutes, name, peerNetwork);
+    return Objects.hash(autoCreateRoutes, name, networkPeering, peerNetwork);
   }
 }

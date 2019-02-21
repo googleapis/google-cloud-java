@@ -437,6 +437,133 @@ public interface VideoAnnotationResultsOrBuilder
    *
    *
    * <pre>
+   * OCR text detection and tracking.
+   * Annotations for list of detected text snippets. Each will have list of
+   * frame information associated with it.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.videointelligence.v1.TextAnnotation text_annotations = 12;</code>
+   */
+  java.util.List<com.google.cloud.videointelligence.v1.TextAnnotation> getTextAnnotationsList();
+  /**
+   *
+   *
+   * <pre>
+   * OCR text detection and tracking.
+   * Annotations for list of detected text snippets. Each will have list of
+   * frame information associated with it.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.videointelligence.v1.TextAnnotation text_annotations = 12;</code>
+   */
+  com.google.cloud.videointelligence.v1.TextAnnotation getTextAnnotations(int index);
+  /**
+   *
+   *
+   * <pre>
+   * OCR text detection and tracking.
+   * Annotations for list of detected text snippets. Each will have list of
+   * frame information associated with it.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.videointelligence.v1.TextAnnotation text_annotations = 12;</code>
+   */
+  int getTextAnnotationsCount();
+  /**
+   *
+   *
+   * <pre>
+   * OCR text detection and tracking.
+   * Annotations for list of detected text snippets. Each will have list of
+   * frame information associated with it.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.videointelligence.v1.TextAnnotation text_annotations = 12;</code>
+   */
+  java.util.List<? extends com.google.cloud.videointelligence.v1.TextAnnotationOrBuilder>
+      getTextAnnotationsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * OCR text detection and tracking.
+   * Annotations for list of detected text snippets. Each will have list of
+   * frame information associated with it.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.videointelligence.v1.TextAnnotation text_annotations = 12;</code>
+   */
+  com.google.cloud.videointelligence.v1.TextAnnotationOrBuilder getTextAnnotationsOrBuilder(
+      int index);
+
+  /**
+   *
+   *
+   * <pre>
+   * Annotations for list of objects detected and tracked in video.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.videointelligence.v1.ObjectTrackingAnnotation object_annotations = 14;
+   * </code>
+   */
+  java.util.List<com.google.cloud.videointelligence.v1.ObjectTrackingAnnotation>
+      getObjectAnnotationsList();
+  /**
+   *
+   *
+   * <pre>
+   * Annotations for list of objects detected and tracked in video.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.videointelligence.v1.ObjectTrackingAnnotation object_annotations = 14;
+   * </code>
+   */
+  com.google.cloud.videointelligence.v1.ObjectTrackingAnnotation getObjectAnnotations(int index);
+  /**
+   *
+   *
+   * <pre>
+   * Annotations for list of objects detected and tracked in video.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.videointelligence.v1.ObjectTrackingAnnotation object_annotations = 14;
+   * </code>
+   */
+  int getObjectAnnotationsCount();
+  /**
+   *
+   *
+   * <pre>
+   * Annotations for list of objects detected and tracked in video.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.videointelligence.v1.ObjectTrackingAnnotation object_annotations = 14;
+   * </code>
+   */
+  java.util.List<? extends com.google.cloud.videointelligence.v1.ObjectTrackingAnnotationOrBuilder>
+      getObjectAnnotationsOrBuilderList();
+  /**
+   *
+   *
+   * <pre>
+   * Annotations for list of objects detected and tracked in video.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.videointelligence.v1.ObjectTrackingAnnotation object_annotations = 14;
+   * </code>
+   */
+  com.google.cloud.videointelligence.v1.ObjectTrackingAnnotationOrBuilder
+      getObjectAnnotationsOrBuilder(int index);
+
+  /**
+   *
+   *
+   * <pre>
    * If set, indicates an error. Note that for a single `AnnotateVideoRequest`
    * some videos may succeed and some may fail.
    * </pre>
