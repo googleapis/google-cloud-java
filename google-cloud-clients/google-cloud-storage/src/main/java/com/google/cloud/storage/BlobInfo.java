@@ -483,10 +483,11 @@ public class BlobInfo implements Serializable {
 
     @Override
     public Builder setMetadata(Map<String, String> metadata) {
-      this.metadata =
-          metadata != null
-              ? new HashMap<>(metadata)
-              : Data.<Map<String, String>>nullOf(ImmutableEmptyMap.class);
+      if (metadata != null) {
+        this.metadata = new HashMap<>(metadata);
+      } else {
+        this.metadata = (Map<String, String>) Data.nullOf(ImmutableEmptyMap.class);
+      }
       return this;
     }
 
