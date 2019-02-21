@@ -42,7 +42,7 @@ public class FieldValueTest {
   private static final Map<String, String> STRING_FIELD = ImmutableMap.of("v", "string");
   private static final Map<String, String> TIMESTAMP_FIELD = ImmutableMap.of("v", "42");
   private static final Map<String, String> BYTES_FIELD = ImmutableMap.of("v", BYTES_BASE64);
-  private static final Map<String, Object> NULL_FIELD =
+  private static final Map<String, String> NULL_FIELD =
       ImmutableMap.of("v", Data.nullOf(String.class));
   private static final Map<String, Object> REPEATED_FIELD =
       ImmutableMap.<String, Object>of("v", ImmutableList.<Object>of(INTEGER_FIELD, INTEGER_FIELD));
