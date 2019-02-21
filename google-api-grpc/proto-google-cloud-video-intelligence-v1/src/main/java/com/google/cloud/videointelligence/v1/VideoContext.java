@@ -151,6 +151,23 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
 
               break;
             }
+          case 66:
+            {
+              com.google.cloud.videointelligence.v1.TextDetectionConfig.Builder subBuilder = null;
+              if (textDetectionConfig_ != null) {
+                subBuilder = textDetectionConfig_.toBuilder();
+              }
+              textDetectionConfig_ =
+                  input.readMessage(
+                      com.google.cloud.videointelligence.v1.TextDetectionConfig.parser(),
+                      extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(textDetectionConfig_);
+                textDetectionConfig_ = subBuilder.buildPartial();
+              }
+
+              break;
+            }
           default:
             {
               if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
@@ -501,6 +518,48 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
     return getSpeechTranscriptionConfig();
   }
 
+  public static final int TEXT_DETECTION_CONFIG_FIELD_NUMBER = 8;
+  private com.google.cloud.videointelligence.v1.TextDetectionConfig textDetectionConfig_;
+  /**
+   *
+   *
+   * <pre>
+   * Config for TEXT_DETECTION.
+   * </pre>
+   *
+   * <code>.google.cloud.videointelligence.v1.TextDetectionConfig text_detection_config = 8;</code>
+   */
+  public boolean hasTextDetectionConfig() {
+    return textDetectionConfig_ != null;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Config for TEXT_DETECTION.
+   * </pre>
+   *
+   * <code>.google.cloud.videointelligence.v1.TextDetectionConfig text_detection_config = 8;</code>
+   */
+  public com.google.cloud.videointelligence.v1.TextDetectionConfig getTextDetectionConfig() {
+    return textDetectionConfig_ == null
+        ? com.google.cloud.videointelligence.v1.TextDetectionConfig.getDefaultInstance()
+        : textDetectionConfig_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Config for TEXT_DETECTION.
+   * </pre>
+   *
+   * <code>.google.cloud.videointelligence.v1.TextDetectionConfig text_detection_config = 8;</code>
+   */
+  public com.google.cloud.videointelligence.v1.TextDetectionConfigOrBuilder
+      getTextDetectionConfigOrBuilder() {
+    return getTextDetectionConfig();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -532,6 +591,9 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
     }
     if (speechTranscriptionConfig_ != null) {
       output.writeMessage(6, getSpeechTranscriptionConfig());
+    }
+    if (textDetectionConfig_ != null) {
+      output.writeMessage(8, getTextDetectionConfig());
     }
     unknownFields.writeTo(output);
   }
@@ -566,6 +628,9 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
       size +=
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               6, getSpeechTranscriptionConfig());
+    }
+    if (textDetectionConfig_ != null) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(8, getTextDetectionConfig());
     }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
@@ -612,6 +677,10 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
       result =
           result && getSpeechTranscriptionConfig().equals(other.getSpeechTranscriptionConfig());
     }
+    result = result && (hasTextDetectionConfig() == other.hasTextDetectionConfig());
+    if (hasTextDetectionConfig()) {
+      result = result && getTextDetectionConfig().equals(other.getTextDetectionConfig());
+    }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -646,6 +715,10 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
     if (hasSpeechTranscriptionConfig()) {
       hash = (37 * hash) + SPEECH_TRANSCRIPTION_CONFIG_FIELD_NUMBER;
       hash = (53 * hash) + getSpeechTranscriptionConfig().hashCode();
+    }
+    if (hasTextDetectionConfig()) {
+      hash = (37 * hash) + TEXT_DETECTION_CONFIG_FIELD_NUMBER;
+      hash = (53 * hash) + getTextDetectionConfig().hashCode();
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -830,6 +903,12 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
         speechTranscriptionConfig_ = null;
         speechTranscriptionConfigBuilder_ = null;
       }
+      if (textDetectionConfigBuilder_ == null) {
+        textDetectionConfig_ = null;
+      } else {
+        textDetectionConfig_ = null;
+        textDetectionConfigBuilder_ = null;
+      }
       return this;
     }
 
@@ -892,6 +971,11 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
         result.speechTranscriptionConfig_ = speechTranscriptionConfig_;
       } else {
         result.speechTranscriptionConfig_ = speechTranscriptionConfigBuilder_.build();
+      }
+      if (textDetectionConfigBuilder_ == null) {
+        result.textDetectionConfig_ = textDetectionConfig_;
+      } else {
+        result.textDetectionConfig_ = textDetectionConfigBuilder_.build();
       }
       result.bitField0_ = to_bitField0_;
       onBuilt();
@@ -985,6 +1069,9 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
       }
       if (other.hasSpeechTranscriptionConfig()) {
         mergeSpeechTranscriptionConfig(other.getSpeechTranscriptionConfig());
+      }
+      if (other.hasTextDetectionConfig()) {
+        mergeTextDetectionConfig(other.getTextDetectionConfig());
       }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
@@ -2429,6 +2516,202 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
         speechTranscriptionConfig_ = null;
       }
       return speechTranscriptionConfigBuilder_;
+    }
+
+    private com.google.cloud.videointelligence.v1.TextDetectionConfig textDetectionConfig_ = null;
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.videointelligence.v1.TextDetectionConfig,
+            com.google.cloud.videointelligence.v1.TextDetectionConfig.Builder,
+            com.google.cloud.videointelligence.v1.TextDetectionConfigOrBuilder>
+        textDetectionConfigBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * Config for TEXT_DETECTION.
+     * </pre>
+     *
+     * <code>.google.cloud.videointelligence.v1.TextDetectionConfig text_detection_config = 8;
+     * </code>
+     */
+    public boolean hasTextDetectionConfig() {
+      return textDetectionConfigBuilder_ != null || textDetectionConfig_ != null;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config for TEXT_DETECTION.
+     * </pre>
+     *
+     * <code>.google.cloud.videointelligence.v1.TextDetectionConfig text_detection_config = 8;
+     * </code>
+     */
+    public com.google.cloud.videointelligence.v1.TextDetectionConfig getTextDetectionConfig() {
+      if (textDetectionConfigBuilder_ == null) {
+        return textDetectionConfig_ == null
+            ? com.google.cloud.videointelligence.v1.TextDetectionConfig.getDefaultInstance()
+            : textDetectionConfig_;
+      } else {
+        return textDetectionConfigBuilder_.getMessage();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config for TEXT_DETECTION.
+     * </pre>
+     *
+     * <code>.google.cloud.videointelligence.v1.TextDetectionConfig text_detection_config = 8;
+     * </code>
+     */
+    public Builder setTextDetectionConfig(
+        com.google.cloud.videointelligence.v1.TextDetectionConfig value) {
+      if (textDetectionConfigBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        textDetectionConfig_ = value;
+        onChanged();
+      } else {
+        textDetectionConfigBuilder_.setMessage(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config for TEXT_DETECTION.
+     * </pre>
+     *
+     * <code>.google.cloud.videointelligence.v1.TextDetectionConfig text_detection_config = 8;
+     * </code>
+     */
+    public Builder setTextDetectionConfig(
+        com.google.cloud.videointelligence.v1.TextDetectionConfig.Builder builderForValue) {
+      if (textDetectionConfigBuilder_ == null) {
+        textDetectionConfig_ = builderForValue.build();
+        onChanged();
+      } else {
+        textDetectionConfigBuilder_.setMessage(builderForValue.build());
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config for TEXT_DETECTION.
+     * </pre>
+     *
+     * <code>.google.cloud.videointelligence.v1.TextDetectionConfig text_detection_config = 8;
+     * </code>
+     */
+    public Builder mergeTextDetectionConfig(
+        com.google.cloud.videointelligence.v1.TextDetectionConfig value) {
+      if (textDetectionConfigBuilder_ == null) {
+        if (textDetectionConfig_ != null) {
+          textDetectionConfig_ =
+              com.google.cloud.videointelligence.v1.TextDetectionConfig.newBuilder(
+                      textDetectionConfig_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          textDetectionConfig_ = value;
+        }
+        onChanged();
+      } else {
+        textDetectionConfigBuilder_.mergeFrom(value);
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config for TEXT_DETECTION.
+     * </pre>
+     *
+     * <code>.google.cloud.videointelligence.v1.TextDetectionConfig text_detection_config = 8;
+     * </code>
+     */
+    public Builder clearTextDetectionConfig() {
+      if (textDetectionConfigBuilder_ == null) {
+        textDetectionConfig_ = null;
+        onChanged();
+      } else {
+        textDetectionConfig_ = null;
+        textDetectionConfigBuilder_ = null;
+      }
+
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config for TEXT_DETECTION.
+     * </pre>
+     *
+     * <code>.google.cloud.videointelligence.v1.TextDetectionConfig text_detection_config = 8;
+     * </code>
+     */
+    public com.google.cloud.videointelligence.v1.TextDetectionConfig.Builder
+        getTextDetectionConfigBuilder() {
+
+      onChanged();
+      return getTextDetectionConfigFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config for TEXT_DETECTION.
+     * </pre>
+     *
+     * <code>.google.cloud.videointelligence.v1.TextDetectionConfig text_detection_config = 8;
+     * </code>
+     */
+    public com.google.cloud.videointelligence.v1.TextDetectionConfigOrBuilder
+        getTextDetectionConfigOrBuilder() {
+      if (textDetectionConfigBuilder_ != null) {
+        return textDetectionConfigBuilder_.getMessageOrBuilder();
+      } else {
+        return textDetectionConfig_ == null
+            ? com.google.cloud.videointelligence.v1.TextDetectionConfig.getDefaultInstance()
+            : textDetectionConfig_;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Config for TEXT_DETECTION.
+     * </pre>
+     *
+     * <code>.google.cloud.videointelligence.v1.TextDetectionConfig text_detection_config = 8;
+     * </code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.cloud.videointelligence.v1.TextDetectionConfig,
+            com.google.cloud.videointelligence.v1.TextDetectionConfig.Builder,
+            com.google.cloud.videointelligence.v1.TextDetectionConfigOrBuilder>
+        getTextDetectionConfigFieldBuilder() {
+      if (textDetectionConfigBuilder_ == null) {
+        textDetectionConfigBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.cloud.videointelligence.v1.TextDetectionConfig,
+                com.google.cloud.videointelligence.v1.TextDetectionConfig.Builder,
+                com.google.cloud.videointelligence.v1.TextDetectionConfigOrBuilder>(
+                getTextDetectionConfig(), getParentForChildren(), isClean());
+        textDetectionConfig_ = null;
+      }
+      return textDetectionConfigBuilder_;
     }
 
     @java.lang.Override

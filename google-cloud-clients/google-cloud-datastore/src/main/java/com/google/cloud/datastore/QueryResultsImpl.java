@@ -37,6 +37,7 @@ class QueryResultsImpl<T> extends AbstractIterator<T> implements QueryResults<T>
   private boolean lastBatch;
   private Iterator<com.google.datastore.v1.EntityResult> entityResultPbIter;
   private ByteString cursor;
+  private MoreResultsType moreResults;
 
   QueryResultsImpl(
       DatastoreImpl datastore, com.google.datastore.v1.ReadOptions readOptionsPb, Query<T> query) {
@@ -74,7 +75,8 @@ class QueryResultsImpl<T> extends AbstractIterator<T> implements QueryResults<T>
     if (mostRecentQueryPb == null) {
       mostRecentQueryPb = requestPb.getQuery();
     }
-    lastBatch = runQueryResponsePb.getBatch().getMoreResults() != MoreResultsType.NOT_FINISHED;
+    moreResults = runQueryResponsePb.getBatch().getMoreResults();
+    lastBatch = moreResults != MoreResultsType.NOT_FINISHED;
     entityResultPbIter = runQueryResponsePb.getBatch().getEntityResultsList().iterator();
     actualResultType = ResultType.fromPb(runQueryResponsePb.getBatch().getEntityResultType());
     if (Objects.equals(queryResultType, ResultType.PROJECTION_ENTITY)) {
@@ -116,5 +118,10 @@ class QueryResultsImpl<T> extends AbstractIterator<T> implements QueryResults<T>
   @Override
   public int getSkippedResults() {
     return runQueryResponsePb.getBatch().getSkippedResults();
+  }
+
+  @Override
+  public MoreResultsType getMoreResults() {
+    return moreResults;
   }
 }

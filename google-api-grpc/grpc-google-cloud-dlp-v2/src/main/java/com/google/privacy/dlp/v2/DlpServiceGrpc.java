@@ -1172,6 +1172,59 @@ public final class DlpServiceGrpc {
   }
 
   @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  @java.lang.Deprecated // Use {@link #getActivateJobTriggerMethod()} instead.
+  public static final io.grpc.MethodDescriptor<
+          com.google.privacy.dlp.v2.ActivateJobTriggerRequest, com.google.privacy.dlp.v2.DlpJob>
+      METHOD_ACTIVATE_JOB_TRIGGER = getActivateJobTriggerMethodHelper();
+
+  private static volatile io.grpc.MethodDescriptor<
+          com.google.privacy.dlp.v2.ActivateJobTriggerRequest, com.google.privacy.dlp.v2.DlpJob>
+      getActivateJobTriggerMethod;
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
+  public static io.grpc.MethodDescriptor<
+          com.google.privacy.dlp.v2.ActivateJobTriggerRequest, com.google.privacy.dlp.v2.DlpJob>
+      getActivateJobTriggerMethod() {
+    return getActivateJobTriggerMethodHelper();
+  }
+
+  private static io.grpc.MethodDescriptor<
+          com.google.privacy.dlp.v2.ActivateJobTriggerRequest, com.google.privacy.dlp.v2.DlpJob>
+      getActivateJobTriggerMethodHelper() {
+    io.grpc.MethodDescriptor<
+            com.google.privacy.dlp.v2.ActivateJobTriggerRequest, com.google.privacy.dlp.v2.DlpJob>
+        getActivateJobTriggerMethod;
+    if ((getActivateJobTriggerMethod = DlpServiceGrpc.getActivateJobTriggerMethod) == null) {
+      synchronized (DlpServiceGrpc.class) {
+        if ((getActivateJobTriggerMethod = DlpServiceGrpc.getActivateJobTriggerMethod) == null) {
+          DlpServiceGrpc.getActivateJobTriggerMethod =
+              getActivateJobTriggerMethod =
+                  io.grpc.MethodDescriptor
+                      .<com.google.privacy.dlp.v2.ActivateJobTriggerRequest,
+                          com.google.privacy.dlp.v2.DlpJob>
+                          newBuilder()
+                      .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+                      .setFullMethodName(
+                          generateFullMethodName(
+                              "google.privacy.dlp.v2.DlpService", "ActivateJobTrigger"))
+                      .setSampledToLocalTracing(true)
+                      .setRequestMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.privacy.dlp.v2.ActivateJobTriggerRequest
+                                  .getDefaultInstance()))
+                      .setResponseMarshaller(
+                          io.grpc.protobuf.ProtoUtils.marshaller(
+                              com.google.privacy.dlp.v2.DlpJob.getDefaultInstance()))
+                      .setSchemaDescriptor(
+                          new DlpServiceMethodDescriptorSupplier("ActivateJobTrigger"))
+                      .build();
+        }
+      }
+    }
+    return getActivateJobTriggerMethod;
+  }
+
+  @io.grpc.ExperimentalApi("https://github.com/grpc/grpc-java/issues/1901")
   @java.lang.Deprecated // Use {@link #getCreateDlpJobMethod()} instead.
   public static final io.grpc.MethodDescriptor<
           com.google.privacy.dlp.v2.CreateDlpJobRequest, com.google.privacy.dlp.v2.DlpJob>
@@ -2070,6 +2123,20 @@ public final class DlpServiceGrpc {
      *
      *
      * <pre>
+     * Activate a job trigger. Causes the immediate execute of a trigger
+     * instead of waiting on the trigger event to occur.
+     * </pre>
+     */
+    public void activateJobTrigger(
+        com.google.privacy.dlp.v2.ActivateJobTriggerRequest request,
+        io.grpc.stub.StreamObserver<com.google.privacy.dlp.v2.DlpJob> responseObserver) {
+      asyncUnimplementedUnaryCall(getActivateJobTriggerMethodHelper(), responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a new job to inspect storage or calculate risk metrics.
      * See https://cloud.google.com/dlp/docs/inspecting-storage and
      * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
@@ -2362,6 +2429,12 @@ public final class DlpServiceGrpc {
                   new MethodHandlers<
                       com.google.privacy.dlp.v2.DeleteJobTriggerRequest, com.google.protobuf.Empty>(
                       this, METHODID_DELETE_JOB_TRIGGER)))
+          .addMethod(
+              getActivateJobTriggerMethodHelper(),
+              asyncUnaryCall(
+                  new MethodHandlers<
+                      com.google.privacy.dlp.v2.ActivateJobTriggerRequest,
+                      com.google.privacy.dlp.v2.DlpJob>(this, METHODID_ACTIVATE_JOB_TRIGGER)))
           .addMethod(
               getCreateDlpJobMethodHelper(),
               asyncUnaryCall(
@@ -2831,6 +2904,23 @@ public final class DlpServiceGrpc {
         io.grpc.stub.StreamObserver<com.google.protobuf.Empty> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getDeleteJobTriggerMethodHelper(), getCallOptions()),
+          request,
+          responseObserver);
+    }
+
+    /**
+     *
+     *
+     * <pre>
+     * Activate a job trigger. Causes the immediate execute of a trigger
+     * instead of waiting on the trigger event to occur.
+     * </pre>
+     */
+    public void activateJobTrigger(
+        com.google.privacy.dlp.v2.ActivateJobTriggerRequest request,
+        io.grpc.stub.StreamObserver<com.google.privacy.dlp.v2.DlpJob> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getActivateJobTriggerMethodHelper(), getCallOptions()),
           request,
           responseObserver);
     }
@@ -3366,6 +3456,20 @@ public final class DlpServiceGrpc {
      *
      *
      * <pre>
+     * Activate a job trigger. Causes the immediate execute of a trigger
+     * instead of waiting on the trigger event to occur.
+     * </pre>
+     */
+    public com.google.privacy.dlp.v2.DlpJob activateJobTrigger(
+        com.google.privacy.dlp.v2.ActivateJobTriggerRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getActivateJobTriggerMethodHelper(), getCallOptions(), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a new job to inspect storage or calculate risk metrics.
      * See https://cloud.google.com/dlp/docs/inspecting-storage and
      * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
@@ -3880,6 +3984,20 @@ public final class DlpServiceGrpc {
      *
      *
      * <pre>
+     * Activate a job trigger. Causes the immediate execute of a trigger
+     * instead of waiting on the trigger event to occur.
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<com.google.privacy.dlp.v2.DlpJob>
+        activateJobTrigger(com.google.privacy.dlp.v2.ActivateJobTriggerRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getActivateJobTriggerMethodHelper(), getCallOptions()), request);
+    }
+
+    /**
+     *
+     *
+     * <pre>
      * Creates a new job to inspect storage or calculate risk metrics.
      * See https://cloud.google.com/dlp/docs/inspecting-storage and
      * https://cloud.google.com/dlp/docs/compute-risk-analysis to learn more.
@@ -4060,16 +4178,17 @@ public final class DlpServiceGrpc {
   private static final int METHODID_GET_JOB_TRIGGER = 17;
   private static final int METHODID_LIST_JOB_TRIGGERS = 18;
   private static final int METHODID_DELETE_JOB_TRIGGER = 19;
-  private static final int METHODID_CREATE_DLP_JOB = 20;
-  private static final int METHODID_LIST_DLP_JOBS = 21;
-  private static final int METHODID_GET_DLP_JOB = 22;
-  private static final int METHODID_DELETE_DLP_JOB = 23;
-  private static final int METHODID_CANCEL_DLP_JOB = 24;
-  private static final int METHODID_CREATE_STORED_INFO_TYPE = 25;
-  private static final int METHODID_UPDATE_STORED_INFO_TYPE = 26;
-  private static final int METHODID_GET_STORED_INFO_TYPE = 27;
-  private static final int METHODID_LIST_STORED_INFO_TYPES = 28;
-  private static final int METHODID_DELETE_STORED_INFO_TYPE = 29;
+  private static final int METHODID_ACTIVATE_JOB_TRIGGER = 20;
+  private static final int METHODID_CREATE_DLP_JOB = 21;
+  private static final int METHODID_LIST_DLP_JOBS = 22;
+  private static final int METHODID_GET_DLP_JOB = 23;
+  private static final int METHODID_DELETE_DLP_JOB = 24;
+  private static final int METHODID_CANCEL_DLP_JOB = 25;
+  private static final int METHODID_CREATE_STORED_INFO_TYPE = 26;
+  private static final int METHODID_UPDATE_STORED_INFO_TYPE = 27;
+  private static final int METHODID_GET_STORED_INFO_TYPE = 28;
+  private static final int METHODID_LIST_STORED_INFO_TYPES = 29;
+  private static final int METHODID_DELETE_STORED_INFO_TYPE = 30;
 
   private static final class MethodHandlers<Req, Resp>
       implements io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -4202,6 +4321,11 @@ public final class DlpServiceGrpc {
           serviceImpl.deleteJobTrigger(
               (com.google.privacy.dlp.v2.DeleteJobTriggerRequest) request,
               (io.grpc.stub.StreamObserver<com.google.protobuf.Empty>) responseObserver);
+          break;
+        case METHODID_ACTIVATE_JOB_TRIGGER:
+          serviceImpl.activateJobTrigger(
+              (com.google.privacy.dlp.v2.ActivateJobTriggerRequest) request,
+              (io.grpc.stub.StreamObserver<com.google.privacy.dlp.v2.DlpJob>) responseObserver);
           break;
         case METHODID_CREATE_DLP_JOB:
           serviceImpl.createDlpJob(
@@ -4342,6 +4466,7 @@ public final class DlpServiceGrpc {
                       .addMethod(getGetJobTriggerMethodHelper())
                       .addMethod(getListJobTriggersMethodHelper())
                       .addMethod(getDeleteJobTriggerMethodHelper())
+                      .addMethod(getActivateJobTriggerMethodHelper())
                       .addMethod(getCreateDlpJobMethodHelper())
                       .addMethod(getListDlpJobsMethodHelper())
                       .addMethod(getGetDlpJobMethodHelper())

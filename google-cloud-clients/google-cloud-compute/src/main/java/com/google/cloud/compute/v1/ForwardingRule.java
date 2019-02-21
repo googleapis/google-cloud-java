@@ -34,6 +34,7 @@ import javax.annotation.Nullable;
  * beta.regionForwardingRules ==) (== resource_for v1.regionForwardingRules ==)
  */
 public final class ForwardingRule implements ApiMessage {
+  private final Boolean allPorts;
   private final String backendService;
   private final String creationTimestamp;
   private final String description;
@@ -61,6 +62,7 @@ public final class ForwardingRule implements ApiMessage {
   private final String target;
 
   private ForwardingRule() {
+    this.allPorts = null;
     this.backendService = null;
     this.creationTimestamp = null;
     this.description = null;
@@ -84,6 +86,7 @@ public final class ForwardingRule implements ApiMessage {
   }
 
   private ForwardingRule(
+      Boolean allPorts,
       String backendService,
       String creationTimestamp,
       String description,
@@ -104,6 +107,7 @@ public final class ForwardingRule implements ApiMessage {
       String serviceName,
       String subnetwork,
       String target) {
+    this.allPorts = allPorts;
     this.backendService = backendService;
     this.creationTimestamp = creationTimestamp;
     this.description = description;
@@ -128,6 +132,9 @@ public final class ForwardingRule implements ApiMessage {
 
   @Override
   public Object getFieldValue(String fieldName) {
+    if ("allPorts".equals(fieldName)) {
+      return allPorts;
+    }
     if ("backendService".equals(fieldName)) {
       return backendService;
     }
@@ -207,6 +214,19 @@ public final class ForwardingRule implements ApiMessage {
    */
   public List<String> getFieldMask() {
     return null;
+  }
+
+  /**
+   * This field is used along with the backend_service field for internal load balancing or with the
+   * target field for internal TargetInstance. This field cannot be used with port or portRange
+   * fields.
+   *
+   * <p>When the load balancing scheme is INTERNAL and protocol is TCP/UDP, specify this field to
+   * allow packets addressed to any ports will be forwarded to the backends configured with this
+   * forwarding rule.
+   */
+  public Boolean getAllPorts() {
+    return allPorts;
   }
 
   /**
@@ -427,8 +447,8 @@ public final class ForwardingRule implements ApiMessage {
    * The URL of the target resource to receive the matched traffic. For regional forwarding rules,
    * this target must live in the same region as the forwarding rule. For global forwarding rules,
    * this target must be a global load balancing resource. The forwarded traffic must be of a type
-   * appropriate to the target object. For INTERNAL_SELF_MANAGED" load balancing, only HTTP and
-   * HTTPS targets are valid.
+   * appropriate to the target object. For INTERNAL_SELF_MANAGED load balancing, only HTTP and HTTPS
+   * targets are valid.
    */
   public String getTarget() {
     return target;
@@ -457,6 +477,7 @@ public final class ForwardingRule implements ApiMessage {
   }
 
   public static class Builder {
+    private Boolean allPorts;
     private String backendService;
     private String creationTimestamp;
     private String description;
@@ -482,6 +503,9 @@ public final class ForwardingRule implements ApiMessage {
 
     public Builder mergeFrom(ForwardingRule other) {
       if (other == ForwardingRule.getDefaultInstance()) return this;
+      if (other.getAllPorts() != null) {
+        this.allPorts = other.allPorts;
+      }
       if (other.getBackendService() != null) {
         this.backendService = other.backendService;
       }
@@ -546,6 +570,7 @@ public final class ForwardingRule implements ApiMessage {
     }
 
     Builder(ForwardingRule source) {
+      this.allPorts = source.allPorts;
       this.backendService = source.backendService;
       this.creationTimestamp = source.creationTimestamp;
       this.description = source.description;
@@ -566,6 +591,33 @@ public final class ForwardingRule implements ApiMessage {
       this.serviceName = source.serviceName;
       this.subnetwork = source.subnetwork;
       this.target = source.target;
+    }
+
+    /**
+     * This field is used along with the backend_service field for internal load balancing or with
+     * the target field for internal TargetInstance. This field cannot be used with port or
+     * portRange fields.
+     *
+     * <p>When the load balancing scheme is INTERNAL and protocol is TCP/UDP, specify this field to
+     * allow packets addressed to any ports will be forwarded to the backends configured with this
+     * forwarding rule.
+     */
+    public Boolean getAllPorts() {
+      return allPorts;
+    }
+
+    /**
+     * This field is used along with the backend_service field for internal load balancing or with
+     * the target field for internal TargetInstance. This field cannot be used with port or
+     * portRange fields.
+     *
+     * <p>When the load balancing scheme is INTERNAL and protocol is TCP/UDP, specify this field to
+     * allow packets addressed to any ports will be forwarded to the backends configured with this
+     * forwarding rule.
+     */
+    public Builder setAllPorts(Boolean allPorts) {
+      this.allPorts = allPorts;
+      return this;
     }
 
     /**
@@ -1045,7 +1097,7 @@ public final class ForwardingRule implements ApiMessage {
      * The URL of the target resource to receive the matched traffic. For regional forwarding rules,
      * this target must live in the same region as the forwarding rule. For global forwarding rules,
      * this target must be a global load balancing resource. The forwarded traffic must be of a type
-     * appropriate to the target object. For INTERNAL_SELF_MANAGED" load balancing, only HTTP and
+     * appropriate to the target object. For INTERNAL_SELF_MANAGED load balancing, only HTTP and
      * HTTPS targets are valid.
      */
     public String getTarget() {
@@ -1056,7 +1108,7 @@ public final class ForwardingRule implements ApiMessage {
      * The URL of the target resource to receive the matched traffic. For regional forwarding rules,
      * this target must live in the same region as the forwarding rule. For global forwarding rules,
      * this target must be a global load balancing resource. The forwarded traffic must be of a type
-     * appropriate to the target object. For INTERNAL_SELF_MANAGED" load balancing, only HTTP and
+     * appropriate to the target object. For INTERNAL_SELF_MANAGED load balancing, only HTTP and
      * HTTPS targets are valid.
      */
     public Builder setTarget(String target) {
@@ -1067,6 +1119,7 @@ public final class ForwardingRule implements ApiMessage {
     public ForwardingRule build() {
 
       return new ForwardingRule(
+          allPorts,
           backendService,
           creationTimestamp,
           description,
@@ -1091,6 +1144,7 @@ public final class ForwardingRule implements ApiMessage {
 
     public Builder clone() {
       Builder newBuilder = new Builder();
+      newBuilder.setAllPorts(this.allPorts);
       newBuilder.setBackendService(this.backendService);
       newBuilder.setCreationTimestamp(this.creationTimestamp);
       newBuilder.setDescription(this.description);
@@ -1118,6 +1172,9 @@ public final class ForwardingRule implements ApiMessage {
   @Override
   public String toString() {
     return "ForwardingRule{"
+        + "allPorts="
+        + allPorts
+        + ", "
         + "backendService="
         + backendService
         + ", "
@@ -1187,7 +1244,8 @@ public final class ForwardingRule implements ApiMessage {
     }
     if (o instanceof ForwardingRule) {
       ForwardingRule that = (ForwardingRule) o;
-      return Objects.equals(this.backendService, that.getBackendService())
+      return Objects.equals(this.allPorts, that.getAllPorts())
+          && Objects.equals(this.backendService, that.getBackendService())
           && Objects.equals(this.creationTimestamp, that.getCreationTimestamp())
           && Objects.equals(this.description, that.getDescription())
           && Objects.equals(this.iPAddress, that.getIPAddress())
@@ -1214,6 +1272,7 @@ public final class ForwardingRule implements ApiMessage {
   @Override
   public int hashCode() {
     return Objects.hash(
+        allPorts,
         backendService,
         creationTimestamp,
         description,

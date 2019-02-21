@@ -30,6 +30,8 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
     faceAnnotations_ = java.util.Collections.emptyList();
     shotAnnotations_ = java.util.Collections.emptyList();
     speechTranscriptions_ = java.util.Collections.emptyList();
+    textAnnotations_ = java.util.Collections.emptyList();
+    objectAnnotations_ = java.util.Collections.emptyList();
   }
 
   @java.lang.Override
@@ -177,6 +179,33 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
                       extensionRegistry));
               break;
             }
+          case 98:
+            {
+              if (!((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
+                textAnnotations_ =
+                    new java.util.ArrayList<com.google.cloud.videointelligence.v1.TextAnnotation>();
+                mutable_bitField0_ |= 0x00000100;
+              }
+              textAnnotations_.add(
+                  input.readMessage(
+                      com.google.cloud.videointelligence.v1.TextAnnotation.parser(),
+                      extensionRegistry));
+              break;
+            }
+          case 114:
+            {
+              if (!((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
+                objectAnnotations_ =
+                    new java.util.ArrayList<
+                        com.google.cloud.videointelligence.v1.ObjectTrackingAnnotation>();
+                mutable_bitField0_ |= 0x00000200;
+              }
+              objectAnnotations_.add(
+                  input.readMessage(
+                      com.google.cloud.videointelligence.v1.ObjectTrackingAnnotation.parser(),
+                      extensionRegistry));
+              break;
+            }
           default:
             {
               if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
@@ -208,6 +237,12 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
       }
       if (((mutable_bitField0_ & 0x00000080) == 0x00000080)) {
         speechTranscriptions_ = java.util.Collections.unmodifiableList(speechTranscriptions_);
+      }
+      if (((mutable_bitField0_ & 0x00000100) == 0x00000100)) {
+        textAnnotations_ = java.util.Collections.unmodifiableList(textAnnotations_);
+      }
+      if (((mutable_bitField0_ & 0x00000200) == 0x00000200)) {
+        objectAnnotations_ = java.util.Collections.unmodifiableList(objectAnnotations_);
       }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
@@ -768,6 +803,161 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
     return speechTranscriptions_.get(index);
   }
 
+  public static final int TEXT_ANNOTATIONS_FIELD_NUMBER = 12;
+  private java.util.List<com.google.cloud.videointelligence.v1.TextAnnotation> textAnnotations_;
+  /**
+   *
+   *
+   * <pre>
+   * OCR text detection and tracking.
+   * Annotations for list of detected text snippets. Each will have list of
+   * frame information associated with it.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.videointelligence.v1.TextAnnotation text_annotations = 12;</code>
+   */
+  public java.util.List<com.google.cloud.videointelligence.v1.TextAnnotation>
+      getTextAnnotationsList() {
+    return textAnnotations_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * OCR text detection and tracking.
+   * Annotations for list of detected text snippets. Each will have list of
+   * frame information associated with it.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.videointelligence.v1.TextAnnotation text_annotations = 12;</code>
+   */
+  public java.util.List<? extends com.google.cloud.videointelligence.v1.TextAnnotationOrBuilder>
+      getTextAnnotationsOrBuilderList() {
+    return textAnnotations_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * OCR text detection and tracking.
+   * Annotations for list of detected text snippets. Each will have list of
+   * frame information associated with it.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.videointelligence.v1.TextAnnotation text_annotations = 12;</code>
+   */
+  public int getTextAnnotationsCount() {
+    return textAnnotations_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * OCR text detection and tracking.
+   * Annotations for list of detected text snippets. Each will have list of
+   * frame information associated with it.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.videointelligence.v1.TextAnnotation text_annotations = 12;</code>
+   */
+  public com.google.cloud.videointelligence.v1.TextAnnotation getTextAnnotations(int index) {
+    return textAnnotations_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * OCR text detection and tracking.
+   * Annotations for list of detected text snippets. Each will have list of
+   * frame information associated with it.
+   * </pre>
+   *
+   * <code>repeated .google.cloud.videointelligence.v1.TextAnnotation text_annotations = 12;</code>
+   */
+  public com.google.cloud.videointelligence.v1.TextAnnotationOrBuilder getTextAnnotationsOrBuilder(
+      int index) {
+    return textAnnotations_.get(index);
+  }
+
+  public static final int OBJECT_ANNOTATIONS_FIELD_NUMBER = 14;
+  private java.util.List<com.google.cloud.videointelligence.v1.ObjectTrackingAnnotation>
+      objectAnnotations_;
+  /**
+   *
+   *
+   * <pre>
+   * Annotations for list of objects detected and tracked in video.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.videointelligence.v1.ObjectTrackingAnnotation object_annotations = 14;
+   * </code>
+   */
+  public java.util.List<com.google.cloud.videointelligence.v1.ObjectTrackingAnnotation>
+      getObjectAnnotationsList() {
+    return objectAnnotations_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Annotations for list of objects detected and tracked in video.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.videointelligence.v1.ObjectTrackingAnnotation object_annotations = 14;
+   * </code>
+   */
+  public java.util.List<
+          ? extends com.google.cloud.videointelligence.v1.ObjectTrackingAnnotationOrBuilder>
+      getObjectAnnotationsOrBuilderList() {
+    return objectAnnotations_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Annotations for list of objects detected and tracked in video.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.videointelligence.v1.ObjectTrackingAnnotation object_annotations = 14;
+   * </code>
+   */
+  public int getObjectAnnotationsCount() {
+    return objectAnnotations_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Annotations for list of objects detected and tracked in video.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.videointelligence.v1.ObjectTrackingAnnotation object_annotations = 14;
+   * </code>
+   */
+  public com.google.cloud.videointelligence.v1.ObjectTrackingAnnotation getObjectAnnotations(
+      int index) {
+    return objectAnnotations_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Annotations for list of objects detected and tracked in video.
+   * </pre>
+   *
+   * <code>
+   * repeated .google.cloud.videointelligence.v1.ObjectTrackingAnnotation object_annotations = 14;
+   * </code>
+   */
+  public com.google.cloud.videointelligence.v1.ObjectTrackingAnnotationOrBuilder
+      getObjectAnnotationsOrBuilder(int index) {
+    return objectAnnotations_.get(index);
+  }
+
   public static final int ERROR_FIELD_NUMBER = 9;
   private com.google.rpc.Status error_;
   /**
@@ -851,6 +1041,12 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
     for (int i = 0; i < speechTranscriptions_.size(); i++) {
       output.writeMessage(11, speechTranscriptions_.get(i));
     }
+    for (int i = 0; i < textAnnotations_.size(); i++) {
+      output.writeMessage(12, textAnnotations_.get(i));
+    }
+    for (int i = 0; i < objectAnnotations_.size(); i++) {
+      output.writeMessage(14, objectAnnotations_.get(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -894,6 +1090,13 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               11, speechTranscriptions_.get(i));
     }
+    for (int i = 0; i < textAnnotations_.size(); i++) {
+      size += com.google.protobuf.CodedOutputStream.computeMessageSize(12, textAnnotations_.get(i));
+    }
+    for (int i = 0; i < objectAnnotations_.size(); i++) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(14, objectAnnotations_.get(i));
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -923,6 +1126,8 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
       result = result && getExplicitAnnotation().equals(other.getExplicitAnnotation());
     }
     result = result && getSpeechTranscriptionsList().equals(other.getSpeechTranscriptionsList());
+    result = result && getTextAnnotationsList().equals(other.getTextAnnotationsList());
+    result = result && getObjectAnnotationsList().equals(other.getObjectAnnotationsList());
     result = result && (hasError() == other.hasError());
     if (hasError()) {
       result = result && getError().equals(other.getError());
@@ -967,6 +1172,14 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
     if (getSpeechTranscriptionsCount() > 0) {
       hash = (37 * hash) + SPEECH_TRANSCRIPTIONS_FIELD_NUMBER;
       hash = (53 * hash) + getSpeechTranscriptionsList().hashCode();
+    }
+    if (getTextAnnotationsCount() > 0) {
+      hash = (37 * hash) + TEXT_ANNOTATIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getTextAnnotationsList().hashCode();
+    }
+    if (getObjectAnnotationsCount() > 0) {
+      hash = (37 * hash) + OBJECT_ANNOTATIONS_FIELD_NUMBER;
+      hash = (53 * hash) + getObjectAnnotationsList().hashCode();
     }
     if (hasError()) {
       hash = (37 * hash) + ERROR_FIELD_NUMBER;
@@ -1119,6 +1332,8 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
         getFaceAnnotationsFieldBuilder();
         getShotAnnotationsFieldBuilder();
         getSpeechTranscriptionsFieldBuilder();
+        getTextAnnotationsFieldBuilder();
+        getObjectAnnotationsFieldBuilder();
       }
     }
 
@@ -1168,6 +1383,18 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
         bitField0_ = (bitField0_ & ~0x00000080);
       } else {
         speechTranscriptionsBuilder_.clear();
+      }
+      if (textAnnotationsBuilder_ == null) {
+        textAnnotations_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000100);
+      } else {
+        textAnnotationsBuilder_.clear();
+      }
+      if (objectAnnotationsBuilder_ == null) {
+        objectAnnotations_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000200);
+      } else {
+        objectAnnotationsBuilder_.clear();
       }
       if (errorBuilder_ == null) {
         error_ = null;
@@ -1265,6 +1492,24 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
         result.speechTranscriptions_ = speechTranscriptions_;
       } else {
         result.speechTranscriptions_ = speechTranscriptionsBuilder_.build();
+      }
+      if (textAnnotationsBuilder_ == null) {
+        if (((bitField0_ & 0x00000100) == 0x00000100)) {
+          textAnnotations_ = java.util.Collections.unmodifiableList(textAnnotations_);
+          bitField0_ = (bitField0_ & ~0x00000100);
+        }
+        result.textAnnotations_ = textAnnotations_;
+      } else {
+        result.textAnnotations_ = textAnnotationsBuilder_.build();
+      }
+      if (objectAnnotationsBuilder_ == null) {
+        if (((bitField0_ & 0x00000200) == 0x00000200)) {
+          objectAnnotations_ = java.util.Collections.unmodifiableList(objectAnnotations_);
+          bitField0_ = (bitField0_ & ~0x00000200);
+        }
+        result.objectAnnotations_ = objectAnnotations_;
+      } else {
+        result.objectAnnotations_ = objectAnnotationsBuilder_.build();
       }
       if (errorBuilder_ == null) {
         result.error_ = error_;
@@ -1489,6 +1734,60 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
                     : null;
           } else {
             speechTranscriptionsBuilder_.addAllMessages(other.speechTranscriptions_);
+          }
+        }
+      }
+      if (textAnnotationsBuilder_ == null) {
+        if (!other.textAnnotations_.isEmpty()) {
+          if (textAnnotations_.isEmpty()) {
+            textAnnotations_ = other.textAnnotations_;
+            bitField0_ = (bitField0_ & ~0x00000100);
+          } else {
+            ensureTextAnnotationsIsMutable();
+            textAnnotations_.addAll(other.textAnnotations_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.textAnnotations_.isEmpty()) {
+          if (textAnnotationsBuilder_.isEmpty()) {
+            textAnnotationsBuilder_.dispose();
+            textAnnotationsBuilder_ = null;
+            textAnnotations_ = other.textAnnotations_;
+            bitField0_ = (bitField0_ & ~0x00000100);
+            textAnnotationsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getTextAnnotationsFieldBuilder()
+                    : null;
+          } else {
+            textAnnotationsBuilder_.addAllMessages(other.textAnnotations_);
+          }
+        }
+      }
+      if (objectAnnotationsBuilder_ == null) {
+        if (!other.objectAnnotations_.isEmpty()) {
+          if (objectAnnotations_.isEmpty()) {
+            objectAnnotations_ = other.objectAnnotations_;
+            bitField0_ = (bitField0_ & ~0x00000200);
+          } else {
+            ensureObjectAnnotationsIsMutable();
+            objectAnnotations_.addAll(other.objectAnnotations_);
+          }
+          onChanged();
+        }
+      } else {
+        if (!other.objectAnnotations_.isEmpty()) {
+          if (objectAnnotationsBuilder_.isEmpty()) {
+            objectAnnotationsBuilder_.dispose();
+            objectAnnotationsBuilder_ = null;
+            objectAnnotations_ = other.objectAnnotations_;
+            bitField0_ = (bitField0_ & ~0x00000200);
+            objectAnnotationsBuilder_ =
+                com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders
+                    ? getObjectAnnotationsFieldBuilder()
+                    : null;
+          } else {
+            objectAnnotationsBuilder_.addAllMessages(other.objectAnnotations_);
           }
         }
       }
@@ -4195,6 +4494,830 @@ public final class VideoAnnotationResults extends com.google.protobuf.GeneratedM
         speechTranscriptions_ = null;
       }
       return speechTranscriptionsBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.videointelligence.v1.TextAnnotation> textAnnotations_ =
+        java.util.Collections.emptyList();
+
+    private void ensureTextAnnotationsIsMutable() {
+      if (!((bitField0_ & 0x00000100) == 0x00000100)) {
+        textAnnotations_ =
+            new java.util.ArrayList<com.google.cloud.videointelligence.v1.TextAnnotation>(
+                textAnnotations_);
+        bitField0_ |= 0x00000100;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.videointelligence.v1.TextAnnotation,
+            com.google.cloud.videointelligence.v1.TextAnnotation.Builder,
+            com.google.cloud.videointelligence.v1.TextAnnotationOrBuilder>
+        textAnnotationsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * OCR text detection and tracking.
+     * Annotations for list of detected text snippets. Each will have list of
+     * frame information associated with it.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.videointelligence.v1.TextAnnotation text_annotations = 12;
+     * </code>
+     */
+    public java.util.List<com.google.cloud.videointelligence.v1.TextAnnotation>
+        getTextAnnotationsList() {
+      if (textAnnotationsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(textAnnotations_);
+      } else {
+        return textAnnotationsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * OCR text detection and tracking.
+     * Annotations for list of detected text snippets. Each will have list of
+     * frame information associated with it.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.videointelligence.v1.TextAnnotation text_annotations = 12;
+     * </code>
+     */
+    public int getTextAnnotationsCount() {
+      if (textAnnotationsBuilder_ == null) {
+        return textAnnotations_.size();
+      } else {
+        return textAnnotationsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * OCR text detection and tracking.
+     * Annotations for list of detected text snippets. Each will have list of
+     * frame information associated with it.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.videointelligence.v1.TextAnnotation text_annotations = 12;
+     * </code>
+     */
+    public com.google.cloud.videointelligence.v1.TextAnnotation getTextAnnotations(int index) {
+      if (textAnnotationsBuilder_ == null) {
+        return textAnnotations_.get(index);
+      } else {
+        return textAnnotationsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * OCR text detection and tracking.
+     * Annotations for list of detected text snippets. Each will have list of
+     * frame information associated with it.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.videointelligence.v1.TextAnnotation text_annotations = 12;
+     * </code>
+     */
+    public Builder setTextAnnotations(
+        int index, com.google.cloud.videointelligence.v1.TextAnnotation value) {
+      if (textAnnotationsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTextAnnotationsIsMutable();
+        textAnnotations_.set(index, value);
+        onChanged();
+      } else {
+        textAnnotationsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * OCR text detection and tracking.
+     * Annotations for list of detected text snippets. Each will have list of
+     * frame information associated with it.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.videointelligence.v1.TextAnnotation text_annotations = 12;
+     * </code>
+     */
+    public Builder setTextAnnotations(
+        int index, com.google.cloud.videointelligence.v1.TextAnnotation.Builder builderForValue) {
+      if (textAnnotationsBuilder_ == null) {
+        ensureTextAnnotationsIsMutable();
+        textAnnotations_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        textAnnotationsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * OCR text detection and tracking.
+     * Annotations for list of detected text snippets. Each will have list of
+     * frame information associated with it.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.videointelligence.v1.TextAnnotation text_annotations = 12;
+     * </code>
+     */
+    public Builder addTextAnnotations(com.google.cloud.videointelligence.v1.TextAnnotation value) {
+      if (textAnnotationsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTextAnnotationsIsMutable();
+        textAnnotations_.add(value);
+        onChanged();
+      } else {
+        textAnnotationsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * OCR text detection and tracking.
+     * Annotations for list of detected text snippets. Each will have list of
+     * frame information associated with it.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.videointelligence.v1.TextAnnotation text_annotations = 12;
+     * </code>
+     */
+    public Builder addTextAnnotations(
+        int index, com.google.cloud.videointelligence.v1.TextAnnotation value) {
+      if (textAnnotationsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureTextAnnotationsIsMutable();
+        textAnnotations_.add(index, value);
+        onChanged();
+      } else {
+        textAnnotationsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * OCR text detection and tracking.
+     * Annotations for list of detected text snippets. Each will have list of
+     * frame information associated with it.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.videointelligence.v1.TextAnnotation text_annotations = 12;
+     * </code>
+     */
+    public Builder addTextAnnotations(
+        com.google.cloud.videointelligence.v1.TextAnnotation.Builder builderForValue) {
+      if (textAnnotationsBuilder_ == null) {
+        ensureTextAnnotationsIsMutable();
+        textAnnotations_.add(builderForValue.build());
+        onChanged();
+      } else {
+        textAnnotationsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * OCR text detection and tracking.
+     * Annotations for list of detected text snippets. Each will have list of
+     * frame information associated with it.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.videointelligence.v1.TextAnnotation text_annotations = 12;
+     * </code>
+     */
+    public Builder addTextAnnotations(
+        int index, com.google.cloud.videointelligence.v1.TextAnnotation.Builder builderForValue) {
+      if (textAnnotationsBuilder_ == null) {
+        ensureTextAnnotationsIsMutable();
+        textAnnotations_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        textAnnotationsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * OCR text detection and tracking.
+     * Annotations for list of detected text snippets. Each will have list of
+     * frame information associated with it.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.videointelligence.v1.TextAnnotation text_annotations = 12;
+     * </code>
+     */
+    public Builder addAllTextAnnotations(
+        java.lang.Iterable<? extends com.google.cloud.videointelligence.v1.TextAnnotation> values) {
+      if (textAnnotationsBuilder_ == null) {
+        ensureTextAnnotationsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, textAnnotations_);
+        onChanged();
+      } else {
+        textAnnotationsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * OCR text detection and tracking.
+     * Annotations for list of detected text snippets. Each will have list of
+     * frame information associated with it.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.videointelligence.v1.TextAnnotation text_annotations = 12;
+     * </code>
+     */
+    public Builder clearTextAnnotations() {
+      if (textAnnotationsBuilder_ == null) {
+        textAnnotations_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000100);
+        onChanged();
+      } else {
+        textAnnotationsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * OCR text detection and tracking.
+     * Annotations for list of detected text snippets. Each will have list of
+     * frame information associated with it.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.videointelligence.v1.TextAnnotation text_annotations = 12;
+     * </code>
+     */
+    public Builder removeTextAnnotations(int index) {
+      if (textAnnotationsBuilder_ == null) {
+        ensureTextAnnotationsIsMutable();
+        textAnnotations_.remove(index);
+        onChanged();
+      } else {
+        textAnnotationsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * OCR text detection and tracking.
+     * Annotations for list of detected text snippets. Each will have list of
+     * frame information associated with it.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.videointelligence.v1.TextAnnotation text_annotations = 12;
+     * </code>
+     */
+    public com.google.cloud.videointelligence.v1.TextAnnotation.Builder getTextAnnotationsBuilder(
+        int index) {
+      return getTextAnnotationsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * OCR text detection and tracking.
+     * Annotations for list of detected text snippets. Each will have list of
+     * frame information associated with it.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.videointelligence.v1.TextAnnotation text_annotations = 12;
+     * </code>
+     */
+    public com.google.cloud.videointelligence.v1.TextAnnotationOrBuilder
+        getTextAnnotationsOrBuilder(int index) {
+      if (textAnnotationsBuilder_ == null) {
+        return textAnnotations_.get(index);
+      } else {
+        return textAnnotationsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * OCR text detection and tracking.
+     * Annotations for list of detected text snippets. Each will have list of
+     * frame information associated with it.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.videointelligence.v1.TextAnnotation text_annotations = 12;
+     * </code>
+     */
+    public java.util.List<? extends com.google.cloud.videointelligence.v1.TextAnnotationOrBuilder>
+        getTextAnnotationsOrBuilderList() {
+      if (textAnnotationsBuilder_ != null) {
+        return textAnnotationsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(textAnnotations_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * OCR text detection and tracking.
+     * Annotations for list of detected text snippets. Each will have list of
+     * frame information associated with it.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.videointelligence.v1.TextAnnotation text_annotations = 12;
+     * </code>
+     */
+    public com.google.cloud.videointelligence.v1.TextAnnotation.Builder
+        addTextAnnotationsBuilder() {
+      return getTextAnnotationsFieldBuilder()
+          .addBuilder(com.google.cloud.videointelligence.v1.TextAnnotation.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * OCR text detection and tracking.
+     * Annotations for list of detected text snippets. Each will have list of
+     * frame information associated with it.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.videointelligence.v1.TextAnnotation text_annotations = 12;
+     * </code>
+     */
+    public com.google.cloud.videointelligence.v1.TextAnnotation.Builder addTextAnnotationsBuilder(
+        int index) {
+      return getTextAnnotationsFieldBuilder()
+          .addBuilder(
+              index, com.google.cloud.videointelligence.v1.TextAnnotation.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * OCR text detection and tracking.
+     * Annotations for list of detected text snippets. Each will have list of
+     * frame information associated with it.
+     * </pre>
+     *
+     * <code>repeated .google.cloud.videointelligence.v1.TextAnnotation text_annotations = 12;
+     * </code>
+     */
+    public java.util.List<com.google.cloud.videointelligence.v1.TextAnnotation.Builder>
+        getTextAnnotationsBuilderList() {
+      return getTextAnnotationsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.videointelligence.v1.TextAnnotation,
+            com.google.cloud.videointelligence.v1.TextAnnotation.Builder,
+            com.google.cloud.videointelligence.v1.TextAnnotationOrBuilder>
+        getTextAnnotationsFieldBuilder() {
+      if (textAnnotationsBuilder_ == null) {
+        textAnnotationsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.videointelligence.v1.TextAnnotation,
+                com.google.cloud.videointelligence.v1.TextAnnotation.Builder,
+                com.google.cloud.videointelligence.v1.TextAnnotationOrBuilder>(
+                textAnnotations_,
+                ((bitField0_ & 0x00000100) == 0x00000100),
+                getParentForChildren(),
+                isClean());
+        textAnnotations_ = null;
+      }
+      return textAnnotationsBuilder_;
+    }
+
+    private java.util.List<com.google.cloud.videointelligence.v1.ObjectTrackingAnnotation>
+        objectAnnotations_ = java.util.Collections.emptyList();
+
+    private void ensureObjectAnnotationsIsMutable() {
+      if (!((bitField0_ & 0x00000200) == 0x00000200)) {
+        objectAnnotations_ =
+            new java.util.ArrayList<com.google.cloud.videointelligence.v1.ObjectTrackingAnnotation>(
+                objectAnnotations_);
+        bitField0_ |= 0x00000200;
+      }
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.videointelligence.v1.ObjectTrackingAnnotation,
+            com.google.cloud.videointelligence.v1.ObjectTrackingAnnotation.Builder,
+            com.google.cloud.videointelligence.v1.ObjectTrackingAnnotationOrBuilder>
+        objectAnnotationsBuilder_;
+
+    /**
+     *
+     *
+     * <pre>
+     * Annotations for list of objects detected and tracked in video.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1.ObjectTrackingAnnotation object_annotations = 14;
+     * </code>
+     */
+    public java.util.List<com.google.cloud.videointelligence.v1.ObjectTrackingAnnotation>
+        getObjectAnnotationsList() {
+      if (objectAnnotationsBuilder_ == null) {
+        return java.util.Collections.unmodifiableList(objectAnnotations_);
+      } else {
+        return objectAnnotationsBuilder_.getMessageList();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Annotations for list of objects detected and tracked in video.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1.ObjectTrackingAnnotation object_annotations = 14;
+     * </code>
+     */
+    public int getObjectAnnotationsCount() {
+      if (objectAnnotationsBuilder_ == null) {
+        return objectAnnotations_.size();
+      } else {
+        return objectAnnotationsBuilder_.getCount();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Annotations for list of objects detected and tracked in video.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1.ObjectTrackingAnnotation object_annotations = 14;
+     * </code>
+     */
+    public com.google.cloud.videointelligence.v1.ObjectTrackingAnnotation getObjectAnnotations(
+        int index) {
+      if (objectAnnotationsBuilder_ == null) {
+        return objectAnnotations_.get(index);
+      } else {
+        return objectAnnotationsBuilder_.getMessage(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Annotations for list of objects detected and tracked in video.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1.ObjectTrackingAnnotation object_annotations = 14;
+     * </code>
+     */
+    public Builder setObjectAnnotations(
+        int index, com.google.cloud.videointelligence.v1.ObjectTrackingAnnotation value) {
+      if (objectAnnotationsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureObjectAnnotationsIsMutable();
+        objectAnnotations_.set(index, value);
+        onChanged();
+      } else {
+        objectAnnotationsBuilder_.setMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Annotations for list of objects detected and tracked in video.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1.ObjectTrackingAnnotation object_annotations = 14;
+     * </code>
+     */
+    public Builder setObjectAnnotations(
+        int index,
+        com.google.cloud.videointelligence.v1.ObjectTrackingAnnotation.Builder builderForValue) {
+      if (objectAnnotationsBuilder_ == null) {
+        ensureObjectAnnotationsIsMutable();
+        objectAnnotations_.set(index, builderForValue.build());
+        onChanged();
+      } else {
+        objectAnnotationsBuilder_.setMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Annotations for list of objects detected and tracked in video.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1.ObjectTrackingAnnotation object_annotations = 14;
+     * </code>
+     */
+    public Builder addObjectAnnotations(
+        com.google.cloud.videointelligence.v1.ObjectTrackingAnnotation value) {
+      if (objectAnnotationsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureObjectAnnotationsIsMutable();
+        objectAnnotations_.add(value);
+        onChanged();
+      } else {
+        objectAnnotationsBuilder_.addMessage(value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Annotations for list of objects detected and tracked in video.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1.ObjectTrackingAnnotation object_annotations = 14;
+     * </code>
+     */
+    public Builder addObjectAnnotations(
+        int index, com.google.cloud.videointelligence.v1.ObjectTrackingAnnotation value) {
+      if (objectAnnotationsBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        ensureObjectAnnotationsIsMutable();
+        objectAnnotations_.add(index, value);
+        onChanged();
+      } else {
+        objectAnnotationsBuilder_.addMessage(index, value);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Annotations for list of objects detected and tracked in video.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1.ObjectTrackingAnnotation object_annotations = 14;
+     * </code>
+     */
+    public Builder addObjectAnnotations(
+        com.google.cloud.videointelligence.v1.ObjectTrackingAnnotation.Builder builderForValue) {
+      if (objectAnnotationsBuilder_ == null) {
+        ensureObjectAnnotationsIsMutable();
+        objectAnnotations_.add(builderForValue.build());
+        onChanged();
+      } else {
+        objectAnnotationsBuilder_.addMessage(builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Annotations for list of objects detected and tracked in video.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1.ObjectTrackingAnnotation object_annotations = 14;
+     * </code>
+     */
+    public Builder addObjectAnnotations(
+        int index,
+        com.google.cloud.videointelligence.v1.ObjectTrackingAnnotation.Builder builderForValue) {
+      if (objectAnnotationsBuilder_ == null) {
+        ensureObjectAnnotationsIsMutable();
+        objectAnnotations_.add(index, builderForValue.build());
+        onChanged();
+      } else {
+        objectAnnotationsBuilder_.addMessage(index, builderForValue.build());
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Annotations for list of objects detected and tracked in video.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1.ObjectTrackingAnnotation object_annotations = 14;
+     * </code>
+     */
+    public Builder addAllObjectAnnotations(
+        java.lang.Iterable<? extends com.google.cloud.videointelligence.v1.ObjectTrackingAnnotation>
+            values) {
+      if (objectAnnotationsBuilder_ == null) {
+        ensureObjectAnnotationsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(values, objectAnnotations_);
+        onChanged();
+      } else {
+        objectAnnotationsBuilder_.addAllMessages(values);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Annotations for list of objects detected and tracked in video.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1.ObjectTrackingAnnotation object_annotations = 14;
+     * </code>
+     */
+    public Builder clearObjectAnnotations() {
+      if (objectAnnotationsBuilder_ == null) {
+        objectAnnotations_ = java.util.Collections.emptyList();
+        bitField0_ = (bitField0_ & ~0x00000200);
+        onChanged();
+      } else {
+        objectAnnotationsBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Annotations for list of objects detected and tracked in video.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1.ObjectTrackingAnnotation object_annotations = 14;
+     * </code>
+     */
+    public Builder removeObjectAnnotations(int index) {
+      if (objectAnnotationsBuilder_ == null) {
+        ensureObjectAnnotationsIsMutable();
+        objectAnnotations_.remove(index);
+        onChanged();
+      } else {
+        objectAnnotationsBuilder_.remove(index);
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Annotations for list of objects detected and tracked in video.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1.ObjectTrackingAnnotation object_annotations = 14;
+     * </code>
+     */
+    public com.google.cloud.videointelligence.v1.ObjectTrackingAnnotation.Builder
+        getObjectAnnotationsBuilder(int index) {
+      return getObjectAnnotationsFieldBuilder().getBuilder(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Annotations for list of objects detected and tracked in video.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1.ObjectTrackingAnnotation object_annotations = 14;
+     * </code>
+     */
+    public com.google.cloud.videointelligence.v1.ObjectTrackingAnnotationOrBuilder
+        getObjectAnnotationsOrBuilder(int index) {
+      if (objectAnnotationsBuilder_ == null) {
+        return objectAnnotations_.get(index);
+      } else {
+        return objectAnnotationsBuilder_.getMessageOrBuilder(index);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Annotations for list of objects detected and tracked in video.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1.ObjectTrackingAnnotation object_annotations = 14;
+     * </code>
+     */
+    public java.util.List<
+            ? extends com.google.cloud.videointelligence.v1.ObjectTrackingAnnotationOrBuilder>
+        getObjectAnnotationsOrBuilderList() {
+      if (objectAnnotationsBuilder_ != null) {
+        return objectAnnotationsBuilder_.getMessageOrBuilderList();
+      } else {
+        return java.util.Collections.unmodifiableList(objectAnnotations_);
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Annotations for list of objects detected and tracked in video.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1.ObjectTrackingAnnotation object_annotations = 14;
+     * </code>
+     */
+    public com.google.cloud.videointelligence.v1.ObjectTrackingAnnotation.Builder
+        addObjectAnnotationsBuilder() {
+      return getObjectAnnotationsFieldBuilder()
+          .addBuilder(
+              com.google.cloud.videointelligence.v1.ObjectTrackingAnnotation.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Annotations for list of objects detected and tracked in video.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1.ObjectTrackingAnnotation object_annotations = 14;
+     * </code>
+     */
+    public com.google.cloud.videointelligence.v1.ObjectTrackingAnnotation.Builder
+        addObjectAnnotationsBuilder(int index) {
+      return getObjectAnnotationsFieldBuilder()
+          .addBuilder(
+              index,
+              com.google.cloud.videointelligence.v1.ObjectTrackingAnnotation.getDefaultInstance());
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Annotations for list of objects detected and tracked in video.
+     * </pre>
+     *
+     * <code>
+     * repeated .google.cloud.videointelligence.v1.ObjectTrackingAnnotation object_annotations = 14;
+     * </code>
+     */
+    public java.util.List<com.google.cloud.videointelligence.v1.ObjectTrackingAnnotation.Builder>
+        getObjectAnnotationsBuilderList() {
+      return getObjectAnnotationsFieldBuilder().getBuilderList();
+    }
+
+    private com.google.protobuf.RepeatedFieldBuilderV3<
+            com.google.cloud.videointelligence.v1.ObjectTrackingAnnotation,
+            com.google.cloud.videointelligence.v1.ObjectTrackingAnnotation.Builder,
+            com.google.cloud.videointelligence.v1.ObjectTrackingAnnotationOrBuilder>
+        getObjectAnnotationsFieldBuilder() {
+      if (objectAnnotationsBuilder_ == null) {
+        objectAnnotationsBuilder_ =
+            new com.google.protobuf.RepeatedFieldBuilderV3<
+                com.google.cloud.videointelligence.v1.ObjectTrackingAnnotation,
+                com.google.cloud.videointelligence.v1.ObjectTrackingAnnotation.Builder,
+                com.google.cloud.videointelligence.v1.ObjectTrackingAnnotationOrBuilder>(
+                objectAnnotations_,
+                ((bitField0_ & 0x00000200) == 0x00000200),
+                getParentForChildren(),
+                isClean());
+        objectAnnotations_ = null;
+      }
+      return objectAnnotationsBuilder_;
     }
 
     private com.google.rpc.Status error_ = null;

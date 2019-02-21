@@ -36,6 +36,8 @@ import com.google.spanner.v1.CommitRequest;
 import com.google.spanner.v1.CommitResponse;
 import com.google.spanner.v1.CreateSessionRequest;
 import com.google.spanner.v1.DeleteSessionRequest;
+import com.google.spanner.v1.ExecuteBatchDmlRequest;
+import com.google.spanner.v1.ExecuteBatchDmlResponse;
 import com.google.spanner.v1.ExecuteSqlRequest;
 import com.google.spanner.v1.GetSessionRequest;
 import com.google.spanner.v1.ListSessionsRequest;
@@ -111,6 +113,12 @@ public class SpannerSettings extends ClientSettings<SpannerSettings> {
   public ServerStreamingCallSettings<ExecuteSqlRequest, PartialResultSet>
       executeStreamingSqlSettings() {
     return ((SpannerStubSettings) getStubSettings()).executeStreamingSqlSettings();
+  }
+
+  /** Returns the object with the settings used for calls to executeBatchDml. */
+  public UnaryCallSettings<ExecuteBatchDmlRequest, ExecuteBatchDmlResponse>
+      executeBatchDmlSettings() {
+    return ((SpannerStubSettings) getStubSettings()).executeBatchDmlSettings();
   }
 
   /** Returns the object with the settings used for calls to read. */
@@ -275,6 +283,12 @@ public class SpannerSettings extends ClientSettings<SpannerSettings> {
     public ServerStreamingCallSettings.Builder<ExecuteSqlRequest, PartialResultSet>
         executeStreamingSqlSettings() {
       return getStubSettingsBuilder().executeStreamingSqlSettings();
+    }
+
+    /** Returns the builder for the settings used for calls to executeBatchDml. */
+    public UnaryCallSettings.Builder<ExecuteBatchDmlRequest, ExecuteBatchDmlResponse>
+        executeBatchDmlSettings() {
+      return getStubSettingsBuilder().executeBatchDmlSettings();
     }
 
     /** Returns the builder for the settings used for calls to read. */

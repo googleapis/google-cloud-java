@@ -120,10 +120,18 @@ public final class InterconnectDiagnosticsLinkStatus implements ApiMessage {
     return lacpStatus;
   }
 
+  /**
+   * An InterconnectDiagnostics.LinkOpticalPower object, describing the current value and status of
+   * the received light level.
+   */
   public InterconnectDiagnosticsLinkOpticalPower getReceivingOpticalPower() {
     return receivingOpticalPower;
   }
 
+  /**
+   * An InterconnectDiagnostics.LinkOpticalPower object, describing the current value and status of
+   * the transmitted light level.
+   */
   public InterconnectDiagnosticsLinkOpticalPower getTransmittingOpticalPower() {
     return transmittingOpticalPower;
   }
@@ -255,20 +263,36 @@ public final class InterconnectDiagnosticsLinkStatus implements ApiMessage {
       return this;
     }
 
+    /**
+     * An InterconnectDiagnostics.LinkOpticalPower object, describing the current value and status
+     * of the received light level.
+     */
     public InterconnectDiagnosticsLinkOpticalPower getReceivingOpticalPower() {
       return receivingOpticalPower;
     }
 
+    /**
+     * An InterconnectDiagnostics.LinkOpticalPower object, describing the current value and status
+     * of the received light level.
+     */
     public Builder setReceivingOpticalPower(
         InterconnectDiagnosticsLinkOpticalPower receivingOpticalPower) {
       this.receivingOpticalPower = receivingOpticalPower;
       return this;
     }
 
+    /**
+     * An InterconnectDiagnostics.LinkOpticalPower object, describing the current value and status
+     * of the transmitted light level.
+     */
     public InterconnectDiagnosticsLinkOpticalPower getTransmittingOpticalPower() {
       return transmittingOpticalPower;
     }
 
+    /**
+     * An InterconnectDiagnostics.LinkOpticalPower object, describing the current value and status
+     * of the transmitted light level.
+     */
     public Builder setTransmittingOpticalPower(
         InterconnectDiagnosticsLinkOpticalPower transmittingOpticalPower) {
       this.transmittingOpticalPower = transmittingOpticalPower;
