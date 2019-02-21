@@ -116,6 +116,24 @@ public final class Field implements Serializable {
      * Sets the type of the field.
      *
      * @param type BigQuery data type
+     * @param subFields nested schema fields in case if {@code type} is {@link
+     *     StandardSQLTypeName#STRUCT}, empty otherwise
+     * @throws IllegalArgumentException if {@code type == StandardSQLTypeName.STRUCT &&
+     *     subFields.length == 0} or if {@code type != StandardSQLTypeName.STRUCT &&
+     *     subFields.length != 0}
+     * @see <a href="https://cloud.google.com/bigquery/docs/reference/standard-sql/data-types">Data
+     *     Types</a>
+     */
+    public Builder setType(StandardSQLTypeName type, Field... subFields) {
+      return setType(
+          LegacySQLTypeName.legacySQLTypeName(type),
+          subFields.length > 0 ? FieldList.of(subFields) : null);
+    }
+
+    /**
+     * Sets the type of the field.
+     *
+     * @param type BigQuery data type
      * @param subFields nested schema fields, in case if {@code type} is {@link
      *     LegacySQLTypeName#RECORD}, {@code null} otherwise.
      * @throws IllegalArgumentException if {@code type == LegacySQLTypeName.RECORD && (subFields ==
@@ -140,6 +158,22 @@ public final class Field implements Serializable {
       this.type = type;
       this.subFields = subFields;
       return this;
+    }
+
+    /**
+     * Sets the type of the field.
+     *
+     * @param type BigQuery data type
+     * @param subFields nested schema fields in case if {@code type} is {@link
+     *     StandardSQLTypeName#STRUCT}, empty otherwise
+     * @throws IllegalArgumentException if {@code type == StandardSQLTypeName.STRUCT &&
+     *     subFields.length == 0} or if {@code type != StandardSQLTypeName.STRUCT &&
+     *     subFields.length != 0}
+     * @see <a href="https://cloud.google.com/bigquery/docs/reference/standard-sql/data-types">Data
+     *     Types</a>
+     */
+    public Builder setType(StandardSQLTypeName type, FieldList subFields) {
+      return setType(LegacySQLTypeName.legacySQLTypeName(type), subFields);
     }
 
     /** Sets the mode of the field. When not specified {@link Mode#NULLABLE} is used. */
@@ -242,7 +276,17 @@ public final class Field implements Serializable {
   }
 
   /** Returns a builder for a Field object with given name and type. */
+  public static Builder newBuilder(String name, StandardSQLTypeName type, Field... subFields) {
+    return new Builder().setName(name).setType(type, subFields);
+  }
+
+  /** Returns a builder for a Field object with given name and type. */
   public static Builder newBuilder(String name, LegacySQLTypeName type, FieldList subFields) {
+    return new Builder().setName(name).setType(type, subFields);
+  }
+
+  /** Returns a builder for a Field object with given name and type. */
+  public static Builder newBuilder(String name, StandardSQLTypeName type, FieldList subFields) {
     return new Builder().setName(name).setType(type, subFields);
   }
 
