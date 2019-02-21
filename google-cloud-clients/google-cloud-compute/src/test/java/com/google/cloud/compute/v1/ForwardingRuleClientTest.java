@@ -247,6 +247,7 @@ public class ForwardingRuleClientTest {
   public void getForwardingRuleTest() {
     String iPAddress = "iPAddress-551149873";
     String iPProtocol = "iPProtocol323774237";
+    Boolean allPorts = true;
     ProjectGlobalBackendServiceName backendService =
         ProjectGlobalBackendServiceName.of("[PROJECT]", "[BACKEND_SERVICE]");
     String creationTimestamp = "creationTimestamp567396278";
@@ -270,6 +271,7 @@ public class ForwardingRuleClientTest {
         ForwardingRule.newBuilder()
             .setIPAddress(iPAddress)
             .setIPProtocol(iPProtocol)
+            .setAllPorts(allPorts)
             .setBackendService(backendService.toString())
             .setCreationTimestamp(creationTimestamp)
             .setDescription(description)
