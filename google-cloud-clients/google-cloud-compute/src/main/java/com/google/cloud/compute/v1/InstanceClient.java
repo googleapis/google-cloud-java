@@ -436,7 +436,7 @@ public class InstanceClient implements BackgroundResource {
    *
    * @param instance The instance name for this request.
    * @param forceAttach Whether to force attach the disk even if it's currently attached to another
-   *     instance. This is only available for regional disks.
+   *     instance.
    * @param attachedDiskResource An instance-attached disk resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
@@ -472,7 +472,7 @@ public class InstanceClient implements BackgroundResource {
    *
    * @param instance The instance name for this request.
    * @param forceAttach Whether to force attach the disk even if it's currently attached to another
-   *     instance. This is only available for regional disks.
+   *     instance.
    * @param attachedDiskResource An instance-attached disk resource.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
