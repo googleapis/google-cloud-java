@@ -32,6 +32,7 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 import com.google.api.core.ApiClock;
 import com.google.api.gax.retrying.RetrySettings;
@@ -50,6 +51,7 @@ import com.google.common.collect.ImmutableMap;
 import com.google.common.io.BaseEncoding;
 import com.google.common.io.CountingOutputStream;
 import java.io.File;
+import java.io.IOException;
 import java.io.OutputStream;
 import java.net.URL;
 import java.nio.ByteBuffer;
@@ -626,23 +628,16 @@ public class BlobTest {
   @Test
   public void testDownloadToOutputStream() throws Exception {
     final byte[] expected = {1, 2};
-
     File file = File.createTempFile("blob", ".tmp");
     StorageRpc mockStorageRpc = createNiceMock(StorageRpc.class);
-
     expect(storage.getOptions()).andReturn(mockOptions).times(2);
     replay(storage);
-
     expect(mockOptions.getStorageRpcV1()).andReturn(mockStorageRpc);
-
     expect(mockOptions.getRetrySettings()).andReturn(RETRY_SETTINGS);
     expect(mockOptions.getClock()).andReturn(API_CLOCK);
-
     replay(mockOptions);
-
     storage.getOptions();
     blob = new Blob(storage, new BlobInfo.BuilderImpl(BLOB_INFO));
-
     expect(
             mockStorageRpc.readToOutputStream(
                 anyObject(StorageObject.class),
@@ -657,10 +652,70 @@ public class BlobTest {
               }
             });
     replay(mockStorageRpc);
-
     OutputStream outputStream = Files.newOutputStream(file.toPath());
     blob.downloadTo(outputStream);
     byte actual[] = Files.readAllBytes(file.toPath());
     assertArrayEquals(expected, actual);
+  }
+
+  @Test
+  public void testDownloadToOutputStreamWithOptions() throws Exception {
+    final byte[] expected = {1, 2};
+    File file = File.createTempFile("blob", ".tmp");
+    StorageRpc mockStorageRpc = createNiceMock(StorageRpc.class);
+    expect(storage.getOptions()).andReturn(mockOptions).times(2);
+    replay(storage);
+    expect(mockOptions.getStorageRpcV1()).andReturn(mockStorageRpc);
+    expect(mockOptions.getRetrySettings()).andReturn(RETRY_SETTINGS);
+    expect(mockOptions.getClock()).andReturn(API_CLOCK);
+    replay(mockOptions);
+    storage.getOptions();
+    blob = new Blob(storage, new BlobInfo.BuilderImpl(BLOB_INFO));
+    expect(
+            mockStorageRpc.readToOutputStream(
+                anyObject(StorageObject.class),
+                anyObject(CountingOutputStream.class),
+                anyObject(Map.class)))
+        .andAnswer(
+            new IAnswer<Boolean>() {
+              @Override
+              public Boolean answer() throws Throwable {
+                ((CountingOutputStream) getCurrentArguments()[1]).write(expected);
+                return true;
+              }
+            });
+    replay(mockStorageRpc);
+    OutputStream outputStream = Files.newOutputStream(file.toPath());
+    blob.downloadTo(outputStream, new BlobSourceOption[0]);
+    byte actual[] = Files.readAllBytes(file.toPath());
+    assertArrayEquals(expected, actual);
+  }
+
+  @Test
+  public void testDownloadToOutputStreamStorageException() throws Exception {
+    File file = File.createTempFile("blob", ".tmp");
+    StorageRpc mockStorageRpc = createNiceMock(StorageRpc.class);
+    expect(storage.getOptions()).andReturn(mockOptions).times(2);
+    replay(storage);
+    expect(mockOptions.getStorageRpcV1()).andReturn(mockStorageRpc);
+    expect(mockOptions.getRetrySettings()).andReturn(RETRY_SETTINGS);
+    expect(mockOptions.getClock()).andReturn(API_CLOCK);
+    replay(mockOptions);
+    storage.getOptions();
+    blob = new Blob(storage, new BlobInfo.BuilderImpl(BLOB_INFO));
+    expect(
+            mockStorageRpc.readToOutputStream(
+                anyObject(StorageObject.class),
+                anyObject(CountingOutputStream.class),
+                anyObject(Map.class)))
+        .andThrow(new StorageException(new IOException()));
+    replay(mockStorageRpc);
+    OutputStream outputStream = Files.newOutputStream(file.toPath());
+    try {
+      blob.downloadTo(outputStream);
+      fail();
+    } catch (StorageException e) {
+      // expected
+    }
   }
 }

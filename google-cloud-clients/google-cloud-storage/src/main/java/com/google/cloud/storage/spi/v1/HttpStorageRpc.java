@@ -668,8 +668,7 @@ public class HttpStorageRpc implements StorageRpc {
       return true;
     } catch (IOException ex) {
       span.setStatus(Status.UNKNOWN.withDescription(ex.getMessage()));
-      StorageException serviceException = translate(ex);
-      throw serviceException;
+      throw translate(ex);
     } finally {
       scope.close();
       span.end();

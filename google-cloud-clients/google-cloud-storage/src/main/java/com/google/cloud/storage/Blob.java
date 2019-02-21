@@ -236,17 +236,19 @@ public class Blob extends BlobInfo {
    * @param options blob read options
    * @throws StorageException upon failure
    */
-  public void downloadTo(OutputStream outputStream, final BlobSourceOption... options) {
+  public void downloadTo(OutputStream outputStream, final BlobSourceOption... options)
+      throws StorageException {
     try (CountingOutputStream countingOutputStream = new CountingOutputStream(outputStream)) {
       final StorageRpc storageRpc = this.options.getStorageRpcV1();
-      final Map<StorageRpc.Option, ?> requestOptions = StorageImpl.optionMap(getBlobId(), options);
       runWithRetries(
           callable(
               new Runnable() {
                 @Override
                 public void run() {
                   storageRpc.readToOutputStream(
-                      getBlobId().toPb(), countingOutputStream, requestOptions);
+                      getBlobId().toPb(),
+                      countingOutputStream,
+                      StorageImpl.optionMap(getBlobId(), options));
                 }
               }),
           this.options.getRetrySettings(),

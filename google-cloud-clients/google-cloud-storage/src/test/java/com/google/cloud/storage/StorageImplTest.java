@@ -26,6 +26,7 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 import com.google.api.client.googleapis.json.GoogleJsonError;
 import com.google.api.core.ApiClock;
@@ -1625,6 +1626,29 @@ public class StorageImplTest {
                 EMPTY_RPC_OPTIONS);
     assertTrue(result);
     assertArrayEquals(BLOB_CONTENT, ((ByteArrayOutputStream) outputStream).toByteArray());
+  }
+
+  @Test
+  public void testReadToOutputStreamStorageException() {
+    CountingOutputStream countingOutputStream =
+        new CountingOutputStream(new ByteArrayOutputStream());
+    EasyMock.expect(
+            storageRpcMock.readToOutputStream(
+                BlobId.of(BUCKET_NAME1, BLOB_NAME1).toPb(),
+                countingOutputStream,
+                EMPTY_RPC_OPTIONS))
+        .andThrow(new StorageException(new IOException()));
+    EasyMock.replay(storageRpcMock);
+    initializeService();
+    try {
+      options
+          .getStorageRpcV1()
+          .readToOutputStream(
+              BlobId.of(BUCKET_NAME1, BLOB_NAME1).toPb(), countingOutputStream, EMPTY_RPC_OPTIONS);
+      fail();
+    } catch (StorageException e) {
+      // expected
+    }
   }
 
   @Test
