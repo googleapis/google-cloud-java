@@ -18,6 +18,7 @@ package com.google.cloud.storage;
 
 import static com.google.cloud.storage.testing.ApiPolicyMatcher.eqApiPolicy;
 import static java.nio.charset.StandardCharsets.UTF_8;
+import static org.easymock.EasyMock.getCurrentArguments;
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -55,9 +56,12 @@ import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.google.common.collect.Iterables;
 import com.google.common.io.BaseEncoding;
+import com.google.common.io.CountingOutputStream;
 import com.google.common.net.UrlEscapers;
 import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
 import java.net.URL;
 import java.net.URLDecoder;
@@ -81,6 +85,7 @@ import java.util.concurrent.TimeUnit;
 import javax.crypto.spec.SecretKeySpec;
 import org.easymock.Capture;
 import org.easymock.EasyMock;
+import org.easymock.IAnswer;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.BeforeClass;
@@ -1589,6 +1594,37 @@ public class StorageImplTest {
     assertNotNull(channel);
     assertTrue(channel.isOpen());
     channel.read(ByteBuffer.allocate(42));
+  }
+
+  @Test
+  public void testReadToOutputStream() {
+    final byte[] expected = {0xD, 0xE, 0xA, 0xD};
+    OutputStream outputStream = new ByteArrayOutputStream();
+    CountingOutputStream countingOutputStream = new CountingOutputStream(outputStream);
+    EasyMock.expect(
+            storageRpcMock.readToOutputStream(
+                BlobId.of(BUCKET_NAME1, BLOB_NAME1).toPb(),
+                countingOutputStream,
+                EMPTY_RPC_OPTIONS))
+        .andAnswer(
+            new IAnswer<Boolean>() {
+              @Override
+              public Boolean answer() throws Throwable {
+                ((CountingOutputStream) getCurrentArguments()[1]).write(expected);
+                return true;
+              }
+            });
+    EasyMock.replay(storageRpcMock);
+    initializeService();
+    boolean result =
+        options
+            .getStorageRpcV1()
+            .readToOutputStream(
+                BlobId.of(BUCKET_NAME1, BLOB_NAME1).toPb(),
+                countingOutputStream,
+                EMPTY_RPC_OPTIONS);
+    assertTrue(result);
+    assertArrayEquals(BLOB_CONTENT, ((ByteArrayOutputStream) outputStream).toByteArray());
   }
 
   @Test
