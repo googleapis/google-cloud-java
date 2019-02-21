@@ -114,11 +114,11 @@ public class ITComputeTest {
       // problem.
       assertThat(e.getMessage()).contains("Bad Request");
       assertThat(e.getCause().getMessage())
-          .doesNotContain("Invalid value for field 'resource.machineType'");
+          .contains("Invalid value for field 'resource.networkInterfaces'");
       return;
     }
 
-    fail();
+    fail("Expected HTTP Bad Request to be returned, but it was not returned.");
   }
 
   @Test
