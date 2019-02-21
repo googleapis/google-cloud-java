@@ -73,6 +73,26 @@ public enum Feature implements com.google.protobuf.ProtocolMessageEnum {
    * <code>SPEECH_TRANSCRIPTION = 6;</code>
    */
   SPEECH_TRANSCRIPTION(6),
+  /**
+   *
+   *
+   * <pre>
+   * OCR text detection and tracking.
+   * </pre>
+   *
+   * <code>TEXT_DETECTION = 7;</code>
+   */
+  TEXT_DETECTION(7),
+  /**
+   *
+   *
+   * <pre>
+   * Object detection and tracking.
+   * </pre>
+   *
+   * <code>OBJECT_TRACKING = 9;</code>
+   */
+  OBJECT_TRACKING(9),
   UNRECOGNIZED(-1),
   ;
 
@@ -136,6 +156,26 @@ public enum Feature implements com.google.protobuf.ProtocolMessageEnum {
    * <code>SPEECH_TRANSCRIPTION = 6;</code>
    */
   public static final int SPEECH_TRANSCRIPTION_VALUE = 6;
+  /**
+   *
+   *
+   * <pre>
+   * OCR text detection and tracking.
+   * </pre>
+   *
+   * <code>TEXT_DETECTION = 7;</code>
+   */
+  public static final int TEXT_DETECTION_VALUE = 7;
+  /**
+   *
+   *
+   * <pre>
+   * Object detection and tracking.
+   * </pre>
+   *
+   * <code>OBJECT_TRACKING = 9;</code>
+   */
+  public static final int OBJECT_TRACKING_VALUE = 9;
 
   public final int getNumber() {
     if (this == UNRECOGNIZED) {
@@ -165,6 +205,10 @@ public enum Feature implements com.google.protobuf.ProtocolMessageEnum {
         return FACE_DETECTION;
       case 6:
         return SPEECH_TRANSCRIPTION;
+      case 7:
+        return TEXT_DETECTION;
+      case 9:
+        return OBJECT_TRACKING;
       default:
         return null;
     }
