@@ -34,11 +34,6 @@ If you are using Maven, add this to your pom.xml file
 
   <dependency>
     <groupId>com.google.cloud</groupId>
-    <artifactId>google-cloud-bigtable-admin</artifactId>
-  </dependency>
-
-  <dependency>
-    <groupId>com.google.cloud</groupId>
     <artifactId>google-cloud-bigtable-emulator</artifactId>
     <scope>test</scope>
   </dependency>
@@ -54,7 +49,6 @@ If you are using Maven, add this to your pom.xml file
 If you are using Gradle, add this to your dependencies
 ```Groovy
 compile 'com.google.cloud:google-cloud-bigtable:0.80.0-alpha'
-compile 'com.google.cloud:google-cloud-bigtable-admin:0.80.0-alpha'
 testCompile 'com.google.cloud:google-cloud-bigtable-emulator:0.80.0-alpha'
 testCompile 'junit:junit:4.12'
 ```

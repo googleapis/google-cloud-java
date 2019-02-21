@@ -13,7 +13,6 @@ google-cloud-bigquery:1.62.0:1.62.1-SNAPSHOT
 google-cloud-bigquerydatatransfer:0.80.0-beta:0.80.1-beta-SNAPSHOT
 google-cloud-bigquerystorage:0.80.0-beta:0.80.1-beta-SNAPSHOT
 google-cloud-bigtable:0.80.0-alpha:0.80.1-alpha-SNAPSHOT
-google-cloud-bigtable-admin:0.80.0-alpha:0.80.1-alpha-SNAPSHOT
 google-cloud-bigtable-emulator:0.80.0-alpha:0.80.1-alpha-SNAPSHOT
 google-cloud-bom:0.80.0-alpha:0.80.1-alpha-SNAPSHOT
 google-cloud-clients:0.80.0-alpha:0.80.1-alpha-SNAPSHOT
