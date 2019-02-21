@@ -185,7 +185,8 @@ class MutateRowsAttemptCallable implements Callable<Void> {
 
       // Handle RPC level errors by wrapping them in a MutateRowsException
       ApiFuture<List<MutateRowsResponse>> catching =
-          ApiFutures.catching(innerFuture, Throwable.class, attemptFailedCallback);
+          ApiFutures.catching(
+              innerFuture, Throwable.class, attemptFailedCallback, MoreExecutors.directExecutor());
 
       // Inspect the results and either propagate the success, or prepare to retry the failed
       // mutations

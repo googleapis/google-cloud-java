@@ -24,6 +24,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Information about any potential InterconnectAttachments between an Interconnect at a specific
+ * InterconnectLocation, and a specific Cloud Region.
+ */
 public final class InterconnectLocationRegionInfo implements ApiMessage {
   private final String expectedRttMs;
   private final String locationPresence;
@@ -64,18 +68,30 @@ public final class InterconnectLocationRegionInfo implements ApiMessage {
 
   @Nullable
   @Override
+  /**
+   * The fields that should be serialized (even if they have empty values). If the containing
+   * message object has a non-null fieldmask, then all the fields in the field mask (and only those
+   * fields in the field mask) will be serialized. If the containing object does not have a
+   * fieldmask, then only non-empty fields will be serialized.
+   */
   public List<String> getFieldMask() {
     return null;
   }
 
+  /**
+   * Expected round-trip time in milliseconds, from this InterconnectLocation to a VM in this
+   * region.
+   */
   public String getExpectedRttMs() {
     return expectedRttMs;
   }
 
+  /** Identifies the network presence of this location. */
   public String getLocationPresence() {
     return locationPresence;
   }
 
+  /** URL for the region of this location. */
   public String getRegion() {
     return region;
   }
@@ -129,28 +145,40 @@ public final class InterconnectLocationRegionInfo implements ApiMessage {
       this.region = source.region;
     }
 
+    /**
+     * Expected round-trip time in milliseconds, from this InterconnectLocation to a VM in this
+     * region.
+     */
     public String getExpectedRttMs() {
       return expectedRttMs;
     }
 
+    /**
+     * Expected round-trip time in milliseconds, from this InterconnectLocation to a VM in this
+     * region.
+     */
     public Builder setExpectedRttMs(String expectedRttMs) {
       this.expectedRttMs = expectedRttMs;
       return this;
     }
 
+    /** Identifies the network presence of this location. */
     public String getLocationPresence() {
       return locationPresence;
     }
 
+    /** Identifies the network presence of this location. */
     public Builder setLocationPresence(String locationPresence) {
       this.locationPresence = locationPresence;
       return this;
     }
 
+    /** URL for the region of this location. */
     public String getRegion() {
       return region;
     }
 
+    /** URL for the region of this location. */
     public Builder setRegion(String region) {
       this.region = region;
       return this;

@@ -19,7 +19,7 @@ public enum RelationalOperator implements com.google.protobuf.ProtocolMessageEnu
    *
    *
    * <pre>
-   * Equal.
+   * Equal. Attempts to match even with incompatible types.
    * </pre>
    *
    * <code>EQUAL_TO = 1;</code>
@@ -29,7 +29,7 @@ public enum RelationalOperator implements com.google.protobuf.ProtocolMessageEnu
    *
    *
    * <pre>
-   * Not equal to.
+   * Not equal to. Attempts to match even with incompatible types.
    * </pre>
    *
    * <code>NOT_EQUAL_TO = 2;</code>
@@ -94,7 +94,7 @@ public enum RelationalOperator implements com.google.protobuf.ProtocolMessageEnu
    *
    *
    * <pre>
-   * Equal.
+   * Equal. Attempts to match even with incompatible types.
    * </pre>
    *
    * <code>EQUAL_TO = 1;</code>
@@ -104,7 +104,7 @@ public enum RelationalOperator implements com.google.protobuf.ProtocolMessageEnu
    *
    *
    * <pre>
-   * Not equal to.
+   * Not equal to. Attempts to match even with incompatible types.
    * </pre>
    *
    * <code>NOT_EQUAL_TO = 2;</code>

@@ -24,6 +24,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/** Describing the ARP neighbor entries seen on this link */
 public final class InterconnectDiagnosticsARPEntry implements ApiMessage {
   private final String ipAddress;
   private final String macAddress;
@@ -57,14 +58,22 @@ public final class InterconnectDiagnosticsARPEntry implements ApiMessage {
 
   @Nullable
   @Override
+  /**
+   * The fields that should be serialized (even if they have empty values). If the containing
+   * message object has a non-null fieldmask, then all the fields in the field mask (and only those
+   * fields in the field mask) will be serialized. If the containing object does not have a
+   * fieldmask, then only non-empty fields will be serialized.
+   */
   public List<String> getFieldMask() {
     return null;
   }
 
+  /** The IP address of this ARP neighbor. */
   public String getIpAddress() {
     return ipAddress;
   }
 
+  /** The MAC address of this ARP neighbor. */
   public String getMacAddress() {
     return macAddress;
   }
@@ -113,19 +122,23 @@ public final class InterconnectDiagnosticsARPEntry implements ApiMessage {
       this.macAddress = source.macAddress;
     }
 
+    /** The IP address of this ARP neighbor. */
     public String getIpAddress() {
       return ipAddress;
     }
 
+    /** The IP address of this ARP neighbor. */
     public Builder setIpAddress(String ipAddress) {
       this.ipAddress = ipAddress;
       return this;
     }
 
+    /** The MAC address of this ARP neighbor. */
     public String getMacAddress() {
       return macAddress;
     }
 
+    /** The MAC address of this ARP neighbor. */
     public Builder setMacAddress(String macAddress) {
       this.macAddress = macAddress;
       return this;

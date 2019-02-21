@@ -25,6 +25,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/** A rule to be applied in a Policy. */
 public final class Rule implements ApiMessage {
   private final String action;
   private final List<Condition> conditions;
@@ -95,34 +96,60 @@ public final class Rule implements ApiMessage {
 
   @Nullable
   @Override
+  /**
+   * The fields that should be serialized (even if they have empty values). If the containing
+   * message object has a non-null fieldmask, then all the fields in the field mask (and only those
+   * fields in the field mask) will be serialized. If the containing object does not have a
+   * fieldmask, then only non-empty fields will be serialized.
+   */
   public List<String> getFieldMask() {
     return null;
   }
 
+  /** Required */
   public String getAction() {
     return action;
   }
 
+  /** Additional restrictions that must be met. All conditions must pass for the rule to match. */
   public List<Condition> getConditionsList() {
     return conditions;
   }
 
+  /** Human-readable description of the rule. */
   public String getDescription() {
     return description;
   }
 
+  /**
+   * If one or more 'in' clauses are specified, the rule matches if the PRINCIPAL/AUTHORITY_SELECTOR
+   * is in at least one of these entries.
+   */
   public List<String> getInsList() {
     return ins;
   }
 
+  /**
+   * The config returned to callers of tech.iam.IAM.CheckPolicy for any entries that match the LOG
+   * action.
+   */
   public List<LogConfig> getLogConfigsList() {
     return logConfigs;
   }
 
+  /**
+   * If one or more 'not_in' clauses are specified, the rule matches if the
+   * PRINCIPAL/AUTHORITY_SELECTOR is in none of the entries.
+   */
   public List<String> getNotInsList() {
     return notIns;
   }
 
+  /**
+   * A permission is a string of form '..' (e.g., 'storage.buckets.list'). A value of '&#42;'
+   * matches all permissions, and a verb part of '&#42;' (e.g., 'storage.buckets.&#42;') matches all
+   * verbs.
+   */
   public List<String> getPermissionsList() {
     return permissions;
   }
@@ -196,19 +223,23 @@ public final class Rule implements ApiMessage {
       this.permissions = source.permissions;
     }
 
+    /** Required */
     public String getAction() {
       return action;
     }
 
+    /** Required */
     public Builder setAction(String action) {
       this.action = action;
       return this;
     }
 
+    /** Additional restrictions that must be met. All conditions must pass for the rule to match. */
     public List<Condition> getConditionsList() {
       return conditions;
     }
 
+    /** Additional restrictions that must be met. All conditions must pass for the rule to match. */
     public Builder addAllConditions(List<Condition> conditions) {
       if (this.conditions == null) {
         this.conditions = new LinkedList<>();
@@ -217,6 +248,7 @@ public final class Rule implements ApiMessage {
       return this;
     }
 
+    /** Additional restrictions that must be met. All conditions must pass for the rule to match. */
     public Builder addConditions(Condition conditions) {
       if (this.conditions == null) {
         this.conditions = new LinkedList<>();
@@ -225,19 +257,29 @@ public final class Rule implements ApiMessage {
       return this;
     }
 
+    /** Human-readable description of the rule. */
     public String getDescription() {
       return description;
     }
 
+    /** Human-readable description of the rule. */
     public Builder setDescription(String description) {
       this.description = description;
       return this;
     }
 
+    /**
+     * If one or more 'in' clauses are specified, the rule matches if the
+     * PRINCIPAL/AUTHORITY_SELECTOR is in at least one of these entries.
+     */
     public List<String> getInsList() {
       return ins;
     }
 
+    /**
+     * If one or more 'in' clauses are specified, the rule matches if the
+     * PRINCIPAL/AUTHORITY_SELECTOR is in at least one of these entries.
+     */
     public Builder addAllIns(List<String> ins) {
       if (this.ins == null) {
         this.ins = new LinkedList<>();
@@ -246,6 +288,10 @@ public final class Rule implements ApiMessage {
       return this;
     }
 
+    /**
+     * If one or more 'in' clauses are specified, the rule matches if the
+     * PRINCIPAL/AUTHORITY_SELECTOR is in at least one of these entries.
+     */
     public Builder addIns(String ins) {
       if (this.ins == null) {
         this.ins = new LinkedList<>();
@@ -254,10 +300,18 @@ public final class Rule implements ApiMessage {
       return this;
     }
 
+    /**
+     * The config returned to callers of tech.iam.IAM.CheckPolicy for any entries that match the LOG
+     * action.
+     */
     public List<LogConfig> getLogConfigsList() {
       return logConfigs;
     }
 
+    /**
+     * The config returned to callers of tech.iam.IAM.CheckPolicy for any entries that match the LOG
+     * action.
+     */
     public Builder addAllLogConfigs(List<LogConfig> logConfigs) {
       if (this.logConfigs == null) {
         this.logConfigs = new LinkedList<>();
@@ -266,6 +320,10 @@ public final class Rule implements ApiMessage {
       return this;
     }
 
+    /**
+     * The config returned to callers of tech.iam.IAM.CheckPolicy for any entries that match the LOG
+     * action.
+     */
     public Builder addLogConfigs(LogConfig logConfigs) {
       if (this.logConfigs == null) {
         this.logConfigs = new LinkedList<>();
@@ -274,10 +332,18 @@ public final class Rule implements ApiMessage {
       return this;
     }
 
+    /**
+     * If one or more 'not_in' clauses are specified, the rule matches if the
+     * PRINCIPAL/AUTHORITY_SELECTOR is in none of the entries.
+     */
     public List<String> getNotInsList() {
       return notIns;
     }
 
+    /**
+     * If one or more 'not_in' clauses are specified, the rule matches if the
+     * PRINCIPAL/AUTHORITY_SELECTOR is in none of the entries.
+     */
     public Builder addAllNotIns(List<String> notIns) {
       if (this.notIns == null) {
         this.notIns = new LinkedList<>();
@@ -286,6 +352,10 @@ public final class Rule implements ApiMessage {
       return this;
     }
 
+    /**
+     * If one or more 'not_in' clauses are specified, the rule matches if the
+     * PRINCIPAL/AUTHORITY_SELECTOR is in none of the entries.
+     */
     public Builder addNotIns(String notIns) {
       if (this.notIns == null) {
         this.notIns = new LinkedList<>();
@@ -294,10 +364,20 @@ public final class Rule implements ApiMessage {
       return this;
     }
 
+    /**
+     * A permission is a string of form '..' (e.g., 'storage.buckets.list'). A value of '&#42;'
+     * matches all permissions, and a verb part of '&#42;' (e.g., 'storage.buckets.&#42;') matches
+     * all verbs.
+     */
     public List<String> getPermissionsList() {
       return permissions;
     }
 
+    /**
+     * A permission is a string of form '..' (e.g., 'storage.buckets.list'). A value of '&#42;'
+     * matches all permissions, and a verb part of '&#42;' (e.g., 'storage.buckets.&#42;') matches
+     * all verbs.
+     */
     public Builder addAllPermissions(List<String> permissions) {
       if (this.permissions == null) {
         this.permissions = new LinkedList<>();
@@ -306,6 +386,11 @@ public final class Rule implements ApiMessage {
       return this;
     }
 
+    /**
+     * A permission is a string of form '..' (e.g., 'storage.buckets.list'). A value of '&#42;'
+     * matches all permissions, and a verb part of '&#42;' (e.g., 'storage.buckets.&#42;') matches
+     * all verbs.
+     */
     public Builder addPermissions(String permissions) {
       if (this.permissions == null) {
         this.permissions = new LinkedList<>();

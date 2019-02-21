@@ -22,7 +22,9 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
     super(builder);
   }
 
-  private RecordKey() {}
+  private RecordKey() {
+    idValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+  }
 
   @java.lang.Override
   public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
@@ -80,6 +82,16 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
               typeCase_ = 3;
               break;
             }
+          case 42:
+            {
+              java.lang.String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+                idValues_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000004;
+              }
+              idValues_.add(s);
+              break;
+            }
           default:
             {
               if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
@@ -94,6 +106,9 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
     } catch (java.io.IOException e) {
       throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
     } finally {
+      if (((mutable_bitField0_ & 0x00000004) == 0x00000004)) {
+        idValues_ = idValues_.getUnmodifiableView();
+      }
       this.unknownFields = unknownFields.build();
       makeExtensionsImmutable();
     }
@@ -114,6 +129,7 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
             com.google.privacy.dlp.v2.RecordKey.Builder.class);
   }
 
+  private int bitField0_;
   private int typeCase_ = 0;
   private java.lang.Object type_;
 
@@ -194,6 +210,61 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
     return com.google.privacy.dlp.v2.BigQueryKey.getDefaultInstance();
   }
 
+  public static final int ID_VALUES_FIELD_NUMBER = 5;
+  private com.google.protobuf.LazyStringList idValues_;
+  /**
+   *
+   *
+   * <pre>
+   * Values of identifying columns in the given row. Order of values matches
+   * the order of field identifiers specified in the scanning request.
+   * </pre>
+   *
+   * <code>repeated string id_values = 5;</code>
+   */
+  public com.google.protobuf.ProtocolStringList getIdValuesList() {
+    return idValues_;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Values of identifying columns in the given row. Order of values matches
+   * the order of field identifiers specified in the scanning request.
+   * </pre>
+   *
+   * <code>repeated string id_values = 5;</code>
+   */
+  public int getIdValuesCount() {
+    return idValues_.size();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Values of identifying columns in the given row. Order of values matches
+   * the order of field identifiers specified in the scanning request.
+   * </pre>
+   *
+   * <code>repeated string id_values = 5;</code>
+   */
+  public java.lang.String getIdValues(int index) {
+    return idValues_.get(index);
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Values of identifying columns in the given row. Order of values matches
+   * the order of field identifiers specified in the scanning request.
+   * </pre>
+   *
+   * <code>repeated string id_values = 5;</code>
+   */
+  public com.google.protobuf.ByteString getIdValuesBytes(int index) {
+    return idValues_.getByteString(index);
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -214,6 +285,9 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
     if (typeCase_ == 3) {
       output.writeMessage(3, (com.google.privacy.dlp.v2.BigQueryKey) type_);
     }
+    for (int i = 0; i < idValues_.size(); i++) {
+      com.google.protobuf.GeneratedMessageV3.writeString(output, 5, idValues_.getRaw(i));
+    }
     unknownFields.writeTo(output);
   }
 
@@ -233,6 +307,14 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
           com.google.protobuf.CodedOutputStream.computeMessageSize(
               3, (com.google.privacy.dlp.v2.BigQueryKey) type_);
     }
+    {
+      int dataSize = 0;
+      for (int i = 0; i < idValues_.size(); i++) {
+        dataSize += computeStringSizeNoTag(idValues_.getRaw(i));
+      }
+      size += dataSize;
+      size += 1 * getIdValuesList().size();
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -249,6 +331,7 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
     com.google.privacy.dlp.v2.RecordKey other = (com.google.privacy.dlp.v2.RecordKey) obj;
 
     boolean result = true;
+    result = result && getIdValuesList().equals(other.getIdValuesList());
     result = result && getTypeCase().equals(other.getTypeCase());
     if (!result) return false;
     switch (typeCase_) {
@@ -272,6 +355,10 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
     }
     int hash = 41;
     hash = (19 * hash) + getDescriptor().hashCode();
+    if (getIdValuesCount() > 0) {
+      hash = (37 * hash) + ID_VALUES_FIELD_NUMBER;
+      hash = (53 * hash) + getIdValuesList().hashCode();
+    }
     switch (typeCase_) {
       case 2:
         hash = (37 * hash) + DATASTORE_KEY_FIELD_NUMBER;
@@ -428,6 +515,8 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public Builder clear() {
       super.clear();
+      idValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000004);
       typeCase_ = 0;
       type_ = null;
       return this;
@@ -456,6 +545,8 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
     @java.lang.Override
     public com.google.privacy.dlp.v2.RecordKey buildPartial() {
       com.google.privacy.dlp.v2.RecordKey result = new com.google.privacy.dlp.v2.RecordKey(this);
+      int from_bitField0_ = bitField0_;
+      int to_bitField0_ = 0;
       if (typeCase_ == 2) {
         if (datastoreKeyBuilder_ == null) {
           result.type_ = type_;
@@ -470,6 +561,12 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
           result.type_ = bigQueryKeyBuilder_.build();
         }
       }
+      if (((bitField0_ & 0x00000004) == 0x00000004)) {
+        idValues_ = idValues_.getUnmodifiableView();
+        bitField0_ = (bitField0_ & ~0x00000004);
+      }
+      result.idValues_ = idValues_;
+      result.bitField0_ = to_bitField0_;
       result.typeCase_ = typeCase_;
       onBuilt();
       return result;
@@ -520,6 +617,16 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
 
     public Builder mergeFrom(com.google.privacy.dlp.v2.RecordKey other) {
       if (other == com.google.privacy.dlp.v2.RecordKey.getDefaultInstance()) return this;
+      if (!other.idValues_.isEmpty()) {
+        if (idValues_.isEmpty()) {
+          idValues_ = other.idValues_;
+          bitField0_ = (bitField0_ & ~0x00000004);
+        } else {
+          ensureIdValuesIsMutable();
+          idValues_.addAll(other.idValues_);
+        }
+        onChanged();
+      }
       switch (other.getTypeCase()) {
         case DATASTORE_KEY:
           {
@@ -578,6 +685,8 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       return this;
     }
+
+    private int bitField0_;
 
     private com.google.protobuf.SingleFieldBuilderV3<
             com.google.privacy.dlp.v2.DatastoreKey,
@@ -830,6 +939,158 @@ public final class RecordKey extends com.google.protobuf.GeneratedMessageV3
       onChanged();
       ;
       return bigQueryKeyBuilder_;
+    }
+
+    private com.google.protobuf.LazyStringList idValues_ =
+        com.google.protobuf.LazyStringArrayList.EMPTY;
+
+    private void ensureIdValuesIsMutable() {
+      if (!((bitField0_ & 0x00000004) == 0x00000004)) {
+        idValues_ = new com.google.protobuf.LazyStringArrayList(idValues_);
+        bitField0_ |= 0x00000004;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Values of identifying columns in the given row. Order of values matches
+     * the order of field identifiers specified in the scanning request.
+     * </pre>
+     *
+     * <code>repeated string id_values = 5;</code>
+     */
+    public com.google.protobuf.ProtocolStringList getIdValuesList() {
+      return idValues_.getUnmodifiableView();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Values of identifying columns in the given row. Order of values matches
+     * the order of field identifiers specified in the scanning request.
+     * </pre>
+     *
+     * <code>repeated string id_values = 5;</code>
+     */
+    public int getIdValuesCount() {
+      return idValues_.size();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Values of identifying columns in the given row. Order of values matches
+     * the order of field identifiers specified in the scanning request.
+     * </pre>
+     *
+     * <code>repeated string id_values = 5;</code>
+     */
+    public java.lang.String getIdValues(int index) {
+      return idValues_.get(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Values of identifying columns in the given row. Order of values matches
+     * the order of field identifiers specified in the scanning request.
+     * </pre>
+     *
+     * <code>repeated string id_values = 5;</code>
+     */
+    public com.google.protobuf.ByteString getIdValuesBytes(int index) {
+      return idValues_.getByteString(index);
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Values of identifying columns in the given row. Order of values matches
+     * the order of field identifiers specified in the scanning request.
+     * </pre>
+     *
+     * <code>repeated string id_values = 5;</code>
+     */
+    public Builder setIdValues(int index, java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureIdValuesIsMutable();
+      idValues_.set(index, value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Values of identifying columns in the given row. Order of values matches
+     * the order of field identifiers specified in the scanning request.
+     * </pre>
+     *
+     * <code>repeated string id_values = 5;</code>
+     */
+    public Builder addIdValues(java.lang.String value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      ensureIdValuesIsMutable();
+      idValues_.add(value);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Values of identifying columns in the given row. Order of values matches
+     * the order of field identifiers specified in the scanning request.
+     * </pre>
+     *
+     * <code>repeated string id_values = 5;</code>
+     */
+    public Builder addAllIdValues(java.lang.Iterable<java.lang.String> values) {
+      ensureIdValuesIsMutable();
+      com.google.protobuf.AbstractMessageLite.Builder.addAll(values, idValues_);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Values of identifying columns in the given row. Order of values matches
+     * the order of field identifiers specified in the scanning request.
+     * </pre>
+     *
+     * <code>repeated string id_values = 5;</code>
+     */
+    public Builder clearIdValues() {
+      idValues_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      bitField0_ = (bitField0_ & ~0x00000004);
+      onChanged();
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Values of identifying columns in the given row. Order of values matches
+     * the order of field identifiers specified in the scanning request.
+     * </pre>
+     *
+     * <code>repeated string id_values = 5;</code>
+     */
+    public Builder addIdValuesBytes(com.google.protobuf.ByteString value) {
+      if (value == null) {
+        throw new NullPointerException();
+      }
+      checkByteStringIsUtf8(value);
+      ensureIdValuesIsMutable();
+      idValues_.add(value);
+      onChanged();
+      return this;
     }
 
     @java.lang.Override

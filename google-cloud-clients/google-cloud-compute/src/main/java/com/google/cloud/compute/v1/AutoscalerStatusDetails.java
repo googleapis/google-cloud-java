@@ -57,14 +57,22 @@ public final class AutoscalerStatusDetails implements ApiMessage {
 
   @Nullable
   @Override
+  /**
+   * The fields that should be serialized (even if they have empty values). If the containing
+   * message object has a non-null fieldmask, then all the fields in the field mask (and only those
+   * fields in the field mask) will be serialized. If the containing object does not have a
+   * fieldmask, then only non-empty fields will be serialized.
+   */
   public List<String> getFieldMask() {
     return null;
   }
 
+  /** The status message. */
   public String getMessage() {
     return message;
   }
 
+  /** The type of error returned. */
   public String getType() {
     return type;
   }
@@ -113,19 +121,23 @@ public final class AutoscalerStatusDetails implements ApiMessage {
       this.type = source.type;
     }
 
+    /** The status message. */
     public String getMessage() {
       return message;
     }
 
+    /** The status message. */
     public Builder setMessage(String message) {
       this.message = message;
       return this;
     }
 
+    /** The type of error returned. */
     public String getType() {
       return type;
     }
 
+    /** The type of error returned. */
     public Builder setType(String type) {
       this.type = type;
       return this;

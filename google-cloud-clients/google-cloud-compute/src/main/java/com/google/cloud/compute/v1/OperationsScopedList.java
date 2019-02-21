@@ -58,14 +58,25 @@ public final class OperationsScopedList implements ApiMessage {
 
   @Nullable
   @Override
+  /**
+   * The fields that should be serialized (even if they have empty values). If the containing
+   * message object has a non-null fieldmask, then all the fields in the field mask (and only those
+   * fields in the field mask) will be serialized. If the containing object does not have a
+   * fieldmask, then only non-empty fields will be serialized.
+   */
   public List<String> getFieldMask() {
     return null;
   }
 
+  /** [Output Only] A list of operations contained in this scope. */
   public List<Operation> getOperationsList() {
     return operations;
   }
 
+  /**
+   * [Output Only] Informational warning which replaces the list of operations when the list is
+   * empty.
+   */
   public Warning getWarning() {
     return warning;
   }
@@ -114,10 +125,12 @@ public final class OperationsScopedList implements ApiMessage {
       this.warning = source.warning;
     }
 
+    /** [Output Only] A list of operations contained in this scope. */
     public List<Operation> getOperationsList() {
       return operations;
     }
 
+    /** [Output Only] A list of operations contained in this scope. */
     public Builder addAllOperations(List<Operation> operations) {
       if (this.operations == null) {
         this.operations = new LinkedList<>();
@@ -126,6 +139,7 @@ public final class OperationsScopedList implements ApiMessage {
       return this;
     }
 
+    /** [Output Only] A list of operations contained in this scope. */
     public Builder addOperations(Operation operations) {
       if (this.operations == null) {
         this.operations = new LinkedList<>();
@@ -134,10 +148,18 @@ public final class OperationsScopedList implements ApiMessage {
       return this;
     }
 
+    /**
+     * [Output Only] Informational warning which replaces the list of operations when the list is
+     * empty.
+     */
     public Warning getWarning() {
       return warning;
     }
 
+    /**
+     * [Output Only] Informational warning which replaces the list of operations when the list is
+     * empty.
+     */
     public Builder setWarning(Warning warning) {
       this.warning = warning;
       return this;

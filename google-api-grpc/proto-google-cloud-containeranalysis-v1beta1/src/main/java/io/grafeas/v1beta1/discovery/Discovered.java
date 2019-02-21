@@ -659,7 +659,8 @@ public final class Discovered extends com.google.protobuf.GeneratedMessageV3
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (continuousAnalysis_
         != io.grafeas.v1beta1.discovery.Discovered.ContinuousAnalysis
-            .CONTINUOUS_ANALYSIS_UNSPECIFIED.getNumber()) {
+            .CONTINUOUS_ANALYSIS_UNSPECIFIED
+            .getNumber()) {
       output.writeEnum(1, continuousAnalysis_);
     }
     if (lastAnalysisTime_ != null) {
@@ -684,7 +685,8 @@ public final class Discovered extends com.google.protobuf.GeneratedMessageV3
     size = 0;
     if (continuousAnalysis_
         != io.grafeas.v1beta1.discovery.Discovered.ContinuousAnalysis
-            .CONTINUOUS_ANALYSIS_UNSPECIFIED.getNumber()) {
+            .CONTINUOUS_ANALYSIS_UNSPECIFIED
+            .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, continuousAnalysis_);
     }
     if (lastAnalysisTime_ != null) {

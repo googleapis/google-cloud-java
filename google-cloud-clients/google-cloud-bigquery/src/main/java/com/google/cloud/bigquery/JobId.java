@@ -101,6 +101,10 @@ public abstract class JobId implements Serializable {
     return getProject() != null ? this : toBuilder().setProject(projectId).build();
   }
 
+  JobId setLocation(String location) {
+    return getLocation() != null ? this : toBuilder().setLocation(location).build();
+  }
+
   JobReference toPb() {
     return new JobReference()
         .setProjectId(getProject())

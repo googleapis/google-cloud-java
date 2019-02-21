@@ -25,6 +25,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/** Message representing the validation result for a UrlMap. */
 public final class UrlMapValidationResult implements ApiMessage {
   private final List<String> loadErrors;
   private final Boolean loadSucceeded;
@@ -74,6 +75,12 @@ public final class UrlMapValidationResult implements ApiMessage {
 
   @Nullable
   @Override
+  /**
+   * The fields that should be serialized (even if they have empty values). If the containing
+   * message object has a non-null fieldmask, then all the fields in the field mask (and only those
+   * fields in the field mask) will be serialized. If the containing object does not have a
+   * fieldmask, then only non-empty fields will be serialized.
+   */
   public List<String> getFieldMask() {
     return null;
   }
@@ -82,6 +89,10 @@ public final class UrlMapValidationResult implements ApiMessage {
     return loadErrors;
   }
 
+  /**
+   * Whether the given UrlMap can be successfully loaded. If false, 'loadErrors' indicates the
+   * reasons.
+   */
   public Boolean getLoadSucceeded() {
     return loadSucceeded;
   }
@@ -90,6 +101,10 @@ public final class UrlMapValidationResult implements ApiMessage {
     return testFailures;
   }
 
+  /**
+   * If successfully loaded, this field indicates whether the test passed. If false, 'testFailures's
+   * indicate the reason of failure.
+   */
   public Boolean getTestPassed() {
     return testPassed;
   }
@@ -168,10 +183,18 @@ public final class UrlMapValidationResult implements ApiMessage {
       return this;
     }
 
+    /**
+     * Whether the given UrlMap can be successfully loaded. If false, 'loadErrors' indicates the
+     * reasons.
+     */
     public Boolean getLoadSucceeded() {
       return loadSucceeded;
     }
 
+    /**
+     * Whether the given UrlMap can be successfully loaded. If false, 'loadErrors' indicates the
+     * reasons.
+     */
     public Builder setLoadSucceeded(Boolean loadSucceeded) {
       this.loadSucceeded = loadSucceeded;
       return this;
@@ -197,10 +220,18 @@ public final class UrlMapValidationResult implements ApiMessage {
       return this;
     }
 
+    /**
+     * If successfully loaded, this field indicates whether the test passed. If false,
+     * 'testFailures's indicate the reason of failure.
+     */
     public Boolean getTestPassed() {
       return testPassed;
     }
 
+    /**
+     * If successfully loaded, this field indicates whether the test passed. If false,
+     * 'testFailures's indicate the reason of failure.
+     */
     public Builder setTestPassed(Boolean testPassed) {
       this.testPassed = testPassed;
       return this;

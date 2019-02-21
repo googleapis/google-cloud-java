@@ -18,7 +18,7 @@ package com.google.cloud.firestore;
 
 import com.google.auto.value.AutoValue;
 import com.google.common.collect.ImmutableList;
-import com.google.firestore.v1beta1.DatabaseRootName;
+import com.google.firestore.v1.DatabaseRootName;
 import java.util.Arrays;
 import java.util.Comparator;
 import javax.annotation.Nonnull;

@@ -45,10 +45,10 @@ import com.google.api.gax.rpc.ApiStreamObserver;
 import com.google.api.gax.rpc.ServerStreamingCallable;
 import com.google.api.gax.rpc.UnaryCallable;
 import com.google.cloud.Timestamp;
-import com.google.cloud.firestore.spi.v1beta1.FirestoreRpc;
-import com.google.firestore.v1beta1.BatchGetDocumentsRequest;
-import com.google.firestore.v1beta1.DocumentMask;
-import com.google.firestore.v1beta1.Write;
+import com.google.cloud.firestore.spi.v1.FirestoreRpc;
+import com.google.firestore.v1.BatchGetDocumentsRequest;
+import com.google.firestore.v1.DocumentMask;
+import com.google.firestore.v1.Write;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.Message;
 import java.util.ArrayList;
@@ -593,8 +593,8 @@ public class TransactionTest {
     List<Write> writes = new ArrayList<>();
     writes.add(delete());
 
-    com.google.firestore.v1beta1.Precondition.Builder precondition =
-        com.google.firestore.v1beta1.Precondition.newBuilder();
+    com.google.firestore.v1.Precondition.Builder precondition =
+        com.google.firestore.v1.Precondition.newBuilder();
     precondition.getUpdateTimeBuilder().setSeconds(1).setNanos(2);
     writes.add(delete(precondition.build()));
 

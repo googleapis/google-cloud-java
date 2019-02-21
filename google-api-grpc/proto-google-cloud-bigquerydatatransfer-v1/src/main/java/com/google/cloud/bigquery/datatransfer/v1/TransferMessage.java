@@ -421,7 +421,8 @@ public final class TransferMessage extends com.google.protobuf.GeneratedMessageV
     }
     if (severity_
         != com.google.cloud.bigquery.datatransfer.v1.TransferMessage.MessageSeverity
-            .MESSAGE_SEVERITY_UNSPECIFIED.getNumber()) {
+            .MESSAGE_SEVERITY_UNSPECIFIED
+            .getNumber()) {
       output.writeEnum(2, severity_);
     }
     if (!getMessageTextBytes().isEmpty()) {
@@ -441,7 +442,8 @@ public final class TransferMessage extends com.google.protobuf.GeneratedMessageV
     }
     if (severity_
         != com.google.cloud.bigquery.datatransfer.v1.TransferMessage.MessageSeverity
-            .MESSAGE_SEVERITY_UNSPECIFIED.getNumber()) {
+            .MESSAGE_SEVERITY_UNSPECIFIED
+            .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, severity_);
     }
     if (!getMessageTextBytes().isEmpty()) {

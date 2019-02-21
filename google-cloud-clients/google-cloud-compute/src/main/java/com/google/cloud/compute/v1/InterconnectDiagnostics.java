@@ -25,6 +25,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * Diagnostics information about interconnect, contains detailed and current technical information
+ * about Google?s side of the connection.
+ */
 public final class InterconnectDiagnostics implements ApiMessage {
   private final List<InterconnectDiagnosticsARPEntry> arpCaches;
   private final List<InterconnectDiagnosticsLinkStatus> links;
@@ -67,18 +71,34 @@ public final class InterconnectDiagnostics implements ApiMessage {
 
   @Nullable
   @Override
+  /**
+   * The fields that should be serialized (even if they have empty values). If the containing
+   * message object has a non-null fieldmask, then all the fields in the field mask (and only those
+   * fields in the field mask) will be serialized. If the containing object does not have a
+   * fieldmask, then only non-empty fields will be serialized.
+   */
   public List<String> getFieldMask() {
     return null;
   }
 
+  /**
+   * A list of InterconnectDiagnostics.ARPEntry objects, describing individual neighbors currently
+   * seen by the Google router in the ARP cache for the Interconnect. This will be empty when the
+   * Interconnect is not bundled.
+   */
   public List<InterconnectDiagnosticsARPEntry> getArpCachesList() {
     return arpCaches;
   }
 
+  /**
+   * A list of InterconnectDiagnostics.LinkStatus objects, describing the status for each link on
+   * the Interconnect.
+   */
   public List<InterconnectDiagnosticsLinkStatus> getLinksList() {
     return links;
   }
 
+  /** The MAC address of the Interconnect's bundle interface. */
   public String getMacAddress() {
     return macAddress;
   }
@@ -132,10 +152,20 @@ public final class InterconnectDiagnostics implements ApiMessage {
       this.macAddress = source.macAddress;
     }
 
+    /**
+     * A list of InterconnectDiagnostics.ARPEntry objects, describing individual neighbors currently
+     * seen by the Google router in the ARP cache for the Interconnect. This will be empty when the
+     * Interconnect is not bundled.
+     */
     public List<InterconnectDiagnosticsARPEntry> getArpCachesList() {
       return arpCaches;
     }
 
+    /**
+     * A list of InterconnectDiagnostics.ARPEntry objects, describing individual neighbors currently
+     * seen by the Google router in the ARP cache for the Interconnect. This will be empty when the
+     * Interconnect is not bundled.
+     */
     public Builder addAllArpCaches(List<InterconnectDiagnosticsARPEntry> arpCaches) {
       if (this.arpCaches == null) {
         this.arpCaches = new LinkedList<>();
@@ -144,6 +174,11 @@ public final class InterconnectDiagnostics implements ApiMessage {
       return this;
     }
 
+    /**
+     * A list of InterconnectDiagnostics.ARPEntry objects, describing individual neighbors currently
+     * seen by the Google router in the ARP cache for the Interconnect. This will be empty when the
+     * Interconnect is not bundled.
+     */
     public Builder addArpCaches(InterconnectDiagnosticsARPEntry arpCaches) {
       if (this.arpCaches == null) {
         this.arpCaches = new LinkedList<>();
@@ -152,10 +187,18 @@ public final class InterconnectDiagnostics implements ApiMessage {
       return this;
     }
 
+    /**
+     * A list of InterconnectDiagnostics.LinkStatus objects, describing the status for each link on
+     * the Interconnect.
+     */
     public List<InterconnectDiagnosticsLinkStatus> getLinksList() {
       return links;
     }
 
+    /**
+     * A list of InterconnectDiagnostics.LinkStatus objects, describing the status for each link on
+     * the Interconnect.
+     */
     public Builder addAllLinks(List<InterconnectDiagnosticsLinkStatus> links) {
       if (this.links == null) {
         this.links = new LinkedList<>();
@@ -164,6 +207,10 @@ public final class InterconnectDiagnostics implements ApiMessage {
       return this;
     }
 
+    /**
+     * A list of InterconnectDiagnostics.LinkStatus objects, describing the status for each link on
+     * the Interconnect.
+     */
     public Builder addLinks(InterconnectDiagnosticsLinkStatus links) {
       if (this.links == null) {
         this.links = new LinkedList<>();
@@ -172,10 +219,12 @@ public final class InterconnectDiagnostics implements ApiMessage {
       return this;
     }
 
+    /** The MAC address of the Interconnect's bundle interface. */
     public String getMacAddress() {
       return macAddress;
     }
 
+    /** The MAC address of the Interconnect's bundle interface. */
     public Builder setMacAddress(String macAddress) {
       this.macAddress = macAddress;
       return this;

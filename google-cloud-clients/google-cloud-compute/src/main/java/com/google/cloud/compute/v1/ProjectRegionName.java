@@ -148,9 +148,10 @@ public final class ProjectRegionName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate(
-        "project", project,
-        "region", region);
+    return SERVICE_ADDRESS
+        + PATH_TEMPLATE.instantiate(
+            "project", project,
+            "region", region);
   }
 
   @Override

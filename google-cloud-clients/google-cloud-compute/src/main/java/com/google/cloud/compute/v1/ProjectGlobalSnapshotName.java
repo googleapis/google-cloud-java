@@ -148,9 +148,10 @@ public final class ProjectGlobalSnapshotName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate(
-        "project", project,
-        "snapshot", snapshot);
+    return SERVICE_ADDRESS
+        + PATH_TEMPLATE.instantiate(
+            "project", project,
+            "snapshot", snapshot);
   }
 
   @Override

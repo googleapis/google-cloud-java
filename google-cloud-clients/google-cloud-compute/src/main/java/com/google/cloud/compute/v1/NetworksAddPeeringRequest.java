@@ -63,18 +63,31 @@ public final class NetworksAddPeeringRequest implements ApiMessage {
 
   @Nullable
   @Override
+  /**
+   * The fields that should be serialized (even if they have empty values). If the containing
+   * message object has a non-null fieldmask, then all the fields in the field mask (and only those
+   * fields in the field mask) will be serialized. If the containing object does not have a
+   * fieldmask, then only non-empty fields will be serialized.
+   */
   public List<String> getFieldMask() {
     return null;
   }
 
+  /** Whether Google Compute Engine manages the routes automatically. */
   public Boolean getAutoCreateRoutes() {
     return autoCreateRoutes;
   }
 
+  /** Name of the peering, which should conform to RFC1035. */
   public String getName() {
     return name;
   }
 
+  /**
+   * URL of the peer network. It can be either full URL or partial URL. The peer network may belong
+   * to a different project. If the partial URL does not contain project, it is assumed that the
+   * peer network is in the same project as the current network.
+   */
   public String getPeerNetwork() {
     return peerNetwork;
   }
@@ -128,28 +141,42 @@ public final class NetworksAddPeeringRequest implements ApiMessage {
       this.peerNetwork = source.peerNetwork;
     }
 
+    /** Whether Google Compute Engine manages the routes automatically. */
     public Boolean getAutoCreateRoutes() {
       return autoCreateRoutes;
     }
 
+    /** Whether Google Compute Engine manages the routes automatically. */
     public Builder setAutoCreateRoutes(Boolean autoCreateRoutes) {
       this.autoCreateRoutes = autoCreateRoutes;
       return this;
     }
 
+    /** Name of the peering, which should conform to RFC1035. */
     public String getName() {
       return name;
     }
 
+    /** Name of the peering, which should conform to RFC1035. */
     public Builder setName(String name) {
       this.name = name;
       return this;
     }
 
+    /**
+     * URL of the peer network. It can be either full URL or partial URL. The peer network may
+     * belong to a different project. If the partial URL does not contain project, it is assumed
+     * that the peer network is in the same project as the current network.
+     */
     public String getPeerNetwork() {
       return peerNetwork;
     }
 
+    /**
+     * URL of the peer network. It can be either full URL or partial URL. The peer network may
+     * belong to a different project. If the partial URL does not contain project, it is assumed
+     * that the peer network is in the same project as the current network.
+     */
     public Builder setPeerNetwork(String peerNetwork) {
       this.peerNetwork = peerNetwork;
       return this;

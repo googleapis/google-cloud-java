@@ -101,5 +101,40 @@ public interface ActionOrBuilder
    */
   com.google.privacy.dlp.v2.Action.PublishSummaryToCsccOrBuilder getPublishSummaryToCsccOrBuilder();
 
+  /**
+   *
+   *
+   * <pre>
+   * Enable email notification to project owners and editors on job‘s
+   * completion/failure.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.Action.JobNotificationEmails job_notification_emails = 8;</code>
+   */
+  boolean hasJobNotificationEmails();
+  /**
+   *
+   *
+   * <pre>
+   * Enable email notification to project owners and editors on job‘s
+   * completion/failure.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.Action.JobNotificationEmails job_notification_emails = 8;</code>
+   */
+  com.google.privacy.dlp.v2.Action.JobNotificationEmails getJobNotificationEmails();
+  /**
+   *
+   *
+   * <pre>
+   * Enable email notification to project owners and editors on job‘s
+   * completion/failure.
+   * </pre>
+   *
+   * <code>.google.privacy.dlp.v2.Action.JobNotificationEmails job_notification_emails = 8;</code>
+   */
+  com.google.privacy.dlp.v2.Action.JobNotificationEmailsOrBuilder
+      getJobNotificationEmailsOrBuilder();
+
   public com.google.privacy.dlp.v2.Action.ActionCase getActionCase();
 }

@@ -149,9 +149,10 @@ public final class ProjectGlobalTargetSslProxyName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate(
-        "project", project,
-        "targetSslProxy", targetSslProxy);
+    return SERVICE_ADDRESS
+        + PATH_TEMPLATE.instantiate(
+            "project", project,
+            "targetSslProxy", targetSslProxy);
   }
 
   @Override

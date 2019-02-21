@@ -51,10 +51,17 @@ public final class NodeGroupsSetNodeTemplateRequest implements ApiMessage {
 
   @Nullable
   @Override
+  /**
+   * The fields that should be serialized (even if they have empty values). If the containing
+   * message object has a non-null fieldmask, then all the fields in the field mask (and only those
+   * fields in the field mask) will be serialized. If the containing object does not have a
+   * fieldmask, then only non-empty fields will be serialized.
+   */
   public List<String> getFieldMask() {
     return null;
   }
 
+  /** Full or partial URL of the node template resource to be updated for this node group. */
   public String getNodeTemplate() {
     return nodeTemplate;
   }
@@ -98,10 +105,12 @@ public final class NodeGroupsSetNodeTemplateRequest implements ApiMessage {
       this.nodeTemplate = source.nodeTemplate;
     }
 
+    /** Full or partial URL of the node template resource to be updated for this node group. */
     public String getNodeTemplate() {
       return nodeTemplate;
     }
 
+    /** Full or partial URL of the node template resource to be updated for this node group. */
     public Builder setNodeTemplate(String nodeTemplate) {
       this.nodeTemplate = nodeTemplate;
       return this;

@@ -168,10 +168,11 @@ public final class ProjectZoneInstanceGroupName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate(
-        "instanceGroup", instanceGroup,
-        "project", project,
-        "zone", zone);
+    return SERVICE_ADDRESS
+        + PATH_TEMPLATE.instantiate(
+            "instanceGroup", instanceGroup,
+            "project", project,
+            "zone", zone);
   }
 
   @Override

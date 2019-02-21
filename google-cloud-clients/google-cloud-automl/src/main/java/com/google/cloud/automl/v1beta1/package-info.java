@@ -19,24 +19,7 @@
  *
  * <p>The interfaces provided are listed below, along with usage samples.
  *
- * <p>======================= PredictionServiceClient =======================
- *
- * <p>Service Description: AutoML Prediction API.
- *
- * <p>Sample for PredictionServiceClient:
- *
- * <pre>
- * <code>
- * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
- *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
- *   ExamplePayload payload = ExamplePayload.newBuilder().build();
- *   Map&lt;String, String&gt; params = new HashMap&lt;&gt;();
- *   PredictResponse response = predictionServiceClient.predict(name, payload, params);
- * }
- * </code>
- * </pre>
- *
- * ============ AutoMlClient ============
+ * <p>============ AutoMlClient ============
  *
  * <p>Service Description: AutoML Server API.
  *
@@ -55,6 +38,23 @@
  *   LocationName parent = LocationName.of("[PROJECT]", "[LOCATION]");
  *   Dataset dataset = Dataset.newBuilder().build();
  *   Dataset response = autoMlClient.createDataset(parent, dataset);
+ * }
+ * </code>
+ * </pre>
+ *
+ * ======================= PredictionServiceClient =======================
+ *
+ * <p>Service Description: AutoML Prediction API.
+ *
+ * <p>Sample for PredictionServiceClient:
+ *
+ * <pre>
+ * <code>
+ * try (PredictionServiceClient predictionServiceClient = PredictionServiceClient.create()) {
+ *   ModelName name = ModelName.of("[PROJECT]", "[LOCATION]", "[MODEL]");
+ *   ExamplePayload payload = ExamplePayload.newBuilder().build();
+ *   Map&lt;String, String&gt; params = new HashMap&lt;&gt;();
+ *   PredictResponse response = predictionServiceClient.predict(name, payload, params);
  * }
  * </code>
  * </pre>

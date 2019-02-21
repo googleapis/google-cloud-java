@@ -24,8 +24,9 @@ import com.google.common.base.MoreObjects;
 import java.io.Serializable;
 import java.math.BigInteger;
 import java.util.Objects;
-import org.joda.time.format.DateTimeFormatter;
-import org.joda.time.format.ISODateTimeFormat;
+import org.threeten.bp.Instant;
+import org.threeten.bp.ZoneOffset;
+import org.threeten.bp.format.DateTimeFormatter;
 
 /**
  * A Google Compute Engine Network. Every virtual machine instance is created as a member of a
@@ -56,7 +57,8 @@ public class NetworkInfo implements Serializable {
       };
 
   private static final long serialVersionUID = 4336912581538114026L;
-  private static final DateTimeFormatter TIMESTAMP_FORMATTER = ISODateTimeFormat.dateTime();
+  private static final DateTimeFormatter TIMESTAMP_FORMATTER =
+      DateTimeFormatter.ISO_DATE_TIME.withZone(ZoneOffset.UTC);
 
   private final String generatedId;
   private final NetworkId networkId;
@@ -115,7 +117,10 @@ public class NetworkInfo implements Serializable {
         this.generatedId = networkPb.getId().toString();
       }
       if (networkPb.getCreationTimestamp() != null) {
-        this.creationTimestamp = TIMESTAMP_FORMATTER.parseMillis(networkPb.getCreationTimestamp());
+        this.creationTimestamp =
+            TIMESTAMP_FORMATTER
+                .parse(networkPb.getCreationTimestamp(), Instant.FROM)
+                .toEpochMilli();
       }
       this.networkId = NetworkId.fromUrl(networkPb.getSelfLink());
       this.description = networkPb.getDescription();
@@ -235,7 +240,8 @@ public class NetworkInfo implements Serializable {
       networkPb.setId(new BigInteger(generatedId));
     }
     if (creationTimestamp != null) {
-      networkPb.setCreationTimestamp(TIMESTAMP_FORMATTER.print(creationTimestamp));
+      networkPb.setCreationTimestamp(
+          TIMESTAMP_FORMATTER.format(Instant.ofEpochMilli(creationTimestamp)));
     }
     networkPb.setName(networkId.getNetwork());
     networkPb.setDescription(description);

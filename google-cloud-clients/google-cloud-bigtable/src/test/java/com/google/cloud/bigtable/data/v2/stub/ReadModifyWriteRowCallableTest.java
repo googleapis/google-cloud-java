@@ -115,6 +115,54 @@ public class ReadModifyWriteRowCallableTest {
   }
 
   @Test
+  public void responseSortsFamilies() throws Exception {
+    ByteString col = ByteString.copyFromUtf8("col1");
+    ByteString value1 = ByteString.copyFromUtf8("value1");
+    ByteString value2 = ByteString.copyFromUtf8("value2");
+
+    ApiFuture<Row> result =
+        callable.futureCall(
+            ReadModifyWriteRow.create("my-table", "my-key").append("my-family", "col", "suffix"));
+
+    inner.response.set(
+        ReadModifyWriteRowResponse.newBuilder()
+            .setRow(
+                com.google.bigtable.v2.Row.newBuilder()
+                    .setKey(ByteString.copyFromUtf8("my-key"))
+                    // family2 is out of order
+                    .addFamilies(
+                        Family.newBuilder()
+                            .setName("family2")
+                            .addColumns(
+                                Column.newBuilder()
+                                    .setQualifier(col)
+                                    .addCells(
+                                        Cell.newBuilder()
+                                            .setTimestampMicros(1_000)
+                                            .setValue(value2))))
+                    .addFamilies(
+                        Family.newBuilder()
+                            .setName("family1")
+                            .addColumns(
+                                Column.newBuilder()
+                                    .setQualifier(col)
+                                    .addCells(
+                                        Cell.newBuilder()
+                                            .setTimestampMicros(1_000)
+                                            .setValue(value1)))
+                            .build()))
+            .build());
+
+    assertThat(result.get(1, TimeUnit.SECONDS))
+        .isEqualTo(
+            Row.create(
+                ByteString.copyFromUtf8("my-key"),
+                ImmutableList.of(
+                    RowCell.create("family1", col, 1_000, ImmutableList.<String>of(), value1),
+                    RowCell.create("family2", col, 1_000, ImmutableList.<String>of(), value2))));
+  }
+
+  @Test
   public void errorIsPropagated() throws Exception {
     ApiFuture<Row> result =
         callable.futureCall(

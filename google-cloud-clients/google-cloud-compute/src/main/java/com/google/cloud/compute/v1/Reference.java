@@ -24,6 +24,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/** Represents a reference to a resource. */
 public final class Reference implements ApiMessage {
   private final String kind;
   private final String referenceType;
@@ -69,22 +70,35 @@ public final class Reference implements ApiMessage {
 
   @Nullable
   @Override
+  /**
+   * The fields that should be serialized (even if they have empty values). If the containing
+   * message object has a non-null fieldmask, then all the fields in the field mask (and only those
+   * fields in the field mask) will be serialized. If the containing object does not have a
+   * fieldmask, then only non-empty fields will be serialized.
+   */
   public List<String> getFieldMask() {
     return null;
   }
 
+  /** [Output Only] Type of the resource. Always compute#reference for references. */
   public String getKind() {
     return kind;
   }
 
+  /**
+   * A description of the reference type with no implied semantics. Possible values include: -
+   * MEMBER_OF
+   */
   public String getReferenceType() {
     return referenceType;
   }
 
+  /** URL of the resource which refers to the target. */
   public String getReferrer() {
     return referrer;
   }
 
+  /** URL of the resource to which this reference points. */
   public String getTarget() {
     return target;
   }
@@ -143,37 +157,51 @@ public final class Reference implements ApiMessage {
       this.target = source.target;
     }
 
+    /** [Output Only] Type of the resource. Always compute#reference for references. */
     public String getKind() {
       return kind;
     }
 
+    /** [Output Only] Type of the resource. Always compute#reference for references. */
     public Builder setKind(String kind) {
       this.kind = kind;
       return this;
     }
 
+    /**
+     * A description of the reference type with no implied semantics. Possible values include: -
+     * MEMBER_OF
+     */
     public String getReferenceType() {
       return referenceType;
     }
 
+    /**
+     * A description of the reference type with no implied semantics. Possible values include: -
+     * MEMBER_OF
+     */
     public Builder setReferenceType(String referenceType) {
       this.referenceType = referenceType;
       return this;
     }
 
+    /** URL of the resource which refers to the target. */
     public String getReferrer() {
       return referrer;
     }
 
+    /** URL of the resource which refers to the target. */
     public Builder setReferrer(String referrer) {
       this.referrer = referrer;
       return this;
     }
 
+    /** URL of the resource to which this reference points. */
     public String getTarget() {
       return target;
     }
 
+    /** URL of the resource to which this reference points. */
     public Builder setTarget(String target) {
       this.target = target;
       return this;

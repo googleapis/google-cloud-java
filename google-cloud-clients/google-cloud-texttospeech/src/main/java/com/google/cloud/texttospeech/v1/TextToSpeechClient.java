@@ -1,5 +1,5 @@
 /*
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -145,7 +145,7 @@ public class TextToSpeechClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns a list of [Voice][google.cloud.texttospeech.v1.Voice] supported for synthesis.
+   * Returns a list of Voice supported for synthesis.
    *
    * <p>Sample code:
    *
@@ -174,7 +174,7 @@ public class TextToSpeechClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns a list of [Voice][google.cloud.texttospeech.v1.Voice] supported for synthesis.
+   * Returns a list of Voice supported for synthesis.
    *
    * <p>Sample code:
    *
@@ -194,7 +194,7 @@ public class TextToSpeechClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Returns a list of [Voice][google.cloud.texttospeech.v1.Voice] supported for synthesis.
+   * Returns a list of Voice supported for synthesis.
    *
    * <p>Sample code:
    *

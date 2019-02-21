@@ -148,9 +148,10 @@ public final class ProjectGlobalFirewallName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate(
-        "firewall", firewall,
-        "project", project);
+    return SERVICE_ADDRESS
+        + PATH_TEMPLATE.instantiate(
+            "firewall", firewall,
+            "project", project);
   }
 
   @Override

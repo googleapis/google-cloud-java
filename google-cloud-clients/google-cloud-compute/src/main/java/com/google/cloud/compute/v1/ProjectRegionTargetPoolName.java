@@ -166,10 +166,11 @@ public final class ProjectRegionTargetPoolName implements ResourceName {
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate(
-        "project", project,
-        "region", region,
-        "targetPool", targetPool);
+    return SERVICE_ADDRESS
+        + PATH_TEMPLATE.instantiate(
+            "project", project,
+            "region", region,
+            "targetPool", targetPool);
   }
 
   @Override

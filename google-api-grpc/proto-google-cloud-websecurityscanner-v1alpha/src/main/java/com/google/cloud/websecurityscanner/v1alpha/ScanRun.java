@@ -801,7 +801,8 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
     }
     if (executionState_
         != com.google.cloud.websecurityscanner.v1alpha.ScanRun.ExecutionState
-            .EXECUTION_STATE_UNSPECIFIED.getNumber()) {
+            .EXECUTION_STATE_UNSPECIFIED
+            .getNumber()) {
       output.writeEnum(2, executionState_);
     }
     if (resultState_
@@ -841,7 +842,8 @@ public final class ScanRun extends com.google.protobuf.GeneratedMessageV3
     }
     if (executionState_
         != com.google.cloud.websecurityscanner.v1alpha.ScanRun.ExecutionState
-            .EXECUTION_STATE_UNSPECIFIED.getNumber()) {
+            .EXECUTION_STATE_UNSPECIFIED
+            .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, executionState_);
     }
     if (resultState_

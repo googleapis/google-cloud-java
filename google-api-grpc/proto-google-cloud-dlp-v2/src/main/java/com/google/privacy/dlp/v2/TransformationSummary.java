@@ -522,7 +522,8 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
       }
       if (code_
           != com.google.privacy.dlp.v2.TransformationSummary.TransformationResultCode
-              .TRANSFORMATION_RESULT_CODE_UNSPECIFIED.getNumber()) {
+              .TRANSFORMATION_RESULT_CODE_UNSPECIFIED
+              .getNumber()) {
         output.writeEnum(2, code_);
       }
       if (!getDetailsBytes().isEmpty()) {
@@ -542,7 +543,8 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
       }
       if (code_
           != com.google.privacy.dlp.v2.TransformationSummary.TransformationResultCode
-              .TRANSFORMATION_RESULT_CODE_UNSPECIFIED.getNumber()) {
+              .TRANSFORMATION_RESULT_CODE_UNSPECIFIED
+              .getNumber()) {
         size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, code_);
       }
       if (!getDetailsBytes().isEmpty()) {
@@ -1101,7 +1103,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Set if the transformation was limited to a specific info_type.
+   * Set if the transformation was limited to a specific InfoType.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
@@ -1113,7 +1115,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Set if the transformation was limited to a specific info_type.
+   * Set if the transformation was limited to a specific InfoType.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
@@ -1125,7 +1127,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Set if the transformation was limited to a specific info_type.
+   * Set if the transformation was limited to a specific InfoType.
    * </pre>
    *
    * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
@@ -1939,7 +1941,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Set if the transformation was limited to a specific info_type.
+     * Set if the transformation was limited to a specific InfoType.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
@@ -1951,7 +1953,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Set if the transformation was limited to a specific info_type.
+     * Set if the transformation was limited to a specific InfoType.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
@@ -1969,7 +1971,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Set if the transformation was limited to a specific info_type.
+     * Set if the transformation was limited to a specific InfoType.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
@@ -1991,7 +1993,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Set if the transformation was limited to a specific info_type.
+     * Set if the transformation was limited to a specific InfoType.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
@@ -2010,7 +2012,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Set if the transformation was limited to a specific info_type.
+     * Set if the transformation was limited to a specific InfoType.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
@@ -2036,7 +2038,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Set if the transformation was limited to a specific info_type.
+     * Set if the transformation was limited to a specific InfoType.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
@@ -2056,7 +2058,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Set if the transformation was limited to a specific info_type.
+     * Set if the transformation was limited to a specific InfoType.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
@@ -2070,7 +2072,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Set if the transformation was limited to a specific info_type.
+     * Set if the transformation was limited to a specific InfoType.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>
@@ -2088,7 +2090,7 @@ public final class TransformationSummary extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Set if the transformation was limited to a specific info_type.
+     * Set if the transformation was limited to a specific InfoType.
      * </pre>
      *
      * <code>.google.privacy.dlp.v2.InfoType info_type = 1;</code>

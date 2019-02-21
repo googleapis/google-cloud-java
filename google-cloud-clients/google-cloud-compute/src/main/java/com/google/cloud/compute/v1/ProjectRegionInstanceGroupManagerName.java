@@ -174,10 +174,11 @@ public final class ProjectRegionInstanceGroupManagerName implements ResourceName
 
   @Override
   public String toString() {
-    return PATH_TEMPLATE.instantiate(
-        "instanceGroupManager", instanceGroupManager,
-        "project", project,
-        "region", region);
+    return SERVICE_ADDRESS
+        + PATH_TEMPLATE.instantiate(
+            "instanceGroupManager", instanceGroupManager,
+            "project", project,
+            "region", region);
   }
 
   @Override

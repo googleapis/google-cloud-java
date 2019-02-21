@@ -95,6 +95,118 @@ public class BucketInfo implements Serializable {
   private final Long retentionEffectiveTime;
   private final Boolean retentionPolicyIsLocked;
   private final Long retentionPeriod;
+  private final IamConfiguration iamConfiguration;
+
+  /**
+   * The Bucket's IAM Configuration.
+   *
+   * @see <a href="https://cloud.google.com/storage/docs/bucket-policy-only">Bucket Policy Only</a>
+   */
+  public static class IamConfiguration implements Serializable {
+    private static final long serialVersionUID = -8671736104909424616L;
+
+    private Boolean isBucketPolicyOnlyEnabled;
+    private Long bucketPolicyOnlyLockedTime;
+
+    @Override
+    public boolean equals(Object o) {
+      if (this == o) return true;
+      if (o == null || getClass() != o.getClass()) {
+        return false;
+      }
+      IamConfiguration other = (IamConfiguration) o;
+      return Objects.equals(toPb(), other.toPb());
+    }
+
+    @Override
+    public int hashCode() {
+      return Objects.hash(isBucketPolicyOnlyEnabled, bucketPolicyOnlyLockedTime);
+    }
+
+    private IamConfiguration(Builder builder) {
+      this.isBucketPolicyOnlyEnabled = builder.isBucketPolicyOnlyEnabled;
+      this.bucketPolicyOnlyLockedTime = builder.bucketPolicyOnlyLockedTime;
+    }
+
+    public static Builder newBuilder() {
+      return new Builder();
+    }
+
+    public Builder toBuilder() {
+      Builder builder = new Builder();
+      builder.isBucketPolicyOnlyEnabled = isBucketPolicyOnlyEnabled;
+      builder.bucketPolicyOnlyLockedTime = bucketPolicyOnlyLockedTime;
+      return builder;
+    }
+
+    public Boolean isBucketPolicyOnlyEnabled() {
+      return isBucketPolicyOnlyEnabled;
+    }
+
+    public Long getBucketPolicyOnlyLockedTime() {
+      return bucketPolicyOnlyLockedTime;
+    }
+
+    Bucket.IamConfiguration toPb() {
+      Bucket.IamConfiguration iamConfiguration = new Bucket.IamConfiguration();
+
+      Bucket.IamConfiguration.BucketPolicyOnly bucketPolicyOnly =
+          new Bucket.IamConfiguration.BucketPolicyOnly();
+      bucketPolicyOnly.setEnabled(isBucketPolicyOnlyEnabled);
+      bucketPolicyOnly.setLockedTime(
+          bucketPolicyOnlyLockedTime == null ? null : new DateTime(bucketPolicyOnlyLockedTime));
+
+      iamConfiguration.setBucketPolicyOnly(bucketPolicyOnly);
+
+      return iamConfiguration;
+    }
+
+    static IamConfiguration fromPb(Bucket.IamConfiguration iamConfiguration) {
+      Bucket.IamConfiguration.BucketPolicyOnly bucketPolicyOnly =
+          iamConfiguration.getBucketPolicyOnly();
+      DateTime lockedTime = bucketPolicyOnly.getLockedTime();
+
+      return newBuilder()
+          .setIsBucketPolicyOnlyEnabled(bucketPolicyOnly.getEnabled())
+          .setBucketPolicyOnlyLockedTime(lockedTime == null ? null : lockedTime.getValue())
+          .build();
+    }
+
+    /** Builder for {@code IamConfiguration} */
+    public static class Builder {
+      private Boolean isBucketPolicyOnlyEnabled;
+      private Long bucketPolicyOnlyLockedTime;
+
+      /**
+       * Sets whether BucketPolicyOnly is enabled for this bucket. When this is enabled, access to
+       * the bucket will be configured through IAM, and legacy ACL policies will not work. When this
+       * is first enabled, {@code bucketPolicyOnly.lockedTime} will be set by the API automatically.
+       * This field can then be disabled until the time specified, after which it will become
+       * immutable and calls to change it will fail. If this is enabled, calls to access legacy ACL
+       * information will fail.
+       */
+      public Builder setIsBucketPolicyOnlyEnabled(Boolean isBucketPolicyOnlyEnabled) {
+        this.isBucketPolicyOnlyEnabled = isBucketPolicyOnlyEnabled;
+        return this;
+      }
+
+      /**
+       * Sets the deadline for switching {@code bucketPolicyOnly.enabled} back to false. After this
+       * time passes, calls to do so will fail. This is package-private, since in general this field
+       * should never be set by a user--it's automatically set by the backend when {@code enabled}
+       * is set to true.
+       */
+      Builder setBucketPolicyOnlyLockedTime(Long bucketPolicyOnlyLockedTime) {
+        this.bucketPolicyOnlyLockedTime = bucketPolicyOnlyLockedTime;
+        return this;
+      }
+
+      /** Builds an {@code IamConfiguration} object */
+      public IamConfiguration build() {
+        return new IamConfiguration(this);
+      }
+    }
+  }
 
   /**
    * Lifecycle rule for a bucket. Allows supported Actions, such as deleting and changing storage
@@ -786,6 +898,15 @@ public class BucketInfo implements Serializable {
     @BetaApi
     public abstract Builder setRetentionPeriod(Long retentionPeriod);
 
+    /**
+     * Sets the IamConfiguration to specify whether IAM access should be enabled.
+     *
+     * @see <a href="https://cloud.google.com/storage/docs/bucket-policy-only">Bucket Policy
+     *     Only</a>
+     */
+    @BetaApi
+    public abstract Builder setIamConfiguration(IamConfiguration iamConfiguration);
+
     /** Creates a {@code BucketInfo} object. */
     public abstract BucketInfo build();
   }
@@ -816,6 +937,7 @@ public class BucketInfo implements Serializable {
     private Long retentionEffectiveTime;
     private Boolean retentionPolicyIsLocked;
     private Long retentionPeriod;
+    private IamConfiguration iamConfiguration;
 
     BuilderImpl(String name) {
       this.name = name;
@@ -846,6 +968,7 @@ public class BucketInfo implements Serializable {
       retentionEffectiveTime = bucketInfo.retentionEffectiveTime;
       retentionPolicyIsLocked = bucketInfo.retentionPolicyIsLocked;
       retentionPeriod = bucketInfo.retentionPeriod;
+      iamConfiguration = bucketInfo.iamConfiguration;
     }
 
     @Override
@@ -999,6 +1122,12 @@ public class BucketInfo implements Serializable {
     }
 
     @Override
+    public Builder setIamConfiguration(IamConfiguration iamConfiguration) {
+      this.iamConfiguration = iamConfiguration;
+      return this;
+    }
+
+    @Override
     public BucketInfo build() {
       checkNotNull(name);
       return new BucketInfo(this);
@@ -1030,6 +1159,7 @@ public class BucketInfo implements Serializable {
     retentionEffectiveTime = builder.retentionEffectiveTime;
     retentionPolicyIsLocked = builder.retentionPolicyIsLocked;
     retentionPeriod = builder.retentionPeriod;
+    iamConfiguration = builder.iamConfiguration;
   }
 
   /** Returns the service-generated id for the bucket. */
@@ -1268,6 +1398,12 @@ public class BucketInfo implements Serializable {
     return retentionPeriod;
   }
 
+  /** Returns the IAM configuration */
+  @BetaApi
+  public IamConfiguration getIamConfiguration() {
+    return iamConfiguration;
+  }
+
   /** Returns a builder for the current bucket. */
   public Builder toBuilder() {
     return new BuilderImpl(this);
@@ -1405,6 +1541,9 @@ public class BucketInfo implements Serializable {
         bucketPb.setRetentionPolicy(retentionPolicy);
       }
     }
+    if (iamConfiguration != null) {
+      bucketPb.setIamConfiguration(iamConfiguration.toPb());
+    }
 
     return bucketPb;
   }
@@ -1525,6 +1664,10 @@ public class BucketInfo implements Serializable {
       if (retentionPolicy.getRetentionPeriod() != null) {
         builder.setRetentionPeriod(retentionPolicy.getRetentionPeriod());
       }
+    }
+    Bucket.IamConfiguration iamConfiguration = bucketPb.getIamConfiguration();
+    if (iamConfiguration != null) {
+      builder.setIamConfiguration(IamConfiguration.fromPb(iamConfiguration));
     }
     return builder.build();
   }

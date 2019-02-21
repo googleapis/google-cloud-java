@@ -411,7 +411,7 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * <pre><code>
    * try (WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.create()) {
    *   WorkflowTemplateName name = WorkflowTemplateName.of("[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]");
-   *   Empty response = workflowTemplateServiceClient.instantiateWorkflowTemplateAsync(name).get();
+   *   workflowTemplateServiceClient.instantiateWorkflowTemplateAsync(name).get();
    * }
    * </code></pre>
    *
@@ -455,7 +455,7 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * <pre><code>
    * try (WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.create()) {
    *   WorkflowTemplateName name = WorkflowTemplateName.of("[PROJECT]", "[REGION]", "[WORKFLOW_TEMPLATE]");
-   *   Empty response = workflowTemplateServiceClient.instantiateWorkflowTemplateAsync(name.toString()).get();
+   *   workflowTemplateServiceClient.instantiateWorkflowTemplateAsync(name.toString()).get();
    * }
    * </code></pre>
    *
@@ -497,7 +497,7 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * <pre><code>
    * try (WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.create()) {
    *   Map&lt;String, String&gt; parameters = new HashMap&lt;&gt;();
-   *   Empty response = workflowTemplateServiceClient.instantiateWorkflowTemplateAsync(parameters).get();
+   *   workflowTemplateServiceClient.instantiateWorkflowTemplateAsync(parameters).get();
    * }
    * </code></pre>
    *
@@ -541,7 +541,7 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    *   InstantiateWorkflowTemplateRequest request = InstantiateWorkflowTemplateRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
-   *   Empty response = workflowTemplateServiceClient.instantiateWorkflowTemplateAsync(request).get();
+   *   workflowTemplateServiceClient.instantiateWorkflowTemplateAsync(request).get();
    * }
    * </code></pre>
    *
@@ -581,9 +581,9 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    *   InstantiateWorkflowTemplateRequest request = InstantiateWorkflowTemplateRequest.newBuilder()
    *     .setName(name.toString())
    *     .build();
-   *   OperationFuture&lt;Operation&gt; future = workflowTemplateServiceClient.instantiateWorkflowTemplateOperationCallable().futureCall(request);
+   *   OperationFuture&lt;Empty, WorkflowMetadata&gt; future = workflowTemplateServiceClient.instantiateWorkflowTemplateOperationCallable().futureCall(request);
    *   // Do something
-   *   Empty response = future.get();
+   *   future.get();
    * }
    * </code></pre>
    */
@@ -659,7 +659,7 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    * try (WorkflowTemplateServiceClient workflowTemplateServiceClient = WorkflowTemplateServiceClient.create()) {
    *   String formattedParent = RegionName.format("[PROJECT]", "[REGION]");
    *   WorkflowTemplate template = WorkflowTemplate.newBuilder().build();
-   *   Empty response = workflowTemplateServiceClient.instantiateInlineWorkflowTemplateAsync(formattedParent, template).get();
+   *   workflowTemplateServiceClient.instantiateInlineWorkflowTemplateAsync(formattedParent, template).get();
    * }
    * </code></pre>
    *
@@ -715,7 +715,7 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    *     .setParent(formattedParent)
    *     .setTemplate(template)
    *     .build();
-   *   Empty response = workflowTemplateServiceClient.instantiateInlineWorkflowTemplateAsync(request).get();
+   *   workflowTemplateServiceClient.instantiateInlineWorkflowTemplateAsync(request).get();
    * }
    * </code></pre>
    *
@@ -762,9 +762,9 @@ public class WorkflowTemplateServiceClient implements BackgroundResource {
    *     .setParent(formattedParent)
    *     .setTemplate(template)
    *     .build();
-   *   OperationFuture&lt;Operation&gt; future = workflowTemplateServiceClient.instantiateInlineWorkflowTemplateOperationCallable().futureCall(request);
+   *   OperationFuture&lt;Empty, WorkflowMetadata&gt; future = workflowTemplateServiceClient.instantiateInlineWorkflowTemplateOperationCallable().futureCall(request);
    *   // Do something
-   *   Empty response = future.get();
+   *   future.get();
    * }
    * </code></pre>
    */

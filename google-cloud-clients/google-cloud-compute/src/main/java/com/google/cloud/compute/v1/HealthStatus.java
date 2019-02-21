@@ -69,22 +69,32 @@ public final class HealthStatus implements ApiMessage {
 
   @Nullable
   @Override
+  /**
+   * The fields that should be serialized (even if they have empty values). If the containing
+   * message object has a non-null fieldmask, then all the fields in the field mask (and only those
+   * fields in the field mask) will be serialized. If the containing object does not have a
+   * fieldmask, then only non-empty fields will be serialized.
+   */
   public List<String> getFieldMask() {
     return null;
   }
 
+  /** Health state of the instance. */
   public String getHealthState() {
     return healthState;
   }
 
+  /** URL of the instance resource. */
   public String getInstance() {
     return instance;
   }
 
+  /** The IP address represented by this resource. */
   public String getIpAddress() {
     return ipAddress;
   }
 
+  /** The port on the instance. */
   public Integer getPort() {
     return port;
   }
@@ -143,37 +153,45 @@ public final class HealthStatus implements ApiMessage {
       this.port = source.port;
     }
 
+    /** Health state of the instance. */
     public String getHealthState() {
       return healthState;
     }
 
+    /** Health state of the instance. */
     public Builder setHealthState(String healthState) {
       this.healthState = healthState;
       return this;
     }
 
+    /** URL of the instance resource. */
     public String getInstance() {
       return instance;
     }
 
+    /** URL of the instance resource. */
     public Builder setInstance(String instance) {
       this.instance = instance;
       return this;
     }
 
+    /** The IP address represented by this resource. */
     public String getIpAddress() {
       return ipAddress;
     }
 
+    /** The IP address represented by this resource. */
     public Builder setIpAddress(String ipAddress) {
       this.ipAddress = ipAddress;
       return this;
     }
 
+    /** The port on the instance. */
     public Integer getPort() {
       return port;
     }
 
+    /** The port on the instance. */
     public Builder setPort(Integer port) {
       this.port = port;
       return this;

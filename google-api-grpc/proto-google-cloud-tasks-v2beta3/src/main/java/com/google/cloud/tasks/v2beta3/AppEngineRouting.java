@@ -8,14 +8,8 @@ package com.google.cloud.tasks.v2beta3;
  *
  * <pre>
  * App Engine Routing.
- * Specifies the target URI. Since this target type dispatches tasks to secure
- * app handlers, unsecure app handlers, and URIs restricted with
- * [`login: admin`](https://cloud.google.com/appengine/docs/standard/python/config/appref)
- * the protocol (for example, HTTP or HTTPS) cannot be explictly specified.
- * Task dispatches do not follow redirects and cannot target URI paths
- * restricted with
- * [`login: required`](https://cloud.google.com/appengine/docs/standard/python/config/appref)
- * because tasks are not run as any user.
+ * Defines routing characteristics specific to App Engine - service, version,
+ * and instance.
  * For more information about services, versions, and instances see
  * [An Overview of App Engine](https://cloud.google.com/appengine/docs/python/an-overview-of-app-engine),
  * [Microservices Architecture on Google App Engine](https://cloud.google.com/appengine/docs/python/microservices-on-app-engine),
@@ -572,14 +566,8 @@ public final class AppEngineRouting extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * App Engine Routing.
-   * Specifies the target URI. Since this target type dispatches tasks to secure
-   * app handlers, unsecure app handlers, and URIs restricted with
-   * [`login: admin`](https://cloud.google.com/appengine/docs/standard/python/config/appref)
-   * the protocol (for example, HTTP or HTTPS) cannot be explictly specified.
-   * Task dispatches do not follow redirects and cannot target URI paths
-   * restricted with
-   * [`login: required`](https://cloud.google.com/appengine/docs/standard/python/config/appref)
-   * because tasks are not run as any user.
+   * Defines routing characteristics specific to App Engine - service, version,
+   * and instance.
    * For more information about services, versions, and instances see
    * [An Overview of App Engine](https://cloud.google.com/appengine/docs/python/an-overview-of-app-engine),
    * [Microservices Architecture on Google App Engine](https://cloud.google.com/appengine/docs/python/microservices-on-app-engine),

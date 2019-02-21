@@ -66,6 +66,7 @@ import org.junit.rules.ExpectedException;
 public class BigQueryImplTest {
 
   private static final String PROJECT = "project";
+  private static final String LOCATION = "US";
   private static final String OTHER_PROJECT = "otherProject";
   private static final String DATASET = "dataset";
   private static final String TABLE = "table";
@@ -288,6 +289,16 @@ public class BigQueryImplTest {
       String project, BigQueryRpcFactory rpcFactory) {
     return BigQueryOptions.newBuilder()
         .setProjectId(project)
+        .setServiceRpcFactory(rpcFactory)
+        .setRetrySettings(ServiceOptions.getNoRetrySettings())
+        .build();
+  }
+
+  private BigQueryOptions createBigQueryOptionsForProjectWithLocation(
+      String project, BigQueryRpcFactory rpcFactory) {
+    return BigQueryOptions.newBuilder()
+        .setProjectId(project)
+        .setLocation(LOCATION)
         .setServiceRpcFactory(rpcFactory)
         .setRetrySettings(ServiceOptions.getNoRetrySettings())
         .build();
@@ -1180,10 +1191,32 @@ public class BigQueryImplTest {
   }
 
   @Test
+  public void testGetJobWithLocation() {
+    EasyMock.expect(bigqueryRpcMock.getJob(PROJECT, JOB, LOCATION, EMPTY_RPC_OPTIONS))
+        .andReturn(COMPLETE_COPY_JOB.toPb());
+    EasyMock.replay(bigqueryRpcMock);
+    BigQueryOptions options = createBigQueryOptionsForProjectWithLocation(PROJECT, rpcFactoryMock);
+    bigquery = options.getService();
+    Job job = bigquery.getJob(JOB);
+    assertEquals(new Job(bigquery, new JobInfo.BuilderImpl(COMPLETE_COPY_JOB)), job);
+  }
+
+  @Test
   public void testGetJobFromJobId() {
     EasyMock.expect(bigqueryRpcMock.getJob(PROJECT, JOB, null, EMPTY_RPC_OPTIONS))
         .andReturn(COMPLETE_COPY_JOB.toPb());
     EasyMock.replay(bigqueryRpcMock);
+    bigquery = options.getService();
+    Job job = bigquery.getJob(JobId.of(JOB));
+    assertEquals(new Job(bigquery, new JobInfo.BuilderImpl(COMPLETE_COPY_JOB)), job);
+  }
+
+  @Test
+  public void testGetJobFromJobIdWithLocation() {
+    EasyMock.expect(bigqueryRpcMock.getJob(PROJECT, JOB, LOCATION, EMPTY_RPC_OPTIONS))
+        .andReturn(COMPLETE_COPY_JOB.toPb());
+    EasyMock.replay(bigqueryRpcMock);
+    BigQueryOptions options = createBigQueryOptionsForProjectWithLocation(PROJECT, rpcFactoryMock);
     bigquery = options.getService();
     Job job = bigquery.getJob(JobId.of(JOB));
     assertEquals(new Job(bigquery, new JobInfo.BuilderImpl(COMPLETE_COPY_JOB)), job);
@@ -1196,6 +1229,19 @@ public class BigQueryImplTest {
     EasyMock.expect(bigqueryRpcMock.getJob(OTHER_PROJECT, JOB, null, EMPTY_RPC_OPTIONS))
         .andReturn(jobInfo.toPb());
     EasyMock.replay(bigqueryRpcMock);
+    bigquery = options.getService();
+    Job job = bigquery.getJob(jobId);
+    assertEquals(new Job(bigquery, new JobInfo.BuilderImpl(jobInfo)), job);
+  }
+
+  @Test
+  public void testGetJobFromJobIdWithProjectWithLocation() {
+    JobId jobId = JobId.of(OTHER_PROJECT, JOB);
+    JobInfo jobInfo = COPY_JOB.setProjectId(OTHER_PROJECT);
+    EasyMock.expect(bigqueryRpcMock.getJob(OTHER_PROJECT, JOB, LOCATION, EMPTY_RPC_OPTIONS))
+        .andReturn(jobInfo.toPb());
+    EasyMock.replay(bigqueryRpcMock);
+    BigQueryOptions options = createBigQueryOptionsForProjectWithLocation(PROJECT, rpcFactoryMock);
     bigquery = options.getService();
     Job job = bigquery.getJob(jobId);
     assertEquals(new Job(bigquery, new JobInfo.BuilderImpl(jobInfo)), job);

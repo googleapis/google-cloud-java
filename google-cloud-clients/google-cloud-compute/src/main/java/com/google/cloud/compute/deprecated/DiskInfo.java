@@ -27,8 +27,9 @@ import java.io.Serializable;
 import java.math.BigInteger;
 import java.util.List;
 import java.util.Objects;
-import org.joda.time.format.DateTimeFormatter;
-import org.joda.time.format.ISODateTimeFormat;
+import org.threeten.bp.Instant;
+import org.threeten.bp.ZoneOffset;
+import org.threeten.bp.format.DateTimeFormatter;
 
 /**
  * A Google Compute Engine persistent disk. A disk can be used as primary storage for your virtual
@@ -54,7 +55,8 @@ public class DiskInfo implements Serializable {
       };
 
   private static final long serialVersionUID = -7173418340679279619L;
-  private static final DateTimeFormatter TIMESTAMP_FORMATTER = ISODateTimeFormat.dateTime();
+  private static final DateTimeFormatter TIMESTAMP_FORMATTER =
+      DateTimeFormatter.ISO_DATE_TIME.withZone(ZoneOffset.UTC);
 
   private final String generatedId;
   private final DiskId diskId;
@@ -149,7 +151,8 @@ public class DiskInfo implements Serializable {
       }
       this.configuration = DiskConfiguration.fromPb(diskPb);
       if (diskPb.getCreationTimestamp() != null) {
-        this.creationTimestamp = TIMESTAMP_FORMATTER.parseMillis(diskPb.getCreationTimestamp());
+        this.creationTimestamp =
+            TIMESTAMP_FORMATTER.parse(diskPb.getCreationTimestamp(), Instant.FROM).toEpochMilli();
       }
       if (diskPb.getStatus() != null) {
         this.creationStatus = CreationStatus.valueOf(diskPb.getStatus());
@@ -163,10 +166,12 @@ public class DiskInfo implements Serializable {
         this.attachedInstances = Lists.transform(diskPb.getUsers(), InstanceId.FROM_URL_FUNCTION);
       }
       if (diskPb.getLastAttachTimestamp() != null) {
-        this.lastAttachTimestamp = TIMESTAMP_FORMATTER.parseMillis(diskPb.getLastAttachTimestamp());
+        this.lastAttachTimestamp =
+            TIMESTAMP_FORMATTER.parse(diskPb.getLastAttachTimestamp(), Instant.FROM).toEpochMilli();
       }
       if (diskPb.getLastDetachTimestamp() != null) {
-        this.lastDetachTimestamp = TIMESTAMP_FORMATTER.parseMillis(diskPb.getLastDetachTimestamp());
+        this.lastDetachTimestamp =
+            TIMESTAMP_FORMATTER.parse(diskPb.getLastDetachTimestamp(), Instant.FROM).toEpochMilli();
       }
     }
 
@@ -377,7 +382,8 @@ public class DiskInfo implements Serializable {
       diskPb.setId(new BigInteger(generatedId));
     }
     if (creationTimestamp != null) {
-      diskPb.setCreationTimestamp(TIMESTAMP_FORMATTER.print(creationTimestamp));
+      diskPb.setCreationTimestamp(
+          TIMESTAMP_FORMATTER.format(Instant.ofEpochMilli(creationTimestamp)));
     }
     diskPb.setZone(diskId.getZoneId().getSelfLink());
     if (creationStatus != null) {
@@ -393,10 +399,12 @@ public class DiskInfo implements Serializable {
       diskPb.setUsers(Lists.transform(attachedInstances, InstanceId.TO_URL_FUNCTION));
     }
     if (lastAttachTimestamp != null) {
-      diskPb.setLastAttachTimestamp(TIMESTAMP_FORMATTER.print(lastAttachTimestamp));
+      diskPb.setLastAttachTimestamp(
+          TIMESTAMP_FORMATTER.format(Instant.ofEpochMilli(lastAttachTimestamp)));
     }
     if (lastDetachTimestamp != null) {
-      diskPb.setLastDetachTimestamp(TIMESTAMP_FORMATTER.print(lastDetachTimestamp));
+      diskPb.setLastDetachTimestamp(
+          TIMESTAMP_FORMATTER.format(Instant.ofEpochMilli(lastDetachTimestamp)));
     }
     return diskPb;
   }

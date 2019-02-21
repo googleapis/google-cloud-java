@@ -22,16 +22,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-kms</artifactId>
-  <version>0.79.0-beta</version>
+  <version>0.80.0-beta</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-kms:0.79.0-beta'
+compile 'com.google.cloud:google-cloud-kms:0.80.0-beta'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-kms" % "0.79.0-beta"
+libraryDependencies += "com.google.cloud" % "google-cloud-kms" % "0.80.0-beta"
 ```
 [//]: # ({x-version-update-end})
 
@@ -54,6 +54,9 @@ You will need a [Google Developers Console](https://console.developers.google.co
 
 #### Installation and setup
 You'll need to obtain the `google-cloud-kms` library.  See the [Quickstart](#quickstart) section to add `google-cloud-kms` as a dependency in your code.
+
+#### Examples
+More information including Java getting started examples can be found in the [KMS documentation](https://cloud.google.com/kms/docs/reference/libraries).
 
 Troubleshooting
 ---------------

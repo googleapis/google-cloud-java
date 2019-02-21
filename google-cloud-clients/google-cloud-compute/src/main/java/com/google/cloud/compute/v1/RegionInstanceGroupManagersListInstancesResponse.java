@@ -52,10 +52,17 @@ public final class RegionInstanceGroupManagersListInstancesResponse implements A
 
   @Nullable
   @Override
+  /**
+   * The fields that should be serialized (even if they have empty values). If the containing
+   * message object has a non-null fieldmask, then all the fields in the field mask (and only those
+   * fields in the field mask) will be serialized. If the containing object does not have a
+   * fieldmask, then only non-empty fields will be serialized.
+   */
   public List<String> getFieldMask() {
     return null;
   }
 
+  /** A list of managed instances. */
   public List<ManagedInstance> getManagedInstancesList() {
     return managedInstances;
   }
@@ -100,10 +107,12 @@ public final class RegionInstanceGroupManagersListInstancesResponse implements A
       this.managedInstances = source.managedInstances;
     }
 
+    /** A list of managed instances. */
     public List<ManagedInstance> getManagedInstancesList() {
       return managedInstances;
     }
 
+    /** A list of managed instances. */
     public Builder addAllManagedInstances(List<ManagedInstance> managedInstances) {
       if (this.managedInstances == null) {
         this.managedInstances = new LinkedList<>();
@@ -112,6 +121,7 @@ public final class RegionInstanceGroupManagersListInstancesResponse implements A
       return this;
     }
 
+    /** A list of managed instances. */
     public Builder addManagedInstances(ManagedInstance managedInstances) {
       if (this.managedInstances == null) {
         this.managedInstances = new LinkedList<>();

@@ -619,7 +619,10 @@ public class HealthCheckClient implements BackgroundResource {
    * @param healthCheckResource An HealthCheck resource. This resource defines a template for how
    *     individual virtual machines should be checked for health, via one of the supported
    *     protocols.
-   * @param fieldMask
+   * @param fieldMask The fields that should be serialized (even if they have empty values). If the
+   *     containing message object has a non-null fieldmask, then all the fields in the field mask
+   *     (and only those fields in the field mask) will be serialized. If the containing object does
+   *     not have a fieldmask, then only non-empty fields will be serialized.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -657,7 +660,10 @@ public class HealthCheckClient implements BackgroundResource {
    * @param healthCheckResource An HealthCheck resource. This resource defines a template for how
    *     individual virtual machines should be checked for health, via one of the supported
    *     protocols.
-   * @param fieldMask
+   * @param fieldMask The fields that should be serialized (even if they have empty values). If the
+   *     containing message object has a non-null fieldmask, then all the fields in the field mask
+   *     (and only those fields in the field mask) will be serialized. If the containing object does
+   *     not have a fieldmask, then only non-empty fields will be serialized.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -749,7 +755,10 @@ public class HealthCheckClient implements BackgroundResource {
    * @param healthCheckResource An HealthCheck resource. This resource defines a template for how
    *     individual virtual machines should be checked for health, via one of the supported
    *     protocols.
-   * @param fieldMask
+   * @param fieldMask The fields that should be serialized (even if they have empty values). If the
+   *     containing message object has a non-null fieldmask, then all the fields in the field mask
+   *     (and only those fields in the field mask) will be serialized. If the containing object does
+   *     not have a fieldmask, then only non-empty fields will be serialized.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -786,7 +795,10 @@ public class HealthCheckClient implements BackgroundResource {
    * @param healthCheckResource An HealthCheck resource. This resource defines a template for how
    *     individual virtual machines should be checked for health, via one of the supported
    *     protocols.
-   * @param fieldMask
+   * @param fieldMask The fields that should be serialized (even if they have empty values). If the
+   *     containing message object has a non-null fieldmask, then all the fields in the field mask
+   *     (and only those fields in the field mask) will be serialized. If the containing object does
+   *     not have a fieldmask, then only non-empty fields will be serialized.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi

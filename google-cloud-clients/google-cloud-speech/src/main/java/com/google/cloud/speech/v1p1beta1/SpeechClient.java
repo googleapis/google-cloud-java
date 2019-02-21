@@ -386,7 +386,7 @@ public class SpeechClient implements BackgroundResource {
    *     .setConfig(config)
    *     .setAudio(audio)
    *     .build();
-   *   OperationFuture&lt;Operation&gt; future = speechClient.longRunningRecognizeOperationCallable().futureCall(request);
+   *   OperationFuture&lt;LongRunningRecognizeResponse, LongRunningRecognizeMetadata&gt; future = speechClient.longRunningRecognizeOperationCallable().futureCall(request);
    *   // Do something
    *   LongRunningRecognizeResponse response = future.get();
    * }

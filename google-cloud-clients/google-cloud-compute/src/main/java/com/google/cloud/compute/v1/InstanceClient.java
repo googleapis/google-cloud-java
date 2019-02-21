@@ -1610,7 +1610,8 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Performs a reset on the instance. For more information, see Resetting an instance.
+   * Performs a reset on the instance. This is a hard reset; the VM does not do a graceful shutdown.
+   * For more information, see Resetting an instance.
    *
    * <p>Sample code:
    *
@@ -1636,7 +1637,8 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Performs a reset on the instance. For more information, see Resetting an instance.
+   * Performs a reset on the instance. This is a hard reset; the VM does not do a graceful shutdown.
+   * For more information, see Resetting an instance.
    *
    * <p>Sample code:
    *
@@ -1660,7 +1662,8 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Performs a reset on the instance. For more information, see Resetting an instance.
+   * Performs a reset on the instance. This is a hard reset; the VM does not do a graceful shutdown.
+   * For more information, see Resetting an instance.
    *
    * <p>Sample code:
    *
@@ -1684,7 +1687,8 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Performs a reset on the instance. For more information, see Resetting an instance.
+   * Performs a reset on the instance. This is a hard reset; the VM does not do a graceful shutdown.
+   * For more information, see Resetting an instance.
    *
    * <p>Sample code:
    *
@@ -3668,7 +3672,10 @@ public class InstanceClient implements BackgroundResource {
    * @param instance The instance name for this request.
    * @param networkInterface The name of the network interface to update.
    * @param networkInterfaceResource A network interface resource attached to an instance.
-   * @param fieldMask
+   * @param fieldMask The fields that should be serialized (even if they have empty values). If the
+   *     containing message object has a non-null fieldmask, then all the fields in the field mask
+   *     (and only those fields in the field mask) will be serialized. If the containing object does
+   *     not have a fieldmask, then only non-empty fields will be serialized.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi
@@ -3707,7 +3714,10 @@ public class InstanceClient implements BackgroundResource {
    * @param instance The instance name for this request.
    * @param networkInterface The name of the network interface to update.
    * @param networkInterfaceResource A network interface resource attached to an instance.
-   * @param fieldMask
+   * @param fieldMask The fields that should be serialized (even if they have empty values). If the
+   *     containing message object has a non-null fieldmask, then all the fields in the field mask
+   *     (and only those fields in the field mask) will be serialized. If the containing object does
+   *     not have a fieldmask, then only non-empty fields will be serialized.
    * @throws com.google.api.gax.rpc.ApiException if the remote call fails
    */
   @BetaApi

@@ -24,6 +24,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/** [Output Only] The array of errors encountered while processing this operation. */
 public final class Errors implements ApiMessage {
   private final String code;
   private final String location;
@@ -63,18 +64,30 @@ public final class Errors implements ApiMessage {
 
   @Nullable
   @Override
+  /**
+   * The fields that should be serialized (even if they have empty values). If the containing
+   * message object has a non-null fieldmask, then all the fields in the field mask (and only those
+   * fields in the field mask) will be serialized. If the containing object does not have a
+   * fieldmask, then only non-empty fields will be serialized.
+   */
   public List<String> getFieldMask() {
     return null;
   }
 
+  /** [Output Only] The error type identifier for this error. */
   public String getCode() {
     return code;
   }
 
+  /**
+   * [Output Only] Indicates the field in the request that caused the error. This property is
+   * optional.
+   */
   public String getLocation() {
     return location;
   }
 
+  /** [Output Only] An optional, human-readable error message. */
   public String getMessage() {
     return message;
   }
@@ -128,28 +141,40 @@ public final class Errors implements ApiMessage {
       this.message = source.message;
     }
 
+    /** [Output Only] The error type identifier for this error. */
     public String getCode() {
       return code;
     }
 
+    /** [Output Only] The error type identifier for this error. */
     public Builder setCode(String code) {
       this.code = code;
       return this;
     }
 
+    /**
+     * [Output Only] Indicates the field in the request that caused the error. This property is
+     * optional.
+     */
     public String getLocation() {
       return location;
     }
 
+    /**
+     * [Output Only] Indicates the field in the request that caused the error. This property is
+     * optional.
+     */
     public Builder setLocation(String location) {
       this.location = location;
       return this;
     }
 
+    /** [Output Only] An optional, human-readable error message. */
     public String getMessage() {
       return message;
     }
 
+    /** [Output Only] An optional, human-readable error message. */
     public Builder setMessage(String message) {
       this.message = message;
       return this;

@@ -26,6 +26,10 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/**
+ * The list of ALLOW rules specified by this firewall. Each rule specifies a protocol and port-range
+ * tuple that describes a permitted connection.
+ */
 public final class Allowed implements ApiMessage {
   @SerializedName("IPProtocol")
   private final String iPProtocol;
@@ -61,14 +65,32 @@ public final class Allowed implements ApiMessage {
 
   @Nullable
   @Override
+  /**
+   * The fields that should be serialized (even if they have empty values). If the containing
+   * message object has a non-null fieldmask, then all the fields in the field mask (and only those
+   * fields in the field mask) will be serialized. If the containing object does not have a
+   * fieldmask, then only non-empty fields will be serialized.
+   */
   public List<String> getFieldMask() {
     return null;
   }
 
+  /**
+   * The IP protocol to which this rule applies. The protocol type is required when creating a
+   * firewall rule. This value can either be one of the following well known protocol strings (tcp,
+   * udp, icmp, esp, ah, ipip, sctp), or the IP protocol number.
+   */
   public String getIPProtocol() {
     return iPProtocol;
   }
 
+  /**
+   * An optional list of ports to which this rule applies. This field is only applicable for UDP or
+   * TCP protocol. Each entry must be either an integer or a range. If not specified, this rule
+   * applies to connections through any port.
+   *
+   * <p>Example inputs include: ["22"], ["80","443"], and ["12345-12349"].
+   */
   public List<String> getPortsList() {
     return ports;
   }
@@ -117,19 +139,43 @@ public final class Allowed implements ApiMessage {
       this.ports = source.ports;
     }
 
+    /**
+     * The IP protocol to which this rule applies. The protocol type is required when creating a
+     * firewall rule. This value can either be one of the following well known protocol strings
+     * (tcp, udp, icmp, esp, ah, ipip, sctp), or the IP protocol number.
+     */
     public String getIPProtocol() {
       return iPProtocol;
     }
 
+    /**
+     * The IP protocol to which this rule applies. The protocol type is required when creating a
+     * firewall rule. This value can either be one of the following well known protocol strings
+     * (tcp, udp, icmp, esp, ah, ipip, sctp), or the IP protocol number.
+     */
     public Builder setIPProtocol(String iPProtocol) {
       this.iPProtocol = iPProtocol;
       return this;
     }
 
+    /**
+     * An optional list of ports to which this rule applies. This field is only applicable for UDP
+     * or TCP protocol. Each entry must be either an integer or a range. If not specified, this rule
+     * applies to connections through any port.
+     *
+     * <p>Example inputs include: ["22"], ["80","443"], and ["12345-12349"].
+     */
     public List<String> getPortsList() {
       return ports;
     }
 
+    /**
+     * An optional list of ports to which this rule applies. This field is only applicable for UDP
+     * or TCP protocol. Each entry must be either an integer or a range. If not specified, this rule
+     * applies to connections through any port.
+     *
+     * <p>Example inputs include: ["22"], ["80","443"], and ["12345-12349"].
+     */
     public Builder addAllPorts(List<String> ports) {
       if (this.ports == null) {
         this.ports = new LinkedList<>();
@@ -138,6 +184,13 @@ public final class Allowed implements ApiMessage {
       return this;
     }
 
+    /**
+     * An optional list of ports to which this rule applies. This field is only applicable for UDP
+     * or TCP protocol. Each entry must be either an integer or a range. If not specified, this rule
+     * applies to connections through any port.
+     *
+     * <p>Example inputs include: ["22"], ["80","443"], and ["12345-12349"].
+     */
     public Builder addPorts(String ports) {
       if (this.ports == null) {
         this.ports = new LinkedList<>();

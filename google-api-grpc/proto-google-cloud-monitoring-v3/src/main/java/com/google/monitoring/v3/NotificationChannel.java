@@ -917,7 +917,8 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
         output, internalGetUserLabels(), UserLabelsDefaultEntryHolder.defaultEntry, 8);
     if (verificationStatus_
         != com.google.monitoring.v3.NotificationChannel.VerificationStatus
-            .VERIFICATION_STATUS_UNSPECIFIED.getNumber()) {
+            .VERIFICATION_STATUS_UNSPECIFIED
+            .getNumber()) {
       output.writeEnum(9, verificationStatus_);
     }
     if (enabled_ != null) {
@@ -966,7 +967,8 @@ public final class NotificationChannel extends com.google.protobuf.GeneratedMess
     }
     if (verificationStatus_
         != com.google.monitoring.v3.NotificationChannel.VerificationStatus
-            .VERIFICATION_STATUS_UNSPECIFIED.getNumber()) {
+            .VERIFICATION_STATUS_UNSPECIFIED
+            .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(9, verificationStatus_);
     }
     if (enabled_ != null) {

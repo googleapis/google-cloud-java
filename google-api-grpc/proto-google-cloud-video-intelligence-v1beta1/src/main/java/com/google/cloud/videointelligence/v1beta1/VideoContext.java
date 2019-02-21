@@ -476,7 +476,8 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
     }
     if (labelDetectionMode_
         != com.google.cloud.videointelligence.v1beta1.LabelDetectionMode
-            .LABEL_DETECTION_MODE_UNSPECIFIED.getNumber()) {
+            .LABEL_DETECTION_MODE_UNSPECIFIED
+            .getNumber()) {
       output.writeEnum(2, labelDetectionMode_);
     }
     if (stationaryCamera_ != false) {
@@ -508,7 +509,8 @@ public final class VideoContext extends com.google.protobuf.GeneratedMessageV3
     }
     if (labelDetectionMode_
         != com.google.cloud.videointelligence.v1beta1.LabelDetectionMode
-            .LABEL_DETECTION_MODE_UNSPECIFIED.getNumber()) {
+            .LABEL_DETECTION_MODE_UNSPECIFIED
+            .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(2, labelDetectionMode_);
     }
     if (stationaryCamera_ != false) {

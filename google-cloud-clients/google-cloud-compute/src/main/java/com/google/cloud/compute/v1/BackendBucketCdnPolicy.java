@@ -25,6 +25,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/** Message containing Cloud CDN configuration for a backend bucket. */
 public final class BackendBucketCdnPolicy implements ApiMessage {
   private final String signedUrlCacheMaxAgeSec;
   private final List<String> signedUrlKeyNames;
@@ -58,14 +59,29 @@ public final class BackendBucketCdnPolicy implements ApiMessage {
 
   @Nullable
   @Override
+  /**
+   * The fields that should be serialized (even if they have empty values). If the containing
+   * message object has a non-null fieldmask, then all the fields in the field mask (and only those
+   * fields in the field mask) will be serialized. If the containing object does not have a
+   * fieldmask, then only non-empty fields will be serialized.
+   */
   public List<String> getFieldMask() {
     return null;
   }
 
+  /**
+   * Maximum number of seconds the response to a signed URL request will be considered fresh. After
+   * this time period, the response will be revalidated before being served. Defaults to 1hr
+   * (3600s). When serving responses to signed URL requests, Cloud CDN will internally behave as
+   * though all responses from this backend had a "Cache-Control: public, max-age=[TTL]" header,
+   * regardless of any existing Cache-Control header. The actual headers served in responses will
+   * not be altered.
+   */
   public String getSignedUrlCacheMaxAgeSec() {
     return signedUrlCacheMaxAgeSec;
   }
 
+  /** [Output Only] Names of the keys for signing request URLs. */
   public List<String> getSignedUrlKeyNamesList() {
     return signedUrlKeyNames;
   }
@@ -114,19 +130,37 @@ public final class BackendBucketCdnPolicy implements ApiMessage {
       this.signedUrlKeyNames = source.signedUrlKeyNames;
     }
 
+    /**
+     * Maximum number of seconds the response to a signed URL request will be considered fresh.
+     * After this time period, the response will be revalidated before being served. Defaults to 1hr
+     * (3600s). When serving responses to signed URL requests, Cloud CDN will internally behave as
+     * though all responses from this backend had a "Cache-Control: public, max-age=[TTL]" header,
+     * regardless of any existing Cache-Control header. The actual headers served in responses will
+     * not be altered.
+     */
     public String getSignedUrlCacheMaxAgeSec() {
       return signedUrlCacheMaxAgeSec;
     }
 
+    /**
+     * Maximum number of seconds the response to a signed URL request will be considered fresh.
+     * After this time period, the response will be revalidated before being served. Defaults to 1hr
+     * (3600s). When serving responses to signed URL requests, Cloud CDN will internally behave as
+     * though all responses from this backend had a "Cache-Control: public, max-age=[TTL]" header,
+     * regardless of any existing Cache-Control header. The actual headers served in responses will
+     * not be altered.
+     */
     public Builder setSignedUrlCacheMaxAgeSec(String signedUrlCacheMaxAgeSec) {
       this.signedUrlCacheMaxAgeSec = signedUrlCacheMaxAgeSec;
       return this;
     }
 
+    /** [Output Only] Names of the keys for signing request URLs. */
     public List<String> getSignedUrlKeyNamesList() {
       return signedUrlKeyNames;
     }
 
+    /** [Output Only] Names of the keys for signing request URLs. */
     public Builder addAllSignedUrlKeyNames(List<String> signedUrlKeyNames) {
       if (this.signedUrlKeyNames == null) {
         this.signedUrlKeyNames = new LinkedList<>();
@@ -135,6 +169,7 @@ public final class BackendBucketCdnPolicy implements ApiMessage {
       return this;
     }
 
+    /** [Output Only] Names of the keys for signing request URLs. */
     public Builder addSignedUrlKeyNames(String signedUrlKeyNames) {
       if (this.signedUrlKeyNames == null) {
         this.signedUrlKeyNames = new LinkedList<>();

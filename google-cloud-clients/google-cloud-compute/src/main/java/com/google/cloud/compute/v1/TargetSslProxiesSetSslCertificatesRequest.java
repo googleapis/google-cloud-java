@@ -52,10 +52,20 @@ public final class TargetSslProxiesSetSslCertificatesRequest implements ApiMessa
 
   @Nullable
   @Override
+  /**
+   * The fields that should be serialized (even if they have empty values). If the containing
+   * message object has a non-null fieldmask, then all the fields in the field mask (and only those
+   * fields in the field mask) will be serialized. If the containing object does not have a
+   * fieldmask, then only non-empty fields will be serialized.
+   */
   public List<String> getFieldMask() {
     return null;
   }
 
+  /**
+   * New set of URLs to SslCertificate resources to associate with this TargetSslProxy. Currently
+   * exactly one ssl certificate must be specified.
+   */
   public List<String> getSslCertificatesList() {
     return sslCertificates;
   }
@@ -99,10 +109,18 @@ public final class TargetSslProxiesSetSslCertificatesRequest implements ApiMessa
       this.sslCertificates = source.sslCertificates;
     }
 
+    /**
+     * New set of URLs to SslCertificate resources to associate with this TargetSslProxy. Currently
+     * exactly one ssl certificate must be specified.
+     */
     public List<String> getSslCertificatesList() {
       return sslCertificates;
     }
 
+    /**
+     * New set of URLs to SslCertificate resources to associate with this TargetSslProxy. Currently
+     * exactly one ssl certificate must be specified.
+     */
     public Builder addAllSslCertificates(List<String> sslCertificates) {
       if (this.sslCertificates == null) {
         this.sslCertificates = new LinkedList<>();
@@ -111,6 +129,10 @@ public final class TargetSslProxiesSetSslCertificatesRequest implements ApiMessa
       return this;
     }
 
+    /**
+     * New set of URLs to SslCertificate resources to associate with this TargetSslProxy. Currently
+     * exactly one ssl certificate must be specified.
+     */
     public Builder addSslCertificates(String sslCertificates) {
       if (this.sslCertificates == null) {
         this.sslCertificates = new LinkedList<>();

@@ -224,7 +224,8 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
   public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
     if (labelDetectionMode_
         != com.google.cloud.videointelligence.v1p1beta1.LabelDetectionMode
-            .LABEL_DETECTION_MODE_UNSPECIFIED.getNumber()) {
+            .LABEL_DETECTION_MODE_UNSPECIFIED
+            .getNumber()) {
       output.writeEnum(1, labelDetectionMode_);
     }
     if (stationaryCamera_ != false) {
@@ -244,7 +245,8 @@ public final class LabelDetectionConfig extends com.google.protobuf.GeneratedMes
     size = 0;
     if (labelDetectionMode_
         != com.google.cloud.videointelligence.v1p1beta1.LabelDetectionMode
-            .LABEL_DETECTION_MODE_UNSPECIFIED.getNumber()) {
+            .LABEL_DETECTION_MODE_UNSPECIFIED
+            .getNumber()) {
       size += com.google.protobuf.CodedOutputStream.computeEnumSize(1, labelDetectionMode_);
     }
     if (stationaryCamera_ != false) {

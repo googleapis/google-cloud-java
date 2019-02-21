@@ -24,6 +24,7 @@ import javax.annotation.Nullable;
 
 @Generated("by GAPIC")
 @BetaApi
+/** A specification of the type and number of accelerator cards attached to the instance. */
 public final class AcceleratorConfig implements ApiMessage {
   private final Integer acceleratorCount;
   private final String acceleratorType;
@@ -57,14 +58,27 @@ public final class AcceleratorConfig implements ApiMessage {
 
   @Nullable
   @Override
+  /**
+   * The fields that should be serialized (even if they have empty values). If the containing
+   * message object has a non-null fieldmask, then all the fields in the field mask (and only those
+   * fields in the field mask) will be serialized. If the containing object does not have a
+   * fieldmask, then only non-empty fields will be serialized.
+   */
   public List<String> getFieldMask() {
     return null;
   }
 
+  /** The number of the guest accelerator cards exposed to this instance. */
   public Integer getAcceleratorCount() {
     return acceleratorCount;
   }
 
+  /**
+   * Full or partial URL of the accelerator type resource to attach to this instance. For example:
+   * projects/my-project/zones/us-central1-c/acceleratorTypes/nvidia-tesla-p100 If you are creating
+   * an instance template, specify only the accelerator name. See GPUs on Compute Engine for a full
+   * list of accelerator types.
+   */
   public String getAcceleratorType() {
     return acceleratorType;
   }
@@ -113,19 +127,33 @@ public final class AcceleratorConfig implements ApiMessage {
       this.acceleratorType = source.acceleratorType;
     }
 
+    /** The number of the guest accelerator cards exposed to this instance. */
     public Integer getAcceleratorCount() {
       return acceleratorCount;
     }
 
+    /** The number of the guest accelerator cards exposed to this instance. */
     public Builder setAcceleratorCount(Integer acceleratorCount) {
       this.acceleratorCount = acceleratorCount;
       return this;
     }
 
+    /**
+     * Full or partial URL of the accelerator type resource to attach to this instance. For example:
+     * projects/my-project/zones/us-central1-c/acceleratorTypes/nvidia-tesla-p100 If you are
+     * creating an instance template, specify only the accelerator name. See GPUs on Compute Engine
+     * for a full list of accelerator types.
+     */
     public String getAcceleratorType() {
       return acceleratorType;
     }
 
+    /**
+     * Full or partial URL of the accelerator type resource to attach to this instance. For example:
+     * projects/my-project/zones/us-central1-c/acceleratorTypes/nvidia-tesla-p100 If you are
+     * creating an instance template, specify only the accelerator name. See GPUs on Compute Engine
+     * for a full list of accelerator types.
+     */
     public Builder setAcceleratorType(String acceleratorType) {
       this.acceleratorType = acceleratorType;
       return this;
