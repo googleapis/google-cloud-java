@@ -70,6 +70,9 @@ public final class LegacySQLTypeName extends StringEnumValue {
   /** Represents a logical calendar date. Note, support for this type is limited in legacy SQL. */
   public static final LegacySQLTypeName DATE =
       type.createAndRegister("DATE").setStandardType(StandardSQLTypeName.DATE);
+  /** Represents a set of geographic points, represented as a Well Known Text (WKT) string. */
+  public static final LegacySQLTypeName GEOGRAPHY =
+      type.createAndRegister("GEOGRAPHY").setStandardType(StandardSQLTypeName.GEOGRAPHY);
   /**
    * Represents a time, independent of a specific date, to microsecond precision. Note, support for
    * this type is limited in legacy SQL.

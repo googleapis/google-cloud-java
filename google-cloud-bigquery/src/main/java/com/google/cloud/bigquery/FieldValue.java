@@ -48,7 +48,8 @@ public class FieldValue implements Serializable {
      * type {@link LegacySQLTypeName#BYTES}, {@link LegacySQLTypeName#BOOLEAN}, {@link
      * LegacySQLTypeName#STRING}, {@link LegacySQLTypeName#FLOAT}, {@link
      * LegacySQLTypeName#INTEGER}, {@link LegacySQLTypeName#NUMERIC}, {@link
-     * LegacySQLTypeName#TIMESTAMP}, or the value is set to {@code null}.
+     * LegacySQLTypeName#TIMESTAMP}, {@link LegacySQLTypeName#GEOGRAPHY} or the value is set to
+     * {@code null}.
      */
     PRIMITIVE,
 
@@ -71,9 +72,10 @@ public class FieldValue implements Serializable {
    *     LegacySQLTypeName#BYTES}, {@link LegacySQLTypeName#BOOLEAN}, {@link
    *     LegacySQLTypeName#STRING}, {@link LegacySQLTypeName#FLOAT}, {@link
    *     LegacySQLTypeName#INTEGER}, {@link LegacySQLTypeName#NUMERIC}, {@link
-   *     LegacySQLTypeName#TIMESTAMP}) or is {@code null}. Returns {@link Attribute#REPEATED} if the
-   *     corresponding field has ({@link Field.Mode#REPEATED}) mode. Returns {@link
-   *     Attribute#RECORD} if the corresponding field is a {@link LegacySQLTypeName#RECORD} type.
+   *     LegacySQLTypeName#TIMESTAMP}, {@link LegacySQLTypeName#GEOGRAPHY}) or is {@code null}.
+   *     <p>Returns {@link Attribute#REPEATED} if the corresponding field has ({@link
+   *     Field.Mode#REPEATED}) mode. Returns {@link Attribute#RECORD} if the corresponding field is
+   *     a {@link LegacySQLTypeName#RECORD} type.
    */
   public Attribute getAttribute() {
     return attribute;
