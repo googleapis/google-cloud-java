@@ -31,8 +31,6 @@ import com.google.spanner.v1.CommitRequest;
 import com.google.spanner.v1.CommitResponse;
 import com.google.spanner.v1.CreateSessionRequest;
 import com.google.spanner.v1.DeleteSessionRequest;
-import com.google.spanner.v1.ExecuteBatchDmlRequest;
-import com.google.spanner.v1.ExecuteBatchDmlResponse;
 import com.google.spanner.v1.ExecuteSqlRequest;
 import com.google.spanner.v1.GetSessionRequest;
 import com.google.spanner.v1.ListSessionsRequest;
@@ -109,16 +107,6 @@ public class GrpcSpannerStub extends SpannerStub {
               .setRequestMarshaller(ProtoUtils.marshaller(ExecuteSqlRequest.getDefaultInstance()))
               .setResponseMarshaller(ProtoUtils.marshaller(PartialResultSet.getDefaultInstance()))
               .build();
-  private static final MethodDescriptor<ExecuteBatchDmlRequest, ExecuteBatchDmlResponse>
-      executeBatchDmlMethodDescriptor =
-          MethodDescriptor.<ExecuteBatchDmlRequest, ExecuteBatchDmlResponse>newBuilder()
-              .setType(MethodDescriptor.MethodType.UNARY)
-              .setFullMethodName("google.spanner.v1.Spanner/ExecuteBatchDml")
-              .setRequestMarshaller(
-                  ProtoUtils.marshaller(ExecuteBatchDmlRequest.getDefaultInstance()))
-              .setResponseMarshaller(
-                  ProtoUtils.marshaller(ExecuteBatchDmlResponse.getDefaultInstance()))
-              .build();
   private static final MethodDescriptor<ReadRequest, ResultSet> readMethodDescriptor =
       MethodDescriptor.<ReadRequest, ResultSet>newBuilder()
           .setType(MethodDescriptor.MethodType.UNARY)
@@ -187,8 +175,6 @@ public class GrpcSpannerStub extends SpannerStub {
   private final UnaryCallable<ExecuteSqlRequest, ResultSet> executeSqlCallable;
   private final ServerStreamingCallable<ExecuteSqlRequest, PartialResultSet>
       executeStreamingSqlCallable;
-  private final UnaryCallable<ExecuteBatchDmlRequest, ExecuteBatchDmlResponse>
-      executeBatchDmlCallable;
   private final UnaryCallable<ReadRequest, ResultSet> readCallable;
   private final ServerStreamingCallable<ReadRequest, PartialResultSet> streamingReadCallable;
   private final UnaryCallable<BeginTransactionRequest, Transaction> beginTransactionCallable;
@@ -257,11 +243,6 @@ public class GrpcSpannerStub extends SpannerStub {
         GrpcCallSettings.<ExecuteSqlRequest, PartialResultSet>newBuilder()
             .setMethodDescriptor(executeStreamingSqlMethodDescriptor)
             .build();
-    GrpcCallSettings<ExecuteBatchDmlRequest, ExecuteBatchDmlResponse>
-        executeBatchDmlTransportSettings =
-            GrpcCallSettings.<ExecuteBatchDmlRequest, ExecuteBatchDmlResponse>newBuilder()
-                .setMethodDescriptor(executeBatchDmlMethodDescriptor)
-                .build();
     GrpcCallSettings<ReadRequest, ResultSet> readTransportSettings =
         GrpcCallSettings.<ReadRequest, ResultSet>newBuilder()
             .setMethodDescriptor(readMethodDescriptor)
@@ -314,9 +295,6 @@ public class GrpcSpannerStub extends SpannerStub {
             executeStreamingSqlTransportSettings,
             settings.executeStreamingSqlSettings(),
             clientContext);
-    this.executeBatchDmlCallable =
-        callableFactory.createUnaryCallable(
-            executeBatchDmlTransportSettings, settings.executeBatchDmlSettings(), clientContext);
     this.readCallable =
         callableFactory.createUnaryCallable(
             readTransportSettings, settings.readSettings(), clientContext);
@@ -369,10 +347,6 @@ public class GrpcSpannerStub extends SpannerStub {
   public ServerStreamingCallable<ExecuteSqlRequest, PartialResultSet>
       executeStreamingSqlCallable() {
     return executeStreamingSqlCallable;
-  }
-
-  public UnaryCallable<ExecuteBatchDmlRequest, ExecuteBatchDmlResponse> executeBatchDmlCallable() {
-    return executeBatchDmlCallable;
   }
 
   public UnaryCallable<ReadRequest, ResultSet> readCallable() {
