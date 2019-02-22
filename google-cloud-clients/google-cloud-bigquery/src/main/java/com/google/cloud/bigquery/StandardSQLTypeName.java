@@ -50,5 +50,7 @@ public enum StandardSQLTypeName {
   /** Represents a time, independent of a specific date, to microsecond precision. */
   TIME,
   /** Represents a year, month, day, hour, minute, second, and subsecond (microsecond precision). */
-  DATETIME
+  DATETIME,
+  /** Represents a set of geographic points, represented as a Well Known Text (WKT) string. */
+  GEOGRAPHY
 }
