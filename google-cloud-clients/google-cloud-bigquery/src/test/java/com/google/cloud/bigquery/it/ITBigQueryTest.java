@@ -166,6 +166,11 @@ public class ITBigQueryTest {
           .setMode(Field.Mode.NULLABLE)
           .setDescription("FloatDescription")
           .build();
+  private static final Field GEOGRAPHY_FIELD_SCHEMA =
+      Field.newBuilder("GeographyField", LegacySQLTypeName.GEOGRAPHY)
+          .setMode(Field.Mode.NULLABLE)
+          .setDescription("GeographyDescription")
+          .build();
   private static final Field NUMERIC_FIELD_SCHEMA =
       Field.newBuilder("NumericField", LegacySQLTypeName.NUMERIC)
           .setMode(Field.Mode.NULLABLE)
@@ -181,6 +186,7 @@ public class ITBigQueryTest {
           RECORD_FIELD_SCHEMA,
           INTEGER_FIELD_SCHEMA,
           FLOAT_FIELD_SCHEMA,
+          GEOGRAPHY_FIELD_SCHEMA,
           NUMERIC_FIELD_SCHEMA);
   private static final Schema SIMPLE_SCHEMA = Schema.of(STRING_FIELD_SCHEMA);
   private static final Schema QUERY_RESULT_SCHEMA =
@@ -220,6 +226,7 @@ public class ITBigQueryTest {
           + "  },"
           + "  \"IntegerField\": \"3\","
           + "  \"FloatField\": \"1.2\","
+          + "  \"GeographyField\": \"POINT(-122.35022 47.649154)\","
           + "  \"NumericField\": \"123456.789012345\""
           + "}\n"
           + "{"
@@ -241,6 +248,7 @@ public class ITBigQueryTest {
           + "  },"
           + "  \"IntegerField\": \"3\","
           + "  \"FloatField\": \"1.2\","
+          + "  \"GeographyField\": \"POINT(-122.35022 47.649154)\","
           + "  \"NumericField\": \"123456.789012345\""
           + "}";
 
@@ -750,6 +758,7 @@ public class ITBigQueryTest {
             BYTES_BASE64));
     builder1.put("IntegerField", 5);
     builder1.put("FloatField", 1.2);
+    builder1.put("GeographyField", "POINT(-122.350220 47.649154)");
     builder1.put("NumericField", new BigDecimal("123456789.123456789"));
     ImmutableMap.Builder<String, Object> builder2 = ImmutableMap.builder();
     builder2.put("TimestampField", "2014-08-19 07:41:35.220 -05:00");
@@ -770,6 +779,7 @@ public class ITBigQueryTest {
             BYTES_BASE64));
     builder2.put("IntegerField", 5);
     builder2.put("FloatField", 1.2);
+    builder2.put("GeographyField", "POINT(-122.350220 47.649154)");
     builder2.put("NumericField", new BigDecimal("123456789.123456789"));
     InsertAllRequest request =
         InsertAllRequest.newBuilder(tableInfo.getTableId())
@@ -807,6 +817,7 @@ public class ITBigQueryTest {
             BYTES_BASE64));
     builder1.put("IntegerField", 5);
     builder1.put("FloatField", 1.2);
+    builder1.put("GeographyField", "POINT(-122.350220 47.649154)");
     builder1.put("NumericField", new BigDecimal("123456789.123456789"));
     ImmutableMap.Builder<String, Object> builder2 = ImmutableMap.builder();
     builder2.put("TimestampField", "2014-08-19 07:41:35.220 -05:00");
@@ -827,6 +838,7 @@ public class ITBigQueryTest {
             BYTES_BASE64));
     builder2.put("IntegerField", 5);
     builder2.put("FloatField", 1.2);
+    builder2.put("GeographyField", "POINT(-122.350220 47.649154)");
     builder2.put("NumericField", new BigDecimal("123456789.123456789"));
     InsertAllRequest request =
         InsertAllRequest.newBuilder(tableInfo.getTableId())
@@ -873,6 +885,7 @@ public class ITBigQueryTest {
             BYTES_BASE64));
     builder1.put("IntegerField", 5);
     builder1.put("FloatField", 1.2);
+    builder1.put("GeographyField", "POINT(-122.350220 47.649154)");
     builder1.put("NumericField", new BigDecimal("123456789.123456789"));
     ImmutableMap.Builder<String, Object> builder2 = ImmutableMap.builder();
     builder2.put("TimestampField", "invalidDate");
@@ -893,6 +906,7 @@ public class ITBigQueryTest {
             BYTES_BASE64));
     builder2.put("IntegerField", 5);
     builder2.put("FloatField", 1.2);
+    builder2.put("GeographyField", "POINT(-122.350220 47.649154)");
     builder2.put("NumericField", new BigDecimal("123456789.123456789"));
     ImmutableMap.Builder<String, Object> builder3 = ImmutableMap.builder();
     builder3.put("TimestampField", "2014-08-19 07:41:35.220 -05:00");
@@ -928,7 +942,8 @@ public class ITBigQueryTest {
       FieldValue recordCell = row.get(5);
       FieldValue integerCell = row.get(6);
       FieldValue floatCell = row.get(7);
-      FieldValue numericCell = row.get(8);
+      FieldValue geographyCell = row.get(8);
+      FieldValue numericCell = row.get(9);
       assertEquals(FieldValue.Attribute.PRIMITIVE, timestampCell.getAttribute());
       assertEquals(FieldValue.Attribute.PRIMITIVE, stringCell.getAttribute());
       assertEquals(FieldValue.Attribute.REPEATED, integerArrayCell.getAttribute());
@@ -937,6 +952,7 @@ public class ITBigQueryTest {
       assertEquals(FieldValue.Attribute.RECORD, recordCell.getAttribute());
       assertEquals(FieldValue.Attribute.PRIMITIVE, integerCell.getAttribute());
       assertEquals(FieldValue.Attribute.PRIMITIVE, floatCell.getAttribute());
+      assertEquals(FieldValue.Attribute.PRIMITIVE, geographyCell.getAttribute());
       assertEquals(FieldValue.Attribute.PRIMITIVE, numericCell.getAttribute());
       assertEquals(1408452095220000L, timestampCell.getTimestampValue());
       assertEquals("stringValue", stringCell.getStringValue());
@@ -951,6 +967,7 @@ public class ITBigQueryTest {
       assertEquals(true, recordCell.getRecordValue().get(3).getBooleanValue());
       assertEquals(3, integerCell.getLongValue());
       assertEquals(1.2, floatCell.getDoubleValue(), 0.0001);
+      assertEquals("POINT(-122.35022 47.649154)", geographyCell.getStringValue());
       assertEquals(new BigDecimal("123456.789012345"), numericCell.getNumericValue());
       rowCount++;
     }
@@ -1350,7 +1367,8 @@ public class ITBigQueryTest {
       FieldValue recordCell = row.get(5);
       FieldValue integerCell = row.get(6);
       FieldValue floatCell = row.get(7);
-      FieldValue numericCell = row.get(8);
+      FieldValue geographyCell = row.get(8);
+      FieldValue numericCell = row.get(9);
       assertEquals(FieldValue.Attribute.PRIMITIVE, timestampCell.getAttribute());
       assertEquals(FieldValue.Attribute.PRIMITIVE, stringCell.getAttribute());
       assertEquals(FieldValue.Attribute.REPEATED, integerArrayCell.getAttribute());
@@ -1359,6 +1377,7 @@ public class ITBigQueryTest {
       assertEquals(FieldValue.Attribute.RECORD, recordCell.getAttribute());
       assertEquals(FieldValue.Attribute.PRIMITIVE, integerCell.getAttribute());
       assertEquals(FieldValue.Attribute.PRIMITIVE, floatCell.getAttribute());
+      assertEquals(FieldValue.Attribute.PRIMITIVE, geographyCell.getAttribute());
       assertEquals(FieldValue.Attribute.PRIMITIVE, numericCell.getAttribute());
       assertEquals(1408452095220000L, timestampCell.getTimestampValue());
       assertEquals("stringValue", stringCell.getStringValue());
@@ -1373,6 +1392,7 @@ public class ITBigQueryTest {
       assertEquals(true, recordCell.getRecordValue().get(3).getBooleanValue());
       assertEquals(3, integerCell.getLongValue());
       assertEquals(1.2, floatCell.getDoubleValue(), 0.0001);
+      assertEquals("POINT(-122.35022 47.649154)", geographyCell.getStringValue());
       assertEquals(new BigDecimal("123456.789012345"), numericCell.getNumericValue());
       rowCount++;
     }
