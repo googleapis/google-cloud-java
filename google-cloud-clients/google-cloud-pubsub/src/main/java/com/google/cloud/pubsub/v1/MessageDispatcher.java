@@ -121,7 +121,7 @@ class MessageDispatcher {
   }
 
   /** Handles callbacks for acking/nacking messages from the {@link MessageReceiver}. */
-  private class AckHandler implements ApiFutureCallback<AckReply> {
+  private class AckHandler implements AckReplyConsumer {
     private final String ackId;
     private final int outstandingBytes;
     private final long receivedTimeMillis;
@@ -149,33 +149,17 @@ class MessageDispatcher {
     }
 
     @Override
-    public void onFailure(Throwable t) {
-      logger.log(
-          Level.WARNING,
-          "MessageReceiver failed to processes ack ID: " + ackId + ", the message will be nacked.",
-          t);
-      pendingNacks.add(ackId);
+    public void ack() {
+      ackLatencyDistribution.record(
+          Ints.saturatedCast(
+              (long) Math.ceil((clock.millisTime() - receivedTimeMillis) / 1000D)));
+      pendingAcks.add(ackId);
       forget();
     }
 
     @Override
-    public void onSuccess(AckReply reply) {
-      LinkedBlockingQueue<String> destination;
-      switch (reply) {
-        case ACK:
-          destination = pendingAcks;
-          // Record the latency rounded to the next closest integer.
-          ackLatencyDistribution.record(
-              Ints.saturatedCast(
-                  (long) Math.ceil((clock.millisTime() - receivedTimeMillis) / 1000D)));
-          break;
-        case NACK:
-          destination = pendingNacks;
-          break;
-        default:
-          throw new IllegalArgumentException(String.format("AckReply: %s not supported", reply));
-      }
-      destination.add(ackId);
+    public void nack() {
+      pendingNacks.add(ackId);
       forget();
     }
   }
@@ -357,20 +341,6 @@ class MessageDispatcher {
   private void processOutstandingMessage(OutstandingMessage outstandingMessage) {
     final PubsubMessage message = outstandingMessage.receivedMessage.getMessage();
     final AckHandler ackHandler = outstandingMessage.ackHandler();
-    final SettableApiFuture<AckReply> response = SettableApiFuture.create();
-    final AckReplyConsumer consumer =
-        new AckReplyConsumer() {
-          @Override
-          public void ack() {
-            response.set(AckReply.ACK);
-          }
-
-          @Override
-          public void nack() {
-            response.set(AckReply.NACK);
-          }
-        };
-    ApiFutures.addCallback(response, ackHandler, MoreExecutors.directExecutor());
     executor.execute(
         new Runnable() {
           @Override
@@ -387,9 +357,13 @@ class MessageDispatcher {
                 return;
               }
 
-              receiver.receiveMessage(message, consumer);
+              receiver.receiveMessage(message, ackHandler);
             } catch (Exception e) {
-              response.setException(e);
+              logger.log(
+                  Level.WARNING,
+                  "MessageReceiver failed to processes ack ID: " + ackHandler.ackId + ", the message will be nacked.",
+                  e);
+              ackHandler.nack();
             }
           }
         });
