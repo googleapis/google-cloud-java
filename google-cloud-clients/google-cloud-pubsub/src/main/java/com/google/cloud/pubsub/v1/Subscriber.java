@@ -37,7 +37,6 @@ import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.pubsub.v1.stub.GrpcSubscriberStub;
-import com.google.cloud.pubsub.v1.stub.SubscriberStub;
 import com.google.cloud.pubsub.v1.stub.SubscriberStubSettings;
 import com.google.common.base.Optional;
 import com.google.common.base.Preconditions;
@@ -47,8 +46,8 @@ import java.util.ArrayList;
 import java.util.Deque;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.ScheduledFuture;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.Nullable;
@@ -95,8 +94,8 @@ public class Subscriber extends AbstractApiService {
   @InternalApi static final int MIN_ACK_DEADLINE_SECONDS = 10;
   private static final Duration UNARY_TIMEOUT = Duration.ofSeconds(60);
 
-  private static final ScheduledExecutorService SHARED_SYSTEM_EXECUTOR =
-      InstantiatingExecutorProvider.newBuilder().setExecutorThreadCount(6).build().getExecutor();
+  private static final int SYSTEM_EXECUTOR_MIN_THREAD_COUNT = 6;
+  private static final int SYSTEM_EXECUTOR_THREADS_PER_PULLER = 2;
 
   private static final Logger logger = Logger.getLogger(Subscriber.class.getName());
 
@@ -109,7 +108,6 @@ public class Subscriber extends AbstractApiService {
   private final Distribution ackLatencyDistribution =
       new Distribution(MAX_ACK_DEADLINE_SECONDS + 1);
 
-  private SubscriberStub subStub;
   private final SubscriberStubSettings subStubSettings;
   private final FlowController flowController;
   private final int numPullers;
@@ -120,7 +118,6 @@ public class Subscriber extends AbstractApiService {
       new LinkedList<>();
   private final ApiClock clock;
   private final List<AutoCloseable> closeables = new ArrayList<>();
-  private ScheduledFuture<?> ackDeadlineUpdater;
 
   private Subscriber(Builder builder) {
     receiver = builder.receiver;
@@ -150,26 +147,35 @@ public class Subscriber extends AbstractApiService {
       closeables.add(
           new AutoCloseable() {
             @Override
-            public void close() throws IOException {
+            public void close() {
               executor.shutdown();
-            }
-          });
-    }
-    alarmsExecutor = builder.systemExecutorProvider.getExecutor();
-    if (builder.systemExecutorProvider.shouldAutoClose()) {
-      closeables.add(
-          new AutoCloseable() {
-            @Override
-            public void close() throws IOException {
-              alarmsExecutor.shutdown();
             }
           });
     }
 
     this.numPullers = builder.parallelPullCount;
+    streamingSubscriberConnections = new ArrayList<>(numPullers);
     TransportChannelProvider channelProvider = builder.channelProvider;
     if (channelProvider.acceptsPoolSize()) {
       channelProvider = channelProvider.withPoolSize(numPullers);
+    }
+
+    ExecutorProvider systemExecutorProvider = builder.systemExecutorProvider;
+    if (systemExecutorProvider == null) {
+      systemExecutorProvider = FixedExecutorProvider.create(Executors.newScheduledThreadPool(
+          Math.max(SYSTEM_EXECUTOR_MIN_THREAD_COUNT, SYSTEM_EXECUTOR_THREADS_PER_PULLER * numPullers)
+      ));
+    }
+
+    alarmsExecutor = systemExecutorProvider.getExecutor();
+    if (systemExecutorProvider.shouldAutoClose()) {
+      closeables.add(
+          new AutoCloseable() {
+            @Override
+            public void close() {
+              alarmsExecutor.shutdown();
+            }
+          });
     }
 
     try {
@@ -192,8 +198,6 @@ public class Subscriber extends AbstractApiService {
     } catch (Exception e) {
       throw new IllegalStateException(e);
     }
-
-    streamingSubscriberConnections = new ArrayList<StreamingSubscriberConnection>(numPullers);
 
     // We regularly look up the distribution for a good subscription deadline.
     // So we seed the distribution with something reasonable to start with.
@@ -282,13 +286,6 @@ public class Subscriber extends AbstractApiService {
   protected void doStart() {
     logger.log(Level.FINE, "Starting subscriber group.");
 
-    try {
-      this.subStub = GrpcSubscriberStub.create(subStubSettings);
-    } catch (IOException e) {
-      // doesn't matter what we throw, the Service will just catch it and fail to start.
-      throw new IllegalStateException(e);
-    }
-
     // When started, connections submit tasks to the executor.
     // These tasks must finish before the connections can declare themselves running.
     // If we have a single-thread executor and call startStreamingConnections from the
@@ -341,7 +338,7 @@ public class Subscriber extends AbstractApiService {
                 ackExpirationPadding,
                 maxAckExtensionPeriod,
                 ackLatencyDistribution,
-                subStub,
+                GrpcSubscriberStub.create(subStubSettings),
                 i,
                 flowController,
                 outstandingMessageBatches,
@@ -372,9 +369,6 @@ public class Subscriber extends AbstractApiService {
 
   private void stopAllStreamingConnections() {
     stopConnections(streamingSubscriberConnections);
-    if (ackDeadlineUpdater != null) {
-      ackDeadlineUpdater.cancel(true);
-    }
   }
 
   private void startConnections(
@@ -430,7 +424,7 @@ public class Subscriber extends AbstractApiService {
         FlowControlSettings.newBuilder().setMaxOutstandingElementCount(1000L).build();
 
     ExecutorProvider executorProvider = DEFAULT_EXECUTOR_PROVIDER;
-    ExecutorProvider systemExecutorProvider = FixedExecutorProvider.create(SHARED_SYSTEM_EXECUTOR);
+    ExecutorProvider systemExecutorProvider = null;
     TransportChannelProvider channelProvider =
         SubscriptionAdminSettings.defaultGrpcTransportProviderBuilder()
             .setMaxInboundMessageSize(MAX_INBOUND_MESSAGE_SIZE)
@@ -595,3 +589,4 @@ public class Subscriber extends AbstractApiService {
     }
   }
 }
+
