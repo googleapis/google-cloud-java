@@ -240,11 +240,6 @@
         <version>0.46.0</version><!-- {x-version-update:grpc-google-cloud-bigtable-v2:current} -->
       </dependency>
       <dependency>
-        <groupId>com.google.cloud</groupId>
-        <artifactId>google-cloud-bigtable-admin</artifactId>
-        <version>0.81.0-alpha</version><!-- {x-version-update:google-cloud-bigtable-admin:current} -->
-      </dependency>
-      <dependency>
         <groupId>com.google.api.grpc</groupId>
         <artifactId>proto-google-cloud-bigtable-admin-v2</artifactId>
         <version>0.46.0</version><!-- {x-version-update:proto-google-cloud-bigtable-admin-v2:current} -->

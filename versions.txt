@@ -13,7 +13,6 @@ google-cloud-bigquery:1.63.0:1.63.0
 google-cloud-bigquerydatatransfer:0.81.0-beta:0.81.0-beta
 google-cloud-bigquerystorage:0.81.0-beta:0.81.0-beta
 google-cloud-bigtable:0.81.0-alpha:0.81.0-alpha
-google-cloud-bigtable-admin:0.81.0-alpha:0.81.0-alpha
 google-cloud-bigtable-emulator:0.81.0-alpha:0.81.0-alpha
 google-cloud-bom:0.81.0-alpha:0.81.0-alpha
 google-cloud-clients:0.81.0-alpha:0.81.0-alpha
