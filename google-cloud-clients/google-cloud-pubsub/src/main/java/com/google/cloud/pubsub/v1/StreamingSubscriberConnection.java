@@ -305,48 +305,4 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
       ApiFutures.addCallback(future, loggingCallback);
     }
   }
-
-  @InternalApi
-  static List<StreamingPullRequest> partitionAckOperations(
-      List<String> acksToSend, List<PendingModifyAckDeadline> ackDeadlineExtensions, int size) {
-    int numExtensions = 0;
-    for (PendingModifyAckDeadline modify : ackDeadlineExtensions) {
-      numExtensions += modify.ackIds.size();
-    }
-    int numChanges = Math.max(numExtensions, acksToSend.size());
-    int numRequests = numChanges / size + (numChanges % size == 0 ? 0 : 1);
-
-    List<StreamingPullRequest.Builder> requests = new ArrayList<>(numRequests);
-    for (int i = 0; i < numRequests; i++) {
-      requests.add(StreamingPullRequest.newBuilder());
-    }
-
-    int reqCount = 0;
-    for (List<String> acksChunk : Lists.partition(acksToSend, size)) {
-      requests.get(reqCount).addAllAckIds(acksChunk);
-      reqCount++;
-    }
-
-    reqCount = 0;
-    int ackCount = 0;
-    for (PendingModifyAckDeadline modify : ackDeadlineExtensions) {
-      for (String ackId : modify.ackIds) {
-        requests
-            .get(reqCount)
-            .addModifyDeadlineSeconds(modify.deadlineExtensionSeconds)
-            .addModifyDeadlineAckIds(ackId);
-        ackCount++;
-        if (ackCount == size) {
-          reqCount++;
-          ackCount = 0;
-        }
-      }
-    }
-
-    List<StreamingPullRequest> ret = new ArrayList<>(requests.size());
-    for (StreamingPullRequest.Builder builder : requests) {
-      ret.add(builder.build());
-    }
-    return ret;
-  }
 }
