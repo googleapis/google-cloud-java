@@ -138,7 +138,7 @@ By default, the functionality is disabled. To enable, you need to add a couple o
 dependencies and configure an exporter. For example to enable tracing using 
 [Google Stackdriver](https://cloud.google.com/trace/docs/):
 
-[//]: # TODO: figure out how to keep opencensus version in sync with pom.xml
+[//]: # (TODO: figure out how to keep opencensus version in sync with pom.xml)
 
 If you are using Maven, add this to your pom.xml file
 ```xml
