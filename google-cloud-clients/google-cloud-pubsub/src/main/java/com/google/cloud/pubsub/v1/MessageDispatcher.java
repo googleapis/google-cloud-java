@@ -33,9 +33,9 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
-import java.util.Deque;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.ListIterator;
 import java.util.Map;
 import java.util.concurrent.BlockingDeque;
 import java.util.concurrent.ConcurrentHashMap;
@@ -298,7 +298,7 @@ class MessageDispatcher {
   }
 
   static class OutstandingMessageBatch {
-    private final Deque<OutstandingMessage> messages;
+    private final List<OutstandingMessage> messages = new LinkedList<>();
     private final Runnable doneCallback;
 
     static class OutstandingMessage {
@@ -310,26 +310,17 @@ class MessageDispatcher {
         this.ackHandler = ackHandler;
       }
 
-      public ReceivedMessage receivedMessage() {
-        return receivedMessage;
-      }
-
       public AckHandler ackHandler() {
         return ackHandler;
       }
     }
 
     public OutstandingMessageBatch(Runnable doneCallback) {
-      this.messages = new LinkedList<>();
       this.doneCallback = doneCallback;
     }
 
     public void addMessage(ReceivedMessage receivedMessage, AckHandler ackHandler) {
       this.messages.add(new OutstandingMessage(receivedMessage, ackHandler));
-    }
-
-    public Deque<OutstandingMessage> messages() {
-      return messages;
     }
   }
 
@@ -372,20 +363,23 @@ class MessageDispatcher {
 
   private void processOutstandingBatches() {
     for (OutstandingMessageBatch nextBatch = outstandingMessageBatches.poll();
-        nextBatch != null;
-        nextBatch = outstandingMessageBatches.poll()) {
-      for (OutstandingMessage nextMessage = nextBatch.messages.poll();
-          nextMessage != null;
-          nextMessage = nextBatch.messages.poll()) {
+         nextBatch != null;
+         nextBatch = outstandingMessageBatches.poll()) {
+      ListIterator<OutstandingMessage> messageIterator = nextBatch.messages.listIterator();
+      while (messageIterator.hasNext()) {
+        OutstandingMessage nextMessage = messageIterator.next();
         try {
           // This is a non-blocking flow controller.
-          flowController.reserve(1, nextMessage.receivedMessage().getMessage().getSerializedSize());
+          flowController.reserve(
+              1, nextMessage.receivedMessage.getMessage().getSerializedSize());
         } catch (FlowController.MaxOutstandingElementCountReachedException
             | FlowController.MaxOutstandingRequestBytesReachedException flowControlException) {
-          // Reset the state, the current message and batch are unfinished.
-          nextBatch.messages.addFirst(nextMessage);
-          outstandingMessageBatches.addFirst(nextBatch);
-          return;
+          // Nack all messages if flow controlled.  They cannot be handled now.
+          pendingNacks.add(nextMessage.receivedMessage.getAckId());
+          while (messageIterator.hasNext()) {
+            pendingNacks.add(messageIterator.next().receivedMessage.getAckId());
+          }
+          continue;
         } catch (FlowControlException unexpectedException) {
           throw new IllegalStateException("Flow control unexpected exception", unexpectedException);
         }
@@ -397,7 +391,7 @@ class MessageDispatcher {
 
   /** Process a single outstanding message that is already allowed by flow control. */
   private void processOutstandingMessage(OutstandingMessage outstandingMessage) {
-    final PubsubMessage message = outstandingMessage.receivedMessage().getMessage();
+    final PubsubMessage message = outstandingMessage.receivedMessage.getMessage();
     final AckHandler ackHandler = outstandingMessage.ackHandler();
     final SettableApiFuture<AckReply> response = SettableApiFuture.create();
     final AckReplyConsumer consumer =
