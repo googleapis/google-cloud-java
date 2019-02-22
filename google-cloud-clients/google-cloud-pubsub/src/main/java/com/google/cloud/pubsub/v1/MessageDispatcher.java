@@ -98,7 +98,7 @@ class MessageDispatcher {
     }
 
     private PendingModifyAckDeadline(int deadlineExtensionSeconds, Collection<String> ackIds) {
-      this.ackIds = new ArrayList<String>(ackIds);
+      this.ackIds = new ArrayList<>(ackIds);
       this.deadlineExtensionSeconds = deadlineExtensionSeconds;
     }
 
@@ -108,12 +108,6 @@ class MessageDispatcher {
           "PendingModifyAckDeadline{extension: %d sec, ackIds: %s}",
           deadlineExtensionSeconds, ackIds);
     }
-  }
-
-  /** Internal representation of a reply to a Pubsub message, to be sent back to the service. */
-  public enum AckReply {
-    ACK,
-    NACK
   }
 
   /** Handles callbacks for acking/nacking messages from the {@link MessageReceiver}. */
