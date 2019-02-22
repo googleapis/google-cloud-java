@@ -114,8 +114,6 @@ public class Subscriber extends AbstractApiService {
 
   private final MessageReceiver receiver;
   private final List<StreamingSubscriberConnection> streamingSubscriberConnections;
-  private final Deque<MessageDispatcher.OutstandingMessageBatch> outstandingMessageBatches =
-      new LinkedList<>();
   private final ApiClock clock;
   private final List<AutoCloseable> closeables = new ArrayList<>();
 
@@ -341,7 +339,6 @@ public class Subscriber extends AbstractApiService {
                 GrpcSubscriberStub.create(subStubSettings),
                 i,
                 flowController,
-                outstandingMessageBatches,
                 executor,
                 alarmsExecutor,
                 clock));

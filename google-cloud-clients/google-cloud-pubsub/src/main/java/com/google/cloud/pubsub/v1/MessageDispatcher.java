@@ -37,10 +37,12 @@ import java.util.Deque;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.BlockingDeque;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.Executor;
 import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
@@ -90,7 +92,7 @@ class MessageDispatcher {
   private final Lock jobLock;
   private ScheduledFuture<?> backgroundJob;
 
-  private final Deque<OutstandingMessageBatch> outstandingMessageBatches;
+  private final BlockingDeque<OutstandingMessageBatch> outstandingMessageBatches = new LinkedBlockingDeque<>();
 
   // To keep track of number of seconds the receiver takes to process messages.
   private final Distribution ackLatencyDistribution;
@@ -200,7 +202,6 @@ class MessageDispatcher {
       Duration maxAckExtensionPeriod,
       Distribution ackLatencyDistribution,
       FlowController flowController,
-      Deque<OutstandingMessageBatch> outstandingMessageBatches,
       Executor executor,
       ScheduledExecutorService systemExecutor,
       ApiClock clock) {
@@ -211,7 +212,6 @@ class MessageDispatcher {
     this.receiver = receiver;
     this.ackProcessor = ackProcessor;
     this.flowController = flowController;
-    this.outstandingMessageBatches = outstandingMessageBatches;
     // 601 buckets of 1s resolution from 0s to MAX_ACK_DEADLINE_SECONDS
     this.ackLatencyDistribution = ackLatencyDistribution;
     jobLock = new ReentrantLock();
@@ -365,9 +365,7 @@ class MessageDispatcher {
     }
 
     messagesWaiter.incrementPendingMessages(outstandingBatch.messages.size());
-    synchronized (outstandingMessageBatches) {
-      outstandingMessageBatches.add(outstandingBatch);
-    }
+    outstandingMessageBatches.add(outstandingBatch);
     processOutstandingBatches();
   }
 
