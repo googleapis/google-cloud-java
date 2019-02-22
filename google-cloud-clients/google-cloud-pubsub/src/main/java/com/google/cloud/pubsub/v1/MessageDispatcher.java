@@ -24,7 +24,6 @@ import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.batching.FlowController;
 import com.google.api.gax.batching.FlowController.FlowControlException;
 import com.google.api.gax.core.Distribution;
-import com.google.cloud.pubsub.v1.MessageDispatcher.OutstandingMessageBatch.OutstandingMessage;
 import com.google.common.primitives.Ints;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.pubsub.v1.PubsubMessage;
@@ -37,12 +36,10 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
 import java.util.Map;
-import java.util.concurrent.BlockingDeque;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.Executor;
 import java.util.concurrent.LinkedBlockingQueue;
-import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
@@ -92,8 +89,6 @@ class MessageDispatcher {
   private final Lock jobLock;
   private ScheduledFuture<?> backgroundJob;
 
-  private final BlockingDeque<OutstandingMessageBatch> outstandingMessageBatches = new LinkedBlockingDeque<>();
-
   // To keep track of number of seconds the receiver takes to process messages.
   private final Distribution ackLatencyDistribution;
 
@@ -109,10 +104,6 @@ class MessageDispatcher {
     private PendingModifyAckDeadline(int deadlineExtensionSeconds, Collection<String> ackIds) {
       this.ackIds = new ArrayList<String>(ackIds);
       this.deadlineExtensionSeconds = deadlineExtensionSeconds;
-    }
-
-    public void addAckId(String ackId) {
-      ackIds.add(ackId);
     }
 
     @Override
@@ -155,7 +146,6 @@ class MessageDispatcher {
       }
       flowController.release(1, outstandingBytes);
       messagesWaiter.incrementPendingMessages(-1);
-      processOutstandingBatches();
     }
 
     @Override
@@ -296,41 +286,27 @@ class MessageDispatcher {
     return messageDeadlineSeconds.get();
   }
 
-  static class OutstandingMessageBatch {
-    private final List<OutstandingMessage> messages = new LinkedList<>();
-    private final Runnable doneCallback;
+  static class OutstandingMessage {
+    private final ReceivedMessage receivedMessage;
+    private final AckHandler ackHandler;
 
-    static class OutstandingMessage {
-      private final ReceivedMessage receivedMessage;
-      private final AckHandler ackHandler;
-
-      public OutstandingMessage(ReceivedMessage receivedMessage, AckHandler ackHandler) {
-        this.receivedMessage = receivedMessage;
-        this.ackHandler = ackHandler;
-      }
-
-      public AckHandler ackHandler() {
-        return ackHandler;
-      }
+    public OutstandingMessage(ReceivedMessage receivedMessage, AckHandler ackHandler) {
+      this.receivedMessage = receivedMessage;
+      this.ackHandler = ackHandler;
     }
 
-    public OutstandingMessageBatch(Runnable doneCallback) {
-      this.doneCallback = doneCallback;
-    }
-
-    public void addMessage(ReceivedMessage receivedMessage, AckHandler ackHandler) {
-      this.messages.add(new OutstandingMessage(receivedMessage, ackHandler));
+    public AckHandler ackHandler() {
+      return ackHandler;
     }
   }
 
-  public void processReceivedMessages(List<ReceivedMessage> messages, Runnable doneCallback) {
+  public void processReceivedMessages(List<ReceivedMessage> messages) {
     if (messages.isEmpty()) {
-      doneCallback.run();
       return;
     }
 
     Instant totalExpiration = now().plus(maxAckExtensionPeriod);
-    OutstandingMessageBatch outstandingBatch = new OutstandingMessageBatch(doneCallback);
+    List<OutstandingMessage> outstandingBatch = new LinkedList<>();
     for (ReceivedMessage message : messages) {
       AckHandler ackHandler =
           new AckHandler(
@@ -346,45 +322,34 @@ class MessageDispatcher {
         // totally expire so that pubsub service sends us the message again.
         continue;
       }
-      outstandingBatch.addMessage(message, ackHandler);
+      outstandingBatch.add(new OutstandingMessage(message, ackHandler));
       pendingReceipts.add(message.getAckId());
     }
 
-    if (outstandingBatch.messages.isEmpty()) {
-      doneCallback.run();
-      return;
-    }
-
-    messagesWaiter.incrementPendingMessages(outstandingBatch.messages.size());
-    outstandingMessageBatches.add(outstandingBatch);
-    processOutstandingBatches();
+    messagesWaiter.incrementPendingMessages(outstandingBatch.size());
+    processBatch(outstandingBatch);
   }
 
-  private void processOutstandingBatches() {
-    for (OutstandingMessageBatch nextBatch = outstandingMessageBatches.poll();
-         nextBatch != null;
-         nextBatch = outstandingMessageBatches.poll()) {
-      ListIterator<OutstandingMessage> messageIterator = nextBatch.messages.listIterator();
-      while (messageIterator.hasNext()) {
-        OutstandingMessage nextMessage = messageIterator.next();
-        try {
-          // This is a non-blocking flow controller.
-          flowController.reserve(
-              1, nextMessage.receivedMessage.getMessage().getSerializedSize());
-        } catch (FlowController.MaxOutstandingElementCountReachedException
-            | FlowController.MaxOutstandingRequestBytesReachedException flowControlException) {
-          // Nack all messages if flow controlled.  They cannot be handled now.
-          pendingNacks.add(nextMessage.receivedMessage.getAckId());
-          while (messageIterator.hasNext()) {
-            pendingNacks.add(messageIterator.next().receivedMessage.getAckId());
-          }
-          continue;
-        } catch (FlowControlException unexpectedException) {
-          throw new IllegalStateException("Flow control unexpected exception", unexpectedException);
+  private void processBatch(List<OutstandingMessage> batch) {
+    ListIterator<OutstandingMessage> messageIterator = batch.listIterator();
+    while (messageIterator.hasNext()) {
+      OutstandingMessage nextMessage = messageIterator.next();
+      try {
+        // This is a non-blocking flow controller.
+        flowController.reserve(
+            1, nextMessage.receivedMessage.getMessage().getSerializedSize());
+      } catch (FlowController.MaxOutstandingElementCountReachedException
+          | FlowController.MaxOutstandingRequestBytesReachedException flowControlException) {
+        // Nack all messages if flow controlled.  They cannot be handled now.
+        pendingNacks.add(nextMessage.receivedMessage.getAckId());
+        while (messageIterator.hasNext()) {
+          pendingNacks.add(messageIterator.next().receivedMessage.getAckId());
         }
-        processOutstandingMessage(nextMessage);
+        return;
+      } catch (FlowControlException unexpectedException) {
+        throw new IllegalStateException("Flow control unexpected exception", unexpectedException);
       }
-      nextBatch.doneCallback.run();
+      processOutstandingMessage(nextMessage);
     }
   }
 

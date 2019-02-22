@@ -44,7 +44,6 @@ import com.google.pubsub.v1.StreamingPullRequest;
 import com.google.pubsub.v1.StreamingPullResponse;
 import io.grpc.Status;
 import java.util.ArrayList;
-import java.util.Deque;
 import java.util.List;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
@@ -154,26 +153,17 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
     @Override
     public void onResponse(StreamingPullResponse response) {
       channelReconnectBackoffMillis.set(INITIAL_CHANNEL_RECONNECT_BACKOFF.toMillis());
-      messageDispatcher.processReceivedMessages(
-          response.getReceivedMessagesList(),
-          new Runnable() {
-            @Override
-            public void run() {
-              // Only request more if we're not shutdown.
-              // If errorFuture is done, the stream has either failed or hung up,
-              // and we don't need to request.
-              if (isAlive() && !errorFuture.isDone()) {
-                lock.lock();
-                try {
-                  thisController.request(1);
-                } catch (Exception e) {
-                  logger.log(Level.WARNING, "cannot request more messages", e);
-                } finally {
-                  lock.unlock();
-                }
-              }
-            }
-          });
+      messageDispatcher.processReceivedMessages(response.getReceivedMessagesList());
+      if (isAlive() && !errorFuture.isDone()) {
+        lock.lock();
+        try {
+          thisController.request(1);
+        } catch (Exception e) {
+          logger.log(Level.WARNING, "cannot request more messages", e);
+        } finally {
+          lock.unlock();
+        }
+      }
     }
 
     @Override

@@ -46,14 +46,6 @@ public class MessageDispatcherTest {
           .setMessage(PubsubMessage.newBuilder().setData(ByteString.EMPTY).build())
           .build();
 
-  private static final Runnable NOOP_RUNNABLE =
-      new Runnable() {
-        @Override
-        public void run() {
-          // No-op; don't do anything.
-        }
-      };
-
   private static final int FLOW_CONTROL_BYTES = 1000;
   private static final String FLOW_CONTROLLED_MESSAGE_ACK_ID = "ackid2";
 
@@ -133,7 +125,7 @@ public class MessageDispatcherTest {
 
   @Test
   public void testReceipt() throws Exception {
-    dispatcher.processReceivedMessages(Collections.singletonList(TEST_MESSAGE), NOOP_RUNNABLE);
+    dispatcher.processReceivedMessages(Collections.singletonList(TEST_MESSAGE));
     dispatcher.processOutstandingAckOperations();
     assertThat(sentModAcks)
         .contains(ModAckItem.of(TEST_MESSAGE.getAckId(), Subscriber.MIN_ACK_DEADLINE_SECONDS));
@@ -141,7 +133,7 @@ public class MessageDispatcherTest {
 
   @Test
   public void testAck() throws Exception {
-    dispatcher.processReceivedMessages(Collections.singletonList(TEST_MESSAGE), NOOP_RUNNABLE);
+    dispatcher.processReceivedMessages(Collections.singletonList(TEST_MESSAGE));
     consumers.take().ack();
     dispatcher.processOutstandingAckOperations();
     assertThat(sentAcks).contains(TEST_MESSAGE.getAckId());
@@ -149,7 +141,7 @@ public class MessageDispatcherTest {
 
   @Test
   public void testNack() throws Exception {
-    dispatcher.processReceivedMessages(Collections.singletonList(TEST_MESSAGE), NOOP_RUNNABLE);
+    dispatcher.processReceivedMessages(Collections.singletonList(TEST_MESSAGE));
     consumers.take().nack();
     dispatcher.processOutstandingAckOperations();
     assertThat(sentModAcks).contains(ModAckItem.of(TEST_MESSAGE.getAckId(), 0));
@@ -157,7 +149,7 @@ public class MessageDispatcherTest {
 
   @Test
   public void testExtension() throws Exception {
-    dispatcher.processReceivedMessages(Collections.singletonList(TEST_MESSAGE), NOOP_RUNNABLE);
+    dispatcher.processReceivedMessages(Collections.singletonList(TEST_MESSAGE));
     dispatcher.extendDeadlines();
     assertThat(sentModAcks)
         .contains(ModAckItem.of(TEST_MESSAGE.getAckId(), Subscriber.MIN_ACK_DEADLINE_SECONDS));
@@ -170,7 +162,7 @@ public class MessageDispatcherTest {
 
   @Test
   public void testExtension_Close() throws Exception {
-    dispatcher.processReceivedMessages(Collections.singletonList(TEST_MESSAGE), NOOP_RUNNABLE);
+    dispatcher.processReceivedMessages(Collections.singletonList(TEST_MESSAGE));
     dispatcher.extendDeadlines();
     assertThat(sentModAcks)
         .contains(ModAckItem.of(TEST_MESSAGE.getAckId(), Subscriber.MIN_ACK_DEADLINE_SECONDS));
@@ -185,7 +177,7 @@ public class MessageDispatcherTest {
 
   @Test
   public void testExtension_GiveUp() throws Exception {
-    dispatcher.processReceivedMessages(Collections.singletonList(TEST_MESSAGE), NOOP_RUNNABLE);
+    dispatcher.processReceivedMessages(Collections.singletonList(TEST_MESSAGE));
     dispatcher.extendDeadlines();
     assertThat(sentModAcks)
         .contains(ModAckItem.of(TEST_MESSAGE.getAckId(), Subscriber.MIN_ACK_DEADLINE_SECONDS));
@@ -206,7 +198,7 @@ public class MessageDispatcherTest {
   public void testDeadlineAdjustment() throws Exception {
     assertThat(dispatcher.computeDeadlineSeconds()).isEqualTo(10);
 
-    dispatcher.processReceivedMessages(Collections.singletonList(TEST_MESSAGE), NOOP_RUNNABLE);
+    dispatcher.processReceivedMessages(Collections.singletonList(TEST_MESSAGE));
     clock.advance(42, TimeUnit.SECONDS);
     consumers.take().ack();
 
@@ -224,14 +216,14 @@ public class MessageDispatcherTest {
 
   @Test
   public void testNotFlowControlledSingleMessageTooLarge() {
-    dispatcher.processReceivedMessages(Collections.singletonList(createFlowControlledMessage()), NOOP_RUNNABLE);
+    dispatcher.processReceivedMessages(Collections.singletonList(createFlowControlledMessage()));
     dispatcher.processOutstandingAckOperations();
     assertThat(sentModAcks).contains(ModAckItem.of(FLOW_CONTROLLED_MESSAGE_ACK_ID, 10));
   }
 
   @Test
   public void testNackFlowControlled() {
-    dispatcher.processReceivedMessages(ImmutableList.of(TEST_MESSAGE, createFlowControlledMessage()), NOOP_RUNNABLE);
+    dispatcher.processReceivedMessages(ImmutableList.of(TEST_MESSAGE, createFlowControlledMessage()));
     dispatcher.processOutstandingAckOperations();
     assertThat(sentModAcks).contains(ModAckItem.of(FLOW_CONTROLLED_MESSAGE_ACK_ID, 0));
   }
