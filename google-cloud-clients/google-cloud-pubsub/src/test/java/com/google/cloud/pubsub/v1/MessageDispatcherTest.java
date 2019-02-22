@@ -22,11 +22,14 @@ import com.google.api.gax.batching.FlowControlSettings;
 import com.google.api.gax.batching.FlowController;
 import com.google.api.gax.core.Distribution;
 import com.google.auto.value.AutoValue;
+import com.google.common.base.Preconditions;
+import com.google.common.collect.ImmutableList;
 import com.google.common.util.concurrent.MoreExecutors;
 import com.google.protobuf.ByteString;
 import com.google.pubsub.v1.PubsubMessage;
 import com.google.pubsub.v1.ReceivedMessage;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.LinkedBlockingQueue;
@@ -42,6 +45,7 @@ public class MessageDispatcherTest {
           .setAckId("ackid")
           .setMessage(PubsubMessage.newBuilder().setData(ByteString.EMPTY).build())
           .build();
+
   private static final Runnable NOOP_RUNNABLE =
       new Runnable() {
         @Override
@@ -49,6 +53,9 @@ public class MessageDispatcherTest {
           // No-op; don't do anything.
         }
       };
+
+  private static final int FLOW_CONTROL_BYTES = 1000;
+  private static final String FLOW_CONTROLLED_MESSAGE_ACK_ID = "ackid2";
 
   private MessageDispatcher dispatcher;
   private LinkedBlockingQueue<AckReplyConsumer> consumers;
@@ -101,10 +108,12 @@ public class MessageDispatcherTest {
     systemExecutor.shutdownNow();
 
     clock = new FakeClock();
+    Preconditions.checkArgument(TEST_MESSAGE.getMessage().getSerializedSize() <= FLOW_CONTROL_BYTES);
     flowController =
         new FlowController(
             FlowControlSettings.newBuilder()
                 .setMaxOutstandingElementCount(1L)
+                .setMaxOutstandingRequestBytes((long) FLOW_CONTROL_BYTES)
                 .setLimitExceededBehavior(FlowController.LimitExceededBehavior.ThrowException)
                 .build());
 
@@ -188,7 +197,7 @@ public class MessageDispatcherTest {
     dispatcher.extendDeadlines();
     assertThat(sentModAcks).isEmpty();
 
-    // We should be able to reserve another item in the flow controller and not block shutdown
+    // We should be able to reserve another item in the flow controller and not throw an exception.
     flowController.reserve(1, 0);
     dispatcher.stop();
   }
@@ -202,5 +211,28 @@ public class MessageDispatcherTest {
     consumers.take().ack();
 
     assertThat(dispatcher.computeDeadlineSeconds()).isEqualTo(42);
+  }
+
+  private static ReceivedMessage createFlowControlledMessage() {
+    byte[] payloadArray = new byte[FLOW_CONTROL_BYTES + 1];
+    Arrays.fill(payloadArray, (byte) 'A');
+    return ReceivedMessage.newBuilder()
+        .setAckId(FLOW_CONTROLLED_MESSAGE_ACK_ID)
+        .setMessage(PubsubMessage.newBuilder().setData(ByteString.copyFrom(payloadArray)))
+        .build();
+  }
+
+  @Test
+  public void testNotFlowControlledSingleMessageTooLarge() {
+    dispatcher.processReceivedMessages(Collections.singletonList(createFlowControlledMessage()), NOOP_RUNNABLE);
+    dispatcher.processOutstandingAckOperations();
+    assertThat(sentModAcks).contains(ModAckItem.of(FLOW_CONTROLLED_MESSAGE_ACK_ID, 10));
+  }
+
+  @Test
+  public void testNackFlowControlled() {
+    dispatcher.processReceivedMessages(ImmutableList.of(TEST_MESSAGE, createFlowControlledMessage()), NOOP_RUNNABLE);
+    dispatcher.processOutstandingAckOperations();
+    assertThat(sentModAcks).contains(ModAckItem.of(FLOW_CONTROLLED_MESSAGE_ACK_ID, 0));
   }
 }
