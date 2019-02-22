@@ -37,6 +37,8 @@ public class FieldValueTest {
   private static final TableCell BOOLEAN_FIELD = new TableCell().setV("false");
   private static final Map<String, String> INTEGER_FIELD = ImmutableMap.of("v", "1");
   private static final Map<String, String> FLOAT_FIELD = ImmutableMap.of("v", "1.5");
+  private static final Map<String, String> GEOGRAPHY_FIELD =
+      ImmutableMap.of("v", "POINT(-122.350220 47.649154)");
   private static final Map<String, String> NUMERIC_FIELD =
       ImmutableMap.of("v", "123456789.123456789");
   private static final Map<String, String> STRING_FIELD = ImmutableMap.of("v", "string");
@@ -60,6 +62,9 @@ public class FieldValueTest {
     value = FieldValue.fromPb(FLOAT_FIELD);
     assertEquals(FieldValue.Attribute.PRIMITIVE, value.getAttribute());
     assertEquals(1.5, value.getDoubleValue(), 0);
+    value = FieldValue.fromPb(GEOGRAPHY_FIELD);
+    assertEquals(FieldValue.Attribute.PRIMITIVE, value.getAttribute());
+    assertEquals("POINT(-122.350220 47.649154)", value.getStringValue());
     value = FieldValue.fromPb(NUMERIC_FIELD);
     assertEquals(FieldValue.Attribute.PRIMITIVE, value.getAttribute());
     assertEquals(new BigDecimal("123456789.123456789"), value.getNumericValue());
@@ -97,6 +102,11 @@ public class FieldValueTest {
     FieldValue floatValue = FieldValue.of(FieldValue.Attribute.PRIMITIVE, "1.5");
     assertEquals(floatValue, FieldValue.fromPb(FLOAT_FIELD));
     assertEquals(floatValue.hashCode(), FieldValue.fromPb(FLOAT_FIELD).hashCode());
+
+    FieldValue geographyValue =
+        FieldValue.of(FieldValue.Attribute.PRIMITIVE, "POINT(-122.350220 47.649154)");
+    assertEquals(geographyValue, FieldValue.fromPb(GEOGRAPHY_FIELD));
+    assertEquals(geographyValue.hashCode(), FieldValue.fromPb(GEOGRAPHY_FIELD).hashCode());
 
     FieldValue numericValue = FieldValue.of(FieldValue.Attribute.PRIMITIVE, "123456789.123456789");
     assertEquals(numericValue, FieldValue.fromPb(NUMERIC_FIELD));
