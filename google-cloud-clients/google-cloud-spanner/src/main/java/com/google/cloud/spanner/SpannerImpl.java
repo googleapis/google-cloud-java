@@ -1710,6 +1710,7 @@ class SpannerImpl extends BaseService<SpannerOptions> implements Spanner {
       for (int i = 0; i < response.getResultSetsCount(); ++i) {
         results[i] = response.getResultSets(i).getStats().getRowCountExact();
       }
+
       if (response.getStatus().getCode() != 0) {
         throw newSpannerBatchUpdateException(
             ErrorCode.fromRpcStatus(
