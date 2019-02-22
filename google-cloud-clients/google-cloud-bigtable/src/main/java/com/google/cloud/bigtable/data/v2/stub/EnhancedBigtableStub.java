@@ -18,7 +18,7 @@ package com.google.cloud.bigtable.data.v2.stub;
 import com.google.api.core.InternalApi;
 import com.google.api.gax.retrying.ExponentialRetryAlgorithm;
 import com.google.api.gax.retrying.RetryAlgorithm;
-import com.google.api.gax.retrying.RetryingExecutor;
+import com.google.api.gax.retrying.RetryingExecutorWithContext;
 import com.google.api.gax.retrying.ScheduledRetryingExecutor;
 import com.google.api.gax.rpc.BatchingCallSettings;
 import com.google.api.gax.rpc.Callables;
@@ -401,7 +401,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
             new ApiResultRetryAlgorithm<Void>(),
             new ExponentialRetryAlgorithm(
                 settings.bulkMutateRowsSettings().getRetrySettings(), clientContext.getClock()));
-    RetryingExecutor<Void> retryingExecutor =
+    RetryingExecutorWithContext<Void> retryingExecutor =
         new ScheduledRetryingExecutor<>(retryAlgorithm, clientContext.getExecutor());
 
     return new MutateRowsRetryingCallable(
