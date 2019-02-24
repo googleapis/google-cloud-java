@@ -99,9 +99,10 @@ public class Subscriber extends AbstractApiService {
 
   private final String subscriptionName;
   private final FlowControlSettings flowControlSettings;
+  private final boolean disableGrpcFlowControl;
   private final Duration ackExpirationPadding;
   private final Duration maxAckExtensionPeriod;
-  private final ScheduledExecutorService executor;
+  private final ExecutorProvider executorProvider;
   @Nullable private final ScheduledExecutorService alarmsExecutor;
   private final Distribution ackLatencyDistribution =
       new Distribution(MAX_ACK_DEADLINE_SECONDS + 1);
@@ -118,6 +119,7 @@ public class Subscriber extends AbstractApiService {
   private Subscriber(Builder builder) {
     receiver = builder.receiver;
     flowControlSettings = builder.flowControlSettings;
+    disableGrpcFlowControl = builder.disableGrpcFlowControl;
     subscriptionName = builder.subscriptionName;
 
     Preconditions.checkArgument(
@@ -138,16 +140,8 @@ public class Subscriber extends AbstractApiService {
                 .setLimitExceededBehavior(LimitExceededBehavior.ThrowException)
                 .build());
 
-    executor = builder.executorProvider.getExecutor();
-    if (builder.executorProvider.shouldAutoClose()) {
-      closeables.add(
-          new AutoCloseable() {
-            @Override
-            public void close() {
-              executor.shutdown();
-            }
-          });
-    }
+    executorProvider = builder.executorProvider;
+
 
     this.numPullers = builder.parallelPullCount;
     streamingSubscriberConnections = new ArrayList<>(numPullers);
@@ -311,7 +305,7 @@ public class Subscriber extends AbstractApiService {
               public void run() {
                 try {
                   // stop connection is no-op if connections haven't been started.
-                  stopAllStreamingConnections();
+                  stopStreamingConnections();
                   for (AutoCloseable closeable : closeables) {
                     closeable.close();
                   }
@@ -324,9 +318,19 @@ public class Subscriber extends AbstractApiService {
         .start();
   }
 
-  private void startStreamingConnections() throws IOException {
+  private synchronized void startStreamingConnections() throws IOException {
     synchronized (streamingSubscriberConnections) {
       for (int i = 0; i < numPullers; i++) {
+        final ScheduledExecutorService executor = executorProvider.getExecutor();
+        if (executorProvider.shouldAutoClose()) {
+          closeables.add(
+              new AutoCloseable() {
+                @Override
+                public void close() {
+                  executor.shutdown();
+                }
+              });
+        }
         streamingSubscriberConnections.add(
             new StreamingSubscriberConnection(
                 subscriptionName,
@@ -341,52 +345,15 @@ public class Subscriber extends AbstractApiService {
                 alarmsExecutor,
                 clock));
       }
-      startConnections(
-          streamingSubscriberConnections,
-          new Listener() {
-            @Override
-            public void failed(State from, Throwable failure) {
-              // If a connection failed is because of a fatal error, we should fail the
-              // whole subscriber.
-              stopAllStreamingConnections();
-              try {
-                notifyFailed(failure);
-              } catch (IllegalStateException e) {
-                if (isRunning()) {
-                  throw e;
-                }
-                // It could happen that we are shutting down while some channels fail.
-              }
-            }
-          });
+      startConnections();
     }
   }
 
-  private void stopAllStreamingConnections() {
-    stopConnections(streamingSubscriberConnections);
-  }
-
-  private void startConnections(
-      List<? extends ApiService> connections, final ApiService.Listener connectionsListener) {
-    for (ApiService subscriber : connections) {
-      subscriber.addListener(connectionsListener, executor);
-      subscriber.startAsync();
-    }
-    for (ApiService subscriber : connections) {
-      subscriber.awaitRunning();
-    }
-  }
-
-  private void stopConnections(List<? extends ApiService> connections) {
-    ArrayList<ApiService> liveConnections;
-    synchronized (connections) {
-      liveConnections = new ArrayList<ApiService>(connections);
-      connections.clear();
-    }
-    for (ApiService subscriber : liveConnections) {
+  private synchronized void stopStreamingConnections() {
+    for (ApiService subscriber : streamingSubscriberConnections) {
       subscriber.stopAsync();
     }
-    for (ApiService subscriber : liveConnections) {
+    for (ApiService subscriber : streamingSubscriberConnections) {
       try {
         subscriber.awaitTerminated();
       } catch (IllegalStateException e) {
@@ -394,6 +361,33 @@ public class Subscriber extends AbstractApiService {
         // However, we could be stopping services because at least one
         // has already failed, so we just ignore this exception.
       }
+    }
+    streamingSubscriberConnections.clear();
+  }
+
+  private void startConnections() {
+    ApiService.Listener connectionsListener = new Listener() {
+      @Override
+      public void failed(State from, Throwable failure) {
+        // If a connection failed is because of a fatal error, we should fail the
+        // whole subscriber.
+        stopStreamingConnections();
+        try {
+          notifyFailed(failure);
+        } catch (IllegalStateException e) {
+          if (isRunning()) {
+            throw e;
+          }
+          // It could happen that we are shutting down while some channels fail.
+        }
+      }
+    };
+    for (ApiService subscriber : streamingSubscriberConnections) {
+      subscriber.addListener(connectionsListener, alarmsExecutor);
+      subscriber.startAsync();
+    }
+    for (ApiService subscriber : streamingSubscriberConnections) {
+      subscriber.awaitRunning();
     }
   }
 
@@ -405,8 +399,7 @@ public class Subscriber extends AbstractApiService {
 
     static final ExecutorProvider DEFAULT_EXECUTOR_PROVIDER =
         InstantiatingExecutorProvider.newBuilder()
-            .setExecutorThreadCount(
-                THREADS_PER_CHANNEL * Runtime.getRuntime().availableProcessors())
+            .setExecutorThreadCount(THREADS_PER_CHANNEL)
             .build();
 
     String subscriptionName;
@@ -417,6 +410,7 @@ public class Subscriber extends AbstractApiService {
 
     FlowControlSettings flowControlSettings =
         FlowControlSettings.newBuilder().setMaxOutstandingElementCount(1000L).build();
+    boolean disableGrpcFlowControl = false;
 
     ExecutorProvider executorProvider = DEFAULT_EXECUTOR_PROVIDER;
     ExecutorProvider systemExecutorProvider = null;
@@ -509,6 +503,20 @@ public class Subscriber extends AbstractApiService {
      */
     public Builder setFlowControlSettings(FlowControlSettings flowControlSettings) {
       this.flowControlSettings = Preconditions.checkNotNull(flowControlSettings);
+      return this;
+    }
+
+    /**
+     * Whether to disable the grpc inbound flow control mechanism.
+     *
+     * <p>This is enabled be default to further limit the amount of messages in memory
+     * under tight flow control limits.
+     *
+     * <p>This can be disabled to increase the throughput of a subscriber at the cost of greater
+     * memory usage.  The FlowControlSettings will apply whether this is set or not.
+     */
+    public Builder disableGrpcFlowControl() {
+      this.disableGrpcFlowControl = true;
       return this;
     }
 

@@ -21,7 +21,6 @@ import com.google.api.core.ApiClock;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutureCallback;
 import com.google.api.core.ApiFutures;
-import com.google.api.core.InternalApi;
 import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.batching.FlowController;
 import com.google.api.gax.core.Distribution;
@@ -43,7 +42,6 @@ import com.google.pubsub.v1.ModifyAckDeadlineRequest;
 import com.google.pubsub.v1.StreamingPullRequest;
 import com.google.pubsub.v1.StreamingPullResponse;
 import io.grpc.Status;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
@@ -289,7 +287,8 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
                         .setSubscription(subscription)
                         .addAllAckIds(idChunk)
                         .setAckDeadlineSeconds(modack.deadlineExtensionSeconds)
-                        .build());
+                        .build(),
+                    GrpcCallContext.createDefault().withChannelAffinity(channelAffinity));
         ApiFutures.addCallback(future, loggingCallback);
       }
     }
@@ -301,7 +300,8 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
                   AcknowledgeRequest.newBuilder()
                       .setSubscription(subscription)
                       .addAllAckIds(idChunk)
-                      .build());
+                      .build(),
+                  GrpcCallContext.createDefault().withChannelAffinity(channelAffinity));
       ApiFutures.addCallback(future, loggingCallback);
     }
   }
