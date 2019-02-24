@@ -108,7 +108,8 @@ public class MessageDispatcherTest {
     systemExecutor.shutdownNow();
 
     clock = new FakeClock();
-    Preconditions.checkArgument(TEST_MESSAGE.getMessage().getSerializedSize() <= FLOW_CONTROL_BYTES);
+    Preconditions.checkArgument(
+        TEST_MESSAGE.getMessage().getSerializedSize() <= FLOW_CONTROL_BYTES);
     flowController =
         new FlowController(
             FlowControlSettings.newBuilder()
@@ -224,14 +225,16 @@ public class MessageDispatcherTest {
 
   @Test
   public void testNotFlowControlledSingleMessageTooLarge() {
-    dispatcher.processReceivedMessages(Collections.singletonList(createFlowControlledMessage()), NOOP_RUNNABLE);
+    dispatcher.processReceivedMessages(
+        Collections.singletonList(createFlowControlledMessage()), NOOP_RUNNABLE);
     dispatcher.processOutstandingAckOperations();
     assertThat(sentModAcks).contains(ModAckItem.of(FLOW_CONTROLLED_MESSAGE_ACK_ID, 10));
   }
 
   @Test
   public void testNackFlowControlled() {
-    dispatcher.processReceivedMessages(ImmutableList.of(TEST_MESSAGE, createFlowControlledMessage()), NOOP_RUNNABLE);
+    dispatcher.processReceivedMessages(
+        ImmutableList.of(TEST_MESSAGE, createFlowControlledMessage()), NOOP_RUNNABLE);
     dispatcher.processOutstandingAckOperations();
     assertThat(sentModAcks).contains(ModAckItem.of(FLOW_CONTROLLED_MESSAGE_ACK_ID, 0));
   }
