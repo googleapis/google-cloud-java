@@ -336,8 +336,7 @@ class MessageDispatcher {
       OutstandingMessage nextMessage = messageIterator.next();
       try {
         // This is a non-blocking flow controller.
-        flowController.reserve(
-            1, nextMessage.receivedMessage.getMessage().getSerializedSize());
+        flowController.reserve(1, nextMessage.receivedMessage.getMessage().getSerializedSize());
       } catch (FlowController.MaxOutstandingElementCountReachedException
           | FlowController.MaxOutstandingRequestBytesReachedException flowControlException) {
         // Nack all messages if flow controlled.  They cannot be handled now.
