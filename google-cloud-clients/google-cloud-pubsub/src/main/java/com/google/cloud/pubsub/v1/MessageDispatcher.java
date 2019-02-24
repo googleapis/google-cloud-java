@@ -41,8 +41,8 @@ import java.util.concurrent.BlockingDeque;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.Executor;
-import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.LinkedBlockingDeque;
+import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
@@ -92,7 +92,8 @@ class MessageDispatcher {
   private final Lock jobLock;
   private ScheduledFuture<?> backgroundJob;
 
-  private final BlockingDeque<OutstandingMessageBatch> outstandingMessageBatches = new LinkedBlockingDeque<>();
+  private final BlockingDeque<OutstandingMessageBatch> outstandingMessageBatches =
+      new LinkedBlockingDeque<>();
 
   // To keep track of number of seconds the receiver takes to process messages.
   private final Distribution ackLatencyDistribution;

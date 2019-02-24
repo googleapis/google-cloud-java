@@ -44,7 +44,6 @@ import com.google.pubsub.v1.StreamingPullRequest;
 import com.google.pubsub.v1.StreamingPullResponse;
 import io.grpc.Status;
 import java.util.ArrayList;
-import java.util.Deque;
 import java.util.List;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;

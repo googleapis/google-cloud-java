@@ -28,7 +28,6 @@ import com.google.pubsub.v1.PubsubMessage;
 import com.google.pubsub.v1.ReceivedMessage;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
