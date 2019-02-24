@@ -142,7 +142,6 @@ public class Subscriber extends AbstractApiService {
 
     executorProvider = builder.executorProvider;
 
-
     this.numPullers = builder.parallelPullCount;
     streamingSubscriberConnections = new ArrayList<>(numPullers);
     TransportChannelProvider channelProvider = builder.channelProvider;
@@ -369,22 +368,23 @@ public class Subscriber extends AbstractApiService {
   }
 
   private void startConnections() {
-    ApiService.Listener connectionsListener = new Listener() {
-      @Override
-      public void failed(State from, Throwable failure) {
-        // If a connection failed is because of a fatal error, we should fail the
-        // whole subscriber.
-        stopStreamingConnections();
-        try {
-          notifyFailed(failure);
-        } catch (IllegalStateException e) {
-          if (isRunning()) {
-            throw e;
+    ApiService.Listener connectionsListener =
+        new Listener() {
+          @Override
+          public void failed(State from, Throwable failure) {
+            // If a connection failed is because of a fatal error, we should fail the
+            // whole subscriber.
+            stopStreamingConnections();
+            try {
+              notifyFailed(failure);
+            } catch (IllegalStateException e) {
+              if (isRunning()) {
+                throw e;
+              }
+              // It could happen that we are shutting down while some channels fail.
+            }
           }
-          // It could happen that we are shutting down while some channels fail.
-        }
-      }
-    };
+        };
     for (ApiService subscriber : streamingSubscriberConnections) {
       subscriber.addListener(connectionsListener, alarmsExecutor);
       subscriber.startAsync();
@@ -512,11 +512,11 @@ public class Subscriber extends AbstractApiService {
     /**
      * Whether to disable the grpc inbound flow control mechanism.
      *
-     * <p>This is enabled be default to further limit the amount of messages in memory
-     * under tight flow control limits.
+     * <p>This is enabled be default to further limit the amount of messages in memory under tight
+     * flow control limits.
      *
      * <p>This can be disabled to increase the throughput of a subscriber at the cost of greater
-     * memory usage.  The FlowControlSettings will apply whether this is set or not.
+     * memory usage. The FlowControlSettings will apply whether this is set or not.
      */
     public Builder disableGrpcFlowControl() {
       this.disableGrpcFlowControl = true;
