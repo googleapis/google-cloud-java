@@ -18,6 +18,7 @@ package com.example.texttospeech;
 
 import static com.google.common.truth.Truth.assertThat;
 
+import com.google.protobuf.ByteString;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 
@@ -58,9 +59,10 @@ public class SynthesizeFileIT {
   @Test
   public void testSynthesizeText() throws Exception {
     // Act
-    SynthesizeFile.synthesizeTextFile(TEXT_FILE);
+    ByteString audioContents = SynthesizeFile.synthesizeTextFile(TEXT_FILE);
 
     // Assert
+    assertThat(audioContents.isEmpty()).isFalse();
     outputFile = new File(OUTPUT);
     assertThat(outputFile.isFile()).isTrue();
     String got = bout.toString();
@@ -70,9 +72,10 @@ public class SynthesizeFileIT {
   @Test
   public void testSynthesizeSsml() throws Exception {
     // Act
-    SynthesizeFile.synthesizeSsmlFile(SSML_FILE);
+    ByteString audioContents = SynthesizeFile.synthesizeSsmlFile(SSML_FILE);
 
     // Assert
+    assertThat(audioContents.isEmpty()).isFalse();
     outputFile = new File(OUTPUT);
     assertThat(outputFile.isFile()).isTrue();
     String got = bout.toString();

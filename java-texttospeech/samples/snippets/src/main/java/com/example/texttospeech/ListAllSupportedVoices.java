@@ -38,7 +38,7 @@ public class ListAllSupportedVoices {
    * Demonstrates using the Text to Speech client to list the client's supported voices.
    * @throws Exception on TextToSpeechClient Errors.
    */
-  public static void listAllSupportedVoices() throws Exception {
+  public static List<Voice> listAllSupportedVoices() throws Exception {
     // Instantiates a client
     try (TextToSpeechClient textToSpeechClient = TextToSpeechClient.create()) {
       // Builds the text to speech list voices request
@@ -65,11 +65,8 @@ public class ListAllSupportedVoices {
         System.out.format("Natural Sample Rate Hertz: %s\n\n",
             voice.getNaturalSampleRateHertz());
       }
+      return voices;
     }
   }
   // [END tts_list_voices]
-
-  public static void main(String[] args) throws Exception {
-    listAllSupportedVoices();
-  }
 }

@@ -18,9 +18,11 @@ package com.example.texttospeech;
 
 import static com.google.common.truth.Truth.assertThat;
 
+import com.google.cloud.texttospeech.v1.Voice;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
+import java.util.List;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -55,9 +57,10 @@ public class ListAllSupportedVoicesIT {
   @Test
   public void testListAllSupportedVoices() throws Exception {
     // Act
-    listAllSupportedVoices.listAllSupportedVoices();
+    List<Voice> voices = listAllSupportedVoices.listAllSupportedVoices();
 
     // Assert
+    assertThat(voices.isEmpty()).isFalse();
     String got = bout.toString();
     assertThat(got).contains("en-US");
     assertThat(got).contains("SSML Voice Gender: MALE");

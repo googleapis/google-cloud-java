@@ -50,7 +50,7 @@ public class SynthesizeFile {
    * @param textFile the text file to be synthesized. (e.g., hello.txt)
    * @throws Exception on TextToSpeechClient Errors.
    */
-  public static void synthesizeTextFile(String textFile)
+  public static ByteString synthesizeTextFile(String textFile)
       throws Exception {
     // Instantiates a client
     try (TextToSpeechClient textToSpeechClient = TextToSpeechClient.create()) {
@@ -83,6 +83,7 @@ public class SynthesizeFile {
       try (OutputStream out = new FileOutputStream("output.mp3")) {
         out.write(audioContents.toByteArray());
         System.out.println("Audio content written to file \"output.mp3\"");
+        return audioContents;
       }
     }
   }
@@ -95,7 +96,7 @@ public class SynthesizeFile {
    * @param ssmlFile the ssml document to be synthesized. (e.g., hello.ssml)
    * @throws Exception on TextToSpeechClient Errors.
    */
-  public static void synthesizeSsmlFile(String ssmlFile)
+  public static ByteString synthesizeSsmlFile(String ssmlFile)
       throws Exception {
     // Instantiates a client
     try (TextToSpeechClient textToSpeechClient = TextToSpeechClient.create()) {
@@ -128,29 +129,9 @@ public class SynthesizeFile {
       try (OutputStream out = new FileOutputStream("output.mp3")) {
         out.write(audioContents.toByteArray());
         System.out.println("Audio content written to file \"output.mp3\"");
+        return audioContents;
       }
     }
   }
   // [END tts_synthesize_ssml_file]
-
-  public static void main(String... args) throws Exception {
-    ArgumentParser parser = ArgumentParsers.newFor("SynthesizeFile").build()
-        .defaultHelp(true)
-        .description("Synthesize a text file or ssml file.");
-    MutuallyExclusiveGroup group = parser.addMutuallyExclusiveGroup().required(true);
-    group.addArgument("--text").help("The text file from which to synthesize speech.");
-    group.addArgument("--ssml").help("The ssml file from which to synthesize speech.");
-
-    try {
-      Namespace namespace = parser.parseArgs(args);
-
-      if (namespace.get("text") != null) {
-        synthesizeTextFile(namespace.getString("text"));
-      } else {
-        synthesizeSsmlFile(namespace.getString("ssml"));
-      }
-    } catch (ArgumentParserException e) {
-      parser.handleError(e);
-    }
-  }
 }
