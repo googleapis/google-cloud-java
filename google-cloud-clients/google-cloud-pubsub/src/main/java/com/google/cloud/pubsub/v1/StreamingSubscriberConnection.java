@@ -287,7 +287,8 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
                         .setSubscription(subscription)
                         .addAllAckIds(idChunk)
                         .setAckDeadlineSeconds(modack.deadlineExtensionSeconds)
-                        .build());
+                        .build(),
+                    GrpcCallContext.createDefault().withChannelAffinity(channelAffinity));
         ApiFutures.addCallback(future, loggingCallback);
       }
     }
@@ -299,7 +300,8 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
                   AcknowledgeRequest.newBuilder()
                       .setSubscription(subscription)
                       .addAllAckIds(idChunk)
-                      .build());
+                      .build(),
+                  GrpcCallContext.createDefault().withChannelAffinity(channelAffinity));
       ApiFutures.addCallback(future, loggingCallback);
     }
   }
