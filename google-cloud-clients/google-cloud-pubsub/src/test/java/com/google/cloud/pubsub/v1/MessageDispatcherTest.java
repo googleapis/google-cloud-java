@@ -224,7 +224,8 @@ public class MessageDispatcherTest {
 
   @Test
   public void testNackFlowControlled() {
-    dispatcher.processReceivedMessages(ImmutableList.of(TEST_MESSAGE, createFlowControlledMessage()));
+    dispatcher.processReceivedMessages(
+        ImmutableList.of(TEST_MESSAGE, createFlowControlledMessage()));
     dispatcher.processOutstandingAckOperations();
     assertThat(sentModAcks).contains(ModAckItem.of(FLOW_CONTROLLED_MESSAGE_ACK_ID, 0));
   }
