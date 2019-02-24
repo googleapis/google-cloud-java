@@ -485,6 +485,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * [AppEngineHttpQueue][google.cloud.tasks.v2beta3.AppEngineHttpQueue] settings apply only to
    * [App Engine tasks][google.cloud.tasks.v2beta3.AppEngineHttpRequest] in this queue.
+   * [Http tasks][google.cloud.tasks.v2beta3.HttpRequest] are not affected by this proto.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.AppEngineHttpQueue app_engine_http_queue = 3;</code>
@@ -498,6 +499,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * [AppEngineHttpQueue][google.cloud.tasks.v2beta3.AppEngineHttpQueue] settings apply only to
    * [App Engine tasks][google.cloud.tasks.v2beta3.AppEngineHttpRequest] in this queue.
+   * [Http tasks][google.cloud.tasks.v2beta3.HttpRequest] are not affected by this proto.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.AppEngineHttpQueue app_engine_http_queue = 3;</code>
@@ -514,6 +516,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * [AppEngineHttpQueue][google.cloud.tasks.v2beta3.AppEngineHttpQueue] settings apply only to
    * [App Engine tasks][google.cloud.tasks.v2beta3.AppEngineHttpRequest] in this queue.
+   * [Http tasks][google.cloud.tasks.v2beta3.HttpRequest] are not affected by this proto.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.AppEngineHttpQueue app_engine_http_queue = 3;</code>
@@ -1433,6 +1436,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * [AppEngineHttpQueue][google.cloud.tasks.v2beta3.AppEngineHttpQueue] settings apply only to
      * [App Engine tasks][google.cloud.tasks.v2beta3.AppEngineHttpRequest] in this queue.
+     * [Http tasks][google.cloud.tasks.v2beta3.HttpRequest] are not affected by this proto.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.AppEngineHttpQueue app_engine_http_queue = 3;</code>
@@ -1446,6 +1450,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * [AppEngineHttpQueue][google.cloud.tasks.v2beta3.AppEngineHttpQueue] settings apply only to
      * [App Engine tasks][google.cloud.tasks.v2beta3.AppEngineHttpRequest] in this queue.
+     * [Http tasks][google.cloud.tasks.v2beta3.HttpRequest] are not affected by this proto.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.AppEngineHttpQueue app_engine_http_queue = 3;</code>
@@ -1469,6 +1474,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * [AppEngineHttpQueue][google.cloud.tasks.v2beta3.AppEngineHttpQueue] settings apply only to
      * [App Engine tasks][google.cloud.tasks.v2beta3.AppEngineHttpRequest] in this queue.
+     * [Http tasks][google.cloud.tasks.v2beta3.HttpRequest] are not affected by this proto.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.AppEngineHttpQueue app_engine_http_queue = 3;</code>
@@ -1492,6 +1498,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * [AppEngineHttpQueue][google.cloud.tasks.v2beta3.AppEngineHttpQueue] settings apply only to
      * [App Engine tasks][google.cloud.tasks.v2beta3.AppEngineHttpRequest] in this queue.
+     * [Http tasks][google.cloud.tasks.v2beta3.HttpRequest] are not affected by this proto.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.AppEngineHttpQueue app_engine_http_queue = 3;</code>
@@ -1513,6 +1520,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * [AppEngineHttpQueue][google.cloud.tasks.v2beta3.AppEngineHttpQueue] settings apply only to
      * [App Engine tasks][google.cloud.tasks.v2beta3.AppEngineHttpRequest] in this queue.
+     * [Http tasks][google.cloud.tasks.v2beta3.HttpRequest] are not affected by this proto.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.AppEngineHttpQueue app_engine_http_queue = 3;</code>
@@ -1547,6 +1555,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * [AppEngineHttpQueue][google.cloud.tasks.v2beta3.AppEngineHttpQueue] settings apply only to
      * [App Engine tasks][google.cloud.tasks.v2beta3.AppEngineHttpRequest] in this queue.
+     * [Http tasks][google.cloud.tasks.v2beta3.HttpRequest] are not affected by this proto.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.AppEngineHttpQueue app_engine_http_queue = 3;</code>
@@ -1573,6 +1582,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * [AppEngineHttpQueue][google.cloud.tasks.v2beta3.AppEngineHttpQueue] settings apply only to
      * [App Engine tasks][google.cloud.tasks.v2beta3.AppEngineHttpRequest] in this queue.
+     * [Http tasks][google.cloud.tasks.v2beta3.HttpRequest] are not affected by this proto.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.AppEngineHttpQueue app_engine_http_queue = 3;</code>
@@ -1587,6 +1597,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * [AppEngineHttpQueue][google.cloud.tasks.v2beta3.AppEngineHttpQueue] settings apply only to
      * [App Engine tasks][google.cloud.tasks.v2beta3.AppEngineHttpRequest] in this queue.
+     * [Http tasks][google.cloud.tasks.v2beta3.HttpRequest] are not affected by this proto.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.AppEngineHttpQueue app_engine_http_queue = 3;</code>
@@ -1608,6 +1619,7 @@ public final class Queue extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * [AppEngineHttpQueue][google.cloud.tasks.v2beta3.AppEngineHttpQueue] settings apply only to
      * [App Engine tasks][google.cloud.tasks.v2beta3.AppEngineHttpRequest] in this queue.
+     * [Http tasks][google.cloud.tasks.v2beta3.HttpRequest] are not affected by this proto.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta3.AppEngineHttpQueue app_engine_http_queue = 3;</code>

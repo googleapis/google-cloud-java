@@ -34,29 +34,31 @@ public final class TaskProto {
           + "annotations.proto\032\'google/cloud/tasks/v2"
           + "beta3/target.proto\032\036google/protobuf/dura"
           + "tion.proto\032\037google/protobuf/timestamp.pr"
-          + "oto\032\027google/rpc/status.proto\"\242\004\n\004Task\022\014\n"
+          + "oto\032\027google/rpc/status.proto\"\343\004\n\004Task\022\014\n"
           + "\004name\030\001 \001(\t\022S\n\027app_engine_http_request\030\003"
           + " \001(\01320.google.cloud.tasks.v2beta3.AppEng"
-          + "ineHttpRequestH\000\0221\n\rschedule_time\030\004 \001(\0132"
-          + "\032.google.protobuf.Timestamp\022/\n\013create_ti"
-          + "me\030\005 \001(\0132\032.google.protobuf.Timestamp\0224\n\021"
-          + "dispatch_deadline\030\014 \001(\0132\031.google.protobu"
-          + "f.Duration\022\026\n\016dispatch_count\030\006 \001(\005\022\026\n\016re"
-          + "sponse_count\030\007 \001(\005\022:\n\rfirst_attempt\030\010 \001("
-          + "\0132#.google.cloud.tasks.v2beta3.Attempt\0229"
-          + "\n\014last_attempt\030\t \001(\0132#.google.cloud.task"
-          + "s.v2beta3.Attempt\0223\n\004view\030\n \001(\0162%.google"
-          + ".cloud.tasks.v2beta3.Task.View\"1\n\004View\022\024"
-          + "\n\020VIEW_UNSPECIFIED\020\000\022\t\n\005BASIC\020\001\022\010\n\004FULL\020"
-          + "\002B\016\n\014payload_type\"\317\001\n\007Attempt\0221\n\rschedul"
-          + "e_time\030\001 \001(\0132\032.google.protobuf.Timestamp"
-          + "\0221\n\rdispatch_time\030\002 \001(\0132\032.google.protobu"
-          + "f.Timestamp\0221\n\rresponse_time\030\003 \001(\0132\032.goo"
-          + "gle.protobuf.Timestamp\022+\n\017response_statu"
-          + "s\030\004 \001(\0132\022.google.rpc.StatusBn\n\036com.googl"
-          + "e.cloud.tasks.v2beta3B\tTaskProtoP\001Z?goog"
-          + "le.golang.org/genproto/googleapis/cloud/"
-          + "tasks/v2beta3;tasksb\006proto3"
+          + "ineHttpRequestH\000\022?\n\014http_request\030\013 \001(\0132\'"
+          + ".google.cloud.tasks.v2beta3.HttpRequestH"
+          + "\000\0221\n\rschedule_time\030\004 \001(\0132\032.google.protob"
+          + "uf.Timestamp\022/\n\013create_time\030\005 \001(\0132\032.goog"
+          + "le.protobuf.Timestamp\0224\n\021dispatch_deadli"
+          + "ne\030\014 \001(\0132\031.google.protobuf.Duration\022\026\n\016d"
+          + "ispatch_count\030\006 \001(\005\022\026\n\016response_count\030\007 "
+          + "\001(\005\022:\n\rfirst_attempt\030\010 \001(\0132#.google.clou"
+          + "d.tasks.v2beta3.Attempt\0229\n\014last_attempt\030"
+          + "\t \001(\0132#.google.cloud.tasks.v2beta3.Attem"
+          + "pt\0223\n\004view\030\n \001(\0162%.google.cloud.tasks.v2"
+          + "beta3.Task.View\"1\n\004View\022\024\n\020VIEW_UNSPECIF"
+          + "IED\020\000\022\t\n\005BASIC\020\001\022\010\n\004FULL\020\002B\016\n\014payload_ty"
+          + "pe\"\317\001\n\007Attempt\0221\n\rschedule_time\030\001 \001(\0132\032."
+          + "google.protobuf.Timestamp\0221\n\rdispatch_ti"
+          + "me\030\002 \001(\0132\032.google.protobuf.Timestamp\0221\n\r"
+          + "response_time\030\003 \001(\0132\032.google.protobuf.Ti"
+          + "mestamp\022+\n\017response_status\030\004 \001(\0132\022.googl"
+          + "e.rpc.StatusBn\n\036com.google.cloud.tasks.v"
+          + "2beta3B\tTaskProtoP\001Z?google.golang.org/g"
+          + "enproto/googleapis/cloud/tasks/v2beta3;t"
+          + "asksb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner() {
@@ -84,6 +86,7 @@ public final class TaskProto {
             new java.lang.String[] {
               "Name",
               "AppEngineHttpRequest",
+              "HttpRequest",
               "ScheduleTime",
               "CreateTime",
               "DispatchDeadline",
