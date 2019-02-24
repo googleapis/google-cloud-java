@@ -372,15 +372,14 @@ class MessageDispatcher {
 
   private void processOutstandingBatches() {
     for (OutstandingMessageBatch nextBatch = outstandingMessageBatches.poll();
-         nextBatch != null;
-         nextBatch = outstandingMessageBatches.poll()) {
+        nextBatch != null;
+        nextBatch = outstandingMessageBatches.poll()) {
       for (OutstandingMessage nextMessage = nextBatch.messages.poll();
-           nextMessage != null;
-           nextMessage = nextBatch.messages.poll()) {
+          nextMessage != null;
+          nextMessage = nextBatch.messages.poll()) {
         try {
           // This is a non-blocking flow controller.
-          flowController.reserve(
-              1, nextMessage.receivedMessage().getMessage().getSerializedSize());
+          flowController.reserve(1, nextMessage.receivedMessage().getMessage().getSerializedSize());
         } catch (FlowController.MaxOutstandingElementCountReachedException
             | FlowController.MaxOutstandingRequestBytesReachedException flowControlException) {
           // Reset the state, the current message and batch are unfinished.
