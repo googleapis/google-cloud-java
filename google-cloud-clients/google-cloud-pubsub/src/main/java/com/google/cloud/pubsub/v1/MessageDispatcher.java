@@ -17,15 +17,11 @@
 package com.google.cloud.pubsub.v1;
 
 import com.google.api.core.ApiClock;
-import com.google.api.core.ApiFutureCallback;
-import com.google.api.core.ApiFutures;
 import com.google.api.core.InternalApi;
-import com.google.api.core.SettableApiFuture;
 import com.google.api.gax.batching.FlowController;
 import com.google.api.gax.batching.FlowController.FlowControlException;
 import com.google.api.gax.core.Distribution;
 import com.google.common.primitives.Ints;
-import com.google.common.util.concurrent.MoreExecutors;
 import com.google.pubsub.v1.PubsubMessage;
 import com.google.pubsub.v1.ReceivedMessage;
 import java.util.ArrayList;
@@ -151,8 +147,7 @@ class MessageDispatcher {
     @Override
     public void ack() {
       ackLatencyDistribution.record(
-          Ints.saturatedCast(
-              (long) Math.ceil((clock.millisTime() - receivedTimeMillis) / 1000D)));
+          Ints.saturatedCast((long) Math.ceil((clock.millisTime() - receivedTimeMillis) / 1000D)));
       pendingAcks.add(ackId);
       forget();
     }
@@ -360,7 +355,9 @@ class MessageDispatcher {
             } catch (Exception e) {
               logger.log(
                   Level.WARNING,
-                  "MessageReceiver failed to processes ack ID: " + ackHandler.ackId + ", the message will be nacked.",
+                  "MessageReceiver failed to processes ack ID: "
+                      + ackHandler.ackId
+                      + ", the message will be nacked.",
                   e);
               ackHandler.nack();
             }
