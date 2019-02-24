@@ -162,9 +162,12 @@ public class Subscriber extends AbstractApiService {
 
     ExecutorProvider systemExecutorProvider = builder.systemExecutorProvider;
     if (systemExecutorProvider == null) {
-      systemExecutorProvider = FixedExecutorProvider.create(Executors.newScheduledThreadPool(
-          Math.max(SYSTEM_EXECUTOR_MIN_THREAD_COUNT, SYSTEM_EXECUTOR_THREADS_PER_PULLER * numPullers)
-      ));
+      systemExecutorProvider =
+          FixedExecutorProvider.create(
+              Executors.newScheduledThreadPool(
+                  Math.max(
+                      SYSTEM_EXECUTOR_MIN_THREAD_COUNT,
+                      SYSTEM_EXECUTOR_THREADS_PER_PULLER * numPullers)));
     }
 
     alarmsExecutor = systemExecutorProvider.getExecutor();
@@ -589,4 +592,3 @@ public class Subscriber extends AbstractApiService {
     }
   }
 }
-
