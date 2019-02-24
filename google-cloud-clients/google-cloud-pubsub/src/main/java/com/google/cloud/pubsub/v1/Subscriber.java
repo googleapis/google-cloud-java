@@ -99,7 +99,6 @@ public class Subscriber extends AbstractApiService {
 
   private final String subscriptionName;
   private final FlowControlSettings flowControlSettings;
-  private final boolean disableGrpcFlowControl;
   private final Duration ackExpirationPadding;
   private final Duration maxAckExtensionPeriod;
   private final ExecutorProvider executorProvider;
@@ -119,7 +118,6 @@ public class Subscriber extends AbstractApiService {
   private Subscriber(Builder builder) {
     receiver = builder.receiver;
     flowControlSettings = builder.flowControlSettings;
-    disableGrpcFlowControl = builder.disableGrpcFlowControl;
     subscriptionName = builder.subscriptionName;
 
     Preconditions.checkArgument(
@@ -413,7 +411,6 @@ public class Subscriber extends AbstractApiService {
 
     FlowControlSettings flowControlSettings =
         FlowControlSettings.newBuilder().setMaxOutstandingElementCount(1000L).build();
-    boolean disableGrpcFlowControl = false;
 
     ExecutorProvider executorProvider = DEFAULT_EXECUTOR_PROVIDER;
     ExecutorProvider systemExecutorProvider = null;
@@ -506,20 +503,6 @@ public class Subscriber extends AbstractApiService {
      */
     public Builder setFlowControlSettings(FlowControlSettings flowControlSettings) {
       this.flowControlSettings = Preconditions.checkNotNull(flowControlSettings);
-      return this;
-    }
-
-    /**
-     * Whether to disable the grpc inbound flow control mechanism.
-     *
-     * <p>This is enabled be default to further limit the amount of messages in memory under tight
-     * flow control limits.
-     *
-     * <p>This can be disabled to increase the throughput of a subscriber at the cost of greater
-     * memory usage. The FlowControlSettings will apply whether this is set or not.
-     */
-    public Builder disableGrpcFlowControl() {
-      this.disableGrpcFlowControl = true;
       return this;
     }
 
