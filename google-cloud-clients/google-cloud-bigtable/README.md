@@ -144,7 +144,7 @@ If you are using Maven, add this to your pom.xml file
 ```xml
 <dependency>
   <groupId>io.opencensus</groupId>
-  <artifactId>io.opencensus</artifactId>
+  <artifactId>opencensus-impl</artifactId>
   <version>0.18.0</version>
 </dependency>
 <dependency>
