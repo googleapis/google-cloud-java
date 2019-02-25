@@ -16,6 +16,7 @@
 package com.google.cloud.pubsub.v1;
 
 import com.google.cloud.ServiceOptions;
+import com.google.common.annotations.VisibleForTesting;
 import com.google.errorprone.annotations.MustBeClosed;
 import com.google.pubsub.v1.PubsubMessage;
 
@@ -53,6 +54,7 @@ final class OpenCensusUtil {
 
   public static final String TAG_CONTEXT_KEY = "googclient_OpenCensusTagContextKey";
   public static final String TRACE_CONTEXT_KEY = "googclient_OpenCensusTraceContextKey";
+  @VisibleForTesting static final String MESSAGE_RECEIVER_SPAN_NAME = "OpenCensusMessageReceiver";
   private static final String TRACEPARENT_KEY = "traceparent";
 
   private static final Tagger tagger = Tags.getTagger();
@@ -103,7 +105,8 @@ final class OpenCensusUtil {
       }
     };
 
-  private static String encodeSpanContext(SpanContext ctxt) {
+  @VisibleForTesting
+  static String encodeSpanContext(SpanContext ctxt) {
     StringBuilder builder = new StringBuilder();
     traceContextTextFormat.inject(ctxt, builder, setter);
     return builder.toString();
@@ -121,8 +124,9 @@ final class OpenCensusUtil {
     return tagger.withTagContext(tagger.getCurrentTagContext());
   }
 
+  @VisibleForTesting
   @MustBeClosed
-  private static Scope createScopedSpan(String name) {
+  static Scope createScopedSpan(String name) {
     return tracer
         .spanBuilderWithExplicitParent(name, tracer.getCurrentSpan())
         .setRecordEvents(true)
@@ -142,7 +146,8 @@ final class OpenCensusUtil {
     }
   }
 
-  // class
+  // Wrapper class for {@link MessageReceiver} that decodes any received trace and tag contexts
+  // and puts them in scope.
   private static final class OpenCensusMessageReceiver implements MessageReceiver {
     private final MessageReceiver receiver;
 
@@ -168,7 +173,7 @@ final class OpenCensusUtil {
         receiver.receiveMessage(message, consumer);
         return;
       }
-      try (Scope spanScope = createScopedSpan("receiver")) {
+      try (Scope spanScope = createScopedSpan(MESSAGE_RECEIVER_SPAN_NAME)) {
         addParentLink(encodedSpanContext);
         receiver.receiveMessage(message, consumer);
       }
