@@ -34,6 +34,8 @@ public class BigQueryOptions extends ServiceOptions<BigQuery, BigQueryOptions> {
   private static final Set<String> SCOPES = ImmutableSet.of(BIGQUERY_SCOPE);
   private static final long serialVersionUID = -2437598817433266049L;
   private final String location;
+  // set the option ThrowNotFound when you want to throw the exception when the value not found
+  private boolean setThrowNotFound;
 
   public static class DefaultBigQueryFactory implements BigQueryFactory {
 
@@ -123,6 +125,14 @@ public class BigQueryOptions extends ServiceOptions<BigQuery, BigQueryOptions> {
 
   public String getLocation() {
     return location;
+  }
+
+  public void setThrowNotFound(boolean setThrowNotFound) {
+    this.setThrowNotFound = setThrowNotFound;
+  }
+
+  public boolean getThrowNotFound() {
+    return setThrowNotFound;
   }
 
   @SuppressWarnings("unchecked")
