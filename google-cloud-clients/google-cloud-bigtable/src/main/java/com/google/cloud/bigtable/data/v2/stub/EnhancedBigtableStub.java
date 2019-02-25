@@ -317,9 +317,7 @@ public class EnhancedBigtableStub implements AutoCloseable {
     UnaryCallable<MutateRowsRequest, Void> baseCallable = createMutateRowsBaseCallable();
 
     return createUserFacingUnaryCallable(
-        "BulkMutateRows",
-        new BulkMutateRowsUserFacingCallable(baseCallable, requestContext)
-    );
+        "BulkMutateRows", new BulkMutateRowsUserFacingCallable(baseCallable, requestContext));
   }
 
   /**
