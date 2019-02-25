@@ -261,15 +261,8 @@ public class EnhancedBigtableStub implements AutoCloseable {
     FilterMarkerRowsCallable<RowT> filtering =
         new FilterMarkerRowsCallable<>(retrying2, rowAdapter);
 
-    ReadRowsUserCallable<RowT> userFacing = new ReadRowsUserCallable<>(filtering, requestContext);
-
-    TracedServerStreamingCallable<Query, RowT> traced =
-        new TracedServerStreamingCallable<>(
-            userFacing,
-            clientContext.getTracerFactory(),
-            SpanName.of(TRACING_OUTER_CLIENT_NAME, "ReadRows"));
-
-    return traced.withDefaultCallContext(clientContext.getDefaultCallContext());
+    return createUserFacingServerStreamingCallable(
+        "ReadRows", new ReadRowsUserCallable<>(filtering, requestContext));
   }
 
   /**
@@ -290,16 +283,8 @@ public class EnhancedBigtableStub implements AutoCloseable {
     UnaryCallable<SampleRowKeysRequest, List<SampleRowKeysResponse>> retryable =
         Callables.retrying(spoolable, settings.sampleRowKeysSettings(), clientContext);
 
-    UnaryCallable<String, List<KeyOffset>> userFacing =
-        new SampleRowKeysCallable(retryable, requestContext);
-
-    UnaryCallable<String, List<KeyOffset>> traced =
-        new TracedUnaryCallable<>(
-            userFacing,
-            clientContext.getTracerFactory(),
-            SpanName.of(TRACING_OUTER_CLIENT_NAME, "SampleRowKeys"));
-
-    return traced.withDefaultCallContext(clientContext.getDefaultCallContext());
+    return createUserFacingUnaryCallable(
+        "SampleRowKeys", new SampleRowKeysCallable(retryable, requestContext));
   }
 
   /**
@@ -310,15 +295,8 @@ public class EnhancedBigtableStub implements AutoCloseable {
    * </ul>
    */
   private UnaryCallable<RowMutation, Void> createMutateRowCallable() {
-    MutateRowCallable userFacing = new MutateRowCallable(stub.mutateRowCallable(), requestContext);
-
-    UnaryCallable<RowMutation, Void> traced =
-        new TracedUnaryCallable<>(
-            userFacing,
-            clientContext.getTracerFactory(),
-            SpanName.of(TRACING_OUTER_CLIENT_NAME, "MutateRow"));
-
-    return traced.withDefaultCallContext(clientContext.getDefaultCallContext());
+    return createUserFacingUnaryCallable(
+        "MutateRow", new MutateRowCallable(stub.mutateRowCallable(), requestContext));
   }
 
   /**
@@ -337,16 +315,11 @@ public class EnhancedBigtableStub implements AutoCloseable {
    */
   private UnaryCallable<BulkMutation, Void> createBulkMutateRowsCallable() {
     UnaryCallable<MutateRowsRequest, Void> baseCallable = createMutateRowsBaseCallable();
-    BulkMutateRowsUserFacingCallable userFacing =
-        new BulkMutateRowsUserFacingCallable(baseCallable, requestContext);
 
-    TracedUnaryCallable<BulkMutation, Void> traced =
-        new TracedUnaryCallable<>(
-            userFacing,
-            clientContext.getTracerFactory(),
-            SpanName.of(TRACING_OUTER_CLIENT_NAME, "BulkMutateRows"));
-
-    return traced.withDefaultCallContext(clientContext.getDefaultCallContext());
+    return createUserFacingUnaryCallable(
+        "BulkMutateRows",
+        new BulkMutateRowsUserFacingCallable(baseCallable, requestContext)
+    );
   }
 
   /**
@@ -373,6 +346,8 @@ public class EnhancedBigtableStub implements AutoCloseable {
         BatchingCallSettings.newBuilder(new MutateRowsBatchingDescriptor())
             .setBatchingSettings(settings.bulkMutateRowsSettings().getBatchingSettings());
 
+    // This is a special case, the tracing starts after the batching, so we can't use
+    // createUserFacingUnaryCallable
     TracedBatchingCallable<MutateRowsRequest, Void> traced =
         new TracedBatchingCallable<>(
             baseCallable,
@@ -420,16 +395,9 @@ public class EnhancedBigtableStub implements AutoCloseable {
    * </ul>
    */
   private UnaryCallable<ConditionalRowMutation, Boolean> createCheckAndMutateRowCallable() {
-    CheckAndMutateRowCallable userFacing =
-        new CheckAndMutateRowCallable(stub.checkAndMutateRowCallable(), requestContext);
-
-    TracedUnaryCallable<ConditionalRowMutation, Boolean> traced =
-        new TracedUnaryCallable<>(
-            userFacing,
-            clientContext.getTracerFactory(),
-            SpanName.of(TRACING_OUTER_CLIENT_NAME, "CheckAndMutateRow"));
-
-    return traced.withDefaultCallContext(clientContext.getDefaultCallContext());
+    return createUserFacingUnaryCallable(
+        "CheckAndMutateRow",
+        new CheckAndMutateRowCallable(stub.checkAndMutateRowCallable(), requestContext));
   }
 
   /**
@@ -442,14 +410,40 @@ public class EnhancedBigtableStub implements AutoCloseable {
    * </ul>
    */
   private UnaryCallable<ReadModifyWriteRow, Row> createReadModifyWriteRowCallable() {
-    ReadModifyWriteRowCallable userFacing =
-        new ReadModifyWriteRowCallable(stub.readModifyWriteRowCallable(), requestContext);
+    return createUserFacingUnaryCallable(
+        "ReadModifyWriteRow",
+        new ReadModifyWriteRowCallable(stub.readModifyWriteRowCallable(), requestContext));
+  }
 
-    TracedUnaryCallable<ReadModifyWriteRow, Row> traced =
+  /**
+   * Wraps a callable chain in a user presentable callable that will inject the default call context
+   * and trace the call.
+   */
+  private <RequestT, ResponseT> UnaryCallable<RequestT, ResponseT> createUserFacingUnaryCallable(
+      String methodName, UnaryCallable<RequestT, ResponseT> inner) {
+
+    UnaryCallable<RequestT, ResponseT> traced =
         new TracedUnaryCallable<>(
-            userFacing,
+            inner,
             clientContext.getTracerFactory(),
-            SpanName.of(TRACING_OUTER_CLIENT_NAME, "ReadModifyWriteRow"));
+            SpanName.of(TRACING_OUTER_CLIENT_NAME, methodName));
+
+    return traced.withDefaultCallContext(clientContext.getDefaultCallContext());
+  }
+
+  /**
+   * Wraps a callable chain in a user presentable callable that will inject the default call context
+   * and trace the call.
+   */
+  private <RequestT, ResponseT>
+      ServerStreamingCallable<RequestT, ResponseT> createUserFacingServerStreamingCallable(
+          String methodName, ServerStreamingCallable<RequestT, ResponseT> inner) {
+
+    ServerStreamingCallable<RequestT, ResponseT> traced =
+        new TracedServerStreamingCallable<>(
+            inner,
+            clientContext.getTracerFactory(),
+            SpanName.of(TRACING_OUTER_CLIENT_NAME, methodName));
 
     return traced.withDefaultCallContext(clientContext.getDefaultCallContext());
   }
