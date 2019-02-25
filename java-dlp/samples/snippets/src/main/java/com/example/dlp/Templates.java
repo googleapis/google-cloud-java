@@ -218,7 +218,7 @@ public class Templates {
       cmd = parser.parse(commandLineOptions, args);
     } catch (ParseException e) {
       System.out.println(e.getMessage());
-      formatter.printHelp(Redact.class.getName(), commandLineOptions);
+      formatter.printHelp("dlp_snippets", commandLineOptions);
       System.exit(1);
       return;
     }
