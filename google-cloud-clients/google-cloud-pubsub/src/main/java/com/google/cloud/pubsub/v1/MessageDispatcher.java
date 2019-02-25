@@ -54,7 +54,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.threeten.bp.Duration;
 import org.threeten.bp.Instant;
-import org.threeten.bp.temporal.ChronoUnit;
 
 /**
  * Dispatches messages to a message receiver while handling the messages acking and lease
@@ -458,12 +457,11 @@ class MessageDispatcher {
     List<PendingModifyAckDeadline> modacks = new ArrayList<>();
     PendingModifyAckDeadline modack = new PendingModifyAckDeadline(extendSeconds);
     Instant now = now();
-    Instant extendTo = now.plusSeconds(extendSeconds);
 
     for (Map.Entry<String, AckHandler> entry : pendingMessages.entrySet()) {
       String ackId = entry.getKey();
       Instant totalExpiration = entry.getValue().totalExpiration;
-      if (totalExpiration.isAfter(extendTo)) {
+      if (totalExpiration.isAfter(now)) {
         modack.ackIds.add(ackId);
         continue;
       }
@@ -471,10 +469,6 @@ class MessageDispatcher {
       // forget removes from pendingMessages; this is OK, concurrent maps can
       // handle concurrent iterations and modifications.
       entry.getValue().forget();
-      if (totalExpiration.isAfter(now)) {
-        int sec = Math.max(1, (int) now.until(totalExpiration, ChronoUnit.SECONDS));
-        modacks.add(new PendingModifyAckDeadline(sec, ackId));
-      }
     }
     logger.log(Level.FINER, "Sending {0} modacks", modack.ackIds.size() + modacks.size());
     modacks.add(modack);
