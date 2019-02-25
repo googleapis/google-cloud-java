@@ -367,6 +367,18 @@ public class BigQueryImplTest {
   }
 
   @Test
+  public void testGetDatasetNotFoundWhenThrowIsDisabled() {
+    EasyMock.expect(bigqueryRpcMock.getDataset(PROJECT, DATASET, EMPTY_RPC_OPTIONS))
+        .andReturn(DATASET_INFO_WITH_PROJECT.toPb());
+    EasyMock.replay(bigqueryRpcMock);
+    options.setThrowNotFound(false);
+    bigquery = options.getService();
+    Dataset dataset = bigquery.getDataset(DATASET);
+    assertEquals(
+        new Dataset(bigquery, new DatasetInfo.BuilderImpl(DATASET_INFO_WITH_PROJECT)), dataset);
+  }
+
+  @Test
   public void testGetDatasetNotFoundWhenThrowIsEnabled() {
     EasyMock.expect(bigqueryRpcMock.getDataset(PROJECT, "dataset-not-found", EMPTY_RPC_OPTIONS))
         .andThrow(new BigQueryException(404, "Dataset not found"));
@@ -609,6 +621,17 @@ public class BigQueryImplTest {
     EasyMock.expect(bigqueryRpcMock.getTable(PROJECT, DATASET, TABLE, EMPTY_RPC_OPTIONS))
         .andReturn(TABLE_INFO_WITH_PROJECT.toPb());
     EasyMock.replay(bigqueryRpcMock);
+    bigquery = options.getService();
+    Table table = bigquery.getTable(DATASET, TABLE);
+    assertEquals(new Table(bigquery, new TableInfo.BuilderImpl(TABLE_INFO_WITH_PROJECT)), table);
+  }
+
+  @Test
+  public void testGetTableNotFoundWhenThrowIsDisabled() {
+    EasyMock.expect(bigqueryRpcMock.getTable(PROJECT, DATASET, TABLE, EMPTY_RPC_OPTIONS))
+        .andReturn(TABLE_INFO_WITH_PROJECT.toPb());
+    EasyMock.replay(bigqueryRpcMock);
+    options.setThrowNotFound(false);
     bigquery = options.getService();
     Table table = bigquery.getTable(DATASET, TABLE);
     assertEquals(new Table(bigquery, new TableInfo.BuilderImpl(TABLE_INFO_WITH_PROJECT)), table);
@@ -1219,6 +1242,17 @@ public class BigQueryImplTest {
         .andReturn(COMPLETE_COPY_JOB.toPb());
     EasyMock.replay(bigqueryRpcMock);
     BigQueryOptions options = createBigQueryOptionsForProjectWithLocation(PROJECT, rpcFactoryMock);
+    bigquery = options.getService();
+    Job job = bigquery.getJob(JOB);
+    assertEquals(new Job(bigquery, new JobInfo.BuilderImpl(COMPLETE_COPY_JOB)), job);
+  }
+
+  @Test
+  public void testGetJobNotFoundWhenThrowIsDisabled() {
+    EasyMock.expect(bigqueryRpcMock.getJob(PROJECT, JOB, null, EMPTY_RPC_OPTIONS))
+        .andReturn(COMPLETE_COPY_JOB.toPb());
+    EasyMock.replay(bigqueryRpcMock);
+    options.setThrowNotFound(false);
     bigquery = options.getService();
     Job job = bigquery.getJob(JOB);
     assertEquals(new Job(bigquery, new JobInfo.BuilderImpl(COMPLETE_COPY_JOB)), job);
