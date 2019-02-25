@@ -101,7 +101,7 @@ public class Subscriber extends AbstractApiService {
   private final FlowControlSettings flowControlSettings;
   private final Duration ackExpirationPadding;
   private final Duration maxAckExtensionPeriod;
-  private final ScheduledExecutorService executor;
+  private final ExecutorProvider executorProvider;
   @Nullable private final ScheduledExecutorService alarmsExecutor;
   private final Distribution ackLatencyDistribution =
       new Distribution(MAX_ACK_DEADLINE_SECONDS + 1);
@@ -138,16 +138,7 @@ public class Subscriber extends AbstractApiService {
                 .setLimitExceededBehavior(LimitExceededBehavior.ThrowException)
                 .build());
 
-    executor = builder.executorProvider.getExecutor();
-    if (builder.executorProvider.shouldAutoClose()) {
-      closeables.add(
-          new AutoCloseable() {
-            @Override
-            public void close() {
-              executor.shutdown();
-            }
-          });
-    }
+    executorProvider = builder.executorProvider;
 
     this.numPullers = builder.parallelPullCount;
     streamingSubscriberConnections = new ArrayList<>(numPullers);
@@ -330,6 +321,16 @@ public class Subscriber extends AbstractApiService {
   private void startStreamingConnections() throws IOException {
     synchronized (streamingSubscriberConnections) {
       for (int i = 0; i < numPullers; i++) {
+        final ScheduledExecutorService executor = executorProvider.getExecutor();
+        if (executorProvider.shouldAutoClose()) {
+          closeables.add(
+              new AutoCloseable() {
+                @Override
+                public void close() {
+                  executor.shutdown();
+                }
+              });
+        }
         streamingSubscriberConnections.add(
             new StreamingSubscriberConnection(
                 subscriptionName,
@@ -372,7 +373,7 @@ public class Subscriber extends AbstractApiService {
   private void startConnections(
       List<? extends ApiService> connections, final ApiService.Listener connectionsListener) {
     for (ApiService subscriber : connections) {
-      subscriber.addListener(connectionsListener, executor);
+      subscriber.addListener(connectionsListener, alarmsExecutor);
       subscriber.startAsync();
     }
     for (ApiService subscriber : connections) {
