@@ -12,7 +12,8 @@ public interface DestroyCryptoKeyVersionRequestOrBuilder
    *
    *
    * <pre>
-   * The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to destroy.
+   * The resource name of the
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to destroy.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -22,7 +23,8 @@ public interface DestroyCryptoKeyVersionRequestOrBuilder
    *
    *
    * <pre>
-   * The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to destroy.
+   * The resource name of the
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to destroy.
    * </pre>
    *
    * <code>string name = 1;</code>

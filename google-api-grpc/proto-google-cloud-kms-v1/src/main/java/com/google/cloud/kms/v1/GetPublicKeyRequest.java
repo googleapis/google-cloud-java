@@ -7,7 +7,8 @@ package com.google.cloud.kms.v1;
  *
  *
  * <pre>
- * Request message for [KeyManagementService.GetPublicKey][google.cloud.kms.v1.KeyManagementService.GetPublicKey].
+ * Request message for
+ * [KeyManagementService.GetPublicKey][google.cloud.kms.v1.KeyManagementService.GetPublicKey].
  * </pre>
  *
  * Protobuf type {@code google.cloud.kms.v1.GetPublicKeyRequest}
@@ -97,8 +98,8 @@ public final class GetPublicKeyRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] public key to
-   * get.
+   * The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] public key to get.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -118,8 +119,8 @@ public final class GetPublicKeyRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] public key to
-   * get.
+   * The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] public key to get.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -300,7 +301,8 @@ public final class GetPublicKeyRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Request message for [KeyManagementService.GetPublicKey][google.cloud.kms.v1.KeyManagementService.GetPublicKey].
+   * Request message for
+   * [KeyManagementService.GetPublicKey][google.cloud.kms.v1.KeyManagementService.GetPublicKey].
    * </pre>
    *
    * Protobuf type {@code google.cloud.kms.v1.GetPublicKeyRequest}
@@ -458,8 +460,8 @@ public final class GetPublicKeyRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] public key to
-     * get.
+     * The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] public key to get.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -479,8 +481,8 @@ public final class GetPublicKeyRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] public key to
-     * get.
+     * The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] public key to get.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -500,8 +502,8 @@ public final class GetPublicKeyRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] public key to
-     * get.
+     * The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] public key to get.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -519,8 +521,8 @@ public final class GetPublicKeyRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] public key to
-     * get.
+     * The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] public key to get.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -535,8 +537,8 @@ public final class GetPublicKeyRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] public key to
-     * get.
+     * The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] public key to get.
      * </pre>
      *
      * <code>string name = 1;</code>
