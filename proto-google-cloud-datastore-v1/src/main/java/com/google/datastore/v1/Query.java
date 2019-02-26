@@ -508,7 +508,8 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * A starting point for the query results. Query cursors are
    * returned in query result batches and
-   * [can only be used to continue the same query](https://cloud.google.com/datastore/docs/concepts/queries#cursors_limits_and_offsets).
+   * [can only be used to continue the same
+   * query](https://cloud.google.com/datastore/docs/concepts/queries#cursors_limits_and_offsets).
    * </pre>
    *
    * <code>bytes start_cursor = 7;</code>
@@ -525,7 +526,8 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
    * <pre>
    * An ending point for the query results. Query cursors are
    * returned in query result batches and
-   * [can only be used to limit the same query](https://cloud.google.com/datastore/docs/concepts/queries#cursors_limits_and_offsets).
+   * [can only be used to limit the same
+   * query](https://cloud.google.com/datastore/docs/concepts/queries#cursors_limits_and_offsets).
    * </pre>
    *
    * <code>bytes end_cursor = 8;</code>
@@ -2861,7 +2863,8 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A starting point for the query results. Query cursors are
      * returned in query result batches and
-     * [can only be used to continue the same query](https://cloud.google.com/datastore/docs/concepts/queries#cursors_limits_and_offsets).
+     * [can only be used to continue the same
+     * query](https://cloud.google.com/datastore/docs/concepts/queries#cursors_limits_and_offsets).
      * </pre>
      *
      * <code>bytes start_cursor = 7;</code>
@@ -2875,7 +2878,8 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A starting point for the query results. Query cursors are
      * returned in query result batches and
-     * [can only be used to continue the same query](https://cloud.google.com/datastore/docs/concepts/queries#cursors_limits_and_offsets).
+     * [can only be used to continue the same
+     * query](https://cloud.google.com/datastore/docs/concepts/queries#cursors_limits_and_offsets).
      * </pre>
      *
      * <code>bytes start_cursor = 7;</code>
@@ -2895,7 +2899,8 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * A starting point for the query results. Query cursors are
      * returned in query result batches and
-     * [can only be used to continue the same query](https://cloud.google.com/datastore/docs/concepts/queries#cursors_limits_and_offsets).
+     * [can only be used to continue the same
+     * query](https://cloud.google.com/datastore/docs/concepts/queries#cursors_limits_and_offsets).
      * </pre>
      *
      * <code>bytes start_cursor = 7;</code>
@@ -2914,7 +2919,8 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * An ending point for the query results. Query cursors are
      * returned in query result batches and
-     * [can only be used to limit the same query](https://cloud.google.com/datastore/docs/concepts/queries#cursors_limits_and_offsets).
+     * [can only be used to limit the same
+     * query](https://cloud.google.com/datastore/docs/concepts/queries#cursors_limits_and_offsets).
      * </pre>
      *
      * <code>bytes end_cursor = 8;</code>
@@ -2928,7 +2934,8 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * An ending point for the query results. Query cursors are
      * returned in query result batches and
-     * [can only be used to limit the same query](https://cloud.google.com/datastore/docs/concepts/queries#cursors_limits_and_offsets).
+     * [can only be used to limit the same
+     * query](https://cloud.google.com/datastore/docs/concepts/queries#cursors_limits_and_offsets).
      * </pre>
      *
      * <code>bytes end_cursor = 8;</code>
@@ -2948,7 +2955,8 @@ public final class Query extends com.google.protobuf.GeneratedMessageV3
      * <pre>
      * An ending point for the query results. Query cursors are
      * returned in query result batches and
-     * [can only be used to limit the same query](https://cloud.google.com/datastore/docs/concepts/queries#cursors_limits_and_offsets).
+     * [can only be used to limit the same
+     * query](https://cloud.google.com/datastore/docs/concepts/queries#cursors_limits_and_offsets).
      * </pre>
      *
      * <code>bytes end_cursor = 8;</code>
