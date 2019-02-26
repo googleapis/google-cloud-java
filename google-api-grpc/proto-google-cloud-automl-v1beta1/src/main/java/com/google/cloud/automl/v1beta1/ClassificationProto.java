@@ -1172,7 +1172,10 @@ public final class ClassificationProto {
        *
        *
        * <pre>
-       * Output only. The harmonic mean of [recall_at1][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.recall_at1] and [precision_at1][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.precision_at1].
+       * Output only. The harmonic mean of
+       * [recall_at1][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.recall_at1]
+       * and
+       * [precision_at1][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.precision_at1].
        * </pre>
        *
        * <code>float f1_score_at1 = 7;</code>
@@ -1405,7 +1408,10 @@ public final class ClassificationProto {
        *
        *
        * <pre>
-       * Output only. The harmonic mean of [recall_at1][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.recall_at1] and [precision_at1][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.precision_at1].
+       * Output only. The harmonic mean of
+       * [recall_at1][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.recall_at1]
+       * and
+       * [precision_at1][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.precision_at1].
        * </pre>
        *
        * <code>float f1_score_at1 = 7;</code>
@@ -2189,7 +2195,10 @@ public final class ClassificationProto {
          *
          *
          * <pre>
-         * Output only. The harmonic mean of [recall_at1][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.recall_at1] and [precision_at1][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.precision_at1].
+         * Output only. The harmonic mean of
+         * [recall_at1][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.recall_at1]
+         * and
+         * [precision_at1][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.precision_at1].
          * </pre>
          *
          * <code>float f1_score_at1 = 7;</code>
@@ -2201,7 +2210,10 @@ public final class ClassificationProto {
          *
          *
          * <pre>
-         * Output only. The harmonic mean of [recall_at1][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.recall_at1] and [precision_at1][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.precision_at1].
+         * Output only. The harmonic mean of
+         * [recall_at1][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.recall_at1]
+         * and
+         * [precision_at1][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.precision_at1].
          * </pre>
          *
          * <code>float f1_score_at1 = 7;</code>
@@ -2216,7 +2228,10 @@ public final class ClassificationProto {
          *
          *
          * <pre>
-         * Output only. The harmonic mean of [recall_at1][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.recall_at1] and [precision_at1][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.precision_at1].
+         * Output only. The harmonic mean of
+         * [recall_at1][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.recall_at1]
+         * and
+         * [precision_at1][google.cloud.automl.v1beta1.ClassificationEvaluationMetrics.ConfidenceMetricsEntry.precision_at1].
          * </pre>
          *
          * <code>float f1_score_at1 = 7;</code>

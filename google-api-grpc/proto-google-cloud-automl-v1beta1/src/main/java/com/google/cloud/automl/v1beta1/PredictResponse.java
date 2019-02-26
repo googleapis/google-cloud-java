@@ -7,7 +7,8 @@ package com.google.cloud.automl.v1beta1;
  *
  *
  * <pre>
- * Response message for [PredictionService.Predict][google.cloud.automl.v1beta1.PredictionService.Predict].
+ * Response message for
+ * [PredictionService.Predict][google.cloud.automl.v1beta1.PredictionService.Predict].
  * Currently, this is only
  * used to return an image recognition prediction result. More prediction
  * output metadata might be introduced in the future.
@@ -470,7 +471,8 @@ public final class PredictResponse extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Response message for [PredictionService.Predict][google.cloud.automl.v1beta1.PredictionService.Predict].
+   * Response message for
+   * [PredictionService.Predict][google.cloud.automl.v1beta1.PredictionService.Predict].
    * Currently, this is only
    * used to return an image recognition prediction result. More prediction
    * output metadata might be introduced in the future.

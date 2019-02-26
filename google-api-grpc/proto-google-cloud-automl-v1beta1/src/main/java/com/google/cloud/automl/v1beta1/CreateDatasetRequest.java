@@ -7,7 +7,8 @@ package com.google.cloud.automl.v1beta1;
  *
  *
  * <pre>
- * Request message for [AutoMl.CreateDataset][google.cloud.automl.v1beta1.AutoMl.CreateDataset].
+ * Request message for
+ * [AutoMl.CreateDataset][google.cloud.automl.v1beta1.AutoMl.CreateDataset].
  * </pre>
  *
  * Protobuf type {@code google.cloud.automl.v1beta1.CreateDatasetRequest}
@@ -369,7 +370,8 @@ public final class CreateDatasetRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Request message for [AutoMl.CreateDataset][google.cloud.automl.v1beta1.AutoMl.CreateDataset].
+   * Request message for
+   * [AutoMl.CreateDataset][google.cloud.automl.v1beta1.AutoMl.CreateDataset].
    * </pre>
    *
    * Protobuf type {@code google.cloud.automl.v1beta1.CreateDatasetRequest}
