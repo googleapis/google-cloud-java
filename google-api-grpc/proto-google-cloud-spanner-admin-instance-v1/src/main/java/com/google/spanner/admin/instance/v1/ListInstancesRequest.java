@@ -7,7 +7,8 @@ package com.google.spanner.admin.instance.v1;
  *
  *
  * <pre>
- * The request for [ListInstances][google.spanner.admin.instance.v1.InstanceAdmin.ListInstances].
+ * The request for
+ * [ListInstances][google.spanner.admin.instance.v1.InstanceAdmin.ListInstances].
  * </pre>
  *
  * Protobuf type {@code google.spanner.admin.instance.v1.ListInstancesRequest}
@@ -181,8 +182,9 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * If non-empty, `page_token` should contain a
-   * [next_page_token][google.spanner.admin.instance.v1.ListInstancesResponse.next_page_token] from a
-   * previous [ListInstancesResponse][google.spanner.admin.instance.v1.ListInstancesResponse].
+   * [next_page_token][google.spanner.admin.instance.v1.ListInstancesResponse.next_page_token]
+   * from a previous
+   * [ListInstancesResponse][google.spanner.admin.instance.v1.ListInstancesResponse].
    * </pre>
    *
    * <code>string page_token = 3;</code>
@@ -203,8 +205,9 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * If non-empty, `page_token` should contain a
-   * [next_page_token][google.spanner.admin.instance.v1.ListInstancesResponse.next_page_token] from a
-   * previous [ListInstancesResponse][google.spanner.admin.instance.v1.ListInstancesResponse].
+   * [next_page_token][google.spanner.admin.instance.v1.ListInstancesResponse.next_page_token]
+   * from a previous
+   * [ListInstancesResponse][google.spanner.admin.instance.v1.ListInstancesResponse].
    * </pre>
    *
    * <code>string page_token = 3;</code>
@@ -486,7 +489,8 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The request for [ListInstances][google.spanner.admin.instance.v1.InstanceAdmin.ListInstances].
+   * The request for
+   * [ListInstances][google.spanner.admin.instance.v1.InstanceAdmin.ListInstances].
    * </pre>
    *
    * Protobuf type {@code google.spanner.admin.instance.v1.ListInstancesRequest}
@@ -813,8 +817,9 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * If non-empty, `page_token` should contain a
-     * [next_page_token][google.spanner.admin.instance.v1.ListInstancesResponse.next_page_token] from a
-     * previous [ListInstancesResponse][google.spanner.admin.instance.v1.ListInstancesResponse].
+     * [next_page_token][google.spanner.admin.instance.v1.ListInstancesResponse.next_page_token]
+     * from a previous
+     * [ListInstancesResponse][google.spanner.admin.instance.v1.ListInstancesResponse].
      * </pre>
      *
      * <code>string page_token = 3;</code>
@@ -835,8 +840,9 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * If non-empty, `page_token` should contain a
-     * [next_page_token][google.spanner.admin.instance.v1.ListInstancesResponse.next_page_token] from a
-     * previous [ListInstancesResponse][google.spanner.admin.instance.v1.ListInstancesResponse].
+     * [next_page_token][google.spanner.admin.instance.v1.ListInstancesResponse.next_page_token]
+     * from a previous
+     * [ListInstancesResponse][google.spanner.admin.instance.v1.ListInstancesResponse].
      * </pre>
      *
      * <code>string page_token = 3;</code>
@@ -857,8 +863,9 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * If non-empty, `page_token` should contain a
-     * [next_page_token][google.spanner.admin.instance.v1.ListInstancesResponse.next_page_token] from a
-     * previous [ListInstancesResponse][google.spanner.admin.instance.v1.ListInstancesResponse].
+     * [next_page_token][google.spanner.admin.instance.v1.ListInstancesResponse.next_page_token]
+     * from a previous
+     * [ListInstancesResponse][google.spanner.admin.instance.v1.ListInstancesResponse].
      * </pre>
      *
      * <code>string page_token = 3;</code>
@@ -877,8 +884,9 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * If non-empty, `page_token` should contain a
-     * [next_page_token][google.spanner.admin.instance.v1.ListInstancesResponse.next_page_token] from a
-     * previous [ListInstancesResponse][google.spanner.admin.instance.v1.ListInstancesResponse].
+     * [next_page_token][google.spanner.admin.instance.v1.ListInstancesResponse.next_page_token]
+     * from a previous
+     * [ListInstancesResponse][google.spanner.admin.instance.v1.ListInstancesResponse].
      * </pre>
      *
      * <code>string page_token = 3;</code>
@@ -894,8 +902,9 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
      *
      * <pre>
      * If non-empty, `page_token` should contain a
-     * [next_page_token][google.spanner.admin.instance.v1.ListInstancesResponse.next_page_token] from a
-     * previous [ListInstancesResponse][google.spanner.admin.instance.v1.ListInstancesResponse].
+     * [next_page_token][google.spanner.admin.instance.v1.ListInstancesResponse.next_page_token]
+     * from a previous
+     * [ListInstancesResponse][google.spanner.admin.instance.v1.ListInstancesResponse].
      * </pre>
      *
      * <code>string page_token = 3;</code>

@@ -7,7 +7,8 @@ package com.google.spanner.admin.database.v1;
  *
  *
  * <pre>
- * The request for [DropDatabase][google.spanner.admin.database.v1.DatabaseAdmin.DropDatabase].
+ * The request for
+ * [DropDatabase][google.spanner.admin.database.v1.DatabaseAdmin.DropDatabase].
  * </pre>
  *
  * Protobuf type {@code google.spanner.admin.database.v1.DropDatabaseRequest}
@@ -299,7 +300,8 @@ public final class DropDatabaseRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The request for [DropDatabase][google.spanner.admin.database.v1.DatabaseAdmin.DropDatabase].
+   * The request for
+   * [DropDatabase][google.spanner.admin.database.v1.DatabaseAdmin.DropDatabase].
    * </pre>
    *
    * Protobuf type {@code google.spanner.admin.database.v1.DropDatabaseRequest}

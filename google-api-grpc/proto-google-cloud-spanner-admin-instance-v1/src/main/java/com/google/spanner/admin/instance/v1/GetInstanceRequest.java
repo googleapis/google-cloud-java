@@ -7,7 +7,8 @@ package com.google.spanner.admin.instance.v1;
  *
  *
  * <pre>
- * The request for [GetInstance][google.spanner.admin.instance.v1.InstanceAdmin.GetInstance].
+ * The request for
+ * [GetInstance][google.spanner.admin.instance.v1.InstanceAdmin.GetInstance].
  * </pre>
  *
  * Protobuf type {@code google.spanner.admin.instance.v1.GetInstanceRequest}
@@ -301,7 +302,8 @@ public final class GetInstanceRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * The request for [GetInstance][google.spanner.admin.instance.v1.InstanceAdmin.GetInstance].
+   * The request for
+   * [GetInstance][google.spanner.admin.instance.v1.InstanceAdmin.GetInstance].
    * </pre>
    *
    * Protobuf type {@code google.spanner.admin.instance.v1.GetInstanceRequest}

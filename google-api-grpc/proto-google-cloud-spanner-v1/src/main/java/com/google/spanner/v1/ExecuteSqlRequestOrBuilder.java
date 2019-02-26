@@ -172,7 +172,8 @@ public interface ExecuteSqlRequestOrBuilder
    * <pre>
    * It is not always possible for Cloud Spanner to infer the right SQL type
    * from a JSON value.  For example, values of type `BYTES` and values
-   * of type `STRING` both appear in [params][google.spanner.v1.ExecuteSqlRequest.params] as JSON strings.
+   * of type `STRING` both appear in
+   * [params][google.spanner.v1.ExecuteSqlRequest.params] as JSON strings.
    * In these cases, `param_types` can be used to specify the exact
    * SQL type for some or all of the SQL statement parameters. See the
    * definition of [Type][google.spanner.v1.Type] for more information
@@ -188,7 +189,8 @@ public interface ExecuteSqlRequestOrBuilder
    * <pre>
    * It is not always possible for Cloud Spanner to infer the right SQL type
    * from a JSON value.  For example, values of type `BYTES` and values
-   * of type `STRING` both appear in [params][google.spanner.v1.ExecuteSqlRequest.params] as JSON strings.
+   * of type `STRING` both appear in
+   * [params][google.spanner.v1.ExecuteSqlRequest.params] as JSON strings.
    * In these cases, `param_types` can be used to specify the exact
    * SQL type for some or all of the SQL statement parameters. See the
    * definition of [Type][google.spanner.v1.Type] for more information
@@ -207,7 +209,8 @@ public interface ExecuteSqlRequestOrBuilder
    * <pre>
    * It is not always possible for Cloud Spanner to infer the right SQL type
    * from a JSON value.  For example, values of type `BYTES` and values
-   * of type `STRING` both appear in [params][google.spanner.v1.ExecuteSqlRequest.params] as JSON strings.
+   * of type `STRING` both appear in
+   * [params][google.spanner.v1.ExecuteSqlRequest.params] as JSON strings.
    * In these cases, `param_types` can be used to specify the exact
    * SQL type for some or all of the SQL statement parameters. See the
    * definition of [Type][google.spanner.v1.Type] for more information
@@ -223,7 +226,8 @@ public interface ExecuteSqlRequestOrBuilder
    * <pre>
    * It is not always possible for Cloud Spanner to infer the right SQL type
    * from a JSON value.  For example, values of type `BYTES` and values
-   * of type `STRING` both appear in [params][google.spanner.v1.ExecuteSqlRequest.params] as JSON strings.
+   * of type `STRING` both appear in
+   * [params][google.spanner.v1.ExecuteSqlRequest.params] as JSON strings.
    * In these cases, `param_types` can be used to specify the exact
    * SQL type for some or all of the SQL statement parameters. See the
    * definition of [Type][google.spanner.v1.Type] for more information
@@ -240,7 +244,8 @@ public interface ExecuteSqlRequestOrBuilder
    * <pre>
    * It is not always possible for Cloud Spanner to infer the right SQL type
    * from a JSON value.  For example, values of type `BYTES` and values
-   * of type `STRING` both appear in [params][google.spanner.v1.ExecuteSqlRequest.params] as JSON strings.
+   * of type `STRING` both appear in
+   * [params][google.spanner.v1.ExecuteSqlRequest.params] as JSON strings.
    * In these cases, `param_types` can be used to specify the exact
    * SQL type for some or all of the SQL statement parameters. See the
    * definition of [Type][google.spanner.v1.Type] for more information
@@ -257,10 +262,10 @@ public interface ExecuteSqlRequestOrBuilder
    * <pre>
    * If this request is resuming a previously interrupted SQL statement
    * execution, `resume_token` should be copied from the last
-   * [PartialResultSet][google.spanner.v1.PartialResultSet] yielded before the interruption. Doing this
-   * enables the new SQL statement execution to resume where the last one left
-   * off. The rest of the request parameters must exactly match the
-   * request that yielded this token.
+   * [PartialResultSet][google.spanner.v1.PartialResultSet] yielded before the
+   * interruption. Doing this enables the new SQL statement execution to resume
+   * where the last one left off. The rest of the request parameters must
+   * exactly match the request that yielded this token.
    * </pre>
    *
    * <code>bytes resume_token = 6;</code>
@@ -272,8 +277,11 @@ public interface ExecuteSqlRequestOrBuilder
    *
    * <pre>
    * Used to control the amount of debugging information returned in
-   * [ResultSetStats][google.spanner.v1.ResultSetStats]. If [partition_token][google.spanner.v1.ExecuteSqlRequest.partition_token] is set, [query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode] can only
-   * be set to [QueryMode.NORMAL][google.spanner.v1.ExecuteSqlRequest.QueryMode.NORMAL].
+   * [ResultSetStats][google.spanner.v1.ResultSetStats]. If
+   * [partition_token][google.spanner.v1.ExecuteSqlRequest.partition_token] is
+   * set, [query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode] can only
+   * be set to
+   * [QueryMode.NORMAL][google.spanner.v1.ExecuteSqlRequest.QueryMode.NORMAL].
    * </pre>
    *
    * <code>.google.spanner.v1.ExecuteSqlRequest.QueryMode query_mode = 7;</code>
@@ -284,8 +292,11 @@ public interface ExecuteSqlRequestOrBuilder
    *
    * <pre>
    * Used to control the amount of debugging information returned in
-   * [ResultSetStats][google.spanner.v1.ResultSetStats]. If [partition_token][google.spanner.v1.ExecuteSqlRequest.partition_token] is set, [query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode] can only
-   * be set to [QueryMode.NORMAL][google.spanner.v1.ExecuteSqlRequest.QueryMode.NORMAL].
+   * [ResultSetStats][google.spanner.v1.ResultSetStats]. If
+   * [partition_token][google.spanner.v1.ExecuteSqlRequest.partition_token] is
+   * set, [query_mode][google.spanner.v1.ExecuteSqlRequest.query_mode] can only
+   * be set to
+   * [QueryMode.NORMAL][google.spanner.v1.ExecuteSqlRequest.QueryMode.NORMAL].
    * </pre>
    *
    * <code>.google.spanner.v1.ExecuteSqlRequest.QueryMode query_mode = 7;</code>

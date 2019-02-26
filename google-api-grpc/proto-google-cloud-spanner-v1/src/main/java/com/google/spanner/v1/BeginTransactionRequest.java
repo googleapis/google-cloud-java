@@ -7,7 +7,8 @@ package com.google.spanner.v1;
  *
  *
  * <pre>
- * The request for [BeginTransaction][google.spanner.v1.Spanner.BeginTransaction].
+ * The request for
+ * [BeginTransaction][google.spanner.v1.Spanner.BeginTransaction].
  * </pre>
  *
  * Protobuf type {@code google.spanner.v1.BeginTransactionRequest}
@@ -369,7 +370,8 @@ public final class BeginTransactionRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The request for [BeginTransaction][google.spanner.v1.Spanner.BeginTransaction].
+   * The request for
+   * [BeginTransaction][google.spanner.v1.Spanner.BeginTransaction].
    * </pre>
    *
    * Protobuf type {@code google.spanner.v1.BeginTransactionRequest}

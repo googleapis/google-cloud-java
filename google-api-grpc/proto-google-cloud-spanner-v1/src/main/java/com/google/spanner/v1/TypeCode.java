@@ -111,7 +111,8 @@ public enum TypeCode implements com.google.protobuf.ProtocolMessageEnum {
    *
    * <pre>
    * Encoded as `list`, where the list elements are represented
-   * according to [array_element_type][google.spanner.v1.Type.array_element_type].
+   * according to
+   * [array_element_type][google.spanner.v1.Type.array_element_type].
    * </pre>
    *
    * <code>ARRAY = 8;</code>
@@ -224,7 +225,8 @@ public enum TypeCode implements com.google.protobuf.ProtocolMessageEnum {
    *
    * <pre>
    * Encoded as `list`, where the list elements are represented
-   * according to [array_element_type][google.spanner.v1.Type.array_element_type].
+   * according to
+   * [array_element_type][google.spanner.v1.Type.array_element_type].
    * </pre>
    *
    * <code>ARRAY = 8;</code>

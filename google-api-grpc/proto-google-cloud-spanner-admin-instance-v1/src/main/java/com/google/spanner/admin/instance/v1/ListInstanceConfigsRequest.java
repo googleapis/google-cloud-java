@@ -7,7 +7,8 @@ package com.google.spanner.admin.instance.v1;
  *
  *
  * <pre>
- * The request for [ListInstanceConfigs][google.spanner.admin.instance.v1.InstanceAdmin.ListInstanceConfigs].
+ * The request for
+ * [ListInstanceConfigs][google.spanner.admin.instance.v1.InstanceAdmin.ListInstanceConfigs].
  * </pre>
  *
  * Protobuf type {@code google.spanner.admin.instance.v1.ListInstanceConfigsRequest}
@@ -176,7 +177,8 @@ public final class ListInstanceConfigsRequest extends com.google.protobuf.Genera
    * <pre>
    * If non-empty, `page_token` should contain a
    * [next_page_token][google.spanner.admin.instance.v1.ListInstanceConfigsResponse.next_page_token]
-   * from a previous [ListInstanceConfigsResponse][google.spanner.admin.instance.v1.ListInstanceConfigsResponse].
+   * from a previous
+   * [ListInstanceConfigsResponse][google.spanner.admin.instance.v1.ListInstanceConfigsResponse].
    * </pre>
    *
    * <code>string page_token = 3;</code>
@@ -198,7 +200,8 @@ public final class ListInstanceConfigsRequest extends com.google.protobuf.Genera
    * <pre>
    * If non-empty, `page_token` should contain a
    * [next_page_token][google.spanner.admin.instance.v1.ListInstanceConfigsResponse.next_page_token]
-   * from a previous [ListInstanceConfigsResponse][google.spanner.admin.instance.v1.ListInstanceConfigsResponse].
+   * from a previous
+   * [ListInstanceConfigsResponse][google.spanner.admin.instance.v1.ListInstanceConfigsResponse].
    * </pre>
    *
    * <code>string page_token = 3;</code>
@@ -398,7 +401,8 @@ public final class ListInstanceConfigsRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * The request for [ListInstanceConfigs][google.spanner.admin.instance.v1.InstanceAdmin.ListInstanceConfigs].
+   * The request for
+   * [ListInstanceConfigs][google.spanner.admin.instance.v1.InstanceAdmin.ListInstanceConfigs].
    * </pre>
    *
    * Protobuf type {@code google.spanner.admin.instance.v1.ListInstanceConfigsRequest}
@@ -728,7 +732,8 @@ public final class ListInstanceConfigsRequest extends com.google.protobuf.Genera
      * <pre>
      * If non-empty, `page_token` should contain a
      * [next_page_token][google.spanner.admin.instance.v1.ListInstanceConfigsResponse.next_page_token]
-     * from a previous [ListInstanceConfigsResponse][google.spanner.admin.instance.v1.ListInstanceConfigsResponse].
+     * from a previous
+     * [ListInstanceConfigsResponse][google.spanner.admin.instance.v1.ListInstanceConfigsResponse].
      * </pre>
      *
      * <code>string page_token = 3;</code>
@@ -750,7 +755,8 @@ public final class ListInstanceConfigsRequest extends com.google.protobuf.Genera
      * <pre>
      * If non-empty, `page_token` should contain a
      * [next_page_token][google.spanner.admin.instance.v1.ListInstanceConfigsResponse.next_page_token]
-     * from a previous [ListInstanceConfigsResponse][google.spanner.admin.instance.v1.ListInstanceConfigsResponse].
+     * from a previous
+     * [ListInstanceConfigsResponse][google.spanner.admin.instance.v1.ListInstanceConfigsResponse].
      * </pre>
      *
      * <code>string page_token = 3;</code>
@@ -772,7 +778,8 @@ public final class ListInstanceConfigsRequest extends com.google.protobuf.Genera
      * <pre>
      * If non-empty, `page_token` should contain a
      * [next_page_token][google.spanner.admin.instance.v1.ListInstanceConfigsResponse.next_page_token]
-     * from a previous [ListInstanceConfigsResponse][google.spanner.admin.instance.v1.ListInstanceConfigsResponse].
+     * from a previous
+     * [ListInstanceConfigsResponse][google.spanner.admin.instance.v1.ListInstanceConfigsResponse].
      * </pre>
      *
      * <code>string page_token = 3;</code>
@@ -792,7 +799,8 @@ public final class ListInstanceConfigsRequest extends com.google.protobuf.Genera
      * <pre>
      * If non-empty, `page_token` should contain a
      * [next_page_token][google.spanner.admin.instance.v1.ListInstanceConfigsResponse.next_page_token]
-     * from a previous [ListInstanceConfigsResponse][google.spanner.admin.instance.v1.ListInstanceConfigsResponse].
+     * from a previous
+     * [ListInstanceConfigsResponse][google.spanner.admin.instance.v1.ListInstanceConfigsResponse].
      * </pre>
      *
      * <code>string page_token = 3;</code>
@@ -809,7 +817,8 @@ public final class ListInstanceConfigsRequest extends com.google.protobuf.Genera
      * <pre>
      * If non-empty, `page_token` should contain a
      * [next_page_token][google.spanner.admin.instance.v1.ListInstanceConfigsResponse.next_page_token]
-     * from a previous [ListInstanceConfigsResponse][google.spanner.admin.instance.v1.ListInstanceConfigsResponse].
+     * from a previous
+     * [ListInstanceConfigsResponse][google.spanner.admin.instance.v1.ListInstanceConfigsResponse].
      * </pre>
      *
      * <code>string page_token = 3;</code>
