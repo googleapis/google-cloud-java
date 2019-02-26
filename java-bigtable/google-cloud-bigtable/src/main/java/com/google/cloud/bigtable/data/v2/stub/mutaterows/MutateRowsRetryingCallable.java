@@ -16,7 +16,7 @@
 package com.google.cloud.bigtable.data.v2.stub.mutaterows;
 
 import com.google.api.core.InternalApi;
-import com.google.api.gax.retrying.RetryingExecutor;
+import com.google.api.gax.retrying.RetryingExecutorWithContext;
 import com.google.api.gax.retrying.RetryingFuture;
 import com.google.api.gax.rpc.ApiCallContext;
 import com.google.api.gax.rpc.ServerStreamingCallable;
@@ -42,13 +42,13 @@ import javax.annotation.Nonnull;
 public class MutateRowsRetryingCallable extends UnaryCallable<MutateRowsRequest, Void> {
   private final ApiCallContext callContextPrototype;
   private final ServerStreamingCallable<MutateRowsRequest, MutateRowsResponse> callable;
-  private final RetryingExecutor<Void> executor;
+  private final RetryingExecutorWithContext<Void> executor;
   private final ImmutableSet<Code> retryCodes;
 
   public MutateRowsRetryingCallable(
       @Nonnull ApiCallContext callContextPrototype,
       @Nonnull ServerStreamingCallable<MutateRowsRequest, MutateRowsResponse> callable,
-      @Nonnull RetryingExecutor<Void> executor,
+      @Nonnull RetryingExecutorWithContext<Void> executor,
       @Nonnull Set<StatusCode.Code> retryCodes) {
     this.callContextPrototype = Preconditions.checkNotNull(callContextPrototype);
     this.callable = Preconditions.checkNotNull(callable);
@@ -62,7 +62,7 @@ public class MutateRowsRetryingCallable extends UnaryCallable<MutateRowsRequest,
     MutateRowsAttemptCallable retryCallable =
         new MutateRowsAttemptCallable(callable.all(), request, context, retryCodes);
 
-    RetryingFuture<Void> retryingFuture = executor.createFuture(retryCallable);
+    RetryingFuture<Void> retryingFuture = executor.createFuture(retryCallable, context);
     retryCallable.setExternalFuture(retryingFuture);
     retryCallable.call();
 

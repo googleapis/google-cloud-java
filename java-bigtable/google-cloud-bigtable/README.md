@@ -130,6 +130,66 @@ try {
 }
 ```
 
+## Opencensus Tracing
+
+Cloud Bigtable client supports [Opencensus Tracing](https://opencensus.io/tracing/),
+which gives insight into the client internals and aids in debugging production issues.
+By default, the functionality is disabled. To enable, you need to add a couple of
+dependencies and configure an exporter. For example to enable tracing using 
+[Google Stackdriver](https://cloud.google.com/trace/docs/):
+
+[//]: # (TODO: figure out how to keep opencensus version in sync with pom.xml)
+
+If you are using Maven, add this to your pom.xml file
+```xml
+<dependency>
+  <groupId>io.opencensus</groupId>
+  <artifactId>opencensus-impl</artifactId>
+  <version>0.18.0</version>
+</dependency>
+<dependency>
+  <groupId>io.opencensus</groupId>
+  <artifactId>opencensus-exporter-trace-stackdriver</artifactId>
+  <version>0.18.0</version>
+</dependency>
+```
+If you are using Gradle, add this to your dependencies
+```Groovy
+compile 'io.opencensus:opencensus-impl:0.18.0'
+compile 'io.opencensus:opencensus-exporter-trace-stackdriver:0.18.0'
+```
+If you are using SBT, add this to your dependencies
+```Scala
+libraryDependencies += "io.opencensus" % "opencensus-impl" % "0.18.0"
+libraryDependencies += "io.opencensus" % "opencensus-exporter-trace-stackdriver" % "0.18.0"
+```
+
+Then at the start of your application configure the exporter:
+
+```java
+import io.opencensus.exporter.trace.stackdriver.StackdriverTraceConfiguration;
+import io.opencensus.exporter.trace.stackdriver.StackdriverTraceExporter;
+
+StackdriverTraceExporter.createAndRegister(
+  StackdriverTraceConfiguration.builder()
+      .setProjectId("YOUR-PROJECT_ID")
+      .build());
+```
+
+By default traces are [sampled](https://opencensus.io/tracing/sampling) at a rate of about 1/10,000.
+You can configure a higher rate by updating the active tracing params:
+
+```java
+import io.opencensus.trace.Tracing;
+import io.opencensus.trace.samplers.Samplers;
+
+Tracing.getTraceConfig().updateActiveTraceParams(
+    Tracing.getTraceConfig().getActiveTraceParams().toBuilder()
+        .setSampler(Samplers.probabilitySampler(0.01))
+        .build()
+);
+```
+
 ## Troubleshooting
 
 To get help, follow the instructions in the [shared Troubleshooting
