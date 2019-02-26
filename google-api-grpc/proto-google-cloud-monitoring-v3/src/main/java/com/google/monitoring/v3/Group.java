@@ -289,7 +289,8 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The filter used to determine which monitored resources belong to this group.
+   * The filter used to determine which monitored resources belong to this
+   * group.
    * </pre>
    *
    * <code>string filter = 5;</code>
@@ -309,7 +310,8 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The filter used to determine which monitored resources belong to this group.
+   * The filter used to determine which monitored resources belong to this
+   * group.
    * </pre>
    *
    * <code>string filter = 5;</code>
@@ -1057,7 +1059,8 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The filter used to determine which monitored resources belong to this group.
+     * The filter used to determine which monitored resources belong to this
+     * group.
      * </pre>
      *
      * <code>string filter = 5;</code>
@@ -1077,7 +1080,8 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The filter used to determine which monitored resources belong to this group.
+     * The filter used to determine which monitored resources belong to this
+     * group.
      * </pre>
      *
      * <code>string filter = 5;</code>
@@ -1097,7 +1101,8 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The filter used to determine which monitored resources belong to this group.
+     * The filter used to determine which monitored resources belong to this
+     * group.
      * </pre>
      *
      * <code>string filter = 5;</code>
@@ -1115,7 +1120,8 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The filter used to determine which monitored resources belong to this group.
+     * The filter used to determine which monitored resources belong to this
+     * group.
      * </pre>
      *
      * <code>string filter = 5;</code>
@@ -1130,7 +1136,8 @@ public final class Group extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The filter used to determine which monitored resources belong to this group.
+     * The filter used to determine which monitored resources belong to this
+     * group.
      * </pre>
      *
      * <code>string filter = 5;</code>
