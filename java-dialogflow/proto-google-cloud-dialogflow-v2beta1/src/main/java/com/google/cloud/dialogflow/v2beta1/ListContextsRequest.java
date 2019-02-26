@@ -7,7 +7,8 @@ package com.google.cloud.dialogflow.v2beta1;
  *
  *
  * <pre>
- * The request message for [Contexts.ListContexts][google.cloud.dialogflow.v2beta1.Contexts.ListContexts].
+ * The request message for
+ * [Contexts.ListContexts][google.cloud.dialogflow.v2beta1.Contexts.ListContexts].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2beta1.ListContextsRequest}
@@ -400,7 +401,8 @@ public final class ListContextsRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The request message for [Contexts.ListContexts][google.cloud.dialogflow.v2beta1.Contexts.ListContexts].
+   * The request message for
+   * [Contexts.ListContexts][google.cloud.dialogflow.v2beta1.Contexts.ListContexts].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2beta1.ListContextsRequest}

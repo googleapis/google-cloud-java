@@ -7,7 +7,8 @@ package com.google.cloud.dialogflow.v2;
  *
  *
  * <pre>
- * The response message for [EntityTypes.BatchCreateEntities][google.cloud.dialogflow.v2.EntityTypes.BatchCreateEntities].
+ * The response message for
+ * [EntityTypes.BatchCreateEntities][google.cloud.dialogflow.v2.EntityTypes.BatchCreateEntities].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2.BatchUpdateEntitiesRequest}
@@ -530,7 +531,8 @@ public final class BatchUpdateEntitiesRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * The response message for [EntityTypes.BatchCreateEntities][google.cloud.dialogflow.v2.EntityTypes.BatchCreateEntities].
+   * The response message for
+   * [EntityTypes.BatchCreateEntities][google.cloud.dialogflow.v2.EntityTypes.BatchCreateEntities].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2.BatchUpdateEntitiesRequest}

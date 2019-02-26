@@ -29,7 +29,9 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  *     entity is represented by the `EntityType` type.
  * *   **User** - entities that are built for an individual user such as
  *     favorites, preferences, playlists, and so on. A user entity is
- *     represented by the [SessionEntityType][google.cloud.dialogflow.v2beta1.SessionEntityType] type.
+ *     represented by the
+ *     [SessionEntityType][google.cloud.dialogflow.v2beta1.SessionEntityType]
+ *     type.
  * For more information about entity types, see the
  * [Dialogflow documentation](https://dialogflow.com/docs/entities).
  * </pre>
@@ -664,7 +666,9 @@ public final class EntityTypesGrpc {
    *     entity is represented by the `EntityType` type.
    * *   **User** - entities that are built for an individual user such as
    *     favorites, preferences, playlists, and so on. A user entity is
-   *     represented by the [SessionEntityType][google.cloud.dialogflow.v2beta1.SessionEntityType] type.
+   *     represented by the
+   *     [SessionEntityType][google.cloud.dialogflow.v2beta1.SessionEntityType]
+   *     type.
    * For more information about entity types, see the
    * [Dialogflow documentation](https://dialogflow.com/docs/entities).
    * </pre>
@@ -745,7 +749,8 @@ public final class EntityTypesGrpc {
      *
      * <pre>
      * Updates/Creates multiple entity types in the specified agent.
-     * Operation &lt;response: [BatchUpdateEntityTypesResponse][google.cloud.dialogflow.v2beta1.BatchUpdateEntityTypesResponse],
+     * Operation &lt;response:
+     * [BatchUpdateEntityTypesResponse][google.cloud.dialogflow.v2beta1.BatchUpdateEntityTypesResponse],
      *            metadata: [google.protobuf.Struct][google.protobuf.Struct]&gt;
      * </pre>
      */
@@ -909,7 +914,9 @@ public final class EntityTypesGrpc {
    *     entity is represented by the `EntityType` type.
    * *   **User** - entities that are built for an individual user such as
    *     favorites, preferences, playlists, and so on. A user entity is
-   *     represented by the [SessionEntityType][google.cloud.dialogflow.v2beta1.SessionEntityType] type.
+   *     represented by the
+   *     [SessionEntityType][google.cloud.dialogflow.v2beta1.SessionEntityType]
+   *     type.
    * For more information about entity types, see the
    * [Dialogflow documentation](https://dialogflow.com/docs/entities).
    * </pre>
@@ -1017,7 +1024,8 @@ public final class EntityTypesGrpc {
      *
      * <pre>
      * Updates/Creates multiple entity types in the specified agent.
-     * Operation &lt;response: [BatchUpdateEntityTypesResponse][google.cloud.dialogflow.v2beta1.BatchUpdateEntityTypesResponse],
+     * Operation &lt;response:
+     * [BatchUpdateEntityTypesResponse][google.cloud.dialogflow.v2beta1.BatchUpdateEntityTypesResponse],
      *            metadata: [google.protobuf.Struct][google.protobuf.Struct]&gt;
      * </pre>
      */
@@ -1126,7 +1134,9 @@ public final class EntityTypesGrpc {
    *     entity is represented by the `EntityType` type.
    * *   **User** - entities that are built for an individual user such as
    *     favorites, preferences, playlists, and so on. A user entity is
-   *     represented by the [SessionEntityType][google.cloud.dialogflow.v2beta1.SessionEntityType] type.
+   *     represented by the
+   *     [SessionEntityType][google.cloud.dialogflow.v2beta1.SessionEntityType]
+   *     type.
    * For more information about entity types, see the
    * [Dialogflow documentation](https://dialogflow.com/docs/entities).
    * </pre>
@@ -1217,7 +1227,8 @@ public final class EntityTypesGrpc {
      *
      * <pre>
      * Updates/Creates multiple entity types in the specified agent.
-     * Operation &lt;response: [BatchUpdateEntityTypesResponse][google.cloud.dialogflow.v2beta1.BatchUpdateEntityTypesResponse],
+     * Operation &lt;response:
+     * [BatchUpdateEntityTypesResponse][google.cloud.dialogflow.v2beta1.BatchUpdateEntityTypesResponse],
      *            metadata: [google.protobuf.Struct][google.protobuf.Struct]&gt;
      * </pre>
      */
@@ -1311,7 +1322,9 @@ public final class EntityTypesGrpc {
    *     entity is represented by the `EntityType` type.
    * *   **User** - entities that are built for an individual user such as
    *     favorites, preferences, playlists, and so on. A user entity is
-   *     represented by the [SessionEntityType][google.cloud.dialogflow.v2beta1.SessionEntityType] type.
+   *     represented by the
+   *     [SessionEntityType][google.cloud.dialogflow.v2beta1.SessionEntityType]
+   *     type.
    * For more information about entity types, see the
    * [Dialogflow documentation](https://dialogflow.com/docs/entities).
    * </pre>
@@ -1406,7 +1419,8 @@ public final class EntityTypesGrpc {
      *
      * <pre>
      * Updates/Creates multiple entity types in the specified agent.
-     * Operation &lt;response: [BatchUpdateEntityTypesResponse][google.cloud.dialogflow.v2beta1.BatchUpdateEntityTypesResponse],
+     * Operation &lt;response:
+     * [BatchUpdateEntityTypesResponse][google.cloud.dialogflow.v2beta1.BatchUpdateEntityTypesResponse],
      *            metadata: [google.protobuf.Struct][google.protobuf.Struct]&gt;
      * </pre>
      */

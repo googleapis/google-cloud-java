@@ -7,7 +7,8 @@ package com.google.cloud.dialogflow.v2beta1;
  *
  *
  * <pre>
- * The request message for [Intents.UpdateIntent][google.cloud.dialogflow.v2beta1.Intents.UpdateIntent].
+ * The request message for
+ * [Intents.UpdateIntent][google.cloud.dialogflow.v2beta1.Intents.UpdateIntent].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2beta1.UpdateIntentRequest}
@@ -498,7 +499,8 @@ public final class UpdateIntentRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The request message for [Intents.UpdateIntent][google.cloud.dialogflow.v2beta1.Intents.UpdateIntent].
+   * The request message for
+   * [Intents.UpdateIntent][google.cloud.dialogflow.v2beta1.Intents.UpdateIntent].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2beta1.UpdateIntentRequest}

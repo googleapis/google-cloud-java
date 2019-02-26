@@ -14,10 +14,10 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  * An intent represents a mapping between input from a user and an action to
  * be taken by your application. When you pass user input to the
  * [DetectIntent][google.cloud.dialogflow.v2beta1.Sessions.DetectIntent] (or
- * [StreamingDetectIntent][google.cloud.dialogflow.v2beta1.Sessions.StreamingDetectIntent]) method, the
- * Dialogflow API analyzes the input and searches
- * for a matching intent. If no match is found, the Dialogflow API returns a
- * fallback intent (`is_fallback` = true).
+ * [StreamingDetectIntent][google.cloud.dialogflow.v2beta1.Sessions.StreamingDetectIntent])
+ * method, the Dialogflow API analyzes the input and searches for a matching
+ * intent. If no match is found, the Dialogflow API returns a fallback intent
+ * (`is_fallback` = true).
  * You can provide additional information for the Dialogflow API to use to
  * match user input to an intent by adding the following to your intent.
  * *   **Contexts** - provide additional context for intent analysis. For
@@ -470,10 +470,10 @@ public final class IntentsGrpc {
    * An intent represents a mapping between input from a user and an action to
    * be taken by your application. When you pass user input to the
    * [DetectIntent][google.cloud.dialogflow.v2beta1.Sessions.DetectIntent] (or
-   * [StreamingDetectIntent][google.cloud.dialogflow.v2beta1.Sessions.StreamingDetectIntent]) method, the
-   * Dialogflow API analyzes the input and searches
-   * for a matching intent. If no match is found, the Dialogflow API returns a
-   * fallback intent (`is_fallback` = true).
+   * [StreamingDetectIntent][google.cloud.dialogflow.v2beta1.Sessions.StreamingDetectIntent])
+   * method, the Dialogflow API analyzes the input and searches for a matching
+   * intent. If no match is found, the Dialogflow API returns a fallback intent
+   * (`is_fallback` = true).
    * You can provide additional information for the Dialogflow API to use to
    * match user input to an intent by adding the following to your intent.
    * *   **Contexts** - provide additional context for intent analysis. For
@@ -568,7 +568,8 @@ public final class IntentsGrpc {
      *
      * <pre>
      * Updates/Creates multiple intents in the specified agent.
-     * Operation &lt;response: [BatchUpdateIntentsResponse][google.cloud.dialogflow.v2beta1.BatchUpdateIntentsResponse]&gt;
+     * Operation &lt;response:
+     * [BatchUpdateIntentsResponse][google.cloud.dialogflow.v2beta1.BatchUpdateIntentsResponse]&gt;
      * </pre>
      */
     public void batchUpdateIntents(
@@ -648,10 +649,10 @@ public final class IntentsGrpc {
    * An intent represents a mapping between input from a user and an action to
    * be taken by your application. When you pass user input to the
    * [DetectIntent][google.cloud.dialogflow.v2beta1.Sessions.DetectIntent] (or
-   * [StreamingDetectIntent][google.cloud.dialogflow.v2beta1.Sessions.StreamingDetectIntent]) method, the
-   * Dialogflow API analyzes the input and searches
-   * for a matching intent. If no match is found, the Dialogflow API returns a
-   * fallback intent (`is_fallback` = true).
+   * [StreamingDetectIntent][google.cloud.dialogflow.v2beta1.Sessions.StreamingDetectIntent])
+   * method, the Dialogflow API analyzes the input and searches for a matching
+   * intent. If no match is found, the Dialogflow API returns a fallback intent
+   * (`is_fallback` = true).
    * You can provide additional information for the Dialogflow API to use to
    * match user input to an intent by adding the following to your intent.
    * *   **Contexts** - provide additional context for intent analysis. For
@@ -773,7 +774,8 @@ public final class IntentsGrpc {
      *
      * <pre>
      * Updates/Creates multiple intents in the specified agent.
-     * Operation &lt;response: [BatchUpdateIntentsResponse][google.cloud.dialogflow.v2beta1.BatchUpdateIntentsResponse]&gt;
+     * Operation &lt;response:
+     * [BatchUpdateIntentsResponse][google.cloud.dialogflow.v2beta1.BatchUpdateIntentsResponse]&gt;
      * </pre>
      */
     public void batchUpdateIntents(
@@ -810,10 +812,10 @@ public final class IntentsGrpc {
    * An intent represents a mapping between input from a user and an action to
    * be taken by your application. When you pass user input to the
    * [DetectIntent][google.cloud.dialogflow.v2beta1.Sessions.DetectIntent] (or
-   * [StreamingDetectIntent][google.cloud.dialogflow.v2beta1.Sessions.StreamingDetectIntent]) method, the
-   * Dialogflow API analyzes the input and searches
-   * for a matching intent. If no match is found, the Dialogflow API returns a
-   * fallback intent (`is_fallback` = true).
+   * [StreamingDetectIntent][google.cloud.dialogflow.v2beta1.Sessions.StreamingDetectIntent])
+   * method, the Dialogflow API analyzes the input and searches for a matching
+   * intent. If no match is found, the Dialogflow API returns a fallback intent
+   * (`is_fallback` = true).
    * You can provide additional information for the Dialogflow API to use to
    * match user input to an intent by adding the following to your intent.
    * *   **Contexts** - provide additional context for intent analysis. For
@@ -919,7 +921,8 @@ public final class IntentsGrpc {
      *
      * <pre>
      * Updates/Creates multiple intents in the specified agent.
-     * Operation &lt;response: [BatchUpdateIntentsResponse][google.cloud.dialogflow.v2beta1.BatchUpdateIntentsResponse]&gt;
+     * Operation &lt;response:
+     * [BatchUpdateIntentsResponse][google.cloud.dialogflow.v2beta1.BatchUpdateIntentsResponse]&gt;
      * </pre>
      */
     public com.google.longrunning.Operation batchUpdateIntents(
@@ -950,10 +953,10 @@ public final class IntentsGrpc {
    * An intent represents a mapping between input from a user and an action to
    * be taken by your application. When you pass user input to the
    * [DetectIntent][google.cloud.dialogflow.v2beta1.Sessions.DetectIntent] (or
-   * [StreamingDetectIntent][google.cloud.dialogflow.v2beta1.Sessions.StreamingDetectIntent]) method, the
-   * Dialogflow API analyzes the input and searches
-   * for a matching intent. If no match is found, the Dialogflow API returns a
-   * fallback intent (`is_fallback` = true).
+   * [StreamingDetectIntent][google.cloud.dialogflow.v2beta1.Sessions.StreamingDetectIntent])
+   * method, the Dialogflow API analyzes the input and searches for a matching
+   * intent. If no match is found, the Dialogflow API returns a fallback intent
+   * (`is_fallback` = true).
    * You can provide additional information for the Dialogflow API to use to
    * match user input to an intent by adding the following to your intent.
    * *   **Contexts** - provide additional context for intent analysis. For
@@ -1063,7 +1066,8 @@ public final class IntentsGrpc {
      *
      * <pre>
      * Updates/Creates multiple intents in the specified agent.
-     * Operation &lt;response: [BatchUpdateIntentsResponse][google.cloud.dialogflow.v2beta1.BatchUpdateIntentsResponse]&gt;
+     * Operation &lt;response:
+     * [BatchUpdateIntentsResponse][google.cloud.dialogflow.v2beta1.BatchUpdateIntentsResponse]&gt;
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>

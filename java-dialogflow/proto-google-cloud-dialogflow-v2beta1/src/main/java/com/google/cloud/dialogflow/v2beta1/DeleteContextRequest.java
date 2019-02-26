@@ -7,7 +7,8 @@ package com.google.cloud.dialogflow.v2beta1;
  *
  *
  * <pre>
- * The request message for [Contexts.DeleteContext][google.cloud.dialogflow.v2beta1.Contexts.DeleteContext].
+ * The request message for
+ * [Contexts.DeleteContext][google.cloud.dialogflow.v2beta1.Contexts.DeleteContext].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2beta1.DeleteContextRequest}
@@ -309,7 +310,8 @@ public final class DeleteContextRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The request message for [Contexts.DeleteContext][google.cloud.dialogflow.v2beta1.Contexts.DeleteContext].
+   * The request message for
+   * [Contexts.DeleteContext][google.cloud.dialogflow.v2beta1.Contexts.DeleteContext].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2beta1.DeleteContextRequest}

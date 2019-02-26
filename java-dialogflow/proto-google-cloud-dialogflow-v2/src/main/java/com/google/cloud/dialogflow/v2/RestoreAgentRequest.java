@@ -7,7 +7,8 @@ package com.google.cloud.dialogflow.v2;
  *
  *
  * <pre>
- * The request message for [Agents.RestoreAgent][google.cloud.dialogflow.v2.Agents.RestoreAgent].
+ * The request message for
+ * [Agents.RestoreAgent][google.cloud.dialogflow.v2.Agents.RestoreAgent].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2.RestoreAgentRequest}
@@ -473,7 +474,8 @@ public final class RestoreAgentRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The request message for [Agents.RestoreAgent][google.cloud.dialogflow.v2.Agents.RestoreAgent].
+   * The request message for
+   * [Agents.RestoreAgent][google.cloud.dialogflow.v2.Agents.RestoreAgent].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2.RestoreAgentRequest}

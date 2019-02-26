@@ -7,7 +7,8 @@ package com.google.cloud.dialogflow.v2beta1;
  *
  *
  * <pre>
- * The request message for [EntityTypes.CreateEntityType][google.cloud.dialogflow.v2beta1.EntityTypes.CreateEntityType].
+ * The request message for
+ * [EntityTypes.CreateEntityType][google.cloud.dialogflow.v2beta1.EntityTypes.CreateEntityType].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2beta1.CreateEntityTypeRequest}
@@ -440,7 +441,8 @@ public final class CreateEntityTypeRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The request message for [EntityTypes.CreateEntityType][google.cloud.dialogflow.v2beta1.EntityTypes.CreateEntityType].
+   * The request message for
+   * [EntityTypes.CreateEntityType][google.cloud.dialogflow.v2beta1.EntityTypes.CreateEntityType].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2beta1.CreateEntityTypeRequest}

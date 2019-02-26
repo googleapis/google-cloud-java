@@ -7,7 +7,8 @@ package com.google.cloud.dialogflow.v2;
  *
  *
  * <pre>
- * The request message for [Agents.GetAgent][google.cloud.dialogflow.v2.Agents.GetAgent].
+ * The request message for
+ * [Agents.GetAgent][google.cloud.dialogflow.v2.Agents.GetAgent].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2.GetAgentRequest}
@@ -300,7 +301,8 @@ public final class GetAgentRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The request message for [Agents.GetAgent][google.cloud.dialogflow.v2.Agents.GetAgent].
+   * The request message for
+   * [Agents.GetAgent][google.cloud.dialogflow.v2.Agents.GetAgent].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2.GetAgentRequest}
