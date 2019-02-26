@@ -7,7 +7,8 @@ package com.google.datastore.v1;
  *
  *
  * <pre>
- * A [GQL query](https://cloud.google.com/datastore/docs/apis/gql/gql_reference).
+ * A [GQL
+ * query](https://cloud.google.com/datastore/docs/apis/gql/gql_reference).
  * </pre>
  *
  * Protobuf type {@code google.datastore.v1.GqlQuery}
@@ -603,7 +604,8 @@ public final class GqlQuery extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A [GQL query](https://cloud.google.com/datastore/docs/apis/gql/gql_reference).
+   * A [GQL
+   * query](https://cloud.google.com/datastore/docs/apis/gql/gql_reference).
    * </pre>
    *
    * Protobuf type {@code google.datastore.v1.GqlQuery}

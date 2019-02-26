@@ -21,7 +21,8 @@ package com.google.datastore.v1;
  * contexts.
  * Foreign partition IDs (in which the project ID does
  * not match the context project ID ) are discouraged.
- * Reads and writes of foreign partition IDs may fail if the project is not in an active state.
+ * Reads and writes of foreign partition IDs may fail if the project is not in
+ * an active state.
  * </pre>
  *
  * Protobuf type {@code google.datastore.v1.PartitionId}
@@ -384,7 +385,8 @@ public final class PartitionId extends com.google.protobuf.GeneratedMessageV3
    * contexts.
    * Foreign partition IDs (in which the project ID does
    * not match the context project ID ) are discouraged.
-   * Reads and writes of foreign partition IDs may fail if the project is not in an active state.
+   * Reads and writes of foreign partition IDs may fail if the project is not in
+   * an active state.
    * </pre>
    *
    * Protobuf type {@code google.datastore.v1.PartitionId}
