@@ -7,7 +7,8 @@ package com.google.cloud.dialogflow.v2beta1;
  *
  *
  * <pre>
- * The request message for [Contexts.CreateContext][google.cloud.dialogflow.v2beta1.Contexts.CreateContext].
+ * The request message for
+ * [Contexts.CreateContext][google.cloud.dialogflow.v2beta1.Contexts.CreateContext].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2beta1.CreateContextRequest}
@@ -380,7 +381,8 @@ public final class CreateContextRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The request message for [Contexts.CreateContext][google.cloud.dialogflow.v2beta1.Contexts.CreateContext].
+   * The request message for
+   * [Contexts.CreateContext][google.cloud.dialogflow.v2beta1.Contexts.CreateContext].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2beta1.CreateContextRequest}

@@ -7,7 +7,8 @@ package com.google.cloud.dialogflow.v2;
  *
  *
  * <pre>
- * The request message for [Intents.GetIntent][google.cloud.dialogflow.v2.Intents.GetIntent].
+ * The request message for
+ * [Intents.GetIntent][google.cloud.dialogflow.v2.Intents.GetIntent].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2.GetIntentRequest}
@@ -417,7 +418,8 @@ public final class GetIntentRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The request message for [Intents.GetIntent][google.cloud.dialogflow.v2.Intents.GetIntent].
+   * The request message for
+   * [Intents.GetIntent][google.cloud.dialogflow.v2.Intents.GetIntent].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2.GetIntentRequest}

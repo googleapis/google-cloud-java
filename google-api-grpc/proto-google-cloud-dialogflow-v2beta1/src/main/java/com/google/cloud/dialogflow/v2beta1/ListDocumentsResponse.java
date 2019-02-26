@@ -7,7 +7,8 @@ package com.google.cloud.dialogflow.v2beta1;
  *
  *
  * <pre>
- * Response message for [Documents.ListDocuments][google.cloud.dialogflow.v2beta1.Documents.ListDocuments].
+ * Response message for
+ * [Documents.ListDocuments][google.cloud.dialogflow.v2beta1.Documents.ListDocuments].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2beta1.ListDocumentsResponse}
@@ -393,7 +394,8 @@ public final class ListDocumentsResponse extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Response message for [Documents.ListDocuments][google.cloud.dialogflow.v2beta1.Documents.ListDocuments].
+   * Response message for
+   * [Documents.ListDocuments][google.cloud.dialogflow.v2beta1.Documents.ListDocuments].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2beta1.ListDocumentsResponse}

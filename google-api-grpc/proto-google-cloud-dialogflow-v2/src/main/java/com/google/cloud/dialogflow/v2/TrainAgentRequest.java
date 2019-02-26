@@ -7,7 +7,8 @@ package com.google.cloud.dialogflow.v2;
  *
  *
  * <pre>
- * The request message for [Agents.TrainAgent][google.cloud.dialogflow.v2.Agents.TrainAgent].
+ * The request message for
+ * [Agents.TrainAgent][google.cloud.dialogflow.v2.Agents.TrainAgent].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2.TrainAgentRequest}
@@ -300,7 +301,8 @@ public final class TrainAgentRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * The request message for [Agents.TrainAgent][google.cloud.dialogflow.v2.Agents.TrainAgent].
+   * The request message for
+   * [Agents.TrainAgent][google.cloud.dialogflow.v2.Agents.TrainAgent].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2.TrainAgentRequest}

@@ -7,7 +7,8 @@ package com.google.cloud.dialogflow.v2;
  *
  *
  * <pre>
- * The request message for [EntityTypes.UpdateEntityType][google.cloud.dialogflow.v2.EntityTypes.UpdateEntityType].
+ * The request message for
+ * [EntityTypes.UpdateEntityType][google.cloud.dialogflow.v2.EntityTypes.UpdateEntityType].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2.UpdateEntityTypeRequest}
@@ -449,7 +450,8 @@ public final class UpdateEntityTypeRequest extends com.google.protobuf.Generated
    *
    *
    * <pre>
-   * The request message for [EntityTypes.UpdateEntityType][google.cloud.dialogflow.v2.EntityTypes.UpdateEntityType].
+   * The request message for
+   * [EntityTypes.UpdateEntityType][google.cloud.dialogflow.v2.EntityTypes.UpdateEntityType].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2.UpdateEntityTypeRequest}

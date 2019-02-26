@@ -7,7 +7,8 @@ package com.google.cloud.dialogflow.v2;
  *
  *
  * <pre>
- * The request message for [Contexts.UpdateContext][google.cloud.dialogflow.v2.Contexts.UpdateContext].
+ * The request message for
+ * [Contexts.UpdateContext][google.cloud.dialogflow.v2.Contexts.UpdateContext].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2.UpdateContextRequest}
@@ -376,7 +377,8 @@ public final class UpdateContextRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * The request message for [Contexts.UpdateContext][google.cloud.dialogflow.v2.Contexts.UpdateContext].
+   * The request message for
+   * [Contexts.UpdateContext][google.cloud.dialogflow.v2.Contexts.UpdateContext].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2.UpdateContextRequest}
