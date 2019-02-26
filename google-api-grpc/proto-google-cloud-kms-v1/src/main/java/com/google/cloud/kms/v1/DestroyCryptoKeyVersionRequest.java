@@ -7,7 +7,8 @@ package com.google.cloud.kms.v1;
  *
  *
  * <pre>
- * Request message for [KeyManagementService.DestroyCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.DestroyCryptoKeyVersion].
+ * Request message for
+ * [KeyManagementService.DestroyCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.DestroyCryptoKeyVersion].
  * </pre>
  *
  * Protobuf type {@code google.cloud.kms.v1.DestroyCryptoKeyVersionRequest}
@@ -98,7 +99,8 @@ public final class DestroyCryptoKeyVersionRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to destroy.
+   * The resource name of the
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to destroy.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -118,7 +120,8 @@ public final class DestroyCryptoKeyVersionRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to destroy.
+   * The resource name of the
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to destroy.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -300,7 +303,8 @@ public final class DestroyCryptoKeyVersionRequest extends com.google.protobuf.Ge
    *
    *
    * <pre>
-   * Request message for [KeyManagementService.DestroyCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.DestroyCryptoKeyVersion].
+   * Request message for
+   * [KeyManagementService.DestroyCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.DestroyCryptoKeyVersion].
    * </pre>
    *
    * Protobuf type {@code google.cloud.kms.v1.DestroyCryptoKeyVersionRequest}
@@ -460,7 +464,8 @@ public final class DestroyCryptoKeyVersionRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to destroy.
+     * The resource name of the
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to destroy.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -480,7 +485,8 @@ public final class DestroyCryptoKeyVersionRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to destroy.
+     * The resource name of the
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to destroy.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -500,7 +506,8 @@ public final class DestroyCryptoKeyVersionRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to destroy.
+     * The resource name of the
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to destroy.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -518,7 +525,8 @@ public final class DestroyCryptoKeyVersionRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to destroy.
+     * The resource name of the
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to destroy.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -533,7 +541,8 @@ public final class DestroyCryptoKeyVersionRequest extends com.google.protobuf.Ge
      *
      *
      * <pre>
-     * The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to destroy.
+     * The resource name of the
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to destroy.
      * </pre>
      *
      * <code>string name = 1;</code>

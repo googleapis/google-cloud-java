@@ -7,7 +7,8 @@ package com.google.cloud.kms.v1;
  *
  *
  * <pre>
- * Request message for [KeyManagementService.GetCryptoKey][google.cloud.kms.v1.KeyManagementService.GetCryptoKey].
+ * Request message for
+ * [KeyManagementService.GetCryptoKey][google.cloud.kms.v1.KeyManagementService.GetCryptoKey].
  * </pre>
  *
  * Protobuf type {@code google.cloud.kms.v1.GetCryptoKeyRequest}
@@ -97,7 +98,8 @@ public final class GetCryptoKeyRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The [name][google.cloud.kms.v1.CryptoKey.name] of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to get.
+   * The [name][google.cloud.kms.v1.CryptoKey.name] of the
+   * [CryptoKey][google.cloud.kms.v1.CryptoKey] to get.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -117,7 +119,8 @@ public final class GetCryptoKeyRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The [name][google.cloud.kms.v1.CryptoKey.name] of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to get.
+   * The [name][google.cloud.kms.v1.CryptoKey.name] of the
+   * [CryptoKey][google.cloud.kms.v1.CryptoKey] to get.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -298,7 +301,8 @@ public final class GetCryptoKeyRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * Request message for [KeyManagementService.GetCryptoKey][google.cloud.kms.v1.KeyManagementService.GetCryptoKey].
+   * Request message for
+   * [KeyManagementService.GetCryptoKey][google.cloud.kms.v1.KeyManagementService.GetCryptoKey].
    * </pre>
    *
    * Protobuf type {@code google.cloud.kms.v1.GetCryptoKeyRequest}
@@ -456,7 +460,8 @@ public final class GetCryptoKeyRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The [name][google.cloud.kms.v1.CryptoKey.name] of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to get.
+     * The [name][google.cloud.kms.v1.CryptoKey.name] of the
+     * [CryptoKey][google.cloud.kms.v1.CryptoKey] to get.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -476,7 +481,8 @@ public final class GetCryptoKeyRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The [name][google.cloud.kms.v1.CryptoKey.name] of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to get.
+     * The [name][google.cloud.kms.v1.CryptoKey.name] of the
+     * [CryptoKey][google.cloud.kms.v1.CryptoKey] to get.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -496,7 +502,8 @@ public final class GetCryptoKeyRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The [name][google.cloud.kms.v1.CryptoKey.name] of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to get.
+     * The [name][google.cloud.kms.v1.CryptoKey.name] of the
+     * [CryptoKey][google.cloud.kms.v1.CryptoKey] to get.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -514,7 +521,8 @@ public final class GetCryptoKeyRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The [name][google.cloud.kms.v1.CryptoKey.name] of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to get.
+     * The [name][google.cloud.kms.v1.CryptoKey.name] of the
+     * [CryptoKey][google.cloud.kms.v1.CryptoKey] to get.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -529,7 +537,8 @@ public final class GetCryptoKeyRequest extends com.google.protobuf.GeneratedMess
      *
      *
      * <pre>
-     * The [name][google.cloud.kms.v1.CryptoKey.name] of the [CryptoKey][google.cloud.kms.v1.CryptoKey] to get.
+     * The [name][google.cloud.kms.v1.CryptoKey.name] of the
+     * [CryptoKey][google.cloud.kms.v1.CryptoKey] to get.
      * </pre>
      *
      * <code>string name = 1;</code>

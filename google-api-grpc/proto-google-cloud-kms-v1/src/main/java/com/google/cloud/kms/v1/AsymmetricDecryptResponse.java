@@ -7,7 +7,8 @@ package com.google.cloud.kms.v1;
  *
  *
  * <pre>
- * Response message for [KeyManagementService.AsymmetricDecrypt][google.cloud.kms.v1.KeyManagementService.AsymmetricDecrypt].
+ * Response message for
+ * [KeyManagementService.AsymmetricDecrypt][google.cloud.kms.v1.KeyManagementService.AsymmetricDecrypt].
  * </pre>
  *
  * Protobuf type {@code google.cloud.kms.v1.AsymmetricDecryptResponse}
@@ -268,7 +269,8 @@ public final class AsymmetricDecryptResponse extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * Response message for [KeyManagementService.AsymmetricDecrypt][google.cloud.kms.v1.KeyManagementService.AsymmetricDecrypt].
+   * Response message for
+   * [KeyManagementService.AsymmetricDecrypt][google.cloud.kms.v1.KeyManagementService.AsymmetricDecrypt].
    * </pre>
    *
    * Protobuf type {@code google.cloud.kms.v1.AsymmetricDecryptResponse}

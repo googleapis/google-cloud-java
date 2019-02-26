@@ -7,7 +7,8 @@ package com.google.cloud.kms.v1;
  *
  *
  * <pre>
- * Request message for [KeyManagementService.AsymmetricSign][google.cloud.kms.v1.KeyManagementService.AsymmetricSign].
+ * Request message for
+ * [KeyManagementService.AsymmetricSign][google.cloud.kms.v1.KeyManagementService.AsymmetricSign].
  * </pre>
  *
  * Protobuf type {@code google.cloud.kms.v1.AsymmetricSignRequest}
@@ -112,7 +113,9 @@ public final class AsymmetricSignRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use for signing.
+   * Required. The resource name of the
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use for
+   * signing.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -132,7 +135,9 @@ public final class AsymmetricSignRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use for signing.
+   * Required. The resource name of the
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use for
+   * signing.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -372,7 +377,8 @@ public final class AsymmetricSignRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Request message for [KeyManagementService.AsymmetricSign][google.cloud.kms.v1.KeyManagementService.AsymmetricSign].
+   * Request message for
+   * [KeyManagementService.AsymmetricSign][google.cloud.kms.v1.KeyManagementService.AsymmetricSign].
    * </pre>
    *
    * Protobuf type {@code google.cloud.kms.v1.AsymmetricSignRequest}
@@ -544,7 +550,9 @@ public final class AsymmetricSignRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use for signing.
+     * Required. The resource name of the
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use for
+     * signing.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -564,7 +572,9 @@ public final class AsymmetricSignRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use for signing.
+     * Required. The resource name of the
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use for
+     * signing.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -584,7 +594,9 @@ public final class AsymmetricSignRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use for signing.
+     * Required. The resource name of the
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use for
+     * signing.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -602,7 +614,9 @@ public final class AsymmetricSignRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use for signing.
+     * Required. The resource name of the
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use for
+     * signing.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -617,7 +631,9 @@ public final class AsymmetricSignRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use for signing.
+     * Required. The resource name of the
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to use for
+     * signing.
      * </pre>
      *
      * <code>string name = 1;</code>

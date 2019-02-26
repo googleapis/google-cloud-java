@@ -13,7 +13,8 @@ public interface ListKeyRingsRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of the location associated with the
-   * [KeyRings][google.cloud.kms.v1.KeyRing], in the format `projects/&#42;&#47;locations/&#42;`.
+   * [KeyRings][google.cloud.kms.v1.KeyRing], in the format
+   * `projects/&#42;&#47;locations/&#42;`.
    * </pre>
    *
    * <code>string parent = 1;</code>
@@ -24,7 +25,8 @@ public interface ListKeyRingsRequestOrBuilder
    *
    * <pre>
    * Required. The resource name of the location associated with the
-   * [KeyRings][google.cloud.kms.v1.KeyRing], in the format `projects/&#42;&#47;locations/&#42;`.
+   * [KeyRings][google.cloud.kms.v1.KeyRing], in the format
+   * `projects/&#42;&#47;locations/&#42;`.
    * </pre>
    *
    * <code>string parent = 1;</code>
@@ -35,10 +37,12 @@ public interface ListKeyRingsRequestOrBuilder
    *
    *
    * <pre>
-   * Optional limit on the number of [KeyRings][google.cloud.kms.v1.KeyRing] to include in the
-   * response.  Further [KeyRings][google.cloud.kms.v1.KeyRing] can subsequently be obtained by
-   * including the [ListKeyRingsResponse.next_page_token][google.cloud.kms.v1.ListKeyRingsResponse.next_page_token] in a subsequent
-   * request.  If unspecified, the server will pick an appropriate default.
+   * Optional limit on the number of [KeyRings][google.cloud.kms.v1.KeyRing] to
+   * include in the response.  Further [KeyRings][google.cloud.kms.v1.KeyRing]
+   * can subsequently be obtained by including the
+   * [ListKeyRingsResponse.next_page_token][google.cloud.kms.v1.ListKeyRingsResponse.next_page_token]
+   * in a subsequent request.  If unspecified, the server will pick an
+   * appropriate default.
    * </pre>
    *
    * <code>int32 page_size = 2;</code>

@@ -7,7 +7,8 @@ package com.google.cloud.kms.v1;
  *
  *
  * <pre>
- * Response message for [KeyManagementService.AsymmetricSign][google.cloud.kms.v1.KeyManagementService.AsymmetricSign].
+ * Response message for
+ * [KeyManagementService.AsymmetricSign][google.cloud.kms.v1.KeyManagementService.AsymmetricSign].
  * </pre>
  *
  * Protobuf type {@code google.cloud.kms.v1.AsymmetricSignResponse}
@@ -268,7 +269,8 @@ public final class AsymmetricSignResponse extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * Response message for [KeyManagementService.AsymmetricSign][google.cloud.kms.v1.KeyManagementService.AsymmetricSign].
+   * Response message for
+   * [KeyManagementService.AsymmetricSign][google.cloud.kms.v1.KeyManagementService.AsymmetricSign].
    * </pre>
    *
    * Protobuf type {@code google.cloud.kms.v1.AsymmetricSignResponse}
