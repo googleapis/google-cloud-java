@@ -7,7 +7,8 @@ package com.google.cloud.automl.v1beta1;
  *
  *
  * <pre>
- * Request message for [AutoMl.DeployModel][google.cloud.automl.v1beta1.AutoMl.DeployModel].
+ * Request message for
+ * [AutoMl.DeployModel][google.cloud.automl.v1beta1.AutoMl.DeployModel].
  * </pre>
  *
  * Protobuf type {@code google.cloud.automl.v1beta1.DeployModelRequest}
@@ -298,7 +299,8 @@ public final class DeployModelRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Request message for [AutoMl.DeployModel][google.cloud.automl.v1beta1.AutoMl.DeployModel].
+   * Request message for
+   * [AutoMl.DeployModel][google.cloud.automl.v1beta1.AutoMl.DeployModel].
    * </pre>
    *
    * Protobuf type {@code google.cloud.automl.v1beta1.DeployModelRequest}

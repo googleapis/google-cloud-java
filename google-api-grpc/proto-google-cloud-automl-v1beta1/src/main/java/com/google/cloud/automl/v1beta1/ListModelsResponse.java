@@ -7,7 +7,8 @@ package com.google.cloud.automl.v1beta1;
  *
  *
  * <pre>
- * Response message for [AutoMl.ListModels][google.cloud.automl.v1beta1.AutoMl.ListModels].
+ * Response message for
+ * [AutoMl.ListModels][google.cloud.automl.v1beta1.AutoMl.ListModels].
  * </pre>
  *
  * Protobuf type {@code google.cloud.automl.v1beta1.ListModelsResponse}
@@ -391,7 +392,8 @@ public final class ListModelsResponse extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Response message for [AutoMl.ListModels][google.cloud.automl.v1beta1.AutoMl.ListModels].
+   * Response message for
+   * [AutoMl.ListModels][google.cloud.automl.v1beta1.AutoMl.ListModels].
    * </pre>
    *
    * Protobuf type {@code google.cloud.automl.v1beta1.ListModelsResponse}
