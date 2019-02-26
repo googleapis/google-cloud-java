@@ -12,8 +12,8 @@ public interface StreamingRecognizeResponseOrBuilder
    *
    *
    * <pre>
-   * Output only. If set, returns a [google.rpc.Status][google.rpc.Status] message that
-   * specifies the error for the operation.
+   * Output only. If set, returns a [google.rpc.Status][google.rpc.Status]
+   * message that specifies the error for the operation.
    * </pre>
    *
    * <code>.google.rpc.Status error = 1;</code>
@@ -23,8 +23,8 @@ public interface StreamingRecognizeResponseOrBuilder
    *
    *
    * <pre>
-   * Output only. If set, returns a [google.rpc.Status][google.rpc.Status] message that
-   * specifies the error for the operation.
+   * Output only. If set, returns a [google.rpc.Status][google.rpc.Status]
+   * message that specifies the error for the operation.
    * </pre>
    *
    * <code>.google.rpc.Status error = 1;</code>
@@ -34,8 +34,8 @@ public interface StreamingRecognizeResponseOrBuilder
    *
    *
    * <pre>
-   * Output only. If set, returns a [google.rpc.Status][google.rpc.Status] message that
-   * specifies the error for the operation.
+   * Output only. If set, returns a [google.rpc.Status][google.rpc.Status]
+   * message that specifies the error for the operation.
    * </pre>
    *
    * <code>.google.rpc.Status error = 1;</code>
