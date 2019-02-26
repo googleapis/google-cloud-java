@@ -7,7 +7,8 @@ package com.google.cloud.redis.v1beta1;
  *
  *
  * <pre>
- * Request for [ListInstances][google.cloud.redis.v1beta1.CloudRedis.ListInstances].
+ * Request for
+ * [ListInstances][google.cloud.redis.v1beta1.CloudRedis.ListInstances].
  * </pre>
  *
  * Protobuf type {@code google.cloud.redis.v1beta1.ListInstancesRequest}
@@ -399,7 +400,8 @@ public final class ListInstancesRequest extends com.google.protobuf.GeneratedMes
    *
    *
    * <pre>
-   * Request for [ListInstances][google.cloud.redis.v1beta1.CloudRedis.ListInstances].
+   * Request for
+   * [ListInstances][google.cloud.redis.v1beta1.CloudRedis.ListInstances].
    * </pre>
    *
    * Protobuf type {@code google.cloud.redis.v1beta1.ListInstancesRequest}
