@@ -221,7 +221,8 @@ public final class CreateSinkRequest extends com.google.protobuf.GeneratedMessag
    * If this field is set to true, or if the sink is owned by a non-project
    * resource such as an organization, then the value of `writer_identity` will
    * be a unique service account used only for exports from the new sink.  For
-   * more information, see `writer_identity` in [LogSink][google.logging.v2.LogSink].
+   * more information, see `writer_identity` in
+   * [LogSink][google.logging.v2.LogSink].
    * </pre>
    *
    * <code>bool unique_writer_identity = 3;</code>
@@ -905,7 +906,8 @@ public final class CreateSinkRequest extends com.google.protobuf.GeneratedMessag
      * If this field is set to true, or if the sink is owned by a non-project
      * resource such as an organization, then the value of `writer_identity` will
      * be a unique service account used only for exports from the new sink.  For
-     * more information, see `writer_identity` in [LogSink][google.logging.v2.LogSink].
+     * more information, see `writer_identity` in
+     * [LogSink][google.logging.v2.LogSink].
      * </pre>
      *
      * <code>bool unique_writer_identity = 3;</code>
@@ -926,7 +928,8 @@ public final class CreateSinkRequest extends com.google.protobuf.GeneratedMessag
      * If this field is set to true, or if the sink is owned by a non-project
      * resource such as an organization, then the value of `writer_identity` will
      * be a unique service account used only for exports from the new sink.  For
-     * more information, see `writer_identity` in [LogSink][google.logging.v2.LogSink].
+     * more information, see `writer_identity` in
+     * [LogSink][google.logging.v2.LogSink].
      * </pre>
      *
      * <code>bool unique_writer_identity = 3;</code>
@@ -950,7 +953,8 @@ public final class CreateSinkRequest extends com.google.protobuf.GeneratedMessag
      * If this field is set to true, or if the sink is owned by a non-project
      * resource such as an organization, then the value of `writer_identity` will
      * be a unique service account used only for exports from the new sink.  For
-     * more information, see `writer_identity` in [LogSink][google.logging.v2.LogSink].
+     * more information, see `writer_identity` in
+     * [LogSink][google.logging.v2.LogSink].
      * </pre>
      *
      * <code>bool unique_writer_identity = 3;</code>
