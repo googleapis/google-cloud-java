@@ -12,7 +12,9 @@ public interface EncryptResponseOrBuilder
    *
    *
    * <pre>
-   * The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used in encryption.
+   * The resource name of the
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used in
+   * encryption.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -22,7 +24,9 @@ public interface EncryptResponseOrBuilder
    *
    *
    * <pre>
-   * The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used in encryption.
+   * The resource name of the
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used in
+   * encryption.
    * </pre>
    *
    * <code>string name = 1;</code>

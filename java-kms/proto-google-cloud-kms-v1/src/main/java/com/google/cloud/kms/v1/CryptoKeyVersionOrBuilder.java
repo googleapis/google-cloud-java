@@ -12,7 +12,8 @@ public interface CryptoKeyVersionOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource name for this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] in the format
+   * Output only. The resource name for this
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] in the format
    * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;&#47;cryptoKeyVersions/&#42;`.
    * </pre>
    *
@@ -23,7 +24,8 @@ public interface CryptoKeyVersionOrBuilder
    *
    *
    * <pre>
-   * Output only. The resource name for this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] in the format
+   * Output only. The resource name for this
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] in the format
    * `projects/&#42;&#47;locations/&#42;&#47;keyRings/&#42;&#47;cryptoKeys/&#42;&#47;cryptoKeyVersions/&#42;`.
    * </pre>
    *
@@ -35,7 +37,8 @@ public interface CryptoKeyVersionOrBuilder
    *
    *
    * <pre>
-   * The current state of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
+   * The current state of the
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
    * </pre>
    *
    * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState state = 3;</code>
@@ -45,7 +48,8 @@ public interface CryptoKeyVersionOrBuilder
    *
    *
    * <pre>
-   * The current state of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
+   * The current state of the
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
    * </pre>
    *
    * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState state = 3;</code>
@@ -56,8 +60,9 @@ public interface CryptoKeyVersionOrBuilder
    *
    *
    * <pre>
-   * Output only. The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] describing how crypto operations are
-   * performed with this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
+   * Output only. The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel]
+   * describing how crypto operations are performed with this
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
    * </pre>
    *
    * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 7;</code>
@@ -67,8 +72,9 @@ public interface CryptoKeyVersionOrBuilder
    *
    *
    * <pre>
-   * Output only. The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] describing how crypto operations are
-   * performed with this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
+   * Output only. The [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel]
+   * describing how crypto operations are performed with this
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion].
    * </pre>
    *
    * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 7;</code>
@@ -79,8 +85,10 @@ public interface CryptoKeyVersionOrBuilder
    *
    *
    * <pre>
-   * Output only. The [CryptoKeyVersionAlgorithm][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm] that this
-   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] supports.
+   * Output only. The
+   * [CryptoKeyVersionAlgorithm][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm]
+   * that this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]
+   * supports.
    * </pre>
    *
    * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm algorithm = 10;</code>
@@ -90,8 +98,10 @@ public interface CryptoKeyVersionOrBuilder
    *
    *
    * <pre>
-   * Output only. The [CryptoKeyVersionAlgorithm][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm] that this
-   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] supports.
+   * Output only. The
+   * [CryptoKeyVersionAlgorithm][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm]
+   * that this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]
+   * supports.
    * </pre>
    *
    * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm algorithm = 10;</code>
@@ -105,7 +115,8 @@ public interface CryptoKeyVersionOrBuilder
    * Output only. Statement that was generated and signed by the HSM at key
    * creation time. Use this statement to verify attributes of the key as stored
    * on the HSM, independently of Google. Only provided for key versions with
-   * [protection_level][google.cloud.kms.v1.CryptoKeyVersion.protection_level] [HSM][google.cloud.kms.v1.ProtectionLevel.HSM].
+   * [protection_level][google.cloud.kms.v1.CryptoKeyVersion.protection_level]
+   * [HSM][google.cloud.kms.v1.ProtectionLevel.HSM].
    * </pre>
    *
    * <code>.google.cloud.kms.v1.KeyOperationAttestation attestation = 8;</code>
@@ -118,7 +129,8 @@ public interface CryptoKeyVersionOrBuilder
    * Output only. Statement that was generated and signed by the HSM at key
    * creation time. Use this statement to verify attributes of the key as stored
    * on the HSM, independently of Google. Only provided for key versions with
-   * [protection_level][google.cloud.kms.v1.CryptoKeyVersion.protection_level] [HSM][google.cloud.kms.v1.ProtectionLevel.HSM].
+   * [protection_level][google.cloud.kms.v1.CryptoKeyVersion.protection_level]
+   * [HSM][google.cloud.kms.v1.ProtectionLevel.HSM].
    * </pre>
    *
    * <code>.google.cloud.kms.v1.KeyOperationAttestation attestation = 8;</code>
@@ -131,7 +143,8 @@ public interface CryptoKeyVersionOrBuilder
    * Output only. Statement that was generated and signed by the HSM at key
    * creation time. Use this statement to verify attributes of the key as stored
    * on the HSM, independently of Google. Only provided for key versions with
-   * [protection_level][google.cloud.kms.v1.CryptoKeyVersion.protection_level] [HSM][google.cloud.kms.v1.ProtectionLevel.HSM].
+   * [protection_level][google.cloud.kms.v1.CryptoKeyVersion.protection_level]
+   * [HSM][google.cloud.kms.v1.ProtectionLevel.HSM].
    * </pre>
    *
    * <code>.google.cloud.kms.v1.KeyOperationAttestation attestation = 8;</code>
@@ -142,7 +155,8 @@ public interface CryptoKeyVersionOrBuilder
    *
    *
    * <pre>
-   * Output only. The time at which this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] was created.
+   * Output only. The time at which this
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 4;</code>
@@ -152,7 +166,8 @@ public interface CryptoKeyVersionOrBuilder
    *
    *
    * <pre>
-   * Output only. The time at which this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] was created.
+   * Output only. The time at which this
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 4;</code>
@@ -162,7 +177,8 @@ public interface CryptoKeyVersionOrBuilder
    *
    *
    * <pre>
-   * Output only. The time at which this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] was created.
+   * Output only. The time at which this
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] was created.
    * </pre>
    *
    * <code>.google.protobuf.Timestamp create_time = 4;</code>
@@ -173,7 +189,8 @@ public interface CryptoKeyVersionOrBuilder
    *
    *
    * <pre>
-   * Output only. The time this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material was
+   * Output only. The time this
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material was
    * generated.
    * </pre>
    *
@@ -184,7 +201,8 @@ public interface CryptoKeyVersionOrBuilder
    *
    *
    * <pre>
-   * Output only. The time this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material was
+   * Output only. The time this
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material was
    * generated.
    * </pre>
    *
@@ -195,7 +213,8 @@ public interface CryptoKeyVersionOrBuilder
    *
    *
    * <pre>
-   * Output only. The time this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material was
+   * Output only. The time this
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material was
    * generated.
    * </pre>
    *
@@ -207,8 +226,10 @@ public interface CryptoKeyVersionOrBuilder
    *
    *
    * <pre>
-   * Output only. The time this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material is scheduled
-   * for destruction. Only present if [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
+   * Output only. The time this
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material is
+   * scheduled for destruction. Only present if
+   * [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
    * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED].
    * </pre>
    *
@@ -219,8 +240,10 @@ public interface CryptoKeyVersionOrBuilder
    *
    *
    * <pre>
-   * Output only. The time this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material is scheduled
-   * for destruction. Only present if [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
+   * Output only. The time this
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material is
+   * scheduled for destruction. Only present if
+   * [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
    * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED].
    * </pre>
    *
@@ -231,8 +254,10 @@ public interface CryptoKeyVersionOrBuilder
    *
    *
    * <pre>
-   * Output only. The time this [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material is scheduled
-   * for destruction. Only present if [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
+   * Output only. The time this
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]'s key material is
+   * scheduled for destruction. Only present if
+   * [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
    * [DESTROY_SCHEDULED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROY_SCHEDULED].
    * </pre>
    *
@@ -245,7 +270,8 @@ public interface CryptoKeyVersionOrBuilder
    *
    * <pre>
    * Output only. The time this CryptoKeyVersion's key material was
-   * destroyed. Only present if [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
+   * destroyed. Only present if
+   * [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
    * [DESTROYED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROYED].
    * </pre>
    *
@@ -257,7 +283,8 @@ public interface CryptoKeyVersionOrBuilder
    *
    * <pre>
    * Output only. The time this CryptoKeyVersion's key material was
-   * destroyed. Only present if [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
+   * destroyed. Only present if
+   * [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
    * [DESTROYED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROYED].
    * </pre>
    *
@@ -269,7 +296,8 @@ public interface CryptoKeyVersionOrBuilder
    *
    * <pre>
    * Output only. The time this CryptoKeyVersion's key material was
-   * destroyed. Only present if [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
+   * destroyed. Only present if
+   * [state][google.cloud.kms.v1.CryptoKeyVersion.state] is
    * [DESTROYED][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionState.DESTROYED].
    * </pre>
    *

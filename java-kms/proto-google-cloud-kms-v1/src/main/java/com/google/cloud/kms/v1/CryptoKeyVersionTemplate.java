@@ -7,10 +7,12 @@ package com.google.cloud.kms.v1;
  *
  *
  * <pre>
- * A [CryptoKeyVersionTemplate][google.cloud.kms.v1.CryptoKeyVersionTemplate] specifies the properties to use when creating
- * a new [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion], either manually with
- * [CreateCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.CreateCryptoKeyVersion] or
- * automatically as a result of auto-rotation.
+ * A [CryptoKeyVersionTemplate][google.cloud.kms.v1.CryptoKeyVersionTemplate]
+ * specifies the properties to use when creating a new
+ * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion], either manually
+ * with
+ * [CreateCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.CreateCryptoKeyVersion]
+ * or automatically as a result of auto-rotation.
  * </pre>
  *
  * Protobuf type {@code google.cloud.kms.v1.CryptoKeyVersionTemplate}
@@ -108,8 +110,10 @@ public final class CryptoKeyVersionTemplate extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] to use when creating a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] based on
-   * this template. Immutable. Defaults to [SOFTWARE][google.cloud.kms.v1.ProtectionLevel.SOFTWARE].
+   * [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] to use when creating
+   * a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] based on this
+   * template. Immutable. Defaults to
+   * [SOFTWARE][google.cloud.kms.v1.ProtectionLevel.SOFTWARE].
    * </pre>
    *
    * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 1;</code>
@@ -121,8 +125,10 @@ public final class CryptoKeyVersionTemplate extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] to use when creating a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] based on
-   * this template. Immutable. Defaults to [SOFTWARE][google.cloud.kms.v1.ProtectionLevel.SOFTWARE].
+   * [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] to use when creating
+   * a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] based on this
+   * template. Immutable. Defaults to
+   * [SOFTWARE][google.cloud.kms.v1.ProtectionLevel.SOFTWARE].
    * </pre>
    *
    * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 1;</code>
@@ -140,10 +146,14 @@ public final class CryptoKeyVersionTemplate extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required. [Algorithm][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm] to use
-   * when creating a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] based on this template.
+   * Required.
+   * [Algorithm][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm]
+   * to use when creating a
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] based on this
+   * template.
    * For backwards compatibility, GOOGLE_SYMMETRIC_ENCRYPTION is implied if both
-   * this field is omitted and [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] is
+   * this field is omitted and
+   * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] is
    * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
    * </pre>
    *
@@ -156,10 +166,14 @@ public final class CryptoKeyVersionTemplate extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * Required. [Algorithm][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm] to use
-   * when creating a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] based on this template.
+   * Required.
+   * [Algorithm][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm]
+   * to use when creating a
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] based on this
+   * template.
    * For backwards compatibility, GOOGLE_SYMMETRIC_ENCRYPTION is implied if both
-   * this field is omitted and [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] is
+   * this field is omitted and
+   * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] is
    * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
    * </pre>
    *
@@ -355,10 +369,12 @@ public final class CryptoKeyVersionTemplate extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * A [CryptoKeyVersionTemplate][google.cloud.kms.v1.CryptoKeyVersionTemplate] specifies the properties to use when creating
-   * a new [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion], either manually with
-   * [CreateCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.CreateCryptoKeyVersion] or
-   * automatically as a result of auto-rotation.
+   * A [CryptoKeyVersionTemplate][google.cloud.kms.v1.CryptoKeyVersionTemplate]
+   * specifies the properties to use when creating a new
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion], either manually
+   * with
+   * [CreateCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.CreateCryptoKeyVersion]
+   * or automatically as a result of auto-rotation.
    * </pre>
    *
    * Protobuf type {@code google.cloud.kms.v1.CryptoKeyVersionTemplate}
@@ -522,8 +538,10 @@ public final class CryptoKeyVersionTemplate extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] to use when creating a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] based on
-     * this template. Immutable. Defaults to [SOFTWARE][google.cloud.kms.v1.ProtectionLevel.SOFTWARE].
+     * [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] to use when creating
+     * a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] based on this
+     * template. Immutable. Defaults to
+     * [SOFTWARE][google.cloud.kms.v1.ProtectionLevel.SOFTWARE].
      * </pre>
      *
      * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 1;</code>
@@ -535,8 +553,10 @@ public final class CryptoKeyVersionTemplate extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] to use when creating a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] based on
-     * this template. Immutable. Defaults to [SOFTWARE][google.cloud.kms.v1.ProtectionLevel.SOFTWARE].
+     * [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] to use when creating
+     * a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] based on this
+     * template. Immutable. Defaults to
+     * [SOFTWARE][google.cloud.kms.v1.ProtectionLevel.SOFTWARE].
      * </pre>
      *
      * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 1;</code>
@@ -550,8 +570,10 @@ public final class CryptoKeyVersionTemplate extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] to use when creating a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] based on
-     * this template. Immutable. Defaults to [SOFTWARE][google.cloud.kms.v1.ProtectionLevel.SOFTWARE].
+     * [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] to use when creating
+     * a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] based on this
+     * template. Immutable. Defaults to
+     * [SOFTWARE][google.cloud.kms.v1.ProtectionLevel.SOFTWARE].
      * </pre>
      *
      * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 1;</code>
@@ -566,8 +588,10 @@ public final class CryptoKeyVersionTemplate extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] to use when creating a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] based on
-     * this template. Immutable. Defaults to [SOFTWARE][google.cloud.kms.v1.ProtectionLevel.SOFTWARE].
+     * [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] to use when creating
+     * a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] based on this
+     * template. Immutable. Defaults to
+     * [SOFTWARE][google.cloud.kms.v1.ProtectionLevel.SOFTWARE].
      * </pre>
      *
      * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 1;</code>
@@ -585,8 +609,10 @@ public final class CryptoKeyVersionTemplate extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] to use when creating a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] based on
-     * this template. Immutable. Defaults to [SOFTWARE][google.cloud.kms.v1.ProtectionLevel.SOFTWARE].
+     * [ProtectionLevel][google.cloud.kms.v1.ProtectionLevel] to use when creating
+     * a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] based on this
+     * template. Immutable. Defaults to
+     * [SOFTWARE][google.cloud.kms.v1.ProtectionLevel.SOFTWARE].
      * </pre>
      *
      * <code>.google.cloud.kms.v1.ProtectionLevel protection_level = 1;</code>
@@ -603,10 +629,14 @@ public final class CryptoKeyVersionTemplate extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. [Algorithm][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm] to use
-     * when creating a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] based on this template.
+     * Required.
+     * [Algorithm][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm]
+     * to use when creating a
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] based on this
+     * template.
      * For backwards compatibility, GOOGLE_SYMMETRIC_ENCRYPTION is implied if both
-     * this field is omitted and [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] is
+     * this field is omitted and
+     * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] is
      * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
      * </pre>
      *
@@ -619,10 +649,14 @@ public final class CryptoKeyVersionTemplate extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. [Algorithm][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm] to use
-     * when creating a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] based on this template.
+     * Required.
+     * [Algorithm][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm]
+     * to use when creating a
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] based on this
+     * template.
      * For backwards compatibility, GOOGLE_SYMMETRIC_ENCRYPTION is implied if both
-     * this field is omitted and [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] is
+     * this field is omitted and
+     * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] is
      * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
      * </pre>
      *
@@ -637,10 +671,14 @@ public final class CryptoKeyVersionTemplate extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. [Algorithm][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm] to use
-     * when creating a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] based on this template.
+     * Required.
+     * [Algorithm][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm]
+     * to use when creating a
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] based on this
+     * template.
      * For backwards compatibility, GOOGLE_SYMMETRIC_ENCRYPTION is implied if both
-     * this field is omitted and [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] is
+     * this field is omitted and
+     * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] is
      * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
      * </pre>
      *
@@ -658,10 +696,14 @@ public final class CryptoKeyVersionTemplate extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. [Algorithm][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm] to use
-     * when creating a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] based on this template.
+     * Required.
+     * [Algorithm][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm]
+     * to use when creating a
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] based on this
+     * template.
      * For backwards compatibility, GOOGLE_SYMMETRIC_ENCRYPTION is implied if both
-     * this field is omitted and [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] is
+     * this field is omitted and
+     * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] is
      * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
      * </pre>
      *
@@ -681,10 +723,14 @@ public final class CryptoKeyVersionTemplate extends com.google.protobuf.Generate
      *
      *
      * <pre>
-     * Required. [Algorithm][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm] to use
-     * when creating a [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] based on this template.
+     * Required.
+     * [Algorithm][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm]
+     * to use when creating a
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] based on this
+     * template.
      * For backwards compatibility, GOOGLE_SYMMETRIC_ENCRYPTION is implied if both
-     * this field is omitted and [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] is
+     * this field is omitted and
+     * [CryptoKey.purpose][google.cloud.kms.v1.CryptoKey.purpose] is
      * [ENCRYPT_DECRYPT][google.cloud.kms.v1.CryptoKey.CryptoKeyPurpose.ENCRYPT_DECRYPT].
      * </pre>
      *

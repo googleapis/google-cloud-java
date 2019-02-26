@@ -7,7 +7,8 @@ package com.google.cloud.kms.v1;
  *
  *
  * <pre>
- * The public key for a given [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]. Obtained via
+ * The public key for a given
+ * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]. Obtained via
  * [GetPublicKey][google.cloud.kms.v1.KeyManagementService.GetPublicKey].
  * </pre>
  *
@@ -157,8 +158,9 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The [Algorithm][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm] associated
-   * with this key.
+   * The
+   * [Algorithm][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm]
+   * associated with this key.
    * </pre>
    *
    * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm algorithm = 2;</code>
@@ -170,8 +172,9 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The [Algorithm][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm] associated
-   * with this key.
+   * The
+   * [Algorithm][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm]
+   * associated with this key.
    * </pre>
    *
    * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm algorithm = 2;</code>
@@ -362,7 +365,8 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The public key for a given [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]. Obtained via
+   * The public key for a given
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion]. Obtained via
    * [GetPublicKey][google.cloud.kms.v1.KeyManagementService.GetPublicKey].
    * </pre>
    *
@@ -640,8 +644,9 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The [Algorithm][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm] associated
-     * with this key.
+     * The
+     * [Algorithm][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm]
+     * associated with this key.
      * </pre>
      *
      * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm algorithm = 2;</code>
@@ -653,8 +658,9 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The [Algorithm][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm] associated
-     * with this key.
+     * The
+     * [Algorithm][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm]
+     * associated with this key.
      * </pre>
      *
      * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm algorithm = 2;</code>
@@ -668,8 +674,9 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The [Algorithm][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm] associated
-     * with this key.
+     * The
+     * [Algorithm][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm]
+     * associated with this key.
      * </pre>
      *
      * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm algorithm = 2;</code>
@@ -686,8 +693,9 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The [Algorithm][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm] associated
-     * with this key.
+     * The
+     * [Algorithm][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm]
+     * associated with this key.
      * </pre>
      *
      * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm algorithm = 2;</code>
@@ -706,8 +714,9 @@ public final class PublicKey extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The [Algorithm][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm] associated
-     * with this key.
+     * The
+     * [Algorithm][google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm]
+     * associated with this key.
      * </pre>
      *
      * <code>.google.cloud.kms.v1.CryptoKeyVersion.CryptoKeyVersionAlgorithm algorithm = 2;</code>

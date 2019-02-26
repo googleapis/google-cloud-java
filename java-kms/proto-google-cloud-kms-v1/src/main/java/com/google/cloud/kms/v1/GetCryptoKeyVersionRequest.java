@@ -7,7 +7,8 @@ package com.google.cloud.kms.v1;
  *
  *
  * <pre>
- * Request message for [KeyManagementService.GetCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.GetCryptoKeyVersion].
+ * Request message for
+ * [KeyManagementService.GetCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.GetCryptoKeyVersion].
  * </pre>
  *
  * Protobuf type {@code google.cloud.kms.v1.GetCryptoKeyVersionRequest}
@@ -97,7 +98,8 @@ public final class GetCryptoKeyVersionRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to get.
+   * The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to get.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -117,7 +119,8 @@ public final class GetCryptoKeyVersionRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to get.
+   * The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to get.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -298,7 +301,8 @@ public final class GetCryptoKeyVersionRequest extends com.google.protobuf.Genera
    *
    *
    * <pre>
-   * Request message for [KeyManagementService.GetCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.GetCryptoKeyVersion].
+   * Request message for
+   * [KeyManagementService.GetCryptoKeyVersion][google.cloud.kms.v1.KeyManagementService.GetCryptoKeyVersion].
    * </pre>
    *
    * Protobuf type {@code google.cloud.kms.v1.GetCryptoKeyVersionRequest}
@@ -458,7 +462,8 @@ public final class GetCryptoKeyVersionRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to get.
+     * The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to get.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -478,7 +483,8 @@ public final class GetCryptoKeyVersionRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to get.
+     * The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to get.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -498,7 +504,8 @@ public final class GetCryptoKeyVersionRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to get.
+     * The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to get.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -516,7 +523,8 @@ public final class GetCryptoKeyVersionRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to get.
+     * The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to get.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -531,7 +539,8 @@ public final class GetCryptoKeyVersionRequest extends com.google.protobuf.Genera
      *
      *
      * <pre>
-     * The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to get.
+     * The [name][google.cloud.kms.v1.CryptoKeyVersion.name] of the
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] to get.
      * </pre>
      *
      * <code>string name = 1;</code>

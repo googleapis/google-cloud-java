@@ -7,7 +7,8 @@ package com.google.cloud.kms.v1;
  *
  *
  * <pre>
- * Response message for [KeyManagementService.Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt].
+ * Response message for
+ * [KeyManagementService.Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt].
  * </pre>
  *
  * Protobuf type {@code google.cloud.kms.v1.EncryptResponse}
@@ -103,7 +104,9 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used in encryption.
+   * The resource name of the
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used in
+   * encryption.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -123,7 +126,9 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used in encryption.
+   * The resource name of the
+   * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used in
+   * encryption.
    * </pre>
    *
    * <code>string name = 1;</code>
@@ -327,7 +332,8 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Response message for [KeyManagementService.Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt].
+   * Response message for
+   * [KeyManagementService.Encrypt][google.cloud.kms.v1.KeyManagementService.Encrypt].
    * </pre>
    *
    * Protobuf type {@code google.cloud.kms.v1.EncryptResponse}
@@ -491,7 +497,9 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used in encryption.
+     * The resource name of the
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used in
+     * encryption.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -511,7 +519,9 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used in encryption.
+     * The resource name of the
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used in
+     * encryption.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -531,7 +541,9 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used in encryption.
+     * The resource name of the
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used in
+     * encryption.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -549,7 +561,9 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used in encryption.
+     * The resource name of the
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used in
+     * encryption.
      * </pre>
      *
      * <code>string name = 1;</code>
@@ -564,7 +578,9 @@ public final class EncryptResponse extends com.google.protobuf.GeneratedMessageV
      *
      *
      * <pre>
-     * The resource name of the [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used in encryption.
+     * The resource name of the
+     * [CryptoKeyVersion][google.cloud.kms.v1.CryptoKeyVersion] used in
+     * encryption.
      * </pre>
      *
      * <code>string name = 1;</code>
