@@ -7,7 +7,8 @@ package com.google.spanner.admin.database.v1;
  *
  *
  * <pre>
- * The request for [CreateDatabase][google.spanner.admin.database.v1.DatabaseAdmin.CreateDatabase].
+ * The request for
+ * [CreateDatabase][google.spanner.admin.database.v1.DatabaseAdmin.CreateDatabase].
  * </pre>
  *
  * Protobuf type {@code google.spanner.admin.database.v1.CreateDatabaseRequest}
@@ -463,7 +464,8 @@ public final class CreateDatabaseRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The request for [CreateDatabase][google.spanner.admin.database.v1.DatabaseAdmin.CreateDatabase].
+   * The request for
+   * [CreateDatabase][google.spanner.admin.database.v1.DatabaseAdmin.CreateDatabase].
    * </pre>
    *
    * Protobuf type {@code google.spanner.admin.database.v1.CreateDatabaseRequest}

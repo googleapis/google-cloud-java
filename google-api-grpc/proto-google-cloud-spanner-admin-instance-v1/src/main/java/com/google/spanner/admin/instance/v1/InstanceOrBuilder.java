@@ -91,7 +91,8 @@ public interface InstanceOrBuilder
    * <pre>
    * Required. The number of nodes allocated to this instance. This may be zero
    * in API responses for instances that are not yet in state `READY`.
-   * See [the documentation](https://cloud.google.com/spanner/docs/instances#node_count)
+   * See [the
+   * documentation](https://cloud.google.com/spanner/docs/instances#node_count)
    * for more information about nodes.
    * </pre>
    *
@@ -104,10 +105,10 @@ public interface InstanceOrBuilder
    *
    * <pre>
    * Output only. The current instance state. For
-   * [CreateInstance][google.spanner.admin.instance.v1.InstanceAdmin.CreateInstance], the state must be
-   * either omitted or set to `CREATING`. For
-   * [UpdateInstance][google.spanner.admin.instance.v1.InstanceAdmin.UpdateInstance], the state must be
-   * either omitted or set to `READY`.
+   * [CreateInstance][google.spanner.admin.instance.v1.InstanceAdmin.CreateInstance],
+   * the state must be either omitted or set to `CREATING`. For
+   * [UpdateInstance][google.spanner.admin.instance.v1.InstanceAdmin.UpdateInstance],
+   * the state must be either omitted or set to `READY`.
    * </pre>
    *
    * <code>.google.spanner.admin.instance.v1.Instance.State state = 6;</code>
@@ -118,10 +119,10 @@ public interface InstanceOrBuilder
    *
    * <pre>
    * Output only. The current instance state. For
-   * [CreateInstance][google.spanner.admin.instance.v1.InstanceAdmin.CreateInstance], the state must be
-   * either omitted or set to `CREATING`. For
-   * [UpdateInstance][google.spanner.admin.instance.v1.InstanceAdmin.UpdateInstance], the state must be
-   * either omitted or set to `READY`.
+   * [CreateInstance][google.spanner.admin.instance.v1.InstanceAdmin.CreateInstance],
+   * the state must be either omitted or set to `CREATING`. For
+   * [UpdateInstance][google.spanner.admin.instance.v1.InstanceAdmin.UpdateInstance],
+   * the state must be either omitted or set to `READY`.
    * </pre>
    *
    * <code>.google.spanner.admin.instance.v1.Instance.State state = 6;</code>

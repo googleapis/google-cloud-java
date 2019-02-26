@@ -193,7 +193,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The names of the columns in [table][google.spanner.v1.Mutation.Write.table] to be written.
+     * The names of the columns in
+     * [table][google.spanner.v1.Mutation.Write.table] to be written.
      * The list of columns must contain enough columns to allow
      * Cloud Spanner to derive values for all primary key columns in the
      * row(s) to be modified.
@@ -206,7 +207,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The names of the columns in [table][google.spanner.v1.Mutation.Write.table] to be written.
+     * The names of the columns in
+     * [table][google.spanner.v1.Mutation.Write.table] to be written.
      * The list of columns must contain enough columns to allow
      * Cloud Spanner to derive values for all primary key columns in the
      * row(s) to be modified.
@@ -219,7 +221,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The names of the columns in [table][google.spanner.v1.Mutation.Write.table] to be written.
+     * The names of the columns in
+     * [table][google.spanner.v1.Mutation.Write.table] to be written.
      * The list of columns must contain enough columns to allow
      * Cloud Spanner to derive values for all primary key columns in the
      * row(s) to be modified.
@@ -232,7 +235,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The names of the columns in [table][google.spanner.v1.Mutation.Write.table] to be written.
+     * The names of the columns in
+     * [table][google.spanner.v1.Mutation.Write.table] to be written.
      * The list of columns must contain enough columns to allow
      * Cloud Spanner to derive values for all primary key columns in the
      * row(s) to be modified.
@@ -249,11 +253,13 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      * The values to be written. `values` can contain more than one
      * list of values. If it does, then multiple rows are written, one
      * for each entry in `values`. Each list in `values` must have
-     * exactly as many entries as there are entries in [columns][google.spanner.v1.Mutation.Write.columns]
-     * above. Sending multiple lists is equivalent to sending multiple
-     * `Mutation`s, each containing one `values` entry and repeating
-     * [table][google.spanner.v1.Mutation.Write.table] and [columns][google.spanner.v1.Mutation.Write.columns]. Individual values in each list are
-     * encoded as described [here][google.spanner.v1.TypeCode].
+     * exactly as many entries as there are entries in
+     * [columns][google.spanner.v1.Mutation.Write.columns] above. Sending
+     * multiple lists is equivalent to sending multiple `Mutation`s, each
+     * containing one `values` entry and repeating
+     * [table][google.spanner.v1.Mutation.Write.table] and
+     * [columns][google.spanner.v1.Mutation.Write.columns]. Individual values in
+     * each list are encoded as described [here][google.spanner.v1.TypeCode].
      * </pre>
      *
      * <code>repeated .google.protobuf.ListValue values = 3;</code>
@@ -266,11 +272,13 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      * The values to be written. `values` can contain more than one
      * list of values. If it does, then multiple rows are written, one
      * for each entry in `values`. Each list in `values` must have
-     * exactly as many entries as there are entries in [columns][google.spanner.v1.Mutation.Write.columns]
-     * above. Sending multiple lists is equivalent to sending multiple
-     * `Mutation`s, each containing one `values` entry and repeating
-     * [table][google.spanner.v1.Mutation.Write.table] and [columns][google.spanner.v1.Mutation.Write.columns]. Individual values in each list are
-     * encoded as described [here][google.spanner.v1.TypeCode].
+     * exactly as many entries as there are entries in
+     * [columns][google.spanner.v1.Mutation.Write.columns] above. Sending
+     * multiple lists is equivalent to sending multiple `Mutation`s, each
+     * containing one `values` entry and repeating
+     * [table][google.spanner.v1.Mutation.Write.table] and
+     * [columns][google.spanner.v1.Mutation.Write.columns]. Individual values in
+     * each list are encoded as described [here][google.spanner.v1.TypeCode].
      * </pre>
      *
      * <code>repeated .google.protobuf.ListValue values = 3;</code>
@@ -283,11 +291,13 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      * The values to be written. `values` can contain more than one
      * list of values. If it does, then multiple rows are written, one
      * for each entry in `values`. Each list in `values` must have
-     * exactly as many entries as there are entries in [columns][google.spanner.v1.Mutation.Write.columns]
-     * above. Sending multiple lists is equivalent to sending multiple
-     * `Mutation`s, each containing one `values` entry and repeating
-     * [table][google.spanner.v1.Mutation.Write.table] and [columns][google.spanner.v1.Mutation.Write.columns]. Individual values in each list are
-     * encoded as described [here][google.spanner.v1.TypeCode].
+     * exactly as many entries as there are entries in
+     * [columns][google.spanner.v1.Mutation.Write.columns] above. Sending
+     * multiple lists is equivalent to sending multiple `Mutation`s, each
+     * containing one `values` entry and repeating
+     * [table][google.spanner.v1.Mutation.Write.table] and
+     * [columns][google.spanner.v1.Mutation.Write.columns]. Individual values in
+     * each list are encoded as described [here][google.spanner.v1.TypeCode].
      * </pre>
      *
      * <code>repeated .google.protobuf.ListValue values = 3;</code>
@@ -300,11 +310,13 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      * The values to be written. `values` can contain more than one
      * list of values. If it does, then multiple rows are written, one
      * for each entry in `values`. Each list in `values` must have
-     * exactly as many entries as there are entries in [columns][google.spanner.v1.Mutation.Write.columns]
-     * above. Sending multiple lists is equivalent to sending multiple
-     * `Mutation`s, each containing one `values` entry and repeating
-     * [table][google.spanner.v1.Mutation.Write.table] and [columns][google.spanner.v1.Mutation.Write.columns]. Individual values in each list are
-     * encoded as described [here][google.spanner.v1.TypeCode].
+     * exactly as many entries as there are entries in
+     * [columns][google.spanner.v1.Mutation.Write.columns] above. Sending
+     * multiple lists is equivalent to sending multiple `Mutation`s, each
+     * containing one `values` entry and repeating
+     * [table][google.spanner.v1.Mutation.Write.table] and
+     * [columns][google.spanner.v1.Mutation.Write.columns]. Individual values in
+     * each list are encoded as described [here][google.spanner.v1.TypeCode].
      * </pre>
      *
      * <code>repeated .google.protobuf.ListValue values = 3;</code>
@@ -317,11 +329,13 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      * The values to be written. `values` can contain more than one
      * list of values. If it does, then multiple rows are written, one
      * for each entry in `values`. Each list in `values` must have
-     * exactly as many entries as there are entries in [columns][google.spanner.v1.Mutation.Write.columns]
-     * above. Sending multiple lists is equivalent to sending multiple
-     * `Mutation`s, each containing one `values` entry and repeating
-     * [table][google.spanner.v1.Mutation.Write.table] and [columns][google.spanner.v1.Mutation.Write.columns]. Individual values in each list are
-     * encoded as described [here][google.spanner.v1.TypeCode].
+     * exactly as many entries as there are entries in
+     * [columns][google.spanner.v1.Mutation.Write.columns] above. Sending
+     * multiple lists is equivalent to sending multiple `Mutation`s, each
+     * containing one `values` entry and repeating
+     * [table][google.spanner.v1.Mutation.Write.table] and
+     * [columns][google.spanner.v1.Mutation.Write.columns]. Individual values in
+     * each list are encoded as described [here][google.spanner.v1.TypeCode].
      * </pre>
      *
      * <code>repeated .google.protobuf.ListValue values = 3;</code>
@@ -332,7 +346,9 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Arguments to [insert][google.spanner.v1.Mutation.insert], [update][google.spanner.v1.Mutation.update], [insert_or_update][google.spanner.v1.Mutation.insert_or_update], and
+   * Arguments to [insert][google.spanner.v1.Mutation.insert],
+   * [update][google.spanner.v1.Mutation.update],
+   * [insert_or_update][google.spanner.v1.Mutation.insert_or_update], and
    * [replace][google.spanner.v1.Mutation.replace] operations.
    * </pre>
    *
@@ -495,7 +511,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The names of the columns in [table][google.spanner.v1.Mutation.Write.table] to be written.
+     * The names of the columns in
+     * [table][google.spanner.v1.Mutation.Write.table] to be written.
      * The list of columns must contain enough columns to allow
      * Cloud Spanner to derive values for all primary key columns in the
      * row(s) to be modified.
@@ -510,7 +527,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The names of the columns in [table][google.spanner.v1.Mutation.Write.table] to be written.
+     * The names of the columns in
+     * [table][google.spanner.v1.Mutation.Write.table] to be written.
      * The list of columns must contain enough columns to allow
      * Cloud Spanner to derive values for all primary key columns in the
      * row(s) to be modified.
@@ -525,7 +543,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The names of the columns in [table][google.spanner.v1.Mutation.Write.table] to be written.
+     * The names of the columns in
+     * [table][google.spanner.v1.Mutation.Write.table] to be written.
      * The list of columns must contain enough columns to allow
      * Cloud Spanner to derive values for all primary key columns in the
      * row(s) to be modified.
@@ -540,7 +559,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The names of the columns in [table][google.spanner.v1.Mutation.Write.table] to be written.
+     * The names of the columns in
+     * [table][google.spanner.v1.Mutation.Write.table] to be written.
      * The list of columns must contain enough columns to allow
      * Cloud Spanner to derive values for all primary key columns in the
      * row(s) to be modified.
@@ -561,11 +581,13 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      * The values to be written. `values` can contain more than one
      * list of values. If it does, then multiple rows are written, one
      * for each entry in `values`. Each list in `values` must have
-     * exactly as many entries as there are entries in [columns][google.spanner.v1.Mutation.Write.columns]
-     * above. Sending multiple lists is equivalent to sending multiple
-     * `Mutation`s, each containing one `values` entry and repeating
-     * [table][google.spanner.v1.Mutation.Write.table] and [columns][google.spanner.v1.Mutation.Write.columns]. Individual values in each list are
-     * encoded as described [here][google.spanner.v1.TypeCode].
+     * exactly as many entries as there are entries in
+     * [columns][google.spanner.v1.Mutation.Write.columns] above. Sending
+     * multiple lists is equivalent to sending multiple `Mutation`s, each
+     * containing one `values` entry and repeating
+     * [table][google.spanner.v1.Mutation.Write.table] and
+     * [columns][google.spanner.v1.Mutation.Write.columns]. Individual values in
+     * each list are encoded as described [here][google.spanner.v1.TypeCode].
      * </pre>
      *
      * <code>repeated .google.protobuf.ListValue values = 3;</code>
@@ -580,11 +602,13 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      * The values to be written. `values` can contain more than one
      * list of values. If it does, then multiple rows are written, one
      * for each entry in `values`. Each list in `values` must have
-     * exactly as many entries as there are entries in [columns][google.spanner.v1.Mutation.Write.columns]
-     * above. Sending multiple lists is equivalent to sending multiple
-     * `Mutation`s, each containing one `values` entry and repeating
-     * [table][google.spanner.v1.Mutation.Write.table] and [columns][google.spanner.v1.Mutation.Write.columns]. Individual values in each list are
-     * encoded as described [here][google.spanner.v1.TypeCode].
+     * exactly as many entries as there are entries in
+     * [columns][google.spanner.v1.Mutation.Write.columns] above. Sending
+     * multiple lists is equivalent to sending multiple `Mutation`s, each
+     * containing one `values` entry and repeating
+     * [table][google.spanner.v1.Mutation.Write.table] and
+     * [columns][google.spanner.v1.Mutation.Write.columns]. Individual values in
+     * each list are encoded as described [here][google.spanner.v1.TypeCode].
      * </pre>
      *
      * <code>repeated .google.protobuf.ListValue values = 3;</code>
@@ -600,11 +624,13 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      * The values to be written. `values` can contain more than one
      * list of values. If it does, then multiple rows are written, one
      * for each entry in `values`. Each list in `values` must have
-     * exactly as many entries as there are entries in [columns][google.spanner.v1.Mutation.Write.columns]
-     * above. Sending multiple lists is equivalent to sending multiple
-     * `Mutation`s, each containing one `values` entry and repeating
-     * [table][google.spanner.v1.Mutation.Write.table] and [columns][google.spanner.v1.Mutation.Write.columns]. Individual values in each list are
-     * encoded as described [here][google.spanner.v1.TypeCode].
+     * exactly as many entries as there are entries in
+     * [columns][google.spanner.v1.Mutation.Write.columns] above. Sending
+     * multiple lists is equivalent to sending multiple `Mutation`s, each
+     * containing one `values` entry and repeating
+     * [table][google.spanner.v1.Mutation.Write.table] and
+     * [columns][google.spanner.v1.Mutation.Write.columns]. Individual values in
+     * each list are encoded as described [here][google.spanner.v1.TypeCode].
      * </pre>
      *
      * <code>repeated .google.protobuf.ListValue values = 3;</code>
@@ -619,11 +645,13 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      * The values to be written. `values` can contain more than one
      * list of values. If it does, then multiple rows are written, one
      * for each entry in `values`. Each list in `values` must have
-     * exactly as many entries as there are entries in [columns][google.spanner.v1.Mutation.Write.columns]
-     * above. Sending multiple lists is equivalent to sending multiple
-     * `Mutation`s, each containing one `values` entry and repeating
-     * [table][google.spanner.v1.Mutation.Write.table] and [columns][google.spanner.v1.Mutation.Write.columns]. Individual values in each list are
-     * encoded as described [here][google.spanner.v1.TypeCode].
+     * exactly as many entries as there are entries in
+     * [columns][google.spanner.v1.Mutation.Write.columns] above. Sending
+     * multiple lists is equivalent to sending multiple `Mutation`s, each
+     * containing one `values` entry and repeating
+     * [table][google.spanner.v1.Mutation.Write.table] and
+     * [columns][google.spanner.v1.Mutation.Write.columns]. Individual values in
+     * each list are encoded as described [here][google.spanner.v1.TypeCode].
      * </pre>
      *
      * <code>repeated .google.protobuf.ListValue values = 3;</code>
@@ -638,11 +666,13 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      * The values to be written. `values` can contain more than one
      * list of values. If it does, then multiple rows are written, one
      * for each entry in `values`. Each list in `values` must have
-     * exactly as many entries as there are entries in [columns][google.spanner.v1.Mutation.Write.columns]
-     * above. Sending multiple lists is equivalent to sending multiple
-     * `Mutation`s, each containing one `values` entry and repeating
-     * [table][google.spanner.v1.Mutation.Write.table] and [columns][google.spanner.v1.Mutation.Write.columns]. Individual values in each list are
-     * encoded as described [here][google.spanner.v1.TypeCode].
+     * exactly as many entries as there are entries in
+     * [columns][google.spanner.v1.Mutation.Write.columns] above. Sending
+     * multiple lists is equivalent to sending multiple `Mutation`s, each
+     * containing one `values` entry and repeating
+     * [table][google.spanner.v1.Mutation.Write.table] and
+     * [columns][google.spanner.v1.Mutation.Write.columns]. Individual values in
+     * each list are encoded as described [here][google.spanner.v1.TypeCode].
      * </pre>
      *
      * <code>repeated .google.protobuf.ListValue values = 3;</code>
@@ -842,7 +872,9 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Arguments to [insert][google.spanner.v1.Mutation.insert], [update][google.spanner.v1.Mutation.update], [insert_or_update][google.spanner.v1.Mutation.insert_or_update], and
+     * Arguments to [insert][google.spanner.v1.Mutation.insert],
+     * [update][google.spanner.v1.Mutation.update],
+     * [insert_or_update][google.spanner.v1.Mutation.insert_or_update], and
      * [replace][google.spanner.v1.Mutation.replace] operations.
      * </pre>
      *
@@ -1172,7 +1204,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The names of the columns in [table][google.spanner.v1.Mutation.Write.table] to be written.
+       * The names of the columns in
+       * [table][google.spanner.v1.Mutation.Write.table] to be written.
        * The list of columns must contain enough columns to allow
        * Cloud Spanner to derive values for all primary key columns in the
        * row(s) to be modified.
@@ -1187,7 +1220,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The names of the columns in [table][google.spanner.v1.Mutation.Write.table] to be written.
+       * The names of the columns in
+       * [table][google.spanner.v1.Mutation.Write.table] to be written.
        * The list of columns must contain enough columns to allow
        * Cloud Spanner to derive values for all primary key columns in the
        * row(s) to be modified.
@@ -1202,7 +1236,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The names of the columns in [table][google.spanner.v1.Mutation.Write.table] to be written.
+       * The names of the columns in
+       * [table][google.spanner.v1.Mutation.Write.table] to be written.
        * The list of columns must contain enough columns to allow
        * Cloud Spanner to derive values for all primary key columns in the
        * row(s) to be modified.
@@ -1217,7 +1252,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The names of the columns in [table][google.spanner.v1.Mutation.Write.table] to be written.
+       * The names of the columns in
+       * [table][google.spanner.v1.Mutation.Write.table] to be written.
        * The list of columns must contain enough columns to allow
        * Cloud Spanner to derive values for all primary key columns in the
        * row(s) to be modified.
@@ -1232,7 +1268,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The names of the columns in [table][google.spanner.v1.Mutation.Write.table] to be written.
+       * The names of the columns in
+       * [table][google.spanner.v1.Mutation.Write.table] to be written.
        * The list of columns must contain enough columns to allow
        * Cloud Spanner to derive values for all primary key columns in the
        * row(s) to be modified.
@@ -1253,7 +1290,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The names of the columns in [table][google.spanner.v1.Mutation.Write.table] to be written.
+       * The names of the columns in
+       * [table][google.spanner.v1.Mutation.Write.table] to be written.
        * The list of columns must contain enough columns to allow
        * Cloud Spanner to derive values for all primary key columns in the
        * row(s) to be modified.
@@ -1274,7 +1312,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The names of the columns in [table][google.spanner.v1.Mutation.Write.table] to be written.
+       * The names of the columns in
+       * [table][google.spanner.v1.Mutation.Write.table] to be written.
        * The list of columns must contain enough columns to allow
        * Cloud Spanner to derive values for all primary key columns in the
        * row(s) to be modified.
@@ -1292,7 +1331,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The names of the columns in [table][google.spanner.v1.Mutation.Write.table] to be written.
+       * The names of the columns in
+       * [table][google.spanner.v1.Mutation.Write.table] to be written.
        * The list of columns must contain enough columns to allow
        * Cloud Spanner to derive values for all primary key columns in the
        * row(s) to be modified.
@@ -1310,7 +1350,8 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * The names of the columns in [table][google.spanner.v1.Mutation.Write.table] to be written.
+       * The names of the columns in
+       * [table][google.spanner.v1.Mutation.Write.table] to be written.
        * The list of columns must contain enough columns to allow
        * Cloud Spanner to derive values for all primary key columns in the
        * row(s) to be modified.
@@ -1352,11 +1393,13 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
        * The values to be written. `values` can contain more than one
        * list of values. If it does, then multiple rows are written, one
        * for each entry in `values`. Each list in `values` must have
-       * exactly as many entries as there are entries in [columns][google.spanner.v1.Mutation.Write.columns]
-       * above. Sending multiple lists is equivalent to sending multiple
-       * `Mutation`s, each containing one `values` entry and repeating
-       * [table][google.spanner.v1.Mutation.Write.table] and [columns][google.spanner.v1.Mutation.Write.columns]. Individual values in each list are
-       * encoded as described [here][google.spanner.v1.TypeCode].
+       * exactly as many entries as there are entries in
+       * [columns][google.spanner.v1.Mutation.Write.columns] above. Sending
+       * multiple lists is equivalent to sending multiple `Mutation`s, each
+       * containing one `values` entry and repeating
+       * [table][google.spanner.v1.Mutation.Write.table] and
+       * [columns][google.spanner.v1.Mutation.Write.columns]. Individual values in
+       * each list are encoded as described [here][google.spanner.v1.TypeCode].
        * </pre>
        *
        * <code>repeated .google.protobuf.ListValue values = 3;</code>
@@ -1375,11 +1418,13 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
        * The values to be written. `values` can contain more than one
        * list of values. If it does, then multiple rows are written, one
        * for each entry in `values`. Each list in `values` must have
-       * exactly as many entries as there are entries in [columns][google.spanner.v1.Mutation.Write.columns]
-       * above. Sending multiple lists is equivalent to sending multiple
-       * `Mutation`s, each containing one `values` entry and repeating
-       * [table][google.spanner.v1.Mutation.Write.table] and [columns][google.spanner.v1.Mutation.Write.columns]. Individual values in each list are
-       * encoded as described [here][google.spanner.v1.TypeCode].
+       * exactly as many entries as there are entries in
+       * [columns][google.spanner.v1.Mutation.Write.columns] above. Sending
+       * multiple lists is equivalent to sending multiple `Mutation`s, each
+       * containing one `values` entry and repeating
+       * [table][google.spanner.v1.Mutation.Write.table] and
+       * [columns][google.spanner.v1.Mutation.Write.columns]. Individual values in
+       * each list are encoded as described [here][google.spanner.v1.TypeCode].
        * </pre>
        *
        * <code>repeated .google.protobuf.ListValue values = 3;</code>
@@ -1398,11 +1443,13 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
        * The values to be written. `values` can contain more than one
        * list of values. If it does, then multiple rows are written, one
        * for each entry in `values`. Each list in `values` must have
-       * exactly as many entries as there are entries in [columns][google.spanner.v1.Mutation.Write.columns]
-       * above. Sending multiple lists is equivalent to sending multiple
-       * `Mutation`s, each containing one `values` entry and repeating
-       * [table][google.spanner.v1.Mutation.Write.table] and [columns][google.spanner.v1.Mutation.Write.columns]. Individual values in each list are
-       * encoded as described [here][google.spanner.v1.TypeCode].
+       * exactly as many entries as there are entries in
+       * [columns][google.spanner.v1.Mutation.Write.columns] above. Sending
+       * multiple lists is equivalent to sending multiple `Mutation`s, each
+       * containing one `values` entry and repeating
+       * [table][google.spanner.v1.Mutation.Write.table] and
+       * [columns][google.spanner.v1.Mutation.Write.columns]. Individual values in
+       * each list are encoded as described [here][google.spanner.v1.TypeCode].
        * </pre>
        *
        * <code>repeated .google.protobuf.ListValue values = 3;</code>
@@ -1421,11 +1468,13 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
        * The values to be written. `values` can contain more than one
        * list of values. If it does, then multiple rows are written, one
        * for each entry in `values`. Each list in `values` must have
-       * exactly as many entries as there are entries in [columns][google.spanner.v1.Mutation.Write.columns]
-       * above. Sending multiple lists is equivalent to sending multiple
-       * `Mutation`s, each containing one `values` entry and repeating
-       * [table][google.spanner.v1.Mutation.Write.table] and [columns][google.spanner.v1.Mutation.Write.columns]. Individual values in each list are
-       * encoded as described [here][google.spanner.v1.TypeCode].
+       * exactly as many entries as there are entries in
+       * [columns][google.spanner.v1.Mutation.Write.columns] above. Sending
+       * multiple lists is equivalent to sending multiple `Mutation`s, each
+       * containing one `values` entry and repeating
+       * [table][google.spanner.v1.Mutation.Write.table] and
+       * [columns][google.spanner.v1.Mutation.Write.columns]. Individual values in
+       * each list are encoded as described [here][google.spanner.v1.TypeCode].
        * </pre>
        *
        * <code>repeated .google.protobuf.ListValue values = 3;</code>
@@ -1450,11 +1499,13 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
        * The values to be written. `values` can contain more than one
        * list of values. If it does, then multiple rows are written, one
        * for each entry in `values`. Each list in `values` must have
-       * exactly as many entries as there are entries in [columns][google.spanner.v1.Mutation.Write.columns]
-       * above. Sending multiple lists is equivalent to sending multiple
-       * `Mutation`s, each containing one `values` entry and repeating
-       * [table][google.spanner.v1.Mutation.Write.table] and [columns][google.spanner.v1.Mutation.Write.columns]. Individual values in each list are
-       * encoded as described [here][google.spanner.v1.TypeCode].
+       * exactly as many entries as there are entries in
+       * [columns][google.spanner.v1.Mutation.Write.columns] above. Sending
+       * multiple lists is equivalent to sending multiple `Mutation`s, each
+       * containing one `values` entry and repeating
+       * [table][google.spanner.v1.Mutation.Write.table] and
+       * [columns][google.spanner.v1.Mutation.Write.columns]. Individual values in
+       * each list are encoded as described [here][google.spanner.v1.TypeCode].
        * </pre>
        *
        * <code>repeated .google.protobuf.ListValue values = 3;</code>
@@ -1476,11 +1527,13 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
        * The values to be written. `values` can contain more than one
        * list of values. If it does, then multiple rows are written, one
        * for each entry in `values`. Each list in `values` must have
-       * exactly as many entries as there are entries in [columns][google.spanner.v1.Mutation.Write.columns]
-       * above. Sending multiple lists is equivalent to sending multiple
-       * `Mutation`s, each containing one `values` entry and repeating
-       * [table][google.spanner.v1.Mutation.Write.table] and [columns][google.spanner.v1.Mutation.Write.columns]. Individual values in each list are
-       * encoded as described [here][google.spanner.v1.TypeCode].
+       * exactly as many entries as there are entries in
+       * [columns][google.spanner.v1.Mutation.Write.columns] above. Sending
+       * multiple lists is equivalent to sending multiple `Mutation`s, each
+       * containing one `values` entry and repeating
+       * [table][google.spanner.v1.Mutation.Write.table] and
+       * [columns][google.spanner.v1.Mutation.Write.columns]. Individual values in
+       * each list are encoded as described [here][google.spanner.v1.TypeCode].
        * </pre>
        *
        * <code>repeated .google.protobuf.ListValue values = 3;</code>
@@ -1505,11 +1558,13 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
        * The values to be written. `values` can contain more than one
        * list of values. If it does, then multiple rows are written, one
        * for each entry in `values`. Each list in `values` must have
-       * exactly as many entries as there are entries in [columns][google.spanner.v1.Mutation.Write.columns]
-       * above. Sending multiple lists is equivalent to sending multiple
-       * `Mutation`s, each containing one `values` entry and repeating
-       * [table][google.spanner.v1.Mutation.Write.table] and [columns][google.spanner.v1.Mutation.Write.columns]. Individual values in each list are
-       * encoded as described [here][google.spanner.v1.TypeCode].
+       * exactly as many entries as there are entries in
+       * [columns][google.spanner.v1.Mutation.Write.columns] above. Sending
+       * multiple lists is equivalent to sending multiple `Mutation`s, each
+       * containing one `values` entry and repeating
+       * [table][google.spanner.v1.Mutation.Write.table] and
+       * [columns][google.spanner.v1.Mutation.Write.columns]. Individual values in
+       * each list are encoded as described [here][google.spanner.v1.TypeCode].
        * </pre>
        *
        * <code>repeated .google.protobuf.ListValue values = 3;</code>
@@ -1534,11 +1589,13 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
        * The values to be written. `values` can contain more than one
        * list of values. If it does, then multiple rows are written, one
        * for each entry in `values`. Each list in `values` must have
-       * exactly as many entries as there are entries in [columns][google.spanner.v1.Mutation.Write.columns]
-       * above. Sending multiple lists is equivalent to sending multiple
-       * `Mutation`s, each containing one `values` entry and repeating
-       * [table][google.spanner.v1.Mutation.Write.table] and [columns][google.spanner.v1.Mutation.Write.columns]. Individual values in each list are
-       * encoded as described [here][google.spanner.v1.TypeCode].
+       * exactly as many entries as there are entries in
+       * [columns][google.spanner.v1.Mutation.Write.columns] above. Sending
+       * multiple lists is equivalent to sending multiple `Mutation`s, each
+       * containing one `values` entry and repeating
+       * [table][google.spanner.v1.Mutation.Write.table] and
+       * [columns][google.spanner.v1.Mutation.Write.columns]. Individual values in
+       * each list are encoded as described [here][google.spanner.v1.TypeCode].
        * </pre>
        *
        * <code>repeated .google.protobuf.ListValue values = 3;</code>
@@ -1560,11 +1617,13 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
        * The values to be written. `values` can contain more than one
        * list of values. If it does, then multiple rows are written, one
        * for each entry in `values`. Each list in `values` must have
-       * exactly as many entries as there are entries in [columns][google.spanner.v1.Mutation.Write.columns]
-       * above. Sending multiple lists is equivalent to sending multiple
-       * `Mutation`s, each containing one `values` entry and repeating
-       * [table][google.spanner.v1.Mutation.Write.table] and [columns][google.spanner.v1.Mutation.Write.columns]. Individual values in each list are
-       * encoded as described [here][google.spanner.v1.TypeCode].
+       * exactly as many entries as there are entries in
+       * [columns][google.spanner.v1.Mutation.Write.columns] above. Sending
+       * multiple lists is equivalent to sending multiple `Mutation`s, each
+       * containing one `values` entry and repeating
+       * [table][google.spanner.v1.Mutation.Write.table] and
+       * [columns][google.spanner.v1.Mutation.Write.columns]. Individual values in
+       * each list are encoded as described [here][google.spanner.v1.TypeCode].
        * </pre>
        *
        * <code>repeated .google.protobuf.ListValue values = 3;</code>
@@ -1586,11 +1645,13 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
        * The values to be written. `values` can contain more than one
        * list of values. If it does, then multiple rows are written, one
        * for each entry in `values`. Each list in `values` must have
-       * exactly as many entries as there are entries in [columns][google.spanner.v1.Mutation.Write.columns]
-       * above. Sending multiple lists is equivalent to sending multiple
-       * `Mutation`s, each containing one `values` entry and repeating
-       * [table][google.spanner.v1.Mutation.Write.table] and [columns][google.spanner.v1.Mutation.Write.columns]. Individual values in each list are
-       * encoded as described [here][google.spanner.v1.TypeCode].
+       * exactly as many entries as there are entries in
+       * [columns][google.spanner.v1.Mutation.Write.columns] above. Sending
+       * multiple lists is equivalent to sending multiple `Mutation`s, each
+       * containing one `values` entry and repeating
+       * [table][google.spanner.v1.Mutation.Write.table] and
+       * [columns][google.spanner.v1.Mutation.Write.columns]. Individual values in
+       * each list are encoded as described [here][google.spanner.v1.TypeCode].
        * </pre>
        *
        * <code>repeated .google.protobuf.ListValue values = 3;</code>
@@ -1613,11 +1674,13 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
        * The values to be written. `values` can contain more than one
        * list of values. If it does, then multiple rows are written, one
        * for each entry in `values`. Each list in `values` must have
-       * exactly as many entries as there are entries in [columns][google.spanner.v1.Mutation.Write.columns]
-       * above. Sending multiple lists is equivalent to sending multiple
-       * `Mutation`s, each containing one `values` entry and repeating
-       * [table][google.spanner.v1.Mutation.Write.table] and [columns][google.spanner.v1.Mutation.Write.columns]. Individual values in each list are
-       * encoded as described [here][google.spanner.v1.TypeCode].
+       * exactly as many entries as there are entries in
+       * [columns][google.spanner.v1.Mutation.Write.columns] above. Sending
+       * multiple lists is equivalent to sending multiple `Mutation`s, each
+       * containing one `values` entry and repeating
+       * [table][google.spanner.v1.Mutation.Write.table] and
+       * [columns][google.spanner.v1.Mutation.Write.columns]. Individual values in
+       * each list are encoded as described [here][google.spanner.v1.TypeCode].
        * </pre>
        *
        * <code>repeated .google.protobuf.ListValue values = 3;</code>
@@ -1639,11 +1702,13 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
        * The values to be written. `values` can contain more than one
        * list of values. If it does, then multiple rows are written, one
        * for each entry in `values`. Each list in `values` must have
-       * exactly as many entries as there are entries in [columns][google.spanner.v1.Mutation.Write.columns]
-       * above. Sending multiple lists is equivalent to sending multiple
-       * `Mutation`s, each containing one `values` entry and repeating
-       * [table][google.spanner.v1.Mutation.Write.table] and [columns][google.spanner.v1.Mutation.Write.columns]. Individual values in each list are
-       * encoded as described [here][google.spanner.v1.TypeCode].
+       * exactly as many entries as there are entries in
+       * [columns][google.spanner.v1.Mutation.Write.columns] above. Sending
+       * multiple lists is equivalent to sending multiple `Mutation`s, each
+       * containing one `values` entry and repeating
+       * [table][google.spanner.v1.Mutation.Write.table] and
+       * [columns][google.spanner.v1.Mutation.Write.columns]. Individual values in
+       * each list are encoded as described [here][google.spanner.v1.TypeCode].
        * </pre>
        *
        * <code>repeated .google.protobuf.ListValue values = 3;</code>
@@ -1665,11 +1730,13 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
        * The values to be written. `values` can contain more than one
        * list of values. If it does, then multiple rows are written, one
        * for each entry in `values`. Each list in `values` must have
-       * exactly as many entries as there are entries in [columns][google.spanner.v1.Mutation.Write.columns]
-       * above. Sending multiple lists is equivalent to sending multiple
-       * `Mutation`s, each containing one `values` entry and repeating
-       * [table][google.spanner.v1.Mutation.Write.table] and [columns][google.spanner.v1.Mutation.Write.columns]. Individual values in each list are
-       * encoded as described [here][google.spanner.v1.TypeCode].
+       * exactly as many entries as there are entries in
+       * [columns][google.spanner.v1.Mutation.Write.columns] above. Sending
+       * multiple lists is equivalent to sending multiple `Mutation`s, each
+       * containing one `values` entry and repeating
+       * [table][google.spanner.v1.Mutation.Write.table] and
+       * [columns][google.spanner.v1.Mutation.Write.columns]. Individual values in
+       * each list are encoded as described [here][google.spanner.v1.TypeCode].
        * </pre>
        *
        * <code>repeated .google.protobuf.ListValue values = 3;</code>
@@ -1684,11 +1751,13 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
        * The values to be written. `values` can contain more than one
        * list of values. If it does, then multiple rows are written, one
        * for each entry in `values`. Each list in `values` must have
-       * exactly as many entries as there are entries in [columns][google.spanner.v1.Mutation.Write.columns]
-       * above. Sending multiple lists is equivalent to sending multiple
-       * `Mutation`s, each containing one `values` entry and repeating
-       * [table][google.spanner.v1.Mutation.Write.table] and [columns][google.spanner.v1.Mutation.Write.columns]. Individual values in each list are
-       * encoded as described [here][google.spanner.v1.TypeCode].
+       * exactly as many entries as there are entries in
+       * [columns][google.spanner.v1.Mutation.Write.columns] above. Sending
+       * multiple lists is equivalent to sending multiple `Mutation`s, each
+       * containing one `values` entry and repeating
+       * [table][google.spanner.v1.Mutation.Write.table] and
+       * [columns][google.spanner.v1.Mutation.Write.columns]. Individual values in
+       * each list are encoded as described [here][google.spanner.v1.TypeCode].
        * </pre>
        *
        * <code>repeated .google.protobuf.ListValue values = 3;</code>
@@ -1707,11 +1776,13 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
        * The values to be written. `values` can contain more than one
        * list of values. If it does, then multiple rows are written, one
        * for each entry in `values`. Each list in `values` must have
-       * exactly as many entries as there are entries in [columns][google.spanner.v1.Mutation.Write.columns]
-       * above. Sending multiple lists is equivalent to sending multiple
-       * `Mutation`s, each containing one `values` entry and repeating
-       * [table][google.spanner.v1.Mutation.Write.table] and [columns][google.spanner.v1.Mutation.Write.columns]. Individual values in each list are
-       * encoded as described [here][google.spanner.v1.TypeCode].
+       * exactly as many entries as there are entries in
+       * [columns][google.spanner.v1.Mutation.Write.columns] above. Sending
+       * multiple lists is equivalent to sending multiple `Mutation`s, each
+       * containing one `values` entry and repeating
+       * [table][google.spanner.v1.Mutation.Write.table] and
+       * [columns][google.spanner.v1.Mutation.Write.columns]. Individual values in
+       * each list are encoded as described [here][google.spanner.v1.TypeCode].
        * </pre>
        *
        * <code>repeated .google.protobuf.ListValue values = 3;</code>
@@ -1731,11 +1802,13 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
        * The values to be written. `values` can contain more than one
        * list of values. If it does, then multiple rows are written, one
        * for each entry in `values`. Each list in `values` must have
-       * exactly as many entries as there are entries in [columns][google.spanner.v1.Mutation.Write.columns]
-       * above. Sending multiple lists is equivalent to sending multiple
-       * `Mutation`s, each containing one `values` entry and repeating
-       * [table][google.spanner.v1.Mutation.Write.table] and [columns][google.spanner.v1.Mutation.Write.columns]. Individual values in each list are
-       * encoded as described [here][google.spanner.v1.TypeCode].
+       * exactly as many entries as there are entries in
+       * [columns][google.spanner.v1.Mutation.Write.columns] above. Sending
+       * multiple lists is equivalent to sending multiple `Mutation`s, each
+       * containing one `values` entry and repeating
+       * [table][google.spanner.v1.Mutation.Write.table] and
+       * [columns][google.spanner.v1.Mutation.Write.columns]. Individual values in
+       * each list are encoded as described [here][google.spanner.v1.TypeCode].
        * </pre>
        *
        * <code>repeated .google.protobuf.ListValue values = 3;</code>
@@ -1751,11 +1824,13 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
        * The values to be written. `values` can contain more than one
        * list of values. If it does, then multiple rows are written, one
        * for each entry in `values`. Each list in `values` must have
-       * exactly as many entries as there are entries in [columns][google.spanner.v1.Mutation.Write.columns]
-       * above. Sending multiple lists is equivalent to sending multiple
-       * `Mutation`s, each containing one `values` entry and repeating
-       * [table][google.spanner.v1.Mutation.Write.table] and [columns][google.spanner.v1.Mutation.Write.columns]. Individual values in each list are
-       * encoded as described [here][google.spanner.v1.TypeCode].
+       * exactly as many entries as there are entries in
+       * [columns][google.spanner.v1.Mutation.Write.columns] above. Sending
+       * multiple lists is equivalent to sending multiple `Mutation`s, each
+       * containing one `values` entry and repeating
+       * [table][google.spanner.v1.Mutation.Write.table] and
+       * [columns][google.spanner.v1.Mutation.Write.columns]. Individual values in
+       * each list are encoded as described [here][google.spanner.v1.TypeCode].
        * </pre>
        *
        * <code>repeated .google.protobuf.ListValue values = 3;</code>
@@ -1771,11 +1846,13 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
        * The values to be written. `values` can contain more than one
        * list of values. If it does, then multiple rows are written, one
        * for each entry in `values`. Each list in `values` must have
-       * exactly as many entries as there are entries in [columns][google.spanner.v1.Mutation.Write.columns]
-       * above. Sending multiple lists is equivalent to sending multiple
-       * `Mutation`s, each containing one `values` entry and repeating
-       * [table][google.spanner.v1.Mutation.Write.table] and [columns][google.spanner.v1.Mutation.Write.columns]. Individual values in each list are
-       * encoded as described [here][google.spanner.v1.TypeCode].
+       * exactly as many entries as there are entries in
+       * [columns][google.spanner.v1.Mutation.Write.columns] above. Sending
+       * multiple lists is equivalent to sending multiple `Mutation`s, each
+       * containing one `values` entry and repeating
+       * [table][google.spanner.v1.Mutation.Write.table] and
+       * [columns][google.spanner.v1.Mutation.Write.columns]. Individual values in
+       * each list are encoded as described [here][google.spanner.v1.TypeCode].
        * </pre>
        *
        * <code>repeated .google.protobuf.ListValue values = 3;</code>
@@ -1886,9 +1963,10 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The primary keys of the rows within [table][google.spanner.v1.Mutation.Delete.table] to delete.
-     * Delete is idempotent. The transaction will succeed even if some or all
-     * rows do not exist.
+     * Required. The primary keys of the rows within
+     * [table][google.spanner.v1.Mutation.Delete.table] to delete. Delete is
+     * idempotent. The transaction will succeed even if some or all rows do not
+     * exist.
      * </pre>
      *
      * <code>.google.spanner.v1.KeySet key_set = 2;</code>
@@ -1898,9 +1976,10 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The primary keys of the rows within [table][google.spanner.v1.Mutation.Delete.table] to delete.
-     * Delete is idempotent. The transaction will succeed even if some or all
-     * rows do not exist.
+     * Required. The primary keys of the rows within
+     * [table][google.spanner.v1.Mutation.Delete.table] to delete. Delete is
+     * idempotent. The transaction will succeed even if some or all rows do not
+     * exist.
      * </pre>
      *
      * <code>.google.spanner.v1.KeySet key_set = 2;</code>
@@ -1910,9 +1989,10 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The primary keys of the rows within [table][google.spanner.v1.Mutation.Delete.table] to delete.
-     * Delete is idempotent. The transaction will succeed even if some or all
-     * rows do not exist.
+     * Required. The primary keys of the rows within
+     * [table][google.spanner.v1.Mutation.Delete.table] to delete. Delete is
+     * idempotent. The transaction will succeed even if some or all rows do not
+     * exist.
      * </pre>
      *
      * <code>.google.spanner.v1.KeySet key_set = 2;</code>
@@ -2071,9 +2151,10 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The primary keys of the rows within [table][google.spanner.v1.Mutation.Delete.table] to delete.
-     * Delete is idempotent. The transaction will succeed even if some or all
-     * rows do not exist.
+     * Required. The primary keys of the rows within
+     * [table][google.spanner.v1.Mutation.Delete.table] to delete. Delete is
+     * idempotent. The transaction will succeed even if some or all rows do not
+     * exist.
      * </pre>
      *
      * <code>.google.spanner.v1.KeySet key_set = 2;</code>
@@ -2085,9 +2166,10 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The primary keys of the rows within [table][google.spanner.v1.Mutation.Delete.table] to delete.
-     * Delete is idempotent. The transaction will succeed even if some or all
-     * rows do not exist.
+     * Required. The primary keys of the rows within
+     * [table][google.spanner.v1.Mutation.Delete.table] to delete. Delete is
+     * idempotent. The transaction will succeed even if some or all rows do not
+     * exist.
      * </pre>
      *
      * <code>.google.spanner.v1.KeySet key_set = 2;</code>
@@ -2099,9 +2181,10 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Required. The primary keys of the rows within [table][google.spanner.v1.Mutation.Delete.table] to delete.
-     * Delete is idempotent. The transaction will succeed even if some or all
-     * rows do not exist.
+     * Required. The primary keys of the rows within
+     * [table][google.spanner.v1.Mutation.Delete.table] to delete. Delete is
+     * idempotent. The transaction will succeed even if some or all rows do not
+     * exist.
      * </pre>
      *
      * <code>.google.spanner.v1.KeySet key_set = 2;</code>
@@ -2562,9 +2645,10 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The primary keys of the rows within [table][google.spanner.v1.Mutation.Delete.table] to delete.
-       * Delete is idempotent. The transaction will succeed even if some or all
-       * rows do not exist.
+       * Required. The primary keys of the rows within
+       * [table][google.spanner.v1.Mutation.Delete.table] to delete. Delete is
+       * idempotent. The transaction will succeed even if some or all rows do not
+       * exist.
        * </pre>
        *
        * <code>.google.spanner.v1.KeySet key_set = 2;</code>
@@ -2576,9 +2660,10 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The primary keys of the rows within [table][google.spanner.v1.Mutation.Delete.table] to delete.
-       * Delete is idempotent. The transaction will succeed even if some or all
-       * rows do not exist.
+       * Required. The primary keys of the rows within
+       * [table][google.spanner.v1.Mutation.Delete.table] to delete. Delete is
+       * idempotent. The transaction will succeed even if some or all rows do not
+       * exist.
        * </pre>
        *
        * <code>.google.spanner.v1.KeySet key_set = 2;</code>
@@ -2594,9 +2679,10 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The primary keys of the rows within [table][google.spanner.v1.Mutation.Delete.table] to delete.
-       * Delete is idempotent. The transaction will succeed even if some or all
-       * rows do not exist.
+       * Required. The primary keys of the rows within
+       * [table][google.spanner.v1.Mutation.Delete.table] to delete. Delete is
+       * idempotent. The transaction will succeed even if some or all rows do not
+       * exist.
        * </pre>
        *
        * <code>.google.spanner.v1.KeySet key_set = 2;</code>
@@ -2618,9 +2704,10 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The primary keys of the rows within [table][google.spanner.v1.Mutation.Delete.table] to delete.
-       * Delete is idempotent. The transaction will succeed even if some or all
-       * rows do not exist.
+       * Required. The primary keys of the rows within
+       * [table][google.spanner.v1.Mutation.Delete.table] to delete. Delete is
+       * idempotent. The transaction will succeed even if some or all rows do not
+       * exist.
        * </pre>
        *
        * <code>.google.spanner.v1.KeySet key_set = 2;</code>
@@ -2639,9 +2726,10 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The primary keys of the rows within [table][google.spanner.v1.Mutation.Delete.table] to delete.
-       * Delete is idempotent. The transaction will succeed even if some or all
-       * rows do not exist.
+       * Required. The primary keys of the rows within
+       * [table][google.spanner.v1.Mutation.Delete.table] to delete. Delete is
+       * idempotent. The transaction will succeed even if some or all rows do not
+       * exist.
        * </pre>
        *
        * <code>.google.spanner.v1.KeySet key_set = 2;</code>
@@ -2665,9 +2753,10 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The primary keys of the rows within [table][google.spanner.v1.Mutation.Delete.table] to delete.
-       * Delete is idempotent. The transaction will succeed even if some or all
-       * rows do not exist.
+       * Required. The primary keys of the rows within
+       * [table][google.spanner.v1.Mutation.Delete.table] to delete. Delete is
+       * idempotent. The transaction will succeed even if some or all rows do not
+       * exist.
        * </pre>
        *
        * <code>.google.spanner.v1.KeySet key_set = 2;</code>
@@ -2687,9 +2776,10 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The primary keys of the rows within [table][google.spanner.v1.Mutation.Delete.table] to delete.
-       * Delete is idempotent. The transaction will succeed even if some or all
-       * rows do not exist.
+       * Required. The primary keys of the rows within
+       * [table][google.spanner.v1.Mutation.Delete.table] to delete. Delete is
+       * idempotent. The transaction will succeed even if some or all rows do not
+       * exist.
        * </pre>
        *
        * <code>.google.spanner.v1.KeySet key_set = 2;</code>
@@ -2703,9 +2793,10 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The primary keys of the rows within [table][google.spanner.v1.Mutation.Delete.table] to delete.
-       * Delete is idempotent. The transaction will succeed even if some or all
-       * rows do not exist.
+       * Required. The primary keys of the rows within
+       * [table][google.spanner.v1.Mutation.Delete.table] to delete. Delete is
+       * idempotent. The transaction will succeed even if some or all rows do not
+       * exist.
        * </pre>
        *
        * <code>.google.spanner.v1.KeySet key_set = 2;</code>
@@ -2721,9 +2812,10 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
        *
        *
        * <pre>
-       * Required. The primary keys of the rows within [table][google.spanner.v1.Mutation.Delete.table] to delete.
-       * Delete is idempotent. The transaction will succeed even if some or all
-       * rows do not exist.
+       * Required. The primary keys of the rows within
+       * [table][google.spanner.v1.Mutation.Delete.table] to delete. Delete is
+       * idempotent. The transaction will succeed even if some or all rows do not
+       * exist.
        * </pre>
        *
        * <code>.google.spanner.v1.KeySet key_set = 2;</code>
@@ -2945,9 +3037,9 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Like [insert][google.spanner.v1.Mutation.insert], except that if the row already exists, then
-   * its column values are overwritten with the ones provided. Any
-   * column values not explicitly written are preserved.
+   * Like [insert][google.spanner.v1.Mutation.insert], except that if the row
+   * already exists, then its column values are overwritten with the ones
+   * provided. Any column values not explicitly written are preserved.
    * </pre>
    *
    * <code>.google.spanner.v1.Mutation.Write insert_or_update = 3;</code>
@@ -2959,9 +3051,9 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Like [insert][google.spanner.v1.Mutation.insert], except that if the row already exists, then
-   * its column values are overwritten with the ones provided. Any
-   * column values not explicitly written are preserved.
+   * Like [insert][google.spanner.v1.Mutation.insert], except that if the row
+   * already exists, then its column values are overwritten with the ones
+   * provided. Any column values not explicitly written are preserved.
    * </pre>
    *
    * <code>.google.spanner.v1.Mutation.Write insert_or_update = 3;</code>
@@ -2976,9 +3068,9 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Like [insert][google.spanner.v1.Mutation.insert], except that if the row already exists, then
-   * its column values are overwritten with the ones provided. Any
-   * column values not explicitly written are preserved.
+   * Like [insert][google.spanner.v1.Mutation.insert], except that if the row
+   * already exists, then its column values are overwritten with the ones
+   * provided. Any column values not explicitly written are preserved.
    * </pre>
    *
    * <code>.google.spanner.v1.Mutation.Write insert_or_update = 3;</code>
@@ -2995,10 +3087,11 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Like [insert][google.spanner.v1.Mutation.insert], except that if the row already exists, it is
-   * deleted, and the column values provided are inserted
-   * instead. Unlike [insert_or_update][google.spanner.v1.Mutation.insert_or_update], this means any values not
-   * explicitly written become `NULL`.
+   * Like [insert][google.spanner.v1.Mutation.insert], except that if the row
+   * already exists, it is deleted, and the column values provided are
+   * inserted instead. Unlike
+   * [insert_or_update][google.spanner.v1.Mutation.insert_or_update], this
+   * means any values not explicitly written become `NULL`.
    * </pre>
    *
    * <code>.google.spanner.v1.Mutation.Write replace = 4;</code>
@@ -3010,10 +3103,11 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Like [insert][google.spanner.v1.Mutation.insert], except that if the row already exists, it is
-   * deleted, and the column values provided are inserted
-   * instead. Unlike [insert_or_update][google.spanner.v1.Mutation.insert_or_update], this means any values not
-   * explicitly written become `NULL`.
+   * Like [insert][google.spanner.v1.Mutation.insert], except that if the row
+   * already exists, it is deleted, and the column values provided are
+   * inserted instead. Unlike
+   * [insert_or_update][google.spanner.v1.Mutation.insert_or_update], this
+   * means any values not explicitly written become `NULL`.
    * </pre>
    *
    * <code>.google.spanner.v1.Mutation.Write replace = 4;</code>
@@ -3028,10 +3122,11 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Like [insert][google.spanner.v1.Mutation.insert], except that if the row already exists, it is
-   * deleted, and the column values provided are inserted
-   * instead. Unlike [insert_or_update][google.spanner.v1.Mutation.insert_or_update], this means any values not
-   * explicitly written become `NULL`.
+   * Like [insert][google.spanner.v1.Mutation.insert], except that if the row
+   * already exists, it is deleted, and the column values provided are
+   * inserted instead. Unlike
+   * [insert_or_update][google.spanner.v1.Mutation.insert_or_update], this
+   * means any values not explicitly written become `NULL`.
    * </pre>
    *
    * <code>.google.spanner.v1.Mutation.Write replace = 4;</code>
@@ -3986,9 +4081,9 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Like [insert][google.spanner.v1.Mutation.insert], except that if the row already exists, then
-     * its column values are overwritten with the ones provided. Any
-     * column values not explicitly written are preserved.
+     * Like [insert][google.spanner.v1.Mutation.insert], except that if the row
+     * already exists, then its column values are overwritten with the ones
+     * provided. Any column values not explicitly written are preserved.
      * </pre>
      *
      * <code>.google.spanner.v1.Mutation.Write insert_or_update = 3;</code>
@@ -4000,9 +4095,9 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Like [insert][google.spanner.v1.Mutation.insert], except that if the row already exists, then
-     * its column values are overwritten with the ones provided. Any
-     * column values not explicitly written are preserved.
+     * Like [insert][google.spanner.v1.Mutation.insert], except that if the row
+     * already exists, then its column values are overwritten with the ones
+     * provided. Any column values not explicitly written are preserved.
      * </pre>
      *
      * <code>.google.spanner.v1.Mutation.Write insert_or_update = 3;</code>
@@ -4024,9 +4119,9 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Like [insert][google.spanner.v1.Mutation.insert], except that if the row already exists, then
-     * its column values are overwritten with the ones provided. Any
-     * column values not explicitly written are preserved.
+     * Like [insert][google.spanner.v1.Mutation.insert], except that if the row
+     * already exists, then its column values are overwritten with the ones
+     * provided. Any column values not explicitly written are preserved.
      * </pre>
      *
      * <code>.google.spanner.v1.Mutation.Write insert_or_update = 3;</code>
@@ -4048,9 +4143,9 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Like [insert][google.spanner.v1.Mutation.insert], except that if the row already exists, then
-     * its column values are overwritten with the ones provided. Any
-     * column values not explicitly written are preserved.
+     * Like [insert][google.spanner.v1.Mutation.insert], except that if the row
+     * already exists, then its column values are overwritten with the ones
+     * provided. Any column values not explicitly written are preserved.
      * </pre>
      *
      * <code>.google.spanner.v1.Mutation.Write insert_or_update = 3;</code>
@@ -4069,9 +4164,9 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Like [insert][google.spanner.v1.Mutation.insert], except that if the row already exists, then
-     * its column values are overwritten with the ones provided. Any
-     * column values not explicitly written are preserved.
+     * Like [insert][google.spanner.v1.Mutation.insert], except that if the row
+     * already exists, then its column values are overwritten with the ones
+     * provided. Any column values not explicitly written are preserved.
      * </pre>
      *
      * <code>.google.spanner.v1.Mutation.Write insert_or_update = 3;</code>
@@ -4102,9 +4197,9 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Like [insert][google.spanner.v1.Mutation.insert], except that if the row already exists, then
-     * its column values are overwritten with the ones provided. Any
-     * column values not explicitly written are preserved.
+     * Like [insert][google.spanner.v1.Mutation.insert], except that if the row
+     * already exists, then its column values are overwritten with the ones
+     * provided. Any column values not explicitly written are preserved.
      * </pre>
      *
      * <code>.google.spanner.v1.Mutation.Write insert_or_update = 3;</code>
@@ -4129,9 +4224,9 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Like [insert][google.spanner.v1.Mutation.insert], except that if the row already exists, then
-     * its column values are overwritten with the ones provided. Any
-     * column values not explicitly written are preserved.
+     * Like [insert][google.spanner.v1.Mutation.insert], except that if the row
+     * already exists, then its column values are overwritten with the ones
+     * provided. Any column values not explicitly written are preserved.
      * </pre>
      *
      * <code>.google.spanner.v1.Mutation.Write insert_or_update = 3;</code>
@@ -4143,9 +4238,9 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Like [insert][google.spanner.v1.Mutation.insert], except that if the row already exists, then
-     * its column values are overwritten with the ones provided. Any
-     * column values not explicitly written are preserved.
+     * Like [insert][google.spanner.v1.Mutation.insert], except that if the row
+     * already exists, then its column values are overwritten with the ones
+     * provided. Any column values not explicitly written are preserved.
      * </pre>
      *
      * <code>.google.spanner.v1.Mutation.Write insert_or_update = 3;</code>
@@ -4164,9 +4259,9 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Like [insert][google.spanner.v1.Mutation.insert], except that if the row already exists, then
-     * its column values are overwritten with the ones provided. Any
-     * column values not explicitly written are preserved.
+     * Like [insert][google.spanner.v1.Mutation.insert], except that if the row
+     * already exists, then its column values are overwritten with the ones
+     * provided. Any column values not explicitly written are preserved.
      * </pre>
      *
      * <code>.google.spanner.v1.Mutation.Write insert_or_update = 3;</code>
@@ -4205,10 +4300,11 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Like [insert][google.spanner.v1.Mutation.insert], except that if the row already exists, it is
-     * deleted, and the column values provided are inserted
-     * instead. Unlike [insert_or_update][google.spanner.v1.Mutation.insert_or_update], this means any values not
-     * explicitly written become `NULL`.
+     * Like [insert][google.spanner.v1.Mutation.insert], except that if the row
+     * already exists, it is deleted, and the column values provided are
+     * inserted instead. Unlike
+     * [insert_or_update][google.spanner.v1.Mutation.insert_or_update], this
+     * means any values not explicitly written become `NULL`.
      * </pre>
      *
      * <code>.google.spanner.v1.Mutation.Write replace = 4;</code>
@@ -4220,10 +4316,11 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Like [insert][google.spanner.v1.Mutation.insert], except that if the row already exists, it is
-     * deleted, and the column values provided are inserted
-     * instead. Unlike [insert_or_update][google.spanner.v1.Mutation.insert_or_update], this means any values not
-     * explicitly written become `NULL`.
+     * Like [insert][google.spanner.v1.Mutation.insert], except that if the row
+     * already exists, it is deleted, and the column values provided are
+     * inserted instead. Unlike
+     * [insert_or_update][google.spanner.v1.Mutation.insert_or_update], this
+     * means any values not explicitly written become `NULL`.
      * </pre>
      *
      * <code>.google.spanner.v1.Mutation.Write replace = 4;</code>
@@ -4245,10 +4342,11 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Like [insert][google.spanner.v1.Mutation.insert], except that if the row already exists, it is
-     * deleted, and the column values provided are inserted
-     * instead. Unlike [insert_or_update][google.spanner.v1.Mutation.insert_or_update], this means any values not
-     * explicitly written become `NULL`.
+     * Like [insert][google.spanner.v1.Mutation.insert], except that if the row
+     * already exists, it is deleted, and the column values provided are
+     * inserted instead. Unlike
+     * [insert_or_update][google.spanner.v1.Mutation.insert_or_update], this
+     * means any values not explicitly written become `NULL`.
      * </pre>
      *
      * <code>.google.spanner.v1.Mutation.Write replace = 4;</code>
@@ -4270,10 +4368,11 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Like [insert][google.spanner.v1.Mutation.insert], except that if the row already exists, it is
-     * deleted, and the column values provided are inserted
-     * instead. Unlike [insert_or_update][google.spanner.v1.Mutation.insert_or_update], this means any values not
-     * explicitly written become `NULL`.
+     * Like [insert][google.spanner.v1.Mutation.insert], except that if the row
+     * already exists, it is deleted, and the column values provided are
+     * inserted instead. Unlike
+     * [insert_or_update][google.spanner.v1.Mutation.insert_or_update], this
+     * means any values not explicitly written become `NULL`.
      * </pre>
      *
      * <code>.google.spanner.v1.Mutation.Write replace = 4;</code>
@@ -4292,10 +4391,11 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Like [insert][google.spanner.v1.Mutation.insert], except that if the row already exists, it is
-     * deleted, and the column values provided are inserted
-     * instead. Unlike [insert_or_update][google.spanner.v1.Mutation.insert_or_update], this means any values not
-     * explicitly written become `NULL`.
+     * Like [insert][google.spanner.v1.Mutation.insert], except that if the row
+     * already exists, it is deleted, and the column values provided are
+     * inserted instead. Unlike
+     * [insert_or_update][google.spanner.v1.Mutation.insert_or_update], this
+     * means any values not explicitly written become `NULL`.
      * </pre>
      *
      * <code>.google.spanner.v1.Mutation.Write replace = 4;</code>
@@ -4326,10 +4426,11 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Like [insert][google.spanner.v1.Mutation.insert], except that if the row already exists, it is
-     * deleted, and the column values provided are inserted
-     * instead. Unlike [insert_or_update][google.spanner.v1.Mutation.insert_or_update], this means any values not
-     * explicitly written become `NULL`.
+     * Like [insert][google.spanner.v1.Mutation.insert], except that if the row
+     * already exists, it is deleted, and the column values provided are
+     * inserted instead. Unlike
+     * [insert_or_update][google.spanner.v1.Mutation.insert_or_update], this
+     * means any values not explicitly written become `NULL`.
      * </pre>
      *
      * <code>.google.spanner.v1.Mutation.Write replace = 4;</code>
@@ -4354,10 +4455,11 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Like [insert][google.spanner.v1.Mutation.insert], except that if the row already exists, it is
-     * deleted, and the column values provided are inserted
-     * instead. Unlike [insert_or_update][google.spanner.v1.Mutation.insert_or_update], this means any values not
-     * explicitly written become `NULL`.
+     * Like [insert][google.spanner.v1.Mutation.insert], except that if the row
+     * already exists, it is deleted, and the column values provided are
+     * inserted instead. Unlike
+     * [insert_or_update][google.spanner.v1.Mutation.insert_or_update], this
+     * means any values not explicitly written become `NULL`.
      * </pre>
      *
      * <code>.google.spanner.v1.Mutation.Write replace = 4;</code>
@@ -4369,10 +4471,11 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Like [insert][google.spanner.v1.Mutation.insert], except that if the row already exists, it is
-     * deleted, and the column values provided are inserted
-     * instead. Unlike [insert_or_update][google.spanner.v1.Mutation.insert_or_update], this means any values not
-     * explicitly written become `NULL`.
+     * Like [insert][google.spanner.v1.Mutation.insert], except that if the row
+     * already exists, it is deleted, and the column values provided are
+     * inserted instead. Unlike
+     * [insert_or_update][google.spanner.v1.Mutation.insert_or_update], this
+     * means any values not explicitly written become `NULL`.
      * </pre>
      *
      * <code>.google.spanner.v1.Mutation.Write replace = 4;</code>
@@ -4391,10 +4494,11 @@ public final class Mutation extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Like [insert][google.spanner.v1.Mutation.insert], except that if the row already exists, it is
-     * deleted, and the column values provided are inserted
-     * instead. Unlike [insert_or_update][google.spanner.v1.Mutation.insert_or_update], this means any values not
-     * explicitly written become `NULL`.
+     * Like [insert][google.spanner.v1.Mutation.insert], except that if the row
+     * already exists, it is deleted, and the column values provided are
+     * inserted instead. Unlike
+     * [insert_or_update][google.spanner.v1.Mutation.insert_or_update], this
+     * means any values not explicitly written become `NULL`.
      * </pre>
      *
      * <code>.google.spanner.v1.Mutation.Write replace = 4;</code>

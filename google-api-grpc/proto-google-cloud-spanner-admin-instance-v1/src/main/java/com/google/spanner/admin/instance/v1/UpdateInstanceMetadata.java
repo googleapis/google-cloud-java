@@ -191,7 +191,8 @@ public final class UpdateInstanceMetadata extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The time at which [UpdateInstance][google.spanner.admin.instance.v1.InstanceAdmin.UpdateInstance]
+   * The time at which
+   * [UpdateInstance][google.spanner.admin.instance.v1.InstanceAdmin.UpdateInstance]
    * request was received.
    * </pre>
    *
@@ -204,7 +205,8 @@ public final class UpdateInstanceMetadata extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The time at which [UpdateInstance][google.spanner.admin.instance.v1.InstanceAdmin.UpdateInstance]
+   * The time at which
+   * [UpdateInstance][google.spanner.admin.instance.v1.InstanceAdmin.UpdateInstance]
    * request was received.
    * </pre>
    *
@@ -217,7 +219,8 @@ public final class UpdateInstanceMetadata extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The time at which [UpdateInstance][google.spanner.admin.instance.v1.InstanceAdmin.UpdateInstance]
+   * The time at which
+   * [UpdateInstance][google.spanner.admin.instance.v1.InstanceAdmin.UpdateInstance]
    * request was received.
    * </pre>
    *
@@ -920,7 +923,8 @@ public final class UpdateInstanceMetadata extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The time at which [UpdateInstance][google.spanner.admin.instance.v1.InstanceAdmin.UpdateInstance]
+     * The time at which
+     * [UpdateInstance][google.spanner.admin.instance.v1.InstanceAdmin.UpdateInstance]
      * request was received.
      * </pre>
      *
@@ -933,7 +937,8 @@ public final class UpdateInstanceMetadata extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The time at which [UpdateInstance][google.spanner.admin.instance.v1.InstanceAdmin.UpdateInstance]
+     * The time at which
+     * [UpdateInstance][google.spanner.admin.instance.v1.InstanceAdmin.UpdateInstance]
      * request was received.
      * </pre>
      *
@@ -950,7 +955,8 @@ public final class UpdateInstanceMetadata extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The time at which [UpdateInstance][google.spanner.admin.instance.v1.InstanceAdmin.UpdateInstance]
+     * The time at which
+     * [UpdateInstance][google.spanner.admin.instance.v1.InstanceAdmin.UpdateInstance]
      * request was received.
      * </pre>
      *
@@ -973,7 +979,8 @@ public final class UpdateInstanceMetadata extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The time at which [UpdateInstance][google.spanner.admin.instance.v1.InstanceAdmin.UpdateInstance]
+     * The time at which
+     * [UpdateInstance][google.spanner.admin.instance.v1.InstanceAdmin.UpdateInstance]
      * request was received.
      * </pre>
      *
@@ -993,7 +1000,8 @@ public final class UpdateInstanceMetadata extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The time at which [UpdateInstance][google.spanner.admin.instance.v1.InstanceAdmin.UpdateInstance]
+     * The time at which
+     * [UpdateInstance][google.spanner.admin.instance.v1.InstanceAdmin.UpdateInstance]
      * request was received.
      * </pre>
      *
@@ -1018,7 +1026,8 @@ public final class UpdateInstanceMetadata extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The time at which [UpdateInstance][google.spanner.admin.instance.v1.InstanceAdmin.UpdateInstance]
+     * The time at which
+     * [UpdateInstance][google.spanner.admin.instance.v1.InstanceAdmin.UpdateInstance]
      * request was received.
      * </pre>
      *
@@ -1039,7 +1048,8 @@ public final class UpdateInstanceMetadata extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The time at which [UpdateInstance][google.spanner.admin.instance.v1.InstanceAdmin.UpdateInstance]
+     * The time at which
+     * [UpdateInstance][google.spanner.admin.instance.v1.InstanceAdmin.UpdateInstance]
      * request was received.
      * </pre>
      *
@@ -1054,7 +1064,8 @@ public final class UpdateInstanceMetadata extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The time at which [UpdateInstance][google.spanner.admin.instance.v1.InstanceAdmin.UpdateInstance]
+     * The time at which
+     * [UpdateInstance][google.spanner.admin.instance.v1.InstanceAdmin.UpdateInstance]
      * request was received.
      * </pre>
      *
@@ -1071,7 +1082,8 @@ public final class UpdateInstanceMetadata extends com.google.protobuf.GeneratedM
      *
      *
      * <pre>
-     * The time at which [UpdateInstance][google.spanner.admin.instance.v1.InstanceAdmin.UpdateInstance]
+     * The time at which
+     * [UpdateInstance][google.spanner.admin.instance.v1.InstanceAdmin.UpdateInstance]
      * request was received.
      * </pre>
      *

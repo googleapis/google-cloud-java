@@ -7,7 +7,8 @@ package com.google.spanner.admin.instance.v1;
  *
  *
  * <pre>
- * The request for [UpdateInstance][google.spanner.admin.instance.v1.InstanceAdmin.UpdateInstance].
+ * The request for
+ * [UpdateInstance][google.spanner.admin.instance.v1.InstanceAdmin.UpdateInstance].
  * </pre>
  *
  * Protobuf type {@code google.spanner.admin.instance.v1.UpdateInstanceRequest}
@@ -120,7 +121,9 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Required. The instance to update, which must always include the instance
-   * name.  Otherwise, only fields mentioned in [][google.spanner.admin.instance.v1.UpdateInstanceRequest.field_mask] need be included.
+   * name.  Otherwise, only fields mentioned in
+   * [][google.spanner.admin.instance.v1.UpdateInstanceRequest.field_mask] need
+   * be included.
    * </pre>
    *
    * <code>.google.spanner.admin.instance.v1.Instance instance = 1;</code>
@@ -133,7 +136,9 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Required. The instance to update, which must always include the instance
-   * name.  Otherwise, only fields mentioned in [][google.spanner.admin.instance.v1.UpdateInstanceRequest.field_mask] need be included.
+   * name.  Otherwise, only fields mentioned in
+   * [][google.spanner.admin.instance.v1.UpdateInstanceRequest.field_mask] need
+   * be included.
    * </pre>
    *
    * <code>.google.spanner.admin.instance.v1.Instance instance = 1;</code>
@@ -148,7 +153,9 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
    *
    * <pre>
    * Required. The instance to update, which must always include the instance
-   * name.  Otherwise, only fields mentioned in [][google.spanner.admin.instance.v1.UpdateInstanceRequest.field_mask] need be included.
+   * name.  Otherwise, only fields mentioned in
+   * [][google.spanner.admin.instance.v1.UpdateInstanceRequest.field_mask] need
+   * be included.
    * </pre>
    *
    * <code>.google.spanner.admin.instance.v1.Instance instance = 1;</code>
@@ -163,10 +170,12 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. A mask specifying which fields in [][google.spanner.admin.instance.v1.UpdateInstanceRequest.instance] should be updated.
-   * The field mask must always be specified; this prevents any future fields in
-   * [][google.spanner.admin.instance.v1.Instance] from being erased accidentally by clients that do not know
-   * about them.
+   * Required. A mask specifying which fields in
+   * [][google.spanner.admin.instance.v1.UpdateInstanceRequest.instance] should
+   * be updated. The field mask must always be specified; this prevents any
+   * future fields in
+   * [][google.spanner.admin.instance.v1.Instance] from being erased
+   * accidentally by clients that do not know about them.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask field_mask = 2;</code>
@@ -178,10 +187,12 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. A mask specifying which fields in [][google.spanner.admin.instance.v1.UpdateInstanceRequest.instance] should be updated.
-   * The field mask must always be specified; this prevents any future fields in
-   * [][google.spanner.admin.instance.v1.Instance] from being erased accidentally by clients that do not know
-   * about them.
+   * Required. A mask specifying which fields in
+   * [][google.spanner.admin.instance.v1.UpdateInstanceRequest.instance] should
+   * be updated. The field mask must always be specified; this prevents any
+   * future fields in
+   * [][google.spanner.admin.instance.v1.Instance] from being erased
+   * accidentally by clients that do not know about them.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask field_mask = 2;</code>
@@ -193,10 +204,12 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * Required. A mask specifying which fields in [][google.spanner.admin.instance.v1.UpdateInstanceRequest.instance] should be updated.
-   * The field mask must always be specified; this prevents any future fields in
-   * [][google.spanner.admin.instance.v1.Instance] from being erased accidentally by clients that do not know
-   * about them.
+   * Required. A mask specifying which fields in
+   * [][google.spanner.admin.instance.v1.UpdateInstanceRequest.instance] should
+   * be updated. The field mask must always be specified; this prevents any
+   * future fields in
+   * [][google.spanner.admin.instance.v1.Instance] from being erased
+   * accidentally by clients that do not know about them.
    * </pre>
    *
    * <code>.google.protobuf.FieldMask field_mask = 2;</code>
@@ -389,7 +402,8 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The request for [UpdateInstance][google.spanner.admin.instance.v1.InstanceAdmin.UpdateInstance].
+   * The request for
+   * [UpdateInstance][google.spanner.admin.instance.v1.InstanceAdmin.UpdateInstance].
    * </pre>
    *
    * Protobuf type {@code google.spanner.admin.instance.v1.UpdateInstanceRequest}
@@ -576,7 +590,9 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The instance to update, which must always include the instance
-     * name.  Otherwise, only fields mentioned in [][google.spanner.admin.instance.v1.UpdateInstanceRequest.field_mask] need be included.
+     * name.  Otherwise, only fields mentioned in
+     * [][google.spanner.admin.instance.v1.UpdateInstanceRequest.field_mask] need
+     * be included.
      * </pre>
      *
      * <code>.google.spanner.admin.instance.v1.Instance instance = 1;</code>
@@ -589,7 +605,9 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The instance to update, which must always include the instance
-     * name.  Otherwise, only fields mentioned in [][google.spanner.admin.instance.v1.UpdateInstanceRequest.field_mask] need be included.
+     * name.  Otherwise, only fields mentioned in
+     * [][google.spanner.admin.instance.v1.UpdateInstanceRequest.field_mask] need
+     * be included.
      * </pre>
      *
      * <code>.google.spanner.admin.instance.v1.Instance instance = 1;</code>
@@ -608,7 +626,9 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The instance to update, which must always include the instance
-     * name.  Otherwise, only fields mentioned in [][google.spanner.admin.instance.v1.UpdateInstanceRequest.field_mask] need be included.
+     * name.  Otherwise, only fields mentioned in
+     * [][google.spanner.admin.instance.v1.UpdateInstanceRequest.field_mask] need
+     * be included.
      * </pre>
      *
      * <code>.google.spanner.admin.instance.v1.Instance instance = 1;</code>
@@ -631,7 +651,9 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The instance to update, which must always include the instance
-     * name.  Otherwise, only fields mentioned in [][google.spanner.admin.instance.v1.UpdateInstanceRequest.field_mask] need be included.
+     * name.  Otherwise, only fields mentioned in
+     * [][google.spanner.admin.instance.v1.UpdateInstanceRequest.field_mask] need
+     * be included.
      * </pre>
      *
      * <code>.google.spanner.admin.instance.v1.Instance instance = 1;</code>
@@ -652,7 +674,9 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The instance to update, which must always include the instance
-     * name.  Otherwise, only fields mentioned in [][google.spanner.admin.instance.v1.UpdateInstanceRequest.field_mask] need be included.
+     * name.  Otherwise, only fields mentioned in
+     * [][google.spanner.admin.instance.v1.UpdateInstanceRequest.field_mask] need
+     * be included.
      * </pre>
      *
      * <code>.google.spanner.admin.instance.v1.Instance instance = 1;</code>
@@ -679,7 +703,9 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The instance to update, which must always include the instance
-     * name.  Otherwise, only fields mentioned in [][google.spanner.admin.instance.v1.UpdateInstanceRequest.field_mask] need be included.
+     * name.  Otherwise, only fields mentioned in
+     * [][google.spanner.admin.instance.v1.UpdateInstanceRequest.field_mask] need
+     * be included.
      * </pre>
      *
      * <code>.google.spanner.admin.instance.v1.Instance instance = 1;</code>
@@ -700,7 +726,9 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The instance to update, which must always include the instance
-     * name.  Otherwise, only fields mentioned in [][google.spanner.admin.instance.v1.UpdateInstanceRequest.field_mask] need be included.
+     * name.  Otherwise, only fields mentioned in
+     * [][google.spanner.admin.instance.v1.UpdateInstanceRequest.field_mask] need
+     * be included.
      * </pre>
      *
      * <code>.google.spanner.admin.instance.v1.Instance instance = 1;</code>
@@ -715,7 +743,9 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The instance to update, which must always include the instance
-     * name.  Otherwise, only fields mentioned in [][google.spanner.admin.instance.v1.UpdateInstanceRequest.field_mask] need be included.
+     * name.  Otherwise, only fields mentioned in
+     * [][google.spanner.admin.instance.v1.UpdateInstanceRequest.field_mask] need
+     * be included.
      * </pre>
      *
      * <code>.google.spanner.admin.instance.v1.Instance instance = 1;</code>
@@ -734,7 +764,9 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      * <pre>
      * Required. The instance to update, which must always include the instance
-     * name.  Otherwise, only fields mentioned in [][google.spanner.admin.instance.v1.UpdateInstanceRequest.field_mask] need be included.
+     * name.  Otherwise, only fields mentioned in
+     * [][google.spanner.admin.instance.v1.UpdateInstanceRequest.field_mask] need
+     * be included.
      * </pre>
      *
      * <code>.google.spanner.admin.instance.v1.Instance instance = 1;</code>
@@ -766,10 +798,12 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. A mask specifying which fields in [][google.spanner.admin.instance.v1.UpdateInstanceRequest.instance] should be updated.
-     * The field mask must always be specified; this prevents any future fields in
-     * [][google.spanner.admin.instance.v1.Instance] from being erased accidentally by clients that do not know
-     * about them.
+     * Required. A mask specifying which fields in
+     * [][google.spanner.admin.instance.v1.UpdateInstanceRequest.instance] should
+     * be updated. The field mask must always be specified; this prevents any
+     * future fields in
+     * [][google.spanner.admin.instance.v1.Instance] from being erased
+     * accidentally by clients that do not know about them.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask field_mask = 2;</code>
@@ -781,10 +815,12 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. A mask specifying which fields in [][google.spanner.admin.instance.v1.UpdateInstanceRequest.instance] should be updated.
-     * The field mask must always be specified; this prevents any future fields in
-     * [][google.spanner.admin.instance.v1.Instance] from being erased accidentally by clients that do not know
-     * about them.
+     * Required. A mask specifying which fields in
+     * [][google.spanner.admin.instance.v1.UpdateInstanceRequest.instance] should
+     * be updated. The field mask must always be specified; this prevents any
+     * future fields in
+     * [][google.spanner.admin.instance.v1.Instance] from being erased
+     * accidentally by clients that do not know about them.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask field_mask = 2;</code>
@@ -800,10 +836,12 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. A mask specifying which fields in [][google.spanner.admin.instance.v1.UpdateInstanceRequest.instance] should be updated.
-     * The field mask must always be specified; this prevents any future fields in
-     * [][google.spanner.admin.instance.v1.Instance] from being erased accidentally by clients that do not know
-     * about them.
+     * Required. A mask specifying which fields in
+     * [][google.spanner.admin.instance.v1.UpdateInstanceRequest.instance] should
+     * be updated. The field mask must always be specified; this prevents any
+     * future fields in
+     * [][google.spanner.admin.instance.v1.Instance] from being erased
+     * accidentally by clients that do not know about them.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask field_mask = 2;</code>
@@ -825,10 +863,12 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. A mask specifying which fields in [][google.spanner.admin.instance.v1.UpdateInstanceRequest.instance] should be updated.
-     * The field mask must always be specified; this prevents any future fields in
-     * [][google.spanner.admin.instance.v1.Instance] from being erased accidentally by clients that do not know
-     * about them.
+     * Required. A mask specifying which fields in
+     * [][google.spanner.admin.instance.v1.UpdateInstanceRequest.instance] should
+     * be updated. The field mask must always be specified; this prevents any
+     * future fields in
+     * [][google.spanner.admin.instance.v1.Instance] from being erased
+     * accidentally by clients that do not know about them.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask field_mask = 2;</code>
@@ -847,10 +887,12 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. A mask specifying which fields in [][google.spanner.admin.instance.v1.UpdateInstanceRequest.instance] should be updated.
-     * The field mask must always be specified; this prevents any future fields in
-     * [][google.spanner.admin.instance.v1.Instance] from being erased accidentally by clients that do not know
-     * about them.
+     * Required. A mask specifying which fields in
+     * [][google.spanner.admin.instance.v1.UpdateInstanceRequest.instance] should
+     * be updated. The field mask must always be specified; this prevents any
+     * future fields in
+     * [][google.spanner.admin.instance.v1.Instance] from being erased
+     * accidentally by clients that do not know about them.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask field_mask = 2;</code>
@@ -874,10 +916,12 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. A mask specifying which fields in [][google.spanner.admin.instance.v1.UpdateInstanceRequest.instance] should be updated.
-     * The field mask must always be specified; this prevents any future fields in
-     * [][google.spanner.admin.instance.v1.Instance] from being erased accidentally by clients that do not know
-     * about them.
+     * Required. A mask specifying which fields in
+     * [][google.spanner.admin.instance.v1.UpdateInstanceRequest.instance] should
+     * be updated. The field mask must always be specified; this prevents any
+     * future fields in
+     * [][google.spanner.admin.instance.v1.Instance] from being erased
+     * accidentally by clients that do not know about them.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask field_mask = 2;</code>
@@ -897,10 +941,12 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. A mask specifying which fields in [][google.spanner.admin.instance.v1.UpdateInstanceRequest.instance] should be updated.
-     * The field mask must always be specified; this prevents any future fields in
-     * [][google.spanner.admin.instance.v1.Instance] from being erased accidentally by clients that do not know
-     * about them.
+     * Required. A mask specifying which fields in
+     * [][google.spanner.admin.instance.v1.UpdateInstanceRequest.instance] should
+     * be updated. The field mask must always be specified; this prevents any
+     * future fields in
+     * [][google.spanner.admin.instance.v1.Instance] from being erased
+     * accidentally by clients that do not know about them.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask field_mask = 2;</code>
@@ -914,10 +960,12 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. A mask specifying which fields in [][google.spanner.admin.instance.v1.UpdateInstanceRequest.instance] should be updated.
-     * The field mask must always be specified; this prevents any future fields in
-     * [][google.spanner.admin.instance.v1.Instance] from being erased accidentally by clients that do not know
-     * about them.
+     * Required. A mask specifying which fields in
+     * [][google.spanner.admin.instance.v1.UpdateInstanceRequest.instance] should
+     * be updated. The field mask must always be specified; this prevents any
+     * future fields in
+     * [][google.spanner.admin.instance.v1.Instance] from being erased
+     * accidentally by clients that do not know about them.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask field_mask = 2;</code>
@@ -933,10 +981,12 @@ public final class UpdateInstanceRequest extends com.google.protobuf.GeneratedMe
      *
      *
      * <pre>
-     * Required. A mask specifying which fields in [][google.spanner.admin.instance.v1.UpdateInstanceRequest.instance] should be updated.
-     * The field mask must always be specified; this prevents any future fields in
-     * [][google.spanner.admin.instance.v1.Instance] from being erased accidentally by clients that do not know
-     * about them.
+     * Required. A mask specifying which fields in
+     * [][google.spanner.admin.instance.v1.UpdateInstanceRequest.instance] should
+     * be updated. The field mask must always be specified; this prevents any
+     * future fields in
+     * [][google.spanner.admin.instance.v1.Instance] from being erased
+     * accidentally by clients that do not know about them.
      * </pre>
      *
      * <code>.google.protobuf.FieldMask field_mask = 2;</code>

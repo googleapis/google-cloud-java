@@ -12,7 +12,8 @@ public interface ResultSetStatsOrBuilder
    *
    *
    * <pre>
-   * [QueryPlan][google.spanner.v1.QueryPlan] for the query associated with this result.
+   * [QueryPlan][google.spanner.v1.QueryPlan] for the query associated with this
+   * result.
    * </pre>
    *
    * <code>.google.spanner.v1.QueryPlan query_plan = 1;</code>
@@ -22,7 +23,8 @@ public interface ResultSetStatsOrBuilder
    *
    *
    * <pre>
-   * [QueryPlan][google.spanner.v1.QueryPlan] for the query associated with this result.
+   * [QueryPlan][google.spanner.v1.QueryPlan] for the query associated with this
+   * result.
    * </pre>
    *
    * <code>.google.spanner.v1.QueryPlan query_plan = 1;</code>
@@ -32,7 +34,8 @@ public interface ResultSetStatsOrBuilder
    *
    *
    * <pre>
-   * [QueryPlan][google.spanner.v1.QueryPlan] for the query associated with this result.
+   * [QueryPlan][google.spanner.v1.QueryPlan] for the query associated with this
+   * result.
    * </pre>
    *
    * <code>.google.spanner.v1.QueryPlan query_plan = 1;</code>

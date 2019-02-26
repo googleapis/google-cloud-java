@@ -7,7 +7,8 @@ package com.google.spanner.admin.database.v1;
  *
  *
  * <pre>
- * The response for [GetDatabaseDdl][google.spanner.admin.database.v1.DatabaseAdmin.GetDatabaseDdl].
+ * The response for
+ * [GetDatabaseDdl][google.spanner.admin.database.v1.DatabaseAdmin.GetDatabaseDdl].
  * </pre>
  *
  * Protobuf type {@code google.spanner.admin.database.v1.GetDatabaseDdlResponse}
@@ -324,7 +325,8 @@ public final class GetDatabaseDdlResponse extends com.google.protobuf.GeneratedM
    *
    *
    * <pre>
-   * The response for [GetDatabaseDdl][google.spanner.admin.database.v1.DatabaseAdmin.GetDatabaseDdl].
+   * The response for
+   * [GetDatabaseDdl][google.spanner.admin.database.v1.DatabaseAdmin.GetDatabaseDdl].
    * </pre>
    *
    * Protobuf type {@code google.spanner.admin.database.v1.GetDatabaseDdlResponse}

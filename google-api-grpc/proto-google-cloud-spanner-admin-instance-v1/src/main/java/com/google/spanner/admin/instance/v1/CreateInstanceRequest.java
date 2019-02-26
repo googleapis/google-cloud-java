@@ -7,7 +7,8 @@ package com.google.spanner.admin.instance.v1;
  *
  *
  * <pre>
- * The request for [CreateInstance][google.spanner.admin.instance.v1.InstanceAdmin.CreateInstance].
+ * The request for
+ * [CreateInstance][google.spanner.admin.instance.v1.InstanceAdmin.CreateInstance].
  * </pre>
  *
  * Protobuf type {@code google.spanner.admin.instance.v1.CreateInstanceRequest}
@@ -439,7 +440,8 @@ public final class CreateInstanceRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The request for [CreateInstance][google.spanner.admin.instance.v1.InstanceAdmin.CreateInstance].
+   * The request for
+   * [CreateInstance][google.spanner.admin.instance.v1.InstanceAdmin.CreateInstance].
    * </pre>
    *
    * Protobuf type {@code google.spanner.admin.instance.v1.CreateInstanceRequest}

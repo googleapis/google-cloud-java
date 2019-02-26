@@ -20,8 +20,8 @@ package com.google.spanner.admin.database.v1;
  * Each batch of statements is assigned a name which can be used with
  * the [Operations][google.longrunning.Operations] API to monitor
  * progress. See the
- * [operation_id][google.spanner.admin.database.v1.UpdateDatabaseDdlRequest.operation_id] field for more
- * details.
+ * [operation_id][google.spanner.admin.database.v1.UpdateDatabaseDdlRequest.operation_id]
+ * field for more details.
  * </pre>
  *
  * Protobuf type {@code google.spanner.admin.database.v1.UpdateDatabaseDdlRequest}
@@ -234,17 +234,19 @@ public final class UpdateDatabaseDdlRequest extends com.google.protobuf.Generate
    * [Operation][google.longrunning.Operation].
    * Specifying an explicit operation ID simplifies determining
    * whether the statements were executed in the event that the
-   * [UpdateDatabaseDdl][google.spanner.admin.database.v1.DatabaseAdmin.UpdateDatabaseDdl] call is replayed,
-   * or the return value is otherwise lost: the [database][google.spanner.admin.database.v1.UpdateDatabaseDdlRequest.database] and
-   * `operation_id` fields can be combined to form the
+   * [UpdateDatabaseDdl][google.spanner.admin.database.v1.DatabaseAdmin.UpdateDatabaseDdl]
+   * call is replayed, or the return value is otherwise lost: the
+   * [database][google.spanner.admin.database.v1.UpdateDatabaseDdlRequest.database]
+   * and `operation_id` fields can be combined to form the
    * [name][google.longrunning.Operation.name] of the resulting
-   * [longrunning.Operation][google.longrunning.Operation]: `&lt;database&gt;/operations/&lt;operation_id&gt;`.
+   * [longrunning.Operation][google.longrunning.Operation]:
+   * `&lt;database&gt;/operations/&lt;operation_id&gt;`.
    * `operation_id` should be unique within the database, and must be
    * a valid identifier: `[a-z][a-z0-9_]*`. Note that
    * automatically-generated operation IDs always begin with an
    * underscore. If the named operation already exists,
-   * [UpdateDatabaseDdl][google.spanner.admin.database.v1.DatabaseAdmin.UpdateDatabaseDdl] returns
-   * `ALREADY_EXISTS`.
+   * [UpdateDatabaseDdl][google.spanner.admin.database.v1.DatabaseAdmin.UpdateDatabaseDdl]
+   * returns `ALREADY_EXISTS`.
    * </pre>
    *
    * <code>string operation_id = 3;</code>
@@ -270,17 +272,19 @@ public final class UpdateDatabaseDdlRequest extends com.google.protobuf.Generate
    * [Operation][google.longrunning.Operation].
    * Specifying an explicit operation ID simplifies determining
    * whether the statements were executed in the event that the
-   * [UpdateDatabaseDdl][google.spanner.admin.database.v1.DatabaseAdmin.UpdateDatabaseDdl] call is replayed,
-   * or the return value is otherwise lost: the [database][google.spanner.admin.database.v1.UpdateDatabaseDdlRequest.database] and
-   * `operation_id` fields can be combined to form the
+   * [UpdateDatabaseDdl][google.spanner.admin.database.v1.DatabaseAdmin.UpdateDatabaseDdl]
+   * call is replayed, or the return value is otherwise lost: the
+   * [database][google.spanner.admin.database.v1.UpdateDatabaseDdlRequest.database]
+   * and `operation_id` fields can be combined to form the
    * [name][google.longrunning.Operation.name] of the resulting
-   * [longrunning.Operation][google.longrunning.Operation]: `&lt;database&gt;/operations/&lt;operation_id&gt;`.
+   * [longrunning.Operation][google.longrunning.Operation]:
+   * `&lt;database&gt;/operations/&lt;operation_id&gt;`.
    * `operation_id` should be unique within the database, and must be
    * a valid identifier: `[a-z][a-z0-9_]*`. Note that
    * automatically-generated operation IDs always begin with an
    * underscore. If the named operation already exists,
-   * [UpdateDatabaseDdl][google.spanner.admin.database.v1.DatabaseAdmin.UpdateDatabaseDdl] returns
-   * `ALREADY_EXISTS`.
+   * [UpdateDatabaseDdl][google.spanner.admin.database.v1.DatabaseAdmin.UpdateDatabaseDdl]
+   * returns `ALREADY_EXISTS`.
    * </pre>
    *
    * <code>string operation_id = 3;</code>
@@ -500,8 +504,8 @@ public final class UpdateDatabaseDdlRequest extends com.google.protobuf.Generate
    * Each batch of statements is assigned a name which can be used with
    * the [Operations][google.longrunning.Operations] API to monitor
    * progress. See the
-   * [operation_id][google.spanner.admin.database.v1.UpdateDatabaseDdlRequest.operation_id] field for more
-   * details.
+   * [operation_id][google.spanner.admin.database.v1.UpdateDatabaseDdlRequest.operation_id]
+   * field for more details.
    * </pre>
    *
    * Protobuf type {@code google.spanner.admin.database.v1.UpdateDatabaseDdlRequest}
@@ -936,17 +940,19 @@ public final class UpdateDatabaseDdlRequest extends com.google.protobuf.Generate
      * [Operation][google.longrunning.Operation].
      * Specifying an explicit operation ID simplifies determining
      * whether the statements were executed in the event that the
-     * [UpdateDatabaseDdl][google.spanner.admin.database.v1.DatabaseAdmin.UpdateDatabaseDdl] call is replayed,
-     * or the return value is otherwise lost: the [database][google.spanner.admin.database.v1.UpdateDatabaseDdlRequest.database] and
-     * `operation_id` fields can be combined to form the
+     * [UpdateDatabaseDdl][google.spanner.admin.database.v1.DatabaseAdmin.UpdateDatabaseDdl]
+     * call is replayed, or the return value is otherwise lost: the
+     * [database][google.spanner.admin.database.v1.UpdateDatabaseDdlRequest.database]
+     * and `operation_id` fields can be combined to form the
      * [name][google.longrunning.Operation.name] of the resulting
-     * [longrunning.Operation][google.longrunning.Operation]: `&lt;database&gt;/operations/&lt;operation_id&gt;`.
+     * [longrunning.Operation][google.longrunning.Operation]:
+     * `&lt;database&gt;/operations/&lt;operation_id&gt;`.
      * `operation_id` should be unique within the database, and must be
      * a valid identifier: `[a-z][a-z0-9_]*`. Note that
      * automatically-generated operation IDs always begin with an
      * underscore. If the named operation already exists,
-     * [UpdateDatabaseDdl][google.spanner.admin.database.v1.DatabaseAdmin.UpdateDatabaseDdl] returns
-     * `ALREADY_EXISTS`.
+     * [UpdateDatabaseDdl][google.spanner.admin.database.v1.DatabaseAdmin.UpdateDatabaseDdl]
+     * returns `ALREADY_EXISTS`.
      * </pre>
      *
      * <code>string operation_id = 3;</code>
@@ -972,17 +978,19 @@ public final class UpdateDatabaseDdlRequest extends com.google.protobuf.Generate
      * [Operation][google.longrunning.Operation].
      * Specifying an explicit operation ID simplifies determining
      * whether the statements were executed in the event that the
-     * [UpdateDatabaseDdl][google.spanner.admin.database.v1.DatabaseAdmin.UpdateDatabaseDdl] call is replayed,
-     * or the return value is otherwise lost: the [database][google.spanner.admin.database.v1.UpdateDatabaseDdlRequest.database] and
-     * `operation_id` fields can be combined to form the
+     * [UpdateDatabaseDdl][google.spanner.admin.database.v1.DatabaseAdmin.UpdateDatabaseDdl]
+     * call is replayed, or the return value is otherwise lost: the
+     * [database][google.spanner.admin.database.v1.UpdateDatabaseDdlRequest.database]
+     * and `operation_id` fields can be combined to form the
      * [name][google.longrunning.Operation.name] of the resulting
-     * [longrunning.Operation][google.longrunning.Operation]: `&lt;database&gt;/operations/&lt;operation_id&gt;`.
+     * [longrunning.Operation][google.longrunning.Operation]:
+     * `&lt;database&gt;/operations/&lt;operation_id&gt;`.
      * `operation_id` should be unique within the database, and must be
      * a valid identifier: `[a-z][a-z0-9_]*`. Note that
      * automatically-generated operation IDs always begin with an
      * underscore. If the named operation already exists,
-     * [UpdateDatabaseDdl][google.spanner.admin.database.v1.DatabaseAdmin.UpdateDatabaseDdl] returns
-     * `ALREADY_EXISTS`.
+     * [UpdateDatabaseDdl][google.spanner.admin.database.v1.DatabaseAdmin.UpdateDatabaseDdl]
+     * returns `ALREADY_EXISTS`.
      * </pre>
      *
      * <code>string operation_id = 3;</code>
@@ -1008,17 +1016,19 @@ public final class UpdateDatabaseDdlRequest extends com.google.protobuf.Generate
      * [Operation][google.longrunning.Operation].
      * Specifying an explicit operation ID simplifies determining
      * whether the statements were executed in the event that the
-     * [UpdateDatabaseDdl][google.spanner.admin.database.v1.DatabaseAdmin.UpdateDatabaseDdl] call is replayed,
-     * or the return value is otherwise lost: the [database][google.spanner.admin.database.v1.UpdateDatabaseDdlRequest.database] and
-     * `operation_id` fields can be combined to form the
+     * [UpdateDatabaseDdl][google.spanner.admin.database.v1.DatabaseAdmin.UpdateDatabaseDdl]
+     * call is replayed, or the return value is otherwise lost: the
+     * [database][google.spanner.admin.database.v1.UpdateDatabaseDdlRequest.database]
+     * and `operation_id` fields can be combined to form the
      * [name][google.longrunning.Operation.name] of the resulting
-     * [longrunning.Operation][google.longrunning.Operation]: `&lt;database&gt;/operations/&lt;operation_id&gt;`.
+     * [longrunning.Operation][google.longrunning.Operation]:
+     * `&lt;database&gt;/operations/&lt;operation_id&gt;`.
      * `operation_id` should be unique within the database, and must be
      * a valid identifier: `[a-z][a-z0-9_]*`. Note that
      * automatically-generated operation IDs always begin with an
      * underscore. If the named operation already exists,
-     * [UpdateDatabaseDdl][google.spanner.admin.database.v1.DatabaseAdmin.UpdateDatabaseDdl] returns
-     * `ALREADY_EXISTS`.
+     * [UpdateDatabaseDdl][google.spanner.admin.database.v1.DatabaseAdmin.UpdateDatabaseDdl]
+     * returns `ALREADY_EXISTS`.
      * </pre>
      *
      * <code>string operation_id = 3;</code>
@@ -1042,17 +1052,19 @@ public final class UpdateDatabaseDdlRequest extends com.google.protobuf.Generate
      * [Operation][google.longrunning.Operation].
      * Specifying an explicit operation ID simplifies determining
      * whether the statements were executed in the event that the
-     * [UpdateDatabaseDdl][google.spanner.admin.database.v1.DatabaseAdmin.UpdateDatabaseDdl] call is replayed,
-     * or the return value is otherwise lost: the [database][google.spanner.admin.database.v1.UpdateDatabaseDdlRequest.database] and
-     * `operation_id` fields can be combined to form the
+     * [UpdateDatabaseDdl][google.spanner.admin.database.v1.DatabaseAdmin.UpdateDatabaseDdl]
+     * call is replayed, or the return value is otherwise lost: the
+     * [database][google.spanner.admin.database.v1.UpdateDatabaseDdlRequest.database]
+     * and `operation_id` fields can be combined to form the
      * [name][google.longrunning.Operation.name] of the resulting
-     * [longrunning.Operation][google.longrunning.Operation]: `&lt;database&gt;/operations/&lt;operation_id&gt;`.
+     * [longrunning.Operation][google.longrunning.Operation]:
+     * `&lt;database&gt;/operations/&lt;operation_id&gt;`.
      * `operation_id` should be unique within the database, and must be
      * a valid identifier: `[a-z][a-z0-9_]*`. Note that
      * automatically-generated operation IDs always begin with an
      * underscore. If the named operation already exists,
-     * [UpdateDatabaseDdl][google.spanner.admin.database.v1.DatabaseAdmin.UpdateDatabaseDdl] returns
-     * `ALREADY_EXISTS`.
+     * [UpdateDatabaseDdl][google.spanner.admin.database.v1.DatabaseAdmin.UpdateDatabaseDdl]
+     * returns `ALREADY_EXISTS`.
      * </pre>
      *
      * <code>string operation_id = 3;</code>
@@ -1073,17 +1085,19 @@ public final class UpdateDatabaseDdlRequest extends com.google.protobuf.Generate
      * [Operation][google.longrunning.Operation].
      * Specifying an explicit operation ID simplifies determining
      * whether the statements were executed in the event that the
-     * [UpdateDatabaseDdl][google.spanner.admin.database.v1.DatabaseAdmin.UpdateDatabaseDdl] call is replayed,
-     * or the return value is otherwise lost: the [database][google.spanner.admin.database.v1.UpdateDatabaseDdlRequest.database] and
-     * `operation_id` fields can be combined to form the
+     * [UpdateDatabaseDdl][google.spanner.admin.database.v1.DatabaseAdmin.UpdateDatabaseDdl]
+     * call is replayed, or the return value is otherwise lost: the
+     * [database][google.spanner.admin.database.v1.UpdateDatabaseDdlRequest.database]
+     * and `operation_id` fields can be combined to form the
      * [name][google.longrunning.Operation.name] of the resulting
-     * [longrunning.Operation][google.longrunning.Operation]: `&lt;database&gt;/operations/&lt;operation_id&gt;`.
+     * [longrunning.Operation][google.longrunning.Operation]:
+     * `&lt;database&gt;/operations/&lt;operation_id&gt;`.
      * `operation_id` should be unique within the database, and must be
      * a valid identifier: `[a-z][a-z0-9_]*`. Note that
      * automatically-generated operation IDs always begin with an
      * underscore. If the named operation already exists,
-     * [UpdateDatabaseDdl][google.spanner.admin.database.v1.DatabaseAdmin.UpdateDatabaseDdl] returns
-     * `ALREADY_EXISTS`.
+     * [UpdateDatabaseDdl][google.spanner.admin.database.v1.DatabaseAdmin.UpdateDatabaseDdl]
+     * returns `ALREADY_EXISTS`.
      * </pre>
      *
      * <code>string operation_id = 3;</code>
