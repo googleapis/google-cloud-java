@@ -8,8 +8,10 @@ package com.google.cloud.asset.v1beta1;
  *
  * <pre>
  * The export asset response. This message is returned by the
- * [google.longrunning.Operations.GetOperation][google.longrunning.Operations.GetOperation] method in the returned
- * [google.longrunning.Operation.response][google.longrunning.Operation.response] field.
+ * [google.longrunning.Operations.GetOperation][google.longrunning.Operations.GetOperation]
+ * method in the returned
+ * [google.longrunning.Operation.response][google.longrunning.Operation.response]
+ * field.
  * </pre>
  *
  * Protobuf type {@code google.cloud.asset.v1beta1.ExportAssetsResponse}
@@ -382,8 +384,10 @@ public final class ExportAssetsResponse extends com.google.protobuf.GeneratedMes
    *
    * <pre>
    * The export asset response. This message is returned by the
-   * [google.longrunning.Operations.GetOperation][google.longrunning.Operations.GetOperation] method in the returned
-   * [google.longrunning.Operation.response][google.longrunning.Operation.response] field.
+   * [google.longrunning.Operations.GetOperation][google.longrunning.Operations.GetOperation]
+   * method in the returned
+   * [google.longrunning.Operation.response][google.longrunning.Operation.response]
+   * field.
    * </pre>
    *
    * Protobuf type {@code google.cloud.asset.v1beta1.ExportAssetsResponse}

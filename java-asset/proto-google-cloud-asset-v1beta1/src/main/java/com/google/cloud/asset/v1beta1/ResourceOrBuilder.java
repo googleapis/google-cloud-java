@@ -117,11 +117,13 @@ public interface ResourceOrBuilder
    *
    * <pre>
    * The full name of the immediate parent of this resource. See
-   * [Resource Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
+   * [Resource
+   * Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
    * for more information.
    * For GCP assets, it is the parent resource defined in the [Cloud IAM policy
    * hierarchy](https://cloud.google.com/iam/docs/overview#policy_hierarchy).
-   * For example: `"//cloudresourcemanager.googleapis.com/projects/my_project_123"`.
+   * For example:
+   * `"//cloudresourcemanager.googleapis.com/projects/my_project_123"`.
    * For third-party assets, it is up to the users to define.
    * </pre>
    *
@@ -133,11 +135,13 @@ public interface ResourceOrBuilder
    *
    * <pre>
    * The full name of the immediate parent of this resource. See
-   * [Resource Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
+   * [Resource
+   * Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
    * for more information.
    * For GCP assets, it is the parent resource defined in the [Cloud IAM policy
    * hierarchy](https://cloud.google.com/iam/docs/overview#policy_hierarchy).
-   * For example: `"//cloudresourcemanager.googleapis.com/projects/my_project_123"`.
+   * For example:
+   * `"//cloudresourcemanager.googleapis.com/projects/my_project_123"`.
    * For third-party assets, it is up to the users to define.
    * </pre>
    *
