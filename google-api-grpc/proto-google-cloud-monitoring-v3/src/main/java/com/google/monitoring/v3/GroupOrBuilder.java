@@ -87,7 +87,8 @@ public interface GroupOrBuilder
    *
    *
    * <pre>
-   * The filter used to determine which monitored resources belong to this group.
+   * The filter used to determine which monitored resources belong to this
+   * group.
    * </pre>
    *
    * <code>string filter = 5;</code>
@@ -97,7 +98,8 @@ public interface GroupOrBuilder
    *
    *
    * <pre>
-   * The filter used to determine which monitored resources belong to this group.
+   * The filter used to determine which monitored resources belong to this
+   * group.
    * </pre>
    *
    * <code>string filter = 5;</code>
