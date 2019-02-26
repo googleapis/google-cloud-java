@@ -241,7 +241,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    * an `AudioEncoding` when you send  send `FLAC` or `WAV` audio, the
    * encoding configuration must match the encoding described in the audio
    * header; otherwise the request returns an
-   * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] error code.
+   * [google.rpc.Code.INVALID_ARGUMENT][google.rpc.Code.INVALID_ARGUMENT] error
+   * code.
    * </pre>
    *
    * Protobuf enum {@code google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding}
@@ -541,7 +542,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Encoding of audio data sent in all `RecognitionAudio` messages.
    * This field is optional for `FLAC` and `WAV` audio files and required
-   * for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
+   * for all other audio formats. For details, see
+   * [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
    * </pre>
    *
    * <code>.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding encoding = 1;</code>
@@ -555,7 +557,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    * <pre>
    * Encoding of audio data sent in all `RecognitionAudio` messages.
    * This field is optional for `FLAC` and `WAV` audio files and required
-   * for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
+   * for all other audio formats. For details, see
+   * [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
    * </pre>
    *
    * <code>.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding encoding = 1;</code>
@@ -581,7 +584,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    * source to 16000 Hz. If that's not possible, use the native sample rate of
    * the audio source (instead of re-sampling).
    * This field is optional for `FLAC` and `WAV` audio files and required
-   * for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
+   * for all other audio formats. For details, see
+   * [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
    * </pre>
    *
    * <code>int32 sample_rate_hertz = 2;</code>
@@ -823,9 +827,10 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * *Optional* array of [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext].
-   * A means to provide context to assist the speech recognition. For more
-   * information, see [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
+   * *Optional* array of
+   * [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext]. A means to
+   * provide context to assist the speech recognition. For more information, see
+   * [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v1p1beta1.SpeechContext speech_contexts = 6;</code>
@@ -837,9 +842,10 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * *Optional* array of [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext].
-   * A means to provide context to assist the speech recognition. For more
-   * information, see [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
+   * *Optional* array of
+   * [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext]. A means to
+   * provide context to assist the speech recognition. For more information, see
+   * [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v1p1beta1.SpeechContext speech_contexts = 6;</code>
@@ -852,9 +858,10 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * *Optional* array of [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext].
-   * A means to provide context to assist the speech recognition. For more
-   * information, see [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
+   * *Optional* array of
+   * [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext]. A means to
+   * provide context to assist the speech recognition. For more information, see
+   * [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v1p1beta1.SpeechContext speech_contexts = 6;</code>
@@ -866,9 +873,10 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * *Optional* array of [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext].
-   * A means to provide context to assist the speech recognition. For more
-   * information, see [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
+   * *Optional* array of
+   * [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext]. A means to
+   * provide context to assist the speech recognition. For more information, see
+   * [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v1p1beta1.SpeechContext speech_contexts = 6;</code>
@@ -880,9 +888,10 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * *Optional* array of [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext].
-   * A means to provide context to assist the speech recognition. For more
-   * information, see [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
+   * *Optional* array of
+   * [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext]. A means to
+   * provide context to assist the speech recognition. For more information, see
+   * [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
    * </pre>
    *
    * <code>repeated .google.cloud.speech.v1p1beta1.SpeechContext speech_contexts = 6;</code>
@@ -1820,7 +1829,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Encoding of audio data sent in all `RecognitionAudio` messages.
      * This field is optional for `FLAC` and `WAV` audio files and required
-     * for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
+     * for all other audio formats. For details, see
+     * [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
      * </pre>
      *
      * <code>.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding encoding = 1;</code>
@@ -1834,7 +1844,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Encoding of audio data sent in all `RecognitionAudio` messages.
      * This field is optional for `FLAC` and `WAV` audio files and required
-     * for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
+     * for all other audio formats. For details, see
+     * [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
      * </pre>
      *
      * <code>.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding encoding = 1;</code>
@@ -1850,7 +1861,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Encoding of audio data sent in all `RecognitionAudio` messages.
      * This field is optional for `FLAC` and `WAV` audio files and required
-     * for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
+     * for all other audio formats. For details, see
+     * [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
      * </pre>
      *
      * <code>.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding encoding = 1;</code>
@@ -1869,7 +1881,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Encoding of audio data sent in all `RecognitionAudio` messages.
      * This field is optional for `FLAC` and `WAV` audio files and required
-     * for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
+     * for all other audio formats. For details, see
+     * [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
      * </pre>
      *
      * <code>.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding encoding = 1;</code>
@@ -1890,7 +1903,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * <pre>
      * Encoding of audio data sent in all `RecognitionAudio` messages.
      * This field is optional for `FLAC` and `WAV` audio files and required
-     * for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
+     * for all other audio formats. For details, see
+     * [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
      * </pre>
      *
      * <code>.google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding encoding = 1;</code>
@@ -1913,7 +1927,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * source to 16000 Hz. If that's not possible, use the native sample rate of
      * the audio source (instead of re-sampling).
      * This field is optional for `FLAC` and `WAV` audio files and required
-     * for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
+     * for all other audio formats. For details, see
+     * [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
      * </pre>
      *
      * <code>int32 sample_rate_hertz = 2;</code>
@@ -1931,7 +1946,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * source to 16000 Hz. If that's not possible, use the native sample rate of
      * the audio source (instead of re-sampling).
      * This field is optional for `FLAC` and `WAV` audio files and required
-     * for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
+     * for all other audio formats. For details, see
+     * [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
      * </pre>
      *
      * <code>int32 sample_rate_hertz = 2;</code>
@@ -1952,7 +1968,8 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      * source to 16000 Hz. If that's not possible, use the native sample rate of
      * the audio source (instead of re-sampling).
      * This field is optional for `FLAC` and `WAV` audio files and required
-     * for all other audio formats. For details, see [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
+     * for all other audio formats. For details, see
+     * [AudioEncoding][google.cloud.speech.v1p1beta1.RecognitionConfig.AudioEncoding].
      * </pre>
      *
      * <code>int32 sample_rate_hertz = 2;</code>
@@ -2582,9 +2599,10 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* array of [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext].
-     * A means to provide context to assist the speech recognition. For more
-     * information, see [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
+     * *Optional* array of
+     * [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext]. A means to
+     * provide context to assist the speech recognition. For more information, see
+     * [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1p1beta1.SpeechContext speech_contexts = 6;</code>
@@ -2600,9 +2618,10 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* array of [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext].
-     * A means to provide context to assist the speech recognition. For more
-     * information, see [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
+     * *Optional* array of
+     * [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext]. A means to
+     * provide context to assist the speech recognition. For more information, see
+     * [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1p1beta1.SpeechContext speech_contexts = 6;</code>
@@ -2618,9 +2637,10 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* array of [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext].
-     * A means to provide context to assist the speech recognition. For more
-     * information, see [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
+     * *Optional* array of
+     * [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext]. A means to
+     * provide context to assist the speech recognition. For more information, see
+     * [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1p1beta1.SpeechContext speech_contexts = 6;</code>
@@ -2636,9 +2656,10 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* array of [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext].
-     * A means to provide context to assist the speech recognition. For more
-     * information, see [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
+     * *Optional* array of
+     * [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext]. A means to
+     * provide context to assist the speech recognition. For more information, see
+     * [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1p1beta1.SpeechContext speech_contexts = 6;</code>
@@ -2661,9 +2682,10 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* array of [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext].
-     * A means to provide context to assist the speech recognition. For more
-     * information, see [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
+     * *Optional* array of
+     * [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext]. A means to
+     * provide context to assist the speech recognition. For more information, see
+     * [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1p1beta1.SpeechContext speech_contexts = 6;</code>
@@ -2683,9 +2705,10 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* array of [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext].
-     * A means to provide context to assist the speech recognition. For more
-     * information, see [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
+     * *Optional* array of
+     * [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext]. A means to
+     * provide context to assist the speech recognition. For more information, see
+     * [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1p1beta1.SpeechContext speech_contexts = 6;</code>
@@ -2707,9 +2730,10 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* array of [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext].
-     * A means to provide context to assist the speech recognition. For more
-     * information, see [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
+     * *Optional* array of
+     * [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext]. A means to
+     * provide context to assist the speech recognition. For more information, see
+     * [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1p1beta1.SpeechContext speech_contexts = 6;</code>
@@ -2732,9 +2756,10 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* array of [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext].
-     * A means to provide context to assist the speech recognition. For more
-     * information, see [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
+     * *Optional* array of
+     * [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext]. A means to
+     * provide context to assist the speech recognition. For more information, see
+     * [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1p1beta1.SpeechContext speech_contexts = 6;</code>
@@ -2754,9 +2779,10 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* array of [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext].
-     * A means to provide context to assist the speech recognition. For more
-     * information, see [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
+     * *Optional* array of
+     * [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext]. A means to
+     * provide context to assist the speech recognition. For more information, see
+     * [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1p1beta1.SpeechContext speech_contexts = 6;</code>
@@ -2776,9 +2802,10 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* array of [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext].
-     * A means to provide context to assist the speech recognition. For more
-     * information, see [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
+     * *Optional* array of
+     * [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext]. A means to
+     * provide context to assist the speech recognition. For more information, see
+     * [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1p1beta1.SpeechContext speech_contexts = 6;</code>
@@ -2798,9 +2825,10 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* array of [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext].
-     * A means to provide context to assist the speech recognition. For more
-     * information, see [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
+     * *Optional* array of
+     * [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext]. A means to
+     * provide context to assist the speech recognition. For more information, see
+     * [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1p1beta1.SpeechContext speech_contexts = 6;</code>
@@ -2819,9 +2847,10 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* array of [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext].
-     * A means to provide context to assist the speech recognition. For more
-     * information, see [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
+     * *Optional* array of
+     * [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext]. A means to
+     * provide context to assist the speech recognition. For more information, see
+     * [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1p1beta1.SpeechContext speech_contexts = 6;</code>
@@ -2840,9 +2869,10 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* array of [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext].
-     * A means to provide context to assist the speech recognition. For more
-     * information, see [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
+     * *Optional* array of
+     * [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext]. A means to
+     * provide context to assist the speech recognition. For more information, see
+     * [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1p1beta1.SpeechContext speech_contexts = 6;</code>
@@ -2855,9 +2885,10 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* array of [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext].
-     * A means to provide context to assist the speech recognition. For more
-     * information, see [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
+     * *Optional* array of
+     * [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext]. A means to
+     * provide context to assist the speech recognition. For more information, see
+     * [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1p1beta1.SpeechContext speech_contexts = 6;</code>
@@ -2874,9 +2905,10 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* array of [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext].
-     * A means to provide context to assist the speech recognition. For more
-     * information, see [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
+     * *Optional* array of
+     * [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext]. A means to
+     * provide context to assist the speech recognition. For more information, see
+     * [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1p1beta1.SpeechContext speech_contexts = 6;</code>
@@ -2893,9 +2925,10 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* array of [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext].
-     * A means to provide context to assist the speech recognition. For more
-     * information, see [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
+     * *Optional* array of
+     * [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext]. A means to
+     * provide context to assist the speech recognition. For more information, see
+     * [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1p1beta1.SpeechContext speech_contexts = 6;</code>
@@ -2908,9 +2941,10 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* array of [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext].
-     * A means to provide context to assist the speech recognition. For more
-     * information, see [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
+     * *Optional* array of
+     * [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext]. A means to
+     * provide context to assist the speech recognition. For more information, see
+     * [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1p1beta1.SpeechContext speech_contexts = 6;</code>
@@ -2924,9 +2958,10 @@ public final class RecognitionConfig extends com.google.protobuf.GeneratedMessag
      *
      *
      * <pre>
-     * *Optional* array of [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext].
-     * A means to provide context to assist the speech recognition. For more
-     * information, see [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
+     * *Optional* array of
+     * [SpeechContext][google.cloud.speech.v1p1beta1.SpeechContext]. A means to
+     * provide context to assist the speech recognition. For more information, see
+     * [Phrase Hints](/speech-to-text/docs/basics#phrase-hints).
      * </pre>
      *
      * <code>repeated .google.cloud.speech.v1p1beta1.SpeechContext speech_contexts = 6;</code>
