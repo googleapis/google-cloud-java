@@ -14,8 +14,9 @@ public interface ReportErrorEventRequestOrBuilder
    * <pre>
    * [Required] The resource name of the Google Cloud Platform project. Written
    * as `projects/` plus the
-   * [Google Cloud Platform project ID](https://support.google.com/cloud/answer/6158840).
-   * Example: `projects/my-project-123`.
+   * [Google Cloud Platform project
+   * ID](https://support.google.com/cloud/answer/6158840). Example:
+   * `projects/my-project-123`.
    * </pre>
    *
    * <code>string project_name = 1;</code>
@@ -27,8 +28,9 @@ public interface ReportErrorEventRequestOrBuilder
    * <pre>
    * [Required] The resource name of the Google Cloud Platform project. Written
    * as `projects/` plus the
-   * [Google Cloud Platform project ID](https://support.google.com/cloud/answer/6158840).
-   * Example: `projects/my-project-123`.
+   * [Google Cloud Platform project
+   * ID](https://support.google.com/cloud/answer/6158840). Example:
+   * `projects/my-project-123`.
    * </pre>
    *
    * <code>string project_name = 1;</code>

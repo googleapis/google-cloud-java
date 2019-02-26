@@ -122,7 +122,8 @@ public final class ReportErrorsServiceGrpc {
      * &lt;a href="https://support.google.com/cloud/answer/6158862"&gt;API key&lt;/a&gt;
      * for authentication. To use an API key, append it to the URL as the value of
      * a `key` parameter. For example:
-     * &lt;pre&gt;POST https://clouderrorreporting.googleapis.com/v1beta1/projects/example-project/events:report?key=123ABC456&lt;/pre&gt;
+     * &lt;pre&gt;POST
+     * https://clouderrorreporting.googleapis.com/v1beta1/projects/example-project/events:report?key=123ABC456&lt;/pre&gt;
      * </pre>
      */
     public void reportErrorEvent(
@@ -180,7 +181,8 @@ public final class ReportErrorsServiceGrpc {
      * &lt;a href="https://support.google.com/cloud/answer/6158862"&gt;API key&lt;/a&gt;
      * for authentication. To use an API key, append it to the URL as the value of
      * a `key` parameter. For example:
-     * &lt;pre&gt;POST https://clouderrorreporting.googleapis.com/v1beta1/projects/example-project/events:report?key=123ABC456&lt;/pre&gt;
+     * &lt;pre&gt;POST
+     * https://clouderrorreporting.googleapis.com/v1beta1/projects/example-project/events:report?key=123ABC456&lt;/pre&gt;
      * </pre>
      */
     public void reportErrorEvent(
@@ -229,7 +231,8 @@ public final class ReportErrorsServiceGrpc {
      * &lt;a href="https://support.google.com/cloud/answer/6158862"&gt;API key&lt;/a&gt;
      * for authentication. To use an API key, append it to the URL as the value of
      * a `key` parameter. For example:
-     * &lt;pre&gt;POST https://clouderrorreporting.googleapis.com/v1beta1/projects/example-project/events:report?key=123ABC456&lt;/pre&gt;
+     * &lt;pre&gt;POST
+     * https://clouderrorreporting.googleapis.com/v1beta1/projects/example-project/events:report?key=123ABC456&lt;/pre&gt;
      * </pre>
      */
     public com.google.devtools.clouderrorreporting.v1beta1.ReportErrorEventResponse
@@ -274,7 +277,8 @@ public final class ReportErrorsServiceGrpc {
      * &lt;a href="https://support.google.com/cloud/answer/6158862"&gt;API key&lt;/a&gt;
      * for authentication. To use an API key, append it to the URL as the value of
      * a `key` parameter. For example:
-     * &lt;pre&gt;POST https://clouderrorreporting.googleapis.com/v1beta1/projects/example-project/events:report?key=123ABC456&lt;/pre&gt;
+     * &lt;pre&gt;POST
+     * https://clouderrorreporting.googleapis.com/v1beta1/projects/example-project/events:report?key=123ABC456&lt;/pre&gt;
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
