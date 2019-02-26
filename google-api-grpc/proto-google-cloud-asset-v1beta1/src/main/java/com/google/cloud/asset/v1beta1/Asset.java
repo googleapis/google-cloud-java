@@ -136,8 +136,10 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The full name of the asset. For example: `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
-   * See [Resource Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
+   * The full name of the asset. For example:
+   * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
+   * See [Resource
+   * Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
    * for more information.
    * </pre>
    *
@@ -158,8 +160,10 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The full name of the asset. For example: `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
-   * See [Resource Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
+   * The full name of the asset. For example:
+   * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
+   * See [Resource
+   * Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
    * for more information.
    * </pre>
    *
@@ -267,8 +271,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Representation of the actual Cloud IAM policy set on a cloud resource. For each
-   * resource, there must be at most one Cloud IAM policy set on it.
+   * Representation of the actual Cloud IAM policy set on a cloud resource. For
+   * each resource, there must be at most one Cloud IAM policy set on it.
    * </pre>
    *
    * <code>.google.iam.v1.Policy iam_policy = 4;</code>
@@ -280,8 +284,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Representation of the actual Cloud IAM policy set on a cloud resource. For each
-   * resource, there must be at most one Cloud IAM policy set on it.
+   * Representation of the actual Cloud IAM policy set on a cloud resource. For
+   * each resource, there must be at most one Cloud IAM policy set on it.
    * </pre>
    *
    * <code>.google.iam.v1.Policy iam_policy = 4;</code>
@@ -293,8 +297,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * Representation of the actual Cloud IAM policy set on a cloud resource. For each
-   * resource, there must be at most one Cloud IAM policy set on it.
+   * Representation of the actual Cloud IAM policy set on a cloud resource. For
+   * each resource, there must be at most one Cloud IAM policy set on it.
    * </pre>
    *
    * <code>.google.iam.v1.Policy iam_policy = 4;</code>
@@ -695,8 +699,10 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The full name of the asset. For example: `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
-     * See [Resource Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
+     * The full name of the asset. For example:
+     * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
+     * See [Resource
+     * Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
      * for more information.
      * </pre>
      *
@@ -717,8 +723,10 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The full name of the asset. For example: `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
-     * See [Resource Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
+     * The full name of the asset. For example:
+     * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
+     * See [Resource
+     * Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
      * for more information.
      * </pre>
      *
@@ -739,8 +747,10 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The full name of the asset. For example: `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
-     * See [Resource Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
+     * The full name of the asset. For example:
+     * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
+     * See [Resource
+     * Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
      * for more information.
      * </pre>
      *
@@ -759,8 +769,10 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The full name of the asset. For example: `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
-     * See [Resource Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
+     * The full name of the asset. For example:
+     * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
+     * See [Resource
+     * Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
      * for more information.
      * </pre>
      *
@@ -776,8 +788,10 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The full name of the asset. For example: `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
-     * See [Resource Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
+     * The full name of the asset. For example:
+     * `//compute.googleapis.com/projects/my_project_123/zones/zone1/instances/instance1`.
+     * See [Resource
+     * Names](https://cloud.google.com/apis/design/resource_names#full_resource_name)
      * for more information.
      * </pre>
      *
@@ -1079,8 +1093,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Representation of the actual Cloud IAM policy set on a cloud resource. For each
-     * resource, there must be at most one Cloud IAM policy set on it.
+     * Representation of the actual Cloud IAM policy set on a cloud resource. For
+     * each resource, there must be at most one Cloud IAM policy set on it.
      * </pre>
      *
      * <code>.google.iam.v1.Policy iam_policy = 4;</code>
@@ -1092,8 +1106,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Representation of the actual Cloud IAM policy set on a cloud resource. For each
-     * resource, there must be at most one Cloud IAM policy set on it.
+     * Representation of the actual Cloud IAM policy set on a cloud resource. For
+     * each resource, there must be at most one Cloud IAM policy set on it.
      * </pre>
      *
      * <code>.google.iam.v1.Policy iam_policy = 4;</code>
@@ -1109,8 +1123,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Representation of the actual Cloud IAM policy set on a cloud resource. For each
-     * resource, there must be at most one Cloud IAM policy set on it.
+     * Representation of the actual Cloud IAM policy set on a cloud resource. For
+     * each resource, there must be at most one Cloud IAM policy set on it.
      * </pre>
      *
      * <code>.google.iam.v1.Policy iam_policy = 4;</code>
@@ -1132,8 +1146,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Representation of the actual Cloud IAM policy set on a cloud resource. For each
-     * resource, there must be at most one Cloud IAM policy set on it.
+     * Representation of the actual Cloud IAM policy set on a cloud resource. For
+     * each resource, there must be at most one Cloud IAM policy set on it.
      * </pre>
      *
      * <code>.google.iam.v1.Policy iam_policy = 4;</code>
@@ -1152,8 +1166,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Representation of the actual Cloud IAM policy set on a cloud resource. For each
-     * resource, there must be at most one Cloud IAM policy set on it.
+     * Representation of the actual Cloud IAM policy set on a cloud resource. For
+     * each resource, there must be at most one Cloud IAM policy set on it.
      * </pre>
      *
      * <code>.google.iam.v1.Policy iam_policy = 4;</code>
@@ -1177,8 +1191,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Representation of the actual Cloud IAM policy set on a cloud resource. For each
-     * resource, there must be at most one Cloud IAM policy set on it.
+     * Representation of the actual Cloud IAM policy set on a cloud resource. For
+     * each resource, there must be at most one Cloud IAM policy set on it.
      * </pre>
      *
      * <code>.google.iam.v1.Policy iam_policy = 4;</code>
@@ -1198,8 +1212,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Representation of the actual Cloud IAM policy set on a cloud resource. For each
-     * resource, there must be at most one Cloud IAM policy set on it.
+     * Representation of the actual Cloud IAM policy set on a cloud resource. For
+     * each resource, there must be at most one Cloud IAM policy set on it.
      * </pre>
      *
      * <code>.google.iam.v1.Policy iam_policy = 4;</code>
@@ -1213,8 +1227,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Representation of the actual Cloud IAM policy set on a cloud resource. For each
-     * resource, there must be at most one Cloud IAM policy set on it.
+     * Representation of the actual Cloud IAM policy set on a cloud resource. For
+     * each resource, there must be at most one Cloud IAM policy set on it.
      * </pre>
      *
      * <code>.google.iam.v1.Policy iam_policy = 4;</code>
@@ -1230,8 +1244,8 @@ public final class Asset extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * Representation of the actual Cloud IAM policy set on a cloud resource. For each
-     * resource, there must be at most one Cloud IAM policy set on it.
+     * Representation of the actual Cloud IAM policy set on a cloud resource. For
+     * each resource, there must be at most one Cloud IAM policy set on it.
      * </pre>
      *
      * <code>.google.iam.v1.Policy iam_policy = 4;</code>
