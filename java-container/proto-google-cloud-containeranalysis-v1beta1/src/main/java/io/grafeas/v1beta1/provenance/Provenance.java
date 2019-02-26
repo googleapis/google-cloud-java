@@ -55,9 +55,9 @@ public final class Provenance {
     java.lang.String[] descriptorData = {
       "\nEgoogle/devtools/containeranalysis/v1be"
           + "ta1/provenance/provenance.proto\022\032grafeas"
-          + ".v1beta1.provenance\032\037google/protobuf/tim"
-          + "estamp.proto\032=google/devtools/containera"
-          + "nalysis/v1beta1/source/source.proto\"\320\004\n\017"
+          + ".v1beta1.provenance\032=google/devtools/con"
+          + "taineranalysis/v1beta1/source/source.pro"
+          + "to\032\037google/protobuf/timestamp.proto\"\320\004\n\017"
           + "BuildProvenance\022\n\n\002id\030\001 \001(\t\022\022\n\nproject_i"
           + "d\030\002 \001(\t\0225\n\010commands\030\003 \003(\0132#.grafeas.v1be"
           + "ta1.provenance.Command\022=\n\017built_artifact"
@@ -106,8 +106,8 @@ public final class Provenance {
     com.google.protobuf.Descriptors.FileDescriptor.internalBuildGeneratedFileFrom(
         descriptorData,
         new com.google.protobuf.Descriptors.FileDescriptor[] {
-          com.google.protobuf.TimestampProto.getDescriptor(),
           io.grafeas.v1beta1.source.Source.getDescriptor(),
+          com.google.protobuf.TimestampProto.getDescriptor(),
         },
         assigner);
     internal_static_grafeas_v1beta1_provenance_BuildProvenance_descriptor =
@@ -188,8 +188,8 @@ public final class Provenance {
             new java.lang.String[] {
               "Checksum", "Id", "Names",
             });
-    com.google.protobuf.TimestampProto.getDescriptor();
     io.grafeas.v1beta1.source.Source.getDescriptor();
+    com.google.protobuf.TimestampProto.getDescriptor();
   }
 
   // @@protoc_insertion_point(outer_class_scope)
