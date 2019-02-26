@@ -7,7 +7,8 @@ package com.google.cloud.dialogflow.v2beta1;
  *
  *
  * <pre>
- * Request message for [Documents.GetDocument][google.cloud.dialogflow.v2beta1.Documents.GetDocument].
+ * Request message for
+ * [Documents.GetDocument][google.cloud.dialogflow.v2beta1.Documents.GetDocument].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2beta1.GetDocumentRequest}
@@ -303,7 +304,8 @@ public final class GetDocumentRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Request message for [Documents.GetDocument][google.cloud.dialogflow.v2beta1.Documents.GetDocument].
+   * Request message for
+   * [Documents.GetDocument][google.cloud.dialogflow.v2beta1.Documents.GetDocument].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2beta1.GetDocumentRequest}

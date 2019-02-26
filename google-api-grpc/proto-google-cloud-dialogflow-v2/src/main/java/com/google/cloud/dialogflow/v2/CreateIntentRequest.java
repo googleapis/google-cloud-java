@@ -7,7 +7,8 @@ package com.google.cloud.dialogflow.v2;
  *
  *
  * <pre>
- * The request message for [Intents.CreateIntent][google.cloud.dialogflow.v2.Intents.CreateIntent].
+ * The request message for
+ * [Intents.CreateIntent][google.cloud.dialogflow.v2.Intents.CreateIntent].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2.CreateIntentRequest}
@@ -486,7 +487,8 @@ public final class CreateIntentRequest extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The request message for [Intents.CreateIntent][google.cloud.dialogflow.v2.Intents.CreateIntent].
+   * The request message for
+   * [Intents.CreateIntent][google.cloud.dialogflow.v2.Intents.CreateIntent].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2.CreateIntentRequest}

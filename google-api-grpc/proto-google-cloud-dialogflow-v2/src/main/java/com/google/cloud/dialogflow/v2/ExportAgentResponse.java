@@ -7,7 +7,8 @@ package com.google.cloud.dialogflow.v2;
  *
  *
  * <pre>
- * The response message for [Agents.ExportAgent][google.cloud.dialogflow.v2.Agents.ExportAgent].
+ * The response message for
+ * [Agents.ExportAgent][google.cloud.dialogflow.v2.Agents.ExportAgent].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2.ExportAgentResponse}
@@ -410,7 +411,8 @@ public final class ExportAgentResponse extends com.google.protobuf.GeneratedMess
    *
    *
    * <pre>
-   * The response message for [Agents.ExportAgent][google.cloud.dialogflow.v2.Agents.ExportAgent].
+   * The response message for
+   * [Agents.ExportAgent][google.cloud.dialogflow.v2.Agents.ExportAgent].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2.ExportAgentResponse}

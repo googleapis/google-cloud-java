@@ -7,7 +7,8 @@ package com.google.cloud.dialogflow.v2;
  *
  *
  * <pre>
- * The request message for [Intents.BatchUpdateIntents][google.cloud.dialogflow.v2.Intents.BatchUpdateIntents].
+ * The request message for
+ * [Intents.BatchUpdateIntents][google.cloud.dialogflow.v2.Intents.BatchUpdateIntents].
  * </pre>
  *
  * Protobuf type {@code google.cloud.dialogflow.v2.BatchUpdateIntentsRequest}
@@ -688,7 +689,8 @@ public final class BatchUpdateIntentsRequest extends com.google.protobuf.Generat
    *
    *
    * <pre>
-   * The request message for [Intents.BatchUpdateIntents][google.cloud.dialogflow.v2.Intents.BatchUpdateIntents].
+   * The request message for
+   * [Intents.BatchUpdateIntents][google.cloud.dialogflow.v2.Intents.BatchUpdateIntents].
    * </pre>
    *
    * Protobuf type {@code google.cloud.dialogflow.v2.BatchUpdateIntentsRequest}

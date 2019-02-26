@@ -313,7 +313,8 @@ public final class DocumentsGrpc {
      * <pre>
      * Creates a new document.
      * Operation &lt;response: [Document][google.cloud.dialogflow.v2beta1.Document],
-     *            metadata: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]&gt;
+     *            metadata:
+     *            [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]&gt;
      * </pre>
      */
     public void createDocument(
@@ -328,7 +329,8 @@ public final class DocumentsGrpc {
      * <pre>
      * Deletes the specified document.
      * Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty],
-     *            metadata: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]&gt;
+     *            metadata:
+     *            [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]&gt;
      * </pre>
      */
     public void deleteDocument(
@@ -430,7 +432,8 @@ public final class DocumentsGrpc {
      * <pre>
      * Creates a new document.
      * Operation &lt;response: [Document][google.cloud.dialogflow.v2beta1.Document],
-     *            metadata: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]&gt;
+     *            metadata:
+     *            [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]&gt;
      * </pre>
      */
     public void createDocument(
@@ -448,7 +451,8 @@ public final class DocumentsGrpc {
      * <pre>
      * Deletes the specified document.
      * Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty],
-     *            metadata: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]&gt;
+     *            metadata:
+     *            [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]&gt;
      * </pre>
      */
     public void deleteDocument(
@@ -516,7 +520,8 @@ public final class DocumentsGrpc {
      * <pre>
      * Creates a new document.
      * Operation &lt;response: [Document][google.cloud.dialogflow.v2beta1.Document],
-     *            metadata: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]&gt;
+     *            metadata:
+     *            [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]&gt;
      * </pre>
      */
     public com.google.longrunning.Operation createDocument(
@@ -531,7 +536,8 @@ public final class DocumentsGrpc {
      * <pre>
      * Deletes the specified document.
      * Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty],
-     *            metadata: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]&gt;
+     *            metadata:
+     *            [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]&gt;
      * </pre>
      */
     public com.google.longrunning.Operation deleteDocument(
@@ -597,7 +603,8 @@ public final class DocumentsGrpc {
      * <pre>
      * Creates a new document.
      * Operation &lt;response: [Document][google.cloud.dialogflow.v2beta1.Document],
-     *            metadata: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]&gt;
+     *            metadata:
+     *            [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]&gt;
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
@@ -612,7 +619,8 @@ public final class DocumentsGrpc {
      * <pre>
      * Deletes the specified document.
      * Operation &lt;response: [google.protobuf.Empty][google.protobuf.Empty],
-     *            metadata: [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]&gt;
+     *            metadata:
+     *            [KnowledgeOperationMetadata][google.cloud.dialogflow.v2beta1.KnowledgeOperationMetadata]&gt;
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.longrunning.Operation>
