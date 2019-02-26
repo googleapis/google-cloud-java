@@ -7,7 +7,8 @@ package com.google.datastore.v1;
  *
  *
  * <pre>
- * The response for [Datastore.RunQuery][google.datastore.v1.Datastore.RunQuery].
+ * The response for
+ * [Datastore.RunQuery][google.datastore.v1.Datastore.RunQuery].
  * </pre>
  *
  * Protobuf type {@code google.datastore.v1.RunQueryResponse}
@@ -372,7 +373,8 @@ public final class RunQueryResponse extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * The response for [Datastore.RunQuery][google.datastore.v1.Datastore.RunQuery].
+   * The response for
+   * [Datastore.RunQuery][google.datastore.v1.Datastore.RunQuery].
    * </pre>
    *
    * Protobuf type {@code google.datastore.v1.RunQueryResponse}

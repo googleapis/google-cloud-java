@@ -144,7 +144,8 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Transactional: The mutations are either all applied, or none are applied.
-     * Learn about transactions [here](https://cloud.google.com/datastore/docs/concepts/transactions).
+     * Learn about transactions
+     * [here](https://cloud.google.com/datastore/docs/concepts/transactions).
      * </pre>
      *
      * <code>TRANSACTIONAL = 1;</code>
@@ -178,7 +179,8 @@ public final class CommitRequest extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Transactional: The mutations are either all applied, or none are applied.
-     * Learn about transactions [here](https://cloud.google.com/datastore/docs/concepts/transactions).
+     * Learn about transactions
+     * [here](https://cloud.google.com/datastore/docs/concepts/transactions).
      * </pre>
      *
      * <code>TRANSACTIONAL = 1;</code>
