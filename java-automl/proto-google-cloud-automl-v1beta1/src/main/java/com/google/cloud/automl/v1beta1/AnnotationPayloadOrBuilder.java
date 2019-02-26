@@ -100,11 +100,12 @@ public interface AnnotationPayloadOrBuilder
    *
    *
    * <pre>
-   * Output only. The value of [AnnotationSpec.display_name][google.cloud.automl.v1beta1.AnnotationSpec.display_name] when the model
-   * was trained. Because this field returns a value at model training time,
-   * for different models trained using the same dataset, the returned value
-   * could be different as model owner could update the display_name between
-   * any two model training.
+   * Output only. The value of
+   * [AnnotationSpec.display_name][google.cloud.automl.v1beta1.AnnotationSpec.display_name]
+   * when the model was trained. Because this field returns a value at model
+   * training time, for different models trained using the same dataset, the
+   * returned value could be different as model owner could update the
+   * display_name between any two model training.
    * </pre>
    *
    * <code>string display_name = 5;</code>
@@ -114,11 +115,12 @@ public interface AnnotationPayloadOrBuilder
    *
    *
    * <pre>
-   * Output only. The value of [AnnotationSpec.display_name][google.cloud.automl.v1beta1.AnnotationSpec.display_name] when the model
-   * was trained. Because this field returns a value at model training time,
-   * for different models trained using the same dataset, the returned value
-   * could be different as model owner could update the display_name between
-   * any two model training.
+   * Output only. The value of
+   * [AnnotationSpec.display_name][google.cloud.automl.v1beta1.AnnotationSpec.display_name]
+   * when the model was trained. Because this field returns a value at model
+   * training time, for different models trained using the same dataset, the
+   * returned value could be different as model owner could update the
+   * display_name between any two model training.
    * </pre>
    *
    * <code>string display_name = 5;</code>

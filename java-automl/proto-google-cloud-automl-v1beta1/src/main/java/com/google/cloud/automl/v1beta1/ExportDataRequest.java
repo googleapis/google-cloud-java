@@ -7,7 +7,8 @@ package com.google.cloud.automl.v1beta1;
  *
  *
  * <pre>
- * Request message for [AutoMl.ExportData][google.cloud.automl.v1beta1.AutoMl.ExportData].
+ * Request message for
+ * [AutoMl.ExportData][google.cloud.automl.v1beta1.AutoMl.ExportData].
  * </pre>
  *
  * Protobuf type {@code google.cloud.automl.v1beta1.ExportDataRequest}
@@ -369,7 +370,8 @@ public final class ExportDataRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Request message for [AutoMl.ExportData][google.cloud.automl.v1beta1.AutoMl.ExportData].
+   * Request message for
+   * [AutoMl.ExportData][google.cloud.automl.v1beta1.AutoMl.ExportData].
    * </pre>
    *
    * Protobuf type {@code google.cloud.automl.v1beta1.ExportDataRequest}
