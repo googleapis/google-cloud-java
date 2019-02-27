@@ -112,6 +112,7 @@ grpc-google-cloud-vision-v1:1.45.0:1.45.1-SNAPSHOT
 grpc-google-cloud-vision-v1p1beta1:0.46.0:0.46.1-SNAPSHOT
 grpc-google-cloud-vision-v1p2beta1:1.45.0:1.45.1-SNAPSHOT
 grpc-google-cloud-vision-v1p3beta1:0.46.0:0.46.1-SNAPSHOT
+grpc-google-cloud-vision-v1p4beta1:0.46.0:0.46.1-SNAPSHOT
 grpc-google-cloud-websecurityscanner-v1alpha:0.46.0:0.46.1-SNAPSHOT
 proto-google-cloud-asset-v1beta1:0.46.0:0.46.1-SNAPSHOT
 proto-google-cloud-automl-v1beta1:0.46.0:0.46.1-SNAPSHOT
@@ -164,4 +165,5 @@ proto-google-cloud-vision-v1:1.45.0:1.45.1-SNAPSHOT
 proto-google-cloud-vision-v1p1beta1:0.46.0:0.46.1-SNAPSHOT
 proto-google-cloud-vision-v1p2beta1:1.45.0:1.45.1-SNAPSHOT
 proto-google-cloud-vision-v1p3beta1:0.46.0:0.46.1-SNAPSHOT
+proto-google-cloud-vision-v1p4beta1:0.46.0:0.46.1-SNAPSHOT
 proto-google-cloud-websecurityscanner-v1alpha:0.46.0:0.46.1-SNAPSHOT
