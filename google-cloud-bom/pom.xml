@@ -467,7 +467,7 @@
       <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-kms</artifactId>
-        <version>0.81.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-kms:current} -->
+        <version>1.0.1-SNAPSHOT</version><!-- {x-version-update:google-cloud-kms:current} -->
       </dependency>
       <dependency>
         <groupId>com.google.api.grpc</groupId>
