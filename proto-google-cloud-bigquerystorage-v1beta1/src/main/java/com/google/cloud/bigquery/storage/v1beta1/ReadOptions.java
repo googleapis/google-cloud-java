@@ -75,10 +75,13 @@ public final class ReadOptions {
      *
      * <pre>
      * Optional. SQL text filtering statement, similar to a WHERE clause in
-     * a query. Currently, we support combinations of predicates that are
-     * a comparison between a column and a constant value in SQL statement.
-     * Aggregates are not supported.
-     * Example: "a &gt; DATE '2014-9-27' AND (b &gt; 5 and C LIKE 'date')"
+     * a query. Currently, only a single predicate that is a comparison between
+     * a column and a constant value is supported. Aggregates are not supported.
+     * Examples: "int_field &gt; 5"
+     *           "date_field = CAST('2014-9-27' as DATE)"
+     *           "nullable_field is not NULL"
+     *           "st_equals(geo_field, st_geofromtext("POINT(2, 2)"))"
+     *           "numeric_field BETWEEN 1.0 AND 5.0"
      * </pre>
      *
      * <code>string row_restriction = 2;</code>
@@ -89,10 +92,13 @@ public final class ReadOptions {
      *
      * <pre>
      * Optional. SQL text filtering statement, similar to a WHERE clause in
-     * a query. Currently, we support combinations of predicates that are
-     * a comparison between a column and a constant value in SQL statement.
-     * Aggregates are not supported.
-     * Example: "a &gt; DATE '2014-9-27' AND (b &gt; 5 and C LIKE 'date')"
+     * a query. Currently, only a single predicate that is a comparison between
+     * a column and a constant value is supported. Aggregates are not supported.
+     * Examples: "int_field &gt; 5"
+     *           "date_field = CAST('2014-9-27' as DATE)"
+     *           "nullable_field is not NULL"
+     *           "st_equals(geo_field, st_geofromtext("POINT(2, 2)"))"
+     *           "numeric_field BETWEEN 1.0 AND 5.0"
      * </pre>
      *
      * <code>string row_restriction = 2;</code>
@@ -272,10 +278,13 @@ public final class ReadOptions {
      *
      * <pre>
      * Optional. SQL text filtering statement, similar to a WHERE clause in
-     * a query. Currently, we support combinations of predicates that are
-     * a comparison between a column and a constant value in SQL statement.
-     * Aggregates are not supported.
-     * Example: "a &gt; DATE '2014-9-27' AND (b &gt; 5 and C LIKE 'date')"
+     * a query. Currently, only a single predicate that is a comparison between
+     * a column and a constant value is supported. Aggregates are not supported.
+     * Examples: "int_field &gt; 5"
+     *           "date_field = CAST('2014-9-27' as DATE)"
+     *           "nullable_field is not NULL"
+     *           "st_equals(geo_field, st_geofromtext("POINT(2, 2)"))"
+     *           "numeric_field BETWEEN 1.0 AND 5.0"
      * </pre>
      *
      * <code>string row_restriction = 2;</code>
@@ -296,10 +305,13 @@ public final class ReadOptions {
      *
      * <pre>
      * Optional. SQL text filtering statement, similar to a WHERE clause in
-     * a query. Currently, we support combinations of predicates that are
-     * a comparison between a column and a constant value in SQL statement.
-     * Aggregates are not supported.
-     * Example: "a &gt; DATE '2014-9-27' AND (b &gt; 5 and C LIKE 'date')"
+     * a query. Currently, only a single predicate that is a comparison between
+     * a column and a constant value is supported. Aggregates are not supported.
+     * Examples: "int_field &gt; 5"
+     *           "date_field = CAST('2014-9-27' as DATE)"
+     *           "nullable_field is not NULL"
+     *           "st_equals(geo_field, st_geofromtext("POINT(2, 2)"))"
+     *           "numeric_field BETWEEN 1.0 AND 5.0"
      * </pre>
      *
      * <code>string row_restriction = 2;</code>
@@ -866,10 +878,13 @@ public final class ReadOptions {
        *
        * <pre>
        * Optional. SQL text filtering statement, similar to a WHERE clause in
-       * a query. Currently, we support combinations of predicates that are
-       * a comparison between a column and a constant value in SQL statement.
-       * Aggregates are not supported.
-       * Example: "a &gt; DATE '2014-9-27' AND (b &gt; 5 and C LIKE 'date')"
+       * a query. Currently, only a single predicate that is a comparison between
+       * a column and a constant value is supported. Aggregates are not supported.
+       * Examples: "int_field &gt; 5"
+       *           "date_field = CAST('2014-9-27' as DATE)"
+       *           "nullable_field is not NULL"
+       *           "st_equals(geo_field, st_geofromtext("POINT(2, 2)"))"
+       *           "numeric_field BETWEEN 1.0 AND 5.0"
        * </pre>
        *
        * <code>string row_restriction = 2;</code>
@@ -890,10 +905,13 @@ public final class ReadOptions {
        *
        * <pre>
        * Optional. SQL text filtering statement, similar to a WHERE clause in
-       * a query. Currently, we support combinations of predicates that are
-       * a comparison between a column and a constant value in SQL statement.
-       * Aggregates are not supported.
-       * Example: "a &gt; DATE '2014-9-27' AND (b &gt; 5 and C LIKE 'date')"
+       * a query. Currently, only a single predicate that is a comparison between
+       * a column and a constant value is supported. Aggregates are not supported.
+       * Examples: "int_field &gt; 5"
+       *           "date_field = CAST('2014-9-27' as DATE)"
+       *           "nullable_field is not NULL"
+       *           "st_equals(geo_field, st_geofromtext("POINT(2, 2)"))"
+       *           "numeric_field BETWEEN 1.0 AND 5.0"
        * </pre>
        *
        * <code>string row_restriction = 2;</code>
@@ -914,10 +932,13 @@ public final class ReadOptions {
        *
        * <pre>
        * Optional. SQL text filtering statement, similar to a WHERE clause in
-       * a query. Currently, we support combinations of predicates that are
-       * a comparison between a column and a constant value in SQL statement.
-       * Aggregates are not supported.
-       * Example: "a &gt; DATE '2014-9-27' AND (b &gt; 5 and C LIKE 'date')"
+       * a query. Currently, only a single predicate that is a comparison between
+       * a column and a constant value is supported. Aggregates are not supported.
+       * Examples: "int_field &gt; 5"
+       *           "date_field = CAST('2014-9-27' as DATE)"
+       *           "nullable_field is not NULL"
+       *           "st_equals(geo_field, st_geofromtext("POINT(2, 2)"))"
+       *           "numeric_field BETWEEN 1.0 AND 5.0"
        * </pre>
        *
        * <code>string row_restriction = 2;</code>
@@ -936,10 +957,13 @@ public final class ReadOptions {
        *
        * <pre>
        * Optional. SQL text filtering statement, similar to a WHERE clause in
-       * a query. Currently, we support combinations of predicates that are
-       * a comparison between a column and a constant value in SQL statement.
-       * Aggregates are not supported.
-       * Example: "a &gt; DATE '2014-9-27' AND (b &gt; 5 and C LIKE 'date')"
+       * a query. Currently, only a single predicate that is a comparison between
+       * a column and a constant value is supported. Aggregates are not supported.
+       * Examples: "int_field &gt; 5"
+       *           "date_field = CAST('2014-9-27' as DATE)"
+       *           "nullable_field is not NULL"
+       *           "st_equals(geo_field, st_geofromtext("POINT(2, 2)"))"
+       *           "numeric_field BETWEEN 1.0 AND 5.0"
        * </pre>
        *
        * <code>string row_restriction = 2;</code>
@@ -955,10 +979,13 @@ public final class ReadOptions {
        *
        * <pre>
        * Optional. SQL text filtering statement, similar to a WHERE clause in
-       * a query. Currently, we support combinations of predicates that are
-       * a comparison between a column and a constant value in SQL statement.
-       * Aggregates are not supported.
-       * Example: "a &gt; DATE '2014-9-27' AND (b &gt; 5 and C LIKE 'date')"
+       * a query. Currently, only a single predicate that is a comparison between
+       * a column and a constant value is supported. Aggregates are not supported.
+       * Examples: "int_field &gt; 5"
+       *           "date_field = CAST('2014-9-27' as DATE)"
+       *           "nullable_field is not NULL"
+       *           "st_equals(geo_field, st_geofromtext("POINT(2, 2)"))"
+       *           "numeric_field BETWEEN 1.0 AND 5.0"
        * </pre>
        *
        * <code>string row_restriction = 2;</code>
