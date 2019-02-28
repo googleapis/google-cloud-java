@@ -37,7 +37,6 @@ import com.google.api.gax.rpc.TransportChannelProvider;
 import com.google.api.gax.rpc.UnaryCallSettings;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.pubsub.v1.stub.GrpcSubscriberStub;
-import com.google.cloud.pubsub.v1.stub.SubscriberStub;
 import com.google.cloud.pubsub.v1.stub.SubscriberStubSettings;
 import com.google.common.base.Optional;
 import com.google.common.base.Preconditions;
@@ -104,7 +103,6 @@ public class Subscriber extends AbstractApiService {
   private final Distribution ackLatencyDistribution =
       new Distribution(MAX_ACK_DEADLINE_SECONDS + 1);
 
-  private SubscriberStub subStub;
   private final SubscriberStubSettings subStubSettings;
   private final FlowController flowController;
   private final int numPullers;
@@ -270,13 +268,6 @@ public class Subscriber extends AbstractApiService {
   protected void doStart() {
     logger.log(Level.FINE, "Starting subscriber group.");
 
-    try {
-      this.subStub = GrpcSubscriberStub.create(subStubSettings);
-    } catch (IOException e) {
-      // doesn't matter what we throw, the Service will just catch it and fail to start.
-      throw new IllegalStateException(e);
-    }
-
     // When started, connections submit tasks to the executor.
     // These tasks must finish before the connections can declare themselves running.
     // If we have a single-thread executor and call startStreamingConnections from the
@@ -319,7 +310,7 @@ public class Subscriber extends AbstractApiService {
         .start();
   }
 
-  private void startStreamingConnections() {
+  private void startStreamingConnections() throws IOException {
     synchronized (streamingSubscriberConnections) {
       for (int i = 0; i < numPullers; i++) {
         streamingSubscriberConnections.add(
@@ -329,7 +320,7 @@ public class Subscriber extends AbstractApiService {
                 ACK_EXPIRATION_PADDING,
                 maxAckExtensionPeriod,
                 ackLatencyDistribution,
-                subStub,
+                GrpcSubscriberStub.create(subStubSettings),
                 i,
                 flowController,
                 executor,
