@@ -1610,7 +1610,7 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Performs a reset on the instance. This is a hard reset; the VM does not do a graceful shutdown.
+   * Performs a reset on the instance. This is a hard reset the VM does not do a graceful shutdown.
    * For more information, see Resetting an instance.
    *
    * <p>Sample code:
@@ -1637,7 +1637,7 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Performs a reset on the instance. This is a hard reset; the VM does not do a graceful shutdown.
+   * Performs a reset on the instance. This is a hard reset the VM does not do a graceful shutdown.
    * For more information, see Resetting an instance.
    *
    * <p>Sample code:
@@ -1662,7 +1662,7 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Performs a reset on the instance. This is a hard reset; the VM does not do a graceful shutdown.
+   * Performs a reset on the instance. This is a hard reset the VM does not do a graceful shutdown.
    * For more information, see Resetting an instance.
    *
    * <p>Sample code:
@@ -1687,7 +1687,7 @@ public class InstanceClient implements BackgroundResource {
 
   // AUTO-GENERATED DOCUMENTATION AND METHOD
   /**
-   * Performs a reset on the instance. This is a hard reset; the VM does not do a graceful shutdown.
+   * Performs a reset on the instance. This is a hard reset the VM does not do a graceful shutdown.
    * For more information, see Resetting an instance.
    *
    * <p>Sample code:

@@ -84,7 +84,7 @@ public final class RawDisk implements ApiMessage {
   }
 
   /**
-   * An optional SHA1 checksum of the disk image before unpackaging; provided by the client when the
+   * An optional SHA1 checksum of the disk image before unpackaging provided by the client when the
    * disk image is created.
    */
   public String getSha1Checksum() {
@@ -168,7 +168,7 @@ public final class RawDisk implements ApiMessage {
     }
 
     /**
-     * An optional SHA1 checksum of the disk image before unpackaging; provided by the client when
+     * An optional SHA1 checksum of the disk image before unpackaging provided by the client when
      * the disk image is created.
      */
     public String getSha1Checksum() {
@@ -176,7 +176,7 @@ public final class RawDisk implements ApiMessage {
     }
 
     /**
-     * An optional SHA1 checksum of the disk image before unpackaging; provided by the client when
+     * An optional SHA1 checksum of the disk image before unpackaging provided by the client when
      * the disk image is created.
      */
     public Builder setSha1Checksum(String sha1Checksum) {
