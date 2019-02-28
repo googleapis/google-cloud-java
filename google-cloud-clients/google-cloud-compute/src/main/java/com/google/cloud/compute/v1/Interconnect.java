@@ -265,7 +265,7 @@ public final class Interconnect implements ApiMessage {
   }
 
   /**
-   * [Output Only] Google reference ID; to be used when raising support tickets with Google or
+   * [Output Only] Google reference ID to be used when raising support tickets with Google or
    * otherwise to debug backend connectivity issues.
    */
   public String getGoogleReferenceId() {
@@ -646,7 +646,7 @@ public final class Interconnect implements ApiMessage {
     }
 
     /**
-     * [Output Only] Google reference ID; to be used when raising support tickets with Google or
+     * [Output Only] Google reference ID to be used when raising support tickets with Google or
      * otherwise to debug backend connectivity issues.
      */
     public String getGoogleReferenceId() {
@@ -654,7 +654,7 @@ public final class Interconnect implements ApiMessage {
     }
 
     /**
-     * [Output Only] Google reference ID; to be used when raising support tickets with Google or
+     * [Output Only] Google reference ID to be used when raising support tickets with Google or
      * otherwise to debug backend connectivity issues.
      */
     public Builder setGoogleReferenceId(String googleReferenceId) {
