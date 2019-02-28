@@ -72,6 +72,24 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
               attributes_.getMutableMap().put(attributes__.getKey(), attributes__.getValue());
               break;
             }
+          case 26:
+            {
+              com.google.pubsub.v1.PushConfig.OidcToken.Builder subBuilder = null;
+              if (authenticationMethodCase_ == 3) {
+                subBuilder =
+                    ((com.google.pubsub.v1.PushConfig.OidcToken) authenticationMethod_).toBuilder();
+              }
+              authenticationMethod_ =
+                  input.readMessage(
+                      com.google.pubsub.v1.PushConfig.OidcToken.parser(), extensionRegistry);
+              if (subBuilder != null) {
+                subBuilder.mergeFrom(
+                    (com.google.pubsub.v1.PushConfig.OidcToken) authenticationMethod_);
+                authenticationMethod_ = subBuilder.buildPartial();
+              }
+              authenticationMethodCase_ = 3;
+              break;
+            }
           default:
             {
               if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
@@ -115,7 +133,944 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
             com.google.pubsub.v1.PushConfig.class, com.google.pubsub.v1.PushConfig.Builder.class);
   }
 
+  public interface OidcTokenOrBuilder
+      extends
+      // @@protoc_insertion_point(interface_extends:google.pubsub.v1.PushConfig.OidcToken)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     *
+     *
+     * <pre>
+     * [Service account
+     * email](https://cloud.google.com/iam/docs/service-accounts)
+     * to be used for generating the OIDC token. The caller (for
+     * CreateSubscription, UpdateSubscription, and ModifyPushConfig calls) must
+     * have the iam.serviceAccounts.actAs permission for the service account.
+     * See https://cloud.google.com/iam/docs/understanding-roles#service-accounts-roles.
+     * </pre>
+     *
+     * <code>string service_account_email = 1;</code>
+     */
+    java.lang.String getServiceAccountEmail();
+    /**
+     *
+     *
+     * <pre>
+     * [Service account
+     * email](https://cloud.google.com/iam/docs/service-accounts)
+     * to be used for generating the OIDC token. The caller (for
+     * CreateSubscription, UpdateSubscription, and ModifyPushConfig calls) must
+     * have the iam.serviceAccounts.actAs permission for the service account.
+     * See https://cloud.google.com/iam/docs/understanding-roles#service-accounts-roles.
+     * </pre>
+     *
+     * <code>string service_account_email = 1;</code>
+     */
+    com.google.protobuf.ByteString getServiceAccountEmailBytes();
+
+    /**
+     *
+     *
+     * <pre>
+     * Audience to be used when generating OIDC token. The audience claim
+     * identifies the recipients that the JWT is intended for. The audience
+     * value is a single case-sensitive string. Having multiple values (array)
+     * for the audience field is not supported. More info about the OIDC JWT
+     * token audience here: https://tools.ietf.org/html/rfc7519#section-4.1.3
+     * Note: if not specified, the Push endpoint URL will be used.
+     * </pre>
+     *
+     * <code>string audience = 2;</code>
+     */
+    java.lang.String getAudience();
+    /**
+     *
+     *
+     * <pre>
+     * Audience to be used when generating OIDC token. The audience claim
+     * identifies the recipients that the JWT is intended for. The audience
+     * value is a single case-sensitive string. Having multiple values (array)
+     * for the audience field is not supported. More info about the OIDC JWT
+     * token audience here: https://tools.ietf.org/html/rfc7519#section-4.1.3
+     * Note: if not specified, the Push endpoint URL will be used.
+     * </pre>
+     *
+     * <code>string audience = 2;</code>
+     */
+    com.google.protobuf.ByteString getAudienceBytes();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * Contains information needed for generating an
+   * [OpenID Connect
+   * token](https://developers.google.com/identity/protocols/OpenIDConnect).
+   * </pre>
+   *
+   * Protobuf type {@code google.pubsub.v1.PushConfig.OidcToken}
+   */
+  public static final class OidcToken extends com.google.protobuf.GeneratedMessageV3
+      implements
+      // @@protoc_insertion_point(message_implements:google.pubsub.v1.PushConfig.OidcToken)
+      OidcTokenOrBuilder {
+    private static final long serialVersionUID = 0L;
+    // Use OidcToken.newBuilder() to construct.
+    private OidcToken(com.google.protobuf.GeneratedMessageV3.Builder<?> builder) {
+      super(builder);
+    }
+
+    private OidcToken() {
+      serviceAccountEmail_ = "";
+      audience_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet getUnknownFields() {
+      return this.unknownFields;
+    }
+
+    private OidcToken(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      if (extensionRegistry == null) {
+        throw new java.lang.NullPointerException();
+      }
+      int mutable_bitField0_ = 0;
+      com.google.protobuf.UnknownFieldSet.Builder unknownFields =
+          com.google.protobuf.UnknownFieldSet.newBuilder();
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            case 10:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                serviceAccountEmail_ = s;
+                break;
+              }
+            case 18:
+              {
+                java.lang.String s = input.readStringRequireUtf8();
+
+                audience_ = s;
+                break;
+              }
+            default:
+              {
+                if (!parseUnknownFieldProto3(input, unknownFields, extensionRegistry, tag)) {
+                  done = true;
+                }
+                break;
+              }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(e).setUnfinishedMessage(this);
+      } finally {
+        this.unknownFields = unknownFields.build();
+        makeExtensionsImmutable();
+      }
+    }
+
+    public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+      return com.google.pubsub.v1.PubsubProto
+          .internal_static_google_pubsub_v1_PushConfig_OidcToken_descriptor;
+    }
+
+    @java.lang.Override
+    protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.google.pubsub.v1.PubsubProto
+          .internal_static_google_pubsub_v1_PushConfig_OidcToken_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.google.pubsub.v1.PushConfig.OidcToken.class,
+              com.google.pubsub.v1.PushConfig.OidcToken.Builder.class);
+    }
+
+    public static final int SERVICE_ACCOUNT_EMAIL_FIELD_NUMBER = 1;
+    private volatile java.lang.Object serviceAccountEmail_;
+    /**
+     *
+     *
+     * <pre>
+     * [Service account
+     * email](https://cloud.google.com/iam/docs/service-accounts)
+     * to be used for generating the OIDC token. The caller (for
+     * CreateSubscription, UpdateSubscription, and ModifyPushConfig calls) must
+     * have the iam.serviceAccounts.actAs permission for the service account.
+     * See https://cloud.google.com/iam/docs/understanding-roles#service-accounts-roles.
+     * </pre>
+     *
+     * <code>string service_account_email = 1;</code>
+     */
+    public java.lang.String getServiceAccountEmail() {
+      java.lang.Object ref = serviceAccountEmail_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        serviceAccountEmail_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * [Service account
+     * email](https://cloud.google.com/iam/docs/service-accounts)
+     * to be used for generating the OIDC token. The caller (for
+     * CreateSubscription, UpdateSubscription, and ModifyPushConfig calls) must
+     * have the iam.serviceAccounts.actAs permission for the service account.
+     * See https://cloud.google.com/iam/docs/understanding-roles#service-accounts-roles.
+     * </pre>
+     *
+     * <code>string service_account_email = 1;</code>
+     */
+    public com.google.protobuf.ByteString getServiceAccountEmailBytes() {
+      java.lang.Object ref = serviceAccountEmail_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        serviceAccountEmail_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int AUDIENCE_FIELD_NUMBER = 2;
+    private volatile java.lang.Object audience_;
+    /**
+     *
+     *
+     * <pre>
+     * Audience to be used when generating OIDC token. The audience claim
+     * identifies the recipients that the JWT is intended for. The audience
+     * value is a single case-sensitive string. Having multiple values (array)
+     * for the audience field is not supported. More info about the OIDC JWT
+     * token audience here: https://tools.ietf.org/html/rfc7519#section-4.1.3
+     * Note: if not specified, the Push endpoint URL will be used.
+     * </pre>
+     *
+     * <code>string audience = 2;</code>
+     */
+    public java.lang.String getAudience() {
+      java.lang.Object ref = audience_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        audience_ = s;
+        return s;
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Audience to be used when generating OIDC token. The audience claim
+     * identifies the recipients that the JWT is intended for. The audience
+     * value is a single case-sensitive string. Having multiple values (array)
+     * for the audience field is not supported. More info about the OIDC JWT
+     * token audience here: https://tools.ietf.org/html/rfc7519#section-4.1.3
+     * Note: if not specified, the Push endpoint URL will be used.
+     * </pre>
+     *
+     * <code>string audience = 2;</code>
+     */
+    public com.google.protobuf.ByteString getAudienceBytes() {
+      java.lang.Object ref = audience_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b =
+            com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+        audience_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+
+    @java.lang.Override
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    @java.lang.Override
+    public void writeTo(com.google.protobuf.CodedOutputStream output) throws java.io.IOException {
+      if (!getServiceAccountEmailBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 1, serviceAccountEmail_);
+      }
+      if (!getAudienceBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessageV3.writeString(output, 2, audience_);
+      }
+      unknownFields.writeTo(output);
+    }
+
+    @java.lang.Override
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getServiceAccountEmailBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(1, serviceAccountEmail_);
+      }
+      if (!getAudienceBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessageV3.computeStringSize(2, audience_);
+      }
+      size += unknownFields.getSerializedSize();
+      memoizedSize = size;
+      return size;
+    }
+
+    @java.lang.Override
+    public boolean equals(final java.lang.Object obj) {
+      if (obj == this) {
+        return true;
+      }
+      if (!(obj instanceof com.google.pubsub.v1.PushConfig.OidcToken)) {
+        return super.equals(obj);
+      }
+      com.google.pubsub.v1.PushConfig.OidcToken other =
+          (com.google.pubsub.v1.PushConfig.OidcToken) obj;
+
+      boolean result = true;
+      result = result && getServiceAccountEmail().equals(other.getServiceAccountEmail());
+      result = result && getAudience().equals(other.getAudience());
+      result = result && unknownFields.equals(other.unknownFields);
+      return result;
+    }
+
+    @java.lang.Override
+    public int hashCode() {
+      if (memoizedHashCode != 0) {
+        return memoizedHashCode;
+      }
+      int hash = 41;
+      hash = (19 * hash) + getDescriptor().hashCode();
+      hash = (37 * hash) + SERVICE_ACCOUNT_EMAIL_FIELD_NUMBER;
+      hash = (53 * hash) + getServiceAccountEmail().hashCode();
+      hash = (37 * hash) + AUDIENCE_FIELD_NUMBER;
+      hash = (53 * hash) + getAudience().hashCode();
+      hash = (29 * hash) + unknownFields.hashCode();
+      memoizedHashCode = hash;
+      return hash;
+    }
+
+    public static com.google.pubsub.v1.PushConfig.OidcToken parseFrom(java.nio.ByteBuffer data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.pubsub.v1.PushConfig.OidcToken parseFrom(
+        java.nio.ByteBuffer data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.pubsub.v1.PushConfig.OidcToken parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.pubsub.v1.PushConfig.OidcToken parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.pubsub.v1.PushConfig.OidcToken parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+
+    public static com.google.pubsub.v1.PushConfig.OidcToken parseFrom(
+        byte[] data, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+
+    public static com.google.pubsub.v1.PushConfig.OidcToken parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.pubsub.v1.PushConfig.OidcToken parseFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.pubsub.v1.PushConfig.OidcToken parseDelimitedFrom(
+        java.io.InputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(PARSER, input);
+    }
+
+    public static com.google.pubsub.v1.PushConfig.OidcToken parseDelimitedFrom(
+        java.io.InputStream input, com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseDelimitedWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    public static com.google.pubsub.v1.PushConfig.OidcToken parseFrom(
+        com.google.protobuf.CodedInputStream input) throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(PARSER, input);
+    }
+
+    public static com.google.pubsub.v1.PushConfig.OidcToken parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessageV3.parseWithIOException(
+          PARSER, input, extensionRegistry);
+    }
+
+    @java.lang.Override
+    public Builder newBuilderForType() {
+      return newBuilder();
+    }
+
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+
+    public static Builder newBuilder(com.google.pubsub.v1.PushConfig.OidcToken prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+
+    @java.lang.Override
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * Contains information needed for generating an
+     * [OpenID Connect
+     * token](https://developers.google.com/identity/protocols/OpenIDConnect).
+     * </pre>
+     *
+     * Protobuf type {@code google.pubsub.v1.PushConfig.OidcToken}
+     */
+    public static final class Builder
+        extends com.google.protobuf.GeneratedMessageV3.Builder<Builder>
+        implements
+        // @@protoc_insertion_point(builder_implements:google.pubsub.v1.PushConfig.OidcToken)
+        com.google.pubsub.v1.PushConfig.OidcTokenOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor getDescriptor() {
+        return com.google.pubsub.v1.PubsubProto
+            .internal_static_google_pubsub_v1_PushConfig_OidcToken_descriptor;
+      }
+
+      @java.lang.Override
+      protected com.google.protobuf.GeneratedMessageV3.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.google.pubsub.v1.PubsubProto
+            .internal_static_google_pubsub_v1_PushConfig_OidcToken_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.google.pubsub.v1.PushConfig.OidcToken.class,
+                com.google.pubsub.v1.PushConfig.OidcToken.Builder.class);
+      }
+
+      // Construct using com.google.pubsub.v1.PushConfig.OidcToken.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(com.google.protobuf.GeneratedMessageV3.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessageV3.alwaysUseFieldBuilders) {}
+      }
+
+      @java.lang.Override
+      public Builder clear() {
+        super.clear();
+        serviceAccountEmail_ = "";
+
+        audience_ = "";
+
+        return this;
+      }
+
+      @java.lang.Override
+      public com.google.protobuf.Descriptors.Descriptor getDescriptorForType() {
+        return com.google.pubsub.v1.PubsubProto
+            .internal_static_google_pubsub_v1_PushConfig_OidcToken_descriptor;
+      }
+
+      @java.lang.Override
+      public com.google.pubsub.v1.PushConfig.OidcToken getDefaultInstanceForType() {
+        return com.google.pubsub.v1.PushConfig.OidcToken.getDefaultInstance();
+      }
+
+      @java.lang.Override
+      public com.google.pubsub.v1.PushConfig.OidcToken build() {
+        com.google.pubsub.v1.PushConfig.OidcToken result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      @java.lang.Override
+      public com.google.pubsub.v1.PushConfig.OidcToken buildPartial() {
+        com.google.pubsub.v1.PushConfig.OidcToken result =
+            new com.google.pubsub.v1.PushConfig.OidcToken(this);
+        result.serviceAccountEmail_ = serviceAccountEmail_;
+        result.audience_ = audience_;
+        onBuilt();
+        return result;
+      }
+
+      @java.lang.Override
+      public Builder clone() {
+        return (Builder) super.clone();
+      }
+
+      @java.lang.Override
+      public Builder setField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return (Builder) super.setField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder clearField(com.google.protobuf.Descriptors.FieldDescriptor field) {
+        return (Builder) super.clearField(field);
+      }
+
+      @java.lang.Override
+      public Builder clearOneof(com.google.protobuf.Descriptors.OneofDescriptor oneof) {
+        return (Builder) super.clearOneof(oneof);
+      }
+
+      @java.lang.Override
+      public Builder setRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field,
+          int index,
+          java.lang.Object value) {
+        return (Builder) super.setRepeatedField(field, index, value);
+      }
+
+      @java.lang.Override
+      public Builder addRepeatedField(
+          com.google.protobuf.Descriptors.FieldDescriptor field, java.lang.Object value) {
+        return (Builder) super.addRepeatedField(field, value);
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.google.pubsub.v1.PushConfig.OidcToken) {
+          return mergeFrom((com.google.pubsub.v1.PushConfig.OidcToken) other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.google.pubsub.v1.PushConfig.OidcToken other) {
+        if (other == com.google.pubsub.v1.PushConfig.OidcToken.getDefaultInstance()) return this;
+        if (!other.getServiceAccountEmail().isEmpty()) {
+          serviceAccountEmail_ = other.serviceAccountEmail_;
+          onChanged();
+        }
+        if (!other.getAudience().isEmpty()) {
+          audience_ = other.audience_;
+          onChanged();
+        }
+        this.mergeUnknownFields(other.unknownFields);
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      @java.lang.Override
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.google.pubsub.v1.PushConfig.OidcToken parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.google.pubsub.v1.PushConfig.OidcToken) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object serviceAccountEmail_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * [Service account
+       * email](https://cloud.google.com/iam/docs/service-accounts)
+       * to be used for generating the OIDC token. The caller (for
+       * CreateSubscription, UpdateSubscription, and ModifyPushConfig calls) must
+       * have the iam.serviceAccounts.actAs permission for the service account.
+       * See https://cloud.google.com/iam/docs/understanding-roles#service-accounts-roles.
+       * </pre>
+       *
+       * <code>string service_account_email = 1;</code>
+       */
+      public java.lang.String getServiceAccountEmail() {
+        java.lang.Object ref = serviceAccountEmail_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          serviceAccountEmail_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * [Service account
+       * email](https://cloud.google.com/iam/docs/service-accounts)
+       * to be used for generating the OIDC token. The caller (for
+       * CreateSubscription, UpdateSubscription, and ModifyPushConfig calls) must
+       * have the iam.serviceAccounts.actAs permission for the service account.
+       * See https://cloud.google.com/iam/docs/understanding-roles#service-accounts-roles.
+       * </pre>
+       *
+       * <code>string service_account_email = 1;</code>
+       */
+      public com.google.protobuf.ByteString getServiceAccountEmailBytes() {
+        java.lang.Object ref = serviceAccountEmail_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          serviceAccountEmail_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * [Service account
+       * email](https://cloud.google.com/iam/docs/service-accounts)
+       * to be used for generating the OIDC token. The caller (for
+       * CreateSubscription, UpdateSubscription, and ModifyPushConfig calls) must
+       * have the iam.serviceAccounts.actAs permission for the service account.
+       * See https://cloud.google.com/iam/docs/understanding-roles#service-accounts-roles.
+       * </pre>
+       *
+       * <code>string service_account_email = 1;</code>
+       */
+      public Builder setServiceAccountEmail(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        serviceAccountEmail_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * [Service account
+       * email](https://cloud.google.com/iam/docs/service-accounts)
+       * to be used for generating the OIDC token. The caller (for
+       * CreateSubscription, UpdateSubscription, and ModifyPushConfig calls) must
+       * have the iam.serviceAccounts.actAs permission for the service account.
+       * See https://cloud.google.com/iam/docs/understanding-roles#service-accounts-roles.
+       * </pre>
+       *
+       * <code>string service_account_email = 1;</code>
+       */
+      public Builder clearServiceAccountEmail() {
+
+        serviceAccountEmail_ = getDefaultInstance().getServiceAccountEmail();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * [Service account
+       * email](https://cloud.google.com/iam/docs/service-accounts)
+       * to be used for generating the OIDC token. The caller (for
+       * CreateSubscription, UpdateSubscription, and ModifyPushConfig calls) must
+       * have the iam.serviceAccounts.actAs permission for the service account.
+       * See https://cloud.google.com/iam/docs/understanding-roles#service-accounts-roles.
+       * </pre>
+       *
+       * <code>string service_account_email = 1;</code>
+       */
+      public Builder setServiceAccountEmailBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
+        serviceAccountEmail_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object audience_ = "";
+      /**
+       *
+       *
+       * <pre>
+       * Audience to be used when generating OIDC token. The audience claim
+       * identifies the recipients that the JWT is intended for. The audience
+       * value is a single case-sensitive string. Having multiple values (array)
+       * for the audience field is not supported. More info about the OIDC JWT
+       * token audience here: https://tools.ietf.org/html/rfc7519#section-4.1.3
+       * Note: if not specified, the Push endpoint URL will be used.
+       * </pre>
+       *
+       * <code>string audience = 2;</code>
+       */
+      public java.lang.String getAudience() {
+        java.lang.Object ref = audience_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs = (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          audience_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Audience to be used when generating OIDC token. The audience claim
+       * identifies the recipients that the JWT is intended for. The audience
+       * value is a single case-sensitive string. Having multiple values (array)
+       * for the audience field is not supported. More info about the OIDC JWT
+       * token audience here: https://tools.ietf.org/html/rfc7519#section-4.1.3
+       * Note: if not specified, the Push endpoint URL will be used.
+       * </pre>
+       *
+       * <code>string audience = 2;</code>
+       */
+      public com.google.protobuf.ByteString getAudienceBytes() {
+        java.lang.Object ref = audience_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b =
+              com.google.protobuf.ByteString.copyFromUtf8((java.lang.String) ref);
+          audience_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Audience to be used when generating OIDC token. The audience claim
+       * identifies the recipients that the JWT is intended for. The audience
+       * value is a single case-sensitive string. Having multiple values (array)
+       * for the audience field is not supported. More info about the OIDC JWT
+       * token audience here: https://tools.ietf.org/html/rfc7519#section-4.1.3
+       * Note: if not specified, the Push endpoint URL will be used.
+       * </pre>
+       *
+       * <code>string audience = 2;</code>
+       */
+      public Builder setAudience(java.lang.String value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+
+        audience_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Audience to be used when generating OIDC token. The audience claim
+       * identifies the recipients that the JWT is intended for. The audience
+       * value is a single case-sensitive string. Having multiple values (array)
+       * for the audience field is not supported. More info about the OIDC JWT
+       * token audience here: https://tools.ietf.org/html/rfc7519#section-4.1.3
+       * Note: if not specified, the Push endpoint URL will be used.
+       * </pre>
+       *
+       * <code>string audience = 2;</code>
+       */
+      public Builder clearAudience() {
+
+        audience_ = getDefaultInstance().getAudience();
+        onChanged();
+        return this;
+      }
+      /**
+       *
+       *
+       * <pre>
+       * Audience to be used when generating OIDC token. The audience claim
+       * identifies the recipients that the JWT is intended for. The audience
+       * value is a single case-sensitive string. Having multiple values (array)
+       * for the audience field is not supported. More info about the OIDC JWT
+       * token audience here: https://tools.ietf.org/html/rfc7519#section-4.1.3
+       * Note: if not specified, the Push endpoint URL will be used.
+       * </pre>
+       *
+       * <code>string audience = 2;</code>
+       */
+      public Builder setAudienceBytes(com.google.protobuf.ByteString value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        checkByteStringIsUtf8(value);
+
+        audience_ = value;
+        onChanged();
+        return this;
+      }
+
+      @java.lang.Override
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.setUnknownFieldsProto3(unknownFields);
+      }
+
+      @java.lang.Override
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return super.mergeUnknownFields(unknownFields);
+      }
+
+      // @@protoc_insertion_point(builder_scope:google.pubsub.v1.PushConfig.OidcToken)
+    }
+
+    // @@protoc_insertion_point(class_scope:google.pubsub.v1.PushConfig.OidcToken)
+    private static final com.google.pubsub.v1.PushConfig.OidcToken DEFAULT_INSTANCE;
+
+    static {
+      DEFAULT_INSTANCE = new com.google.pubsub.v1.PushConfig.OidcToken();
+    }
+
+    public static com.google.pubsub.v1.PushConfig.OidcToken getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<OidcToken> PARSER =
+        new com.google.protobuf.AbstractParser<OidcToken>() {
+          @java.lang.Override
+          public OidcToken parsePartialFrom(
+              com.google.protobuf.CodedInputStream input,
+              com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+              throws com.google.protobuf.InvalidProtocolBufferException {
+            return new OidcToken(input, extensionRegistry);
+          }
+        };
+
+    public static com.google.protobuf.Parser<OidcToken> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<OidcToken> getParserForType() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.pubsub.v1.PushConfig.OidcToken getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+  }
+
   private int bitField0_;
+  private int authenticationMethodCase_ = 0;
+  private java.lang.Object authenticationMethod_;
+
+  public enum AuthenticationMethodCase implements com.google.protobuf.Internal.EnumLite {
+    OIDC_TOKEN(3),
+    AUTHENTICATIONMETHOD_NOT_SET(0);
+    private final int value;
+
+    private AuthenticationMethodCase(int value) {
+      this.value = value;
+    }
+    /** @deprecated Use {@link #forNumber(int)} instead. */
+    @java.lang.Deprecated
+    public static AuthenticationMethodCase valueOf(int value) {
+      return forNumber(value);
+    }
+
+    public static AuthenticationMethodCase forNumber(int value) {
+      switch (value) {
+        case 3:
+          return OIDC_TOKEN;
+        case 0:
+          return AUTHENTICATIONMETHOD_NOT_SET;
+        default:
+          return null;
+      }
+    }
+
+    public int getNumber() {
+      return this.value;
+    }
+  };
+
+  public AuthenticationMethodCase getAuthenticationMethodCase() {
+    return AuthenticationMethodCase.forNumber(authenticationMethodCase_);
+  }
+
   public static final int PUSH_ENDPOINT_FIELD_NUMBER = 1;
   private volatile java.lang.Object pushEndpoint_;
   /**
@@ -315,6 +1270,53 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
     return map.get(key);
   }
 
+  public static final int OIDC_TOKEN_FIELD_NUMBER = 3;
+  /**
+   *
+   *
+   * <pre>
+   * If specified, Pub/Sub will generate and attach an OIDC JWT token as an
+   * `Authorization` header in the HTTP request for every pushed message.
+   * </pre>
+   *
+   * <code>.google.pubsub.v1.PushConfig.OidcToken oidc_token = 3;</code>
+   */
+  public boolean hasOidcToken() {
+    return authenticationMethodCase_ == 3;
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If specified, Pub/Sub will generate and attach an OIDC JWT token as an
+   * `Authorization` header in the HTTP request for every pushed message.
+   * </pre>
+   *
+   * <code>.google.pubsub.v1.PushConfig.OidcToken oidc_token = 3;</code>
+   */
+  public com.google.pubsub.v1.PushConfig.OidcToken getOidcToken() {
+    if (authenticationMethodCase_ == 3) {
+      return (com.google.pubsub.v1.PushConfig.OidcToken) authenticationMethod_;
+    }
+    return com.google.pubsub.v1.PushConfig.OidcToken.getDefaultInstance();
+  }
+  /**
+   *
+   *
+   * <pre>
+   * If specified, Pub/Sub will generate and attach an OIDC JWT token as an
+   * `Authorization` header in the HTTP request for every pushed message.
+   * </pre>
+   *
+   * <code>.google.pubsub.v1.PushConfig.OidcToken oidc_token = 3;</code>
+   */
+  public com.google.pubsub.v1.PushConfig.OidcTokenOrBuilder getOidcTokenOrBuilder() {
+    if (authenticationMethodCase_ == 3) {
+      return (com.google.pubsub.v1.PushConfig.OidcToken) authenticationMethod_;
+    }
+    return com.google.pubsub.v1.PushConfig.OidcToken.getDefaultInstance();
+  }
+
   private byte memoizedIsInitialized = -1;
 
   @java.lang.Override
@@ -334,6 +1336,9 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
     }
     com.google.protobuf.GeneratedMessageV3.serializeStringMapTo(
         output, internalGetAttributes(), AttributesDefaultEntryHolder.defaultEntry, 2);
+    if (authenticationMethodCase_ == 3) {
+      output.writeMessage(3, (com.google.pubsub.v1.PushConfig.OidcToken) authenticationMethod_);
+    }
     unknownFields.writeTo(output);
   }
 
@@ -356,6 +1361,11 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
               .build();
       size += com.google.protobuf.CodedOutputStream.computeMessageSize(2, attributes__);
     }
+    if (authenticationMethodCase_ == 3) {
+      size +=
+          com.google.protobuf.CodedOutputStream.computeMessageSize(
+              3, (com.google.pubsub.v1.PushConfig.OidcToken) authenticationMethod_);
+    }
     size += unknownFields.getSerializedSize();
     memoizedSize = size;
     return size;
@@ -374,6 +1384,15 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
     boolean result = true;
     result = result && getPushEndpoint().equals(other.getPushEndpoint());
     result = result && internalGetAttributes().equals(other.internalGetAttributes());
+    result = result && getAuthenticationMethodCase().equals(other.getAuthenticationMethodCase());
+    if (!result) return false;
+    switch (authenticationMethodCase_) {
+      case 3:
+        result = result && getOidcToken().equals(other.getOidcToken());
+        break;
+      case 0:
+      default:
+    }
     result = result && unknownFields.equals(other.unknownFields);
     return result;
   }
@@ -390,6 +1409,14 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
     if (!internalGetAttributes().getMap().isEmpty()) {
       hash = (37 * hash) + ATTRIBUTES_FIELD_NUMBER;
       hash = (53 * hash) + internalGetAttributes().hashCode();
+    }
+    switch (authenticationMethodCase_) {
+      case 3:
+        hash = (37 * hash) + OIDC_TOKEN_FIELD_NUMBER;
+        hash = (53 * hash) + getOidcToken().hashCode();
+        break;
+      case 0:
+      default:
     }
     hash = (29 * hash) + unknownFields.hashCode();
     memoizedHashCode = hash;
@@ -557,6 +1584,8 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
       pushEndpoint_ = "";
 
       internalGetMutableAttributes().clear();
+      authenticationMethodCase_ = 0;
+      authenticationMethod_ = null;
       return this;
     }
 
@@ -588,7 +1617,15 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
       result.pushEndpoint_ = pushEndpoint_;
       result.attributes_ = internalGetAttributes();
       result.attributes_.makeImmutable();
+      if (authenticationMethodCase_ == 3) {
+        if (oidcTokenBuilder_ == null) {
+          result.authenticationMethod_ = authenticationMethod_;
+        } else {
+          result.authenticationMethod_ = oidcTokenBuilder_.build();
+        }
+      }
       result.bitField0_ = to_bitField0_;
+      result.authenticationMethodCase_ = authenticationMethodCase_;
       onBuilt();
       return result;
     }
@@ -643,6 +1680,17 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
         onChanged();
       }
       internalGetMutableAttributes().mergeFrom(other.internalGetAttributes());
+      switch (other.getAuthenticationMethodCase()) {
+        case OIDC_TOKEN:
+          {
+            mergeOidcToken(other.getOidcToken());
+            break;
+          }
+        case AUTHENTICATIONMETHOD_NOT_SET:
+          {
+            break;
+          }
+      }
       this.mergeUnknownFields(other.unknownFields);
       onChanged();
       return this;
@@ -669,6 +1717,20 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
           mergeFrom(parsedMessage);
         }
       }
+      return this;
+    }
+
+    private int authenticationMethodCase_ = 0;
+    private java.lang.Object authenticationMethod_;
+
+    public AuthenticationMethodCase getAuthenticationMethodCase() {
+      return AuthenticationMethodCase.forNumber(authenticationMethodCase_);
+    }
+
+    public Builder clearAuthenticationMethod() {
+      authenticationMethodCase_ = 0;
+      authenticationMethod_ = null;
+      onChanged();
       return this;
     }
 
@@ -1031,6 +2093,217 @@ public final class PushConfig extends com.google.protobuf.GeneratedMessageV3
     public Builder putAllAttributes(java.util.Map<java.lang.String, java.lang.String> values) {
       internalGetMutableAttributes().getMutableMap().putAll(values);
       return this;
+    }
+
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.pubsub.v1.PushConfig.OidcToken,
+            com.google.pubsub.v1.PushConfig.OidcToken.Builder,
+            com.google.pubsub.v1.PushConfig.OidcTokenOrBuilder>
+        oidcTokenBuilder_;
+    /**
+     *
+     *
+     * <pre>
+     * If specified, Pub/Sub will generate and attach an OIDC JWT token as an
+     * `Authorization` header in the HTTP request for every pushed message.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.PushConfig.OidcToken oidc_token = 3;</code>
+     */
+    public boolean hasOidcToken() {
+      return authenticationMethodCase_ == 3;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If specified, Pub/Sub will generate and attach an OIDC JWT token as an
+     * `Authorization` header in the HTTP request for every pushed message.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.PushConfig.OidcToken oidc_token = 3;</code>
+     */
+    public com.google.pubsub.v1.PushConfig.OidcToken getOidcToken() {
+      if (oidcTokenBuilder_ == null) {
+        if (authenticationMethodCase_ == 3) {
+          return (com.google.pubsub.v1.PushConfig.OidcToken) authenticationMethod_;
+        }
+        return com.google.pubsub.v1.PushConfig.OidcToken.getDefaultInstance();
+      } else {
+        if (authenticationMethodCase_ == 3) {
+          return oidcTokenBuilder_.getMessage();
+        }
+        return com.google.pubsub.v1.PushConfig.OidcToken.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If specified, Pub/Sub will generate and attach an OIDC JWT token as an
+     * `Authorization` header in the HTTP request for every pushed message.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.PushConfig.OidcToken oidc_token = 3;</code>
+     */
+    public Builder setOidcToken(com.google.pubsub.v1.PushConfig.OidcToken value) {
+      if (oidcTokenBuilder_ == null) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        authenticationMethod_ = value;
+        onChanged();
+      } else {
+        oidcTokenBuilder_.setMessage(value);
+      }
+      authenticationMethodCase_ = 3;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If specified, Pub/Sub will generate and attach an OIDC JWT token as an
+     * `Authorization` header in the HTTP request for every pushed message.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.PushConfig.OidcToken oidc_token = 3;</code>
+     */
+    public Builder setOidcToken(com.google.pubsub.v1.PushConfig.OidcToken.Builder builderForValue) {
+      if (oidcTokenBuilder_ == null) {
+        authenticationMethod_ = builderForValue.build();
+        onChanged();
+      } else {
+        oidcTokenBuilder_.setMessage(builderForValue.build());
+      }
+      authenticationMethodCase_ = 3;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If specified, Pub/Sub will generate and attach an OIDC JWT token as an
+     * `Authorization` header in the HTTP request for every pushed message.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.PushConfig.OidcToken oidc_token = 3;</code>
+     */
+    public Builder mergeOidcToken(com.google.pubsub.v1.PushConfig.OidcToken value) {
+      if (oidcTokenBuilder_ == null) {
+        if (authenticationMethodCase_ == 3
+            && authenticationMethod_
+                != com.google.pubsub.v1.PushConfig.OidcToken.getDefaultInstance()) {
+          authenticationMethod_ =
+              com.google.pubsub.v1.PushConfig.OidcToken.newBuilder(
+                      (com.google.pubsub.v1.PushConfig.OidcToken) authenticationMethod_)
+                  .mergeFrom(value)
+                  .buildPartial();
+        } else {
+          authenticationMethod_ = value;
+        }
+        onChanged();
+      } else {
+        if (authenticationMethodCase_ == 3) {
+          oidcTokenBuilder_.mergeFrom(value);
+        }
+        oidcTokenBuilder_.setMessage(value);
+      }
+      authenticationMethodCase_ = 3;
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If specified, Pub/Sub will generate and attach an OIDC JWT token as an
+     * `Authorization` header in the HTTP request for every pushed message.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.PushConfig.OidcToken oidc_token = 3;</code>
+     */
+    public Builder clearOidcToken() {
+      if (oidcTokenBuilder_ == null) {
+        if (authenticationMethodCase_ == 3) {
+          authenticationMethodCase_ = 0;
+          authenticationMethod_ = null;
+          onChanged();
+        }
+      } else {
+        if (authenticationMethodCase_ == 3) {
+          authenticationMethodCase_ = 0;
+          authenticationMethod_ = null;
+        }
+        oidcTokenBuilder_.clear();
+      }
+      return this;
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If specified, Pub/Sub will generate and attach an OIDC JWT token as an
+     * `Authorization` header in the HTTP request for every pushed message.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.PushConfig.OidcToken oidc_token = 3;</code>
+     */
+    public com.google.pubsub.v1.PushConfig.OidcToken.Builder getOidcTokenBuilder() {
+      return getOidcTokenFieldBuilder().getBuilder();
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If specified, Pub/Sub will generate and attach an OIDC JWT token as an
+     * `Authorization` header in the HTTP request for every pushed message.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.PushConfig.OidcToken oidc_token = 3;</code>
+     */
+    public com.google.pubsub.v1.PushConfig.OidcTokenOrBuilder getOidcTokenOrBuilder() {
+      if ((authenticationMethodCase_ == 3) && (oidcTokenBuilder_ != null)) {
+        return oidcTokenBuilder_.getMessageOrBuilder();
+      } else {
+        if (authenticationMethodCase_ == 3) {
+          return (com.google.pubsub.v1.PushConfig.OidcToken) authenticationMethod_;
+        }
+        return com.google.pubsub.v1.PushConfig.OidcToken.getDefaultInstance();
+      }
+    }
+    /**
+     *
+     *
+     * <pre>
+     * If specified, Pub/Sub will generate and attach an OIDC JWT token as an
+     * `Authorization` header in the HTTP request for every pushed message.
+     * </pre>
+     *
+     * <code>.google.pubsub.v1.PushConfig.OidcToken oidc_token = 3;</code>
+     */
+    private com.google.protobuf.SingleFieldBuilderV3<
+            com.google.pubsub.v1.PushConfig.OidcToken,
+            com.google.pubsub.v1.PushConfig.OidcToken.Builder,
+            com.google.pubsub.v1.PushConfig.OidcTokenOrBuilder>
+        getOidcTokenFieldBuilder() {
+      if (oidcTokenBuilder_ == null) {
+        if (!(authenticationMethodCase_ == 3)) {
+          authenticationMethod_ = com.google.pubsub.v1.PushConfig.OidcToken.getDefaultInstance();
+        }
+        oidcTokenBuilder_ =
+            new com.google.protobuf.SingleFieldBuilderV3<
+                com.google.pubsub.v1.PushConfig.OidcToken,
+                com.google.pubsub.v1.PushConfig.OidcToken.Builder,
+                com.google.pubsub.v1.PushConfig.OidcTokenOrBuilder>(
+                (com.google.pubsub.v1.PushConfig.OidcToken) authenticationMethod_,
+                getParentForChildren(),
+                isClean());
+        authenticationMethod_ = null;
+      }
+      authenticationMethodCase_ = 3;
+      onChanged();
+      ;
+      return oidcTokenBuilder_;
     }
 
     @java.lang.Override
