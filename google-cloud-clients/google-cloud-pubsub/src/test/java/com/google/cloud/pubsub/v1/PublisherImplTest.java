@@ -23,6 +23,7 @@ import static org.junit.Assert.assertSame;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
+import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.gax.batching.BatchingSettings;
 import com.google.api.gax.core.ExecutorProvider;
@@ -43,6 +44,7 @@ import io.grpc.StatusException;
 import io.grpc.inprocess.InProcessServerBuilder;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.atomic.AtomicBoolean;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -431,6 +433,33 @@ public class PublisherImplTest {
         Publisher.Builder.DEFAULT_ELEMENT_COUNT_THRESHOLD,
         builder.batchingSettings.getElementCountThreshold().longValue());
     assertEquals(Publisher.Builder.DEFAULT_RETRY_SETTINGS, builder.retrySettings);
+  }
+
+  @Test
+  public void testTransformer() throws Exception {
+    final AtomicBoolean transformed = new AtomicBoolean();
+    ApiFunction<PubsubMessage, PubsubMessage> transform =
+        new ApiFunction<PubsubMessage, PubsubMessage>() {
+          @Override
+          public PubsubMessage apply(PubsubMessage input) {
+            transformed.set(true);
+            return input;
+          }
+        };
+    Publisher publisher =
+        getTestPublisherBuilder()
+            .setBatchingSettings(
+                Publisher.Builder.DEFAULT_BATCHING_SETTINGS
+                    .toBuilder()
+                    .setElementCountThreshold(1L)
+                    .setDelayThreshold(Duration.ofSeconds(100))
+                    .build())
+            .setTransform(transform)
+            .build();
+    publisher.publish(PubsubMessage.getDefaultInstance());
+    testPublisherServiceImpl.addPublishResponse(PublishResponse.getDefaultInstance());
+    publisher.shutdown();
+    assertTrue(transformed.get());
   }
 
   @Test
