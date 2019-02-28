@@ -48,7 +48,6 @@ import java.util.Deque;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.ScheduledFuture;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.annotation.Nullable;
@@ -94,6 +93,7 @@ public class Subscriber extends AbstractApiService {
   @InternalApi static final int MAX_ACK_DEADLINE_SECONDS = 600;
   @InternalApi static final int MIN_ACK_DEADLINE_SECONDS = 10;
   private static final Duration UNARY_TIMEOUT = Duration.ofSeconds(60);
+  private static final Duration ACK_EXPIRATION_PADDING = Duration.ofSeconds(5);
 
   private static final ScheduledExecutorService SHARED_SYSTEM_EXECUTOR =
       InstantiatingExecutorProvider.newBuilder().setExecutorThreadCount(6).build().getExecutor();
@@ -102,7 +102,6 @@ public class Subscriber extends AbstractApiService {
 
   private final String subscriptionName;
   private final FlowControlSettings flowControlSettings;
-  private final Duration ackExpirationPadding;
   private final Duration maxAckExtensionPeriod;
   private final ScheduledExecutorService executor;
   @Nullable private final ScheduledExecutorService alarmsExecutor;
@@ -120,20 +119,12 @@ public class Subscriber extends AbstractApiService {
       new LinkedList<>();
   private final ApiClock clock;
   private final List<AutoCloseable> closeables = new ArrayList<>();
-  private ScheduledFuture<?> ackDeadlineUpdater;
 
   private Subscriber(Builder builder) {
     receiver = builder.receiver;
     flowControlSettings = builder.flowControlSettings;
     subscriptionName = builder.subscriptionName;
 
-    Preconditions.checkArgument(
-        builder.ackExpirationPadding.compareTo(Duration.ZERO) > 0, "padding must be positive");
-    Preconditions.checkArgument(
-        builder.ackExpirationPadding.compareTo(Duration.ofSeconds(MIN_ACK_DEADLINE_SECONDS)) < 0,
-        "padding must be less than %s seconds",
-        MIN_ACK_DEADLINE_SECONDS);
-    ackExpirationPadding = builder.ackExpirationPadding;
     maxAckExtensionPeriod = builder.maxAckExtensionPeriod;
     clock = builder.clock.isPresent() ? builder.clock.get() : CurrentMillisClock.getDefaultClock();
 
@@ -226,12 +217,6 @@ public class Subscriber extends AbstractApiService {
   /** Subscription which the subscriber is subscribed to. */
   public String getSubscriptionNameString() {
     return subscriptionName;
-  }
-
-  /** Acknowledgement expiration padding. See {@link Builder#setAckExpirationPadding}. */
-  @InternalApi
-  Duration getAckExpirationPadding() {
-    return ackExpirationPadding;
   }
 
   /** The flow control settings the Subscriber is configured with. */
@@ -331,14 +316,14 @@ public class Subscriber extends AbstractApiService {
         .start();
   }
 
-  private void startStreamingConnections() throws IOException {
+  private void startStreamingConnections() {
     synchronized (streamingSubscriberConnections) {
       for (int i = 0; i < numPullers; i++) {
         streamingSubscriberConnections.add(
             new StreamingSubscriberConnection(
                 subscriptionName,
                 receiver,
-                ackExpirationPadding,
+                ACK_EXPIRATION_PADDING,
                 maxAckExtensionPeriod,
                 ackLatencyDistribution,
                 subStub,
@@ -372,9 +357,6 @@ public class Subscriber extends AbstractApiService {
 
   private void stopAllStreamingConnections() {
     stopConnections(streamingSubscriberConnections);
-    if (ackDeadlineUpdater != null) {
-      ackDeadlineUpdater.cancel(true);
-    }
   }
 
   private void startConnections(
@@ -410,8 +392,6 @@ public class Subscriber extends AbstractApiService {
 
   /** Builder of {@link Subscriber Subscribers}. */
   public static final class Builder {
-    private static final Duration MIN_ACK_EXPIRATION_PADDING = Duration.ofMillis(100);
-    private static final Duration DEFAULT_ACK_EXPIRATION_PADDING = Duration.ofSeconds(5);
     private static final Duration DEFAULT_MAX_ACK_EXTENSION_PERIOD = Duration.ofMinutes(60);
 
     static final ExecutorProvider DEFAULT_EXECUTOR_PROVIDER =
@@ -423,7 +403,6 @@ public class Subscriber extends AbstractApiService {
     String subscriptionName;
     MessageReceiver receiver;
 
-    Duration ackExpirationPadding = DEFAULT_ACK_EXPIRATION_PADDING;
     Duration maxAckExtensionPeriod = DEFAULT_MAX_ACK_EXTENSION_PERIOD;
 
     FlowControlSettings flowControlSettings =
@@ -437,8 +416,6 @@ public class Subscriber extends AbstractApiService {
             .setKeepAliveTime(Duration.ofMinutes(5))
             .build();
     HeaderProvider headerProvider = new NoHeaderProvider();
-    HeaderProvider internalHeaderProvider =
-        SubscriptionAdminSettings.defaultApiClientHeaderProviderBuilder().build();
     CredentialsProvider credentialsProvider =
         SubscriptionAdminSettings.defaultCredentialsProviderBuilder().build();
     Optional<ApiClock> clock = Optional.absent();
@@ -479,21 +456,6 @@ public class Subscriber extends AbstractApiService {
     }
 
     /**
-     * Sets the static header provider for getting internal (library-defined) headers. The header
-     * provider will be called during client construction only once. The headers returned by the
-     * provider will be cached and supplied as is for each request issued by the constructed client.
-     * Some reserved headers can be overridden (e.g. Content-Type) or merged with the default value
-     * (e.g. User-Agent) by the underlying transport layer.
-     *
-     * @param internalHeaderProvider the internal header provider
-     * @return the builder
-     */
-    Builder setInternalHeaderProvider(HeaderProvider internalHeaderProvider) {
-      this.internalHeaderProvider = Preconditions.checkNotNull(internalHeaderProvider);
-      return this;
-    }
-
-    /**
      * Sets the flow control settings.
      *
      * <p>In the example below, the {@link Subscriber} will make sure that
@@ -520,25 +482,6 @@ public class Subscriber extends AbstractApiService {
      */
     public Builder setFlowControlSettings(FlowControlSettings flowControlSettings) {
       this.flowControlSettings = Preconditions.checkNotNull(flowControlSettings);
-      return this;
-    }
-
-    /**
-     * Set acknowledgement expiration padding.
-     *
-     * <p>This is the time accounted before a message expiration is to happen, so the {@link
-     * Subscriber} is able to send an ack extension beforehand.
-     *
-     * <p>This padding duration is configurable so you can account for network latency. A reasonable
-     * number must be provided so messages don't expire because of network latency between when the
-     * ack extension is required and when it reaches the Pub/Sub service.
-     *
-     * @param ackExpirationPadding must be greater or equal to {@link #MIN_ACK_EXPIRATION_PADDING}
-     */
-    @InternalApi
-    Builder setAckExpirationPadding(Duration ackExpirationPadding) {
-      Preconditions.checkArgument(ackExpirationPadding.compareTo(MIN_ACK_EXPIRATION_PADDING) >= 0);
-      this.ackExpirationPadding = ackExpirationPadding;
       return this;
     }
 
