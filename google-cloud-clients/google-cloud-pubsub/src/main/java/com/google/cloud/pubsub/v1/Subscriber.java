@@ -44,8 +44,6 @@ import com.google.common.base.Preconditions;
 import com.google.pubsub.v1.ProjectSubscriptionName;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Deque;
-import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.logging.Level;
@@ -115,8 +113,6 @@ public class Subscriber extends AbstractApiService {
 
   private final MessageReceiver receiver;
   private final List<StreamingSubscriberConnection> streamingSubscriberConnections;
-  private final Deque<MessageDispatcher.OutstandingMessageBatch> outstandingMessageBatches =
-      new LinkedList<>();
   private final ApiClock clock;
   private final List<AutoCloseable> closeables = new ArrayList<>();
 
@@ -329,7 +325,6 @@ public class Subscriber extends AbstractApiService {
                 subStub,
                 i,
                 flowController,
-                outstandingMessageBatches,
                 executor,
                 alarmsExecutor,
                 clock));
