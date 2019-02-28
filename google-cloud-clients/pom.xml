@@ -161,7 +161,7 @@
     <grpc.version>1.18.0</grpc.version>
     <!-- We are currently using the *-android version to support JDK7. -->
     <guava.version>26.0-android</guava.version>
-    <http-client.version>1.28.0</http-client.version>
+    <http-client-bom.version>1.28.0</http-client-bom.version>
     <oauth-client.version>1.28.0</oauth-client.version>
     <protobuf.version>3.6.1</protobuf.version>
     <!-- make sure to keep opencensus version in sync with grpc -->
@@ -185,6 +185,13 @@
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-bom</artifactId>
         <version>${bom.version}</version>
+        <type>pom</type>
+        <scope>import</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.google.http-client</groupId>
+        <artifactId>google-http-client-bom</artifactId>
+        <version>${http-client-bom.version}</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -312,21 +319,6 @@
         <groupId>com.google.auto.value</groupId>
         <artifactId>auto-value</artifactId>
         <version>1.4</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.http-client</groupId>
-        <artifactId>google-http-client</artifactId>
-        <version>${http-client.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.http-client</groupId>
-        <artifactId>google-http-client-appengine</artifactId>
-        <version>${http-client.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>com.google.http-client</groupId>
-        <artifactId>google-http-client-jackson2</artifactId>
-        <version>${http-client.version}</version>
       </dependency>
       <dependency>
         <groupId>com.google.oauth-client</groupId>
