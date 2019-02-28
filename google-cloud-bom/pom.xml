@@ -821,6 +821,16 @@
         <version>0.46.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-vision-v1p3beta1:current} -->
       </dependency>
       <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>proto-google-cloud-vision-v1p4beta1</artifactId>
+        <version>0.46.1-SNAPSHOT</version><!-- {x-version-update:proto-google-cloud-vision-v1p4beta1:current} -->
+      </dependency>
+      <dependency>
+        <groupId>com.google.api.grpc</groupId>
+        <artifactId>grpc-google-cloud-vision-v1p4beta1</artifactId>
+        <version>0.46.1-SNAPSHOT</version><!-- {x-version-update:grpc-google-cloud-vision-v1p4beta1:current} -->
+      </dependency>
+      <dependency>
         <groupId>com.google.cloud</groupId>
         <artifactId>google-cloud-video-intelligence</artifactId>
         <version>0.81.1-beta-SNAPSHOT</version><!-- {x-version-update:google-cloud-video-intelligence:current} -->
