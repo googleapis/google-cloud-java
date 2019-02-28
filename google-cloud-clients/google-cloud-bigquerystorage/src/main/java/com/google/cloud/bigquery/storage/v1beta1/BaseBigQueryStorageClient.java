@@ -187,8 +187,8 @@ public class BaseBigQueryStorageClient implements BackgroundResource {
    * </code></pre>
    *
    * @param tableReference Required. Reference to the table to read.
-   * @param parent Required. String of the form "projects/your-project-id" indicating the project
-   *     this ReadSession is associated with. This is the project that will be billed for usage.
+   * @param parent Required. String of the form `projects/{project_id}` indicating the project this
+   *     ReadSession is associated with. This is the project that will be billed for usage.
    * @param requestedStreams Optional. Initial number of streams. If unset or 0, we will provide a
    *     value of streams so as to produce reasonable throughput. Must be non-negative. The number
    *     of streams may be lower than the requested number, depending on the amount parallelism that
