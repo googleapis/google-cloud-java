@@ -19,13 +19,14 @@ If you are still having issues, please be sure to include as much information as
 
 1. Specify the API at the beginning of the title (for example, "BigQuery: ...")
    General, Core, and Other are also allowed as types
-2. OS type and version
-3. Java version
-4. google-cloud-<service> version
+2. OS type and version:
+3. Java version:
+4. google-cloud-java version(s):
 
 #### Steps to reproduce
 
   1. ?
+  2. ? 
 
 #### Code example
 
@@ -35,8 +36,15 @@ If you are still having issues, please be sure to include as much information as
 
 #### Stack trace
 ```
-// example
+Any relevant stacktrace here.
 ```
+
+#### External references such as API reference guides used	
+
+- ?	
+
+#### Any additional information below	
+
 
 Making sure to follow these steps will guarantee the quickest resolution possible.
 
