@@ -42,7 +42,6 @@ import com.google.pubsub.v1.ModifyAckDeadlineRequest;
 import com.google.pubsub.v1.StreamingPullRequest;
 import com.google.pubsub.v1.StreamingPullResponse;
 import io.grpc.Status;
-import java.util.Deque;
 import java.util.List;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
@@ -84,7 +83,6 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
       SubscriberStub stub,
       int channelAffinity,
       FlowController flowController,
-      Deque<MessageDispatcher.OutstandingMessageBatch> outstandingMessageBatches,
       ScheduledExecutorService executor,
       ScheduledExecutorService systemExecutor,
       ApiClock clock) {
@@ -100,7 +98,6 @@ final class StreamingSubscriberConnection extends AbstractApiService implements 
             maxAckExtensionPeriod,
             ackLatencyDistribution,
             flowController,
-            outstandingMessageBatches,
             executor,
             systemExecutor,
             clock);

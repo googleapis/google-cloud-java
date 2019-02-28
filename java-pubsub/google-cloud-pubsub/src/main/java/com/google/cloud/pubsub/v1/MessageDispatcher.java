@@ -40,6 +40,7 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.Executor;
+import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.ScheduledFuture;
@@ -90,7 +91,8 @@ class MessageDispatcher {
   private final Lock jobLock;
   private ScheduledFuture<?> backgroundJob;
 
-  private final Deque<OutstandingMessageBatch> outstandingMessageBatches;
+  private final LinkedBlockingDeque<OutstandingMessageBatch> outstandingMessageBatches =
+      new LinkedBlockingDeque<>();
 
   // To keep track of number of seconds the receiver takes to process messages.
   private final Distribution ackLatencyDistribution;
@@ -200,7 +202,6 @@ class MessageDispatcher {
       Duration maxAckExtensionPeriod,
       Distribution ackLatencyDistribution,
       FlowController flowController,
-      Deque<OutstandingMessageBatch> outstandingMessageBatches,
       Executor executor,
       ScheduledExecutorService systemExecutor,
       ApiClock clock) {
@@ -211,7 +212,6 @@ class MessageDispatcher {
     this.receiver = receiver;
     this.ackProcessor = ackProcessor;
     this.flowController = flowController;
-    this.outstandingMessageBatches = outstandingMessageBatches;
     // 601 buckets of 1s resolution from 0s to MAX_ACK_DEADLINE_SECONDS
     this.ackLatencyDistribution = ackLatencyDistribution;
     jobLock = new ReentrantLock();
