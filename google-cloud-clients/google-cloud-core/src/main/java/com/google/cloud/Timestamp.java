@@ -166,8 +166,9 @@ public final class Timestamp implements Comparable<Timestamp>, Serializable {
   }
 
   /**
-   * Creates a Timestamp instance from the given string. String is in the RFC 3339 format without
+   * Creates a Timestamp instance from the given string. String is in the RFC 3339 format with
    * the timezone offset (always ends in "Z").
+   * {@code 2007-12-03T10:15:30.000Z}
    */
   public static Timestamp parseTimestamp(String timestamp) {
     Instant instant = Instant.parse(timestamp);
