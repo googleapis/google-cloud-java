@@ -36,9 +36,11 @@ public interface ImportProductSetsGcsSourceOrBuilder
    * If the Product with product_id already exists, the fields
    * product_display_name, product_category and labels are ignored.
    * If a Product doesn't exist and needs to be created on the fly, the
-   * product_display_name field refers to [Product.display_name][google.cloud.vision.v1p3beta1.Product.display_name], the
-   * product_category field refers to [Product.product_category][google.cloud.vision.v1p3beta1.Product.product_category], and the
-   * labels field refers to [Product.labels][].
+   * product_display_name field refers to
+   * [Product.display_name][google.cloud.vision.v1p3beta1.Product.display_name],
+   * the product_category field refers to
+   * [Product.product_category][google.cloud.vision.v1p3beta1.Product.product_category],
+   * and the labels field refers to [Product.labels][].
    * Labels (optional) should be a line containing a list of comma-separated
    * key-value pairs, with the format
    *     "key_1=value_1,key_2=value_2,...,key_n=value_n".
@@ -88,9 +90,11 @@ public interface ImportProductSetsGcsSourceOrBuilder
    * If the Product with product_id already exists, the fields
    * product_display_name, product_category and labels are ignored.
    * If a Product doesn't exist and needs to be created on the fly, the
-   * product_display_name field refers to [Product.display_name][google.cloud.vision.v1p3beta1.Product.display_name], the
-   * product_category field refers to [Product.product_category][google.cloud.vision.v1p3beta1.Product.product_category], and the
-   * labels field refers to [Product.labels][].
+   * product_display_name field refers to
+   * [Product.display_name][google.cloud.vision.v1p3beta1.Product.display_name],
+   * the product_category field refers to
+   * [Product.product_category][google.cloud.vision.v1p3beta1.Product.product_category],
+   * and the labels field refers to [Product.labels][].
    * Labels (optional) should be a line containing a list of comma-separated
    * key-value pairs, with the format
    *     "key_1=value_1,key_2=value_2,...,key_n=value_n".

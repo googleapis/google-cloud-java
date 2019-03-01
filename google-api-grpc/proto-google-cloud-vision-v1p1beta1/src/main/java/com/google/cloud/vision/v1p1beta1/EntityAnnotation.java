@@ -180,7 +180,8 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Opaque entity ID. Some IDs may be available in
-   * [Google Knowledge Graph Search API](https://developers.google.com/knowledge-graph/).
+   * [Google Knowledge Graph Search
+   * API](https://developers.google.com/knowledge-graph/).
    * </pre>
    *
    * <code>string mid = 1;</code>
@@ -201,7 +202,8 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
    *
    * <pre>
    * Opaque entity ID. Some IDs may be available in
-   * [Google Knowledge Graph Search API](https://developers.google.com/knowledge-graph/).
+   * [Google Knowledge Graph Search
+   * API](https://developers.google.com/knowledge-graph/).
    * </pre>
    *
    * <code>string mid = 1;</code>
@@ -1108,7 +1110,8 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Opaque entity ID. Some IDs may be available in
-     * [Google Knowledge Graph Search API](https://developers.google.com/knowledge-graph/).
+     * [Google Knowledge Graph Search
+     * API](https://developers.google.com/knowledge-graph/).
      * </pre>
      *
      * <code>string mid = 1;</code>
@@ -1129,7 +1132,8 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Opaque entity ID. Some IDs may be available in
-     * [Google Knowledge Graph Search API](https://developers.google.com/knowledge-graph/).
+     * [Google Knowledge Graph Search
+     * API](https://developers.google.com/knowledge-graph/).
      * </pre>
      *
      * <code>string mid = 1;</code>
@@ -1150,7 +1154,8 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Opaque entity ID. Some IDs may be available in
-     * [Google Knowledge Graph Search API](https://developers.google.com/knowledge-graph/).
+     * [Google Knowledge Graph Search
+     * API](https://developers.google.com/knowledge-graph/).
      * </pre>
      *
      * <code>string mid = 1;</code>
@@ -1169,7 +1174,8 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Opaque entity ID. Some IDs may be available in
-     * [Google Knowledge Graph Search API](https://developers.google.com/knowledge-graph/).
+     * [Google Knowledge Graph Search
+     * API](https://developers.google.com/knowledge-graph/).
      * </pre>
      *
      * <code>string mid = 1;</code>
@@ -1185,7 +1191,8 @@ public final class EntityAnnotation extends com.google.protobuf.GeneratedMessage
      *
      * <pre>
      * Opaque entity ID. Some IDs may be available in
-     * [Google Knowledge Graph Search API](https://developers.google.com/knowledge-graph/).
+     * [Google Knowledge Graph Search
+     * API](https://developers.google.com/knowledge-graph/).
      * </pre>
      *
      * <code>string mid = 1;</code>

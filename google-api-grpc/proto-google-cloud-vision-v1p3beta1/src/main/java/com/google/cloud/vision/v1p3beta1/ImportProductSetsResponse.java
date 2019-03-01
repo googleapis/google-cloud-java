@@ -9,8 +9,10 @@ package com.google.cloud.vision.v1p3beta1;
  * <pre>
  * Response message for the `ImportProductSets` method.
  * This message is returned by the
- * [google.longrunning.Operations.GetOperation][google.longrunning.Operations.GetOperation] method in the returned
- * [google.longrunning.Operation.response][google.longrunning.Operation.response] field.
+ * [google.longrunning.Operations.GetOperation][google.longrunning.Operations.GetOperation]
+ * method in the returned
+ * [google.longrunning.Operation.response][google.longrunning.Operation.response]
+ * field.
  * </pre>
  *
  * Protobuf type {@code google.cloud.vision.v1p3beta1.ImportProductSetsResponse}
@@ -444,8 +446,10 @@ public final class ImportProductSetsResponse extends com.google.protobuf.Generat
    * <pre>
    * Response message for the `ImportProductSets` method.
    * This message is returned by the
-   * [google.longrunning.Operations.GetOperation][google.longrunning.Operations.GetOperation] method in the returned
-   * [google.longrunning.Operation.response][google.longrunning.Operation.response] field.
+   * [google.longrunning.Operations.GetOperation][google.longrunning.Operations.GetOperation]
+   * method in the returned
+   * [google.longrunning.Operation.response][google.longrunning.Operation.response]
+   * field.
    * </pre>
    *
    * Protobuf type {@code google.cloud.vision.v1p3beta1.ImportProductSetsResponse}
