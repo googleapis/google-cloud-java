@@ -115,10 +115,10 @@ public class WriteChannelConfigurationTest {
 
     compareLoadConfiguration(LOAD_CONFIGURATION_AVRO, LOAD_CONFIGURATION_AVRO.toBuilder().build());
     WriteChannelConfiguration configurationAvro =
-            LOAD_CONFIGURATION_AVRO
-                    .toBuilder()
-                    .setDestinationTable(TableId.of("dataset", "newTable"))
-                    .build();
+        LOAD_CONFIGURATION_AVRO
+            .toBuilder()
+            .setDestinationTable(TableId.of("dataset", "newTable"))
+            .build();
     assertEquals("newTable", configurationAvro.getDestinationTable().getTable());
     configurationAvro = configurationAvro.toBuilder().setDestinationTable(TABLE_ID).build();
     compareLoadConfiguration(LOAD_CONFIGURATION_AVRO, configurationAvro);
