@@ -41,6 +41,7 @@ public class LoadJobConfigurationTest {
   private static final WriteDisposition WRITE_DISPOSITION = WriteDisposition.WRITE_APPEND;
   private static final Integer MAX_BAD_RECORDS = 42;
   private static final String FORMAT = "CSV";
+  private static final String AVRO_FORMATE = "AVRO";
   private static final Boolean IGNORE_UNKNOWN_VALUES = true;
   private static final Field FIELD_SCHEMA =
       Field.newBuilder("IntegerField", LegacySQLTypeName.INTEGER)
@@ -52,6 +53,7 @@ public class LoadJobConfigurationTest {
       ImmutableList.of(SchemaUpdateOption.ALLOW_FIELD_ADDITION);
   private static final Schema TABLE_SCHEMA = Schema.of(FIELD_SCHEMA);
   private static final Boolean AUTODETECT = true;
+  private static final Boolean USERAVROLOGICALTYPES = true;
   private static final EncryptionConfiguration JOB_ENCRYPTION_CONFIGURATION =
       EncryptionConfiguration.newBuilder().setKmsKeyName("KMS_KEY_1").build();
   private static final TimePartitioning TIME_PARTITIONING = TimePartitioning.of(Type.DAY);
@@ -86,6 +88,21 @@ public class LoadJobConfigurationTest {
           .setSchemaUpdateOptions(SCHEMA_UPDATE_OPTIONS)
           .setAutodetect(AUTODETECT)
           .build();
+  private static final LoadJobConfiguration LOAD_CONFIGURATION_AVRO =
+      LoadJobConfiguration.newBuilder(TABLE_ID, SOURCE_URIS)
+          .setCreateDisposition(CREATE_DISPOSITION)
+          .setWriteDisposition(WRITE_DISPOSITION)
+          .setFormatOptions(FormatOptions.avro())
+          .setIgnoreUnknownValues(IGNORE_UNKNOWN_VALUES)
+          .setMaxBadRecords(MAX_BAD_RECORDS)
+          .setSchema(TABLE_SCHEMA)
+          .setSchemaUpdateOptions(SCHEMA_UPDATE_OPTIONS)
+          .setAutodetect(AUTODETECT)
+          .setDestinationEncryptionConfiguration(JOB_ENCRYPTION_CONFIGURATION)
+          .setTimePartitioning(TIME_PARTITIONING)
+          .setClustering(CLUSTERING)
+          .setUseAvroLogicalTypes(USERAVROLOGICALTYPES)
+          .build();
 
   @Test
   public void testToBuilder() {
@@ -109,6 +126,17 @@ public class LoadJobConfigurationTest {
     assertEquals("newTable", configurationBackup.getDestinationTable().getTable());
     configurationBackup = configurationBackup.toBuilder().setDestinationTable(TABLE_ID).build();
     compareLoadJobConfiguration(LOAD_CONFIGURATION_BACKUP, configurationBackup);
+
+    compareLoadJobConfiguration(
+        LOAD_CONFIGURATION_AVRO, LOAD_CONFIGURATION_AVRO.toBuilder().build());
+    LoadJobConfiguration configurationAvro =
+        LOAD_CONFIGURATION_AVRO
+            .toBuilder()
+            .setDestinationTable(TableId.of("dataset", "newTable"))
+            .build();
+    assertEquals("newTable", configurationAvro.getDestinationTable().getTable());
+    configurationAvro = configurationAvro.toBuilder().setDestinationTable(TABLE_ID).build();
+    compareLoadJobConfiguration(LOAD_CONFIGURATION_AVRO, configurationBackup);
   }
 
   @Test
@@ -188,5 +216,6 @@ public class LoadJobConfigurationTest {
         value.getDestinationEncryptionConfiguration());
     assertEquals(expected.getTimePartitioning(), value.getTimePartitioning());
     assertEquals(expected.getClustering(), value.getClustering());
+    assertEquals(expected.getUseAvroLogicalTypes(), value.getUseAvroLogicalTypes());
   }
 }
