@@ -308,6 +308,8 @@ public class Subscriber extends AbstractApiService {
   private void startStreamingConnections() throws IOException {
     synchronized (streamingSubscriberConnections) {
       for (int i = 0; i < numPullers; i++) {
+        // Each connection gets its own stub so it gets its own system executor and channel
+        // instantiation.
         streamingSubscriberConnections.add(
             new StreamingSubscriberConnection(
                 subscriptionName,
