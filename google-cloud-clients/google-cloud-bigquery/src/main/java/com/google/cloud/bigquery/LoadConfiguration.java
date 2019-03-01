@@ -118,6 +118,13 @@ public interface LoadConfiguration {
     /** Sets the clustering specification for the destination table. */
     Builder setClustering(Clustering clustering);
 
+    /**
+     * If FormatOptions is set to AVRO, you can interpret logical types into their corresponding
+     * types (such as TIMESTAMP) instead of only using their raw types (such as INTEGER). The value
+     * may be {@code null}.
+     */
+    Builder setUseAvroLogicalTypes(Boolean useAvroLogicalTypes);
+
     LoadConfiguration build();
   }
 
@@ -203,6 +210,9 @@ public interface LoadConfiguration {
 
   /** Returns the clustering specification for the definition table. */
   Clustering getClustering();
+
+  /** Returns True/False. Indicates whether the logical type is interpreted. */
+  Boolean getUseAvroLogicalTypes();
 
   /** Returns a builder for the load configuration object. */
   Builder toBuilder();
