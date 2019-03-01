@@ -869,9 +869,10 @@ public final class SubscriberGrpc {
      * If the name is not provided in the request, the server will assign a random
      * name for this subscription on the same project as the topic, conforming
      * to the
-     * [resource name format](https://cloud.google.com/pubsub/docs/admin#resource_names).
-     * The generated name is populated in the returned Subscription object.
-     * Note that for REST API requests, you must specify a name in the request.
+     * [resource name
+     * format](https://cloud.google.com/pubsub/docs/admin#resource_names). The
+     * generated name is populated in the returned Subscription object. Note that
+     * for REST API requests, you must specify a name in the request.
      * </pre>
      */
     public void createSubscription(
@@ -1086,9 +1087,10 @@ public final class SubscriberGrpc {
      * the request, the server will assign a random
      * name for this snapshot on the same project as the subscription, conforming
      * to the
-     * [resource name format](https://cloud.google.com/pubsub/docs/admin#resource_names).
-     * The generated name is populated in the returned Snapshot object. Note that
-     * for REST API requests, you must specify a name in the request.
+     * [resource name
+     * format](https://cloud.google.com/pubsub/docs/admin#resource_names). The
+     * generated name is populated in the returned Snapshot object. Note that for
+     * REST API requests, you must specify a name in the request.
      * </pre>
      */
     public void createSnapshot(
@@ -1306,9 +1308,10 @@ public final class SubscriberGrpc {
      * If the name is not provided in the request, the server will assign a random
      * name for this subscription on the same project as the topic, conforming
      * to the
-     * [resource name format](https://cloud.google.com/pubsub/docs/admin#resource_names).
-     * The generated name is populated in the returned Subscription object.
-     * Note that for REST API requests, you must specify a name in the request.
+     * [resource name
+     * format](https://cloud.google.com/pubsub/docs/admin#resource_names). The
+     * generated name is populated in the returned Subscription object. Note that
+     * for REST API requests, you must specify a name in the request.
      * </pre>
      */
     public void createSubscription(
@@ -1555,9 +1558,10 @@ public final class SubscriberGrpc {
      * the request, the server will assign a random
      * name for this snapshot on the same project as the subscription, conforming
      * to the
-     * [resource name format](https://cloud.google.com/pubsub/docs/admin#resource_names).
-     * The generated name is populated in the returned Snapshot object. Note that
-     * for REST API requests, you must specify a name in the request.
+     * [resource name
+     * format](https://cloud.google.com/pubsub/docs/admin#resource_names). The
+     * generated name is populated in the returned Snapshot object. Note that for
+     * REST API requests, you must specify a name in the request.
      * </pre>
      */
     public void createSnapshot(
@@ -1684,9 +1688,10 @@ public final class SubscriberGrpc {
      * If the name is not provided in the request, the server will assign a random
      * name for this subscription on the same project as the topic, conforming
      * to the
-     * [resource name format](https://cloud.google.com/pubsub/docs/admin#resource_names).
-     * The generated name is populated in the returned Subscription object.
-     * Note that for REST API requests, you must specify a name in the request.
+     * [resource name
+     * format](https://cloud.google.com/pubsub/docs/admin#resource_names). The
+     * generated name is populated in the returned Subscription object. Note that
+     * for REST API requests, you must specify a name in the request.
      * </pre>
      */
     public com.google.pubsub.v1.Subscription createSubscription(
@@ -1879,9 +1884,10 @@ public final class SubscriberGrpc {
      * the request, the server will assign a random
      * name for this snapshot on the same project as the subscription, conforming
      * to the
-     * [resource name format](https://cloud.google.com/pubsub/docs/admin#resource_names).
-     * The generated name is populated in the returned Snapshot object. Note that
-     * for REST API requests, you must specify a name in the request.
+     * [resource name
+     * format](https://cloud.google.com/pubsub/docs/admin#resource_names). The
+     * generated name is populated in the returned Snapshot object. Note that for
+     * REST API requests, you must specify a name in the request.
      * </pre>
      */
     public com.google.pubsub.v1.Snapshot createSnapshot(
@@ -1995,9 +2001,10 @@ public final class SubscriberGrpc {
      * If the name is not provided in the request, the server will assign a random
      * name for this subscription on the same project as the topic, conforming
      * to the
-     * [resource name format](https://cloud.google.com/pubsub/docs/admin#resource_names).
-     * The generated name is populated in the returned Subscription object.
-     * Note that for REST API requests, you must specify a name in the request.
+     * [resource name
+     * format](https://cloud.google.com/pubsub/docs/admin#resource_names). The
+     * generated name is populated in the returned Subscription object. Note that
+     * for REST API requests, you must specify a name in the request.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.pubsub.v1.Subscription>
@@ -2195,9 +2202,10 @@ public final class SubscriberGrpc {
      * the request, the server will assign a random
      * name for this snapshot on the same project as the subscription, conforming
      * to the
-     * [resource name format](https://cloud.google.com/pubsub/docs/admin#resource_names).
-     * The generated name is populated in the returned Snapshot object. Note that
-     * for REST API requests, you must specify a name in the request.
+     * [resource name
+     * format](https://cloud.google.com/pubsub/docs/admin#resource_names). The
+     * generated name is populated in the returned Snapshot object. Note that for
+     * REST API requests, you must specify a name in the request.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<com.google.pubsub.v1.Snapshot>
