@@ -7,7 +7,8 @@ package com.google.cloud.scheduler.v1beta1;
  *
  *
  * <pre>
- * Request message for [ResumeJob][google.cloud.scheduler.v1beta1.CloudScheduler.ResumeJob].
+ * Request message for
+ * [ResumeJob][google.cloud.scheduler.v1beta1.CloudScheduler.ResumeJob].
  * </pre>
  *
  * Protobuf type {@code google.cloud.scheduler.v1beta1.ResumeJobRequest}
@@ -302,7 +303,8 @@ public final class ResumeJobRequest extends com.google.protobuf.GeneratedMessage
    *
    *
    * <pre>
-   * Request message for [ResumeJob][google.cloud.scheduler.v1beta1.CloudScheduler.ResumeJob].
+   * Request message for
+   * [ResumeJob][google.cloud.scheduler.v1beta1.CloudScheduler.ResumeJob].
    * </pre>
    *
    * Protobuf type {@code google.cloud.scheduler.v1beta1.ResumeJobRequest}

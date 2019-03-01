@@ -17,7 +17,8 @@ public interface JobOrBuilder
    * * `PROJECT_ID` can contain letters ([A-Za-z]), numbers ([0-9]),
    *    hyphens (-), colons (:), or periods (.).
    *    For more information, see
-   *    [Identifying projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
+   *    [Identifying
+   *    projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
    * * `LOCATION_ID` is the canonical ID for the job's location.
    *    The list of available locations can be obtained by calling
    *    [ListLocations][google.cloud.location.Locations.ListLocations].
@@ -38,7 +39,8 @@ public interface JobOrBuilder
    * * `PROJECT_ID` can contain letters ([A-Za-z]), numbers ([0-9]),
    *    hyphens (-), colons (:), or periods (.).
    *    For more information, see
-   *    [Identifying projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
+   *    [Identifying
+   *    projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects)
    * * `LOCATION_ID` is the canonical ID for the job's location.
    *    The list of available locations can be obtained by calling
    *    [ListLocations][google.cloud.location.Locations.ListLocations].
@@ -181,13 +183,15 @@ public interface JobOrBuilder
    * execution will not start until `16:15`.
    * A scheduled start time will be delayed if the previous
    * execution has not ended when its scheduled time occurs.
-   * If [retry_count][google.cloud.scheduler.v1beta1.RetryConfig.retry_count] &gt; 0 and a job attempt fails,
-   * the job will be tried a total of [retry_count][google.cloud.scheduler.v1beta1.RetryConfig.retry_count]
+   * If [retry_count][google.cloud.scheduler.v1beta1.RetryConfig.retry_count] &gt;
+   * 0 and a job attempt fails, the job will be tried a total of
+   * [retry_count][google.cloud.scheduler.v1beta1.RetryConfig.retry_count]
    * times, with exponential backoff, until the next scheduled start
    * time.
    * The schedule can be either of the following types:
    * * [Crontab](http://en.wikipedia.org/wiki/Cron#Overview)
-   * * English-like [schedule](https://cloud.google.com/scheduler/docs/configuring/cron-job-schedules)
+   * * English-like
+   * [schedule](https://cloud.google.com/scheduler/docs/configuring/cron-job-schedules)
    * </pre>
    *
    * <code>string schedule = 20;</code>
@@ -207,13 +211,15 @@ public interface JobOrBuilder
    * execution will not start until `16:15`.
    * A scheduled start time will be delayed if the previous
    * execution has not ended when its scheduled time occurs.
-   * If [retry_count][google.cloud.scheduler.v1beta1.RetryConfig.retry_count] &gt; 0 and a job attempt fails,
-   * the job will be tried a total of [retry_count][google.cloud.scheduler.v1beta1.RetryConfig.retry_count]
+   * If [retry_count][google.cloud.scheduler.v1beta1.RetryConfig.retry_count] &gt;
+   * 0 and a job attempt fails, the job will be tried a total of
+   * [retry_count][google.cloud.scheduler.v1beta1.RetryConfig.retry_count]
    * times, with exponential backoff, until the next scheduled start
    * time.
    * The schedule can be either of the following types:
    * * [Crontab](http://en.wikipedia.org/wiki/Cron#Overview)
-   * * English-like [schedule](https://cloud.google.com/scheduler/docs/configuring/cron-job-schedules)
+   * * English-like
+   * [schedule](https://cloud.google.com/scheduler/docs/configuring/cron-job-schedules)
    * </pre>
    *
    * <code>string schedule = 20;</code>
@@ -225,8 +231,9 @@ public interface JobOrBuilder
    *
    * <pre>
    * Specifies the time zone to be used in interpreting
-   * [schedule][google.cloud.scheduler.v1beta1.Job.schedule]. The value of this field must be a time
-   * zone name from the [tz database](http://en.wikipedia.org/wiki/Tz_database).
+   * [schedule][google.cloud.scheduler.v1beta1.Job.schedule]. The value of this
+   * field must be a time zone name from the [tz
+   * database](http://en.wikipedia.org/wiki/Tz_database).
    * Note that some time zones include a provision for
    * daylight savings time. The rules for daylight saving time are
    * determined by the chosen tz. For UTC use the string "utc". If a
@@ -242,8 +249,9 @@ public interface JobOrBuilder
    *
    * <pre>
    * Specifies the time zone to be used in interpreting
-   * [schedule][google.cloud.scheduler.v1beta1.Job.schedule]. The value of this field must be a time
-   * zone name from the [tz database](http://en.wikipedia.org/wiki/Tz_database).
+   * [schedule][google.cloud.scheduler.v1beta1.Job.schedule]. The value of this
+   * field must be a time zone name from the [tz
+   * database](http://en.wikipedia.org/wiki/Tz_database).
    * Note that some time zones include a provision for
    * daylight savings time. The rules for daylight saving time are
    * determined by the chosen tz. For UTC use the string "utc". If a
