@@ -159,17 +159,12 @@ public class Subscriber extends AbstractApiService {
           });
     }
 
-    TransportChannelProvider channelProvider = builder.channelProvider;
-    if (channelProvider.acceptsPoolSize()) {
-      channelProvider = channelProvider.withPoolSize(numPullers);
-    }
-
     try {
       this.subStubSettings =
           SubscriberStubSettings.newBuilder()
               .setExecutorProvider(systemExecutorProvider)
               .setCredentialsProvider(builder.credentialsProvider)
-              .setTransportChannelProvider(channelProvider)
+              .setTransportChannelProvider(builder.channelProvider)
               .setHeaderProvider(builder.headerProvider)
               .applyToAllUnaryMethods(
                   new ApiFunction<UnaryCallSettings.Builder<?, ?>, Void>() {
