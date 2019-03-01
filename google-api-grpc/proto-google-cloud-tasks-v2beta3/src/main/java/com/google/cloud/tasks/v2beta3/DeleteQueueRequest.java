@@ -7,7 +7,8 @@ package com.google.cloud.tasks.v2beta3;
  *
  *
  * <pre>
- * Request message for [DeleteQueue][google.cloud.tasks.v2beta3.CloudTasks.DeleteQueue].
+ * Request message for
+ * [DeleteQueue][google.cloud.tasks.v2beta3.CloudTasks.DeleteQueue].
  * </pre>
  *
  * Protobuf type {@code google.cloud.tasks.v2beta3.DeleteQueueRequest}
@@ -302,7 +303,8 @@ public final class DeleteQueueRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Request message for [DeleteQueue][google.cloud.tasks.v2beta3.CloudTasks.DeleteQueue].
+   * Request message for
+   * [DeleteQueue][google.cloud.tasks.v2beta3.CloudTasks.DeleteQueue].
    * </pre>
    *
    * Protobuf type {@code google.cloud.tasks.v2beta3.DeleteQueueRequest}
