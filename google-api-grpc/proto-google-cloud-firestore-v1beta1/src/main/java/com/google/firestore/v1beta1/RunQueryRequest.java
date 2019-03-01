@@ -7,7 +7,8 @@ package com.google.firestore.v1beta1;
  *
  *
  * <pre>
- * The request for [Firestore.RunQuery][google.firestore.v1beta1.Firestore.RunQuery].
+ * The request for
+ * [Firestore.RunQuery][google.firestore.v1beta1.Firestore.RunQuery].
  * </pre>
  *
  * Protobuf type {@code google.firestore.v1beta1.RunQueryRequest}
@@ -687,7 +688,8 @@ public final class RunQueryRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * The request for [Firestore.RunQuery][google.firestore.v1beta1.Firestore.RunQuery].
+   * The request for
+   * [Firestore.RunQuery][google.firestore.v1beta1.Firestore.RunQuery].
    * </pre>
    *
    * Protobuf type {@code google.firestore.v1beta1.RunQueryRequest}

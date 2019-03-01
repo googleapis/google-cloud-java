@@ -52,8 +52,9 @@ public interface WriteResultOrBuilder
    *
    *
    * <pre>
-   * The results of applying each [DocumentTransform.FieldTransform][google.firestore.v1beta1.DocumentTransform.FieldTransform], in the
-   * same order.
+   * The results of applying each
+   * [DocumentTransform.FieldTransform][google.firestore.v1beta1.DocumentTransform.FieldTransform],
+   * in the same order.
    * </pre>
    *
    * <code>repeated .google.firestore.v1beta1.Value transform_results = 2;</code>
@@ -63,8 +64,9 @@ public interface WriteResultOrBuilder
    *
    *
    * <pre>
-   * The results of applying each [DocumentTransform.FieldTransform][google.firestore.v1beta1.DocumentTransform.FieldTransform], in the
-   * same order.
+   * The results of applying each
+   * [DocumentTransform.FieldTransform][google.firestore.v1beta1.DocumentTransform.FieldTransform],
+   * in the same order.
    * </pre>
    *
    * <code>repeated .google.firestore.v1beta1.Value transform_results = 2;</code>
@@ -74,8 +76,9 @@ public interface WriteResultOrBuilder
    *
    *
    * <pre>
-   * The results of applying each [DocumentTransform.FieldTransform][google.firestore.v1beta1.DocumentTransform.FieldTransform], in the
-   * same order.
+   * The results of applying each
+   * [DocumentTransform.FieldTransform][google.firestore.v1beta1.DocumentTransform.FieldTransform],
+   * in the same order.
    * </pre>
    *
    * <code>repeated .google.firestore.v1beta1.Value transform_results = 2;</code>
@@ -85,8 +88,9 @@ public interface WriteResultOrBuilder
    *
    *
    * <pre>
-   * The results of applying each [DocumentTransform.FieldTransform][google.firestore.v1beta1.DocumentTransform.FieldTransform], in the
-   * same order.
+   * The results of applying each
+   * [DocumentTransform.FieldTransform][google.firestore.v1beta1.DocumentTransform.FieldTransform],
+   * in the same order.
    * </pre>
    *
    * <code>repeated .google.firestore.v1beta1.Value transform_results = 2;</code>
@@ -97,8 +101,9 @@ public interface WriteResultOrBuilder
    *
    *
    * <pre>
-   * The results of applying each [DocumentTransform.FieldTransform][google.firestore.v1beta1.DocumentTransform.FieldTransform], in the
-   * same order.
+   * The results of applying each
+   * [DocumentTransform.FieldTransform][google.firestore.v1beta1.DocumentTransform.FieldTransform],
+   * in the same order.
    * </pre>
    *
    * <code>repeated .google.firestore.v1beta1.Value transform_results = 2;</code>

@@ -7,7 +7,8 @@ package com.google.firestore.v1;
  *
  *
  * <pre>
- * The request for [Firestore.BatchGetDocuments][google.firestore.v1.Firestore.BatchGetDocuments].
+ * The request for
+ * [Firestore.BatchGetDocuments][google.firestore.v1.Firestore.BatchGetDocuments].
  * </pre>
  *
  * Protobuf type {@code google.firestore.v1.BatchGetDocumentsRequest}
@@ -723,7 +724,8 @@ public final class BatchGetDocumentsRequest extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * The request for [Firestore.BatchGetDocuments][google.firestore.v1.Firestore.BatchGetDocuments].
+   * The request for
+   * [Firestore.BatchGetDocuments][google.firestore.v1.Firestore.BatchGetDocuments].
    * </pre>
    *
    * Protobuf type {@code google.firestore.v1.BatchGetDocumentsRequest}

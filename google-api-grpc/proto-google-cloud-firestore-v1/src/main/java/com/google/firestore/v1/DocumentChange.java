@@ -8,10 +8,11 @@ package com.google.firestore.v1;
  *
  * <pre>
  * A [Document][google.firestore.v1.Document] has changed.
- * May be the result of multiple [writes][google.firestore.v1.Write], including deletes, that
- * ultimately resulted in a new value for the [Document][google.firestore.v1.Document].
- * Multiple [DocumentChange][google.firestore.v1.DocumentChange] messages may be returned for the same logical
- * change, if multiple targets are affected.
+ * May be the result of multiple [writes][google.firestore.v1.Write], including
+ * deletes, that ultimately resulted in a new value for the
+ * [Document][google.firestore.v1.Document].
+ * Multiple [DocumentChange][google.firestore.v1.DocumentChange] messages may be
+ * returned for the same logical change, if multiple targets are affected.
  * </pre>
  *
  * Protobuf type {@code google.firestore.v1.DocumentChange}
@@ -502,10 +503,11 @@ public final class DocumentChange extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A [Document][google.firestore.v1.Document] has changed.
-   * May be the result of multiple [writes][google.firestore.v1.Write], including deletes, that
-   * ultimately resulted in a new value for the [Document][google.firestore.v1.Document].
-   * Multiple [DocumentChange][google.firestore.v1.DocumentChange] messages may be returned for the same logical
-   * change, if multiple targets are affected.
+   * May be the result of multiple [writes][google.firestore.v1.Write], including
+   * deletes, that ultimately resulted in a new value for the
+   * [Document][google.firestore.v1.Document].
+   * Multiple [DocumentChange][google.firestore.v1.DocumentChange] messages may be
+   * returned for the same logical change, if multiple targets are affected.
    * </pre>
    *
    * Protobuf type {@code google.firestore.v1.DocumentChange}

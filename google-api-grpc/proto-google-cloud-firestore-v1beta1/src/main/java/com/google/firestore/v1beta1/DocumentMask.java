@@ -11,7 +11,8 @@ package com.google.firestore.v1beta1;
  * Used to restrict a get or update operation on a document to a subset of its
  * fields.
  * This is different from standard field masks, as this is always scoped to a
- * [Document][google.firestore.v1beta1.Document], and takes in account the dynamic nature of [Value][google.firestore.v1beta1.Value].
+ * [Document][google.firestore.v1beta1.Document], and takes in account the
+ * dynamic nature of [Value][google.firestore.v1beta1.Value].
  * </pre>
  *
  * Protobuf type {@code google.firestore.v1beta1.DocumentMask}
@@ -107,7 +108,8 @@ public final class DocumentMask extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The list of field paths in the mask. See [Document.fields][google.firestore.v1beta1.Document.fields] for a field
+   * The list of field paths in the mask. See
+   * [Document.fields][google.firestore.v1beta1.Document.fields] for a field
    * path syntax reference.
    * </pre>
    *
@@ -120,7 +122,8 @@ public final class DocumentMask extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The list of field paths in the mask. See [Document.fields][google.firestore.v1beta1.Document.fields] for a field
+   * The list of field paths in the mask. See
+   * [Document.fields][google.firestore.v1beta1.Document.fields] for a field
    * path syntax reference.
    * </pre>
    *
@@ -133,7 +136,8 @@ public final class DocumentMask extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The list of field paths in the mask. See [Document.fields][google.firestore.v1beta1.Document.fields] for a field
+   * The list of field paths in the mask. See
+   * [Document.fields][google.firestore.v1beta1.Document.fields] for a field
    * path syntax reference.
    * </pre>
    *
@@ -146,7 +150,8 @@ public final class DocumentMask extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The list of field paths in the mask. See [Document.fields][google.firestore.v1beta1.Document.fields] for a field
+   * The list of field paths in the mask. See
+   * [Document.fields][google.firestore.v1beta1.Document.fields] for a field
    * path syntax reference.
    * </pre>
    *
@@ -331,7 +336,8 @@ public final class DocumentMask extends com.google.protobuf.GeneratedMessageV3
    * Used to restrict a get or update operation on a document to a subset of its
    * fields.
    * This is different from standard field masks, as this is always scoped to a
-   * [Document][google.firestore.v1beta1.Document], and takes in account the dynamic nature of [Value][google.firestore.v1beta1.Value].
+   * [Document][google.firestore.v1beta1.Document], and takes in account the
+   * dynamic nature of [Value][google.firestore.v1beta1.Value].
    * </pre>
    *
    * Protobuf type {@code google.firestore.v1beta1.DocumentMask}
@@ -510,7 +516,8 @@ public final class DocumentMask extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of field paths in the mask. See [Document.fields][google.firestore.v1beta1.Document.fields] for a field
+     * The list of field paths in the mask. See
+     * [Document.fields][google.firestore.v1beta1.Document.fields] for a field
      * path syntax reference.
      * </pre>
      *
@@ -523,7 +530,8 @@ public final class DocumentMask extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of field paths in the mask. See [Document.fields][google.firestore.v1beta1.Document.fields] for a field
+     * The list of field paths in the mask. See
+     * [Document.fields][google.firestore.v1beta1.Document.fields] for a field
      * path syntax reference.
      * </pre>
      *
@@ -536,7 +544,8 @@ public final class DocumentMask extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of field paths in the mask. See [Document.fields][google.firestore.v1beta1.Document.fields] for a field
+     * The list of field paths in the mask. See
+     * [Document.fields][google.firestore.v1beta1.Document.fields] for a field
      * path syntax reference.
      * </pre>
      *
@@ -549,7 +558,8 @@ public final class DocumentMask extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of field paths in the mask. See [Document.fields][google.firestore.v1beta1.Document.fields] for a field
+     * The list of field paths in the mask. See
+     * [Document.fields][google.firestore.v1beta1.Document.fields] for a field
      * path syntax reference.
      * </pre>
      *
@@ -562,7 +572,8 @@ public final class DocumentMask extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of field paths in the mask. See [Document.fields][google.firestore.v1beta1.Document.fields] for a field
+     * The list of field paths in the mask. See
+     * [Document.fields][google.firestore.v1beta1.Document.fields] for a field
      * path syntax reference.
      * </pre>
      *
@@ -581,7 +592,8 @@ public final class DocumentMask extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of field paths in the mask. See [Document.fields][google.firestore.v1beta1.Document.fields] for a field
+     * The list of field paths in the mask. See
+     * [Document.fields][google.firestore.v1beta1.Document.fields] for a field
      * path syntax reference.
      * </pre>
      *
@@ -600,7 +612,8 @@ public final class DocumentMask extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of field paths in the mask. See [Document.fields][google.firestore.v1beta1.Document.fields] for a field
+     * The list of field paths in the mask. See
+     * [Document.fields][google.firestore.v1beta1.Document.fields] for a field
      * path syntax reference.
      * </pre>
      *
@@ -616,7 +629,8 @@ public final class DocumentMask extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of field paths in the mask. See [Document.fields][google.firestore.v1beta1.Document.fields] for a field
+     * The list of field paths in the mask. See
+     * [Document.fields][google.firestore.v1beta1.Document.fields] for a field
      * path syntax reference.
      * </pre>
      *
@@ -632,7 +646,8 @@ public final class DocumentMask extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The list of field paths in the mask. See [Document.fields][google.firestore.v1beta1.Document.fields] for a field
+     * The list of field paths in the mask. See
+     * [Document.fields][google.firestore.v1beta1.Document.fields] for a field
      * path syntax reference.
      * </pre>
      *

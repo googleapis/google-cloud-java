@@ -2161,7 +2161,8 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A resume token from a prior [TargetChange][google.firestore.v1.TargetChange] for an identical target.
+   * A resume token from a prior
+   * [TargetChange][google.firestore.v1.TargetChange] for an identical target.
    * Using a resume token with a different target is unsupported and may fail.
    * </pre>
    *
@@ -3160,7 +3161,8 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A resume token from a prior [TargetChange][google.firestore.v1.TargetChange] for an identical target.
+     * A resume token from a prior
+     * [TargetChange][google.firestore.v1.TargetChange] for an identical target.
      * Using a resume token with a different target is unsupported and may fail.
      * </pre>
      *
@@ -3176,7 +3178,8 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A resume token from a prior [TargetChange][google.firestore.v1.TargetChange] for an identical target.
+     * A resume token from a prior
+     * [TargetChange][google.firestore.v1.TargetChange] for an identical target.
      * Using a resume token with a different target is unsupported and may fail.
      * </pre>
      *
@@ -3195,7 +3198,8 @@ public final class Target extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * A resume token from a prior [TargetChange][google.firestore.v1.TargetChange] for an identical target.
+     * A resume token from a prior
+     * [TargetChange][google.firestore.v1.TargetChange] for an identical target.
      * Using a resume token with a different target is unsupported and may fail.
      * </pre>
      *

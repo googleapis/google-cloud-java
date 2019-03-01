@@ -168,8 +168,9 @@ public final class WriteResult extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The results of applying each [DocumentTransform.FieldTransform][google.firestore.v1beta1.DocumentTransform.FieldTransform], in the
-   * same order.
+   * The results of applying each
+   * [DocumentTransform.FieldTransform][google.firestore.v1beta1.DocumentTransform.FieldTransform],
+   * in the same order.
    * </pre>
    *
    * <code>repeated .google.firestore.v1beta1.Value transform_results = 2;</code>
@@ -181,8 +182,9 @@ public final class WriteResult extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The results of applying each [DocumentTransform.FieldTransform][google.firestore.v1beta1.DocumentTransform.FieldTransform], in the
-   * same order.
+   * The results of applying each
+   * [DocumentTransform.FieldTransform][google.firestore.v1beta1.DocumentTransform.FieldTransform],
+   * in the same order.
    * </pre>
    *
    * <code>repeated .google.firestore.v1beta1.Value transform_results = 2;</code>
@@ -195,8 +197,9 @@ public final class WriteResult extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The results of applying each [DocumentTransform.FieldTransform][google.firestore.v1beta1.DocumentTransform.FieldTransform], in the
-   * same order.
+   * The results of applying each
+   * [DocumentTransform.FieldTransform][google.firestore.v1beta1.DocumentTransform.FieldTransform],
+   * in the same order.
    * </pre>
    *
    * <code>repeated .google.firestore.v1beta1.Value transform_results = 2;</code>
@@ -208,8 +211,9 @@ public final class WriteResult extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The results of applying each [DocumentTransform.FieldTransform][google.firestore.v1beta1.DocumentTransform.FieldTransform], in the
-   * same order.
+   * The results of applying each
+   * [DocumentTransform.FieldTransform][google.firestore.v1beta1.DocumentTransform.FieldTransform],
+   * in the same order.
    * </pre>
    *
    * <code>repeated .google.firestore.v1beta1.Value transform_results = 2;</code>
@@ -221,8 +225,9 @@ public final class WriteResult extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * The results of applying each [DocumentTransform.FieldTransform][google.firestore.v1beta1.DocumentTransform.FieldTransform], in the
-   * same order.
+   * The results of applying each
+   * [DocumentTransform.FieldTransform][google.firestore.v1beta1.DocumentTransform.FieldTransform],
+   * in the same order.
    * </pre>
    *
    * <code>repeated .google.firestore.v1beta1.Value transform_results = 2;</code>
@@ -846,8 +851,9 @@ public final class WriteResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The results of applying each [DocumentTransform.FieldTransform][google.firestore.v1beta1.DocumentTransform.FieldTransform], in the
-     * same order.
+     * The results of applying each
+     * [DocumentTransform.FieldTransform][google.firestore.v1beta1.DocumentTransform.FieldTransform],
+     * in the same order.
      * </pre>
      *
      * <code>repeated .google.firestore.v1beta1.Value transform_results = 2;</code>
@@ -863,8 +869,9 @@ public final class WriteResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The results of applying each [DocumentTransform.FieldTransform][google.firestore.v1beta1.DocumentTransform.FieldTransform], in the
-     * same order.
+     * The results of applying each
+     * [DocumentTransform.FieldTransform][google.firestore.v1beta1.DocumentTransform.FieldTransform],
+     * in the same order.
      * </pre>
      *
      * <code>repeated .google.firestore.v1beta1.Value transform_results = 2;</code>
@@ -880,8 +887,9 @@ public final class WriteResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The results of applying each [DocumentTransform.FieldTransform][google.firestore.v1beta1.DocumentTransform.FieldTransform], in the
-     * same order.
+     * The results of applying each
+     * [DocumentTransform.FieldTransform][google.firestore.v1beta1.DocumentTransform.FieldTransform],
+     * in the same order.
      * </pre>
      *
      * <code>repeated .google.firestore.v1beta1.Value transform_results = 2;</code>
@@ -897,8 +905,9 @@ public final class WriteResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The results of applying each [DocumentTransform.FieldTransform][google.firestore.v1beta1.DocumentTransform.FieldTransform], in the
-     * same order.
+     * The results of applying each
+     * [DocumentTransform.FieldTransform][google.firestore.v1beta1.DocumentTransform.FieldTransform],
+     * in the same order.
      * </pre>
      *
      * <code>repeated .google.firestore.v1beta1.Value transform_results = 2;</code>
@@ -920,8 +929,9 @@ public final class WriteResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The results of applying each [DocumentTransform.FieldTransform][google.firestore.v1beta1.DocumentTransform.FieldTransform], in the
-     * same order.
+     * The results of applying each
+     * [DocumentTransform.FieldTransform][google.firestore.v1beta1.DocumentTransform.FieldTransform],
+     * in the same order.
      * </pre>
      *
      * <code>repeated .google.firestore.v1beta1.Value transform_results = 2;</code>
@@ -941,8 +951,9 @@ public final class WriteResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The results of applying each [DocumentTransform.FieldTransform][google.firestore.v1beta1.DocumentTransform.FieldTransform], in the
-     * same order.
+     * The results of applying each
+     * [DocumentTransform.FieldTransform][google.firestore.v1beta1.DocumentTransform.FieldTransform],
+     * in the same order.
      * </pre>
      *
      * <code>repeated .google.firestore.v1beta1.Value transform_results = 2;</code>
@@ -964,8 +975,9 @@ public final class WriteResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The results of applying each [DocumentTransform.FieldTransform][google.firestore.v1beta1.DocumentTransform.FieldTransform], in the
-     * same order.
+     * The results of applying each
+     * [DocumentTransform.FieldTransform][google.firestore.v1beta1.DocumentTransform.FieldTransform],
+     * in the same order.
      * </pre>
      *
      * <code>repeated .google.firestore.v1beta1.Value transform_results = 2;</code>
@@ -987,8 +999,9 @@ public final class WriteResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The results of applying each [DocumentTransform.FieldTransform][google.firestore.v1beta1.DocumentTransform.FieldTransform], in the
-     * same order.
+     * The results of applying each
+     * [DocumentTransform.FieldTransform][google.firestore.v1beta1.DocumentTransform.FieldTransform],
+     * in the same order.
      * </pre>
      *
      * <code>repeated .google.firestore.v1beta1.Value transform_results = 2;</code>
@@ -1007,8 +1020,9 @@ public final class WriteResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The results of applying each [DocumentTransform.FieldTransform][google.firestore.v1beta1.DocumentTransform.FieldTransform], in the
-     * same order.
+     * The results of applying each
+     * [DocumentTransform.FieldTransform][google.firestore.v1beta1.DocumentTransform.FieldTransform],
+     * in the same order.
      * </pre>
      *
      * <code>repeated .google.firestore.v1beta1.Value transform_results = 2;</code>
@@ -1028,8 +1042,9 @@ public final class WriteResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The results of applying each [DocumentTransform.FieldTransform][google.firestore.v1beta1.DocumentTransform.FieldTransform], in the
-     * same order.
+     * The results of applying each
+     * [DocumentTransform.FieldTransform][google.firestore.v1beta1.DocumentTransform.FieldTransform],
+     * in the same order.
      * </pre>
      *
      * <code>repeated .google.firestore.v1beta1.Value transform_results = 2;</code>
@@ -1049,8 +1064,9 @@ public final class WriteResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The results of applying each [DocumentTransform.FieldTransform][google.firestore.v1beta1.DocumentTransform.FieldTransform], in the
-     * same order.
+     * The results of applying each
+     * [DocumentTransform.FieldTransform][google.firestore.v1beta1.DocumentTransform.FieldTransform],
+     * in the same order.
      * </pre>
      *
      * <code>repeated .google.firestore.v1beta1.Value transform_results = 2;</code>
@@ -1069,8 +1085,9 @@ public final class WriteResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The results of applying each [DocumentTransform.FieldTransform][google.firestore.v1beta1.DocumentTransform.FieldTransform], in the
-     * same order.
+     * The results of applying each
+     * [DocumentTransform.FieldTransform][google.firestore.v1beta1.DocumentTransform.FieldTransform],
+     * in the same order.
      * </pre>
      *
      * <code>repeated .google.firestore.v1beta1.Value transform_results = 2;</code>
@@ -1089,8 +1106,9 @@ public final class WriteResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The results of applying each [DocumentTransform.FieldTransform][google.firestore.v1beta1.DocumentTransform.FieldTransform], in the
-     * same order.
+     * The results of applying each
+     * [DocumentTransform.FieldTransform][google.firestore.v1beta1.DocumentTransform.FieldTransform],
+     * in the same order.
      * </pre>
      *
      * <code>repeated .google.firestore.v1beta1.Value transform_results = 2;</code>
@@ -1102,8 +1120,9 @@ public final class WriteResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The results of applying each [DocumentTransform.FieldTransform][google.firestore.v1beta1.DocumentTransform.FieldTransform], in the
-     * same order.
+     * The results of applying each
+     * [DocumentTransform.FieldTransform][google.firestore.v1beta1.DocumentTransform.FieldTransform],
+     * in the same order.
      * </pre>
      *
      * <code>repeated .google.firestore.v1beta1.Value transform_results = 2;</code>
@@ -1119,8 +1138,9 @@ public final class WriteResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The results of applying each [DocumentTransform.FieldTransform][google.firestore.v1beta1.DocumentTransform.FieldTransform], in the
-     * same order.
+     * The results of applying each
+     * [DocumentTransform.FieldTransform][google.firestore.v1beta1.DocumentTransform.FieldTransform],
+     * in the same order.
      * </pre>
      *
      * <code>repeated .google.firestore.v1beta1.Value transform_results = 2;</code>
@@ -1137,8 +1157,9 @@ public final class WriteResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The results of applying each [DocumentTransform.FieldTransform][google.firestore.v1beta1.DocumentTransform.FieldTransform], in the
-     * same order.
+     * The results of applying each
+     * [DocumentTransform.FieldTransform][google.firestore.v1beta1.DocumentTransform.FieldTransform],
+     * in the same order.
      * </pre>
      *
      * <code>repeated .google.firestore.v1beta1.Value transform_results = 2;</code>
@@ -1151,8 +1172,9 @@ public final class WriteResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The results of applying each [DocumentTransform.FieldTransform][google.firestore.v1beta1.DocumentTransform.FieldTransform], in the
-     * same order.
+     * The results of applying each
+     * [DocumentTransform.FieldTransform][google.firestore.v1beta1.DocumentTransform.FieldTransform],
+     * in the same order.
      * </pre>
      *
      * <code>repeated .google.firestore.v1beta1.Value transform_results = 2;</code>
@@ -1165,8 +1187,9 @@ public final class WriteResult extends com.google.protobuf.GeneratedMessageV3
      *
      *
      * <pre>
-     * The results of applying each [DocumentTransform.FieldTransform][google.firestore.v1beta1.DocumentTransform.FieldTransform], in the
-     * same order.
+     * The results of applying each
+     * [DocumentTransform.FieldTransform][google.firestore.v1beta1.DocumentTransform.FieldTransform],
+     * in the same order.
      * </pre>
      *
      * <code>repeated .google.firestore.v1beta1.Value transform_results = 2;</code>
