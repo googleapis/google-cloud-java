@@ -762,7 +762,10 @@ public class GrpcResultSetTest {
     consumer.onCompleted();
 
     assertThat(resultSet.next()).isTrue();
-    assertThat(resultSet.getDoubleArray(0)).isEqualTo(doubleArray, 0.0);
+    assertThat(resultSet.getDoubleArray(0))
+        .usingTolerance(0.0)
+        .containsExactly(doubleArray)
+        .inOrder();
   }
 
   @Test
