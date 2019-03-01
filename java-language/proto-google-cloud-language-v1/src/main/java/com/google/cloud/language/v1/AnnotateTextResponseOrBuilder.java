@@ -227,7 +227,8 @@ public interface AnnotateTextResponseOrBuilder
    * <pre>
    * The language of the text, which will be the same as the language specified
    * in the request or, if not specified, the automatically-detected language.
-   * See [Document.language][google.cloud.language.v1.Document.language] field for more details.
+   * See [Document.language][google.cloud.language.v1.Document.language] field
+   * for more details.
    * </pre>
    *
    * <code>string language = 5;</code>
@@ -239,7 +240,8 @@ public interface AnnotateTextResponseOrBuilder
    * <pre>
    * The language of the text, which will be the same as the language specified
    * in the request or, if not specified, the automatically-detected language.
-   * See [Document.language][google.cloud.language.v1.Document.language] field for more details.
+   * See [Document.language][google.cloud.language.v1.Document.language] field
+   * for more details.
    * </pre>
    *
    * <code>string language = 5;</code>

@@ -443,8 +443,10 @@ public final class LanguageServiceGrpc {
      *
      *
      * <pre>
-     * Finds entities, similar to [AnalyzeEntities][google.cloud.language.v1beta2.LanguageService.AnalyzeEntities] in the text and analyzes
-     * sentiment associated with each entity and its mentions.
+     * Finds entities, similar to
+     * [AnalyzeEntities][google.cloud.language.v1beta2.LanguageService.AnalyzeEntities]
+     * in the text and analyzes sentiment associated with each entity and its
+     * mentions.
      * </pre>
      */
     public void analyzeEntitySentiment(
@@ -612,8 +614,10 @@ public final class LanguageServiceGrpc {
      *
      *
      * <pre>
-     * Finds entities, similar to [AnalyzeEntities][google.cloud.language.v1beta2.LanguageService.AnalyzeEntities] in the text and analyzes
-     * sentiment associated with each entity and its mentions.
+     * Finds entities, similar to
+     * [AnalyzeEntities][google.cloud.language.v1beta2.LanguageService.AnalyzeEntities]
+     * in the text and analyzes sentiment associated with each entity and its
+     * mentions.
      * </pre>
      */
     public void analyzeEntitySentiment(
@@ -738,8 +742,10 @@ public final class LanguageServiceGrpc {
      *
      *
      * <pre>
-     * Finds entities, similar to [AnalyzeEntities][google.cloud.language.v1beta2.LanguageService.AnalyzeEntities] in the text and analyzes
-     * sentiment associated with each entity and its mentions.
+     * Finds entities, similar to
+     * [AnalyzeEntities][google.cloud.language.v1beta2.LanguageService.AnalyzeEntities]
+     * in the text and analyzes sentiment associated with each entity and its
+     * mentions.
      * </pre>
      */
     public com.google.cloud.language.v1beta2.AnalyzeEntitySentimentResponse analyzeEntitySentiment(
@@ -849,8 +855,10 @@ public final class LanguageServiceGrpc {
      *
      *
      * <pre>
-     * Finds entities, similar to [AnalyzeEntities][google.cloud.language.v1beta2.LanguageService.AnalyzeEntities] in the text and analyzes
-     * sentiment associated with each entity and its mentions.
+     * Finds entities, similar to
+     * [AnalyzeEntities][google.cloud.language.v1beta2.LanguageService.AnalyzeEntities]
+     * in the text and analyzes sentiment associated with each entity and its
+     * mentions.
      * </pre>
      */
     public com.google.common.util.concurrent.ListenableFuture<
