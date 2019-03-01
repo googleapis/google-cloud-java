@@ -7,7 +7,8 @@ package com.google.cloud.scheduler.v1beta1;
  *
  *
  * <pre>
- * Request message for [PauseJob][google.cloud.scheduler.v1beta1.CloudScheduler.PauseJob].
+ * Request message for
+ * [PauseJob][google.cloud.scheduler.v1beta1.CloudScheduler.PauseJob].
  * </pre>
  *
  * Protobuf type {@code google.cloud.scheduler.v1beta1.PauseJobRequest}
@@ -302,7 +303,8 @@ public final class PauseJobRequest extends com.google.protobuf.GeneratedMessageV
    *
    *
    * <pre>
-   * Request message for [PauseJob][google.cloud.scheduler.v1beta1.CloudScheduler.PauseJob].
+   * Request message for
+   * [PauseJob][google.cloud.scheduler.v1beta1.CloudScheduler.PauseJob].
    * </pre>
    *
    * Protobuf type {@code google.cloud.scheduler.v1beta1.PauseJobRequest}

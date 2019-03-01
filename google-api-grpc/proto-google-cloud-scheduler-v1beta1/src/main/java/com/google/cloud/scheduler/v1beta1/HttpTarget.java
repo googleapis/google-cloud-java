@@ -8,8 +8,9 @@ package com.google.cloud.scheduler.v1beta1;
  *
  * <pre>
  * Http target. The job will be pushed to the job handler by means of
- * an HTTP request via an [http_method][google.cloud.scheduler.v1beta1.HttpTarget.http_method] such as HTTP
- * POST, HTTP GET, etc. The job is acknowledged by means of an HTTP
+ * an HTTP request via an
+ * [http_method][google.cloud.scheduler.v1beta1.HttpTarget.http_method] such as
+ * HTTP POST, HTTP GET, etc. The job is acknowledged by means of an HTTP
  * response code in the range [200 - 299]. A failure to receive a response
  * constitutes a failed execution. For a redirected request, the response
  * returned by the redirected request is considered.
@@ -585,8 +586,9 @@ public final class HttpTarget extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Http target. The job will be pushed to the job handler by means of
-   * an HTTP request via an [http_method][google.cloud.scheduler.v1beta1.HttpTarget.http_method] such as HTTP
-   * POST, HTTP GET, etc. The job is acknowledged by means of an HTTP
+   * an HTTP request via an
+   * [http_method][google.cloud.scheduler.v1beta1.HttpTarget.http_method] such as
+   * HTTP POST, HTTP GET, etc. The job is acknowledged by means of an HTTP
    * response code in the range [200 - 299]. A failure to receive a response
    * constitutes a failed execution. For a redirected request, the response
    * returned by the redirected request is considered.
