@@ -52,6 +52,7 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
   private final EncryptionConfiguration destinationEncryptionConfiguration;
   private final TimePartitioning timePartitioning;
   private final Clustering clustering;
+  private final Boolean useAvroLogicalTypes;
 
   public static final class Builder implements LoadConfiguration.Builder {
 
@@ -68,6 +69,7 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
     private EncryptionConfiguration destinationEncryptionConfiguration;
     private TimePartitioning timePartitioning;
     private Clustering clustering;
+    private Boolean useAvroLogicalTypes;
 
     private Builder() {}
 
@@ -86,6 +88,7 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
           writeChannelConfiguration.destinationEncryptionConfiguration;
       this.timePartitioning = writeChannelConfiguration.timePartitioning;
       this.clustering = writeChannelConfiguration.clustering;
+      this.useAvroLogicalTypes = writeChannelConfiguration.useAvroLogicalTypes;
     }
 
     private Builder(com.google.api.services.bigquery.model.JobConfiguration configurationPb) {
@@ -158,6 +161,7 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
       if (loadConfigurationPb.getClustering() != null) {
         this.clustering = Clustering.fromPb(loadConfigurationPb.getClustering());
       }
+      this.useAvroLogicalTypes = loadConfigurationPb.getUseAvroLogicalTypes();
     }
 
     @Override
@@ -241,6 +245,12 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
     }
 
     @Override
+    public Builder setUseAvroLogicalTypes(Boolean useAvroLogicalTypes) {
+      this.useAvroLogicalTypes = useAvroLogicalTypes;
+      return this;
+    }
+
+    @Override
     public WriteChannelConfiguration build() {
       return new WriteChannelConfiguration(this);
     }
@@ -260,6 +270,7 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
     this.destinationEncryptionConfiguration = builder.destinationEncryptionConfiguration;
     this.timePartitioning = builder.timePartitioning;
     this.clustering = builder.clustering;
+    this.useAvroLogicalTypes = builder.useAvroLogicalTypes;
   }
 
   @Override
@@ -340,6 +351,11 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
   }
 
   @Override
+  public Boolean getUseAvroLogicalTypes() {
+    return useAvroLogicalTypes;
+  }
+
+  @Override
   public Builder toBuilder() {
     return new Builder(this);
   }
@@ -358,7 +374,8 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
         .add("schemaUpdateOptions", schemaUpdateOptions)
         .add("autodetect", autodetect)
         .add("timePartitioning", timePartitioning)
-        .add("clustering", clustering);
+        .add("clustering", clustering)
+        .add("useAvroLogicalTypes", useAvroLogicalTypes);
   }
 
   @Override
@@ -387,7 +404,8 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
         schemaUpdateOptions,
         autodetect,
         timePartitioning,
-        clustering);
+        clustering,
+        useAvroLogicalTypes);
   }
 
   WriteChannelConfiguration setProjectId(String projectId) {
@@ -452,6 +470,7 @@ public final class WriteChannelConfiguration implements LoadConfiguration, Seria
     if (clustering != null) {
       loadConfigurationPb.setClustering(clustering.toPb());
     }
+    loadConfigurationPb.setUseAvroLogicalTypes(useAvroLogicalTypes);
     return new com.google.api.services.bigquery.model.JobConfiguration()
         .setLoad(loadConfigurationPb);
   }
