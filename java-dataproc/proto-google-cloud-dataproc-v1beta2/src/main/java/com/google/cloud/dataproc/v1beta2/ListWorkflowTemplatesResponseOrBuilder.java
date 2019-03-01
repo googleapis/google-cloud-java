@@ -64,8 +64,8 @@ public interface ListWorkflowTemplatesResponseOrBuilder
    *
    *
    * <pre>
-   * Output only. This token is included in the response if there are more results
-   * to fetch. To fetch additional results, provide this value as the
+   * Output only. This token is included in the response if there are more
+   * results to fetch. To fetch additional results, provide this value as the
    * page_token in a subsequent &lt;code&gt;ListWorkflowTemplatesRequest&lt;/code&gt;.
    * </pre>
    *
@@ -76,8 +76,8 @@ public interface ListWorkflowTemplatesResponseOrBuilder
    *
    *
    * <pre>
-   * Output only. This token is included in the response if there are more results
-   * to fetch. To fetch additional results, provide this value as the
+   * Output only. This token is included in the response if there are more
+   * results to fetch. To fetch additional results, provide this value as the
    * page_token in a subsequent &lt;code&gt;ListWorkflowTemplatesRequest&lt;/code&gt;.
    * </pre>
    *

@@ -487,8 +487,10 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
    * Optional. Commands to execute on each node after config is
    * completed. By default, executables are run on master and all worker nodes.
    * You can test a node's `role` metadata to run an executable on
-   * a master or worker node, as shown below using `curl` (you can also use `wget`):
-   *     ROLE=$(curl -H Metadata-Flavor:Google http://metadata/computeMetadata/v1/instance/attributes/dataproc-role)
+   * a master or worker node, as shown below using `curl` (you can also use
+   * `wget`):
+   *     ROLE=$(curl -H Metadata-Flavor:Google
+   *     http://metadata/computeMetadata/v1/instance/attributes/dataproc-role)
    *     if [[ "${ROLE}" == 'Master' ]]; then
    *       ... master specific actions ...
    *     else
@@ -510,8 +512,10 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
    * Optional. Commands to execute on each node after config is
    * completed. By default, executables are run on master and all worker nodes.
    * You can test a node's `role` metadata to run an executable on
-   * a master or worker node, as shown below using `curl` (you can also use `wget`):
-   *     ROLE=$(curl -H Metadata-Flavor:Google http://metadata/computeMetadata/v1/instance/attributes/dataproc-role)
+   * a master or worker node, as shown below using `curl` (you can also use
+   * `wget`):
+   *     ROLE=$(curl -H Metadata-Flavor:Google
+   *     http://metadata/computeMetadata/v1/instance/attributes/dataproc-role)
    *     if [[ "${ROLE}" == 'Master' ]]; then
    *       ... master specific actions ...
    *     else
@@ -533,8 +537,10 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
    * Optional. Commands to execute on each node after config is
    * completed. By default, executables are run on master and all worker nodes.
    * You can test a node's `role` metadata to run an executable on
-   * a master or worker node, as shown below using `curl` (you can also use `wget`):
-   *     ROLE=$(curl -H Metadata-Flavor:Google http://metadata/computeMetadata/v1/instance/attributes/dataproc-role)
+   * a master or worker node, as shown below using `curl` (you can also use
+   * `wget`):
+   *     ROLE=$(curl -H Metadata-Flavor:Google
+   *     http://metadata/computeMetadata/v1/instance/attributes/dataproc-role)
    *     if [[ "${ROLE}" == 'Master' ]]; then
    *       ... master specific actions ...
    *     else
@@ -555,8 +561,10 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
    * Optional. Commands to execute on each node after config is
    * completed. By default, executables are run on master and all worker nodes.
    * You can test a node's `role` metadata to run an executable on
-   * a master or worker node, as shown below using `curl` (you can also use `wget`):
-   *     ROLE=$(curl -H Metadata-Flavor:Google http://metadata/computeMetadata/v1/instance/attributes/dataproc-role)
+   * a master or worker node, as shown below using `curl` (you can also use
+   * `wget`):
+   *     ROLE=$(curl -H Metadata-Flavor:Google
+   *     http://metadata/computeMetadata/v1/instance/attributes/dataproc-role)
    *     if [[ "${ROLE}" == 'Master' ]]; then
    *       ... master specific actions ...
    *     else
@@ -577,8 +585,10 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
    * Optional. Commands to execute on each node after config is
    * completed. By default, executables are run on master and all worker nodes.
    * You can test a node's `role` metadata to run an executable on
-   * a master or worker node, as shown below using `curl` (you can also use `wget`):
-   *     ROLE=$(curl -H Metadata-Flavor:Google http://metadata/computeMetadata/v1/instance/attributes/dataproc-role)
+   * a master or worker node, as shown below using `curl` (you can also use
+   * `wget`):
+   *     ROLE=$(curl -H Metadata-Flavor:Google
+   *     http://metadata/computeMetadata/v1/instance/attributes/dataproc-role)
    *     if [[ "${ROLE}" == 'Master' ]]; then
    *       ... master specific actions ...
    *     else
@@ -2277,8 +2287,10 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      * Optional. Commands to execute on each node after config is
      * completed. By default, executables are run on master and all worker nodes.
      * You can test a node's `role` metadata to run an executable on
-     * a master or worker node, as shown below using `curl` (you can also use `wget`):
-     *     ROLE=$(curl -H Metadata-Flavor:Google http://metadata/computeMetadata/v1/instance/attributes/dataproc-role)
+     * a master or worker node, as shown below using `curl` (you can also use
+     * `wget`):
+     *     ROLE=$(curl -H Metadata-Flavor:Google
+     *     http://metadata/computeMetadata/v1/instance/attributes/dataproc-role)
      *     if [[ "${ROLE}" == 'Master' ]]; then
      *       ... master specific actions ...
      *     else
@@ -2305,8 +2317,10 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      * Optional. Commands to execute on each node after config is
      * completed. By default, executables are run on master and all worker nodes.
      * You can test a node's `role` metadata to run an executable on
-     * a master or worker node, as shown below using `curl` (you can also use `wget`):
-     *     ROLE=$(curl -H Metadata-Flavor:Google http://metadata/computeMetadata/v1/instance/attributes/dataproc-role)
+     * a master or worker node, as shown below using `curl` (you can also use
+     * `wget`):
+     *     ROLE=$(curl -H Metadata-Flavor:Google
+     *     http://metadata/computeMetadata/v1/instance/attributes/dataproc-role)
      *     if [[ "${ROLE}" == 'Master' ]]; then
      *       ... master specific actions ...
      *     else
@@ -2332,8 +2346,10 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      * Optional. Commands to execute on each node after config is
      * completed. By default, executables are run on master and all worker nodes.
      * You can test a node's `role` metadata to run an executable on
-     * a master or worker node, as shown below using `curl` (you can also use `wget`):
-     *     ROLE=$(curl -H Metadata-Flavor:Google http://metadata/computeMetadata/v1/instance/attributes/dataproc-role)
+     * a master or worker node, as shown below using `curl` (you can also use
+     * `wget`):
+     *     ROLE=$(curl -H Metadata-Flavor:Google
+     *     http://metadata/computeMetadata/v1/instance/attributes/dataproc-role)
      *     if [[ "${ROLE}" == 'Master' ]]; then
      *       ... master specific actions ...
      *     else
@@ -2360,8 +2376,10 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      * Optional. Commands to execute on each node after config is
      * completed. By default, executables are run on master and all worker nodes.
      * You can test a node's `role` metadata to run an executable on
-     * a master or worker node, as shown below using `curl` (you can also use `wget`):
-     *     ROLE=$(curl -H Metadata-Flavor:Google http://metadata/computeMetadata/v1/instance/attributes/dataproc-role)
+     * a master or worker node, as shown below using `curl` (you can also use
+     * `wget`):
+     *     ROLE=$(curl -H Metadata-Flavor:Google
+     *     http://metadata/computeMetadata/v1/instance/attributes/dataproc-role)
      *     if [[ "${ROLE}" == 'Master' ]]; then
      *       ... master specific actions ...
      *     else
@@ -2394,8 +2412,10 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      * Optional. Commands to execute on each node after config is
      * completed. By default, executables are run on master and all worker nodes.
      * You can test a node's `role` metadata to run an executable on
-     * a master or worker node, as shown below using `curl` (you can also use `wget`):
-     *     ROLE=$(curl -H Metadata-Flavor:Google http://metadata/computeMetadata/v1/instance/attributes/dataproc-role)
+     * a master or worker node, as shown below using `curl` (you can also use
+     * `wget`):
+     *     ROLE=$(curl -H Metadata-Flavor:Google
+     *     http://metadata/computeMetadata/v1/instance/attributes/dataproc-role)
      *     if [[ "${ROLE}" == 'Master' ]]; then
      *       ... master specific actions ...
      *     else
@@ -2425,8 +2445,10 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      * Optional. Commands to execute on each node after config is
      * completed. By default, executables are run on master and all worker nodes.
      * You can test a node's `role` metadata to run an executable on
-     * a master or worker node, as shown below using `curl` (you can also use `wget`):
-     *     ROLE=$(curl -H Metadata-Flavor:Google http://metadata/computeMetadata/v1/instance/attributes/dataproc-role)
+     * a master or worker node, as shown below using `curl` (you can also use
+     * `wget`):
+     *     ROLE=$(curl -H Metadata-Flavor:Google
+     *     http://metadata/computeMetadata/v1/instance/attributes/dataproc-role)
      *     if [[ "${ROLE}" == 'Master' ]]; then
      *       ... master specific actions ...
      *     else
@@ -2459,8 +2481,10 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      * Optional. Commands to execute on each node after config is
      * completed. By default, executables are run on master and all worker nodes.
      * You can test a node's `role` metadata to run an executable on
-     * a master or worker node, as shown below using `curl` (you can also use `wget`):
-     *     ROLE=$(curl -H Metadata-Flavor:Google http://metadata/computeMetadata/v1/instance/attributes/dataproc-role)
+     * a master or worker node, as shown below using `curl` (you can also use
+     * `wget`):
+     *     ROLE=$(curl -H Metadata-Flavor:Google
+     *     http://metadata/computeMetadata/v1/instance/attributes/dataproc-role)
      *     if [[ "${ROLE}" == 'Master' ]]; then
      *       ... master specific actions ...
      *     else
@@ -2493,8 +2517,10 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      * Optional. Commands to execute on each node after config is
      * completed. By default, executables are run on master and all worker nodes.
      * You can test a node's `role` metadata to run an executable on
-     * a master or worker node, as shown below using `curl` (you can also use `wget`):
-     *     ROLE=$(curl -H Metadata-Flavor:Google http://metadata/computeMetadata/v1/instance/attributes/dataproc-role)
+     * a master or worker node, as shown below using `curl` (you can also use
+     * `wget`):
+     *     ROLE=$(curl -H Metadata-Flavor:Google
+     *     http://metadata/computeMetadata/v1/instance/attributes/dataproc-role)
      *     if [[ "${ROLE}" == 'Master' ]]; then
      *       ... master specific actions ...
      *     else
@@ -2524,8 +2550,10 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      * Optional. Commands to execute on each node after config is
      * completed. By default, executables are run on master and all worker nodes.
      * You can test a node's `role` metadata to run an executable on
-     * a master or worker node, as shown below using `curl` (you can also use `wget`):
-     *     ROLE=$(curl -H Metadata-Flavor:Google http://metadata/computeMetadata/v1/instance/attributes/dataproc-role)
+     * a master or worker node, as shown below using `curl` (you can also use
+     * `wget`):
+     *     ROLE=$(curl -H Metadata-Flavor:Google
+     *     http://metadata/computeMetadata/v1/instance/attributes/dataproc-role)
      *     if [[ "${ROLE}" == 'Master' ]]; then
      *       ... master specific actions ...
      *     else
@@ -2555,8 +2583,10 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      * Optional. Commands to execute on each node after config is
      * completed. By default, executables are run on master and all worker nodes.
      * You can test a node's `role` metadata to run an executable on
-     * a master or worker node, as shown below using `curl` (you can also use `wget`):
-     *     ROLE=$(curl -H Metadata-Flavor:Google http://metadata/computeMetadata/v1/instance/attributes/dataproc-role)
+     * a master or worker node, as shown below using `curl` (you can also use
+     * `wget`):
+     *     ROLE=$(curl -H Metadata-Flavor:Google
+     *     http://metadata/computeMetadata/v1/instance/attributes/dataproc-role)
      *     if [[ "${ROLE}" == 'Master' ]]; then
      *       ... master specific actions ...
      *     else
@@ -2587,8 +2617,10 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      * Optional. Commands to execute on each node after config is
      * completed. By default, executables are run on master and all worker nodes.
      * You can test a node's `role` metadata to run an executable on
-     * a master or worker node, as shown below using `curl` (you can also use `wget`):
-     *     ROLE=$(curl -H Metadata-Flavor:Google http://metadata/computeMetadata/v1/instance/attributes/dataproc-role)
+     * a master or worker node, as shown below using `curl` (you can also use
+     * `wget`):
+     *     ROLE=$(curl -H Metadata-Flavor:Google
+     *     http://metadata/computeMetadata/v1/instance/attributes/dataproc-role)
      *     if [[ "${ROLE}" == 'Master' ]]; then
      *       ... master specific actions ...
      *     else
@@ -2617,8 +2649,10 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      * Optional. Commands to execute on each node after config is
      * completed. By default, executables are run on master and all worker nodes.
      * You can test a node's `role` metadata to run an executable on
-     * a master or worker node, as shown below using `curl` (you can also use `wget`):
-     *     ROLE=$(curl -H Metadata-Flavor:Google http://metadata/computeMetadata/v1/instance/attributes/dataproc-role)
+     * a master or worker node, as shown below using `curl` (you can also use
+     * `wget`):
+     *     ROLE=$(curl -H Metadata-Flavor:Google
+     *     http://metadata/computeMetadata/v1/instance/attributes/dataproc-role)
      *     if [[ "${ROLE}" == 'Master' ]]; then
      *       ... master specific actions ...
      *     else
@@ -2647,8 +2681,10 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      * Optional. Commands to execute on each node after config is
      * completed. By default, executables are run on master and all worker nodes.
      * You can test a node's `role` metadata to run an executable on
-     * a master or worker node, as shown below using `curl` (you can also use `wget`):
-     *     ROLE=$(curl -H Metadata-Flavor:Google http://metadata/computeMetadata/v1/instance/attributes/dataproc-role)
+     * a master or worker node, as shown below using `curl` (you can also use
+     * `wget`):
+     *     ROLE=$(curl -H Metadata-Flavor:Google
+     *     http://metadata/computeMetadata/v1/instance/attributes/dataproc-role)
      *     if [[ "${ROLE}" == 'Master' ]]; then
      *       ... master specific actions ...
      *     else
@@ -2671,8 +2707,10 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      * Optional. Commands to execute on each node after config is
      * completed. By default, executables are run on master and all worker nodes.
      * You can test a node's `role` metadata to run an executable on
-     * a master or worker node, as shown below using `curl` (you can also use `wget`):
-     *     ROLE=$(curl -H Metadata-Flavor:Google http://metadata/computeMetadata/v1/instance/attributes/dataproc-role)
+     * a master or worker node, as shown below using `curl` (you can also use
+     * `wget`):
+     *     ROLE=$(curl -H Metadata-Flavor:Google
+     *     http://metadata/computeMetadata/v1/instance/attributes/dataproc-role)
      *     if [[ "${ROLE}" == 'Master' ]]; then
      *       ... master specific actions ...
      *     else
@@ -2699,8 +2737,10 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      * Optional. Commands to execute on each node after config is
      * completed. By default, executables are run on master and all worker nodes.
      * You can test a node's `role` metadata to run an executable on
-     * a master or worker node, as shown below using `curl` (you can also use `wget`):
-     *     ROLE=$(curl -H Metadata-Flavor:Google http://metadata/computeMetadata/v1/instance/attributes/dataproc-role)
+     * a master or worker node, as shown below using `curl` (you can also use
+     * `wget`):
+     *     ROLE=$(curl -H Metadata-Flavor:Google
+     *     http://metadata/computeMetadata/v1/instance/attributes/dataproc-role)
      *     if [[ "${ROLE}" == 'Master' ]]; then
      *       ... master specific actions ...
      *     else
@@ -2727,8 +2767,10 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      * Optional. Commands to execute on each node after config is
      * completed. By default, executables are run on master and all worker nodes.
      * You can test a node's `role` metadata to run an executable on
-     * a master or worker node, as shown below using `curl` (you can also use `wget`):
-     *     ROLE=$(curl -H Metadata-Flavor:Google http://metadata/computeMetadata/v1/instance/attributes/dataproc-role)
+     * a master or worker node, as shown below using `curl` (you can also use
+     * `wget`):
+     *     ROLE=$(curl -H Metadata-Flavor:Google
+     *     http://metadata/computeMetadata/v1/instance/attributes/dataproc-role)
      *     if [[ "${ROLE}" == 'Master' ]]; then
      *       ... master specific actions ...
      *     else
@@ -2752,8 +2794,10 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      * Optional. Commands to execute on each node after config is
      * completed. By default, executables are run on master and all worker nodes.
      * You can test a node's `role` metadata to run an executable on
-     * a master or worker node, as shown below using `curl` (you can also use `wget`):
-     *     ROLE=$(curl -H Metadata-Flavor:Google http://metadata/computeMetadata/v1/instance/attributes/dataproc-role)
+     * a master or worker node, as shown below using `curl` (you can also use
+     * `wget`):
+     *     ROLE=$(curl -H Metadata-Flavor:Google
+     *     http://metadata/computeMetadata/v1/instance/attributes/dataproc-role)
      *     if [[ "${ROLE}" == 'Master' ]]; then
      *       ... master specific actions ...
      *     else
@@ -2778,8 +2822,10 @@ public final class ClusterConfig extends com.google.protobuf.GeneratedMessageV3
      * Optional. Commands to execute on each node after config is
      * completed. By default, executables are run on master and all worker nodes.
      * You can test a node's `role` metadata to run an executable on
-     * a master or worker node, as shown below using `curl` (you can also use `wget`):
-     *     ROLE=$(curl -H Metadata-Flavor:Google http://metadata/computeMetadata/v1/instance/attributes/dataproc-role)
+     * a master or worker node, as shown below using `curl` (you can also use
+     * `wget`):
+     *     ROLE=$(curl -H Metadata-Flavor:Google
+     *     http://metadata/computeMetadata/v1/instance/attributes/dataproc-role)
      *     if [[ "${ROLE}" == 'Master' ]]; then
      *       ... master specific actions ...
      *     else

@@ -65,8 +65,8 @@ public interface HadoopJobOrBuilder
    *
    * <pre>
    * Optional. The arguments to pass to the driver. Do not
-   * include arguments, such as `-libjars` or `-Dfoo=bar`, that can be set as job
-   * properties, since a collision may occur that causes an incorrect job
+   * include arguments, such as `-libjars` or `-Dfoo=bar`, that can be set as
+   * job properties, since a collision may occur that causes an incorrect job
    * submission.
    * </pre>
    *
@@ -78,8 +78,8 @@ public interface HadoopJobOrBuilder
    *
    * <pre>
    * Optional. The arguments to pass to the driver. Do not
-   * include arguments, such as `-libjars` or `-Dfoo=bar`, that can be set as job
-   * properties, since a collision may occur that causes an incorrect job
+   * include arguments, such as `-libjars` or `-Dfoo=bar`, that can be set as
+   * job properties, since a collision may occur that causes an incorrect job
    * submission.
    * </pre>
    *
@@ -91,8 +91,8 @@ public interface HadoopJobOrBuilder
    *
    * <pre>
    * Optional. The arguments to pass to the driver. Do not
-   * include arguments, such as `-libjars` or `-Dfoo=bar`, that can be set as job
-   * properties, since a collision may occur that causes an incorrect job
+   * include arguments, such as `-libjars` or `-Dfoo=bar`, that can be set as
+   * job properties, since a collision may occur that causes an incorrect job
    * submission.
    * </pre>
    *
@@ -104,8 +104,8 @@ public interface HadoopJobOrBuilder
    *
    * <pre>
    * Optional. The arguments to pass to the driver. Do not
-   * include arguments, such as `-libjars` or `-Dfoo=bar`, that can be set as job
-   * properties, since a collision may occur that causes an incorrect job
+   * include arguments, such as `-libjars` or `-Dfoo=bar`, that can be set as
+   * job properties, since a collision may occur that causes an incorrect job
    * submission.
    * </pre>
    *

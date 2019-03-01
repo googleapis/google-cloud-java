@@ -7,8 +7,8 @@ package com.google.cloud.dataproc.v1;
  *
  *
  * <pre>
- * A Cloud Dataproc job for running [Apache Spark SQL](http://spark.apache.org/sql/)
- * queries.
+ * A Cloud Dataproc job for running [Apache Spark
+ * SQL](http://spark.apache.org/sql/) queries.
  * </pre>
  *
  * Protobuf type {@code google.cloud.dataproc.v1.SparkSqlJob}
@@ -869,8 +869,8 @@ public final class SparkSqlJob extends com.google.protobuf.GeneratedMessageV3
    *
    *
    * <pre>
-   * A Cloud Dataproc job for running [Apache Spark SQL](http://spark.apache.org/sql/)
-   * queries.
+   * A Cloud Dataproc job for running [Apache Spark
+   * SQL](http://spark.apache.org/sql/) queries.
    * </pre>
    *
    * Protobuf type {@code google.cloud.dataproc.v1.SparkSqlJob}

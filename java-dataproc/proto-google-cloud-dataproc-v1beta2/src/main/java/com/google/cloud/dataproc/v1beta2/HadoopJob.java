@@ -8,8 +8,10 @@ package com.google.cloud.dataproc.v1beta2;
  *
  * <pre>
  * A Cloud Dataproc job for running
- * [Apache Hadoop MapReduce](https://hadoop.apache.org/docs/current/hadoop-mapreduce-client/hadoop-mapreduce-client-core/MapReduceTutorial.html)
- * jobs on [Apache Hadoop YARN](https://hadoop.apache.org/docs/r2.7.1/hadoop-yarn/hadoop-yarn-site/YARN.html).
+ * [Apache Hadoop
+ * MapReduce](https://hadoop.apache.org/docs/current/hadoop-mapreduce-client/hadoop-mapreduce-client-core/MapReduceTutorial.html)
+ * jobs on [Apache Hadoop
+ * YARN](https://hadoop.apache.org/docs/r2.7.1/hadoop-yarn/hadoop-yarn-site/YARN.html).
  * </pre>
  *
  * Protobuf type {@code google.cloud.dataproc.v1beta2.HadoopJob}
@@ -359,8 +361,8 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. The arguments to pass to the driver. Do not
-   * include arguments, such as `-libjars` or `-Dfoo=bar`, that can be set as job
-   * properties, since a collision may occur that causes an incorrect job
+   * include arguments, such as `-libjars` or `-Dfoo=bar`, that can be set as
+   * job properties, since a collision may occur that causes an incorrect job
    * submission.
    * </pre>
    *
@@ -374,8 +376,8 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. The arguments to pass to the driver. Do not
-   * include arguments, such as `-libjars` or `-Dfoo=bar`, that can be set as job
-   * properties, since a collision may occur that causes an incorrect job
+   * include arguments, such as `-libjars` or `-Dfoo=bar`, that can be set as
+   * job properties, since a collision may occur that causes an incorrect job
    * submission.
    * </pre>
    *
@@ -389,8 +391,8 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. The arguments to pass to the driver. Do not
-   * include arguments, such as `-libjars` or `-Dfoo=bar`, that can be set as job
-   * properties, since a collision may occur that causes an incorrect job
+   * include arguments, such as `-libjars` or `-Dfoo=bar`, that can be set as
+   * job properties, since a collision may occur that causes an incorrect job
    * submission.
    * </pre>
    *
@@ -404,8 +406,8 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Optional. The arguments to pass to the driver. Do not
-   * include arguments, such as `-libjars` or `-Dfoo=bar`, that can be set as job
-   * properties, since a collision may occur that causes an incorrect job
+   * include arguments, such as `-libjars` or `-Dfoo=bar`, that can be set as
+   * job properties, since a collision may occur that causes an incorrect job
    * submission.
    * </pre>
    *
@@ -1022,8 +1024,10 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A Cloud Dataproc job for running
-   * [Apache Hadoop MapReduce](https://hadoop.apache.org/docs/current/hadoop-mapreduce-client/hadoop-mapreduce-client-core/MapReduceTutorial.html)
-   * jobs on [Apache Hadoop YARN](https://hadoop.apache.org/docs/r2.7.1/hadoop-yarn/hadoop-yarn-site/YARN.html).
+   * [Apache Hadoop
+   * MapReduce](https://hadoop.apache.org/docs/current/hadoop-mapreduce-client/hadoop-mapreduce-client-core/MapReduceTutorial.html)
+   * jobs on [Apache Hadoop
+   * YARN](https://hadoop.apache.org/docs/r2.7.1/hadoop-yarn/hadoop-yarn-site/YARN.html).
    * </pre>
    *
    * Protobuf type {@code google.cloud.dataproc.v1beta2.HadoopJob}
@@ -1572,8 +1576,8 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The arguments to pass to the driver. Do not
-     * include arguments, such as `-libjars` or `-Dfoo=bar`, that can be set as job
-     * properties, since a collision may occur that causes an incorrect job
+     * include arguments, such as `-libjars` or `-Dfoo=bar`, that can be set as
+     * job properties, since a collision may occur that causes an incorrect job
      * submission.
      * </pre>
      *
@@ -1587,8 +1591,8 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The arguments to pass to the driver. Do not
-     * include arguments, such as `-libjars` or `-Dfoo=bar`, that can be set as job
-     * properties, since a collision may occur that causes an incorrect job
+     * include arguments, such as `-libjars` or `-Dfoo=bar`, that can be set as
+     * job properties, since a collision may occur that causes an incorrect job
      * submission.
      * </pre>
      *
@@ -1602,8 +1606,8 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The arguments to pass to the driver. Do not
-     * include arguments, such as `-libjars` or `-Dfoo=bar`, that can be set as job
-     * properties, since a collision may occur that causes an incorrect job
+     * include arguments, such as `-libjars` or `-Dfoo=bar`, that can be set as
+     * job properties, since a collision may occur that causes an incorrect job
      * submission.
      * </pre>
      *
@@ -1617,8 +1621,8 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The arguments to pass to the driver. Do not
-     * include arguments, such as `-libjars` or `-Dfoo=bar`, that can be set as job
-     * properties, since a collision may occur that causes an incorrect job
+     * include arguments, such as `-libjars` or `-Dfoo=bar`, that can be set as
+     * job properties, since a collision may occur that causes an incorrect job
      * submission.
      * </pre>
      *
@@ -1632,8 +1636,8 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The arguments to pass to the driver. Do not
-     * include arguments, such as `-libjars` or `-Dfoo=bar`, that can be set as job
-     * properties, since a collision may occur that causes an incorrect job
+     * include arguments, such as `-libjars` or `-Dfoo=bar`, that can be set as
+     * job properties, since a collision may occur that causes an incorrect job
      * submission.
      * </pre>
      *
@@ -1653,8 +1657,8 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The arguments to pass to the driver. Do not
-     * include arguments, such as `-libjars` or `-Dfoo=bar`, that can be set as job
-     * properties, since a collision may occur that causes an incorrect job
+     * include arguments, such as `-libjars` or `-Dfoo=bar`, that can be set as
+     * job properties, since a collision may occur that causes an incorrect job
      * submission.
      * </pre>
      *
@@ -1674,8 +1678,8 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The arguments to pass to the driver. Do not
-     * include arguments, such as `-libjars` or `-Dfoo=bar`, that can be set as job
-     * properties, since a collision may occur that causes an incorrect job
+     * include arguments, such as `-libjars` or `-Dfoo=bar`, that can be set as
+     * job properties, since a collision may occur that causes an incorrect job
      * submission.
      * </pre>
      *
@@ -1692,8 +1696,8 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The arguments to pass to the driver. Do not
-     * include arguments, such as `-libjars` or `-Dfoo=bar`, that can be set as job
-     * properties, since a collision may occur that causes an incorrect job
+     * include arguments, such as `-libjars` or `-Dfoo=bar`, that can be set as
+     * job properties, since a collision may occur that causes an incorrect job
      * submission.
      * </pre>
      *
@@ -1710,8 +1714,8 @@ public final class HadoopJob extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Optional. The arguments to pass to the driver. Do not
-     * include arguments, such as `-libjars` or `-Dfoo=bar`, that can be set as job
-     * properties, since a collision may occur that causes an incorrect job
+     * include arguments, such as `-libjars` or `-Dfoo=bar`, that can be set as
+     * job properties, since a collision may occur that causes an incorrect job
      * submission.
      * </pre>
      *

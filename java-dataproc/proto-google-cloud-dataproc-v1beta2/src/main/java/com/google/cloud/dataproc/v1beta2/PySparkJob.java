@@ -8,7 +8,8 @@ package com.google.cloud.dataproc.v1beta2;
  *
  * <pre>
  * A Cloud Dataproc job for running
- * [Apache PySpark](https://spark.apache.org/docs/0.9.0/python-programming-guide.html)
+ * [Apache
+ * PySpark](https://spark.apache.org/docs/0.9.0/python-programming-guide.html)
  * applications on YARN.
  * </pre>
  *
@@ -953,7 +954,8 @@ public final class PySparkJob extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * A Cloud Dataproc job for running
-   * [Apache PySpark](https://spark.apache.org/docs/0.9.0/python-programming-guide.html)
+   * [Apache
+   * PySpark](https://spark.apache.org/docs/0.9.0/python-programming-guide.html)
    * applications on YARN.
    * </pre>
    *
