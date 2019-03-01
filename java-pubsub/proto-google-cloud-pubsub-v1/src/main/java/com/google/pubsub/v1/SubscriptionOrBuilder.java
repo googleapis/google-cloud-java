@@ -138,7 +138,8 @@ public interface SubscriptionOrBuilder
    * messages are not expunged from the subscription's backlog, even if they are
    * acknowledged, until they fall out of the `message_retention_duration`
    * window. This must be true if you would like to
-   * &lt;a href="https://cloud.google.com/pubsub/docs/replay-overview#seek_to_a_time"&gt;
+   * &lt;a
+   * href="https://cloud.google.com/pubsub/docs/replay-overview#seek_to_a_time"&gt;
    * Seek to a timestamp&lt;/a&gt;.
    * &lt;br&gt;&lt;br&gt;
    * &lt;b&gt;BETA:&lt;/b&gt; This feature is part of a beta release. This API might be
