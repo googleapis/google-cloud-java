@@ -362,8 +362,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * Label **keys** must contain 1 to 63 characters, and must conform to
    * [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
    * Label **values** may be empty, but, if present, must contain 1 to 63
-   * characters, and must conform to [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
-   * No more than 32 labels can be associated with a cluster.
+   * characters, and must conform to [RFC
+   * 1035](https://www.ietf.org/rfc/rfc1035.txt). No more than 32 labels can be
+   * associated with a cluster.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 8;</code>
@@ -387,8 +388,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * Label **keys** must contain 1 to 63 characters, and must conform to
    * [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
    * Label **values** may be empty, but, if present, must contain 1 to 63
-   * characters, and must conform to [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
-   * No more than 32 labels can be associated with a cluster.
+   * characters, and must conform to [RFC
+   * 1035](https://www.ietf.org/rfc/rfc1035.txt). No more than 32 labels can be
+   * associated with a cluster.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 8;</code>
@@ -404,8 +406,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * Label **keys** must contain 1 to 63 characters, and must conform to
    * [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
    * Label **values** may be empty, but, if present, must contain 1 to 63
-   * characters, and must conform to [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
-   * No more than 32 labels can be associated with a cluster.
+   * characters, and must conform to [RFC
+   * 1035](https://www.ietf.org/rfc/rfc1035.txt). No more than 32 labels can be
+   * associated with a cluster.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 8;</code>
@@ -425,8 +428,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    * Label **keys** must contain 1 to 63 characters, and must conform to
    * [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
    * Label **values** may be empty, but, if present, must contain 1 to 63
-   * characters, and must conform to [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
-   * No more than 32 labels can be associated with a cluster.
+   * characters, and must conform to [RFC
+   * 1035](https://www.ietf.org/rfc/rfc1035.txt). No more than 32 labels can be
+   * associated with a cluster.
    * </pre>
    *
    * <code>map&lt;string, string&gt; labels = 8;</code>
@@ -600,8 +604,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. Contains cluster daemon metrics such as HDFS and YARN stats.
-   * **Beta Feature**: This report is available for testing purposes only. It may
-   * be changed before final release.
+   * **Beta Feature**: This report is available for testing purposes only. It
+   * may be changed before final release.
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.ClusterMetrics metrics = 9;</code>
@@ -614,8 +618,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. Contains cluster daemon metrics such as HDFS and YARN stats.
-   * **Beta Feature**: This report is available for testing purposes only. It may
-   * be changed before final release.
+   * **Beta Feature**: This report is available for testing purposes only. It
+   * may be changed before final release.
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.ClusterMetrics metrics = 9;</code>
@@ -630,8 +634,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
    *
    * <pre>
    * Output only. Contains cluster daemon metrics such as HDFS and YARN stats.
-   * **Beta Feature**: This report is available for testing purposes only. It may
-   * be changed before final release.
+   * **Beta Feature**: This report is available for testing purposes only. It
+   * may be changed before final release.
    * </pre>
    *
    * <code>.google.cloud.dataproc.v1beta2.ClusterMetrics metrics = 9;</code>
@@ -1592,8 +1596,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * Label **keys** must contain 1 to 63 characters, and must conform to
      * [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
      * Label **values** may be empty, but, if present, must contain 1 to 63
-     * characters, and must conform to [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
-     * No more than 32 labels can be associated with a cluster.
+     * characters, and must conform to [RFC
+     * 1035](https://www.ietf.org/rfc/rfc1035.txt). No more than 32 labels can be
+     * associated with a cluster.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 8;</code>
@@ -1617,8 +1622,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * Label **keys** must contain 1 to 63 characters, and must conform to
      * [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
      * Label **values** may be empty, but, if present, must contain 1 to 63
-     * characters, and must conform to [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
-     * No more than 32 labels can be associated with a cluster.
+     * characters, and must conform to [RFC
+     * 1035](https://www.ietf.org/rfc/rfc1035.txt). No more than 32 labels can be
+     * associated with a cluster.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 8;</code>
@@ -1634,8 +1640,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * Label **keys** must contain 1 to 63 characters, and must conform to
      * [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
      * Label **values** may be empty, but, if present, must contain 1 to 63
-     * characters, and must conform to [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
-     * No more than 32 labels can be associated with a cluster.
+     * characters, and must conform to [RFC
+     * 1035](https://www.ietf.org/rfc/rfc1035.txt). No more than 32 labels can be
+     * associated with a cluster.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 8;</code>
@@ -1656,8 +1663,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * Label **keys** must contain 1 to 63 characters, and must conform to
      * [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
      * Label **values** may be empty, but, if present, must contain 1 to 63
-     * characters, and must conform to [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
-     * No more than 32 labels can be associated with a cluster.
+     * characters, and must conform to [RFC
+     * 1035](https://www.ietf.org/rfc/rfc1035.txt). No more than 32 labels can be
+     * associated with a cluster.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 8;</code>
@@ -1685,8 +1693,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * Label **keys** must contain 1 to 63 characters, and must conform to
      * [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
      * Label **values** may be empty, but, if present, must contain 1 to 63
-     * characters, and must conform to [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
-     * No more than 32 labels can be associated with a cluster.
+     * characters, and must conform to [RFC
+     * 1035](https://www.ietf.org/rfc/rfc1035.txt). No more than 32 labels can be
+     * associated with a cluster.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 8;</code>
@@ -1711,8 +1720,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * Label **keys** must contain 1 to 63 characters, and must conform to
      * [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
      * Label **values** may be empty, but, if present, must contain 1 to 63
-     * characters, and must conform to [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
-     * No more than 32 labels can be associated with a cluster.
+     * characters, and must conform to [RFC
+     * 1035](https://www.ietf.org/rfc/rfc1035.txt). No more than 32 labels can be
+     * associated with a cluster.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 8;</code>
@@ -1735,8 +1745,9 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      * Label **keys** must contain 1 to 63 characters, and must conform to
      * [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
      * Label **values** may be empty, but, if present, must contain 1 to 63
-     * characters, and must conform to [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
-     * No more than 32 labels can be associated with a cluster.
+     * characters, and must conform to [RFC
+     * 1035](https://www.ietf.org/rfc/rfc1035.txt). No more than 32 labels can be
+     * associated with a cluster.
      * </pre>
      *
      * <code>map&lt;string, string&gt; labels = 8;</code>
@@ -2398,8 +2409,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Contains cluster daemon metrics such as HDFS and YARN stats.
-     * **Beta Feature**: This report is available for testing purposes only. It may
-     * be changed before final release.
+     * **Beta Feature**: This report is available for testing purposes only. It
+     * may be changed before final release.
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1beta2.ClusterMetrics metrics = 9;</code>
@@ -2412,8 +2423,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Contains cluster daemon metrics such as HDFS and YARN stats.
-     * **Beta Feature**: This report is available for testing purposes only. It may
-     * be changed before final release.
+     * **Beta Feature**: This report is available for testing purposes only. It
+     * may be changed before final release.
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1beta2.ClusterMetrics metrics = 9;</code>
@@ -2432,8 +2443,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Contains cluster daemon metrics such as HDFS and YARN stats.
-     * **Beta Feature**: This report is available for testing purposes only. It may
-     * be changed before final release.
+     * **Beta Feature**: This report is available for testing purposes only. It
+     * may be changed before final release.
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1beta2.ClusterMetrics metrics = 9;</code>
@@ -2456,8 +2467,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Contains cluster daemon metrics such as HDFS and YARN stats.
-     * **Beta Feature**: This report is available for testing purposes only. It may
-     * be changed before final release.
+     * **Beta Feature**: This report is available for testing purposes only. It
+     * may be changed before final release.
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1beta2.ClusterMetrics metrics = 9;</code>
@@ -2478,8 +2489,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Contains cluster daemon metrics such as HDFS and YARN stats.
-     * **Beta Feature**: This report is available for testing purposes only. It may
-     * be changed before final release.
+     * **Beta Feature**: This report is available for testing purposes only. It
+     * may be changed before final release.
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1beta2.ClusterMetrics metrics = 9;</code>
@@ -2506,8 +2517,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Contains cluster daemon metrics such as HDFS and YARN stats.
-     * **Beta Feature**: This report is available for testing purposes only. It may
-     * be changed before final release.
+     * **Beta Feature**: This report is available for testing purposes only. It
+     * may be changed before final release.
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1beta2.ClusterMetrics metrics = 9;</code>
@@ -2528,8 +2539,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Contains cluster daemon metrics such as HDFS and YARN stats.
-     * **Beta Feature**: This report is available for testing purposes only. It may
-     * be changed before final release.
+     * **Beta Feature**: This report is available for testing purposes only. It
+     * may be changed before final release.
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1beta2.ClusterMetrics metrics = 9;</code>
@@ -2544,8 +2555,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Contains cluster daemon metrics such as HDFS and YARN stats.
-     * **Beta Feature**: This report is available for testing purposes only. It may
-     * be changed before final release.
+     * **Beta Feature**: This report is available for testing purposes only. It
+     * may be changed before final release.
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1beta2.ClusterMetrics metrics = 9;</code>
@@ -2564,8 +2575,8 @@ public final class Cluster extends com.google.protobuf.GeneratedMessageV3
      *
      * <pre>
      * Output only. Contains cluster daemon metrics such as HDFS and YARN stats.
-     * **Beta Feature**: This report is available for testing purposes only. It may
-     * be changed before final release.
+     * **Beta Feature**: This report is available for testing purposes only. It
+     * may be changed before final release.
      * </pre>
      *
      * <code>.google.cloud.dataproc.v1beta2.ClusterMetrics metrics = 9;</code>

@@ -65,8 +65,8 @@ public interface HiveJobOrBuilder
    *
    * <pre>
    * Optional. Whether to continue executing queries if a query fails.
-   * The default value is `false`. Setting to `true` can be useful when executing
-   * independent parallel queries.
+   * The default value is `false`. Setting to `true` can be useful when
+   * executing independent parallel queries.
    * </pre>
    *
    * <code>bool continue_on_failure = 3;</code>

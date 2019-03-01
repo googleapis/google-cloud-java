@@ -118,11 +118,11 @@ public interface GceClusterConfigOrBuilder
    *
    * <pre>
    * Optional. If true, all instances in the cluster will only have internal IP
-   * addresses. By default, clusters are not restricted to internal IP addresses,
-   * and will have ephemeral external IP addresses assigned to each instance.
-   * This `internal_ip_only` restriction can only be enabled for subnetwork
-   * enabled networks, and all off-cluster dependencies must be configured to be
-   * accessible without external IP addresses.
+   * addresses. By default, clusters are not restricted to internal IP
+   * addresses, and will have ephemeral external IP addresses assigned to each
+   * instance. This `internal_ip_only` restriction can only be enabled for
+   * subnetwork enabled networks, and all off-cluster dependencies must be
+   * configured to be accessible without external IP addresses.
    * </pre>
    *
    * <code>bool internal_ip_only = 7;</code>
@@ -138,7 +138,8 @@ public interface GceClusterConfigOrBuilder
    * permissions equivalent to the following IAM roles:
    * * roles/logging.logWriter
    * * roles/storage.objectAdmin
-   * (see https://cloud.google.com/compute/docs/access/service-accounts#custom_service_accounts
+   * (see
+   * https://cloud.google.com/compute/docs/access/service-accounts#custom_service_accounts
    * for more information).
    * Example: `[account_id]&#64;[project_id].iam.gserviceaccount.com`
    * </pre>
@@ -155,7 +156,8 @@ public interface GceClusterConfigOrBuilder
    * permissions equivalent to the following IAM roles:
    * * roles/logging.logWriter
    * * roles/storage.objectAdmin
-   * (see https://cloud.google.com/compute/docs/access/service-accounts#custom_service_accounts
+   * (see
+   * https://cloud.google.com/compute/docs/access/service-accounts#custom_service_accounts
    * for more information).
    * Example: `[account_id]&#64;[project_id].iam.gserviceaccount.com`
    * </pre>
@@ -295,7 +297,8 @@ public interface GceClusterConfigOrBuilder
    *
    * <pre>
    * The Compute Engine metadata entries to add to all instances (see
-   * [Project and instance metadata](https://cloud.google.com/compute/docs/storing-retrieving-metadata#project_and_instance_metadata)).
+   * [Project and instance
+   * metadata](https://cloud.google.com/compute/docs/storing-retrieving-metadata#project_and_instance_metadata)).
    * </pre>
    *
    * <code>map&lt;string, string&gt; metadata = 5;</code>
@@ -306,7 +309,8 @@ public interface GceClusterConfigOrBuilder
    *
    * <pre>
    * The Compute Engine metadata entries to add to all instances (see
-   * [Project and instance metadata](https://cloud.google.com/compute/docs/storing-retrieving-metadata#project_and_instance_metadata)).
+   * [Project and instance
+   * metadata](https://cloud.google.com/compute/docs/storing-retrieving-metadata#project_and_instance_metadata)).
    * </pre>
    *
    * <code>map&lt;string, string&gt; metadata = 5;</code>
@@ -320,7 +324,8 @@ public interface GceClusterConfigOrBuilder
    *
    * <pre>
    * The Compute Engine metadata entries to add to all instances (see
-   * [Project and instance metadata](https://cloud.google.com/compute/docs/storing-retrieving-metadata#project_and_instance_metadata)).
+   * [Project and instance
+   * metadata](https://cloud.google.com/compute/docs/storing-retrieving-metadata#project_and_instance_metadata)).
    * </pre>
    *
    * <code>map&lt;string, string&gt; metadata = 5;</code>
@@ -331,7 +336,8 @@ public interface GceClusterConfigOrBuilder
    *
    * <pre>
    * The Compute Engine metadata entries to add to all instances (see
-   * [Project and instance metadata](https://cloud.google.com/compute/docs/storing-retrieving-metadata#project_and_instance_metadata)).
+   * [Project and instance
+   * metadata](https://cloud.google.com/compute/docs/storing-retrieving-metadata#project_and_instance_metadata)).
    * </pre>
    *
    * <code>map&lt;string, string&gt; metadata = 5;</code>
@@ -342,7 +348,8 @@ public interface GceClusterConfigOrBuilder
    *
    * <pre>
    * The Compute Engine metadata entries to add to all instances (see
-   * [Project and instance metadata](https://cloud.google.com/compute/docs/storing-retrieving-metadata#project_and_instance_metadata)).
+   * [Project and instance
+   * metadata](https://cloud.google.com/compute/docs/storing-retrieving-metadata#project_and_instance_metadata)).
    * </pre>
    *
    * <code>map&lt;string, string&gt; metadata = 5;</code>
