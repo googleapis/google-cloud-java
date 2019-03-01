@@ -45,7 +45,8 @@ public interface CreateQueueRequestOrBuilder
    * <pre>
    * Required.
    * The queue to create.
-   * [Queue's name][google.cloud.tasks.v2beta3.Queue.name] cannot be the same as an existing queue.
+   * [Queue's name][google.cloud.tasks.v2beta3.Queue.name] cannot be the same as
+   * an existing queue.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.Queue queue = 2;</code>
@@ -57,7 +58,8 @@ public interface CreateQueueRequestOrBuilder
    * <pre>
    * Required.
    * The queue to create.
-   * [Queue's name][google.cloud.tasks.v2beta3.Queue.name] cannot be the same as an existing queue.
+   * [Queue's name][google.cloud.tasks.v2beta3.Queue.name] cannot be the same as
+   * an existing queue.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.Queue queue = 2;</code>
@@ -69,7 +71,8 @@ public interface CreateQueueRequestOrBuilder
    * <pre>
    * Required.
    * The queue to create.
-   * [Queue's name][google.cloud.tasks.v2beta3.Queue.name] cannot be the same as an existing queue.
+   * [Queue's name][google.cloud.tasks.v2beta3.Queue.name] cannot be the same as
+   * an existing queue.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta3.Queue queue = 2;</code>

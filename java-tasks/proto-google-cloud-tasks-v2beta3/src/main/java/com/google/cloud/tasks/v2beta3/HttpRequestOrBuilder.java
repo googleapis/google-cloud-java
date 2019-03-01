@@ -222,8 +222,9 @@ public interface HttpRequestOrBuilder
    * <pre>
    * HTTP request body.
    * A request body is allowed only if the
-   * [HTTP method][google.cloud.tasks.v2beta3.HttpRequest.http_method] is POST, PUT, or PATCH. It is an
-   * error to set body on a task with an incompatible [HttpMethod][google.cloud.tasks.v2beta3.HttpMethod].
+   * [HTTP method][google.cloud.tasks.v2beta3.HttpRequest.http_method] is POST,
+   * PUT, or PATCH. It is an error to set body on a task with an incompatible
+   * [HttpMethod][google.cloud.tasks.v2beta3.HttpMethod].
    * </pre>
    *
    * <code>bytes body = 4;</code>

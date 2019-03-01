@@ -7,7 +7,8 @@ package com.google.cloud.tasks.v2beta2;
  *
  *
  * <pre>
- * Response message for leasing tasks using [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks].
+ * Response message for leasing tasks using
+ * [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks].
  * </pre>
  *
  * Protobuf type {@code google.cloud.tasks.v2beta2.LeaseTasksResponse}
@@ -328,7 +329,8 @@ public final class LeaseTasksResponse extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Response message for leasing tasks using [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks].
+   * Response message for leasing tasks using
+   * [LeaseTasks][google.cloud.tasks.v2beta2.CloudTasks.LeaseTasks].
    * </pre>
    *
    * Protobuf type {@code google.cloud.tasks.v2beta2.LeaseTasksResponse}
