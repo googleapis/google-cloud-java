@@ -7,7 +7,8 @@ package com.google.firestore.v1;
  *
  *
  * <pre>
- * The request for [Firestore.UpdateDocument][google.firestore.v1.Firestore.UpdateDocument].
+ * The request for
+ * [Firestore.UpdateDocument][google.firestore.v1.Firestore.UpdateDocument].
  * </pre>
  *
  * Protobuf type {@code google.firestore.v1.UpdateDocumentRequest}
@@ -543,7 +544,8 @@ public final class UpdateDocumentRequest extends com.google.protobuf.GeneratedMe
    *
    *
    * <pre>
-   * The request for [Firestore.UpdateDocument][google.firestore.v1.Firestore.UpdateDocument].
+   * The request for
+   * [Firestore.UpdateDocument][google.firestore.v1.Firestore.UpdateDocument].
    * </pre>
    *
    * Protobuf type {@code google.firestore.v1.UpdateDocumentRequest}

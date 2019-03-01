@@ -7,7 +7,8 @@ package com.google.firestore.v1;
  *
  *
  * <pre>
- * The response for [Firestore.BeginTransaction][google.firestore.v1.Firestore.BeginTransaction].
+ * The response for
+ * [Firestore.BeginTransaction][google.firestore.v1.Firestore.BeginTransaction].
  * </pre>
  *
  * Protobuf type {@code google.firestore.v1.BeginTransactionResponse}
@@ -268,7 +269,8 @@ public final class BeginTransactionResponse extends com.google.protobuf.Generate
    *
    *
    * <pre>
-   * The response for [Firestore.BeginTransaction][google.firestore.v1.Firestore.BeginTransaction].
+   * The response for
+   * [Firestore.BeginTransaction][google.firestore.v1.Firestore.BeginTransaction].
    * </pre>
    *
    * Protobuf type {@code google.firestore.v1.BeginTransactionResponse}

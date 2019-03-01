@@ -12,7 +12,8 @@ public interface DocumentDeleteOrBuilder
    *
    *
    * <pre>
-   * The resource name of the [Document][google.firestore.v1.Document] that was deleted.
+   * The resource name of the [Document][google.firestore.v1.Document] that was
+   * deleted.
    * </pre>
    *
    * <code>string document = 1;</code>
@@ -22,7 +23,8 @@ public interface DocumentDeleteOrBuilder
    *
    *
    * <pre>
-   * The resource name of the [Document][google.firestore.v1.Document] that was deleted.
+   * The resource name of the [Document][google.firestore.v1.Document] that was
+   * deleted.
    * </pre>
    *
    * <code>string document = 1;</code>
