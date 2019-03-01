@@ -12,9 +12,9 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
  *
  * <pre>
  * The Google BigQuery Data Transfer Service API enables BigQuery users to
- * configure the transfer of their data from other Google Products into BigQuery.
- * This service contains methods that are end user exposed. It backs up the
- * frontend.
+ * configure the transfer of their data from other Google Products into
+ * BigQuery. This service contains methods that are end user exposed. It backs
+ * up the frontend.
  * </pre>
  */
 @javax.annotation.Generated(
@@ -842,9 +842,9 @@ public final class DataTransferServiceGrpc {
    *
    * <pre>
    * The Google BigQuery Data Transfer Service API enables BigQuery users to
-   * configure the transfer of their data from other Google Products into BigQuery.
-   * This service contains methods that are end user exposed. It backs up the
-   * frontend.
+   * configure the transfer of their data from other Google Products into
+   * BigQuery. This service contains methods that are end user exposed. It backs
+   * up the frontend.
    * </pre>
    */
   public abstract static class DataTransferServiceImplBase implements io.grpc.BindableService {
@@ -1148,9 +1148,9 @@ public final class DataTransferServiceGrpc {
    *
    * <pre>
    * The Google BigQuery Data Transfer Service API enables BigQuery users to
-   * configure the transfer of their data from other Google Products into BigQuery.
-   * This service contains methods that are end user exposed. It backs up the
-   * frontend.
+   * configure the transfer of their data from other Google Products into
+   * BigQuery. This service contains methods that are end user exposed. It backs
+   * up the frontend.
    * </pre>
    */
   public static final class DataTransferServiceStub
@@ -1412,9 +1412,9 @@ public final class DataTransferServiceGrpc {
    *
    * <pre>
    * The Google BigQuery Data Transfer Service API enables BigQuery users to
-   * configure the transfer of their data from other Google Products into BigQuery.
-   * This service contains methods that are end user exposed. It backs up the
-   * frontend.
+   * configure the transfer of their data from other Google Products into
+   * BigQuery. This service contains methods that are end user exposed. It backs
+   * up the frontend.
    * </pre>
    */
   public static final class DataTransferServiceBlockingStub
@@ -1623,9 +1623,9 @@ public final class DataTransferServiceGrpc {
    *
    * <pre>
    * The Google BigQuery Data Transfer Service API enables BigQuery users to
-   * configure the transfer of their data from other Google Products into BigQuery.
-   * This service contains methods that are end user exposed. It backs up the
-   * frontend.
+   * configure the transfer of their data from other Google Products into
+   * BigQuery. This service contains methods that are end user exposed. It backs
+   * up the frontend.
    * </pre>
    */
   public static final class DataTransferServiceFutureStub
