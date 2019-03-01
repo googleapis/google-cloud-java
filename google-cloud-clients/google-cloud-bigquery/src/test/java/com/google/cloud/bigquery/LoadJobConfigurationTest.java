@@ -41,7 +41,6 @@ public class LoadJobConfigurationTest {
   private static final WriteDisposition WRITE_DISPOSITION = WriteDisposition.WRITE_APPEND;
   private static final Integer MAX_BAD_RECORDS = 42;
   private static final String FORMAT = "CSV";
-  private static final String AVRO_FORMATE = "AVRO";
   private static final Boolean IGNORE_UNKNOWN_VALUES = true;
   private static final Field FIELD_SCHEMA =
       Field.newBuilder("IntegerField", LegacySQLTypeName.INTEGER)
@@ -136,7 +135,7 @@ public class LoadJobConfigurationTest {
             .build();
     assertEquals("newTable", configurationAvro.getDestinationTable().getTable());
     configurationAvro = configurationAvro.toBuilder().setDestinationTable(TABLE_ID).build();
-    compareLoadJobConfiguration(LOAD_CONFIGURATION_AVRO, configurationBackup);
+    compareLoadJobConfiguration(LOAD_CONFIGURATION_AVRO, configurationAvro);
   }
 
   @Test
