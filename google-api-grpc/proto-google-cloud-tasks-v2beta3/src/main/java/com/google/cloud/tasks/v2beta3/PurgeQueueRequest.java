@@ -7,7 +7,8 @@ package com.google.cloud.tasks.v2beta3;
  *
  *
  * <pre>
- * Request message for [PurgeQueue][google.cloud.tasks.v2beta3.CloudTasks.PurgeQueue].
+ * Request message for
+ * [PurgeQueue][google.cloud.tasks.v2beta3.CloudTasks.PurgeQueue].
  * </pre>
  *
  * Protobuf type {@code google.cloud.tasks.v2beta3.PurgeQueueRequest}
@@ -302,7 +303,8 @@ public final class PurgeQueueRequest extends com.google.protobuf.GeneratedMessag
    *
    *
    * <pre>
-   * Request message for [PurgeQueue][google.cloud.tasks.v2beta3.CloudTasks.PurgeQueue].
+   * Request message for
+   * [PurgeQueue][google.cloud.tasks.v2beta3.CloudTasks.PurgeQueue].
    * </pre>
    *
    * Protobuf type {@code google.cloud.tasks.v2beta3.PurgeQueueRequest}

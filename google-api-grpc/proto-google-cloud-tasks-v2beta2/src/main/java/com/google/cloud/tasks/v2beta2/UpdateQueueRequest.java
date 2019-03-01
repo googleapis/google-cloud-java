@@ -7,7 +7,8 @@ package com.google.cloud.tasks.v2beta2;
  *
  *
  * <pre>
- * Request message for [UpdateQueue][google.cloud.tasks.v2beta2.CloudTasks.UpdateQueue].
+ * Request message for
+ * [UpdateQueue][google.cloud.tasks.v2beta2.CloudTasks.UpdateQueue].
  * </pre>
  *
  * Protobuf type {@code google.cloud.tasks.v2beta2.UpdateQueueRequest}
@@ -121,10 +122,12 @@ public final class UpdateQueueRequest extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Required.
    * The queue to create or update.
-   * The queue's [name][google.cloud.tasks.v2beta2.Queue.name] must be specified.
+   * The queue's [name][google.cloud.tasks.v2beta2.Queue.name] must be
+   * specified.
    * Output only fields cannot be modified using UpdateQueue.
    * Any value specified for an output only field will be ignored.
-   * The queue's [name][google.cloud.tasks.v2beta2.Queue.name] cannot be changed.
+   * The queue's [name][google.cloud.tasks.v2beta2.Queue.name] cannot be
+   * changed.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta2.Queue queue = 1;</code>
@@ -138,10 +141,12 @@ public final class UpdateQueueRequest extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Required.
    * The queue to create or update.
-   * The queue's [name][google.cloud.tasks.v2beta2.Queue.name] must be specified.
+   * The queue's [name][google.cloud.tasks.v2beta2.Queue.name] must be
+   * specified.
    * Output only fields cannot be modified using UpdateQueue.
    * Any value specified for an output only field will be ignored.
-   * The queue's [name][google.cloud.tasks.v2beta2.Queue.name] cannot be changed.
+   * The queue's [name][google.cloud.tasks.v2beta2.Queue.name] cannot be
+   * changed.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta2.Queue queue = 1;</code>
@@ -155,10 +160,12 @@ public final class UpdateQueueRequest extends com.google.protobuf.GeneratedMessa
    * <pre>
    * Required.
    * The queue to create or update.
-   * The queue's [name][google.cloud.tasks.v2beta2.Queue.name] must be specified.
+   * The queue's [name][google.cloud.tasks.v2beta2.Queue.name] must be
+   * specified.
    * Output only fields cannot be modified using UpdateQueue.
    * Any value specified for an output only field will be ignored.
-   * The queue's [name][google.cloud.tasks.v2beta2.Queue.name] cannot be changed.
+   * The queue's [name][google.cloud.tasks.v2beta2.Queue.name] cannot be
+   * changed.
    * </pre>
    *
    * <code>.google.cloud.tasks.v2beta2.Queue queue = 1;</code>
@@ -392,7 +399,8 @@ public final class UpdateQueueRequest extends com.google.protobuf.GeneratedMessa
    *
    *
    * <pre>
-   * Request message for [UpdateQueue][google.cloud.tasks.v2beta2.CloudTasks.UpdateQueue].
+   * Request message for
+   * [UpdateQueue][google.cloud.tasks.v2beta2.CloudTasks.UpdateQueue].
    * </pre>
    *
    * Protobuf type {@code google.cloud.tasks.v2beta2.UpdateQueueRequest}
@@ -580,10 +588,12 @@ public final class UpdateQueueRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Required.
      * The queue to create or update.
-     * The queue's [name][google.cloud.tasks.v2beta2.Queue.name] must be specified.
+     * The queue's [name][google.cloud.tasks.v2beta2.Queue.name] must be
+     * specified.
      * Output only fields cannot be modified using UpdateQueue.
      * Any value specified for an output only field will be ignored.
-     * The queue's [name][google.cloud.tasks.v2beta2.Queue.name] cannot be changed.
+     * The queue's [name][google.cloud.tasks.v2beta2.Queue.name] cannot be
+     * changed.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.Queue queue = 1;</code>
@@ -597,10 +607,12 @@ public final class UpdateQueueRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Required.
      * The queue to create or update.
-     * The queue's [name][google.cloud.tasks.v2beta2.Queue.name] must be specified.
+     * The queue's [name][google.cloud.tasks.v2beta2.Queue.name] must be
+     * specified.
      * Output only fields cannot be modified using UpdateQueue.
      * Any value specified for an output only field will be ignored.
-     * The queue's [name][google.cloud.tasks.v2beta2.Queue.name] cannot be changed.
+     * The queue's [name][google.cloud.tasks.v2beta2.Queue.name] cannot be
+     * changed.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.Queue queue = 1;</code>
@@ -618,10 +630,12 @@ public final class UpdateQueueRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Required.
      * The queue to create or update.
-     * The queue's [name][google.cloud.tasks.v2beta2.Queue.name] must be specified.
+     * The queue's [name][google.cloud.tasks.v2beta2.Queue.name] must be
+     * specified.
      * Output only fields cannot be modified using UpdateQueue.
      * Any value specified for an output only field will be ignored.
-     * The queue's [name][google.cloud.tasks.v2beta2.Queue.name] cannot be changed.
+     * The queue's [name][google.cloud.tasks.v2beta2.Queue.name] cannot be
+     * changed.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.Queue queue = 1;</code>
@@ -645,10 +659,12 @@ public final class UpdateQueueRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Required.
      * The queue to create or update.
-     * The queue's [name][google.cloud.tasks.v2beta2.Queue.name] must be specified.
+     * The queue's [name][google.cloud.tasks.v2beta2.Queue.name] must be
+     * specified.
      * Output only fields cannot be modified using UpdateQueue.
      * Any value specified for an output only field will be ignored.
-     * The queue's [name][google.cloud.tasks.v2beta2.Queue.name] cannot be changed.
+     * The queue's [name][google.cloud.tasks.v2beta2.Queue.name] cannot be
+     * changed.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.Queue queue = 1;</code>
@@ -669,10 +685,12 @@ public final class UpdateQueueRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Required.
      * The queue to create or update.
-     * The queue's [name][google.cloud.tasks.v2beta2.Queue.name] must be specified.
+     * The queue's [name][google.cloud.tasks.v2beta2.Queue.name] must be
+     * specified.
      * Output only fields cannot be modified using UpdateQueue.
      * Any value specified for an output only field will be ignored.
-     * The queue's [name][google.cloud.tasks.v2beta2.Queue.name] cannot be changed.
+     * The queue's [name][google.cloud.tasks.v2beta2.Queue.name] cannot be
+     * changed.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.Queue queue = 1;</code>
@@ -700,10 +718,12 @@ public final class UpdateQueueRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Required.
      * The queue to create or update.
-     * The queue's [name][google.cloud.tasks.v2beta2.Queue.name] must be specified.
+     * The queue's [name][google.cloud.tasks.v2beta2.Queue.name] must be
+     * specified.
      * Output only fields cannot be modified using UpdateQueue.
      * Any value specified for an output only field will be ignored.
-     * The queue's [name][google.cloud.tasks.v2beta2.Queue.name] cannot be changed.
+     * The queue's [name][google.cloud.tasks.v2beta2.Queue.name] cannot be
+     * changed.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.Queue queue = 1;</code>
@@ -725,10 +745,12 @@ public final class UpdateQueueRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Required.
      * The queue to create or update.
-     * The queue's [name][google.cloud.tasks.v2beta2.Queue.name] must be specified.
+     * The queue's [name][google.cloud.tasks.v2beta2.Queue.name] must be
+     * specified.
      * Output only fields cannot be modified using UpdateQueue.
      * Any value specified for an output only field will be ignored.
-     * The queue's [name][google.cloud.tasks.v2beta2.Queue.name] cannot be changed.
+     * The queue's [name][google.cloud.tasks.v2beta2.Queue.name] cannot be
+     * changed.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.Queue queue = 1;</code>
@@ -744,10 +766,12 @@ public final class UpdateQueueRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Required.
      * The queue to create or update.
-     * The queue's [name][google.cloud.tasks.v2beta2.Queue.name] must be specified.
+     * The queue's [name][google.cloud.tasks.v2beta2.Queue.name] must be
+     * specified.
      * Output only fields cannot be modified using UpdateQueue.
      * Any value specified for an output only field will be ignored.
-     * The queue's [name][google.cloud.tasks.v2beta2.Queue.name] cannot be changed.
+     * The queue's [name][google.cloud.tasks.v2beta2.Queue.name] cannot be
+     * changed.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.Queue queue = 1;</code>
@@ -765,10 +789,12 @@ public final class UpdateQueueRequest extends com.google.protobuf.GeneratedMessa
      * <pre>
      * Required.
      * The queue to create or update.
-     * The queue's [name][google.cloud.tasks.v2beta2.Queue.name] must be specified.
+     * The queue's [name][google.cloud.tasks.v2beta2.Queue.name] must be
+     * specified.
      * Output only fields cannot be modified using UpdateQueue.
      * Any value specified for an output only field will be ignored.
-     * The queue's [name][google.cloud.tasks.v2beta2.Queue.name] cannot be changed.
+     * The queue's [name][google.cloud.tasks.v2beta2.Queue.name] cannot be
+     * changed.
      * </pre>
      *
      * <code>.google.cloud.tasks.v2beta2.Queue queue = 1;</code>
