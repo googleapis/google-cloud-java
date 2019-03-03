@@ -516,6 +516,7 @@ class FakeStorageRpc implements StorageRpc {
     fakeFolder.setName(folderName);
     fakeFolder.setBucket(so.getBucket());
     fakeFolder.setGeneration(so.getGeneration());
+    fakeFolder.set("isDirectory", true);
     folders.put(folderName, fakeFolder);
     return true;
   }
