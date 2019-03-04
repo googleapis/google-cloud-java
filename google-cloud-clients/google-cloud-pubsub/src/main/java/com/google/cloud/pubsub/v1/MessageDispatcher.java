@@ -371,11 +371,11 @@ class MessageDispatcher {
 
   private void processOutstandingBatches() {
     for (OutstandingMessageBatch nextBatch = outstandingMessageBatches.poll();
-         nextBatch != null;
-         nextBatch = outstandingMessageBatches.poll()) {
+        nextBatch != null;
+        nextBatch = outstandingMessageBatches.poll()) {
       for (OutstandingMessage nextMessage = nextBatch.messages.poll();
-           nextMessage != null;
-           nextMessage = nextBatch.messages.poll()) {
+          nextMessage != null;
+          nextMessage = nextBatch.messages.poll()) {
         try {
           // This is a non-blocking flow controller.
           flowController.reserve(1, nextMessage.receivedMessage.getMessage().getSerializedSize());
@@ -386,11 +386,9 @@ class MessageDispatcher {
           outstandingMessageBatches.addFirst(nextBatch);
           return;
         } catch (FlowControlException unexpectedException) {
-          throw new IllegalStateException(
-              "Flow control unexpected exception", unexpectedException);
+          throw new IllegalStateException("Flow control unexpected exception", unexpectedException);
         }
-        processOutstandingMessage(
-            nextMessage.receivedMessage.getMessage(), nextMessage.ackHandler);
+        processOutstandingMessage(nextMessage.receivedMessage.getMessage(), nextMessage.ackHandler);
       }
       nextBatch.doneCallback.run();
     }
