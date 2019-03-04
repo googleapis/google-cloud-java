@@ -22,16 +22,16 @@ If you are using Maven, add this to your pom.xml file
 <dependency>
   <groupId>com.google.cloud</groupId>
   <artifactId>google-cloud-kms</artifactId>
-  <version>0.81.0-beta</version>
+  <version>1.0.0</version>
 </dependency>
 ```
 If you are using Gradle, add this to your dependencies
 ```Groovy
-compile 'com.google.cloud:google-cloud-kms:0.81.0-beta'
+compile 'com.google.cloud:google-cloud-kms:1.0.0'
 ```
 If you are using SBT, add this to your dependencies
 ```Scala
-libraryDependencies += "com.google.cloud" % "google-cloud-kms" % "0.81.0-beta"
+libraryDependencies += "com.google.cloud" % "google-cloud-kms" % "1.0.0"
 ```
 [//]: # ({x-version-update-end})
 
