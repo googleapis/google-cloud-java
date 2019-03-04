@@ -269,8 +269,8 @@ public class Publisher {
 
     if (batchToSend != null) {
       logger.log(Level.FINER, "Scheduling a batch for immediate sending.");
-      publishOutstandingBatch(batchToSend);
       publishAllOutstanding();
+      publishOutstandingBatch(batchToSend);
     }
 
     // If the message is over the size limit, it was not added to the pending messages and it will
@@ -278,9 +278,9 @@ public class Publisher {
     if (hasBatchingBytes() && messageSize >= getMaxBatchBytes()) {
       logger.log(
           Level.FINER, "Message exceeds the max batch bytes, scheduling it for immediate send.");
+      publishAllOutstanding();
       publishOutstandingBatch(
           new OutstandingBatch(ImmutableList.of(outstandingPublish), messageSize, orderingKey));
-      publishAllOutstanding();
     }
 
     return publishResult;

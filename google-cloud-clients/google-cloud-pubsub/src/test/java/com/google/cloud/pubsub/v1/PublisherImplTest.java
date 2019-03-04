@@ -339,6 +339,39 @@ public class PublisherImplTest {
   }
 
   @Test
+  public void testLargeMessagesDoNotReorderBatches() throws Exception {
+    // Set the maximum batching size to 20 bytes.
+    Publisher publisher =
+        getTestPublisherBuilder()
+            .setBatchingSettings(
+                Publisher.Builder.DEFAULT_BATCHING_SETTINGS
+                    .toBuilder()
+                    .setElementCountThreshold(10L)
+                    .setRequestByteThreshold(20L)
+                    .setDelayThreshold(Duration.ofSeconds(100))
+                    .build())
+            .setEnableMessageOrdering(true)
+            .build();
+    testPublisherServiceImpl.setAutoPublishResponse(true);
+    ApiFuture<String> publishFuture1 = sendTestMessageWithOrderingKey(publisher, "m1", "OrderA");
+    ApiFuture<String> publishFuture2 = sendTestMessageWithOrderingKey(publisher, "m2", "OrderB");
+
+    assertFalse(publishFuture1.isDone());
+    assertFalse(publishFuture2.isDone());
+
+    ApiFuture<String> publishFuture3 =
+        sendTestMessageWithOrderingKey(publisher, "VeryLargeMessage", "OrderB");
+    // Verify that messages with "OrderB" were delivered in order.
+    assertTrue(Integer.parseInt(publishFuture2.get()) < Integer.parseInt(publishFuture3.get()));
+
+    assertTrue(publishFuture1.isDone());
+    assertTrue(publishFuture2.isDone());
+    assertTrue(publishFuture3.isDone());
+
+    publisher.shutdown();
+  }
+
+  @Test
   public void testOrderingKeyWhenDisabled_throwsException() throws Exception {
     // Message ordering is disabled by default.
     Publisher publisher = getTestPublisherBuilder().build();
