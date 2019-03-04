@@ -35,7 +35,7 @@ google-cloud-firestore:0.82.0-beta:0.82.0-beta
 google-cloud-gcloud-maven-plugin:0.82.0-alpha:0.82.0-alpha
 google-cloud-iamcredentials:0.9.0-alpha:0.9.0-alpha
 google-cloud-iot:0.82.0-beta:0.82.0-beta
-google-cloud-kms:1.1.0:1.1.0
+google-cloud-kms:1.0.0:1.0.0
 google-cloud-language:1.64.0:1.64.0
 google-cloud-logging:1.64.0:1.64.0
 google-cloud-logging-logback:0.82.0-alpha:0.82.0-alpha
