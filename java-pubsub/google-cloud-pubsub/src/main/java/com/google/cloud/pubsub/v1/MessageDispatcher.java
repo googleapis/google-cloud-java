@@ -371,41 +371,31 @@ class MessageDispatcher {
     processOutstandingBatches();
   }
 
-  public void processOutstandingBatches() {
-    while (true) {
-      boolean batchDone = false;
-      Runnable batchCallback = null;
-      OutstandingMessage outstandingMessage;
-      synchronized (outstandingMessageBatches) {
-        OutstandingMessageBatch nextBatch = outstandingMessageBatches.peek();
-        if (nextBatch == null) {
-          return;
+  private void processOutstandingBatches() {
+    synchronized (outstandingMessageBatches) {
+      for (OutstandingMessageBatch nextBatch = outstandingMessageBatches.poll();
+          nextBatch != null;
+          nextBatch = outstandingMessageBatches.poll()) {
+        for (OutstandingMessage nextMessage = nextBatch.messages.poll();
+            nextMessage != null;
+            nextMessage = nextBatch.messages.poll()) {
+          try {
+            // This is a non-blocking flow controller.
+            flowController.reserve(1, nextMessage.receivedMessage.getMessage().getSerializedSize());
+          } catch (FlowController.MaxOutstandingElementCountReachedException
+              | FlowController.MaxOutstandingRequestBytesReachedException flowControlException) {
+            // Unwind previous changes in the batches outstanding.
+            nextBatch.messages.addFirst(nextMessage);
+            outstandingMessageBatches.addFirst(nextBatch);
+            return;
+          } catch (FlowControlException unexpectedException) {
+            throw new IllegalStateException(
+                "Flow control unexpected exception", unexpectedException);
+          }
+          processOutstandingMessage(
+              nextMessage.receivedMessage.getMessage(), nextMessage.ackHandler);
         }
-        outstandingMessage = nextBatch.messages.peek();
-        if (outstandingMessage == null) {
-          return;
-        }
-        try {
-          // This is a non-blocking flow controller.
-          flowController.reserve(
-              1, outstandingMessage.receivedMessage().getMessage().getSerializedSize());
-        } catch (FlowController.MaxOutstandingElementCountReachedException
-            | FlowController.MaxOutstandingRequestBytesReachedException flowControlException) {
-          return;
-        } catch (FlowControlException unexpectedException) {
-          throw new IllegalStateException("Flow control unexpected exception", unexpectedException);
-        }
-        nextBatch.messages.poll(); // We got a hold to the message already.
-        batchDone = nextBatch.messages.isEmpty();
-        if (batchDone) {
-          outstandingMessageBatches.poll();
-          batchCallback = nextBatch.doneCallback;
-        }
-      }
-      processOutstandingMessage(
-          outstandingMessage.receivedMessage.getMessage(), outstandingMessage.ackHandler);
-      if (batchDone) {
-        batchCallback.run();
+        nextBatch.doneCallback.run();
       }
     }
   }
