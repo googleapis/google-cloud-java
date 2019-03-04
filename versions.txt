@@ -35,7 +35,7 @@ google-cloud-firestore:0.81.0-beta:0.81.1-beta-SNAPSHOT
 google-cloud-gcloud-maven-plugin:0.81.0-alpha:0.81.1-alpha-SNAPSHOT
 google-cloud-iamcredentials:0.8.0-alpha:0.8.1-alpha-SNAPSHOT
 google-cloud-iot:0.81.0-beta:0.81.1-beta-SNAPSHOT
-google-cloud-kms:0.81.0-beta:0.81.1-beta-SNAPSHOT
+google-cloud-kms:1.0.0:1.0.1-SNAPSHOT
 google-cloud-language:1.63.0:1.63.1-SNAPSHOT
 google-cloud-logging:1.63.0:1.63.1-SNAPSHOT
 google-cloud-logging-logback:0.81.0-alpha:0.81.1-alpha-SNAPSHOT
