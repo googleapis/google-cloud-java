@@ -27,6 +27,7 @@ com.google.cloud.bigtable.data.v2.stub.readrows
 com.google.cloud.bigtable.gaxx
 com.google.cloud.bigtable.gaxx.reframing
 com.google.cloud.bigtable.gaxx.retrying
+com.google.cloud.bigtable.gaxx.tracing
 com.google.cloud.compute
 com.google.cloud.compute.deprecated
 com.google.cloud.compute.deprecated.spi
@@ -160,5 +161,7 @@ com.google.cloud.vision.v1p2beta1
 com.google.cloud.vision.v1p2beta1.stub
 com.google.cloud.vision.v1p3beta1
 com.google.cloud.vision.v1p3beta1.stub
+com.google.cloud.vision.v1p4beta1
+com.google.cloud.vision.v1p4beta1.stub
 com.google.cloud.websecurityscanner.v1alpha
 com.google.cloud.websecurityscanner.v1alpha.stub

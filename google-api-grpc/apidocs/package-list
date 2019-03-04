@@ -35,6 +35,7 @@ com.google.cloud.vision.v1
 com.google.cloud.vision.v1p1beta1
 com.google.cloud.vision.v1p2beta1
 com.google.cloud.vision.v1p3beta1
+com.google.cloud.vision.v1p4beta1
 com.google.cloud.websecurityscanner.v1alpha
 com.google.container.v1
 com.google.containeranalysis.v1beta1

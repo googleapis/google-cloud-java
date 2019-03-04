@@ -12,3 +12,4 @@ com.google.cloud.bigtable.data.v2.stub.readrows
 com.google.cloud.bigtable.gaxx
 com.google.cloud.bigtable.gaxx.reframing
 com.google.cloud.bigtable.gaxx.retrying
+com.google.cloud.bigtable.gaxx.tracing
