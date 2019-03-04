@@ -16,6 +16,7 @@
 
 package com.google.cloud.pubsub.v1;
 
+import com.google.api.core.ApiFunction;
 import com.google.api.core.ApiFuture;
 import com.google.api.core.ApiFutureCallback;
 import com.google.api.core.ApiFutures;
@@ -95,6 +96,7 @@ public class Publisher {
   private final List<AutoCloseable> closeables;
   private final MessageWaiter messagesWaiter;
   private ScheduledFuture<?> currentAlarmFuture;
+  private final ApiFunction<PubsubMessage, PubsubMessage> messageTransform;
 
   /** The maximum number of messages in one request. Defined by the API. */
   public static long getApiMaxRequestElementCount() {
@@ -110,6 +112,7 @@ public class Publisher {
     topicName = builder.topicName;
 
     this.batchingSettings = builder.batchingSettings;
+    this.messageTransform = builder.messageTransform;
 
     messagesBatch = new LinkedList<>();
     messagesBatchLock = new ReentrantLock();
@@ -187,11 +190,12 @@ public class Publisher {
    * @param message the message to publish.
    * @return the message ID wrapped in a future.
    */
-  public ApiFuture<String> publish(PubsubMessage originalMessage) {
+  public ApiFuture<String> publish(PubsubMessage message) {
     if (shutdown.get()) {
       throw new IllegalStateException("Cannot publish on a shut-down publisher.");
     }
-    PubsubMessage message = OpenCensusUtil.putOpenCensusAttributes(originalMessage);
+
+    message = messageTransform.apply(message);
     final int messageSize = message.getSerializedSize();
     OutstandingBatch batchToSend = null;
     SettableApiFuture<String> publishResult = SettableApiFuture.<String>create();
@@ -528,6 +532,14 @@ public class Publisher {
     CredentialsProvider credentialsProvider =
         TopicAdminSettings.defaultCredentialsProviderBuilder().build();
 
+    ApiFunction<PubsubMessage, PubsubMessage> messageTransform =
+        new ApiFunction<PubsubMessage, PubsubMessage> () {
+          @Override
+          public PubsubMessage apply(PubsubMessage input) {
+            return input;
+          }
+        };
+
     private Builder(String topic) {
       this.topicName = Preconditions.checkNotNull(topic);
     }
@@ -607,6 +619,16 @@ public class Publisher {
     /** Gives the ability to set a custom executor to be used by the library. */
     public Builder setExecutorProvider(ExecutorProvider executorProvider) {
       this.executorProvider = Preconditions.checkNotNull(executorProvider);
+      return this;
+    }
+
+    /**
+     * Gives the ability to set an {@link ApiFunction} that will transform the {@link PubsubMessage}
+     * before it is sent
+     */
+    public Builder setTransform(ApiFunction<PubsubMessage, PubsubMessage> messageTransform) {
+      this.messageTransform =
+          Preconditions.checkNotNull(messageTransform, "The messageTransform cannnot be null.");
       return this;
     }
 

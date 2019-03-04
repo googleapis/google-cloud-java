@@ -17,6 +17,7 @@
 package com.google.cloud.pubsub.v1;
 
 import static com.google.cloud.pubsub.v1.OpenCensusUtil.MESSAGE_RECEIVER_SPAN_NAME;
+import static com.google.cloud.pubsub.v1.OpenCensusUtil.OPEN_CENSUS_MESSAGE_TRANSFORM;
 import static com.google.cloud.pubsub.v1.OpenCensusUtil.TAG_CONTEXT_KEY;
 import static com.google.cloud.pubsub.v1.OpenCensusUtil.TRACE_CONTEXT_KEY;
 
@@ -64,11 +65,11 @@ public class OpenCensusUtilTest {
     try (
         Scope traceScope = OpenCensusUtil.createScopedSpan(TEST_PARENT_LINK_NAME);
         Scope tagScope = createScopeTags()) {
-      message = OpenCensusUtil.putOpenCensusAttributes(generatePubsubMessage(500));
+      message = OPEN_CENSUS_MESSAGE_TRANSFORM.apply(generatePubsubMessage(500));
       publisherContext = tracer.getCurrentSpan().getContext();
     }
     MessageReceiver receiver =
-        OpenCensusUtil.createOpenCensusMessageReceiver(
+        new OpenCensusUtil.OpenCensusMessageReceiver(
             new TestMessageReceiver(publisherContext, tagger.getCurrentTagContext()));
     receiver.receiveMessage(message, new NoOpAckReplyConsumer());
   }
@@ -76,7 +77,7 @@ public class OpenCensusUtilTest {
   // Verifies that the current span context is added as an attribute and that (for now) the tag
   // context is not added as an attribute.
   @Test
-  public void testPutOpenCensusAttributes() {
+  public void testOpenCensusMessageTransformer() {
     try (
         Scope traceScope = OpenCensusUtil.createScopedSpan("PublisherTestRoot");
         Scope tagScope = createScopeTags()) {
@@ -84,7 +85,7 @@ public class OpenCensusUtilTest {
       assertEquals("", originalMessage.getAttributesOrDefault(TRACE_CONTEXT_KEY, ""));
       assertEquals("", originalMessage.getAttributesOrDefault(TAG_CONTEXT_KEY, ""));
 
-      PubsubMessage attributedMessage = OpenCensusUtil.putOpenCensusAttributes(originalMessage);
+      PubsubMessage attributedMessage = OPEN_CENSUS_MESSAGE_TRANSFORM.apply(originalMessage);
       String encodedSpanContext =
           OpenCensusUtil.encodeSpanContext(tracer.getCurrentSpan().getContext());
       assertNotEquals("",  encodedSpanContext);

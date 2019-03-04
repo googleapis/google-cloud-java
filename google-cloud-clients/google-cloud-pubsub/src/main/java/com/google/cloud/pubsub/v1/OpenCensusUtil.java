@@ -15,6 +15,7 @@
 
 package com.google.cloud.pubsub.v1;
 
+import com.google.api.core.ApiFunction;
 import com.google.cloud.ServiceOptions;
 import com.google.common.annotations.VisibleForTesting;
 import com.google.errorprone.annotations.MustBeClosed;
@@ -49,7 +50,7 @@ import java.util.logging.Logger;
  * Utilities for propagating OpenCensus {@link TagContext} and {@link SpanContext} from publishers
  * to subscribers.
  */
-final class OpenCensusUtil {
+public class OpenCensusUtil {
   private static final Logger logger = Logger.getLogger(OpenCensusUtil.class.getName());
 
   public static final String TAG_CONTEXT_KEY = "googclient_OpenCensusTagContextKey";
@@ -66,28 +67,29 @@ final class OpenCensusUtil {
   private static final TextFormat traceContextTextFormat =
       Tracing.getPropagationComponent().getTraceContextFormat();
 
-  // Used in Publisher.
-  // TODO: consider adding configuration support to control adding these attributes.
-  static PubsubMessage putOpenCensusAttributes(PubsubMessage message) {
-    PubsubMessage.Builder builder = PubsubMessage.newBuilder(message);
-    String encodedSpanContext = encodeSpanContext(tracer.getCurrentSpan().getContext());
-    String encodedTagContext = encodeTagContext(tagger.getCurrentTagContext());
-    if (encodedSpanContext.isEmpty() && encodedTagContext.isEmpty()) {
-      return message;
-    }
-    if (!encodedSpanContext.isEmpty()) {
-      builder.putAttributes(TRACE_CONTEXT_KEY, encodedSpanContext);
-    }
-    if (!encodedTagContext.isEmpty()) {
-      builder.putAttributes(TAG_CONTEXT_KEY, encodedTagContext);
-    }
-    return builder.build();
-  }
-
-  // Used in Subscriber.
-  static MessageReceiver createOpenCensusMessageReceiver(MessageReceiver receiver) {
-    return new OpenCensusMessageReceiver(receiver);
-  }
+  /**
+   * Propagates active OpenCensus trace and tag contexts from the Publisher by adding them as
+   * attributes to the {@link PubsubMessage}.
+   */
+  public static final ApiFunction<PubsubMessage, PubsubMessage> OPEN_CENSUS_MESSAGE_TRANSFORM =
+      new ApiFunction<PubsubMessage, PubsubMessage>() {
+        @Override
+        public PubsubMessage apply(PubsubMessage message) {
+          PubsubMessage.Builder builder = PubsubMessage.newBuilder(message);
+          String encodedSpanContext = encodeSpanContext(tracer.getCurrentSpan().getContext());
+          String encodedTagContext = encodeTagContext(tagger.getCurrentTagContext());
+          if (encodedSpanContext.isEmpty() && encodedTagContext.isEmpty()) {
+            return message;
+          }
+          if (!encodedSpanContext.isEmpty()) {
+            builder.putAttributes(TRACE_CONTEXT_KEY, encodedSpanContext);
+          }
+          if (!encodedTagContext.isEmpty()) {
+            builder.putAttributes(TAG_CONTEXT_KEY, encodedTagContext);
+          }
+          return builder.build();
+        }
+      };
 
   private static final Setter<StringBuilder> setter = new Setter<StringBuilder>() {
       @Override
@@ -146,12 +148,14 @@ final class OpenCensusUtil {
     }
   }
 
-  // Wrapper class for {@link MessageReceiver} that decodes any received trace and tag contexts
-  // and puts them in scope.
-  private static final class OpenCensusMessageReceiver implements MessageReceiver {
+  /**
+   * Wrapper class for {@link MessageReceiver} that decodes any received trace and tag contexts
+   * and puts them in scope.
+   */
+  public static class OpenCensusMessageReceiver implements MessageReceiver {
     private final MessageReceiver receiver;
 
-    private OpenCensusMessageReceiver(MessageReceiver receiver) {
+    public OpenCensusMessageReceiver(MessageReceiver receiver) {
       this.receiver = receiver;
     }
 
