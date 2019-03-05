@@ -63,7 +63,7 @@ protobuf {
     }
 }
 
-group = 'org.grpc'
+group = 'com.google.cloud'
 version = '0.0.1-SNAPSHOT'
 description = 'GRPC-GCP-Extension Java'
 sourceCompatibility = '1.8'
