@@ -50,6 +50,8 @@ import com.google.spanner.v1.CommitRequest;
 import com.google.spanner.v1.CommitResponse;
 import com.google.spanner.v1.CreateSessionRequest;
 import com.google.spanner.v1.DeleteSessionRequest;
+import com.google.spanner.v1.ExecuteBatchDmlRequest;
+import com.google.spanner.v1.ExecuteBatchDmlResponse;
 import com.google.spanner.v1.ExecuteSqlRequest;
 import com.google.spanner.v1.GetSessionRequest;
 import com.google.spanner.v1.ListSessionsRequest;
@@ -112,6 +114,8 @@ public class SpannerStubSettings extends StubSettings<SpannerStubSettings> {
   private final UnaryCallSettings<ExecuteSqlRequest, ResultSet> executeSqlSettings;
   private final ServerStreamingCallSettings<ExecuteSqlRequest, PartialResultSet>
       executeStreamingSqlSettings;
+  private final UnaryCallSettings<ExecuteBatchDmlRequest, ExecuteBatchDmlResponse>
+      executeBatchDmlSettings;
   private final UnaryCallSettings<ReadRequest, ResultSet> readSettings;
   private final ServerStreamingCallSettings<ReadRequest, PartialResultSet> streamingReadSettings;
   private final UnaryCallSettings<BeginTransactionRequest, Transaction> beginTransactionSettings;
@@ -150,6 +154,12 @@ public class SpannerStubSettings extends StubSettings<SpannerStubSettings> {
   public ServerStreamingCallSettings<ExecuteSqlRequest, PartialResultSet>
       executeStreamingSqlSettings() {
     return executeStreamingSqlSettings;
+  }
+
+  /** Returns the object with the settings used for calls to executeBatchDml. */
+  public UnaryCallSettings<ExecuteBatchDmlRequest, ExecuteBatchDmlResponse>
+      executeBatchDmlSettings() {
+    return executeBatchDmlSettings;
   }
 
   /** Returns the object with the settings used for calls to read. */
@@ -260,6 +270,7 @@ public class SpannerStubSettings extends StubSettings<SpannerStubSettings> {
     deleteSessionSettings = settingsBuilder.deleteSessionSettings().build();
     executeSqlSettings = settingsBuilder.executeSqlSettings().build();
     executeStreamingSqlSettings = settingsBuilder.executeStreamingSqlSettings().build();
+    executeBatchDmlSettings = settingsBuilder.executeBatchDmlSettings().build();
     readSettings = settingsBuilder.readSettings().build();
     streamingReadSettings = settingsBuilder.streamingReadSettings().build();
     beginTransactionSettings = settingsBuilder.beginTransactionSettings().build();
@@ -335,6 +346,8 @@ public class SpannerStubSettings extends StubSettings<SpannerStubSettings> {
     private final UnaryCallSettings.Builder<ExecuteSqlRequest, ResultSet> executeSqlSettings;
     private final ServerStreamingCallSettings.Builder<ExecuteSqlRequest, PartialResultSet>
         executeStreamingSqlSettings;
+    private final UnaryCallSettings.Builder<ExecuteBatchDmlRequest, ExecuteBatchDmlResponse>
+        executeBatchDmlSettings;
     private final UnaryCallSettings.Builder<ReadRequest, ResultSet> readSettings;
     private final ServerStreamingCallSettings.Builder<ReadRequest, PartialResultSet>
         streamingReadSettings;
@@ -425,6 +438,8 @@ public class SpannerStubSettings extends StubSettings<SpannerStubSettings> {
 
       executeStreamingSqlSettings = ServerStreamingCallSettings.newBuilder();
 
+      executeBatchDmlSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
+
       readSettings = UnaryCallSettings.newUnaryCallSettingsBuilder();
 
       streamingReadSettings = ServerStreamingCallSettings.newBuilder();
@@ -446,6 +461,7 @@ public class SpannerStubSettings extends StubSettings<SpannerStubSettings> {
               listSessionsSettings,
               deleteSessionSettings,
               executeSqlSettings,
+              executeBatchDmlSettings,
               readSettings,
               beginTransactionSettings,
               commitSettings,
@@ -498,6 +514,11 @@ public class SpannerStubSettings extends StubSettings<SpannerStubSettings> {
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("streaming"));
 
       builder
+          .executeBatchDmlSettings()
+          .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
+          .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
+
+      builder
           .readSettings()
           .setRetryableCodes(RETRYABLE_CODE_DEFINITIONS.get("idempotent"))
           .setRetrySettings(RETRY_PARAM_DEFINITIONS.get("default"));
@@ -544,6 +565,7 @@ public class SpannerStubSettings extends StubSettings<SpannerStubSettings> {
       deleteSessionSettings = settings.deleteSessionSettings.toBuilder();
       executeSqlSettings = settings.executeSqlSettings.toBuilder();
       executeStreamingSqlSettings = settings.executeStreamingSqlSettings.toBuilder();
+      executeBatchDmlSettings = settings.executeBatchDmlSettings.toBuilder();
       readSettings = settings.readSettings.toBuilder();
       streamingReadSettings = settings.streamingReadSettings.toBuilder();
       beginTransactionSettings = settings.beginTransactionSettings.toBuilder();
@@ -559,6 +581,7 @@ public class SpannerStubSettings extends StubSettings<SpannerStubSettings> {
               listSessionsSettings,
               deleteSessionSettings,
               executeSqlSettings,
+              executeBatchDmlSettings,
               readSettings,
               beginTransactionSettings,
               commitSettings,
@@ -614,6 +637,12 @@ public class SpannerStubSettings extends StubSettings<SpannerStubSettings> {
     public ServerStreamingCallSettings.Builder<ExecuteSqlRequest, PartialResultSet>
         executeStreamingSqlSettings() {
       return executeStreamingSqlSettings;
+    }
+
+    /** Returns the builder for the settings used for calls to executeBatchDml. */
+    public UnaryCallSettings.Builder<ExecuteBatchDmlRequest, ExecuteBatchDmlResponse>
+        executeBatchDmlSettings() {
+      return executeBatchDmlSettings;
     }
 
     /** Returns the builder for the settings used for calls to read. */
